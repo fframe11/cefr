@@ -1,0 +1,88 @@
+import { CEFRLevelInfo } from '../types';
+
+export const CEFR_LEVELS: CEFRLevelInfo[] = [
+  {
+    level: 'A1',
+    nameEn: 'Beginner / Breakthrough',
+    nameTh: 'ระดับเริ่มต้น (พื้นฐานเบื้องต้น)',
+    cambridgeEquivalent: 'Pre-A1 Starters / A1 Movers',
+    cambridgeScaleRange: [100, 119],
+    descriptionTh: 'เข้าใจและใช้สำนวนภาษาที่คุ้นเคยในชีวิตประจำวัน แนะนำตัวเองและผู้อื่น ถามตอบข้อมูลส่วนตัวเบื้องต้นได้',
+    descriptionEn: 'Can understand and use familiar everyday expressions and very basic phrases to satisfy concrete needs.',
+    canDoDescriptorsTh: [
+      'เข้าใจคำศัพท์และประโยคง่ายๆ ในชีวิตประจำวัน เช่น ทักทาย สั่งอาหาร ซื้อของ',
+      'แนะนำตนเอง บอกชื่อ อายุ สัญชาติ และครอบครัวได้',
+      'สื่อสารอย่างง่ายได้เมื่อคู่สนทนาพูดช้าและชัดเจน',
+    ],
+  },
+  {
+    level: 'A2',
+    nameEn: 'Elementary / Waystage',
+    nameTh: 'ระดับต้น (การสื่อสารพื้นฐาน)',
+    cambridgeEquivalent: 'A2 Key (KET)',
+    cambridgeScaleRange: [120, 139],
+    descriptionTh: 'เข้าใจประโยคและสำนวนที่พบบ่อยเกี่ยวกับการทำงาน ครอบครัว การซื้อของ และสถานที่ สามารถแลกเปลี่ยนข้อมูลในเรื่องที่คุ้นเคยได้',
+    descriptionEn: 'Can understand sentences and frequently used expressions related to areas of most immediate relevance.',
+    canDoDescriptorsTh: [
+      'เข้าใจข้อความสั้นๆ บนป้ายประกาศ อีเมล หรือบทสนทนาประจำวัน',
+      'บอกเล่าเหตุการณ์ในอดีต กิจวัตรประจำวัน และแผนการในอนาคตได้',
+      'ถามทาง ซื้อตั๋ว และสั่งอาหารในร้านอาหารได้อย่างมั่นใจ',
+    ],
+  },
+  {
+    level: 'B1',
+    nameEn: 'Intermediate / Threshold',
+    nameTh: 'ระดับกลาง (ผู้ใช้ภาษาอิสระ)',
+    cambridgeEquivalent: 'B1 Preliminary (PET)',
+    cambridgeScaleRange: [140, 159],
+    descriptionTh: 'เข้าใจประเด็นหลักของภาษามาตรฐานในเรื่องการงาน โรงเรียน และเวลาว่าง จัดการสถานการณ์ส่วนใหญ่ขณะเดินทางได้ เขียนข้อความเชื่อมโยงในหัวข้อที่คุ้นเคยได้',
+    descriptionEn: 'Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, and leisure.',
+    canDoDescriptorsTh: [
+      'เข้าใจบทความทั่วไป ข่าวสาร และคำแนะนำในที่ทำงาน',
+      'เขียนอีเมล อธิบายความรู้สึก ประสบการณ์ และให้เหตุผลสนับสนุนสั้นๆ ได้',
+      'สนทนาได้อย่างเป็นธรรมชาติในชีวิตประจำวันและการท่องเที่ยว',
+    ],
+  },
+  {
+    level: 'B2',
+    nameEn: 'Upper Intermediate / Vantage',
+    nameTh: 'ระดับกลางสูง (สื่อสารคล่องแคล่ว)',
+    cambridgeEquivalent: 'B2 First (FCE)',
+    cambridgeScaleRange: [160, 179],
+    descriptionTh: 'เข้าใจใจความสำคัญของข้อความที่ซับซ้อนทั้งเรื่องรูปธรรมและนามธรรม รวมทั้งการอภิปรายเชิงเทคนิค สามารถสื่อสารได้อย่างคล่องแคล่วกับเจ้าของภาษา',
+    descriptionEn: 'Can understand the main ideas of complex text on both concrete and abstract topics, including technical discussions.',
+    canDoDescriptorsTh: [
+      'เข้าใจบทความวิชาการ รายงานข่าว และภาพยนตร์ภาษาอังกฤษได้ดี',
+      'เขียนเรียงความ รายงาน และจดหมายทางการได้อย่างมีแบบแผน',
+      'โต้แย้ง แลกเปลี่ยนมุมมอง และอภิปรายข้อดีข้อเสียได้อย่างคล่องตัว',
+    ],
+  },
+  {
+    level: 'C1',
+    nameEn: 'Advanced / Effective Operational Proficiency',
+    nameTh: 'ระดับสูง (ใช้งานอย่างมีประสิทธิภาพ)',
+    cambridgeEquivalent: 'C1 Advanced (CAE)',
+    cambridgeScaleRange: [180, 199],
+    descriptionTh: 'เข้าใจข้อความยาวและซับซ้อนหลากหลายประเภท รับรู้ความหมายแฝง ใช้ภาษาได้อย่างยืดหยุ่นและมีประสิทธิภาพเพื่อวัตถุประสงค์ทางสังคม วิชาการ และวิชาชีพ',
+    descriptionEn: 'Can understand a wide range of demanding, longer texts, and recognise implicit meaning.',
+    canDoDescriptorsTh: [
+      'เข้าใจสำนวน ความหมายแฝง และมุกตลกในบทความหรือการสัมภาษณ์ระดับสูง',
+      'เขียนข้อความที่สละสลวย ซับซ้อน และมีโครงสร้างที่ชัดเจนในระดับวิชาการหรือธุรกิจ',
+      'สื่อสารได้อย่างเป็นธรรมชาติ แม่นยำ และคล่องแคล่วโดยแทบไม่ต้องหยุดคิดคำศัพท์',
+    ],
+  },
+  {
+    level: 'C2',
+    nameEn: 'Proficiency / Mastery',
+    nameTh: 'ระดับเชี่ยวชาญ (เจ้าของภาษา)',
+    cambridgeEquivalent: 'C2 Proficiency (CPE)',
+    cambridgeScaleRange: [200, 230],
+    descriptionTh: 'เข้าใจทุกสิ่งที่ได้ยินหรืออ่านได้อย่างง่ายดาย สรุปข้อมูลจากแหล่งต่างๆ และสร้างการโต้แย้งที่สอดคล้องกัน แสดงออกได้อย่างเป็นธรรมชาติและแม่นยำยิ่ง',
+    descriptionEn: 'Can understand with ease virtually everything heard or read, expressing spontaneously, very fluently and precisely.',
+    canDoDescriptorsTh: [
+      'เข้าใจวรรณกรรม บทความปรัชญา และการบรรยายทางวิทยาศาสตร์ที่ซับซ้อนได้ทันที',
+      'ถ่ายทอดความแตกต่างของความหมายอย่างละเอียดลึกซึ้งได้แม่นยำ',
+      'ใช้สำนวน วาทศิลป์ และโครงสร้างภาษาได้เทียบเท่าเจ้าของภาษาที่มีการศึกษาสูง',
+    ],
+  },
+];
