@@ -18,8 +18,10 @@ import { getWritingPrompts, mapWritingDtoToPrompt } from '../../lib/api/content/
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 export const WritingView: React.FC = () => {
+  const { t } = useTranslation();
   const { showToast } = useToast();
   const [prompts, setPrompts] = useState<WritingPrompt[]>(WRITING_BANK);
   const [selectedPromptId, setSelectedPromptId] = useState<string>(WRITING_BANK[0]?.id || '');
@@ -173,7 +175,7 @@ export const WritingView: React.FC = () => {
                 <div className="space-y-2 pt-2 border-t border-border/40">
                   <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>สำนวนและวลีที่แนะนำ (Useful Phrases):</span>
+                    <span>{t('writing.useful_phrases')}:</span>
                   </h4>
                   <div className="space-y-1.5">
                     {currentPrompt.usefulPhrases.map((item, idx) => (
@@ -203,7 +205,7 @@ export const WritingView: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <PenTool className="w-4 h-4 text-primary" />
-                  <h3 className="font-semibold text-sm text-foreground">พื้นที่เขียนคำตอบ (Your Writing)</h3>
+                  <h3 className="font-semibold text-sm text-foreground">{t('writing.your_writing')}</h3>
                 </div>
 
                 {/* Word Count Meter */}
@@ -250,7 +252,7 @@ export const WritingView: React.FC = () => {
             <div className="rounded-xl bg-card border border-border/60 p-4 shadow-xs">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">ตัวอย่างคำตอบระดับคะแนนเต็ม (Sample Model Answer)</h4>
+                  <h4 className="text-sm font-semibold text-foreground">{t('writing.model_answer')}</h4>
                   <p className="text-xs text-muted-foreground mt-0.5">ศึกษาโครงสร้างและการเลือกใช้คำศัพท์</p>
                 </div>
 
@@ -286,7 +288,7 @@ export const WritingView: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <FileCheck className="w-4 h-4 text-primary" />
                   <h4 className="font-semibold text-sm text-foreground">
-                    เกณฑ์การประเมินตนเองตามมาตรฐาน Cambridge (Self-Assessment Rubric)
+                    {t('writing.self_assessment_rubric')}
                   </h4>
                 </div>
 

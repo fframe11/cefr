@@ -14,6 +14,7 @@ import {
 } from '../../lib/api';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../common/Toast';
+import { useTranslation } from '../../i18n';
 import confetti from 'canvas-confetti';
 import {
   GraduationCap,
@@ -56,6 +57,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   onExamSubmitted,
   onOpenProfile,
 }) => {
+  const { t } = useTranslation();
   const { status: authStatus } = useAuth();
   const { showToast } = useToast();
 
@@ -372,7 +374,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
       } else {
         // Safe fallback: If an exam ran without an active server session token, prevent silent fake submission
         showToast(
-          'โหมดพรีวิวออฟไลน์ (Offline Preview)',
+          t('mock_exam.offline_preview'),
           'ไม่พบเซสชันการสอบบนเซิร์ฟเวอร์ การสอบนี้ทำงานในโหมดตัวอย่างและไม่มีการบันทึกคะแนน',
           'info'
         );
@@ -550,13 +552,13 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                     : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                 }`}
               >
-                {isPassed ? 'ผ่านเกณฑ์มาตรฐาน (Passed)' : 'ยังไม่ผ่านเกณฑ์ (Needs Improvement)'}
+                {isPassed ? t('mock_exam.passed') : t('mock_exam.needs_improvement')}
               </span>
 
               {isTimedOut && (
                 <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center gap-1">
                   <Clock className="w-3 h-3" />
-                  <span>หมดเวลาสอบ (Timed Out)</span>
+                  <span>{t('mock_exam.timed_out')}</span>
                 </span>
               )}
             </div>
@@ -576,7 +578,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="rounded-xl p-3.5 bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-300 text-xs text-left space-y-1">
               <div className="flex items-center gap-2 font-semibold">
                 <FileText className="w-4 h-4 text-blue-400" />
-                <span>ข้อสอบอัตนัย Writing / Speaking: รอการประเมิน (Pending Evaluation)</span>
+                <span>{t('mock_exam.pending_eval')}</span>
               </div>
               <p className="text-muted-foreground leading-relaxed pl-6">
                 มีข้อสอบส่วนอัตนัยจำนวน {examResult.pending_subjective_marks} คะแนนที่รอรับการตรวจประเมิน คะแนนส่วนนี้จึงยังไม่ถูกนำมาคำนวณ และไม่มีการหักเป็น 0 คะแนน
@@ -613,7 +615,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
               <h3 className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
                 <Layers className="w-4 h-4 text-primary" />
-                <span>คะแนนแยกตามส่วนสอบ (Section Breakdown)</span>
+                <span>{t('mock_exam.section_breakdown')}</span>
               </h3>
               <div className="space-y-2">
                 {Object.entries(examResult.section_breakdown).map(([secName, secData]) => (
@@ -639,7 +641,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
               <h3 className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary" />
-                <span>ความแม่นยำรายทักษะ (Skill Breakdown)</span>
+                <span>{t('mock_exam.skill_breakdown')}</span>
               </h3>
               <div className="space-y-2">
                 {Object.entries(examResult.skill_breakdown).map(([skillName, skData]) => (
@@ -869,9 +871,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           {/* Right Column: Question Navigator Palette */}
           <div className="lg:col-span-4 rounded-xl bg-card border border-border/70 p-4 shadow-xs space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
-              <span className="text-xs font-semibold text-foreground">ผังข้อสอบ (Question Palette)</span>
+              <span className="text-xs font-semibold text-foreground">{t('mock_exam.question_palette')}</span>
               <span className="text-xs text-muted-foreground font-mono">
-                ตอบแล้ว{' '}
+                {t('mock_exam.status_answered')}{' '}
                 {
                   Object.values(answers).filter(
                     (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
@@ -918,15 +920,15 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="pt-3 border-t border-border/40 space-y-1.5 text-[11px] text-muted-foreground">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded bg-primary/20 border border-primary" />
-                <span>ตอบแล้ว (Answered)</span>
+                <span>{t('mock_exam.status_answered')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded bg-amber-500/20 border border-amber-500" />
-                <span>ติดธงทบทวน (Flagged)</span>
+                <span>{t('mock_exam.status_flagged')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded bg-muted border border-border" />
-                <span>ยังไม่ตอบ (Unanswered)</span>
+                <span>{t('mock_exam.status_unanswered')}</span>
               </div>
             </div>
           </div>
@@ -953,8 +955,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 Object.values(answers).filter(
                   (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
                 ).length && (
-                <span className="block mt-2 font-semibold text-amber-500">
-                  ⚠️ คุณยังมีข้อที่ไม่ได้ตอบอีก{' '}
+                <span className="flex items-center gap-1.5 mt-2 font-semibold text-amber-500">
+                  <AlertTriangle className="w-4 h-4 shrink-0" />
+                  คุณยังมีข้อที่ไม่ได้ตอบอีก{' '}
                   {questions.length -
                     Object.values(answers).filter(
                       (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')

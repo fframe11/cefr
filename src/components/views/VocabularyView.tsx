@@ -18,6 +18,7 @@ import { getVocabulary, mapVocabularyDtoToWord } from '../../lib/api/content/voc
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 interface VocabularyViewProps {
   masteredWordIds: string[];
@@ -28,6 +29,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   masteredWordIds,
   onToggleMastery,
 }) => {
+  const { t } = useTranslation();
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'cards' | 'table' | 'flashcard'>('cards');
@@ -223,7 +225,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   {currentFlashcard.partOfSpeech}
                 </span>
                 <p className="text-xs text-muted-foreground mt-4 italic">
-                  (แตะการ์ดเพื่อดูความหมายและตัวอย่างประโยค)
+                  ({t('vocabulary.card_hint')})
                 </p>
               </div>
             ) : (
@@ -350,12 +352,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             <table className="w-full text-left text-xs sm:text-sm">
               <thead className="bg-muted/50 border-b border-border text-muted-foreground font-medium text-xs">
                 <tr>
-                  <th className="py-3 px-4">คำศัพท์ (Word)</th>
+                  <th className="py-3 px-4">{t('vocabulary.word')}</th>
                   <th className="py-3 px-3">CEFR</th>
-                  <th className="py-3 px-3">ชนิดคำ (POS)</th>
-                  <th className="py-3 px-4">ความหมาย (Meaning)</th>
-                  <th className="py-3 px-4 hidden md:table-cell">ตัวอย่างประโยค (Example)</th>
-                  <th className="py-3 px-4 text-right">สถานะ</th>
+                  <th className="py-3 px-3">{t('vocabulary.pos')}</th>
+                  <th className="py-3 px-4">{t('vocabulary.meaning')}</th>
+                  <th className="py-3 px-4 hidden md:table-cell">{t('vocabulary.example')}</th>
+                  <th className="py-3 px-4 text-right">{t('common.status')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/40">

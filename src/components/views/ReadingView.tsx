@@ -13,12 +13,14 @@ import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions'
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 interface ReadingViewProps {
   onQuestionCompleted: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
 }
 
 export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted }) => {
+  const { t } = useTranslation();
   const [passages, setPassages] = useState<ReadingPassage[]>(READING_BANK);
   const [selectedPassageId, setSelectedPassageId] = useState<string>(READING_BANK[0]?.id || '');
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
@@ -198,7 +200,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <FileText className="w-4 h-4 text-primary" />
-                <span>คำถามวัดความเข้าใจจากการอ่าน (Reading Quiz)</span>
+                <span>{t('reading.quiz')}</span>
               </h3>
               <span className="text-xs text-muted-foreground font-mono">
                 {displayedQuestions.length} ข้อ

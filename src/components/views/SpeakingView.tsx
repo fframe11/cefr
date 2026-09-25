@@ -19,8 +19,10 @@ import { getSpeakingPrompts, mapSpeakingDtoToPrompt } from '../../lib/api/conten
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 export const SpeakingView: React.FC = () => {
+  const { t } = useTranslation();
   const { showToast } = useToast();
   const [prompts, setPrompts] = useState<SpeakingPrompt[]>(SPEAKING_BANK);
   const [selectedPromptId, setSelectedPromptId] = useState<string>(SPEAKING_BANK[0]?.id || '');
@@ -226,7 +228,7 @@ export const SpeakingView: React.FC = () => {
             <div className="p-4 rounded-xl bg-muted/30 border border-border/40 space-y-2">
               <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
                 <HelpCircle className="w-3.5 h-3.5 text-primary" />
-                <span>แนวทางการตอบ (Guiding Questions):</span>
+                <span>{t('speaking.guiding_questions')}:</span>
               </h4>
               <ul className="space-y-1 text-xs text-muted-foreground">
                 {currentPrompt.guidingQuestionsTh.map((q, idx) => (
@@ -244,7 +246,7 @@ export const SpeakingView: React.FC = () => {
             <div className="space-y-2">
               <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>สำนวนและคำศัพท์ที่ควรฝึกพูดในหัวข้อนี้ (Target Phrases):</span>
+                <span>{t('speaking.target_phrases')}:</span>
               </h4>
               <div className="flex flex-wrap gap-2">
                 {currentPrompt.targetPhrases.map((phrase, idx) => (
@@ -286,7 +288,7 @@ export const SpeakingView: React.FC = () => {
             {transcript && (
               <div className="w-full text-left p-4 rounded-xl bg-background border border-border text-xs sm:text-sm font-mono text-foreground leading-relaxed whitespace-pre-wrap break-word-safe">
                 <span className="text-xs text-muted-foreground block mb-1 font-sans">
-                  ข้อความเสียงที่คุณพูด (Speech Transcript):
+                  {t('speaking.speech_transcript')}:
                 </span>
                 {transcript}
               </div>

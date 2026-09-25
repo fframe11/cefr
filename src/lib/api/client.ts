@@ -63,7 +63,7 @@ export class ApiClient {
     } catch (err: any) {
       clearTimeout(timeoutId);
       if (err.name === 'AbortError') {
-        throw new ApiError(408, 'การเชื่อมต่อหมดเวลา (Request Timeout)', 'TIMEOUT');
+        throw new ApiError(408, 'การเชื่อมต่อหมดเวลา', 'TIMEOUT');
       }
       throw new ApiError(0, err.message || 'ไม่สามารถเชื่อมต่อเครือข่ายได้', 'NETWORK_ERROR');
     } finally {

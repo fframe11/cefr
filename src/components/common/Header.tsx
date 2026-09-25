@@ -1,6 +1,8 @@
 import React from 'react';
 import { Flame, Clock, Award, Moon, Sun, GraduationCap, RefreshCw, User as UserIcon } from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
+import { useTranslation } from '../../i18n';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
   currentLevel: CEFRLevel;
@@ -29,6 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
   isAuthenticated = false,
   userEmail,
 }) => {
+  const { t } = useTranslation();
   const goalPercent = Math.min(100, Math.round((minutesStudiedToday / dailyGoalMinutes) * 100));
 
   return (
@@ -42,14 +45,14 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="min-w-0">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-sm sm:text-base tracking-tight truncate text-foreground">
-                CEFR English
+                {t('header.title')}
               </span>
               <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-muted text-muted-foreground border border-border">
-                {targetExam} Prep
+                {targetExam} {t('header.prep_suffix')}
               </span>
             </div>
             <p className="text-[11px] text-muted-foreground truncate hidden xs:block">
-              Cambridge Exam Learning Platform
+              {t('header.subtitle')}
             </p>
           </div>
         </div>
@@ -72,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/20 text-amber-500" />
             <span className="font-semibold">{streakDays}</span>
-            <span className="hidden md:inline text-muted-foreground">วัน</span>
+            <span className="hidden md:inline text-muted-foreground">{t('common.days')}</span>
           </div>
 
           {/* Daily Goal Progress */}
@@ -92,12 +95,15 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+
           {/* Re-take Diagnostic Button */}
           <button
             onClick={onRetakeAssessment}
             className="touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-muted/60 rounded-md transition-colors"
-            title="วัดระดับภาษาอังกฤษใหม่ (Diagnostic Assessment)"
-            aria-label="วัดระดับใหม่"
+            title={t('header.retake_assessment')}
+            aria-label={t('header.retake_assessment')}
           >
             <RefreshCw className="w-4 h-4" />
           </button>
@@ -106,8 +112,8 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onToggleTheme}
             className="touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-muted/60 rounded-md transition-colors"
-            title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            aria-label="Toggle theme"
+            title={t('header.switch_theme')}
+            aria-label={t('header.switch_theme')}
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
@@ -120,12 +126,12 @@ export const Header: React.FC<HeaderProps> = ({
                 ? 'bg-primary/10 border-primary/20 text-primary hover:bg-primary/15'
                 : 'bg-muted/60 border-border text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
-            title={isAuthenticated ? `Profile: ${userEmail || 'User'}` : 'เข้าสู่ระบบ / บัญชีผู้ใช้'}
-            aria-label="User profile and authentication"
+            title={isAuthenticated ? `${t('header.profile_title')}: ${userEmail || 'User'}` : t('header.login')}
+            aria-label={t('header.profile_title')}
           >
             <UserIcon className="w-4 h-4 shrink-0" />
             <span className="hidden lg:inline max-w-[120px] truncate">
-              {isAuthenticated ? (userEmail?.split('@')[0] || 'บัญชีของฉัน') : 'เข้าสู่ระบบ'}
+              {isAuthenticated ? (userEmail?.split('@')[0] || t('header.my_account')) : t('header.login')}
             </span>
           </button>
         </div>

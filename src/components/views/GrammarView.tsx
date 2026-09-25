@@ -15,6 +15,7 @@ import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions'
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 interface GrammarViewProps {
   onQuestionCompleted: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
@@ -25,6 +26,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   onQuestionCompleted,
   activeTopicId,
 }) => {
+  const { t } = useTranslation();
   const [topics, setTopics] = useState<GrammarTopic[]>(GRAMMAR_BANK);
   const [selectedTopicId, setSelectedTopicId] = useState<string>(
     activeTopicId || GRAMMAR_BANK[0]?.id || ''
@@ -170,7 +172,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-primary" />
-                  <span>โครงสร้างประโยคและหลักการใช้งาน (Grammar Formulas)</span>
+                  <span>{t('grammar.formulas')}</span>
                 </h3>
 
                 <div className="space-y-3">
@@ -199,7 +201,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               <div className="p-4 rounded-xl bg-card border border-rose-500/20 shadow-xs space-y-3">
                 <h3 className="text-xs sm:text-sm font-semibold text-rose-400 flex items-center gap-2">
                   <AlertCircle className="w-4 h-4" />
-                  <span>ข้อผิดพลาดที่พบบ่อยของผู้เรียนไทย (Common Pitfalls)</span>
+                  <span>{t('grammar.pitfalls')}</span>
                 </h3>
 
                 <div className="space-y-2.5">
@@ -226,7 +228,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" />
-                <span>แบบฝึกหัดวัดความเข้าใจ (Practice Quiz)</span>
+                <span>{t('grammar.practice_quiz')}</span>
               </h3>
               <span className="text-xs text-muted-foreground font-mono">
                 {displayedQuestions.length} ข้อ

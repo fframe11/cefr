@@ -350,7 +350,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
       } catch (err: any) {
         expect(err.status).toBe(408);
         expect(err.code).toBe('TIMEOUT');
-        expect(err.friendlyMessage).toBe('การเชื่อมต่อหมดเวลา (Request Timeout)');
+        expect(err.friendlyMessage).toBe('การเชื่อมต่อหมดเวลา');
       }
     });
 

@@ -1,5 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'http';
 import { formatErrorResponse } from '../errors/error-handler';
+import { BadRequestError } from '../errors/api-error';
 import { getAuthUser, requireAuth } from '../auth/auth.helper';
 import { RateLimiter } from '../rate-limit/rate-limiter';
 import { logger } from '../logger';
@@ -55,11 +56,38 @@ export function createApiHandler<T = unknown>(
       };
     }
 
-    // CORS & Observability Headers
+    // CORS & Observability & Security Headers
     apiRes.setHeader('X-Request-Id', requestId);
-    apiRes.setHeader('Access-Control-Allow-Origin', '*');
+    apiRes.setHeader('X-Content-Type-Options', 'nosniff');
+
+    // Restricted CORS Origin Handling
+    const requestOrigin = (req.headers['origin'] as string) || '';
+    const isDev = process.env.NODE_ENV !== 'production';
+    const allowedOrigins = [
+      process.env.APP_URL,
+      process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '',
+      'http://localhost:5173',
+      'http://localhost:4173',
+      'http://localhost:4174',
+      'http://localhost:3000',
+    ].filter(Boolean) as string[];
+
+    let allowOrigin = '*';
+    if (options.requireAuth || requestOrigin) {
+      if (!requestOrigin || isDev || allowedOrigins.includes(requestOrigin) || (process.env.VERCEL_URL && requestOrigin.endsWith('.vercel.app'))) {
+        allowOrigin = requestOrigin || (isDev ? '*' : (allowedOrigins[0] || '*'));
+      } else {
+        allowOrigin = allowedOrigins[0] || 'null';
+      }
+      apiRes.setHeader('Vary', 'Origin');
+    }
+
+    apiRes.setHeader('Access-Control-Allow-Origin', allowOrigin);
     apiRes.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Request-Id');
     apiRes.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    if (options.requireAuth) {
+      apiRes.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    }
 
     // Handle OPTIONS Preflight
     if (req.method === 'OPTIONS') {
@@ -149,6 +177,10 @@ export function createApiHandler<T = unknown>(
       const durationMs = Date.now() - startTime;
       const { statusCode, payload } = formatErrorResponse(error, requestId);
 
+      if (statusCode === 429) {
+        apiRes.setHeader('Retry-After', '60');
+      }
+
       logger.warn('API request failed', {
         requestId,
         method: req.method,
@@ -165,10 +197,19 @@ export function createApiHandler<T = unknown>(
   };
 }
 
+const MAX_PAYLOAD_BYTES = 1024 * 1024; // 1 MB payload limit against memory exhaustion
+
 async function parseRequestBody(req: IncomingMessage): Promise<unknown> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let body = '';
+    let bytesReceived = 0;
     req.on('data', (chunk) => {
+      bytesReceived += typeof chunk === 'string' ? Buffer.byteLength(chunk) : chunk.length;
+      if (bytesReceived > MAX_PAYLOAD_BYTES) {
+        req.destroy();
+        reject(new BadRequestError('Payload too large. Maximum allowed size is 1MB.'));
+        return;
+      }
       body += chunk;
     });
     req.on('end', () => {
@@ -178,6 +219,9 @@ async function parseRequestBody(req: IncomingMessage): Promise<unknown> {
       } catch {
         resolve(body);
       }
+    });
+    req.on('error', (err) => {
+      reject(err);
     });
   });
 }

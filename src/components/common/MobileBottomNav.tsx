@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { NavView } from './Sidebar';
+import { useTranslation } from '../../i18n';
 
 interface MobileBottomNavProps {
   currentView: NavView;
@@ -21,22 +22,23 @@ interface MobileBottomNavProps {
 }
 
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, onSelectView }) => {
+  const { t } = useTranslation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const primaryItems = [
-    { id: 'dashboard' as NavView, label: 'หน้าหลัก', icon: LayoutDashboard },
-    { id: 'vocabulary' as NavView, label: 'คำศัพท์', icon: BookOpen },
-    { id: 'grammar' as NavView, label: 'ไวยากรณ์', icon: Sparkles },
-    { id: 'reading' as NavView, label: 'การอ่าน', icon: BookMarked },
-    { id: 'mockExam' as NavView, label: 'สอบจำลอง', icon: GraduationCap },
+    { id: 'dashboard' as NavView, icon: LayoutDashboard },
+    { id: 'vocabulary' as NavView, icon: BookOpen },
+    { id: 'grammar' as NavView, icon: Sparkles },
+    { id: 'reading' as NavView, icon: BookMarked },
+    { id: 'mockExam' as NavView, icon: GraduationCap },
   ];
 
   const secondaryItems = [
-    { id: 'assessment' as NavView, labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR', icon: ClipboardCheck },
-    { id: 'listening' as NavView, labelEn: 'Listening Skills', labelTh: 'ทักษะการฟัง', icon: Headphones },
-    { id: 'writing' as NavView, labelEn: 'Writing Practice', labelTh: 'ทักษะการเขียน', icon: PenTool },
-    { id: 'speaking' as NavView, labelEn: 'Speaking & Pronunciation', labelTh: 'การพูดและออกเสียง', icon: Mic },
-    { id: 'analytics' as NavView, labelEn: 'Weakness Analysis', labelTh: 'วิเคราะห์จุดอ่อน', icon: BarChart2 },
+    { id: 'assessment' as NavView, icon: ClipboardCheck },
+    { id: 'listening' as NavView, icon: Headphones },
+    { id: 'writing' as NavView, icon: PenTool },
+    { id: 'speaking' as NavView, icon: Mic },
+    { id: 'analytics' as NavView, icon: BarChart2 },
   ];
 
   const handleSelect = (view: NavView) => {
@@ -57,7 +59,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-border/40 mb-3">
-              <span className="font-semibold text-sm text-foreground">เมนูการเรียนรู้เพิ่มเติม</span>
+              <span className="font-semibold text-sm text-foreground">{t('nav.more_menu')}</span>
               <button
                 onClick={() => setDrawerOpen(false)}
                 className="p-1.5 text-muted-foreground hover:text-foreground touch-target"
@@ -83,8 +85,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                   >
                     <Icon className="w-5 h-5 text-primary shrink-0" />
                     <div className="min-w-0">
-                      <span className="block text-sm font-medium">{item.labelTh}</span>
-                      <span className="block text-xs text-muted-foreground">{item.labelEn}</span>
+                      <span className="block text-sm font-medium">{t(`nav.${item.id}`)}</span>
                     </div>
                   </button>
                 );
@@ -113,7 +114,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
               >
                 <Icon className={`w-5 h-5 transition-all duration-150 ${isActive ? 'scale-110' : ''}`} />
                 <span className="text-[10px] mt-0.5 tracking-tight truncate max-w-full px-0.5">
-                  {item.label}
+                  {t(`nav.${item.id}`)}
                 </span>
               </button>
             );
@@ -130,7 +131,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
             aria-label="More navigation options"
           >
             <MoreHorizontal className="w-5 h-5" />
-            <span className="text-[10px] mt-0.5">เพิ่มเติม</span>
+            <span className="text-[10px] mt-0.5">{t('common.more')}</span>
           </button>
         </div>
       </nav>

@@ -518,7 +518,7 @@ export class ApiError extends Error {
       case 429:
         return 'คำขอมากเกินไป กรุณารอสักครู่แล้วลองใหม่';
       case 408:
-        return 'การเชื่อมต่อหมดเวลา (Request Timeout)';
+        return 'การเชื่อมต่อหมดเวลา';
       case 500:
       case 502:
       case 503:

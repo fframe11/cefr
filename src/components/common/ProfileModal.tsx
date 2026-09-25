@@ -252,7 +252,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           <div className="space-y-4">
             {/* Guest notice */}
             <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs leading-relaxed space-y-1">
-              <p className="font-semibold">กำลังใช้งานในโหมดผู้ใช้ทั่วไป (Guest Mode)</p>
+              <p className="font-semibold">กำลังใช้งานในโหมดผู้ใช้ทั่วไป</p>
               <p className="text-[11px] opacity-90">
                 ข้อมูลและความก้าวหน้าจะถูกบันทึกไว้ในเบราว์เซอร์นี้ หากต้องการบันทึกถาวรหรือซิงก์ข้ามอุปกรณ์ กรุณาเข้าสู่ระบบ
               </p>

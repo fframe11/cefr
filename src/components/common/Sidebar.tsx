@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '../../i18n';
 import {
   LayoutDashboard,
   ClipboardCheck,
@@ -52,6 +53,8 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentView, onSelectView }) => {
+  const { t } = useTranslation();
+
   return (
     <aside
       className="hidden md:flex flex-col w-56 lg:w-64 border-r border-border/40 bg-card/40 shrink-0 select-none py-4 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto"
@@ -59,7 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onSelectView }) =
     >
       <div className="px-3 pb-3 mb-2 border-b border-border/40">
         <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Learning Journey
+          {t('nav.learning_journey')}
         </span>
       </div>
 
@@ -84,8 +87,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onSelectView }) =
                   }`}
                 />
                 <div className="truncate">
-                  <span className="block truncate text-xs lg:text-sm font-medium">{item.labelTh}</span>
-                  <span className="block truncate text-[10px] text-muted-foreground/80">{item.labelEn}</span>
+                  <span className="block truncate text-xs lg:text-sm font-medium">
+                    {t(`nav.${item.id}`)}
+                  </span>
                 </div>
               </div>
 

@@ -19,8 +19,8 @@ const DEFAULT_STATE: UserProgressState = {
   completedQuestionIds: [],
   masteredWordIds: ['vocab-a1-1', 'vocab-a1-2'],
   weakTopics: [
-    { tag: 'present_perfect_vs_past_simple', labelTh: 'Past Simple vs. Present Perfect (อดีตจบแล้ว vs ยังส่งผลถึงปัจจุบัน)', errorCount: 2, lastFailedAt: new Date().toISOString() },
-    { tag: 'prepositions_of_time', labelTh: 'การใช้คำบุพบทบอกเวลา (in / on / at)', errorCount: 1, lastFailedAt: new Date().toISOString() },
+    { tag: 'present_perfect_vs_past_simple', labelTh: 'Past Simple vs. Present Perfect: อดีตจบแล้ว vs ยังส่งผลถึงปัจจุบัน', errorCount: 2, lastFailedAt: new Date().toISOString() },
+    { tag: 'prepositions_of_time', labelTh: 'การใช้คำบุพบทบอกเวลา: in, on, at', errorCount: 1, lastFailedAt: new Date().toISOString() },
   ],
   assessmentCompleted: false,
   targetExam: 'PET',

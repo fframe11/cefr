@@ -14,6 +14,7 @@ import {
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
 import { NavView } from '../common/Sidebar';
+import { useTranslation } from '../../i18n';
 
 interface DashboardViewProps {
   progress: UserProgressState;
@@ -26,13 +27,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   onNavigate,
   onStartRemediation,
 }) => {
+  const { t, language } = useTranslation();
   const currentLevelInfo = CEFR_LEVELS.find((l) => l.level === progress.currentLevel) || CEFR_LEVELS[0];
   const allLevels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
   const currentLevelIdx = allLevels.indexOf(progress.currentLevel);
 
   return (
     <div className="w-full space-y-6 max-w-6xl mx-auto pb-12">
-      {/* Welcome & Primary Orientation (ตอบคำถาม: ตอนนี้ฉันอยู่ระดับไหน?) */}
+      {/* Welcome & Primary Orientation */}
       <section className="rounded-2xl bg-card border border-border/60 p-5 sm:p-7 shadow-xs relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
@@ -44,7 +46,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               เป้าหมายการสอบ: {progress.targetExam} ({progress.currentLevel})
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              ระดับภาษาปัจจุบันของคุณคือ <strong className="text-foreground">{currentLevelInfo.nameTh}</strong> เทียบเคียงคะแนนเคมบริดจ์ประมาณ{' '}
+              ระดับภาษาปัจจุบันของคุณคือ <strong className="text-foreground">{language === 'th' ? currentLevelInfo.nameTh : currentLevelInfo.nameEn}</strong> เทียบเคียงคะแนนเคมบริดจ์ประมาณ{' '}
               <strong className="text-primary font-mono">{progress.estimatedCambridgeScore}</strong> คะแนน
             </p>
           </div>
@@ -108,13 +110,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </section>
 
-      {/* Answer to: วันนี้ต้องทำอะไร? (Today's Recommended Focus) */}
+      {/* Today's Recommended Focus */}
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-primary" />
             <h2 className="text-base sm:text-lg font-semibold text-foreground">
-              วันนี้ต้องทำอะไร? (Today's Actions)
+              {t('dashboard.todays_actions')}
             </h2>
           </div>
           <span className="text-xs text-muted-foreground hidden sm:inline">
@@ -199,20 +201,20 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div className="flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
               <h3 className="font-semibold text-sm sm:text-base text-foreground">
-                ฉันพัฒนาไปถึงไหนแล้ว? (Skill Mastery)
+                {t('dashboard.skill_stats')}
               </h3>
             </div>
-            <span className="text-xs font-medium text-muted-foreground">ภาพรวม 6 ทักษะ</span>
+            <span className="text-xs font-medium text-muted-foreground">{t('analytics.skill_proficiency')}</span>
           </div>
 
           <div className="space-y-3.5">
             {[
-              { key: 'vocabulary', label: 'คำศัพท์ (Vocabulary)', value: progress.skillStats.vocabulary },
-              { key: 'grammar', label: 'ไวยากรณ์ (Grammar)', value: progress.skillStats.grammar },
-              { key: 'reading', label: 'การอ่าน (Reading)', value: progress.skillStats.reading },
-              { key: 'listening', label: 'การฟัง (Listening)', value: progress.skillStats.listening },
-              { key: 'writing', label: 'การเขียน (Writing)', value: progress.skillStats.writing },
-              { key: 'speaking', label: 'การพูด (Speaking)', value: progress.skillStats.speaking },
+              { key: 'vocabulary', label: t('skills.vocabulary'), value: progress.skillStats.vocabulary },
+              { key: 'grammar', label: t('skills.grammar'), value: progress.skillStats.grammar },
+              { key: 'reading', label: t('skills.reading'), value: progress.skillStats.reading },
+              { key: 'listening', label: t('skills.listening'), value: progress.skillStats.listening },
+              { key: 'writing', label: t('skills.writing'), value: progress.skillStats.writing },
+              { key: 'speaking', label: t('skills.speaking'), value: progress.skillStats.speaking },
             ].map((skill) => (
               <div key={skill.key} className="space-y-1.5">
                 <div className="flex justify-between text-xs font-medium">
@@ -242,7 +244,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <h3 className="font-semibold text-sm sm:text-base text-foreground">
-                จุดอ่อนที่ตรวจพบ (Weakness Remediation)
+                {t('dashboard.weakness_remediation')}
               </h3>
             </div>
             <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 font-medium">

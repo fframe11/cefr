@@ -8,6 +8,10 @@ export default defineConfig({
     port: 3000,
     host: true
   },
+  build: {
+    sourcemap: false,
+    chunkSizeWarningLimit: 1000,
+  },
   // @ts-expect-error vitest config field
   test: {
     include: ['tests/**/*.test.ts']

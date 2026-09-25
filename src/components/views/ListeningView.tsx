@@ -9,12 +9,14 @@ import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions'
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 interface ListeningViewProps {
   onQuestionCompleted: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
 }
 
 export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionCompleted }) => {
+  const { t } = useTranslation();
   const [exercises, setExercises] = useState<ListeningExercise[]>(LISTENING_BANK);
   const [selectedExerciseId, setSelectedExerciseId] = useState<string>(LISTENING_BANK[0]?.id || '');
   const [showTranscript, setShowTranscript] = useState(false);
@@ -157,7 +159,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 className="text-xs font-medium text-primary hover:underline inline-flex items-center gap-1.5 touch-target"
               >
                 {showTranscript ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
-                <span>{showTranscript ? 'ซ่อนบทพูดภาษาอังกฤษ (Hide Transcript)' : 'แสดงบทพูดภาษาอังกฤษ (Reveal Transcript)'}</span>
+                <span>{showTranscript ? t('listening.hide_transcript') : t('listening.reveal_transcript')}</span>
               </button>
 
               {showTranscript && (
@@ -173,7 +175,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <FileText className="w-4 h-4 text-primary" />
-                <span>คำถามทดสอบความเข้าใจจากการฟัง (Comprehension Questions)</span>
+                <span>{t('listening.comprehension_questions')}</span>
               </h3>
               <span className="text-xs text-muted-foreground font-mono">
                 {displayedQuestions.length} ข้อ

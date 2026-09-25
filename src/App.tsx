@@ -14,6 +14,7 @@ import { Sidebar, NavView } from './components/common/Sidebar';
 import { MobileBottomNav } from './components/common/MobileBottomNav';
 import { ToastProvider, useToast } from './components/common/Toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { I18nProvider } from './i18n';
 import { ProfileModal } from './components/common/ProfileModal';
 
 import { DashboardView } from './components/views/DashboardView';
@@ -343,10 +344,12 @@ const MainAppContent: React.FC = () => {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <ToastProvider>
-        <MainAppContent />
-      </ToastProvider>
-    </AuthProvider>
+    <I18nProvider>
+      <AuthProvider>
+        <ToastProvider>
+          <MainAppContent />
+        </ToastProvider>
+      </AuthProvider>
+    </I18nProvider>
   );
 }

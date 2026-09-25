@@ -83,7 +83,7 @@ export default createApiHandler(
       .select('*', { count: 'exact', head: true })
       .eq('user_id', user.id);
 
-    // 7. Mock Exam Summary (Defensive for test harness compatibility)
+    // 7. Mock Exam Summary (Defensive for test framework compatibility)
     let latestMock: any = null;
     let mockCount = 0;
     try {

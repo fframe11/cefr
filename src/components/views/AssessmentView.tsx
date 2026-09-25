@@ -22,6 +22,7 @@ import { UserProgressState, CambridgeExamCode, CEFRLevel, UserSkillStats } from 
 import { useAuth } from '../../context/AuthContext';
 import { submitAssessment } from '../../lib/api/assessment';
 import { saveGuestAttempt } from '../../services/storageService';
+import { useTranslation } from '../../i18n';
 
 function toUserSkillStats(stats?: Record<string, number> | UserSkillStats): UserSkillStats {
   return {
@@ -59,6 +60,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   onComplete,
   onNavigateDashboard,
 }) => {
+  const { t } = useTranslation();
   const { status, profile } = useAuth();
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -288,7 +290,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               </div>
               <div>
                 <p className="text-[11px] text-muted-foreground font-medium uppercase">
-                  ข้อสอบที่ระบบแนะนำ (Recommended)
+                  {t('assessment.recommended')}
                 </p>
                 <p className="text-sm font-semibold text-foreground mt-0.5">
                   Cambridge {result.recommendedExam}
@@ -306,7 +308,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               </div>
               <div>
                 <p className="text-[11px] text-muted-foreground font-medium uppercase">
-                  เป้าหมายที่คุณเลือก (Target Exam)
+                  {t('assessment.target_exam')}
                 </p>
                 <p className="text-sm font-semibold text-foreground mt-0.5">
                   Cambridge {result.targetExam}
@@ -333,7 +335,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <BarChart3 className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
-              คะแนนแยกตามทักษะ (Skill Breakdown)
+              {t('assessment.skill_breakdown')}
             </h3>
           </div>
 
@@ -341,7 +343,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             {Object.entries(result.skillStats).map(([skill, val]) => (
               <div key={skill} className="p-3 rounded-lg bg-muted/30 border border-border/40 space-y-1.5">
                 <div className="flex justify-between text-xs font-medium">
-                  <span className="capitalize text-foreground">{skill}</span>
+                  <span className="capitalize text-foreground">{t(`skills.${skill}`)}</span>
                   <span className="font-mono text-muted-foreground">{val}%</span>
                 </div>
                 <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
@@ -360,7 +362,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <Sparkles className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
-              แผนการเรียนรู้เฉพาะบุคคล (Personalized Learning Path)
+              {t('assessment.personalized_path')}
             </h3>
           </div>
 

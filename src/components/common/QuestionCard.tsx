@@ -3,6 +3,7 @@ import { Question } from '../../types';
 import { Check, X, HelpCircle, ArrowRight, Clock, Loader2 } from 'lucide-react';
 import { AudioPlayer } from './AudioPlayer';
 import { submitPracticeAnswer, PracticeGradingResultDTO } from '../../lib/api/practice';
+import { useTranslation } from '../../i18n';
 
 interface QuestionCardProps {
   question: Question;
@@ -19,6 +20,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   onAnswer,
   showExplanationImmediately = true,
 }) => {
+  const { t } = useTranslation();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -279,7 +281,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             <div className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/40 space-y-1">
               <p className="font-medium text-foreground flex items-center gap-1">
                 <HelpCircle className="w-3.5 h-3.5 text-primary shrink-0" />
-                คำอธิบายหลักการ (Explanation):
+                {t('common.explanation')}:
               </p>
               {explanationTh && <p className="text-foreground/90 pl-4 break-word-safe">{explanationTh}</p>}
               {explanationEn && (

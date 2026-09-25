@@ -18,6 +18,7 @@ import { UserAnalyticsResponse } from '../../lib/api/types';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useTranslation } from '../../i18n';
 
 interface AnalyticsViewProps {
   progress: UserProgressState;
@@ -34,20 +35,12 @@ const SKILL_COLOR_MAP: Record<string, string> = {
   speaking: 'bg-teal-500',
 };
 
-const SKILL_LABEL_TH: Record<string, string> = {
-  vocabulary: 'คำศัพท์ (Vocabulary)',
-  grammar: 'ไวยากรณ์ (Grammar)',
-  reading: 'การอ่าน (Reading)',
-  listening: 'การฟัง (Listening)',
-  writing: 'การเขียน (Writing)',
-  speaking: 'การพูด (Speaking)',
-};
-
 export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   progress,
   onNavigate,
   onStartRemediation,
 }) => {
+  const { t } = useTranslation();
   const { status } = useAuth();
   const [analytics, setAnalytics] = useState<UserAnalyticsResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(status === 'authenticated');
@@ -116,7 +109,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   // Skills data
   const skillsData = analytics
     ? analytics.skills_breakdown.map((s) => ({
-        name: SKILL_LABEL_TH[s.skill] || s.skill,
+        name: t(`skills.${s.skill}`),
         score: s.proficiency_score,
         accuracy: s.accuracy_percentage,
         attempted: s.total_attempted,
@@ -124,12 +117,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         color: SKILL_COLOR_MAP[s.skill] || 'bg-primary',
       }))
     : [
-        { name: 'คำศัพท์ (Vocabulary)', score: progress.skillStats.vocabulary, accuracy: null, attempted: 0, pending: 0, color: 'bg-blue-500' },
-        { name: 'ไวยากรณ์ (Grammar)', score: progress.skillStats.grammar, accuracy: null, attempted: 0, pending: 0, color: 'bg-emerald-500' },
-        { name: 'การอ่าน (Reading)', score: progress.skillStats.reading, accuracy: null, attempted: 0, pending: 0, color: 'bg-purple-500' },
-        { name: 'การฟัง (Listening)', score: progress.skillStats.listening, accuracy: null, attempted: 0, pending: 0, color: 'bg-amber-500' },
-        { name: 'การเขียน (Writing)', score: progress.skillStats.writing, accuracy: null, attempted: 0, pending: 0, color: 'bg-rose-500' },
-        { name: 'การพูด (Speaking)', score: progress.skillStats.speaking, accuracy: null, attempted: 0, pending: 0, color: 'bg-teal-500' },
+        { name: t('skills.vocabulary'), score: progress.skillStats.vocabulary, accuracy: null, attempted: 0, pending: 0, color: 'bg-blue-500' },
+        { name: t('skills.grammar'), score: progress.skillStats.grammar, accuracy: null, attempted: 0, pending: 0, color: 'bg-emerald-500' },
+        { name: t('skills.reading'), score: progress.skillStats.reading, accuracy: null, attempted: 0, pending: 0, color: 'bg-purple-500' },
+        { name: t('skills.listening'), score: progress.skillStats.listening, accuracy: null, attempted: 0, pending: 0, color: 'bg-amber-500' },
+        { name: t('skills.writing'), score: progress.skillStats.writing, accuracy: null, attempted: 0, pending: 0, color: 'bg-rose-500' },
+        { name: t('skills.speaking'), score: progress.skillStats.speaking, accuracy: null, attempted: 0, pending: 0, color: 'bg-teal-500' },
       ];
 
   // Weaknesses data
@@ -160,7 +153,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               </span>
             </div>
             <h1 className="text-fluid-title font-bold text-foreground">
-              แดชบอร์ดวิเคราะห์ผลการเรียน (Performance Telemetry)
+              {t('analytics.title')}
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">
               {currentLevelInfo.descriptionTh}
@@ -181,7 +174,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         {/* Can-Do Descriptors at Current CEFR Level */}
         <div className="pt-5 space-y-2">
           <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider">
-            ความสามารถที่คุณทำได้แล้วในระดับนี้ (Can-Do Descriptors):
+            {t('analytics.can_do_descriptors')}:
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-1">
             {currentLevelInfo.canDoDescriptorsTh.map((desc, i) => (
@@ -215,7 +208,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         </div>
 
         <div className="p-4 rounded-xl bg-card border border-border/70 shadow-xs space-y-1">
-          <span className="text-xs text-muted-foreground">ความแม่นยำรวม (Accuracy)</span>
+          <span className="text-xs text-muted-foreground">{t('analytics.accuracy')}</span>
           {overallAccuracy !== null ? (
             <p className="text-2xl font-bold font-mono text-primary">{overallAccuracy}%</p>
           ) : (
@@ -249,7 +242,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             <div className="flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
               <h3 className="font-semibold text-sm sm:text-base text-foreground">
-                ความเชี่ยวชาญแยกตาม 6 ทักษะหลัก (Skill Proficiency)
+                {t('analytics.skill_proficiency')}
               </h3>
             </div>
             <span className="text-xs text-muted-foreground font-mono">100% Scale</span>
@@ -313,7 +306,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <h3 className="font-semibold text-sm sm:text-base text-foreground">
-                การวิเคราะห์จุดอ่อน (Weakness Detection)
+                {t('analytics.weakness_detection')}
               </h3>
             </div>
             <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 font-medium">
@@ -348,7 +341,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                     className="w-full py-2 px-3 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors touch-target"
                   >
                     <Play className="w-3.5 h-3.5 fill-current" />
-                    <span>เริ่มฝึกซ่อมจุดนี้ทันที</span>
+                    <span>{t('analytics.remediation_action')}</span>
                   </button>
                 </div>
               ))}
@@ -363,7 +356,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <FileText className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
-              ประวัติการทำชุดข้อสอบจำลอง (Mock Exam History)
+              {t('analytics.mock_exam_history')}
             </h3>
           </div>
 
