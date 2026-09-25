@@ -1,21 +1,16 @@
 import type { IncomingMessage, ServerResponse } from 'http';
 import { EventEmitter } from 'events';
 
-export type NextRouteHandler = (
-  request: Request,
-  context?: { params?: Record<string, string | string[]> }
-) => Promise<Response>;
+export type NextRouteHandler = (request: Request) => Promise<Response>;
 
 /**
  * Adapts universal Serverless API handler (Node req/res) to Next.js App Router Web Request/Response.
+ * Compatible with Next.js 15 strict route handler type checking.
  */
 export function toNextRoute(
   nodeHandler: (req: IncomingMessage, res: ServerResponse) => Promise<void>
 ): NextRouteHandler {
-  return async function (
-    request: Request,
-    context?: { params?: Record<string, string | string[]> }
-  ): Promise<Response> {
+  return async function (request: Request): Promise<Response> {
     const url = new URL(request.url);
     const method = request.method;
 
@@ -49,16 +44,11 @@ export function toNextRoute(
       }
     }
 
-    // Parse query params
+    // Parse query params from request URL
     const query: Record<string, string> = {};
     url.searchParams.forEach((val, key) => {
       query[key] = val;
     });
-    if (context?.params) {
-      for (const [k, v] of Object.entries(context.params)) {
-        query[k] = Array.isArray(v) ? v.join('/') : v;
-      }
-    }
 
     return new Promise<Response>((resolve) => {
       const req: any = new EventEmitter();
