@@ -370,8 +370,14 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           'success'
         );
       } else {
-        // Fallback for static mock mode
-        setIsSubmitted(true);
+        // Safe fallback: If an exam ran without an active server session token, prevent silent fake submission
+        showToast(
+          'โหมดพรีวิวออฟไลน์ (Offline Preview)',
+          'ไม่พบเซสชันการสอบบนเซิร์ฟเวอร์ การสอบนี้ทำงานในโหมดตัวอย่างและไม่มีการบันทึกคะแนน',
+          'info'
+        );
+        setIsExamStarted(false);
+        setIsSubmitted(false);
       }
     } catch (err: any) {
       console.error('Failed to submit mock exam:', err);
