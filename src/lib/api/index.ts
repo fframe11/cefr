@@ -16,3 +16,4 @@ export * from './analytics';
 export * from './weaknesses';
 export * from './vocabulary-mastery';
 export * from './guest-sync';
+export * from './mock-exams';

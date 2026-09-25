@@ -299,7 +299,10 @@ const MainAppContent: React.FC = () => {
           {currentView === 'speaking' && <SpeakingView />}
 
           {currentView === 'mockExam' && (
-            <MockExamView onExamSubmitted={handleExamSubmitted} />
+            <MockExamView
+              onExamSubmitted={handleExamSubmitted}
+              onOpenProfile={() => setIsProfileModalOpen(true)}
+            />
           )}
 
           {currentView === 'analytics' && (

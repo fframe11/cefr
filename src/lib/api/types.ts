@@ -320,6 +320,171 @@ export interface SyncGuestResponse {
 }
 
 // ==========================================
+// Mock Exam DTOs
+// ==========================================
+
+export interface MockExamCatalogItemDTO {
+  id: string;
+  exam_code: string;
+  name: string;
+  target_cefr: CEFRLevel | string;
+  description_th: string;
+  total_duration_minutes: number;
+  passing_score: number;
+  version: number;
+}
+
+export interface MockExamCatalogResponse {
+  exams: MockExamCatalogItemDTO[];
+  total: number;
+  disclaimer: string;
+}
+
+export interface MockExamStartInput {
+  mock_exam_id: string;
+}
+
+export interface MockExamStartResponseDTO {
+  session_token: string;
+  mock_exam_id: string;
+  exam_code: string;
+  name: string;
+  started_at: string;
+  expires_at: string;
+  duration_minutes: number;
+  status: 'in_progress';
+  disclaimer: string;
+}
+
+export interface SafeMockOptionDTO {
+  id: string;
+  key: string;
+  text: string;
+}
+
+export interface SafeMockQuestionDTO {
+  id: string;
+  mock_exam_question_id: string;
+  order_index: number;
+  marks: number;
+  skill: string;
+  type: string;
+  prompt_th: string;
+  prompt_en: string;
+  options: SafeMockOptionDTO[];
+  saved_answer?: {
+    selected_option_key: string | null;
+    text_answer: string | null;
+  } | null;
+}
+
+export interface MockExamSectionDTO {
+  id: string;
+  name: string;
+  skill: string;
+  duration_minutes: number;
+  question_count: number;
+  order_index: number;
+  questions: SafeMockQuestionDTO[];
+}
+
+export interface MockExamSessionResponseDTO {
+  session_token: string;
+  mock_exam: {
+    id: string;
+    exam_code: string;
+    name: string;
+    target_cefr: string;
+    total_duration_minutes: number;
+  };
+  status: 'in_progress' | 'submitted' | 'timed_out' | 'abandoned';
+  started_at: string;
+  expires_at: string;
+  remaining_seconds: number;
+  sections: MockExamSectionDTO[];
+  disclaimer: string;
+}
+
+export interface MockExamAutosaveInput {
+  session_token: string;
+  question_id: string;
+  selected_option_key?: string | null;
+  text_answer?: string | null;
+  time_spent_seconds?: number;
+}
+
+export interface MockExamAutosaveResponse {
+  success: boolean;
+  question_id: string;
+  saved_at: string;
+}
+
+export interface MockExamAnswerItem {
+  question_id: string;
+  selected_option_key?: string | null;
+  text_answer?: string | null;
+  time_spent_seconds?: number;
+}
+
+export interface MockExamSubmitInput {
+  session_token: string;
+  answers?: MockExamAnswerItem[];
+}
+
+export interface MockExamSubmitResponseDTO {
+  attempt_id: string;
+  session_token: string;
+  status: 'submitted' | 'timed_out';
+  started_at: string;
+  submitted_at: string;
+  raw_score: number;
+  total_marks: number;
+  percentage_score: number;
+  objective_score: number;
+  objective_total_marks: number;
+  objective_percentage: number;
+  pending_subjective_marks: number;
+  has_pending_subjective: boolean;
+  evaluation_status: 'completed' | 'partially_evaluated_pending_subjective';
+  estimated_cefr_level: string;
+  estimated_cambridge_score: number;
+  is_official: false;
+  disclaimer: string;
+}
+
+export interface MockExamResultResponseDTO {
+  attempt_id: string;
+  session_token: string;
+  exam: {
+    id: string;
+    exam_code: string;
+    name: string;
+    target_cefr: string;
+    passing_score: number;
+    total_duration_minutes: number;
+  };
+  status: 'submitted' | 'timed_out';
+  started_at: string;
+  submitted_at: string;
+  raw_score: number;
+  total_marks: number;
+  percentage_score: number;
+  objective_score: number;
+  objective_total_marks: number;
+  objective_percentage: number;
+  pending_subjective_marks: number;
+  has_pending_subjective: boolean;
+  evaluation_status: 'completed' | 'partially_evaluated_pending_subjective';
+  is_passed: boolean;
+  estimated_cefr_level: string;
+  estimated_cambridge_score: number;
+  section_breakdown: Record<string, { raw_score: number; total_marks: number; percentage: number }>;
+  skill_breakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }>;
+  is_official: false;
+  disclaimer: string;
+}
+
+// ==========================================
 // Error handling class
 // ==========================================
 
