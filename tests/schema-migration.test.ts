@@ -5,7 +5,7 @@ import * as path from 'path';
 describe('Database Schema Migrations Verification', () => {
   const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-  it('should find all 4 approved migration files', () => {
+  it('should find all 5 approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
     expect(files).toEqual([
@@ -13,6 +13,7 @@ describe('Database Schema Migrations Verification', () => {
       '20260925000002_create_indexes.sql',
       '20260925000003_create_rls_policies.sql',
       '20260925000004_seed_reference_data.sql',
+      '20260925000005_create_storage_buckets.sql',
     ]);
   });
 
@@ -141,6 +142,17 @@ describe('Database Schema Migrations Verification', () => {
     expect(seedSql).toMatch(/'listening'/);
     expect(seedSql).toMatch(/'writing'/);
     expect(seedSql).toMatch(/'speaking'/);
+  });
+
+  it('should verify storage buckets migration provisions audio buckets and RLS policies', () => {
+    const storageSql = fs.readFileSync(
+      path.join(migrationsDir, '20260925000005_create_storage_buckets.sql'),
+      'utf-8'
+    );
+    expect(storageSql).toMatch(/'audio-listening'/);
+    expect(storageSql).toMatch(/'audio-speaking-submissions'/);
+    expect(storageSql).toMatch(/ON\s+storage\.objects\s+FOR\s+SELECT/i);
+    expect(storageSql).toMatch(/auth\.uid\(\)::text/);
   });
 });
 
