@@ -3,10 +3,9 @@
 # ==============================================================================
 
 # 1. Base Image
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 WORKDIR /app
 RUN apk add --no-cache libc6-compat
-ENV NODE_ENV=production
 
 # 2. Dependencies
 FROM base AS deps

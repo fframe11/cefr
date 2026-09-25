@@ -14,10 +14,10 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Setup Node.js 20
+    - name: Setup Node.js 22
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 22
         cache: 'npm'
 
     - name: Install Dependencies
@@ -32,3 +32,6 @@ jobs:
         NEXT_TELEMETRY_DISABLED: 1
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://atmatooytieelwiarffp.supabase.co' }}
         NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'dummy_publishable_key_for_ci_build' }}
+
+    - name: Verify Docker Container Build
+      run: docker build -t cefr-platform:latest .
