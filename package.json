@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build:worker": "opennextjs-cloudflare build",
-    "preview:worker": "opennextjs-cloudflare preview"
+    "preview:worker": "opennextjs-cloudflare preview",
+    "test:load": "node scripts/load-test.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
