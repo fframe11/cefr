@@ -26,9 +26,22 @@ const DEFAULT_STATE: UserProgressState = {
   targetExam: 'PET',
 };
 
-export function loadUserProgress(): UserProgressState {
+const getLocalStorage = (): Storage | null => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    if (typeof localStorage !== 'undefined') {
+      return localStorage;
+    }
+  } catch {
+    // SSR or restricted iframe
+  }
+  return null;
+};
+
+export function loadUserProgress(): UserProgressState {
+  const storage = getLocalStorage();
+  if (!storage) return DEFAULT_STATE;
+  try {
+    const raw = storage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_STATE;
     const parsed = JSON.parse(raw);
     return { ...DEFAULT_STATE, ...parsed };
@@ -39,8 +52,10 @@ export function loadUserProgress(): UserProgressState {
 }
 
 export function saveUserProgress(state: UserProgressState): void {
+  const storage = getLocalStorage();
+  if (!storage) return;
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    storage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch (err) {
     console.error('Failed to save user progress to localStorage:', err);
   }
@@ -140,8 +155,10 @@ export interface StoredGuestAttempt {
 }
 
 export function loadGuestAttempts(): StoredGuestAttempt[] {
+  const storage = getLocalStorage();
+  if (!storage) return [];
   try {
-    const raw = localStorage.getItem(GUEST_ATTEMPTS_STORAGE_KEY);
+    const raw = storage.getItem(GUEST_ATTEMPTS_STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
@@ -152,18 +169,22 @@ export function loadGuestAttempts(): StoredGuestAttempt[] {
 }
 
 export function saveGuestAttempt(attempt: StoredGuestAttempt): void {
+  const storage = getLocalStorage();
+  if (!storage) return;
   try {
     const current = loadGuestAttempts();
     const updated = [...current, attempt].slice(-100);
-    localStorage.setItem(GUEST_ATTEMPTS_STORAGE_KEY, JSON.stringify(updated));
+    storage.setItem(GUEST_ATTEMPTS_STORAGE_KEY, JSON.stringify(updated));
   } catch (err) {
     console.error('Failed to save guest attempt to localStorage:', err);
   }
 }
 
 export function clearGuestAttempts(): void {
+  const storage = getLocalStorage();
+  if (!storage) return;
   try {
-    localStorage.removeItem(GUEST_ATTEMPTS_STORAGE_KEY);
+    storage.removeItem(GUEST_ATTEMPTS_STORAGE_KEY);
   } catch (err) {
     console.error('Failed to clear guest attempts from localStorage:', err);
   }

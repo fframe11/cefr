@@ -1,0 +1,103 @@
+'use client';
+import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Header } from './common/Header';
+import { Sidebar, NavView } from './common/Sidebar';
+import { MobileBottomNav } from './common/MobileBottomNav';
+import { ProfileModal } from './common/ProfileModal';
+import { useAuth } from '../context/AuthContext';
+import { useApp } from '../context/AppContext';
+import { saveUserProgress } from '../services/storageService';
+import { UserProgressState } from '../types';
+
+export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const { status, user } = useAuth();
+  const {
+    progress,
+    setProgress,
+    isDark,
+    toggleTheme,
+    isProfileModalOpen,
+    setIsProfileModalOpen,
+  } = useApp();
+
+  // Map pathname to NavView
+  const currentView: NavView = React.useMemo(() => {
+    if (!pathname || pathname === '/') return 'dashboard';
+    if (pathname.startsWith('/assessment')) return 'assessment';
+    if (pathname.startsWith('/vocabulary')) return 'vocabulary';
+    if (pathname.startsWith('/grammar')) return 'grammar';
+    if (pathname.startsWith('/reading')) return 'reading';
+    if (pathname.startsWith('/listening')) return 'listening';
+    if (pathname.startsWith('/writing')) return 'writing';
+    if (pathname.startsWith('/speaking')) return 'speaking';
+    if (pathname.startsWith('/mock-exams')) return 'mockExam';
+    if (pathname.startsWith('/analytics')) return 'analytics';
+    return 'dashboard';
+  }, [pathname]);
+
+  const handleSelectView = (view: NavView) => {
+    const route = view === 'dashboard' ? '/' : view === 'mockExam' ? '/mock-exams' : `/${view}`;
+    router.push(route);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+      {/* Top Universal Header */}
+      <Header
+        currentLevel={progress.currentLevel}
+        streakDays={progress.streakDays}
+        minutesStudiedToday={progress.minutesStudiedToday}
+        dailyGoalMinutes={progress.dailyGoalMinutes}
+        targetExam={progress.targetExam}
+        onRetakeAssessment={() => router.push('/assessment')}
+        isDark={isDark}
+        onToggleTheme={toggleTheme}
+        onOpenProfile={() => setIsProfileModalOpen(true)}
+        isAuthenticated={status === 'authenticated'}
+        userEmail={user?.email || null}
+      />
+
+      <div className="flex-1 flex w-full max-w-7xl mx-auto">
+        {/* Desktop / Tablet Sidebar (>= 768px) */}
+        <Sidebar
+          currentView={currentView}
+          onSelectView={handleSelectView}
+          assessmentCompleted={progress.assessmentCompleted}
+        />
+
+        {/* Main Content Area */}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 max-w-full overflow-x-hidden pb-24 md:pb-8">
+          {children}
+        </main>
+      </div>
+
+      {/* Mobile Bottom Navigation (< 768px) */}
+      <MobileBottomNav currentView={currentView} onSelectView={handleSelectView} />
+
+      {/* User Profile & Authentication Modal */}
+      <ProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        currentLocalTargetExam={progress.targetExam}
+        currentLocalDailyGoal={progress.dailyGoalMinutes}
+        onProfileUpdated={({ targetExam, dailyGoalMinutes }) => {
+          const updated: UserProgressState = {
+            ...progress,
+            targetExam,
+            dailyGoalMinutes,
+          };
+          setProgress(updated);
+          if (status !== 'authenticated') {
+            saveUserProgress(updated);
+          }
+        }}
+      />
+    </div>
+  );
+};
