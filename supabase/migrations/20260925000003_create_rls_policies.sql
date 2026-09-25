@@ -158,3 +158,57 @@ CREATE POLICY "Users can read own vocabulary mastery"
   TO authenticated 
   USING (auth.uid() = user_id);
 
+-- ------------------------------------------------------------------------------
+-- 4. Role Permissions & Table Privileges (Defensive Grant Matrix)
+-- ------------------------------------------------------------------------------
+
+-- Ensure schema usage
+GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO authenticated, service_role;
+GRANT ALL ON ALL ROUTINES IN SCHEMA public TO authenticated, service_role;
+
+-- Full access for service_role (Used by serverless backend for grading, scoring, sync, attempts)
+GRANT ALL ON ALL TABLES IN SCHEMA public TO service_role;
+
+-- Master reference tables (Read-only for anon and authenticated)
+GRANT SELECT ON public.cefr_levels TO anon, authenticated;
+GRANT SELECT ON public.skills TO anon, authenticated;
+
+-- Content bank tables (Read-only for active items, governed by RLS)
+GRANT SELECT ON public.vocabularies TO anon, authenticated;
+GRANT SELECT ON public.vocabulary_collocations TO anon, authenticated;
+GRANT SELECT ON public.grammar_topics TO anon, authenticated;
+GRANT SELECT ON public.reading_passages TO anon, authenticated;
+GRANT SELECT ON public.listening_exercises TO anon, authenticated;
+GRANT SELECT ON public.writing_prompts TO anon, authenticated;
+GRANT SELECT ON public.speaking_prompts TO anon, authenticated;
+
+-- Mock exam structural tables (Read-only for published items, governed by RLS)
+GRANT SELECT ON public.mock_exams TO anon, authenticated;
+GRANT SELECT ON public.mock_exam_sections TO anon, authenticated;
+GRANT SELECT ON public.mock_exam_questions TO anon, authenticated;
+
+-- Defense-in-depth: Grant SELECT ONLY on sanitized non-answer columns to anon and authenticated
+-- Sensitive answer keys (correct_answer_text, explanations, is_correct, feedback_th) are EXCLUDED
+GRANT SELECT (
+  id, skill, cefr_level, type, prompt_th, prompt_en,
+  context_passage, audio_script, audio_storage_path,
+  weakness_tag, difficulty_weight, grammar_topic_id,
+  reading_passage_id, listening_exercise_id, metadata,
+  is_active, created_at
+) ON public.questions TO anon, authenticated;
+
+GRANT SELECT (
+  id, question_id, key, text
+) ON public.question_options TO anon, authenticated;
+
+-- User-owned tables: Granted SELECT ONLY to authenticated (anon receives NO grants)
+-- Row isolation is strictly enforced by RLS USING (auth.uid() = ...)
+GRANT SELECT ON public.user_profiles TO authenticated;
+GRANT SELECT ON public.user_mock_exam_attempts TO authenticated;
+GRANT SELECT ON public.user_question_attempts TO authenticated;
+GRANT SELECT ON public.user_skill_progress TO authenticated;
+GRANT SELECT ON public.user_weaknesses TO authenticated;
+GRANT SELECT ON public.user_vocabulary_mastery TO authenticated;
+
+

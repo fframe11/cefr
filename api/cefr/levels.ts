@@ -12,16 +12,28 @@ export default createApiHandler(
 
     const { data: levels, error } = await supabase
       .from('cefr_levels')
-      .select('code, name, cambridge_scale_min, cambridge_scale_max, description_en, description_th, order_index')
+      .select('code, name_en, name_th, cambridge_scale_min, cambridge_scale_max, description_en, description_th, order_index')
       .order('order_index', { ascending: true });
 
     if (error) {
       throw error;
     }
 
+    const mappedLevels = (levels || []).map((l: any) => ({
+      code: l.code,
+      name: l.name_en,
+      name_en: l.name_en,
+      name_th: l.name_th,
+      cambridge_scale_min: l.cambridge_scale_min,
+      cambridge_scale_max: l.cambridge_scale_max,
+      description_en: l.description_en,
+      description_th: l.description_th,
+      order_index: l.order_index,
+    }));
+
     return {
-      levels: levels || [],
-      total: levels?.length || 0,
+      levels: mappedLevels,
+      total: mappedLevels.length,
     };
   },
   {

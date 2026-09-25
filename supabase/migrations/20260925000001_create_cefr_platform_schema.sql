@@ -4,13 +4,8 @@
 -- Source of Truth: Phase 2.2 Finalized Database Schema Specification
 -- ==============================================================================
 
--- 0. Ensure Required Extensions and Schemas
+-- 0. Ensure Required Extensions
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-
-CREATE SCHEMA IF NOT EXISTS auth;
-CREATE TABLE IF NOT EXISTS auth.users (
-  id UUID PRIMARY KEY
-);
 
 -- ------------------------------------------------------------------------------
 -- 1. Master Reference Tables
