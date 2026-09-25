@@ -2,78 +2,85 @@
 
 ## Executive Summary & Verification Matrix
 
-Phase 5.5 completed the production readiness and release engineering for the CEFR English Preparation Platform following live Supabase integration in Phase 5.4. This phase provisions storage buckets and RLS policies for audio media, hardens upload security validation, introduces standalone Next.js 15 multi-stage containerization, and establishes CI/CD automation pipelines.
+Phase 5.5 conducted a focused live audit of Supabase Storage provisioning, application audio endpoints, containerization, and CI/CD pipelines against the live Supabase instance (`atmatooytieelwiarffp.supabase.co`).
 
 | Verification Item | Status | Summary of Empirical Evidence |
 |:---|:---:|:---|
-| **1. Storage Bucket Provisioning & RLS** | **VERIFIED** | `20260925000005_create_storage_buckets.sql` provisions `audio-listening` (public read, 20MB limit) and `audio-speaking-submissions` (private, 10MB limit, RLS isolated by `auth.uid()`). |
-| **2. Storage Helper & Audio Validation** | **VERIFIED** | `lib/storage/audio.ts` validates MIME types, enforces 10MB cap, neutralizes path traversal, and generates isolated paths. |
-| **3. Audio Endpoints Implementation** | **LIVE VERIFIED** | `/api/speaking/upload` rejects unauthenticated requests with HTTP 401; `/api/listening/audio-url` validates query parameters and returns HTTP 400 on missing IDs and HTTP 404 on missing exercises. |
-| **4. Next.js 15 Standalone Output** | **VERIFIED** | `next.config.js` configured with `output: 'standalone'`. Build generates optimized `.next/standalone/server.js`. |
-| **5. Multi-Stage Production Dockerfile** | **VERIFIED** | Production multi-stage `Dockerfile` (node:20-alpine, unprivileged `nextjs` user UID 1001, healthcheck, standalone runner) and `.dockerignore`. |
-| **6. CI/CD Automation Pipeline** | **VERIFIED** | `.github/workflows/ci.yml` runs dependencies installation, Vitest regression suite, and Next.js 15 standalone build. |
-| **7. Vitest Automated Regression** | **VERIFIED** | **205/205 tests passed** across 15 suites in 2.50s (includes new storage audio validation suite). |
-| **8. Next.js Route Compilation** | **LIVE VERIFIED** | **40/40 routes** (including new dynamic audio endpoints) compiled and optimized cleanly. |
-| **9. Secret Scan & Guardrails Audit** | **VERIFIED** | 0 secrets detected in source trees; AI-slop audit clean (0 violations across 237 files); architecture boundary audit passed (0 leaks); Mermaid parity 100%. |
-| **10. Godkiller Gate Approval** | **VERIFIED** | `allow_claim_done` approved. |
+| **1. Storage Bucket Migration Definition** | **LOCAL VERIFIED ONLY** | `supabase/migrations/20260925000005_create_storage_buckets.sql` specifies `audio-listening` (public, 20MB limit) and `audio-speaking-submissions` (private, 10MB limit, RLS isolated by `auth.uid()`). |
+| **2. Remote Supabase Storage Buckets** | **BLOCKED** | Queried `GET /storage/v1/bucket` via service role: returned HTTP 200 OK with `[]` (0 buckets found). Remote migration has not been applied in Supabase SQL Editor. |
+| **3. Remote Storage RLS Policies** | **BLOCKED** | Blocked because buckets and policies on `storage.objects` have not yet been created remotely. |
+| **4. Live Multi-User Storage Security Test** | **BLOCKED** | Blocked strictly by absence of remote storage buckets. |
+| **5. Next.js 15 Standalone Output** | **LOCAL VERIFIED** | `next.config.js` configured with `output: 'standalone'`. Build generates optimized `.next/standalone/server.js`. |
+| **6. Multi-Stage Production Dockerfile** | **LOCAL VERIFIED** | Production multi-stage `Dockerfile` (node:20-alpine, unprivileged `nextjs` user UID 1001, healthcheck, standalone runner) and `.dockerignore`. |
+| **7. CI/CD Automation Pipeline** | **LOCAL VERIFIED** | `.github/workflows/ci.yml` runs dependencies installation, Vitest regression suite, and Next.js 15 standalone build. |
+| **8. Vitest Automated Regression** | **LOCAL VERIFIED** | **205/205 tests passed** across 15 suites in 2.50s (includes new storage audio validation suite). |
+| **9. Next.js Route Compilation** | **LOCAL VERIFIED** | **40/40 routes** (including `/api/speaking/upload` and `/api/listening/audio-url`) compiled cleanly. |
+| **10. Local HTTP Audio API Probes** | **LOCAL VERIFIED** | `/api/health` returns 200; `/api/speaking/upload` rejects unauthenticated requests with HTTP 401; `/api/listening/audio-url` returns HTTP 400 on missing ID and HTTP 404 on missing exercise. |
+| **11. Secret Scan & Guardrails Audit** | **LOCAL VERIFIED** | 0 secrets in source trees; AI-slop clean (0 violations across 237 files); architecture boundaries clean (0 leaks); Mermaid parity 100%. |
+| **12. Rate Limiting Implementation** | **LIVE VERIFIED WITH LIMITATIONS** | In-memory sliding window (`RateLimiter`); non-distributed across serverless instances. |
 
-**Final Gate Decision**: **`PRODUCTION DEPLOYMENT APPROVED`**
-
----
-
-## Detailed Architectural Implementations
-
-### 1. Storage Buckets & Row Level Security (RLS)
-- **Bucket `audio-listening`**:
-  - Purpose: Curated listening comprehension audio files.
-  - Visibility: Public read (`public = true`).
-  - Allowed MIME Types: `audio/mpeg`, `audio/wav`, `audio/ogg`, `audio/webm`.
-  - Max Size: 20 MB.
-  - Access Policy: Public `SELECT` allowed for all users; `INSERT/UPDATE/DELETE` restricted to service role.
-- **Bucket `audio-speaking-submissions`**:
-  - Purpose: Student spoken responses for Cambridge speaking practice and mock exams.
-  - Visibility: Private (`public = false`).
-  - Allowed MIME Types: `audio/webm`, `audio/wav`, `audio/mp4`, `audio/ogg`, `audio/mpeg`.
-  - Max Size: 10 MB.
-  - Access Policy: `INSERT`, `SELECT`, and `DELETE` restricted to authenticated users matching `(storage.foldername(name))[1] = auth.uid()::text`. Cross-user access strictly blocked.
-
-### 2. Audio Validation & Path Sanitization
-- `validateAudioUpload`: Enforces strict MIME whitelist and rejects 0-byte or >10MB files.
-- `sanitizeStorageFilename`: Neutralizes directory traversal characters (`../`, `\` `..`) and replaces non-alphanumeric symbols.
-- `buildSpeakingStoragePath`: Enforces user isolation: `${userId}/${promptId}_${attemptId}_${timestamp}.${ext}`.
-
-### 3. Production Containerization
-- Multi-stage Docker build separating dependencies, compilation, and runtime.
-- Executes as unprivileged user `nextjs` (UID 1001).
-- Health check polling `http://localhost:3000/api/health`.
-- Standalone runner minimizing image footprint.
+**Final Gate Decision**: **`BLOCKED`**
 
 ---
 
-## Live Empirical Probes
+## Classification Breakdown
 
-- `GET http://localhost:3000/api/health` -> **HTTP 200 OK**
-- `POST http://localhost:3000/api/speaking/upload` (unauthenticated) -> **HTTP 401 Unauthorized**
-- `GET http://localhost:3000/api/listening/audio-url` (missing ID) -> **HTTP 400 Bad Request**
-- `GET http://localhost:3000/api/listening/audio-url?id=00000000-0000-0000-0000-000000000000` -> **HTTP 404 Not Found**
-- `npm test` -> **15/15 test files passed, 205/205 tests passed (2.50s)**
-- `npm run build` -> **40/40 routes generated cleanly**
+### A. LIVE VERIFIED (With Concrete Network / HTTP Evidence)
+1. **Remote Supabase Project & 20 Application Tables**:
+   - `https://atmatooytieelwiarffp.supabase.co` reachable.
+   - All 20 application tables in `public` schema return HTTP 200 OK via PostgREST.
+   - Live cross-user RLS (`USER_A` vs `USER_B`) and PostgreSQL column grant answer masking confirmed from Phase 5.4 baseline.
+2. **Local Production Next.js 15 Server Probes**:
+   - `GET http://localhost:3000/api/health` -> HTTP 200 OK
+   - `POST http://localhost:3000/api/speaking/upload` (unauthenticated) -> HTTP 401 Unauthorized
+   - `GET http://localhost:3000/api/listening/audio-url` (missing ID) -> HTTP 400 Bad Request
+   - `GET http://localhost:3000/api/listening/audio-url?id=00000000-0000-0000-0000-000000000000` -> HTTP 404 Not Found
+
+---
+
+### B. LIVE VERIFIED WITH LIMITATIONS
+1. **Rate Limiting**:
+   - In-memory sliding window Map (`RateLimiter` in `api/_lib/rate-limit/rate-limiter.ts`).
+   - Non-distributed across serverless instances. Requires Upstash / Redis for multi-region serverless deployments.
+
+---
+
+### C. LOCAL VERIFIED ONLY
+1. **Audio Storage Helper & Validation Logic (`lib/storage/audio.ts`)**:
+   - Tested and verified via `tests/storage-audio.test.ts` (10MB limit, MIME whitelist, path traversal neutralization, secure path builder).
+2. **Next.js 15 Standalone Build & Dockerfile**:
+   - 40/40 routes compiled and prerendered cleanly.
+   - Multi-stage `Dockerfile` and `.dockerignore` ready.
+3. **CI/CD Pipeline**:
+   - `.github/workflows/ci.yml` configured.
+4. **Automated Vitest Regression**:
+   - 205/205 tests passing across 15 suites in 2.50s.
+
+---
+
+### D. NOT VERIFIED
+- **Live Remote Audio Upload & Playback End-to-End**: Cannot be verified live until buckets exist remotely on Supabase.
+
+---
+
+### E. BLOCKER
+1. **Storage Migration Not Applied Remotely**:
+   - **Probed Endpoint**: `GET https://atmatooytieelwiarffp.supabase.co/storage/v1/bucket`
+   - **Result**: `HTTP 200 OK`, `[]` (0 buckets found).
+   - **Missing Buckets**: `audio-listening`, `audio-speaking-submissions`.
+   - **Missing Policies**: RLS policies on `storage.objects` for public reading and user folder isolation (`auth.uid()`).
+   - **Resolution Required**: Execute [`supabase/migrations/20260925000005_create_storage_buckets.sql`](file:///c:/CEFR_platform/supabase/migrations/20260925000005_create_storage_buckets.sql) in the **Supabase Dashboard SQL Editor** (`https://supabase.com/dashboard/project/atmatooytieelwiarffp/sql/new`).
 
 ---
 
 ```text
 ============================================================
 FINAL GATE DECISION:
-PRODUCTION DEPLOYMENT APPROVED
+BLOCKED
 ============================================================
-Framework: Next.js 15.5.26 (Standalone Mode)
-Database: Supabase PostgreSQL (20 Tables + 2 Storage Buckets)
-Storage RLS: auth.uid() Folder Isolation Enforced
-Audio APIs: Validated & Live Tested
-Automated Tests: 205/205 Vitest Tests Passed
-Containerization: Multi-stage Dockerfile Verified
-CI/CD: GitHub Actions Pipeline Configured
-Guardrails: AI-Slop (PASS), Boundaries (PASS), Parity (PASS)
-Godkiller Gate: allow_claim_done APPROVED
+Reason: STORAGE MIGRATION NOT APPLIED TO REMOTE SUPABASE
+Remote Storage Buckets: 0/2 Present (audio-listening, audio-speaking-submissions missing)
+Storage Objects RLS: Not active on remote Supabase
+Required Action: Execute supabase/migrations/20260925000005_create_storage_buckets.sql in Supabase SQL Editor
 ============================================================
 ```
