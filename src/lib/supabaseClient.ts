@@ -7,7 +7,9 @@ const supabaseUrl =
   '';
 
 const supabaseAnonKey =
-  (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY) ||
+  (typeof process !== 'undefined' &&
+    (process.env?.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      process.env?.NEXT_PUBLIC_SUPABASE_ANON_KEY)) ||
   import.meta.env.VITE_SUPABASE_ANON_KEY ||
   '';
 
