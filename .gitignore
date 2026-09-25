@@ -12,4 +12,8 @@ coverage
 logs
 *.log
 supabase/.temp
+.open-next
+.wrangler
+.dev.vars
+.dev.vars.*
 

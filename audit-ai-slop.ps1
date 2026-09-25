@@ -91,7 +91,7 @@ $AllTextPatterns = ($BannedEnglish + $BannedThai + $BannedButtonPhrases + $Banne
 $Extensions = @("*.ts", "*.tsx", "*.js", "*.jsx", "*.html", "*.vue", "*.svelte")
 
 # 3. Directories to Exclude
-$ExcludeDirs = @("node_modules", ".git", "dist", "build", ".next", "coverage", ".gemini", "logs")
+$ExcludeDirs = @("node_modules", ".git", "dist", "build", ".next", ".open-next", ".wrangler", "coverage", ".gemini", "logs")
 
 $Files = Get-ChildItem -Path $TargetDir -Recurse -File -Include $Extensions | Where-Object {
     $FilePath = $_.FullName
