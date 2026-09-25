@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   loadUserProgress,
   saveUserProgress,
   recordQuestionResult,
   updateWordMastery,
+  loadGuestAttempts,
+  saveGuestAttempt,
+  clearGuestAttempts,
 } from './services/storageService';
 import { UserProgressState } from './types';
 import { Header } from './components/common/Header';
 import { Sidebar, NavView } from './components/common/Sidebar';
 import { MobileBottomNav } from './components/common/MobileBottomNav';
 import { ToastProvider, useToast } from './components/common/Toast';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { ProfileModal } from './components/common/ProfileModal';
 
 import { DashboardView } from './components/views/DashboardView';
 import { AssessmentView } from './components/views/AssessmentView';
@@ -22,12 +27,104 @@ import { SpeakingView } from './components/views/SpeakingView';
 import { MockExamView } from './components/views/MockExamView';
 import { AnalyticsView } from './components/views/AnalyticsView';
 
+import { getUserProgress } from './lib/api/progress';
+import { getUserWeaknesses } from './lib/api/weaknesses';
+import { updateVocabularyMastery } from './lib/api/vocabulary-mastery';
+import { syncGuestProgress } from './lib/api/guest-sync';
+
 const MainAppContent: React.FC = () => {
   const { showToast } = useToast();
+  const { status, user, profile, refreshProfile } = useAuth();
   const [progress, setProgress] = useState<UserProgressState>(loadUserProgress);
   const [currentView, setCurrentView] = useState<NavView>('dashboard');
   const [isDark, setIsDark] = useState<boolean>(true);
   const [remediationTopic, setRemediationTopic] = useState<string | undefined>(undefined);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+
+  // Function to load canonical progress from API when authenticated
+  const loadCanonicalProgress = useCallback(async () => {
+    try {
+      const serverData = await getUserProgress();
+      const weaknessesData = await getUserWeaknesses({ limit: 10 }).catch(() => null);
+
+      setProgress((prev) => ({
+        ...prev,
+        currentLevel: serverData.profile.current_cefr_level || prev.currentLevel,
+        targetExam: serverData.profile.target_exam || prev.targetExam,
+        estimatedCambridgeScore:
+          serverData.profile.estimated_cambridge_score || prev.estimatedCambridgeScore,
+        streakDays: serverData.profile.streak_days ?? prev.streakDays,
+        dailyGoalMinutes: serverData.profile.daily_goal_minutes || prev.dailyGoalMinutes,
+        assessmentCompleted:
+          serverData.profile.assessment_completed ?? prev.assessmentCompleted,
+        skillStats: {
+          vocabulary:
+            serverData.skills?.vocabulary?.proficiency_score ?? prev.skillStats.vocabulary,
+          grammar: serverData.skills?.grammar?.proficiency_score ?? prev.skillStats.grammar,
+          reading: serverData.skills?.reading?.proficiency_score ?? prev.skillStats.reading,
+          listening:
+            serverData.skills?.listening?.proficiency_score ?? prev.skillStats.listening,
+          writing: serverData.skills?.writing?.proficiency_score ?? prev.skillStats.writing,
+          speaking:
+            serverData.skills?.speaking?.proficiency_score ?? prev.skillStats.speaking,
+        },
+        weakTopics:
+          weaknessesData?.weaknesses?.map((w) => ({
+            tag: w.weakness_tag,
+            labelTh: w.weakness_tag.replace(/_/g, ' '),
+            errorCount: w.error_count,
+            lastFailedAt: w.last_failed_at,
+          })) || prev.weakTopics,
+      }));
+    } catch (err) {
+      console.warn('[App] Failed to load canonical user progress from server:', err);
+    }
+  }, []);
+
+  // When user is authenticated: Sync guest attempts if any, then load canonical progress
+  useEffect(() => {
+    if (status === 'authenticated') {
+      const guestAttempts = loadGuestAttempts();
+      if (guestAttempts.length > 0) {
+        syncGuestProgress({ practice_attempts: guestAttempts })
+          .then((syncRes) => {
+            clearGuestAttempts();
+            showToast(
+              'ซิงค์ประวัติการเรียนสำเร็จ',
+              `อัปเดตสถิติ ${syncRes.synced_count} รายการลงในบัญชีของคุณแล้ว`,
+              'success'
+            );
+            return loadCanonicalProgress();
+          })
+          .catch((syncErr) => {
+            console.error('[App] Guest sync failed:', syncErr);
+            showToast(
+              'ไม่สามารถซิงค์ประวัติการเรียนแบบผู้เยี่ยมชมได้',
+              'ระบบเก็บข้อมูลไว้ในเครื่องเพื่อลองใหม่อีกครั้งในภายหลัง',
+              'info'
+            );
+            loadCanonicalProgress();
+          });
+      } else {
+        loadCanonicalProgress();
+      }
+    }
+  }, [status, loadCanonicalProgress, showToast]);
+
+  // Synchronize server profile into progress state if profile changes
+  useEffect(() => {
+    if (profile) {
+      setProgress((prev) => ({
+        ...prev,
+        targetExam: profile.target_exam,
+        dailyGoalMinutes: profile.daily_goal_minutes,
+        currentLevel: profile.current_cefr_level,
+        streakDays: profile.streak_days,
+        estimatedCambridgeScore: profile.estimated_cambridge_score,
+        assessmentCompleted: profile.assessment_completed,
+      }));
+    }
+  }, [profile]);
 
   // Sync theme
   useEffect(() => {
@@ -49,14 +146,28 @@ const MainAppContent: React.FC = () => {
     isCorrect: boolean,
     weaknessTag: string
   ) => {
-    const updated = recordQuestionResult(
-      progress,
-      questionId,
-      isCorrect,
-      'grammar',
-      weaknessTag
-    );
-    setProgress(updated);
+    if (status === 'authenticated') {
+      // In authenticated mode, server is updated via practice submission; refresh progress
+      loadCanonicalProgress();
+    } else {
+      // In guest mode, record locally and queue for guest sync
+      const updated = recordQuestionResult(
+        progress,
+        questionId,
+        isCorrect,
+        'grammar',
+        weaknessTag
+      );
+      setProgress(updated);
+      saveGuestAttempt({
+        client_attempt_id: `guest-${questionId}-${Date.now()}`,
+        question_id: questionId,
+        time_spent_seconds: 15,
+        context_type: 'practice',
+        attempted_at: new Date().toISOString(),
+      });
+    }
+
     if (isCorrect) {
       showToast('เยี่ยมมาก! ตอบถูกต้อง', 'ทักษะของคุณพัฒนาขึ้น', 'success');
     } else {
@@ -64,7 +175,16 @@ const MainAppContent: React.FC = () => {
     }
   };
 
-  const handleToggleWordMastery = (wordId: string, isMastered: boolean) => {
+  const handleToggleWordMastery = async (wordId: string, isMastered: boolean) => {
+    if (status === 'authenticated') {
+      try {
+        await updateVocabularyMastery({ vocabulary_id: wordId, is_correct: isMastered });
+        loadCanonicalProgress();
+      } catch (err) {
+        console.warn('[App] Failed to update vocabulary mastery via API:', err);
+      }
+    }
+
     const updated = updateWordMastery(progress, wordId, isMastered);
     setProgress(updated);
     showToast(
@@ -80,7 +200,13 @@ const MainAppContent: React.FC = () => {
       ...updatedData,
     };
     setProgress(updated);
-    saveUserProgress(updated);
+    if (status !== 'authenticated') {
+      saveUserProgress(updated);
+    } else {
+      // Refresh profile and canonical progress
+      refreshProfile();
+      loadCanonicalProgress();
+    }
     showToast('ปรับปรุงข้อมูลระดับ CEFR เรียบร้อยแล้ว', `ระดับของคุณคือ ${updated.currentLevel}`, 'success');
   };
 
@@ -113,6 +239,9 @@ const MainAppContent: React.FC = () => {
         onRetakeAssessment={() => setCurrentView('assessment')}
         isDark={isDark}
         onToggleTheme={handleToggleTheme}
+        onOpenProfile={() => setIsProfileModalOpen(true)}
+        isAuthenticated={status === 'authenticated'}
+        userEmail={user?.email || null}
       />
 
       <div className="flex-1 flex w-full max-w-7xl mx-auto">
@@ -185,14 +314,36 @@ const MainAppContent: React.FC = () => {
 
       {/* Mobile Bottom Navigation (< 768px) */}
       <MobileBottomNav currentView={currentView} onSelectView={setCurrentView} />
+
+      {/* User Profile & Authentication Modal */}
+      <ProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        currentLocalTargetExam={progress.targetExam}
+        currentLocalDailyGoal={progress.dailyGoalMinutes}
+        onProfileUpdated={({ targetExam, dailyGoalMinutes }) => {
+          const updated: UserProgressState = {
+            ...progress,
+            targetExam,
+            dailyGoalMinutes,
+          };
+          setProgress(updated);
+          if (status !== 'authenticated') {
+            saveUserProgress(updated);
+          }
+          showToast('บันทึกการตั้งค่าเป้าหมายเรียบร้อย', `เป้าหมาย: ${targetExam}, ${dailyGoalMinutes} นาที/วัน`, 'success');
+        }}
+      />
     </div>
   );
 };
 
 export default function App() {
   return (
-    <ToastProvider>
-      <MainAppContent />
-    </ToastProvider>
+    <AuthProvider>
+      <ToastProvider>
+        <MainAppContent />
+      </ToastProvider>
+    </AuthProvider>
   );
 }

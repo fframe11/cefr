@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Clock, Award, Moon, Sun, GraduationCap, RefreshCw } from 'lucide-react';
+import { Flame, Clock, Award, Moon, Sun, GraduationCap, RefreshCw, User as UserIcon } from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
 
 interface HeaderProps {
@@ -11,6 +11,9 @@ interface HeaderProps {
   onRetakeAssessment: () => void;
   isDark: boolean;
   onToggleTheme: () => void;
+  onOpenProfile?: () => void;
+  isAuthenticated?: boolean;
+  userEmail?: string | null;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -22,6 +25,9 @@ export const Header: React.FC<HeaderProps> = ({
   onRetakeAssessment,
   isDark,
   onToggleTheme,
+  onOpenProfile,
+  isAuthenticated = false,
+  userEmail,
 }) => {
   const goalPercent = Math.min(100, Math.round((minutesStudiedToday / dailyGoalMinutes) * 100));
 
@@ -104,6 +110,23 @@ export const Header: React.FC<HeaderProps> = ({
             aria-label="Toggle theme"
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
+          {/* Profile & Auth Modal Trigger */}
+          <button
+            onClick={onOpenProfile}
+            className={`touch-target flex items-center gap-1.5 p-1.5 sm:px-2.5 sm:py-1.5 rounded-md border text-xs font-medium transition-colors ${
+              isAuthenticated
+                ? 'bg-primary/10 border-primary/20 text-primary hover:bg-primary/15'
+                : 'bg-muted/60 border-border text-muted-foreground hover:text-foreground hover:bg-muted'
+            }`}
+            title={isAuthenticated ? `Profile: ${userEmail || 'User'}` : 'เข้าสู่ระบบ / บัญชีผู้ใช้'}
+            aria-label="User profile and authentication"
+          >
+            <UserIcon className="w-4 h-4 shrink-0" />
+            <span className="hidden lg:inline max-w-[120px] truncate">
+              {isAuthenticated ? (userEmail?.split('@')[0] || 'บัญชีของฉัน') : 'เข้าสู่ระบบ'}
+            </span>
           </button>
         </div>
       </div>

@@ -126,3 +126,45 @@ export function updateWordMastery(
   saveUserProgress(newState);
   return newState;
 }
+
+const GUEST_ATTEMPTS_STORAGE_KEY = 'cefr_platform_guest_attempts_v1';
+
+export interface StoredGuestAttempt {
+  client_attempt_id: string;
+  question_id: string;
+  selected_option_key?: string | null;
+  text_answer?: string | null;
+  time_spent_seconds?: number;
+  context_type?: 'practice' | 'placement';
+  attempted_at?: string;
+}
+
+export function loadGuestAttempts(): StoredGuestAttempt[] {
+  try {
+    const raw = localStorage.getItem(GUEST_ATTEMPTS_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    console.warn('Failed to load guest attempts from localStorage:', err);
+    return [];
+  }
+}
+
+export function saveGuestAttempt(attempt: StoredGuestAttempt): void {
+  try {
+    const current = loadGuestAttempts();
+    const updated = [...current, attempt].slice(-100);
+    localStorage.setItem(GUEST_ATTEMPTS_STORAGE_KEY, JSON.stringify(updated));
+  } catch (err) {
+    console.error('Failed to save guest attempt to localStorage:', err);
+  }
+}
+
+export function clearGuestAttempts(): void {
+  try {
+    localStorage.removeItem(GUEST_ATTEMPTS_STORAGE_KEY);
+  } catch (err) {
+    console.error('Failed to clear guest attempts from localStorage:', err);
+  }
+}

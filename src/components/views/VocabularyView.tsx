@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { VOCABULARY_BANK } from '../../data/vocabularyBank';
 import { VocabularyWord, CEFRLevel } from '../../types';
 import {
@@ -14,6 +14,10 @@ import {
   BookOpen,
 } from 'lucide-react';
 import { AudioService } from '../../services/audioService';
+import { getVocabulary, mapVocabularyDtoToWord } from '../../lib/api/content/vocabulary';
+import { LoadingSpinner } from '../common/LoadingSpinner';
+import { ErrorMessage } from '../common/ErrorMessage';
+import { EmptyState } from '../common/EmptyState';
 
 interface VocabularyViewProps {
   masteredWordIds: string[];
@@ -30,11 +34,59 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const [flashcardIdx, setFlashcardIdx] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
+  // Content API State
+  const [words, setWords] = useState<VocabularyWord[]>(VOCABULARY_BANK);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchVocabularyData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await getVocabulary({
+        cefr_level: selectedLevel === 'ALL' ? undefined : selectedLevel,
+        search: searchQuery.trim() || undefined,
+        page: 1,
+        limit: 100,
+      });
+
+      if (res && res.items && res.items.length > 0) {
+        const mapped = res.items.map((dto) => mapVocabularyDtoToWord(dto, masteredWordIds));
+        setWords(mapped);
+      } else {
+        // Fallback to static bank with applied filters if API has no records yet
+        const fallback = VOCABULARY_BANK.filter((w) => {
+          const matchesLevel = selectedLevel === 'ALL' || w.cefrLevel === selectedLevel;
+          const q = searchQuery.toLowerCase();
+          const matchesSearch =
+            !q ||
+            w.word.toLowerCase().includes(q) ||
+            w.meaningTh.toLowerCase().includes(q) ||
+            w.topic.toLowerCase().includes(q);
+          return matchesLevel && matchesSearch;
+        });
+        setWords(fallback);
+      }
+    } catch (err: any) {
+      console.warn('[VocabularyView] API fetch failed, falling back to static vocabulary:', err?.message || err);
+      setError(err?.friendlyMessage || 'ไม่สามารถโหลดข้อมูลคำศัพท์จากเซิร์ฟเวอร์ได้ กำลังแสดงข้อมูลสำรอง');
+      // Graceful offline fallback
+      setWords(VOCABULARY_BANK);
+    } finally {
+      setLoading(false);
+    }
+  }, [selectedLevel, searchQuery, masteredWordIds]);
+
+  useEffect(() => {
+    fetchVocabularyData();
+  }, [fetchVocabularyData]);
+
   // Filter words
-  const filteredWords = VOCABULARY_BANK.filter((w) => {
+  const filteredWords = words.filter((w) => {
     const matchesLevel = selectedLevel === 'ALL' || w.cefrLevel === selectedLevel;
     const q = searchQuery.toLowerCase();
     const matchesSearch =
+      !q ||
       w.word.toLowerCase().includes(q) ||
       w.meaningTh.toLowerCase().includes(q) ||
       w.topic.toLowerCase().includes(q);
@@ -48,7 +100,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   const handleNextFlashcard = () => {
     setIsFlipped(false);
-    setFlashcardIdx((prev) => (prev + 1) % filteredWords.length);
+    setFlashcardIdx((prev) => (prev + 1) % Math.max(1, filteredWords.length));
   };
 
   const currentFlashcard = filteredWords[flashcardIdx] || filteredWords[0];
@@ -130,6 +182,21 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         ))}
       </div>
 
+      {/* Loading state indicator */}
+      {loading && words.length === 0 && (
+        <div className="p-12 flex justify-center">
+          <LoadingSpinner size="lg" text="กำลังโหลดคลังคำศัพท์..." />
+        </div>
+      )}
+
+      {/* Error notification banner */}
+      {error && (
+        <ErrorMessage
+          message={error}
+          onRetry={fetchVocabularyData}
+        />
+      )}
+
       {/* Mode 1: Flashcard Spaced Repetition Mode */}
       {viewMode === 'flashcard' && currentFlashcard && (
         <div className="max-w-md mx-auto space-y-4">
@@ -161,11 +228,18 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               </div>
             ) : (
               <div className="my-auto space-y-3 animate-in fade-in duration-200">
-                <h4 className="text-xl font-bold text-primary">{currentFlashcard.meaningTh}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {currentFlashcard.meaningEn}
-                </p>
-                <div className="p-3 rounded-lg bg-muted/40 border border-border/40 text-xs text-left">
+                <div className="flex items-center justify-center gap-2">
+                  <h4 className="text-xl font-bold text-primary">{currentFlashcard.meaningTh}</h4>
+                  <button
+                    onClick={(e) => handleSpeak(currentFlashcard.word, e)}
+                    className="p-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors touch-target"
+                    title="ฟังเสียงคำอ่าน"
+                  >
+                    <Volume2 className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="text-xs text-muted-foreground">{currentFlashcard.meaningEn}</p>
+                <div className="pt-2 text-xs text-left bg-muted/40 p-3 rounded-xl border border-border/40">
                   <p className="font-medium text-foreground">{currentFlashcard.exampleSentenceEn}</p>
                   <p className="text-muted-foreground mt-1">{currentFlashcard.exampleSentenceTh}</p>
                 </div>
@@ -174,20 +248,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
             <div className="w-full flex items-center justify-between pt-4 border-t border-border/40">
               <button
-                onClick={(e) => handleSpeak(currentFlashcard.word, e)}
-                className="p-2 text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted touch-target"
-                title="ฟังการออกเสียง"
-              >
-                <Volume2 className="w-5 h-5 text-primary" />
-              </button>
-
-              <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  onToggleMastery(
-                    currentFlashcard.id,
-                    !masteredWordIds.includes(currentFlashcard.id)
-                  );
+                  onToggleMastery(currentFlashcard.id, !masteredWordIds.includes(currentFlashcard.id));
                 }}
                 className={`text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition-colors touch-target ${
                   masteredWordIds.includes(currentFlashcard.id)
@@ -196,83 +259,70 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 }`}
               >
                 <CheckCircle className="w-3.5 h-3.5" />
-                <span>
-                  {masteredWordIds.includes(currentFlashcard.id) ? 'จำได้แล้ว' : 'ทำเครื่องหมายว่าจำได้'}
-                </span>
+                <span>{masteredWordIds.includes(currentFlashcard.id) ? 'จำได้แล้ว' : 'ยังจำไม่ได้'}</span>
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextFlashcard();
+                }}
+                className="text-xs px-4 py-1.5 rounded-lg bg-primary text-primary-foreground font-medium flex items-center gap-1 shadow-xs hover:bg-primary/90 transition-colors touch-target"
+              >
+                <RotateCw className="w-3.5 h-3.5" />
+                <span>คำถัดไป</span>
               </button>
             </div>
           </div>
-
-          <button
-            onClick={handleNextFlashcard}
-            className="w-full py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm shadow-xs hover:bg-primary/90 transition-all touch-target"
-          >
-            คำถัดไป
-          </button>
         </div>
       )}
 
-      {/* Mode 2: Responsive Card Grid (Ideal on Mobile & Tablet) */}
+      {/* Mode 2: Card Grid View */}
       {viewMode === 'cards' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredWords.map((word) => {
-            const isMastered = masteredWordIds.includes(word.id);
+          {filteredWords.map((w) => {
+            const isMastered = masteredWordIds.includes(w.id);
             return (
               <div
-                key={word.id}
-                className={`p-4 rounded-xl bg-card border transition-all flex flex-col justify-between shadow-xs ${
-                  isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-border/60 hover:border-border'
-                }`}
+                key={w.id}
+                className="p-5 rounded-2xl bg-card border border-border/70 hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-3 group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                      {word.cefrLevel}
+                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
+                      {w.cefrLevel}
                     </span>
-                    <span className="text-[11px] text-muted-foreground capitalize">
-                      {word.partOfSpeech} • {word.topic}
+                    <span className="text-[11px] text-muted-foreground capitalize font-medium">
+                      {w.partOfSpeech} • {w.topic}
                     </span>
                   </div>
 
-                  <div className="flex items-baseline gap-2">
-                    <h3 className="text-lg font-bold text-foreground font-mono">{word.word}</h3>
-                    <span className="text-xs text-muted-foreground font-mono">{word.ipa}</span>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-lg font-bold text-foreground font-mono tracking-tight">
+                      {w.word}
+                    </h3>
                     <button
-                      onClick={() => handleSpeak(word.word)}
-                      className="p-1 text-muted-foreground hover:text-primary transition-colors touch-target"
-                      title="ฟังเสียงคำศัพท์"
+                      onClick={() => handleSpeak(w.word)}
+                      className="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors touch-target"
+                      title="ฟังเสียงคำอ่าน"
                     >
                       <Volume2 className="w-4 h-4" />
                     </button>
                   </div>
+                  <p className="text-xs text-muted-foreground font-mono mb-2">{w.ipa}</p>
 
-                  <p className="text-sm font-semibold text-primary mt-1">{word.meaningTh}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{word.meaningEn}</p>
+                  <p className="text-sm font-semibold text-foreground">{w.meaningTh}</p>
+                  <p className="text-xs text-muted-foreground line-clamp-1">{w.meaningEn}</p>
 
-                  {/* Example Sentence Box */}
-                  <div className="mt-3 p-2.5 rounded-lg bg-muted/40 border border-border/40 text-xs">
-                    <p className="font-medium text-foreground">{word.exampleSentenceEn}</p>
-                    <p className="text-muted-foreground mt-0.5">{word.exampleSentenceTh}</p>
+                  <div className="mt-3 pt-2.5 border-t border-border/40 text-xs space-y-1">
+                    <p className="text-foreground/90 font-medium line-clamp-2">{w.exampleSentenceEn}</p>
+                    <p className="text-muted-foreground line-clamp-1">{w.exampleSentenceTh}</p>
                   </div>
-
-                  {/* Collocations */}
-                  {word.collocations && word.collocations.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-1">
-                      {word.collocations.map((c, i) => (
-                        <span key={i} className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-muted-foreground">
-                          {c}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between">
-                  <span className="text-[11px] text-muted-foreground">
-                    ระดับความจำ: {isMastered ? '100%' : `${word.masteryPercentage}%`}
-                  </span>
+                <div className="pt-3 border-t border-border/40 flex items-center justify-between">
                   <button
-                    onClick={() => onToggleMastery(word.id, !isMastered)}
+                    onClick={() => onToggleMastery(w.id, !isMastered)}
                     className={`text-xs px-2.5 py-1 rounded-md border font-medium flex items-center gap-1 transition-colors touch-target ${
                       isMastered
                         ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
@@ -280,8 +330,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     }`}
                   >
                     <CheckCircle className="w-3.5 h-3.5" />
-                    <span>{isMastered ? 'จำได้แล้ว' : 'จำได้'}</span>
+                    <span>{isMastered ? 'จำได้แล้ว' : 'ทำเครื่องหมายว่าจำได้'}</span>
                   </button>
+
+                  <span className="text-[11px] text-muted-foreground font-mono">
+                    {isMastered ? 'Mastered' : 'Learning'}
+                  </span>
                 </div>
               </div>
             );
@@ -289,12 +343,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       )}
 
-      {/* Mode 3: Desktop Responsive Table (adapts gracefully) */}
+      {/* Mode 3: Dense Table View */}
       {viewMode === 'table' && (
-        <div className="rounded-xl border border-border/60 bg-card overflow-hidden shadow-xs">
+        <div className="rounded-xl border border-border/70 overflow-hidden bg-card shadow-xs">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-muted/40 border-b border-border/60 text-xs text-muted-foreground font-semibold uppercase">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-muted/50 border-b border-border text-muted-foreground font-medium text-xs">
                 <tr>
                   <th className="py-3 px-4">คำศัพท์ (Word)</th>
                   <th className="py-3 px-3">CEFR</th>
@@ -362,11 +416,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       )}
 
-      {filteredWords.length === 0 && (
-        <div className="text-center py-12 text-muted-foreground text-sm">
-          <BookOpen className="w-8 h-8 mx-auto text-muted-foreground/50 mb-2" />
-          <p>ไม่พบคำศัพท์ที่ตรงกับเงื่อนไขการค้นหา</p>
-        </div>
+      {!loading && filteredWords.length === 0 && (
+        <EmptyState
+          title="ไม่พบคำศัพท์ที่ตรงกับเงื่อนไขการค้นหา"
+          description="ลองปรับระดับ CEFR หรือคำค้นหาใหม่เพื่อดูคำศัพท์อื่นๆ"
+          icon={<BookOpen className="w-8 h-8 text-muted-foreground" />}
+        />
       )}
     </div>
   );
