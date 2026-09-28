@@ -1,0 +1,40 @@
+{
+  "report_type": "phase-6.2.44-tatoeba-source-verification",
+  "phase": "6.2.44",
+  "timestamp": "2026-09-28T11:37:45Z",
+  "source_name": "Tatoeba Collaborative Translation Corpus",
+  "source_version": "2024.09 Export",
+  "authoritative_endpoints": {
+    "english_corpus_bz2": {
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2",
+      "size_bytes": 24887945,
+      "format": "TSV compressed with bzip2",
+      "status": "VERIFIED_DOWNLOADABLE",
+      "http_status": 200
+    },
+    "full_multilingual_corpus_bz2": {
+      "url": "https://downloads.tatoeba.org/exports/sentences.tar.bz2",
+      "size_bytes": 218750764,
+      "format": "TAR archive compressed with bzip2",
+      "status": "VERIFIED_DOWNLOADABLE",
+      "http_status": 200
+    }
+  },
+  "legal_and_licensing": {
+    "license_spdx": "CC-BY-2.0-FR",
+    "license_name": "Creative Commons Attribution 2.0 France",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+    "attribution_requirement": "Mandatory: Must attribute Tatoeba and the respective contributors by username / sentence ID.",
+    "share_alike_requirement": false,
+    "commercial_use_allowed": true,
+    "redistribution_allowed": true,
+    "derived_indexes_allowed": true,
+    "license_status": "VERIFIED_LICENSED"
+  },
+  "storage_policy": {
+    "raw_archive_location": "data/external-cache/tatoeba/eng_sentences.tsv.bz2",
+    "git_status": "GITIGNORED",
+    "offline_access_only": true
+  },
+  "verification_verdict": "VERIFIED_DOWNLOADABLE"
+}

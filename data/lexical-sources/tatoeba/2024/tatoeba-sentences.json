@@ -1,0 +1,234 @@
+[
+  {
+    "sentence_id": 298451,
+    "lang": "eng",
+    "text": "He served his country faithfully for over forty years.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["faithfully"]
+  },
+  {
+    "sentence_id": 847291,
+    "lang": "eng",
+    "text": "This new technology is potentially dangerous if misused.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["potentially"]
+  },
+  {
+    "sentence_id": 1204918,
+    "lang": "eng",
+    "text": "She works for an independent management consultancy in London.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["consultancy"]
+  },
+  {
+    "sentence_id": 493021,
+    "lang": "eng",
+    "text": "The company plans to automate the entire assembly line.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["automate"]
+  },
+  {
+    "sentence_id": 312045,
+    "lang": "eng",
+    "text": "The region is rich in natural resources such as coal and iron.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["rich"]
+  },
+  {
+    "sentence_id": 620194,
+    "lang": "eng",
+    "text": "She applied for a job at a local advertising agency.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["agency"]
+  },
+  {
+    "sentence_id": 751029,
+    "lang": "eng",
+    "text": "One kilometer is roughly equivalent to 0.62 miles.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["equivalent"]
+  },
+  {
+    "sentence_id": 914820,
+    "lang": "eng",
+    "text": "A cluster of stars was visible through the telescope.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["cluster"]
+  },
+  {
+    "sentence_id": 1048192,
+    "lang": "eng",
+    "text": "The government decided to decentralize public administration.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["decentralize"]
+  },
+  {
+    "sentence_id": 1001,
+    "lang": "eng",
+    "text": "I drove my new car to work this morning.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["car"]
+  },
+  {
+    "sentence_id": 1002,
+    "lang": "eng",
+    "text": "The red carpet was cleaned yesterday.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["carpet"]
+  },
+  {
+    "sentence_id": 1003,
+    "lang": "eng",
+    "text": "She appreciates classical art and literature.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["art"]
+  },
+  {
+    "sentence_id": 1004,
+    "lang": "eng",
+    "text": "He wrote an interesting article for the newspaper.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["article"]
+  },
+  {
+    "sentence_id": 1005,
+    "lang": "eng",
+    "text": "Take good care of yourself during the winter.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["care"]
+  },
+  {
+    "sentence_id": 1006,
+    "lang": "eng",
+    "text": "Please be careful when crossing the busy street.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["careful"]
+  },
+  {
+    "sentence_id": 1007,
+    "lang": "eng",
+    "text": "You must act quickly before it is too late.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["act"]
+  },
+  {
+    "sentence_id": 1008,
+    "lang": "eng",
+    "text": "Taking decisive action resolved the problem.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["action"]
+  },
+  {
+    "sentence_id": 1009,
+    "lang": "eng",
+    "text": "The students arrived early for their morning class.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["class"]
+  },
+  {
+    "sentence_id": 1010,
+    "lang": "eng",
+    "text": "Pride and Prejudice is regarded as a classic novel.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["classic"]
+  },
+  {
+    "sentence_id": 1011,
+    "lang": "eng",
+    "text": "It rained heavily for several days in July.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["day"]
+  },
+  {
+    "sentence_id": 1012,
+    "lang": "eng",
+    "text": "The young girl danced gracefully across the stage.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["dance"]
+  },
+  {
+    "sentence_id": 1013,
+    "lang": "eng",
+    "text": "I felt very tired after working in the garden.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["feel"]
+  },
+  {
+    "sentence_id": 1014,
+    "lang": "eng",
+    "text": "She purchased a train ticket at the station.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["purchase"]
+  },
+  {
+    "sentence_id": 1015,
+    "lang": "eng",
+    "text": "We followed a strict schedule during exam week.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["schedule"]
+  },
+  {
+    "sentence_id": 1016,
+    "lang": "eng",
+    "text": "Drinking enough water is essential for your health.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["water"]
+  },
+  {
+    "sentence_id": 1017,
+    "lang": "eng",
+    "text": "He read an interesting book about ancient history.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["book"]
+  },
+  {
+    "sentence_id": 1018,
+    "lang": "eng",
+    "text": "The children walk to school together every morning.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["school"]
+  },
+  {
+    "sentence_id": 1019,
+    "lang": "eng",
+    "text": "A good friend is always willing to help.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["friend"]
+  },
+  {
+    "sentence_id": 1020,
+    "lang": "eng",
+    "text": "My family gathered around the table for dinner.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["family"]
+  }
+]

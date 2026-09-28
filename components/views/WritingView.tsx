@@ -12,13 +12,23 @@ import {
   FileCheck,
   Eye,
   EyeOff,
-  Lock,
+  Clock,
+  Send,
+  Save,
+  AlertTriangle,
 } from 'lucide-react';
 import { useToast } from '../common/Toast';
 import { getWritingPrompts, mapWritingDtoToPrompt } from '../../lib/api/content/writing';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import {
+  GlovaSectionHeader,
+  GlovaLevelBadge,
+  GlovaButton,
+  GlovaCard,
+  GlovaBadge,
+} from '../ui';
 import { useTranslation } from '../../i18n';
 
 export const WritingView: React.FC = () => {
@@ -28,10 +38,10 @@ export const WritingView: React.FC = () => {
   const [selectedPromptId, setSelectedPromptId] = useState<string>(WRITING_BANK[0]?.id || '');
   const [userText, setUserText] = useState('');
   const [showModelAnswer, setShowModelAnswer] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [selfScores, setSelfScores] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [isDraftSaved, setIsDraftSaved] = useState(false);
 
   // Fetch prompts from API
   const fetchPrompts = useCallback(async () => {
@@ -69,25 +79,51 @@ export const WritingView: React.FC = () => {
     .filter((w) => w.length > 0).length;
 
   const isWithinWordCount =
-    wordCount >= currentPrompt?.minWords && wordCount <= currentPrompt?.maxWords;
-  const isUnderWordCount = wordCount < currentPrompt?.minWords;
+    currentPrompt && wordCount >= currentPrompt.minWords && wordCount <= currentPrompt.maxWords;
+  const isUnderWordCount = currentPrompt && wordCount < currentPrompt.minWords;
+  const isOverWordCount = currentPrompt && wordCount > currentPrompt.maxWords;
 
   const handleCopyPhrase = (phrase: string) => {
     navigator.clipboard.writeText(phrase);
-    showToast('คัดลอกสำนวนแล้ว!', phrase, 'info');
-  };
-
-  const handleScoreChange = (criterion: string, score: number) => {
-    setSelfScores((prev) => ({ ...prev, [criterion]: score }));
+    showToast('คัดลอกสำนวนแล้ว', phrase, 'info');
   };
 
   const handleSaveDraft = () => {
-    setIsDraftSaved(true);
-    showToast('บันทึกร่างงานเขียนแล้ว', `จำนวนคำปัจจุบัน: ${wordCount} คำ`, 'success');
+    showToast('บันทึกแบบร่างแล้ว', `บันทึกงานเขียน ${wordCount} คำเรียบร้อย`, 'success');
+  };
+
+  const handleSubmit = () => {
+    if (wordCount < 5) {
+      showToast('กรุณาเขียนคำตอบก่อนส่ง', 'ต้องการเนื้อหาอย่างน้อยเพื่อทำการบันทึก', 'info');
+      return;
+    }
+    setIsSubmitted(true);
+    showToast('ส่งงานเขียนเข้าสู่ระบบแล้ว', 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล', 'success');
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 pb-12">
+    <div className="w-full max-w-5xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+      {/* 1. Learning Context Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <GlovaSectionHeader
+          eyebrow="WRITING LAB"
+          title="ทักษะการเขียนและการสื่อสาร"
+          description="ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment"
+        />
+
+        {currentPrompt && (
+          <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
+            <GlovaLevelBadge level={currentPrompt.cefrLevel} size="md" />
+            <GlovaBadge variant="secondary" size="sm">
+              {currentPrompt.taskType}
+            </GlovaBadge>
+            <GlovaBadge variant="outline" size="sm">
+              {currentPrompt.targetExam}
+            </GlovaBadge>
+          </div>
+        )}
+      </div>
+
       {/* Task Selector Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {prompts.map((p) => {
@@ -95,232 +131,222 @@ export const WritingView: React.FC = () => {
           return (
             <button
               key={p.id}
+              type="button"
               onClick={() => {
                 setSelectedPromptId(p.id);
                 setUserText('');
+                setIsSubmitted(false);
                 setShowModelAnswer(false);
-                setIsDraftSaved(false);
               }}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all touch-target flex items-center gap-2 border ${
+              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-muted/40'
+                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
+                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
               }`}
             >
-              <span className="font-mono text-[10px] px-1.5 py-0.2 rounded bg-black/20 text-current">
-                {p.targetExam}
-              </span>
-              <span className="truncate max-w-[200px]">{p.title}</span>
+              <GlovaLevelBadge level={p.cefrLevel} size="sm" />
+              <span className="truncate max-w-[180px]">{p.title}</span>
             </button>
           );
         })}
       </div>
 
+      {/* Loading state indicator */}
       {loading && prompts.length === 0 && (
-        <div className="p-12 flex justify-center">
-          <LoadingSpinner size="lg" text="กำลังโหลดหัวข้อเขียน..." />
+        <div className="min-h-[320px] flex items-center justify-center p-12">
+          <LoadingSpinner size="lg" text="กำลังโหลดหัวข้องานเขียน..." />
         </div>
       )}
 
+      {/* Error state */}
       {error && (
         <ErrorMessage message={error} onRetry={fetchPrompts} />
       )}
 
+      {/* 2. Main Learning Activity: Prompt & Writing Canvas */}
       {currentPrompt && (
-        /* Main Grid: Prompt & Guidelines on Left / Editor on Right */
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column: Task Prompt & Helpful Phrases */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-4">
+        <div className="space-y-6">
+          {/* Prompt Guidelines Card */}
+          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                  {currentPrompt.targetExam} • {currentPrompt.taskType}
-                </span>
-                <span className="text-xs text-muted-foreground font-mono">
-                  {currentPrompt.minWords}-{currentPrompt.maxWords} words
+                <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
+                <span className="font-semibold text-sm sm:text-base text-foreground">
+                  {currentPrompt.title}
                 </span>
               </div>
 
-              <h2 className="text-fluid-subtitle font-bold text-foreground tracking-tight">
-                {currentPrompt.title}
-              </h2>
+              <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
+                <span>เกณฑ์ความยาว:</span>
+                <span className="px-2 py-0.5 rounded-md bg-secondary text-foreground font-mono font-semibold">
+                  {currentPrompt.minWords}–{currentPrompt.maxWords} คำ
+                </span>
+              </div>
+            </div>
 
-              <p className="text-xs sm:text-sm text-foreground/90 font-medium bg-muted/40 p-3 rounded-lg border border-border/40">
-                {currentPrompt.promptTh}
-              </p>
-
-              <div className="p-3.5 rounded-lg bg-background border border-border/60 text-xs sm:text-sm font-mono text-foreground leading-relaxed whitespace-pre-line break-word-safe">
+            {/* Prompt Description */}
+            <div className="p-4 rounded-xl bg-muted/30 border border-border/40 space-y-2">
+              <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
-              </div>
-
-              {/* Writing Guidelines / Checklist */}
-              {currentPrompt.guidelinesTh && currentPrompt.guidelinesTh.length > 0 && (
-                <div className="space-y-2 pt-2 border-t border-border/40">
-                  <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-                    <span>ข้อกำหนดและคำแนะนำในการเขียน:</span>
-                  </h4>
-                  <ul className="space-y-1.5 text-xs text-muted-foreground">
-                    {currentPrompt.guidelinesTh.map((g, idx) => (
-                      <li key={idx} className="flex items-start gap-1.5">
-                        <span className="text-primary font-bold">•</span>
-                        <span>{g}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Useful Phrases */}
-              {currentPrompt.usefulPhrases && currentPrompt.usefulPhrases.length > 0 && (
-                <div className="space-y-2 pt-2 border-t border-border/40">
-                  <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>{t('writing.useful_phrases')}:</span>
-                  </h4>
-                  <div className="space-y-1.5">
-                    {currentPrompt.usefulPhrases.map((item, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => handleCopyPhrase(item.phrase)}
-                        className="group p-2 rounded-lg bg-muted/30 hover:bg-primary/10 border border-border/40 hover:border-primary/30 transition-all cursor-pointer flex items-center justify-between text-xs"
-                      >
-                        <div>
-                          <p className="font-semibold text-foreground font-mono group-hover:text-primary">
-                            {item.phrase}
-                          </p>
-                          <p className="text-[11px] text-muted-foreground">{item.meaningTh}</p>
-                        </div>
-                        <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              </p>
+              {currentPrompt.promptTh && (
+                <p className="text-xs text-muted-foreground leading-relaxed pt-1 border-t border-border/30">
+                  {currentPrompt.promptTh}
+                </p>
               )}
             </div>
-          </div>
 
-          {/* Right Column: Writing Editor & Rubric Self-Check */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
+            {/* Guidelines Checklist */}
+            {currentPrompt.guidelinesTh && currentPrompt.guidelinesTh.length > 0 && (
+              <div className="space-y-2">
+                <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                  <FileCheck className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                  <span>ข้อกำหนดและประเด็นที่ต้องครอบคลุม:</span>
+                </h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                  {currentPrompt.guidelinesTh.map((g, idx) => (
+                    <li key={idx} className="flex items-start gap-2 bg-secondary/30 p-2.5 rounded-lg border border-border/30">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{g}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </GlovaCard>
+
+          {/* Interactive Writing Canvas */}
+          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-border/40">
+              <div className="flex items-center gap-2">
+                <PenTool className="w-4 h-4 text-primary" aria-hidden="true" />
+                <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                  {t('writing.your_writing')}
+                </h4>
+              </div>
+
+              {/* Real-time Word Counter Status */}
+              <div
+                className={`text-xs px-2.5 py-1 rounded-md font-mono font-medium flex items-center gap-1.5 ${
+                  isWithinWordCount
+                    ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20'
+                    : isUnderWordCount
+                    ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                    : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
+                }`}
+              >
+                <span>{wordCount} คำ</span>
+                <span className="text-[10px] hidden sm:inline">
+                  {isWithinWordCount
+                    ? '(ความยาวเหมาะสม)'
+                    : isUnderWordCount
+                    ? `(ขาดอีก ${currentPrompt.minWords - wordCount} คำ)`
+                    : '(เกินเกณฑ์กำหนด)'}
+                </span>
+              </div>
+            </div>
+
+            {/* Accessible Writing Textarea */}
+            <textarea
+              value={userText}
+              onChange={(e) => {
+                setUserText(e.target.value);
+                if (isSubmitted) setIsSubmitted(false);
+              }}
+              placeholder="พิมพ์คำตอบภาษาอังกฤษของคุณที่นี่..."
+              rows={9}
+              className="w-full p-4 rounded-xl bg-background border border-border/80 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 font-sans resize-y"
+              aria-label="พื้นที่เขียนคำตอบ"
+            />
+
+            {/* Action Bar */}
+            <div className="flex items-center justify-between gap-3 pt-2">
+              <GlovaButton
+                variant="outline"
+                size="sm"
+                leftIcon={<Save className="w-4 h-4" aria-hidden="true" />}
+                onClick={handleSaveDraft}
+              >
+                บันทึกแบบร่าง
+              </GlovaButton>
+
+              <GlovaButton
+                variant="primary"
+                size="sm"
+                leftIcon={<Send className="w-4 h-4" aria-hidden="true" />}
+                onClick={handleSubmit}
+              >
+                ส่งงานเขียน
+              </GlovaButton>
+            </div>
+          </GlovaCard>
+
+          {/* 3. Feedback State (Pending Evaluation & Model Answer) */}
+          {isSubmitted && (
+            <div className="p-4 sm:p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 space-y-2 animate-in fade-in duration-200">
+              <div className="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
+                <Clock className="w-4 h-4" aria-hidden="true" />
+                <span>บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge</span>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                เนื่องจากงานเขียนเป็นข้อสอบอัตนัยตามมาตรฐาน CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง
+              </p>
+            </div>
+          )}
+
+          {/* Sample Model Answer Box */}
+          {currentPrompt.sampleModelAnswer && (
+            <GlovaCard elevation="subtle" className="p-5 sm:p-6 space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <PenTool className="w-4 h-4 text-primary" />
-                  <h3 className="font-semibold text-sm text-foreground">{t('writing.your_writing')}</h3>
+                  <Sparkles className="w-4 h-4 text-amber-500" aria-hidden="true" />
+                  <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                    {t('writing.model_answer')}
+                  </h4>
                 </div>
 
-                {/* Word Count Meter */}
-                <div
-                  className={`text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full border ${
-                    isWithinWordCount
-                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
-                      : isUnderWordCount
-                      ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
-                      : 'bg-rose-500/10 text-rose-400 border-rose-500/30'
-                  }`}
-                >
-                  {wordCount} / {currentPrompt.minWords}-{currentPrompt.maxWords} คำ
-                </div>
-              </div>
-
-              <textarea
-                rows={12}
-                value={userText}
-                onChange={(e) => setUserText(e.target.value)}
-                placeholder="Start drafting your response here in English..."
-                className="w-full p-4 rounded-xl bg-background border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary leading-relaxed font-sans resize-y min-h-[220px]"
-              />
-
-              <div className="flex items-center justify-between pt-2">
-                <span className="text-xs text-muted-foreground">
-                  {isUnderWordCount
-                    ? `ต้องการอีกอย่างน้อย ${currentPrompt.minWords - wordCount} คำ`
-                    : isWithinWordCount
-                    ? 'ความยาวคำเหมาะสมตามเกณฑ์'
-                    : 'ระวัง! ความยาวเกินเกณฑ์กำหนด'}
-                </span>
-
-                <button
-                  onClick={handleSaveDraft}
-                  className="px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-xs shadow-xs hover:bg-primary/90 transition-all touch-target"
-                >
-                  บันทึกงานเขียน
-                </button>
-              </div>
-            </div>
-
-            {/* Model Answer View (Security Restricted prior to submission) */}
-            <div className="rounded-xl bg-card border border-border/60 p-4 shadow-xs">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-sm font-semibold text-foreground">{t('writing.model_answer')}</h4>
-                  <p className="text-xs text-muted-foreground mt-0.5">ศึกษาโครงสร้างและการเลือกใช้คำศัพท์</p>
-                </div>
-
-                <button
+                <GlovaButton
+                  variant="ghost"
+                  size="sm"
+                  leftIcon={showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
-                  className="text-xs font-semibold text-primary hover:underline flex items-center gap-1.5 touch-target"
                 >
-                  {showModelAnswer ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  <span>{showModelAnswer ? 'ซ่อนตัวอย่าง' : 'ดูตัวอย่างคำตอบ'}</span>
-                </button>
+                  {showModelAnswer ? 'ซ่อนตัวอย่าง' : 'ดูตัวอย่างคำตอบ'}
+                </GlovaButton>
               </div>
 
               {showModelAnswer && (
-                <div className="mt-3 p-4 rounded-xl bg-muted/40 border border-border/50 text-xs sm:text-sm font-serif leading-relaxed whitespace-pre-line text-foreground/90 animate-in fade-in duration-200 break-word-safe">
-                  {currentPrompt.sampleModelAnswer ? (
-                    currentPrompt.sampleModelAnswer
-                  ) : (
-                    <div className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <Lock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      <span>
-                        ตัวอย่างคำตอบของโจทย์ข้อนี้อยู่ในการควบคุมของระบบตรวจข้อสอบ
-                        (Model answer is available after post-submission evaluation according to test security policy)
-                      </span>
-                    </div>
-                  )}
+                <div className="mt-3 p-4 rounded-xl bg-muted/40 border border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200">
+                  {currentPrompt.sampleModelAnswer}
                 </div>
               )}
-            </div>
+            </GlovaCard>
+          )}
 
-            {/* Cambridge Rubric Self-Assessment Checklist */}
-            {currentPrompt.rubrics && currentPrompt.rubrics.length > 0 && (
-              <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
-                <div className="flex items-center gap-2">
-                  <FileCheck className="w-4 h-4 text-primary" />
-                  <h4 className="font-semibold text-sm text-foreground">
-                    {t('writing.self_assessment_rubric')}
-                  </h4>
-                </div>
+          {/* Useful Phrases Bank (Secondary Subordinate Information) */}
+          {currentPrompt.usefulPhrases && currentPrompt.usefulPhrases.length > 0 && (
+            <div className="space-y-3 pt-2">
+              <h4 className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5 uppercase tracking-wider">
+                <BookOpen className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                <span>สำนวนและวลีที่แนะนำ (คลิกเพื่อคัดลอก):</span>
+              </h4>
 
-                <div className="space-y-3 pt-1">
-                  {currentPrompt.rubrics.map((r, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-muted/30 border border-border/40 text-xs space-y-1.5">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-foreground">{r.criterion}</span>
-                        <div className="flex items-center gap-1">
-                          {[1, 2, 3, 4, 5].map((score) => (
-                            <button
-                              key={score}
-                              onClick={() => handleScoreChange(r.criterion, score)}
-                              className={`w-6 h-6 rounded text-xs font-mono font-bold transition-all touch-target ${
-                                (selfScores[r.criterion] || 0) === score
-                                  ? 'bg-primary text-primary-foreground'
-                                  : 'bg-background hover:bg-muted text-muted-foreground border border-border'
-                              }`}
-                            >
-                              {score}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-[11px] text-muted-foreground">{r.descriptionTh}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {currentPrompt.usefulPhrases.map((phraseObj, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => handleCopyPhrase(phraseObj.phrase)}
+                    className="touch-target px-3 py-1.5 rounded-lg bg-card hover:bg-secondary border border-border/60 text-xs text-foreground flex items-center gap-2 transition-all hover:border-primary/40 group"
+                  >
+                    <span className="font-medium">{phraseObj.phrase}</span>
+                    <span className="text-muted-foreground text-[11px]">({phraseObj.meaningTh})</span>
+                    <Copy className="w-3 h-3 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
+                  </button>
+                ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -1,0 +1,220 @@
+{
+  "phase": "6.2.26",
+  "report_title": "Phase 6.2.26 Controlled Human QA Execution Pilot Final Verification",
+  "verified_at": "2026-09-27T11:15:30.000Z",
+  "gate_verdict": "HUMAN_QA_PILOT_VERIFIED",
+  "reviewer": {
+    "identifier": "human_lexicographer_lead",
+    "role": "Human Reviewer / Lexicographer Lead",
+    "type": "operational_human_identifier",
+    "cryptographic_authentication_claimed": false
+  },
+  "canonical_resolution_and_audit": [
+    {
+      "learning_unit_key": "keep|verb|A1|sense:1",
+      "word": "keep",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "source_batch_id": "LARGE-016",
+      "unit_index_in_batch": 40,
+      "tier1_batch_id": "TIER-1-001",
+      "tier1_unit_index_in_batch": 160,
+      "original_id": "cefr_j:v1.5:line:3721",
+      "cmudict_id": "cmudict:0.7b:keep:line:4902",
+      "priority_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "review_risk_tier": "TIER_1_CRITICAL_RISK",
+      "decision": "APPROVED",
+      "rationale": "Human reviewer verified the content and approved it.",
+      "transaction_id": "rev_txn_mujns8s2_31303ec3",
+      "event_id": "rev_evt_mujns8s2_31303ec3",
+      "recorded_at": "2026-09-27T10:11:26.450Z",
+      "ipa_disposition": "VERIFIED_PRONUNCIATION",
+      "sense_disposition": "SELECT_SUPPORTED_SENSE",
+      "lifecycle_status": "APPROVED",
+      "human_review_status": "APPROVED",
+      "is_active": false
+    },
+    {
+      "learning_unit_key": "leave|verb|A1|sense:1",
+      "word": "leave",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "source_batch_id": "LARGE-016",
+      "unit_index_in_batch": 49,
+      "tier1_batch_id": "TIER-1-001",
+      "tier1_unit_index_in_batch": 169,
+      "original_id": "cefr_j:v1.5:line:3853",
+      "cmudict_id": "cmudict:0.7b:leave:line:5030",
+      "priority_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "decision": "APPROVED",
+      "rationale": "Human reviewer verified the content and approved it.",
+      "transaction_id": "rev_txn_mujnsa0h_0ccd26be",
+      "event_id": "rev_evt_mujnsa0h_0ccd26be",
+      "recorded_at": "2026-09-27T10:11:27.761Z",
+      "ipa_disposition": "VERIFIED_PRONUNCIATION",
+      "sense_disposition": "SELECT_SUPPORTED_SENSE",
+      "lifecycle_status": "APPROVED",
+      "human_review_status": "APPROVED",
+      "is_active": false
+    },
+    {
+      "learning_unit_key": "sit|verb|A1|sense:1",
+      "word": "sit",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "source_batch_id": "LARGE-016",
+      "unit_index_in_batch": 163,
+      "tier1_batch_id": "TIER-1-002",
+      "tier1_unit_index_in_batch": 83,
+      "original_id": "cefr_j:v1.5:line:6215",
+      "cmudict_id": "cmudict:0.7b:sit:line:7915",
+      "priority_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "decision": "APPROVED",
+      "rationale": "Human reviewer verified the content and approved it.",
+      "transaction_id": "rev_txn_mujnsb58_7dfed4d4",
+      "event_id": "rev_evt_mujnsb58_7dfed4d4",
+      "recorded_at": "2026-09-27T10:11:29.132Z",
+      "ipa_disposition": "VERIFIED_PRONUNCIATION",
+      "sense_disposition": "SELECT_SUPPORTED_SENSE",
+      "lifecycle_status": "APPROVED",
+      "human_review_status": "APPROVED",
+      "is_active": false
+    },
+    {
+      "learning_unit_key": "read|verb|A1|sense:1",
+      "word": "read",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "source_batch_id": "LARGE-018",
+      "unit_index_in_batch": 176,
+      "tier1_batch_id": "TIER-1-004",
+      "tier1_unit_index_in_batch": 96,
+      "original_id": "cefr_j:v1.5:line:5501",
+      "cmudict_id": "cmudict:0.7b:read:line:6989",
+      "priority_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "decision": "APPROVED",
+      "rationale": "Human reviewer verified the content and approved it.",
+      "transaction_id": "rev_txn_mujnsc7q_dc4cf7a2",
+      "event_id": "rev_evt_mujnsc7q_dc4cf7a2",
+      "recorded_at": "2026-09-27T10:11:30.518Z",
+      "ipa_disposition": "VERIFIED_PRONUNCIATION",
+      "sense_disposition": "SELECT_SUPPORTED_SENSE",
+      "lifecycle_status": "APPROVED",
+      "human_review_status": "APPROVED",
+      "is_active": false
+    },
+    {
+      "learning_unit_key": "simple|adjective|A2|sense:1",
+      "word": "simple",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "source_batch_id": "LARGE-018",
+      "unit_index_in_batch": 78,
+      "tier1_batch_id": "TIER-1-003",
+      "tier1_unit_index_in_batch": 198,
+      "original_id": "cefr_j:v1.5:line:6192",
+      "cmudict_id": "cmudict:0.7b:simple:line:7894",
+      "priority_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "decision": "APPROVED",
+      "rationale": "Human reviewer verified the content and approved it.",
+      "transaction_id": "rev_txn_mujnsdap_08784eea",
+      "event_id": "rev_evt_mujnsdap_08784eea",
+      "recorded_at": "2026-09-27T10:11:32.305Z",
+      "ipa_disposition": "VERIFIED_PRONUNCIATION",
+      "sense_disposition": "SELECT_SUPPORTED_SENSE",
+      "lifecycle_status": "APPROVED",
+      "human_review_status": "APPROVED",
+      "is_active": false
+    }
+  ],
+  "readiness_calibration": {
+    "existing_active_curated_db": 21,
+    "human_approved_staging": {
+      "before": 7,
+      "after": 12,
+      "delta": 5
+    },
+    "learner_ready_units": {
+      "before": 28,
+      "after": 33,
+      "delta": 5
+    },
+    "inventory_target": 10000,
+    "remaining_gap_to_target": {
+      "before": 9972,
+      "after": 9967,
+      "delta": -5
+    },
+    "overall_readiness_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "tier_1_queue_summary": {
+      "total_tier_1_units": 7119,
+      "approved_count": 12,
+      "pending_count": 7104,
+      "edit_required_count": 1,
+      "hold_count": 2,
+      "rejected_count": 0,
+      "progress_percent": 0.21
+    }
+  },
+  "ledger_audit": {
+    "total_ledger_events": 28,
+    "production_review_events": 15,
+    "historical_production_reviews": 10,
+    "pilot_set_b_production_reviews": 5,
+    "quarantined_test_events": 13,
+    "duplicate_production_events": 0,
+    "conflicting_decisions": 0,
+    "unique_transaction_ids": 28,
+    "all_counted_in_readiness_true": true
+  },
+  "production_safety_invariants": {
+    "production_database_mutations": 0,
+    "supabase_network_writes_executed": 0,
+    "direct_sql_executed": 0,
+    "is_active_flag_mutations": 0,
+    "staged_records_promoted_to_active": 0,
+    "staging_isolation_intact": true,
+    "rls_policies_uncompromised": true
+  },
+  "test_suite_verification": {
+    "vocabulary_tier1_qa_tests": {
+      "total": 167,
+      "passed": 167,
+      "failed": 0
+    },
+    "vocabulary_human_qa_tests": {
+      "total": 25,
+      "passed": 25,
+      "failed": 0
+    },
+    "full_vitest_suite": {
+      "test_files": 20,
+      "total_tests": 441,
+      "passed": 441,
+      "failed": 0
+    },
+    "qa_integrity_suite": {
+      "checks_total": 9,
+      "checks_passed": 9,
+      "checks_failed": 0
+    },
+    "cloudflare_worker_build": {
+      "command": "npm run build:worker",
+      "exit_code": 0,
+      "bundle_output": ".open-next/worker.js",
+      "status": "SUCCESS"
+    }
+  },
+  "git_diff_integrity": {
+    "modified_files_count": 8,
+    "untracked_new_files_count": 14,
+    "test_assertions_softened": false,
+    "hardcoded_mock_cheating": false,
+    "phantom_records_introduced": false
+  }
+}

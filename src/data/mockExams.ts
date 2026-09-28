@@ -9,7 +9,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
     targetCefr: 'A2',
     descriptionTh: 'การสอบจำลองระดับพื้นฐาน A2 Key เหมาะสำหรับนักเรียนที่ต้องการทดสอบความสามารถในการสื่อสารในชีวิตประจำวัน',
     totalDurationMinutes: 45,
-    passingScore: 120, // 120-139 is Grade C/B/A Pass
+    passingScore: 60, // 60% minimum percentage pass mark (Cambridge English Scale Grade C Pass: 120-139)
     sections: [
       {
         id: 'ket-sec-reading',
@@ -154,7 +154,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
     targetCefr: 'B1',
     descriptionTh: 'การสอบจำลองระดับ B1 Preliminary สำหรับผู้ใช้ภาษาที่สามารถสื่อสารเรื่องการงาน โรงเรียน และการท่องเที่ยวได้อย่างมั่นใจ',
     totalDurationMinutes: 60,
-    passingScore: 140, // 140-159 is Pass
+    passingScore: 60, // 60% minimum percentage pass mark (Cambridge English Scale Pass: 140-159)
     sections: [
       {
         id: 'pet-sec-reading',
@@ -280,7 +280,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
     targetCefr: 'B2',
     descriptionTh: 'การสอบจำลองระดับ B2 First เหมาะสำหรับผู้ที่ต้องการยื่นศึกษาต่อต่างประเทศหรือสมัครงานในองค์กรข้ามชาติ',
     totalDurationMinutes: 75,
-    passingScore: 160, // 160-179 is Pass
+    passingScore: 60, // 60% minimum percentage pass mark (Cambridge English Scale Pass: 160-179)
     sections: [
       {
         id: 'fce-sec-reading-use',

@@ -1,0 +1,350 @@
+{
+  "totalRecords": 10000,
+  "cefr": {
+    "A1": {
+      "total": 1164,
+      "en_source_verified": 273,
+      "en_ai_draft": 891,
+      "en_missing": 0,
+      "ipa_source_verified": 949,
+      "ipa_ai_draft": 214,
+      "ipa_missing": 1
+    },
+    "A2": {
+      "total": 1412,
+      "en_source_verified": 380,
+      "en_ai_draft": 1032,
+      "en_missing": 0,
+      "ipa_source_verified": 1131,
+      "ipa_ai_draft": 273,
+      "ipa_missing": 8
+    },
+    "B1": {
+      "total": 2494,
+      "en_source_verified": 734,
+      "en_ai_draft": 1760,
+      "en_missing": 0,
+      "ipa_source_verified": 2053,
+      "ipa_ai_draft": 426,
+      "ipa_missing": 15
+    },
+    "B2": {
+      "total": 2853,
+      "en_source_verified": 988,
+      "en_ai_draft": 1865,
+      "en_missing": 0,
+      "ipa_source_verified": 2370,
+      "ipa_ai_draft": 422,
+      "ipa_missing": 61
+    },
+    "C1": {
+      "total": 1087,
+      "en_source_verified": 385,
+      "en_ai_draft": 702,
+      "en_missing": 0,
+      "ipa_source_verified": 875,
+      "ipa_ai_draft": 132,
+      "ipa_missing": 80
+    },
+    "C2": {
+      "total": 990,
+      "en_source_verified": 440,
+      "en_ai_draft": 550,
+      "en_missing": 0,
+      "ipa_source_verified": 749,
+      "ipa_ai_draft": 90,
+      "ipa_missing": 151
+    }
+  },
+  "meaning_en": {
+    "source_verified": 3200,
+    "ai_draft": 6800,
+    "missing_or_empty": 0,
+    "short_length": [
+      {
+        "word": "again",
+        "cefr": "A1",
+        "en": "anew",
+        "id": "again|adverb|A1|sense:1"
+      },
+      {
+        "word": "bear",
+        "cefr": "A2",
+        "en": "have",
+        "id": "bear|verb|A2|sense:1"
+      }
+    ],
+    "suspicious": []
+  },
+  "ipa": {
+    "source_verified": 8127,
+    "ai_draft": 1557,
+    "missing_or_empty": 316,
+    "unresolved": 0,
+    "malformed_or_no_slashes": [],
+    "suspicious_chars": []
+  },
+  "meaning_th": {
+    "ai_draft": 10000,
+    "source_verified": 0,
+    "template_matches": 7946,
+    "template_samples": [
+      {
+        "word": "ago",
+        "th": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "almost",
+        "th": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่การลดลง ขนาดที่เล็ก หรือความขาดแคลน ในเชิงปฏิเสธหรือการปราศจากสิ่งนั้น"
+      },
+      {
+        "word": "bar",
+        "th": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับอาหาร การปรุงอาหาร และโภชนาการ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "case",
+        "th": "เหตุการณ์หรือสถานการณ์ที่เกิดขึ้นเกี่ยวกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "class",
+        "th": "กลุ่มคน องค์กร หรือหมวดหมู่ของการศึกษา การเรียนรู้ และวิชาการ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "course",
+        "th": "การกระทำหรือกิจกรรมเกี่ยวกับการศึกษา การเรียนรู้ และวิชาการ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "daughter",
+        "th": "บุคคลหรือผู้ปฏิบัติหน้าที่เกี่ยวข้องกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "dress",
+        "th": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "fish",
+        "th": "บุคคลหรือผู้ปฏิบัติหน้าที่เกี่ยวข้องกับอาหาร การปรุงอาหาร และโภชนาการ ตามนิยามเฉพาะของความหมายนี้"
+      },
+      {
+        "word": "food",
+        "th": "คำนามหมายถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้"
+      }
+    ],
+    "pure_thai_count": 9999,
+    "mixed_or_latin": [
+      {
+        "word": "jog",
+        "th": "กระตุ้นความจำ, เตือนความจำ (โดยเฉพาะในสำนวน jog someone's memory)"
+      }
+    ]
+  },
+  "example": {
+    "source_verified": 1099,
+    "ai_draft": 8901,
+    "missing_or_empty": 0,
+    "short_length_total": 190,
+    "short_length_under_4": [
+      {
+        "word": "food",
+        "ex": "food and drink",
+        "count": 3
+      },
+      {
+        "word": "front",
+        "ex": "the front lines",
+        "count": 3
+      },
+      {
+        "word": "please",
+        "ex": "please pay attention",
+        "count": 3
+      },
+      {
+        "word": "wrong",
+        "ex": "she guessed wrong",
+        "count": 3
+      },
+      {
+        "word": "again",
+        "ex": "she tried again",
+        "count": 3
+      },
+      {
+        "word": "patient",
+        "ex": "a patient smile",
+        "count": 3
+      },
+      {
+        "word": "suddenly",
+        "ex": "he stopped suddenly",
+        "count": 3
+      },
+      {
+        "word": "welcome",
+        "ex": "a welcome relief",
+        "count": 3
+      },
+      {
+        "word": "health",
+        "ex": "his delicate health",
+        "count": 3
+      },
+      {
+        "word": "successful",
+        "ex": "a successful architect",
+        "count": 3
+      },
+      {
+        "word": "current",
+        "ex": "the current topic",
+        "count": 3
+      },
+      {
+        "word": "expensive",
+        "ex": "an expensive shop",
+        "count": 3
+      },
+      {
+        "word": "famous",
+        "ex": "a famous actor",
+        "count": 3
+      },
+      {
+        "word": "huge",
+        "ex": "huge government spending",
+        "count": 3
+      },
+      {
+        "word": "top",
+        "ex": "the top shelf",
+        "count": 3
+      }
+    ],
+    "no_terminal_punct_total": 5150,
+    "no_terminal_punct": [
+      {
+        "word": "almost",
+        "ex": "the baby was almost asleep when the alarm sounded"
+      },
+      {
+        "word": "bar",
+        "ex": "he bought a hot dog and a coke at the bar"
+      },
+      {
+        "word": "book",
+        "ex": "he used a large book as a doorstop"
+      },
+      {
+        "word": "case",
+        "ex": "the musicians left their instrument cases backstage"
+      },
+      {
+        "word": "class",
+        "ex": "flirting is not unknown in college classes"
+      },
+      {
+        "word": "club",
+        "ex": "he joined a golf club"
+      },
+      {
+        "word": "course",
+        "ex": "he took a course in basket weaving"
+      },
+      {
+        "word": "daughter",
+        "ex": "her daughter cared for her in her old age"
+      },
+      {
+        "word": "dress",
+        "ex": "fastidious about his dress"
+      },
+      {
+        "word": "fish",
+        "ex": "in Japan most fish is eaten raw"
+      },
+      {
+        "word": "food",
+        "ex": "food and drink"
+      },
+      {
+        "word": "front",
+        "ex": "the front lines"
+      },
+      {
+        "word": "hair",
+        "ex": "he combed his hair"
+      },
+      {
+        "word": "home",
+        "ex": "the teacher asked how many people made up his home"
+      },
+      {
+        "word": "little",
+        "ex": "he talked little about his family"
+      }
+    ],
+    "template_fallbacks_total": 3216,
+    "template_fallbacks": [
+      {
+        "word": "also",
+        "ex": "She spoke also while explaining how the group handled general communication yesterday."
+      },
+      {
+        "word": "animal",
+        "ex": "Understanding the role of animal helps students discuss living organism voluntary movement clearly in everyday situations."
+      },
+      {
+        "word": "clock",
+        "ex": "Understanding the role of clock helps students discuss timepiece shows time day clearly in everyday situations."
+      },
+      {
+        "word": "computer",
+        "ex": "Understanding the role of computer helps students discuss machine performing calculations automatically clearly in everyday situations."
+      },
+      {
+        "word": "conversation",
+        "ex": "Understanding the role of conversation helps students discuss use speech informal exchange clearly in everyday situations."
+      },
+      {
+        "word": "dance",
+        "ex": "Understanding the role of dance helps students discuss taking series rhythmical steps clearly in everyday situations."
+      },
+      {
+        "word": "garden",
+        "ex": "Understanding the role of garden helps students discuss yard lawn adjoining house clearly in everyday situations."
+      },
+      {
+        "word": "hotel",
+        "ex": "Understanding the role of hotel helps students discuss building where travelers can clearly in everyday situations."
+      },
+      {
+        "word": "husband",
+        "ex": "Understanding the role of husband helps students discuss married man woman partner clearly in everyday situations."
+      },
+      {
+        "word": "leader",
+        "ex": "Understanding the role of leader helps students discuss person rules guides inspires clearly in everyday situations."
+      },
+      {
+        "word": "May",
+        "ex": "Understanding the role of May helps students discuss month following april preceding clearly in everyday situations."
+      },
+      {
+        "word": "maybe",
+        "ex": "She spoke maybe while explaining how the group handled general communication yesterday."
+      },
+      {
+        "word": "OK",
+        "ex": "She spoke OK while explaining how the group handled expression agreement normally occurring yesterday."
+      },
+      {
+        "word": "parent",
+        "ex": "Understanding the role of parent helps students discuss father mother one begets clearly in everyday situations."
+      },
+      {
+        "word": "smile",
+        "ex": "Understanding the role of smile helps students discuss facial expression turning corners clearly in everyday situations."
+      }
+    ]
+  }
+}

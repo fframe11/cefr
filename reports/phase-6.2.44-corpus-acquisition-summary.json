@@ -1,0 +1,22 @@
+{
+  "phase": "6.2.44",
+  "timestamp": "2026-09-28T14:56:52Z",
+  "universe_units": 10021,
+  "universe_unique_lemmas": 8776,
+  "tatoeba": {
+    "total_lines_scanned": 2037522,
+    "quality_rejected_length": 109627,
+    "quality_rejected_punct": 553,
+    "quality_rejected_vulgar": 1692,
+    "candidates_extracted": 24522,
+    "unique_lemmas_covered": 8309,
+    "duration_seconds": 11740.54
+  },
+  "kaikki": {
+    "total_entries_scanned": 21020,
+    "glosses_evaluated": 28093,
+    "records_extracted": 17371,
+    "unique_lemmas_covered": 4909,
+    "duration_seconds": 0.75
+  }
+}

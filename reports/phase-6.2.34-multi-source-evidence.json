@@ -1,0 +1,2094 @@
+{
+  "phase": "6.2.34",
+  "title": "Phase 6.2.34 — Multi-Source Lexical Evidence Expansion Audit Report",
+  "generated_at": "2026-09-27T19:09:31.970Z",
+  "master_manifest_summary": {
+    "total_sources": 7,
+    "sources": [
+      {
+        "source_id": "cefr_j",
+        "version": "1.5",
+        "sha256": "b0dd3c635f1c9a4fdf1490c7e5b7c48e8bbe55b652ad0c9860a95f98e10ae498",
+        "record_count": 7799,
+        "license": "TUFS-CEFR-J-Permissive"
+      },
+      {
+        "source_id": "octanove",
+        "version": "1.0",
+        "sha256": "18c33a407f2f89f7b8de9671c6d45fe3ea0bce45e7d2d7dcaab48d73e0f7b380",
+        "record_count": 2136,
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "source_id": "oewn",
+        "version": "2024",
+        "sha256": "a95fd823705565b6f2dc4429239d34714ea736f4dc2998ac57f1e8fcf11a6efd",
+        "record_count": 35605,
+        "license": "CC-BY-4.0"
+      },
+      {
+        "source_id": "lexitron",
+        "version": "2.0",
+        "sha256": "f7af9701d1ebfe56fd4ac802195c8adbefee8104ec7138ae922bba8ea07c6e78",
+        "record_count": 53000,
+        "license": "NECTEC-LEXiTRON-License-Agreement"
+      },
+      {
+        "source_id": "cmudict",
+        "version": "0.7b",
+        "sha256": "87f46307a6a65240b2c8c254569d608191bce07aad33aeb4b53b10088c713574",
+        "record_count": 9726,
+        "license": "BSD-2-Clause"
+      },
+      {
+        "source_id": "frequency_ngsl",
+        "version": "1.2",
+        "sha256": "2098bab8955a120a9766c6282a51d7d578c6cb0a7d946600d2ffb73ba25a0b44",
+        "record_count": 3766,
+        "license": "CC-BY-SA-4.0"
+      },
+      {
+        "source_id": "wiktionary_omw",
+        "version": "2024.1",
+        "sha256": "41fce10eb666403743dd766de3e5c3ad4ee3c4b2b29986ba1183571c4a2fd65e",
+        "record_count": 15000,
+        "license": "CC-BY-SA-4.0"
+      }
+    ]
+  },
+  "candidate_inventory_coverage": {
+    "total_candidates": 10021,
+    "level_distribution": {
+      "A1": 1168,
+      "A2": 1415,
+      "B1": 2498,
+      "B2": 2857,
+      "C1": 1090,
+      "C2": 993
+    },
+    "overall_source_coverage": {
+      "cefrj": {
+        "count": 9861,
+        "pct": "98.4"
+      },
+      "oewn": {
+        "count": 9452,
+        "pct": "94.3"
+      },
+      "lexitron": {
+        "count": 9137,
+        "pct": "91.2"
+      },
+      "wiktionary_omw": {
+        "count": 9,
+        "pct": "0.1"
+      },
+      "combined_thai": {
+        "count": 9139,
+        "pct": "91.2"
+      },
+      "cmudict": {
+        "count": 9527,
+        "pct": "95.1"
+      },
+      "frequency": {
+        "count": 5543,
+        "pct": "55.3"
+      }
+    },
+    "coverage_by_cefr_level": {
+      "A1": {
+        "total": 1168,
+        "cefrj": 1142,
+        "oewn": 985,
+        "lexitron": 1156,
+        "wiktionary_omw": 3,
+        "combined_thai": 1156,
+        "cmudict": 1152
+      },
+      "A2": {
+        "total": 1415,
+        "cefrj": 1410,
+        "oewn": 1331,
+        "lexitron": 1367,
+        "wiktionary_omw": 2,
+        "combined_thai": 1367,
+        "cmudict": 1366
+      },
+      "B1": {
+        "total": 2498,
+        "cefrj": 2449,
+        "oewn": 2421,
+        "lexitron": 2379,
+        "wiktionary_omw": 0,
+        "combined_thai": 2379,
+        "cmudict": 2422
+      },
+      "B2": {
+        "total": 2857,
+        "cefrj": 2782,
+        "oewn": 2761,
+        "lexitron": 2593,
+        "wiktionary_omw": 1,
+        "combined_thai": 2594,
+        "cmudict": 2756
+      },
+      "C1": {
+        "total": 1090,
+        "cefrj": 1088,
+        "oewn": 1037,
+        "lexitron": 893,
+        "wiktionary_omw": 1,
+        "combined_thai": 893,
+        "cmudict": 1001
+      },
+      "C2": {
+        "total": 993,
+        "cefrj": 990,
+        "oewn": 917,
+        "lexitron": 749,
+        "wiktionary_omw": 2,
+        "combined_thai": 750,
+        "cmudict": 830
+      }
+    }
+  },
+  "benchmark_100_comparison": {
+    "total": 100,
+    "p31_results": {
+      "AUTO_READY": 39,
+      "REVIEW_REQUIRED": 21,
+      "HOLD": 40
+    },
+    "p32_results": {
+      "AUTO_READY": 39,
+      "REVIEW_REQUIRED": 21,
+      "HOLD": 40
+    },
+    "p33_results": {
+      "AUTO_READY": 64,
+      "REVIEW_REQUIRED": 21,
+      "HOLD": 15
+    },
+    "p34_results": {
+      "AUTO_READY": 57,
+      "REVIEW_REQUIRED": 30,
+      "HOLD": 13,
+      "auto_ready_pct": "57%",
+      "review_required_pct": "30%",
+      "hold_pct": "13%"
+    },
+    "evidence_level_distribution": {
+      "LEVEL_1_DIRECT": 62,
+      "LEVEL_2_SECONDARY": 0,
+      "LEVEL_3_CONSENSUS": 7,
+      "LEVEL_4_AMBIGUOUS": 29,
+      "LEVEL_5_NO_EVIDENCE": 2
+    },
+    "transitions": [
+      {
+        "word": "car",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "รถยนต์",
+        "primary_definition_en": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "clean",
+        "pos": "adjective",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "(of a surface) not written or printed on",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "door",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ประตู",
+        "primary_definition_en": "a swinging or sliding barrier that will close the entrance to a room or building or vehicle",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "drink",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "กิน",
+        "primary_definition_en": "consume alcohol",
+        "gap_reasons": [],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "eat",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "use up (resources or materials)",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "call",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the characteristic sound produced by a bird",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "catch",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "attract and fix",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "church",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "โบสถ์",
+        "primary_definition_en": "one of the groups of Christians who have their own beliefs and forms of worship",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "day",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ช่วงเวลา",
+        "primary_definition_en": "time for Earth to make a complete rotation on its axis",
+        "gap_reasons": [],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "father",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "a male parent (also used as a term of address to your father)",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "feel",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "มีความรู้สึก",
+        "primary_definition_en": "undergo an emotional sensation or be in a particular state of mind",
+        "gap_reasons": [],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "card",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "a printed circuit that can be inserted into expansion slots in a computer to increase the computer's capabilities",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "check",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the state of inactivity following an interruption",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "cut",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "reduce in scope while retaining essential elements",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "dance",
+        "pos": "verb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "เต้นรำ",
+        "primary_definition_en": "move in a graceful and rhythmical way",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "dog",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "metal supports for logs in a fireplace",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "down",
+        "pos": "adverb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ลงข้างล่าง",
+        "primary_definition_en": "spatially or metaphorically from a higher to a lower level or position",
+        "gap_reasons": [],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "early",
+        "pos": "adverb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "before the usual time or the time expected",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "fast",
+        "pos": "adverb",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "quickly or rapidly (often used as a combining form)",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "face",
+        "pos": "noun",
+        "cefr": "A1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the feelings expressed on a person's face",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "film",
+        "pos": "noun",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "a medium that disseminates moving pictures",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "achieve",
+        "pos": "verb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "สำเร็จ",
+        "primary_definition_en": "to gain with effort",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "further",
+        "pos": "adjective",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ซึ่งเพิ่มเข้ามา",
+        "primary_definition_en": "more distant in especially degree",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "all",
+        "pos": "adverb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ทั้งหมด",
+        "primary_definition_en": "to a complete degree or to the full or entire extent; Completely or entirely",
+        "gap_reasons": [],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "lack",
+        "pos": "noun",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ความขาดแคลน",
+        "primary_definition_en": "the state of needing something that is absent or unavailable",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "matter",
+        "pos": "verb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "เป็นเรื่องสำคัญ",
+        "primary_definition_en": "have weight; have import, carry weight",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "elderly",
+        "pos": "adjective",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "สูงวัย",
+        "primary_definition_en": "advanced in years; (‘aged’ is pronounced as two syllables)",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "certainly",
+        "pos": "adverb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อย่างแน่นอน",
+        "primary_definition_en": "definitely or positively (‘sure’ is sometimes used informally for ‘surely’)",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "opportunity",
+        "pos": "noun",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "โอกาสที่ดี",
+        "primary_definition_en": "a possibility due to a favorable combination of circumstances",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "frighten",
+        "pos": "verb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "ทำให้กลัว",
+        "primary_definition_en": "cause fear in",
+        "gap_reasons": [],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "illegal",
+        "pos": "adjective",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ผิดกฎหมาย",
+        "primary_definition_en": "prohibited by law or by official or accepted rules",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "low",
+        "pos": "adverb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "in a low position; near the ground",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "patient",
+        "pos": "noun",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "คนป่วย",
+        "primary_definition_en": "the semantic role of an entity that is not the agent but is directly involved in or affected by the happening denoted by the verb in the clause",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "harm",
+        "pos": "verb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ทำร้าย",
+        "primary_definition_en": "cause or do harm to",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "north",
+        "pos": "adjective",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ทางเหนือ",
+        "primary_definition_en": "situated in or facing or moving toward or coming from the north",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "perhaps",
+        "pos": "adverb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "บางที",
+        "primary_definition_en": "by chance",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "show",
+        "pos": "noun",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "pretending that something is the case in order to make a good impression",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "license",
+        "pos": "verb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อนุญาต",
+        "primary_definition_en": "authorize officially",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "principal",
+        "pos": "adjective",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "สำคัญมากกว่าอย่างอื่น",
+        "primary_definition_en": "most important element",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "round",
+        "pos": "adverb",
+        "cefr": "A2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "from beginning to end; throughout",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "application",
+        "pos": "noun",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the act of bringing something to bear; using it for a particular purpose",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "own",
+        "pos": "verb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "เป็นเจ้าของ",
+        "primary_definition_en": "have ownership or possession of",
+        "gap_reasons": [],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "above",
+        "pos": "adjective",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "appearing earlier in the same text",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "half",
+        "pos": "adverb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ครึ่งหนึ่ง",
+        "primary_definition_en": "partially or to the extent of a half",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "career",
+        "pos": "noun",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อาชีพ",
+        "primary_definition_en": "the particular occupation for which you are trained",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "room",
+        "pos": "verb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "พักอาศัย",
+        "primary_definition_en": "live and take one's meals at or in",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "patient",
+        "pos": "adjective",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อดทน",
+        "primary_definition_en": "enduring trying circumstances with even temper or characterized by such endurance",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "least",
+        "pos": "adverb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อย่างน้อยที่สุด",
+        "primary_definition_en": "used to form the superlative, smallest in size or degree",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "foot",
+        "pos": "noun",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the pedal extremity of vertebrates other than human beings",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED",
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "convince",
+        "pos": "verb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "make (someone) agree, understand, or realize the truth or validity of something",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "welcome",
+        "pos": "adjective",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "giving pleasure or satisfaction or received with pleasure or freely granted",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "obviously",
+        "pos": "adverb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อย่างเห็นชัด",
+        "primary_definition_en": "unmistakably (‘plain’ is often used informally for ‘plainly’)",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "industry",
+        "pos": "noun",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "persevering determination to perform a task",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "deserve",
+        "pos": "verb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "สมควรได้รับ",
+        "primary_definition_en": "be worthy or deserving",
+        "gap_reasons": [],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "current",
+        "pos": "adjective",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "occurring in or belonging to the present time",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "second",
+        "pos": "adverb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "รองลงมา",
+        "primary_definition_en": "in the second place",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "relationship",
+        "pos": "noun",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ความสัมพันธ์",
+        "primary_definition_en": "(anthropology) relatedness or connection by blood or marriage or adoption",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 3
+      },
+      {
+        "word": "iron",
+        "pos": "verb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "รีด",
+        "primary_definition_en": "press and smooth with a heated iron",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "huge",
+        "pos": "adjective",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ใหญ่โต",
+        "primary_definition_en": "unusually great in size or amount or degree or especially extent or scope",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "suddenly",
+        "pos": "adverb",
+        "cefr": "B1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อย่างกะทันหัน",
+        "primary_definition_en": "quickly and without warning",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "say",
+        "pos": "noun",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "สิทธิในการพูด",
+        "primary_definition_en": "the chance to speak",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "detect",
+        "pos": "verb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ค้นหา",
+        "primary_definition_en": "discover or determine the existence, presence, or fact of by perception with the eyes",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "bias",
+        "pos": "adjective",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "slanting diagonally across the grain of a fabric",
+        "gap_reasons": [
+          "LEXICON_NOT_FOUND",
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "though",
+        "pos": "adverb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "อย่างไรก็ตาม",
+        "primary_definition_en": "(postpositive) however",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "cluster",
+        "pos": "noun",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "กลุ่ม",
+        "primary_definition_en": "a grouping of a number of similar things",
+        "gap_reasons": [
+          "LEXICON_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "praise",
+        "pos": "verb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ชมเชย",
+        "primary_definition_en": "express approval of",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "characteristic",
+        "pos": "adjective",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ลักษณะพิเศษ",
+        "primary_definition_en": "typical or distinctive",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "bloody",
+        "pos": "adverb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "extremely",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "gaze",
+        "pos": "noun",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "การเพ่งมอง",
+        "primary_definition_en": "a long fixed look",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "purchase",
+        "pos": "verb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ได้มา",
+        "primary_definition_en": "obtain by purchase; acquire by means of a financial transaction",
+        "gap_reasons": [],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "equivalent",
+        "pos": "adjective",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "เท่ากับ",
+        "primary_definition_en": "being essentially equal to something",
+        "gap_reasons": [
+          "LEXICON_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "faithfully",
+        "pos": "adverb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "อย่างน่าเชื่อถือ",
+        "primary_definition_en": "in a faithful manner",
+        "gap_reasons": [
+          "LEXICON_NOT_FOUND"
+        ],
+        "candidate_translations_count": 4
+      },
+      {
+        "word": "rival",
+        "pos": "noun",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "คู่แข่ง",
+        "primary_definition_en": "the contestant you hope to defeat",
+        "gap_reasons": [],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "select",
+        "pos": "verb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "คัดเลือก",
+        "primary_definition_en": "pick out, select, or choose from a number of alternatives",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "executive",
+        "pos": "adjective",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "เกี่ยวกับการบริหาร",
+        "primary_definition_en": "having the function of carrying out plans or orders etc.",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "potentially",
+        "pos": "adverb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_5_NO_EVIDENCE",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "with a possibility of becoming actual",
+        "gap_reasons": [
+          "THAI_NOT_FOUND"
+        ],
+        "candidate_translations_count": 0
+      },
+      {
+        "word": "therapy",
+        "pos": "noun",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "การบำบัดโรค",
+        "primary_definition_en": "(medicine) the act of caring for someone (as by medication or remedial training etc.)",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "trick",
+        "pos": "verb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ใช้เล่ห์เหลี่ยม",
+        "primary_definition_en": "deceive somebody",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "latter",
+        "pos": "adjective",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ต่อมา",
+        "primary_definition_en": "referring to the second of two things or persons mentioned (or the last one or ones of several)",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "previously",
+        "pos": "adverb",
+        "cefr": "B2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "แต่ก่อน",
+        "primary_definition_en": "at an earlier time or formerly",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "absolute",
+        "pos": "noun",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "กฎซึ่งเป็นจริงเสมอ",
+        "primary_definition_en": "something that is conceived or that exists independently and not in relation to other things; something that does not depend on anything else and is beyond human control; something that is not relative",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "allege",
+        "pos": "verb",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "report or maintain",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "rich",
+        "pos": "adjective",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "มั่งคั่ง",
+        "primary_definition_en": "affording an abundant supply",
+        "gap_reasons": [
+          "CEFR_CONFLICT"
+        ],
+        "candidate_translations_count": 9
+      },
+      {
+        "word": "beforehand",
+        "pos": "adverb",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ก่อนเวลา",
+        "primary_definition_en": "ahead of time; in anticipation",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "consultancy",
+        "pos": "noun",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_5_NO_EVIDENCE",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "the practice of giving expert advice within a particular field",
+        "gap_reasons": [
+          "THAI_NOT_FOUND"
+        ],
+        "candidate_translations_count": 0
+      },
+      {
+        "word": "brief",
+        "pos": "verb",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "โดยย่อ",
+        "primary_definition_en": "give essential information to someone",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "advisory",
+        "pos": "adjective",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ที่เกี่ยวกับการให้คำปรึกษา",
+        "primary_definition_en": "giving advice",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "mutually",
+        "pos": "adverb",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ร่วมกัน",
+        "primary_definition_en": "in a mutual or shared manner",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "drawback",
+        "pos": "noun",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ข้อเสียเปรียบ",
+        "primary_definition_en": "the quality of being a hindrance",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "craft",
+        "pos": "verb",
+        "cefr": "C1",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "make by hand and with much skill",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "agency",
+        "pos": "noun",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "กรม",
+        "primary_definition_en": "an administrative unit of government",
+        "gap_reasons": [
+          "CEFR_CONFLICT"
+        ],
+        "candidate_translations_count": 8
+      },
+      {
+        "word": "ally",
+        "pos": "verb",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "become an ally or associate, as by a treaty or marriage",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 5
+      },
+      {
+        "word": "averse",
+        "pos": "adjective",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ซึ่งไม่ชอบ",
+        "primary_definition_en": "(usually followed by ‘to’) strongly opposed",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "wholly",
+        "pos": "adverb",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "ทั้งหมด",
+        "primary_definition_en": "to a complete degree or to the full or entire extent; Completely or entirely",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "subsidy",
+        "pos": "noun",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "การให้ความช่วยเหลือด้านการเงิน",
+        "primary_definition_en": "a grant paid by a government to an enterprise that benefits the public",
+        "gap_reasons": [],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "automate",
+        "pos": "verb",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_3_CONSENSUS",
+        "aligned_meaning_th": "ทำให้เป็นอัตโนมัติ",
+        "primary_definition_en": "make automatic or control or operate automatically",
+        "gap_reasons": [],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "pedestrian",
+        "pos": "adjective",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "REVIEW_REQUIRED",
+        "transition": "UNKNOWN -> REVIEW_REQUIRED",
+        "evidence_tier": "LEVEL_4_AMBIGUOUS",
+        "aligned_meaning_th": null,
+        "primary_definition_en": "lacking wit or imagination",
+        "gap_reasons": [
+          "POLYSEMY_UNRESOLVED"
+        ],
+        "candidate_translations_count": 2
+      },
+      {
+        "word": "hitherto",
+        "pos": "adverb",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "จนกระทั่งเดี๋ยวนี้",
+        "primary_definition_en": "used in negative statement to describe a situation that has existed up to this point or up to the present time",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "brief",
+        "pos": "noun",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "HOLD",
+        "transition": "UNKNOWN -> HOLD",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "โดยย่อ",
+        "primary_definition_en": "a document stating the facts and points of law of a client's case",
+        "gap_reasons": [
+          "EXAMPLE_NOT_FOUND"
+        ],
+        "candidate_translations_count": 1
+      },
+      {
+        "word": "decentralize",
+        "pos": "verb",
+        "cefr": "C2",
+        "p31_decision": "UNKNOWN",
+        "p32_decision": "UNKNOWN",
+        "p33_decision": "UNKNOWN",
+        "p34_decision": "AUTO_READY",
+        "transition": "UNKNOWN -> AUTO_READY",
+        "evidence_tier": "LEVEL_1_DIRECT",
+        "aligned_meaning_th": "กระจายอำนาจ",
+        "primary_definition_en": "make less central",
+        "gap_reasons": [],
+        "candidate_translations_count": 1
+      }
+    ]
+  },
+  "benchmark_500_stratified": {
+    "total": 500,
+    "AUTO_READY": 77,
+    "REVIEW_REQUIRED": 217,
+    "HOLD": 206,
+    "evidence_levels": {
+      "LEVEL_1_DIRECT": 249,
+      "LEVEL_2_SECONDARY": 0,
+      "LEVEL_3_CONSENSUS": 1,
+      "LEVEL_4_AMBIGUOUS": 203,
+      "LEVEL_5_NO_EVIDENCE": 47
+    },
+    "gap_frequencies": {
+      "EXAMPLE_NOT_FOUND": 307,
+      "LEXICON_NOT_FOUND": 8,
+      "SENSE_NOT_FOUND": 40,
+      "THAI_NOT_FOUND": 47,
+      "IPA_NOT_FOUND": 29,
+      "POLYSEMY_UNRESOLVED": 173,
+      "CEFR_CONFLICT": 7
+    }
+  },
+  "benchmark_1000_stratified": {
+    "total": 1000,
+    "AUTO_READY": 182,
+    "REVIEW_REQUIRED": 448,
+    "HOLD": 370,
+    "evidence_levels": {
+      "LEVEL_1_DIRECT": 465,
+      "LEVEL_2_SECONDARY": 0,
+      "LEVEL_3_CONSENSUS": 1,
+      "LEVEL_4_AMBIGUOUS": 420,
+      "LEVEL_5_NO_EVIDENCE": 114
+    },
+    "gap_frequencies": {
+      "POLYSEMY_UNRESOLVED": 368,
+      "THAI_NOT_FOUND": 114,
+      "EXAMPLE_NOT_FOUND": 568,
+      "SENSE_NOT_FOUND": 66,
+      "IPA_NOT_FOUND": 63,
+      "LEXICON_NOT_FOUND": 14,
+      "CEFR_CONFLICT": 14
+    },
+    "by_level": {
+      "A1": {
+        "AUTO_READY": 20,
+        "REVIEW_REQUIRED": 99,
+        "HOLD": 48,
+        "total": 167
+      },
+      "A2": {
+        "AUTO_READY": 29,
+        "REVIEW_REQUIRED": 97,
+        "HOLD": 41,
+        "total": 167
+      },
+      "B1": {
+        "AUTO_READY": 39,
+        "REVIEW_REQUIRED": 84,
+        "HOLD": 44,
+        "total": 167
+      },
+      "B2": {
+        "AUTO_READY": 30,
+        "REVIEW_REQUIRED": 75,
+        "HOLD": 62,
+        "total": 167
+      },
+      "C1": {
+        "AUTO_READY": 34,
+        "REVIEW_REQUIRED": 56,
+        "HOLD": 76,
+        "total": 166
+      },
+      "C2": {
+        "AUTO_READY": 30,
+        "REVIEW_REQUIRED": 37,
+        "HOLD": 99,
+        "total": 166
+      }
+    }
+  },
+  "known_gap_evaluations": [
+    {
+      "word": "faithfully",
+      "pos": "adverb",
+      "target_cefr": "B2",
+      "description": "Missing in LEXiTRON 2.0; adverb derived from faithful (adj B1)",
+      "decision": "HOLD",
+      "evidence_tier": "LEVEL_3_CONSENSUS",
+      "aligned_meaning_th": "อย่างน่าเชื่อถือ",
+      "primary_definition_en": "in a faithful manner",
+      "gap_reasons": [
+        "LEXICON_NOT_FOUND"
+      ],
+      "sources_ingested": [
+        "oewn",
+        "wiktionary_omw_2024",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 4,
+      "candidate_translations": [
+        "อย่างน่าเชื่อถือ (wiktionary_omw_2024)",
+        "อย่างเชื่อถือได้ (wiktionary_omw_2024)",
+        "อย่างซื่อสัตย์ (wiktionary_omw_2024)",
+        "อย่างจงรักภักดี (wiktionary_omw_2024)"
+      ]
+    },
+    {
+      "word": "potentially",
+      "pos": "adverb",
+      "target_cefr": "B2",
+      "description": "Missing in LEXiTRON 2.0; common B2 modal adverb",
+      "decision": "HOLD",
+      "evidence_tier": "LEVEL_5_NO_EVIDENCE",
+      "aligned_meaning_th": null,
+      "primary_definition_en": "with a possibility of becoming actual",
+      "gap_reasons": [
+        "THAI_NOT_FOUND"
+      ],
+      "sources_ingested": [
+        "cefr_j",
+        "oewn",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 0,
+      "candidate_translations": []
+    },
+    {
+      "word": "consultancy",
+      "pos": "noun",
+      "target_cefr": "C1",
+      "description": "Missing in LEXiTRON 2.0; specialized C1 business noun",
+      "decision": "HOLD",
+      "evidence_tier": "LEVEL_5_NO_EVIDENCE",
+      "aligned_meaning_th": null,
+      "primary_definition_en": "the practice of giving expert advice within a particular field",
+      "gap_reasons": [
+        "THAI_NOT_FOUND"
+      ],
+      "sources_ingested": [
+        "cefr_j",
+        "oewn",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 0,
+      "candidate_translations": []
+    },
+    {
+      "word": "automate",
+      "pos": "verb",
+      "target_cefr": "C2",
+      "description": "Missing in LEXiTRON 2.0; technical C2 verb with exact secondary match",
+      "decision": "AUTO_READY",
+      "evidence_tier": "LEVEL_3_CONSENSUS",
+      "aligned_meaning_th": "ทำให้เป็นอัตโนมัติ",
+      "primary_definition_en": "make automatic or control or operate automatically",
+      "gap_reasons": [],
+      "sources_ingested": [
+        "cefr_j",
+        "oewn",
+        "wiktionary_omw_2024",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 2,
+      "candidate_translations": [
+        "ทำให้เป็นอัตโนมัติ (wiktionary_omw_2024)",
+        "ใช้เครื่องจักรอัตโนมัติ (wiktionary_omw_2024)"
+      ]
+    },
+    {
+      "word": "rich",
+      "pos": "adjective",
+      "target_cefr": "C1",
+      "description": "Polysemous word: target C1 vs CEFR-J A1 basic level mismatch",
+      "decision": "HOLD",
+      "evidence_tier": "LEVEL_3_CONSENSUS",
+      "aligned_meaning_th": "มั่งคั่ง",
+      "primary_definition_en": "affording an abundant supply",
+      "gap_reasons": [
+        "CEFR_CONFLICT"
+      ],
+      "sources_ingested": [
+        "cefr_j",
+        "oewn",
+        "lexitron_2_0",
+        "wiktionary_omw_2024",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 9,
+      "candidate_translations": [
+        "รวย (lexitron_2_0)",
+        "อุดมสมบูรณ์ (lexitron_2_0)",
+        "มีค่า (lexitron_2_0)",
+        "มัน (lexitron_2_0)",
+        "เข้มข้น (lexitron_2_0)",
+        "มั่งคั่ง (wiktionary_omw_2024)",
+        "มั่งมี (wiktionary_omw_2024)",
+        "รวย (wiktionary_omw_2024)",
+        "ร่ำรวย (wiktionary_omw_2024)"
+      ]
+    },
+    {
+      "word": "agency",
+      "pos": "noun",
+      "target_cefr": "C2",
+      "description": "Polysemous word: target C2 (philosophical agency) vs CEFR-J A2 (travel agency)",
+      "decision": "HOLD",
+      "evidence_tier": "LEVEL_3_CONSENSUS",
+      "aligned_meaning_th": "กรม",
+      "primary_definition_en": "an administrative unit of government",
+      "gap_reasons": [
+        "CEFR_CONFLICT"
+      ],
+      "sources_ingested": [
+        "cefr_j",
+        "oewn",
+        "lexitron_2_0",
+        "wiktionary_omw_2024",
+        "cmudict_0_7b",
+        "frequency_ngsl"
+      ],
+      "all_candidate_translations_count": 8,
+      "candidate_translations": [
+        "บริษัทตัวแทน (lexitron_2_0)",
+        "สำนักงานตัวแทน (lexitron_2_0)",
+        "หน่วยงานราชการ (lexitron_2_0)",
+        "หน้าที่ (lexitron_2_0)",
+        "กรม (wiktionary_omw_2024)",
+        "ทบวง (wiktionary_omw_2024)",
+        "หน่วยงาน (wiktionary_omw_2024)",
+        "หน่วยงานราชการ (wiktionary_omw_2024)"
+      ]
+    }
+  ],
+  "adversarial_suite_results": [
+    {
+      "target_word": "car",
+      "collision_word": "carpet",
+      "sentence": "The red carpet was rolled out for the guests.",
+      "target_ipa": "/kɑːɹ/",
+      "collision_ipa": "/ˈkɑːɹpət/",
+      "distinct_ipa": true,
+      "morphology_match_type": "NOT_FOUND",
+      "collision_safely_rejected": true
+    },
+    {
+      "target_word": "art",
+      "collision_word": "article",
+      "sentence": "She published a scholarly article in the medical journal.",
+      "target_ipa": "/ɑːɹt/",
+      "collision_ipa": "/ˈɑːɹtəkəl/",
+      "distinct_ipa": true,
+      "morphology_match_type": "NOT_FOUND",
+      "collision_safely_rejected": true
+    },
+    {
+      "target_word": "care",
+      "collision_word": "careful",
+      "sentence": "Please be careful when crossing the busy road.",
+      "target_ipa": "/keɹ/",
+      "collision_ipa": "/ˈkeɹfəl/",
+      "distinct_ipa": true,
+      "morphology_match_type": "NOT_FOUND",
+      "collision_safely_rejected": true
+    },
+    {
+      "target_word": "act",
+      "collision_word": "action",
+      "sentence": "Taking immediate action is crucial during an emergency.",
+      "target_ipa": "/ækt/",
+      "collision_ipa": "/ˈækʃən/",
+      "distinct_ipa": true,
+      "morphology_match_type": "NOT_FOUND",
+      "collision_safely_rejected": true
+    },
+    {
+      "target_word": "class",
+      "collision_word": "classic",
+      "sentence": "Pride and Prejudice is regarded as a classic novel.",
+      "target_ipa": "/klæs/",
+      "collision_ipa": "/kˈlæsɪk/",
+      "distinct_ipa": true,
+      "morphology_match_type": "NOT_FOUND",
+      "collision_safely_rejected": true
+    }
+  ],
+  "human_workload_simulation": {
+    "candidate_universe": 10021,
+    "baseline_manual_hours": 418,
+    "projected_auto_ready_units": 1824,
+    "projected_review_required_units": 4489,
+    "projected_hold_units": 3708,
+    "projected_p34_human_hours": 198,
+    "hours_saved": 219,
+    "workload_reduction_percentage": "52.5%"
+  },
+  "governance_and_safety": {
+    "production_db_mutated": false,
+    "vocabulary_activated": false,
+    "learner_ready_accounting": 83,
+    "user_testing_authorized": false,
+    "overall_status": "NOT_READY",
+    "mass_ai_generation_used": false,
+    "ai_drafts_isolated": true,
+    "candidate_provenance_preserved": true
+  }
+}

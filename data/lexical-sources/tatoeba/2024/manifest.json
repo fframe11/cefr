@@ -1,0 +1,23 @@
+{
+  "source_id": "tatoeba",
+  "source_name": "Tatoeba Collaborative Translation Project (English Sentences)",
+  "source_version": "2024.1",
+  "official_homepage": "https://tatoeba.org/",
+  "download_url": "https://tatoeba.org/en/downloads",
+  "dataset_format": "JSON (sentence_id, lang, text, contributor, license)",
+  "license_name": "Creative Commons Attribution 2.0 France (CC BY 2.0 FR)",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+  "license_text_available": true,
+  "commercial_use_status": "PERMITTED_WITH_ATTRIBUTION",
+  "redistribution_status": "PERMITTED_UNDER_CC_BY_2_0_FR",
+  "attribution_requirement": "Sentences from Tatoeba Project (https://tatoeba.org) contributed by community members under CC BY 2.0 FR.",
+  "scope_restriction": "TEXT_ONLY_STRICT. Audio files are strictly excluded due to heterogeneous per-file audio licenses.",
+  "share_alike_requirement": false,
+  "source_role": "PRIMARY_ATTESTED_EXAMPLE_SENTENCE_CORPUS",
+  "expected_sentences": 500,
+  "snapshot_dir": "data/lexical-sources/tatoeba/2024",
+  "source_file": "tatoeba-sentences.json",
+  "license_file": "LICENSE.txt",
+  "downloaded_at": "2026-09-28T03:30:00.000Z",
+  "sha256": "6d7164c288137229693f16529e914a2ea1aacb64e9d7ef3f5b3173951560b14a"
+}

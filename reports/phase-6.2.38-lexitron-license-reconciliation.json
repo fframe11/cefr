@@ -1,0 +1,23 @@
+{
+  "source_name": "NECTEC LEXiTRON Version 2.0 (etlex / telex)",
+  "copyright_holder": "National Electronics and Computer Technology Center (NECTEC)",
+  "release_year": 2003,
+  "license_files_verified": {
+    "LICENSE.txt": true,
+    "LICENSE-th.txt": true,
+    "manifest.json": true
+  },
+  "clauses": {
+    "section_1_purpose": "Section 1(e) explicitly permits commercial and educational application (การนำไปใช้ประโยชน์ในเชิงพาณิชย์ หรือการถ่ายทอดเทคโนโลยี).",
+    "section_3_a_redistribution_source": "Retention of copyright notice and condition list required in source code redistribution.",
+    "section_3_b_redistribution_binary": "Reproduction of copyright notice, conditions, and disclaimer required in documentation and materials.",
+    "section_3_c_mandatory_attribution": "Derived products must state: \"This product is created by the adaptation of LEXiTRON developed by NECTEC (http://www.nectec.or.th/).\"",
+    "section_3_d_naming_restriction": "Derived products must NOT use the name \"LEXiTRON\" or NECTEC endorsement without prior written permission."
+  },
+  "commercial_suitability": "PERMITTED_WITH_ATTRIBUTION",
+  "attribution_verified": true,
+  "mandatory_attribution_string": "This product is created by the adaptation of LEXiTRON developed by NECTEC (http://www.nectec.or.th/).",
+  "naming_restriction_honored": true,
+  "glova_product_storage_compliance": "COMPLIANT — Lexical data stored as dictionary evidence adapter with mandatory attribution string attached to provenance records and product documentation.",
+  "legal_status": "LICENSE_VERIFIED_COMPLIANT"
+}

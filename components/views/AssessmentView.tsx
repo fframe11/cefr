@@ -24,6 +24,14 @@ import { useAuth } from '../../context/AuthContext';
 import { submitAssessment } from '../../lib/api/assessment';
 import { saveGuestAttempt } from '../../services/storageService';
 import { useTranslation } from '../../i18n';
+import {
+  GlovaButton,
+  GlovaCard,
+  GlovaBadge,
+  GlovaProgress,
+  GlovaSectionHeader,
+  GlovaFeedbackBubble,
+} from '../ui';
 
 function toUserSkillStats(stats?: Record<string, number> | UserSkillStats): UserSkillStats {
   return {
@@ -264,16 +272,16 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
     return (
       <div className="w-full max-w-3xl mx-auto space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Results Banner */}
-        <div className="rounded-2xl bg-card border border-border/60 p-6 sm:p-8 text-center shadow-sm space-y-4">
-          <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto">
+        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
+          <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto shadow-sm">
             <Award className="w-8 h-8" />
           </div>
 
           <div>
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <GlovaBadge variant="success" size="md">
               การประเมินเสร็จสมบูรณ์
-            </span>
-            <h2 className="text-fluid-title font-bold text-foreground mt-2">
+            </GlovaBadge>
+            <h2 className="text-fluid-title font-bold text-foreground mt-3">
               ระดับภาษาอังกฤษของคุณคือ CEFR {result.estimatedLevel}
             </h2>
             <p className="text-sm text-muted-foreground mt-1 max-w-md mx-auto">
@@ -315,7 +323,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
                   Cambridge {result.targetExam}
                 </p>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
-                  เป้าหมายส่วนตัวของคุณ (สามารถปรับเปลี่ยนได้ในการตั้งค่า)
+                  เป้าหมายส่วนตัวของคุณ สามารถปรับเปลี่ยนได้ในการตั้งค่า
                 </p>
               </div>
             </div>
@@ -329,10 +337,10 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               {result.disclaimer}
             </div>
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Skill Proficiency Breakdown */}
-        <div className="rounded-xl bg-card border border-border/60 p-5 sm:p-6 shadow-xs space-y-4">
+        <GlovaCard variant="interactive" className="p-5 sm:p-6 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <BarChart3 className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
@@ -342,24 +350,19 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {Object.entries(result.skillStats).map(([skill, val]) => (
-              <div key={skill} className="p-3 rounded-lg bg-muted/30 border border-border/40 space-y-1.5">
+              <div key={skill} className="p-3 rounded-lg bg-muted/30 border border-border/40 space-y-2">
                 <div className="flex justify-between text-xs font-medium">
                   <span className="capitalize text-foreground">{t(`skills.${skill}`)}</span>
                   <span className="font-mono text-muted-foreground">{val}%</span>
                 </div>
-                <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full transition-all duration-500"
-                    style={{ width: `${val}%` }}
-                  />
-                </div>
+                <GlovaProgress value={val} max={100} size="sm" />
               </div>
             ))}
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Personalized Learning Path Recommendations */}
-        <div className="rounded-xl bg-card border border-border/60 p-5 sm:p-6 shadow-xs space-y-4">
+        <GlovaCard variant="interactive" className="p-5 sm:p-6 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <Sparkles className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
@@ -378,26 +381,32 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               </div>
             ))}
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-          <button
+          <GlovaButton
             onClick={onNavigateDashboard}
-            className="w-full sm:flex-1 py-3 px-6 rounded-xl bg-primary text-primary-foreground font-semibold text-sm flex items-center justify-center gap-2 shadow-xs hover:bg-primary/90 transition-all touch-target"
+            variant="primary"
+            size="lg"
+            className="w-full sm:flex-1"
           >
             <span>เริ่มเรียนตามแผนการเรียนรู้นี้</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </GlovaButton>
 
-          <button
+          <GlovaButton
             onClick={handleRestart}
-            className="w-full sm:w-auto py-3 px-5 rounded-xl border border-border text-muted-foreground hover:text-foreground hover:bg-muted text-sm font-medium flex items-center justify-center gap-2 transition-colors touch-target"
+            variant="outline"
+            size="lg"
+            className="w-full sm:w-auto"
           >
-            <RotateCcw className="w-4 h-4" />
+            <RotateCcw className="w-4 h-4 mr-2" />
             <span>ทำแบบประเมินอีกครั้ง</span>
-          </button>
+          </GlovaButton>
         </div>
+
+        <GlovaFeedbackBubble currentSkill="diagnostic" />
       </div>
     );
   }
@@ -409,20 +418,15 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-medium">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-foreground">แบบวัดระดับ CEFR Diagnostic Test</span>
+            <GlovaBadge variant="accent" size="sm">CEFR Diagnostic</GlovaBadge>
             <span className="text-muted-foreground">
               ข้อที่ {currentIdx + 1} จาก {DIAGNOSTIC_QUESTIONS.length}
             </span>
           </div>
-          <span className="font-mono text-primary">{progressPercent}%</span>
+          <span className="font-mono text-primary font-semibold">{progressPercent}%</span>
         </div>
 
-        <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-          <div
-            className="h-full bg-primary rounded-full transition-all duration-300"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
+        <GlovaProgress value={progressPercent} max={100} size="md" />
       </div>
 
       {/* Render Current Question */}
@@ -434,6 +438,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
         onAnswer={handleAnswer}
         showExplanationImmediately={true}
       />
+
+      <GlovaFeedbackBubble currentSkill="diagnostic" />
     </div>
   );
 };

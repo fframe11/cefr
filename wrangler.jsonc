@@ -12,7 +12,9 @@
   },
   "vars": {
     "NEXT_PUBLIC_SUPABASE_URL": "https://atmatooytieelwiarffp.supabase.co",
-    "APP_URL": "http://localhost:8787",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_ijcWQyHGOSuCilaFvt1r0w_JbH6YafO",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_ijcWQyHGOSuCilaFvt1r0w_JbH6YafO",
+    "APP_URL": "https://cefr-platform.fframew01-36b.workers.dev",
     "NODE_ENV": "production",
     "NEXT_TELEMETRY_DISABLED": "1"
   }

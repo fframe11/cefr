@@ -1,0 +1,291 @@
+{
+  "report_type": "vocabulary-dedup-report",
+  "phase": "6.2.7",
+  "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+  "primary_input_rows": 9935,
+  "valid_normalized_input_rows": 9934,
+  "malformed_rejected_rows": 1,
+  "exact_duplicates_removed": 28,
+  "duplicates": [
+    {
+      "lemma": "alignment",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:212",
+      "duplicate_original_id": "octanove:v1.0:line:547",
+      "source": "octanove",
+      "raw_headword": "alignment",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "align",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:211",
+      "duplicate_original_id": "octanove:v1.0:line:546",
+      "source": "octanove",
+      "raw_headword": "align",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "compel",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:32",
+      "duplicate_original_id": "octanove:v1.0:line:218",
+      "source": "octanove",
+      "raw_headword": "compel",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "continuity",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:95",
+      "duplicate_original_id": "octanove:v1.0:line:699",
+      "source": "octanove",
+      "raw_headword": "continuity",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "eccentric",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:26",
+      "duplicate_original_id": "octanove:v1.0:line:731",
+      "source": "octanove",
+      "raw_headword": "eccentric",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "encumber",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1156",
+      "duplicate_original_id": "octanove:v1.0:line:1261",
+      "source": "octanove",
+      "raw_headword": "encumber",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "encumbrance",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1155",
+      "duplicate_original_id": "octanove:v1.0:line:1262",
+      "source": "octanove",
+      "raw_headword": "encumbrance",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "envisage",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1114",
+      "duplicate_original_id": "octanove:v1.0:line:1315",
+      "source": "octanove",
+      "raw_headword": "envisage",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "hanging",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:85",
+      "duplicate_original_id": "octanove:v1.0:line:86",
+      "source": "octanove",
+      "raw_headword": "hanging",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "hostile",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:236",
+      "duplicate_original_id": "octanove:v1.0:line:401",
+      "source": "octanove",
+      "raw_headword": "hostile",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "hostility",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:237",
+      "duplicate_original_id": "octanove:v1.0:line:402",
+      "source": "octanove",
+      "raw_headword": "hostility",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "implicate",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:119",
+      "duplicate_original_id": "octanove:v1.0:line:169",
+      "source": "octanove",
+      "raw_headword": "implicate",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "inexhaustible",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:313",
+      "duplicate_original_id": "octanove:v1.0:line:1090",
+      "source": "octanove",
+      "raw_headword": "inexhaustible",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "insightful",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:186",
+      "duplicate_original_id": "octanove:v1.0:line:258",
+      "source": "octanove",
+      "raw_headword": "insightful",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "lamentation",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1487",
+      "duplicate_original_id": "octanove:v1.0:line:1716",
+      "source": "octanove",
+      "raw_headword": "lamentation",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "lament",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1486",
+      "duplicate_original_id": "octanove:v1.0:line:1715",
+      "source": "octanove",
+      "raw_headword": "lament",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "lapse",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:332",
+      "duplicate_original_id": "octanove:v1.0:line:651",
+      "source": "octanove",
+      "raw_headword": "lapse",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "launch",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:718",
+      "duplicate_original_id": "octanove:v1.0:line:927",
+      "source": "octanove",
+      "raw_headword": "launch",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "pendulum",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:329",
+      "duplicate_original_id": "octanove:v1.0:line:960",
+      "source": "octanove",
+      "raw_headword": "pendulum",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "posture",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1252",
+      "duplicate_original_id": "octanove:v1.0:line:1347",
+      "source": "octanove",
+      "raw_headword": "posture",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "premise",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:180",
+      "duplicate_original_id": "octanove:v1.0:line:594",
+      "source": "octanove",
+      "raw_headword": "premise",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "proliferation",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1268",
+      "duplicate_original_id": "octanove:v1.0:line:1973",
+      "source": "octanove",
+      "raw_headword": "proliferation",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "promotable",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1579",
+      "duplicate_original_id": "octanove:v1.0:line:2080",
+      "source": "octanove",
+      "raw_headword": "promotable",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "refreshingly",
+      "part_of_speech": "adverb",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:56",
+      "duplicate_original_id": "octanove:v1.0:line:686",
+      "source": "octanove",
+      "raw_headword": "refreshingly",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "relegate",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1371",
+      "duplicate_original_id": "octanove:v1.0:line:2102",
+      "source": "octanove",
+      "raw_headword": "relegate",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "swap",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:294",
+      "duplicate_original_id": "octanove:v1.0:line:746",
+      "source": "octanove",
+      "raw_headword": "swap",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "tedious",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "kept_original_id": "octanove:v1.0:line:142",
+      "duplicate_original_id": "octanove:v1.0:line:427",
+      "source": "octanove",
+      "raw_headword": "tedious",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    },
+    {
+      "lemma": "utilitarian",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "kept_original_id": "octanove:v1.0:line:1162",
+      "duplicate_original_id": "octanove:v1.0:line:1231",
+      "source": "octanove",
+      "raw_headword": "utilitarian",
+      "reason": "identical_lemma_pos_cefr_and_note"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "phase": "6.2.26",
+  "title": "Phase 6.2.26 — Real Human QA Decision Execution Log on Canonical Set B Records",
+  "executed_at": "2026-09-27T10:11:46.465Z",
+  "final_gate": "NEEDS_REWORK",
+  "readiness_before_and_after": {
+    "before": {
+      "active_curated_db": 21,
+      "human_approved_staging": 7,
+      "learner_ready": 28,
+      "gap": 9972,
+      "status": "NOT_READY"
+    },
+    "after": {
+      "active_curated_db": 21,
+      "human_approved_staging": 12,
+      "learner_ready": 33,
+      "gap": 9967,
+      "status": "NOT_READY"
+    }
+  },
+  "safety_invariants": {
+    "production_db_mutations": 0,
+    "supabase_network_writes_executed": 0,
+    "approved_units_promoted_to_active": 0,
+    "all_approved_units_is_active_false": true,
+    "user_testing_authorized": false,
+    "overall_status": "NOT_READY",
+    "canonical_identity_mutated": false
+  },
+  "reviewer_identity": {
+    "reviewer_id": "human_lexicographer_lead",
+    "is_operational_identifier_only": true,
+    "is_authenticated_proof_of_human": false,
+    "operational_limitation_notice": "reviewer_id is an operational workflow identifier only; string validation does NOT equal cryptographic authentication or proof of human identity."
+  },
+  "applied_transactions": [
+    {
+      "learning_unit_key": "keep|verb|A1|sense:1",
+      "word": "keep",
+      "cefr_level": "A1",
+      "decision": "APPROVED",
+      "lifecycle_status": "APPROVED",
+      "is_active": false,
+      "tier1_batch_id": "TIER-1-001",
+      "large_batch_id": "LARGE-016",
+      "transaction_id": "rev_txn_mujns8s2_31303ec3",
+      "event_id": "rev_evt_mujns8s2_31303ec3",
+      "reviewed_at": "2026-09-27T10:11:26.450Z",
+      "meaning_th": "เก็บรักษา, ทำต่อไป",
+      "rationale": "Human reviewer verified the content and approved it."
+    },
+    {
+      "learning_unit_key": "leave|verb|A1|sense:1",
+      "word": "leave",
+      "cefr_level": "A1",
+      "decision": "APPROVED",
+      "lifecycle_status": "APPROVED",
+      "is_active": false,
+      "tier1_batch_id": "TIER-1-001",
+      "large_batch_id": "LARGE-016",
+      "transaction_id": "rev_txn_mujnsa0h_0ccd26be",
+      "event_id": "rev_evt_mujnsa0h_0ccd26be",
+      "reviewed_at": "2026-09-27T10:11:28.049Z",
+      "meaning_th": "ออกจาก, ละทิ้ง, ทิ้งไว้",
+      "rationale": "Human reviewer verified the content and approved it."
+    },
+    {
+      "learning_unit_key": "sit|verb|A1|sense:1",
+      "word": "sit",
+      "cefr_level": "A1",
+      "decision": "APPROVED",
+      "lifecycle_status": "APPROVED",
+      "is_active": false,
+      "tier1_batch_id": "TIER-1-002",
+      "large_batch_id": "LARGE-016",
+      "transaction_id": "rev_txn_mujnsb58_7dfed4d4",
+      "event_id": "rev_evt_mujnsb58_7dfed4d4",
+      "reviewed_at": "2026-09-27T10:11:29.516Z",
+      "meaning_th": "นั่ง",
+      "rationale": "Human reviewer verified the content and approved it."
+    },
+    {
+      "learning_unit_key": "read|verb|A1|sense:1",
+      "word": "read",
+      "cefr_level": "A1",
+      "decision": "APPROVED",
+      "lifecycle_status": "APPROVED",
+      "is_active": false,
+      "tier1_batch_id": "TIER-1-004",
+      "large_batch_id": "LARGE-018",
+      "transaction_id": "rev_txn_mujnsc7q_dc4cf7a2",
+      "event_id": "rev_evt_mujnsc7q_dc4cf7a2",
+      "reviewed_at": "2026-09-27T10:11:30.902Z",
+      "meaning_th": "อ่าน",
+      "rationale": "Human reviewer verified the content and approved it."
+    },
+    {
+      "learning_unit_key": "simple|adjective|A2|sense:1",
+      "word": "simple",
+      "cefr_level": "A2",
+      "decision": "APPROVED",
+      "lifecycle_status": "APPROVED",
+      "is_active": false,
+      "tier1_batch_id": "TIER-1-003",
+      "large_batch_id": "LARGE-018",
+      "transaction_id": "rev_txn_mujnsdap_08784eea",
+      "event_id": "rev_evt_mujnsdap_08784eea",
+      "reviewed_at": "2026-09-27T10:11:32.305Z",
+      "meaning_th": "เรียบง่าย, ไม่ซับซ้อน",
+      "rationale": "Human reviewer verified the content and approved it."
+    }
+  ]
+}

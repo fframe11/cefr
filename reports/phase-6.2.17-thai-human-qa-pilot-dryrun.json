@@ -1,0 +1,258 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-human-review-v1.json",
+  "batch_id": "MULTI_BATCH",
+  "multi_batch": true,
+  "dry_run_template": true,
+  "records": [
+    {
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "rich|adjective|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "country|noun|A2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "appear|verb|A2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "clear|adjective|A2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "automatically|adverb|A2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "application|noun|B1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "wing|noun|B1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "jog|verb|B1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "abundant|adjective|B1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "aboard|adverb|B1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "commission|noun|B2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "accessibility|noun|B2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "aim|verb|B2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "abolish|verb|B2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "acute|adjective|B2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "cast|noun|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "recite|verb|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "advantageous|adjective|C1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "automatically|adverb|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "commission|noun|C2|sense:3",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "hover|verb|C2|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "adverse|adjective|C2|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema, transaction correlation, and reviewer authentication for Phase 6.2.17 pilot.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    }
+  ]
+}

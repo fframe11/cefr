@@ -1,0 +1,257 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-human-review-v1.json",
+  "batch_id": "TIER-1-001",
+  "dry_run_template": true,
+  "records": [
+    {
+      "learning_unit_key": "drill|noun|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "echo|verb|C2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "gape|verb|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "dribble|verb|C2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "grounds|noun|C1|sense:2",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "gape|verb|C1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "perch|noun|C2|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "grounds|noun|C1|sense:3",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "recess|noun|C1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "about|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "action|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "add|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "afternoon|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "age|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "alone|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "along|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "answer|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "answer|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "arrive|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "art|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "ask|verb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "away|adverb|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Dry-run validation of schema and reviewer authentication.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    }
+  ]
+}

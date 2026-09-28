@@ -1,0 +1,191 @@
+{
+  "phase": "6.2.41",
+  "title": "Phase 6.2.41 — Evidence Recovery Impact Measurement Report",
+  "generated_at": "2026-09-28T10:30:06.127Z",
+  "execution_time_ms": 13471,
+  "final_verdict": "EVIDENCE_RECOVERY_MEASURED",
+  "verdict_constraints": {
+    "is_production_ready": false,
+    "is_user_testing_ready": false,
+    "disclaimer": "EVIDENCE_RECOVERY_MEASURED confirms empirical measurement of evidence recovery yields. It does NOT authorize production promotion, lifecycle updates, or user testing."
+  },
+  "governance": {
+    "total_universe_denominator": 10021,
+    "production_db_writes": 0,
+    "schema_changes": 0,
+    "lifecycle_promotions": 0,
+    "learner_ready_units_locked": 83,
+    "learner_ready_breakdown": {
+      "active_production": 21,
+      "approved_staging": 62
+    },
+    "readiness_gap": 9917,
+    "target_learner_ready": 10000,
+    "production_status": "NOT_READY",
+    "user_testing_authorized": false
+  },
+  "baseline_snapshot": {
+    "universe_total": 10021,
+    "AUTO_CANDIDATE": 342,
+    "REVIEW_REQUIRED": 1196,
+    "HOLD": 8483,
+    "learner_ready_units_locked": 83,
+    "learner_ready_breakdown": {
+      "active_production": 21,
+      "approved_staging": 62
+    },
+    "readiness_gap": 9917,
+    "target_learner_ready": 10000,
+    "production_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_db_writes": 0,
+    "schema_changes": 0,
+    "lifecycle_promotions": 0
+  },
+  "blocker_opportunities": {
+    "total_blocked_units": 9679,
+    "category_A_example_missing": 5308,
+    "category_B_semantic_missing": 5833,
+    "category_C_polysemy_unresolved": 5273,
+    "category_D_thai_missing": 882,
+    "category_E_sense_missing": 569,
+    "category_F_cefr_conflict": 100,
+    "category_G_ipa_issue": 623,
+    "category_H_multiple_blockers": 6758,
+    "sole_blocker_total": 2921,
+    "sole_blockers_by_type": {
+      "SEMANTIC_NO_EVIDENCE": 1136,
+      "POLYSEMY_UNRESOLVED": 1146,
+      "EXAMPLE_NOT_FOUND": 365,
+      "THAI_NOT_FOUND": 262,
+      "IPA_MULTI_VARIANT": 6,
+      "IPA_NOT_FOUND": 2,
+      "CEFR_CONFLICT": 4
+    }
+  },
+  "recovery_matrix": [
+    {
+      "intervention_name": "OEWN example recovery",
+      "source_id": "oewn_examples",
+      "candidate_population": 5308,
+      "evidence_recovered": 1195,
+      "evidence_recovery_pct": "22.51%",
+      "auto_candidate_after_full_gates": 445,
+      "auto_candidate_delta": 103,
+      "review_required_after_full_gates": 1560,
+      "review_required_delta": 364,
+      "hold_after_full_gates": 8016,
+      "hold_delta": -467,
+      "recovery_rate": "1.94%",
+      "yield_of_recovered": "8.62%",
+      "main_failure_reason": "Multi-blocker coupling: 728 recovered units remain in HOLD due to persistent semantic or Thai deficits."
+    },
+    {
+      "intervention_name": "Tatoeba example recovery",
+      "source_id": "tatoeba_repo",
+      "candidate_population": 5308,
+      "evidence_recovered": 234,
+      "evidence_recovery_pct": "4.41%",
+      "auto_candidate_after_full_gates": 356,
+      "auto_candidate_delta": 14,
+      "review_required_after_full_gates": 1266,
+      "review_required_delta": 70,
+      "hold_after_full_gates": 8399,
+      "hold_delta": -84,
+      "recovery_rate": "0.26%",
+      "yield_of_recovered": "5.98%",
+      "main_failure_reason": "Inventory limitation: 5,074 units absent from repo 93-sentence subset (TRUE_SOURCE_GAP), plus secondary semantic gaps."
+    },
+    {
+      "intervention_name": "LEXiTRON lexical evidence",
+      "source_id": "lexitron_2_0",
+      "candidate_population": 1024,
+      "evidence_recovered": 113,
+      "evidence_recovery_pct": "11.04%",
+      "auto_candidate_after_full_gates": 342,
+      "auto_candidate_delta": 0,
+      "review_required_after_full_gates": 1210,
+      "review_required_delta": 14,
+      "hold_after_full_gates": 8469,
+      "hold_delta": -14,
+      "recovery_rate": "0.00%",
+      "yield_of_recovered": "0.00%",
+      "main_failure_reason": "TRUE_SOURCE_GAP: 100% of candidate lemmas (modern tech, compounds, C1/C2 derivatives) are missing from 2003 LEXiTRON."
+    },
+    {
+      "intervention_name": "OEWN semantic evidence",
+      "source_id": "oewn_definitions_and_glosses",
+      "candidate_population": 8390,
+      "evidence_recovered": 4001,
+      "evidence_recovery_pct": "47.69%",
+      "auto_candidate_after_full_gates": 757,
+      "auto_candidate_delta": 415,
+      "review_required_after_full_gates": 1615,
+      "review_required_delta": 419,
+      "hold_after_full_gates": 7649,
+      "hold_delta": -834,
+      "recovery_rate": "4.95%",
+      "yield_of_recovered": "10.37%",
+      "main_failure_reason": "Multi-blocker dead ends: 3,167 units with resolved semantics remain trapped in HOLD due to missing example sentences."
+    },
+    {
+      "intervention_name": "CMU pronunciation recovery",
+      "source_id": "cmudict_0_7b",
+      "candidate_population": 623,
+      "evidence_recovered": 129,
+      "evidence_recovery_pct": "20.71%",
+      "auto_candidate_after_full_gates": 348,
+      "auto_candidate_delta": 6,
+      "review_required_after_full_gates": 1190,
+      "review_required_delta": -6,
+      "hold_after_full_gates": 8483,
+      "hold_delta": 0,
+      "recovery_rate": "0.96%",
+      "yield_of_recovered": "4.65%",
+      "main_failure_reason": "Multi-blocker dead ends: 615 units (98.72%) simultaneously suffer from missing examples or semantic deficits."
+    }
+  ],
+  "true_bottlenecks": {
+    "largest_recoverable_population": {
+      "blocker": "SEMANTIC_NO_EVIDENCE & POLYSEMY_UNRESOLVED",
+      "intervention": "OEWN semantic evidence (definitions, synset members, relations, glosses)",
+      "candidate_population": 8390,
+      "evidence_recovered": 4001,
+      "auto_candidate_gain": 415,
+      "total_unblocked_from_hold": 834,
+      "finding": "Highest measured absolute recovery yield among all single-source interventions (+415 AUTO_CANDIDATE, 834 moved out of HOLD)."
+    },
+    "largest_population_low_recovery_yield": {
+      "blocker": "EXAMPLE_NOT_FOUND",
+      "intervention": "OEWN example recovery & Tatoeba example recovery",
+      "candidate_population": 5308,
+      "finding": "Despite affecting 5,308 units (54.84% of blocked population), example recovery achieves only 1.94% (OEWN) and 0.26% (Tatoeba) conversion to AUTO_CANDIDATE because 728 recovered units remain held by secondary semantic deficits."
+    },
+    "most_multi_blocker_dead_ends": {
+      "blocker_pair": "EXAMPLE_NOT_FOUND + SEMANTIC_NO_EVIDENCE",
+      "count": 3001,
+      "finding": "Exactly 3,001 units suffer from both missing examples AND zero semantic definition overlap. Neither example expansion alone nor semantic expansion alone can unlock these units past HOLD."
+    },
+    "currently_preventing_otherwise_strong_units": {
+      "sole_blocker_breakdown": {
+        "SEMANTIC_NO_EVIDENCE": 1136,
+        "POLYSEMY_UNRESOLVED": 1146,
+        "EXAMPLE_NOT_FOUND": 365,
+        "THAI_NOT_FOUND": 262,
+        "IPA_MULTI_VARIANT": 6,
+        "IPA_NOT_FOUND": 2,
+        "CEFR_CONFLICT": 4
+      },
+      "finding": "365 units are blocked ONLY by EXAMPLE_NOT_FOUND, 1,136 units ONLY by SEMANTIC_NO_EVIDENCE, 1,146 units ONLY by POLYSEMY_UNRESOLVED, and 8 units ONLY by IPA. These 2,655 units are otherwise fully compliant across all other gates."
+    }
+  },
+  "projection_policy": {
+    "statement": "INSUFFICIENT EVIDENCE FOR PROJECTION",
+    "reason": "Cross-dependent multi-blocker coupling (69.82% of blocked units) prevents linear extrapolation. No single source intervention can unlock thousands of units in isolation."
+  },
+  "recommended_next_intervention": {
+    "strategy": "DUAL_TRACK_COORDINATED_EVIDENCE_INGESTION",
+    "track_1": "OEWN Definition & Relation Gloss Expansion: Directly addresses the largest recoverable bottleneck (4,001 units, +415 AUTO_CANDIDATE).",
+    "track_2": "Full Tatoeba Sentence Corpus Ingestion with Strict POS Gating: Directly addresses the 365 sole-blocker units and unlocks the 3,001 co-dependent units when paired with Track 1."
+  }
+}

@@ -4,20 +4,31 @@ import { READING_BANK } from '../../data/readingBank';
 import { ReadingPassage, Question } from '../../types';
 import { QuestionCard } from '../common/QuestionCard';
 import {
-  ChevronDown,
-  ChevronUp,
   FileText,
-  Lightbulb,
+  Clock,
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  BookMarked,
+  Layers,
+  Sparkles,
 } from 'lucide-react';
 import { getReadingPassages, mapReadingDtoToPassage } from '../../lib/api/content/reading';
 import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import {
+  GlovaSectionHeader,
+  GlovaLevelBadge,
+  GlovaButton,
+  GlovaCard,
+  GlovaBadge,
+} from '../ui';
 import { useTranslation } from '../../i18n';
 
 interface ReadingViewProps {
-  onQuestionCompleted: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
+  onQuestionCompleted?: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
 }
 
 export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted }) => {
@@ -25,11 +36,12 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
   const [passages, setPassages] = useState<ReadingPassage[]>(READING_BANK);
   const [selectedPassageId, setSelectedPassageId] = useState<string>(READING_BANK[0]?.id || '');
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
-  const [mobilePassageCollapsed, setMobilePassageCollapsed] = useState(false);
+  const [activeTab, setActiveTab] = useState<'passage' | 'questions'>('passage');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [passageQuestions, setPassageQuestions] = useState<Record<string, Question[]>>({});
   const [loadingQuestions, setLoadingQuestions] = useState(false);
+  const [activeQuestionIdx, setActiveQuestionIdx] = useState(0);
 
   // Fetch passages from API
   const fetchPassages = useCallback(async () => {
@@ -86,13 +98,53 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
   useEffect(() => {
     if (currentPassage?.id) {
       fetchQuestionsForPassage(currentPassage.id);
+      setActiveQuestionIdx(0);
     }
   }, [currentPassage?.id, fetchQuestionsForPassage]);
 
   const displayedQuestions = (currentPassage && passageQuestions[currentPassage.id]) || currentPassage?.questions || [];
+  const currentQuestion = displayedQuestions[activeQuestionIdx];
+
+  const estimatedReadingMinutes = currentPassage ? Math.ceil(currentPassage.wordCount / 150) : 2;
+
+  const handleNextQuestion = () => {
+    if (activeQuestionIdx < displayedQuestions.length - 1) {
+      setActiveQuestionIdx((prev) => prev + 1);
+    } else {
+      // Advance to next passage if available
+      const currentIndex = passages.findIndex((p) => p.id === currentPassage?.id);
+      if (currentIndex !== -1 && currentIndex < passages.length - 1) {
+        setSelectedPassageId(passages[currentIndex + 1].id);
+      }
+    }
+  };
+
+  const handlePrevQuestion = () => {
+    if (activeQuestionIdx > 0) {
+      setActiveQuestionIdx((prev) => prev - 1);
+    }
+  };
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 pb-12">
+    <div className="w-full max-w-6xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+      {/* 1. Learning Context Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <GlovaSectionHeader
+          eyebrow="READING LAB"
+          title="อ่านจับใจความและวิเคราะห์บริบท"
+          description="ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge"
+        />
+
+        {currentPassage && (
+          <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
+            <GlovaLevelBadge level={currentPassage.cefrLevel} size="md" />
+            <GlovaBadge variant="outline" size="sm">
+              {currentPassage.targetExam}
+            </GlovaBadge>
+          </div>
+        )}
+      </div>
+
       {/* Passage Selector Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {passages.map((p) => {
@@ -100,138 +152,199 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
           return (
             <button
               key={p.id}
+              type="button"
               onClick={() => {
                 setSelectedPassageId(p.id);
-                setMobilePassageCollapsed(false);
+                setActiveQuestionIdx(0);
+                setActiveTab('passage');
               }}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all touch-target flex items-center gap-2 border ${
+              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-muted/40'
+                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
+                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
               }`}
             >
-              <span className="font-mono text-[10px] px-1.5 py-0.2 rounded bg-black/20 text-current">
-                {p.cefrLevel}
-              </span>
-              <span className="truncate max-w-[200px]">{p.title}</span>
+              <GlovaLevelBadge level={p.cefrLevel} size="sm" />
+              <span className="truncate max-w-[180px]">{p.title}</span>
             </button>
           );
         })}
       </div>
 
+      {/* Mobile/Tablet View Toggle (Passage vs Questions) */}
+      <div className="lg:hidden flex items-center p-1 rounded-xl bg-muted/40 border border-border/60">
+        <button
+          type="button"
+          onClick={() => setActiveTab('passage')}
+          className={`flex-1 touch-target py-2 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
+            activeTab === 'passage'
+              ? 'bg-card text-foreground shadow-xs border border-border/60'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <FileText className="w-4 h-4" aria-hidden="true" />
+          <span>บทความ</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveTab('questions')}
+          className={`flex-1 touch-target py-2 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
+            activeTab === 'questions'
+              ? 'bg-card text-foreground shadow-xs border border-border/60'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <BookOpen className="w-4 h-4" aria-hidden="true" />
+          <span>คำถาม ({displayedQuestions.length} ข้อ)</span>
+        </button>
+      </div>
+
+      {/* Loading state indicator */}
       {loading && passages.length === 0 && (
-        <div className="p-12 flex justify-center">
-          <LoadingSpinner size="lg" text="กำลังโหลดบทอ่าน..." />
+        <div className="min-h-[320px] flex items-center justify-center p-12">
+          <LoadingSpinner size="lg" text="กำลังโหลดบทความอ่าน..." />
         </div>
       )}
 
+      {/* Error state */}
       {error && (
         <ErrorMessage message={error} onRetry={fetchPassages} />
       )}
 
+      {/* 2. Main Learning Activity: Split Canvas */}
       {currentPassage && (
-        /* Main Responsive Grid: Split-screen on desktop (lg:grid-cols-12), stacked on mobile */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left: Reading Passage (7 cols desktop) */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="rounded-2xl bg-card border border-border/70 p-5 sm:p-6 shadow-xs space-y-4">
-              {/* Passage Meta Bar */}
-              <div className="flex items-center justify-between gap-2 pb-3 border-b border-border/40">
+          {/* Left Column (6 cols): Reading Passage Canvas */}
+          <div className={`lg:col-span-6 space-y-4 ${activeTab === 'questions' ? 'hidden lg:block' : 'block'}`}>
+            <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
+              {/* Passage Metadata Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                    {currentPassage.targetExam} • {currentPassage.cefrLevel}
-                  </span>
-                  <span className="text-xs text-muted-foreground hidden sm:inline">
-                    {currentPassage.wordCount} words
+                  <GlovaLevelBadge level={currentPassage.cefrLevel} size="sm" />
+                  <span className="text-xs text-muted-foreground font-mono">
+                    {currentPassage.topic}
                   </span>
                 </div>
 
-                {/* Mobile Collapse Toggle to save screen height */}
-                <button
-                  onClick={() => setMobilePassageCollapsed(!mobilePassageCollapsed)}
-                  className="lg:hidden text-xs text-primary font-medium flex items-center gap-1 touch-target"
-                >
-                  <span>{mobilePassageCollapsed ? 'ขยายเนื้อหาบทความ' : 'ย่อบทความชั่วคราว'}</span>
-                  {mobilePassageCollapsed ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
-                </button>
+                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>{currentPassage.wordCount} คำ</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>~{estimatedReadingMinutes} นาที</span>
+                  </span>
+                </div>
               </div>
 
-              <h2 className="text-fluid-subtitle font-bold text-foreground tracking-tight">
+              {/* Title */}
+              <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
                 {currentPassage.title}
-              </h2>
+              </h3>
 
-              {/* Passage Body Text */}
-              {!mobilePassageCollapsed && (
-                <div className="text-sm sm:text-base text-foreground/90 font-serif leading-relaxed whitespace-pre-line space-y-3 pt-1 break-word-safe">
-                  {currentPassage.content}
-                </div>
-              )}
+              {/* Passage Content with Optimal Typography */}
+              <div className="text-sm sm:text-base leading-relaxed text-foreground/90 space-y-3 font-normal whitespace-pre-line selection:bg-primary/20">
+                {currentPassage.content}
+              </div>
 
-              {/* Vocabulary Glossary Drawer / Box */}
+              {/* Vocabulary Glossary Drawer */}
               {currentPassage.vocabularyGlossary && currentPassage.vocabularyGlossary.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-border/40">
+                <div className="pt-4 border-t border-border/40 space-y-2">
                   <button
+                    type="button"
                     onClick={() => setIsGlossaryOpen(!isGlossaryOpen)}
-                    className="w-full flex items-center justify-between text-xs font-semibold text-primary hover:underline touch-target"
+                    className="touch-target text-xs font-semibold text-primary hover:underline flex items-center gap-1.5"
                   >
-                    <div className="flex items-center gap-1.5">
-                      <Lightbulb className="w-4 h-4" />
-                      <span>คลังคำศัพท์น่ารู้ในบทความนี้ (Glossary {currentPassage.vocabularyGlossary.length} คำ)</span>
-                    </div>
-                    {isGlossaryOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    <BookMarked className="w-4 h-4" aria-hidden="true" />
+                    <span>
+                      {isGlossaryOpen ? 'ซ่อนคลังคำศัพท์ประจำบทความ' : 'ดูคำศัพท์สำคัญในบทความ'}
+                    </span>
                   </button>
 
                   {isGlossaryOpen && (
-                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-border/30 animate-in fade-in duration-200">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 animate-in fade-in duration-200">
                       {currentPassage.vocabularyGlossary.map((item, idx) => (
-                        <div key={idx} className="p-2 rounded-lg bg-muted/40 text-xs border border-border/40">
-                          <span className="font-bold text-primary font-mono">{item.word}: </span>
-                          <span className="text-foreground">{item.meaningTh}</span>
+                        <div
+                          key={idx}
+                          className="p-2.5 rounded-lg bg-muted/30 border border-border/40 text-xs flex items-baseline justify-between gap-2"
+                        >
+                          <span className="font-mono font-bold text-foreground">{item.word}</span>
+                          <span className="text-muted-foreground text-right">{item.meaningTh}</span>
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
               )}
-            </div>
+            </GlovaCard>
           </div>
 
-          {/* Right: Comprehension Quiz (5 cols desktop) */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <FileText className="w-4 h-4 text-primary" />
-                <span>{t('reading.quiz')}</span>
-              </h3>
-              <span className="text-xs text-muted-foreground font-mono">
-                {displayedQuestions.length} ข้อ
-              </span>
+          {/* Right Column (6 cols): Comprehension Questions */}
+          <div className={`lg:col-span-6 space-y-4 ${activeTab === 'passage' ? 'hidden lg:block' : 'block'}`}>
+            <div className="flex items-center justify-between pb-2 border-b border-border/40">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
+                <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                  คำถามวัดความเข้าใจ
+                </h4>
+              </div>
+
+              {displayedQuestions.length > 0 && (
+                <span className="text-xs text-muted-foreground font-mono">
+                  ข้อที่ {activeQuestionIdx + 1} จาก {displayedQuestions.length}
+                </span>
+              )}
             </div>
 
-            {loadingQuestions && displayedQuestions.length === 0 ? (
-              <div className="p-8 flex justify-center">
-                <LoadingSpinner size="md" text="กำลังโหลดแบบฝึกหัด..." />
+            {loadingQuestions && displayedQuestions.length === 0 && (
+              <div className="min-h-[260px] flex items-center justify-center p-8">
+                <LoadingSpinner size="md" text="กำลังโหลดคำถาม..." />
               </div>
-            ) : displayedQuestions.length > 0 ? (
-              <div className="space-y-4">
-                {displayedQuestions.map((q, idx) => (
-                  <QuestionCard
-                    key={q.id}
-                    question={q}
-                    questionNumber={idx + 1}
-                    totalQuestions={displayedQuestions.length}
-                    showExplanationImmediately={true}
-                    onAnswer={(selectedKey, isCorrect) => {
-                      onQuestionCompleted(q.id, isCorrect, q.weaknessTag);
-                    }}
-                  />
-                ))}
-              </div>
-            ) : (
+            )}
+
+            {!loadingQuestions && displayedQuestions.length === 0 && (
               <EmptyState
-                title="ยังไม่มีคำถามสำหรับบทอ่านนี้"
-                description="เลือกบทอ่านอื่นเพื่อฝึกทำโจทย์"
+                title="ยังไม่มีคำถามสำหรับบทความนี้"
+                description="ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม"
               />
+            )}
+
+            {currentQuestion && (
+              <div className="space-y-4">
+                <QuestionCard
+                  key={currentQuestion.id}
+                  question={currentQuestion}
+                  questionNumber={activeQuestionIdx + 1}
+                  totalQuestions={displayedQuestions.length}
+                  onAnswer={(selectedKey, isCorrect) => {
+                    onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
+                  }}
+                  showExplanationImmediately={true}
+                />
+
+                {/* Question Navigation Controls */}
+                <div className="flex items-center justify-between pt-2">
+                  <GlovaButton
+                    variant="secondary"
+                    size="sm"
+                    leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
+                    onClick={handlePrevQuestion}
+                    disabled={activeQuestionIdx === 0}
+                  >
+                    ข้อก่อนหน้า
+                  </GlovaButton>
+
+                  <GlovaButton
+                    variant="primary"
+                    size="sm"
+                    rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
+                    onClick={handleNextQuestion}
+                  >
+                    {activeQuestionIdx < displayedQuestions.length - 1 ? 'ข้อถัดไป' : 'บทความถัดไป'}
+                  </GlovaButton>
+                </div>
+              </div>
             )}
           </div>
         </div>

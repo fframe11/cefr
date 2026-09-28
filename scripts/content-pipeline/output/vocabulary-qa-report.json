@@ -1,0 +1,65 @@
+{
+  "report_type": "vocabulary-qa-report",
+  "phase": "6.2.9",
+  "seed_version": "phase-6.2.10-v1",
+  "base_candidates_count": 9806,
+  "expanded_conflict_sense_units": 70,
+  "total_audited": 9876,
+  "structural_qa_passed_count": 9876,
+  "structural_qa_failed_rejected_count": 0,
+  "sense_disambiguation_breakdown": {
+    "NO_MATCH": 565,
+    "MATCH_AMBIGUOUS": 6058,
+    "MATCH_CONFIDENT": 3084,
+    "REVIEW_REQUIRED": 169
+  },
+  "sense_disambiguation_rules": {
+    "OPEN_CLASS_NOT_FOUND_IN_OEWN_2024": 264,
+    "MULTI_SENSE_REQUIRES_HUMAN_DISAMBIGUATION": 6058,
+    "MONOSEMOUS_OEWN_1_TO_1_SENSE": 2682,
+    "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET": 301,
+    "UNRESOLVED_CEFR_CONFLICT_REQUIRES_HUMAN_REVIEW": 169,
+    "SOURCE_NOTE_GLOSS_OVERLAP_UNIQUE_WINNER": 178,
+    "SOURCE_TOPIC_LEX_DOMAIN_UNIQUE_WINNER": 221,
+    "CAPITALIZED_TIME_NOUN_UNIQUE_SYNSET": 3
+  },
+  "pronunciation_confidence_breakdown": {
+    "HIGH_SINGLE_ENTRY": 8023,
+    "UNRESOLVED": 316,
+    "MULTI_VARIANT_ENTRY": 1238,
+    "AMBIGUOUS_HETERONYM": 127,
+    "COMPOSITE_PHRASE_FROM_TOKENS": 172
+  },
+  "pronunciation_review_status_breakdown": {
+    "SOURCE_VERIFIED": 8023,
+    "UNRESOLVED": 316,
+    "SOURCE_VERIFIED_WITH_VARIANTS": 1238,
+    "REVIEW_REQUIRED": 299
+  },
+  "coverage": {
+    "meaning_en_present": 3083,
+    "meaning_th_present": 0,
+    "phonetic_ipa_present": 9560,
+    "source_verified_ipa_present": 9261,
+    "example_sentence_present": 1111,
+    "synonyms_present": 1965,
+    "antonyms_present": 404,
+    "collocations_linked": 4590,
+    "complete_provenance": 9876
+  },
+  "qa_reason_counts": {
+    "SENSE_NO_OEWN_MATCH": 565,
+    "MEANING_MISSING_EN": 6793,
+    "MEANING_MISSING_TH": 9876,
+    "EXAMPLE_MISSING_EN": 8765,
+    "IPA_MISSING": 316,
+    "SENSE_AMBIGUOUS_REQUIRES_HUMAN_SELECTION": 6058,
+    "CEFR_CONFLICTING_EVIDENCE:CROSS_SOURCE_CEFR_CONFLICT": 138,
+    "SENSE_DISAMBIGUATION_REVIEW_REQUIRED": 169,
+    "IPA_HETERONYM_REQUIRES_POS_SENSE_REVIEW": 127,
+    "IPA_COMPOSITE_OR_VARIANT_REQUIRES_REVIEW": 172,
+    "CEFR_CONFLICTING_EVIDENCE:INTRA_SOURCE_CEFR_CONFLICT": 31,
+    "EXAMPLE_CONTAINS_ABOVE_LEVEL_VOCABULARY": 43,
+    "MEANING_SOURCE_GLOSS_CIRCULAR_SKIPPED": 1
+  }
+}

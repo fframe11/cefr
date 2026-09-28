@@ -1,0 +1,35 @@
+{
+  "report_type": "phase-6.2.44-kaikki-source-verification",
+  "phase": "6.2.44",
+  "timestamp": "2026-09-28T11:43:05Z",
+  "source_name": "Kaikki Wiktionary English-Thai",
+  "source_version": "2024.09 Dump",
+  "authoritative_endpoints": {
+    "thai_wiktionary_dump_jsonl": {
+      "url": "https://kaikki.org/dictionary/Thai/kaikki.org-dictionary-Thai.jsonl",
+      "size_bytes": 50456126,
+      "format": "JSON Lines (JSONL)",
+      "sha256": "202acdc93b99bfeb240d48ee48a9f520160a85aa951ecb653eeb3d93b0b6fb57",
+      "status": "VERIFIED_DOWNLOADABLE",
+      "http_status": 200
+    }
+  },
+  "legal_and_licensing": {
+    "license_spdx": "CC-BY-SA-3.0",
+    "license_name": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "attribution_requirement": "Mandatory: Must attribute Wiktionary contributors and Tatu Ylonen (kaikki.org / wiktextract).",
+    "share_alike_requirement": true,
+    "commercial_use_allowed": true,
+    "redistribution_allowed": true,
+    "derived_indexes_allowed": true,
+    "license_status": "VERIFIED_LICENSED"
+  },
+  "storage_policy": {
+    "raw_dump_location": "data/external-cache/kaikki/kaikki.org-dictionary-Thai.jsonl",
+    "derived_index_location": "data/external-cache/kaikki/kaikki-universe-index.json",
+    "git_status": "GITIGNORED",
+    "offline_access_only": true
+  },
+  "verification_verdict": "VERIFIED_DOWNLOADABLE"
+}

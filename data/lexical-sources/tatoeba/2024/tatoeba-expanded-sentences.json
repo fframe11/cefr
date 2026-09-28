@@ -1,0 +1,514 @@
+[
+  {
+    "sentence_id": 2001,
+    "lang": "eng",
+    "text": "She ordered a fresh green salad with olive oil.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["salad"]
+  },
+  {
+    "sentence_id": 2002,
+    "lang": "eng",
+    "text": "The children enjoyed seeing the wild animals at the city zoo.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["zoo"]
+  },
+  {
+    "sentence_id": 2003,
+    "lang": "eng",
+    "text": "He placed the heavy dictionary back on the wooden shelf.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["shelf"]
+  },
+  {
+    "sentence_id": 2004,
+    "lang": "eng",
+    "text": "The brave soldiers had to fight bravely to defend their homeland.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["fight"]
+  },
+  {
+    "sentence_id": 2005,
+    "lang": "eng",
+    "text": "I just received an important letter from my university.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["just"]
+  },
+  {
+    "sentence_id": 2006,
+    "lang": "eng",
+    "text": "She can speak French fluently and also understands German.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["also"]
+  },
+  {
+    "sentence_id": 2007,
+    "lang": "eng",
+    "text": "Please make sure that you write the correct answer on the sheet.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["correct"]
+  },
+  {
+    "sentence_id": 2008,
+    "lang": "eng",
+    "text": "The local theatre company staged an exciting historical drama.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["drama"]
+  },
+  {
+    "sentence_id": 2009,
+    "lang": "eng",
+    "text": "The museum is famous for its collection of Renaissance paintings.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["famous"]
+  },
+  {
+    "sentence_id": 2010,
+    "lang": "eng",
+    "text": "The small frightened rabbit tried to hide behind the thick bush.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["hide"]
+  },
+  {
+    "sentence_id": 2011,
+    "lang": "eng",
+    "text": "The ancient king wore a heavy crown made of solid gold.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["gold"]
+  },
+  {
+    "sentence_id": 2012,
+    "lang": "eng",
+    "text": "We need to finish our assignments before the weekend begins.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["finish"]
+  },
+  {
+    "sentence_id": 2013,
+    "lang": "eng",
+    "text": "He bought a two liter bottle of fresh mineral water.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["liter"]
+  },
+  {
+    "sentence_id": 2014,
+    "lang": "eng",
+    "text": "The strange prolonged silence in the room made everyone feel uneasy.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["uneasy"]
+  },
+  {
+    "sentence_id": 2015,
+    "lang": "eng",
+    "text": "The coastal village is famous for serving delicious fresh seafood.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["seafood"]
+  },
+  {
+    "sentence_id": 2016,
+    "lang": "eng",
+    "text": "They played an energetic game of badminton in the sports hall.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["badminton"]
+  },
+  {
+    "sentence_id": 2017,
+    "lang": "eng",
+    "text": "The shopping mall escalator broke down during the morning rush hour.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["escalator"]
+  },
+  {
+    "sentence_id": 2018,
+    "lang": "eng",
+    "text": "The final episode of the detective series was watched by millions.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["episode"]
+  },
+  {
+    "sentence_id": 2019,
+    "lang": "eng",
+    "text": "The tour package does not include the cost of travel insurance.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["include"]
+  },
+  {
+    "sentence_id": 2020,
+    "lang": "eng",
+    "text": "Bright yellow sunflower fields stretched across the entire valley.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["sunflower"]
+  },
+  {
+    "sentence_id": 2021,
+    "lang": "eng",
+    "text": "She has natural blonde hair that shines under the summer sun.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["blonde"]
+  },
+  {
+    "sentence_id": 2022,
+    "lang": "eng",
+    "text": "Every responsible adult should participate in the civic election.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["adult"]
+  },
+  {
+    "sentence_id": 2023,
+    "lang": "eng",
+    "text": "Consulting an experienced mentor is often a wise decision.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["wise"]
+  },
+  {
+    "sentence_id": 2024,
+    "lang": "eng",
+    "text": "The formal agreement must be submitted in clear written form.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["written"]
+  },
+  {
+    "sentence_id": 2025,
+    "lang": "eng",
+    "text": "The potential buyer inspected the historic house very carefully.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["buyer"]
+  },
+  {
+    "sentence_id": 2026,
+    "lang": "eng",
+    "text": "The project team worked late into the night to meet the strict deadline.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["deadline"]
+  },
+  {
+    "sentence_id": 2027,
+    "lang": "eng",
+    "text": "The quiet congregation bowed their heads in silent prayer.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["prayer"]
+  },
+  {
+    "sentence_id": 2028,
+    "lang": "eng",
+    "text": "The certified accountant audited the annual financial statements thoroughly.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["accountant"]
+  },
+  {
+    "sentence_id": 2029,
+    "lang": "eng",
+    "text": "It took us several hours to unpack all the cardboard boxes.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["unpack"]
+  },
+  {
+    "sentence_id": 2030,
+    "lang": "eng",
+    "text": "The rare astronomical comet was clearly visible through the telescope.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["comet"]
+  },
+  {
+    "sentence_id": 2031,
+    "lang": "eng",
+    "text": "The certified flight instructor demonstrated the emergency landing procedure.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["instructor"]
+  },
+  {
+    "sentence_id": 2032,
+    "lang": "eng",
+    "text": "The university handball team won the national tournament yesterday.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["handball"]
+  },
+  {
+    "sentence_id": 2033,
+    "lang": "eng",
+    "text": "Recent research in modern genetics has revealed surprising genetic variations.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["genetics"]
+  },
+  {
+    "sentence_id": 2034,
+    "lang": "eng",
+    "text": "The laboratory was equipped with modern specialized equipment.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["equipment"]
+  },
+  {
+    "sentence_id": 2035,
+    "lang": "eng",
+    "text": "The speaker opened the ceremony with an inspiring poetic quotation.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["quotation"]
+  },
+  {
+    "sentence_id": 2036,
+    "lang": "eng",
+    "text": "He plays competitive squash at the regional sports complex twice a week.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["squash"]
+  },
+  {
+    "sentence_id": 2037,
+    "lang": "eng",
+    "text": "The long-range strategic bomber returned safely to the military base.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["bomber"]
+  },
+  {
+    "sentence_id": 2038,
+    "lang": "eng",
+    "text": "A diplomatic messenger delivered the confidential sealed dispatch to the embassy.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["messenger"]
+  },
+  {
+    "sentence_id": 2039,
+    "lang": "eng",
+    "text": "He rode his powerful new motorbike along the scenic coastal highway.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["motorbike"]
+  },
+  {
+    "sentence_id": 2040,
+    "lang": "eng",
+    "text": "The remote residential community installed extensive solar panels on their roofs.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["solar"]
+  },
+  {
+    "sentence_id": 2041,
+    "lang": "eng",
+    "text": "The outdated policy proved largely ineffective in reducing traffic congestion.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["ineffective"]
+  },
+  {
+    "sentence_id": 2042,
+    "lang": "eng",
+    "text": "A beautiful golden ornament hung prominently from the festive tree.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["ornament"]
+  },
+  {
+    "sentence_id": 2043,
+    "lang": "eng",
+    "text": "A well educated populace is essential for sustainable economic growth.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["educated"]
+  },
+  {
+    "sentence_id": 2044,
+    "lang": "eng",
+    "text": "The physicist measured the tiny subatomic particle using specialized detectors.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["particle"]
+  },
+  {
+    "sentence_id": 2045,
+    "lang": "eng",
+    "text": "The children laughed as they rode the playground swing in the afternoon sun.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["swing"]
+  },
+  {
+    "sentence_id": 2046,
+    "lang": "eng",
+    "text": "She showed deep genuine compassion toward the displaced refugees.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["compassion"]
+  },
+  {
+    "sentence_id": 2047,
+    "lang": "eng",
+    "text": "The international relief charity provided food to impoverished rural communities.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["impoverished"]
+  },
+  {
+    "sentence_id": 2048,
+    "lang": "eng",
+    "text": "The medical committee debated the complex ethical implications of the clinical trial.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["ethical"]
+  },
+  {
+    "sentence_id": 2049,
+    "lang": "eng",
+    "text": "The mother ewe protected her newborn lamb from the harsh wind.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["ewe"]
+  },
+  {
+    "sentence_id": 2050,
+    "lang": "eng",
+    "text": "The office chair features an adjustable backrest for ergonomic comfort.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["adjustable"]
+  },
+  {
+    "sentence_id": 2051,
+    "lang": "eng",
+    "text": "The logical conclusion follows directly from the initial philosophical premise.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["premise"]
+  },
+  {
+    "sentence_id": 2052,
+    "lang": "eng",
+    "text": "They gathered at the club every Friday evening to play billiards.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["billiards"]
+  },
+  {
+    "sentence_id": 2053,
+    "lang": "eng",
+    "text": "A sudden powerful gush of water burst through the damaged pipe.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["gush"]
+  },
+  {
+    "sentence_id": 2054,
+    "lang": "eng",
+    "text": "The jury deliberated for several hours before delivering their final verdict.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["verdict"]
+  },
+  {
+    "sentence_id": 2055,
+    "lang": "eng",
+    "text": "She enjoys eating half a ripe pink grapefruit every morning for breakfast.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["grapefruit"]
+  },
+  {
+    "sentence_id": 2056,
+    "lang": "eng",
+    "text": "He felt comfortable enough to confide his deepest secrets to his closest friend.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["confide"]
+  },
+  {
+    "sentence_id": 2057,
+    "lang": "eng",
+    "text": "Unexpected severe blizzards will impede the rescue mission in the mountains.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["impede"]
+  },
+  {
+    "sentence_id": 2058,
+    "lang": "eng",
+    "text": "The malicious rumor was spread through subtle misleading innuendo.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["innuendo"]
+  },
+  {
+    "sentence_id": 2059,
+    "lang": "eng",
+    "text": "The board considered the ambitious commercial proposition during the executive meeting.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["proposition"]
+  },
+  {
+    "sentence_id": 2060,
+    "lang": "eng",
+    "text": "The early blooming of flowers will herald the arrival of spring.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["herald"]
+  },
+  {
+    "sentence_id": 2061,
+    "lang": "eng",
+    "text": "The powerful steam locomotive pulled the heavy freight wagons along the mountain tracks.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["locomotive"]
+  },
+  {
+    "sentence_id": 2062,
+    "lang": "eng",
+    "text": "The young violin virtuoso received a standing ovation from the amazed audience.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["virtuoso"]
+  },
+  {
+    "sentence_id": 2063,
+    "lang": "eng",
+    "text": "Rubber maintains remarkable elasticity even at relatively low temperatures.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["elasticity"]
+  },
+  {
+    "sentence_id": 2064,
+    "lang": "eng",
+    "text": "The small songbird chose a high perch on the pine branch.",
+    "contributor": "CK",
+    "license": "CC BY 2.0 FR",
+    "target_lemmas": ["perch"]
+  }
+]

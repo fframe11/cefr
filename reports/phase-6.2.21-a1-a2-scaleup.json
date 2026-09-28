@@ -1,0 +1,256 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-grounding-scaleup-v1.json",
+  "phase": "PHASE_6_2_21_CONTROLLED_A1_A2_SCALEUP",
+  "generated_at": "2026-09-27T04:05:08.158Z",
+  "sample_scope": {
+    "total_scaleup_units": 1000,
+    "a1_units": 500,
+    "a2_units": 500,
+    "sampling_method": "DETERMINISTIC_STRATIFIED_INDEX_STEP"
+  },
+  "metrics_before": {
+    "total_evaluated": 1000,
+    "source_grounded": 4,
+    "no_lexical_source": 996,
+    "pos_aligned": 4,
+    "pos_suspect": 0,
+    "pos_unknown": 996,
+    "sense_aligned": 4,
+    "sense_ambiguous": 0,
+    "sense_conflict": 0,
+    "no_lexical_match": 996,
+    "cefr_compatible": 4,
+    "cefr_incompatible": 0,
+    "candidate_ready": 4,
+    "edit_required": 0,
+    "hold_candidate": 0,
+    "special_syntax_review_required": 0,
+    "unresolved": 996,
+    "human_review_required": 1000
+  },
+  "metrics_after": {
+    "total_evaluated": 1000,
+    "source_grounded": 108,
+    "no_lexical_source": 892,
+    "pos_aligned": 108,
+    "pos_suspect": 0,
+    "pos_unknown": 892,
+    "sense_aligned": 108,
+    "sense_ambiguous": 0,
+    "sense_conflict": 0,
+    "no_lexical_match": 892,
+    "cefr_compatible": 108,
+    "cefr_incompatible": 0,
+    "candidate_ready": 108,
+    "edit_required": 0,
+    "hold_candidate": 0,
+    "special_syntax_review_required": 93,
+    "unresolved": 799,
+    "human_review_required": 1000
+  },
+  "breakdowns": {
+    "by_cefr": {
+      "A1": {
+        "total": 500,
+        "candidate_ready": 91,
+        "special_syntax": 71,
+        "unresolved": 338,
+        "source_grounded": 91
+      },
+      "A2": {
+        "total": 500,
+        "candidate_ready": 17,
+        "special_syntax": 22,
+        "unresolved": 461,
+        "source_grounded": 17
+      }
+    },
+    "by_pos": {
+      "adverb": {
+        "total": 75,
+        "candidate_ready": 16,
+        "special_syntax": 0,
+        "unresolved": 59
+      },
+      "noun": {
+        "total": 554,
+        "candidate_ready": 29,
+        "special_syntax": 0,
+        "unresolved": 525
+      },
+      "adjective": {
+        "total": 149,
+        "candidate_ready": 24,
+        "special_syntax": 0,
+        "unresolved": 125
+      },
+      "verb": {
+        "total": 129,
+        "candidate_ready": 39,
+        "special_syntax": 0,
+        "unresolved": 90
+      },
+      "preposition": {
+        "total": 24,
+        "candidate_ready": 0,
+        "special_syntax": 24,
+        "unresolved": 0
+      },
+      "pronoun": {
+        "total": 33,
+        "candidate_ready": 0,
+        "special_syntax": 33,
+        "unresolved": 0
+      },
+      "determiner": {
+        "total": 15,
+        "candidate_ready": 0,
+        "special_syntax": 15,
+        "unresolved": 0
+      },
+      "conjunction": {
+        "total": 5,
+        "candidate_ready": 0,
+        "special_syntax": 5,
+        "unresolved": 0
+      },
+      "modal_auxiliary": {
+        "total": 3,
+        "candidate_ready": 0,
+        "special_syntax": 3,
+        "unresolved": 0
+      },
+      "interjection": {
+        "total": 3,
+        "candidate_ready": 0,
+        "special_syntax": 3,
+        "unresolved": 0
+      },
+      "number": {
+        "total": 10,
+        "candidate_ready": 0,
+        "special_syntax": 10,
+        "unresolved": 0
+      }
+    },
+    "by_remediation_source": {
+      "glova_curated_lexical_registry_v1": {
+        "total": 77,
+        "candidate_ready": 75,
+        "unresolved": 2
+      },
+      "glova_contextual_thai_drafter_v2": {
+        "total": 763,
+        "candidate_ready": 3,
+        "unresolved": 707
+      },
+      "glova_offline_thai_sense_drafter_v1": {
+        "total": 160,
+        "candidate_ready": 30,
+        "unresolved": 90
+      }
+    },
+    "by_risk_tier": {
+      "TIER_3_MEDIUM_RISK": {
+        "total": 127,
+        "candidate_ready": 6,
+        "unresolved": 121
+      },
+      "TIER_2_HIGH_RISK": {
+        "total": 107,
+        "candidate_ready": 6,
+        "unresolved": 101
+      },
+      "TIER_1_CRITICAL_RISK": {
+        "total": 766,
+        "candidate_ready": 96,
+        "unresolved": 577
+      }
+    },
+    "by_lexical_source": {
+      "GLOVA_CURATED_REGISTRY": 108,
+      "NONE": 892
+    }
+  },
+  "measured_yield": {
+    "grounded_candidates_added": 104,
+    "grounded_candidate_yield_pct": 10.4,
+    "candidate_ready_units_added": 104,
+    "candidate_ready_yield_pct": 10.4,
+    "closed_class_segregated_count": 93,
+    "closed_class_rate_pct": 9.3,
+    "unresolved_reduction": 197
+  },
+  "quality_check_candidate_ready": {
+    "passed": true,
+    "inspected_count": 108,
+    "check_summary": {
+      "duplicate_learning_unit_keys": 0,
+      "missing_provenance": 0,
+      "invalid_candidate_metadata": 0,
+      "pos_inconsistencies": 0,
+      "sense_mismatches": 0,
+      "cefr_mismatches": 0,
+      "placeholder_thai_text": 0,
+      "synthetic_thai_templates": 0,
+      "unresolved_ipa": 0,
+      "raw_example_sentences_needing_refinement": 103
+    },
+    "documented_gaps": [
+      "103/108 candidate-ready units contain raw OEWN example sentences (lowercase start or lack of terminal punctuation) requiring lexicographer editing during Phase 6.2.22."
+    ]
+  },
+  "study_comparison_pilot_vs_scaleup": {
+    "pilot_200": {
+      "sample_size": 200,
+      "grounded_count": 21,
+      "grounded_rate_pct": 10.5,
+      "candidate_ready_count": 21,
+      "candidate_ready_rate_pct": 10.5,
+      "special_syntax_count": 19,
+      "special_syntax_rate_pct": 9.5,
+      "unresolved_count": 160,
+      "unresolved_rate_pct": 80
+    },
+    "scaleup_1000": {
+      "sample_size": 1000,
+      "grounded_count": 108,
+      "grounded_rate_pct": 10.8,
+      "candidate_ready_count": 108,
+      "candidate_ready_rate_pct": 10.8,
+      "special_syntax_count": 93,
+      "special_syntax_rate_pct": 9.3,
+      "unresolved_count": 799,
+      "unresolved_rate_pct": 79.9
+    },
+    "delta_between_studies": {
+      "grounded_rate_delta_pct": 0.3,
+      "candidate_ready_rate_delta_pct": 0.3,
+      "special_syntax_rate_delta_pct": -0.2
+    },
+    "observed_yield_range": {
+      "lower_bound_pct": 9.5,
+      "upper_bound_pct": 10.8,
+      "label": "OBSERVED_SAMPLE_YIELD_RANGE_NOT_EXTRAPOLATED_GUARANTEE",
+      "disclaimer": "Observed rates are empirical results on controlled samples. They must NOT be treated as a statistical guarantee for the full 10,000 dataset."
+    }
+  },
+  "decision_gate": {
+    "classification": "SCALEUP_VALIDATED",
+    "rationale": "Scale-up on 1,000 controlled units demonstrated deterministic grounding (+104 grounded, +104 candidate-ready, 10.4% yield), 0 structural defects on candidate-ready group, clean closed-class segregation (93 units), and 5-tier review queue partitioning with zero production mutations.",
+    "next_phase_recommendation": "Proceed to Phase 6.2.22: Structured Human QA Execution on Candidate-Ready Queue & Closed-Class Syntactic Adjudication."
+  },
+  "invariants_maintained": {
+    "active_curated_db": 21,
+    "human_approved_staging": 7,
+    "learner_ready": 28,
+    "target": 10000,
+    "gap": 9972,
+    "overall_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_supabase_mutations": 0,
+    "historical_human_reviews_preserved": 10,
+    "cefr_overwritten_by_lexical_source": false,
+    "zero_auto_approval_enforced": true
+  }
+}

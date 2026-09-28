@@ -1,0 +1,299 @@
+{
+  "gate_name": "GLOVA_LARGE_VOCABULARY_READINESS_GATE_V1",
+  "phase": "6.2.10",
+  "is_product_target_not_cefr_standard": true,
+  "overall_status": "NOT_READY",
+  "verdict_display": "NOT READY",
+  "user_testing_authorized": false,
+  "summary": {
+    "target_active_vocabulary": 10000,
+    "current_active_vocabulary": 21,
+    "current_approved_vocabulary": 21,
+    "current_reviewed_vocabulary": 0,
+    "current_review_required_vocabulary": 9876,
+    "current_rejected_vocabulary": 0,
+    "current_base_candidate_vocabulary": 9806,
+    "current_candidate_vocabulary": 9806,
+    "current_staged_learning_units": 9876,
+    "total_known_learning_units": 9897,
+    "total_known_vocabulary": 9897,
+    "target_collocations": 25000,
+    "current_active_collocations": 58,
+    "current_approved_collocations": 58,
+    "current_candidate_collocations": 39487,
+    "collocation_lifecycle_counts": {
+      "CANDIDATE": 978,
+      "REVIEW_REQUIRED": 38509,
+      "APPROVED": 58,
+      "ACTIVE": 58
+    },
+    "supplemental_green_learning_units": 124,
+    "total_large_staged_learning_units": 10000,
+    "total_large_inventory_learning_units": 10021,
+    "ai_draft_staged_units": 10000,
+    "unresolved_sense_units": 6792,
+    "remaining_gap_to_10000_active": 9979,
+    "human_review_status": "Human review pending"
+  },
+  "human_review_workload": {
+    "total_queue_size": 9876,
+    "tier_counts": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 2777,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 2696,
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 3669,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 734
+    },
+    "workload_by_field": {
+      "sense_selection_required": 6792,
+      "meaning_en_required": 6793,
+      "meaning_th_required": 9876,
+      "phonetic_ipa_required": 615,
+      "example_sentence_required": 8808
+    },
+    "executable_batch_plan": [
+      {
+        "batch_wave": "WAVE_1_TIER_1_FAST_TRACK",
+        "target_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+        "learning_unit_count": 2777,
+        "required_actions": "English sense and CMUdict IPA are already SOURCE_VERIFIED. Run offline sense-bound Thai translation + example draft where missing, then perform human SME review to promote ~2,980–3,005 units to ACTIVE."
+      },
+      {
+        "batch_wave": "WAVE_2_TIER_2_CORE_HIGH_FREQ_POLYSEMOUS",
+        "target_tier": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+        "learning_unit_count": 3669,
+        "required_actions": "Confirm or override recommended OEWN synset for high-frequency A1–B2 words, unlocking verified OEWN definitions/examples, followed by Thai translation & SME review."
+      },
+      {
+        "batch_wave": "WAVE_3_TIER_3_ADVANCED_POLYSEMOUS",
+        "target_tier": "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED",
+        "learning_unit_count": 2696,
+        "required_actions": "Disambiguate B2–C2 polysemous senses and heteronym pronunciations, then complete Thai translation & example QA."
+      },
+      {
+        "batch_wave": "WAVE_4_TIER_4_SPECIALIST_ADJUDICATION",
+        "target_tier": "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS",
+        "learning_unit_count": 734,
+        "required_actions": "Author closed-class grammatical definitions (301 items), open-class missing definitions (264 items), and adjudicate 99 CEFR conflict groups (169 units)."
+      }
+    ]
+  },
+  "license_and_provenance_status": {
+    "all_sources_green_licensed": true,
+    "proprietary_cambridge_oxford_scraped": false,
+    "provenance_completeness_pct": 100,
+    "sources_used": [
+      "CEFR-J v1.5 (TUFS Permissive)",
+      "Octanove C1/C2 v1.0 (CC BY-SA 4.0)",
+      "Open English WordNet 2024 (CC BY 4.0)",
+      "CMU Pronouncing Dictionary v0.7b (BSD-2-Clause)",
+      "NGSL 1.2 / NAWL 1.2 / TSL 1.2 / BSL 1.20 (CC BY-SA 4.0)"
+    ]
+  },
+  "production_safety_status": {
+    "production_supabase_modified": false,
+    "production_migrations_executed": false,
+    "runtime_llm_dependency": false,
+    "secrets_or_keys_exposed": false,
+    "active_content_bypass_possible": false
+  },
+  "criteria": {
+    "1_total_active_vocabulary": {
+      "target": 10000,
+      "actual_active": 21,
+      "actual_base_candidates": 9806,
+      "actual_staged_learning_units": 9876,
+      "actual_candidates_plus_curated": 9897,
+      "gap_to_active_target": 9979,
+      "gap_to_learning_unit_target": 103,
+      "passed": false
+    },
+    "2_cefr_level_distribution": {
+      "distribution_candidates": {
+        "A1": 1164,
+        "A2": 1411,
+        "B1": 2446,
+        "B2": 2778,
+        "C1": 1087,
+        "C2": 990
+      },
+      "all_levels_represented": true,
+      "passed": false
+    },
+    "3_usable_sense_coverage": {
+      "match_confident_candidates": 3084,
+      "match_ambiguous_candidates": 6058,
+      "no_match_candidates": 565,
+      "conflict_review_required": 169,
+      "confident_ratio_pct": 31.23,
+      "passed": false
+    },
+    "4_meaning_en_coverage": {
+      "enriched_candidates_with_meaning_en": 3083,
+      "curated_active_with_meaning_en": 21,
+      "missing_meaning_en": 6793,
+      "coverage_pct": 31.22,
+      "passed": false
+    },
+    "5_meaning_th_coverage": {
+      "enriched_candidates_with_meaning_th": 0,
+      "curated_active_with_meaning_th": 21,
+      "missing_meaning_th": 9876,
+      "coverage_pct": 0,
+      "passed": false
+    },
+    "6_pronunciation_ipa_coverage": {
+      "enriched_candidates_with_ipa": 9560,
+      "source_verified_ipa_count": 9261,
+      "curated_active_with_ipa": 21,
+      "missing_ipa": 316,
+      "coverage_pct": 96.8,
+      "verified_coverage_pct": 93.77,
+      "passed": false
+    },
+    "7_example_sentence_coverage": {
+      "enriched_candidates_with_example": 1111,
+      "source_verified_example_count": 1068,
+      "curated_active_with_example": 21,
+      "missing_example": 8765,
+      "coverage_pct": 11.25,
+      "passed": false
+    },
+    "8_pos_coverage": {
+      "distribution": {
+        "verb": 1814,
+        "adverb": 821,
+        "adjective": 2037,
+        "noun": 4903,
+        "preposition": 81,
+        "conjunction": 38,
+        "determiner": 46,
+        "pronoun": 83,
+        "modal_auxiliary": 13,
+        "interjection": 9,
+        "number": 30,
+        "infinitive_to": 1
+      },
+      "valid_pos_pct": 100,
+      "passed": true
+    },
+    "9_provenance_coverage": {
+      "complete_provenance_count": 9876,
+      "coverage_pct": 100,
+      "passed": true
+    },
+    "10_lifecycle_status_integrity": {
+      "counts": {
+        "REVIEW_REQUIRED": 9876,
+        "REVIEWED": 0,
+        "APPROVED": 21,
+        "ACTIVE": 21,
+        "REJECTED": 0
+      },
+      "unreviewed_promoted_to_active": 0,
+      "passed": true
+    },
+    "11_duplicate_and_conflict_checks": {
+      "unresolved_semantic_conflicts_in_active": 0,
+      "unresolved_semantic_conflicts_in_staging": 169,
+      "conflict_resolution_summary": {
+        "total_conflict_groups": 99,
+        "monosemous_calibration_disagreements_unsplit": 30,
+        "polysemous_conflict_groups_split": 69,
+        "additional_sense_learning_units_created": 70
+      },
+      "passed": true
+    },
+    "12_collocation_coverage": {
+      "target": 25000,
+      "curated_active_collocations": 58,
+      "extracted_oewn_collocation_candidates": 39487,
+      "collocation_lifecycle_counts": {
+        "CANDIDATE": 978,
+        "REVIEW_REQUIRED": 38509,
+        "APPROVED": 58,
+        "ACTIVE": 58
+      },
+      "total_collocation_pool": 39545,
+      "approved_collocations": 58,
+      "gap_to_approved_target": 24942,
+      "passed": false
+    },
+    "13_content_quality_qa_status": {
+      "structural_qa_failures": 0,
+      "passed": true
+    }
+  },
+  "step12_large_gate_ledger": {
+    "A_inventory_size": 10021,
+    "A1_staged_pipeline_units": 10000,
+    "A2_existing_active_units": 21,
+    "B_learner_ready_active_count": 21,
+    "C_approved_count": 21,
+    "D_review_required_count": 10000,
+    "D1_ai_draft_units_awaiting_human_review": 10000,
+    "E_unresolved_sense_count": 6792,
+    "F_missing_english_meaning": 0,
+    "F1_source_verified_english_meaning": 3207,
+    "F2_ai_draft_english_meaning": 6793,
+    "G_missing_thai_meaning": 0,
+    "G1_human_approved_thai_meaning": 21,
+    "G2_ai_draft_thai_meaning": 10000,
+    "H_missing_ipa": 316,
+    "H1_populated_ipa_in_staged": 9684,
+    "H2_source_verified_ipa_in_staged": 9383,
+    "I_missing_example": 0,
+    "I1_source_verified_example": 1150,
+    "I2_ai_draft_example": 8850,
+    "J_provenance_failures": 0,
+    "K_qa_failures": 0,
+    "L_duplicate_count": 0,
+    "target_gap": {
+      "large_target": 10000,
+      "learner_ready_active_units": 21,
+      "remaining_active_gap": 9979,
+      "staged_inventory_shortfall": 0
+    }
+  },
+  "scale_benchmarks": [
+    {
+      "tier_label": "Tier_180",
+      "input_units": 180,
+      "output_units": 180,
+      "runtime_ms": 86.91,
+      "throughput_units_per_sec": 2071.1,
+      "heap_used_mb": 543.71,
+      "rss_mb": 946.05,
+      "failure_count": 0
+    },
+    {
+      "tier_label": "Tier_1000",
+      "input_units": 1000,
+      "output_units": 1000,
+      "runtime_ms": 421.94,
+      "throughput_units_per_sec": 2370,
+      "heap_used_mb": 595.2,
+      "rss_mb": 946.82,
+      "failure_count": 0
+    },
+    {
+      "tier_label": "Tier_5000",
+      "input_units": 5000,
+      "output_units": 5000,
+      "runtime_ms": 2171.12,
+      "throughput_units_per_sec": 2303,
+      "heap_used_mb": 587.51,
+      "rss_mb": 957.52,
+      "failure_count": 0
+    },
+    {
+      "tier_label": "Full_Inventory_10000",
+      "input_units": 10000,
+      "output_units": 10000,
+      "runtime_ms": 3884.55,
+      "throughput_units_per_sec": 2574.3,
+      "heap_used_mb": 617.77,
+      "rss_mb": 969.96,
+      "failure_count": 0
+    }
+  ]
+}

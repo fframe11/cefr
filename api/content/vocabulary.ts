@@ -6,13 +6,14 @@ import { cefrLevelSchema, paginationSchema } from '../_lib/validation/common-sch
 
 const vocabularyQuerySchema = paginationSchema.extend({
   cefr_level: cefrLevelSchema.optional(),
+  part_of_speech: z.string().max(40).optional(),
   topic: z.string().max(100).optional(),
   search: z.string().max(100).optional(),
 });
 
 /**
  * GET /api/content/vocabulary
- * Public endpoint to fetch vocabulary content bank items with CEFR and topic filters.
+ * Public endpoint to fetch vocabulary content bank items with CEFR, POS, and topic filters.
  */
 export default createApiHandler(
   async ({ req }) => {
@@ -30,6 +31,9 @@ export default createApiHandler(
     if (query.cefr_level) {
       dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
     }
+    if (query.part_of_speech) {
+      dbQuery = dbQuery.eq('part_of_speech', query.part_of_speech);
+    }
     if (query.topic) {
       dbQuery = dbQuery.eq('topic', query.topic);
     }
@@ -40,6 +44,7 @@ export default createApiHandler(
     const offset = (query.page - 1) * query.limit;
     dbQuery = dbQuery
       .order('word', { ascending: true })
+      .order('id', { ascending: true })
       .range(offset, offset + query.limit - 1);
 
     const { data: items, count, error } = await dbQuery;

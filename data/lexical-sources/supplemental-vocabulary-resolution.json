@@ -1,0 +1,3504 @@
+{
+  "thai": {
+    "blog": "บล็อก / เว็บบันทึกเรื่องราว",
+    "faithfully": "อย่างซื่อสัตย์",
+    "lunchtime": "เวลาอาหารกลางวัน",
+    "potentially": "อย่างมีศักยภาพ / ที่อาจเกิดขึ้นได้",
+    "consultancy": "บริษัทที่ปรึกษา",
+    "explanatory": "ซึ่งเป็นการอธิบาย",
+    "attendee": "ผู้เข้าร่วม",
+    "automate": "ทำให้เป็นระบบอัตโนมัติ",
+    "disastrous": "หายนะ / ร้ายแรงมาก",
+    "genetically": "ทางพันธุกรรม",
+    "permanently": "อย่างถาวร",
+    "physically": "ทางกายภาพ / ร่างกาย",
+    "alternatively": "อีกทางเลือกหนึ่ง",
+    "downturn": "ภาวะเศรษฐกิจตกต่ำ",
+    "email": "อีเมล",
+    "exclusively": "โดยเฉพาะเจาะจง",
+    "unspecified": "ไม่ได้ระบุเจาะจง",
+    "dependent": "ขึ้นอยู่กับ",
+    "electronically": "ทางอิเล็กทรอนิกส์",
+    "environmentally": "ด้านสิ่งแวดล้อม",
+    "financially": "ทางการเงิน",
+    "interviewer": "ผู้สัมภาษณ์",
+    "civilian": "พลเรือน",
+    "headquarter": "สำนักงานใหญ่",
+    "credibility": "ความน่าเชื่อถือ",
+    "sustainable": "ยั่งยืน",
+    "dioxide": "ไดออกไซด์",
+    "internship": "การฝึกงาน",
+    "supposedly": "อย่างsupposed",
+    "accountability": "ความรับผิดชอบที่ตรวจสอบได้",
+    "affordable": "ราคาจับต้องได้",
+    "airfare": "ค่าตั๋วเครื่องบิน",
+    "consistently": "อย่างconsistent",
+    "coordinator": "ผู้ประสานงาน",
+    "explorer": "นักสำรวจ",
+    "healthcare": "การดูแลสุขภาพ",
+    "hotline": "สายด่วน",
+    "hugely": "อย่างhuge",
+    "hypothetical": "ตามสมมติฐาน",
+    "predictor": "ตัวทำนาย / ปัจจัยบ่งชี้",
+    "spreadsheet": "ตารางคำนวณ",
+    "tech": "เทคโนโลยี",
+    "availability": "ความพร้อมใช้งาน",
+    "predictable": "คาดเดาได้",
+    "realtor": "นายหน้าอสังหาริมทรัพย์",
+    "heating": "ระบบทำความร้อน",
+    "backpacking": "การเดินทางสะพายเป้",
+    "boldly": "อย่างbold",
+    "bravely": "อย่างbrave",
+    "feverishly": "อย่างfeverish",
+    "hand-held": "แบบพกพา / ถือในมือ",
+    "illegally": "อย่างillegal",
+    "scared": "รู้สึกกลัว",
+    "admiringly": "อย่างadmiring",
+    "affectionately": "อย่างaffectionate",
+    "artificially": "อย่างartificial",
+    "attainable": "บรรลุได้",
+    "citywide": "ทั่วทั้งเมือง",
+    "confidently": "อย่างconfident",
+    "conversely": "อย่างconverse",
+    "countrywide": "ทั่วทั้งประเทศ",
+    "dna": "ดีเอ็นเอ",
+    "eagerly": "อย่างeager",
+    "eloquence": "ความมีคารมคมคาย",
+    "fighting": "การต่อสู้",
+    "flexibly": "อย่างยืดหยุ่น",
+    "fondly": "อย่างfond",
+    "functionality": "ฟังก์ชันการทำงาน",
+    "heartbreaking": "สะเทือนใจ",
+    "homeward": "มุ่งหน้ากลับบ้าน",
+    "hospitalize": "นำส่งโรงพยาบาล",
+    "humanize": "ทำให้มีความเป็นมนุษย์",
+    "interpersonal": "interpersonal (ความหมายภาษาไทย)",
+    "involuntarily": "อย่างinvoluntary",
+    "skillfully": "อย่างskillful",
+    "stubbornly": "อย่างstubborn",
+    "suspiciously": "อย่างsuspicious",
+    "transitional": "transitional (ความหมายภาษาไทย)",
+    "unashamedly": "อย่างunashamed",
+    "uncharacteristic": "uncharacteristic (ความหมายภาษาไทย)",
+    "uncomfortably": "อย่างuncomfortab",
+    "unenthusiastic": "unenthusiastic (ความหมายภาษาไทย)",
+    "unjustly": "อย่างunjust",
+    "weakly": "อย่างweak",
+    "worrying": "worrying (ความหมายภาษาไทย)",
+    "acoustically": "ในทางเสียง / ทางอะคูสติก",
+    "aesthetically": "อย่างaesthetical",
+    "appallingly": "อย่างน่าตกใจ / อย่างน่าสะพรึงกลัว",
+    "artistically": "อย่างartistical",
+    "benignly": "อย่างมีเมตตา / ไม่เป็นอันตราย",
+    "candidly": "อย่างcandid",
+    "commercially": "อย่างcommercial",
+    "contested": "contested (ความหมายภาษาไทย)",
+    "disquieting": "disquieting (ความหมายภาษาไทย)",
+    "dutifully": "อย่างdutiful",
+    "dynamically": "อย่างdynamical",
+    "ecstatically": "อย่างปลาบปลื้มยินดี",
+    "ethically": "อย่างethical",
+    "indefinitely": "อย่างindefinite",
+    "instinctively": "อย่างinstinctive",
+    "intuitively": "อย่างintuitive",
+    "linearly": "อย่างlinear",
+    "panoramic": "panoramic (ความหมายภาษาไทย)",
+    "persuasively": "อย่างโน้มน้าวใจ",
+    "phenomenally": "อย่างphenomenal",
+    "plausibly": "อย่างplausib",
+    "prohibitively": "อย่างprohibitive",
+    "prophetic": "prophetic (ความหมายภาษาไทย)",
+    "provocatively": "อย่างprovocative",
+    "recognizably": "อย่างจดจำได้ง่าย",
+    "robustly": "อย่างrobust",
+    "smugly": "อย่างsmug",
+    "somberly": "อย่างsomber",
+    "staggering": "staggering (ความหมายภาษาไทย)",
+    "startling": "startling (ความหมายภาษาไทย)",
+    "startlingly": "อย่างstartling",
+    "structurally": "อย่างstructural",
+    "subtly": "อย่างsubt",
+    "synthetically": "โดยการสังเคราะห์",
+    "tactfully": "อย่างtactful",
+    "uninspiring": "uninspiring (ความหมายภาษาไทย)",
+    "abhorrent": "abhorrent (ความหมายภาษาไทย)",
+    "allegorical": "allegorical (ความหมายภาษาไทย)",
+    "anarchic": "anarchic (ความหมายภาษาไทย)",
+    "antithetical": "antithetical (ความหมายภาษาไทย)",
+    "athleticism": "สมรรถภาพทางกีฬา",
+    "austerely": "อย่างเคร่งครัดสมถะ",
+    "burgeoning": "burgeoning (ความหมายภาษาไทย)",
+    "callously": "อย่างcallous",
+    "centralized": "centralized (ความหมายภาษาไทย)",
+    "chronologically": "อย่างchronological",
+    "contractually": "ตามข้อตกลงในสัญญา",
+    "disparagingly": "อย่างdisparaging",
+    "ecologically": "อย่างecological",
+    "endangered": "endangered (ความหมายภาษาไทย)",
+    "euphemistic": "euphemistic (ความหมายภาษาไทย)",
+    "euphemistically": "อย่างeuphemistical",
+    "exceptionally": "อย่างexceptional",
+    "extant": "extant (ความหมายภาษาไทย)",
+    "figuratively": "อย่างfigurative",
+    "formidably": "อย่างformidab",
+    "gravitationally": "อย่างgravitational",
+    "hysterically": "อย่างhysterical",
+    "idiosyncratic": "idiosyncratic (ความหมายภาษาไทย)",
+    "impeccably": "อย่างimpeccab",
+    "imperceptibly": "อย่างimperceptib",
+    "incongruously": "อย่างincongruous",
+    "indignantly": "อย่างindignant",
+    "inexorably": "อย่างinexorab",
+    "jarring": "jarring (ความหมายภาษาไทย)",
+    "lyrically": "อย่างlyrical",
+    "painstakingly": "อย่างpainstaking",
+    "paradoxical": "paradoxical (ความหมายภาษาไทย)",
+    "pervasive": "pervasive (ความหมายภาษาไทย)",
+    "pervasiveness": "ความpervasive",
+    "remaining": "remaining (ความหมายภาษาไทย)",
+    "respected": "respected (ความหมายภาษาไทย)",
+    "rhetorically": "อย่างrhetorical",
+    "scheduled": "scheduled (ความหมายภาษาไทย)",
+    "stringently": "อย่างstringent",
+    "summarily": "อย่างsummary",
+    "surreptitiously": "อย่างsurreptitious",
+    "tactically": "อย่างtactical",
+    "unfeasible": "unfeasible (ความหมายภาษาไทย)",
+    "unnerving": "unnerving (ความหมายภาษาไทย)",
+    "unobtrusive": "unobtrusive (ความหมายภาษาไทย)",
+    "unpromising": "unpromising (ความหมายภาษาไทย)",
+    "unsuspected": "unsuspected (ความหมายภาษาไทย)",
+    "wistfully": "อย่างwistful",
+    "conditionally": "อย่างconditional",
+    "cynically": "อย่างcynical",
+    "fanatically": "อย่างfanatical",
+    "favorably": "อย่างfavorab",
+    "inherently": "อย่างinherent",
+    "temperamentally": "อย่างtemperamental",
+    "yogurt": "yogurt (ความหมายภาษาไทย)",
+    "acreage": "acreage (ความหมายภาษาไทย)",
+    "boiled": "boiled (ความหมายภาษาไทย)",
+    "camping": "camping (ความหมายภาษาไทย)",
+    "climbing": "climbing (ความหมายภาษาไทย)",
+    "crippling": "crippling (ความหมายภาษาไทย)",
+    "farcical": "farcical (ความหมายภาษาไทย)",
+    "guidebook": "guidebook (ความหมายภาษาไทย)",
+    "hiking": "hiking (ความหมายภาษาไทย)",
+    "paradoxically": "อย่างparadoxical",
+    "shoplifting": "shoplifting (ความหมายภาษาไทย)",
+    "skateboarding": "skateboarding (ความหมายภาษาไทย)",
+    "skating": "skating (ความหมายภาษาไทย)",
+    "tantalizingly": "อย่างtantalizing",
+    "unequivocally": "อย่างunequivocal",
+    "blogger": "blogger (ความหมายภาษาไทย)",
+    "cycling": "cycling (ความหมายภาษาไทย)",
+    "dating": "dating (ความหมายภาษาไทย)",
+    "divorced": "divorced (ความหมายภาษาไทย)",
+    "dj": "dj (ความหมายภาษาไทย)",
+    "dustbin": "dustbin (ความหมายภาษาไทย)",
+    "golfer": "golfer (ความหมายภาษาไทย)",
+    "hiv": "hiv (ความหมายภาษาไทย)",
+    "interviewee": "interviewee (ความหมายภาษาไทย)",
+    "lovingly": "อย่างloving",
+    "shocked": "shocked (ความหมายภาษาไทย)",
+    "snowboard": "snowboard (ความหมายภาษาไทย)",
+    "someplace": "someplace (ความหมายภาษาไทย)",
+    "uplifted": "uplifted (ความหมายภาษาไทย)",
+    "aggressively": "อย่างaggressive",
+    "archaeologist": "archaeologist (ความหมายภาษาไทย)",
+    "catering": "catering (ความหมายภาษาไทย)",
+    "counseling": "counseling (ความหมายภาษาไทย)",
+    "coziness": "ความcozi",
+    "cubism": "cubism (ความหมายภาษาไทย)",
+    "culturally": "อย่างcultural",
+    "cyberspace": "cyberspace (ความหมายภาษาไทย)",
+    "dandelion": "dandelion (ความหมายภาษาไทย)",
+    "dorm": "dorm (ความหมายภาษาไทย)",
+    "essayist": "essayist (ความหมายภาษาไทย)",
+    "exultant": "exultant (ความหมายภาษาไทย)",
+    "fantastically": "อย่างfantastical",
+    "generously": "อย่างgenerous",
+    "hospice": "hospice (ความหมายภาษาไทย)",
+    "humiliating": "humiliating (ความหมายภาษาไทย)",
+    "innovator": "innovator (ความหมายภาษาไทย)",
+    "intruder": "intruder (ความหมายภาษาไทย)",
+    "invariably": "อย่างinvariab",
+    "irresistibly": "อย่างirresistib",
+    "jogging": "jogging (ความหมายภาษาไทย)",
+    "last-minute": "last minute",
+    "patriotic": "patriotic (ความหมายภาษาไทย)",
+    "pedantic": "pedantic (ความหมายภาษาไทย)",
+    "pessimist": "pessimist (ความหมายภาษาไทย)",
+    "practicality": "practicality (ความหมายภาษาไทย)",
+    "salsa": "salsa (ความหมายภาษาไทย)",
+    "shoplift": "shoplift (ความหมายภาษาไทย)",
+    "starving": "starving (ความหมายภาษาไทย)",
+    "subculture": "subculture (ความหมายภาษาไทย)",
+    "thrilled": "thrilled (ความหมายภาษาไทย)",
+    "undreamed": "undreamed (ความหมายภาษาไทย)",
+    "unimaginable": "unimaginable (ความหมายภาษาไทย)",
+    "adrenaline": "adrenaline (ความหมายภาษาไทย)",
+    "altruistic": "altruistic (ความหมายภาษาไทย)",
+    "apprenticeship": "apprenticeship (ความหมายภาษาไทย)",
+    "blithely": "อย่างblithe",
+    "brainwashing": "brainwashing (ความหมายภาษาไทย)",
+    "concerto": "concerto (ความหมายภาษาไทย)",
+    "conscientiously": "อย่างconscientious",
+    "credibly": "อย่างcredib",
+    "cynical": "cynical (ความหมายภาษาไทย)",
+    "cynicism": "cynicism (ความหมายภาษาไทย)",
+    "exhilaration": "exhilaration (ความหมายภาษาไทย)",
+    "folktale": "folktale (ความหมายภาษาไทย)",
+    "glumly": "อย่างglum",
+    "impersonator": "impersonator (ความหมายภาษาไทย)",
+    "inexplicably": "อย่างinexplicab",
+    "intuit": "intuit (ความหมายภาษาไทย)",
+    "ludicrously": "อย่างludicrous",
+    "paternalistic": "paternalistic (ความหมายภาษาไทย)",
+    "plausibility": "plausibility (ความหมายภาษาไทย)",
+    "refurbishment": "refurbishment (ความหมายภาษาไทย)",
+    "stylistically": "อย่างstylistical",
+    "affectation": "affectation (ความหมายภาษาไทย)",
+    "angst": "angst (ความหมายภาษาไทย)",
+    "anthropological": "anthropological (ความหมายภาษาไทย)",
+    "archetypal": "archetypal (ความหมายภาษาไทย)",
+    "archival": "archival (ความหมายภาษาไทย)",
+    "authenticity": "authenticity (ความหมายภาษาไทย)",
+    "behest": "behest (ความหมายภาษาไทย)",
+    "bestseller": "bestseller (ความหมายภาษาไทย)",
+    "cinematographer": "cinematographer (ความหมายภาษาไทย)",
+    "cinematography": "cinematography (ความหมายภาษาไทย)",
+    "collider": "collider (ความหมายภาษาไทย)",
+    "confrontational": "confrontational (ความหมายภาษาไทย)",
+    "counterproductive": "counterproductive (ความหมายภาษาไทย)",
+    "dispersal": "dispersal (ความหมายภาษาไทย)",
+    "dwarfism": "dwarfism (ความหมายภาษาไทย)",
+    "ecologist": "ecologist (ความหมายภาษาไทย)",
+    "edification": "edification (ความหมายภาษาไทย)",
+    "edify": "edify (ความหมายภาษาไทย)",
+    "egalitarian": "egalitarian (ความหมายภาษาไทย)",
+    "emulsifier": "emulsifier (ความหมายภาษาไทย)",
+    "exorcism": "exorcism (ความหมายภาษาไทย)",
+    "floe": "floe (ความหมายภาษาไทย)",
+    "happenstance": "happenstance (ความหมายภาษาไทย)",
+    "hotelier": "hotelier (ความหมายภาษาไทย)",
+    "hypothesize": "hypothesize (ความหมายภาษาไทย)",
+    "impressionist": "impressionist (ความหมายภาษาไทย)",
+    "infallibility": "infallibility (ความหมายภาษาไทย)",
+    "ingratiate": "ingratiate (ความหมายภาษาไทย)",
+    "interlocking": "interlocking (ความหมายภาษาไทย)",
+    "irrelevancy": "irrelevancy (ความหมายภาษาไทย)",
+    "physiologically": "อย่างphysiological",
+    "posturing": "posturing (ความหมายภาษาไทย)",
+    "predictive": "predictive (ความหมายภาษาไทย)",
+    "prurient": "prurient (ความหมายภาษาไทย)",
+    "selectivity": "selectivity (ความหมายภาษาไทย)",
+    "tenaciously": "อย่างtenacious",
+    "tremendously": "อย่างtremendous",
+    "unsurpassed": "unsurpassed (ความหมายภาษาไทย)",
+    "vestigial": "vestigial (ความหมายภาษาไทย)",
+    "collaborative": "collaborative (ความหมายภาษาไทย)",
+    "elitist": "elitist (ความหมายภาษาไทย)",
+    "intrinsically": "อย่างintrinsical",
+    "genetic": "genetic (ความหมายภาษาไทย)",
+    "environmental": "environmental (ความหมายภาษาไทย)",
+    "annually": "อย่างannual",
+    "enthusiast": "enthusiast (ความหมายภาษาไทย)",
+    "evaluation": "evaluation (ความหมายภาษาไทย)",
+    "flavor": "flavor (ความหมายภาษาไทย)",
+    "incredibly": "อย่างincredib",
+    "recognition": "recognition (ความหมายภาษาไทย)",
+    "steadily": "อย่างsteady",
+    "dependable": "dependable (ความหมายภาษาไทย)",
+    "downsize": "downsize (ความหมายภาษาไทย)",
+    "ecological": "ecological (ความหมายภาษาไทย)",
+    "geographic": "geographic (ความหมายภาษาไทย)",
+    "globally": "อย่างglobal",
+    "sharply": "อย่างsharp",
+    "specially": "อย่างspecial",
+    "unauthorized": "unauthorized (ความหมายภาษาไทย)",
+    "unrelated": "unrelated (ความหมายภาษาไทย)",
+    "unsure": "unsure (ความหมายภาษาไทย)",
+    "effectiveness": "ความeffective",
+    "generalization": "generalization (ความหมายภาษาไทย)",
+    "politically": "อย่างpolitical",
+    "specialty": "specialty (ความหมายภาษาไทย)",
+    "technically": "อย่างtechnical",
+    "transmission": "transmission (ความหมายภาษาไทย)",
+    "half-price": "ครึ่งราคา",
+    "bank account": "บัญชีธนาคาร",
+    "last minute": "นาทีสุดท้าย",
+    "cd player": "เครื่องเล่นซีดี",
+    "crossly": "อย่างหงุดหงิด",
+    "predicative": "predicative (ความหมายภาษาไทย)",
+    "swimming pool": "swimming pool (ความหมายภาษาไทย)",
+    "untrimmed": "untrimmed (ความหมายภาษาไทย)",
+    "wornout": "wornout (ความหมายภาษาไทย)",
+    "animatedly": "อย่างanimated",
+    "classical music": "classical music (ความหมายภาษาไทย)",
+    "digital camera": "digital camera (ความหมายภาษาไทย)",
+    "driver's license": "driver's license (ความหมายภาษาไทย)",
+    "first name": "first name (ความหมายภาษาไทย)",
+    "frostily": "อย่างfrosty",
+    "geologically": "อย่างgeological",
+    "hypocritically": "อย่างhypocritical",
+    "impishly": "อย่างimpish",
+    "insensitively": "อย่างinsensitive",
+    "irately": "อย่างirate",
+    "petrol station": "petrol station (ความหมายภาษาไทย)",
+    "sentimentally": "อย่างsentimental",
+    "shop assistant": "shop assistant (ความหมายภาษาไทย)",
+    "stuffily": "อย่างstuffy",
+    "swimming costume": "swimming costume (ความหมายภาษาไทย)",
+    "tautly": "อย่างtaut",
+    "unconvincingly": "อย่างunconvincing",
+    "unmusically": "อย่างunmusical",
+    "washing-up": "washing up",
+    "arduously": "อย่างarduous",
+    "attributive": "attributive (ความหมายภาษาไทย)",
+    "blubbery": "blubbery (ความหมายภาษาไทย)",
+    "circumnavigation": "circumnavigation (ความหมายภาษาไทย)",
+    "colloquially": "อย่างcolloquial",
+    "enduringly": "อย่างenduring",
+    "forlornly": "อย่างforlorn",
+    "idiomatically": "อย่างidiomatical",
+    "indolently": "อย่างindolent",
+    "indulgently": "อย่างindulgent",
+    "ingratiatingly": "อย่างingratiating",
+    "luridly": "อย่างlurid",
+    "magnanimously": "อย่างmagnanimous",
+    "methodologically": "อย่างmethodological",
+    "nostalgically": "อย่างnostalgical",
+    "precociously": "อย่างprecocious",
+    "prescriptive": "prescriptive (ความหมายภาษาไทย)",
+    "presentational": "presentational (ความหมายภาษาไทย)",
+    "spuriously": "อย่างspurious",
+    "superfluously": "อย่างsuperfluous",
+    "telescopically": "อย่างtelescopical",
+    "topographically": "อย่างtopographical",
+    "treacherously": "อย่างtreacherous",
+    "unexceptional": "unexceptional (ความหมายภาษาไทย)",
+    "unexcused": "unexcused (ความหมายภาษาไทย)",
+    "unobtrusively": "อย่างunobtrusive",
+    "air conditioning": "air conditioning (ความหมายภาษาไทย)",
+    "check-in counter": "check in counter",
+    "check-in desk": "check in desk",
+    "chest of drawers": "chest of drawers (ความหมายภาษาไทย)",
+    "definite article": "definite article (ความหมายภาษาไทย)",
+    "disc jockey": "disc jockey (ความหมายภาษาไทย)",
+    "first floor": "first floor (ความหมายภาษาไทย)",
+    "ice hockey": "ice hockey (ความหมายภาษาไทย)",
+    "ice skating": "ice skating (ความหมายภาษาไทย)",
+    "weather forecast": "weather forecast (ความหมายภาษาไทย)",
+    "snowboarding": "snowboarding (ความหมายภาษาไทย)",
+    "climate change": "climate change (ความหมายภาษาไทย)",
+    "debit card": "debit card (ความหมายภาษาไทย)",
+    "first language": "first language (ความหมายภาษาไทย)",
+    "first person": "first person (ความหมายภาษาไทย)",
+    "hard drive": "hard drive (ความหมายภาษาไทย)",
+    "second person": "second person (ความหมายภาษาไทย)",
+    "steering wheel": "steering wheel (ความหมายภาษาไทย)",
+    "cost-effective": "cost effective",
+    "courgette": "courgette (ความหมายภาษาไทย)",
+    "duvet": "duvet (ความหมายภาษาไทย)",
+    "self-worth": "self worth",
+    "webcam": "webcam (ความหมายภาษาไทย)",
+    "all-encompassing": "all encompassing",
+    "taste-maker": "taste maker",
+    "anchorperson": "anchorperson (ความหมายภาษาไทย)",
+    "cybercafe": "cybercafe (ความหมายภาษาไทย)",
+    "cybercrime": "cybercrime (ความหมายภาษาไทย)",
+    "examinee": "examinee (ความหมายภาษาไทย)",
+    "housemaster": "housemaster (ความหมายภาษาไทย)",
+    "invitingly": "อย่างinviting",
+    "layabout": "layabout (ความหมายภาษาไทย)",
+    "scholasticism": "scholasticism (ความหมายภาษาไทย)",
+    "skateboarder": "skateboarder (ความหมายภาษาไทย)",
+    "unclearly": "อย่างunclear",
+    "unimaginably": "อย่างunimaginab",
+    "untalented": "untalented (ความหมายภาษาไทย)",
+    "unthinkably": "อย่างunthinkab",
+    "blankness": "ความblank",
+    "detrimentally": "อย่างdetrimental",
+    "digitalization": "digitalization (ความหมายภาษาไทย)",
+    "fiendishly": "อย่างfiendish",
+    "maternalistic": "maternalistic (ความหมายภาษาไทย)",
+    "paywall": "paywall (ความหมายภาษาไทย)",
+    "perceptively": "อย่างperceptive",
+    "physicality": "physicality (ความหมายภาษาไทย)",
+    "remorsefully": "อย่างremorseful",
+    "scornfully": "อย่างscornful",
+    "shortlist": "shortlist (ความหมายภาษาไทย)",
+    "slackly": "อย่างslack",
+    "tastebud": "tastebud (ความหมายภาษาไทย)",
+    "untangled": "untangled (ความหมายภาษาไทย)",
+    "unwaveringly": "อย่างunwavering",
+    "buffoonery": "buffoonery (ความหมายภาษาไทย)",
+    "catastrophically": "อย่างcatastrophical",
+    "drabness": "ความdrab",
+    "ecotourism": "ecotourism (ความหมายภาษาไทย)",
+    "ephemerality": "ephemerality (ความหมายภาษาไทย)",
+    "hypnotherapy": "hypnotherapy (ความหมายภาษาไทย)",
+    "ignominiously": "อย่างignominious",
+    "inartistic": "inartistic (ความหมายภาษาไทย)",
+    "inexorability": "inexorability (ความหมายภาษาไทย)",
+    "infernally": "อย่างinfernal",
+    "liaise": "liaise (ความหมายภาษาไทย)",
+    "opulently": "อย่างopulent",
+    "patchily": "อย่างpatchy",
+    "patronizingly": "อย่างpatronizing",
+    "philanthropically": "อย่างphilanthropical",
+    "postural": "postural (ความหมายภาษาไทย)",
+    "punitively": "อย่างpunitive",
+    "rapturously": "อย่างrapturous",
+    "salivary": "salivary (ความหมายภาษาไทย)",
+    "spatially": "อย่างspatial",
+    "sulphuric": "sulphuric (ความหมายภาษาไทย)",
+    "surrealist": "surrealist (ความหมายภาษาไทย)",
+    "taciturnity": "taciturnity (ความหมายภาษาไทย)",
+    "totemic": "totemic (ความหมายภาษาไทย)",
+    "undemonstrative": "undemonstrative (ความหมายภาษาไทย)",
+    "unmediated": "unmediated (ความหมายภาษาไทย)",
+    "unobtrusiveness": "ความunobtrusive",
+    "venomously": "อย่างvenomous",
+    "characterization": "characterization (ความหมายภาษาไทย)",
+    "smoking": "smoking (ความหมายภาษาไทย)",
+    "disco": "disco (ความหมายภาษาไทย)",
+    "dressed": "dressed (ความหมายภาษาไทย)",
+    "grilled": "grilled (ความหมายภาษาไทย)",
+    "hip hop": "hip hop (ความหมายภาษาไทย)",
+    "singing": "singing (ความหมายภาษาไทย)",
+    "dusty": "dusty (ความหมายภาษาไทย)",
+    "furthest": "furthest (ความหมายภาษาไทย)",
+    "grouping": "grouping (ความหมายภาษาไทย)",
+    "main course": "main course (ความหมายภาษาไทย)",
+    "takeaway": "takeaway (ความหมายภาษาไทย)",
+    "thump": "thump (ความหมายภาษาไทย)",
+    "unwanted": "unwanted (ความหมายภาษาไทย)",
+    "addiction": "addiction (ความหมายภาษาไทย)",
+    "breakup": "breakup (ความหมายภาษาไทย)",
+    "categorization": "categorization (ความหมายภาษาไทย)",
+    "dearly": "อย่างdear",
+    "dehumanize": "dehumanize (ความหมายภาษาไทย)",
+    "denim": "denim (ความหมายภาษาไทย)",
+    "densely": "อย่างdense",
+    "divided": "divided (ความหมายภาษาไทย)",
+    "doubly": "อย่างdoub",
+    "dropout": "dropout (ความหมายภาษาไทย)",
+    "encouraging": "encouraging (ความหมายภาษาไทย)",
+    "exhausting": "exhausting (ความหมายภาษาไทย)",
+    "expressive": "expressive (ความหมายภาษาไทย)",
+    "fictional": "fictional (ความหมายภาษาไทย)",
+    "first lady": "first lady (ความหมายภาษาไทย)",
+    "fluency": "fluency (ความหมายภาษาไทย)",
+    "funk": "funk (ความหมายภาษาไทย)",
+    "furiously": "อย่างfurious",
+    "graphically": "อย่างgraphical",
+    "hatching": "hatching (ความหมายภาษาไทย)",
+    "hone": "hone (ความหมายภาษาไทย)",
+    "humiliation": "humiliation (ความหมายภาษาไทย)",
+    "iceman": "iceman (ความหมายภาษาไทย)",
+    "improved": "improved (ความหมายภาษาไทย)",
+    "ironically": "อย่างironical",
+    "ivory": "ivory (ความหมายภาษาไทย)",
+    "legendary": "legendary (ความหมายภาษาไทย)",
+    "long-distance": "long distance",
+    "mutable": "mutable (ความหมายภาษาไทย)",
+    "passionately": "อย่างpassionate",
+    "planning": "planning (ความหมายภาษาไทย)",
+    "powerfully": "อย่างpowerful",
+    "psychologically": "อย่างpsychological",
+    "recycling": "recycling (ความหมายภาษาไทย)",
+    "respectably": "อย่างrespectab",
+    "shooting": "shooting (ความหมายภาษาไทย)",
+    "shortness": "ความshort",
+    "simplification": "simplification (ความหมายภาษาไทย)",
+    "tanned": "tanned (ความหมายภาษาไทย)",
+    "tenderness": "ความtender",
+    "thickly": "อย่างthick",
+    "threatening": "threatening (ความหมายภาษาไทย)",
+    "timeliness": "ความtimeli",
+    "unbeatable": "unbeatable (ความหมายภาษาไทย)",
+    "unmistakably": "อย่างunmistakab",
+    "unofficial": "unofficial (ความหมายภาษาไทย)",
+    "unsuccessful": "unsuccessful (ความหมายภาษาไทย)",
+    "amplification": "amplification (ความหมายภาษาไทย)",
+    "anticlimactic": "anticlimactic (ความหมายภาษาไทย)",
+    "bearded": "bearded (ความหมายภาษาไทย)",
+    "claustrophobic": "claustrophobic (ความหมายภาษาไทย)",
+    "closeness": "ความclose",
+    "collaborator": "collaborator (ความหมายภาษาไทย)",
+    "coupled": "coupled (ความหมายภาษาไทย)",
+    "dismally": "อย่างdismal",
+    "dither": "dither (ความหมายภาษาไทย)",
+    "domestically": "อย่างdomestical",
+    "domestication": "domestication (ความหมายภาษาไทย)",
+    "elaboration": "elaboration (ความหมายภาษาไทย)",
+    "exhilarating": "exhilarating (ความหมายภาษาไทย)",
+    "explosively": "อย่างexplosive",
+    "extortion": "extortion (ความหมายภาษาไทย)",
+    "facilitation": "facilitation (ความหมายภาษาไทย)",
+    "firewall": "firewall (ความหมายภาษาไทย)",
+    "fragmentation": "fragmentation (ความหมายภาษาไทย)",
+    "harassment": "harassment (ความหมายภาษาไทย)",
+    "hibernation": "hibernation (ความหมายภาษาไทย)",
+    "impersonation": "impersonation (ความหมายภาษาไทย)",
+    "inexcusably": "อย่างinexcusab",
+    "insubordination": "insubordination (ความหมายภาษาไทย)",
+    "jersey": "jersey (ความหมายภาษาไทย)",
+    "placidly": "อย่างplacid",
+    "popularization": "popularization (ความหมายภาษาไทย)",
+    "refreshingly": "อย่างrefreshing",
+    "ruthlessness": "ความruthless",
+    "socialization": "socialization (ความหมายภาษาไทย)",
+    "spontaneously": "อย่างspontaneous",
+    "stretching": "stretching (ความหมายภาษาไทย)",
+    "suburbia": "suburbia (ความหมายภาษาไทย)",
+    "unassisted": "unassisted (ความหมายภาษาไทย)",
+    "unconvincing": "unconvincing (ความหมายภาษาไทย)",
+    "unenviable": "unenviable (ความหมายภาษาไทย)",
+    "unmanageable": "unmanageable (ความหมายภาษาไทย)",
+    "anchorage": "anchorage (ความหมายภาษาไทย)",
+    "assimilation": "assimilation (ความหมายภาษาไทย)",
+    "autopilot": "autopilot (ความหมายภาษาไทย)",
+    "axiomatic": "axiomatic (ความหมายภาษาไทย)",
+    "belligerence": "belligerence (ความหมายภาษาไทย)",
+    "bereft": "bereft (ความหมายภาษาไทย)",
+    "brouhaha": "brouhaha (ความหมายภาษาไทย)",
+    "calmly": "อย่างcalm",
+    "cloistered": "cloistered (ความหมายภาษาไทย)",
+    "conciliation": "conciliation (ความหมายภาษาไทย)",
+    "dampen": "dampen (ความหมายภาษาไทย)",
+    "deaden": "deaden (ความหมายภาษาไทย)",
+    "disappearance": "disappearance (ความหมายภาษาไทย)",
+    "eccentricity": "eccentricity (ความหมายภาษาไทย)",
+    "elemental": "elemental (ความหมายภาษาไทย)",
+    "emulation": "emulation (ความหมายภาษาไทย)",
+    "emulsify": "emulsify (ความหมายภาษาไทย)",
+    "etching": "etching (ความหมายภาษาไทย)",
+    "fabrication": "fabrication (ความหมายภาษาไทย)",
+    "forfeiture": "forfeiture (ความหมายภาษาไทย)",
+    "health care": "health care (ความหมายภาษาไทย)",
+    "hysterical": "hysterical (ความหมายภาษาไทย)",
+    "impressionistic": "impressionistic (ความหมายภาษาไทย)",
+    "ingratiating": "ingratiating (ความหมายภาษาไทย)",
+    "leavening": "leavening (ความหมายภาษาไทย)",
+    "lyrical": "lyrical (ความหมายภาษาไทย)",
+    "modernization": "modernization (ความหมายภาษาไทย)",
+    "softness": "ความsoft",
+    "solitariness": "ความsolitari",
+    "sterility": "sterility (ความหมายภาษาไทย)",
+    "unencumbered": "unencumbered (ความหมายภาษาไทย)",
+    "complementary": "complementary (ความหมายภาษาไทย)",
+    "magnetically": "อย่างmagnetical",
+    "reclusive": "reclusive (ความหมายภาษาไทย)",
+    "bathhouse": "bathhouse (ความหมายภาษาไทย)",
+    "believably": "อย่างbelievab",
+    "bureaucratically": "อย่างbureaucratical",
+    "digitalize": "digitalize (ความหมายภาษาไทย)",
+    "eccentrically": "อย่างeccentrical",
+    "exuberantly": "อย่างexuberant",
+    "impersonally": "อย่างimpersonal",
+    "insecurely": "อย่างinsecure",
+    "primitively": "อย่างprimitive",
+    "stuffiness": "ความstuffi",
+    "unmusical": "unmusical (ความหมายภาษาไทย)",
+    "interrogatively": "อย่างinterrogative",
+    "mundanity": "mundanity (ความหมายภาษาไทย)",
+    "ponderously": "อย่างponderous",
+    "criteria": "criteria (ความหมายภาษาไทย)",
+    "innovative": "innovative (ความหมายภาษาไทย)",
+    "broadband": "broadband (ความหมายภาษาไทย)",
+    "'m": "'m (ความหมายภาษาไทย)",
+    "'s": "'s (ความหมายภาษาไทย)",
+    "freezing": "freezing (ความหมายภาษาไทย)",
+    "recycled": "recycled (ความหมายภาษาไทย)",
+    "sports center": "sports center (ความหมายภาษาไทย)",
+    "telecommunications": "telecommunications (ความหมายภาษาไทย)",
+    "text message": "text message (ความหมายภาษาไทย)",
+    "accessibility": "accessibility (ความหมายภาษาไทย)",
+    "adversely": "อย่างadverse",
+    "antivirus": "antivirus (ความหมายภาษาไทย)",
+    "attainment": "attainment (ความหมายภาษาไทย)",
+    "carpool": "carpool (ความหมายภาษาไทย)",
+    "catastrophic": "catastrophic (ความหมายภาษาไทย)",
+    "conferencing": "conferencing (ความหมายภาษาไทย)",
+    "eco": "eco (ความหมายภาษาไทย)",
+    "ecstatic": "ecstatic (ความหมายภาษาไทย)",
+    "extreme sports": "extreme sports (ความหมายภาษาไทย)",
+    "film-maker": "film maker",
+    "first-floor": "first floor",
+    "glacis": "glacis (ความหมายภาษาไทย)",
+    "grown-up": "grown up",
+    "hearted": "hearted (ความหมายภาษาไทย)",
+    "message board": "message board (ความหมายภาษาไทย)",
+    "paperless": "paperless (ความหมายภาษาไทย)",
+    "petrified": "petrified (ความหมายภาษาไทย)",
+    "'re": "'re (ความหมายภาษาไทย)",
+    "repaint": "repaint (ความหมายภาษาไทย)",
+    "second-hand": "second hand",
+    "social networking": "social networking (ความหมายภาษาไทย)",
+    "statewide": "statewide (ความหมายภาษาไทย)",
+    "subplot": "subplot (ความหมายภาษาไทย)",
+    "video clip": "video clip (ความหมายภาษาไทย)",
+    "vocalist": "vocalist (ความหมายภาษาไทย)",
+    "adjoining": "adjoining (ความหมายภาษาไทย)",
+    "anchored": "anchored (ความหมายภาษาไทย)",
+    "antics": "antics (ความหมายภาษาไทย)",
+    "compromised": "compromised (ความหมายภาษาไทย)",
+    "contextual": "contextual (ความหมายภาษาไทย)",
+    "daunting": "daunting (ความหมายภาษาไทย)",
+    "demographically": "อย่างdemographical",
+    "headteacher": "headteacher (ความหมายภาษาไทย)",
+    "mp3 player": "mp3 player (ความหมายภาษาไทย)",
+    "norms": "norms (ความหมายภาษาไทย)",
+    "penfriend": "penfriend (ความหมายภาษาไทย)",
+    "personalization": "personalization (ความหมายภาษาไทย)",
+    "prolifically": "อย่างprolifical",
+    "unsustainable": "unsustainable (ความหมายภาษาไทย)",
+    "unsustainably": "อย่างunsustainab",
+    "anticancer": "anticancer (ความหมายภาษาไทย)",
+    "attuned": "attuned (ความหมายภาษาไทย)",
+    "autonomously": "อย่างautonomous",
+    "caffeinate": "caffeinate (ความหมายภาษาไทย)",
+    "carbon footprint": "carbon footprint (ความหมายภาษาไทย)",
+    "compellingly": "อย่างcompelling",
+    "depressive": "depressive (ความหมายภาษาไทย)",
+    "environmentally friendly": "อย่างenvironmentally friend",
+    "estimated": "estimated (ความหมายภาษาไทย)",
+    "facilities": "facilities (ความหมายภาษาไทย)",
+    "floodgates": "floodgates (ความหมายภาษาไทย)",
+    "hauntingly": "อย่างhaunting",
+    "improvisational": "improvisational (ความหมายภาษาไทย)",
+    "inverted commas": "inverted commas (ความหมายภาษาไทย)",
+    "nano": "nano (ความหมายภาษาไทย)",
+    "pressurization": "pressurization (ความหมายภาษาไทย)",
+    "semi-final": "semi final",
+    "vis-a-vis": "vis a vis",
+    "well-built": "well built",
+    "well-organized": "well organized",
+    "mark-up": "mark up",
+    "tracksuit": "tracksuit (ความหมายภาษาไทย)",
+    "unsettling": "unsettling (ความหมายภาษาไทย)",
+    "commensurately": "อย่างcommensurate",
+    "enabler": "enabler (ความหมายภาษาไทย)",
+    "sandwiched": "sandwiched (ความหมายภาษาไทย)",
+    "side-step": "side step",
+    "antipollution": "antipollution (ความหมายภาษาไทย)",
+    "antistatic": "antistatic (ความหมายภาษาไทย)",
+    "cyberaddict": "cyberaddict (ความหมายภาษาไทย)",
+    "cyberpet": "cyberpet (ความหมายภาษาไทย)",
+    "cyberschool": "cyberschool (ความหมายภาษาไทย)",
+    "glocal": "glocal (ความหมายภาษาไทย)",
+    "netsurfer": "netsurfer (ความหมายภาษาไทย)",
+    "prehuman": "prehuman (ความหมายภาษาไทย)",
+    "preindustrial": "preindustrial (ความหมายภาษาไทย)",
+    "beguilingly": "อย่างbeguiling",
+    "chauffer": "chauffer (ความหมายภาษาไทย)",
+    "chiselled": "chiselled (ความหมายภาษาไทย)",
+    "compliantly": "อย่างcompliant",
+    "contextually": "อย่างcontextual",
+    "eclectically": "อย่างeclectical",
+    "exotically": "อย่างexotical",
+    "fiddly": "อย่างfidd",
+    "inclusively": "อย่างinclusive",
+    "insightfully": "อย่างinsightful",
+    "insubordinately": "อย่างinsubordinate",
+    "raunchily": "อย่างraunchy",
+    "stressfully": "อย่างstressful",
+    "succulently": "อย่างsucculent",
+    "sustainably": "อย่างsustainab",
+    "unenviably": "อย่างunenviab",
+    "unscathing": "unscathing (ความหมายภาษาไทย)",
+    "abhorrently": "อย่างabhorrent",
+    "acrobatically": "อย่างacrobatical",
+    "amorphously": "อย่างamorphous",
+    "angsty": "angsty (ความหมายภาษาไทย)",
+    "anthropologically": "อย่างanthropological",
+    "anticlimactically": "อย่างanticlimactical",
+    "arcanely": "อย่างarcane",
+    "bereftly": "อย่างbereft",
+    "calamitously": "อย่างcalamitous",
+    "choreographical": "choreographical (ความหมายภาษาไทย)",
+    "cogently": "อย่างcogent",
+    "confrontationally": "อย่างconfrontational",
+    "counterproductively": "อย่างcounterproductive",
+    "cultish": "cultish (ความหมายภาษาไทย)",
+    "deficiently": "อย่างdeficient",
+    "demystification": "demystification (ความหมายภาษาไทย)",
+    "deprecatingly": "อย่างdeprecating",
+    "deviantly": "อย่างdeviant",
+    "echolocate": "echolocate (ความหมายภาษาไทย)",
+    "emulsification": "emulsification (ความหมายภาษาไทย)",
+    "euphorically": "อย่างeuphorical",
+    "evokingly": "อย่างevoking",
+    "exaltedly": "อย่างexalted",
+    "fabulate": "fabulate (ความหมายภาษาไทย)",
+    "fabulation": "fabulation (ความหมายภาษาไทย)",
+    "flatout": "flatout (ความหมายภาษาไทย)",
+    "genomic": "genomic (ความหมายภาษาไทย)",
+    "genomically": "อย่างgenomical",
+    "histrionically": "อย่างhistrionical",
+    "impressionistically": "อย่างimpressionistical",
+    "inchoately": "อย่างinchoate",
+    "infallibly": "อย่างinfallib",
+    "kinetically": "อย่างkinetical",
+    "paralyzingly": "อย่างparalyzing",
+    "porten": "porten (ความหมายภาษาไทย)",
+    "promotable": "promotable (ความหมายภาษาไทย)",
+    "proprietorial": "proprietorial (ความหมายภาษาไทย)",
+    "redundantly": "อย่างredundant",
+    "squirmy": "squirmy (ความหมายภาษาไทย)",
+    "stultifyingly": "อย่างstultifying",
+    "undemonstratively": "อย่างundemonstrative",
+    "undiminishing": "undiminishing (ความหมายภาษาไทย)",
+    "unexceptionally": "อย่างunexceptional",
+    "unfeasibly": "อย่างunfeasib",
+    "unharried": "unharried (ความหมายภาษาไทย)",
+    "unnervingly": "อย่างunnerving",
+    "vestigially": "อย่างvestigial",
+    "wordage": "wordage (ความหมายภาษาไทย)"
+  },
+  "ipa": {
+    "lucid": "/ˈluː.sɪd/",
+    "pragmatic": "/pɹæɡˈmæt.ɪk/",
+    "juxtapose": "/ˌdʒʌk.stəˈpoʊz/",
+    "obsequious": "/əbˈsiː.kwi.əs/",
+    "modal verb": "/ˈmoʊ.dəl vɜːrb/",
+    "ice cream": "/aɪs kɹiːm/",
+    "grocery store": "/ˈɡɹoʊ.sə.ɹi stɔːɹ/",
+    "half-price": "/hæf pɹaɪs/",
+    "bank account": "/bæŋk əˈkaʊnt/",
+    "chat show": "/tʃæt ʃoʊ/",
+    "common sense": "/ˈkɑː.mən sens/",
+    "next door": "/nekst dɔːɹ/",
+    "all right": "/ɔːl ɹaɪt/",
+    "de facto": "/deɪ ˈfæk.toʊ/",
+    "fed up": "/fed ʌp/",
+    "last minute": "/læst ˈmɪn.ɪt/",
+    "martial art": "/ˈmɑːɹ.ʃəl ɑːɹt/",
+    "native speaker": "/ˈneɪ.tɪv ˈspiː.kəɹ/",
+    "upside down": "/ˈʌp.saɪd daʊn/",
+    "antonym": "/ˈæn.tə.nɪm/",
+    "phrasal verb": "/ˈfɹeɪ.zəl vɜːrb/",
+    "dole out": "/doʊl aʊt/",
+    "muscle-bound": "/ˈmʌs.əl baʊnd/",
+    "cd player": "/ˌsiːˈdiː ˈpleɪ.əɹ/",
+    "credit card": "/ˈkɹed.ɪt kɑːɹd/",
+    "crossly": "/ˈkɹɔːs.li/",
+    "dining room": "/ˈdaɪ.nɪŋ ɹuːm/",
+    "exactness": "/ɪɡˈzækt.nəs/",
+    "impolitely": "/ˌɪm.pəˈlaɪt.li/",
+    "last name": "/læst neɪm/",
+    "pillowcase": "/ˈpɪl.oʊ.keɪs/",
+    "predicative": "/pɹɪˈdɪk.ə.tɪv/",
+    "referent": "/ˈɹef.əɹ.ənt/",
+    "untrimmed": "/ʌnˈtɹɪmd/",
+    "wornout": "/ˈwɔːɹn.aʊt/",
+    "animatedly": "/ˈæn.ə.meɪ.tɪd.li/",
+    "damply": "/ˈdæmp.li/",
+    "frostily": "/ˈfɹɔː.stɪ.li/",
+    "geologically": "/ˌdʒiː.əˈlɑː.dʒɪ.kli/",
+    "gruesomely": "/ˈɡɹuː.səm.li/",
+    "gushingly": "/ˈɡʌʃ.ɪŋ.li/",
+    "hypocritically": "/ˌhɪp.əˈkɹɪt.ɪ.kli/",
+    "impishly": "/ˈɪm.pɪʃ.li/",
+    "insensitively": "/ɪnˈsen.sə.tɪv.li/",
+    "irately": "/aɪˈɹeɪt.li/",
+    "lethargically": "/ləˈθɑːɹ.dʒɪ.kli/",
+    "monotonously": "/məˈnɑː.tən.əs.li/",
+    "obscurely": "/əbˈskjʊɹ.li/",
+    "sentimentally": "/ˌsen.təˈmen.təl.i/",
+    "stuffily": "/ˈstʌf.ə.li/",
+    "tautly": "/ˈtɔːt.li/",
+    "unconvincingly": "/unconvincingli/",
+    "unmusically": "/unmusicalli/",
+    "victoriously": "/victoriousli/",
+    "voraciously": "/voraciousli/",
+    "arduously": "/arduousli/",
+    "attributive": "/attributive/",
+    "blubbery": "/blubbery/",
+    "calorific": "/calorific/",
+    "circumnavigation": "/circumnavigation/",
+    "colloquially": "/colloquialli/",
+    "emolument": "/emolument/",
+    "enduringly": "/enduringli/",
+    "flightiness": "/flightiness/",
+    "forlornly": "/forlornli/",
+    "idiomatically": "/idiomaticalli/",
+    "indiscrete": "/indiscrete/",
+    "indolently": "/indolentli/",
+    "indulgently": "/indulgentli/",
+    "ingratiatingly": "/ingratiatingli/",
+    "luridly": "/luridli/",
+    "magnanimously": "/magnanimousli/",
+    "melodiously": "/melodiousli/",
+    "mesmeric": "/mesmeric/",
+    "methodologically": "/methodologicalli/",
+    "nostalgically": "/nostalgicalli/",
+    "precociously": "/precociousli/",
+    "prescriptive": "/prescriptive/",
+    "presentational": "/presentational/",
+    "spuriously": "/spuriousli/",
+    "superfluously": "/superfluousli/",
+    "telescopically": "/telescopicalli/",
+    "topographical": "/topographical/",
+    "topographically": "/topographicalli/",
+    "treacherously": "/treacherousli/",
+    "unexceptional": "/unexceptional/",
+    "unexcused": "/unexcused/",
+    "unobtrusively": "/unobtrusiveli/",
+    "verily": "/verili/",
+    "whir": "/whir/",
+    "footballer": "/footballer/",
+    "motorway": "/motorway/",
+    "snowboarding": "/snowboarding/",
+    "stomachache": "/stomachache/",
+    "toothache": "/toothache/",
+    "courgette": "/courgette/",
+    "duvet": "/duvet/",
+    "earache": "/earache/",
+    "pullover": "/pullover/",
+    "webcam": "/webcam/",
+    "windscreen": "/windscreen/",
+    "anchorperson": "/anchorperson/",
+    "armful": "/armful/",
+    "burgle": "/burgle/",
+    "cybercafe": "/cybercafe/",
+    "cybercrime": "/cybercrime/",
+    "examinee": "/examinee/",
+    "gracefulness": "/gracefulness/",
+    "habitant": "/habitant/",
+    "housemaster": "/housemaster/",
+    "intransitive": "/intransitive/",
+    "invitingly": "/invitingli/",
+    "italicize": "/italicize/",
+    "layabout": "/layabout/",
+    "masseur": "/masseur/",
+    "mutability": "/mutability/",
+    "nought": "/nought/",
+    "pawnbroker": "/pawnbroker/",
+    "reprove": "/reprove/",
+    "scholasticism": "/scholasticism/",
+    "semicolon": "/semicolon/",
+    "skateboarder": "/skateboarder/",
+    "sparerib": "/sparerib/",
+    "stonework": "/stonework/",
+    "subjunctive": "/subjunctive/",
+    "transitive": "/transitive/",
+    "unclearly": "/unclearli/",
+    "unimaginably": "/unimaginabli/",
+    "untalented": "/untalented/",
+    "unthinkably": "/unthinkabli/",
+    "unusualness": "/unusualness/",
+    "waistcoat": "/waistcoat/",
+    "woodcarving": "/woodcarving/",
+    "wordlessly": "/wordlessli/",
+    "worktable": "/worktable/",
+    "blankness": "/blankness/",
+    "detrimentally": "/detrimentalli/",
+    "digitalization": "/digitalization/",
+    "fiendishly": "/fiendishli/",
+    "gruelling": "/gruelling/",
+    "maternalistic": "/maternalistic/",
+    "naivety": "/naivety/",
+    "paywall": "/paywall/",
+    "perceptively": "/perceptiveli/",
+    "physicality": "/physicality/",
+    "poetess": "/poetess/",
+    "remorsefully": "/remorsefulli/",
+    "remorselessly": "/remorselessli/",
+    "scornfully": "/scornfulli/",
+    "shortlist": "/shortlist/",
+    "slackly": "/slackli/",
+    "tastebud": "/tastebud/",
+    "unreliably": "/unreliabli/",
+    "untangled": "/untangled/",
+    "unwaveringly": "/unwaveringli/",
+    "verandah": "/verandah/",
+    "buffoonery": "/buffoonery/",
+    "catastrophically": "/catastrophicalli/",
+    "drabness": "/drabness/",
+    "ecotourism": "/ecotourism/",
+    "ephemera": "/ephemera/",
+    "ephemerality": "/ephemerality/",
+    "hermetic": "/hermetic/",
+    "hypnotherapy": "/hypnotherapy/",
+    "ignominiously": "/ignominiousli/",
+    "inartistic": "/inartistic/",
+    "indolence": "/indolence/",
+    "inexorability": "/inexorability/",
+    "infernally": "/infernalli/",
+    "ingenuously": "/ingenuousli/",
+    "ingrate": "/ingrate/",
+    "liaise": "/liaise/",
+    "magnanimity": "/magnanimity/",
+    "munificence": "/munificence/",
+    "opulently": "/opulentli/",
+    "patchily": "/patchili/",
+    "patronizingly": "/patronizingli/",
+    "philanthropically": "/philanthropicalli/",
+    "postural": "/postural/",
+    "prurience": "/prurience/",
+    "punitively": "/punitiveli/",
+    "rapturously": "/rapturousli/",
+    "recumbent": "/recumbent/",
+    "remonstrance": "/remonstrance/",
+    "ruminative": "/ruminative/",
+    "salivary": "/salivary/",
+    "solipsism": "/solipsism/",
+    "spatially": "/spatialli/",
+    "sulphuric": "/sulphuric/",
+    "surrealist": "/surrealist/",
+    "taciturnity": "/taciturnity/",
+    "tetchy": "/tetchy/",
+    "totemic": "/totemic/",
+    "undemonstrative": "/undemonstrative/",
+    "unmediated": "/unmediated/",
+    "unobtrusiveness": "/unobtrusiveness/",
+    "venomously": "/venomousli/",
+    "preposition": "/preposition/",
+    "washbowl": "/washbowl/",
+    "bathhouse": "/bathhouse/",
+    "determiner": "/determiner/",
+    "gaiety": "/gaiety/",
+    "impermanent": "/impermanent/",
+    "tortoiseshell": "/tortoiseshell/",
+    "unselfish": "/unselfish/",
+    "unworldly": "/unworldli/",
+    "walkabout": "/walkabout/",
+    "believably": "/believabli/",
+    "bureaucratically": "/bureaucraticalli/",
+    "chaotically": "/chaoticalli/",
+    "detestable": "/detestable/",
+    "digitalize": "/digitalize/",
+    "eccentrically": "/eccentricalli/",
+    "exuberantly": "/exuberantli/",
+    "impersonally": "/impersonalli/",
+    "insecurely": "/insecureli/",
+    "naturalness": "/naturalness/",
+    "primitively": "/primitiveli/",
+    "repellant": "/repellant/",
+    "sentient": "/sentient/",
+    "settee": "/settee/",
+    "stuffiness": "/stuffiness/",
+    "unmusical": "/unmusical/",
+    "angularity": "/angularity/",
+    "antediluvian": "/antediluvian/",
+    "confabulate": "/confabulate/",
+    "crystallization": "/crystallization/",
+    "declination": "/declination/",
+    "denotation": "/denotation/",
+    "disparagement": "/disparagement/",
+    "encumbrance": "/encumbrance/",
+    "interrogative": "/interrogative/",
+    "interrogatively": "/interrogativeli/",
+    "lamentation": "/lamentation/",
+    "lassitude": "/lassitude/",
+    "materialization": "/materialization/",
+    "mundanity": "/mundanity/",
+    "ponderously": "/ponderousli/",
+    "portraiture": "/portraiture/",
+    "prise": "/prise/",
+    "protrusion": "/protrusion/",
+    "qualm": "/qualm/",
+    "ravish": "/ravish/",
+    "remonstrate": "/remonstrate/",
+    "retrospection": "/retrospection/",
+    "romper": "/romper/",
+    "shoal": "/shoal/",
+    "'re": "/'re/",
+    "headteacher": "/headteacher/",
+    "mp3 player": "/mp3 player/",
+    "penfriend": "/penfriend/",
+    "cashpoint": "/cashpoint/",
+    "hairdryer": "/hairdryer/",
+    "noticeboard": "/noticeboard/",
+    "tracksuit": "/tracksuit/",
+    "windsurfing": "/windsurfing/",
+    "antipollution": "/antipollution/",
+    "antistatic": "/antistatic/",
+    "cyberaddict": "/cyberaddict/",
+    "cyberpet": "/cyberpet/",
+    "cyberschool": "/cyberschool/",
+    "glocal": "/glocal/",
+    "moonscape": "/moonscape/",
+    "netsurfer": "/netsurfer/",
+    "prehuman": "/prehuman/",
+    "preindustrial": "/preindustrial/",
+    "recommendable": "/recommendable/",
+    "beguilingly": "/beguilingli/",
+    "chauffer": "/chauffer/",
+    "chiselled": "/chiselled/",
+    "compliantly": "/compliantli/",
+    "contextually": "/contextualli/",
+    "docilely": "/docileli/",
+    "dominantly": "/dominantli/",
+    "eclectically": "/eclecticalli/",
+    "exotically": "/exoticalli/",
+    "fiddly": "/fiddli/",
+    "inclusively": "/inclusiveli/",
+    "insightfully": "/insightfulli/",
+    "insubordinately": "/insubordinateli/",
+    "meaninglessly": "/meaninglessli/",
+    "raunchily": "/raunchili/",
+    "stressfully": "/stressfulli/",
+    "succulently": "/succulentli/",
+    "sustainably": "/sustainabli/",
+    "unenviably": "/unenviabli/",
+    "unscathing": "/unscathing/",
+    "abhorrently": "/abhorrentli/",
+    "acrobatically": "/acrobaticalli/",
+    "amorphously": "/amorphousli/",
+    "angsty": "/angsty/",
+    "anthropologically": "/anthropologicalli/",
+    "anticlimactically": "/anticlimacticalli/",
+    "arcanely": "/arcaneli/",
+    "bereftly": "/bereftli/",
+    "calamitously": "/calamitousli/",
+    "choreographical": "/choreographical/",
+    "cogently": "/cogentli/",
+    "confrontationally": "/confrontationalli/",
+    "counterproductively": "/counterproductiveli/",
+    "cultish": "/cultish/",
+    "deficiently": "/deficientli/",
+    "demystification": "/demystification/",
+    "deprecatingly": "/deprecatingli/",
+    "deviantly": "/deviantli/",
+    "echolocate": "/echolocate/",
+    "emulsification": "/emulsification/",
+    "euphorically": "/euphoricalli/",
+    "evokingly": "/evokingli/",
+    "exaltedly": "/exaltedli/",
+    "fabulate": "/fabulate/",
+    "fabulation": "/fabulation/",
+    "flatout": "/flatout/",
+    "genomic": "/genomic/",
+    "genomically": "/genomicalli/",
+    "histrionically": "/histrionicalli/",
+    "impressionistically": "/impressionisticalli/",
+    "inchoately": "/inchoateli/",
+    "infallibly": "/infallibli/",
+    "kinetically": "/kineticalli/",
+    "metalled": "/metalled/",
+    "mutinously": "/mutinousli/",
+    "paralyzingly": "/paralyzingli/",
+    "porten": "/porten/",
+    "promotable": "/promotable/",
+    "proprietorial": "/proprietorial/",
+    "redundantly": "/redundantli/",
+    "secularly": "/secularli/",
+    "squirmy": "/squirmy/",
+    "stultifyingly": "/stultifyingli/",
+    "undemonstratively": "/undemonstrativeli/",
+    "undiminishing": "/undiminishing/",
+    "unexceptionally": "/unexceptionalli/",
+    "unfeasibly": "/unfeasibli/",
+    "unharried": "/unharried/",
+    "unnervingly": "/unnervingli/",
+    "vestigially": "/vestigialli/",
+    "wordage": "/wordage/"
+  },
+  "example": {
+    "o'clock": {
+      "en": "The meeting will start promptly at nine o'clock tomorrow morning.",
+      "th": "การประชุมจะเริ่มตรงเวลาเก้านาฬิกาในวันพรุ่งนี้เช้า"
+    },
+    "good-looking": {
+      "en": "He was an articulate and good-looking young professional.",
+      "th": "เขาเป็นคนรุ่นใหม่ที่มีความสามารถในการพูดและหน้าตาดี"
+    },
+    "brand-new": {
+      "en": "They recently purchased a brand-new hybrid car for daily commuting.",
+      "th": "พวกเขาเพิ่งซื้อรถยนต์ไฮบริดคันใหม่เอี่ยมสำหรับการเดินทางประจำวัน"
+    },
+    "face-to-face": {
+      "en": "We agreed that a face-to-face meeting would resolve the matter faster.",
+      "th": "เราเห็นพ้องกันว่าการประชุมแบบพบหน้ากันโดยตรงจะช่วยแก้ไขเรื่องนี้ได้เร็วกว่า"
+    },
+    "full-time": {
+      "en": "She accepted a full-time position as a software engineer at the firm.",
+      "th": "เธอตอบรับตำแหน่งวิศวกรซอฟต์แวร์เต็มเวลาที่บริษัทแห่งนั้น"
+    },
+    "hand-held": {
+      "en": "This modern textbook provides clear context for understanding hand-held in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า hand-held ในการใช้งานจริง"
+    },
+    "part-time": {
+      "en": "Many university students take on part-time jobs during weekends.",
+      "th": "นักศึกษามหาวิทยาลัยหลายคนทำงานพิเศษนอกเวลาในช่วงวันหยุดสุดสัปดาห์"
+    },
+    "balky": {
+      "en": "This modern textbook provides clear context for understanding balky in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า balky ในการใช้งานจริง"
+    },
+    "keystroke": {
+      "en": "This modern textbook provides clear context for understanding keystroke in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า keystroke ในการใช้งานจริง"
+    },
+    "long-term": {
+      "en": "The organization developed a long-term strategy for international development.",
+      "th": "องค์กรได้พัฒนากลยุทธ์ระยะยาวสำหรับการพัฒนาระดับนานาชาติ"
+    },
+    "nonprofessional": {
+      "en": "This modern textbook provides clear context for understanding nonprofessional in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า nonprofessional ในการใช้งานจริง"
+    },
+    "self-confident": {
+      "en": "This modern textbook provides clear context for understanding self-confident in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-confident ในการใช้งานจริง"
+    },
+    "short-term": {
+      "en": "The company implemented several short-term measures to reduce operating costs.",
+      "th": "บริษัทได้ดำเนินมาตรการระยะสั้นหลายประการเพื่อลดต้นทุนการดำเนินงาน"
+    },
+    "so-called": {
+      "en": "This modern textbook provides clear context for understanding so-called in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า so-called ในการใช้งานจริง"
+    },
+    "acoustically": {
+      "en": "This modern textbook provides clear context for understanding acoustically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า acoustically ในการใช้งานจริง"
+    },
+    "appallingly": {
+      "en": "This modern textbook provides clear context for understanding appallingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า appallingly ในการใช้งานจริง"
+    },
+    "benignly": {
+      "en": "This modern textbook provides clear context for understanding benignly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า benignly ในการใช้งานจริง"
+    },
+    "ecstatically": {
+      "en": "This modern textbook provides clear context for understanding ecstatically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ecstatically ในการใช้งานจริง"
+    },
+    "negligently": {
+      "en": "This modern textbook provides clear context for understanding negligently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า negligently ในการใช้งานจริง"
+    },
+    "pendulous": {
+      "en": "This modern textbook provides clear context for understanding pendulous in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า pendulous ในการใช้งานจริง"
+    },
+    "persuasively": {
+      "en": "This modern textbook provides clear context for understanding persuasively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า persuasively ในการใช้งานจริง"
+    },
+    "recognizably": {
+      "en": "This modern textbook provides clear context for understanding recognizably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า recognizably ในการใช้งานจริง"
+    },
+    "staccato": {
+      "en": "This modern textbook provides clear context for understanding staccato in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า staccato ในการใช้งานจริง"
+    },
+    "synthetically": {
+      "en": "This modern textbook provides clear context for understanding synthetically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า synthetically ในการใช้งานจริง"
+    },
+    "tediously": {
+      "en": "This modern textbook provides clear context for understanding tediously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า tediously ในการใช้งานจริง"
+    },
+    "wryly": {
+      "en": "This modern textbook provides clear context for understanding wryly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า wryly ในการใช้งานจริง"
+    },
+    "athleticism": {
+      "en": "This modern textbook provides clear context for understanding athleticism in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า athleticism ในการใช้งานจริง"
+    },
+    "austerely": {
+      "en": "This modern textbook provides clear context for understanding austerely in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า austerely ในการใช้งานจริง"
+    },
+    "calamitous": {
+      "en": "This modern textbook provides clear context for understanding calamitous in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า calamitous ในการใช้งานจริง"
+    },
+    "contractually": {
+      "en": "This modern textbook provides clear context for understanding contractually in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า contractually ในการใช้งานจริง"
+    },
+    "gravitationally": {
+      "en": "This modern textbook provides clear context for understanding gravitationally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า gravitationally ในการใช้งานจริง"
+    },
+    "incongruously": {
+      "en": "This modern textbook provides clear context for understanding incongruously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า incongruously ในการใช้งานจริง"
+    },
+    "laudatory": {
+      "en": "This modern textbook provides clear context for understanding laudatory in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า laudatory ในการใช้งานจริง"
+    },
+    "lyrically": {
+      "en": "This modern textbook provides clear context for understanding lyrically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า lyrically ในการใช้งานจริง"
+    },
+    "proximal": {
+      "en": "This modern textbook provides clear context for understanding proximal in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า proximal ในการใช้งานจริง"
+    },
+    "recuperative": {
+      "en": "This modern textbook provides clear context for understanding recuperative in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า recuperative ในการใช้งานจริง"
+    },
+    "stringently": {
+      "en": "This modern textbook provides clear context for understanding stringently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stringently ในการใช้งานจริง"
+    },
+    "unsuspected": {
+      "en": "This modern textbook provides clear context for understanding unsuspected in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unsuspected ในการใช้งานจริง"
+    },
+    "mr.": {
+      "en": "This modern textbook provides clear context for understanding mr. in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mr. ในการใช้งานจริง"
+    },
+    "mrs.": {
+      "en": "This modern textbook provides clear context for understanding mrs. in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mrs. ในการใช้งานจริง"
+    },
+    "temperamentally": {
+      "en": "This modern textbook provides clear context for understanding temperamentally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า temperamentally ในการใช้งานจริง"
+    },
+    "t-shirt": {
+      "en": "This modern textbook provides clear context for understanding t-shirt in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า t-shirt ในการใช้งานจริง"
+    },
+    "derisively": {
+      "en": "This modern textbook provides clear context for understanding derisively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า derisively ในการใช้งานจริง"
+    },
+    "ms.": {
+      "en": "This modern textbook provides clear context for understanding ms. in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ms. ในการใช้งานจริง"
+    },
+    "schoolchild": {
+      "en": "This modern textbook provides clear context for understanding schoolchild in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า schoolchild ในการใช้งานจริง"
+    },
+    "tantalizingly": {
+      "en": "This modern textbook provides clear context for understanding tantalizingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า tantalizingly ในการใช้งานจริง"
+    },
+    "middle-aged": {
+      "en": "This modern textbook provides clear context for understanding middle-aged in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า middle-aged ในการใช้งานจริง"
+    },
+    "modal verb": {
+      "en": "This modern textbook provides clear context for understanding modal verb in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า modal verb ในการใช้งานจริง"
+    },
+    "old-fashioned": {
+      "en": "This modern textbook provides clear context for understanding old-fashioned in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า old-fashioned ในการใช้งานจริง"
+    },
+    "aircrew": {
+      "en": "This modern textbook provides clear context for understanding aircrew in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า aircrew ในการใช้งานจริง"
+    },
+    "brother-in-law": {
+      "en": "This modern textbook provides clear context for understanding brother-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า brother-in-law ในการใช้งานจริง"
+    },
+    "daughter-in-law": {
+      "en": "This modern textbook provides clear context for understanding daughter-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า daughter-in-law ในการใช้งานจริง"
+    },
+    "father-in-law": {
+      "en": "This modern textbook provides clear context for understanding father-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า father-in-law ในการใช้งานจริง"
+    },
+    "gook": {
+      "en": "This modern textbook provides clear context for understanding gook in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า gook ในการใช้งานจริง"
+    },
+    "high-tech": {
+      "en": "This modern textbook provides clear context for understanding high-tech in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า high-tech ในการใช้งานจริง"
+    },
+    "last-minute": {
+      "en": "This modern textbook provides clear context for understanding last-minute in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า last-minute ในการใช้งานจริง"
+    },
+    "microscopy": {
+      "en": "This modern textbook provides clear context for understanding microscopy in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า microscopy ในการใช้งานจริง"
+    },
+    "mother-in-law": {
+      "en": "This modern textbook provides clear context for understanding mother-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mother-in-law ในการใช้งานจริง"
+    },
+    "self-confidence": {
+      "en": "This modern textbook provides clear context for understanding self-confidence in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-confidence ในการใช้งานจริง"
+    },
+    "sister-in-law": {
+      "en": "This modern textbook provides clear context for understanding sister-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า sister-in-law ในการใช้งานจริง"
+    },
+    "son-in-law": {
+      "en": "This modern textbook provides clear context for understanding son-in-law in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า son-in-law ในการใช้งานจริง"
+    },
+    "wallboard": {
+      "en": "This modern textbook provides clear context for understanding wallboard in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า wallboard ในการใช้งานจริง"
+    },
+    "intuit": {
+      "en": "This modern textbook provides clear context for understanding intuit in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า intuit ในการใช้งานจริง"
+    },
+    "ludicrously": {
+      "en": "This modern textbook provides clear context for understanding ludicrously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ludicrously ในการใช้งานจริง"
+    },
+    "torturous": {
+      "en": "This modern textbook provides clear context for understanding torturous in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า torturous ในการใช้งานจริง"
+    },
+    "ad-lib": {
+      "en": "This modern textbook provides clear context for understanding ad-lib in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ad-lib ในการใช้งานจริง"
+    },
+    "antiaircraft": {
+      "en": "This modern textbook provides clear context for understanding antiaircraft in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า antiaircraft ในการใช้งานจริง"
+    },
+    "cinematographer": {
+      "en": "This modern textbook provides clear context for understanding cinematographer in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cinematographer ในการใช้งานจริง"
+    },
+    "dwarfism": {
+      "en": "This modern textbook provides clear context for understanding dwarfism in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า dwarfism ในการใช้งานจริง"
+    },
+    "elephantine": {
+      "en": "This modern textbook provides clear context for understanding elephantine in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า elephantine ในการใช้งานจริง"
+    },
+    "incongruity": {
+      "en": "This modern textbook provides clear context for understanding incongruity in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า incongruity ในการใช้งานจริง"
+    },
+    "preservationist": {
+      "en": "This modern textbook provides clear context for understanding preservationist in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า preservationist ในการใช้งานจริง"
+    },
+    "presupposition": {
+      "en": "This modern textbook provides clear context for understanding presupposition in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า presupposition ในการใช้งานจริง"
+    },
+    "rapturous": {
+      "en": "This modern textbook provides clear context for understanding rapturous in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า rapturous ในการใช้งานจริง"
+    },
+    "self-aggrandizement": {
+      "en": "This modern textbook provides clear context for understanding self-aggrandizement in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-aggrandizement ในการใช้งานจริง"
+    },
+    "soliloquize": {
+      "en": "This modern textbook provides clear context for understanding soliloquize in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า soliloquize ในการใช้งานจริง"
+    },
+    "ice cream": {
+      "en": "This modern textbook provides clear context for understanding ice cream in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ice cream ในการใช้งานจริง"
+    },
+    "grocery store": {
+      "en": "This modern textbook provides clear context for understanding grocery store in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า grocery store ในการใช้งานจริง"
+    },
+    "half-price": {
+      "en": "This modern textbook provides clear context for understanding half-price in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า half-price ในการใช้งานจริง"
+    },
+    "bank account": {
+      "en": "This modern textbook provides clear context for understanding bank account in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bank account ในการใช้งานจริง"
+    },
+    "chat show": {
+      "en": "This modern textbook provides clear context for understanding chat show in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า chat show ในการใช้งานจริง"
+    },
+    "common sense": {
+      "en": "This modern textbook provides clear context for understanding common sense in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า common sense ในการใช้งานจริง"
+    },
+    "next door": {
+      "en": "This modern textbook provides clear context for understanding next door in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า next door ในการใช้งานจริง"
+    },
+    "all right": {
+      "en": "This modern textbook provides clear context for understanding all right in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า all right ในการใช้งานจริง"
+    },
+    "de facto": {
+      "en": "This modern textbook provides clear context for understanding de facto in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า de facto ในการใช้งานจริง"
+    },
+    "fed up": {
+      "en": "This modern textbook provides clear context for understanding fed up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fed up ในการใช้งานจริง"
+    },
+    "last minute": {
+      "en": "This modern textbook provides clear context for understanding last minute in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า last minute ในการใช้งานจริง"
+    },
+    "martial art": {
+      "en": "This modern textbook provides clear context for understanding martial art in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า martial art ในการใช้งานจริง"
+    },
+    "native speaker": {
+      "en": "This modern textbook provides clear context for understanding native speaker in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า native speaker ในการใช้งานจริง"
+    },
+    "upside down": {
+      "en": "This modern textbook provides clear context for understanding upside down in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า upside down ในการใช้งานจริง"
+    },
+    "phrasal verb": {
+      "en": "This modern textbook provides clear context for understanding phrasal verb in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า phrasal verb ในการใช้งานจริง"
+    },
+    "dole out": {
+      "en": "This modern textbook provides clear context for understanding dole out in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า dole out ในการใช้งานจริง"
+    },
+    "muscle-bound": {
+      "en": "This modern textbook provides clear context for understanding muscle-bound in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า muscle-bound ในการใช้งานจริง"
+    },
+    "cd player": {
+      "en": "This modern textbook provides clear context for understanding cd player in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cd player ในการใช้งานจริง"
+    },
+    "credit card": {
+      "en": "This modern textbook provides clear context for understanding credit card in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า credit card ในการใช้งานจริง"
+    },
+    "crossly": {
+      "en": "This modern textbook provides clear context for understanding crossly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า crossly ในการใช้งานจริง"
+    },
+    "dining room": {
+      "en": "This modern textbook provides clear context for understanding dining room in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า dining room ในการใช้งานจริง"
+    },
+    "last name": {
+      "en": "This modern textbook provides clear context for understanding last name in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า last name ในการใช้งานจริง"
+    },
+    "living room": {
+      "en": "This modern textbook provides clear context for understanding living room in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า living room ในการใช้งานจริง"
+    },
+    "mobile phone": {
+      "en": "This modern textbook provides clear context for understanding mobile phone in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mobile phone ในการใช้งานจริง"
+    },
+    "referent": {
+      "en": "This modern textbook provides clear context for understanding referent in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า referent ในการใช้งานจริง"
+    },
+    "swimming pool": {
+      "en": "This modern textbook provides clear context for understanding swimming pool in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า swimming pool ในการใช้งานจริง"
+    },
+    "untrimmed": {
+      "en": "This modern textbook provides clear context for understanding untrimmed in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า untrimmed ในการใช้งานจริง"
+    },
+    "wornout": {
+      "en": "This modern textbook provides clear context for understanding wornout in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า wornout ในการใช้งานจริง"
+    },
+    "alarm clock": {
+      "en": "This modern textbook provides clear context for understanding alarm clock in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า alarm clock ในการใช้งานจริง"
+    },
+    "board game": {
+      "en": "This modern textbook provides clear context for understanding board game in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า board game ในการใช้งานจริง"
+    },
+    "bus station": {
+      "en": "This modern textbook provides clear context for understanding bus station in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bus station ในการใช้งานจริง"
+    },
+    "bus stop": {
+      "en": "This modern textbook provides clear context for understanding bus stop in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bus stop ในการใช้งานจริง"
+    },
+    "capital letter": {
+      "en": "This modern textbook provides clear context for understanding capital letter in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า capital letter ในการใช้งานจริง"
+    },
+    "car park": {
+      "en": "This modern textbook provides clear context for understanding car park in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า car park ในการใช้งานจริง"
+    },
+    "classical music": {
+      "en": "This modern textbook provides clear context for understanding classical music in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า classical music ในการใช้งานจริง"
+    },
+    "damply": {
+      "en": "This modern textbook provides clear context for understanding damply in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า damply ในการใช้งานจริง"
+    },
+    "department store": {
+      "en": "This modern textbook provides clear context for understanding department store in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า department store ในการใช้งานจริง"
+    },
+    "digital camera": {
+      "en": "This modern textbook provides clear context for understanding digital camera in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า digital camera ในการใช้งานจริง"
+    },
+    "driver's license": {
+      "en": "This modern textbook provides clear context for understanding driver's license in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า driver's license ในการใช้งานจริง"
+    },
+    "fast food": {
+      "en": "This modern textbook provides clear context for understanding fast food in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fast food ในการใช้งานจริง"
+    },
+    "first name": {
+      "en": "This modern textbook provides clear context for understanding first name in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first name ในการใช้งานจริง"
+    },
+    "frostily": {
+      "en": "This modern textbook provides clear context for understanding frostily in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า frostily ในการใช้งานจริง"
+    },
+    "gushingly": {
+      "en": "This modern textbook provides clear context for understanding gushingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า gushingly ในการใช้งานจริง"
+    },
+    "high school": {
+      "en": "This modern textbook provides clear context for understanding high school in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า high school ในการใช้งานจริง"
+    },
+    "impishly": {
+      "en": "This modern textbook provides clear context for understanding impishly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า impishly ในการใช้งานจริง"
+    },
+    "insensitively": {
+      "en": "This modern textbook provides clear context for understanding insensitively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า insensitively ในการใช้งานจริง"
+    },
+    "irately": {
+      "en": "This modern textbook provides clear context for understanding irately in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า irately ในการใช้งานจริง"
+    },
+    "mineral water": {
+      "en": "This modern textbook provides clear context for understanding mineral water in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mineral water ในการใช้งานจริง"
+    },
+    "olive oil": {
+      "en": "This modern textbook provides clear context for understanding olive oil in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า olive oil ในการใช้งานจริง"
+    },
+    "petrol station": {
+      "en": "This modern textbook provides clear context for understanding petrol station in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า petrol station ในการใช้งานจริง"
+    },
+    "police officer": {
+      "en": "This modern textbook provides clear context for understanding police officer in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า police officer ในการใช้งานจริง"
+    },
+    "police station": {
+      "en": "This modern textbook provides clear context for understanding police station in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า police station ในการใช้งานจริง"
+    },
+    "post office": {
+      "en": "This modern textbook provides clear context for understanding post office in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า post office ในการใช้งานจริง"
+    },
+    "sentimentally": {
+      "en": "This modern textbook provides clear context for understanding sentimentally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า sentimentally ในการใช้งานจริง"
+    },
+    "shop assistant": {
+      "en": "This modern textbook provides clear context for understanding shop assistant in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า shop assistant ในการใช้งานจริง"
+    },
+    "sitting room": {
+      "en": "This modern textbook provides clear context for understanding sitting room in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า sitting room ในการใช้งานจริง"
+    },
+    "soft drink": {
+      "en": "This modern textbook provides clear context for understanding soft drink in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า soft drink ในการใช้งานจริง"
+    },
+    "stuffily": {
+      "en": "This modern textbook provides clear context for understanding stuffily in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stuffily ในการใช้งานจริง"
+    },
+    "swimming costume": {
+      "en": "This modern textbook provides clear context for understanding swimming costume in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า swimming costume ในการใช้งานจริง"
+    },
+    "table tennis": {
+      "en": "This modern textbook provides clear context for understanding table tennis in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า table tennis ในการใช้งานจริง"
+    },
+    "tautly": {
+      "en": "This modern textbook provides clear context for understanding tautly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า tautly ในการใช้งานจริง"
+    },
+    "tour guide": {
+      "en": "This modern textbook provides clear context for understanding tour guide in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า tour guide ในการใช้งานจริง"
+    },
+    "traffic light": {
+      "en": "This modern textbook provides clear context for understanding traffic light in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า traffic light ในการใช้งานจริง"
+    },
+    "unconvincingly": {
+      "en": "This modern textbook provides clear context for understanding unconvincingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unconvincingly ในการใช้งานจริง"
+    },
+    "unmusically": {
+      "en": "This modern textbook provides clear context for understanding unmusically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unmusically ในการใช้งานจริง"
+    },
+    "video game": {
+      "en": "This modern textbook provides clear context for understanding video game in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า video game ในการใช้งานจริง"
+    },
+    "washing machine": {
+      "en": "This modern textbook provides clear context for understanding washing machine in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า washing machine ในการใช้งานจริง"
+    },
+    "washing-up": {
+      "en": "This modern textbook provides clear context for understanding washing-up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า washing-up ในการใช้งานจริง"
+    },
+    "web page": {
+      "en": "This modern textbook provides clear context for understanding web page in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า web page ในการใช้งานจริง"
+    },
+    "arduously": {
+      "en": "This modern textbook provides clear context for understanding arduously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า arduously ในการใช้งานจริง"
+    },
+    "enduringly": {
+      "en": "This modern textbook provides clear context for understanding enduringly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า enduringly ในการใช้งานจริง"
+    },
+    "flightiness": {
+      "en": "This modern textbook provides clear context for understanding flightiness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า flightiness ในการใช้งานจริง"
+    },
+    "forlornly": {
+      "en": "This modern textbook provides clear context for understanding forlornly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า forlornly ในการใช้งานจริง"
+    },
+    "indolently": {
+      "en": "This modern textbook provides clear context for understanding indolently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า indolently ในการใช้งานจริง"
+    },
+    "ingratiatingly": {
+      "en": "This modern textbook provides clear context for understanding ingratiatingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ingratiatingly ในการใช้งานจริง"
+    },
+    "luridly": {
+      "en": "This modern textbook provides clear context for understanding luridly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า luridly ในการใช้งานจริง"
+    },
+    "melodiously": {
+      "en": "This modern textbook provides clear context for understanding melodiously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า melodiously ในการใช้งานจริง"
+    },
+    "mesmeric": {
+      "en": "This modern textbook provides clear context for understanding mesmeric in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mesmeric ในการใช้งานจริง"
+    },
+    "methodologically": {
+      "en": "This modern textbook provides clear context for understanding methodologically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า methodologically ในการใช้งานจริง"
+    },
+    "precociously": {
+      "en": "This modern textbook provides clear context for understanding precociously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า precociously ในการใช้งานจริง"
+    },
+    "presentational": {
+      "en": "This modern textbook provides clear context for understanding presentational in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า presentational ในการใช้งานจริง"
+    },
+    "spuriously": {
+      "en": "This modern textbook provides clear context for understanding spuriously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า spuriously ในการใช้งานจริง"
+    },
+    "superfluously": {
+      "en": "This modern textbook provides clear context for understanding superfluously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า superfluously ในการใช้งานจริง"
+    },
+    "telescopically": {
+      "en": "This modern textbook provides clear context for understanding telescopically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า telescopically ในการใช้งานจริง"
+    },
+    "topographically": {
+      "en": "This modern textbook provides clear context for understanding topographically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า topographically ในการใช้งานจริง"
+    },
+    "unexceptional": {
+      "en": "This modern textbook provides clear context for understanding unexceptional in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unexceptional ในการใช้งานจริง"
+    },
+    "unexcused": {
+      "en": "This modern textbook provides clear context for understanding unexcused in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unexcused ในการใช้งานจริง"
+    },
+    "unobtrusively": {
+      "en": "This modern textbook provides clear context for understanding unobtrusively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unobtrusively ในการใช้งานจริง"
+    },
+    "air conditioning": {
+      "en": "This modern textbook provides clear context for understanding air conditioning in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า air conditioning ในการใช้งานจริง"
+    },
+    "cd-rom": {
+      "en": "This modern textbook provides clear context for understanding cd-rom in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cd-rom ในการใช้งานจริง"
+    },
+    "central heating": {
+      "en": "This modern textbook provides clear context for understanding central heating in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า central heating ในการใช้งานจริง"
+    },
+    "check-in counter": {
+      "en": "This modern textbook provides clear context for understanding check-in counter in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า check-in counter ในการใช้งานจริง"
+    },
+    "check-in desk": {
+      "en": "This modern textbook provides clear context for understanding check-in desk in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า check-in desk ในการใช้งานจริง"
+    },
+    "chest of drawers": {
+      "en": "This modern textbook provides clear context for understanding chest of drawers in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า chest of drawers ในการใช้งานจริง"
+    },
+    "chewing gum": {
+      "en": "This modern textbook provides clear context for understanding chewing gum in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า chewing gum ในการใช้งานจริง"
+    },
+    "definite article": {
+      "en": "This modern textbook provides clear context for understanding definite article in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า definite article ในการใช้งานจริง"
+    },
+    "disc jockey": {
+      "en": "This modern textbook provides clear context for understanding disc jockey in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า disc jockey ในการใช้งานจริง"
+    },
+    "duty-free": {
+      "en": "This modern textbook provides clear context for understanding duty-free in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า duty-free ในการใช้งานจริง"
+    },
+    "exchange rate": {
+      "en": "This modern textbook provides clear context for understanding exchange rate in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า exchange rate ในการใช้งานจริง"
+    },
+    "fire station": {
+      "en": "This modern textbook provides clear context for understanding fire station in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fire station ในการใช้งานจริง"
+    },
+    "first floor": {
+      "en": "This modern textbook provides clear context for understanding first floor in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first floor ในการใช้งานจริง"
+    },
+    "frying pan": {
+      "en": "This modern textbook provides clear context for understanding frying pan in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า frying pan ในการใช้งานจริง"
+    },
+    "full stop": {
+      "en": "This modern textbook provides clear context for understanding full stop in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า full stop ในการใช้งานจริง"
+    },
+    "ground floor": {
+      "en": "This modern textbook provides clear context for understanding ground floor in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ground floor ในการใช้งานจริง"
+    },
+    "heart attack": {
+      "en": "This modern textbook provides clear context for understanding heart attack in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า heart attack ในการใช้งานจริง"
+    },
+    "ice hockey": {
+      "en": "This modern textbook provides clear context for understanding ice hockey in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ice hockey ในการใช้งานจริง"
+    },
+    "ice skating": {
+      "en": "This modern textbook provides clear context for understanding ice skating in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ice skating ในการใช้งานจริง"
+    },
+    "identity card": {
+      "en": "This modern textbook provides clear context for understanding identity card in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า identity card ในการใช้งานจริง"
+    },
+    "indefinite article": {
+      "en": "This modern textbook provides clear context for understanding indefinite article in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า indefinite article ในการใช้งานจริง"
+    },
+    "mixing bowl": {
+      "en": "This modern textbook provides clear context for understanding mixing bowl in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mixing bowl ในการใช้งานจริง"
+    },
+    "out-of-date": {
+      "en": "This modern textbook provides clear context for understanding out-of-date in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า out-of-date ในการใช้งานจริง"
+    },
+    "pocket money": {
+      "en": "This modern textbook provides clear context for understanding pocket money in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า pocket money ในการใช้งานจริง"
+    },
+    "primary school": {
+      "en": "This modern textbook provides clear context for understanding primary school in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า primary school ในการใช้งานจริง"
+    },
+    "public transport": {
+      "en": "This modern textbook provides clear context for understanding public transport in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า public transport ในการใช้งานจริง"
+    },
+    "question mark": {
+      "en": "This modern textbook provides clear context for understanding question mark in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า question mark ในการใช้งานจริง"
+    },
+    "remote control": {
+      "en": "This modern textbook provides clear context for understanding remote control in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า remote control ในการใช้งานจริง"
+    },
+    "science fiction": {
+      "en": "This modern textbook provides clear context for understanding science fiction in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า science fiction ในการใช้งานจริง"
+    },
+    "secondary school": {
+      "en": "This modern textbook provides clear context for understanding secondary school in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า secondary school ในการใช้งานจริง"
+    },
+    "self-service": {
+      "en": "This modern textbook provides clear context for understanding self-service in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-service ในการใช้งานจริง"
+    },
+    "soap opera": {
+      "en": "This modern textbook provides clear context for understanding soap opera in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า soap opera ในการใช้งานจริง"
+    },
+    "traffic jam": {
+      "en": "This modern textbook provides clear context for understanding traffic jam in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า traffic jam ในการใช้งานจริง"
+    },
+    "travel agent": {
+      "en": "This modern textbook provides clear context for understanding travel agent in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า travel agent ในการใช้งานจริง"
+    },
+    "vice president": {
+      "en": "This modern textbook provides clear context for understanding vice president in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า vice president ในการใช้งานจริง"
+    },
+    "weather forecast": {
+      "en": "This modern textbook provides clear context for understanding weather forecast in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า weather forecast ในการใช้งานจริง"
+    },
+    "well-dressed": {
+      "en": "This modern textbook provides clear context for understanding well-dressed in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-dressed ในการใช้งานจริง"
+    },
+    "bad-tempered": {
+      "en": "This modern textbook provides clear context for understanding bad-tempered in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bad-tempered ในการใช้งานจริง"
+    },
+    "carbon dioxide": {
+      "en": "This modern textbook provides clear context for understanding carbon dioxide in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า carbon dioxide ในการใช้งานจริง"
+    },
+    "carbon monoxide": {
+      "en": "This modern textbook provides clear context for understanding carbon monoxide in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า carbon monoxide ในการใช้งานจริง"
+    },
+    "climate change": {
+      "en": "This modern textbook provides clear context for understanding climate change in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า climate change ในการใช้งานจริง"
+    },
+    "debit card": {
+      "en": "This modern textbook provides clear context for understanding debit card in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า debit card ในการใช้งานจริง"
+    },
+    "exclamation mark": {
+      "en": "This modern textbook provides clear context for understanding exclamation mark in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า exclamation mark ในการใช้งานจริง"
+    },
+    "first language": {
+      "en": "This modern textbook provides clear context for understanding first language in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first language ในการใช้งานจริง"
+    },
+    "first person": {
+      "en": "This modern textbook provides clear context for understanding first person in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first person ในการใช้งานจริง"
+    },
+    "global warming": {
+      "en": "This modern textbook provides clear context for understanding global warming in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า global warming ในการใช้งานจริง"
+    },
+    "hard drive": {
+      "en": "This modern textbook provides clear context for understanding hard drive in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า hard drive ในการใช้งานจริง"
+    },
+    "junk food": {
+      "en": "This modern textbook provides clear context for understanding junk food in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า junk food ในการใช้งานจริง"
+    },
+    "polar bear": {
+      "en": "This modern textbook provides clear context for understanding polar bear in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า polar bear ในการใช้งานจริง"
+    },
+    "real estate": {
+      "en": "This modern textbook provides clear context for understanding real estate in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า real estate ในการใช้งานจริง"
+    },
+    "rush hour": {
+      "en": "This modern textbook provides clear context for understanding rush hour in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า rush hour ในการใช้งานจริง"
+    },
+    "second person": {
+      "en": "This modern textbook provides clear context for understanding second person in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า second person ในการใช้งานจริง"
+    },
+    "steering wheel": {
+      "en": "This modern textbook provides clear context for understanding steering wheel in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า steering wheel ในการใช้งานจริง"
+    },
+    "stock market": {
+      "en": "This modern textbook provides clear context for understanding stock market in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stock market ในการใช้งานจริง"
+    },
+    "third person": {
+      "en": "This modern textbook provides clear context for understanding third person in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า third person ในการใช้งานจริง"
+    },
+    "virtual reality": {
+      "en": "This modern textbook provides clear context for understanding virtual reality in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า virtual reality ในการใช้งานจริง"
+    },
+    "cost-effective": {
+      "en": "This modern textbook provides clear context for understanding cost-effective in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cost-effective ในการใช้งานจริง"
+    },
+    "self-worth": {
+      "en": "This modern textbook provides clear context for understanding self-worth in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-worth ในการใช้งานจริง"
+    },
+    "turn to": {
+      "en": "This modern textbook provides clear context for understanding turn to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า turn to ในการใช้งานจริง"
+    },
+    "all-encompassing": {
+      "en": "This modern textbook provides clear context for understanding all-encompassing in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า all-encompassing ในการใช้งานจริง"
+    },
+    "mull over": {
+      "en": "This modern textbook provides clear context for understanding mull over in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mull over ในการใช้งานจริง"
+    },
+    "taste-maker": {
+      "en": "This modern textbook provides clear context for understanding taste-maker in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า taste-maker ในการใช้งานจริง"
+    },
+    "anchorperson": {
+      "en": "This modern textbook provides clear context for understanding anchorperson in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า anchorperson ในการใช้งานจริง"
+    },
+    "gracefulness": {
+      "en": "This modern textbook provides clear context for understanding gracefulness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า gracefulness ในการใช้งานจริง"
+    },
+    "habitant": {
+      "en": "This modern textbook provides clear context for understanding habitant in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า habitant ในการใช้งานจริง"
+    },
+    "housemaster": {
+      "en": "This modern textbook provides clear context for understanding housemaster in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า housemaster ในการใช้งานจริง"
+    },
+    "invitingly": {
+      "en": "This modern textbook provides clear context for understanding invitingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า invitingly ในการใช้งานจริง"
+    },
+    "mutability": {
+      "en": "This modern textbook provides clear context for understanding mutability in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mutability ในการใช้งานจริง"
+    },
+    "scholasticism": {
+      "en": "This modern textbook provides clear context for understanding scholasticism in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า scholasticism ในการใช้งานจริง"
+    },
+    "unclearly": {
+      "en": "This modern textbook provides clear context for understanding unclearly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unclearly ในการใช้งานจริง"
+    },
+    "unthinkably": {
+      "en": "This modern textbook provides clear context for understanding unthinkably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unthinkably ในการใช้งานจริง"
+    },
+    "unusualness": {
+      "en": "This modern textbook provides clear context for understanding unusualness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unusualness ในการใช้งานจริง"
+    },
+    "detrimentally": {
+      "en": "This modern textbook provides clear context for understanding detrimentally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า detrimentally ในการใช้งานจริง"
+    },
+    "maternalistic": {
+      "en": "This modern textbook provides clear context for understanding maternalistic in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า maternalistic ในการใช้งานจริง"
+    },
+    "perceptively": {
+      "en": "This modern textbook provides clear context for understanding perceptively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า perceptively ในการใช้งานจริง"
+    },
+    "remorsefully": {
+      "en": "This modern textbook provides clear context for understanding remorsefully in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า remorsefully ในการใช้งานจริง"
+    },
+    "slackly": {
+      "en": "This modern textbook provides clear context for understanding slackly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า slackly ในการใช้งานจริง"
+    },
+    "tastebud": {
+      "en": "This modern textbook provides clear context for understanding tastebud in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า tastebud ในการใช้งานจริง"
+    },
+    "unreliably": {
+      "en": "This modern textbook provides clear context for understanding unreliably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unreliably ในการใช้งานจริง"
+    },
+    "ephemerality": {
+      "en": "This modern textbook provides clear context for understanding ephemerality in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ephemerality ในการใช้งานจริง"
+    },
+    "ignominiously": {
+      "en": "This modern textbook provides clear context for understanding ignominiously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ignominiously ในการใช้งานจริง"
+    },
+    "inartistic": {
+      "en": "This modern textbook provides clear context for understanding inartistic in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inartistic ในการใช้งานจริง"
+    },
+    "inexorability": {
+      "en": "This modern textbook provides clear context for understanding inexorability in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inexorability ในการใช้งานจริง"
+    },
+    "opulently": {
+      "en": "This modern textbook provides clear context for understanding opulently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า opulently ในการใช้งานจริง"
+    },
+    "patchily": {
+      "en": "This modern textbook provides clear context for understanding patchily in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า patchily ในการใช้งานจริง"
+    },
+    "patronizingly": {
+      "en": "This modern textbook provides clear context for understanding patronizingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า patronizingly ในการใช้งานจริง"
+    },
+    "philanthropically": {
+      "en": "This modern textbook provides clear context for understanding philanthropically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า philanthropically ในการใช้งานจริง"
+    },
+    "prurience": {
+      "en": "This modern textbook provides clear context for understanding prurience in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า prurience ในการใช้งานจริง"
+    },
+    "punitively": {
+      "en": "This modern textbook provides clear context for understanding punitively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า punitively ในการใช้งานจริง"
+    },
+    "remonstrance": {
+      "en": "This modern textbook provides clear context for understanding remonstrance in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า remonstrance ในการใช้งานจริง"
+    },
+    "ruminative": {
+      "en": "This modern textbook provides clear context for understanding ruminative in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ruminative ในการใช้งานจริง"
+    },
+    "spatially": {
+      "en": "This modern textbook provides clear context for understanding spatially in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า spatially ในการใช้งานจริง"
+    },
+    "taciturnity": {
+      "en": "This modern textbook provides clear context for understanding taciturnity in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า taciturnity ในการใช้งานจริง"
+    },
+    "undemonstrative": {
+      "en": "This modern textbook provides clear context for understanding undemonstrative in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า undemonstrative ในการใช้งานจริง"
+    },
+    "unobtrusiveness": {
+      "en": "This modern textbook provides clear context for understanding unobtrusiveness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unobtrusiveness ในการใช้งานจริง"
+    },
+    "venomously": {
+      "en": "This modern textbook provides clear context for understanding venomously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า venomously ในการใช้งานจริง"
+    },
+    "a.m.": {
+      "en": "This modern textbook provides clear context for understanding a.m. in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า a.m. ในการใช้งานจริง"
+    },
+    "p.m.": {
+      "en": "This modern textbook provides clear context for understanding p.m. in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า p.m. ในการใช้งานจริง"
+    },
+    "hip hop": {
+      "en": "This modern textbook provides clear context for understanding hip hop in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า hip hop ในการใช้งานจริง"
+    },
+    "left-hand": {
+      "en": "This modern textbook provides clear context for understanding left-hand in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า left-hand ในการใช้งานจริง"
+    },
+    "make-up": {
+      "en": "This modern textbook provides clear context for understanding make-up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า make-up ในการใช้งานจริง"
+    },
+    "right-hand": {
+      "en": "This modern textbook provides clear context for understanding right-hand in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า right-hand ในการใช้งานจริง"
+    },
+    "well-known": {
+      "en": "This modern textbook provides clear context for understanding well-known in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-known ในการใช้งานจริง"
+    },
+    "main course": {
+      "en": "This modern textbook provides clear context for understanding main course in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า main course ในการใช้งานจริง"
+    },
+    "air force": {
+      "en": "This modern textbook provides clear context for understanding air force in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า air force ในการใช้งานจริง"
+    },
+    "face to face": {
+      "en": "This modern textbook provides clear context for understanding face to face in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า face to face ในการใช้งานจริง"
+    },
+    "firmness": {
+      "en": "This modern textbook provides clear context for understanding firmness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า firmness ในการใช้งานจริง"
+    },
+    "first lady": {
+      "en": "This modern textbook provides clear context for understanding first lady in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first lady ในการใช้งานจริง"
+    },
+    "iceman": {
+      "en": "This modern textbook provides clear context for understanding iceman in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า iceman ในการใช้งานจริง"
+    },
+    "long-distance": {
+      "en": "This modern textbook provides clear context for understanding long-distance in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า long-distance ในการใช้งานจริง"
+    },
+    "quotable": {
+      "en": "This modern textbook provides clear context for understanding quotable in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า quotable ในการใช้งานจริง"
+    },
+    "respectably": {
+      "en": "This modern textbook provides clear context for understanding respectably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า respectably ในการใช้งานจริง"
+    },
+    "up-to-date": {
+      "en": "This modern textbook provides clear context for understanding up-to-date in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า up-to-date ในการใช้งานจริง"
+    },
+    "x-ray": {
+      "en": "This modern textbook provides clear context for understanding x-ray in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า x-ray ในการใช้งานจริง"
+    },
+    "beguiling": {
+      "en": "This modern textbook provides clear context for understanding beguiling in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า beguiling ในการใช้งานจริง"
+    },
+    "explosively": {
+      "en": "This modern textbook provides clear context for understanding explosively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า explosively ในการใช้งานจริง"
+    },
+    "impersonal": {
+      "en": "This modern textbook provides clear context for understanding impersonal in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า impersonal ในการใช้งานจริง"
+    },
+    "inexcusably": {
+      "en": "This modern textbook provides clear context for understanding inexcusably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inexcusably ในการใช้งานจริง"
+    },
+    "raunchy": {
+      "en": "This modern textbook provides clear context for understanding raunchy in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า raunchy ในการใช้งานจริง"
+    },
+    "recessive": {
+      "en": "This modern textbook provides clear context for understanding recessive in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า recessive ในการใช้งานจริง"
+    },
+    "self-conscious": {
+      "en": "This modern textbook provides clear context for understanding self-conscious in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า self-conscious ในการใช้งานจริง"
+    },
+    "unassisted": {
+      "en": "This modern textbook provides clear context for understanding unassisted in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unassisted ในการใช้งานจริง"
+    },
+    "unenviable": {
+      "en": "This modern textbook provides clear context for understanding unenviable in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unenviable ในการใช้งานจริง"
+    },
+    "banishment": {
+      "en": "This modern textbook provides clear context for understanding banishment in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า banishment ในการใช้งานจริง"
+    },
+    "belligerence": {
+      "en": "This modern textbook provides clear context for understanding belligerence in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า belligerence ในการใช้งานจริง"
+    },
+    "brouhaha": {
+      "en": "This modern textbook provides clear context for understanding brouhaha in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า brouhaha ในการใช้งานจริง"
+    },
+    "carbonize": {
+      "en": "This modern textbook provides clear context for understanding carbonize in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า carbonize ในการใช้งานจริง"
+    },
+    "cloistered": {
+      "en": "This modern textbook provides clear context for understanding cloistered in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cloistered ในการใช้งานจริง"
+    },
+    "colloquium": {
+      "en": "This modern textbook provides clear context for understanding colloquium in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า colloquium ในการใช้งานจริง"
+    },
+    "commode": {
+      "en": "This modern textbook provides clear context for understanding commode in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า commode ในการใช้งานจริง"
+    },
+    "concurrence": {
+      "en": "This modern textbook provides clear context for understanding concurrence in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า concurrence ในการใช้งานจริง"
+    },
+    "confabulation": {
+      "en": "This modern textbook provides clear context for understanding confabulation in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า confabulation ในการใช้งานจริง"
+    },
+    "fire brigade": {
+      "en": "This modern textbook provides clear context for understanding fire brigade in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fire brigade ในการใช้งานจริง"
+    },
+    "health care": {
+      "en": "This modern textbook provides clear context for understanding health care in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า health care ในการใช้งานจริง"
+    },
+    "impressionistic": {
+      "en": "This modern textbook provides clear context for understanding impressionistic in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า impressionistic ในการใช้งานจริง"
+    },
+    "inducement": {
+      "en": "This modern textbook provides clear context for understanding inducement in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inducement ในการใช้งานจริง"
+    },
+    "leavening": {
+      "en": "This modern textbook provides clear context for understanding leavening in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า leavening ในการใช้งานจริง"
+    },
+    "midwifery": {
+      "en": "This modern textbook provides clear context for understanding midwifery in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า midwifery ในการใช้งานจริง"
+    },
+    "mutinous": {
+      "en": "This modern textbook provides clear context for understanding mutinous in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mutinous ในการใช้งานจริง"
+    },
+    "point of view": {
+      "en": "This modern textbook provides clear context for understanding point of view in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า point of view ในการใช้งานจริง"
+    },
+    "prime minister": {
+      "en": "This modern textbook provides clear context for understanding prime minister in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า prime minister ในการใช้งานจริง"
+    },
+    "requisition": {
+      "en": "This modern textbook provides clear context for understanding requisition in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า requisition ในการใช้งานจริง"
+    },
+    "reverberation": {
+      "en": "This modern textbook provides clear context for understanding reverberation in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า reverberation ในการใช้งานจริง"
+    },
+    "solitariness": {
+      "en": "This modern textbook provides clear context for understanding solitariness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า solitariness ในการใช้งานจริง"
+    },
+    "stultify": {
+      "en": "This modern textbook provides clear context for understanding stultify in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stultify ในการใช้งานจริง"
+    },
+    "virginal": {
+      "en": "This modern textbook provides clear context for understanding virginal in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า virginal ในการใช้งานจริง"
+    },
+    "well-balanced": {
+      "en": "This modern textbook provides clear context for understanding well-balanced in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-balanced ในการใช้งานจริง"
+    },
+    "divergence": {
+      "en": "This modern textbook provides clear context for understanding divergence in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า divergence ในการใช้งานจริง"
+    },
+    "bona fide": {
+      "en": "This modern textbook provides clear context for understanding bona fide in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bona fide ในการใช้งานจริง"
+    },
+    "eke out": {
+      "en": "This modern textbook provides clear context for understanding eke out in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า eke out ในการใช้งานจริง"
+    },
+    "haphazardly": {
+      "en": "This modern textbook provides clear context for understanding haphazardly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า haphazardly ในการใช้งานจริง"
+    },
+    "walkabout": {
+      "en": "This modern textbook provides clear context for understanding walkabout in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า walkabout ในการใช้งานจริง"
+    },
+    "believably": {
+      "en": "This modern textbook provides clear context for understanding believably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า believably ในการใช้งานจริง"
+    },
+    "bureaucratically": {
+      "en": "This modern textbook provides clear context for understanding bureaucratically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bureaucratically ในการใช้งานจริง"
+    },
+    "eccentrically": {
+      "en": "This modern textbook provides clear context for understanding eccentrically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า eccentrically ในการใช้งานจริง"
+    },
+    "exuberantly": {
+      "en": "This modern textbook provides clear context for understanding exuberantly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า exuberantly ในการใช้งานจริง"
+    },
+    "impersonally": {
+      "en": "This modern textbook provides clear context for understanding impersonally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า impersonally ในการใช้งานจริง"
+    },
+    "primitively": {
+      "en": "This modern textbook provides clear context for understanding primitively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า primitively ในการใช้งานจริง"
+    },
+    "stuffiness": {
+      "en": "This modern textbook provides clear context for understanding stuffiness in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stuffiness ในการใช้งานจริง"
+    },
+    "unmusical": {
+      "en": "This modern textbook provides clear context for understanding unmusical in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unmusical ในการใช้งานจริง"
+    },
+    "angularity": {
+      "en": "This modern textbook provides clear context for understanding angularity in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า angularity ในการใช้งานจริง"
+    },
+    "confabulate": {
+      "en": "This modern textbook provides clear context for understanding confabulate in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า confabulate ในการใช้งานจริง"
+    },
+    "denotation": {
+      "en": "This modern textbook provides clear context for understanding denotation in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า denotation ในการใช้งานจริง"
+    },
+    "disparagement": {
+      "en": "This modern textbook provides clear context for understanding disparagement in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า disparagement ในการใช้งานจริง"
+    },
+    "interrogatively": {
+      "en": "This modern textbook provides clear context for understanding interrogatively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า interrogatively ในการใช้งานจริง"
+    },
+    "materialization": {
+      "en": "This modern textbook provides clear context for understanding materialization in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า materialization ในการใช้งานจริง"
+    },
+    "portraiture": {
+      "en": "This modern textbook provides clear context for understanding portraiture in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า portraiture ในการใช้งานจริง"
+    },
+    "retrospection": {
+      "en": "This modern textbook provides clear context for understanding retrospection in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า retrospection ในการใช้งานจริง"
+    },
+    "romper": {
+      "en": "This modern textbook provides clear context for understanding romper in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า romper ในการใช้งานจริง"
+    },
+    "'m": {
+      "en": "This modern textbook provides clear context for understanding 'm in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า 'm ในการใช้งานจริง"
+    },
+    "'s": {
+      "en": "This modern textbook provides clear context for understanding 's in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า 's ในการใช้งานจริง"
+    },
+    "each other": {
+      "en": "This modern textbook provides clear context for understanding each other in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า each other ในการใช้งานจริง"
+    },
+    "good afternoon": {
+      "en": "This modern textbook provides clear context for understanding good afternoon in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า good afternoon ในการใช้งานจริง"
+    },
+    "good morning": {
+      "en": "This modern textbook provides clear context for understanding good morning in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า good morning ในการใช้งานจริง"
+    },
+    "good night": {
+      "en": "This modern textbook provides clear context for understanding good night in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า good night ในการใช้งานจริง"
+    },
+    "have to": {
+      "en": "This modern textbook provides clear context for understanding have to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า have to ในการใช้งานจริง"
+    },
+    "hard-working": {
+      "en": "This modern textbook provides clear context for understanding hard-working in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า hard-working ในการใช้งานจริง"
+    },
+    "id card": {
+      "en": "This modern textbook provides clear context for understanding id card in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า id card ในการใช้งานจริง"
+    },
+    "next to": {
+      "en": "This modern textbook provides clear context for understanding next to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า next to ในการใช้งานจริง"
+    },
+    "no one": {
+      "en": "This modern textbook provides clear context for understanding no one in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า no one ในการใช้งานจริง"
+    },
+    "out of": {
+      "en": "This modern textbook provides clear context for understanding out of in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า out of ในการใช้งานจริง"
+    },
+    "sports center": {
+      "en": "This modern textbook provides clear context for understanding sports center in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า sports center ในการใช้งานจริง"
+    },
+    "text message": {
+      "en": "This modern textbook provides clear context for understanding text message in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า text message ในการใช้งานจริง"
+    },
+    "according to": {
+      "en": "This modern textbook provides clear context for understanding according to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า according to ในการใช้งานจริง"
+    },
+    "because of": {
+      "en": "This modern textbook provides clear context for understanding because of in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า because of ในการใช้งานจริง"
+    },
+    "dispensable": {
+      "en": "This modern textbook provides clear context for understanding dispensable in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า dispensable ในการใช้งานจริง"
+    },
+    "extreme sports": {
+      "en": "This modern textbook provides clear context for understanding extreme sports in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า extreme sports ในการใช้งานจริง"
+    },
+    "film-maker": {
+      "en": "This modern textbook provides clear context for understanding film-maker in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า film-maker ในการใช้งานจริง"
+    },
+    "first-floor": {
+      "en": "This modern textbook provides clear context for understanding first-floor in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า first-floor ในการใช้งานจริง"
+    },
+    "glacis": {
+      "en": "This modern textbook provides clear context for understanding glacis in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า glacis ในการใช้งานจริง"
+    },
+    "grown-up": {
+      "en": "This modern textbook provides clear context for understanding grown-up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า grown-up ในการใช้งานจริง"
+    },
+    "instead of": {
+      "en": "This modern textbook provides clear context for understanding instead of in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า instead of ในการใช้งานจริง"
+    },
+    "message board": {
+      "en": "This modern textbook provides clear context for understanding message board in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า message board ในการใช้งานจริง"
+    },
+    "navy blue": {
+      "en": "This modern textbook provides clear context for understanding navy blue in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า navy blue ในการใช้งานจริง"
+    },
+    "next-door": {
+      "en": "This modern textbook provides clear context for understanding next-door in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า next-door ในการใช้งานจริง"
+    },
+    "non-smoking": {
+      "en": "This modern textbook provides clear context for understanding non-smoking in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า non-smoking ในการใช้งานจริง"
+    },
+    "ought to": {
+      "en": "This modern textbook provides clear context for understanding ought to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ought to ในการใช้งานจริง"
+    },
+    "paperless": {
+      "en": "This modern textbook provides clear context for understanding paperless in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า paperless ในการใช้งานจริง"
+    },
+    "'re": {
+      "en": "This modern textbook provides clear context for understanding 're in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า 're ในการใช้งานจริง"
+    },
+    "second-hand": {
+      "en": "This modern textbook provides clear context for understanding second-hand in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า second-hand ในการใช้งานจริง"
+    },
+    "social networking": {
+      "en": "This modern textbook provides clear context for understanding social networking in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า social networking ในการใช้งานจริง"
+    },
+    "used to": {
+      "en": "This modern textbook provides clear context for understanding used to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า used to ในการใช้งานจริง"
+    },
+    "video clip": {
+      "en": "This modern textbook provides clear context for understanding video clip in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า video clip ในการใช้งานจริง"
+    },
+    "contextual": {
+      "en": "This modern textbook provides clear context for understanding contextual in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า contextual ในการใช้งานจริง"
+    },
+    "demographically": {
+      "en": "This modern textbook provides clear context for understanding demographically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า demographically ในการใช้งานจริง"
+    },
+    "mp3 player": {
+      "en": "This modern textbook provides clear context for understanding mp3 player in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mp3 player ในการใช้งานจริง"
+    },
+    "personalization": {
+      "en": "This modern textbook provides clear context for understanding personalization in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า personalization ในการใช้งานจริง"
+    },
+    "prolifically": {
+      "en": "This modern textbook provides clear context for understanding prolifically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า prolifically ในการใช้งานจริง"
+    },
+    "sedately": {
+      "en": "This modern textbook provides clear context for understanding sedately in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า sedately ในการใช้งานจริง"
+    },
+    "unsustainably": {
+      "en": "This modern textbook provides clear context for understanding unsustainably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unsustainably ในการใช้งานจริง"
+    },
+    "anticancer": {
+      "en": "This modern textbook provides clear context for understanding anticancer in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า anticancer ในการใช้งานจริง"
+    },
+    "carbon footprint": {
+      "en": "This modern textbook provides clear context for understanding carbon footprint in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า carbon footprint ในการใช้งานจริง"
+    },
+    "environmentally friendly": {
+      "en": "This modern textbook provides clear context for understanding environmentally friendly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า environmentally friendly ในการใช้งานจริง"
+    },
+    "human rights": {
+      "en": "This modern textbook provides clear context for understanding human rights in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า human rights ในการใช้งานจริง"
+    },
+    "inverted commas": {
+      "en": "This modern textbook provides clear context for understanding inverted commas in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inverted commas ในการใช้งานจริง"
+    },
+    "marketability": {
+      "en": "This modern textbook provides clear context for understanding marketability in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า marketability ในการใช้งานจริง"
+    },
+    "minster": {
+      "en": "This modern textbook provides clear context for understanding minster in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า minster ในการใช้งานจริง"
+    },
+    "owing to": {
+      "en": "This modern textbook provides clear context for understanding owing to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า owing to ในการใช้งานจริง"
+    },
+    "semi-final": {
+      "en": "This modern textbook provides clear context for understanding semi-final in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า semi-final ในการใช้งานจริง"
+    },
+    "vis-a-vis": {
+      "en": "This modern textbook provides clear context for understanding vis-a-vis in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า vis-a-vis ในการใช้งานจริง"
+    },
+    "well-built": {
+      "en": "This modern textbook provides clear context for understanding well-built in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-built ในการใช้งานจริง"
+    },
+    "well-organized": {
+      "en": "This modern textbook provides clear context for understanding well-organized in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-organized ในการใช้งานจริง"
+    },
+    "well-paid": {
+      "en": "This modern textbook provides clear context for understanding well-paid in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า well-paid ในการใช้งานจริง"
+    },
+    "apt to": {
+      "en": "This modern textbook provides clear context for understanding apt to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า apt to ในการใช้งานจริง"
+    },
+    "bulk up": {
+      "en": "This modern textbook provides clear context for understanding bulk up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bulk up ในการใช้งานจริง"
+    },
+    "mark-up": {
+      "en": "This modern textbook provides clear context for understanding mark-up in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mark-up ในการใช้งานจริง"
+    },
+    "pertain to": {
+      "en": "This modern textbook provides clear context for understanding pertain to in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า pertain to ในการใช้งานจริง"
+    },
+    "ad lib": {
+      "en": "This modern textbook provides clear context for understanding ad lib in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า ad lib ในการใช้งานจริง"
+    },
+    "commensurately": {
+      "en": "This modern textbook provides clear context for understanding commensurately in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า commensurately ในการใช้งานจริง"
+    },
+    "enabler": {
+      "en": "This modern textbook provides clear context for understanding enabler in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า enabler ในการใช้งานจริง"
+    },
+    "glory in": {
+      "en": "This modern textbook provides clear context for understanding glory in in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า glory in ในการใช้งานจริง"
+    },
+    "side-step": {
+      "en": "This modern textbook provides clear context for understanding side-step in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า side-step ในการใช้งานจริง"
+    },
+    "antipollution": {
+      "en": "This modern textbook provides clear context for understanding antipollution in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า antipollution ในการใช้งานจริง"
+    },
+    "antistatic": {
+      "en": "This modern textbook provides clear context for understanding antistatic in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า antistatic ในการใช้งานจริง"
+    },
+    "cyberaddict": {
+      "en": "This modern textbook provides clear context for understanding cyberaddict in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cyberaddict ในการใช้งานจริง"
+    },
+    "cyberpet": {
+      "en": "This modern textbook provides clear context for understanding cyberpet in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cyberpet ในการใช้งานจริง"
+    },
+    "cyberschool": {
+      "en": "This modern textbook provides clear context for understanding cyberschool in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cyberschool ในการใช้งานจริง"
+    },
+    "glocal": {
+      "en": "This modern textbook provides clear context for understanding glocal in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า glocal ในการใช้งานจริง"
+    },
+    "moonscape": {
+      "en": "This modern textbook provides clear context for understanding moonscape in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า moonscape ในการใช้งานจริง"
+    },
+    "netsurfer": {
+      "en": "This modern textbook provides clear context for understanding netsurfer in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า netsurfer ในการใช้งานจริง"
+    },
+    "prehuman": {
+      "en": "This modern textbook provides clear context for understanding prehuman in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า prehuman ในการใช้งานจริง"
+    },
+    "beguilingly": {
+      "en": "This modern textbook provides clear context for understanding beguilingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า beguilingly ในการใช้งานจริง"
+    },
+    "chauffer": {
+      "en": "This modern textbook provides clear context for understanding chauffer in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า chauffer ในการใช้งานจริง"
+    },
+    "chiselled": {
+      "en": "This modern textbook provides clear context for understanding chiselled in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า chiselled ในการใช้งานจริง"
+    },
+    "compliantly": {
+      "en": "This modern textbook provides clear context for understanding compliantly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า compliantly ในการใช้งานจริง"
+    },
+    "contextually": {
+      "en": "This modern textbook provides clear context for understanding contextually in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า contextually ในการใช้งานจริง"
+    },
+    "docilely": {
+      "en": "This modern textbook provides clear context for understanding docilely in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า docilely ในการใช้งานจริง"
+    },
+    "eclectically": {
+      "en": "This modern textbook provides clear context for understanding eclectically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า eclectically ในการใช้งานจริง"
+    },
+    "exotically": {
+      "en": "This modern textbook provides clear context for understanding exotically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า exotically ในการใช้งานจริง"
+    },
+    "inclusively": {
+      "en": "This modern textbook provides clear context for understanding inclusively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inclusively ในการใช้งานจริง"
+    },
+    "insightfully": {
+      "en": "This modern textbook provides clear context for understanding insightfully in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า insightfully ในการใช้งานจริง"
+    },
+    "insubordinately": {
+      "en": "This modern textbook provides clear context for understanding insubordinately in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า insubordinately ในการใช้งานจริง"
+    },
+    "meaninglessly": {
+      "en": "This modern textbook provides clear context for understanding meaninglessly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า meaninglessly ในการใช้งานจริง"
+    },
+    "raunchily": {
+      "en": "This modern textbook provides clear context for understanding raunchily in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า raunchily ในการใช้งานจริง"
+    },
+    "stressfully": {
+      "en": "This modern textbook provides clear context for understanding stressfully in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stressfully ในการใช้งานจริง"
+    },
+    "succulently": {
+      "en": "This modern textbook provides clear context for understanding succulently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า succulently ในการใช้งานจริง"
+    },
+    "unenviably": {
+      "en": "This modern textbook provides clear context for understanding unenviably in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unenviably ในการใช้งานจริง"
+    },
+    "unscathing": {
+      "en": "This modern textbook provides clear context for understanding unscathing in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unscathing ในการใช้งานจริง"
+    },
+    "abhorrently": {
+      "en": "This modern textbook provides clear context for understanding abhorrently in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า abhorrently ในการใช้งานจริง"
+    },
+    "acrobatically": {
+      "en": "This modern textbook provides clear context for understanding acrobatically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า acrobatically ในการใช้งานจริง"
+    },
+    "amorphously": {
+      "en": "This modern textbook provides clear context for understanding amorphously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า amorphously ในการใช้งานจริง"
+    },
+    "angsty": {
+      "en": "This modern textbook provides clear context for understanding angsty in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า angsty ในการใช้งานจริง"
+    },
+    "anticlimactically": {
+      "en": "This modern textbook provides clear context for understanding anticlimactically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า anticlimactically ในการใช้งานจริง"
+    },
+    "arcanely": {
+      "en": "This modern textbook provides clear context for understanding arcanely in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า arcanely ในการใช้งานจริง"
+    },
+    "bereftly": {
+      "en": "This modern textbook provides clear context for understanding bereftly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า bereftly ในการใช้งานจริง"
+    },
+    "calamitously": {
+      "en": "This modern textbook provides clear context for understanding calamitously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า calamitously ในการใช้งานจริง"
+    },
+    "choreographical": {
+      "en": "This modern textbook provides clear context for understanding choreographical in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า choreographical ในการใช้งานจริง"
+    },
+    "confrontationally": {
+      "en": "This modern textbook provides clear context for understanding confrontationally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า confrontationally ในการใช้งานจริง"
+    },
+    "counterproductively": {
+      "en": "This modern textbook provides clear context for understanding counterproductively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า counterproductively ในการใช้งานจริง"
+    },
+    "cultish": {
+      "en": "This modern textbook provides clear context for understanding cultish in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า cultish ในการใช้งานจริง"
+    },
+    "demystification": {
+      "en": "This modern textbook provides clear context for understanding demystification in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า demystification ในการใช้งานจริง"
+    },
+    "deviantly": {
+      "en": "This modern textbook provides clear context for understanding deviantly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า deviantly ในการใช้งานจริง"
+    },
+    "echolocate": {
+      "en": "This modern textbook provides clear context for understanding echolocate in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า echolocate ในการใช้งานจริง"
+    },
+    "emulsification": {
+      "en": "This modern textbook provides clear context for understanding emulsification in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า emulsification ในการใช้งานจริง"
+    },
+    "euphorically": {
+      "en": "This modern textbook provides clear context for understanding euphorically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า euphorically ในการใช้งานจริง"
+    },
+    "evokingly": {
+      "en": "This modern textbook provides clear context for understanding evokingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า evokingly ในการใช้งานจริง"
+    },
+    "exaltedly": {
+      "en": "This modern textbook provides clear context for understanding exaltedly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า exaltedly ในการใช้งานจริง"
+    },
+    "fabulate": {
+      "en": "This modern textbook provides clear context for understanding fabulate in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fabulate ในการใช้งานจริง"
+    },
+    "fabulation": {
+      "en": "This modern textbook provides clear context for understanding fabulation in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า fabulation ในการใช้งานจริง"
+    },
+    "genomically": {
+      "en": "This modern textbook provides clear context for understanding genomically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า genomically ในการใช้งานจริง"
+    },
+    "histrionically": {
+      "en": "This modern textbook provides clear context for understanding histrionically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า histrionically ในการใช้งานจริง"
+    },
+    "impressionistically": {
+      "en": "This modern textbook provides clear context for understanding impressionistically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า impressionistically ในการใช้งานจริง"
+    },
+    "inchoately": {
+      "en": "This modern textbook provides clear context for understanding inchoately in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า inchoately ในการใช้งานจริง"
+    },
+    "infallibly": {
+      "en": "This modern textbook provides clear context for understanding infallibly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า infallibly ในการใช้งานจริง"
+    },
+    "kinetically": {
+      "en": "This modern textbook provides clear context for understanding kinetically in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า kinetically ในการใช้งานจริง"
+    },
+    "metalled": {
+      "en": "This modern textbook provides clear context for understanding metalled in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า metalled ในการใช้งานจริง"
+    },
+    "mutinously": {
+      "en": "This modern textbook provides clear context for understanding mutinously in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า mutinously ในการใช้งานจริง"
+    },
+    "paralyzingly": {
+      "en": "This modern textbook provides clear context for understanding paralyzingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า paralyzingly ในการใช้งานจริง"
+    },
+    "porten": {
+      "en": "This modern textbook provides clear context for understanding porten in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า porten ในการใช้งานจริง"
+    },
+    "promotable": {
+      "en": "This modern textbook provides clear context for understanding promotable in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า promotable ในการใช้งานจริง"
+    },
+    "proprietorial": {
+      "en": "This modern textbook provides clear context for understanding proprietorial in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า proprietorial ในการใช้งานจริง"
+    },
+    "redundantly": {
+      "en": "This modern textbook provides clear context for understanding redundantly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า redundantly ในการใช้งานจริง"
+    },
+    "secularly": {
+      "en": "This modern textbook provides clear context for understanding secularly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า secularly ในการใช้งานจริง"
+    },
+    "squirmy": {
+      "en": "This modern textbook provides clear context for understanding squirmy in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า squirmy ในการใช้งานจริง"
+    },
+    "stultifyingly": {
+      "en": "This modern textbook provides clear context for understanding stultifyingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า stultifyingly ในการใช้งานจริง"
+    },
+    "undemonstratively": {
+      "en": "This modern textbook provides clear context for understanding undemonstratively in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า undemonstratively ในการใช้งานจริง"
+    },
+    "undiminishing": {
+      "en": "This modern textbook provides clear context for understanding undiminishing in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า undiminishing ในการใช้งานจริง"
+    },
+    "unexceptionally": {
+      "en": "This modern textbook provides clear context for understanding unexceptionally in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unexceptionally ในการใช้งานจริง"
+    },
+    "unfeasibly": {
+      "en": "This modern textbook provides clear context for understanding unfeasibly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unfeasibly ในการใช้งานจริง"
+    },
+    "unharried": {
+      "en": "This modern textbook provides clear context for understanding unharried in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unharried ในการใช้งานจริง"
+    },
+    "unnervingly": {
+      "en": "This modern textbook provides clear context for understanding unnervingly in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า unnervingly ในการใช้งานจริง"
+    },
+    "vestigially": {
+      "en": "This modern textbook provides clear context for understanding vestigially in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า vestigially ในการใช้งานจริง"
+    },
+    "wordage": {
+      "en": "This modern textbook provides clear context for understanding wordage in practice.",
+      "th": "หนังสือเรียนเล่มนี้ให้บริบทที่ชัดเจนในการทำความเข้าใจคำว่า wordage ในการใช้งานจริง"
+    }
+  },
+  "def": {
+    "lucid": "Clearly expressed and easily understood; intelligible.",
+    "pragmatic": "Dealing with things sensibly and realistically based on practical rather than theoretical considerations.",
+    "juxtapose": "To place or deal with close together for contrasting effect.",
+    "obsequious": "Obedient or attentive to an excessive or servile degree.",
+    "application": "The quality, state, or action of application.",
+    "foot": "The quality, state, or action of foot.",
+    "back": "The quality, state, or action of back.",
+    "heart": "The quality, state, or action of heart.",
+    "number": "The quality, state, or action of number.",
+    "top": "The quality, state, or action of top.",
+    "yard": "The quality, state, or action of yard.",
+    "culture": "The quality, state, or action of culture.",
+    "protein": "The quality, state, or action of protein.",
+    "bias": "The quality, state, or action of bias.",
+    "cast": "The quality, state, or action of cast.",
+    "cluster": "The quality, state, or action of cluster.",
+    "equivalent": "The quality, state, or action of equivalent.",
+    "faithfully": "Relating to or denoting faithfully; standard lexical meaning.",
+    "random": "The quality, state, or action of random.",
+    "respectively": "In a respective manner or way.",
+    "subsequently": "In a subsequent manner or way.",
+    "attendee": "Relating to or denoting attendee; standard lexical meaning.",
+    "cumulative": "The quality, state, or action of cumulative.",
+    "efficiently": "In a efficient manner or way.",
+    "finalize": "The quality, state, or action of finalize.",
+    "inventory": "The quality, state, or action of inventory.",
+    "overdue": "The quality, state, or action of overdue.",
+    "overview": "The quality, state, or action of overview.",
+    "reschedule": "The quality, state, or action of reschedule.",
+    "transaction": "The quality, state, or action of transaction.",
+    "upcoming": "The quality, state, or action of upcoming.",
+    "hall": "The quality, state, or action of hall.",
+    "allocate": "The quality, state, or action of allocate.",
+    "applicable": "The quality, state, or action of applicable.",
+    "beverage": "The quality, state, or action of beverage.",
+    "downturn": "Relating to or denoting downturn; standard lexical meaning.",
+    "mandatory": "The quality, state, or action of mandatory.",
+    "opt": "The quality, state, or action of opt.",
+    "overhead": "The quality, state, or action of overhead.",
+    "payable": "The quality, state, or action of payable.",
+    "premium": "The quality, state, or action of premium.",
+    "proofread": "The quality, state, or action of proofread.",
+    "reopen": "The quality, state, or action of reopen.",
+    "showroom": "The quality, state, or action of showroom.",
+    "spokesperson": "The quality, state, or action of spokesperson.",
+    "tow": "The quality, state, or action of tow.",
+    "unspecified": "Relating to or denoting unspecified; standard lexical meaning.",
+    "vacuum": "The quality, state, or action of vacuum.",
+    "wireless": "The quality, state, or action of wireless.",
+    "asset": "The quality, state, or action of asset.",
+    "ongoing": "The quality, state, or action of ongoing.",
+    "tongue": "The quality, state, or action of tongue.",
+    "corn": "The quality, state, or action of corn.",
+    "chamber": "The quality, state, or action of chamber.",
+    "civilian": "Relating to or denoting civilian; standard lexical meaning.",
+    "grain": "The quality, state, or action of grain.",
+    "headquarter": "Relating to or denoting headquarter; standard lexical meaning.",
+    "incorporate": "The quality, state, or action of incorporate.",
+    "inexperience": "The quality, state, or action of inexperience.",
+    "pregnancy": "The quality, state, or action of pregnancy.",
+    "shareholder": "The quality, state, or action of shareholder.",
+    "statistic": "The quality, state, or action of statistic.",
+    "subsequent": "The quality, state, or action of subsequent.",
+    "auto": "The quality, state, or action of auto.",
+    "briefcase": "The quality, state, or action of briefcase.",
+    "broker": "The quality, state, or action of broker.",
+    "cellphone": "The quality, state, or action of cellphone.",
+    "closet": "The quality, state, or action of closet.",
+    "copier": "The quality, state, or action of copier.",
+    "courier": "The quality, state, or action of courier.",
+    "expertise": "The quality, state, or action of expertise.",
+    "franchise": "The quality, state, or action of franchise.",
+    "inconvenience": "The quality, state, or action of inconvenience.",
+    "intern": "The quality, state, or action of intern.",
+    "internship": "Relating to or denoting internship; standard lexical meaning.",
+    "luncheon": "The quality, state, or action of luncheon.",
+    "memo": "The quality, state, or action of memo.",
+    "memorandum": "The quality, state, or action of memorandum.",
+    "mini": "The quality, state, or action of mini.",
+    "mister": "The quality, state, or action of mister.",
+    "newsletter": "The quality, state, or action of newsletter.",
+    "notify": "The quality, state, or action of notify.",
+    "paycheck": "The quality, state, or action of paycheck.",
+    "photocopier": "The quality, state, or action of photocopier.",
+    "preview": "The quality, state, or action of preview.",
+    "respondent": "The quality, state, or action of respondent.",
+    "shuttle": "The quality, state, or action of shuttle.",
+    "sightsee": "The quality, state, or action of sightsee.",
+    "stationery": "The quality, state, or action of stationery.",
+    "tenant": "The quality, state, or action of tenant.",
+    "warehouse": "The quality, state, or action of warehouse.",
+    "advertiser": "The quality, state, or action of advertiser.",
+    "airfare": "Relating to or denoting airfare; standard lexical meaning.",
+    "attorney": "The quality, state, or action of attorney.",
+    "auditorium": "The quality, state, or action of auditorium.",
+    "automobile": "The quality, state, or action of automobile.",
+    "boardroom": "The quality, state, or action of boardroom.",
+    "businessperson": "The quality, state, or action of businessperson.",
+    "cargo": "The quality, state, or action of cargo.",
+    "caterer": "The quality, state, or action of caterer.",
+    "concierge": "The quality, state, or action of concierge.",
+    "consistently": "In a consistent manner or way.",
+    "coordinator": "Relating to or denoting coordinator; standard lexical meaning.",
+    "cosmetic": "The quality, state, or action of cosmetic.",
+    "culinary": "The quality, state, or action of culinary.",
+    "designate": "The quality, state, or action of designate.",
+    "dissatisfy": "The quality, state, or action of dissatisfy.",
+    "gasoline": "The quality, state, or action of gasoline.",
+    "healthcare": "Relating to or denoting healthcare; standard lexical meaning.",
+    "hesitant": "The quality, state, or action of hesitant.",
+    "hotline": "Relating to or denoting hotline; standard lexical meaning.",
+    "humidity": "The quality, state, or action of humidity.",
+    "managerial": "The quality, state, or action of managerial.",
+    "meantime": "The quality, state, or action of meantime.",
+    "newsstand": "The quality, state, or action of newsstand.",
+    "outdated": "The quality, state, or action of outdated.",
+    "paraphrase": "The quality, state, or action of paraphrase.",
+    "periodical": "The quality, state, or action of periodical.",
+    "pharmaceutical": "The quality, state, or action of pharmaceutical.",
+    "purchaser": "The quality, state, or action of purchaser.",
+    "quarterly": "In a quarter manner or way.",
+    "rehearse": "The quality, state, or action of rehearse.",
+    "restroom": "The quality, state, or action of restroom.",
+    "spam": "The quality, state, or action of spam.",
+    "spouse": "The quality, state, or action of spouse.",
+    "stockholder": "The quality, state, or action of stockholder.",
+    "streamline": "The quality, state, or action of streamline.",
+    "tech": "Relating to or denoting tech; standard lexical meaning.",
+    "vendor": "The quality, state, or action of vendor.",
+    "walkway": "The quality, state, or action of walkway.",
+    "workforce": "The quality, state, or action of workforce.",
+    "yearly": "In a year manner or way.",
+    "auction": "The quality, state, or action of auction.",
+    "periodically": "In a periodical manner or way.",
+    "realtor": "Relating to or denoting realtor; standard lexical meaning.",
+    "recruitment": "The quality, state, or action of recruitment.",
+    "stapler": "The quality, state, or action of stapler.",
+    "beaver": "The quality, state, or action of beaver.",
+    "action": "The quality, state, or action of action.",
+    "bank": "The quality, state, or action of bank.",
+    "black": "The quality, state, or action of black.",
+    "blue": "The quality, state, or action of blue.",
+    "body": "The quality, state, or action of body.",
+    "box": "The quality, state, or action of box.",
+    "call": "The quality, state, or action of call.",
+    "character": "The quality, state, or action of character.",
+    "date": "The quality, state, or action of date.",
+    "end": "The quality, state, or action of end.",
+    "face": "The quality, state, or action of face.",
+    "life": "The quality, state, or action of life.",
+    "point": "The quality, state, or action of point.",
+    "program": "The quality, state, or action of program.",
+    "quarter": "The quality, state, or action of quarter.",
+    "ring": "The quality, state, or action of ring.",
+    "sit": "The quality, state, or action of sit.",
+    "stand": "The quality, state, or action of stand.",
+    "thing": "The quality, state, or action of thing.",
+    "account": "The quality, state, or action of account.",
+    "bit": "The quality, state, or action of bit.",
+    "continue": "The quality, state, or action of continue.",
+    "deal": "The quality, state, or action of deal.",
+    "death": "The quality, state, or action of death.",
+    "figure": "The quality, state, or action of figure.",
+    "lose": "The quality, state, or action of lose.",
+    "provide": "The quality, state, or action of provide.",
+    "style": "The quality, state, or action of style.",
+    "drop": "The quality, state, or action of drop.",
+    "house": "The quality, state, or action of house.",
+    "white": "The quality, state, or action of white.",
+    "around": "The quality, state, or action of around.",
+    "balance": "The quality, state, or action of balance.",
+    "center": "The quality, state, or action of center.",
+    "involve": "The quality, state, or action of involve.",
+    "lead": "The quality, state, or action of lead.",
+    "mile": "The quality, state, or action of mile.",
+    "receive": "The quality, state, or action of receive.",
+    "score": "The quality, state, or action of score.",
+    "series": "The quality, state, or action of series.",
+    "ball": "The quality, state, or action of ball.",
+    "band": "The quality, state, or action of band.",
+    "bowl": "The quality, state, or action of bowl.",
+    "correct": "The quality, state, or action of correct.",
+    "flag": "The quality, state, or action of flag.",
+    "grade": "The quality, state, or action of grade.",
+    "gray": "The quality, state, or action of gray.",
+    "king": "The quality, state, or action of king.",
+    "moon": "The quality, state, or action of moon.",
+    "mouth": "The quality, state, or action of mouth.",
+    "reader": "The quality, state, or action of reader.",
+    "stone": "The quality, state, or action of stone.",
+    "wash": "The quality, state, or action of wash.",
+    "earth": "The quality, state, or action of earth.",
+    "expression": "The quality, state, or action of expression.",
+    "frame": "The quality, state, or action of frame.",
+    "guard": "The quality, state, or action of guard.",
+    "gun": "The quality, state, or action of gun.",
+    "roll": "The quality, state, or action of roll.",
+    "root": "The quality, state, or action of root.",
+    "scale": "The quality, state, or action of scale.",
+    "shell": "The quality, state, or action of shell.",
+    "square": "The quality, state, or action of square.",
+    "tie": "The quality, state, or action of tie.",
+    "beat": "The quality, state, or action of beat.",
+    "depression": "The quality, state, or action of depression.",
+    "impression": "The quality, state, or action of impression.",
+    "stick": "The quality, state, or action of stick.",
+    "twist": "The quality, state, or action of twist.",
+    "core": "The quality, state, or action of core.",
+    "hook": "The quality, state, or action of hook.",
+    "pitch": "The quality, state, or action of pitch.",
+    "ray": "The quality, state, or action of ray.",
+    "resolution": "The quality, state, or action of resolution.",
+    "seal": "The quality, state, or action of seal.",
+    "pin": "The quality, state, or action of pin.",
+    "recognition": "The quality, state, or action of recognition.",
+    "relief": "The quality, state, or action of relief.",
+    "reservation": "The quality, state, or action of reservation.",
+    "resistance": "The quality, state, or action of resistance.",
+    "conversion": "The quality, state, or action of conversion.",
+    "execute": "The quality, state, or action of execute.",
+    "pad": "The quality, state, or action of pad.",
+    "coordinate": "The quality, state, or action of coordinate.",
+    "defect": "The quality, state, or action of defect.",
+    "wornout": "The quality, state, or action of wornout.",
+    "check-in counter": "The quality, state, or action of check-in counter.",
+    "check-in desk": "The quality, state, or action of check-in desk.",
+    "fusion": "The quality, state, or action of fusion.",
+    "carrier": "The quality, state, or action of carrier.",
+    "advanced": "The quality, state, or action of advanced.",
+    "bay": "The quality, state, or action of bay.",
+    "hip hop": "The quality, state, or action of hip hop.",
+    "crossing": "The quality, state, or action of crossing.",
+    "engaged": "The quality, state, or action of engaged.",
+    "blade": "The quality, state, or action of blade.",
+    "bolt": "The quality, state, or action of bolt.",
+    "corona": "The quality, state, or action of corona.",
+    "crab": "The quality, state, or action of crab.",
+    "hood": "The quality, state, or action of hood.",
+    "hack": "The quality, state, or action of hack.",
+    "rendering": "The quality, state, or action of rendering.",
+    "anything": "The quality, state, or action of anything.",
+    "could": "The quality, state, or action of could.",
+    "else": "The quality, state, or action of else.",
+    "everybody": "The quality, state, or action of everybody.",
+    "everyone": "The quality, state, or action of everyone.",
+    "from": "The quality, state, or action of from.",
+    "how": "The quality, state, or action of how.",
+    "if": "The quality, state, or action of if.",
+    "of": "The quality, state, or action of of.",
+    "she": "The quality, state, or action of she.",
+    "should": "The quality, state, or action of should.",
+    "something": "The quality, state, or action of something.",
+    "they": "The quality, state, or action of they.",
+    "this": "The quality, state, or action of this.",
+    "until": "The quality, state, or action of until.",
+    "we": "The quality, state, or action of we.",
+    "would": "The quality, state, or action of would.",
+    "you": "The quality, state, or action of you.",
+    "although": "The quality, state, or action of although.",
+    "among": "The quality, state, or action of among.",
+    "herself": "The quality, state, or action of herself.",
+    "himself": "The quality, state, or action of himself.",
+    "itself": "The quality, state, or action of itself.",
+    "myself": "The quality, state, or action of myself.",
+    "shall": "The quality, state, or action of shall.",
+    "since": "The quality, state, or action of since.",
+    "upon": "The quality, state, or action of upon.",
+    "and": "The quality, state, or action of and.",
+    "anyone": "The quality, state, or action of anyone.",
+    "because": "The quality, state, or action of because.",
+    "for": "The quality, state, or action of for.",
+    "into": "The quality, state, or action of into.",
+    "than": "The quality, state, or action of than.",
+    "that": "The quality, state, or action of that.",
+    "the": "The quality, state, or action of the.",
+    "to": "The quality, state, or action of to.",
+    "what": "The quality, state, or action of what.",
+    "when": "The quality, state, or action of when.",
+    "where": "The quality, state, or action of where.",
+    "which": "The quality, state, or action of which.",
+    "with": "The quality, state, or action of with.",
+    "yourself": "The quality, state, or action of yourself.",
+    "against": "The quality, state, or action of against.",
+    "during": "The quality, state, or action of during.",
+    "nor": "The quality, state, or action of nor.",
+    "per": "The quality, state, or action of per.",
+    "themselves": "The quality, state, or action of themselves.",
+    "toward": "The quality, state, or action of toward.",
+    "without": "The quality, state, or action of without.",
+    "anybody": "The quality, state, or action of anybody.",
+    "whether": "The quality, state, or action of whether.",
+    "beside": "The quality, state, or action of beside.",
+    "criteria": "The quality, state, or action of criteria.",
+    "whilst": "The quality, state, or action of whilst.",
+    "ourselves": "The quality, state, or action of ourselves.",
+    "unless": "The quality, state, or action of unless.",
+    "onto": "The quality, state, or action of onto.",
+    "via": "The quality, state, or action of via.",
+    "whenever": "The quality, state, or action of whenever.",
+    "amid": "The quality, state, or action of amid.",
+    "goods": "The quality, state, or action of goods.",
+    "versus": "The quality, state, or action of versus.",
+    "whereas": "The quality, state, or action of whereas.",
+    "whoever": "The quality, state, or action of whoever.",
+    "amongst": "The quality, state, or action of amongst.",
+    "media": "The quality, state, or action of media.",
+    "whichever": "The quality, state, or action of whichever.",
+    "did": "The quality, state, or action of did.",
+    "doing": "The quality, state, or action of doing.",
+    "had": "The quality, state, or action of had.",
+    "his": "The quality, state, or action of his.",
+    "is": "The quality, state, or action of is.",
+    "its": "The quality, state, or action of its.",
+    "'m": "The quality, state, or action of 'm.",
+    "my": "The quality, state, or action of my.",
+    "'s": "The quality, state, or action of 's.",
+    "their": "The quality, state, or action of their.",
+    "these": "The quality, state, or action of these.",
+    "those": "The quality, state, or action of those.",
+    "were": "The quality, state, or action of were.",
+    "whose": "The quality, state, or action of whose.",
+    "hey": "The quality, state, or action of hey.",
+    "pence": "The quality, state, or action of pence.",
+    "theirs": "The quality, state, or action of theirs.",
+    "whom": "The quality, state, or action of whom.",
+    "does": "The quality, state, or action of does.",
+    "each other": "The quality, state, or action of each other.",
+    "has": "The quality, state, or action of has.",
+    "have to": "The quality, state, or action of have to.",
+    "her": "The quality, state, or action of her.",
+    "hers": "The quality, state, or action of hers.",
+    "him": "The quality, state, or action of him.",
+    "our": "The quality, state, or action of our.",
+    "ours": "The quality, state, or action of ours.",
+    "them": "The quality, state, or action of them.",
+    "was": "The quality, state, or action of was.",
+    "your": "The quality, state, or action of your.",
+    "yours": "The quality, state, or action of yours.",
+    "been": "The quality, state, or action of been.",
+    "hard-working": "The quality, state, or action of hard-working.",
+    "id card": "The quality, state, or action of id card.",
+    "including": "The quality, state, or action of including.",
+    "mountaintop": "The quality, state, or action of mountaintop.",
+    "next to": "The quality, state, or action of next to.",
+    "no one": "The quality, state, or action of no one.",
+    "oneself": "The quality, state, or action of oneself.",
+    "provided": "The quality, state, or action of provided.",
+    "recycled": "The quality, state, or action of recycled.",
+    "refreshments": "The quality, state, or action of refreshments.",
+    "regarding": "The quality, state, or action of regarding.",
+    "sports": "The quality, state, or action of sports.",
+    "sports center": "The quality, state, or action of sports center.",
+    "telecommunications": "The quality, state, or action of telecommunications.",
+    "text message": "The quality, state, or action of text message.",
+    "according to": "The quality, state, or action of according to.",
+    "antivirus": "The quality, state, or action of antivirus.",
+    "because of": "The quality, state, or action of because of.",
+    "bio": "The quality, state, or action of bio.",
+    "carpool": "The quality, state, or action of carpool.",
+    "concerning": "The quality, state, or action of concerning.",
+    "conferencing": "The quality, state, or action of conferencing.",
+    "considering": "The quality, state, or action of considering.",
+    "eco": "The quality, state, or action of eco.",
+    "extreme sports": "The quality, state, or action of extreme sports.",
+    "film-maker": "The quality, state, or action of film-maker.",
+    "first-floor": "The quality, state, or action of first-floor.",
+    "glacis": "The quality, state, or action of glacis.",
+    "grown-up": "The quality, state, or action of grown-up.",
+    "hearted": "The quality, state, or action of hearted.",
+    "instead of": "The quality, state, or action of instead of.",
+    "lest": "The quality, state, or action of lest.",
+    "lyrics": "The quality, state, or action of lyrics.",
+    "message board": "The quality, state, or action of message board.",
+    "next-door": "The quality, state, or action of next-door.",
+    "non-smoking": "The quality, state, or action of non-smoking.",
+    "ought to": "The quality, state, or action of ought to.",
+    "overbook": "The quality, state, or action of overbook.",
+    "paperless": "The quality, state, or action of paperless.",
+    "petrified": "The quality, state, or action of petrified.",
+    "proposed": "The quality, state, or action of proposed.",
+    "'re": "The quality, state, or action of 're.",
+    "second-hand": "The quality, state, or action of second-hand.",
+    "showbiz": "The quality, state, or action of showbiz.",
+    "social networking": "The quality, state, or action of social networking.",
+    "subplot": "The quality, state, or action of subplot.",
+    "unto": "The quality, state, or action of unto.",
+    "video clip": "The quality, state, or action of video clip.",
+    "worldview": "The quality, state, or action of worldview.",
+    "adjoining": "The quality, state, or action of adjoining.",
+    "anchored": "The quality, state, or action of anchored.",
+    "antics": "The quality, state, or action of antics.",
+    "compromised": "The quality, state, or action of compromised.",
+    "demographically": "In a demographical manner or way.",
+    "headteacher": "The quality, state, or action of headteacher.",
+    "minutiae": "The quality, state, or action of minutiae.",
+    "mp3 player": "The quality, state, or action of mp3 player.",
+    "norms": "The quality, state, or action of norms.",
+    "overalls": "The quality, state, or action of overalls.",
+    "penfriend": "The quality, state, or action of penfriend.",
+    "personalization": "The quality, state, or action of personalization.",
+    "prolifically": "In a prolifical manner or way.",
+    "stimuli": "The quality, state, or action of stimuli.",
+    "unsustainable": "The quality, state, or action of unsustainable.",
+    "unsustainably": "In a unsustainab manner or way.",
+    "wares": "The quality, state, or action of wares.",
+    "attuned": "The quality, state, or action of attuned.",
+    "autonomously": "In a autonomous manner or way.",
+    "caffeinate": "The quality, state, or action of caffeinate.",
+    "carbon footprint": "The quality, state, or action of carbon footprint.",
+    "compellingly": "In a compelling manner or way.",
+    "environmentally friendly": "In a environmentally friend manner or way.",
+    "estimated": "The quality, state, or action of estimated.",
+    "facilities": "The quality, state, or action of facilities.",
+    "floodgates": "The quality, state, or action of floodgates.",
+    "glitzy": "The quality, state, or action of glitzy.",
+    "hauntingly": "In a haunting manner or way.",
+    "human rights": "The quality, state, or action of human rights.",
+    "improvisational": "The quality, state, or action of improvisational.",
+    "inverted commas": "The quality, state, or action of inverted commas.",
+    "marketability": "The quality, state, or action of marketability.",
+    "nano": "The quality, state, or action of nano.",
+    "ow": "The quality, state, or action of ow.",
+    "owing to": "The quality, state, or action of owing to.",
+    "pajamas": "The quality, state, or action of pajamas.",
+    "pressurization": "The quality, state, or action of pressurization.",
+    "reverb": "The quality, state, or action of reverb.",
+    "semi-final": "The quality, state, or action of semi-final.",
+    "well-built": "The quality, state, or action of well-built.",
+    "well-organized": "The quality, state, or action of well-organized.",
+    "well-paid": "The quality, state, or action of well-paid.",
+    "apt to": "The quality, state, or action of apt to.",
+    "bulk up": "The quality, state, or action of bulk up.",
+    "cashpoint": "The quality, state, or action of cashpoint.",
+    "hairdryer": "The quality, state, or action of hairdryer.",
+    "mark-up": "The quality, state, or action of mark-up.",
+    "noticeboard": "The quality, state, or action of noticeboard.",
+    "pertain to": "The quality, state, or action of pertain to.",
+    "tracksuit": "The quality, state, or action of tracksuit.",
+    "unsettling": "The quality, state, or action of unsettling.",
+    "windsurfing": "The quality, state, or action of windsurfing.",
+    "commensurately": "In a commensurate manner or way.",
+    "enabler": "The quality, state, or action of enabler.",
+    "glory in": "The quality, state, or action of glory in.",
+    "sandwiched": "The quality, state, or action of sandwiched.",
+    "side-step": "The quality, state, or action of side-step.",
+    "antistatic": "The quality, state, or action of antistatic.",
+    "cyberaddict": "The quality, state, or action of cyberaddict.",
+    "cyberpet": "The quality, state, or action of cyberpet.",
+    "cyberschool": "The quality, state, or action of cyberschool.",
+    "glocal": "The quality, state, or action of glocal.",
+    "moonscape": "The quality, state, or action of moonscape.",
+    "netsurfer": "The quality, state, or action of netsurfer.",
+    "prehuman": "The quality, state, or action of prehuman.",
+    "preindustrial": "The quality, state, or action of preindustrial.",
+    "recommendable": "The quality, state, or action of recommendable.",
+    "beguilingly": "In a beguiling manner or way.",
+    "chauffer": "The quality, state, or action of chauffer.",
+    "chiselled": "The quality, state, or action of chiselled.",
+    "compliantly": "In a compliant manner or way.",
+    "docilely": "In a docile manner or way.",
+    "dominantly": "In a dominant manner or way.",
+    "eclectically": "In a eclectical manner or way.",
+    "exotically": "In a exotical manner or way.",
+    "fiddly": "In a fidd manner or way.",
+    "inclusively": "In a inclusive manner or way.",
+    "insightfully": "In a insightful manner or way.",
+    "insubordinately": "In a insubordinate manner or way.",
+    "meaninglessly": "In a meaningless manner or way.",
+    "raunchily": "In a raunchi manner or way.",
+    "stressfully": "In a stressful manner or way.",
+    "succulently": "In a succulent manner or way.",
+    "sustainably": "In a sustainab manner or way.",
+    "unenviably": "In a unenviab manner or way.",
+    "unscathing": "The quality, state, or action of unscathing.",
+    "abhorrently": "In a abhorrent manner or way.",
+    "acrobatically": "In a acrobatical manner or way.",
+    "amorphously": "In a amorphous manner or way.",
+    "angsty": "The quality, state, or action of angsty.",
+    "anthropologically": "In a anthropological manner or way.",
+    "anticlimactically": "In a anticlimactical manner or way.",
+    "arcanely": "In a arcane manner or way.",
+    "bereftly": "In a bereft manner or way.",
+    "calamitously": "In a calamitous manner or way.",
+    "choreographical": "The quality, state, or action of choreographical.",
+    "cogently": "In a cogent manner or way.",
+    "confrontationally": "In a confrontational manner or way.",
+    "counterproductively": "In a counterproductive manner or way.",
+    "cultish": "The quality, state, or action of cultish.",
+    "deficiently": "In a deficient manner or way.",
+    "demystification": "The quality, state, or action of demystification.",
+    "deprecatingly": "In a deprecating manner or way.",
+    "deviantly": "In a deviant manner or way.",
+    "echolocate": "The quality, state, or action of echolocate.",
+    "emulsification": "The quality, state, or action of emulsification.",
+    "euphorically": "In a euphorical manner or way.",
+    "evokingly": "In a evoking manner or way.",
+    "exaltedly": "In a exalted manner or way.",
+    "fabulate": "The quality, state, or action of fabulate.",
+    "fabulation": "The quality, state, or action of fabulation.",
+    "flatout": "The quality, state, or action of flatout.",
+    "genomic": "The quality, state, or action of genomic.",
+    "genomically": "In a genomical manner or way.",
+    "histrionically": "In a histrionical manner or way.",
+    "impressionistically": "In a impressionistical manner or way.",
+    "inchoately": "In a inchoate manner or way.",
+    "infallibly": "In a infallib manner or way.",
+    "kinetically": "In a kinetical manner or way.",
+    "metalled": "The quality, state, or action of metalled.",
+    "mutinously": "In a mutinous manner or way.",
+    "paralyzingly": "In a paralyzing manner or way.",
+    "porten": "The quality, state, or action of porten.",
+    "promotable": "The quality, state, or action of promotable.",
+    "proprietorial": "The quality, state, or action of proprietorial.",
+    "redundantly": "In a redundant manner or way.",
+    "secularly": "In a secular manner or way.",
+    "squirmy": "The quality, state, or action of squirmy.",
+    "stultifyingly": "In a stultifying manner or way.",
+    "undemonstratively": "In a undemonstrative manner or way.",
+    "undiminishing": "The quality, state, or action of undiminishing.",
+    "unexceptionally": "In a unexceptional manner or way.",
+    "unfeasibly": "In a unfeasib manner or way.",
+    "unharried": "The quality, state, or action of unharried.",
+    "unnervingly": "In a unnerving manner or way.",
+    "vestigially": "In a vestigial manner or way.",
+    "wordage": "The quality, state, or action of wordage.",
+    "blog": "A regularly updated website or web page typically run by an individual or small group.",
+    "email": "Messages distributed by electronic means from one computer user to one or more recipients via a network.",
+    "lunchtime": "The time in the middle of the day when lunch is normally eaten.",
+    "consultancy": "A professional practice that gives expert advice within a particular field.",
+    "sustainable": "Able to be maintained at a certain rate or level without depleting natural resources."
+  }
+}

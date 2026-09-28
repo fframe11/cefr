@@ -1,0 +1,1203 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-blind-quality-comparison-v1.json",
+  "evaluation_phase": "PHASE_6_2_18_THAI_LEXICON_GROUNDING",
+  "generated_at": "2026-09-28T16:33:45.578Z",
+  "sample_size": 25,
+  "pre_review_metrics": {
+    "total_evaluated": 25,
+    "approved_candidate_ready": 21,
+    "edit_required_candidate": 0,
+    "hold_candidate": 4,
+    "unresolved": 0,
+    "pos_aligned_count": 25,
+    "pos_suspect_count": 0,
+    "sense_aligned_count": 21,
+    "sense_conflict_count": 4,
+    "sense_ambiguous_count": 0,
+    "source_grounded_count": 25,
+    "approved_candidate_ready_pct": 84,
+    "edit_required_candidate_pct": 0,
+    "hold_candidate_pct": 16,
+    "unresolved_pct": 0,
+    "pos_aligned_pct": 100,
+    "sense_aligned_pct": 84,
+    "source_grounded_rate_pct": 100
+  },
+  "invariants_maintained": {
+    "learner_ready": 28,
+    "target": 10000,
+    "gap": 9972,
+    "status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_supabase_mutations": 0,
+    "lifecycle_status": "REVIEW_REQUIRED",
+    "field_status": "AI_DRAFT"
+  },
+  "records": [
+    {
+      "sample_index": 1,
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "word": "baby",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "เด็กทารก, ลูกอ่อน",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Remediated Thai gloss accurately and idiomatically conveys the primary infant sense in natural, simple Thai perfectly suited for A1 beginner learners.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "เด็กทารก, ลูกอ่อน",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_BABY_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "baby%1:18:00::",
+          "rationale": "Exact synset alignment matched: 10001672-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A1 matches candidate register A1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 2,
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "word": "agree",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "be in accord; be in agreement",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "เห็นด้วย, ตกลง",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Essential communicative verb glossed accurately with high-frequency, natural Thai terms.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "เห็นด้วย, ตกลง",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_AGREE_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "agree%2:32:00::",
+          "rationale": "Exact synset alignment matched: 00840439-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A1 matches candidate register A1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 3,
+      "learning_unit_key": "rich|adjective|A1|sense:1",
+      "word": "rich",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "A1",
+      "definition_en": "possessing material wealth",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ร่ำรวย, มั่งคั่ง",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Accurate beginner adjective gloss covering both common and formal registers without ambiguity.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ร่ำรวย, มั่งคั่ง",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_RICH_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "rich%3:00:00::",
+          "rationale": "Exact synset alignment matched: 02035345-a"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A1 matches candidate register A1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 4,
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "word": "above",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "(in writing) at an earlier place",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "HOLD",
+        "human_rationale": "Cross-level CEFR and sense mismatch. Definition is textual reference ('see above'), while A1 learners require physical/spatial adverb ('overhead, higher up'). Held for sense disambiguation.",
+        "defect_category": "POLYSEMOUS_SENSE_CONFLICT",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_POLYSEMOUS_SENSE_CONFLICT"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ข้างต้น, ที่กล่าวมาแล้วข้างต้น",
+        "source": "OMW_THAI_WORDNET_1.0",
+        "source_version": "1.0",
+        "license": "CC-BY-3.0",
+        "source_record_id": "OMW_THA_ABOVE_002",
+        "confidence_score": 0.7,
+        "pre_review_status": "HOLD_CANDIDATE",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Manner/circumstantial/time gloss compatible with adverb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_CONFLICT",
+          "score": 0.4,
+          "matched_sense_key": "above%4:02:00::",
+          "rationale": "Pedagogical CEFR conflict: textual reference sense (B1) mapped to beginner A1 unit. A1 requires physical spatial adverb (overhead, higher up). Held for senior review."
+        },
+        "cefr_compatibility": {
+          "compatible": false,
+          "note": "Potential CEFR mismatch: learning unit target is A1, but candidate sense is typically registered at B1 (gap: 2 bands)"
+        },
+        "quality_flags": [
+          "SENSE_CONFLICT_REQUIRES_HOLD"
+        ]
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 5,
+      "learning_unit_key": "country|noun|A2|sense:1",
+      "word": "country",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A2",
+      "definition_en": "a politically organized body of people under a single government",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ประเทศ, ดินแดน",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Standard core geographical and political translation accurately represented.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ประเทศ, ดินแดน",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_COUNTRY_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "country%1:14:00::",
+          "rationale": "Exact synset alignment matched: 08321619-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A2 matches candidate register A2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 6,
+      "learning_unit_key": "appear|verb|A2|sense:1",
+      "word": "appear",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A2",
+      "definition_en": "give a certain impression of being something or having a certain aspect",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ปรากฏตัว, ดูเหมือนว่า",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Captures both visual arrival and epistemic copular impression naturally.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ปรากฏตัว, ดูเหมือนว่า",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_APPEAR_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "appear%2:39:00::",
+          "rationale": "Exact synset alignment matched: 02198297-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A2 matches candidate register A2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 7,
+      "learning_unit_key": "clear|adjective|A2|sense:1",
+      "word": "clear",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "A2",
+      "definition_en": "readily apparent to the mind",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ชัดเจน, ใส, ปลอดโปร่ง",
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "human_review_decision_phase_6_2_17": "APPROVED",
+        "human_rationale": "Comprehensive Thai polysemy gloss covering clarity of mind, weather, and transparency.",
+        "defect_category": "NONE",
+        "quality_flags": []
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ชัดเจน, ใส, ปลอดโปร่ง",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_CLEAR_001",
+        "confidence_score": 1,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "clear%3:00:00::",
+          "rationale": "Exact synset alignment matched: 00431842-a"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A2 matches candidate register A2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 8,
+      "learning_unit_key": "automatically|adverb|A2|sense:1",
+      "word": "automatically",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A2",
+      "definition_en": "in a reflex manner",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Contextual drafter produced abstract semantic placeholder. Corrected to idiomatic Thai adverb.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "โดยอัตโนมัติ, โดยสัญชาตญาณ",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_AUTOMATICALLY_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Manner/circumstantial/time gloss compatible with adverb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "automatically%4:02:00::",
+          "rationale": "Exact synset alignment matched: 00005912-r"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: A2 matches candidate register A2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 9,
+      "learning_unit_key": "application|noun|B1|sense:1",
+      "word": "application",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B1",
+      "definition_en": "the work of applying something",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Contextual drafter produced generic noun placeholder. Corrected to practical application gloss.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "การประยุกต์ใช้, การนำไปใช้",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_APPLICATION_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "application%1:04:02::",
+          "rationale": "Exact synset alignment matched: 00961750-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B1 matches candidate register B1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 10,
+      "learning_unit_key": "wing|noun|B1|sense:1",
+      "word": "wing",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B1",
+      "definition_en": "a movable organ for flying (one of a pair)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Generic noun placeholder instead of concrete anatomical term. Corrected to standard Thai noun.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ปีก (อวัยวะสำหรับบิน)",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_WING_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "wing%1:05:00::",
+          "rationale": "Exact synset alignment matched: 02187207-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B1 matches candidate register B1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 11,
+      "learning_unit_key": "jog|verb|B1|sense:1",
+      "word": "jog",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B1",
+      "definition_en": "continue talking or writing in a desultory manner",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "สื่อสาร กล่าว หรือแสดงออกทางภาษา",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "HOLD",
+        "human_rationale": "Severe pedagogical mismatch. Staged sense is rare literary chatter, while B1 learners universally require physical exercise. Held for synset re-mapping.",
+        "defect_category": "POLYSEMOUS_SENSE_CONFLICT",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_POLYSEMOUS_SENSE_CONFLICT"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "พูดจ้อ, พล่ามเรื่อยเปื่อย",
+        "source": "OMW_THAI_WORDNET_1.0",
+        "source_version": "1.0",
+        "license": "CC-BY-3.0",
+        "source_record_id": "OMW_THA_JOG_001",
+        "confidence_score": 0.65,
+        "pre_review_status": "HOLD_CANDIDATE",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_CONFLICT",
+          "score": 0.4,
+          "matched_sense_key": "jog%2:42:00::",
+          "rationale": "Pedagogical conflict: literary chatter sense staged instead of common aerobic running exercise (A2/B1). Held for synset reassignment."
+        },
+        "cefr_compatibility": {
+          "compatible": false,
+          "note": "Potential CEFR mismatch: learning unit target is B1, but candidate sense is typically registered at C2 (gap: 3 bands)"
+        },
+        "quality_flags": [
+          "SENSE_CONFLICT_REQUIRES_HOLD"
+        ]
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 12,
+      "learning_unit_key": "abundant|adjective|B1|sense:1",
+      "word": "abundant",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "B1",
+      "definition_en": "present in great quantity",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ที่มีขนาดใหญ่ หรือมีปริมาณมากเป็นพิเศษ (เกี่ยวกับอาหารหรือของกิน)",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Spurious food domain tag injected into general adjective. Corrected to natural general quantity gloss.",
+        "defect_category": "ERRONEOUS_TOPIC_INJECTION",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ERRONEOUS_TOPIC_INJECTION"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "อุดมสมบูรณ์, มากมาย, ล้นเหลือ",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ABUNDANT_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "abundant%3:00:00::",
+          "rationale": "Exact synset alignment matched: 00013854-a"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B1 matches candidate register B1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 13,
+      "learning_unit_key": "aboard|adverb|B1|sense:1",
+      "word": "aboard",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "B1",
+      "definition_en": "on a ship, train, plane or other vehicle",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน (การเดินทางและคมนาคม)",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Abstract placeholder with parenthesized category. Corrected to direct prepositional/adverbial Thai.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "บนเรือ, บนเครื่องบิน, บนรถไฟ (อยู่บนยานพาหนะ)",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ABOARD_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Manner/circumstantial/time gloss compatible with adverb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "aboard%4:02:01::",
+          "rationale": "Exact synset alignment matched: 00251340-r"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B1 matches candidate register B1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 14,
+      "learning_unit_key": "commission|noun|B2|sense:1",
+      "word": "commission",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B2",
+      "definition_en": "a special group delegated to consider some matter",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "กลุ่มบุคคล องค์กร หรือหน่วยงาน",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Vague hypernym placeholder. Corrected to standard Thai institutional committee noun.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "คณะกรรมการ, คณะกรรมาธิการ",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_COMMISSION_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "commission%1:14:00::",
+          "rationale": "Exact synset alignment matched: 08477894-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B2 matches candidate register B2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 15,
+      "learning_unit_key": "accessibility|noun|B2|sense:1",
+      "word": "accessibility",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B2",
+      "definition_en": "the quality of being at hand when needed",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Noun placeholder. Corrected to standard usability and availability Thai term.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "การเข้าถึงได้, ความสะดวกในการเข้าถึง",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ACCESSIBILITY_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "accessibility%1:07:00::",
+          "rationale": "Exact synset alignment matched: 04788157-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B2 matches candidate register B2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 16,
+      "learning_unit_key": "aim|verb|B2|sense:1",
+      "word": "aim",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B2",
+      "definition_en": "point or cause to go (blows, weapons, or objects such as photographic equipment) towards",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ทำให้เกิด หรือสร้างสรรค์สิ่งใหม่ขึ้น",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Verb template misinterprets directional aiming as creative production. Corrected to accurate aiming verb.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "เล็งเป้า, มุ่งเป้า, ตั้งเป้าหมาย",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_AIM_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "aim%2:33:00::",
+          "rationale": "Exact synset alignment matched: 01196750-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B2 matches candidate register B2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 17,
+      "learning_unit_key": "abolish|verb|B2|sense:1",
+      "word": "abolish",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B2",
+      "definition_en": "do away with",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Generic action placeholder misses destructive/repeal meaning. Corrected to legal repeal term.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ยกเลิก, ล้มเลิก (กฎหมาย ระบบ หรือประเพณี)",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ABOLISH_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "abolish%2:41:00::",
+          "rationale": "Exact synset alignment matched: 02501347-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B2 matches candidate register B2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 18,
+      "learning_unit_key": "acute|adjective|B2|sense:1",
+      "word": "acute",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "B2",
+      "definition_en": "having or experiencing a rapid onset and short but severe course",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ซึ่งมีคุณลักษณะเด่นหรือคุณสมบัตินี้",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Generic adjective placeholder misses medical/severity nuance. Corrected to precise Thai gloss.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "เฉียบพลัน, รุนแรง (ทางการแพทย์หรืออาการ)",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ACUTE_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "acute%3:00:00::",
+          "rationale": "Exact synset alignment matched: 00044883-a"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: B2 matches candidate register B2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 19,
+      "learning_unit_key": "cast|noun|C1|sense:2",
+      "word": "cast",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "container into which liquid is poured to create a given shape when it hardens (distinct sense #2 for C1)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (เกี่ยวกับอาหารหรือของกิน)",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "HOLD",
+        "human_rationale": "Severe domain confusion (industrial mold labeled food) and polysemy with theatrical cast. Held for lexical disambiguation.",
+        "defect_category": "ERRONEOUS_TOPIC_INJECTION",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ERRONEOUS_TOPIC_INJECTION"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "แม่พิมพ์, เบ้าหล่อ",
+        "source": "OMW_THAI_WORDNET_1.0",
+        "source_version": "1.0",
+        "license": "CC-BY-3.0",
+        "source_record_id": "OMW_THA_CAST_002",
+        "confidence_score": 0.6,
+        "pre_review_status": "HOLD_CANDIDATE",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_CONFLICT",
+          "score": 0.4,
+          "matched_sense_key": "cast%1:14:00::",
+          "rationale": "Domain confusion & extreme polysemy: industrial mold sense erroneously tagged as Food domain. Held for domain clearing."
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C1 matches candidate register C1"
+        },
+        "quality_flags": [
+          "SENSE_CONFLICT_REQUIRES_HOLD"
+        ]
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 20,
+      "learning_unit_key": "recite|verb|C1|sense:2",
+      "word": "recite",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "repeat aloud from memory (distinct sense #2 for C1)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ (เกี่ยวกับอาหารหรือของกิน)",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Spurious food domain tag. Corrected to standard recitation Thai verb.",
+        "defect_category": "ERRONEOUS_TOPIC_INJECTION",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ERRONEOUS_TOPIC_INJECTION"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ท่องจำ, ท่องบทเรียน, สวดท่อง",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_RECITE_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "recite%2:32:02::",
+          "rationale": "Exact synset alignment matched: 01094848-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C1 matches candidate register C1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 21,
+      "learning_unit_key": "advantageous|adjective|C1|sense:1",
+      "word": "advantageous",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "C1",
+      "definition_en": "giving an advantage",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Generic adjective placeholder. Corrected to beneficial/advantageous Thai adjective.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ที่เป็นประโยชน์, ที่ได้เปรียบ, ที่เป็นผลดี",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_ADVANTAGEOUS_001",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "advantageous%3:00:00::",
+          "rationale": "Exact synset alignment matched: 00064748-a"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C1 matches candidate register C1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 22,
+      "learning_unit_key": "automatically|adverb|C1|sense:2",
+      "word": "automatically",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "in a mechanical manner; by a mechanism (distinct sense #2 for C1)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Adverb placeholder misses mechanical agency. Corrected to precise Thai mechanical adverb.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "โดยกลไกอัตโนมัติ, โดยการทำงานของเครื่องจักร",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_AUTOMATICALLY_002",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Manner/circumstantial/time gloss compatible with adverb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "automatically%4:02:01::",
+          "rationale": "Exact synset alignment matched: 00114928-r"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C1 matches candidate register C1"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 23,
+      "learning_unit_key": "commission|noun|C2|sense:3",
+      "word": "commission",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C2",
+      "definition_en": "the act of granting authority to undertake certain functions (distinct sense #3 for C2)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "กระบวนการ การปฏิบัติ หรือการดำเนินการ",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Process placeholder misses authoritative delegation nuance. Corrected to formal authorization gloss.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "การมอบหมายอำนาจหน้าที่, การแต่งตั้งอย่างเป็นทางการ",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_COMMISSION_003",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Nominal gloss semantics compatible with noun category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "commission%1:04:02::",
+          "rationale": "Exact synset alignment matched: 01157297-n"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C2 matches candidate register C2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 24,
+      "learning_unit_key": "hover|verb|C2|sense:2",
+      "word": "hover",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C2",
+      "definition_en": "to hang about in a place beyond the proper or usual time (distinct sense #2 for C2)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "EDIT_REQUIRED",
+        "human_rationale": "Action placeholder misses lingering/hovering behavior. Corrected to accurate Thai verb.",
+        "defect_category": "ABSTRACT_SEMANTIC_PLACEHOLDER",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_ABSTRACT_SEMANTIC_PLACEHOLDER"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "วนเวียนอยู่ใกล้ๆ, เฝ้ารอคอยอย่างกระวนกระวาย",
+        "source": "GLOVA_CURATED_REGISTRY",
+        "source_version": "1.2.0",
+        "license": "Glova-Internal-Proprietary",
+        "source_record_id": "GLOVA_LEX_HOVER_002",
+        "confidence_score": 0.95,
+        "pre_review_status": "APPROVED_CANDIDATE_READY",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Verbal action/state gloss compatible with verb category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_ALIGNED",
+          "score": 1,
+          "matched_sense_key": "hover%2:42:01::",
+          "rationale": "Exact synset alignment matched: 02722983-v"
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C2 matches candidate register C2"
+        },
+        "quality_flags": []
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "sample_index": 25,
+      "learning_unit_key": "adverse|adjective|C2|sense:2",
+      "word": "adverse",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "C2",
+      "definition_en": "in an opposing direction (distinct sense #2 for C2)",
+      "version_a_original_phase_6_2_16": {
+        "thai_meaning": "ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ",
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "human_review_decision_phase_6_2_17": "HOLD",
+        "human_rationale": "Directional sense ('adverse winds') distinct from unfavorable/harmful sense. Held for lexicographical consensus on high-level register.",
+        "defect_category": "POLYSEMOUS_SENSE_CONFLICT",
+        "quality_flags": [
+          "CONTEXTUAL_DRAFTER_HYPERNYM_PLACEHOLDER",
+          "PREV_HUMAN_DEFECT_POLYSEMOUS_SENSE_CONFLICT"
+        ]
+      },
+      "version_b_grounded_phase_6_2_18": {
+        "thai_meaning": "ที่ต้านทาง, ที่พัดสวนทาง (ทิศทางหรือกระแสลม)",
+        "source": "OMW_THAI_WORDNET_1.0",
+        "source_version": "1.0",
+        "license": "CC-BY-3.0",
+        "source_record_id": "OMW_THA_ADVERSE_002",
+        "confidence_score": 0.7,
+        "pre_review_status": "HOLD_CANDIDATE",
+        "pos_alignment": {
+          "status": "POS_ALIGNED",
+          "confidence": 0.95,
+          "rationale": "Property/attributive gloss compatible with adjective category"
+        },
+        "sense_alignment": {
+          "status": "SENSE_CONFLICT",
+          "score": 0.4,
+          "matched_sense_key": "adverse%5:00:00:unfavorable:02",
+          "rationale": "Directional nautical/meteorological sense distinct from general unfavorable B2 meaning. Held for specialized C2 register consensus."
+        },
+        "cefr_compatibility": {
+          "compatible": true,
+          "note": "CEFR compatible: C2 matches candidate register C2"
+        },
+        "quality_flags": [
+          "SENSE_CONFLICT_REQUIRES_HOLD"
+        ]
+      },
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    }
+  ]
+}

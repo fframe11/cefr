@@ -1,0 +1,170 @@
+{
+  "report_type": "vocabulary-cefr-distribution-report",
+  "phase": "6.2.9",
+  "disclaimer": "Product inventory distribution derived from CEFR-J v1.5 (A1-B2) and Octanove v1.0 (C1-C2). Not an official Council of Europe or Cambridge CEFR standard.",
+  "total_candidates": 9876,
+  "levels": {
+    "A1": {
+      "cefr_level": "A1",
+      "candidate_count": 1164,
+      "normalized_count": 1164,
+      "enriched_with_meaning_en_count": 275,
+      "enriched_with_ipa_count": 1163,
+      "source_verified_ipa_count": 1134,
+      "enriched_with_example_count": 86,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 1164,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 275,
+        "MATCH_AMBIGUOUS": 705,
+        "NO_MATCH": 183,
+        "REVIEW_REQUIRED": 1
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 889,
+        "missing_meaning_th": 1164,
+        "missing_phonetic_ipa": 1,
+        "missing_example_sentence": 1078,
+        "missing_frequency_rank": 186
+      }
+    },
+    "A2": {
+      "cefr_level": "A2",
+      "candidate_count": 1411,
+      "normalized_count": 1411,
+      "enriched_with_meaning_en_count": 379,
+      "enriched_with_ipa_count": 1403,
+      "source_verified_ipa_count": 1347,
+      "enriched_with_example_count": 112,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 1411,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 379,
+        "MATCH_AMBIGUOUS": 947,
+        "NO_MATCH": 83,
+        "REVIEW_REQUIRED": 2
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 1032,
+        "missing_meaning_th": 1411,
+        "missing_phonetic_ipa": 8,
+        "missing_example_sentence": 1299,
+        "missing_frequency_rank": 301
+      }
+    },
+    "B1": {
+      "cefr_level": "B1",
+      "candidate_count": 2446,
+      "normalized_count": 2446,
+      "enriched_with_meaning_en_count": 686,
+      "enriched_with_ipa_count": 2431,
+      "source_verified_ipa_count": 2337,
+      "enriched_with_example_count": 243,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 2446,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 687,
+        "MATCH_AMBIGUOUS": 1665,
+        "NO_MATCH": 75,
+        "REVIEW_REQUIRED": 19
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 1760,
+        "missing_meaning_th": 2446,
+        "missing_phonetic_ipa": 15,
+        "missing_example_sentence": 2203,
+        "missing_frequency_rank": 803
+      }
+    },
+    "B2": {
+      "cefr_level": "B2",
+      "candidate_count": 2778,
+      "normalized_count": 2778,
+      "enriched_with_meaning_en_count": 913,
+      "enriched_with_ipa_count": 2717,
+      "source_verified_ipa_count": 2627,
+      "enriched_with_example_count": 304,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 2778,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 913,
+        "MATCH_AMBIGUOUS": 1713,
+        "NO_MATCH": 95,
+        "REVIEW_REQUIRED": 57
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 1865,
+        "missing_meaning_th": 2778,
+        "missing_phonetic_ipa": 61,
+        "missing_example_sentence": 2474,
+        "missing_frequency_rank": 1500
+      }
+    },
+    "C1": {
+      "cefr_level": "C1",
+      "candidate_count": 1064,
+      "normalized_count": 1087,
+      "enriched_with_meaning_en_count": 388,
+      "enriched_with_ipa_count": 1007,
+      "source_verified_ipa_count": 989,
+      "enriched_with_example_count": 179,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 1087,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 388,
+        "MATCH_AMBIGUOUS": 603,
+        "NO_MATCH": 53,
+        "REVIEW_REQUIRED": 43
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 699,
+        "missing_meaning_th": 1087,
+        "missing_phonetic_ipa": 80,
+        "missing_example_sentence": 908,
+        "missing_frequency_rank": 806
+      }
+    },
+    "C2": {
+      "cefr_level": "C2",
+      "candidate_count": 943,
+      "normalized_count": 990,
+      "enriched_with_meaning_en_count": 442,
+      "enriched_with_ipa_count": 839,
+      "source_verified_ipa_count": 827,
+      "enriched_with_example_count": 187,
+      "reviewed_count": 0,
+      "approved_count": 0,
+      "active_count": 0,
+      "rejected_count": 0,
+      "review_required_count": 990,
+      "sense_disambiguation": {
+        "MATCH_CONFIDENT": 442,
+        "MATCH_AMBIGUOUS": 425,
+        "NO_MATCH": 76,
+        "REVIEW_REQUIRED": 47
+      },
+      "missing_metadata_counts": {
+        "missing_meaning_en": 548,
+        "missing_meaning_th": 990,
+        "missing_phonetic_ipa": 151,
+        "missing_example_sentence": 803,
+        "missing_frequency_rank": 874
+      }
+    }
+  }
+}

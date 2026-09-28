@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "source_name": "Wiktionary & OMW Asian WordNet Thai Curated Subset",
+    "version": "2024.2",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Wiktionary contributors & Open Multilingual Wordnet (Bond et al., 2013)",
+    "official_urls": [
+      "https://en.wiktionary.org/",
+      "https://kaikki.org/dictionary/rawdata.html",
+      "http://compling.hss.ntu.edu.sg/omw/"
+    ],
+    "redistribution_status": "PERMITTED_UNDER_CC_BY_SA_4_0",
+    "commercial_use_status": "PERMITTED_WITH_SHARE_ALIKE",
+    "total_entries": 12,
+    "last_updated": "2026-09-28T03:30:00.000Z"
+  },
+  "entries": {
+    "faithfully|adverb": {
+      "headword": "faithfully",
+      "pos": "adverb",
+      "translations": [
+        "อย่างน่าเชื่อถือ",
+        "อย่างเชื่อถือได้",
+        "อย่างซื่อสัตย์",
+        "อย่างจงรักภักดี"
+      ],
+      "senses": [
+        {
+          "synset_id": "00109673-r",
+          "definition": "in a faithful manner",
+          "source": "omw_thai",
+          "thai_lemmas": ["อย่างน่าเชื่อถือ", "อย่างเชื่อถือได้"]
+        }
+      ]
+    },
+
+    "automate|verb": {
+      "headword": "automate",
+      "pos": "verb",
+      "translations": [
+        "ทำให้เป็นอัตโนมัติ",
+        "ใช้เครื่องจักรอัตโนมัติ"
+      ],
+      "senses": [
+        {
+          "synset_id": "00472421-v",
+          "definition": "make automatic or control or operate automatically",
+          "source": "wiktionary_thai",
+          "thai_lemmas": ["ทำให้เป็นอัตโนมัติ"]
+        }
+      ]
+    },
+    "decentralize|verb": {
+      "headword": "decentralize",
+      "pos": "verb",
+      "translations": [
+        "กระจายอำนาจ",
+        "กระจายศูนย์"
+      ],
+      "senses": [
+        {
+          "synset_id": "02409741-v",
+          "definition": "make less centralized",
+          "source": "wiktionary_thai",
+          "thai_lemmas": ["กระจายอำนาจ"]
+        }
+      ]
+    },
+    "rich|adjective": {
+      "headword": "rich",
+      "pos": "adjective",
+      "translations": [
+        "มั่งคั่ง",
+        "มั่งมี",
+        "รวย",
+        "ร่ำรวย"
+      ],
+      "senses": [
+        {
+          "synset_id": "00014457-s",
+          "definition": "affording an abundant supply",
+          "source": "wiktionary_thai",
+          "thai_lemmas": ["มั่งคั่ง", "อุดมสมบูรณ์"]
+        },
+        {
+          "synset_id": "01934988-a",
+          "definition": "possessing material wealth",
+          "source": "omw_thai",
+          "thai_lemmas": ["มั่งคั่ง", "รวย"]
+        }
+      ]
+    },
+    "agency|noun": {
+      "headword": "agency",
+      "pos": "noun",
+      "translations": [
+        "กรม",
+        "ทบวง",
+        "หน่วยงาน",
+        "หน่วยงานราชการ"
+      ],
+      "senses": [
+        {
+          "synset_id": "08054835-n",
+          "definition": "an administrative unit of government",
+          "source": "omw_thai",
+          "thai_lemmas": ["กรม", "ทบวง", "หน่วยงาน"]
+        }
+      ]
+    },
+    "equivalent|adjective": {
+      "headword": "equivalent",
+      "pos": "adjective",
+      "translations": [
+        "เท่ากัน",
+        "เสมอกัน",
+        "สมมูล"
+      ],
+      "senses": [
+        {
+          "synset_id": "00911776-a",
+          "definition": "equal in amount or value",
+          "source": "omw_thai",
+          "thai_lemmas": ["เท่ากัน", "สมมูล"]
+        }
+      ]
+    },
+    "cluster|noun": {
+      "headword": "cluster",
+      "pos": "noun",
+      "translations": [
+        "กลุ่ม",
+        "พวง",
+        "กอ",
+        "กระจุก"
+      ],
+      "senses": [
+        {
+          "synset_id": "07963053-n",
+          "definition": "a grouping of a number of similar things",
+          "source": "omw_thai",
+          "thai_lemmas": ["กลุ่ม", "กระจุก"]
+        }
+      ]
+    },
+    "drink|verb": {
+      "headword": "drink",
+      "pos": "verb",
+      "translations": ["ดื่ม"],
+      "senses": [
+        {
+          "synset_id": "01171052-v",
+          "definition": "take in liquids",
+          "source": "omw_thai",
+          "thai_lemmas": ["ดื่ม"]
+        }
+      ]
+    },
+    "feel|verb": {
+      "headword": "feel",
+      "pos": "verb",
+      "translations": ["รู้สึก"],
+      "senses": [
+        {
+          "synset_id": "02107412-v",
+          "definition": "undergo an emotional sensation or be in a particular state of mind",
+          "source": "omw_thai",
+          "thai_lemmas": ["รู้สึก"]
+        }
+      ]
+    },
+    "frighten|verb": {
+      "headword": "frighten",
+      "pos": "verb",
+      "translations": ["ทำให้กลัว", "ตกใจ"],
+      "senses": [
+        {
+          "synset_id": "01783088-v",
+          "definition": "cause fear in",
+          "source": "omw_thai",
+          "thai_lemmas": ["ทำให้กลัว"]
+        }
+      ]
+    }
+  }
+}

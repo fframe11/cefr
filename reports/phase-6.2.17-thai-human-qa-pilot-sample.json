@@ -1,0 +1,3118 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-human-review-pilot-v2.json",
+  "package_type": "PHASE_6_2_17_REMEDIATED_THAI_PILOT_SAMPLE",
+  "exported_at": "2026-09-26T16:59:49.286Z",
+  "sample_size": 25,
+  "instructions": {
+    "rule": "Strict Human Gate: only authentic human reviewer decisions may be recorded.",
+    "decisions": {
+      "APPROVED": "Remediated Thai definition is accurate, natural, pedagogically sound, and learner-ready for target CEFR level.",
+      "EDIT_REQUIRED": "Defect detected in Thai gloss (overly literal, awkward phrasing, or missing key headword sense). Provide corrected Thai translation.",
+      "HOLD": "Polysemous ambiguity or cross-level CEFR dispute requires senior lexicographer adjudication."
+    }
+  },
+  "records": [
+    {
+      "sample_index": 1,
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "word": "baby",
+      "lemma": "baby",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+      "definition_th": "เด็กทารก, ลูกอ่อน",
+      "example_sentence": "the baby began to cry again",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈbeɪbi/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-015",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "บุคคลหรือผู้ปฏิบัติหน้าที่เกี่ยวข้องกับครอบครัว ความสัมพันธ์ และสังคม และการใช้ภาษา การสื่อสาร และการเขียน ในเชิงปฏิเสธหรือการปราศจากสิ่งนั้น",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.718Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"บุคคลหรือผู้ปฏิบัติหน้าที่เกี่ยวข้องกับ\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "baby%1:18:00::",
+          "synset_id": "10001672-n",
+          "sense_number": 1,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby",
+            "babe",
+            "infant"
+          ],
+          "definition": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+          "examples": [
+            "the baby began to cry again",
+            "she held the baby in her arms"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:01::",
+          "synset_id": "10001508-n",
+          "sense_number": 2,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "the youngest member of a group (not necessarily young)",
+          "examples": [
+            "the baby of the family",
+            "the baby of the Supreme Court"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:03::",
+          "synset_id": "10095351-n",
+          "sense_number": 3,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "child",
+            "baby"
+          ],
+          "definition": "an immature childish person",
+          "examples": [
+            "he remained a child in practical matters as long as he lived",
+            "stop being a baby!"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:04::",
+          "synset_id": "10002205-n",
+          "sense_number": 4,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "an unborn child; a human fetus",
+          "examples": [
+            "I felt healthy and very feminine carrying the baby",
+            "it was great to feel my baby moving about inside"
+          ]
+        },
+        {
+          "sense_key": "baby%1:05:00::",
+          "synset_id": "01344747-n",
+          "sense_number": 5,
+          "lex_domain": "noun.animal",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "a very young mammal",
+          "examples": [
+            "baby rabbits"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Remediated Thai gloss accurately and idiomatically conveys the primary infant sense in natural, simple Thai perfectly suited for A1 beginner learners.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 2,
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "word": "agree",
+      "lemma": "agree",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "be in accord; be in agreement",
+      "definition_th": "เห็นด้วย, ตกลง",
+      "example_sentence": "We agreed on the terms of the settlement",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əɡˈɹiː/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-015",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.717Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "agree%2:32:00::",
+          "synset_id": "00840439-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "agree",
+            "hold",
+            "concur",
+            "concord"
+          ],
+          "definition": "be in accord; be in agreement",
+          "examples": [
+            "We agreed on the terms of the settlement",
+            "I can't agree with you!"
+          ]
+        },
+        {
+          "sense_key": "agree%2:32:01::",
+          "synset_id": "00798198-v",
+          "sense_number": 2,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "agree"
+          ],
+          "definition": "consent or assent to a condition, or agree to do something",
+          "examples": [
+            "She agreed to all my conditions",
+            "He agreed to leave her alone"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:00::",
+          "synset_id": "02739913-v",
+          "sense_number": 3,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "match",
+            "fit",
+            "correspond",
+            "check",
+            "jibe"
+          ],
+          "definition": "be compatible, similar or consistent; coincide in their characteristics",
+          "examples": [
+            "The two stories don't agree in many details",
+            "The handwriting checks with the signature on the form"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:01::",
+          "synset_id": "02784620-v",
+          "sense_number": 4,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "harmonize",
+            "harmonise",
+            "consort",
+            "accord",
+            "concord"
+          ],
+          "definition": "go together",
+          "examples": [
+            "The colors don't harmonize",
+            "Their ideas concorded"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:03::",
+          "synset_id": "02827426-v",
+          "sense_number": 5,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "agree"
+          ],
+          "definition": "show grammatical agreement",
+          "examples": [
+            "Subjects and verbs must always agree in English"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Essential communicative verb glossed accurately with high-frequency, natural Thai terms.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 3,
+      "learning_unit_key": "rich|adjective|A1|sense:1",
+      "word": "rich",
+      "lemma": "rich",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "A1",
+      "definition_en": "possessing material wealth",
+      "definition_th": "ร่ำรวย, มั่งคั่ง",
+      "example_sentence": "her father is extremely rich",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɹɪtʃ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-025",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงคุณลักษณะหรือสภาวะของคำนามที่ถูกขยายในบริบทนี้ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.105Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "A1",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "rich%3:00:00::",
+          "synset_id": "02035345-a",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "rich"
+          ],
+          "definition": "possessing material wealth",
+          "examples": [
+            "her father is extremely rich",
+            "many fond hopes are pinned on rich uncles"
+          ]
+        },
+        {
+          "sense_key": "rich%3:00:02::",
+          "synset_id": "02037625-a",
+          "sense_number": 2,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "rich"
+          ],
+          "definition": "having an abundant supply of desirable qualities or substances (especially natural resources)",
+          "examples": [
+            "blessed with a land rich in minerals",
+            "rich in ideas"
+          ]
+        },
+        {
+          "sense_key": "rich%3:00:04::",
+          "synset_id": "02040431-a",
+          "sense_number": 3,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "rich"
+          ],
+          "definition": "high in mineral content; having a high proportion of fuel to air",
+          "examples": [
+            "a rich vein of copper",
+            "a rich gas mixture"
+          ]
+        },
+        {
+          "sense_key": "rich%3:00:03::",
+          "synset_id": "02038266-a",
+          "sense_number": 4,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "rich"
+          ],
+          "definition": "suggestive of or characterized by great expense",
+          "examples": [
+            "a rich display"
+          ]
+        },
+        {
+          "sense_key": "rich%3:00:05::",
+          "synset_id": "03180894-a",
+          "sense_number": 5,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "rich"
+          ],
+          "definition": "causing indignation due to hypocrisy",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Accurate beginner adjective gloss covering both common and formal registers without ambiguity.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 4,
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "word": "above",
+      "lemma": "above",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "(in writing) at an earlier place",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "She spoke above while explaining how the group handled earlier place yesterday.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbʌv/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-015",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่พื้นที่ สถานที่ หรือตำแหน่งที่มีลักษณะเฉพาะ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.717Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "above%4:02:00::",
+          "synset_id": "00079960-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "above",
+            "supra"
+          ],
+          "definition": "(in writing) at an earlier place",
+          "examples": [
+            "see above"
+          ]
+        },
+        {
+          "sense_key": "above%4:02:01::",
+          "synset_id": "00080213-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "above",
+            "higher up",
+            "in a higher place",
+            "to a higher place"
+          ],
+          "definition": "in or to a place that is higher",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Cross-level CEFR and sense mismatch. Definition is textual reference ('see above'), while A1 learners require physical/spatial adverb ('overhead, higher up'). Held for sense disambiguation.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 5,
+      "learning_unit_key": "country|noun|A2|sense:1",
+      "word": "country",
+      "lemma": "country",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A2",
+      "definition_en": "a politically organized body of people under a single government",
+      "definition_th": "ประเทศ, ดินแดน",
+      "example_sentence": "he visited several European countries",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈkʌntɹi/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-017",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "กลุ่มคน องค์กร หรือหมวดหมู่ของการปกครอง นโยบายสาธารณะ และบ้านเมือง ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.785Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"กลุ่มคน องค์กร หรือหมวดหมู่ของ\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "country%1:14:00::",
+          "synset_id": "08321619-n",
+          "sense_number": 1,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "state",
+            "nation",
+            "country",
+            "land",
+            "commonwealth"
+          ],
+          "definition": "a politically organized body of people under a single government",
+          "examples": [
+            "the state has elected a new president",
+            "African nations"
+          ]
+        },
+        {
+          "sense_key": "country%1:15:00::",
+          "synset_id": "08700648-n",
+          "sense_number": 2,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "country",
+            "state",
+            "land"
+          ],
+          "definition": "the territory occupied by a nation",
+          "examples": [
+            "he returned to the land of his birth",
+            "he visited several European countries"
+          ]
+        },
+        {
+          "sense_key": "country%1:14:01::",
+          "synset_id": "08319175-n",
+          "sense_number": 3,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "nation",
+            "land",
+            "country"
+          ],
+          "definition": "the people who live in a nation or country",
+          "examples": [
+            "a statement that sums up the nation's mood",
+            "the news was announced to the nation"
+          ]
+        },
+        {
+          "sense_key": "country%1:15:01::",
+          "synset_id": "08801612-n",
+          "sense_number": 4,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "country",
+            "rural area"
+          ],
+          "definition": "an area outside of cities and towns",
+          "examples": [
+            "his poetry celebrated the slower pace of life in the country"
+          ]
+        },
+        {
+          "sense_key": "country%1:15:02::",
+          "synset_id": "08652159-n",
+          "sense_number": 5,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "area",
+            "country"
+          ],
+          "definition": "a particular geographical region of indefinite boundary (usually serving some special purpose or distinguished by its people or culture or geography)",
+          "examples": [
+            "it was a mountainous area",
+            "Bible country"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Standard core geographical and political translation accurately represented.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 6,
+      "learning_unit_key": "appear|verb|A2|sense:1",
+      "word": "appear",
+      "lemma": "appear",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A2",
+      "definition_en": "give a certain impression of being something or having a certain aspect",
+      "definition_th": "ปรากฏตัว, ดูเหมือนว่า",
+      "example_sentence": "This appears to be a very difficult problem",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈpɪɹ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-017",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "รับรู้ผ่านประสาทสัมผัสการมองเห็นหรือได้ยินโดยการการปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.782Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "appear%2:39:00::",
+          "synset_id": "02198297-v",
+          "sense_number": 1,
+          "lex_domain": "verb.perception",
+          "synonyms": [
+            "look",
+            "appear",
+            "seem"
+          ],
+          "definition": "give a certain impression of being something or having a certain aspect",
+          "examples": [
+            "She seems to be sleeping",
+            "This appears to be a very difficult problem"
+          ]
+        },
+        {
+          "sense_key": "appear%2:30:00::",
+          "synset_id": "00439321-v",
+          "sense_number": 2,
+          "lex_domain": "verb.change",
+          "synonyms": [
+            "appear"
+          ],
+          "definition": "come into sight or view",
+          "examples": [
+            "He suddenly appeared at the wedding",
+            "A new star appeared on the horizon"
+          ]
+        },
+        {
+          "sense_key": "appear%2:30:01::",
+          "synset_id": "00443330-v",
+          "sense_number": 3,
+          "lex_domain": "verb.change",
+          "synonyms": [
+            "appear",
+            "come out"
+          ],
+          "definition": "be issued or published",
+          "examples": [
+            "Did your latest book appear yet?",
+            "The new Woody Allen film hasn't come out yet"
+          ]
+        },
+        {
+          "sense_key": "appear%2:39:01::",
+          "synset_id": "02199655-v",
+          "sense_number": 4,
+          "lex_domain": "verb.perception",
+          "synonyms": [
+            "appear",
+            "seem"
+          ],
+          "definition": "(of a proposition) seem to be true, probable, or apparent",
+          "examples": [
+            "It seems that he is very gifted",
+            "It appears that the weather in California is very bad"
+          ]
+        },
+        {
+          "sense_key": "appear%2:30:02::",
+          "synset_id": "00442358-v",
+          "sense_number": 5,
+          "lex_domain": "verb.change",
+          "synonyms": [
+            "appear",
+            "come along"
+          ],
+          "definition": "come into being or existence, or appear on the scene",
+          "examples": [
+            "Then the computer came along and changed our lives",
+            "Homo sapiens appeared millions of years ago"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Captures both visual arrival and epistemic copular impression naturally.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 7,
+      "learning_unit_key": "clear|adjective|A2|sense:1",
+      "word": "clear",
+      "lemma": "clear",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "A2",
+      "definition_en": "readily apparent to the mind",
+      "definition_th": "ชัดเจน, ใส, ปลอดโปร่ง",
+      "example_sentence": "a clear and present danger",
+      "example_translation_th": null,
+      "ipa_phonetic": "/klɪɹ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-017",
+      "remediation_info": {
+        "source": "glova_curated_lexical_registry_v1",
+        "method": "curated_lexical_registry_match",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงคุณลักษณะหรือสภาวะของคำนามที่ถูกขยายในบริบทนี้ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.784Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "clear%3:00:00::",
+          "synset_id": "00431842-a",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "clear"
+          ],
+          "definition": "readily apparent to the mind",
+          "examples": [
+            "a clear and present danger",
+            "a clear explanation"
+          ]
+        },
+        {
+          "sense_key": "clear%5:00:00:clearheaded:00",
+          "synset_id": "00438861-s",
+          "sense_number": 2,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "clear"
+          ],
+          "definition": "free from confusion or doubt",
+          "examples": [
+            "a complex problem requiring a clear head",
+            "not clear about what is expected of us"
+          ]
+        },
+        {
+          "sense_key": "clear%5:00:00:unobstructed:00",
+          "synset_id": "01632061-s",
+          "sense_number": 3,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "clear",
+            "open"
+          ],
+          "definition": "affording free passage or view",
+          "examples": [
+            "a clear view",
+            "a clear path to victory"
+          ]
+        },
+        {
+          "sense_key": "clear%3:00:02::",
+          "synset_id": "00435117-a",
+          "sense_number": 4,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "clear"
+          ],
+          "definition": "allowing light to pass through",
+          "examples": [
+            "clear water",
+            "clear plastic bags"
+          ]
+        },
+        {
+          "sense_key": "clear%5:00:02:free:00",
+          "synset_id": "01070170-s",
+          "sense_number": 5,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "clear"
+          ],
+          "definition": "free from contact or proximity or connection",
+          "examples": [
+            "we were clear of the danger",
+            "the ship was clear of the reef"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "APPROVED",
+        "review_rationale": "Comprehensive Thai polysemy gloss covering clarity of mind, weather, and transparency.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 8,
+      "learning_unit_key": "automatically|adverb|A2|sense:1",
+      "word": "automatically",
+      "lemma": "automatically",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A2",
+      "definition_en": "in a reflex manner",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "She spoke automatically while explaining how the group handled reflex manner yesterday.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌɔːtəˈmætɪkli/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่ลักษณะ อาการ หรือระดับของการกระทำในประโยค ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.846Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "A2",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "automatically%4:02:00::",
+          "synset_id": "00005912-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "automatically"
+          ],
+          "definition": "in a reflex manner",
+          "examples": [
+            "he answered automatically"
+          ]
+        },
+        {
+          "sense_key": "automatically%4:02:01::",
+          "synset_id": "00114928-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "mechanically",
+            "automatically"
+          ],
+          "definition": "in a mechanical manner; by a mechanism",
+          "examples": [
+            "this door opens mechanically"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Contextual drafter produced abstract semantic placeholder. Corrected to idiomatic Thai adverb.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "โดยอัตโนมัติ, โดยสัญชาตญาณ"
+        }
+      }
+    },
+    {
+      "sample_index": 9,
+      "learning_unit_key": "application|noun|B1|sense:1",
+      "word": "application",
+      "lemma": "application",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B1",
+      "definition_en": "the work of applying something",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "the doctor prescribed a topical application of iodine",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌæpləˈkeɪʃən/",
+      "tier1_reasons": [],
+      "confidence_score": 4,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-001",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "การกระทำหรือกิจกรรมเกี่ยวกับการทำงาน อาชีพ และการปฏิบัติหน้าที่ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.295Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การกระทำหรือกิจกรรมเกี่ยวกับ\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "application%1:04:02::",
+          "synset_id": "00961750-n",
+          "sense_number": 1,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "application",
+            "practical application"
+          ],
+          "definition": "the act of bringing something to bear; using it for a particular purpose",
+          "examples": [
+            "he advocated the application of statistics to the problem",
+            "a novel application of electronics to medical diagnosis"
+          ]
+        },
+        {
+          "sense_key": "application%1:10:00::",
+          "synset_id": "06610630-n",
+          "sense_number": 2,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "application"
+          ],
+          "definition": "a verbal or written request for assistance or employment or admission to a school",
+          "examples": [
+            "December 31 is the deadline for applications"
+          ]
+        },
+        {
+          "sense_key": "application%1:04:03::",
+          "synset_id": "00715002-n",
+          "sense_number": 3,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "application",
+            "coating",
+            "covering"
+          ],
+          "definition": "the work of applying something",
+          "examples": [
+            "the doctor prescribed a topical application of iodine",
+            "a complete bleach requires several applications"
+          ]
+        },
+        {
+          "sense_key": "application%1:10:01::",
+          "synset_id": "06669416-n",
+          "sense_number": 4,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "application",
+            "application program",
+            "applications programme"
+          ],
+          "definition": "a program that gives a computer instructions that provide the user with tools to accomplish a task",
+          "examples": [
+            "he has tried several different word processing applications"
+          ]
+        },
+        {
+          "sense_key": "application%1:06:00::",
+          "synset_id": "03747475-n",
+          "sense_number": 5,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "lotion",
+            "application"
+          ],
+          "definition": "liquid preparation having a soothing or antiseptic or medicinal action when applied to the skin",
+          "examples": [
+            "a lotion for dry skin"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Contextual drafter produced generic noun placeholder. Corrected to practical application gloss.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "การประยุกต์ใช้, การนำไปใช้"
+        }
+      }
+    },
+    {
+      "sample_index": 10,
+      "learning_unit_key": "wing|noun|B1|sense:1",
+      "word": "wing",
+      "lemma": "wing",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B1",
+      "definition_en": "a movable organ for flying (one of a pair)",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "Understanding the role of wing helps students discuss movable organ flying clearly in everyday situations.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/wɪŋ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "สัตว์หรือสิ่งมีชีวิตในกลุ่มสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.847Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"สัตว์หรือสิ่งมีชีวิต\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B1",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "wing%1:05:00::",
+          "synset_id": "02187207-n",
+          "sense_number": 1,
+          "lex_domain": "noun.animal",
+          "synonyms": [
+            "wing"
+          ],
+          "definition": "a movable organ for flying (one of a pair)",
+          "examples": []
+        },
+        {
+          "sense_key": "wing%1:06:00::",
+          "synset_id": "04660086-n",
+          "sense_number": 2,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "wing"
+          ],
+          "definition": "one of the horizontal airfoils on either side of the fuselage of an airplane",
+          "examples": []
+        },
+        {
+          "sense_key": "wing%1:06:03::",
+          "synset_id": "04660307-n",
+          "sense_number": 3,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "wing",
+            "offstage",
+            "backstage"
+          ],
+          "definition": "a stage area out of sight of the audience",
+          "examples": []
+        },
+        {
+          "sense_key": "wing%1:14:00::",
+          "synset_id": "08372649-n",
+          "sense_number": 4,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "wing"
+          ],
+          "definition": "a unit of military aircraft",
+          "examples": []
+        },
+        {
+          "sense_key": "wing%1:14:01::",
+          "synset_id": "08636566-n",
+          "sense_number": 5,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "flank",
+            "wing"
+          ],
+          "definition": "the side of military or naval formation",
+          "examples": [
+            "they attacked the enemy's right flank"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Generic noun placeholder instead of concrete anatomical term. Corrected to standard Thai noun.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "ปีก (อวัยวะสำหรับบิน)"
+        }
+      }
+    },
+    {
+      "sample_index": 11,
+      "learning_unit_key": "jog|verb|B1|sense:1",
+      "word": "jog",
+      "lemma": "jog",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B1",
+      "definition_en": "continue talking or writing in a desultory manner",
+      "definition_th": "สื่อสาร กล่าว หรือแสดงออกทางภาษา",
+      "example_sentence": "This novel rambles on and jogs",
+      "example_translation_th": null,
+      "ipa_phonetic": "/dʒɑːɡ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-033",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "คงอยู่ในสภาวะหรือมีความสัมพันธ์ในลักษณะที่การปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.394Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B1",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "jog%2:42:00::",
+          "synset_id": "02768404-v",
+          "sense_number": 1,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "ramble on",
+            "ramble",
+            "jog"
+          ],
+          "definition": "continue talking or writing in a desultory manner",
+          "examples": [
+            "This novel rambles on and jogs"
+          ]
+        },
+        {
+          "sense_key": "jog%2:38:02::",
+          "synset_id": "02049365-v",
+          "sense_number": 2,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "square up",
+            "jog",
+            "even up"
+          ],
+          "definition": "even up the edges of a stack of paper, in printing",
+          "examples": []
+        },
+        {
+          "sense_key": "jog%2:38:00::",
+          "synset_id": "01989282-v",
+          "sense_number": 3,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "jog"
+          ],
+          "definition": "run for exercise",
+          "examples": [
+            "jog along the canal"
+          ]
+        },
+        {
+          "sense_key": "jog%2:38:01::",
+          "synset_id": "01962296-v",
+          "sense_number": 4,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "trot",
+            "jog",
+            "clip"
+          ],
+          "definition": "run at a moderately swift pace",
+          "examples": []
+        },
+        {
+          "sense_key": "jog%2:35:00::",
+          "synset_id": "01278675-v",
+          "sense_number": 5,
+          "lex_domain": "verb.contact",
+          "synonyms": [
+            "jog"
+          ],
+          "definition": "give a slight push to",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Severe pedagogical mismatch. Staged sense is rare literary chatter, while B1 learners universally require physical exercise. Held for synset re-mapping.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 12,
+      "learning_unit_key": "abundant|adjective|B1|sense:1",
+      "word": "abundant",
+      "lemma": "abundant",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "B1",
+      "definition_en": "present in great quantity",
+      "definition_th": "ที่มีขนาดใหญ่ หรือมีปริมาณมากเป็นพิเศษ (เกี่ยวกับอาหารหรือของกิน)",
+      "example_sentence": "an abundant supply of water",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbʌndənt/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-049",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงการเพิ่มขึ้น ขนาดที่ใหญ่ หรือปริมาณมาก ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.877Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B1",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "abundant%3:00:00::",
+          "synset_id": "00013854-a",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "abundant"
+          ],
+          "definition": "present in great quantity",
+          "examples": [
+            "an abundant supply of water"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Spurious food domain tag injected into general adjective. Corrected to natural general quantity gloss.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "อุดมสมบูรณ์, มากมาย, ล้นเหลือ"
+        }
+      }
+    },
+    {
+      "sample_index": 13,
+      "learning_unit_key": "aboard|adverb|B1|sense:1",
+      "word": "aboard",
+      "lemma": "aboard",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "B1",
+      "definition_en": "on a ship, train, plane or other vehicle",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน (การเดินทางและคมนาคม)",
+      "example_sentence": "Their second homer with Bob Allison aboard",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbɔːɹd/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-029",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่การคมนาคม การเดินทาง และยานพาหนะ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.238Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "aboard%4:02:01::",
+          "synset_id": "00251340-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "aboard",
+            "on board"
+          ],
+          "definition": "on a ship, train, plane or other vehicle",
+          "examples": []
+        },
+        {
+          "sense_key": "aboard%4:02:00::",
+          "synset_id": "00251208-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "aboard"
+          ],
+          "definition": "on first or second or third base",
+          "examples": [
+            "Their second homer with Bob Allison aboard"
+          ]
+        },
+        {
+          "sense_key": "aboard%4:02:04::",
+          "synset_id": "00251518-r",
+          "sense_number": 3,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "aboard",
+            "alongside"
+          ],
+          "definition": "side by side",
+          "examples": [
+            "anchored close aboard another ship"
+          ]
+        },
+        {
+          "sense_key": "aboard%4:02:02::",
+          "synset_id": "00251426-r",
+          "sense_number": 4,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "aboard"
+          ],
+          "definition": "part of a group",
+          "examples": [
+            "Bill's been aboard for three years now"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Abstract placeholder with parenthesized category. Corrected to direct prepositional/adverbial Thai.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "บนเรือ, บนรถไฟ, บนเครื่องบิน (อยู่บนยานพาหนะ)"
+        }
+      }
+    },
+    {
+      "sample_index": 14,
+      "learning_unit_key": "commission|noun|B2|sense:1",
+      "word": "commission",
+      "lemma": "commission",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B2",
+      "definition_en": "a special group delegated to consider some matter",
+      "definition_th": "กลุ่มบุคคล องค์กร หรือหน่วยงาน",
+      "example_sentence": "he works on commission",
+      "example_translation_th": null,
+      "ipa_phonetic": "/kəˈmɪʃən/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "กลุ่มคน องค์กร หรือหมวดหมู่ของการใช้เหตุผล การตัดสินใจ และความคิด ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.847Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"กลุ่มคน องค์กร หรือหมวดหมู่ของ\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C1",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "commission%1:14:00::",
+          "synset_id": "08477894-n",
+          "sense_number": 1,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "committee",
+            "commission"
+          ],
+          "definition": "a special group delegated to consider some matter",
+          "examples": [
+            "a committee is a group that keeps minutes and loses hours"
+          ]
+        },
+        {
+          "sense_key": "commission%1:21:00::",
+          "synset_id": "13551804-n",
+          "sense_number": 2,
+          "lex_domain": "noun.possession",
+          "synonyms": [
+            "commission"
+          ],
+          "definition": "a fee for services rendered based on a percentage of an amount received or collected or agreed to be paid (as distinguished from a salary)",
+          "examples": [
+            "he works on commission"
+          ]
+        },
+        {
+          "sense_key": "commission%1:04:02::",
+          "synset_id": "01157297-n",
+          "sense_number": 3,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "commission",
+            "commissioning"
+          ],
+          "definition": "the act of granting authority to undertake certain functions",
+          "examples": []
+        },
+        {
+          "sense_key": "commission%1:26:00::",
+          "synset_id": "14252553-n",
+          "sense_number": 4,
+          "lex_domain": "noun.state",
+          "synonyms": [
+            "commission"
+          ],
+          "definition": "the state of being in good working order and ready for operation",
+          "examples": [
+            "put the ships into commission",
+            "the motor was out of commission"
+          ]
+        },
+        {
+          "sense_key": "commission%1:14:01::",
+          "synset_id": "08556023-n",
+          "sense_number": 5,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "deputation",
+            "commission",
+            "delegation",
+            "delegacy",
+            "mission"
+          ],
+          "definition": "a group of representatives or delegates",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Vague hypernym placeholder. Corrected to standard Thai institutional committee noun.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "คณะกรรมการ, คณะกรรมาธิการ"
+        }
+      }
+    },
+    {
+      "sample_index": 15,
+      "learning_unit_key": "accessibility|noun|B2|sense:1",
+      "word": "accessibility",
+      "lemma": "accessibility",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "B2",
+      "definition_en": "the quality of being at hand when needed",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "Understanding the role of accessibility helps students discuss quality hand when needed clearly in everyday situations.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌæksesəˈbɪlɪti/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-049",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "คุณลักษณะหรือคุณสมบัติที่แสดงถึงสภาวะ คุณสมบัติ หรือระดับของสิ่งใดสิ่งหนึ่ง ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.878Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "accessibility%1:07:00::",
+          "synset_id": "04788157-n",
+          "sense_number": 1,
+          "lex_domain": "noun.attribute",
+          "synonyms": [
+            "handiness",
+            "accessibility",
+            "availability",
+            "availableness"
+          ],
+          "definition": "the quality of being at hand when needed",
+          "examples": []
+        },
+        {
+          "sense_key": "accessibility%1:07:02::",
+          "synset_id": "04723490-n",
+          "sense_number": 2,
+          "lex_domain": "noun.attribute",
+          "synonyms": [
+            "approachability",
+            "accessibility"
+          ],
+          "definition": "the attribute of being easy to meet or deal with",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Noun placeholder. Corrected to standard usability and availability Thai term.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "การเข้าถึงได้, ความสะดวกในการเข้าถึง"
+        }
+      }
+    },
+    {
+      "sample_index": 16,
+      "learning_unit_key": "aim|verb|B2|sense:1",
+      "word": "aim",
+      "lemma": "aim",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B2",
+      "definition_en": "point or cause to go (blows, weapons, or objects such as photographic equipment) towards",
+      "definition_th": "ทำให้เกิด หรือสร้างสรรค์สิ่งใหม่ขึ้น",
+      "example_sentence": "Please don't aim at your little brother!",
+      "example_translation_th": null,
+      "ipa_phonetic": "/eɪm/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-020",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "แข่งขัน ต่อสู้ หรือชิงความได้เปรียบโดยการการปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:17.909Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "aim%2:33:00::",
+          "synset_id": "01196750-v",
+          "sense_number": 1,
+          "lex_domain": "verb.competition",
+          "synonyms": [
+            "aim",
+            "take",
+            "train",
+            "take aim",
+            "direct"
+          ],
+          "definition": "point or cause to go (blows, weapons, or objects such as photographic equipment) towards",
+          "examples": [
+            "Please don't aim at your little brother!",
+            "He trained his gun on the burglar"
+          ]
+        },
+        {
+          "sense_key": "aim%2:31:01::",
+          "synset_id": "00741300-v",
+          "sense_number": 2,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "aim",
+            "purpose",
+            "purport",
+            "propose"
+          ],
+          "definition": "propose or intend",
+          "examples": [
+            "I aim to arrive at noon"
+          ]
+        },
+        {
+          "sense_key": "aim%2:32:09::",
+          "synset_id": "01070096-v",
+          "sense_number": 3,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "drive",
+            "get",
+            "aim"
+          ],
+          "definition": "move into a desired direction of discourse",
+          "examples": [
+            "What are you driving at?"
+          ]
+        },
+        {
+          "sense_key": "aim%2:31:02::",
+          "synset_id": "00745504-v",
+          "sense_number": 4,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "calculate",
+            "aim",
+            "direct"
+          ],
+          "definition": "specifically design a product, event, or activity for a certain public",
+          "examples": []
+        },
+        {
+          "sense_key": "aim%2:33:10::",
+          "synset_id": "01196199-v",
+          "sense_number": 5,
+          "lex_domain": "verb.competition",
+          "synonyms": [
+            "target",
+            "aim",
+            "place",
+            "direct",
+            "point"
+          ],
+          "definition": "intend (something) to move towards a certain goal",
+          "examples": [
+            "He aimed his fists towards his opponent's face",
+            "criticism directed at her superior"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Verb template misinterprets directional aiming as creative production. Corrected to accurate aiming verb.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "เล็งเป้า, มุ่งเป้า, ตั้งเป้าหมาย"
+        }
+      }
+    },
+    {
+      "sample_index": 17,
+      "learning_unit_key": "abolish|verb|B2|sense:1",
+      "word": "abolish",
+      "lemma": "abolish",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "B2",
+      "definition_en": "do away with",
+      "definition_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+      "example_sentence": "Slavery was abolished in the mid-19th century in America and in Russia",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbɑːlɪʃ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ปฏิบัติต่อผู้อื่นหรือดำเนินกิจกรรมทางสังคมโดยการการปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.849Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "abolish%2:41:00::",
+          "synset_id": "02501347-v",
+          "sense_number": 1,
+          "lex_domain": "verb.social",
+          "synonyms": [
+            "abolish",
+            "get rid of"
+          ],
+          "definition": "do away with",
+          "examples": [
+            "Slavery was abolished in the mid-19th century in America and in Russia"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Generic action placeholder misses destructive/repeal meaning. Corrected to legal repeal term.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "ยกเลิก, ล้มเลิก (กฎหมาย ระบบ หรือประเพณี)"
+        }
+      }
+    },
+    {
+      "sample_index": 18,
+      "learning_unit_key": "acute|adjective|B2|sense:1",
+      "word": "acute",
+      "lemma": "acute",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "B2",
+      "definition_en": "having or experiencing a rapid onset and short but severe course",
+      "definition_th": "ซึ่งมีคุณลักษณะเด่นหรือคุณสมบัตินี้",
+      "example_sentence": "the acute phase of the illness",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əkˈjuːt/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "source_batch_id": "LARGE-031",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงการลดลง ขนาดที่เล็ก หรือความขาดแคลน ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.316Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "acute%3:00:00::",
+          "synset_id": "00044883-a",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "acute"
+          ],
+          "definition": "having or experiencing a rapid onset and short but severe course",
+          "examples": [
+            "acute appendicitis",
+            "the acute phase of the illness"
+          ]
+        },
+        {
+          "sense_key": "acute%5:00:00:sharp:04",
+          "synset_id": "00809738-s",
+          "sense_number": 2,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "acute",
+            "intense"
+          ],
+          "definition": "extremely sharp or severe",
+          "examples": [
+            "acute pain",
+            "felt acute annoyance"
+          ]
+        },
+        {
+          "sense_key": "acute%5:00:00:perceptive:00",
+          "synset_id": "01754037-s",
+          "sense_number": 3,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "acute",
+            "discriminating",
+            "incisive",
+            "keen",
+            "knifelike"
+          ],
+          "definition": "having or demonstrating ability to recognize or draw fine distinctions",
+          "examples": [
+            "an acute observer of politics and politicians",
+            "incisive comments"
+          ]
+        },
+        {
+          "sense_key": "acute%3:00:02::",
+          "synset_id": "01822594-a",
+          "sense_number": 4,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "acute"
+          ],
+          "definition": "of an angle; less than 90 degrees",
+          "examples": []
+        },
+        {
+          "sense_key": "acute%5:00:00:pointed:00",
+          "synset_id": "01820963-s",
+          "sense_number": 5,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "acuate",
+            "acute",
+            "sharp",
+            "needlelike"
+          ],
+          "definition": "ending in a sharp point",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Generic adjective placeholder misses medical/severity nuance. Corrected to precise Thai gloss.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "เฉียบพลัน, รุนแรง (ทางการแพทย์ หรืออาการ)"
+        }
+      }
+    },
+    {
+      "sample_index": 19,
+      "learning_unit_key": "cast|noun|C1|sense:2",
+      "word": "cast",
+      "lemma": "cast",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "container into which liquid is poured to create a given shape when it hardens (distinct sense #2 for C1)",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (เกี่ยวกับอาหารหรือของกิน)",
+      "example_sentence": "pottery of this cast was found throughout the region (C1 noun sense 2).",
+      "example_translation_th": null,
+      "ipa_phonetic": "/kæst/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-035",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับการสร้าง การผลิต และการพัฒนา ตามนิยามเฉพาะของความหมายนี้ (ความหมายรองที่สอง)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.451Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับ\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "cast%1:14:00::",
+          "synset_id": "08391189-n",
+          "sense_number": 1,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "cast",
+            "cast of characters",
+            "dramatis personae"
+          ],
+          "definition": "the actors in a play",
+          "examples": []
+        },
+        {
+          "sense_key": "cast%1:06:03::",
+          "synset_id": "03837827-n",
+          "sense_number": 2,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "mold",
+            "mould",
+            "cast"
+          ],
+          "definition": "container into which liquid is poured to create a given shape when it hardens",
+          "examples": []
+        },
+        {
+          "sense_key": "cast%1:25:00::",
+          "synset_id": "14155688-n",
+          "sense_number": 3,
+          "lex_domain": "noun.shape",
+          "synonyms": [
+            "cast",
+            "mold",
+            "mould",
+            "stamp"
+          ],
+          "definition": "the distinctive form in which a thing is made",
+          "examples": [
+            "pottery of this cast was found throughout the region"
+          ]
+        },
+        {
+          "sense_key": "cast%1:07:00::",
+          "synset_id": "04745651-n",
+          "sense_number": 4,
+          "lex_domain": "noun.attribute",
+          "synonyms": [
+            "form",
+            "shape",
+            "cast"
+          ],
+          "definition": "the visual appearance of something or someone",
+          "examples": [
+            "the delicate cast of his features"
+          ]
+        },
+        {
+          "sense_key": "cast%1:06:02::",
+          "synset_id": "03027451-n",
+          "sense_number": 5,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "cast",
+            "plaster cast",
+            "plaster bandage"
+          ],
+          "definition": "bandage consisting of a firm covering (often made of plaster of Paris) that immobilizes broken bones while they heal",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Severe domain confusion (industrial mold labeled food) and polysemy with theatrical cast. Held for lexical disambiguation.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    },
+    {
+      "sample_index": 20,
+      "learning_unit_key": "recite|verb|C1|sense:2",
+      "word": "recite",
+      "lemma": "recite",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "repeat aloud from memory (distinct sense #2 for C1)",
+      "definition_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ (เกี่ยวกับอาหารหรือของกิน)",
+      "example_sentence": "she recited a poem (C1 verb sense 2).",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɹəˈsaɪt/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-050",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการปฏิบัติหรือทำให้เกิดผลลัพธ์ตามความหมายของคำกริยานี้ ตามบริบทของความหมายที่เลือกไว้ (ความหมายรองที่สอง)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.899Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การปฏิบัติหรือทำให้เกิดผลลัพธ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "B1",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "recite%2:32:02::",
+          "synset_id": "01094848-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "declaim",
+            "recite"
+          ],
+          "definition": "recite in elocution",
+          "examples": []
+        },
+        {
+          "sense_key": "recite%2:32:00::",
+          "synset_id": "00984625-v",
+          "sense_number": 2,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "recite"
+          ],
+          "definition": "repeat aloud from memory",
+          "examples": [
+            "she recited a poem",
+            "The pupil recited his lesson for the day"
+          ]
+        },
+        {
+          "sense_key": "recite%2:36:00::",
+          "synset_id": "01759706-v",
+          "sense_number": 3,
+          "lex_domain": "verb.creation",
+          "synonyms": [
+            "recite",
+            "retell"
+          ],
+          "definition": "render verbally",
+          "examples": [
+            "recite a poem",
+            "retell a story"
+          ]
+        },
+        {
+          "sense_key": "recite%2:32:01::",
+          "synset_id": "00993069-v",
+          "sense_number": 4,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "tell",
+            "narrate",
+            "recount",
+            "recite"
+          ],
+          "definition": "narrate or give a detailed account of",
+          "examples": [
+            "Tell what happened",
+            "The father told a story to his child"
+          ]
+        },
+        {
+          "sense_key": "recite%2:32:03::",
+          "synset_id": "00985519-v",
+          "sense_number": 5,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "enumerate",
+            "recite",
+            "itemize",
+            "itemise"
+          ],
+          "definition": "specify individually",
+          "examples": [
+            "She enumerated the many obstacles she had encountered",
+            "The doctor recited the list of possible side effects of the drug"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Spurious food domain tag. Corrected to standard recitation Thai verb.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "ท่องจำ, ท่องบทเรียน, สวดท่อง"
+        }
+      }
+    },
+    {
+      "sample_index": 21,
+      "learning_unit_key": "advantageous|adjective|C1|sense:1",
+      "word": "advantageous",
+      "lemma": "advantageous",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "C1",
+      "definition_en": "giving an advantage",
+      "definition_th": "ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ",
+      "example_sentence": "a contract advantageous to our country",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌædvənˈteɪdʒəs/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-049",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงความถูกต้อง คุณภาพที่ดี และผลประโยชน์ ตามนิยามเฉพาะของความหมายนี้",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.881Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "advantageous%3:00:00::",
+          "synset_id": "00064748-a",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "advantageous",
+            "favorable",
+            "favourable"
+          ],
+          "definition": "giving an advantage",
+          "examples": [
+            "a contract advantageous to our country",
+            "socially advantageous to entertain often"
+          ]
+        },
+        {
+          "sense_key": "advantageous%5:00:00:expedient:00",
+          "synset_id": "00938187-s",
+          "sense_number": 2,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "advantageous"
+          ],
+          "definition": "appropriate for achieving a particular end; implies a lack of concern for fairness",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Generic adjective placeholder. Corrected to beneficial/advantageous Thai adjective.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "ที่เป็นประโยชน์, ที่ได้เปรียบ, ที่เป็นผลดี"
+        }
+      }
+    },
+    {
+      "sample_index": 22,
+      "learning_unit_key": "automatically|adverb|C1|sense:2",
+      "word": "automatically",
+      "lemma": "automatically",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "in a mechanical manner; by a mechanism (distinct sense #2 for C1)",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "She spoke automatically while explaining how the group handled mechanical manner mechanism yesterday.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌɔːtəˈmætɪkli/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่ลักษณะ อาการ หรือระดับของการกระทำในประโยค ตามนิยามเฉพาะของความหมายนี้ (ความหมายรองที่สอง)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.847Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "A2",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "automatically%4:02:00::",
+          "synset_id": "00005912-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "automatically"
+          ],
+          "definition": "in a reflex manner",
+          "examples": [
+            "he answered automatically"
+          ]
+        },
+        {
+          "sense_key": "automatically%4:02:01::",
+          "synset_id": "00114928-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "mechanically",
+            "automatically"
+          ],
+          "definition": "in a mechanical manner; by a mechanism",
+          "examples": [
+            "this door opens mechanically"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Adverb placeholder misses mechanical agency. Corrected to precise Thai mechanical adverb.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "โดยอัตโนมัติ, โดยกลไกเครื่องจักร"
+        }
+      }
+    },
+    {
+      "sample_index": 23,
+      "learning_unit_key": "commission|noun|C2|sense:3",
+      "word": "commission",
+      "lemma": "commission",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C2",
+      "definition_en": "the act of granting authority to undertake certain functions (distinct sense #3 for C2)",
+      "definition_th": "กระบวนการ การปฏิบัติ หรือการดำเนินการ",
+      "example_sentence": "he works on commission (C2 noun sense 3).",
+      "example_translation_th": null,
+      "ipa_phonetic": "/kəˈmɪʃən/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "การกระทำหรือกิจกรรมเกี่ยวกับการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามนิยามเฉพาะของความหมายนี้ (ความหมายรองที่สาม)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.846Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"การกระทำหรือกิจกรรมเกี่ยวกับ\"",
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C1",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "commission%1:14:00::",
+          "synset_id": "08477894-n",
+          "sense_number": 1,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "committee",
+            "commission"
+          ],
+          "definition": "a special group delegated to consider some matter",
+          "examples": [
+            "a committee is a group that keeps minutes and loses hours"
+          ]
+        },
+        {
+          "sense_key": "commission%1:21:00::",
+          "synset_id": "13551804-n",
+          "sense_number": 2,
+          "lex_domain": "noun.possession",
+          "synonyms": [
+            "commission"
+          ],
+          "definition": "a fee for services rendered based on a percentage of an amount received or collected or agreed to be paid (as distinguished from a salary)",
+          "examples": [
+            "he works on commission"
+          ]
+        },
+        {
+          "sense_key": "commission%1:04:02::",
+          "synset_id": "01157297-n",
+          "sense_number": 3,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "commission",
+            "commissioning"
+          ],
+          "definition": "the act of granting authority to undertake certain functions",
+          "examples": []
+        },
+        {
+          "sense_key": "commission%1:26:00::",
+          "synset_id": "14252553-n",
+          "sense_number": 4,
+          "lex_domain": "noun.state",
+          "synonyms": [
+            "commission"
+          ],
+          "definition": "the state of being in good working order and ready for operation",
+          "examples": [
+            "put the ships into commission",
+            "the motor was out of commission"
+          ]
+        },
+        {
+          "sense_key": "commission%1:14:01::",
+          "synset_id": "08556023-n",
+          "sense_number": 5,
+          "lex_domain": "noun.group",
+          "synonyms": [
+            "deputation",
+            "commission",
+            "delegation",
+            "delegacy",
+            "mission"
+          ],
+          "definition": "a group of representatives or delegates",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Process placeholder misses authoritative delegation nuance. Corrected to formal authorization gloss.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "การมอบหมายอำนาจหน้าที่, การแต่งตั้งอย่างเป็นทางการ"
+        }
+      }
+    },
+    {
+      "sample_index": 24,
+      "learning_unit_key": "hover|verb|C2|sense:2",
+      "word": "hover",
+      "lemma": "hover",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C2",
+      "definition_en": "to hang about in a place beyond the proper or usual time (distinct sense #2 for C2)",
+      "definition_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+      "example_sentence": "Our team decided to hover carefully so that we could manage hang about place beyond effectively.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈhʌvəɹ/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-050",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "คงอยู่ในสภาวะหรือมีความสัมพันธ์ในลักษณะที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ และความถูกต้อง คุณภาพที่ดี และผลประโยชน์ ตามบริบทของความหมายที่เลือกไว้ (ความหมายรองที่สอง)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.901Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic domain template prefix: \"กาลเวลา ช่วงเวลา และลำดับเหตุการณ์\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "hover%2:42:00::",
+          "synset_id": "02790840-v",
+          "sense_number": 1,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "hover",
+            "vibrate",
+            "vacillate",
+            "oscillate"
+          ],
+          "definition": "be undecided about something; waver between conflicting positions or courses of action",
+          "examples": [
+            "He oscillates between accepting the new position and retirement"
+          ]
+        },
+        {
+          "sense_key": "hover%2:42:01::",
+          "synset_id": "02722983-v",
+          "sense_number": 2,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "hover",
+            "linger"
+          ],
+          "definition": "to hang about in a place beyond the proper or usual time",
+          "examples": [
+            "The shy student lingered in the corner"
+          ]
+        },
+        {
+          "sense_key": "hover%2:38:00::",
+          "synset_id": "02004461-v",
+          "sense_number": 3,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "hover"
+          ],
+          "definition": "hang in the air; fly or be suspended above",
+          "examples": []
+        },
+        {
+          "sense_key": "hover%2:38:01::",
+          "synset_id": "02005265-v",
+          "sense_number": 4,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "levitate",
+            "hover"
+          ],
+          "definition": "be suspended in the air, as if in defiance of gravity",
+          "examples": [
+            "The guru claimed that he could levitate"
+          ]
+        },
+        {
+          "sense_key": "hover%2:42:05::",
+          "synset_id": "02829802-v",
+          "sense_number": 5,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "brood",
+            "hover",
+            "loom",
+            "bulk large"
+          ],
+          "definition": "hang over, as of something threatening, dark, or menacing",
+          "examples": [
+            "The terrible vision brooded over her all day long"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "EDIT_REQUIRED",
+        "review_rationale": "Action placeholder misses lingering/hovering behavior. Corrected to accurate Thai verb.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_th": "วนเวียนอยู่ใกล้ๆ, เฝ้ารอคอยอย่างกระวนกระวาย"
+        }
+      }
+    },
+    {
+      "sample_index": 25,
+      "learning_unit_key": "adverse|adjective|C2|sense:2",
+      "word": "adverse",
+      "lemma": "adverse",
+      "part_of_speech": "adjective",
+      "claimed_cefr_level": "C2",
+      "definition_en": "in an opposing direction (distinct sense #2 for C2)",
+      "definition_th": "ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ",
+      "example_sentence": "The project required a very adverse approach when addressing opposing direction during the meeting.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ædˈvɜːɹs/",
+      "tier1_reasons": [],
+      "confidence_score": 1,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "source_batch_id": "LARGE-048",
+      "remediation_info": {
+        "source": "glova_contextual_thai_drafter_v2",
+        "method": "contextual_headword_sense_draft_v2",
+        "remediation_version": "phase-6.2.16-v2.0",
+        "quality_gate_passed": true,
+        "quality_gate_issues": [],
+        "previous_drafts": [
+          {
+            "field": "meaning_th",
+            "value": "ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงคุณลักษณะหรือสภาวะของคำนามที่ถูกขยายในบริบทนี้ ตามนิยามเฉพาะของความหมายนี้ (ความหมายรองที่สอง)",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "review_status": "AI_DRAFT",
+            "archived_at": "2026-09-26T14:34:18.849Z",
+            "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+            "detection_reasons": [
+              "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+            ]
+          }
+        ]
+      },
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "B2",
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "adverse%5:00:00:unfavorable:02",
+          "synset_id": "01003806-s",
+          "sense_number": 1,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "adverse",
+            "inauspicious",
+            "untoward"
+          ],
+          "definition": "contrary to your interests or welfare",
+          "examples": [
+            "adverse circumstances",
+            "made a place for themselves under the most untoward conditions"
+          ]
+        },
+        {
+          "sense_key": "adverse%5:00:00:unfavorable:01",
+          "synset_id": "01002381-s",
+          "sense_number": 2,
+          "lex_domain": "adj.all",
+          "synonyms": [
+            "adverse",
+            "contrary"
+          ],
+          "definition": "in an opposing direction",
+          "examples": [
+            "adverse currents",
+            "a contrary wind"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": "HOLD",
+        "review_rationale": "Directional sense ('adverse winds') distinct from unfavorable/harmful sense. Held for lexicographical consensus on high-level register.",
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": null
+      }
+    }
+  ]
+}

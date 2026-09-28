@@ -1,0 +1,105 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-grounding-scaleup-delta-v1.json",
+  "phase": "PHASE_6_2_21_SCALEUP_DELTA",
+  "generated_at": "2026-09-27T04:05:08.159Z",
+  "sample_size": 1000,
+  "comparison_table": {
+    "source_grounded": {
+      "before": 4,
+      "after": 108,
+      "delta": 104
+    },
+    "no_lexical_source": {
+      "before": 996,
+      "after": 892,
+      "delta": -104
+    },
+    "candidate_ready": {
+      "before": 4,
+      "after": 108,
+      "delta": 104
+    },
+    "edit_required": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "hold_candidate": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "unresolved": {
+      "before": 996,
+      "after": 799,
+      "delta": -197
+    },
+    "special_syntax_review_required": {
+      "before": 0,
+      "after": 93,
+      "delta": 93
+    },
+    "pos_aligned": {
+      "before": 4,
+      "after": 108,
+      "delta": 104
+    },
+    "sense_aligned": {
+      "before": 4,
+      "after": 108,
+      "delta": 104
+    },
+    "cefr_compatible": {
+      "before": 4,
+      "after": 108,
+      "delta": 104
+    },
+    "human_review_required": {
+      "before": 1000,
+      "after": 1000,
+      "delta": 0
+    }
+  },
+  "pilot_vs_scaleup_comparison": {
+    "pilot_200": {
+      "sample_size": 200,
+      "grounded_count": 21,
+      "grounded_rate_pct": 10.5,
+      "candidate_ready_count": 21,
+      "candidate_ready_rate_pct": 10.5,
+      "special_syntax_count": 19,
+      "special_syntax_rate_pct": 9.5,
+      "unresolved_count": 160,
+      "unresolved_rate_pct": 80
+    },
+    "scaleup_1000": {
+      "sample_size": 1000,
+      "grounded_count": 108,
+      "grounded_rate_pct": 10.8,
+      "candidate_ready_count": 108,
+      "candidate_ready_rate_pct": 10.8,
+      "special_syntax_count": 93,
+      "special_syntax_rate_pct": 9.3,
+      "unresolved_count": 799,
+      "unresolved_rate_pct": 79.9
+    },
+    "delta_between_studies": {
+      "grounded_rate_delta_pct": 0.3,
+      "candidate_ready_rate_delta_pct": 0.3,
+      "special_syntax_rate_delta_pct": -0.2
+    },
+    "observed_yield_range": {
+      "lower_bound_pct": 9.5,
+      "upper_bound_pct": 10.8,
+      "label": "OBSERVED_SAMPLE_YIELD_RANGE_NOT_EXTRAPOLATED_GUARANTEE",
+      "disclaimer": "Observed rates are empirical results on controlled samples. They must NOT be treated as a statistical guarantee for the full 10,000 dataset."
+    }
+  },
+  "measured_yield_summary": {
+    "sample_size": 1000,
+    "candidate_ready_yield_pct": 10.4,
+    "grounded_yield_pct": 10.4,
+    "status": "SCALEUP_VALIDATED",
+    "rationale": "Scale-up on 1,000 controlled units demonstrated deterministic grounding (+104 grounded, +104 candidate-ready, 10.4% yield), 0 structural defects on candidate-ready group, clean closed-class segregation (93 units), and 5-tier review queue partitioning with zero production mutations."
+  }
+}

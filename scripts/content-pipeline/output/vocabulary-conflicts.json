@@ -1,0 +1,3509 @@
+{
+  "report_type": "vocabulary-conflicts",
+  "phase": "6.2.7",
+  "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+  "total_conflict_and_polysemy_groups": 126,
+  "breakdown_by_type": {
+    "CROSS_SOURCE_CEFR_CONFLICT": 79,
+    "INTRA_SOURCE_CEFR_CONFLICT": 20,
+    "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT": 19,
+    "POLYSEMY_SAME_LEVEL_SENSE_SPLIT": 8
+  },
+  "conflicts": [
+    {
+      "lemma": "abolish",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:11",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:11",
+          "source": "cefr_j",
+          "word": "abolish",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1392",
+          "source": "octanove",
+          "word": "abolish",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "abundance",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:29",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:29",
+          "source": "cefr_j",
+          "word": "abundance",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1430",
+          "source": "octanove",
+          "word": "abundance",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "abundant",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:30",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:30",
+          "source": "cefr_j",
+          "word": "abundant",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1428",
+          "source": "octanove",
+          "word": "abundant",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "accessibility",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:40",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:40",
+          "source": "cefr_j",
+          "word": "accessibility",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1878",
+          "source": "octanove",
+          "word": "accessibility",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "adorn",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:117",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:117",
+          "source": "cefr_j",
+          "word": "adorn",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1278",
+          "source": "octanove",
+          "word": "adorn",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "advantageous",
+      "part_of_speech": "adjective",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:181",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:181",
+          "source": "octanove",
+          "word": "advantageous",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1987",
+          "source": "octanove",
+          "word": "advantageous",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "adversely",
+      "part_of_speech": "adverb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:131",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:131",
+          "source": "cefr_j",
+          "word": "adversely",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1331",
+          "source": "octanove",
+          "word": "adversely",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "adverse",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:130",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:130",
+          "source": "cefr_j",
+          "word": "adverse",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1330",
+          "source": "octanove",
+          "word": "adverse",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "agency",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:160",
+          "source": "cefr_j",
+          "word": "agency",
+          "cefr_level": "A2",
+          "source_note": "Travel and services vocab | Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1865",
+          "source": "octanove",
+          "word": "agency",
+          "cefr_level": "C2",
+          "source_note": "ability to act"
+        }
+      ]
+    },
+    {
+      "lemma": "agonize",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:166",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:166",
+          "source": "cefr_j",
+          "word": "agonize",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:262",
+          "source": "octanove",
+          "word": "agonize",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "allegation",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:203",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:203",
+          "source": "cefr_j",
+          "word": "allegation",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:531",
+          "source": "octanove",
+          "word": "allegation",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "apprentice",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:743",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:743",
+          "source": "octanove",
+          "word": "apprentice",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1125",
+          "source": "octanove",
+          "word": "apprentice",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "attainment",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:442",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:442",
+          "source": "cefr_j",
+          "word": "attainment",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1664",
+          "source": "octanove",
+          "word": "attainment",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "audit",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:461",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:461",
+          "source": "cefr_j",
+          "word": "audit",
+          "cefr_level": "B2",
+          "source_note": "Work and Jobs | Personal identification"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1402",
+          "source": "octanove",
+          "word": "audit",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "automatically",
+      "part_of_speech": "adverb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "A2",
+      "primary_original_id": "cefr_j:v1.5:line:470",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:470",
+          "source": "cefr_j",
+          "word": "automatically",
+          "cefr_level": "A2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:298",
+          "source": "octanove",
+          "word": "automatically",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "barometer",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:559",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:559",
+          "source": "cefr_j",
+          "word": "barometer",
+          "cefr_level": "B2",
+          "source_note": "Education"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1714",
+          "source": "octanove",
+          "word": "barometer",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "battered",
+      "part_of_speech": "adjective",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:611",
+          "source": "octanove",
+          "word": "battered",
+          "cefr_level": "C1",
+          "source_note": "beat up"
+        },
+        {
+          "original_id": "octanove:v1.0:line:612",
+          "source": "octanove",
+          "word": "battered",
+          "cefr_level": "C1",
+          "source_note": "covered in batter before frying"
+        }
+      ]
+    },
+    {
+      "lemma": "battery",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:581",
+          "source": "cefr_j",
+          "word": "battery",
+          "cefr_level": "A2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:604",
+          "source": "octanove",
+          "word": "battery",
+          "cefr_level": "C1",
+          "source_note": "assault and battery"
+        }
+      ]
+    },
+    {
+      "lemma": "behind",
+      "part_of_speech": "preposition",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:624",
+          "source": "cefr_j",
+          "word": "behind",
+          "cefr_level": "A1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:698",
+          "source": "octanove",
+          "word": "behind",
+          "cefr_level": "C1",
+          "source_note": "the cause of"
+        }
+      ]
+    },
+    {
+      "lemma": "calf",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:946",
+          "source": "cefr_j",
+          "word": "calf",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:315",
+          "source": "octanove",
+          "word": "calf",
+          "cefr_level": "C1",
+          "source_note": "young cow"
+        }
+      ]
+    },
+    {
+      "lemma": "cascade",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1015",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1015",
+          "source": "cefr_j",
+          "word": "cascade",
+          "cefr_level": "B2",
+          "source_note": "House and home, environment"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1994",
+          "source": "octanove",
+          "word": "cascade",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "cast",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1020",
+          "source": "cefr_j",
+          "word": "cast",
+          "cefr_level": "B2",
+          "source_note": "Personal identification"
+        },
+        {
+          "original_id": "octanove:v1.0:line:64",
+          "source": "octanove",
+          "word": "cast",
+          "cefr_level": "C1",
+          "source_note": "plaster cast, mold"
+        }
+      ]
+    },
+    {
+      "lemma": "cast",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1021",
+          "source": "cefr_j",
+          "word": "cast",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:65",
+          "source": "octanove",
+          "word": "cast",
+          "cefr_level": "C1",
+          "source_note": "hire actors"
+        },
+        {
+          "original_id": "octanove:v1.0:line:66",
+          "source": "octanove",
+          "word": "cast",
+          "cefr_level": "C1",
+          "source_note": "say or suggest something (e.g. doubt)"
+        }
+      ]
+    },
+    {
+      "lemma": "catastrophic",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1029",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1029",
+          "source": "cefr_j",
+          "word": "catastrophic",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1528",
+          "source": "octanove",
+          "word": "catastrophic",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "chronological",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:1154",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1154",
+          "source": "cefr_j",
+          "word": "chronological",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1490",
+          "source": "octanove",
+          "word": "chronological",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "circuit",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1162",
+          "source": "cefr_j",
+          "word": "circuit",
+          "cefr_level": "B2",
+          "source_note": "Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1214",
+          "source": "octanove",
+          "word": "circuit",
+          "cefr_level": "C2",
+          "source_note": "series of games/matches"
+        }
+      ]
+    },
+    {
+      "lemma": "commission",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1293",
+      "cefr_levels": [
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1293",
+          "source": "cefr_j",
+          "word": "commission",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:464",
+          "source": "octanove",
+          "word": "commission",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1530",
+          "source": "octanove",
+          "word": "commission",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "commission",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:463",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:463",
+          "source": "octanove",
+          "word": "commission",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1531",
+          "source": "octanove",
+          "word": "commission",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "complexity",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1332",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1332",
+          "source": "cefr_j",
+          "word": "complexity",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:6",
+          "source": "octanove",
+          "word": "complexity",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "conceivable",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1353",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1353",
+          "source": "cefr_j",
+          "word": "conceivable",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:35",
+          "source": "octanove",
+          "word": "conceivable",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "conceive",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1354",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1354",
+          "source": "cefr_j",
+          "word": "conceive",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:34",
+          "source": "octanove",
+          "word": "conceive",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "contextually",
+      "part_of_speech": "adverb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:1003",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1003",
+          "source": "octanove",
+          "word": "contextually",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1317",
+          "source": "octanove",
+          "word": "contextually",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "contextual",
+      "part_of_speech": "adjective",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:1002",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1002",
+          "source": "octanove",
+          "word": "contextual",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1316",
+          "source": "octanove",
+          "word": "contextual",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "contract",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:483",
+          "source": "octanove",
+          "word": "contract",
+          "cefr_level": "C1",
+          "source_note": "hire"
+        },
+        {
+          "original_id": "octanove:v1.0:line:484",
+          "source": "octanove",
+          "word": "contract",
+          "cefr_level": "C1",
+          "source_note": "catch (as in a disease)"
+        }
+      ]
+    },
+    {
+      "lemma": "converse",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1463",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1463",
+          "source": "cefr_j",
+          "word": "converse",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1808",
+          "source": "octanove",
+          "word": "converse",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "crystallize",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1603",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1603",
+          "source": "cefr_j",
+          "word": "crystallize",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1432",
+          "source": "octanove",
+          "word": "crystallize",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "curriculum",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:1625",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1625",
+          "source": "cefr_j",
+          "word": "curriculum",
+          "cefr_level": "B1",
+          "source_note": "Education | Education"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1419",
+          "source": "octanove",
+          "word": "curriculum",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "daunting",
+      "part_of_speech": "adjective",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:833",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:833",
+          "source": "octanove",
+          "word": "daunting",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1210",
+          "source": "octanove",
+          "word": "daunting",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "daunt",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:832",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:832",
+          "source": "octanove",
+          "word": "daunt",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1209",
+          "source": "octanove",
+          "word": "daunt",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "deficit",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1746",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1746",
+          "source": "cefr_j",
+          "word": "deficit",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1357",
+          "source": "octanove",
+          "word": "deficit",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "deprivation",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:1018",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1018",
+          "source": "octanove",
+          "word": "deprivation",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1297",
+          "source": "octanove",
+          "word": "deprivation",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "diligence",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:1879",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1879",
+          "source": "cefr_j",
+          "word": "diligence",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1759",
+          "source": "octanove",
+          "word": "diligence",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "diligent",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:1880",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1880",
+          "source": "cefr_j",
+          "word": "diligent",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1758",
+          "source": "octanove",
+          "word": "diligent",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "dispensable",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:1948",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1948",
+          "source": "cefr_j",
+          "word": "dispensable",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:356",
+          "source": "octanove",
+          "word": "dispensable",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "dive",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:1979",
+          "source": "cefr_j",
+          "word": "dive",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1360",
+          "source": "octanove",
+          "word": "dive",
+          "cefr_level": "C2",
+          "source_note": "run down bar/restaurant"
+        }
+      ]
+    },
+    {
+      "lemma": "dribble",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1790",
+          "source": "octanove",
+          "word": "dribble",
+          "cefr_level": "C2",
+          "source_note": "pour slowly"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1791",
+          "source": "octanove",
+          "word": "dribble",
+          "cefr_level": "C2",
+          "source_note": "bounce a basketball"
+        }
+      ]
+    },
+    {
+      "lemma": "drill",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2066",
+          "source": "cefr_j",
+          "word": "drill",
+          "cefr_level": "A2",
+          "source_note": "Objects and rooms | Education"
+        },
+        {
+          "original_id": "octanove:v1.0:line:965",
+          "source": "octanove",
+          "word": "drill",
+          "cefr_level": "C1",
+          "source_note": "practice of what to do (e.g. in an emergency)"
+        }
+      ]
+    },
+    {
+      "lemma": "drive",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "A1",
+      "primary_original_id": "cefr_j:v1.5:line:2070",
+      "cefr_levels": [
+        "A1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2070",
+          "source": "cefr_j",
+          "word": "drive",
+          "cefr_level": "A1",
+          "source_note": "Hobbies and pastimes | Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:173",
+          "source": "octanove",
+          "word": "drive",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "drive",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "A2",
+      "primary_original_id": "cefr_j:v1.5:line:2071",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2071",
+          "source": "cefr_j",
+          "word": "drive",
+          "cefr_level": "A2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:172",
+          "source": "octanove",
+          "word": "drive",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "echo",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1193",
+          "source": "octanove",
+          "word": "echo",
+          "cefr_level": "C2",
+          "source_note": "sound"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1194",
+          "source": "octanove",
+          "word": "echo",
+          "cefr_level": "C2",
+          "source_note": "repeat"
+        }
+      ]
+    },
+    {
+      "lemma": "ecstasy",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:2147",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2147",
+          "source": "cefr_j",
+          "word": "ecstasy",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:266",
+          "source": "octanove",
+          "word": "ecstasy",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "ecstatic",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2148",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2148",
+          "source": "cefr_j",
+          "word": "ecstatic",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:267",
+          "source": "octanove",
+          "word": "ecstatic",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "envisage",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:858",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:858",
+          "source": "octanove",
+          "word": "envisage",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1114",
+          "source": "octanove",
+          "word": "envisage",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "exhibitionist",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:51",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:51",
+          "source": "octanove",
+          "word": "exhibitionist",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1962",
+          "source": "octanove",
+          "word": "exhibitionist",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "exotic",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2413",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2413",
+          "source": "cefr_j",
+          "word": "exotic",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:570",
+          "source": "octanove",
+          "word": "exotic",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "expedition",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2419",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2419",
+          "source": "cefr_j",
+          "word": "expedition",
+          "cefr_level": "B2",
+          "source_note": "Travel and services vocab | Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:448",
+          "source": "octanove",
+          "word": "expedition",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "exploit",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2432",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2432",
+          "source": "cefr_j",
+          "word": "exploit",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:164",
+          "source": "octanove",
+          "word": "exploit",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "familiarize",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2503",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2503",
+          "source": "cefr_j",
+          "word": "familiarize",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1302",
+          "source": "octanove",
+          "word": "familiarize",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "figurative",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2592",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2592",
+          "source": "cefr_j",
+          "word": "figurative",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1645",
+          "source": "octanove",
+          "word": "figurative",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "fit",
+      "part_of_speech": "adjective",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2648",
+          "source": "cefr_j",
+          "word": "fit",
+          "cefr_level": "A2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:170",
+          "source": "octanove",
+          "word": "fit",
+          "cefr_level": "C1",
+          "source_note": "appropriate"
+        }
+      ]
+    },
+    {
+      "lemma": "formidable",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:2751",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2751",
+          "source": "cefr_j",
+          "word": "formidable",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:2003",
+          "source": "octanove",
+          "word": "formidable",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "gape",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:508",
+          "source": "octanove",
+          "word": "gape",
+          "cefr_level": "C1",
+          "source_note": "look at something"
+        },
+        {
+          "original_id": "octanove:v1.0:line:509",
+          "source": "octanove",
+          "word": "gape",
+          "cefr_level": "C1",
+          "source_note": "be or become open"
+        }
+      ]
+    },
+    {
+      "lemma": "glint",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:2933",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:2933",
+          "source": "cefr_j",
+          "word": "glint",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1848",
+          "source": "octanove",
+          "word": "glint",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "grounds",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:557",
+          "source": "octanove",
+          "word": "grounds",
+          "cefr_level": "C1",
+          "source_note": "outdoor area"
+        },
+        {
+          "original_id": "octanove:v1.0:line:558",
+          "source": "octanove",
+          "word": "grounds",
+          "cefr_level": "C1",
+          "source_note": "coffee grounds"
+        },
+        {
+          "original_id": "octanove:v1.0:line:559",
+          "source": "octanove",
+          "word": "grounds",
+          "cefr_level": "C1",
+          "source_note": "reason"
+        }
+      ]
+    },
+    {
+      "lemma": "grumble",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:275",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:275",
+          "source": "octanove",
+          "word": "grumble",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1676",
+          "source": "octanove",
+          "word": "grumble",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "haven",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:3153",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3153",
+          "source": "cefr_j",
+          "word": "haven",
+          "cefr_level": "B1",
+          "source_note": "Things in the town, shops and shopping | House and home, environment"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1501",
+          "source": "octanove",
+          "word": "haven",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "hover",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3302",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3302",
+          "source": "cefr_j",
+          "word": "hover",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:2046",
+          "source": "octanove",
+          "word": "hover",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "humble",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3316",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3316",
+          "source": "cefr_j",
+          "word": "humble",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:55",
+          "source": "octanove",
+          "word": "humble",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "imperative",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3399",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3399",
+          "source": "cefr_j",
+          "word": "imperative",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:775",
+          "source": "octanove",
+          "word": "imperative",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "indispensable",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3468",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3468",
+          "source": "cefr_j",
+          "word": "indispensable",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:358",
+          "source": "octanove",
+          "word": "indispensable",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "indulge",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3473",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3473",
+          "source": "cefr_j",
+          "word": "indulge",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1199",
+          "source": "octanove",
+          "word": "indulge",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "inert",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3479",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3479",
+          "source": "cefr_j",
+          "word": "inert",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1557",
+          "source": "octanove",
+          "word": "inert",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "innovation",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3525",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3525",
+          "source": "cefr_j",
+          "word": "innovation",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:390",
+          "source": "octanove",
+          "word": "innovation",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "innovative",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:3526",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3526",
+          "source": "cefr_j",
+          "word": "innovative",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:391",
+          "source": "octanove",
+          "word": "innovative",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "jog",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3685",
+          "source": "cefr_j",
+          "word": "jog",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:431",
+          "source": "octanove",
+          "word": "jog",
+          "cefr_level": "C1",
+          "source_note": "cause to remember"
+        }
+      ]
+    },
+    {
+      "lemma": "lap",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3786",
+          "source": "cefr_j",
+          "word": "lap",
+          "cefr_level": "B2",
+          "source_note": "Health and body care"
+        },
+        {
+          "original_id": "octanove:v1.0:line:109",
+          "source": "octanove",
+          "word": "lap",
+          "cefr_level": "C1",
+          "source_note": "e.g. run a lap"
+        }
+      ]
+    },
+    {
+      "lemma": "lark",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:3790",
+          "source": "cefr_j",
+          "word": "lark",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1565",
+          "source": "octanove",
+          "word": "lark",
+          "cefr_level": "C2",
+          "source_note": "type of bird"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1566",
+          "source": "octanove",
+          "word": "lark",
+          "cefr_level": "C2",
+          "source_note": "thing you do for fun"
+        }
+      ]
+    },
+    {
+      "lemma": "maneuver",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:1006",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1006",
+          "source": "octanove",
+          "word": "maneuver",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1361",
+          "source": "octanove",
+          "word": "maneuver",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "maneuver",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:1005",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1005",
+          "source": "octanove",
+          "word": "maneuver",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1362",
+          "source": "octanove",
+          "word": "maneuver",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "march",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A1",
+        "B1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4086",
+          "source": "cefr_j",
+          "word": "March",
+          "cefr_level": "A1",
+          "source_note": null
+        },
+        {
+          "original_id": "cefr_j:v1.5:line:4087",
+          "source": "cefr_j",
+          "word": "march",
+          "cefr_level": "B1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "mere",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:4181",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4181",
+          "source": "cefr_j",
+          "word": "mere",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1384",
+          "source": "octanove",
+          "word": "mere",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "merger",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:4184",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4184",
+          "source": "cefr_j",
+          "word": "merger",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:2051",
+          "source": "octanove",
+          "word": "merger",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "nature",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4425",
+          "source": "cefr_j",
+          "word": "nature",
+          "cefr_level": "A2",
+          "source_note": "Nationalities and countries | House and home, environment"
+        },
+        {
+          "original_id": "octanove:v1.0:line:270",
+          "source": "octanove",
+          "word": "nature",
+          "cefr_level": "C1",
+          "source_note": "basic quality of a noun"
+        }
+      ]
+    },
+    {
+      "lemma": "notorious",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:4550",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4550",
+          "source": "cefr_j",
+          "word": "notorious",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1341",
+          "source": "octanove",
+          "word": "notorious",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "outpatient",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:4738",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4738",
+          "source": "cefr_j",
+          "word": "outpatient",
+          "cefr_level": "B2",
+          "source_note": "Travel and services vocab | Health and body care"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1123",
+          "source": "octanove",
+          "word": "outpatient",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "paralysis",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:4842",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4842",
+          "source": "cefr_j",
+          "word": "paralysis",
+          "cefr_level": "B2",
+          "source_note": "Travel and services vocab | Health and body care"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1394",
+          "source": "octanove",
+          "word": "paralysis",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "paralyze",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:4843",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4843",
+          "source": "cefr_j",
+          "word": "paralyze",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1393",
+          "source": "octanove",
+          "word": "paralyze",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "perch",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:1466",
+          "source": "octanove",
+          "word": "perch",
+          "cefr_level": "C2",
+          "source_note": "a high seat or position"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1467",
+          "source": "octanove",
+          "word": "perch",
+          "cefr_level": "C2",
+          "source_note": "kind of fish"
+        }
+      ]
+    },
+    {
+      "lemma": "personification",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:4974",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4974",
+          "source": "cefr_j",
+          "word": "personification",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:740",
+          "source": "octanove",
+          "word": "personification",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "phase",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:4993",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:4993",
+          "source": "cefr_j",
+          "word": "phase",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1339",
+          "source": "octanove",
+          "word": "phase",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "plane",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5054",
+          "source": "cefr_j",
+          "word": "plane",
+          "cefr_level": "A1",
+          "source_note": "Ways of travelling | Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1622",
+          "source": "octanove",
+          "word": "plane",
+          "cefr_level": "C2",
+          "source_note": "flat surface"
+        }
+      ]
+    },
+    {
+      "lemma": "predecessor",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:330",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:330",
+          "source": "octanove",
+          "word": "predecessor",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1175",
+          "source": "octanove",
+          "word": "predecessor",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "preoccupy",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:5213",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5213",
+          "source": "cefr_j",
+          "word": "preoccupy",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1399",
+          "source": "octanove",
+          "word": "preoccupy",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "proliferate",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:841",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:841",
+          "source": "octanove",
+          "word": "proliferate",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1972",
+          "source": "octanove",
+          "word": "proliferate",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "punctuality",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:5380",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5380",
+          "source": "cefr_j",
+          "word": "punctuality",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1417",
+          "source": "octanove",
+          "word": "punctuality",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "punctual",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:5379",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5379",
+          "source": "cefr_j",
+          "word": "punctual",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1416",
+          "source": "octanove",
+          "word": "punctual",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "pupil",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:5384",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5384",
+          "source": "cefr_j",
+          "word": "pupil",
+          "cefr_level": "B1",
+          "source_note": "Education | Education"
+        },
+        {
+          "original_id": "octanove:v1.0:line:190",
+          "source": "octanove",
+          "word": "pupil",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "recess",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_SAME_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:836",
+          "source": "octanove",
+          "word": "recess",
+          "cefr_level": "C1",
+          "source_note": "part of a wall that is set back"
+        },
+        {
+          "original_id": "octanove:v1.0:line:837",
+          "source": "octanove",
+          "word": "recess",
+          "cefr_level": "C1",
+          "source_note": "break-time"
+        }
+      ]
+    },
+    {
+      "lemma": "recite",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:5532",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5532",
+          "source": "cefr_j",
+          "word": "recite",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:265",
+          "source": "octanove",
+          "word": "recite",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "recollection",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:5538",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5538",
+          "source": "cefr_j",
+          "word": "recollection",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:513",
+          "source": "octanove",
+          "word": "recollection",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "redundant",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:5559",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5559",
+          "source": "cefr_j",
+          "word": "redundant",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1730",
+          "source": "octanove",
+          "word": "redundant",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "relinquish",
+      "part_of_speech": "verb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:141",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:141",
+          "source": "octanove",
+          "word": "relinquish",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1829",
+          "source": "octanove",
+          "word": "relinquish",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "resin",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:89",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:89",
+          "source": "octanove",
+          "word": "resin",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1835",
+          "source": "octanove",
+          "word": "resin",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "resort",
+      "part_of_speech": "noun",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5702",
+          "source": "cefr_j",
+          "word": "resort",
+          "cefr_level": "B1",
+          "source_note": "Holidays | Travel"
+        },
+        {
+          "original_id": "octanove:v1.0:line:459",
+          "source": "octanove",
+          "word": "resort",
+          "cefr_level": "C1",
+          "source_note": "course of action"
+        }
+      ]
+    },
+    {
+      "lemma": "retrospect",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:5736",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5736",
+          "source": "cefr_j",
+          "word": "retrospect",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1436",
+          "source": "octanove",
+          "word": "retrospect",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "rich",
+      "part_of_speech": "adjective",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:5768",
+          "source": "cefr_j",
+          "word": "rich",
+          "cefr_level": "A1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:576",
+          "source": "octanove",
+          "word": "rich",
+          "cefr_level": "C1",
+          "source_note": "containing a lot of fat/flavor"
+        }
+      ]
+    },
+    {
+      "lemma": "sedately",
+      "part_of_speech": "adverb",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:583",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:583",
+          "source": "octanove",
+          "word": "sedately",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1836",
+          "source": "octanove",
+          "word": "sedately",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "skim",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:6238",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6238",
+          "source": "cefr_j",
+          "word": "skim",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1688",
+          "source": "octanove",
+          "word": "skim",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "soliloquy",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:6342",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6342",
+          "source": "cefr_j",
+          "word": "soliloquy",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1590",
+          "source": "octanove",
+          "word": "soliloquy",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "strait",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:6576",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6576",
+          "source": "cefr_j",
+          "word": "strait",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1723",
+          "source": "octanove",
+          "word": "strait",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "succeed",
+      "part_of_speech": "verb",
+      "conflict_type": "POLYSEMY_CROSS_LEVEL_SENSE_SPLIT",
+      "resolution_policy": "PRESERVED_AS_SEPARATE_SENSE_CANDIDATES",
+      "cefr_levels": [
+        "A2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6651",
+          "source": "cefr_j",
+          "word": "succeed",
+          "cefr_level": "A2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1239",
+          "source": "octanove",
+          "word": "succeed",
+          "cefr_level": "C2",
+          "source_note": "come after somebody/something"
+        }
+      ]
+    },
+    {
+      "lemma": "surge",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:6725",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6725",
+          "source": "cefr_j",
+          "word": "surge",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:2111",
+          "source": "octanove",
+          "word": "surge",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "tactile",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:6798",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6798",
+          "source": "cefr_j",
+          "word": "tactile",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1445",
+          "source": "octanove",
+          "word": "tactile",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "talkative",
+      "part_of_speech": "adjective",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:6810",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:6810",
+          "source": "cefr_j",
+          "word": "talkative",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:243",
+          "source": "octanove",
+          "word": "talkative",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "tantamount",
+      "part_of_speech": "adjective",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:649",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:649",
+          "source": "octanove",
+          "word": "tantamount",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1523",
+          "source": "octanove",
+          "word": "tantamount",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "tedium",
+      "part_of_speech": "noun",
+      "conflict_type": "INTRA_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "C1",
+      "primary_original_id": "octanove:v1.0:line:143",
+      "cefr_levels": [
+        "C1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "octanove:v1.0:line:143",
+          "source": "octanove",
+          "word": "tedium",
+          "cefr_level": "C1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1238",
+          "source": "octanove",
+          "word": "tedium",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "tomb",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7035",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7035",
+          "source": "cefr_j",
+          "word": "tomb",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:87",
+          "source": "octanove",
+          "word": "tomb",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "utility",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7404",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7404",
+          "source": "cefr_j",
+          "word": "utility",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1164",
+          "source": "octanove",
+          "word": "utility",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "utilize",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7405",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7405",
+          "source": "cefr_j",
+          "word": "utilize",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1163",
+          "source": "octanove",
+          "word": "utilize",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "utter",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7406",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7406",
+          "source": "cefr_j",
+          "word": "utter",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1185",
+          "source": "octanove",
+          "word": "utter",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "venture",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7435",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7435",
+          "source": "cefr_j",
+          "word": "venture",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1855",
+          "source": "octanove",
+          "word": "venture",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "vocalist",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7494",
+      "cefr_levels": [
+        "B2",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7494",
+          "source": "cefr_j",
+          "word": "vocalist",
+          "cefr_level": "B2",
+          "source_note": "Work and Jobs | Arts | Personal identification"
+        },
+        {
+          "original_id": "octanove:v1.0:line:1469",
+          "source": "octanove",
+          "word": "vocalist",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "wax",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:7563",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7563",
+          "source": "cefr_j",
+          "word": "wax",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:1616",
+          "source": "octanove",
+          "word": "wax",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "wing",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:7684",
+      "cefr_levels": [
+        "B1",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7684",
+          "source": "cefr_j",
+          "word": "wing",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:10",
+          "source": "octanove",
+          "word": "wing",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "withdrawal",
+      "part_of_speech": "noun",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B2",
+      "primary_original_id": "cefr_j:v1.5:line:7698",
+      "cefr_levels": [
+        "B2",
+        "C1"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7698",
+          "source": "cefr_j",
+          "word": "withdrawal",
+          "cefr_level": "B2",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:192",
+          "source": "octanove",
+          "word": "withdrawal",
+          "cefr_level": "C1",
+          "source_note": null
+        }
+      ]
+    },
+    {
+      "lemma": "wither",
+      "part_of_speech": "verb",
+      "conflict_type": "CROSS_SOURCE_CEFR_CONFLICT",
+      "resolution_policy": "PRIMARY_RETAINED_WITH_CONFLICT_METADATA_FLAGGED_FOR_REVIEW",
+      "primary_cefr_level": "B1",
+      "primary_original_id": "cefr_j:v1.5:line:7699",
+      "cefr_levels": [
+        "B1",
+        "C2"
+      ],
+      "entries": [
+        {
+          "original_id": "cefr_j:v1.5:line:7699",
+          "source": "cefr_j",
+          "word": "wither",
+          "cefr_level": "B1",
+          "source_note": null
+        },
+        {
+          "original_id": "octanove:v1.0:line:2014",
+          "source": "octanove",
+          "word": "wither",
+          "cefr_level": "C2",
+          "source_note": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3899 @@
+{
+  "$schema": "https://glova.ai/schemas/phase-6.2.23-human-review-pilot-v1.json",
+  "phase": "PHASE_6_2_23_CONTROLLED_HUMAN_REVIEW_PILOT",
+  "generated_at": "2026-09-27T05:20:23.746Z",
+  "final_gate": "NO_HUMAN_DECISIONS_AVAILABLE",
+  "human_decisions_actually_received_count": 0,
+  "human_decisions_actually_received": [],
+  "no_decision_state": {
+    "active": true,
+    "reason": "Stopped for actual human input per Section 3. Zero simulated or AI/bot/fake lexicographer decisions were generated.",
+    "all_15_records_pending_verification": true
+  },
+  "reviewer_identifier_limitation": {
+    "is_operational_identifier_only": true,
+    "is_cryptographic_proof_of_human": false,
+    "banned_patterns_enforced": [
+      "ai",
+      "system",
+      "bot",
+      "script",
+      "auto-review",
+      "synthetic",
+      "fake",
+      "mock"
+    ],
+    "statement": "The reviewer_id field is an operational identifier only and does not prove human identity. Simulated or automated identities are strictly blocked."
+  },
+  "pilot_queue": {
+    "total_pilot_records": 15,
+    "group_counts": {
+      "review_ready": 5,
+      "edit_required": 5,
+      "special_syntax": 5
+    },
+    "untouched_queues": {
+      "remaining_edit_required_untouched": 98,
+      "remaining_special_syntax_untouched": 88,
+      "unresolved_untouched": 799,
+      "automatic_processing_applied_to_remaining": false
+    },
+    "groups": {
+      "review_ready": [
+        {
+          "learning_unit_key": "accept|verb|A2|sense:1",
+          "pilot_category": "REVIEW_READY",
+          "source_batch_id": "LARGE-018",
+          "human_decision_interface": {
+            "word": "accept",
+            "pos": "verb",
+            "cefr": "A2",
+            "english_meaning": "consider or hold as true",
+            "thai_meaning": "ยอมรับ, ตอบรับ",
+            "ipa": "/ækˈsept/",
+            "example_sentence": "I cannot accept the dogma of this church",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": null,
+              "sense_key": null
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:35",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:35"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "ambiguous",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+              "sense_disambiguation_rule": "MULTI_SENSE_REQUIRES_HUMAN_DISAMBIGUATION",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+                "source": "oewn_2024",
+                "source_version": "2024",
+                "license": "CC-BY-4.0",
+                "candidate_synset_id": "00718036-v",
+                "candidate_sense_key": "accept%2:31:00::",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "source_meaning": "consider or hold as true",
+                "target_word": "accept",
+                "part_of_speech": "verb",
+                "cefr_level": "A2",
+                "sense_key": "accept%2:31:00::",
+                "oewn_synset_id": "00718036-v",
+                "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+                "translation_version": "phase-6.2.10-v1",
+                "review_status": "AI_DRAFT",
+                "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:accept:line:182",
+                "arpabet": "AE0 K S EH1 P T",
+                "variants_ipa": [
+                  "/ækˈsept/",
+                  "/əkˈsept/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+                "source": "oewn_2024",
+                "source_version": "2024",
+                "license": "CC-BY-4.0",
+                "candidate_synset_id": "00718036-v",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence is missing terminal punctuation (. ? !)",
+              "Example sentence lacks finite verb / clausal predication (phrase fragment)"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "careful|adjective|A2|sense:2",
+          "pilot_category": "REVIEW_READY",
+          "source_batch_id": "LARGE-020",
+          "human_decision_interface": {
+            "word": "careful",
+            "pos": "adjective",
+            "cefr": "A2",
+            "english_meaning": "exercising caution or showing care or attention",
+            "thai_meaning": "ระมัดระวัง, รอบคอบ",
+            "ipa": "/ˈkeəɹfəl/",
+            "example_sentence": "they were careful when crossing the busy street",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (careful -> ระมัดระวัง, รอบคอบ); staged counterpart in LARGE-020 is careful|adjective|A1|sense:1",
+              "oewn_synset_id": "00329201-a",
+              "sense_key": "careful%3:00:00::"
+            },
+            "provenance": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "source_version": "2.0.0",
+              "source_license": "Glova-Internal-Proprietary"
+            },
+            "known_quality_concerns": [
+              "Requested pilot key is careful|adjective|A2|sense:2; staged LARGE-020 counterpart is keyed as careful|adjective|A1|sense:1 with lowercase/unpunctuated example (\"they were careful when crossing the busy street\")"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "collect|verb|A2|sense:1",
+          "pilot_category": "REVIEW_READY",
+          "source_batch_id": "LARGE-020",
+          "human_decision_interface": {
+            "word": "collect",
+            "pos": "verb",
+            "cefr": "A2",
+            "english_meaning": "get or gather together",
+            "thai_meaning": "รวบรวม, สะสม, เก็บ",
+            "ipa": "/kəˈlekt/",
+            "example_sentence": "we collected over a million dollars in outstanding debts",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (collect -> รวบรวม, สะสม, เก็บ); staged counterpart in LARGE-020 is collect|verb|A1|sense:1",
+              "oewn_synset_id": "01383303-v",
+              "sense_key": "collect%2:35:00::"
+            },
+            "provenance": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "source_version": "2.0.0",
+              "source_license": "Glova-Internal-Proprietary"
+            },
+            "known_quality_concerns": [
+              "Requested pilot key is collect|verb|A2|sense:1; staged LARGE-020 counterpart is keyed as collect|verb|A1|sense:1 with lowercase/unpunctuated example (\"we collected over a million dollars in outstanding debts\")"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "conversation|noun|A1|sense:1",
+          "pilot_category": "REVIEW_READY",
+          "source_batch_id": "LARGE-001",
+          "human_decision_interface": {
+            "word": "conversation",
+            "pos": "noun",
+            "cefr": "A1",
+            "english_meaning": "the use of speech for informal exchange of views or ideas or information etc.",
+            "thai_meaning": "บทสนทนา, การพูดคุย",
+            "ipa": "/ˌkɑːnvəɹˈseɪʃən/",
+            "example_sentence": "Understanding the role of conversation helps students discuss use speech informal exchange clearly in everyday situations.",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": "07275364-n",
+              "sense_key": "conversation%1:10:00::"
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:1462",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:1462"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+oewn_unambiguous_sense_matched+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "matched",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_CONFIDENT",
+              "sense_disambiguation_rule": "MONOSEMOUS_OEWN_1_TO_1_SENSE",
+              "meaning_en_provenance": {
+                "status": "VERIFIED_SOURCE_GLOSS",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "07275364-n",
+                "sense_key": "conversation%1:10:00::",
+                "license": "CC-BY-4.0",
+                "method": "deterministic_oewn_synset_gloss"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_curated_lexical_registry_v1",
+                "source_meaning": "the use of speech for informal exchange of views or ideas or information etc.",
+                "target_word": "conversation",
+                "part_of_speech": "noun",
+                "cefr_level": "A1",
+                "sense_key": "conversation%1:10:00::",
+                "oewn_synset_id": "07275364-n",
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "curated_lexical_registry_match",
+                "remediation_timestamp": "2026-09-26T14:34:17.300Z",
+                "candidate_provenance": {
+                  "source": "glova_curated_lexical_registry_v1",
+                  "method": "curated_lexical_registry_match",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:conversation:line:1957",
+                "arpabet": "K AA2 N V ER0 S EY1 SH AH0 N",
+                "variants_ipa": [
+                  "/ˌkɑːnvəɹˈseɪʃən/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "use speech informal exchange",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "การสื่อสาร ถ้อยคำ หรือเอกสารที่แสดงถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ในบริบทที่เป็นทางการหรือตามระเบียบปฏิบัติ",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:17.300Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"สิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "curated_lexical_registry_match",
+                "source": "glova_curated_lexical_registry_v1",
+                "timestamp": "2026-09-26T14:34:17.300Z",
+                "original_draft": "การสื่อสาร ถ้อยคำ หรือเอกสารที่แสดงถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ในบริบทที่เป็นทางการหรือตามระเบียบปฏิบัติ",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence matches synthetic boilerplate template pattern"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "correct|verb|A2|sense:1",
+          "pilot_category": "REVIEW_READY",
+          "source_batch_id": "LARGE-027",
+          "human_decision_interface": {
+            "word": "correct",
+            "pos": "verb",
+            "cefr": "A2",
+            "english_meaning": "make right or correct",
+            "thai_meaning": "แก้ไขให้ถูกต้อง, ทำให้ถูกต้อง",
+            "ipa": "/kəˈɹekt/",
+            "example_sentence": "engineers will work to correct the effects of air resistance",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (correct -> แก้ไขให้ถูกต้อง); staged verb counterpart in LARGE-027 is correct|verb|B2|sense:1",
+              "oewn_synset_id": "00199659-v",
+              "sense_key": "correct%2:30:00::"
+            },
+            "provenance": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "source_version": "2.0.0",
+              "source_license": "Glova-Internal-Proprietary"
+            },
+            "known_quality_concerns": [
+              "Requested pilot key is correct|verb|A2|sense:1; staged LARGE-027 verb counterpart is keyed at B2 (correct|verb|B2|sense:1) with lowercase/unpunctuated example"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        }
+      ],
+      "edit_required": [
+        {
+          "learning_unit_key": "ago|adverb|A1|sense:1",
+          "pilot_category": "EDIT_REQUIRED",
+          "source_batch_id": "LARGE-001",
+          "human_decision_interface": {
+            "word": "ago",
+            "pos": "adverb",
+            "cefr": "A1",
+            "english_meaning": "in the past",
+            "thai_meaning": "ที่ผ่านมา, ล่วงมาแล้ว, ก่อนหน้านี้",
+            "ipa": "/əˈɡoʊ/",
+            "example_sentence": "sixty years ago my grandfather came to the U.S.",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": "00074043-r",
+              "sense_key": "ago%4:02:00::"
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:165",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:165"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+oewn_unambiguous_sense_matched+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "matched",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_CONFIDENT",
+              "sense_disambiguation_rule": "MONOSEMOUS_OEWN_1_TO_1_SENSE",
+              "meaning_en_provenance": {
+                "status": "VERIFIED_SOURCE_GLOSS",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "00074043-r",
+                "sense_key": "ago%4:02:00::",
+                "license": "CC-BY-4.0",
+                "method": "deterministic_oewn_synset_gloss"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_curated_lexical_registry_v1",
+                "source_meaning": "in the past",
+                "target_word": "ago",
+                "part_of_speech": "adverb",
+                "cefr_level": "A1",
+                "sense_key": "ago%4:02:00::",
+                "oewn_synset_id": "00074043-r",
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "curated_lexical_registry_match",
+                "remediation_timestamp": "2026-09-26T14:34:17.288Z",
+                "candidate_provenance": {
+                  "source": "glova_curated_lexical_registry_v1",
+                  "method": "curated_lexical_registry_match",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:ago:line:372",
+                "arpabet": "AH0 G OW1",
+                "variants_ipa": [
+                  "/əˈɡoʊ/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "VERIFIED_SOURCE_EXAMPLE",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "00074043-r",
+                "license": "CC-BY-4.0",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:17.288Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "curated_lexical_registry_match",
+                "source": "glova_curated_lexical_registry_v1",
+                "timestamp": "2026-09-26T14:34:17.288Z",
+                "original_draft": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence starts with lowercase character (\"s\")"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "become|verb|A1|sense:1",
+          "pilot_category": "EDIT_REQUIRED",
+          "source_batch_id": "LARGE-015",
+          "human_decision_interface": {
+            "word": "become",
+            "pos": "verb",
+            "cefr": "A1",
+            "english_meaning": "enter or assume a certain state or condition",
+            "thai_meaning": "กลายเป็น, เริ่มเป็น",
+            "ipa": "/bɪˈkʌm/",
+            "example_sentence": "What becomes has duration",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": null,
+              "sense_key": null
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:605",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:605"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "ambiguous",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+              "sense_disambiguation_rule": "MULTI_SENSE_REQUIRES_HUMAN_DISAMBIGUATION",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+                "source": "oewn_2024",
+                "source_version": "2024",
+                "license": "CC-BY-4.0",
+                "candidate_synset_id": "00155584-v",
+                "candidate_sense_key": "become%2:30:00::",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "source_meaning": "enter or assume a certain state or condition",
+                "target_word": "become",
+                "part_of_speech": "verb",
+                "cefr_level": "A1",
+                "sense_key": "become%2:30:00::",
+                "oewn_synset_id": "00155584-v",
+                "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+                "translation_version": "phase-6.2.10-v1",
+                "review_status": "AI_DRAFT",
+                "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:become:line:925",
+                "arpabet": "B IH0 K AH1 M",
+                "variants_ipa": [
+                  "/bɪˈkʌm/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+                "source": "oewn_2024",
+                "source_version": "2024",
+                "license": "CC-BY-4.0",
+                "candidate_synset_id": "02704993-v",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence is missing terminal punctuation (. ? !)"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "eye|noun|A1|sense:1",
+          "pilot_category": "EDIT_REQUIRED",
+          "source_batch_id": "LARGE-001",
+          "human_decision_interface": {
+            "word": "eye",
+            "pos": "noun",
+            "cefr": "A1",
+            "english_meaning": "the organ of sight",
+            "thai_meaning": "ตา, ดวงตา",
+            "ipa": "/aɪ/",
+            "example_sentence": "she has an eye for fresh talent",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": "05390565-n",
+              "sense_key": "eye%1:08:00::"
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:2466",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:2466"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "ambiguous",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_CONFIDENT",
+              "sense_disambiguation_rule": "SOURCE_TOPIC_LEX_DOMAIN_UNIQUE_WINNER",
+              "meaning_en_provenance": {
+                "status": "VERIFIED_SOURCE_GLOSS",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "05390565-n",
+                "sense_key": "eye%1:08:00::",
+                "license": "CC-BY-4.0",
+                "method": "deterministic_oewn_synset_gloss"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_curated_lexical_registry_v1",
+                "source_meaning": "the organ of sight",
+                "target_word": "eye",
+                "part_of_speech": "noun",
+                "cefr_level": "A1",
+                "sense_key": "eye%1:08:00::",
+                "oewn_synset_id": "05390565-n",
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "curated_lexical_registry_match",
+                "remediation_timestamp": "2026-09-26T14:34:17.301Z",
+                "candidate_provenance": {
+                  "source": "glova_curated_lexical_registry_v1",
+                  "method": "curated_lexical_registry_match",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:eye:line:3342",
+                "arpabet": "AY1",
+                "variants_ipa": [
+                  "/aɪ/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+                "source": "oewn_2024",
+                "source_version": "2024",
+                "license": "CC-BY-4.0",
+                "candidate_synset_id": "05696027-n",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "อวัยวะหรือส่วนประกอบของร่างกายที่เกี่ยวกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:17.301Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "curated_lexical_registry_match",
+                "source": "glova_curated_lexical_registry_v1",
+                "timestamp": "2026-09-26T14:34:17.301Z",
+                "original_draft": "อวัยวะหรือส่วนประกอบของร่างกายที่เกี่ยวกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence starts with lowercase character (\"s\")",
+              "Example sentence is missing terminal punctuation (. ? !)"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "dress|noun|A1|sense:1",
+          "pilot_category": "EDIT_REQUIRED",
+          "source_batch_id": "LARGE-001",
+          "human_decision_interface": {
+            "word": "dress",
+            "pos": "noun",
+            "cefr": "A1",
+            "english_meaning": "clothing in general",
+            "thai_meaning": "ชุดกระโปรง, ชุดแต่งกาย",
+            "ipa": "/dɹes/",
+            "example_sentence": "fastidious about his dress",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": "02773272-n",
+              "sense_key": "dress%1:06:02::"
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:2063",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:2063"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "ambiguous",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_CONFIDENT",
+              "sense_disambiguation_rule": "SOURCE_NOTE_GLOSS_OVERLAP_UNIQUE_WINNER",
+              "meaning_en_provenance": {
+                "status": "VERIFIED_SOURCE_GLOSS",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "02773272-n",
+                "sense_key": "dress%1:06:02::",
+                "license": "CC-BY-4.0",
+                "method": "deterministic_oewn_synset_gloss"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_curated_lexical_registry_v1",
+                "source_meaning": "clothing in general",
+                "target_word": "dress",
+                "part_of_speech": "noun",
+                "cefr_level": "A1",
+                "sense_key": "dress%1:06:02::",
+                "oewn_synset_id": "02773272-n",
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "curated_lexical_registry_match",
+                "remediation_timestamp": "2026-09-26T14:34:17.291Z",
+                "candidate_provenance": {
+                  "source": "glova_curated_lexical_registry_v1",
+                  "method": "curated_lexical_registry_match",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:dress:line:2746",
+                "arpabet": "D R EH1 S",
+                "variants_ipa": [
+                  "/dɹes/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "VERIFIED_SOURCE_EXAMPLE",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "02773272-n",
+                "license": "CC-BY-4.0",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:17.291Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic domain template prefix: \"สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับ\"",
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "curated_lexical_registry_match",
+                "source": "glova_curated_lexical_registry_v1",
+                "timestamp": "2026-09-26T14:34:17.291Z",
+                "original_draft": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence starts with lowercase character (\"f\")",
+              "Example sentence is missing terminal punctuation (. ? !)",
+              "Example sentence lacks finite verb / clausal predication (phrase fragment)"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "food|noun|A1|sense:1",
+          "pilot_category": "EDIT_REQUIRED",
+          "source_batch_id": "LARGE-001",
+          "human_decision_interface": {
+            "word": "food",
+            "pos": "noun",
+            "cefr": "A1",
+            "english_meaning": "any solid substance (as opposed to liquid) that is used as a source of nourishment",
+            "thai_meaning": "อาหาร, ของกิน",
+            "ipa": "/fuːd/",
+            "example_sentence": "food and drink",
+            "lexical_source": {
+              "source": "GLOVA_CURATED_REGISTRY",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "SENSE_ALIGNED",
+              "confidence_note": "Exact English gloss / synset domain match",
+              "oewn_synset_id": "07701837-n",
+              "sense_key": "food%1:13:00::"
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:2714",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:2714"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": "OEWN-2024",
+              "oewn_match_status": "ambiguous",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "MATCH_CONFIDENT",
+              "sense_disambiguation_rule": "SOURCE_NOTE_GLOSS_OVERLAP_UNIQUE_WINNER",
+              "meaning_en_provenance": {
+                "status": "VERIFIED_SOURCE_GLOSS",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "07701837-n",
+                "sense_key": "food%1:13:00::",
+                "license": "CC-BY-4.0",
+                "method": "deterministic_oewn_synset_gloss"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_curated_lexical_registry_v1",
+                "source_meaning": "any solid substance (as opposed to liquid) that is used as a source of nourishment",
+                "target_word": "food",
+                "part_of_speech": "noun",
+                "cefr_level": "A1",
+                "sense_key": "food%1:13:00::",
+                "oewn_synset_id": "07701837-n",
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "curated_lexical_registry_match",
+                "remediation_timestamp": "2026-09-26T14:34:17.291Z",
+                "candidate_provenance": {
+                  "source": "glova_curated_lexical_registry_v1",
+                  "method": "curated_lexical_registry_match",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:food:line:3616",
+                "arpabet": "F UW1 D",
+                "variants_ipa": [
+                  "/fuːd/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "VERIFIED_SOURCE_EXAMPLE",
+                "source": "oewn_2024",
+                "source_name": "Open English WordNet 2024",
+                "synset_id": "07701837-n",
+                "license": "CC-BY-4.0",
+                "is_original_generated": false,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "คำนามหมายถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:17.291Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "curated_lexical_registry_match",
+                "source": "glova_curated_lexical_registry_v1",
+                "timestamp": "2026-09-26T14:34:17.291Z",
+                "original_draft": "คำนามหมายถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Example sentence starts with lowercase character (\"f\")",
+              "Example sentence is missing terminal punctuation (. ? !)",
+              "Example sentence has fewer than 4 words (3 words)"
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        }
+      ],
+      "special_syntax": [
+        {
+          "learning_unit_key": "about|preposition|A1|sense:1",
+          "pilot_category": "SPECIAL_SYNTAX",
+          "source_batch_id": "LARGE-047",
+          "human_decision_interface": {
+            "word": "about",
+            "pos": "preposition",
+            "cefr": "A1",
+            "english_meaning": "on the subject of; concerning or relating to someone or something",
+            "thai_meaning": "บุพบทใช้บอกหัวข้อหรือเรื่องที่เกี่ยวข้อง (เกี่ยวกับ, เรื่องของ)",
+            "ipa": "/əˈbaʊt/",
+            "example_sentence": "The instructor placed the key example about the main schedule for subject concerning.",
+            "lexical_source": {
+              "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+              "grammatical_role": "Prepositional Head licensing an Oblique Noun Phrase (PP -> P + NP) or Spatial/Temporal Adjunct",
+              "syntactic_evidence": "Licenses a nominal complement or gerundive clause following \"about\"; establishes relational, spatial, temporal, or topical dependency in \"The instructor placed the key example about the main schedule for subject concerning.\".",
+              "potential_ambiguity": "High polysemy and functional overlap between prepositional head, phrasal-verb particle, and intransitive spatial adverb for \"about\"."
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:15",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:15"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": null,
+              "oewn_match_status": "not_attempted",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "NO_MATCH",
+              "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_grammatical_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_closed_class_gloss_draft",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "source_meaning": "on the subject of; concerning or relating to someone or something",
+                "target_word": "about",
+                "part_of_speech": "preposition",
+                "cefr_level": "A1",
+                "sense_key": null,
+                "oewn_synset_id": null,
+                "translation_method": "closed_class_grammatical_thai_draft_v1",
+                "translation_version": "phase-6.2.10-v1",
+                "review_status": "AI_DRAFT",
+                "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:about:line:159",
+                "arpabet": "AH0 B AW1 T",
+                "variants_ipa": [
+                  "/əˈbaʊt/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "subject concerning",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              }
+            },
+            "known_quality_concerns": [
+              "Closed-class functional POS (preposition) requires syntactic complementation frame review",
+              "High polysemy and functional overlap between prepositional head, phrasal-verb particle, and intransitive spatial adverb for \"about\".",
+              "Adjudicate Thai relational particle/preposition choice in syntactic frame (P + NP) and replace synthetic draft example with authentic A1/A2 learner sentence."
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "all|pronoun|A1|sense:1",
+          "pilot_category": "SPECIAL_SYNTAX",
+          "source_batch_id": "LARGE-047",
+          "human_decision_interface": {
+            "word": "all",
+            "pos": "pronoun",
+            "cefr": "A1",
+            "english_meaning": "a grammatical pronoun (\"all\") referring to participants, entities, or things in discourse",
+            "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา",
+            "ipa": "/ɔːl/",
+            "example_sentence": "During the workshop on grammatical pronoun referring participants, all became an important point of discussion.",
+            "lexical_source": {
+              "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+              "grammatical_role": "Nominal Pro-Form (Personal / Possessive / Demonstrative / Reflexive / Indefinite Pronoun)",
+              "syntactic_evidence": "Substitutes for a full Determiner Phrase (DP) in subject, object, or oblique argument positions; encodes person, number, gender, or animacy reference for \"all\".",
+              "potential_ambiguity": "Register-sensitive Thai pronominal mapping and potential overlap with determiner distribution (e.g. demonstrative/quantifier uses of \"all\")."
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:200",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:200"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": null,
+              "oewn_match_status": "not_attempted",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "NO_MATCH",
+              "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_lexicographical_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_pos_sense_draft",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_contextual_thai_drafter_v2",
+                "source_meaning": "a grammatical pronoun (\"all\") referring to participants, entities, or things in discourse",
+                "target_word": "all",
+                "part_of_speech": "pronoun",
+                "cefr_level": "A1",
+                "sense_key": null,
+                "oewn_synset_id": null,
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "contextual_headword_sense_draft_v2",
+                "remediation_timestamp": "2026-09-26T14:34:18.825Z",
+                "candidate_provenance": {
+                  "source": "glova_contextual_thai_drafter_v2",
+                  "method": "contextual_headword_sense_draft_v2",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:all:line:405",
+                "arpabet": "AO1 L",
+                "variants_ipa": [
+                  "/ɔːl/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "grammatical pronoun referring participants",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "คำสรรพนามใช้แทนคำนามเพื่อกล่าวถึงบุคคล สิ่งของ หรือกลุ่มเป้าหมายการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:18.825Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "contextual_headword_sense_draft_v2",
+                "source": "glova_contextual_thai_drafter_v2",
+                "timestamp": "2026-09-26T14:34:18.825Z",
+                "original_draft": "คำสรรพนามใช้แทนคำนามเพื่อกล่าวถึงบุคคล สิ่งของ หรือกลุ่มเป้าหมายการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Closed-class functional POS (pronoun) requires syntactic complementation frame review",
+              "Register-sensitive Thai pronominal mapping and potential overlap with determiner distribution (e.g. demonstrative/quantifier uses of \"all\").",
+              "Verify register-neutral Thai pronominal gloss appropriate for A1/A2 learners and validate argument-position example sentence."
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "both|determiner|A1|sense:1",
+          "pilot_category": "SPECIAL_SYNTAX",
+          "source_batch_id": "LARGE-047",
+          "human_decision_interface": {
+            "word": "both",
+            "pos": "determiner",
+            "cefr": "A1",
+            "english_meaning": "a grammatical determiner (\"both\") placed before a noun to specify quantity, possession, or reference",
+            "thai_meaning": "คำนำหน้านามใช้ระบุความชี้เฉพาะหรือปริมาณของคำนามที่ตามมาพื้นที่ สถานที่ หรือตำแหน่งที่มีลักษณะเฉพาะ ในระยะเริ่มต้นหรือเกิดก่อนลำดับอื่น",
+            "ipa": "/boʊθ/",
+            "example_sentence": "Please check both document in the folder before we finalize grammatical determiner placed before.",
+            "lexical_source": {
+              "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+              "grammatical_role": "DP Specifier / Determiner Head (Definite, Indefinite, Demonstrative, or Quantificational Determiner)",
+              "syntactic_evidence": "Precedes nominal heads (Det + (AdjP) + N) to encode definiteness, specificity, quantification, or deixis for \"both\".",
+              "potential_ambiguity": "Categorical boundary overlap between pre-nominal determiner and standalone pronominal head; Thai post-nominal classifier/determiner word-order inversion."
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:784",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:784"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": null,
+              "oewn_match_status": "not_attempted",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "NO_MATCH",
+              "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_lexicographical_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_pos_sense_draft",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "source_meaning": "a grammatical determiner (\"both\") placed before a noun to specify quantity, possession, or reference",
+                "target_word": "both",
+                "part_of_speech": "determiner",
+                "cefr_level": "A1",
+                "sense_key": null,
+                "oewn_synset_id": null,
+                "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+                "translation_version": "phase-6.2.10-v1",
+                "review_status": "AI_DRAFT",
+                "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:both:line:1113",
+                "arpabet": "B OW1 TH",
+                "variants_ipa": [
+                  "/boʊθ/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "grammatical determiner placed before",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              }
+            },
+            "known_quality_concerns": [
+              "Closed-class functional POS (determiner) requires syntactic complementation frame review",
+              "Categorical boundary overlap between pre-nominal determiner and standalone pronominal head; Thai post-nominal classifier/determiner word-order inversion.",
+              "Confirm structural explanation of pre-nominal English determiner vs Thai post-nominal classifier/demonstrative construction and verify natural example."
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "if|conjunction|A1|sense:1",
+          "pilot_category": "SPECIAL_SYNTAX",
+          "source_batch_id": "LARGE-047",
+          "human_decision_interface": {
+            "word": "if",
+            "pos": "conjunction",
+            "cefr": "A1",
+            "english_meaning": "a grammatical conjunction (\"if\") connecting clauses or phrases to show logical relationship",
+            "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา (การเดินทางและคมนาคม)",
+            "ipa": "/ɪf/",
+            "example_sentence": "We reviewed the schedule carefully, if everyone understood the plan for grammatical conjunction connecting clauses.",
+            "lexical_source": {
+              "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+              "grammatical_role": "Clausal / Phrasal Coordinator or Subordinating Complementizer",
+              "syntactic_evidence": "Links coordinate constituents of equal syntactic rank or introduces a subordinate finite/non-finite clause licensed by \"if\".",
+              "potential_ambiguity": "Overlap between coordinating conjunction, subordinating complementizer, and discourse connective or prepositional usage for \"if\"."
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:3367",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:3367"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": null,
+              "oewn_match_status": "not_attempted",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "NO_MATCH",
+              "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_lexicographical_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_pos_sense_draft",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_contextual_thai_drafter_v2",
+                "source_meaning": "a grammatical conjunction (\"if\") connecting clauses or phrases to show logical relationship",
+                "target_word": "if",
+                "part_of_speech": "conjunction",
+                "cefr_level": "A1",
+                "sense_key": null,
+                "oewn_synset_id": null,
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "contextual_headword_sense_draft_v2",
+                "remediation_timestamp": "2026-09-26T14:34:18.825Z",
+                "candidate_provenance": {
+                  "source": "glova_contextual_thai_drafter_v2",
+                  "method": "contextual_headword_sense_draft_v2",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:if:line:4380",
+                "arpabet": "IH1 F",
+                "variants_ipa": [
+                  "/ɪf/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "grammatical conjunction connecting clauses",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "คำสันธานใช้เชื่อมประโยคหรือวลีเพื่อแสดงความสอดคล้อง เหตุผล หรือความขัดแย้งครอบครัว ความสัมพันธ์ และสังคม ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:18.825Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "contextual_headword_sense_draft_v2",
+                "source": "glova_contextual_thai_drafter_v2",
+                "timestamp": "2026-09-26T14:34:18.825Z",
+                "original_draft": "คำสันธานใช้เชื่อมประโยคหรือวลีเพื่อแสดงความสอดคล้อง เหตุผล หรือความขัดแย้งครอบครัว ความสัมพันธ์ และสังคม ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Closed-class functional POS (conjunction) requires syntactic complementation frame review",
+              "Overlap between coordinating conjunction, subordinating complementizer, and discourse connective or prepositional usage for \"if\".",
+              "Verify Thai clause-linking conjunction gloss and confirm biclausal or coordinate example sentence structure."
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        },
+        {
+          "learning_unit_key": "will|modal_auxiliary|A1|sense:1",
+          "pilot_category": "SPECIAL_SYNTAX",
+          "source_batch_id": "LARGE-048",
+          "human_decision_interface": {
+            "word": "will",
+            "pos": "modal_auxiliary",
+            "cefr": "A1",
+            "english_meaning": "a modal auxiliary verb (\"will\") expressing possibility, necessity, permission, or intention",
+            "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา",
+            "ipa": "/wɪl/",
+            "example_sentence": "Learners will practice regularly when they want to master modal auxiliary verb expressing.",
+            "lexical_source": {
+              "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+              "version": "2.0.0",
+              "license": "Glova-Internal-Proprietary"
+            },
+            "sense_evidence": {
+              "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+              "grammatical_role": "Finite Modal Auxiliary Verb (T-head licensing bare infinitive VP complement)",
+              "syntactic_evidence": "Occupies Tense/Inflectional head position (Modal + V_bare), exhibiting NICE syntactic properties (negation contraction, subject-auxiliary inversion) and encoding epistemic or deontic modality for \"will\".",
+              "potential_ambiguity": "Dual epistemic (probability/inference) vs deontic (permission/obligation/ability) modal readings for \"will\"."
+            },
+            "provenance": {
+              "source": "cefr_j",
+              "source_name": "CEFR-J Vocabulary Profile",
+              "source_version": "1.5",
+              "source_url": "http://www.cefr-j.org/download.html",
+              "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+              "license": "TUFS-CEFR-J-Permissive",
+              "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+              "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+              "original_id": "cefr_j:v1.5:line:7668",
+              "merged_original_ids": [
+                "cefr_j:v1.5:line:7668"
+              ],
+              "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+              "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+pos_normalized:modal auxiliary->modal_auxiliary+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+              "frequency_source": "NGSL_1.2",
+              "frequency_match_status": "matched_exact_lemma",
+              "oewn_source_version": null,
+              "oewn_match_status": "not_attempted",
+              "conflict_status": "NONE",
+              "conflicting_cefr_levels": [],
+              "conflicting_entries": [],
+              "enrichment_version": "phase-6.2.10-v1",
+              "sense_disambiguation_status": "NO_MATCH",
+              "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+              "meaning_en_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_lexicographical_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_pos_sense_draft",
+                "review_status": "AI_DRAFT"
+              },
+              "meaning_th_provenance": {
+                "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+                "source": "glova_contextual_thai_drafter_v2",
+                "source_meaning": "a modal auxiliary verb (\"will\") expressing possibility, necessity, permission, or intention",
+                "target_word": "will",
+                "part_of_speech": "modal_auxiliary",
+                "cefr_level": "A1",
+                "sense_key": null,
+                "oewn_synset_id": null,
+                "remediation_version": "phase-6.2.16-v2.0",
+                "remediation_method": "contextual_headword_sense_draft_v2",
+                "remediation_timestamp": "2026-09-26T14:34:18.845Z",
+                "candidate_provenance": {
+                  "source": "glova_contextual_thai_drafter_v2",
+                  "method": "contextual_headword_sense_draft_v2",
+                  "quality_gate_passed": true,
+                  "quality_gate_issues": []
+                },
+                "review_status": "AI_DRAFT",
+                "human_review_required": true
+              },
+              "ipa_provenance": {
+                "status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+                "source": "cmudict",
+                "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+                "source_version": "0.7b",
+                "license": "BSD-2-Clause",
+                "original_id": "cmudict:0.7b:will:line:9585",
+                "arpabet": "W IH1 L",
+                "variants_ipa": [
+                  "/wɪl/",
+                  "/wəl/"
+                ],
+                "transformation_method": "cmudict_arpabet_to_ipa_v1"
+              },
+              "example_provenance": {
+                "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+                "source": "glova_offline_example_drafter_v1",
+                "source_version": "phase-6.2.10-v1",
+                "method": "offline_ai_assisted_sense_pos_drafter_v1",
+                "sense_context_used": "modal auxiliary verb expressing",
+                "is_original_generated": true,
+                "cefr_certified": false,
+                "above_level_words": []
+              },
+              "previous_drafts": [
+                {
+                  "field": "meaning_th",
+                  "value": "กริยาช่วยใช้แสดงความเป็นไปได้ ความจำเป็น ความสามารถ หรือการขออนุญาตการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                  "source": "glova_offline_thai_sense_drafter_v1",
+                  "review_status": "AI_DRAFT",
+                  "archived_at": "2026-09-26T14:34:18.845Z",
+                  "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                  "detection_reasons": [
+                    "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                  ]
+                }
+              ],
+              "remediation": {
+                "field": "meaning_th",
+                "remediated": true,
+                "version": "phase-6.2.16-v2.0",
+                "method": "contextual_headword_sense_draft_v2",
+                "source": "glova_contextual_thai_drafter_v2",
+                "timestamp": "2026-09-26T14:34:18.845Z",
+                "original_draft": "กริยาช่วยใช้แสดงความเป็นไปได้ ความจำเป็น ความสามารถ หรือการขออนุญาตการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                "quality_gate_passed": true,
+                "quality_gate_issues": [],
+                "human_review_required": true
+              }
+            },
+            "known_quality_concerns": [
+              "Closed-class functional POS (modal_auxiliary) requires syntactic complementation frame review",
+              "Dual epistemic (probability/inference) vs deontic (permission/obligation/ability) modal readings for \"will\".",
+              "Select primary CEFR-aligned modal sense (ability/permission/request vs deduction) and verify Thai pre-verbal auxiliary gloss."
+            ]
+          },
+          "allowed_dispositions": [
+            "APPROVE",
+            "EDIT_REQUIRED",
+            "HOLD"
+          ],
+          "required_submission_metadata": {
+            "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+            "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+            "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+            "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+          },
+          "reviewer_decision": null,
+          "reviewer_id": null,
+          "reviewed_at": null,
+          "review_rationale": null,
+          "transaction_id": null,
+          "lifecycle_status": "REVIEW_REQUIRED",
+          "field_status": "AI_DRAFT",
+          "human_review_required": true
+        }
+      ]
+    },
+    "records": [
+      {
+        "learning_unit_key": "accept|verb|A2|sense:1",
+        "pilot_category": "REVIEW_READY",
+        "source_batch_id": "LARGE-018",
+        "human_decision_interface": {
+          "word": "accept",
+          "pos": "verb",
+          "cefr": "A2",
+          "english_meaning": "consider or hold as true",
+          "thai_meaning": "ยอมรับ, ตอบรับ",
+          "ipa": "/ækˈsept/",
+          "example_sentence": "I cannot accept the dogma of this church",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": null,
+            "sense_key": null
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:35",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:35"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "ambiguous",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_disambiguation_rule": "MULTI_SENSE_REQUIRES_HUMAN_DISAMBIGUATION",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+              "source": "oewn_2024",
+              "source_version": "2024",
+              "license": "CC-BY-4.0",
+              "candidate_synset_id": "00718036-v",
+              "candidate_sense_key": "accept%2:31:00::",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+              "source": "glova_offline_thai_sense_drafter_v1",
+              "source_meaning": "consider or hold as true",
+              "target_word": "accept",
+              "part_of_speech": "verb",
+              "cefr_level": "A2",
+              "sense_key": "accept%2:31:00::",
+              "oewn_synset_id": "00718036-v",
+              "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+              "translation_version": "phase-6.2.10-v1",
+              "review_status": "AI_DRAFT",
+              "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:accept:line:182",
+              "arpabet": "AE0 K S EH1 P T",
+              "variants_ipa": [
+                "/ækˈsept/",
+                "/əkˈsept/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+              "source": "oewn_2024",
+              "source_version": "2024",
+              "license": "CC-BY-4.0",
+              "candidate_synset_id": "00718036-v",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence is missing terminal punctuation (. ? !)",
+            "Example sentence lacks finite verb / clausal predication (phrase fragment)"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "careful|adjective|A2|sense:2",
+        "pilot_category": "REVIEW_READY",
+        "source_batch_id": "LARGE-020",
+        "human_decision_interface": {
+          "word": "careful",
+          "pos": "adjective",
+          "cefr": "A2",
+          "english_meaning": "exercising caution or showing care or attention",
+          "thai_meaning": "ระมัดระวัง, รอบคอบ",
+          "ipa": "/ˈkeəɹfəl/",
+          "example_sentence": "they were careful when crossing the busy street",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (careful -> ระมัดระวัง, รอบคอบ); staged counterpart in LARGE-020 is careful|adjective|A1|sense:1",
+            "oewn_synset_id": "00329201-a",
+            "sense_key": "careful%3:00:00::"
+          },
+          "provenance": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "source_version": "2.0.0",
+            "source_license": "Glova-Internal-Proprietary"
+          },
+          "known_quality_concerns": [
+            "Requested pilot key is careful|adjective|A2|sense:2; staged LARGE-020 counterpart is keyed as careful|adjective|A1|sense:1 with lowercase/unpunctuated example (\"they were careful when crossing the busy street\")"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "collect|verb|A2|sense:1",
+        "pilot_category": "REVIEW_READY",
+        "source_batch_id": "LARGE-020",
+        "human_decision_interface": {
+          "word": "collect",
+          "pos": "verb",
+          "cefr": "A2",
+          "english_meaning": "get or gather together",
+          "thai_meaning": "รวบรวม, สะสม, เก็บ",
+          "ipa": "/kəˈlekt/",
+          "example_sentence": "we collected over a million dollars in outstanding debts",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (collect -> รวบรวม, สะสม, เก็บ); staged counterpart in LARGE-020 is collect|verb|A1|sense:1",
+            "oewn_synset_id": "01383303-v",
+            "sense_key": "collect%2:35:00::"
+          },
+          "provenance": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "source_version": "2.0.0",
+            "source_license": "Glova-Internal-Proprietary"
+          },
+          "known_quality_concerns": [
+            "Requested pilot key is collect|verb|A2|sense:1; staged LARGE-020 counterpart is keyed as collect|verb|A1|sense:1 with lowercase/unpunctuated example (\"we collected over a million dollars in outstanding debts\")"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "conversation|noun|A1|sense:1",
+        "pilot_category": "REVIEW_READY",
+        "source_batch_id": "LARGE-001",
+        "human_decision_interface": {
+          "word": "conversation",
+          "pos": "noun",
+          "cefr": "A1",
+          "english_meaning": "the use of speech for informal exchange of views or ideas or information etc.",
+          "thai_meaning": "บทสนทนา, การพูดคุย",
+          "ipa": "/ˌkɑːnvəɹˈseɪʃən/",
+          "example_sentence": "Understanding the role of conversation helps students discuss use speech informal exchange clearly in everyday situations.",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": "07275364-n",
+            "sense_key": "conversation%1:10:00::"
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:1462",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:1462"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+oewn_unambiguous_sense_matched+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "matched",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_CONFIDENT",
+            "sense_disambiguation_rule": "MONOSEMOUS_OEWN_1_TO_1_SENSE",
+            "meaning_en_provenance": {
+              "status": "VERIFIED_SOURCE_GLOSS",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "07275364-n",
+              "sense_key": "conversation%1:10:00::",
+              "license": "CC-BY-4.0",
+              "method": "deterministic_oewn_synset_gloss"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_curated_lexical_registry_v1",
+              "source_meaning": "the use of speech for informal exchange of views or ideas or information etc.",
+              "target_word": "conversation",
+              "part_of_speech": "noun",
+              "cefr_level": "A1",
+              "sense_key": "conversation%1:10:00::",
+              "oewn_synset_id": "07275364-n",
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "curated_lexical_registry_match",
+              "remediation_timestamp": "2026-09-26T14:34:17.300Z",
+              "candidate_provenance": {
+                "source": "glova_curated_lexical_registry_v1",
+                "method": "curated_lexical_registry_match",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:conversation:line:1957",
+              "arpabet": "K AA2 N V ER0 S EY1 SH AH0 N",
+              "variants_ipa": [
+                "/ˌkɑːnvəɹˈseɪʃən/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "use speech informal exchange",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "การสื่อสาร ถ้อยคำ หรือเอกสารที่แสดงถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ในบริบทที่เป็นทางการหรือตามระเบียบปฏิบัติ",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:17.300Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"สิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "curated_lexical_registry_match",
+              "source": "glova_curated_lexical_registry_v1",
+              "timestamp": "2026-09-26T14:34:17.300Z",
+              "original_draft": "การสื่อสาร ถ้อยคำ หรือเอกสารที่แสดงถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ในบริบทที่เป็นทางการหรือตามระเบียบปฏิบัติ",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence matches synthetic boilerplate template pattern"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "correct|verb|A2|sense:1",
+        "pilot_category": "REVIEW_READY",
+        "source_batch_id": "LARGE-027",
+        "human_decision_interface": {
+          "word": "correct",
+          "pos": "verb",
+          "cefr": "A2",
+          "english_meaning": "make right or correct",
+          "thai_meaning": "แก้ไขให้ถูกต้อง, ทำให้ถูกต้อง",
+          "ipa": "/kəˈɹekt/",
+          "example_sentence": "engineers will work to correct the effects of air resistance",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Grounded in GLOVA_CURATED_HEADWORD_REGISTRY (correct -> แก้ไขให้ถูกต้อง); staged verb counterpart in LARGE-027 is correct|verb|B2|sense:1",
+            "oewn_synset_id": "00199659-v",
+            "sense_key": "correct%2:30:00::"
+          },
+          "provenance": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "source_version": "2.0.0",
+            "source_license": "Glova-Internal-Proprietary"
+          },
+          "known_quality_concerns": [
+            "Requested pilot key is correct|verb|A2|sense:1; staged LARGE-027 verb counterpart is keyed at B2 (correct|verb|B2|sense:1) with lowercase/unpunctuated example"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "ago|adverb|A1|sense:1",
+        "pilot_category": "EDIT_REQUIRED",
+        "source_batch_id": "LARGE-001",
+        "human_decision_interface": {
+          "word": "ago",
+          "pos": "adverb",
+          "cefr": "A1",
+          "english_meaning": "in the past",
+          "thai_meaning": "ที่ผ่านมา, ล่วงมาแล้ว, ก่อนหน้านี้",
+          "ipa": "/əˈɡoʊ/",
+          "example_sentence": "sixty years ago my grandfather came to the U.S.",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": "00074043-r",
+            "sense_key": "ago%4:02:00::"
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:165",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:165"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+oewn_unambiguous_sense_matched+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "matched",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_CONFIDENT",
+            "sense_disambiguation_rule": "MONOSEMOUS_OEWN_1_TO_1_SENSE",
+            "meaning_en_provenance": {
+              "status": "VERIFIED_SOURCE_GLOSS",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "00074043-r",
+              "sense_key": "ago%4:02:00::",
+              "license": "CC-BY-4.0",
+              "method": "deterministic_oewn_synset_gloss"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_curated_lexical_registry_v1",
+              "source_meaning": "in the past",
+              "target_word": "ago",
+              "part_of_speech": "adverb",
+              "cefr_level": "A1",
+              "sense_key": "ago%4:02:00::",
+              "oewn_synset_id": "00074043-r",
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "curated_lexical_registry_match",
+              "remediation_timestamp": "2026-09-26T14:34:17.288Z",
+              "candidate_provenance": {
+                "source": "glova_curated_lexical_registry_v1",
+                "method": "curated_lexical_registry_match",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:ago:line:372",
+              "arpabet": "AH0 G OW1",
+              "variants_ipa": [
+                "/əˈɡoʊ/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "VERIFIED_SOURCE_EXAMPLE",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "00074043-r",
+              "license": "CC-BY-4.0",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:17.288Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic domain template prefix: \"อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่\"",
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "curated_lexical_registry_match",
+              "source": "glova_curated_lexical_registry_v1",
+              "timestamp": "2026-09-26T14:34:17.288Z",
+              "original_draft": "อย่างมีลักษณะที่แสดงถึง หรือในทิศทางที่กาลเวลา ช่วงเวลา และลำดับเหตุการณ์ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence starts with lowercase character (\"s\")"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "become|verb|A1|sense:1",
+        "pilot_category": "EDIT_REQUIRED",
+        "source_batch_id": "LARGE-015",
+        "human_decision_interface": {
+          "word": "become",
+          "pos": "verb",
+          "cefr": "A1",
+          "english_meaning": "enter or assume a certain state or condition",
+          "thai_meaning": "กลายเป็น, เริ่มเป็น",
+          "ipa": "/bɪˈkʌm/",
+          "example_sentence": "What becomes has duration",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": null,
+            "sense_key": null
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:605",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:605"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "ambiguous",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_disambiguation_rule": "MULTI_SENSE_REQUIRES_HUMAN_DISAMBIGUATION",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+              "source": "oewn_2024",
+              "source_version": "2024",
+              "license": "CC-BY-4.0",
+              "candidate_synset_id": "00155584-v",
+              "candidate_sense_key": "become%2:30:00::",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+              "source": "glova_offline_thai_sense_drafter_v1",
+              "source_meaning": "enter or assume a certain state or condition",
+              "target_word": "become",
+              "part_of_speech": "verb",
+              "cefr_level": "A1",
+              "sense_key": "become%2:30:00::",
+              "oewn_synset_id": "00155584-v",
+              "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+              "translation_version": "phase-6.2.10-v1",
+              "review_status": "AI_DRAFT",
+              "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:become:line:925",
+              "arpabet": "B IH0 K AH1 M",
+              "variants_ipa": [
+                "/bɪˈkʌm/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+              "source": "oewn_2024",
+              "source_version": "2024",
+              "license": "CC-BY-4.0",
+              "candidate_synset_id": "02704993-v",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence is missing terminal punctuation (. ? !)"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "eye|noun|A1|sense:1",
+        "pilot_category": "EDIT_REQUIRED",
+        "source_batch_id": "LARGE-001",
+        "human_decision_interface": {
+          "word": "eye",
+          "pos": "noun",
+          "cefr": "A1",
+          "english_meaning": "the organ of sight",
+          "thai_meaning": "ตา, ดวงตา",
+          "ipa": "/aɪ/",
+          "example_sentence": "she has an eye for fresh talent",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": "05390565-n",
+            "sense_key": "eye%1:08:00::"
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:2466",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:2466"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "ambiguous",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_CONFIDENT",
+            "sense_disambiguation_rule": "SOURCE_TOPIC_LEX_DOMAIN_UNIQUE_WINNER",
+            "meaning_en_provenance": {
+              "status": "VERIFIED_SOURCE_GLOSS",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "05390565-n",
+              "sense_key": "eye%1:08:00::",
+              "license": "CC-BY-4.0",
+              "method": "deterministic_oewn_synset_gloss"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_curated_lexical_registry_v1",
+              "source_meaning": "the organ of sight",
+              "target_word": "eye",
+              "part_of_speech": "noun",
+              "cefr_level": "A1",
+              "sense_key": "eye%1:08:00::",
+              "oewn_synset_id": "05390565-n",
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "curated_lexical_registry_match",
+              "remediation_timestamp": "2026-09-26T14:34:17.301Z",
+              "candidate_provenance": {
+                "source": "glova_curated_lexical_registry_v1",
+                "method": "curated_lexical_registry_match",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:eye:line:3342",
+              "arpabet": "AY1",
+              "variants_ipa": [
+                "/aɪ/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+              "source": "oewn_2024",
+              "source_version": "2024",
+              "license": "CC-BY-4.0",
+              "candidate_synset_id": "05696027-n",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "อวัยวะหรือส่วนประกอบของร่างกายที่เกี่ยวกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:17.301Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "curated_lexical_registry_match",
+              "source": "glova_curated_lexical_registry_v1",
+              "timestamp": "2026-09-26T14:34:17.301Z",
+              "original_draft": "อวัยวะหรือส่วนประกอบของร่างกายที่เกี่ยวกับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence starts with lowercase character (\"s\")",
+            "Example sentence is missing terminal punctuation (. ? !)"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "dress|noun|A1|sense:1",
+        "pilot_category": "EDIT_REQUIRED",
+        "source_batch_id": "LARGE-001",
+        "human_decision_interface": {
+          "word": "dress",
+          "pos": "noun",
+          "cefr": "A1",
+          "english_meaning": "clothing in general",
+          "thai_meaning": "ชุดกระโปรง, ชุดแต่งกาย",
+          "ipa": "/dɹes/",
+          "example_sentence": "fastidious about his dress",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": "02773272-n",
+            "sense_key": "dress%1:06:02::"
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:2063",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:2063"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "ambiguous",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_CONFIDENT",
+            "sense_disambiguation_rule": "SOURCE_NOTE_GLOSS_OVERLAP_UNIQUE_WINNER",
+            "meaning_en_provenance": {
+              "status": "VERIFIED_SOURCE_GLOSS",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "02773272-n",
+              "sense_key": "dress%1:06:02::",
+              "license": "CC-BY-4.0",
+              "method": "deterministic_oewn_synset_gloss"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_curated_lexical_registry_v1",
+              "source_meaning": "clothing in general",
+              "target_word": "dress",
+              "part_of_speech": "noun",
+              "cefr_level": "A1",
+              "sense_key": "dress%1:06:02::",
+              "oewn_synset_id": "02773272-n",
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "curated_lexical_registry_match",
+              "remediation_timestamp": "2026-09-26T14:34:17.291Z",
+              "candidate_provenance": {
+                "source": "glova_curated_lexical_registry_v1",
+                "method": "curated_lexical_registry_match",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:dress:line:2746",
+              "arpabet": "D R EH1 S",
+              "variants_ipa": [
+                "/dɹes/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "VERIFIED_SOURCE_EXAMPLE",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "02773272-n",
+              "license": "CC-BY-4.0",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:17.291Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic domain template prefix: \"สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับ\"",
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "curated_lexical_registry_match",
+              "source": "glova_curated_lexical_registry_v1",
+              "timestamp": "2026-09-26T14:34:17.291Z",
+              "original_draft": "สิ่งประดิษฐ์ อุปกรณ์ หรือโครงสร้างที่ใช้สำหรับสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence starts with lowercase character (\"f\")",
+            "Example sentence is missing terminal punctuation (. ? !)",
+            "Example sentence lacks finite verb / clausal predication (phrase fragment)"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "food|noun|A1|sense:1",
+        "pilot_category": "EDIT_REQUIRED",
+        "source_batch_id": "LARGE-001",
+        "human_decision_interface": {
+          "word": "food",
+          "pos": "noun",
+          "cefr": "A1",
+          "english_meaning": "any solid substance (as opposed to liquid) that is used as a source of nourishment",
+          "thai_meaning": "อาหาร, ของกิน",
+          "ipa": "/fuːd/",
+          "example_sentence": "food and drink",
+          "lexical_source": {
+            "source": "GLOVA_CURATED_REGISTRY",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "SENSE_ALIGNED",
+            "confidence_note": "Exact English gloss / synset domain match",
+            "oewn_synset_id": "07701837-n",
+            "sense_key": "food%1:13:00::"
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:2714",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:2714"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": "OEWN-2024",
+            "oewn_match_status": "ambiguous",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "MATCH_CONFIDENT",
+            "sense_disambiguation_rule": "SOURCE_NOTE_GLOSS_OVERLAP_UNIQUE_WINNER",
+            "meaning_en_provenance": {
+              "status": "VERIFIED_SOURCE_GLOSS",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "07701837-n",
+              "sense_key": "food%1:13:00::",
+              "license": "CC-BY-4.0",
+              "method": "deterministic_oewn_synset_gloss"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_curated_lexical_registry_v1",
+              "source_meaning": "any solid substance (as opposed to liquid) that is used as a source of nourishment",
+              "target_word": "food",
+              "part_of_speech": "noun",
+              "cefr_level": "A1",
+              "sense_key": "food%1:13:00::",
+              "oewn_synset_id": "07701837-n",
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "curated_lexical_registry_match",
+              "remediation_timestamp": "2026-09-26T14:34:17.291Z",
+              "candidate_provenance": {
+                "source": "glova_curated_lexical_registry_v1",
+                "method": "curated_lexical_registry_match",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:food:line:3616",
+              "arpabet": "F UW1 D",
+              "variants_ipa": [
+                "/fuːd/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "VERIFIED_SOURCE_EXAMPLE",
+              "source": "oewn_2024",
+              "source_name": "Open English WordNet 2024",
+              "synset_id": "07701837-n",
+              "license": "CC-BY-4.0",
+              "is_original_generated": false,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "คำนามหมายถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:17.291Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "curated_lexical_registry_match",
+              "source": "glova_curated_lexical_registry_v1",
+              "timestamp": "2026-09-26T14:34:17.291Z",
+              "original_draft": "คำนามหมายถึงสิ่งของ แนวคิด หรือสภาวะตามนิยามของความหมายนี้ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Example sentence starts with lowercase character (\"f\")",
+            "Example sentence is missing terminal punctuation (. ? !)",
+            "Example sentence has fewer than 4 words (3 words)"
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "about|preposition|A1|sense:1",
+        "pilot_category": "SPECIAL_SYNTAX",
+        "source_batch_id": "LARGE-047",
+        "human_decision_interface": {
+          "word": "about",
+          "pos": "preposition",
+          "cefr": "A1",
+          "english_meaning": "on the subject of; concerning or relating to someone or something",
+          "thai_meaning": "บุพบทใช้บอกหัวข้อหรือเรื่องที่เกี่ยวข้อง (เกี่ยวกับ, เรื่องของ)",
+          "ipa": "/əˈbaʊt/",
+          "example_sentence": "The instructor placed the key example about the main schedule for subject concerning.",
+          "lexical_source": {
+            "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+            "grammatical_role": "Prepositional Head licensing an Oblique Noun Phrase (PP -> P + NP) or Spatial/Temporal Adjunct",
+            "syntactic_evidence": "Licenses a nominal complement or gerundive clause following \"about\"; establishes relational, spatial, temporal, or topical dependency in \"The instructor placed the key example about the main schedule for subject concerning.\".",
+            "potential_ambiguity": "High polysemy and functional overlap between prepositional head, phrasal-verb particle, and intransitive spatial adverb for \"about\"."
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:15",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:15"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": null,
+            "oewn_match_status": "not_attempted",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "NO_MATCH",
+            "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_grammatical_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_closed_class_gloss_draft",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+              "source": "glova_offline_thai_sense_drafter_v1",
+              "source_meaning": "on the subject of; concerning or relating to someone or something",
+              "target_word": "about",
+              "part_of_speech": "preposition",
+              "cefr_level": "A1",
+              "sense_key": null,
+              "oewn_synset_id": null,
+              "translation_method": "closed_class_grammatical_thai_draft_v1",
+              "translation_version": "phase-6.2.10-v1",
+              "review_status": "AI_DRAFT",
+              "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:about:line:159",
+              "arpabet": "AH0 B AW1 T",
+              "variants_ipa": [
+                "/əˈbaʊt/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "subject concerning",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            }
+          },
+          "known_quality_concerns": [
+            "Closed-class functional POS (preposition) requires syntactic complementation frame review",
+            "High polysemy and functional overlap between prepositional head, phrasal-verb particle, and intransitive spatial adverb for \"about\".",
+            "Adjudicate Thai relational particle/preposition choice in syntactic frame (P + NP) and replace synthetic draft example with authentic A1/A2 learner sentence."
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "all|pronoun|A1|sense:1",
+        "pilot_category": "SPECIAL_SYNTAX",
+        "source_batch_id": "LARGE-047",
+        "human_decision_interface": {
+          "word": "all",
+          "pos": "pronoun",
+          "cefr": "A1",
+          "english_meaning": "a grammatical pronoun (\"all\") referring to participants, entities, or things in discourse",
+          "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา",
+          "ipa": "/ɔːl/",
+          "example_sentence": "During the workshop on grammatical pronoun referring participants, all became an important point of discussion.",
+          "lexical_source": {
+            "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+            "grammatical_role": "Nominal Pro-Form (Personal / Possessive / Demonstrative / Reflexive / Indefinite Pronoun)",
+            "syntactic_evidence": "Substitutes for a full Determiner Phrase (DP) in subject, object, or oblique argument positions; encodes person, number, gender, or animacy reference for \"all\".",
+            "potential_ambiguity": "Register-sensitive Thai pronominal mapping and potential overlap with determiner distribution (e.g. demonstrative/quantifier uses of \"all\")."
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:200",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:200"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": null,
+            "oewn_match_status": "not_attempted",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "NO_MATCH",
+            "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_lexicographical_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_pos_sense_draft",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_contextual_thai_drafter_v2",
+              "source_meaning": "a grammatical pronoun (\"all\") referring to participants, entities, or things in discourse",
+              "target_word": "all",
+              "part_of_speech": "pronoun",
+              "cefr_level": "A1",
+              "sense_key": null,
+              "oewn_synset_id": null,
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "contextual_headword_sense_draft_v2",
+              "remediation_timestamp": "2026-09-26T14:34:18.825Z",
+              "candidate_provenance": {
+                "source": "glova_contextual_thai_drafter_v2",
+                "method": "contextual_headword_sense_draft_v2",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:all:line:405",
+              "arpabet": "AO1 L",
+              "variants_ipa": [
+                "/ɔːl/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "grammatical pronoun referring participants",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "คำสรรพนามใช้แทนคำนามเพื่อกล่าวถึงบุคคล สิ่งของ หรือกลุ่มเป้าหมายการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:18.825Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "contextual_headword_sense_draft_v2",
+              "source": "glova_contextual_thai_drafter_v2",
+              "timestamp": "2026-09-26T14:34:18.825Z",
+              "original_draft": "คำสรรพนามใช้แทนคำนามเพื่อกล่าวถึงบุคคล สิ่งของ หรือกลุ่มเป้าหมายการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Closed-class functional POS (pronoun) requires syntactic complementation frame review",
+            "Register-sensitive Thai pronominal mapping and potential overlap with determiner distribution (e.g. demonstrative/quantifier uses of \"all\").",
+            "Verify register-neutral Thai pronominal gloss appropriate for A1/A2 learners and validate argument-position example sentence."
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "both|determiner|A1|sense:1",
+        "pilot_category": "SPECIAL_SYNTAX",
+        "source_batch_id": "LARGE-047",
+        "human_decision_interface": {
+          "word": "both",
+          "pos": "determiner",
+          "cefr": "A1",
+          "english_meaning": "a grammatical determiner (\"both\") placed before a noun to specify quantity, possession, or reference",
+          "thai_meaning": "คำนำหน้านามใช้ระบุความชี้เฉพาะหรือปริมาณของคำนามที่ตามมาพื้นที่ สถานที่ หรือตำแหน่งที่มีลักษณะเฉพาะ ในระยะเริ่มต้นหรือเกิดก่อนลำดับอื่น",
+          "ipa": "/boʊθ/",
+          "example_sentence": "Please check both document in the folder before we finalize grammatical determiner placed before.",
+          "lexical_source": {
+            "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+            "grammatical_role": "DP Specifier / Determiner Head (Definite, Indefinite, Demonstrative, or Quantificational Determiner)",
+            "syntactic_evidence": "Precedes nominal heads (Det + (AdjP) + N) to encode definiteness, specificity, quantification, or deixis for \"both\".",
+            "potential_ambiguity": "Categorical boundary overlap between pre-nominal determiner and standalone pronominal head; Thai post-nominal classifier/determiner word-order inversion."
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:784",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:784"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": null,
+            "oewn_match_status": "not_attempted",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "NO_MATCH",
+            "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_lexicographical_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_pos_sense_draft",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+              "source": "glova_offline_thai_sense_drafter_v1",
+              "source_meaning": "a grammatical determiner (\"both\") placed before a noun to specify quantity, possession, or reference",
+              "target_word": "both",
+              "part_of_speech": "determiner",
+              "cefr_level": "A1",
+              "sense_key": null,
+              "oewn_synset_id": null,
+              "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+              "translation_version": "phase-6.2.10-v1",
+              "review_status": "AI_DRAFT",
+              "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:both:line:1113",
+              "arpabet": "B OW1 TH",
+              "variants_ipa": [
+                "/boʊθ/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "grammatical determiner placed before",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            }
+          },
+          "known_quality_concerns": [
+            "Closed-class functional POS (determiner) requires syntactic complementation frame review",
+            "Categorical boundary overlap between pre-nominal determiner and standalone pronominal head; Thai post-nominal classifier/determiner word-order inversion.",
+            "Confirm structural explanation of pre-nominal English determiner vs Thai post-nominal classifier/demonstrative construction and verify natural example."
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "if|conjunction|A1|sense:1",
+        "pilot_category": "SPECIAL_SYNTAX",
+        "source_batch_id": "LARGE-047",
+        "human_decision_interface": {
+          "word": "if",
+          "pos": "conjunction",
+          "cefr": "A1",
+          "english_meaning": "a grammatical conjunction (\"if\") connecting clauses or phrases to show logical relationship",
+          "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา (การเดินทางและคมนาคม)",
+          "ipa": "/ɪf/",
+          "example_sentence": "We reviewed the schedule carefully, if everyone understood the plan for grammatical conjunction connecting clauses.",
+          "lexical_source": {
+            "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+            "grammatical_role": "Clausal / Phrasal Coordinator or Subordinating Complementizer",
+            "syntactic_evidence": "Links coordinate constituents of equal syntactic rank or introduces a subordinate finite/non-finite clause licensed by \"if\".",
+            "potential_ambiguity": "Overlap between coordinating conjunction, subordinating complementizer, and discourse connective or prepositional usage for \"if\"."
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:3367",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:3367"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": null,
+            "oewn_match_status": "not_attempted",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "NO_MATCH",
+            "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_lexicographical_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_pos_sense_draft",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_contextual_thai_drafter_v2",
+              "source_meaning": "a grammatical conjunction (\"if\") connecting clauses or phrases to show logical relationship",
+              "target_word": "if",
+              "part_of_speech": "conjunction",
+              "cefr_level": "A1",
+              "sense_key": null,
+              "oewn_synset_id": null,
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "contextual_headword_sense_draft_v2",
+              "remediation_timestamp": "2026-09-26T14:34:18.825Z",
+              "candidate_provenance": {
+                "source": "glova_contextual_thai_drafter_v2",
+                "method": "contextual_headword_sense_draft_v2",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:if:line:4380",
+              "arpabet": "IH1 F",
+              "variants_ipa": [
+                "/ɪf/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "grammatical conjunction connecting clauses",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "คำสันธานใช้เชื่อมประโยคหรือวลีเพื่อแสดงความสอดคล้อง เหตุผล หรือความขัดแย้งครอบครัว ความสัมพันธ์ และสังคม ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:18.825Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "contextual_headword_sense_draft_v2",
+              "source": "glova_contextual_thai_drafter_v2",
+              "timestamp": "2026-09-26T14:34:18.825Z",
+              "original_draft": "คำสันธานใช้เชื่อมประโยคหรือวลีเพื่อแสดงความสอดคล้อง เหตุผล หรือความขัดแย้งครอบครัว ความสัมพันธ์ และสังคม ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Closed-class functional POS (conjunction) requires syntactic complementation frame review",
+            "Overlap between coordinating conjunction, subordinating complementizer, and discourse connective or prepositional usage for \"if\".",
+            "Verify Thai clause-linking conjunction gloss and confirm biclausal or coordinate example sentence structure."
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      },
+      {
+        "learning_unit_key": "will|modal_auxiliary|A1|sense:1",
+        "pilot_category": "SPECIAL_SYNTAX",
+        "source_batch_id": "LARGE-048",
+        "human_decision_interface": {
+          "word": "will",
+          "pos": "modal_auxiliary",
+          "cefr": "A1",
+          "english_meaning": "a modal auxiliary verb (\"will\") expressing possibility, necessity, permission, or intention",
+          "thai_meaning": "ความหมายและบทบาทตามหน้าที่ทางภาษา",
+          "ipa": "/wɪl/",
+          "example_sentence": "Learners will practice regularly when they want to master modal auxiliary verb expressing.",
+          "lexical_source": {
+            "source": "SYNTACTIC_ADJUDICATION_ISOLATION",
+            "version": "2.0.0",
+            "license": "Glova-Internal-Proprietary"
+          },
+          "sense_evidence": {
+            "status": "CLOSED_CLASS_SYNTACTIC_FRAME",
+            "grammatical_role": "Finite Modal Auxiliary Verb (T-head licensing bare infinitive VP complement)",
+            "syntactic_evidence": "Occupies Tense/Inflectional head position (Modal + V_bare), exhibiting NICE syntactic properties (negation contraction, subject-auxiliary inversion) and encoding epistemic or deontic modality for \"will\".",
+            "potential_ambiguity": "Dual epistemic (probability/inference) vs deontic (permission/obligation/ability) modal readings for \"will\"."
+          },
+          "provenance": {
+            "source": "cefr_j",
+            "source_name": "CEFR-J Vocabulary Profile",
+            "source_version": "1.5",
+            "source_url": "http://www.cefr-j.org/download.html",
+            "download_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/cefrj-vocabulary-profile-1.5.csv",
+            "license": "TUFS-CEFR-J-Permissive",
+            "license_url": "https://raw.githubusercontent.com/openlanguageprofiles/olp-en-cefrj/master/README.md",
+            "attribution": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tono Laboratory, Tokyo University of Foreign Studies (TUFS).",
+            "original_id": "cefr_j:v1.5:line:7668",
+            "merged_original_ids": [
+              "cefr_j:v1.5:line:7668"
+            ],
+            "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+            "transformation_method": "unicode_nfc+trim_whitespace+lowercase_lemma+pos_normalized:modal auxiliary->modal_auxiliary+freq_join:NGSL_1.2+offline_enrich:phase-6.2.10-v1",
+            "frequency_source": "NGSL_1.2",
+            "frequency_match_status": "matched_exact_lemma",
+            "oewn_source_version": null,
+            "oewn_match_status": "not_attempted",
+            "conflict_status": "NONE",
+            "conflicting_cefr_levels": [],
+            "conflicting_entries": [],
+            "enrichment_version": "phase-6.2.10-v1",
+            "sense_disambiguation_status": "NO_MATCH",
+            "sense_disambiguation_rule": "CLOSED_CLASS_GRAMMATICAL_POS_NO_WORDNET_SYNSET",
+            "meaning_en_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_lexicographical_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_pos_sense_draft",
+              "review_status": "AI_DRAFT"
+            },
+            "meaning_th_provenance": {
+              "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+              "source": "glova_contextual_thai_drafter_v2",
+              "source_meaning": "a modal auxiliary verb (\"will\") expressing possibility, necessity, permission, or intention",
+              "target_word": "will",
+              "part_of_speech": "modal_auxiliary",
+              "cefr_level": "A1",
+              "sense_key": null,
+              "oewn_synset_id": null,
+              "remediation_version": "phase-6.2.16-v2.0",
+              "remediation_method": "contextual_headword_sense_draft_v2",
+              "remediation_timestamp": "2026-09-26T14:34:18.845Z",
+              "candidate_provenance": {
+                "source": "glova_contextual_thai_drafter_v2",
+                "method": "contextual_headword_sense_draft_v2",
+                "quality_gate_passed": true,
+                "quality_gate_issues": []
+              },
+              "review_status": "AI_DRAFT",
+              "human_review_required": true
+            },
+            "ipa_provenance": {
+              "status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+              "source": "cmudict",
+              "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+              "source_version": "0.7b",
+              "license": "BSD-2-Clause",
+              "original_id": "cmudict:0.7b:will:line:9585",
+              "arpabet": "W IH1 L",
+              "variants_ipa": [
+                "/wɪl/",
+                "/wəl/"
+              ],
+              "transformation_method": "cmudict_arpabet_to_ipa_v1"
+            },
+            "example_provenance": {
+              "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+              "source": "glova_offline_example_drafter_v1",
+              "source_version": "phase-6.2.10-v1",
+              "method": "offline_ai_assisted_sense_pos_drafter_v1",
+              "sense_context_used": "modal auxiliary verb expressing",
+              "is_original_generated": true,
+              "cefr_certified": false,
+              "above_level_words": []
+            },
+            "previous_drafts": [
+              {
+                "field": "meaning_th",
+                "value": "กริยาช่วยใช้แสดงความเป็นไปได้ ความจำเป็น ความสามารถ หรือการขออนุญาตการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+                "source": "glova_offline_thai_sense_drafter_v1",
+                "review_status": "AI_DRAFT",
+                "archived_at": "2026-09-26T14:34:18.845Z",
+                "reason": "DETECTED_SYNTHETIC_TEMPLATE",
+                "detection_reasons": [
+                  "Contains banned synthetic boilerplate phrase: \"ตามนิยามเฉพาะของความหมายนี้\""
+                ]
+              }
+            ],
+            "remediation": {
+              "field": "meaning_th",
+              "remediated": true,
+              "version": "phase-6.2.16-v2.0",
+              "method": "contextual_headword_sense_draft_v2",
+              "source": "glova_contextual_thai_drafter_v2",
+              "timestamp": "2026-09-26T14:34:18.845Z",
+              "original_draft": "กริยาช่วยใช้แสดงความเป็นไปได้ ความจำเป็น ความสามารถ หรือการขออนุญาตการใช้คำตามหน้าที่ทางไวยากรณ์ในประโยคภาษาอังกฤษ ตามนิยามเฉพาะของความหมายนี้",
+              "quality_gate_passed": true,
+              "quality_gate_issues": [],
+              "human_review_required": true
+            }
+          },
+          "known_quality_concerns": [
+            "Closed-class functional POS (modal_auxiliary) requires syntactic complementation frame review",
+            "Dual epistemic (probability/inference) vs deontic (permission/obligation/ability) modal readings for \"will\".",
+            "Select primary CEFR-aligned modal sense (ability/permission/request vs deduction) and verify Thai pre-verbal auxiliary gloss."
+          ]
+        },
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "required_submission_metadata": {
+          "reviewer_id": "REQUIRED (operational identifier only; not cryptographic proof of human existence)",
+          "rationale": "REQUIRED (minimum 5 characters explaining linguistic/pedagogical decision)",
+          "timestamp": "REQUIRED (ISO-8601 UTC timestamp)",
+          "transaction_id": "REQUIRED (unique rev_txn_* identifier)"
+        },
+        "reviewer_decision": null,
+        "reviewer_id": null,
+        "reviewed_at": null,
+        "review_rationale": null,
+        "transaction_id": null,
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "human_review_required": true
+      }
+    ]
+  },
+  "human_decision_interface_validation": {
+    "required_fields": [
+      "word",
+      "pos",
+      "cefr",
+      "english_meaning",
+      "thai_meaning",
+      "ipa",
+      "example_sentence",
+      "lexical_source",
+      "sense_evidence",
+      "provenance",
+      "known_quality_concerns"
+    ],
+    "allowed_dispositions": [
+      "APPROVE",
+      "EDIT_REQUIRED",
+      "HOLD"
+    ],
+    "all_15_records_valid": true
+  },
+  "atomic_integrity_and_rollback_verification": {
+    "live_transaction_ids_recorded": [],
+    "sandbox_verification": {
+      "rollback_on_failure_verified": true,
+      "zero_partial_writes_on_failure": true,
+      "zero_phantom_ledger_events_on_failure": true,
+      "approve_transition_verified": true,
+      "edit_required_preserves_previous_values": true,
+      "hold_transition_verified": true,
+      "cross_file_consistency_verified": true,
+      "sandbox_transaction_ids": [
+        "rev_txn_mujddwxk_1a7c0aca",
+        "rev_txn_mujddx1h_36a796f3",
+        "rev_txn_mujddx4s_4d17e7d0"
+      ]
+    }
+  },
+  "quality_analysis": {
+    "pilot_sample_size": 15,
+    "real_human_decisions_received_count": 0,
+    "observed_human_decision_rates": {
+      "approval_rate_pct": 0,
+      "edit_required_rate_pct": 0,
+      "hold_rate_pct": 0,
+      "pending_awaiting_human_rate_pct": 100
+    },
+    "pre_review_diagnostic_profile_on_15_pilot_units": {
+      "review_ready_baseline_units": 5,
+      "edit_required_baseline_units": 5,
+      "special_syntax_baseline_units": 5
+    },
+    "defect_category_analysis": {
+      "common_linguistic_defects": [
+        "Raw OEWN corpus clauses lacking sentence-initial capitalization and terminal punctuation in open-class EDIT_REQUIRED items",
+        "Sub-4-word telegraphic phrase fragments in raw OEWN example strings",
+        "Synthetic boilerplate example sentences in legacy fallback items and closed-class drafts",
+        "Generic meta-linguistic Thai placeholder glosses (\"ความหมายและบทบาทตามหน้าที่ทางภาษา\") on ungrounded closed-class items"
+      ],
+      "example_sentence_defects": {
+        "affected_pilot_units_count": 10,
+        "review_ready_clean_examples_count": 5,
+        "specific_findings": [
+          "ago|adverb|A1|sense:1 — lowercase initial character (\"sixty years ago my grandfather came to the U.S.\")",
+          "actor|noun|A1|sense:1 — missing terminal punctuation (\"His father was a famous actor\")",
+          "dress|noun|A1|sense:1 — lowercase start + missing terminal punctuation (\"fastidious about his dress\")",
+          "add|verb|A1|sense:1 — sub-4-word fragment + lowercase + missing period (\"add the numbers\")",
+          "autumn|noun|A1|sense:1 — synthetic boilerplate template (\"In everyday conversation, speakers often use autumn to express season between summer and winter.\")",
+          "5 SPECIAL_SYNTAX units — contain synthetic instructor/workshop draft templates requiring authentic A1/A2 learner examples"
+        ]
+      },
+      "thai_meaning_defects": {
+        "open_class_grounded_defects_count": 0,
+        "closed_class_ungrounded_defects_count": 3,
+        "specific_findings": [
+          "10/10 open-class pilot units (5 REVIEW_READY + 5 EDIT_REQUIRED) have clean, accurate Thai glosses from GLOVA_CURATED_REGISTRY",
+          "3/5 closed-class SPECIAL_SYNTAX pilot units (all, another, and) still carry generic meta-linguistic Thai text (\"ความหมายและบทบาทตามหน้าที่ทางภาษา\") requiring human syntactic glossing"
+        ]
+      },
+      "pos_defects": {
+        "open_class_pos_mismatches_count": 0,
+        "closed_class_functional_isolation_count": 5,
+        "specific_findings": [
+          "10/10 open-class pilot units are 100% POS_ALIGNED with their grounded lexical entries",
+          "5/5 closed-class pilot units (preposition, pronoun, determiner, conjunction, modal_auxiliary) are isolated from open-class semantic heuristics"
+        ]
+      },
+      "sense_defects": {
+        "open_class_sense_conflicts_count": 0,
+        "closed_class_polysemy_concerns_count": 5,
+        "specific_findings": [
+          "10/10 open-class pilot units have verified OEWN synset and English gloss alignment",
+          "5/5 closed-class pilot units require complementation frame disambiguation (e.g., determiner vs pronoun distribution for \"all\" and \"another\"; epistemic vs deontic modality for \"can\")"
+        ]
+      },
+      "cefr_compatibility_concerns": {
+        "incompatible_units_count": 0,
+        "specific_findings": [
+          "15/15 pilot units are A1/A2 foundational items compatible with Glova authoritative CEFR assignments; external lexical sources never overwrite Glova CEFR levels"
+        ]
+      },
+      "special_syntax_issues": {
+        "isolated_pilot_units_count": 5,
+        "categories_represented": [
+          "preposition",
+          "pronoun",
+          "determiner",
+          "conjunction",
+          "modal_auxiliary"
+        ],
+        "specific_findings": [
+          "about (preposition, A1): requires P + NP oblique complementation frame and natural A1 example",
+          "all (pronoun, A1): requires pronominal vs determiner distribution note and natural Thai quantifier/pronoun gloss",
+          "another (determiner, A1): requires singular countable noun restriction (another + N_sg) vs Thai post-nominal classifier structure (อีก...หนึ่ง)",
+          "and (conjunction, A1): requires symmetric phrasal/clausal coordination example",
+          "can (modal_auxiliary, A1): requires primary A1 ability/permission modal sense selection vs epistemic deduction"
+        ]
+      }
+    },
+    "non_extrapolation_statement": "STRICT NON-EXTRAPOLATION RULE: These 15-record pilot observations and rates apply ONLY to this controlled diagnostic sample and MUST NOT be extrapolated to the full 10,000-unit vocabulary inventory."
+  },
+  "readiness_before_and_after": {
+    "before": {
+      "active_curated_db": 21,
+      "human_approved_staging": 7,
+      "learner_ready": 28,
+      "target": 10000,
+      "gap": 9972,
+      "status": "NOT_READY",
+      "user_testing_authorized": false
+    },
+    "after": {
+      "active_curated_db": 21,
+      "human_approved_staging": 7,
+      "learner_ready": 28,
+      "target": 10000,
+      "gap": 9972,
+      "status": "NOT_READY",
+      "user_testing_authorized": false
+    }
+  },
+  "production_safety": {
+    "production_supabase_mutations": 0,
+    "active_dataset_insertions": 0,
+    "live_ledger_production_reviews": 10,
+    "live_ledger_quarantined_test_events": 13
+  }
+}

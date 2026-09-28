@@ -35,6 +35,13 @@ import {
   FileText,
   HelpCircle,
 } from 'lucide-react';
+import {
+  GlovaButton,
+  GlovaCard,
+  GlovaBadge,
+  GlovaProgress,
+  GlovaFeedbackBubble,
+} from '../ui';
 
 interface MockExamViewProps {
   onExamSubmitted: (cambridgeScore: number) => void;
@@ -406,7 +413,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return (
       <div className="w-full max-w-4xl mx-auto space-y-6 pb-12">
         {/* Header Hero Banner */}
-        <div className="rounded-2xl bg-card border border-border/70 p-6 sm:p-8 shadow-xs text-center space-y-4">
+        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mx-auto">
             <GraduationCap className="w-7 h-7" />
           </div>
@@ -419,6 +426,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </p>
           </div>
 
+          <GlovaFeedbackBubble
+            currentSkill="reading"
+            customTip="แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ"
+          />
+
           {/* Official Cambridge Disclaimer */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/40 border border-border/60 text-[11px] text-muted-foreground text-left max-w-xl mx-auto">
             <HelpCircle className="w-4 h-4 shrink-0 text-muted-foreground" />
@@ -426,7 +438,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications
             </span>
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Guest Mode Auth Required Warning Banner */}
         {authStatus !== 'authenticated' && (
@@ -441,13 +453,14 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               </div>
             </div>
             {onOpenProfile && (
-              <button
+              <GlovaButton
+                variant="primary"
+                size="sm"
                 onClick={onOpenProfile}
-                className="w-full sm:w-auto px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-semibold shrink-0 hover:bg-primary/90 transition-all flex items-center justify-center gap-1.5 touch-target shadow-xs"
               >
-                <LogIn className="w-3.5 h-3.5" />
+                <LogIn className="w-3.5 h-3.5 mr-1" />
                 <span>เข้าสู่ระบบ / สมัครสมาชิก</span>
-              </button>
+              </GlovaButton>
             )}
           </div>
         )}
@@ -463,21 +476,27 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {catalogExams.map((exam) => {
               const isSelected = selectedExamId === exam.id;
               return (
-                <div
+                <GlovaCard
                   key={exam.id}
+                  variant={isSelected ? 'elevated' : 'interactive'}
                   onClick={() => setSelectedExamId(exam.id)}
-                  className={`p-5 rounded-2xl bg-card border cursor-pointer transition-all flex flex-col justify-between shadow-xs ${
+                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between ${
                     isSelected
-                      ? 'border-primary ring-1 ring-primary bg-primary/5'
-                      : 'border-border/60 hover:border-border'
+                      ? 'border-primary ring-2 ring-primary/40 bg-primary/5'
+                      : ''
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                        {exam.exam_code} ({exam.target_cefr})
-                      </span>
-                      <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <div className="flex items-center gap-1.5">
+                        <GlovaBadge variant="accent">
+                          {exam.exam_code}
+                        </GlovaBadge>
+                        <GlovaBadge variant="outline">
+                          CEFR {exam.target_cefr}
+                        </GlovaBadge>
+                      </div>
+                      <span className="text-xs text-muted-foreground flex items-center gap-1 font-mono">
                         <Clock className="w-3.5 h-3.5" />
                         <span>{exam.total_duration_minutes} นาที</span>
                       </span>
@@ -491,30 +510,28 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-border/40 space-y-1 text-xs text-muted-foreground">
-                      <p>• เกณฑ์ผ่าน: {exam.passing_score} คะแนนขึ้นไป</p>
-                      <p>• มาตรฐาน CEFR: ระดับ {exam.target_cefr}</p>
+                      <p>• เกณฑ์ผ่าน: {exam.passing_score}% ขึ้นไป</p>
+                      <p>• มาตรฐานเป้าหมาย: CEFR {exam.target_cefr}</p>
                     </div>
                   </div>
 
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedExamId(exam.id);
-                      handleStartExam(exam.id);
-                    }}
-                    disabled={isStartingExam}
-                    className="mt-5 w-full py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-xs shadow-xs hover:bg-primary/90 transition-all touch-target flex items-center justify-center gap-2"
-                  >
-                    {isStartingExam && selectedExamId === exam.id ? (
-                      <>
-                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        <span>กำลังจัดเตรียมข้อสอบ...</span>
-                      </>
-                    ) : (
-                      <span>เริ่มทำข้อสอบชุดนี้</span>
-                    )}
-                  </button>
-                </div>
+                  <div className="mt-5">
+                    <GlovaButton
+                      variant="primary"
+                      size="sm"
+                      fullWidth
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedExamId(exam.id);
+                        handleStartExam(exam.id);
+                      }}
+                      disabled={isStartingExam}
+                      isLoading={isStartingExam && selectedExamId === exam.id}
+                    >
+                      เริ่มทำข้อสอบชุดนี้
+                    </GlovaButton>
+                  </div>
+                </GlovaCard>
               );
             })}
           </div>
@@ -533,7 +550,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return (
       <div className="w-full max-w-4xl mx-auto space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Main Score Card */}
-        <div className="rounded-2xl bg-card border border-border/70 p-6 sm:p-8 text-center shadow-xs space-y-4">
+        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div
             className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto ${
               isPassed
@@ -546,21 +563,15 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
           <div>
             <div className="flex items-center justify-center gap-2 flex-wrap mb-2">
-              <span
-                className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
-                  isPassed
-                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-                }`}
-              >
+              <GlovaBadge variant={isPassed ? 'success' : 'warning'}>
                 {isPassed ? t('mock_exam.passed') : t('mock_exam.needs_improvement')}
-              </span>
+              </GlovaBadge>
 
               {isTimedOut && (
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
+                <GlovaBadge variant="danger">
+                  <Clock className="w-3 h-3 inline mr-1" />
                   <span>{t('mock_exam.timed_out')}</span>
-                </span>
+                </GlovaBadge>
               )}
             </div>
 
@@ -570,7 +581,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">
               ระดับ CEFR ที่ประเมินได้: <span className="font-bold text-primary">{examResult.estimated_cefr_level}</span> • 
               คะแนนปรนัย {examResult.objective_score} จาก {examResult.objective_total_marks} ข้อ ({examResult.objective_percentage}%) • 
-              เกณฑ์ผ่าน {examResult.exam.passing_score} คะแนน
+              เกณฑ์ผ่าน {examResult.exam.passing_score}%
             </p>
           </div>
 
@@ -589,31 +600,33 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-            <button
+            <GlovaButton
+              variant="primary"
+              size="md"
               onClick={() => handleStartExam(examResult.exam.id)}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-xs shadow-xs hover:bg-primary/90 transition-all touch-target"
             >
               ทำข้อสอบชุดนี้อีกครั้ง
-            </button>
-            <button
+            </GlovaButton>
+            <GlovaButton
+              variant="outline"
+              size="md"
               onClick={() => {
                 setIsExamStarted(false);
                 setIsSubmitted(false);
                 setExamResult(null);
                 setSessionToken(null);
               }}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-border text-foreground hover:bg-muted font-medium text-xs transition-colors touch-target"
             >
               กลับสู่หน้ารายการข้อสอบ
-            </button>
+            </GlovaButton>
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Section & Skill Diagnostics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Section Breakdown */}
           {examResult.section_breakdown && Object.keys(examResult.section_breakdown).length > 0 && (
-            <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
+            <GlovaCard className="p-5 space-y-3">
               <h3 className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
                 <Layers className="w-4 h-4 text-primary" />
                 <span>{t('mock_exam.section_breakdown')}</span>
@@ -623,23 +636,18 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                   <div key={secName} className="p-3 rounded-xl bg-muted/30 border border-border/40 text-xs">
                     <div className="flex items-center justify-between font-medium text-foreground mb-1">
                       <span>{secName}</span>
-                      <span>{secData.raw_score} / {secData.total_marks} ({secData.percentage}%)</span>
+                      <span className="font-mono">{secData.raw_score} / {secData.total_marks} ({secData.percentage}%)</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-muted overflow-hidden">
-                      <div
-                        className="h-full bg-primary rounded-full transition-all duration-500"
-                        style={{ width: `${Math.min(100, secData.percentage)}%` }}
-                      />
-                    </div>
+                    <GlovaProgress value={secData.percentage} showLabel={false} />
                   </div>
                 ))}
               </div>
-            </div>
+            </GlovaCard>
           )}
 
           {/* Skill Breakdown */}
           {examResult.skill_breakdown && Object.keys(examResult.skill_breakdown).length > 0 && (
-            <div className="rounded-2xl bg-card border border-border/70 p-5 shadow-xs space-y-3">
+            <GlovaCard className="p-5 space-y-3">
               <h3 className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary" />
                 <span>{t('mock_exam.skill_breakdown')}</span>
@@ -649,18 +657,13 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                   <div key={skillName} className="p-3 rounded-xl bg-muted/30 border border-border/40 text-xs">
                     <div className="flex items-center justify-between font-medium text-foreground mb-1 capitalize">
                       <span>{skillName}</span>
-                      <span>{skData.correct_questions} / {skData.total_questions} ข้อ ({skData.percentage}%)</span>
+                      <span className="font-mono">{skData.correct_questions} / {skData.total_questions} ข้อ ({skData.percentage}%)</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-muted overflow-hidden">
-                      <div
-                        className="h-full bg-emerald-500 rounded-full transition-all duration-500"
-                        style={{ width: `${Math.min(100, skData.percentage)}%` }}
-                      />
-                    </div>
+                    <GlovaProgress value={skData.percentage} showLabel={false} />
                   </div>
                 ))}
               </div>
-            </div>
+            </GlovaCard>
           )}
         </div>
 
@@ -670,7 +673,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {examResult.disclaimer}
           </p>
           <p className="text-[11px]">
-            การประเมินนี้อ้างอิงจากเกณฑ์การเทียบเคียงของแพลตฟอร์ม (is_official: false) เพื่อใช้เป็นแนวทางในการฝึกฝนทักษะเท่านั้น
+            การประเมินนี้อ้างอิงจากเกณฑ์การเทียบเคียงของแพลตฟอร์ม เพื่อใช้เป็นแนวทางในการฝึกฝนทักษะเท่านั้น ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications
           </p>
         </div>
       </div>
@@ -778,7 +781,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </div>
 
             {/* Current Question View */}
-            <div className="p-5 rounded-2xl bg-card border border-border/70 space-y-4 shadow-xs">
+            <GlovaCard variant="elevated" className="p-5 space-y-4">
               <h3 className="text-sm sm:text-base font-semibold text-foreground break-word-safe">
                 {currentQuestion.promptTh}
               </h3>
@@ -833,44 +836,38 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                   />
                 </div>
               )}
-            </div>
+            </GlovaCard>
 
             {/* Bottom Pagination Buttons */}
             <div className="flex items-center justify-between pt-2">
-              <button
+              <GlovaButton
+                variant="outline"
+                size="sm"
                 onClick={() => setCurrentQuestionIdx((prev) => Math.max(0, prev - 1))}
                 disabled={currentQuestionIdx === 0}
-                className={`px-4 py-2 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors touch-target ${
-                  currentQuestionIdx === 0
-                    ? 'opacity-40 cursor-not-allowed border-border text-muted-foreground'
-                    : 'hover:bg-muted text-foreground border-border'
-                }`}
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4 mr-1" />
                 <span>ข้อก่อนหน้า</span>
-              </button>
+              </GlovaButton>
 
-              <button
+              <GlovaButton
+                variant="outline"
+                size="sm"
                 onClick={() =>
                   setCurrentQuestionIdx((prev) =>
                     Math.min(questions.length - 1, prev + 1)
                   )
                 }
                 disabled={currentQuestionIdx === questions.length - 1}
-                className={`px-4 py-2 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors touch-target ${
-                  currentQuestionIdx === questions.length - 1
-                    ? 'opacity-40 cursor-not-allowed border-border text-muted-foreground'
-                    : 'hover:bg-muted text-foreground border-border'
-                }`}
               >
                 <span>ข้อถัดไป</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </GlovaButton>
             </div>
           </div>
 
           {/* Right Column: Question Navigator Palette */}
-          <div className="lg:col-span-4 rounded-xl bg-card border border-border/70 p-4 shadow-xs space-y-4">
+          <GlovaCard className="lg:col-span-4 p-4 space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
               <span className="text-xs font-semibold text-foreground">{t('mock_exam.question_palette')}</span>
               <span className="text-xs text-muted-foreground font-mono">
@@ -932,7 +929,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 <span>{t('mock_exam.status_unanswered')}</span>
               </div>
             </div>
-          </div>
+          </GlovaCard>
         </div>
       ) : (
         <div className="py-16 text-center space-y-3">
@@ -944,7 +941,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
       {/* Submit Confirmation Dialog Modal */}
       {isConfirmSubmitOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="w-full max-w-md rounded-2xl bg-card border border-border p-6 shadow-xl space-y-4">
+          <GlovaCard variant="elevated" className="w-full max-w-md p-6 space-y-4">
             <div className="flex items-center gap-3 text-amber-500">
               <AlertTriangle className="w-6 h-6 shrink-0" />
               <h3 className="font-bold text-base text-foreground">ยืนยันการส่งข้อสอบ</h3>
@@ -969,28 +966,24 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </p>
 
             <div className="flex items-center justify-end gap-3 pt-2">
-              <button
+              <GlovaButton
+                variant="outline"
+                size="sm"
                 onClick={() => setIsConfirmSubmitOpen(false)}
-                className="px-4 py-2 rounded-xl border border-border text-foreground hover:bg-muted text-xs font-medium transition-colors touch-target"
               >
                 กลับไปทำต่อ
-              </button>
-              <button
+              </GlovaButton>
+              <GlovaButton
+                variant="success"
+                size="sm"
                 onClick={() => handleSubmitExam(false)}
                 disabled={isSubmitting}
-                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition-all touch-target flex items-center gap-1.5"
+                isLoading={isSubmitting}
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                    <span>กำลังส่งข้อสอบ...</span>
-                  </>
-                ) : (
-                  <span>ยืนยันส่งข้อสอบ</span>
-                )}
-              </button>
+                ยืนยันส่งข้อสอบ
+              </GlovaButton>
             </div>
-          </div>
+          </GlovaCard>
         </div>
       )}
     </div>

@@ -1,0 +1,406 @@
+{
+  "phase": "6.2.39-R1",
+  "title": "Phase 6.2.39-R1 — Full-Universe Routing Logic Audit Report",
+  "generated_at": "2026-09-28T09:49:51.168Z",
+  "execution_time_ms": 1473,
+  "final_verdict": "ROUTING_LOGIC_CONFIRMED",
+  "verdict_constraints": {
+    "is_production_ready": false,
+    "is_user_testing_ready": false,
+    "disclaimer": "ROUTING_LOGIC_CONFIRMED validates the mathematical and policy integrity of the multi-dimensional routing matrix. It does NOT authorize production activation or user testing."
+  },
+  "governance_audit": {
+    "total_universe_denominator": 10021,
+    "production_db_writes": 0,
+    "schema_changes": 0,
+    "lifecycle_promotions": 0,
+    "learner_ready_locked": 83,
+    "learner_ready_breakdown": {
+      "active_production": 21,
+      "approved_staging": 62
+    },
+    "readiness_gap": 9917,
+    "production_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "invariants_verified": true
+  },
+  "decision_tree_audit": {
+    "step_1_semantic_evaluation": "evaluateCandidateSenses() computes top_score (S1), second_score (S2), and margin (Delta = S1 - S2). S1 >= 0.65 and Delta >= 0.15 => SEMANTIC_MATCH_CONFIDENT; S1 >= 0.40 and not confident => SEMANTIC_MATCH_AMBIGUOUS; else SEMANTIC_MATCH_NO_EVIDENCE.",
+    "step_2_auto_candidate_gate": "Requires ALL of: isSemConf (S1 >= 0.65, Delta >= 0.15) AND hasThai AND hasExample (EXAMPLE_EXACT or EXAMPLE_INFLECTED) AND hasIpaConfirmed (CONFIRMED) AND hasSense AND !hasCefrConflict AND !hasSourceConflict AND hasLexicon. Zero hidden blockers permitted.",
+    "step_3_review_required_gate": "Requires: !hasCefrConflict AND !hasSourceConflict AND hasThai AND hasSense AND hasLexicon AND (isSemConf || isSemAmb) AND (hasExample || example_status === EXAMPLE_REVIEW). Filters out evidence-absence gaps, sending only genuine editorial ambiguities to human queue.",
+    "step_4_hold_gate": "Fail-closed fallback for all units failing Steps 2 and 3 (missing examples, weak semantics S1 < 0.40, CEFR conflicts, missing Thai translations, or missing WordNet synsets).",
+    "step_5_primary_blocker_priority": "Deterministic cascading hierarchy: CEFR_CONFLICT > THAI_NOT_FOUND > SENSE_NOT_FOUND > EXAMPLE_NOT_FOUND > SEMANTIC_NO_EVIDENCE > POLYSEMY_UNRESOLVED > IPA_NOT_FOUND > IPA_MULTI_VARIANT > LEXICON_NOT_FOUND > SOURCE_CONFLICT > OTHER_BLOCKER > NONE."
+  },
+  "auto_candidate_audit": {
+    "total_auto_candidate": 342,
+    "every_gate_passed_count": 342,
+    "hidden_blocker_count": 0,
+    "expected_hidden_blocker_count": 0,
+    "compliance_status": "PASSED_ZERO_HIDDEN_BLOCKERS",
+    "violations": [],
+    "gates_verified": [
+      "semantic_S1 >= 0.65",
+      "semantic_margin >= 0.15",
+      "thai_evidence_passes (hasThai = true, thai_status != THAI_NOT_FOUND)",
+      "attested_example_passes (EXAMPLE_EXACT or EXAMPLE_INFLECTED)",
+      "ipa_gate_passes (CONFIRMED)",
+      "sense_evidence_exists (hasSense = true)",
+      "cefr_conflict_absent",
+      "source_conflict_absent",
+      "lexical_evidence_exists",
+      "unresolved_hard_blocker_absent",
+      "source_provenance_attached",
+      "is_synthetic = false (AI draft isolation verified)"
+    ]
+  },
+  "review_required_vs_hold_audit": {
+    "transition_matrix_9_cells": {
+      "AUTO_READY -> AUTO_CANDIDATE": 209,
+      "AUTO_READY -> REVIEW_REQUIRED": 585,
+      "AUTO_READY -> HOLD": 1035,
+      "REVIEW_REQUIRED -> AUTO_CANDIDATE": 133,
+      "REVIEW_REQUIRED -> REVIEW_REQUIRED": 606,
+      "REVIEW_REQUIRED -> HOLD": 3712,
+      "HOLD -> AUTO_CANDIDATE": 0,
+      "HOLD -> REVIEW_REQUIRED": 5,
+      "HOLD -> HOLD": 3736
+    },
+    "transition_matrix_sum_p36": {
+      "AUTO_READY": 1829,
+      "REVIEW_REQUIRED": 4451,
+      "HOLD": 3741,
+      "total": 10021
+    },
+    "transition_matrix_sum_p39": {
+      "AUTO_CANDIDATE": 342,
+      "REVIEW_REQUIRED": 1196,
+      "HOLD": 8483,
+      "total": 10021
+    },
+    "review_to_hold_decomposition": {
+      "total_units": 3712,
+      "primary_blockers": {
+        "SEMANTIC_NO_EVIDENCE": 1545,
+        "EXAMPLE_NOT_FOUND": 1992,
+        "SENSE_NOT_FOUND": 175
+      },
+      "all_blocker_flags": {
+        "POLYSEMY_UNRESOLVED": 3111,
+        "SEMANTIC_NO_EVIDENCE": 2998,
+        "EXAMPLE_NOT_FOUND": 2080,
+        "IPA_MULTI_VARIANT": 85,
+        "IPA_NOT_FOUND": 20,
+        "SENSE_NOT_FOUND": 175
+      },
+      "policy_nature": {
+        "evidence_absence_count": 3712,
+        "evidence_absence_pct": "100.00%",
+        "actionable_ambiguity_count": 0,
+        "actionable_ambiguity_pct": "0.00%",
+        "assessment": "All 3,712 units moved from REVIEW_REQUIRED to HOLD were caused by genuine evidence absence (1,992 missing examples, 1,545 missing semantic definition overlap S1 < 0.40, and 175 missing senses). Not a single unit was moved into HOLD merely to reduce human workload."
+      }
+    },
+    "auto_to_hold_decomposition": {
+      "total_units": 1035,
+      "root_cause": "SEMANTIC_NO_EVIDENCE: All 1,035 units were monosemous dictionary entries accepted by Phase 6.2.36 that failed the calibrated definition keyword overlap gate (S1 < 0.40). Correctly quarantined to prevent ungrounded single-translation hallucination."
+    },
+    "auto_to_review_decomposition": {
+      "total_units": 585,
+      "root_cause": "SEMANTIC_MATCH_AMBIGUOUS: All 585 units achieved moderate semantic scores (0.40 <= S1 < 0.65 or margin < 0.15). Properly routed to human review rather than automatic promotion."
+    }
+  },
+  "example_gap_audit": {
+    "total_primary_example_not_found": 4463,
+    "taxonomy_breakdown": {
+      "SOURCE_DATA_GAP": 1729,
+      "TRUE_SOURCE_GAP": 697,
+      "QUALITY_REJECTED": 1193,
+      "MATCHER_LIMITATION": 36,
+      "MORPHOLOGY_UNRESOLVED": 808,
+      "OTHER": 0
+    },
+    "taxonomy_percentages": {
+      "SOURCE_DATA_GAP": "38.74%",
+      "QUALITY_REJECTED": "26.73%",
+      "MORPHOLOGY_UNRESOLVED": "18.10%",
+      "TRUE_SOURCE_GAP": "15.62%",
+      "MATCHER_LIMITATION": "0.81%",
+      "OTHER": "0.00%"
+    },
+    "key_findings": [
+      "MATCHER_LIMITATION accounts for only 36 units (0.81%). The regex and tokenization matcher logic is fundamentally robust.",
+      "SOURCE_DATA_GAP accounts for 1,729 units (38.74%): WordNet synsets contain 0 example sentences.",
+      "QUALITY_REJECTED accounts for 1,193 units (26.73%): WordNet example fragments fail minimum length (4 words) or punctuation rules.",
+      "MORPHOLOGY_UNRESOLVED accounts for 808 units (18.10%): Sentences contain inflected forms that rule-based lemmatizer did not map back to headwords.",
+      "TRUE_SOURCE_GAP accounts for 697 units (15.62%): WordNet examples illustrate a co-synonym, leaving the target lemma unattested."
+    ],
+    "samples": {
+      "SOURCE_DATA_GAP": [
+        {
+          "word": "computer",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "WordNet synsets have 0 example sentences"
+        },
+        {
+          "word": "conversation",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "WordNet synsets have 0 example sentences"
+        },
+        {
+          "word": "hotel",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "WordNet synsets have 0 example sentences"
+        },
+        {
+          "word": "leader",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "WordNet synsets have 0 example sentences"
+        },
+        {
+          "word": "may",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "WordNet synsets have 0 example sentences"
+        }
+      ],
+      "TRUE_SOURCE_GAP": [
+        {
+          "word": "controversy",
+          "pos": "noun",
+          "cefr": "B2",
+          "reason": "Synset example illustrates a co-synonym, not target lemma"
+        },
+        {
+          "word": "ok",
+          "pos": "adjective",
+          "cefr": "A1",
+          "reason": "Synset example illustrates a co-synonym, not target lemma"
+        },
+        {
+          "word": "also",
+          "pos": "adverb",
+          "cefr": "A1",
+          "reason": "Synset example illustrates a co-synonym, not target lemma"
+        },
+        {
+          "word": "husband",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "Synset example illustrates a co-synonym, not target lemma"
+        },
+        {
+          "word": "maybe",
+          "pos": "adverb",
+          "cefr": "A1",
+          "reason": "Synset example illustrates a co-synonym, not target lemma"
+        }
+      ],
+      "QUALITY_REJECTED": [
+        {
+          "word": "delicious",
+          "pos": "adjective",
+          "cefr": "A1",
+          "reason": "Example failed length (<4 or >35 words) or terminal punctuation check"
+        },
+        {
+          "word": "convenient",
+          "pos": "adjective",
+          "cefr": "A2",
+          "reason": "Example failed length (<4 or >35 words) or terminal punctuation check"
+        },
+        {
+          "word": "lucid",
+          "pos": "adjective",
+          "cefr": "C1",
+          "reason": "Example failed length (<4 or >35 words) or terminal punctuation check"
+        },
+        {
+          "word": "obsequious",
+          "pos": "adjective",
+          "cefr": "C2",
+          "reason": "Example failed length (<4 or >35 words) or terminal punctuation check"
+        },
+        {
+          "word": "food",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "Example failed length (<4 or >35 words) or terminal punctuation check"
+        }
+      ],
+      "MATCHER_LIMITATION": [
+        {
+          "word": "hair",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "Word present in synset example but rejected by matcher regex"
+        },
+        {
+          "word": "good-looking",
+          "pos": "adjective",
+          "cefr": "A2",
+          "reason": "Word present in synset example but rejected by matcher regex"
+        },
+        {
+          "word": "brand-new",
+          "pos": "adjective",
+          "cefr": "B1",
+          "reason": "Word present in synset example but rejected by matcher regex"
+        },
+        {
+          "word": "face-to-face",
+          "pos": "adjective",
+          "cefr": "B1",
+          "reason": "Word present in synset example but rejected by matcher regex"
+        },
+        {
+          "word": "full-time",
+          "pos": "adjective",
+          "cefr": "B1",
+          "reason": "Word present in synset example but rejected by matcher regex"
+        }
+      ],
+      "MORPHOLOGY_UNRESOLVED": [
+        {
+          "word": "scrutinize",
+          "pos": "verb",
+          "cefr": "C1",
+          "reason": "Inflected form in sentence not resolved to lemma"
+        },
+        {
+          "word": "course",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "Inflected form in sentence not resolved to lemma"
+        },
+        {
+          "word": "front",
+          "pos": "adjective",
+          "cefr": "A1",
+          "reason": "Inflected form in sentence not resolved to lemma"
+        },
+        {
+          "word": "rest",
+          "pos": "noun",
+          "cefr": "B1",
+          "reason": "Inflected form in sentence not resolved to lemma"
+        },
+        {
+          "word": "sentence",
+          "pos": "noun",
+          "cefr": "A1",
+          "reason": "Inflected form in sentence not resolved to lemma"
+        }
+      ],
+      "OTHER": []
+    }
+  },
+  "unsupported_projection_audit": {
+    "previous_statement": "Phase 6.2.40 could potentially unlock 4,000–7,000 units by expanding example corpora.",
+    "audit_finding": "UNSUPPORTED_PROJECTION",
+    "empirical_basis": {
+      "total_units_with_example_blocker": 5308,
+      "sole_blocker_example_not_found": 365,
+      "recoverable_immediately_to_auto_candidate": 365,
+      "multi_blocker_units_with_example_gap": 4943,
+      "multi_blocker_breakdown": {
+        "with_semantic_gap": 3001,
+        "with_polysemy_gap": 2519,
+        "with_thai_gap": 569
+      }
+    },
+    "rigorous_conclusion": "Example expansion in Phase 6.2.40 can directly unlock at most 365 units into AUTO_CANDIDATE. The remaining 4,943 units (93.1%) have co-occurring semantic or lexical deficiencies that will continue to block them in HOLD regardless of sentence availability."
+  },
+  "morphology_adversarial_suite": {
+    "total_pairs": 11,
+    "all_blocked": true,
+    "test_results": [
+      {
+        "lemma": "art",
+        "pos": "noun",
+        "sentence": "She wrote a comprehensive article on science.",
+        "target_derivative": "article",
+        "blocked": true
+      },
+      {
+        "lemma": "car",
+        "pos": "noun",
+        "sentence": "They bought a luxurious Persian carpet.",
+        "target_derivative": "carpet",
+        "blocked": true
+      },
+      {
+        "lemma": "care",
+        "pos": "verb",
+        "sentence": "Please be careful when handling hot liquids.",
+        "target_derivative": "careful",
+        "blocked": true
+      },
+      {
+        "lemma": "act",
+        "pos": "verb",
+        "sentence": "Immediate emergency action was taken.",
+        "target_derivative": "action",
+        "blocked": true
+      },
+      {
+        "lemma": "class",
+        "pos": "noun",
+        "sentence": "This is a classic example of baroque architecture.",
+        "target_derivative": "classic",
+        "blocked": true
+      },
+      {
+        "lemma": "day",
+        "pos": "noun",
+        "sentence": "The daylight illuminated the mountain peak.",
+        "target_derivative": "daylight",
+        "blocked": true
+      },
+      {
+        "lemma": "pan",
+        "pos": "noun",
+        "sentence": "Sudden panic spread through the market.",
+        "target_derivative": "panic",
+        "blocked": true
+      },
+      {
+        "lemma": "war",
+        "pos": "noun",
+        "sentence": "We must warn travelers about the storm.",
+        "target_derivative": "warn",
+        "blocked": true
+      },
+      {
+        "lemma": "fat",
+        "pos": "noun",
+        "sentence": "His father worked as an architect.",
+        "target_derivative": "father",
+        "blocked": true
+      },
+      {
+        "lemma": "dog",
+        "pos": "noun",
+        "sentence": "The religious dogma was questioned by scholars.",
+        "target_derivative": "dogma",
+        "blocked": true
+      },
+      {
+        "lemma": "bus",
+        "pos": "noun",
+        "sentence": "She started an international logistics business.",
+        "target_derivative": "business",
+        "blocked": true
+      }
+    ]
+  },
+  "dominant_bottleneck_and_next_phase": {
+    "rank_1_blocker": "EXAMPLE_NOT_FOUND (4,463 primary / 5,308 total)",
+    "rank_2_blocker": "SEMANTIC_NO_EVIDENCE (2,624 primary / 5,833 total)",
+    "rank_3_blocker": "POLYSEMY_UNRESOLVED (1,200 primary / 5,273 total)",
+    "data_driven_recommendation_for_phase_6240": "Dual-Track Evidence Expansion: 1) Ingest full Tatoeba corpus and OpenEdu corpus with morphology inflection expansion (targets 365 sole-blocker units + unblocks example requirements across 4,943 multi-blocker units), 2) Enrich lexical definition synonyms in LEXiTRON/Wiktionary to resolve SEMANTIC_NO_EVIDENCE."
+  }
+}

@@ -5,10 +5,12 @@ import { Header } from './common/Header';
 import { Sidebar, NavView } from './common/Sidebar';
 import { MobileBottomNav } from './common/MobileBottomNav';
 import { ProfileModal } from './common/ProfileModal';
+import { GlovaFeedbackBubble } from './ui/GlovaFeedbackBubble';
 import { useAuth } from '../context/AuthContext';
 import { useApp } from '../context/AppContext';
 import { saveUserProgress } from '../services/storageService';
 import { UserProgressState } from '../types';
+import { CEFRTier } from '@/lib/design-tokens/tokens';
 
 export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
@@ -97,6 +99,13 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
             saveUserProgress(updated);
           }
         }}
+      />
+
+      {/* Persistent Glova Feedback Bubble */}
+      <GlovaFeedbackBubble
+        currentView={currentView}
+        cefrLevel={progress.currentLevel as CEFRTier}
+        targetExam={progress.targetExam}
       />
     </div>
   );

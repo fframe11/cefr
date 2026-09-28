@@ -1,0 +1,5697 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-grounding-expansion-pilot-v1.json",
+  "phase": "PHASE_6_2_20_CONTROLLED_EXPANSION_PILOT",
+  "generated_at": "2026-09-28T16:33:32.774Z",
+  "sample_scope": {
+    "total_pilot_units": 200,
+    "a1_units": 100,
+    "a2_units": 100,
+    "closed_class_units_in_sample": 19
+  },
+  "metrics_before": {
+    "total_evaluated": 200,
+    "source_grounded": 2,
+    "no_lexical_source": 198,
+    "pos_aligned": 2,
+    "pos_suspect": 0,
+    "pos_unknown": 198,
+    "sense_aligned": 2,
+    "sense_ambiguous": 0,
+    "sense_conflict": 0,
+    "no_lexical_match": 198,
+    "cefr_compatible": 2,
+    "cefr_incompatible": 0,
+    "candidate_ready": 2,
+    "edit_required": 0,
+    "hold_candidate": 0,
+    "special_syntax_review_required": 0,
+    "unresolved": 198,
+    "human_review_required": 200
+  },
+  "metrics_after": {
+    "total_evaluated": 200,
+    "source_grounded": 21,
+    "no_lexical_source": 179,
+    "pos_aligned": 21,
+    "pos_suspect": 0,
+    "pos_unknown": 179,
+    "sense_aligned": 21,
+    "sense_ambiguous": 0,
+    "sense_conflict": 0,
+    "no_lexical_match": 179,
+    "cefr_compatible": 21,
+    "cefr_incompatible": 0,
+    "candidate_ready": 21,
+    "edit_required": 0,
+    "hold_candidate": 0,
+    "special_syntax_review_required": 19,
+    "unresolved": 160,
+    "human_review_required": 200
+  },
+  "delta_metrics": {
+    "source_grounded": 19,
+    "no_lexical_source": -19,
+    "pos_aligned": 19,
+    "pos_suspect": 0,
+    "pos_unknown": -19,
+    "sense_aligned": 19,
+    "sense_ambiguous": 0,
+    "sense_conflict": 0,
+    "no_lexical_match": -19,
+    "cefr_compatible": 19,
+    "cefr_incompatible": 0,
+    "candidate_ready": 19,
+    "edit_required": 0,
+    "hold_candidate": 0,
+    "special_syntax_review_required": 19,
+    "unresolved": -38
+  },
+  "measured_yield": {
+    "pilot_sample_size": 200,
+    "grounded_candidates_added": 19,
+    "grounded_candidate_yield_pct": 9.5,
+    "candidate_ready_units_added": 19,
+    "candidate_ready_yield_pct": 9.5,
+    "closed_class_segregated_count": 19,
+    "unresolved_reduction": 38
+  },
+  "decision_gate": {
+    "classification": "EXPANSION_VALIDATED",
+    "rationale": "Pilot demonstrated clean empirical yield: +19 grounded candidates and +19 candidate-ready units (+9.5% yield) with 0 POS defects on curated entries and strict isolation of 19 closed-class items.",
+    "next_phase_recommendation": "Proceed to Phase 6.2.21: Scaled A1/A2 Expansion with Dedicated Closed-Class Syntactic Review Packets."
+  },
+  "invariants_maintained": {
+    "active_curated_db": 21,
+    "human_approved_staging": 7,
+    "learner_ready": 28,
+    "target": 10000,
+    "gap": 9972,
+    "overall_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_supabase_mutations": 0,
+    "cefr_overwritten_by_lexical_source": false,
+    "human_review_required_pct": 100
+  },
+  "comparison_records": [
+    {
+      "pilot_sample_index": 1,
+      "learning_unit_key": "ago|adverb|A1|sense:1",
+      "word": "ago",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ที่ผ่านมา, ล่วงมาแล้ว, ก่อนหน้านี้",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 2,
+      "learning_unit_key": "food|noun|A1|sense:1",
+      "word": "food",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "อาหาร, ของกิน",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 3,
+      "learning_unit_key": "party|noun|A1|sense:1",
+      "word": "party",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 4,
+      "learning_unit_key": "business|noun|A1|sense:1",
+      "word": "business",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 5,
+      "learning_unit_key": "real|adverb|A1|sense:1",
+      "word": "real",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 6,
+      "learning_unit_key": "rain|verb|A1|sense:1",
+      "word": "rain",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 7,
+      "learning_unit_key": "hello|noun|A1|sense:1",
+      "word": "hello",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 8,
+      "learning_unit_key": "game|noun|A1|sense:1",
+      "word": "game",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 9,
+      "learning_unit_key": "picture|noun|A1|sense:1",
+      "word": "picture",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "รูปภาพ, ภาพวาด",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 10,
+      "learning_unit_key": "vacation|noun|A1|sense:1",
+      "word": "vacation",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 11,
+      "learning_unit_key": "bread|noun|A1|sense:1",
+      "word": "bread",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 12,
+      "learning_unit_key": "feed|noun|A1|sense:1",
+      "word": "feed",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 13,
+      "learning_unit_key": "map|noun|A1|sense:1",
+      "word": "map",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 14,
+      "learning_unit_key": "reporter|noun|A1|sense:1",
+      "word": "reporter",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 15,
+      "learning_unit_key": "vegetable|noun|A1|sense:1",
+      "word": "vegetable",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 16,
+      "learning_unit_key": "march|noun|A1|sense:1",
+      "word": "March",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 17,
+      "learning_unit_key": "corn|noun|A1|sense:1",
+      "word": "corn",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 18,
+      "learning_unit_key": "pizza|noun|A1|sense:1",
+      "word": "pizza",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 19,
+      "learning_unit_key": "jewelry|noun|A1|sense:1",
+      "word": "jewelry",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 20,
+      "learning_unit_key": "banana|noun|A1|sense:1",
+      "word": "banana",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 21,
+      "learning_unit_key": "grape|noun|A1|sense:1",
+      "word": "grape",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 22,
+      "learning_unit_key": "pants|noun|A1|sense:1",
+      "word": "pants",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 23,
+      "learning_unit_key": "grandfather|noun|A1|sense:1",
+      "word": "grandfather",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 24,
+      "learning_unit_key": "action|noun|A1|sense:1",
+      "word": "action",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "การกระทำ, การปฏิบัติ",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 25,
+      "learning_unit_key": "away|adverb|A1|sense:1",
+      "word": "away",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 26,
+      "learning_unit_key": "big|adjective|A1|sense:1",
+      "word": "big",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ใหญ่, โต",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 27,
+      "learning_unit_key": "brother|noun|A1|sense:1",
+      "word": "brother",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 28,
+      "learning_unit_key": "character|noun|A1|sense:1",
+      "word": "character",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 29,
+      "learning_unit_key": "come|verb|A1|sense:1",
+      "word": "come",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "มา, เดินทางมา",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 30,
+      "learning_unit_key": "dog|noun|A1|sense:1",
+      "word": "dog",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 31,
+      "learning_unit_key": "example|noun|A1|sense:1",
+      "word": "example",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 32,
+      "learning_unit_key": "find|verb|A1|sense:1",
+      "word": "find",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "พบ, หาพบ",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 33,
+      "learning_unit_key": "future|noun|A1|sense:1",
+      "word": "future",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 34,
+      "learning_unit_key": "half|noun|A1|sense:1",
+      "word": "half",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 35,
+      "learning_unit_key": "hope|noun|A1|sense:1",
+      "word": "hope",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 36,
+      "learning_unit_key": "kid|noun|A1|sense:1",
+      "word": "kid",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 37,
+      "learning_unit_key": "light|noun|A1|sense:1",
+      "word": "light",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 38,
+      "learning_unit_key": "magazine|noun|A1|sense:1",
+      "word": "magazine",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 39,
+      "learning_unit_key": "money|noun|A1|sense:1",
+      "word": "money",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "เงิน, เงินตรา",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 40,
+      "learning_unit_key": "note|noun|A1|sense:1",
+      "word": "note",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 41,
+      "learning_unit_key": "out|adverb|A1|sense:1",
+      "word": "out",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ออก, ข้างนอก",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 42,
+      "learning_unit_key": "phone|noun|A1|sense:1",
+      "word": "phone",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 43,
+      "learning_unit_key": "price|noun|A1|sense:1",
+      "word": "price",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 44,
+      "learning_unit_key": "right|adjective|A1|sense:1",
+      "word": "right",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ถูกต้อง, ด้านขวา",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 45,
+      "learning_unit_key": "sea|noun|A1|sense:1",
+      "word": "sea",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 46,
+      "learning_unit_key": "show|verb|A1|sense:1",
+      "word": "show",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "แสดง, ชี้ให้ดู",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 47,
+      "learning_unit_key": "son|noun|A1|sense:1",
+      "word": "son",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ลูกชาย, บุตรชาย",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 48,
+      "learning_unit_key": "station|noun|A1|sense:1",
+      "word": "station",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 49,
+      "learning_unit_key": "study|verb|A1|sense:1",
+      "word": "study",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "เรียน, ศึกษา, ค้นคว้า",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 50,
+      "learning_unit_key": "then|adverb|A1|sense:1",
+      "word": "then",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "จากนั้น, ในเวลานั้น",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 51,
+      "learning_unit_key": "tree|noun|A1|sense:1",
+      "word": "tree",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 52,
+      "learning_unit_key": "wall|noun|A1|sense:1",
+      "word": "wall",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 53,
+      "learning_unit_key": "word|noun|A1|sense:1",
+      "word": "word",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "คำ, ถ้อยคำ",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 54,
+      "learning_unit_key": "activity|noun|A1|sense:1",
+      "word": "activity",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 55,
+      "learning_unit_key": "different|adjective|A1|sense:1",
+      "word": "different",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "แตกต่างกัน, ไม่เหมือนกัน",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 56,
+      "learning_unit_key": "foreign|adjective|A1|sense:1",
+      "word": "foreign",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 57,
+      "learning_unit_key": "language|noun|A1|sense:1",
+      "word": "language",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 58,
+      "learning_unit_key": "read|verb|A1|sense:1",
+      "word": "read",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "อ่าน",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 59,
+      "learning_unit_key": "walk|verb|A1|sense:1",
+      "word": "walk",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "เดิน",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 60,
+      "learning_unit_key": "band|noun|A1|sense:1",
+      "word": "band",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 61,
+      "learning_unit_key": "breathe|verb|A1|sense:1",
+      "word": "breathe",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 62,
+      "learning_unit_key": "cat|noun|A1|sense:1",
+      "word": "cat",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 63,
+      "learning_unit_key": "cook|noun|A1|sense:1",
+      "word": "cook",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 64,
+      "learning_unit_key": "dish|noun|A1|sense:1",
+      "word": "dish",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 65,
+      "learning_unit_key": "fat|adjective|A1|sense:1",
+      "word": "fat",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 66,
+      "learning_unit_key": "gray|noun|A1|sense:1",
+      "word": "gray",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 67,
+      "learning_unit_key": "ice|noun|A1|sense:1",
+      "word": "ice",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 68,
+      "learning_unit_key": "left|adjective|A1|sense:1",
+      "word": "left",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 69,
+      "learning_unit_key": "mouse|noun|A1|sense:1",
+      "word": "mouse",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 70,
+      "learning_unit_key": "pleasure|noun|A1|sense:1",
+      "word": "pleasure",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 71,
+      "learning_unit_key": "rose|noun|A1|sense:1",
+      "word": "rose",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 72,
+      "learning_unit_key": "smart|adjective|A1|sense:1",
+      "word": "smart",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 73,
+      "learning_unit_key": "sweet|adjective|A1|sense:1",
+      "word": "sweet",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "หวาน, น่ารัก",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 74,
+      "learning_unit_key": "tooth|noun|A1|sense:1",
+      "word": "tooth",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 75,
+      "learning_unit_key": "camera|noun|A1|sense:1",
+      "word": "camera",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 76,
+      "learning_unit_key": "wheel|noun|A1|sense:1",
+      "word": "wheel",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 77,
+      "learning_unit_key": "cinema|noun|A1|sense:1",
+      "word": "cinema",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 78,
+      "learning_unit_key": "pardon|noun|A1|sense:1",
+      "word": "pardon",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 79,
+      "learning_unit_key": "bucket|noun|A1|sense:1",
+      "word": "bucket",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 80,
+      "learning_unit_key": "mobile phone|noun|A1|sense:1",
+      "word": "mobile phone",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 81,
+      "learning_unit_key": "cartoon|noun|A1|sense:1",
+      "word": "cartoon",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 82,
+      "learning_unit_key": "following|adjective|A1|sense:1",
+      "word": "following",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 83,
+      "learning_unit_key": "notebook|noun|A1|sense:1",
+      "word": "notebook",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 84,
+      "learning_unit_key": "smith|noun|A1|sense:1",
+      "word": "smith",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 85,
+      "learning_unit_key": "rabbit|noun|A1|sense:1",
+      "word": "rabbit",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 86,
+      "learning_unit_key": "at|preposition|A1|sense:1",
+      "word": "at",
+      "part_of_speech": "preposition",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 87,
+      "learning_unit_key": "everyone|pronoun|A1|sense:1",
+      "word": "everyone",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 88,
+      "learning_unit_key": "many|determiner|A1|sense:1",
+      "word": "many",
+      "part_of_speech": "determiner",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 89,
+      "learning_unit_key": "nothing|pronoun|A1|sense:1",
+      "word": "nothing",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 90,
+      "learning_unit_key": "so|conjunction|A1|sense:1",
+      "word": "so",
+      "part_of_speech": "conjunction",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 91,
+      "learning_unit_key": "we|pronoun|A1|sense:1",
+      "word": "we",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 92,
+      "learning_unit_key": "before|preposition|A1|sense:1",
+      "word": "before",
+      "part_of_speech": "preposition",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 93,
+      "learning_unit_key": "on|preposition|A1|sense:1",
+      "word": "on",
+      "part_of_speech": "preposition",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 94,
+      "learning_unit_key": "when|adverb|A1|sense:1",
+      "word": "when",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 95,
+      "learning_unit_key": "hi|interjection|A1|sense:1",
+      "word": "hi",
+      "part_of_speech": "interjection",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 96,
+      "learning_unit_key": "his|determiner|A1|sense:1",
+      "word": "his",
+      "part_of_speech": "determiner",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 97,
+      "learning_unit_key": "seven|number|A1|sense:1",
+      "word": "seven",
+      "part_of_speech": "number",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 98,
+      "learning_unit_key": "twelve|number|A1|sense:1",
+      "word": "twelve",
+      "part_of_speech": "number",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 99,
+      "learning_unit_key": "eleven|number|A1|sense:1",
+      "word": "eleven",
+      "part_of_speech": "number",
+      "cefr_level": "A1",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 100,
+      "learning_unit_key": "our|determiner|A1|sense:1",
+      "word": "our",
+      "part_of_speech": "determiner",
+      "cefr_level": "A1",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 101,
+      "learning_unit_key": "achieve|verb|A2|sense:1",
+      "word": "achieve",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "บรรลุผล, สำเร็จ, ได้รับ",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 102,
+      "learning_unit_key": "wrong|adverb|A2|sense:1",
+      "word": "wrong",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 103,
+      "learning_unit_key": "furniture|noun|A2|sense:1",
+      "word": "furniture",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 104,
+      "learning_unit_key": "south|adverb|A2|sense:1",
+      "word": "south",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 105,
+      "learning_unit_key": "gradually|adverb|A2|sense:1",
+      "word": "gradually",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 106,
+      "learning_unit_key": "downstairs|adverb|A2|sense:1",
+      "word": "downstairs",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 107,
+      "learning_unit_key": "someday|adverb|A2|sense:1",
+      "word": "someday",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 108,
+      "learning_unit_key": "assistant|adjective|A2|sense:1",
+      "word": "assistant",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 109,
+      "learning_unit_key": "expert|noun|A2|sense:1",
+      "word": "expert",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 110,
+      "learning_unit_key": "photograph|noun|A2|sense:1",
+      "word": "photograph",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 111,
+      "learning_unit_key": "valley|noun|A2|sense:1",
+      "word": "valley",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 112,
+      "learning_unit_key": "lawyer|noun|A2|sense:1",
+      "word": "lawyer",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 113,
+      "learning_unit_key": "cleaner|noun|A2|sense:1",
+      "word": "cleaner",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 114,
+      "learning_unit_key": "invention|noun|A2|sense:1",
+      "word": "invention",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 115,
+      "learning_unit_key": "rumor|noun|A2|sense:1",
+      "word": "rumor",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 116,
+      "learning_unit_key": "wallet|noun|A2|sense:1",
+      "word": "wallet",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 117,
+      "learning_unit_key": "wheelchair|noun|A2|sense:1",
+      "word": "wheelchair",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 118,
+      "learning_unit_key": "disappointed|adjective|A2|sense:1",
+      "word": "disappointed",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 119,
+      "learning_unit_key": "blonde|adjective|A2|sense:1",
+      "word": "blonde",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 120,
+      "learning_unit_key": "comic|noun|A2|sense:1",
+      "word": "comic",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 121,
+      "learning_unit_key": "handbag|noun|A2|sense:1",
+      "word": "handbag",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 122,
+      "learning_unit_key": "omelet|noun|A2|sense:1",
+      "word": "omelet",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 123,
+      "learning_unit_key": "skateboarding|noun|A2|sense:1",
+      "word": "skateboarding",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 124,
+      "learning_unit_key": "thief|noun|A2|sense:1",
+      "word": "thief",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_3_MEDIUM_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 125,
+      "learning_unit_key": "retired|adjective|A2|sense:1",
+      "word": "retired",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_2_HIGH_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 126,
+      "learning_unit_key": "appear|verb|A2|sense:1",
+      "word": "appear",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_curated_lexical_registry_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "APPROVED_CANDIDATE_READY",
+        "selected_source": "GLOVA_CURATED_REGISTRY",
+        "selected_thai": "ปรากฏตัว, ดูเหมือนว่า",
+        "pos_alignment": "POS_ALIGNED",
+        "sense_alignment": "SENSE_ALIGNED",
+        "cefr_compatibility": true,
+        "quality_gate_passed": true
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 127,
+      "learning_unit_key": "basic|adjective|A2|sense:1",
+      "word": "basic",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 128,
+      "learning_unit_key": "claim|verb|A2|sense:1",
+      "word": "claim",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 129,
+      "learning_unit_key": "continue|verb|A2|sense:1",
+      "word": "continue",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 130,
+      "learning_unit_key": "debate|noun|A2|sense:1",
+      "word": "debate",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 131,
+      "learning_unit_key": "earn|verb|A2|sense:1",
+      "word": "earn",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 132,
+      "learning_unit_key": "express|noun|A2|sense:1",
+      "word": "express",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 133,
+      "learning_unit_key": "fix|noun|A2|sense:1",
+      "word": "fix",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 134,
+      "learning_unit_key": "home|adverb|A2|sense:1",
+      "word": "home",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 135,
+      "learning_unit_key": "local|adjective|A2|sense:1",
+      "word": "local",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 136,
+      "learning_unit_key": "middle|noun|A2|sense:1",
+      "word": "middle",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 137,
+      "learning_unit_key": "oil|noun|A2|sense:1",
+      "word": "oil",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 138,
+      "learning_unit_key": "popular|adjective|A2|sense:1",
+      "word": "popular",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 139,
+      "learning_unit_key": "pull|verb|A2|sense:1",
+      "word": "pull",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 140,
+      "learning_unit_key": "right|noun|A2|sense:1",
+      "word": "right",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 141,
+      "learning_unit_key": "share|noun|A2|sense:1",
+      "word": "share",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 142,
+      "learning_unit_key": "staff|noun|A2|sense:1",
+      "word": "staff",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 143,
+      "learning_unit_key": "system|noun|A2|sense:1",
+      "word": "system",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 144,
+      "learning_unit_key": "useful|adjective|A2|sense:1",
+      "word": "useful",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 145,
+      "learning_unit_key": "adult|noun|A2|sense:1",
+      "word": "adult",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 146,
+      "learning_unit_key": "drop|noun|A2|sense:1",
+      "word": "drop",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 147,
+      "learning_unit_key": "law|noun|A2|sense:1",
+      "word": "law",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 148,
+      "learning_unit_key": "prefer|verb|A2|sense:1",
+      "word": "prefer",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 149,
+      "learning_unit_key": "separate|adjective|A2|sense:1",
+      "word": "separate",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 150,
+      "learning_unit_key": "affair|noun|A2|sense:1",
+      "word": "affair",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 151,
+      "learning_unit_key": "belong|verb|A2|sense:1",
+      "word": "belong",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 152,
+      "learning_unit_key": "bury|verb|A2|sense:1",
+      "word": "bury",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 153,
+      "learning_unit_key": "coast|noun|A2|sense:1",
+      "word": "coast",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 154,
+      "learning_unit_key": "count|verb|A2|sense:1",
+      "word": "count",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 155,
+      "learning_unit_key": "display|noun|A2|sense:1",
+      "word": "display",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 156,
+      "learning_unit_key": "explanation|noun|A2|sense:1",
+      "word": "explanation",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 157,
+      "learning_unit_key": "fool|noun|A2|sense:1",
+      "word": "fool",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 158,
+      "learning_unit_key": "guard|noun|A2|sense:1",
+      "word": "guard",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 159,
+      "learning_unit_key": "inch|noun|A2|sense:1",
+      "word": "inch",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 160,
+      "learning_unit_key": "load|noun|A2|sense:1",
+      "word": "load",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 161,
+      "learning_unit_key": "mood|noun|A2|sense:1",
+      "word": "mood",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 162,
+      "learning_unit_key": "path|noun|A2|sense:1",
+      "word": "path",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 163,
+      "learning_unit_key": "pretend|verb|A2|sense:1",
+      "word": "pretend",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 164,
+      "learning_unit_key": "roll|noun|A2|sense:1",
+      "word": "roll",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 165,
+      "learning_unit_key": "seed|noun|A2|sense:1",
+      "word": "seed",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 166,
+      "learning_unit_key": "silly|adjective|A2|sense:1",
+      "word": "silly",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 167,
+      "learning_unit_key": "spell|verb|A2|sense:1",
+      "word": "spell",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 168,
+      "learning_unit_key": "sweet|noun|A2|sense:1",
+      "word": "sweet",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 169,
+      "learning_unit_key": "trust|verb|A2|sense:1",
+      "word": "trust",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 170,
+      "learning_unit_key": "west|noun|A2|sense:1",
+      "word": "west",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 171,
+      "learning_unit_key": "appropriate|adjective|A2|sense:1",
+      "word": "appropriate",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 172,
+      "learning_unit_key": "gentle|adjective|A2|sense:1",
+      "word": "gentle",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 173,
+      "learning_unit_key": "prevent|verb|A2|sense:1",
+      "word": "prevent",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 174,
+      "learning_unit_key": "secret|noun|A2|sense:1",
+      "word": "secret",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 175,
+      "learning_unit_key": "bake|verb|A2|sense:1",
+      "word": "bake",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 176,
+      "learning_unit_key": "captain|noun|A2|sense:1",
+      "word": "captain",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 177,
+      "learning_unit_key": "elevator|noun|A2|sense:1",
+      "word": "elevator",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 178,
+      "learning_unit_key": "importantly|adverb|A2|sense:1",
+      "word": "importantly",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 179,
+      "learning_unit_key": "logical|adjective|A2|sense:1",
+      "word": "logical",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 180,
+      "learning_unit_key": "pronounce|verb|A2|sense:1",
+      "word": "pronounce",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 181,
+      "learning_unit_key": "singular|adjective|A2|sense:1",
+      "word": "singular",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 182,
+      "learning_unit_key": "unhappy|adjective|A2|sense:1",
+      "word": "unhappy",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 183,
+      "learning_unit_key": "research|noun|A2|sense:1",
+      "word": "research",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 184,
+      "learning_unit_key": "driver's license|noun|A2|sense:1",
+      "word": "driver's license",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 185,
+      "learning_unit_key": "tour guide|noun|A2|sense:1",
+      "word": "tour guide",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 186,
+      "learning_unit_key": "armed|adjective|A2|sense:1",
+      "word": "armed",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 187,
+      "learning_unit_key": "cereal|noun|A2|sense:1",
+      "word": "cereal",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 188,
+      "learning_unit_key": "drawing|noun|A2|sense:1",
+      "word": "drawing",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 189,
+      "learning_unit_key": "happily|adverb|A2|sense:1",
+      "word": "happily",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 190,
+      "learning_unit_key": "lost|adjective|A2|sense:1",
+      "word": "lost",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 191,
+      "learning_unit_key": "pacific|adjective|A2|sense:1",
+      "word": "pacific",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 192,
+      "learning_unit_key": "roundabout|noun|A2|sense:1",
+      "word": "roundabout",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 193,
+      "learning_unit_key": "symphony|noun|A2|sense:1",
+      "word": "symphony",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 194,
+      "learning_unit_key": "worse|adjective|A2|sense:1",
+      "word": "worse",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 195,
+      "learning_unit_key": "across|preposition|A2|sense:1",
+      "word": "across",
+      "part_of_speech": "preposition",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 196,
+      "learning_unit_key": "itself|pronoun|A2|sense:1",
+      "word": "itself",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 197,
+      "learning_unit_key": "such|pronoun|A2|sense:1",
+      "word": "such",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 198,
+      "learning_unit_key": "most|pronoun|A2|sense:1",
+      "word": "most",
+      "part_of_speech": "pronoun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 199,
+      "learning_unit_key": "plus|preposition|A2|sense:1",
+      "word": "plus",
+      "part_of_speech": "preposition",
+      "cefr_level": "A2",
+      "remediation_source": "glova_offline_thai_sense_drafter_v1",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "SPECIAL_SYNTAX_REVIEW_REQUIRED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": true,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    },
+    {
+      "pilot_sample_index": 200,
+      "learning_unit_key": "weep|noun|A2|sense:1",
+      "word": "weep",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "remediation_source": "glova_contextual_thai_drafter_v2",
+      "risk_tier": "TIER_1_CRITICAL_RISK",
+      "baseline_phase_6_2_19": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false
+      },
+      "expanded_phase_6_2_20": {
+        "candidate_status": "UNRESOLVED",
+        "selected_source": null,
+        "selected_thai": null,
+        "pos_alignment": "POS_UNKNOWN",
+        "sense_alignment": "NO_LEXICAL_MATCH",
+        "cefr_compatibility": false,
+        "quality_gate_passed": false
+      },
+      "status_changed": false,
+      "human_review_required": true,
+      "lifecycle_status": "REVIEW_REQUIRED"
+    }
+  ]
+}

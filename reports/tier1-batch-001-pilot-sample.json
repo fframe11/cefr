@@ -1,0 +1,2902 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-human-review-pilot-v1.json",
+  "package_type": "PHASE_6_2_14_PILOT_SAMPLE",
+  "batch_id": "TIER-1-001",
+  "exported_at": "2026-09-26T14:40:33.087Z",
+  "sample_size": 25,
+  "total_unreviewed_in_batch": 190,
+  "total_records_in_batch": 200,
+  "instructions": {
+    "rule": "Strict Human Gate: only authentic human reviewer decisions may be recorded.",
+    "decisions": {
+      "APPROVED": "All 14 dimensions accurate, pedagogically sound, and learner-ready.",
+      "EDIT_REQUIRED": "Defect detected. Provide corrected field(s) in review_submission.edits and rationale.",
+      "HOLD": "Needs further disambiguation or senior lexicographical consultation. Provide rationale >= 10 chars.",
+      "REJECTED": "Uncurable or inappropriate item. Provide rationale >= 10 chars."
+    },
+    "ipa_dispositions": [
+      "VERIFIED_PRONUNCIATION",
+      "EDITED_PRONUNCIATION",
+      "MULTI_ACCENT_PRONUNCIATION",
+      "EXEMPT_NON_PHONETIC"
+    ],
+    "sense_dispositions": [
+      "SELECT_SUPPORTED_SENSE",
+      "CONFIRM_MONOSEMOUS",
+      "SPLIT_NEW_LEARNING_UNIT",
+      "EDIT_MEANING",
+      "CHANGE_CEFR_WITH_EVIDENCE",
+      "HOLD_FOR_CURATION"
+    ]
+  },
+  "records": [
+    {
+      "sample_index": 1,
+      "learning_unit_key": "drill|noun|C1|sense:2",
+      "word": "drill",
+      "lemma": "drill",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "systematic training by multiple repetitions",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "Understanding the role of drill helps students discuss systematic training multiple repetitions clearly in everyday situations.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/dɹɪl/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "A2",
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "drill%1:06:00::",
+          "synset_id": "03291391-n",
+          "sense_number": 1,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "drill"
+          ],
+          "definition": "a tool with a sharp point and cutting edges for making holes in hard materials (usually rotating rapidly or by repeated blows)",
+          "examples": []
+        },
+        {
+          "sense_key": "drill%1:05:00::",
+          "synset_id": "02526827-n",
+          "sense_number": 2,
+          "lex_domain": "noun.animal",
+          "synonyms": [
+            "drill",
+            "Mandrillus leucophaeus"
+          ],
+          "definition": "similar to the mandrill but smaller and less brightly colored",
+          "examples": []
+        },
+        {
+          "sense_key": "drill%1:04:00::",
+          "synset_id": "00905554-n",
+          "sense_number": 3,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "exercise",
+            "practice",
+            "drill",
+            "practice session",
+            "recitation"
+          ],
+          "definition": "systematic training by multiple repetitions",
+          "examples": [
+            "practice makes perfect"
+          ]
+        },
+        {
+          "sense_key": "drill%1:04:01::",
+          "synset_id": "00905361-n",
+          "sense_number": 4,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "drill"
+          ],
+          "definition": "(military) the training of soldiers to march (as in ceremonial parades) or to perform the manual of arms",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 2,
+      "learning_unit_key": "echo|verb|C2|sense:1",
+      "word": "echo",
+      "lemma": "echo",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C2",
+      "definition_en": "ring or echo with sound",
+      "definition_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการมองเห็น แสงสี และการรับรู้ทางเสียง ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "followers echoing the cries of their leaders",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈekoʊ/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "echo%2:32:00::",
+          "synset_id": "00997821-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "repeat",
+            "echo"
+          ],
+          "definition": "to say again or imitate",
+          "examples": [
+            "followers echoing the cries of their leaders"
+          ]
+        },
+        {
+          "sense_key": "echo%2:39:00::",
+          "synset_id": "02250012-v",
+          "sense_number": 2,
+          "lex_domain": "verb.perception",
+          "synonyms": [
+            "resound",
+            "echo",
+            "ring",
+            "reverberate"
+          ],
+          "definition": "ring or echo with sound",
+          "examples": [
+            "the hall resounded with laughter"
+          ]
+        },
+        {
+          "sense_key": "echo%2:42:00::",
+          "synset_id": "02758571-v",
+          "sense_number": 3,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "echo",
+            "recall"
+          ],
+          "definition": "bring to mind",
+          "examples": [
+            "His words echoed John F. Kennedy"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 3,
+      "learning_unit_key": "gape|verb|C1|sense:2",
+      "word": "gape",
+      "lemma": "gape",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "be wide open",
+      "definition_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+      "example_sentence": "the deep gaping canyon",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɡeɪp/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "gape%2:39:00::",
+          "synset_id": "02230306-v",
+          "sense_number": 1,
+          "lex_domain": "verb.perception",
+          "synonyms": [
+            "goggle",
+            "gape",
+            "gawp",
+            "gawk"
+          ],
+          "definition": "look with amazement; look stupidly",
+          "examples": []
+        },
+        {
+          "sense_key": "gape%2:42:00::",
+          "synset_id": "02803949-v",
+          "sense_number": 2,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "gape",
+            "yawn",
+            "yaw"
+          ],
+          "definition": "be wide open",
+          "examples": [
+            "the deep gaping canyon"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 4,
+      "learning_unit_key": "dribble|verb|C2|sense:1",
+      "word": "dribble",
+      "lemma": "dribble",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C2",
+      "definition_en": "run or flow slowly, as in drops or in an unsteady stream",
+      "definition_th": "เคลื่อนที่ เดินทาง หรือย้ายตำแหน่งโดยการการเคลื่อนไหว การออกแรง และการย้ายตำแหน่ง ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "reports began to dribble in",
+      "example_translation_th": null,
+      "ipa_phonetic": "/dˈɹɪbəl/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "dribble%2:38:00::",
+          "synset_id": "02133723-v",
+          "sense_number": 1,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "trickle",
+            "dribble",
+            "filter"
+          ],
+          "definition": "run or flow slowly, as in drops or in an unsteady stream",
+          "examples": [
+            "water trickled onto the lawn from the broken hose",
+            "reports began to dribble in"
+          ]
+        },
+        {
+          "sense_key": "dribble%2:35:10::",
+          "synset_id": "01664476-v",
+          "sense_number": 2,
+          "lex_domain": "verb.contact",
+          "synonyms": [
+            "dribble",
+            "drip",
+            "drop"
+          ],
+          "definition": "let or cause to fall in drops",
+          "examples": [
+            "dribble oil into the mixture"
+          ]
+        },
+        {
+          "sense_key": "dribble%2:35:00::",
+          "synset_id": "01458804-v",
+          "sense_number": 3,
+          "lex_domain": "verb.contact",
+          "synonyms": [
+            "dribble",
+            "carry"
+          ],
+          "definition": "propel",
+          "examples": [
+            "Carry the ball",
+            "dribble the ball"
+          ]
+        },
+        {
+          "sense_key": "dribble%2:29:00::",
+          "synset_id": "00105824-v",
+          "sense_number": 4,
+          "lex_domain": "verb.body",
+          "synonyms": [
+            "drivel",
+            "drool",
+            "slabber",
+            "slaver",
+            "slobber"
+          ],
+          "definition": "let saliva drivel from the mouth",
+          "examples": [
+            "The baby drooled"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 5,
+      "learning_unit_key": "grounds|noun|C1|sense:2",
+      "word": "grounds",
+      "lemma": "grounds",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "dregs consisting of solid particles (especially of coffee) that form a residue",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "it is a Middle Eastern custom to read your future in your coffee grounds",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɡɹaʊndz/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 4,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "grounds%1:09:00::",
+          "synset_id": "05908532-n",
+          "sense_number": 1,
+          "lex_domain": "noun.cognition",
+          "synonyms": [
+            "evidence",
+            "grounds"
+          ],
+          "definition": "your basis for belief or disbelief; knowledge on which to base belief",
+          "examples": [
+            "the evidence that smoking causes lung cancer is very compelling"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:06:00::",
+          "synset_id": "04678383-n",
+          "sense_number": 2,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "yard",
+            "grounds",
+            "curtilage"
+          ],
+          "definition": "the enclosed land around a house or other building",
+          "examples": [
+            "it was a small house with almost no yard"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:15:00::",
+          "synset_id": "08726409-n",
+          "sense_number": 3,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "grounds"
+          ],
+          "definition": "a tract of land cleared for some special purposes (recreation or burial etc.)",
+          "examples": []
+        },
+        {
+          "sense_key": "grounds%1:10:00::",
+          "synset_id": "06853064-n",
+          "sense_number": 4,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "cause",
+            "reason",
+            "grounds"
+          ],
+          "definition": "a justification for something existing or happening",
+          "examples": [
+            "he had no cause to complain",
+            "they had good reason to rejoice"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:17:00::",
+          "synset_id": "09460170-n",
+          "sense_number": 5,
+          "lex_domain": "noun.object",
+          "synonyms": [
+            "grounds"
+          ],
+          "definition": "dregs consisting of solid particles (especially of coffee) that form a residue",
+          "examples": [
+            "it is a Middle Eastern custom to read your future in your coffee grounds"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 6,
+      "learning_unit_key": "gape|verb|C1|sense:1",
+      "word": "gape",
+      "lemma": "gape",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "C1",
+      "definition_en": "look with amazement; look stupidly",
+      "definition_th": "รับรู้ผ่านประสาทสัมผัสการมองเห็นหรือได้ยินโดยการการมองเห็น แสงสี และการรับรู้ทางเสียง ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "the deep gaping canyon",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɡeɪp/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "gape%2:39:00::",
+          "synset_id": "02230306-v",
+          "sense_number": 1,
+          "lex_domain": "verb.perception",
+          "synonyms": [
+            "goggle",
+            "gape",
+            "gawp",
+            "gawk"
+          ],
+          "definition": "look with amazement; look stupidly",
+          "examples": []
+        },
+        {
+          "sense_key": "gape%2:42:00::",
+          "synset_id": "02803949-v",
+          "sense_number": 2,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "gape",
+            "yawn",
+            "yaw"
+          ],
+          "definition": "be wide open",
+          "examples": [
+            "the deep gaping canyon"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 7,
+      "learning_unit_key": "perch|noun|C2|sense:1",
+      "word": "perch",
+      "lemma": "perch",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C2",
+      "definition_en": "an elevated place serving as a seat",
+      "definition_th": "สถานที่ พื้นที่ หรืออาคารสำหรับการใช้งานเฉพาะ (เกี่ยวกับอาหารหรือของกิน)",
+      "example_sentence": "Understanding the role of perch helps students discuss elevated place serving seat clearly in everyday situations.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/pɜːɹtʃ/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C2"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "perch%1:06:00::",
+          "synset_id": "03975523-n",
+          "sense_number": 1,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "perch"
+          ],
+          "definition": "support consisting of a branch or rod that serves as a resting place (especially for a bird)",
+          "examples": []
+        },
+        {
+          "sense_key": "perch%1:23:01::",
+          "synset_id": "13888776-n",
+          "sense_number": 2,
+          "lex_domain": "noun.quantity",
+          "synonyms": [
+            "perch",
+            "rod",
+            "pole"
+          ],
+          "definition": "a linear measure of 16.5 feet",
+          "examples": []
+        },
+        {
+          "sense_key": "perch%1:23:02::",
+          "synset_id": "13851432-n",
+          "sense_number": 3,
+          "lex_domain": "noun.quantity",
+          "synonyms": [
+            "perch",
+            "rod",
+            "pole"
+          ],
+          "definition": "a square rod of land",
+          "examples": []
+        },
+        {
+          "sense_key": "perch%1:15:00::",
+          "synset_id": "08783651-n",
+          "sense_number": 4,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "perch"
+          ],
+          "definition": "an elevated place serving as a seat",
+          "examples": []
+        },
+        {
+          "sense_key": "perch%1:13:00::",
+          "synset_id": "07928067-n",
+          "sense_number": 5,
+          "lex_domain": "noun.food",
+          "synonyms": [
+            "perch"
+          ],
+          "definition": "any of numerous fishes of America and Europe",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 8,
+      "learning_unit_key": "grounds|noun|C1|sense:3",
+      "word": "grounds",
+      "lemma": "grounds",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "a justification for something existing or happening",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "it is a Middle Eastern custom to read your future in your coffee grounds (C1 noun sense 3).",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɡɹaʊndz/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 2,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "grounds%1:09:00::",
+          "synset_id": "05908532-n",
+          "sense_number": 1,
+          "lex_domain": "noun.cognition",
+          "synonyms": [
+            "evidence",
+            "grounds"
+          ],
+          "definition": "your basis for belief or disbelief; knowledge on which to base belief",
+          "examples": [
+            "the evidence that smoking causes lung cancer is very compelling"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:06:00::",
+          "synset_id": "04678383-n",
+          "sense_number": 2,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "yard",
+            "grounds",
+            "curtilage"
+          ],
+          "definition": "the enclosed land around a house or other building",
+          "examples": [
+            "it was a small house with almost no yard"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:15:00::",
+          "synset_id": "08726409-n",
+          "sense_number": 3,
+          "lex_domain": "noun.location",
+          "synonyms": [
+            "grounds"
+          ],
+          "definition": "a tract of land cleared for some special purposes (recreation or burial etc.)",
+          "examples": []
+        },
+        {
+          "sense_key": "grounds%1:10:00::",
+          "synset_id": "06853064-n",
+          "sense_number": 4,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "cause",
+            "reason",
+            "grounds"
+          ],
+          "definition": "a justification for something existing or happening",
+          "examples": [
+            "he had no cause to complain",
+            "they had good reason to rejoice"
+          ]
+        },
+        {
+          "sense_key": "grounds%1:17:00::",
+          "synset_id": "09460170-n",
+          "sense_number": 5,
+          "lex_domain": "noun.object",
+          "synonyms": [
+            "grounds"
+          ],
+          "definition": "dregs consisting of solid particles (especially of coffee) that form a residue",
+          "examples": [
+            "it is a Middle Eastern custom to read your future in your coffee grounds"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 9,
+      "learning_unit_key": "recess|noun|C1|sense:1",
+      "word": "recess",
+      "lemma": "recess",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "C1",
+      "definition_en": "an enclosure that is set back or indented",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "Understanding the role of recess helps students discuss enclosure set back indented clearly in everyday situations.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɹɪˈses/",
+      "tier1_reasons": [
+        "cefr_conflict"
+      ],
+      "confidence_score": 4,
+      "source_domain": "Octanove Vocabulary Profile C1/C2",
+      "provenance": {
+        "source": "octanove",
+        "source_name": "Octanove Vocabulary Profile C1/C2",
+        "license": "CC-BY-SA-4.0",
+        "conflicting_cefr_levels": [
+          "C1"
+        ]
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "recess%1:26:00::",
+          "synset_id": "14256930-n",
+          "sense_number": 1,
+          "lex_domain": "noun.state",
+          "synonyms": [
+            "deferral",
+            "recess"
+          ],
+          "definition": "a state of abeyance or suspended business",
+          "examples": []
+        },
+        {
+          "sense_key": "recess%1:25:00::",
+          "synset_id": "14113849-n",
+          "sense_number": 2,
+          "lex_domain": "noun.shape",
+          "synonyms": [
+            "recess",
+            "recession",
+            "niche",
+            "corner"
+          ],
+          "definition": "a small concavity",
+          "examples": []
+        },
+        {
+          "sense_key": "recess%1:17:00::",
+          "synset_id": "09478938-n",
+          "sense_number": 3,
+          "lex_domain": "noun.object",
+          "synonyms": [
+            "inlet",
+            "recess"
+          ],
+          "definition": "an arm off of a larger body of water (often between rocky headlands)",
+          "examples": []
+        },
+        {
+          "sense_key": "recess%1:06:00::",
+          "synset_id": "04124624-n",
+          "sense_number": 4,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "recess",
+            "niche"
+          ],
+          "definition": "an enclosure that is set back or indented",
+          "examples": []
+        },
+        {
+          "sense_key": "recess%1:04:00::",
+          "synset_id": "01078105-n",
+          "sense_number": 5,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "respite",
+            "recess",
+            "break",
+            "time out"
+          ],
+          "definition": "a pause from doing something (as work)",
+          "examples": [
+            "we took a 10-minute break",
+            "he took time out to recuperate"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 10,
+      "learning_unit_key": "about|adverb|A1|sense:1",
+      "word": "about",
+      "lemma": "about",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "(of quantities) imprecise but fairly close to correct",
+      "definition_th": "กริยาวิเศษณ์บอกจำนวนหรือเวลาโดยประมาณ (ประมาณ, ราวๆ)",
+      "example_sentence": "in just about a minute",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbaʊt/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "about%4:02:00::",
+          "synset_id": "00007381-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "approximately",
+            "about",
+            "close to",
+            "just about",
+            "some"
+          ],
+          "definition": "(of quantities) imprecise but fairly close to correct",
+          "examples": [
+            "lasted approximately an hour",
+            "in just about a minute"
+          ]
+        },
+        {
+          "sense_key": "about%4:02:06::",
+          "synset_id": "00071904-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "about",
+            "around"
+          ],
+          "definition": "all around or on all sides",
+          "examples": [
+            "dirty clothes lying around (or about)",
+            "let's look about for help"
+          ]
+        },
+        {
+          "sense_key": "about%4:02:01::",
+          "synset_id": "00071229-r",
+          "sense_number": 3,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "about",
+            "around"
+          ],
+          "definition": "in the area or vicinity",
+          "examples": [
+            "a few spectators standing about",
+            "hanging around"
+          ]
+        },
+        {
+          "sense_key": "about%4:02:04::",
+          "synset_id": "00072393-r",
+          "sense_number": 4,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "about",
+            "around"
+          ],
+          "definition": "used of movement to or among many different places or in no particular direction",
+          "examples": [
+            "wandering about with no place to go",
+            "people were rushing about"
+          ]
+        },
+        {
+          "sense_key": "about%4:02:02::",
+          "synset_id": "00072265-r",
+          "sense_number": 5,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "about",
+            "around"
+          ],
+          "definition": "in or to a reversed position or direction",
+          "examples": [
+            "about face",
+            "suddenly she turned around"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 11,
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "word": "above",
+      "lemma": "above",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "(in writing) at an earlier place",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "She spoke above while explaining how the group handled earlier place yesterday.",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈbʌv/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "above%4:02:00::",
+          "synset_id": "00079960-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "above",
+            "supra"
+          ],
+          "definition": "(in writing) at an earlier place",
+          "examples": [
+            "see above"
+          ]
+        },
+        {
+          "sense_key": "above%4:02:01::",
+          "synset_id": "00080213-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "above",
+            "higher up",
+            "in a higher place",
+            "to a higher place"
+          ],
+          "definition": "in or to a place that is higher",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 12,
+      "learning_unit_key": "action|noun|A1|sense:1",
+      "word": "action",
+      "lemma": "action",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "something done (usually as opposed to something said)",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "there were stories of murders and other unnatural actions",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈækʃən/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "action%1:04:02::",
+          "synset_id": "00032488-n",
+          "sense_number": 1,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "action"
+          ],
+          "definition": "something done (usually as opposed to something said)",
+          "examples": [
+            "there were stories of murders and other unnatural actions"
+          ]
+        },
+        {
+          "sense_key": "action%1:26:00::",
+          "synset_id": "14250165-n",
+          "sense_number": 2,
+          "lex_domain": "noun.state",
+          "synonyms": [
+            "action",
+            "activity",
+            "activeness"
+          ],
+          "definition": "the state of being active",
+          "examples": [
+            "his sphere of activity",
+            "he is out of action"
+          ]
+        },
+        {
+          "sense_key": "action%1:04:03::",
+          "synset_id": "00966216-n",
+          "sense_number": 3,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "military action",
+            "action"
+          ],
+          "definition": "a military engagement",
+          "examples": [
+            "he saw action in Korea"
+          ]
+        },
+        {
+          "sense_key": "action%1:22:00::",
+          "synset_id": "13753191-n",
+          "sense_number": 4,
+          "lex_domain": "noun.process",
+          "synonyms": [
+            "natural process",
+            "natural action",
+            "action",
+            "activity"
+          ],
+          "definition": "a process existing in or produced by nature (rather than by the intent of human beings)",
+          "examples": [
+            "the action of natural forces",
+            "volcanic activity"
+          ]
+        },
+        {
+          "sense_key": "action%1:10:00::",
+          "synset_id": "06468812-n",
+          "sense_number": 5,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "action"
+          ],
+          "definition": "the series of events that form a plot",
+          "examples": [
+            "his novels always have a lot of action"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 13,
+      "learning_unit_key": "add|verb|A1|sense:1",
+      "word": "add",
+      "lemma": "add",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "make an addition (to); join or combine or unite with others; increase the quality, quantity, size or scope of",
+      "definition_th": "ทำให้เกิดการเปลี่ยนแปลงหรือปรับสภาพโดยการการเพิ่มขึ้น ขนาดที่ใหญ่ หรือปริมาณมาก และการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "We added two students to that dorm room",
+      "example_translation_th": null,
+      "ipa_phonetic": "/æd/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "add%2:30:00::",
+          "synset_id": "00189412-v",
+          "sense_number": 1,
+          "lex_domain": "verb.change",
+          "synonyms": [
+            "add"
+          ],
+          "definition": "make an addition (to); join or combine or unite with others; increase the quality, quantity, size or scope of",
+          "examples": [
+            "We added two students to that dorm room",
+            "She added a personal note to her letter"
+          ]
+        },
+        {
+          "sense_key": "add%2:32:01::",
+          "synset_id": "01070295-v",
+          "sense_number": 2,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "add",
+            "append",
+            "supply"
+          ],
+          "definition": "state or say further",
+          "examples": [
+            "‘It doesn't matter,’ he supplied"
+          ]
+        },
+        {
+          "sense_key": "add%2:40:00::",
+          "synset_id": "02394146-v",
+          "sense_number": 3,
+          "lex_domain": "verb.possession",
+          "synonyms": [
+            "lend",
+            "impart",
+            "bestow",
+            "contribute",
+            "add"
+          ],
+          "definition": "bestow a quality on",
+          "examples": [
+            "Her presence lends a certain cachet to the company",
+            "The music added a lot to the play"
+          ]
+        },
+        {
+          "sense_key": "add%2:31:00::",
+          "synset_id": "00670531-v",
+          "sense_number": 4,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "add",
+            "add together"
+          ],
+          "definition": "make an addition by combining numbers",
+          "examples": [
+            "Add 27 and 49, please!"
+          ]
+        },
+        {
+          "sense_key": "add%2:32:00::",
+          "synset_id": "00988834-v",
+          "sense_number": 5,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "total",
+            "tot",
+            "tot up",
+            "sum",
+            "sum up"
+          ],
+          "definition": "determine the sum of",
+          "examples": [
+            "Add all the people in this town to those of the neighboring town"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 14,
+      "learning_unit_key": "afternoon|noun|A1|sense:1",
+      "word": "afternoon",
+      "lemma": "afternoon",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "the part of the day between noon and evening",
+      "definition_th": "ช่วงเวลา ระยะเวลา หรือจังหวะเวลา",
+      "example_sentence": "he spent a quiet afternoon in the park",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˌæftəɹˈnuːn/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "afternoon%1:28:00::",
+          "synset_id": "15421730-n",
+          "sense_number": 1,
+          "lex_domain": "noun.time",
+          "synonyms": [
+            "afternoon"
+          ],
+          "definition": "the part of the day between noon and evening",
+          "examples": [
+            "he spent a quiet afternoon in the park"
+          ]
+        },
+        {
+          "sense_key": "afternoon%1:10:00::",
+          "synset_id": "06732779-n",
+          "sense_number": 2,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "good afternoon",
+            "afternoon"
+          ],
+          "definition": "a conventional expression of greeting or farewell, used to wish someone a good afternoon",
+          "examples": []
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 15,
+      "learning_unit_key": "age|noun|A1|sense:1",
+      "word": "age",
+      "lemma": "age",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "how long something has existed",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "example_sentence": "it was replaced because of its age",
+      "example_translation_th": null,
+      "ipa_phonetic": "/eɪdʒ/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "age%1:07:00::",
+          "synset_id": "04997037-n",
+          "sense_number": 1,
+          "lex_domain": "noun.attribute",
+          "synonyms": [
+            "age"
+          ],
+          "definition": "how long something has existed",
+          "examples": [
+            "it was replaced because of its age"
+          ]
+        },
+        {
+          "sense_key": "age%1:28:02::",
+          "synset_id": "15510082-n",
+          "sense_number": 2,
+          "lex_domain": "noun.time",
+          "synonyms": [
+            "historic period",
+            "age"
+          ],
+          "definition": "an era of history having some distinctive feature",
+          "examples": [
+            "we live in a litigious age"
+          ]
+        },
+        {
+          "sense_key": "age%1:28:00::",
+          "synset_id": "15400405-n",
+          "sense_number": 3,
+          "lex_domain": "noun.time",
+          "synonyms": [
+            "age",
+            "eld"
+          ],
+          "definition": "a time of life (usually defined in years) at which some particular qualification or power arises",
+          "examples": [
+            "she was now of school age",
+            "tall for his eld"
+          ]
+        },
+        {
+          "sense_key": "age%1:28:03::",
+          "synset_id": "15498939-n",
+          "sense_number": 4,
+          "lex_domain": "noun.time",
+          "synonyms": [
+            "long time",
+            "age",
+            "years"
+          ],
+          "definition": "a prolonged period of time",
+          "examples": [
+            "we've known each other for ages",
+            "I haven't been there for years and years"
+          ]
+        },
+        {
+          "sense_key": "age%1:28:01::",
+          "synset_id": "15409040-n",
+          "sense_number": 5,
+          "lex_domain": "noun.time",
+          "synonyms": [
+            "old age",
+            "years",
+            "age",
+            "eld",
+            "geezerhood"
+          ],
+          "definition": "a late time of life",
+          "examples": [
+            "old age is not for sissies",
+            "he's showing his years"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 16,
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "word": "agree",
+      "lemma": "agree",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "be in accord; be in agreement",
+      "definition_th": "เห็นด้วย, ตกลง",
+      "example_sentence": "We agreed on the terms of the settlement",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əɡˈɹiː/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "agree%2:32:00::",
+          "synset_id": "00840439-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "agree",
+            "hold",
+            "concur",
+            "concord"
+          ],
+          "definition": "be in accord; be in agreement",
+          "examples": [
+            "We agreed on the terms of the settlement",
+            "I can't agree with you!"
+          ]
+        },
+        {
+          "sense_key": "agree%2:32:01::",
+          "synset_id": "00798198-v",
+          "sense_number": 2,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "agree"
+          ],
+          "definition": "consent or assent to a condition, or agree to do something",
+          "examples": [
+            "She agreed to all my conditions",
+            "He agreed to leave her alone"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:00::",
+          "synset_id": "02739913-v",
+          "sense_number": 3,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "match",
+            "fit",
+            "correspond",
+            "check",
+            "jibe"
+          ],
+          "definition": "be compatible, similar or consistent; coincide in their characteristics",
+          "examples": [
+            "The two stories don't agree in many details",
+            "The handwriting checks with the signature on the form"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:01::",
+          "synset_id": "02784620-v",
+          "sense_number": 4,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "harmonize",
+            "harmonise",
+            "consort",
+            "accord",
+            "concord"
+          ],
+          "definition": "go together",
+          "examples": [
+            "The colors don't harmonize",
+            "Their ideas concorded"
+          ]
+        },
+        {
+          "sense_key": "agree%2:42:03::",
+          "synset_id": "02827426-v",
+          "sense_number": 5,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "agree"
+          ],
+          "definition": "show grammatical agreement",
+          "examples": [
+            "Subjects and verbs must always agree in English"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 17,
+      "learning_unit_key": "alone|adverb|A1|sense:1",
+      "word": "alone",
+      "lemma": "alone",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "without any others being included or involved",
+      "definition_th": "อย่างปราศจาก หรือไม่ปรากฏอาการดังกล่าว",
+      "example_sentence": "the child stayed home alone",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈloʊn/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "alone%4:02:00::",
+          "synset_id": "00009005-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "entirely",
+            "exclusively",
+            "solely",
+            "alone",
+            "only"
+          ],
+          "definition": "without any others being included or involved",
+          "examples": [
+            "was entirely to blame",
+            "a school devoted entirely to the needs of problem children"
+          ]
+        },
+        {
+          "sense_key": "alone%4:02:01::",
+          "synset_id": "00159115-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "alone",
+            "solo",
+            "unaccompanied"
+          ],
+          "definition": "without anybody else or anything else",
+          "examples": [
+            "the child stayed home alone",
+            "the pillar stood alone, supporting nothing"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 18,
+      "learning_unit_key": "along|adverb|A1|sense:1",
+      "word": "along",
+      "lemma": "along",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "with a forward motion",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "we drove along admiring the view",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈlɔːŋ/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "along%4:02:01::",
+          "synset_id": "00068420-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "along",
+            "on"
+          ],
+          "definition": "with a forward motion",
+          "examples": [
+            "we drove along admiring the view",
+            "the horse trotted along at a steady pace"
+          ]
+        },
+        {
+          "sense_key": "along%4:02:00::",
+          "synset_id": "00068629-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "along"
+          ],
+          "definition": "in accompaniment or as a companion",
+          "examples": [
+            "his little sister came along to the movies",
+            "I brought my camera along"
+          ]
+        },
+        {
+          "sense_key": "along%4:02:03::",
+          "synset_id": "00069042-r",
+          "sense_number": 3,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "along"
+          ],
+          "definition": "to a more advanced state",
+          "examples": [
+            "the work is moving along",
+            "well along in their research"
+          ]
+        },
+        {
+          "sense_key": "along%4:02:02::",
+          "synset_id": "00068805-r",
+          "sense_number": 4,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "along"
+          ],
+          "definition": "in addition (usually followed by ‘with’)",
+          "examples": [
+            "we sent them food and some clothing went along in the package",
+            "along with the package came a bill"
+          ]
+        },
+        {
+          "sense_key": "along%4:02:04::",
+          "synset_id": "00069220-r",
+          "sense_number": 5,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "along"
+          ],
+          "definition": "in line with a length or direction (often followed by ‘by’ or ‘beside’)",
+          "examples": [
+            "pass the word along",
+            "ran along beside me"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 19,
+      "learning_unit_key": "answer|noun|A1|sense:1",
+      "word": "answer",
+      "lemma": "answer",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "a statement (either spoken or written) that is made to reply to a question or request or criticism or accusation",
+      "definition_th": "สภาวะ สภาพ หรือเงื่อนไขที่เป็นอยู่",
+      "example_sentence": "I waited several days for his answer",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈænsəɹ/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "answer%1:10:01::",
+          "synset_id": "06858807-n",
+          "sense_number": 1,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "answer",
+            "reply",
+            "response"
+          ],
+          "definition": "a statement (either spoken or written) that is made to reply to a question or request or criticism or accusation",
+          "examples": [
+            "I waited several days for his answer",
+            "he wrote replies to several of his critics"
+          ]
+        },
+        {
+          "sense_key": "answer%1:10:02::",
+          "synset_id": "06856296-n",
+          "sense_number": 2,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "solution",
+            "answer",
+            "result",
+            "resolution",
+            "solvent"
+          ],
+          "definition": "a statement that solves a problem or explains how to solve the problem",
+          "examples": [
+            "they were trying to find a peaceful solution",
+            "the answers were in the back of the book"
+          ]
+        },
+        {
+          "sense_key": "answer%1:10:00::",
+          "synset_id": "07342501-n",
+          "sense_number": 3,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "the speech act of replying to a question",
+          "examples": []
+        },
+        {
+          "sense_key": "answer%1:10:03::",
+          "synset_id": "06659201-n",
+          "sense_number": 4,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "the principal pleading by the defendant in response to plaintiff's complaint; in criminal law it consists of the defendant's plea of ‘guilty’ or ‘not guilty’ (or nolo contendere); in civil law it must contain denials of all allegations in the plaintiff's complaint that the defendant hopes to controvert and it can contain affirmative defenses or counterclaims",
+          "examples": []
+        },
+        {
+          "sense_key": "answer%1:04:00::",
+          "synset_id": "01255367-n",
+          "sense_number": 5,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "a nonverbal reaction",
+          "examples": [
+            "his answer to any problem was to get drunk",
+            "their answer was to sue me"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 20,
+      "learning_unit_key": "answer|verb|A1|sense:1",
+      "word": "answer",
+      "lemma": "answer",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "react verbally",
+      "definition_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "She didn't want to answer",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈænsəɹ/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "answer%2:32:00::",
+          "synset_id": "00850842-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "answer",
+            "reply",
+            "respond"
+          ],
+          "definition": "react verbally",
+          "examples": [
+            "She didn't want to answer",
+            "answer the question"
+          ]
+        },
+        {
+          "sense_key": "answer%2:31:02::",
+          "synset_id": "00752137-v",
+          "sense_number": 2,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "respond to a signal",
+          "examples": [
+            "answer the door",
+            "answer the telephone"
+          ]
+        },
+        {
+          "sense_key": "answer%2:31:00::",
+          "synset_id": "00665814-v",
+          "sense_number": 3,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "give the correct answer or solution to",
+          "examples": [
+            "answer a question",
+            "answer the riddle"
+          ]
+        },
+        {
+          "sense_key": "answer%2:31:03::",
+          "synset_id": "00665058-v",
+          "sense_number": 4,
+          "lex_domain": "verb.cognition",
+          "synonyms": [
+            "answer",
+            "resolve"
+          ],
+          "definition": "understand the meaning of",
+          "examples": [
+            "The question concerning the meaning of life cannot be answered"
+          ]
+        },
+        {
+          "sense_key": "answer%2:32:06::",
+          "synset_id": "00850327-v",
+          "sense_number": 5,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "answer"
+          ],
+          "definition": "give a defence or refutation of (a charge) or in (an argument)",
+          "examples": [
+            "The defendant answered to all the charges of the prosecution"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 21,
+      "learning_unit_key": "arrive|verb|A1|sense:1",
+      "word": "arrive",
+      "lemma": "arrive",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "reach a destination; arrive by movement or progress",
+      "definition_th": "มาถึง, ถึงที่หมาย",
+      "example_sentence": "She arrived home at 7 o'clock",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əɹˈaɪv/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "arrive%2:38:00::",
+          "synset_id": "02068344-v",
+          "sense_number": 1,
+          "lex_domain": "verb.motion",
+          "synonyms": [
+            "arrive",
+            "get",
+            "come"
+          ],
+          "definition": "reach a destination; arrive by movement or progress",
+          "examples": [
+            "She arrived home at 7 o'clock",
+            "She didn't get to Chicago until after midnight"
+          ]
+        },
+        {
+          "sense_key": "arrive%2:41:00::",
+          "synset_id": "02667396-v",
+          "sense_number": 2,
+          "lex_domain": "verb.social",
+          "synonyms": [
+            "arrive",
+            "make it",
+            "get in",
+            "go far"
+          ],
+          "definition": "succeed in a big way; get to the top",
+          "examples": [
+            "After he published his book, he had arrived",
+            "I don't know whether I can make it in science!"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 22,
+      "learning_unit_key": "art|noun|A1|sense:1",
+      "word": "art",
+      "lemma": "art",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "the products of human creativity; works of art collectively",
+      "definition_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (เกี่ยวกับอาหารหรือของกิน)",
+      "example_sentence": "a collection of fine art",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ɑːɹt/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "art%1:06:00::",
+          "synset_id": "02788665-n",
+          "sense_number": 1,
+          "lex_domain": "noun.artifact",
+          "synonyms": [
+            "art",
+            "fine art"
+          ],
+          "definition": "the products of human creativity; works of art collectively",
+          "examples": [
+            "an art exhibition",
+            "a collection of fine art"
+          ]
+        },
+        {
+          "sense_key": "art%1:04:00::",
+          "synset_id": "00945564-n",
+          "sense_number": 2,
+          "lex_domain": "noun.act",
+          "synonyms": [
+            "art",
+            "artistic creation",
+            "artistic production"
+          ],
+          "definition": "the creation of beautiful or significant things",
+          "examples": [
+            "art does not need to be innovative to be good",
+            "I was never any good at art"
+          ]
+        },
+        {
+          "sense_key": "art%1:09:00::",
+          "synset_id": "05720856-n",
+          "sense_number": 3,
+          "lex_domain": "noun.cognition",
+          "synonyms": [
+            "art",
+            "artistry",
+            "prowess"
+          ],
+          "definition": "a superior skill that you can learn by study and practice and observation",
+          "examples": [
+            "the art of conversation",
+            "it's quite an art"
+          ]
+        },
+        {
+          "sense_key": "art%1:10:00::",
+          "synset_id": "07135158-n",
+          "sense_number": 4,
+          "lex_domain": "noun.communication",
+          "synonyms": [
+            "artwork",
+            "art",
+            "graphics",
+            "nontextual matter"
+          ],
+          "definition": "photographs or other visual representations in a printed publication",
+          "examples": [
+            "the publisher was responsible for all the artwork in the book"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 23,
+      "learning_unit_key": "ask|verb|A1|sense:1",
+      "word": "ask",
+      "lemma": "ask",
+      "part_of_speech": "verb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "make a request or demand for something to somebody",
+      "definition_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้",
+      "example_sentence": "She asked him for a loan",
+      "example_translation_th": null,
+      "ipa_phonetic": "/æsk/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "ask%2:32:01::",
+          "synset_id": "00786391-v",
+          "sense_number": 1,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "ask"
+          ],
+          "definition": "make a request or demand for something to somebody",
+          "examples": [
+            "She asked him for a loan"
+          ]
+        },
+        {
+          "sense_key": "ask%2:32:02::",
+          "synset_id": "00819355-v",
+          "sense_number": 2,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "ask"
+          ],
+          "definition": "direct or put; seek an answer to",
+          "examples": [
+            "ask a question"
+          ]
+        },
+        {
+          "sense_key": "ask%2:32:05::",
+          "synset_id": "00789664-v",
+          "sense_number": 3,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "ask",
+            "require",
+            "expect"
+          ],
+          "definition": "consider obligatory; request and expect",
+          "examples": [
+            "We require our secretary to be on time",
+            "Aren't we asking too much of these children?"
+          ]
+        },
+        {
+          "sense_key": "ask%2:32:04::",
+          "synset_id": "00935322-v",
+          "sense_number": 4,
+          "lex_domain": "verb.communication",
+          "synonyms": [
+            "ask",
+            "inquire",
+            "enquire"
+          ],
+          "definition": "address a question to and expect an answer from",
+          "examples": [
+            "Ask your teacher about trigonometry",
+            "The children asked me about their dead grandmother"
+          ]
+        },
+        {
+          "sense_key": "ask%2:42:00::",
+          "synset_id": "02709475-v",
+          "sense_number": 5,
+          "lex_domain": "verb.stative",
+          "synonyms": [
+            "necessitate",
+            "ask",
+            "postulate",
+            "need",
+            "require"
+          ],
+          "definition": "require as useful, just, or proper",
+          "examples": [
+            "It takes nerve to do what she did",
+            "success usually requires hard work"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 24,
+      "learning_unit_key": "away|adverb|A1|sense:1",
+      "word": "away",
+      "lemma": "away",
+      "part_of_speech": "adverb",
+      "claimed_cefr_level": "A1",
+      "definition_en": "from a particular thing or place or position (‘forth’ is obsolete)",
+      "definition_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "example_sentence": "ran away from the lion",
+      "example_translation_th": null,
+      "ipa_phonetic": "/əˈweɪ/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "away%4:02:00::",
+          "synset_id": "00234590-r",
+          "sense_number": 1,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "away",
+            "off",
+            "forth"
+          ],
+          "definition": "from a particular thing or place or position (‘forth’ is obsolete)",
+          "examples": [
+            "ran away from the lion",
+            "wanted to get away from there"
+          ]
+        },
+        {
+          "sense_key": "away%4:02:01::",
+          "synset_id": "00234953-r",
+          "sense_number": 2,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "away",
+            "out"
+          ],
+          "definition": "from one's possession",
+          "examples": [
+            "he gave out money to the poor",
+            "gave away the tickets"
+          ]
+        },
+        {
+          "sense_key": "away%4:02:03::",
+          "synset_id": "00235709-r",
+          "sense_number": 3,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "aside",
+            "away"
+          ],
+          "definition": "out of the way (especially away from one's thoughts)",
+          "examples": [
+            "brush the objections aside",
+            "pushed all doubts away"
+          ]
+        },
+        {
+          "sense_key": "away%4:02:04::",
+          "synset_id": "00236210-r",
+          "sense_number": 4,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "away"
+          ],
+          "definition": "out of existence",
+          "examples": [
+            "the music faded away",
+            "tried to explain away the affair of the letter"
+          ]
+        },
+        {
+          "sense_key": "away%4:02:08::",
+          "synset_id": "00236912-r",
+          "sense_number": 5,
+          "lex_domain": "adv.all",
+          "synonyms": [
+            "off",
+            "away"
+          ],
+          "definition": "at a distance in space or time",
+          "examples": [
+            "the boat was 5 miles off (or away)",
+            "the party is still 2 weeks off (or away)"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    },
+    {
+      "sample_index": 25,
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "word": "baby",
+      "lemma": "baby",
+      "part_of_speech": "noun",
+      "claimed_cefr_level": "A1",
+      "definition_en": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+      "definition_th": "เด็กทารก, ลูกอ่อน",
+      "example_sentence": "the baby began to cry again",
+      "example_translation_th": null,
+      "ipa_phonetic": "/ˈbeɪbi/",
+      "tier1_reasons": [
+        "ambiguous_sense",
+        "qa_flagged"
+      ],
+      "confidence_score": 1,
+      "source_domain": "CEFR-J Vocabulary Profile",
+      "provenance": {
+        "source": "cefr_j",
+        "source_name": "CEFR-J Vocabulary Profile",
+        "license": "TUFS-CEFR-J-Permissive",
+        "conflicting_cefr_levels": []
+      },
+      "candidate_senses": [
+        {
+          "sense_key": "baby%1:18:00::",
+          "synset_id": "10001672-n",
+          "sense_number": 1,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby",
+            "babe",
+            "infant"
+          ],
+          "definition": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+          "examples": [
+            "the baby began to cry again",
+            "she held the baby in her arms"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:01::",
+          "synset_id": "10001508-n",
+          "sense_number": 2,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "the youngest member of a group (not necessarily young)",
+          "examples": [
+            "the baby of the family",
+            "the baby of the Supreme Court"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:03::",
+          "synset_id": "10095351-n",
+          "sense_number": 3,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "child",
+            "baby"
+          ],
+          "definition": "an immature childish person",
+          "examples": [
+            "he remained a child in practical matters as long as he lived",
+            "stop being a baby!"
+          ]
+        },
+        {
+          "sense_key": "baby%1:18:04::",
+          "synset_id": "10002205-n",
+          "sense_number": 4,
+          "lex_domain": "noun.person",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "an unborn child; a human fetus",
+          "examples": [
+            "I felt healthy and very feminine carrying the baby",
+            "it was great to feel my baby moving about inside"
+          ]
+        },
+        {
+          "sense_key": "baby%1:05:00::",
+          "synset_id": "01344747-n",
+          "sense_number": 5,
+          "lex_domain": "noun.animal",
+          "synonyms": [
+            "baby"
+          ],
+          "definition": "a very young mammal",
+          "examples": [
+            "baby rabbits"
+          ]
+        }
+      ],
+      "allowed_decisions": [
+        "APPROVED",
+        "EDIT_REQUIRED",
+        "HOLD",
+        "REJECTED"
+      ],
+      "edit_template": {
+        "corrected_cefr": null,
+        "corrected_definition_th": null,
+        "corrected_example_en": null,
+        "corrected_example_th": null,
+        "corrected_ipa": null,
+        "reviewer_notes": null
+      },
+      "review_submission": {
+        "reviewer_decision": null,
+        "review_rationale": null,
+        "ipa_disposition": null,
+        "sense_disposition": null,
+        "edits": {
+          "meaning_en": null,
+          "meaning_th": null,
+          "phonetic_ipa": null,
+          "example_sentence": null,
+          "cefr_level": null,
+          "topic": null
+        }
+      }
+    }
+  ]
+}

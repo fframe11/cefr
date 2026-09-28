@@ -1,0 +1,162 @@
+{
+  "phase": "6.2.36",
+  "title": "Phase 6.2.36 — Blocker & Bottleneck Analysis Report (10,021 Units)",
+  "generated_at": "2026-09-28T04:07:09.582Z",
+  "primary_blockers": [
+    {
+      "blocker": "POLYSEMY_UNRESOLVED",
+      "count": 3611,
+      "pct": "36.03%",
+      "formula": "3611 / 10021"
+    },
+    {
+      "blocker": "EXAMPLE_NOT_FOUND",
+      "count": 2734,
+      "pct": "27.28%",
+      "formula": "2734 / 10021"
+    },
+    {
+      "blocker": "NONE",
+      "count": 1829,
+      "pct": "18.25%",
+      "formula": "1829 / 10021"
+    },
+    {
+      "blocker": "THAI_NOT_FOUND",
+      "count": 861,
+      "pct": "8.59%",
+      "formula": "861 / 10021"
+    },
+    {
+      "blocker": "SENSE_NOT_FOUND",
+      "count": 379,
+      "pct": "3.78%",
+      "formula": "379 / 10021"
+    },
+    {
+      "blocker": "IPA_MULTI_VARIANT",
+      "count": 285,
+      "pct": "2.84%",
+      "formula": "285 / 10021"
+    },
+    {
+      "blocker": "LEXICON_NOT_FOUND",
+      "count": 160,
+      "pct": "1.60%",
+      "formula": "160 / 10021"
+    },
+    {
+      "blocker": "CEFR_CONFLICT",
+      "count": 100,
+      "pct": "1.00%",
+      "formula": "100 / 10021"
+    },
+    {
+      "blocker": "IPA_HETERONYM",
+      "count": 33,
+      "pct": "0.33%",
+      "formula": "33 / 10021"
+    },
+    {
+      "blocker": "IPA_NOT_FOUND",
+      "count": 25,
+      "pct": "0.25%",
+      "formula": "25 / 10021"
+    },
+    {
+      "blocker": "EXAMPLE_QUALITY_FAIL",
+      "count": 4,
+      "pct": "0.04%",
+      "formula": "4 / 10021"
+    }
+  ],
+  "all_gap_flags": [
+    {
+      "gap": "EXAMPLE_NOT_FOUND",
+      "count": 5301,
+      "pct": "52.90%",
+      "formula": "5301 / 10021"
+    },
+    {
+      "gap": "POLYSEMY_UNRESOLVED",
+      "count": 3773,
+      "pct": "37.65%",
+      "formula": "3773 / 10021"
+    },
+    {
+      "gap": "THAI_NOT_FOUND",
+      "count": 882,
+      "pct": "8.80%",
+      "formula": "882 / 10021"
+    },
+    {
+      "gap": "SENSE_NOT_FOUND",
+      "count": 569,
+      "pct": "5.68%",
+      "formula": "569 / 10021"
+    },
+    {
+      "gap": "IPA_NOT_FOUND",
+      "count": 494,
+      "pct": "4.93%",
+      "formula": "494 / 10021"
+    },
+    {
+      "gap": "LEXICON_NOT_FOUND",
+      "count": 160,
+      "pct": "1.60%",
+      "formula": "160 / 10021"
+    },
+    {
+      "gap": "IPA_HETERONYM",
+      "count": 129,
+      "pct": "1.29%",
+      "formula": "129 / 10021"
+    },
+    {
+      "gap": "CEFR_CONFLICT",
+      "count": 100,
+      "pct": "1.00%",
+      "formula": "100 / 10021"
+    },
+    {
+      "gap": "EXAMPLE_QUALITY_FAIL",
+      "count": 7,
+      "pct": "0.07%",
+      "formula": "7 / 10021"
+    }
+  ],
+  "auto_ready_profile": {
+    "total": 1829,
+    "with_exact_thai": 1515,
+    "with_strong_thai": 314,
+    "with_exact_example": 1549,
+    "with_inflected_example": 280,
+    "with_confirmed_ipa": 1829,
+    "level_1_evidence": 1823,
+    "level_2_evidence": 0,
+    "level_3_evidence": 6
+  },
+  "investigations": {
+    "adverb_thai_deficit": {
+      "observation": "Adverb Thai coverage is 65.66% (543 / 827).",
+      "linguistic_root_cause": "English derivational morphology transparently generates adverbs via \"-ly\" suffixation (faithful -> faithfully, potential -> potentially). Bilingual lexicons like LEXiTRON historically index root adjectives and omit regular derived adverbs, expecting automated morphological derivation.",
+      "pipeline_status": "No artificial patching applied; gap accurately classified as THAI_NOT_FOUND or LEXICON_NOT_FOUND and held closed."
+    },
+    "auto_ready_real_bottleneck": {
+      "rank_1_blocker": {
+        "blocker": "POLYSEMY_UNRESOLVED",
+        "count": 3611,
+        "pct": "36.03%",
+        "formula": "3611 / 10021"
+      },
+      "rank_2_blocker": {
+        "blocker": "EXAMPLE_NOT_FOUND",
+        "count": 2734,
+        "pct": "27.28%",
+        "formula": "2734 / 10021"
+      },
+      "analysis": "The primary bottleneck preventing candidate units from reaching AUTO_READY is Thai polysemy ambiguity across divergent senses (POLYSEMY_UNRESOLVED), followed by missing attested example sentences in WordNet/OEWN (EXAMPLE_NOT_FOUND)."
+    }
+  }
+}

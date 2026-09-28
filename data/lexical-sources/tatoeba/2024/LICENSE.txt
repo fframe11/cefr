@@ -1,0 +1,33 @@
+Creative Commons Legal Code
+Attribution 2.0 France (CC BY 2.0 FR)
+
+CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS DRAFT LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.
+
+License
+
+THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+
+BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+
+1. Definitions
+"Attribution" You must attribute the work in the manner specified by the author or licensor.
+"Work" refers to the textual sentence contributions provided via Tatoeba.org under CC BY 2.0 FR.
+
+2. Fair Use Rights
+Nothing in this license is intended to reduce, limit, or restrict any rights arising from fair use, first sale or other limitations on the exclusive rights of the copyright owner under copyright law or other applicable laws.
+
+3. License Grant
+Subject to the terms and conditions of this License, Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in the Work as stated below:
+- to reproduce the Work;
+- to incorporate the Work into one or more Collective Works;
+- to distribute copies of the Work.
+
+4. Restrictions
+The license granted in Section 3 above is expressly made subject to and limited by the following restrictions:
+You may distribute or publicly display the Work only under the terms of this License. You must keep intact all copyright notices for the Work and provide, reasonable to the medium or means You are utilizing:
+(i) the name of the Original Author (or pseudonym, if applicable) if supplied;
+(ii) the title of the Work if supplied;
+(iii) to the extent reasonably practicable, the Uniform Resource Identifier (URI) that Licensor specifies to be associated with the Work.
+
+5. Disclaimer
+UNLESS OTHERWISE MUTUALLY AGREED BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE.

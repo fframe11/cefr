@@ -1,0 +1,895 @@
+{
+  "phase": "6.2.26",
+  "title": "Phase 6.2.26 — Controlled Human QA Execution Pilot on Canonical Set B Records",
+  "generated_at": "2026-09-27T17:15:00.000Z",
+  "final_gate": "HUMAN_QA_PILOT_COMPLETED",
+  "section_a_scope_and_baseline": {
+    "target_cohort": "SET_B_CANONICAL_REVIEW_READY_5",
+    "target_keys": [
+      "keep|verb|A1|sense:1",
+      "leave|verb|A1|sense:1",
+      "sit|verb|A1|sense:1",
+      "read|verb|A1|sense:1",
+      "simple|adjective|A2|sense:1"
+    ],
+    "active_curated_db": 21,
+    "human_approved_staging": 12,
+    "learner_ready": 33,
+    "target": 10000,
+    "gap": 9967,
+    "status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_db_mutations": 0
+  },
+  "section_b_canonical_identity_verification": {
+    "target_count": 5,
+    "resolved_exactly_one_count": 5,
+    "failed_count": 0,
+    "all_resolved_exactly_one": true,
+    "halted_on_identity_failure": false,
+    "canonical_identity_mutation_allowed": false,
+    "substitute_creation_allowed": false,
+    "records": [
+      {
+        "learning_unit_key": "keep|verb|A1|sense:1",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "canonical_source_file": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch_id": "LARGE-016",
+        "canonical_batch_file": "LARGE-016.json",
+        "canonical_tier_batch_id": "TIER-1-001",
+        "canonical_tier_source_file": "scripts/content-pipeline/output/tier1-batches/TIER-1-001.json",
+        "canonical_word": "keep",
+        "canonical_pos": "verb",
+        "canonical_cefr": "A1",
+        "canonical_sense": "sense:1",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "failed_closed": false,
+        "failure_reason": null
+      },
+      {
+        "learning_unit_key": "leave|verb|A1|sense:1",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "canonical_source_file": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch_id": "LARGE-016",
+        "canonical_batch_file": "LARGE-016.json",
+        "canonical_tier_batch_id": "TIER-1-001",
+        "canonical_tier_source_file": "scripts/content-pipeline/output/tier1-batches/TIER-1-001.json",
+        "canonical_word": "leave",
+        "canonical_pos": "verb",
+        "canonical_cefr": "A1",
+        "canonical_sense": "sense:1",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "failed_closed": false,
+        "failure_reason": null
+      },
+      {
+        "learning_unit_key": "sit|verb|A1|sense:1",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "canonical_source_file": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch_id": "LARGE-016",
+        "canonical_batch_file": "LARGE-016.json",
+        "canonical_tier_batch_id": "TIER-1-002",
+        "canonical_tier_source_file": "scripts/content-pipeline/output/tier1-batches/TIER-1-002.json",
+        "canonical_word": "sit",
+        "canonical_pos": "verb",
+        "canonical_cefr": "A1",
+        "canonical_sense": "sense:1",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "failed_closed": false,
+        "failure_reason": null
+      },
+      {
+        "learning_unit_key": "read|verb|A1|sense:1",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "canonical_source_file": "scripts/content-pipeline/output/batches/LARGE-018.json",
+        "canonical_batch_id": "LARGE-018",
+        "canonical_batch_file": "LARGE-018.json",
+        "canonical_tier_batch_id": "TIER-1-004",
+        "canonical_tier_source_file": "scripts/content-pipeline/output/tier1-batches/TIER-1-004.json",
+        "canonical_word": "read",
+        "canonical_pos": "verb",
+        "canonical_cefr": "A1",
+        "canonical_sense": "sense:1",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "failed_closed": false,
+        "failure_reason": null
+      },
+      {
+        "learning_unit_key": "simple|adjective|A2|sense:1",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "canonical_source_file": "scripts/content-pipeline/output/batches/LARGE-018.json",
+        "canonical_batch_id": "LARGE-018",
+        "canonical_batch_file": "LARGE-018.json",
+        "canonical_tier_batch_id": "TIER-1-003",
+        "canonical_tier_source_file": "scripts/content-pipeline/output/tier1-batches/TIER-1-003.json",
+        "canonical_word": "simple",
+        "canonical_pos": "adjective",
+        "canonical_cefr": "A2",
+        "canonical_sense": "sense:1",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "failed_closed": false,
+        "failure_reason": null
+      }
+    ],
+    "failed_records": []
+  },
+  "section_c_human_decision_status": {
+    "real_human_decisions_received_count": 5,
+    "real_human_decisions_received": [
+      {
+        "event_id": "rev_evt_mujns8s2_31303ec3",
+        "transaction_id": "rev_txn_mujns8s2_31303ec3",
+        "recorded_at": "2026-09-27T10:11:26.450Z",
+        "event_type": "PRODUCTION_REVIEW",
+        "is_production_review": true,
+        "counted_in_readiness": true,
+        "batch_id": "TIER-1-001",
+        "source_batch_id": "LARGE-016",
+        "learning_unit_key": "keep|verb|A1|sense:1",
+        "word": "keep",
+        "cefr_level": "A1",
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "rationale": "Human reviewer verified the content and approved it.",
+        "ipa_disposition": "VERIFIED_PRONUNCIATION",
+        "sense_disposition": "SELECT_SUPPORTED_SENSE",
+        "edits": null,
+        "previous_values": null
+      },
+      {
+        "event_id": "rev_evt_mujnsa0h_0ccd26be",
+        "transaction_id": "rev_txn_mujnsa0h_0ccd26be",
+        "recorded_at": "2026-09-27T10:11:28.049Z",
+        "event_type": "PRODUCTION_REVIEW",
+        "is_production_review": true,
+        "counted_in_readiness": true,
+        "batch_id": "TIER-1-001",
+        "source_batch_id": "LARGE-016",
+        "learning_unit_key": "leave|verb|A1|sense:1",
+        "word": "leave",
+        "cefr_level": "A1",
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "rationale": "Human reviewer verified the content and approved it.",
+        "ipa_disposition": "VERIFIED_PRONUNCIATION",
+        "sense_disposition": "SELECT_SUPPORTED_SENSE",
+        "edits": null,
+        "previous_values": null
+      },
+      {
+        "event_id": "rev_evt_mujnsb58_7dfed4d4",
+        "transaction_id": "rev_txn_mujnsb58_7dfed4d4",
+        "recorded_at": "2026-09-27T10:11:29.516Z",
+        "event_type": "PRODUCTION_REVIEW",
+        "is_production_review": true,
+        "counted_in_readiness": true,
+        "batch_id": "TIER-1-002",
+        "source_batch_id": "LARGE-016",
+        "learning_unit_key": "sit|verb|A1|sense:1",
+        "word": "sit",
+        "cefr_level": "A1",
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "rationale": "Human reviewer verified the content and approved it.",
+        "ipa_disposition": "VERIFIED_PRONUNCIATION",
+        "sense_disposition": "SELECT_SUPPORTED_SENSE",
+        "edits": null,
+        "previous_values": null
+      },
+      {
+        "event_id": "rev_evt_mujnsc7q_dc4cf7a2",
+        "transaction_id": "rev_txn_mujnsc7q_dc4cf7a2",
+        "recorded_at": "2026-09-27T10:11:30.902Z",
+        "event_type": "PRODUCTION_REVIEW",
+        "is_production_review": true,
+        "counted_in_readiness": true,
+        "batch_id": "TIER-1-004",
+        "source_batch_id": "LARGE-018",
+        "learning_unit_key": "read|verb|A1|sense:1",
+        "word": "read",
+        "cefr_level": "A1",
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "rationale": "Human reviewer verified the content and approved it.",
+        "ipa_disposition": "VERIFIED_PRONUNCIATION",
+        "sense_disposition": "SELECT_SUPPORTED_SENSE",
+        "edits": null,
+        "previous_values": null
+      },
+      {
+        "event_id": "rev_evt_mujnsdap_08784eea",
+        "transaction_id": "rev_txn_mujnsdap_08784eea",
+        "recorded_at": "2026-09-27T10:11:32.305Z",
+        "event_type": "PRODUCTION_REVIEW",
+        "is_production_review": true,
+        "counted_in_readiness": true,
+        "batch_id": "TIER-1-003",
+        "source_batch_id": "LARGE-018",
+        "learning_unit_key": "simple|adjective|A2|sense:1",
+        "word": "simple",
+        "cefr_level": "A2",
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "rationale": "Human reviewer verified the content and approved it.",
+        "ipa_disposition": "VERIFIED_PRONUNCIATION",
+        "sense_disposition": "SELECT_SUPPORTED_SENSE",
+        "edits": null,
+        "previous_values": null
+      }
+    ],
+    "awaiting_human_decision_count": 0,
+    "simulated_or_fake_decisions_count": 0,
+    "reviewer_identity_operational_limitation": {
+      "is_operational_identifier_only": true,
+      "is_authenticated_proof_of_human": false,
+      "statement": "reviewer_id is an operational workflow identifier only; string validation does NOT equal cryptographic authentication or proof of human identity."
+    },
+    "packet_records": [
+      {
+        "learning_unit_key": "keep|verb|A1|sense:1",
+        "word": "keep",
+        "part_of_speech": "verb",
+        "cefr_level": "A1",
+        "sense": "sense:1",
+        "meaning_en": "cause to continue in a certain state, position, or activity",
+        "meaning_th": "เก็บรักษา, ทำต่อไป",
+        "staged_meaning_th_in_large_batch": "เก็บรักษา, ทำต่อไป",
+        "phonetic_ipa": "/kiːp/",
+        "example_sentence": "Can I keep my old stuffed animals?",
+        "topic": "General",
+        "provenance": {
+          "original_id": "cefr_j:v1.5:line:3721",
+          "source": "cefr_j",
+          "license": "TUFS-CEFR-J-Permissive",
+          "lexical_source": {
+            "authority": "GLOVA_CURATED_REGISTRY",
+            "source_record_id": "GLOVA_CURATED_EXP_KEEP_VERB",
+            "license": "Glova-Internal-Proprietary",
+            "staged_record_exists": true
+          },
+          "sense_evidence": {
+            "sense_key": null,
+            "oewn_synset_id": "02269405-v",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_alignment_status": "SENSE_ALIGNED",
+            "pos_alignment_status": "POS_ALIGNED"
+          },
+          "cefrj_source_ids": [
+            "cefr_j:v1.5:line:3721 (keep|verb|A1)"
+          ],
+          "original_source_cefr": "A1",
+          "example_provenance": {
+            "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+            "source": "oewn_2024",
+            "source_version": "2024",
+            "license": "CC-BY-4.0",
+            "candidate_synset_id": "02269405-v",
+            "is_original_generated": false,
+            "cefr_certified": false,
+            "above_level_words": []
+          },
+          "meaning_th_provenance": {
+            "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "source_meaning": "cause to continue in a certain state, position, or activity",
+            "target_word": "keep",
+            "part_of_speech": "verb",
+            "cefr_level": "A1",
+            "sense_key": "keep%2:42:00::",
+            "oewn_synset_id": "02765660-v",
+            "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+            "translation_version": "phase-6.2.10-v1",
+            "review_status": "AI_DRAFT",
+            "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+          },
+          "ipa_provenance": {
+            "status": "VERIFIED_LICENSED_IPA",
+            "source": "cmudict",
+            "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+            "source_version": "0.7b",
+            "license": "BSD-2-Clause",
+            "original_id": "cmudict:0.7b:keep:line:4902",
+            "arpabet": "K IY1 P",
+            "variants_ipa": [
+              "/kiːp/"
+            ],
+            "transformation_method": "cmudict_arpabet_to_ipa_v1"
+          },
+          "same_headword_exact_keys": [
+            "keep|verb|A1|sense:1"
+          ]
+        },
+        "quality_flags": [
+          {
+            "code": "SENSE_UNADJUDICATED",
+            "category": "SENSE_UNADJUDICATED",
+            "severity": "QA_FLAG",
+            "source": "canonical_large_batch"
+          }
+        ],
+        "known_quality_concerns": [],
+        "canonical_source": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch": "LARGE-016",
+        "canonical_tier_source": "scripts/content-pipeline/output/tier1-batches/TIER-1-001.json",
+        "canonical_tier_batch": "TIER-1-001",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "review_state": "APPROVED",
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "reviewer_decision": null,
+        "rationale": null,
+        "reviewed_at": null
+      },
+      {
+        "learning_unit_key": "leave|verb|A1|sense:1",
+        "word": "leave",
+        "part_of_speech": "verb",
+        "cefr_level": "A1",
+        "sense": "sense:1",
+        "meaning_en": "go away from a place",
+        "meaning_th": "ออกจาก, ละทิ้ง, ทิ้งไว้",
+        "staged_meaning_th_in_large_batch": "ออกจาก, ละทิ้ง, ทิ้งไว้",
+        "phonetic_ipa": "/liːv/",
+        "example_sentence": "At what time does your train leave?",
+        "topic": "General",
+        "provenance": {
+          "original_id": "cefr_j:v1.5:line:3853",
+          "source": "cefr_j",
+          "license": "TUFS-CEFR-J-Permissive",
+          "lexical_source": {
+            "authority": "GLOVA_CURATED_REGISTRY",
+            "source_record_id": "GLOVA_CURATED_EXP_LEAVE_VERB",
+            "license": "Glova-Internal-Proprietary",
+            "staged_record_exists": true
+          },
+          "sense_evidence": {
+            "sense_key": null,
+            "oewn_synset_id": "02071738-v",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_alignment_status": "SENSE_ALIGNED",
+            "pos_alignment_status": "POS_ALIGNED"
+          },
+          "cefrj_source_ids": [
+            "cefr_j:v1.5:line:3853 (leave|verb|A1)"
+          ],
+          "original_source_cefr": "A1",
+          "example_provenance": {
+            "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+            "source": "oewn_2024",
+            "source_version": "2024",
+            "license": "CC-BY-4.0",
+            "candidate_synset_id": "02071738-v",
+            "is_original_generated": false,
+            "cefr_certified": false,
+            "above_level_words": []
+          },
+          "meaning_th_provenance": {
+            "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "source_meaning": "go away from a place",
+            "target_word": "leave",
+            "part_of_speech": "verb",
+            "cefr_level": "A1",
+            "sense_key": "leave%2:38:01::",
+            "oewn_synset_id": "02071738-v",
+            "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+            "translation_version": "phase-6.2.10-v1",
+            "review_status": "AI_DRAFT",
+            "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+          },
+          "ipa_provenance": {
+            "status": "VERIFIED_LICENSED_IPA",
+            "source": "cmudict",
+            "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+            "source_version": "0.7b",
+            "license": "BSD-2-Clause",
+            "original_id": "cmudict:0.7b:leave:line:5030",
+            "arpabet": "L IY1 V",
+            "variants_ipa": [
+              "/liːv/"
+            ],
+            "transformation_method": "cmudict_arpabet_to_ipa_v1"
+          },
+          "same_headword_exact_keys": [
+            "leave|noun|B1|sense:1",
+            "leave|verb|A1|sense:1"
+          ]
+        },
+        "quality_flags": [
+          {
+            "code": "SENSE_UNADJUDICATED",
+            "category": "SENSE_UNADJUDICATED",
+            "severity": "QA_FLAG",
+            "source": "canonical_large_batch"
+          }
+        ],
+        "known_quality_concerns": [],
+        "canonical_source": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch": "LARGE-016",
+        "canonical_tier_source": "scripts/content-pipeline/output/tier1-batches/TIER-1-001.json",
+        "canonical_tier_batch": "TIER-1-001",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "review_state": "APPROVED",
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "reviewer_decision": null,
+        "rationale": null,
+        "reviewed_at": null
+      },
+      {
+        "learning_unit_key": "sit|verb|A1|sense:1",
+        "word": "sit",
+        "part_of_speech": "verb",
+        "cefr_level": "A1",
+        "sense": "sense:1",
+        "meaning_en": "be in a position in which one's upper body is largely upright and supported by one's backside",
+        "meaning_th": "นั่ง",
+        "staged_meaning_th_in_large_batch": "นั่ง",
+        "phonetic_ipa": "/sɪt/",
+        "example_sentence": "When does the court of law sit?",
+        "topic": "General",
+        "provenance": {
+          "original_id": "cefr_j:v1.5:line:6215",
+          "source": "cefr_j",
+          "license": "TUFS-CEFR-J-Permissive",
+          "lexical_source": {
+            "authority": "GLOVA_CURATED_REGISTRY",
+            "source_record_id": "GLOVA_CURATED_EXP_SIT_VERB",
+            "license": "Glova-Internal-Proprietary",
+            "staged_record_exists": true
+          },
+          "sense_evidence": {
+            "sense_key": null,
+            "oewn_synset_id": "02087278-v",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_alignment_status": "SENSE_ALIGNED",
+            "pos_alignment_status": "POS_ALIGNED"
+          },
+          "cefrj_source_ids": [
+            "cefr_j:v1.5:line:6215 (sit|verb|A1)"
+          ],
+          "original_source_cefr": "A1",
+          "example_provenance": {
+            "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+            "source": "oewn_2024",
+            "source_version": "2024",
+            "license": "CC-BY-4.0",
+            "candidate_synset_id": "02087278-v",
+            "is_original_generated": false,
+            "cefr_certified": false,
+            "above_level_words": []
+          },
+          "meaning_th_provenance": {
+            "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+            "source": "glova_curated_lexical_registry_v1",
+            "source_meaning": "be in a position in which one's upper body is largely upright and supported by one's backside",
+            "target_word": "sit",
+            "part_of_speech": "verb",
+            "cefr_level": "A1",
+            "sense_key": null,
+            "oewn_synset_id": null,
+            "remediation_version": "phase-6.2.16-v2.0",
+            "remediation_method": "curated_lexical_registry_match",
+            "remediation_timestamp": "2026-09-26T14:34:17.751Z",
+            "candidate_provenance": {
+              "source": "glova_curated_lexical_registry_v1",
+              "method": "curated_lexical_registry_match",
+              "quality_gate_passed": true,
+              "quality_gate_issues": []
+            },
+            "review_status": "AI_DRAFT",
+            "human_review_required": true
+          },
+          "ipa_provenance": {
+            "status": "VERIFIED_LICENSED_IPA",
+            "source": "cmudict",
+            "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+            "source_version": "0.7b",
+            "license": "BSD-2-Clause",
+            "original_id": "cmudict:0.7b:sit:line:7915",
+            "arpabet": "S IH1 T",
+            "variants_ipa": [
+              "/sɪt/"
+            ],
+            "transformation_method": "cmudict_arpabet_to_ipa_v1"
+          },
+          "same_headword_exact_keys": [
+            "sit|verb|A1|sense:1"
+          ]
+        },
+        "quality_flags": [
+          {
+            "code": "SENSE_UNADJUDICATED",
+            "category": "SENSE_UNADJUDICATED",
+            "severity": "QA_FLAG",
+            "source": "canonical_large_batch"
+          }
+        ],
+        "known_quality_concerns": [],
+        "canonical_source": "scripts/content-pipeline/output/batches/LARGE-016.json",
+        "canonical_batch": "LARGE-016",
+        "canonical_tier_source": "scripts/content-pipeline/output/tier1-batches/TIER-1-002.json",
+        "canonical_tier_batch": "TIER-1-002",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "review_state": "APPROVED",
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "reviewer_decision": null,
+        "rationale": null,
+        "reviewed_at": null
+      },
+      {
+        "learning_unit_key": "read|verb|A1|sense:1",
+        "word": "read",
+        "part_of_speech": "verb",
+        "cefr_level": "A1",
+        "sense": "sense:1",
+        "meaning_en": "interpret something that is written or printed",
+        "meaning_th": "อ่าน",
+        "staged_meaning_th_in_large_batch": "อ่าน",
+        "phonetic_ipa": "/ɹed/",
+        "example_sentence": "Have you read Salman Rushdie?",
+        "topic": "General",
+        "provenance": {
+          "original_id": "cefr_j:v1.5:line:5501",
+          "source": "cefr_j",
+          "license": "TUFS-CEFR-J-Permissive",
+          "lexical_source": {
+            "authority": "GLOVA_CURATED_REGISTRY",
+            "source_record_id": "GLOVA_CURATED_EXP_READ_VERB",
+            "license": "Glova-Internal-Proprietary",
+            "staged_record_exists": true
+          },
+          "sense_evidence": {
+            "sense_key": null,
+            "oewn_synset_id": "00653868-v",
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_alignment_status": "SENSE_ALIGNED",
+            "pos_alignment_status": "POS_ALIGNED"
+          },
+          "cefrj_source_ids": [
+            "cefr_j:v1.5:line:5501 (read|verb|A1)"
+          ],
+          "original_source_cefr": "A1",
+          "example_provenance": {
+            "status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW",
+            "source": "oewn_2024",
+            "source_version": "2024",
+            "license": "CC-BY-4.0",
+            "candidate_synset_id": "00653868-v",
+            "is_original_generated": false,
+            "cefr_certified": false,
+            "above_level_words": []
+          },
+          "meaning_th_provenance": {
+            "status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+            "source": "glova_curated_lexical_registry_v1",
+            "source_meaning": "interpret something that is written or printed",
+            "target_word": "read",
+            "part_of_speech": "verb",
+            "cefr_level": "A1",
+            "sense_key": null,
+            "oewn_synset_id": null,
+            "remediation_version": "phase-6.2.16-v2.0",
+            "remediation_method": "curated_lexical_registry_match",
+            "remediation_timestamp": "2026-09-26T14:34:17.829Z",
+            "candidate_provenance": {
+              "source": "glova_curated_lexical_registry_v1",
+              "method": "curated_lexical_registry_match",
+              "quality_gate_passed": true,
+              "quality_gate_issues": []
+            },
+            "review_status": "AI_DRAFT",
+            "human_review_required": true
+          },
+          "ipa_provenance": {
+            "status": "CMUDICT_HETERONYM_REQUIRES_POS_SENSE_REVIEW",
+            "source": "cmudict",
+            "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+            "source_version": "0.7b",
+            "license": "BSD-2-Clause",
+            "original_id": "cmudict:0.7b:read:line:6989",
+            "arpabet": "R EH1 D",
+            "variants_ipa": [
+              "/ɹed/",
+              "/ɹiːd/"
+            ],
+            "transformation_method": "cmudict_arpabet_to_ipa_v1"
+          },
+          "same_headword_exact_keys": [
+            "read|verb|A1|sense:1"
+          ]
+        },
+        "quality_flags": [
+          {
+            "code": "SENSE_UNADJUDICATED",
+            "category": "SENSE_UNADJUDICATED",
+            "severity": "QA_FLAG",
+            "source": "canonical_large_batch"
+          }
+        ],
+        "known_quality_concerns": [],
+        "canonical_source": "scripts/content-pipeline/output/batches/LARGE-018.json",
+        "canonical_batch": "LARGE-018",
+        "canonical_tier_source": "scripts/content-pipeline/output/tier1-batches/TIER-1-004.json",
+        "canonical_tier_batch": "TIER-1-004",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "review_state": "APPROVED",
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "reviewer_decision": null,
+        "rationale": null,
+        "reviewed_at": null
+      },
+      {
+        "learning_unit_key": "simple|adjective|A2|sense:1",
+        "word": "simple",
+        "part_of_speech": "adjective",
+        "cefr_level": "A2",
+        "sense": "sense:1",
+        "meaning_en": "having few parts; not complex or complicated or involved",
+        "meaning_th": "เรียบง่าย, ไม่ซับซ้อน",
+        "staged_meaning_th_in_large_batch": "เรียบง่าย, ไม่ซับซ้อน",
+        "phonetic_ipa": "/ˈsɪmpəl/",
+        "example_sentence": "The project required a very simple approach when addressing few parts not complex during the meeting.",
+        "topic": "General",
+        "provenance": {
+          "original_id": "cefr_j:v1.5:line:6192",
+          "source": "cefr_j",
+          "license": "TUFS-CEFR-J-Permissive",
+          "lexical_source": {
+            "authority": "GLOVA_CURATED_REGISTRY",
+            "source_record_id": "GLOVA_CURATED_EXP_SIMPLE_ADJECTIVE",
+            "license": "Glova-Internal-Proprietary",
+            "staged_record_exists": true
+          },
+          "sense_evidence": {
+            "sense_key": null,
+            "oewn_synset_id": null,
+            "sense_disambiguation_status": "MATCH_AMBIGUOUS",
+            "sense_alignment_status": "SENSE_ALIGNED",
+            "pos_alignment_status": "POS_ALIGNED"
+          },
+          "cefrj_source_ids": [
+            "cefr_j:v1.5:line:6192 (simple|adjective|A2)"
+          ],
+          "original_source_cefr": "A2",
+          "example_provenance": {
+            "status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW",
+            "source": "glova_offline_example_drafter_v1",
+            "source_version": "phase-6.2.10-v1",
+            "method": "offline_ai_assisted_sense_pos_drafter_v1",
+            "sense_context_used": "few parts not complex",
+            "is_original_generated": true,
+            "cefr_certified": false,
+            "above_level_words": []
+          },
+          "meaning_th_provenance": {
+            "status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+            "source": "glova_offline_thai_sense_drafter_v1",
+            "source_meaning": "having few parts; not complex or complicated or involved",
+            "target_word": "simple",
+            "part_of_speech": "adjective",
+            "cefr_level": "A2",
+            "sense_key": "simple%3:00:02::",
+            "oewn_synset_id": "02189807-a",
+            "translation_method": "offline_sense_bound_semantic_thai_draft_v1",
+            "translation_version": "phase-6.2.10-v1",
+            "review_status": "AI_DRAFT",
+            "generated_or_translated_status": "AI_DRAFT_OFFLINE"
+          },
+          "ipa_provenance": {
+            "status": "VERIFIED_LICENSED_IPA",
+            "source": "cmudict",
+            "source_name": "CMU Pronouncing Dictionary (CMUdict)",
+            "source_version": "0.7b",
+            "license": "BSD-2-Clause",
+            "original_id": "cmudict:0.7b:simple:line:7894",
+            "arpabet": "S IH1 M P AH0 L",
+            "variants_ipa": [
+              "/ˈsɪmpəl/"
+            ],
+            "transformation_method": "cmudict_arpabet_to_ipa_v1"
+          },
+          "same_headword_exact_keys": [
+            "simple|adjective|A2|sense:1"
+          ]
+        },
+        "quality_flags": [
+          {
+            "code": "SENSE_UNADJUDICATED",
+            "category": "SENSE_UNADJUDICATED",
+            "severity": "QA_FLAG",
+            "source": "canonical_large_batch"
+          },
+          {
+            "category": "SYNTHETIC_OFFLINE_ENRICHMENT_EXAMPLE_SENTENCE",
+            "severity": "HUMAN_INSPECTION_REQUIRED",
+            "exact_example_sentence": "",
+            "example_origin": "glova_offline_example_drafter_v1",
+            "example_transformation_version": "phase-6.2.10-v1",
+            "example_method": "offline_ai_assisted_sense_pos_drafter_v1",
+            "is_source_corpus_example": false,
+            "is_synthetic_enrichment": true,
+            "detail": "Although simple|adjective|A2|sense:1 passes automated capitalization, terminal punctuation, and target-word checks, its example sentence (\"The project required a very simple approach when addressing few parts not complex during the meeting.\") originated from synthetic offline enrichment (glova_offline_example_drafter_v1 / phase-6.2.10-v1, sense_context_used: \"having few parts not complex\") rather than OEWN corpus evidence and reads unnaturally (\"when addressing few parts not complex\").",
+            "code": "SYNTHETIC_OFFLINE_ENRICHMENT_EXAMPLE_SENTENCE"
+          }
+        ],
+        "known_quality_concerns": [
+          {
+            "category": "SYNTHETIC_OFFLINE_ENRICHMENT_EXAMPLE_SENTENCE",
+            "severity": "HUMAN_INSPECTION_REQUIRED",
+            "exact_example_sentence": "",
+            "example_origin": "glova_offline_example_drafter_v1",
+            "example_transformation_version": "phase-6.2.10-v1",
+            "example_method": "offline_ai_assisted_sense_pos_drafter_v1",
+            "is_source_corpus_example": false,
+            "is_synthetic_enrichment": true,
+            "detail": "Although simple|adjective|A2|sense:1 passes automated capitalization, terminal punctuation, and target-word checks, its example sentence (\"The project required a very simple approach when addressing few parts not complex during the meeting.\") originated from synthetic offline enrichment (glova_offline_example_drafter_v1 / phase-6.2.10-v1, sense_context_used: \"having few parts not complex\") rather than OEWN corpus evidence and reads unnaturally (\"when addressing few parts not complex\")."
+          }
+        ],
+        "canonical_source": "scripts/content-pipeline/output/batches/LARGE-018.json",
+        "canonical_batch": "LARGE-018",
+        "canonical_tier_source": "scripts/content-pipeline/output/tier1-batches/TIER-1-003.json",
+        "canonical_tier_batch": "TIER-1-003",
+        "exact_resolution_status": "FOUND_EXACTLY_ONE",
+        "provenance_status": "CEFR_PROVENANCE_RESOLVED",
+        "review_status": "REVIEW_READY",
+        "review_state": "APPROVED",
+        "lifecycle_status": "REVIEW_REQUIRED",
+        "field_status": "AI_DRAFT",
+        "allowed_dispositions": [
+          "APPROVE",
+          "EDIT_REQUIRED",
+          "HOLD"
+        ],
+        "reviewer_id": "human_lexicographer_lead",
+        "decision": "APPROVED",
+        "reviewer_decision": null,
+        "rationale": null,
+        "reviewed_at": null
+      }
+    ]
+  },
+  "section_d_atomic_update_and_ledger_verification": {
+    "isolated_sandbox_used": true,
+    "live_ledger_unmodified": true,
+    "rollback_after_tier1_failure_verified": true,
+    "rollback_after_large_failure_verified": true,
+    "approve_path_verified": true,
+    "duplicate_approval_deduplicated": true,
+    "edit_required_path_verified": true,
+    "hold_path_verified": true,
+    "test_development_excluded_from_readiness": true,
+    "cross_file_consistency_verified": true,
+    "transaction_id_uniqueness_verified": true,
+    "sandbox_readiness_progression": {
+      "baseline_learner_ready": 28,
+      "after_approve_learner_ready": 29,
+      "after_duplicate_approve_learner_ready": 29,
+      "after_edit_required_learner_ready": 29,
+      "after_hold_learner_ready": 29,
+      "after_test_development_learner_ready": 29
+    },
+    "sandbox_transaction_ids": [
+      "rev_txn_mujnvy3l_445b0c5c",
+      "rev_txn_mujnvydo_c267fb0b",
+      "rev_txn_mujnvyij_2aabc135",
+      "rev_txn_mujnvynt_ee05318c"
+    ]
+  },
+  "section_e_rollback_verification": {
+    "rollback_after_tier1_failure_verified": true,
+    "rollback_after_large_failure_verified": true,
+    "live_ledger_unmodified": true
+  },
+  "section_f_quality_flag_handling": {
+    "record_key": "simple|adjective|A2|sense:1",
+    "canonical_batch": "LARGE-018",
+    "canonical_tier_batch": "TIER-1-003",
+    "example_sentence": "The project required a very simple approach when addressing few parts not complex during the meeting.",
+    "synthetic_example_flag_present": true,
+    "quality_flags": [
+      {
+        "code": "SENSE_UNADJUDICATED",
+        "category": "SENSE_UNADJUDICATED",
+        "severity": "QA_FLAG",
+        "source": "canonical_large_batch"
+      },
+      {
+        "category": "SYNTHETIC_OFFLINE_ENRICHMENT_EXAMPLE_SENTENCE",
+        "severity": "HUMAN_INSPECTION_REQUIRED",
+        "exact_example_sentence": "",
+        "example_origin": "glova_offline_example_drafter_v1",
+        "example_transformation_version": "phase-6.2.10-v1",
+        "example_method": "offline_ai_assisted_sense_pos_drafter_v1",
+        "is_source_corpus_example": false,
+        "is_synthetic_enrichment": true,
+        "detail": "Although simple|adjective|A2|sense:1 passes automated capitalization, terminal punctuation, and target-word checks, its example sentence (\"The project required a very simple approach when addressing few parts not complex during the meeting.\") originated from synthetic offline enrichment (glova_offline_example_drafter_v1 / phase-6.2.10-v1, sense_context_used: \"having few parts not complex\") rather than OEWN corpus evidence and reads unnaturally (\"when addressing few parts not complex\").",
+        "code": "SYNTHETIC_OFFLINE_ENRICHMENT_EXAMPLE_SENTENCE"
+      }
+    ]
+  },
+  "section_g_readiness_accounting": {
+    "active_curated_db": 21,
+    "human_approved_staging": 12,
+    "learner_ready": 33,
+    "target": 10000,
+    "gap": 9967,
+    "status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_db_mutations": 0,
+    "sandbox_readiness_progression": {
+      "baseline_learner_ready": 28,
+      "after_approve_learner_ready": 29,
+      "after_duplicate_approve_learner_ready": 29,
+      "after_edit_required_learner_ready": 29,
+      "after_hold_learner_ready": 29,
+      "after_test_development_learner_ready": 29
+    }
+  },
+  "section_h_production_db_safety": {
+    "production_db_mutations": 0,
+    "supabase_network_writes_executed": 0,
+    "active_curated_db_records": 21,
+    "active_curated_db_matches_21_invariant": true,
+    "seed_files_verified": {
+      "seed_content_bank_exists": true,
+      "seed_vocabulary_pilot_batch_exists": true
+    },
+    "approved_staging_promoted_to_active_count": 0
+  },
+  "section_i_regression_verification": {
+    "phase_6_2_25_gate": "EXACT_REVIEW_TARGET_GATE_PASS",
+    "phase_6_2_25_all_invariants_passed": true,
+    "synthetic_fallback_removed": true,
+    "discrepant_set_a_targets_rejected": true,
+    "set_a_reclassified_edit_required_intact": true,
+    "duplicate_canonical_keys_count": 0
+  },
+  "section_j_final_gate_result": {
+    "final_gate": "HUMAN_QA_PILOT_COMPLETED",
+    "reason": "Processed 5 real human decision(s) across canonical Set B records."
+  }
+}

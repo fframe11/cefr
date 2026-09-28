@@ -1,0 +1,24 @@
+{
+  "phase": "6.2.18",
+  "sample_size": 25,
+  "metrics": {
+    "total_evaluated": 25,
+    "approved_candidate_ready": 21,
+    "edit_required_candidate": 0,
+    "hold_candidate": 4,
+    "unresolved": 0,
+    "pos_aligned_count": 25,
+    "pos_suspect_count": 0,
+    "sense_aligned_count": 21,
+    "sense_conflict_count": 4,
+    "sense_ambiguous_count": 0,
+    "source_grounded_count": 25,
+    "approved_candidate_ready_pct": 84,
+    "edit_required_candidate_pct": 0,
+    "hold_candidate_pct": 16,
+    "unresolved_pct": 0,
+    "pos_aligned_pct": 100,
+    "sense_aligned_pct": 84,
+    "source_grounded_rate_pct": 100
+  }
+}

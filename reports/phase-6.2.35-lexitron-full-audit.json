@@ -1,0 +1,82 @@
+{
+  "phase": "6.2.35",
+  "dataset": "NECTEC LEXiTRON 2.0 (English-Thai etlex)",
+  "generated_at": "2026-09-28T03:04:07.473Z",
+  "inventory_summary": {
+    "raw_records": 83232,
+    "usable_records": 83231,
+    "malformed_records": 0,
+    "empty_translations": 1,
+    "unique_raw_headwords": 54485,
+    "unique_normalized_headwords": 52761,
+    "with_synonyms_count": 39565,
+    "with_synonyms_percentage": "47.54%",
+    "with_antonyms_count": 4726,
+    "with_antonyms_percentage": "5.68%",
+    "with_thai_phonetics_count": 41085,
+    "with_thai_phonetics_percentage": "49.36%"
+  },
+  "polysemy_and_ambiguity_metrics": {
+    "multi_translation_words_count": 13559,
+    "multi_translation_rate": "25.70%",
+    "multi_pos_words_count": 5667,
+    "multi_pos_rate": "10.74%",
+    "duplicate_exact_entries_count": 313,
+    "duplicate_rate": "0.38%"
+  },
+  "pos_distribution": {
+    "raw_categories": {
+      "DET": 13,
+      "N": 34418,
+      "ADJ": 12436,
+      "ABBR": 318,
+      "ADV": 2437,
+      "PREP": 216,
+      "VT": 8684,
+      "VI": 4251,
+      "VT, VI": 1,
+      "VI, VT": 1,
+      "INT": 137,
+      "CONJ": 96,
+      "PRON": 111,
+      "IDM": 4205,
+      "AUX": 37,
+      "ART": 2,
+      "PRF": 256,
+      "V": 7,
+      "adj": 4,
+      "PHRV": 12972,
+      "UNKNOWN": 7,
+      "PERP": 1,
+      "PHRV0": 2,
+      "PRO": 1,
+      "SL": 2470,
+      "INTER": 1,
+      "SUF": 139,
+      "DM": 5,
+      "ีีN": 1,
+      "ืN": 2
+    },
+    "normalized_categories": {
+      "determiner": 13,
+      "noun": 34421,
+      "adjective": 12440,
+      "abbreviation": 318,
+      "adverb": 2437,
+      "preposition": 216,
+      "verb": 25918,
+      "interjection": 137,
+      "conjunction": 96,
+      "pronoun": 111,
+      "idiom": 4205,
+      "other": 54,
+      "prefix": 256,
+      "slang": 2470,
+      "suffix": 139
+    }
+  },
+  "artifacts_created": {
+    "usable_index_file": "data/lexical-sources/lexitron/2.0/lexitron-usable-index.json",
+    "total_indexed_keys": 59279
+  }
+}

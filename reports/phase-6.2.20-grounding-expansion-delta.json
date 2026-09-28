@@ -1,0 +1,70 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-grounding-expansion-delta-v1.json",
+  "phase": "PHASE_6_2_20_GROUNDING_EXPANSION_DELTA",
+  "generated_at": "2026-09-28T16:33:32.774Z",
+  "sample_size": 200,
+  "comparison_table": {
+    "source_grounded": {
+      "before": 2,
+      "after": 21,
+      "delta": 19
+    },
+    "no_lexical_source": {
+      "before": 198,
+      "after": 179,
+      "delta": -19
+    },
+    "candidate_ready": {
+      "before": 2,
+      "after": 21,
+      "delta": 19
+    },
+    "edit_required": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "hold_candidate": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "unresolved": {
+      "before": 198,
+      "after": 160,
+      "delta": -38
+    },
+    "special_syntax_review_required": {
+      "before": 0,
+      "after": 19,
+      "delta": 19
+    },
+    "pos_aligned": {
+      "before": 2,
+      "after": 21,
+      "delta": 19
+    },
+    "sense_aligned": {
+      "before": 2,
+      "after": 21,
+      "delta": 19
+    },
+    "cefr_compatible": {
+      "before": 2,
+      "after": 21,
+      "delta": 19
+    },
+    "human_review_required": {
+      "before": 200,
+      "after": 200,
+      "delta": 0
+    }
+  },
+  "measured_yield_summary": {
+    "pilot_sample": 200,
+    "candidate_ready_yield_pct": 9.5,
+    "grounded_yield_pct": 9.5,
+    "status": "EXPANSION_VALIDATED",
+    "rationale": "Pilot demonstrated clean empirical yield: +19 grounded candidates and +19 candidate-ready units (+9.5% yield) with 0 POS defects on curated entries and strict isolation of 19 closed-class items."
+  }
+}

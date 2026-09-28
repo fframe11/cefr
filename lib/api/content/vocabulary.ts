@@ -4,6 +4,7 @@ import { CEFRLevel, VocabularyWord } from '../../../types';
 export interface VocabularyQueryParams {
   cefr_level?: CEFRLevel;
   topic?: string;
+  part_of_speech?: string;
   search?: string;
   page?: number;
   limit?: number;
@@ -68,6 +69,7 @@ export async function getVocabulary(params: VocabularyQueryParams = {}): Promise
   const queryParts: string[] = [];
   if (params.cefr_level) queryParts.push(`cefr_level=${encodeURIComponent(params.cefr_level)}`);
   if (params.topic) queryParts.push(`topic=${encodeURIComponent(params.topic)}`);
+  if (params.part_of_speech) queryParts.push(`part_of_speech=${encodeURIComponent(params.part_of_speech)}`);
   if (params.search) queryParts.push(`search=${encodeURIComponent(params.search)}`);
   if (params.page !== undefined) queryParts.push(`page=${params.page}`);
   if (params.limit !== undefined) queryParts.push(`limit=${params.limit}`);

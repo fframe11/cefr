@@ -1,0 +1,68 @@
+{
+  "phase": "6.2.35",
+  "document_type": "LICENSE_RECONCILIATION_REPORT",
+  "dataset_name": "NECTEC LEXiTRON 2.0 (etlex)",
+  "dataset_version": "2.0",
+  "reconciliation_date": "2026-09-28T03:15:00.000Z",
+  "official_sources": [
+    {
+      "source_name": "NECTEC LEXiTRON Official Homepage & Repository",
+      "url": "https://lexitron.nectec.or.th/",
+      "repository_url": "https://github.com/PyThaiNLP/lexitron",
+      "license_file": "LICENSE.txt",
+      "license_th_file": "LICENSE-th.txt",
+      "sha256_english_license": "b4bbce1f9a1f94ea6b39922c07ef94c6f937eef9f96b99ec76f1e29e92ad372e",
+      "license_title_english": "LICENSE AGREEMENT (National Electronics and Computer Technology Center - NECTEC, 2003)",
+      "license_title_thai": "ข้อตกลงการอนุญาตใช้สิทธิ์ (ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ พ.ศ. 2546)"
+    },
+    {
+      "source_name": "Open Government Data Catalog (Data.go.th / Open-D NSTDA)",
+      "url": "https://data.go.th / https://opend.nstda.or.th/",
+      "catalog_classification": "Open Data Common / Public Language Resource",
+      "publisher": "National Science and Technology Development Agency (NSTDA) / NECTEC",
+      "data_access_level": "Public Open Data"
+    }
+  ],
+  "authoritative_terms_reconciliation": {
+    "license_identifier": "NECTEC-LEXiTRON-License-Agreement-2003",
+    "redistribution_permitted": true,
+    "modification_permitted": true,
+    "source_code_redistribution_conditions": [
+      "Must retain copyright notice (Copyright (c) 2003 NECTEC)",
+      "Must retain Acceptance of License Agreement",
+      "Must retain Terms of Use (TOU)",
+      "Must retain Section 4 Disclaimer of Warranty"
+    ],
+    "binary_form_redistribution_conditions": [
+      "Must reproduce copyright notice in documentation or accompanying materials",
+      "Must reproduce Acceptance of terms, TOU, and disclaimer"
+    ],
+    "mandatory_attribution_clause": {
+      "english": "This product is created by the adaptation of LEXiTRON developed by NECTEC (http://www.nectec.or.th/).",
+      "thai": "ผลิตภัณฑ์นี้สร้างสรรค์ขึ้นโดยดัดแปลงมาจากพจนานุกรมเล็กซิตรอนซึ่งพัฒนาโดยศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ (http://www.nectec.or.th)"
+    },
+    "naming_and_trademark_restrictions": [
+      "Derived products must NOT be called 'LEXiTRON' or 'เล็กซิตรอน'",
+      "'LEXiTRON' must not appear in the derivative product name without prior written permission",
+      "Neither the name NECTEC nor NSTDA may be used to endorse or promote derivative products without written permission"
+    ],
+    "commercial_use_analysis": {
+      "explicit_license_text_position": "The official 2003 License Agreement text in Section 3 permits redistribution and use with or without modification subject to conditions (a) through (f). It does NOT contain the phrase 'Non-Commercial' or 'for educational use only' in Section 3.",
+      "historical_context": "NECTEC historically provided bespoke technology transfer agreements for commercial standalone desktop software in the late 1990s and early 2000s, which gave rise to informal assertions that LEXiTRON was non-commercial. However, the published dataset license file (LICENSE.txt) is a modified BSD-style permissive attribution agreement.",
+      "open_government_status": "Published under Open Data Common on the national open data portal (data.go.th).",
+      "reconciliation_verdict": "PERMITTED_WITH_ATTRIBUTION_AND_NAMING_RESTRICTION"
+    },
+    "correction_of_previous_statement": {
+      "previous_pipeline_description": "NECTEC Non-Commercial Educational License",
+      "audit_finding": "INACCURATE_CONFLATION",
+      "corrected_classification": "NECTEC LEXiTRON License Agreement (2003) — BSD-style Permissive Open Attribution Agreement"
+    }
+  },
+  "unresolved_ambiguity": "None in the dataset file license. The published LICENSE.txt and LICENSE-th.txt are mutually consistent and explicitly govern redistribution under Section 3.",
+  "compliance_requirements_for_glova": [
+    "Retain full attribution in all learning unit provenances and public docs",
+    "Do NOT brand the Glova vocabulary product as LEXiTRON",
+    "Do NOT state that NECTEC endorses or certifies Glova CEFR vocabulary",
+    "Retain the complete NECTEC copyright notice and disclaimer in the source snapshots"
+  ]
+}

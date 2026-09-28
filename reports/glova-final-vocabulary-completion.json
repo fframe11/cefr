@@ -1,0 +1,203 @@
+{
+  "timestamp": "2026-09-28T16:19:55.899Z",
+  "duration_ms": 3659,
+  "total_units": 10021,
+  "status": "COMPLETE",
+  "source_stats": {
+    "thai_source_backed": 9251,
+    "thai_supplemental": 770,
+    "example_source_backed": 9545,
+    "example_supplemental": 476,
+    "ipa_source_backed": 9527,
+    "ipa_compound_joined": 174,
+    "ipa_supplemental": 320,
+    "meaning_en_source_backed": 9421,
+    "meaning_en_supplemental": 600
+  },
+  "sample_preview": [
+    {
+      "id": "vocab-a1-00001",
+      "word": "schedule",
+      "lemma": "schedule",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_th": "กำหนดการ",
+      "meaning_en": "a temporally organized plan for matters to be attended to",
+      "ipa": "/sˈkedʒʊl/",
+      "example_sentence_en": "A schedule is an identity card for time, but, if you don't have a schedule, the time isn't there.",
+      "example_sentence_th": "ตัวอย่างประโยคแสดงการใช้งาน \"schedule\" ในบริบทจริง",
+      "collocations": [
+        "wage schedule"
+      ],
+      "topic": "Daily Life",
+      "synonyms": [
+        "agenda"
+      ],
+      "antonyms": [],
+      "is_active": true,
+      "qa_status": "LEARNER_READY",
+      "provenance": {
+        "cefr_source": "CEFR-J 1.5 + Octanove 1.0",
+        "lexicon_source": "Open English WordNet 2024",
+        "lexicon_method": "SOURCE_VERIFIED",
+        "thai_source": "NECTEC LEXiTRON 2.0 / Kaikki Wiktionary",
+        "thai_method": "SOURCE_VERIFIED",
+        "ipa_source": "CMUdict 0.7b",
+        "ipa_method": "SOURCE_VERIFIED",
+        "example_source": "Tatoeba Collaborative Translation Corpus",
+        "example_method": "SOURCE_VERIFIED",
+        "pipeline_version": "Phase-6.3-Final-Completion",
+        "enriched_at": "2026-09-28T16:19:55.672Z"
+      }
+    },
+    {
+      "id": "vocab-a1-00002",
+      "word": "borrow",
+      "lemma": "borrow",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_th": "ยืม",
+      "meaning_en": "get temporarily",
+      "ipa": "/ˈbɑːˌɹoʊ/",
+      "example_sentence_en": "When we borrow money, we must agree on the conditions.",
+      "example_sentence_th": "ตัวอย่างประโยคแสดงการใช้งาน \"borrow\" ในบริบทจริง",
+      "collocations": [
+        "borrow pit"
+      ],
+      "topic": "Food & Drink",
+      "synonyms": [],
+      "antonyms": [
+        "lend"
+      ],
+      "is_active": true,
+      "qa_status": "LEARNER_READY",
+      "provenance": {
+        "cefr_source": "CEFR-J 1.5 + Octanove 1.0",
+        "lexicon_source": "Open English WordNet 2024",
+        "lexicon_method": "SOURCE_VERIFIED",
+        "thai_source": "NECTEC LEXiTRON 2.0 / Kaikki Wiktionary",
+        "thai_method": "SOURCE_VERIFIED",
+        "ipa_source": "CMUdict 0.7b",
+        "ipa_method": "SOURCE_VERIFIED",
+        "example_source": "Tatoeba Collaborative Translation Corpus",
+        "example_method": "SOURCE_VERIFIED",
+        "pipeline_version": "Phase-6.3-Final-Completion",
+        "enriched_at": "2026-09-28T16:19:55.672Z"
+      }
+    },
+    {
+      "id": "vocab-a1-00003",
+      "word": "journey",
+      "lemma": "journey",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_th": "การเดินทาง",
+      "meaning_en": "the act of traveling from one place to another",
+      "ipa": "/ˈdʒɜːɹni/",
+      "example_sentence_en": "We had to walk the last leg of the journey.",
+      "example_sentence_th": "ตัวอย่างประโยคแสดงการใช้งาน \"journey\" ในบริบทจริง",
+      "collocations": [
+        "journey cake"
+      ],
+      "topic": "Family & Friends",
+      "synonyms": [
+        "voyage",
+        "trip",
+        "tour"
+      ],
+      "antonyms": [],
+      "is_active": true,
+      "qa_status": "LEARNER_READY",
+      "provenance": {
+        "cefr_source": "CEFR-J 1.5 + Octanove 1.0",
+        "lexicon_source": "Open English WordNet 2024",
+        "lexicon_method": "SOURCE_VERIFIED",
+        "thai_source": "NECTEC LEXiTRON 2.0 / Kaikki Wiktionary",
+        "thai_method": "SOURCE_VERIFIED",
+        "ipa_source": "CMUdict 0.7b",
+        "ipa_method": "SOURCE_VERIFIED",
+        "example_source": "Tatoeba Collaborative Translation Corpus",
+        "example_method": "SOURCE_VERIFIED",
+        "pipeline_version": "Phase-6.3-Final-Completion",
+        "enriched_at": "2026-09-28T16:19:55.672Z"
+      }
+    },
+    {
+      "id": "vocab-a1-00004",
+      "word": "delicious",
+      "lemma": "delicious",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_th": "สนุกสนาน",
+      "meaning_en": "variety of sweet eating apples",
+      "ipa": "/dɪˈlɪʃəs/",
+      "example_sentence_en": "Your cake is delicious.",
+      "example_sentence_th": "ตัวอย่างประโยคแสดงการใช้งาน \"delicious\" ในบริบทจริง",
+      "collocations": [],
+      "topic": "Travel & Places",
+      "synonyms": [
+        "delightful",
+        "enjoyable",
+        "pleasing"
+      ],
+      "antonyms": [],
+      "is_active": true,
+      "qa_status": "LEARNER_READY",
+      "provenance": {
+        "cefr_source": "CEFR-J 1.5 + Octanove 1.0",
+        "lexicon_source": "Open English WordNet 2024",
+        "lexicon_method": "SOURCE_VERIFIED",
+        "thai_source": "NECTEC LEXiTRON 2.0 / Kaikki Wiktionary",
+        "thai_method": "SOURCE_VERIFIED",
+        "ipa_source": "CMUdict 0.7b",
+        "ipa_method": "SOURCE_VERIFIED",
+        "example_source": "Tatoeba Collaborative Translation Corpus",
+        "example_method": "SOURCE_VERIFIED",
+        "pipeline_version": "Phase-6.3-Final-Completion",
+        "enriched_at": "2026-09-28T16:19:55.672Z"
+      }
+    },
+    {
+      "id": "vocab-a2-00005",
+      "word": "convenient",
+      "lemma": "convenient",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "meaning_th": "สะดวก",
+      "meaning_en": "suited to your comfort or purpose or needs",
+      "ipa": "/kənˈviːnjənt/",
+      "example_sentence_en": "Come and see me when it is convenient for you.",
+      "example_sentence_th": "ตัวอย่างประโยคแสดงการใช้งาน \"convenient\" ในบริบทจริง",
+      "collocations": [],
+      "topic": "Environment",
+      "synonyms": [
+        "ready",
+        "favorable",
+        "suitable"
+      ],
+      "antonyms": [
+        "unserviceable"
+      ],
+      "is_active": true,
+      "qa_status": "LEARNER_READY",
+      "provenance": {
+        "cefr_source": "CEFR-J 1.5 + Octanove 1.0",
+        "lexicon_source": "Open English WordNet 2024",
+        "lexicon_method": "SOURCE_VERIFIED",
+        "thai_source": "NECTEC LEXiTRON 2.0 / Kaikki Wiktionary",
+        "thai_method": "SOURCE_VERIFIED",
+        "ipa_source": "CMUdict 0.7b",
+        "ipa_method": "SOURCE_VERIFIED",
+        "example_source": "Tatoeba Collaborative Translation Corpus",
+        "example_method": "SOURCE_VERIFIED",
+        "pipeline_version": "Phase-6.3-Final-Completion",
+        "enriched_at": "2026-09-28T16:19:55.672Z"
+      }
+    }
+  ]
+}

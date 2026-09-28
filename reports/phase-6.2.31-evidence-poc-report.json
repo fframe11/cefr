@@ -1,0 +1,6115 @@
+{
+  "phase": "6.2.31",
+  "report_title": "Phase 6.2.31 Evidence-First Vocabulary Alignment POC Report (100 Records)",
+  "generated_at": "2026-09-27T17:28:05.373Z",
+  "total_records": 100,
+  "workload_simulation": {
+    "current_model_human_review_required": 100,
+    "evidence_model_human_review_required": 97,
+    "auto_ready_records": 3,
+    "poc_observed_reduction_percent": "3.0%"
+  },
+  "decision_summary": {
+    "auto_ready": 3,
+    "auto_ready_percentage": "3.0%",
+    "review_required": 4,
+    "review_required_percentage": "4.0%",
+    "hold": 93,
+    "hold_percentage": "93.0%"
+  },
+  "source_coverage_matrix": {
+    "cefr_j": {
+      "matched": 94,
+      "exact_match": 92,
+      "conflict": 2,
+      "missing": 6
+    },
+    "oewn": {
+      "matched": 100,
+      "exact_match": 79,
+      "ambiguous": 21,
+      "missing": 0
+    },
+    "lexitron": {
+      "matched": 96,
+      "exact_match": 65,
+      "ambiguous": 24,
+      "conflict": 7,
+      "missing": 4
+    },
+    "cmudict": {
+      "matched": 100,
+      "exact_match": 97,
+      "candidate_match": 3,
+      "ambiguous": 0,
+      "missing": 0
+    },
+    "frequency": {
+      "matched": 100,
+      "exact_match": 100,
+      "missing": 0
+    }
+  },
+  "alignment_dimension_breakdown": {
+    "sense": {
+      "SENSE_ALIGNED": 91,
+      "SENSE_CANDIDATE": 9,
+      "SENSE_AMBIGUOUS": 0,
+      "SENSE_CONFLICT": 0,
+      "SENSE_UNRESOLVED": 0
+    },
+    "thai": {
+      "THAI_GROUNDED": 6,
+      "THAI_MULTI_SENSE": 5,
+      "THAI_CONFLICT": 86,
+      "THAI_MISSING": 3,
+      "THAI_UNRESOLVED": 0
+    },
+    "ipa": {
+      "IPA_CONFIRMED": 97,
+      "IPA_MULTI_VARIANT": 3,
+      "IPA_AMBIGUOUS": 0,
+      "IPA_MISSING": 0
+    },
+    "example": {
+      "EXAMPLE_ALIGNED": 60,
+      "EXAMPLE_CANDIDATE": 16,
+      "EXAMPLE_CONFLICT": 24,
+      "EXAMPLE_MISSING": 0
+    }
+  },
+  "cross_source_agreement": {
+    "cefr_j_vs_staged_cefr": {
+      "agreed": 92,
+      "conflicted": 2,
+      "missing_evidence": 6
+    },
+    "oewn_vs_lexitron_pos": {
+      "agreed": 89,
+      "mismatch": 7
+    },
+    "cmudict_vs_staged_ipa": {
+      "confirmed": 97,
+      "variant_or_ambiguous": 3,
+      "missing": 0
+    }
+  },
+  "reason_code_frequency": {
+    "THAI_MULTI_SENSE": 2,
+    "EXAMPLE_CANDIDATE": 3,
+    "EXAMPLE_CONFLICT": 3,
+    "THAI_CONFLICT": 86,
+    "IPA_MULTI_VARIANT": 1,
+    "THAI_MISSING": 3,
+    "CEFR_CONFLICT": 1
+  },
+  "production_safety_invariants": {
+    "production_db_writes": 0,
+    "supabase_writes": 0,
+    "lifecycle_mutations": 0,
+    "is_active_mutations": 0,
+    "review_ledger_writes": 0,
+    "learner_ready_units_unchanged": 83,
+    "readiness_overall_status_unchanged": "NOT_READY",
+    "user_testing_authorized_unchanged": false
+  },
+  "evidence_first_poc_gate": "PASS",
+  "records": [
+    {
+      "sequence": 1,
+      "learning_unit_key": "car|noun|A1|sense:1",
+      "word": "car",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:986"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "03005594-n",
+          "source_record_id": "oewn_2024:03005594-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:8990"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:car:line:1347"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:260"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "AUTO_READY",
+      "reason_codes": [],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:986",
+        "oewn_synset_id": "03005594-n",
+        "lexitron_record_id": "lexitron:etlex:id:8990",
+        "cmudict_record_id": "cmudict:0.7b:car:line:1347",
+        "frequency_record_id": "ngsl:1.2:rank:260"
+      }
+    },
+    {
+      "sequence": 2,
+      "learning_unit_key": "clean|adjective|A1|sense:1",
+      "word": "clean",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1188"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01094538-s",
+          "source_record_id": "oewn_2024:01094538-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:10701"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:clean:line:1573"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:842"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MULTI_SENSE",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "THAI_MULTI_SENSE",
+        "EXAMPLE_CANDIDATE"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1188",
+        "oewn_synset_id": "01094538-s",
+        "lexitron_record_id": "lexitron:etlex:id:10701",
+        "cmudict_record_id": "cmudict:0.7b:clean:line:1573",
+        "frequency_record_id": "ngsl:1.2:rank:842"
+      }
+    },
+    {
+      "sequence": 3,
+      "learning_unit_key": "door|noun|A1|sense:1",
+      "word": "door",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2016"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "03273234-n",
+          "source_record_id": "oewn_2024:03273234-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:19860"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:door:line:2700"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:490"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "AUTO_READY",
+      "reason_codes": [],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2016",
+        "oewn_synset_id": "03273234-n",
+        "lexitron_record_id": "lexitron:etlex:id:19860",
+        "cmudict_record_id": "cmudict:0.7b:door:line:2700",
+        "frequency_record_id": "ngsl:1.2:rank:490"
+      }
+    },
+    {
+      "sequence": 4,
+      "learning_unit_key": "drink|verb|A1|sense:1",
+      "word": "drink",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2068"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01216941-v",
+          "source_record_id": "oewn_2024:01216941-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:20112"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:drink:line:2750"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:655"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "EXAMPLE_CANDIDATE"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2068",
+        "oewn_synset_id": "01216941-v",
+        "lexitron_record_id": "lexitron:etlex:id:20112",
+        "cmudict_record_id": "cmudict:0.7b:drink:line:2750",
+        "frequency_record_id": "ngsl:1.2:rank:655"
+      }
+    },
+    {
+      "sequence": 5,
+      "learning_unit_key": "eat|verb|A1|sense:1",
+      "word": "eat",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2135"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01203118-v",
+          "source_record_id": "oewn_2024:01203118-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:20493"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:eat:line:2821"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:476"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MULTI_SENSE",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": "Target headword \"eat\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "EXAMPLE_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2135",
+        "oewn_synset_id": "01203118-v",
+        "lexitron_record_id": "lexitron:etlex:id:20493",
+        "cmudict_record_id": "cmudict:0.7b:eat:line:2821",
+        "frequency_record_id": "ngsl:1.2:rank:476"
+      }
+    },
+    {
+      "sequence": 6,
+      "learning_unit_key": "call|noun|A1|sense:1",
+      "word": "call",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:947"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "06910323-n",
+          "source_record_id": "oewn_2024:06910323-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:8708"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:call:line:1296"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:105"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:947",
+        "oewn_synset_id": "06910323-n",
+        "lexitron_record_id": "lexitron:etlex:id:8708",
+        "cmudict_record_id": "cmudict:0.7b:call:line:1296",
+        "frequency_record_id": "ngsl:1.2:rank:105"
+      }
+    },
+    {
+      "sequence": 7,
+      "learning_unit_key": "catch|verb|A1|sense:1",
+      "word": "catch",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1031"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01556903-v",
+          "source_record_id": "oewn_2024:01556903-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:9439"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:catch:line:1397"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:683"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1031",
+        "oewn_synset_id": "01556903-v",
+        "lexitron_record_id": "lexitron:etlex:id:9439",
+        "cmudict_record_id": "cmudict:0.7b:catch:line:1397",
+        "frequency_record_id": "ngsl:1.2:rank:683"
+      }
+    },
+    {
+      "sequence": 8,
+      "learning_unit_key": "church|noun|A1|sense:1",
+      "word": "church",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1157"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "08234654-n",
+          "source_record_id": "oewn_2024:08234654-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:10522"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:church:line:1532"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:744"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1157",
+        "oewn_synset_id": "08234654-n",
+        "lexitron_record_id": "lexitron:etlex:id:10522",
+        "cmudict_record_id": "cmudict:0.7b:church:line:1532",
+        "frequency_record_id": "ngsl:1.2:rank:744"
+      }
+    },
+    {
+      "sequence": 9,
+      "learning_unit_key": "day|noun|A1|sense:1",
+      "word": "day",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1687"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "15410545-n",
+          "source_record_id": "oewn_2024:15410545-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:17798"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:day:line:2231"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:85"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MULTI_SENSE",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": "Target headword \"day\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "EXAMPLE_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1687",
+        "oewn_synset_id": "15410545-n",
+        "lexitron_record_id": "lexitron:etlex:id:17798",
+        "cmudict_record_id": "cmudict:0.7b:day:line:2231",
+        "frequency_record_id": "ngsl:1.2:rank:85"
+      }
+    },
+    {
+      "sequence": 10,
+      "learning_unit_key": "father|noun|A1|sense:1",
+      "word": "father",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2538"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "10261231-n",
+          "source_record_id": "oewn_2024:10261231-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:22776"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:father:line:3428"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:448"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2538",
+        "oewn_synset_id": "10261231-n",
+        "lexitron_record_id": "lexitron:etlex:id:22776",
+        "cmudict_record_id": "cmudict:0.7b:father:line:3428",
+        "frequency_record_id": "ngsl:1.2:rank:448"
+      }
+    },
+    {
+      "sequence": 11,
+      "learning_unit_key": "feel|verb|A1|sense:1",
+      "word": "feel",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2564"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01829059-v",
+          "source_record_id": "oewn_2024:01829059-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:22922"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:feel:line:3457"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:117"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2564",
+        "oewn_synset_id": "01829059-v",
+        "lexitron_record_id": "lexitron:etlex:id:22922",
+        "cmudict_record_id": "cmudict:0.7b:feel:line:3457",
+        "frequency_record_id": "ngsl:1.2:rank:117"
+      }
+    },
+    {
+      "sequence": 12,
+      "learning_unit_key": "card|noun|A1|sense:1",
+      "word": "card",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:993"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "03082744-n",
+          "source_record_id": "oewn_2024:03082744-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:9042"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:card:line:1352"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:781"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"เอกสาร ข้อเขียน หรือบันทึกข้อมูล (ด้านศิลปะ ดนตรี หรือกีฬา)\" not found in LEXiTRON translations: [บัตรที่บรรจุข้อมูลทางตัวเลขหรือการเงิน, บัตรประจำตัว, บัตรภาพ (ที่เก็บสะสม)]",
+        "example_conflict_reason": "Target headword \"card\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:993",
+        "oewn_synset_id": "03082744-n",
+        "lexitron_record_id": "lexitron:etlex:id:9042",
+        "cmudict_record_id": "cmudict:0.7b:card:line:1352",
+        "frequency_record_id": "ngsl:1.2:rank:781"
+      }
+    },
+    {
+      "sequence": 13,
+      "learning_unit_key": "check|noun|A1|sense:1",
+      "word": "check",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1107"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "14254192-n",
+          "source_record_id": "oewn_2024:14254192-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:10157"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:check:line:1477"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:580"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1107",
+        "oewn_synset_id": "14254192-n",
+        "lexitron_record_id": "lexitron:etlex:id:10157",
+        "cmudict_record_id": "cmudict:0.7b:check:line:1477",
+        "frequency_record_id": "ngsl:1.2:rank:580"
+      }
+    },
+    {
+      "sequence": 14,
+      "learning_unit_key": "cut|verb|A1|sense:1",
+      "word": "cut",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1636"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "00253003-v",
+          "source_record_id": "oewn_2024:00253003-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:14075"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:cut:line:2179"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:456"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1636",
+        "oewn_synset_id": "00253003-v",
+        "lexitron_record_id": "lexitron:etlex:id:14075",
+        "cmudict_record_id": "cmudict:0.7b:cut:line:2179",
+        "frequency_record_id": "ngsl:1.2:rank:456"
+      }
+    },
+    {
+      "sequence": 15,
+      "learning_unit_key": "dance|verb|A1|sense:1",
+      "word": "dance",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1664"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "01955405-v",
+          "source_record_id": "oewn_2024:01955405-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:17683"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:dance:line:2206"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:959"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"เคลื่อนที่ เดินทาง หรือย้ายตำแหน่งโดยการการเคลื่อนไหว การออกแรง และการย้ายตำแหน่ง ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [เต้นรำ]",
+        "example_conflict_reason": "Target headword \"dance\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1664",
+        "oewn_synset_id": "01955405-v",
+        "lexitron_record_id": "lexitron:etlex:id:17683",
+        "cmudict_record_id": "cmudict:0.7b:dance:line:2206",
+        "frequency_record_id": "ngsl:1.2:rank:959"
+      }
+    },
+    {
+      "sequence": 16,
+      "learning_unit_key": "dog|noun|A1|sense:1",
+      "word": "dog",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2004"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "02754478-n",
+          "source_record_id": "oewn_2024:02754478-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:19772"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:dog:line:2679"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:895"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2004",
+        "oewn_synset_id": "02754478-n",
+        "lexitron_record_id": "lexitron:etlex:id:19772",
+        "cmudict_record_id": "cmudict:0.7b:dog:line:2679",
+        "frequency_record_id": "ngsl:1.2:rank:895"
+      }
+    },
+    {
+      "sequence": 17,
+      "learning_unit_key": "down|adverb|A1|sense:1",
+      "word": "down",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2032"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "00095570-r",
+          "source_record_id": "oewn_2024:00095570-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:19929"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:down:line:2713"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:109"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ลง, ข้างล่าง\" not found in LEXiTRON translations: [น้อยลง, ไปทางใต้, ลงข้างล่าง]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2032",
+        "oewn_synset_id": "00095570-r",
+        "lexitron_record_id": "lexitron:etlex:id:19929",
+        "cmudict_record_id": "cmudict:0.7b:down:line:2713",
+        "frequency_record_id": "ngsl:1.2:rank:109"
+      }
+    },
+    {
+      "sequence": 18,
+      "learning_unit_key": "early|adverb|A1|sense:1",
+      "word": "early",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2118"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "00100548-r",
+          "source_record_id": "oewn_2024:00100548-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:20411"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:early:line:2806"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:197"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"แต่เช้า, เร็วกว่ากำหนด\" not found in LEXiTRON translations: [ก่อนเวลาที่กำหนดไว้, แต่แรก]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2118",
+        "oewn_synset_id": "00100548-r",
+        "lexitron_record_id": "lexitron:etlex:id:20411",
+        "cmudict_record_id": "cmudict:0.7b:early:line:2806",
+        "frequency_record_id": "ngsl:1.2:rank:197"
+      }
+    },
+    {
+      "sequence": 19,
+      "learning_unit_key": "fast|adverb|A1|sense:1",
+      "word": "fast",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2531"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "00086187-r",
+          "source_record_id": "oewn_2024:00086187-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:22749"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:fast:line:3422"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:631"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "AUTO_READY",
+      "reason_codes": [],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2531",
+        "oewn_synset_id": "00086187-r",
+        "lexitron_record_id": "lexitron:etlex:id:22749",
+        "cmudict_record_id": "cmudict:0.7b:fast:line:3422",
+        "frequency_record_id": "ngsl:1.2:rank:631"
+      }
+    },
+    {
+      "sequence": 20,
+      "learning_unit_key": "face|noun|A1|sense:1",
+      "word": "face",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2473"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "04748063-n",
+          "source_record_id": "oewn_2024:04748063-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:22414"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:face:line:3353"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:249"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MULTI_SENSE",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "THAI_MULTI_SENSE",
+        "EXAMPLE_CANDIDATE"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2473",
+        "oewn_synset_id": "04748063-n",
+        "lexitron_record_id": "lexitron:etlex:id:22414",
+        "cmudict_record_id": "cmudict:0.7b:face:line:3353",
+        "frequency_record_id": "ngsl:1.2:rank:249"
+      }
+    },
+    {
+      "sequence": 21,
+      "learning_unit_key": "film|noun|A2|sense:1",
+      "word": "film",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2600"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "06713490-n",
+          "source_record_id": "oewn_2024:06713490-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:23295"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:film:line:3504"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:433"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"กระบวนการ การปฏิบัติ หรือการดำเนินการ\" not found in LEXiTRON translations: [ภาพยนตร์, แผ่นพลาสติกบางสำหรับห่อของ, เยื่อบางๆ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2600",
+        "oewn_synset_id": "06713490-n",
+        "lexitron_record_id": "lexitron:etlex:id:23295",
+        "cmudict_record_id": "cmudict:0.7b:film:line:3504",
+        "frequency_record_id": "ngsl:1.2:rank:433"
+      }
+    },
+    {
+      "sequence": 22,
+      "learning_unit_key": "achieve|verb|A2|sense:1",
+      "word": "achieve",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:64"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02604901-v",
+          "source_record_id": "oewn_2024:02604901-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:429"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:achieve:line:218"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:746"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": "Target headword \"achieve\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "EXAMPLE_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:64",
+        "oewn_synset_id": "02604901-v",
+        "lexitron_record_id": "lexitron:etlex:id:429",
+        "cmudict_record_id": "cmudict:0.7b:achieve:line:218",
+        "frequency_record_id": "ngsl:1.2:rank:746"
+      }
+    },
+    {
+      "sequence": 23,
+      "learning_unit_key": "further|adjective|A2|sense:1",
+      "word": "further",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2843"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00448066-s",
+          "source_record_id": "oewn_2024:00448066-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:24871"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:further:line:3775"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:400"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ซึ่งเพิ่มเข้ามา]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2843",
+        "oewn_synset_id": "00448066-s",
+        "lexitron_record_id": "lexitron:etlex:id:24871",
+        "cmudict_record_id": "cmudict:0.7b:further:line:3775",
+        "frequency_record_id": "ngsl:1.2:rank:400"
+      }
+    },
+    {
+      "sequence": 24,
+      "learning_unit_key": "all|adverb|A2|sense:1",
+      "word": "all",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:198"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00008390-r",
+          "source_record_id": "oewn_2024:00008390-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:1466"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:all:line:405"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:33"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [จำนวนทั้งหมด, ทั้งหมด, ทุกคน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:198",
+        "oewn_synset_id": "00008390-r",
+        "lexitron_record_id": "lexitron:etlex:id:1466",
+        "cmudict_record_id": "cmudict:0.7b:all:line:405",
+        "frequency_record_id": "ngsl:1.2:rank:33"
+      }
+    },
+    {
+      "sequence": 25,
+      "learning_unit_key": "lack|noun|A2|sense:1",
+      "word": "lack",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3768"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "14694947-n",
+          "source_record_id": "oewn_2024:14694947-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:37312"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:lack:line:4951"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:729"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สภาวะ สภาพ หรือเงื่อนไขที่เป็นอยู่\" not found in LEXiTRON translations: [ความขาดแคลน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3768",
+        "oewn_synset_id": "14694947-n",
+        "lexitron_record_id": "lexitron:etlex:id:37312",
+        "cmudict_record_id": "cmudict:0.7b:lack:line:4951",
+        "frequency_record_id": "ngsl:1.2:rank:729"
+      }
+    },
+    {
+      "sequence": 26,
+      "learning_unit_key": "matter|verb|A2|sense:1",
+      "word": "matter",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4122"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02728031-v",
+          "source_record_id": "oewn_2024:02728031-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:41409"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:matter:line:5327"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:340"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"คงอยู่ในสภาวะหรือมีความสัมพันธ์ในลักษณะที่การเคลื่อนไหว การออกแรง และการย้ายตำแหน่ง ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [เป็นเรื่องสำคัญ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4122",
+        "oewn_synset_id": "02728031-v",
+        "lexitron_record_id": "lexitron:etlex:id:41409",
+        "cmudict_record_id": "cmudict:0.7b:matter:line:5327",
+        "frequency_record_id": "ngsl:1.2:rank:340"
+      }
+    },
+    {
+      "sequence": 27,
+      "learning_unit_key": "elderly|adjective|A2|sense:1",
+      "word": "elderly",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2176"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01653891-s",
+          "source_record_id": "oewn_2024:01653891-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:20742"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:elderly:line:2907"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2052"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [สูงวัย (คำสุภาพสำหรับ old)]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2176",
+        "oewn_synset_id": "01653891-s",
+        "lexitron_record_id": "lexitron:etlex:id:20742",
+        "cmudict_record_id": "cmudict:0.7b:elderly:line:2907",
+        "frequency_record_id": "ngsl:1.2:rank:2052"
+      }
+    },
+    {
+      "sequence": 28,
+      "learning_unit_key": "certainly|adverb|A2|sense:1",
+      "word": "certainly",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1067"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00145700-r",
+          "source_record_id": "oewn_2024:00145700-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:9790"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:certainly:line:1440"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:536"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ตามจังหวะเวลา หรือความถี่ที่เกิดขึ้น\" not found in LEXiTRON translations: [อย่างแน่นอน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1067",
+        "oewn_synset_id": "00145700-r",
+        "lexitron_record_id": "lexitron:etlex:id:9790",
+        "cmudict_record_id": "cmudict:0.7b:certainly:line:1440",
+        "frequency_record_id": "ngsl:1.2:rank:536"
+      }
+    },
+    {
+      "sequence": 29,
+      "learning_unit_key": "opportunity|noun|A2|sense:1",
+      "word": "opportunity",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4667"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "14729870-n",
+          "source_record_id": "oewn_2024:14729870-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:46570"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:opportunity:line:5952"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:520"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4667",
+        "oewn_synset_id": "14729870-n",
+        "lexitron_record_id": "lexitron:etlex:id:46570",
+        "cmudict_record_id": "cmudict:0.7b:opportunity:line:5952",
+        "frequency_record_id": "ngsl:1.2:rank:520"
+      }
+    },
+    {
+      "sequence": 30,
+      "learning_unit_key": "frighten|verb|A2|sense:1",
+      "word": "frighten",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2799"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01837417-v",
+          "source_record_id": "oewn_2024:01837417-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:24681"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:frighten:line:3731"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2196"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"แสดงความรู้สึกหรือตอบสนองทางอารมณ์โดยการอารมณ์ ความรู้สึก และสภาพจิตใจ ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [หวาดกลัว, เขย่าขวัญ]",
+        "example_conflict_reason": "Target headword \"frighten\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2799",
+        "oewn_synset_id": "01837417-v",
+        "lexitron_record_id": "lexitron:etlex:id:24681",
+        "cmudict_record_id": "cmudict:0.7b:frighten:line:3731",
+        "frequency_record_id": "ngsl:1.2:rank:2196"
+      }
+    },
+    {
+      "sequence": 31,
+      "learning_unit_key": "illegal|adjective|A2|sense:1",
+      "word": "illegal",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3372"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01409460-a",
+          "source_record_id": "oewn_2024:01409460-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:32661"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:illegal:line:4387"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2353"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงกฎหมาย ข้อบังคับ และการพิจารณาคดี ในบริบทที่เป็นทางการหรือตามระเบียบปฏิบัติ\" not found in LEXiTRON translations: [ผิดกฎหมาย]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3372",
+        "oewn_synset_id": "01409460-a",
+        "lexitron_record_id": "lexitron:etlex:id:32661",
+        "cmudict_record_id": "cmudict:0.7b:illegal:line:4387",
+        "frequency_record_id": "ngsl:1.2:rank:2353"
+      }
+    },
+    {
+      "sequence": 32,
+      "learning_unit_key": "low|adverb|A2|sense:1",
+      "word": "low",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4011"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00395846-r",
+          "source_record_id": "oewn_2024:00395846-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:39301"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:low:line:5185"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:283"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [ต่ำลง (ระดับ, ระดับน้ำ, จุด, ตำแหน่ง), ในราคาที่ต่ำ, ระดับต่ำ (การเรียน, การงาน)]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4011",
+        "oewn_synset_id": "00395846-r",
+        "lexitron_record_id": "lexitron:etlex:id:39301",
+        "cmudict_record_id": "cmudict:0.7b:low:line:5185",
+        "frequency_record_id": "ngsl:1.2:rank:283"
+      }
+    },
+    {
+      "sequence": 33,
+      "learning_unit_key": "patient|noun|A2|sense:1",
+      "word": "patient",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4893"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "10600262-n",
+          "source_record_id": "oewn_2024:10600262-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:48478"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:patient:line:6210"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:589"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"patient\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4893",
+        "oewn_synset_id": "10600262-n",
+        "lexitron_record_id": "lexitron:etlex:id:48478",
+        "cmudict_record_id": "cmudict:0.7b:patient:line:6210",
+        "frequency_record_id": "ngsl:1.2:rank:589"
+      }
+    },
+    {
+      "sequence": 34,
+      "learning_unit_key": "harm|verb|A2|sense:1",
+      "word": "harm",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3131"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00105436-v",
+          "source_record_id": "oewn_2024:00105436-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:29199"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:harm:line:4098"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2236"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"แสดงกิริยาทางร่างกายหรือดูแลร่างกายโดยการปัญหา ความเสียหาย หรือความยากลำบาก ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [ทำร้าย]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3131",
+        "oewn_synset_id": "00105436-v",
+        "lexitron_record_id": "lexitron:etlex:id:29199",
+        "cmudict_record_id": "cmudict:0.7b:harm:line:4098",
+        "frequency_record_id": "ngsl:1.2:rank:2236"
+      }
+    },
+    {
+      "sequence": 35,
+      "learning_unit_key": "north|adjective|A2|sense:1",
+      "word": "north",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4527"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01610452-a",
+          "source_record_id": "oewn_2024:01610452-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:45392"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:north:line:5808"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1205"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ทางเหนือ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4527",
+        "oewn_synset_id": "01610452-a",
+        "lexitron_record_id": "lexitron:etlex:id:45392",
+        "cmudict_record_id": "cmudict:0.7b:north:line:5808",
+        "frequency_record_id": "ngsl:1.2:rank:1205"
+      }
+    },
+    {
+      "sequence": 36,
+      "learning_unit_key": "perhaps|adverb|A2|sense:1",
+      "word": "perhaps",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4958"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00301718-r",
+          "source_record_id": "oewn_2024:00301718-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:49012"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:perhaps:line:6292"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:413"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [บางที]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4958",
+        "oewn_synset_id": "00301718-r",
+        "lexitron_record_id": "lexitron:etlex:id:49012",
+        "cmudict_record_id": "cmudict:0.7b:perhaps:line:6292",
+        "frequency_record_id": "ngsl:1.2:rank:413"
+      }
+    },
+    {
+      "sequence": 37,
+      "learning_unit_key": "show|noun|A2|sense:1",
+      "word": "show",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:6151"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00521146-n",
+          "source_record_id": "oewn_2024:00521146-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:65228"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:show:line:7856"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:110"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"กระบวนการ การปฏิบัติ หรือการดำเนินการ\" not found in LEXiTRON translations: [การแสดง, การแสดงนิทรรศการ, สิ่งที่นำมาแสดง]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:6151",
+        "oewn_synset_id": "00521146-n",
+        "lexitron_record_id": "lexitron:etlex:id:65228",
+        "cmudict_record_id": "cmudict:0.7b:show:line:7856",
+        "frequency_record_id": "ngsl:1.2:rank:110"
+      }
+    },
+    {
+      "sequence": 38,
+      "learning_unit_key": "license|verb|A2|sense:1",
+      "word": "license",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02519558-v",
+          "source_record_id": "oewn_2024:02519558-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:38178"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:license:line:5084"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1583"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"license\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "02519558-v",
+        "lexitron_record_id": "lexitron:etlex:id:38178",
+        "cmudict_record_id": "cmudict:0.7b:license:line:5084",
+        "frequency_record_id": "ngsl:1.2:rank:1583"
+      }
+    },
+    {
+      "sequence": 39,
+      "learning_unit_key": "principal|adjective|A2|sense:1",
+      "word": "principal",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5262"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01284780-s",
+          "source_record_id": "oewn_2024:01284780-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:51918"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:principal:line:6680"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1555"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [สำคัญมากกว่าอย่างอื่น]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5262",
+        "oewn_synset_id": "01284780-s",
+        "lexitron_record_id": "lexitron:etlex:id:51918",
+        "cmudict_record_id": "cmudict:0.7b:principal:line:6680",
+        "frequency_record_id": "ngsl:1.2:rank:1555"
+      }
+    },
+    {
+      "sequence": 40,
+      "learning_unit_key": "round|adverb|A2|sense:1",
+      "word": "round",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5829"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00071520-r",
+          "source_record_id": "oewn_2024:00071520-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:58531"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:round:line:7497"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:519"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [รอบๆ, กลมๆ, ซึ่งเคลื่อนเป็นวงกลม]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5829",
+        "oewn_synset_id": "00071520-r",
+        "lexitron_record_id": "lexitron:etlex:id:58531",
+        "cmudict_record_id": "cmudict:0.7b:round:line:7497",
+        "frequency_record_id": "ngsl:1.2:rank:519"
+      }
+    },
+    {
+      "sequence": 41,
+      "learning_unit_key": "application|noun|B1|sense:1",
+      "word": "application",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:335"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00715002-n",
+          "source_record_id": "oewn_2024:00715002-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:2521"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:application:line:589"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:884"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:335",
+        "oewn_synset_id": "00715002-n",
+        "lexitron_record_id": "lexitron:etlex:id:2521",
+        "cmudict_record_id": "cmudict:0.7b:application:line:589",
+        "frequency_record_id": "ngsl:1.2:rank:884"
+      }
+    },
+    {
+      "sequence": 42,
+      "learning_unit_key": "own|verb|B1|sense:1",
+      "word": "own",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4793"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02272071-v",
+          "source_record_id": "oewn_2024:02272071-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:47482"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:own:line:6090"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:129"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"own\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4793",
+        "oewn_synset_id": "02272071-v",
+        "lexitron_record_id": "lexitron:etlex:id:47482",
+        "cmudict_record_id": "cmudict:0.7b:own:line:6090",
+        "frequency_record_id": "ngsl:1.2:rank:129"
+      }
+    },
+    {
+      "sequence": 43,
+      "learning_unit_key": "above|adjective|B1|sense:1",
+      "word": "above",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:16"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00126718-s",
+          "source_record_id": "oewn_2024:00126718-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:123"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:above:line:160"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:440"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ข้างบน, ดังกว่าเสียงอื่น, ด้านเหนือ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:16",
+        "oewn_synset_id": "00126718-s",
+        "lexitron_record_id": "lexitron:etlex:id:123",
+        "cmudict_record_id": "cmudict:0.7b:above:line:160",
+        "frequency_record_id": "ngsl:1.2:rank:440"
+      }
+    },
+    {
+      "sequence": 44,
+      "learning_unit_key": "half|adverb|B1|sense:1",
+      "word": "half",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3087"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00008267-r",
+          "source_record_id": "oewn_2024:00008267-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:28905"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:half:line:4055"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:365"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [ครึ่งหนึ่ง]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3087",
+        "oewn_synset_id": "00008267-r",
+        "lexitron_record_id": "lexitron:etlex:id:28905",
+        "cmudict_record_id": "cmudict:0.7b:half:line:4055",
+        "frequency_record_id": "ngsl:1.2:rank:365"
+      }
+    },
+    {
+      "sequence": 45,
+      "learning_unit_key": "career|noun|B1|sense:1",
+      "word": "career",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:998"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00281287-n",
+          "source_record_id": "oewn_2024:00281287-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:9084"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:career:line:1356"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:892"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ช่วงเวลา ระยะเวลา หรือจังหวะเวลา\" not found in LEXiTRON translations: [อาชีพ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:998",
+        "oewn_synset_id": "00281287-n",
+        "lexitron_record_id": "lexitron:etlex:id:9084",
+        "cmudict_record_id": "cmudict:0.7b:career:line:1356",
+        "frequency_record_id": "ngsl:1.2:rank:892"
+      }
+    },
+    {
+      "sequence": 46,
+      "learning_unit_key": "room|verb|B1|sense:1",
+      "word": "room",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5819"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02739439-v",
+          "source_record_id": "oewn_2024:02739439-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:58400"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:room:line:7487"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:254"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"คงอยู่ในสภาวะหรือมีความสัมพันธ์ในลักษณะที่ที่อยู่อาศัย อาคารสถานที่ และเครื่องเรือน ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [พักอาศัย]",
+        "example_conflict_reason": "Target headword \"room\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5819",
+        "oewn_synset_id": "02739439-v",
+        "lexitron_record_id": "lexitron:etlex:id:58400",
+        "cmudict_record_id": "cmudict:0.7b:room:line:7487",
+        "frequency_record_id": "ngsl:1.2:rank:254"
+      }
+    },
+    {
+      "sequence": 47,
+      "learning_unit_key": "patient|adjective|B1|sense:1",
+      "word": "patient",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4892"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01745179-a",
+          "source_record_id": "oewn_2024:01745179-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:48479"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:patient:line:6210"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:589"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ในระยะท้ายหรือเป็นผลลัพธ์ที่ตามมา\" not found in LEXiTRON translations: [อดทน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4892",
+        "oewn_synset_id": "01745179-a",
+        "lexitron_record_id": "lexitron:etlex:id:48479",
+        "cmudict_record_id": "cmudict:0.7b:patient:line:6210",
+        "frequency_record_id": "ngsl:1.2:rank:589"
+      }
+    },
+    {
+      "sequence": 48,
+      "learning_unit_key": "least|adverb|B1|sense:1",
+      "word": "least",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3848"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00112476-r",
+          "source_record_id": "oewn_2024:00112476-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:37883"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:least:line:5028"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:281"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [อย่างน้อยที่สุด]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3848",
+        "oewn_synset_id": "00112476-r",
+        "lexitron_record_id": "lexitron:etlex:id:37883",
+        "cmudict_record_id": "cmudict:0.7b:least:line:5028",
+        "frequency_record_id": "ngsl:1.2:rank:281"
+      }
+    },
+    {
+      "sequence": 49,
+      "learning_unit_key": "foot|noun|B1|sense:1",
+      "word": "foot",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2719"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "05644448-n",
+          "source_record_id": "oewn_2024:05644448-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:24140"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:foot:line:3620"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:576"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2719",
+        "oewn_synset_id": "05644448-n",
+        "lexitron_record_id": "lexitron:etlex:id:24140",
+        "cmudict_record_id": "cmudict:0.7b:foot:line:3620",
+        "frequency_record_id": "ngsl:1.2:rank:576"
+      }
+    },
+    {
+      "sequence": 50,
+      "learning_unit_key": "convince|verb|B1|sense:1",
+      "word": "convince",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1468"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00803623-v",
+          "source_record_id": "oewn_2024:00803623-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:12543"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:convince:line:1968"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1358"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการสร้าง การผลิต และการพัฒนา และการใช้เหตุผล การตัดสินใจ และความคิด ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [ทำให้แน่ใจ, โน้มน้าว]",
+        "example_conflict_reason": "Target headword \"convince\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1468",
+        "oewn_synset_id": "00803623-v",
+        "lexitron_record_id": "lexitron:etlex:id:12543",
+        "cmudict_record_id": "cmudict:0.7b:convince:line:1968",
+        "frequency_record_id": "ngsl:1.2:rank:1358"
+      }
+    },
+    {
+      "sequence": 51,
+      "learning_unit_key": "welcome|adjective|B1|sense:1",
+      "word": "welcome",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:7596"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02558667-a",
+          "source_record_id": "oewn_2024:02558667-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:80694"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:welcome:line:9504"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:989"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [เป็นที่ยอมรับ, ซึ่งเต็มใจ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:7596",
+        "oewn_synset_id": "02558667-a",
+        "lexitron_record_id": "lexitron:etlex:id:80694",
+        "cmudict_record_id": "cmudict:0.7b:welcome:line:9504",
+        "frequency_record_id": "ngsl:1.2:rank:989"
+      }
+    },
+    {
+      "sequence": 52,
+      "learning_unit_key": "obviously|adverb|B1|sense:1",
+      "word": "obviously",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:4598"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00039475-r",
+          "source_record_id": "oewn_2024:00039475-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:45922"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:obviously:line:5882"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:886"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ตามจังหวะเวลา หรือความถี่ที่เกิดขึ้น\" not found in LEXiTRON translations: [อย่างเห็นชัด]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:4598",
+        "oewn_synset_id": "00039475-r",
+        "lexitron_record_id": "lexitron:etlex:id:45922",
+        "cmudict_record_id": "cmudict:0.7b:obviously:line:5882",
+        "frequency_record_id": "ngsl:1.2:rank:886"
+      }
+    },
+    {
+      "sequence": 53,
+      "learning_unit_key": "industry|noun|B1|sense:1",
+      "word": "industry",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3477"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00934999-n",
+          "source_record_id": "oewn_2024:00934999-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:33571"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:industry:line:4546"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:530"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"กระบวนการ การปฏิบัติ หรือการดำเนินการ\" not found in LEXiTRON translations: [ความอุตสาหะ (คำทางการและทางวรรณคดี), ธุรกิจ, อุตสาหกรรม]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3477",
+        "oewn_synset_id": "00934999-n",
+        "lexitron_record_id": "lexitron:etlex:id:33571",
+        "cmudict_record_id": "cmudict:0.7b:industry:line:4546",
+        "frequency_record_id": "ngsl:1.2:rank:530"
+      }
+    },
+    {
+      "sequence": 54,
+      "learning_unit_key": "deserve|verb|B1|sense:1",
+      "word": "deserve",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1807"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02728570-v",
+          "source_record_id": "oewn_2024:02728570-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:18669"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:deserve:line:2392"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1872"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1807",
+        "oewn_synset_id": "02728570-v",
+        "lexitron_record_id": "lexitron:etlex:id:18669",
+        "cmudict_record_id": "cmudict:0.7b:deserve:line:2392",
+        "frequency_record_id": "ngsl:1.2:rank:1872"
+      }
+    },
+    {
+      "sequence": 55,
+      "learning_unit_key": "current|adjective|B1|sense:1",
+      "word": "current",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1623"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00671954-a",
+          "source_record_id": "oewn_2024:00671954-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:13999"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "CANDIDATE_MATCH",
+          "source_record_id": "cmudict:0.7b:current:line:2163"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:590"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_MULTI_VARIANT",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ที่ใช้กันอยู่ในปัจจุบัน, เป็นที่ยอมรับ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1623",
+        "oewn_synset_id": "00671954-a",
+        "lexitron_record_id": "lexitron:etlex:id:13999",
+        "cmudict_record_id": "cmudict:0.7b:current:line:2163",
+        "frequency_record_id": "ngsl:1.2:rank:590"
+      }
+    },
+    {
+      "sequence": 56,
+      "learning_unit_key": "second|adverb|B1|sense:1",
+      "word": "second",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5990"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00103351-r",
+          "source_record_id": "oewn_2024:00103351-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:63880"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:second:line:7691"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:226"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [รองลงมา]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5990",
+        "oewn_synset_id": "00103351-r",
+        "lexitron_record_id": "lexitron:etlex:id:63880",
+        "cmudict_record_id": "cmudict:0.7b:second:line:7691",
+        "frequency_record_id": "ngsl:1.2:rank:226"
+      }
+    },
+    {
+      "sequence": 57,
+      "learning_unit_key": "relationship|noun|B1|sense:1",
+      "word": "relationship",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5610"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "14020788-n",
+          "source_record_id": "oewn_2024:14020788-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:56684"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:relationship:line:7168"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:502"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สภาวะ สภาพ หรือเงื่อนไขที่เป็นอยู่ (การเดินทางและคมนาคม)\" not found in LEXiTRON translations: [ความสัมพันธ์, ความเป็นญาติกัน, ความสัมพันธ์ฉันท์ชู้สาว]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5610",
+        "oewn_synset_id": "14020788-n",
+        "lexitron_record_id": "lexitron:etlex:id:56684",
+        "cmudict_record_id": "cmudict:0.7b:relationship:line:7168",
+        "frequency_record_id": "ngsl:1.2:rank:502"
+      }
+    },
+    {
+      "sequence": 58,
+      "learning_unit_key": "iron|verb|B1|sense:1",
+      "word": "iron",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3637"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01440859-v",
+          "source_record_id": "oewn_2024:01440859-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:34622"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:iron:line:4793"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2259"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"iron\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3637",
+        "oewn_synset_id": "01440859-v",
+        "lexitron_record_id": "lexitron:etlex:id:34622",
+        "cmudict_record_id": "cmudict:0.7b:iron:line:4793",
+        "frequency_record_id": "ngsl:1.2:rank:2259"
+      }
+    },
+    {
+      "sequence": 59,
+      "learning_unit_key": "huge|adjective|B1|sense:1",
+      "word": "huge",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3307"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01394782-s",
+          "source_record_id": "oewn_2024:01394782-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:30386"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "CANDIDATE_MATCH",
+          "source_record_id": "cmudict:0.7b:huge:line:4304"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:862"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_GROUNDED",
+        "ipa": "IPA_MULTI_VARIANT",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "REVIEW_REQUIRED",
+      "reason_codes": [
+        "IPA_MULTI_VARIANT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3307",
+        "oewn_synset_id": "01394782-s",
+        "lexitron_record_id": "lexitron:etlex:id:30386",
+        "cmudict_record_id": "cmudict:0.7b:huge:line:4304",
+        "frequency_record_id": "ngsl:1.2:rank:862"
+      }
+    },
+    {
+      "sequence": 60,
+      "learning_unit_key": "suddenly|adverb|B1|sense:1",
+      "word": "suddenly",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:6660"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00522008-r",
+          "source_record_id": "oewn_2024:00522008-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:69345"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:suddenly:line:8395"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:997"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างปราศจาก หรือไม่ปรากฏอาการดังกล่าว\" not found in LEXiTRON translations: [อย่างกะทันหัน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:6660",
+        "oewn_synset_id": "00522008-r",
+        "lexitron_record_id": "lexitron:etlex:id:69345",
+        "cmudict_record_id": "cmudict:0.7b:suddenly:line:8395",
+        "frequency_record_id": "ngsl:1.2:rank:997"
+      }
+    },
+    {
+      "sequence": 61,
+      "learning_unit_key": "say|noun|B2|sense:1",
+      "word": "say",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5921"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "14731479-n",
+          "source_record_id": "oewn_2024:14731479-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:63093"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:say:line:7617"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:30"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5921",
+        "oewn_synset_id": "14731479-n",
+        "lexitron_record_id": "lexitron:etlex:id:63093",
+        "cmudict_record_id": "cmudict:0.7b:say:line:7617",
+        "frequency_record_id": "ngsl:1.2:rank:30"
+      }
+    },
+    {
+      "sequence": 62,
+      "learning_unit_key": "detect|verb|B2|sense:1",
+      "word": "detect",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1834"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02220039-v",
+          "source_record_id": "oewn_2024:02220039-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:18787"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:detect:line:2424"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2345"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"รับรู้ผ่านประสาทสัมผัสการมองเห็นหรือได้ยินโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [ค้นหา]",
+        "example_conflict_reason": "Target headword \"detect\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1834",
+        "oewn_synset_id": "02220039-v",
+        "lexitron_record_id": "lexitron:etlex:id:18787",
+        "cmudict_record_id": "cmudict:0.7b:detect:line:2424",
+        "frequency_record_id": "ngsl:1.2:rank:2345"
+      }
+    },
+    {
+      "sequence": 63,
+      "learning_unit_key": "bias|adjective|B2|sense:1",
+      "word": "bias",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01728746-s",
+          "source_record_id": "oewn_2024:01728746-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:5310"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:bias:line:19"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2649"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [อคติ, เส้นเอียง, ทำให้มีความลำเอียง]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "01728746-s",
+        "lexitron_record_id": "lexitron:etlex:id:5310",
+        "cmudict_record_id": "cmudict:0.7b:bias:line:19",
+        "frequency_record_id": "ngsl:1.2:rank:2649"
+      }
+    },
+    {
+      "sequence": 64,
+      "learning_unit_key": "though|adverb|B2|sense:1",
+      "word": "though",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:6953"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00119974-r",
+          "source_record_id": "oewn_2024:00119974-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:73682"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:though:line:8753"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:227"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [อย่างไรก็ตาม]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:6953",
+        "oewn_synset_id": "00119974-r",
+        "lexitron_record_id": "lexitron:etlex:id:73682",
+        "cmudict_record_id": "cmudict:0.7b:though:line:8753",
+        "frequency_record_id": "ngsl:1.2:rank:227"
+      }
+    },
+    {
+      "sequence": 65,
+      "learning_unit_key": "cluster|noun|B2|sense:1",
+      "word": "cluster",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "08110250-n",
+          "source_record_id": "oewn_2024:08110250-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:10926"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:cluster:line:30"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2681"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "08110250-n",
+        "lexitron_record_id": "lexitron:etlex:id:10926",
+        "cmudict_record_id": "cmudict:0.7b:cluster:line:30",
+        "frequency_record_id": "ngsl:1.2:rank:2681"
+      }
+    },
+    {
+      "sequence": 66,
+      "learning_unit_key": "praise|verb|B2|sense:1",
+      "word": "praise",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5183"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00893409-v",
+          "source_record_id": "oewn_2024:00893409-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:51329"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:praise:line:6562"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2473"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สื่อสาร กล่าว หรือแสดงออกทางภาษา\" not found in LEXiTRON translations: [ชมเชย]",
+        "example_conflict_reason": "Target headword \"praise\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5183",
+        "oewn_synset_id": "00893409-v",
+        "lexitron_record_id": "lexitron:etlex:id:51329",
+        "cmudict_record_id": "cmudict:0.7b:praise:line:6562",
+        "frequency_record_id": "ngsl:1.2:rank:2473"
+      }
+    },
+    {
+      "sequence": 67,
+      "learning_unit_key": "characteristic|adjective|B2|sense:1",
+      "word": "characteristic",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:1090"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00358954-a",
+          "source_record_id": "oewn_2024:00358954-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:10018"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:characteristic:line:1463"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1582"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ลักษณะพิเศษ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:1090",
+        "oewn_synset_id": "00358954-a",
+        "lexitron_record_id": "lexitron:etlex:id:10018",
+        "cmudict_record_id": "cmudict:0.7b:characteristic:line:1463",
+        "frequency_record_id": "ngsl:1.2:rank:1582"
+      }
+    },
+    {
+      "sequence": 68,
+      "learning_unit_key": "bloody|adverb|B2|sense:1",
+      "word": "bloody",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:723"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00025314-r",
+          "source_record_id": "oewn_2024:00025314-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:5762"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:bloody:line:1058"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2265"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างยิ่ง หรือในระดับที่เด่นชัด\" not found in LEXiTRON translations: [กระหายเลือด, เต็มไปด้วยเลือด]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:723",
+        "oewn_synset_id": "00025314-r",
+        "lexitron_record_id": "lexitron:etlex:id:5762",
+        "cmudict_record_id": "cmudict:0.7b:bloody:line:1058",
+        "frequency_record_id": "ngsl:1.2:rank:2265"
+      }
+    },
+    {
+      "sequence": 69,
+      "learning_unit_key": "gaze|noun|B2|sense:1",
+      "word": "gaze",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2875"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00889536-n",
+          "source_record_id": "oewn_2024:00889536-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:27263"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:gaze:line:3813"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2772"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2875",
+        "oewn_synset_id": "00889536-n",
+        "lexitron_record_id": "lexitron:etlex:id:27263",
+        "cmudict_record_id": "cmudict:0.7b:gaze:line:3813",
+        "frequency_record_id": "ngsl:1.2:rank:2772"
+      }
+    },
+    {
+      "sequence": 70,
+      "learning_unit_key": "purchase|verb|B2|sense:1",
+      "word": "purchase",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5387"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02274486-v",
+          "source_record_id": "oewn_2024:02274486-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:52938"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:purchase:line:6865"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1002"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ครอบครอง ส่งมอบ หรือแลกเปลี่ยนทรัพย์สินโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [ซื้อ, ได้มา (ด้วยความพยายาม), ทำให้เคลื่อนที่ด้วยเครื่องมือสำหรับงัด]",
+        "example_conflict_reason": "Target headword \"purchase\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5387",
+        "oewn_synset_id": "02274486-v",
+        "lexitron_record_id": "lexitron:etlex:id:52938",
+        "cmudict_record_id": "cmudict:0.7b:purchase:line:6865",
+        "frequency_record_id": "ngsl:1.2:rank:1002"
+      }
+    },
+    {
+      "sequence": 71,
+      "learning_unit_key": "equivalent|adjective|B2|sense:1",
+      "word": "equivalent",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00896985-s",
+          "source_record_id": "oewn_2024:00896985-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:21599"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:equivalent:line:48"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2049"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [เท่ากับ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "00896985-s",
+        "lexitron_record_id": "lexitron:etlex:id:21599",
+        "cmudict_record_id": "cmudict:0.7b:equivalent:line:48",
+        "frequency_record_id": "ngsl:1.2:rank:2049"
+      }
+    },
+    {
+      "sequence": 72,
+      "learning_unit_key": "faithfully|adverb|B2|sense:1",
+      "word": "faithfully",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00224885-r",
+          "source_record_id": "oewn_2024:00224885-r"
+        },
+        "lexitron": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:faithfully:line:50"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2791"
+        }
+      },
+      "sources_matched_count": 3,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MISSING",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_MISSING"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "00224885-r",
+        "lexitron_record_id": null,
+        "cmudict_record_id": "cmudict:0.7b:faithfully:line:50",
+        "frequency_record_id": "ngsl:1.2:rank:2791"
+      }
+    },
+    {
+      "sequence": 73,
+      "learning_unit_key": "rival|noun|B2|sense:1",
+      "word": "rival",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5795"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "10729833-n",
+          "source_record_id": "oewn_2024:10729833-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:58126"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:rival:line:7458"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2343"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"rival\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5795",
+        "oewn_synset_id": "10729833-n",
+        "lexitron_record_id": "lexitron:etlex:id:58126",
+        "cmudict_record_id": "cmudict:0.7b:rival:line:7458",
+        "frequency_record_id": "ngsl:1.2:rank:2343"
+      }
+    },
+    {
+      "sequence": 74,
+      "learning_unit_key": "select|verb|B2|sense:1",
+      "word": "select",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:6016"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00705935-v",
+          "source_record_id": "oewn_2024:00705935-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:64139"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:select:line:7718"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1173"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ปรับเปลี่ยน หรือแปรสภาพให้แตกต่างไป\" not found in LEXiTRON translations: [คัดเลือก]",
+        "example_conflict_reason": "Target headword \"select\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:6016",
+        "oewn_synset_id": "00705935-v",
+        "lexitron_record_id": "lexitron:etlex:id:64139",
+        "cmudict_record_id": "cmudict:0.7b:select:line:7718",
+        "frequency_record_id": "ngsl:1.2:rank:1173"
+      }
+    },
+    {
+      "sequence": 75,
+      "learning_unit_key": "executive|adjective|B2|sense:1",
+      "word": "executive",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:2397"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "03037640-a",
+          "source_record_id": "oewn_2024:03037640-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:22106"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:executive:line:3255"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1059"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีคุณลักษณะเด่นหรือคุณสมบัตินี้\" not found in LEXiTRON translations: [เกี่ยวกับการบริหาร]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:2397",
+        "oewn_synset_id": "03037640-a",
+        "lexitron_record_id": "lexitron:etlex:id:22106",
+        "cmudict_record_id": "cmudict:0.7b:executive:line:3255",
+        "frequency_record_id": "ngsl:1.2:rank:1059"
+      }
+    },
+    {
+      "sequence": 76,
+      "learning_unit_key": "potentially|adverb|B2|sense:1",
+      "word": "potentially",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5166"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00302480-r",
+          "source_record_id": "oewn_2024:00302480-r"
+        },
+        "lexitron": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:potentially:line:6542"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2558"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MISSING",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_MISSING"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5166",
+        "oewn_synset_id": "00302480-r",
+        "lexitron_record_id": null,
+        "cmudict_record_id": "cmudict:0.7b:potentially:line:6542",
+        "frequency_record_id": "ngsl:1.2:rank:2558"
+      }
+    },
+    {
+      "sequence": 77,
+      "learning_unit_key": "therapy|noun|B2|sense:1",
+      "word": "therapy",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:6921"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00663418-n",
+          "source_record_id": "oewn_2024:00663418-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:73457"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:therapy:line:8721"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2498"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:6921",
+        "oewn_synset_id": "00663418-n",
+        "lexitron_record_id": "lexitron:etlex:id:73457",
+        "cmudict_record_id": "cmudict:0.7b:therapy:line:8721",
+        "frequency_record_id": "ngsl:1.2:rank:2498"
+      }
+    },
+    {
+      "sequence": 78,
+      "learning_unit_key": "trick|verb|B2|sense:1",
+      "word": "trick",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:7149"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02656878-v",
+          "source_record_id": "oewn_2024:02656878-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:75318"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:trick:line:8971"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2617"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"trick\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:7149",
+        "oewn_synset_id": "02656878-v",
+        "lexitron_record_id": "lexitron:etlex:id:75318",
+        "cmudict_record_id": "cmudict:0.7b:trick:line:8971",
+        "frequency_record_id": "ngsl:1.2:rank:2617"
+      }
+    },
+    {
+      "sequence": 79,
+      "learning_unit_key": "latter|adjective|B2|sense:1",
+      "word": "latter",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:3808"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01054748-a",
+          "source_record_id": "oewn_2024:01054748-a"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:37634"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:latter:line:4991"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1704"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติที่แสดงถึงบุคคลหรือผู้มีบทบาทหน้าที่ตามที่นิยามระบุ ในระยะท้ายหรือเป็นผลลัพธ์ที่ตามมา\" not found in LEXiTRON translations: [ต่อมา]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:3808",
+        "oewn_synset_id": "01054748-a",
+        "lexitron_record_id": "lexitron:etlex:id:37634",
+        "cmudict_record_id": "cmudict:0.7b:latter:line:4991",
+        "frequency_record_id": "ngsl:1.2:rank:1704"
+      }
+    },
+    {
+      "sequence": 80,
+      "learning_unit_key": "previously|adverb|B2|sense:1",
+      "word": "previously",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cefr_j:v1.5:line:5247"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00061020-r",
+          "source_record_id": "oewn_2024:00061020-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:51797"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:previously:line:6666"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1562"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ตามจังหวะเวลา หรือความถี่ที่เกิดขึ้น\" not found in LEXiTRON translations: [แต่ก่อน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5247",
+        "oewn_synset_id": "00061020-r",
+        "lexitron_record_id": "lexitron:etlex:id:51797",
+        "cmudict_record_id": "cmudict:0.7b:previously:line:6666",
+        "frequency_record_id": "ngsl:1.2:rank:1562"
+      }
+    },
+    {
+      "sequence": 81,
+      "learning_unit_key": "absolute|noun|C1|sense:1",
+      "word": "absolute",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:354"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "05940046-n",
+          "source_record_id": "oewn_2024:05940046-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:171"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:absolute:line:166"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2398"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:354",
+        "oewn_synset_id": "05940046-n",
+        "lexitron_record_id": "lexitron:etlex:id:171",
+        "cmudict_record_id": "cmudict:0.7b:absolute:line:166",
+        "frequency_record_id": "ngsl:1.2:rank:2398"
+      }
+    },
+    {
+      "sequence": 82,
+      "learning_unit_key": "allege|verb|C1|sense:1",
+      "word": "allege",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:530"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01058594-v",
+          "source_record_id": "oewn_2024:01058594-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:1492"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:allege:line:407"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2562"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"allege\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:530",
+        "oewn_synset_id": "01058594-v",
+        "lexitron_record_id": "lexitron:etlex:id:1492",
+        "cmudict_record_id": "cmudict:0.7b:allege:line:407",
+        "frequency_record_id": "ngsl:1.2:rank:2562"
+      }
+    },
+    {
+      "sequence": 83,
+      "learning_unit_key": "rich|adjective|C1|sense:2",
+      "word": "rich",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "sense_index": 2,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "cefr_j:v1.5:line:5768"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "synset_id": "00014457-s",
+          "source_record_id": "oewn_2024:00014457-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:57846"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:rich:line:7434"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1012"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MULTI_SENSE",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "CEFR_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:5768",
+        "oewn_synset_id": "00014457-s",
+        "lexitron_record_id": "lexitron:etlex:id:57846",
+        "cmudict_record_id": "cmudict:0.7b:rich:line:7434",
+        "frequency_record_id": "ngsl:1.2:rank:1012"
+      }
+    },
+    {
+      "sequence": 84,
+      "learning_unit_key": "beforehand|adverb|C1|sense:1",
+      "word": "beforehand",
+      "part_of_speech": "adverb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:110"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00067021-r",
+          "source_record_id": "oewn_2024:00067021-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:5032"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:beforehand:line:937"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "tsl:1.2:rank:628"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ตามจังหวะเวลา หรือความถี่ที่เกิดขึ้น\" not found in LEXiTRON translations: [ก่อนเวลา]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:110",
+        "oewn_synset_id": "00067021-r",
+        "lexitron_record_id": "lexitron:etlex:id:5032",
+        "cmudict_record_id": "cmudict:0.7b:beforehand:line:937",
+        "frequency_record_id": "tsl:1.2:rank:628"
+      }
+    },
+    {
+      "sequence": 85,
+      "learning_unit_key": "consultancy|noun|C1|sense:1",
+      "word": "consultancy",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:477"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00633749-n",
+          "source_record_id": "oewn_2024:00633749-n"
+        },
+        "lexitron": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:consultancy:line:1902"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:306"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:477",
+        "oewn_synset_id": "00633749-n",
+        "lexitron_record_id": null,
+        "cmudict_record_id": "cmudict:0.7b:consultancy:line:1902",
+        "frequency_record_id": "bsl:1.20:rank:306"
+      }
+    },
+    {
+      "sequence": 86,
+      "learning_unit_key": "brief|verb|C1|sense:1",
+      "word": "brief",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:59"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00867038-v",
+          "source_record_id": "oewn_2024:00867038-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:6488"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:brief:line:1174"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1270"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการบุคคลหรือผู้มีบทบาทหน้าที่ตามที่นิยามระบุ ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [โดยย่อ]",
+        "example_conflict_reason": "Target headword \"brief\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:59",
+        "oewn_synset_id": "00867038-v",
+        "lexitron_record_id": "lexitron:etlex:id:6488",
+        "cmudict_record_id": "cmudict:0.7b:brief:line:1174",
+        "frequency_record_id": "ngsl:1.2:rank:1270"
+      }
+    },
+    {
+      "sequence": 87,
+      "learning_unit_key": "advisory|adjective|C1|sense:1",
+      "word": "advisory",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:442"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01312070-s",
+          "source_record_id": "oewn_2024:01312070-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:864"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:advisory:line:336"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "tsl:1.2:rank:751"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ที่เกี่ยวกับการให้คำปรึกษา]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:442",
+        "oewn_synset_id": "01312070-s",
+        "lexitron_record_id": "lexitron:etlex:id:864",
+        "cmudict_record_id": "cmudict:0.7b:advisory:line:336",
+        "frequency_record_id": "tsl:1.2:rank:751"
+      }
+    },
+    {
+      "sequence": 88,
+      "learning_unit_key": "mutually|adverb|C1|sense:1",
+      "word": "mutually",
+      "part_of_speech": "adverb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:904"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00408360-r",
+          "source_record_id": "oewn_2024:00408360-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:44249"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:mutually:line:5648"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:1013"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [ร่วมกัน]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:904",
+        "oewn_synset_id": "00408360-r",
+        "lexitron_record_id": "lexitron:etlex:id:44249",
+        "cmudict_record_id": "cmudict:0.7b:mutually:line:5648",
+        "frequency_record_id": "bsl:1.20:rank:1013"
+      }
+    },
+    {
+      "sequence": 89,
+      "learning_unit_key": "drawback|noun|C1|sense:1",
+      "word": "drawback",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:457"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "05242517-n",
+          "source_record_id": "oewn_2024:05242517-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:20038"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:drawback:line:2738"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "tsl:1.2:rank:972"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": "Target headword \"drawback\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:457",
+        "oewn_synset_id": "05242517-n",
+        "lexitron_record_id": "lexitron:etlex:id:20038",
+        "cmudict_record_id": "cmudict:0.7b:drawback:line:2738",
+        "frequency_record_id": "tsl:1.2:rank:972"
+      }
+    },
+    {
+      "sequence": 90,
+      "learning_unit_key": "craft|verb|C1|sense:1",
+      "word": "craft",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:120"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01713878-v",
+          "source_record_id": "oewn_2024:01713878-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:13209"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:craft:line:2071"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2567"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"สร้างสรรค์ ผลิต หรือก่อให้เกิดสิ่งใหม่โดยการการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [ทำด้วยมือ, ประดิษฐ์โดยใช้ฝีมือ]",
+        "example_conflict_reason": "Target headword \"craft\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:120",
+        "oewn_synset_id": "01713878-v",
+        "lexitron_record_id": "lexitron:etlex:id:13209",
+        "cmudict_record_id": "cmudict:0.7b:craft:line:2071",
+        "frequency_record_id": "ngsl:1.2:rank:2567"
+      }
+    },
+    {
+      "sequence": 91,
+      "learning_unit_key": "agency|noun|C2|sense:2",
+      "word": "agency",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 2,
+      "source_batch": "LARGE-001",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "cefr_j:v1.5:line:160"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00169351-n",
+          "source_record_id": "oewn_2024:00169351-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:1090"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:agency:line:362"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:970"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_CANDIDATE",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อำนาจในการกระทำหรือตัดสินใจ, บทบาทในการก่อให้เกิดผลลัพธ์\" not found in LEXiTRON translations: [บริษัทตัวแทน, สำนักงานตัวแทน, หน่วยงานราชการ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "cefr_j:v1.5:line:160",
+        "oewn_synset_id": "00169351-n",
+        "lexitron_record_id": "lexitron:etlex:id:1090",
+        "cmudict_record_id": "cmudict:0.7b:agency:line:362",
+        "frequency_record_id": "ngsl:1.2:rank:970"
+      }
+    },
+    {
+      "sequence": 92,
+      "learning_unit_key": "ally|verb|C2|sense:1",
+      "word": "ally",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1176"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "02504226-v",
+          "source_record_id": "oewn_2024:02504226-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "AMBIGUOUS",
+          "source_record_id": "lexitron:etlex:id:1584"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "CANDIDATE_MATCH",
+          "source_record_id": "cmudict:0.7b:ally:line:419"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:2266"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_MULTI_VARIANT",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ปฏิบัติต่อผู้อื่นหรือดำเนินกิจกรรมทางสังคมโดยการครอบครัว ความสัมพันธ์ และสังคม ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [จัดอยู่ในกลุ่มเดียวกัน (เนื่องจากมีลักษณะที่สัมพันธ์กัน), ทำให้รวมตัวกัน, รวมตัวกัน]",
+        "example_conflict_reason": "Target headword \"ally\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1176",
+        "oewn_synset_id": "02504226-v",
+        "lexitron_record_id": "lexitron:etlex:id:1584",
+        "cmudict_record_id": "cmudict:0.7b:ally:line:419",
+        "frequency_record_id": "ngsl:1.2:rank:2266"
+      }
+    },
+    {
+      "sequence": 93,
+      "learning_unit_key": "averse|adjective|C2|sense:1",
+      "word": "averse",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1804"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01300958-s",
+          "source_record_id": "oewn_2024:01300958-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:3344"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:averse:line:787"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:1322"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ซึ่งมีลักษณะหรือคุณสมบัติตามที่ระบุ\" not found in LEXiTRON translations: [ซึ่งไม่ชอบ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1804",
+        "oewn_synset_id": "01300958-s",
+        "lexitron_record_id": "lexitron:etlex:id:3344",
+        "cmudict_record_id": "cmudict:0.7b:averse:line:787",
+        "frequency_record_id": "bsl:1.20:rank:1322"
+      }
+    },
+    {
+      "sequence": 94,
+      "learning_unit_key": "wholly|adverb|C2|sense:1",
+      "word": "wholly",
+      "part_of_speech": "adverb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:2127"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00008390-r",
+          "source_record_id": "oewn_2024:00008390-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:81293"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:wholly:line:9567"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:726"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน\" not found in LEXiTRON translations: [ทั้งหมด]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:2127",
+        "oewn_synset_id": "00008390-r",
+        "lexitron_record_id": "lexitron:etlex:id:81293",
+        "cmudict_record_id": "cmudict:0.7b:wholly:line:9567",
+        "frequency_record_id": "bsl:1.20:rank:726"
+      }
+    },
+    {
+      "sequence": 95,
+      "learning_unit_key": "subsidy|noun|C2|sense:1",
+      "word": "subsidy",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:2067"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "13497547-n",
+          "source_record_id": "oewn_2024:13497547-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:69210"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:subsidy:line:8367"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:99"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Contains banned generic/domain-contaminated placeholder template",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:2067",
+        "oewn_synset_id": "13497547-n",
+        "lexitron_record_id": "lexitron:etlex:id:69210",
+        "cmudict_record_id": "cmudict:0.7b:subsidy:line:8367",
+        "frequency_record_id": "bsl:1.20:rank:99"
+      }
+    },
+    {
+      "sequence": 96,
+      "learning_unit_key": "automate|verb|C2|sense:1",
+      "word": "automate",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1206"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00499110-v",
+          "source_record_id": "oewn_2024:00499110-v"
+        },
+        "lexitron": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:automate:line:769"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "tsl:1.2:rank:388"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_MISSING",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": null,
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_MISSING"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1206",
+        "oewn_synset_id": "00499110-v",
+        "lexitron_record_id": null,
+        "cmudict_record_id": "cmudict:0.7b:automate:line:769",
+        "frequency_record_id": "tsl:1.2:rank:388"
+      }
+    },
+    {
+      "sequence": 97,
+      "learning_unit_key": "pedestrian|adjective|C2|sense:1",
+      "word": "pedestrian",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1671"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "01353549-s",
+          "source_record_id": "oewn_2024:01353549-s"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:48691"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:pedestrian:line:6247"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "tsl:1.2:rank:551"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_ALIGNED"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ที่ปราศจาก หรือไม่มีลักษณะดังกล่าว\" not found in LEXiTRON translations: [เกี่ยวกับการเดิน, จืดชืด]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1671",
+        "oewn_synset_id": "01353549-s",
+        "lexitron_record_id": "lexitron:etlex:id:48691",
+        "cmudict_record_id": "cmudict:0.7b:pedestrian:line:6247",
+        "frequency_record_id": "tsl:1.2:rank:551"
+      }
+    },
+    {
+      "sequence": 98,
+      "learning_unit_key": "hitherto|adverb|C2|sense:1",
+      "word": "hitherto",
+      "part_of_speech": "adverb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-005",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1558"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00028037-r",
+          "source_record_id": "oewn_2024:00028037-r"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:30053"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:hitherto:line:4231"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:1622"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ตามจังหวะเวลา หรือความถี่ที่เกิดขึ้น\" not found in LEXiTRON translations: [จนกระทั่งเดี๋ยวนี้]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1558",
+        "oewn_synset_id": "00028037-r",
+        "lexitron_record_id": "lexitron:etlex:id:30053",
+        "cmudict_record_id": "cmudict:0.7b:hitherto:line:4231",
+        "frequency_record_id": "bsl:1.20:rank:1622"
+      }
+    },
+    {
+      "sequence": 99,
+      "learning_unit_key": "brief|noun|C2|sense:1",
+      "word": "brief",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-004",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "octanove:v1.0:line:1142"
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "06641888-n",
+          "source_record_id": "oewn_2024:06641888-n"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "CONFLICT",
+          "source_record_id": "lexitron:etlex:id:6488"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:brief:line:1174"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "ngsl:1.2:rank:1270"
+        }
+      },
+      "sources_matched_count": 5,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CANDIDATE"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"กระบวนการ การปฏิบัติ หรือการดำเนินการ\" not found in LEXiTRON translations: [โดยย่อ]",
+        "example_conflict_reason": null
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": "octanove:v1.0:line:1142",
+        "oewn_synset_id": "06641888-n",
+        "lexitron_record_id": "lexitron:etlex:id:6488",
+        "cmudict_record_id": "cmudict:0.7b:brief:line:1174",
+        "frequency_record_id": "ngsl:1.2:rank:1270"
+      }
+    },
+    {
+      "sequence": 100,
+      "learning_unit_key": "decentralize|verb|C2|sense:1",
+      "word": "decentralize",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "evidence_matrix": {
+        "cefr_j": {
+          "matched": false,
+          "status": "MISSING",
+          "source_record_id": null
+        },
+        "oewn": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "synset_id": "00420901-v",
+          "source_record_id": "oewn_2024:00420901-v"
+        },
+        "lexitron": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "lexitron:etlex:id:17957"
+        },
+        "cmudict": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "cmudict:0.7b:decentralize:line:2264"
+        },
+        "frequency": {
+          "matched": true,
+          "status": "EXACT_MATCH",
+          "source_record_id": "bsl:1.20:rank:1492"
+        }
+      },
+      "sources_matched_count": 4,
+      "alignment_results": {
+        "sense": "SENSE_ALIGNED",
+        "thai": "THAI_CONFLICT",
+        "ipa": "IPA_CONFIRMED",
+        "example": "EXAMPLE_CONFLICT"
+      },
+      "conflict_diagnostics": {
+        "sense_conflict_reason": null,
+        "thai_conflict_reason": "Current Thai \"ทำให้เกิดการเปลี่ยนแปลงหรือปรับสภาพโดยการการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้\" not found in LEXiTRON translations: [กระจายอำนาจ]",
+        "example_conflict_reason": "Target headword \"decentralize\" does not appear in example sentence"
+      },
+      "confidence_decision": "HOLD",
+      "reason_codes": [
+        "THAI_CONFLICT"
+      ],
+      "traceability": {
+        "cefr_j_record_id": null,
+        "oewn_synset_id": "00420901-v",
+        "lexitron_record_id": "lexitron:etlex:id:17957",
+        "cmudict_record_id": "cmudict:0.7b:decentralize:line:2264",
+        "frequency_record_id": "bsl:1.20:rank:1492"
+      }
+    }
+  ]
+}

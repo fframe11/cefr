@@ -16,4 +16,16 @@ supabase/.temp
 .wrangler
 .dev.vars
 .dev.vars.*
+scripts/content-pipeline/sources/oewn/extracted/
+scripts/content-pipeline/sources/cmudict/cmudict-0.7b.dict
+scripts/content-pipeline/output/vocabulary-candidates-normalized.json
+scripts/content-pipeline/output/vocabulary-enriched-candidates.json
+scripts/content-pipeline/output/vocabulary-collocations-candidates.json
+
+scripts/content-pipeline/output/vocabulary-large-manifest.json
+scripts/content-pipeline/output/vocabulary-large-batches.json
+reports/vocabulary-large-manifest.json
+data/external-cache/
+*.bz2
+*.tar.bz2
 

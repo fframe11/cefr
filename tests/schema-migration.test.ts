@@ -5,7 +5,7 @@ import * as path from 'path';
 describe('Database Schema Migrations Verification', () => {
   const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-  it('should find all 5 approved migration files', () => {
+  it('should find all 8 approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
     expect(files).toEqual([
@@ -14,6 +14,9 @@ describe('Database Schema Migrations Verification', () => {
       '20260925000003_create_rls_policies.sql',
       '20260925000004_seed_reference_data.sql',
       '20260925000005_create_storage_buckets.sql',
+      '20260925000006_seed_content_bank.sql',
+      '20260926000007_add_vocabulary_provenance_and_lifecycle.sql',
+      '20260926000008_seed_vocabulary_pilot_batch.sql',
     ]);
   });
 
@@ -153,6 +156,30 @@ describe('Database Schema Migrations Verification', () => {
     expect(storageSql).toMatch(/'audio-speaking-submissions'/);
     expect(storageSql).toMatch(/ON\s+storage\.objects\s+FOR\s+SELECT/i);
     expect(storageSql).toMatch(/auth\.uid\(\)::text/);
+  });
+
+  it('should verify content bank seed provisions unblocked content and excludes mock exams', () => {
+    const seedSql = fs.readFileSync(
+      path.join(migrationsDir, '20260925000006_seed_content_bank.sql'),
+      'utf-8'
+    );
+    // Explicitly excludes mock exam tables
+    expect(seedSql).not.toMatch(/INSERT\s+INTO\s+public\.mock_exams\b/i);
+    expect(seedSql).not.toMatch(/INSERT\s+INTO\s+public\.mock_exam_sections\b/i);
+    expect(seedSql).not.toMatch(/INSERT\s+INTO\s+public\.mock_exam_questions\b/i);
+
+    // Explicitly excludes user/state tables
+    expect(seedSql).not.toMatch(/INSERT\s+INTO\s+public\.user_/i);
+    expect(seedSql).not.toMatch(/INSERT\s+INTO\s+auth\./i);
+
+    // Audio storage path should be explicitly NULL
+    expect(seedSql).toMatch(/INSERT\s+INTO\s+public\.listening_exercises/i);
+    expect(seedSql).toMatch(/speaker_accents,\s*audio_storage_path,\s*audio_script/i);
+    expect(seedSql).toMatch(/NULL,\s*'Attention all passengers/i);
+
+    // Verify conflict clauses
+    expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(id\)\s+DO\s+UPDATE/i);
+    expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(question_id,\s*key\)\s+DO\s+UPDATE/i);
   });
 });
 

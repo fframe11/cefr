@@ -6,20 +6,30 @@ import { QuestionCard } from '../common/QuestionCard';
 import {
   Sparkles,
   BookOpen,
-  AlertCircle,
   Lightbulb,
-  X,
-  Check,
+  AlertTriangle,
+  ChevronRight,
+  ChevronLeft,
+  CheckCircle2,
+  HelpCircle,
 } from 'lucide-react';
 import { getGrammarTopics, mapGrammarDtoToTopic } from '../../lib/api/content/grammar';
 import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import {
+  GlovaSectionHeader,
+  GlovaLevelBadge,
+  GlovaButton,
+  GlovaCard,
+  GlovaCardContent,
+  GlovaBadge,
+} from '../ui';
 import { useTranslation } from '../../i18n';
 
 interface GrammarViewProps {
-  onQuestionCompleted: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
+  onQuestionCompleted?: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
   activeTopicId?: string;
 }
 
@@ -36,6 +46,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [topicQuestions, setTopicQuestions] = useState<Record<string, Question[]>>({});
   const [loadingQuestions, setLoadingQuestions] = useState(false);
+  const [activeQuestionIdx, setActiveQuestionIdx] = useState(0);
 
   // Fetch topics from API
   const fetchTopics = useCallback(async () => {
@@ -67,7 +78,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
   const currentTopic = topics.find((t) => t.id === selectedTopicId) || topics[0] || GRAMMAR_BANK[0];
 
-  // Fetch questions for the selected topic
+  // Fetch questions for selected topic
   const fetchQuestionsForTopic = useCallback(async (topicId: string) => {
     if (topicQuestions[topicId]) return;
     setLoadingQuestions(true);
@@ -77,7 +88,6 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
         const mapped = res.questions.map(mapQuestionDtoToQuestion);
         setTopicQuestions((prev) => ({ ...prev, [topicId]: mapped }));
       } else {
-        // Fallback to static practice questions if available
         const staticTopic = GRAMMAR_BANK.find((t) => t.id === topicId);
         setTopicQuestions((prev) => ({ ...prev, [topicId]: staticTopic?.practiceQuestions || [] }));
       }
@@ -93,173 +103,243 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   useEffect(() => {
     if (currentTopic?.id) {
       fetchQuestionsForTopic(currentTopic.id);
+      setActiveQuestionIdx(0);
     }
   }, [currentTopic?.id, fetchQuestionsForTopic]);
 
   const displayedQuestions = (currentTopic && topicQuestions[currentTopic.id]) || currentTopic?.practiceQuestions || [];
+  const currentQuestion = displayedQuestions[activeQuestionIdx];
+
+  const handleNextQuestion = () => {
+    if (activeQuestionIdx < displayedQuestions.length - 1) {
+      setActiveQuestionIdx((prev) => prev + 1);
+    } else {
+      // Find next topic
+      const currentIndex = topics.findIndex((t) => t.id === currentTopic?.id);
+      if (currentIndex !== -1 && currentIndex < topics.length - 1) {
+        setSelectedTopicId(topics[currentIndex + 1].id);
+      }
+    }
+  };
+
+  const handlePrevQuestion = () => {
+    if (activeQuestionIdx > 0) {
+      setActiveQuestionIdx((prev) => prev - 1);
+    }
+  };
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 pb-12">
-      {/* Topic Switcher Pills (Horizontal on mobile/tablet) */}
+    <div className="w-full max-w-6xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+      {/* 1. Learning Context Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <GlovaSectionHeader
+          eyebrow="GRAMMAR LAB"
+          title="ไวยากรณ์และการประยุกต์ใช้"
+          description="เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด"
+        />
+
+        {currentTopic && (
+          <div className="flex items-center gap-2 shrink-0">
+            <GlovaLevelBadge level={currentTopic.cefrLevel} size="md" />
+            <span className="text-xs font-mono font-medium text-muted-foreground">
+              {currentTopic.titleEn}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Topic Switcher Pills Carousel */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {topics.map((topic) => {
           const isSelected = topic.id === currentTopic?.id;
           return (
             <button
               key={topic.id}
-              onClick={() => setSelectedTopicId(topic.id)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all touch-target flex items-center gap-2 border ${
+              type="button"
+              onClick={() => {
+                setSelectedTopicId(topic.id);
+                setActiveQuestionIdx(0);
+              }}
+              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-muted/40'
+                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
+                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
               }`}
             >
-              <span className="font-mono text-[10px] px-1.5 py-0.2 rounded bg-black/20 text-current">
-                {topic.cefrLevel}
-              </span>
-              <span className="truncate max-w-[200px]">{topic.titleTh}</span>
+              <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
+              <span className="truncate max-w-[180px]">{topic.titleTh}</span>
             </button>
           );
         })}
       </div>
 
+      {/* Loading state indicator */}
       {loading && topics.length === 0 && (
-        <div className="p-12 flex justify-center">
+        <div className="min-h-[320px] flex items-center justify-center p-12">
           <LoadingSpinner size="lg" text="กำลังโหลดหัวข้อไวยากรณ์..." />
         </div>
       )}
 
+      {/* Error state */}
       {error && (
         <ErrorMessage message={error} onRetry={fetchTopics} />
       )}
 
+      {/* 2. Main Learning Activity: 2-Column Responsive Layout */}
       {currentTopic && (
-        /* Main Learning Interface: 2-column on desktop, stacked on mobile/tablet */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column (Desktop 7 cols): Explanation & Examples */}
-          <div className="lg:col-span-7 space-y-5">
-            {/* Header Card */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-card border border-border/60 shadow-xs space-y-3">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
-                  CEFR {currentTopic.cefrLevel}
-                </span>
-                <span className="text-xs text-muted-foreground font-mono">
-                  {currentTopic.titleEn}
-                </span>
+          {/* Left Column (5 cols): Grammar Concept & Rule Blueprint */}
+          <div className="lg:col-span-5 space-y-4">
+            <GlovaCard elevation="subtle" className="p-5 sm:p-6 space-y-4">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2">
+                  <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
+                  <span className="text-xs font-mono text-muted-foreground">
+                    {currentTopic.titleEn}
+                  </span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
+                  {currentTopic.titleTh}
+                </h3>
               </div>
 
-              <h2 className="text-fluid-title font-bold text-foreground tracking-tight">
-                {currentTopic.titleTh}
-              </h2>
-
               {currentTopic.summaryTh && (
-                <p className="text-sm text-foreground/90 leading-relaxed font-medium bg-muted/30 p-3 rounded-lg border border-border/40 flex items-start gap-2">
-                  <Lightbulb className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <span>{currentTopic.summaryTh}</span>
-                </p>
+                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground flex items-start gap-2.5">
+                  <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span className="leading-relaxed font-medium">{currentTopic.summaryTh}</span>
+                </div>
               )}
 
-              {/* Detailed Explanation in Thai */}
+              {/* Core Concept */}
               {currentTopic.conceptTh && (
-                <div className="pt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed whitespace-pre-line space-y-2">
+                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {currentTopic.conceptTh}
                 </div>
               )}
-            </div>
 
-            {/* Formulas and Rules */}
-            {currentTopic.rules && currentTopic.rules.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  <span>{t('grammar.formulas')}</span>
-                </h3>
+              {/* Formulas & Rules */}
+              {currentTopic.rules && currentTopic.rules.length > 0 && (
+                <div className="pt-2 space-y-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground">
+                    <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                    <span>โครงสร้างและกฎการใช้งาน:</span>
+                  </div>
 
-                <div className="space-y-3">
-                  {currentTopic.rules.map((rule, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-xl bg-card border border-border/60 shadow-xs space-y-2"
-                    >
-                      <div className="font-mono text-xs sm:text-sm font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg border border-primary/20 inline-block break-word-safe">
-                        {rule.formula}
+                  <div className="space-y-2.5">
+                    {currentTopic.rules.map((rule, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3.5 rounded-xl bg-muted/30 border border-border/40 space-y-2"
+                      >
+                        <div className="font-mono text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md border border-primary/20 inline-block break-word-safe">
+                          {rule.formula}
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {rule.explanationTh}
+                        </p>
+                        <div className="pt-1.5 border-t border-border/30 text-[11px]">
+                          <p className="font-medium text-foreground">{rule.exampleEn}</p>
+                          <p className="text-muted-foreground">{rule.exampleTh}</p>
+                        </div>
                       </div>
-                      <p className="text-xs text-muted-foreground">{rule.explanationTh}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-                      <div className="mt-2 p-2.5 rounded-lg bg-muted/40 border border-border/40 text-xs">
-                        <p className="font-medium text-foreground">{rule.exampleEn}</p>
-                        <p className="text-muted-foreground mt-0.5">{rule.exampleTh}</p>
+              {/* Common Pitfalls by Thai Learners */}
+              {currentTopic.commonMistakes && currentTopic.commonMistakes.length > 0 && (
+                <div className="pt-2 space-y-2 border-t border-border/40">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-rose-400">
+                    <AlertTriangle className="w-3.5 h-3.5 text-rose-400" aria-hidden="true" />
+                    <span>จุดผิดบ่อยที่ควรระวัง:</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {currentTopic.commonMistakes.map((m, idx) => (
+                      <div key={idx} className="p-3 rounded-lg bg-rose-500/5 border border-rose-500/20 text-xs space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-rose-400 line-through font-mono">
+                            {m.incorrect}
+                          </span>
+                          <span className="text-emerald-500 font-mono font-medium">
+                            {m.correct}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground">{m.reasonTh}</p>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-
-            {/* Common Mistakes by Thai Learners */}
-            {currentTopic.commonMistakes && currentTopic.commonMistakes.length > 0 && (
-              <div className="p-4 rounded-xl bg-card border border-rose-500/20 shadow-xs space-y-3">
-                <h3 className="text-xs sm:text-sm font-semibold text-rose-400 flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4" />
-                  <span>{t('grammar.pitfalls')}</span>
-                </h3>
-
-                <div className="space-y-2.5">
-                  {currentTopic.commonMistakes.map((mistake, idx) => (
-                    <div key={idx} className="text-xs space-y-1 p-2.5 rounded-lg bg-rose-500/5 border border-rose-500/10">
-                      <p className="text-rose-400 flex items-center gap-1.5">
-                        <X className="w-3.5 h-3.5 shrink-0" />
-                        <span className="line-through">{mistake.incorrect}</span>
-                      </p>
-                      <p className="text-emerald-400 font-medium flex items-center gap-1.5">
-                        <Check className="w-3.5 h-3.5 shrink-0" />
-                        <span>{mistake.correct}</span>
-                      </p>
-                      <p className="text-muted-foreground text-[11px] pt-1 pl-5">{mistake.reasonTh}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+              )}
+            </GlovaCard>
           </div>
 
-          {/* Right Column (Desktop 5 cols): Interactive Practice Questions */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-primary" />
-                <span>{t('grammar.practice_quiz')}</span>
-              </h3>
-              <span className="text-xs text-muted-foreground font-mono">
-                {displayedQuestions.length} ข้อ
-              </span>
+          {/* Right Column (7 cols): Dominant Practice Task with QuestionCard */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-border/40">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
+                <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                  แบบฝึกหัดวัดความเข้าใจ
+                </h4>
+              </div>
+
+              {displayedQuestions.length > 0 && (
+                <span className="text-xs text-muted-foreground font-mono">
+                  ข้อที่ {activeQuestionIdx + 1} จาก {displayedQuestions.length}
+                </span>
+              )}
             </div>
 
-            {loadingQuestions && displayedQuestions.length === 0 ? (
-              <div className="p-8 flex justify-center">
+            {loadingQuestions && displayedQuestions.length === 0 && (
+              <div className="min-h-[260px] flex items-center justify-center p-8">
                 <LoadingSpinner size="md" text="กำลังโหลดแบบฝึกหัด..." />
               </div>
-            ) : displayedQuestions.length > 0 ? (
-              <div className="space-y-4">
-                {displayedQuestions.map((q, idx) => (
-                  <QuestionCard
-                    key={q.id}
-                    question={q}
-                    questionNumber={idx + 1}
-                    totalQuestions={displayedQuestions.length}
-                    showExplanationImmediately={true}
-                    onAnswer={(selectedKey, isCorrect) => {
-                      onQuestionCompleted(q.id, isCorrect, q.weaknessTag);
-                    }}
-                  />
-                ))}
-              </div>
-            ) : (
+            )}
+
+            {!loadingQuestions && displayedQuestions.length === 0 && (
               <EmptyState
                 title="ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้"
-                description="เลือกหัวข้อไวยากรณ์อื่นเพื่อเริ่มทำแบบฝึกหัด"
+                description="ทีมผู้เชี่ยวชาญกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้"
               />
+            )}
+
+            {currentQuestion && (
+              <div className="space-y-4">
+                <QuestionCard
+                  key={currentQuestion.id}
+                  question={currentQuestion}
+                  questionNumber={activeQuestionIdx + 1}
+                  totalQuestions={displayedQuestions.length}
+                  onAnswer={(selectedKey, isCorrect) => {
+                    onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
+                  }}
+                  showExplanationImmediately={true}
+                />
+
+                {/* Next / Previous Question Action Bar */}
+                <div className="flex items-center justify-between pt-2">
+                  <GlovaButton
+                    variant="secondary"
+                    size="sm"
+                    leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
+                    onClick={handlePrevQuestion}
+                    disabled={activeQuestionIdx === 0}
+                  >
+                    ข้อก่อนหน้า
+                  </GlovaButton>
+
+                  <GlovaButton
+                    variant="primary"
+                    size="sm"
+                    rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
+                    onClick={handleNextQuestion}
+                  >
+                    {activeQuestionIdx < displayedQuestions.length - 1 ? 'ข้อถัดไป' : 'หัวข้อถัดไป'}
+                  </GlovaButton>
+                </div>
+              </div>
             )}
           </div>
         </div>

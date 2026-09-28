@@ -1,0 +1,112 @@
+{
+  "report_type": "vocabulary-import-summary",
+  "phase": "6.2.7",
+  "import_batch": "batch-2026-09-26-phase-6.2.7-v1",
+  "counts": {
+    "raw_primary_input_rows": 9935,
+    "malformed_rows_rejected": 1,
+    "valid_normalized_rows_before_merge": 9934,
+    "exact_duplicates_collapsed": 28,
+    "cross_and_intra_source_cefr_conflicts_collapsed_for_review": 99,
+    "polysemy_sense_splits_preserved": 27,
+    "final_candidate_set_size": 9806,
+    "pilot_batch_size": 180
+  },
+  "missing_fields_audit": {
+    "malformed_missing_pos_in_raw_input": 1,
+    "candidates_missing_frequency_rank": 4431,
+    "candidates_missing_unambiguous_oewn_sense_key": 7094,
+    "candidates_awaiting_pedagogical_enrichment_meaning_th_ipa_examples": 9806
+  },
+  "cefr_distribution": {
+    "A1": 1164,
+    "A2": 1411,
+    "B1": 2446,
+    "B2": 2778,
+    "C1": 1064,
+    "C2": 943
+  },
+  "pos_distribution": {
+    "verb": 1793,
+    "adverb": 820,
+    "adjective": 2023,
+    "noun": 4869,
+    "preposition": 81,
+    "conjunction": 38,
+    "determiner": 46,
+    "pronoun": 83,
+    "modal_auxiliary": 13,
+    "interjection": 9,
+    "number": 30,
+    "infinitive_to": 1
+  },
+  "source_distribution": {
+    "cefr_j": 7799,
+    "octanove": 2007
+  },
+  "frequency_coverage": {
+    "matched_count": 5375,
+    "unmatched_count": 4431,
+    "coverage_percentage": 54.81,
+    "by_primary_frequency_source": {
+      "UNMATCHED": 4431,
+      "NGSL_1.2": 3602,
+      "TSL_1.2": 737,
+      "BSL_1.20": 435,
+      "NAWL_1.2": 601
+    },
+    "by_match_status": {
+      "unmatched_multiword_or_abbreviation": 221,
+      "unmatched_not_in_ngsl_nawl_tsl_bsl": 4210,
+      "matched_exact_lemma": 5373,
+      "matched_orthographic_variant:okay": 2
+    }
+  },
+  "oewn_match_coverage": {
+    "unambiguous_matched_count": 2712,
+    "ambiguous_polysemous_count": 6529,
+    "not_found_count": 264,
+    "not_attempted_closed_class_pos_count": 301,
+    "unambiguous_coverage_percentage": 27.66,
+    "open_class_found_in_oewn_percentage": 94.24,
+    "by_status": {
+      "not_found": 264,
+      "ambiguous": 6529,
+      "matched": 2712,
+      "not_attempted": 301
+    }
+  },
+  "lifecycle_status_distribution": {
+    "REVIEW_REQUIRED": 9806
+  },
+  "pilot_batch_summary": {
+    "total_records": 180,
+    "cefr_distribution": {
+      "A1": 30,
+      "A2": 30,
+      "B1": 30,
+      "B2": 30,
+      "C1": 30,
+      "C2": 30
+    },
+    "pos_distribution": {
+      "preposition": 12,
+      "noun": 46,
+      "adjective": 40,
+      "verb": 37,
+      "adverb": 32,
+      "conjunction": 9,
+      "determiner": 4
+    },
+    "source_distribution": {
+      "cefr_j": 120,
+      "octanove": 60
+    },
+    "frequency_matched_count": 132,
+    "oewn_matched_count": 91,
+    "oewn_ambiguous_count": 59,
+    "conflict_and_polysemy_cases_included": 30
+  },
+  "normalized_candidates_sha256": "ef119da594cc6f5c58c315f083bf77487fcbf15bafc9ec937e8d340a16ad69a9",
+  "pilot_batch_sha256": "fe1872900a3ef2aa8d9fda3655bebe7506c969d6c0603bc6ccb913ac34ea9934"
+}

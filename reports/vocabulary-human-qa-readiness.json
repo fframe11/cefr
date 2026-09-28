@@ -1,0 +1,934 @@
+{
+  "phase": "6.2.12",
+  "report_title": "Large Vocabulary Human QA & Production Readiness Gate",
+  "generated_at": "2026-09-27T14:53:41.065Z",
+  "overall_status": "NOT_READY",
+  "verdict_display": "NOT READY",
+  "user_testing_authorized": false,
+  "disclaimer": "Glova vocabulary content is CEFR-informed and source-referenced for learning preparation. It does NOT constitute official certification or endorsement by Cambridge Assessment English or the Council of Europe. Content requires authenticated human review before production activation.",
+  "inventory_metrics": {
+    "inventory_target": 10000,
+    "total_inventory_unique_learning_units": 10021,
+    "existing_active_curated_units": 21,
+    "staged_review_required_units": 10000,
+    "tier_1_queue_units": 7119,
+    "duplicate_learning_unit_keys": 0,
+    "batch_count": 50,
+    "tier1_batch_count": 36,
+    "batch_size": 200
+  },
+  "learner_ready_metrics": {
+    "learner_ready_target": 10000,
+    "currently_learner_ready_units": 83,
+    "learner_ready_percentage": 0.83,
+    "remaining_gap_to_10000_learner_ready": 9917,
+    "status": "NOT_READY"
+  },
+  "human_review_status_breakdown": {
+    "active_in_production": 21,
+    "human_approved": 62,
+    "review_required_pending": 9935,
+    "edit_required": 1,
+    "hold": 2,
+    "rejected": 0
+  },
+  "unresolved_and_risk_queues": {
+    "ipa_unresolved_count": 316,
+    "sense_ambiguous_count": 6053,
+    "sense_no_match_count": 565,
+    "sense_conflict_count": 0,
+    "risk_tier_breakdown": {
+      "TIER_1_CRITICAL_RISK": 7118,
+      "TIER_2_HIGH_RISK": 806,
+      "TIER_3_MEDIUM_RISK": 2075,
+      "TIER_4_LOW_RISK": 1
+    },
+    "tier_1_queue_summary": {
+      "total_tier_1_units": 7119,
+      "total_tier_1_batches": 36,
+      "approved_count": 62,
+      "rejected_count": 0,
+      "edit_required_count": 1,
+      "hold_count": 2,
+      "pending_count": 7054,
+      "reviewed_count": 65,
+      "progress_percent": 0.91
+    }
+  },
+  "cefr_claim_boundary": {
+    "framework": "CEFR (Common European Framework of Reference)",
+    "classification_type": "Source-referenced and corpus-calibrated vocabulary band",
+    "official_cambridge_certified": false,
+    "user_facing_label": "CEFR-informed preparation content"
+  },
+  "production_safety": {
+    "production_database_modified": false,
+    "bulk_promotions_executed": false,
+    "rls_policies_intact": true,
+    "unreviewed_content_blocked_from_active": true
+  },
+  "batch_progress": [
+    {
+      "batch_id": "LARGE-001",
+      "item_count": 200,
+      "approved": 2,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 1,
+      "pending": 197,
+      "progress_percent": 1.5
+    },
+    {
+      "batch_id": "LARGE-002",
+      "item_count": 200,
+      "approved": 2,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 198,
+      "progress_percent": 1
+    },
+    {
+      "batch_id": "LARGE-003",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "LARGE-004",
+      "item_count": 200,
+      "approved": 2,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 1,
+      "pending": 197,
+      "progress_percent": 1.5
+    },
+    {
+      "batch_id": "LARGE-005",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-006",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 1,
+      "hold": 0,
+      "pending": 198,
+      "progress_percent": 1
+    },
+    {
+      "batch_id": "LARGE-007",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "LARGE-008",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-009",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-010",
+      "item_count": 200,
+      "approved": 2,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 198,
+      "progress_percent": 1
+    },
+    {
+      "batch_id": "LARGE-011",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "LARGE-012",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-013",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-014",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-015",
+      "item_count": 200,
+      "approved": 45,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 155,
+      "progress_percent": 22.5
+    },
+    {
+      "batch_id": "LARGE-016",
+      "item_count": 200,
+      "approved": 3,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 197,
+      "progress_percent": 1.5
+    },
+    {
+      "batch_id": "LARGE-017",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-018",
+      "item_count": 200,
+      "approved": 2,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 198,
+      "progress_percent": 1
+    },
+    {
+      "batch_id": "LARGE-019",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-020",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-021",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-022",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-023",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-024",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-025",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-026",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-027",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-028",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-029",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-030",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-031",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-032",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-033",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-034",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-035",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-036",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-037",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-038",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-039",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-040",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-041",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-042",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-043",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-044",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-045",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-046",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-047",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-048",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-049",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "LARGE-050",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    }
+  ],
+  "tier1_batch_progress": [
+    {
+      "batch_id": "TIER-1-001",
+      "item_count": 200,
+      "approved": 59,
+      "rejected": 0,
+      "edit_required": 1,
+      "hold": 2,
+      "pending": 138,
+      "progress_percent": 31
+    },
+    {
+      "batch_id": "TIER-1-002",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "TIER-1-003",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "TIER-1-004",
+      "item_count": 200,
+      "approved": 1,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 199,
+      "progress_percent": 0.5
+    },
+    {
+      "batch_id": "TIER-1-005",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-006",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-007",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-008",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-009",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-010",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-011",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-012",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-013",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-014",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-015",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-016",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-017",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-018",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-019",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-020",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-021",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-022",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-023",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-024",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-025",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-026",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-027",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-028",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-029",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-030",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-031",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-032",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-033",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-034",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-035",
+      "item_count": 200,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 200,
+      "progress_percent": 0
+    },
+    {
+      "batch_id": "TIER-1-036",
+      "item_count": 119,
+      "approved": 0,
+      "rejected": 0,
+      "edit_required": 0,
+      "hold": 0,
+      "pending": 119,
+      "progress_percent": 0
+    }
+  ]
+}

@@ -1,0 +1,1022 @@
+{
+  "phase": "6.2.31",
+  "title": "Phase 6.2.31 Evidence-First Vocabulary POC Manifest (100 Records)",
+  "generated_at": "2026-09-27T17:24:34.756Z",
+  "total_records": 100,
+  "cefr_distribution": {
+    "A1": 20,
+    "A2": 20,
+    "B1": 20,
+    "B2": 20,
+    "C1": 10,
+    "C2": 10
+  },
+  "pos_distribution": {
+    "noun": 31,
+    "verb": 27,
+    "adjective": 20,
+    "adverb": 22
+  },
+  "records": [
+    {
+      "sequence": 1,
+      "learning_unit_key": "car|noun|A1|sense:1",
+      "word": "car",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 2,
+      "learning_unit_key": "clean|adjective|A1|sense:1",
+      "word": "clean",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 3,
+      "learning_unit_key": "door|noun|A1|sense:1",
+      "word": "door",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 4,
+      "learning_unit_key": "drink|verb|A1|sense:1",
+      "word": "drink",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 5,
+      "learning_unit_key": "eat|verb|A1|sense:1",
+      "word": "eat",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 6,
+      "learning_unit_key": "call|noun|A1|sense:1",
+      "word": "call",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 7,
+      "learning_unit_key": "catch|verb|A1|sense:1",
+      "word": "catch",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 8,
+      "learning_unit_key": "church|noun|A1|sense:1",
+      "word": "church",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 9,
+      "learning_unit_key": "day|noun|A1|sense:1",
+      "word": "day",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 10,
+      "learning_unit_key": "father|noun|A1|sense:1",
+      "word": "father",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 11,
+      "learning_unit_key": "feel|verb|A1|sense:1",
+      "word": "feel",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 12,
+      "learning_unit_key": "card|noun|A1|sense:1",
+      "word": "card",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 13,
+      "learning_unit_key": "check|noun|A1|sense:1",
+      "word": "check",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 14,
+      "learning_unit_key": "cut|verb|A1|sense:1",
+      "word": "cut",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 15,
+      "learning_unit_key": "dance|verb|A1|sense:1",
+      "word": "dance",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 16,
+      "learning_unit_key": "dog|noun|A1|sense:1",
+      "word": "dog",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 17,
+      "learning_unit_key": "down|adverb|A1|sense:1",
+      "word": "down",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 18,
+      "learning_unit_key": "early|adverb|A1|sense:1",
+      "word": "early",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 19,
+      "learning_unit_key": "fast|adverb|A1|sense:1",
+      "word": "fast",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 20,
+      "learning_unit_key": "face|noun|A1|sense:1",
+      "word": "face",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "source_batch": "LARGE-015",
+      "selection_rationale": "A1 benchmark from Phase 6.2.30A packet with established empirical human audit baseline"
+    },
+    {
+      "sequence": 21,
+      "learning_unit_key": "film|noun|A2|sense:1",
+      "word": "film",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 22,
+      "learning_unit_key": "achieve|verb|A2|sense:1",
+      "word": "achieve",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 23,
+      "learning_unit_key": "further|adjective|A2|sense:1",
+      "word": "further",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 24,
+      "learning_unit_key": "all|adverb|A2|sense:1",
+      "word": "all",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 25,
+      "learning_unit_key": "lack|noun|A2|sense:1",
+      "word": "lack",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 26,
+      "learning_unit_key": "matter|verb|A2|sense:1",
+      "word": "matter",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 27,
+      "learning_unit_key": "elderly|adjective|A2|sense:1",
+      "word": "elderly",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 28,
+      "learning_unit_key": "certainly|adverb|A2|sense:1",
+      "word": "certainly",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 29,
+      "learning_unit_key": "opportunity|noun|A2|sense:1",
+      "word": "opportunity",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 30,
+      "learning_unit_key": "frighten|verb|A2|sense:1",
+      "word": "frighten",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 31,
+      "learning_unit_key": "illegal|adjective|A2|sense:1",
+      "word": "illegal",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 32,
+      "learning_unit_key": "low|adverb|A2|sense:1",
+      "word": "low",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 33,
+      "learning_unit_key": "patient|noun|A2|sense:1",
+      "word": "patient",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 34,
+      "learning_unit_key": "harm|verb|A2|sense:1",
+      "word": "harm",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 35,
+      "learning_unit_key": "north|adjective|A2|sense:1",
+      "word": "north",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 36,
+      "learning_unit_key": "perhaps|adverb|A2|sense:1",
+      "word": "perhaps",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 37,
+      "learning_unit_key": "show|noun|A2|sense:1",
+      "word": "show",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 38,
+      "learning_unit_key": "license|verb|A2|sense:1",
+      "word": "license",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 39,
+      "learning_unit_key": "principal|adjective|A2|sense:1",
+      "word": "principal",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 40,
+      "learning_unit_key": "round|adverb|A2|sense:1",
+      "word": "round",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic A2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 41,
+      "learning_unit_key": "application|noun|B1|sense:1",
+      "word": "application",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 42,
+      "learning_unit_key": "own|verb|B1|sense:1",
+      "word": "own",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 43,
+      "learning_unit_key": "above|adjective|B1|sense:1",
+      "word": "above",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 44,
+      "learning_unit_key": "half|adverb|B1|sense:1",
+      "word": "half",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 45,
+      "learning_unit_key": "career|noun|B1|sense:1",
+      "word": "career",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 46,
+      "learning_unit_key": "room|verb|B1|sense:1",
+      "word": "room",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 47,
+      "learning_unit_key": "patient|adjective|B1|sense:1",
+      "word": "patient",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 48,
+      "learning_unit_key": "least|adverb|B1|sense:1",
+      "word": "least",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 49,
+      "learning_unit_key": "foot|noun|B1|sense:1",
+      "word": "foot",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 50,
+      "learning_unit_key": "convince|verb|B1|sense:1",
+      "word": "convince",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 51,
+      "learning_unit_key": "welcome|adjective|B1|sense:1",
+      "word": "welcome",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 52,
+      "learning_unit_key": "obviously|adverb|B1|sense:1",
+      "word": "obviously",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 53,
+      "learning_unit_key": "industry|noun|B1|sense:1",
+      "word": "industry",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 54,
+      "learning_unit_key": "deserve|verb|B1|sense:1",
+      "word": "deserve",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 55,
+      "learning_unit_key": "current|adjective|B1|sense:1",
+      "word": "current",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adjective (monosemous candidate) [IPA variants]"
+    },
+    {
+      "sequence": 56,
+      "learning_unit_key": "second|adverb|B1|sense:1",
+      "word": "second",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 57,
+      "learning_unit_key": "relationship|noun|B1|sense:1",
+      "word": "relationship",
+      "part_of_speech": "noun",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 58,
+      "learning_unit_key": "iron|verb|B1|sense:1",
+      "word": "iron",
+      "part_of_speech": "verb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 59,
+      "learning_unit_key": "huge|adjective|B1|sense:1",
+      "word": "huge",
+      "part_of_speech": "adjective",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adjective (monosemous candidate) [IPA variants]"
+    },
+    {
+      "sequence": 60,
+      "learning_unit_key": "suddenly|adverb|B1|sense:1",
+      "word": "suddenly",
+      "part_of_speech": "adverb",
+      "cefr_level": "B1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 61,
+      "learning_unit_key": "say|noun|B2|sense:1",
+      "word": "say",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 62,
+      "learning_unit_key": "detect|verb|B2|sense:1",
+      "word": "detect",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 63,
+      "learning_unit_key": "bias|adjective|B2|sense:1",
+      "word": "bias",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 64,
+      "learning_unit_key": "though|adverb|B2|sense:1",
+      "word": "though",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic B2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 65,
+      "learning_unit_key": "cluster|noun|B2|sense:1",
+      "word": "cluster",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 66,
+      "learning_unit_key": "praise|verb|B2|sense:1",
+      "word": "praise",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 67,
+      "learning_unit_key": "characteristic|adjective|B2|sense:1",
+      "word": "characteristic",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 68,
+      "learning_unit_key": "bloody|adverb|B2|sense:1",
+      "word": "bloody",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 69,
+      "learning_unit_key": "gaze|noun|B2|sense:1",
+      "word": "gaze",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 70,
+      "learning_unit_key": "purchase|verb|B2|sense:1",
+      "word": "purchase",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 71,
+      "learning_unit_key": "equivalent|adjective|B2|sense:1",
+      "word": "equivalent",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 72,
+      "learning_unit_key": "faithfully|adverb|B2|sense:1",
+      "word": "faithfully",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 73,
+      "learning_unit_key": "rival|noun|B2|sense:1",
+      "word": "rival",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 74,
+      "learning_unit_key": "select|verb|B2|sense:1",
+      "word": "select",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 75,
+      "learning_unit_key": "executive|adjective|B2|sense:1",
+      "word": "executive",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 76,
+      "learning_unit_key": "potentially|adverb|B2|sense:1",
+      "word": "potentially",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 77,
+      "learning_unit_key": "therapy|noun|B2|sense:1",
+      "word": "therapy",
+      "part_of_speech": "noun",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 78,
+      "learning_unit_key": "trick|verb|B2|sense:1",
+      "word": "trick",
+      "part_of_speech": "verb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 79,
+      "learning_unit_key": "latter|adjective|B2|sense:1",
+      "word": "latter",
+      "part_of_speech": "adjective",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 80,
+      "learning_unit_key": "previously|adverb|B2|sense:1",
+      "word": "previously",
+      "part_of_speech": "adverb",
+      "cefr_level": "B2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic B2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 81,
+      "learning_unit_key": "absolute|noun|C1|sense:1",
+      "word": "absolute",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic C1 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 82,
+      "learning_unit_key": "allege|verb|C1|sense:1",
+      "word": "allege",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic C1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 83,
+      "learning_unit_key": "rich|adjective|C1|sense:2",
+      "word": "rich",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "sense_index": 2,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 adjective (polysemous candidate)"
+    },
+    {
+      "sequence": 84,
+      "learning_unit_key": "beforehand|adverb|C1|sense:1",
+      "word": "beforehand",
+      "part_of_speech": "adverb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 85,
+      "learning_unit_key": "consultancy|noun|C1|sense:1",
+      "word": "consultancy",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 86,
+      "learning_unit_key": "brief|verb|C1|sense:1",
+      "word": "brief",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic C1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 87,
+      "learning_unit_key": "advisory|adjective|C1|sense:1",
+      "word": "advisory",
+      "part_of_speech": "adjective",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 88,
+      "learning_unit_key": "mutually|adverb|C1|sense:1",
+      "word": "mutually",
+      "part_of_speech": "adverb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 89,
+      "learning_unit_key": "drawback|noun|C1|sense:1",
+      "word": "drawback",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C1 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 90,
+      "learning_unit_key": "craft|verb|C1|sense:1",
+      "word": "craft",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic C1 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 91,
+      "learning_unit_key": "agency|noun|C2|sense:2",
+      "word": "agency",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 2,
+      "source_batch": "LARGE-001",
+      "selection_rationale": "Deterministic C2 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 92,
+      "learning_unit_key": "ally|verb|C2|sense:1",
+      "word": "ally",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C2 verb (monosemous candidate) [IPA variants]"
+    },
+    {
+      "sequence": 93,
+      "learning_unit_key": "averse|adjective|C2|sense:1",
+      "word": "averse",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 94,
+      "learning_unit_key": "wholly|adverb|C2|sense:1",
+      "word": "wholly",
+      "part_of_speech": "adverb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "selection_rationale": "Deterministic C2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 95,
+      "learning_unit_key": "subsidy|noun|C2|sense:1",
+      "word": "subsidy",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "selection_rationale": "Deterministic C2 noun (monosemous candidate)"
+    },
+    {
+      "sequence": 96,
+      "learning_unit_key": "automate|verb|C2|sense:1",
+      "word": "automate",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C2 verb (monosemous candidate)"
+    },
+    {
+      "sequence": 97,
+      "learning_unit_key": "pedestrian|adjective|C2|sense:1",
+      "word": "pedestrian",
+      "part_of_speech": "adjective",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-003",
+      "selection_rationale": "Deterministic C2 adjective (monosemous candidate)"
+    },
+    {
+      "sequence": 98,
+      "learning_unit_key": "hitherto|adverb|C2|sense:1",
+      "word": "hitherto",
+      "part_of_speech": "adverb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-005",
+      "selection_rationale": "Deterministic C2 adverb (monosemous candidate)"
+    },
+    {
+      "sequence": 99,
+      "learning_unit_key": "brief|noun|C2|sense:1",
+      "word": "brief",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-004",
+      "selection_rationale": "Deterministic C2 noun (polysemous candidate)"
+    },
+    {
+      "sequence": 100,
+      "learning_unit_key": "decentralize|verb|C2|sense:1",
+      "word": "decentralize",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "source_batch": "LARGE-002",
+      "selection_rationale": "Deterministic C2 verb (monosemous candidate)"
+    }
+  ]
+}

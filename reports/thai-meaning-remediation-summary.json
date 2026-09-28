@@ -1,0 +1,321 @@
+{
+  "phase": "6.2.16",
+  "remediation_version": "phase-6.2.16-v2.0",
+  "executed_at": "2026-09-26T14:34:17.276Z",
+  "dry_run": false,
+  "total_staged_units": 10000,
+  "synthetic_detected": 8318,
+  "candidates_generated": 8314,
+  "candidates_passed_structural_gate": 8314,
+  "candidates_failed_gate": 0,
+  "source_verified_candidates": 0,
+  "ai_draft_candidates": 8314,
+  "curated_registry_matches": 172,
+  "contextual_drafter_matches": 8142,
+  "unresolved": 0,
+  "human_review_required": 9990,
+  "exempt_human_approved_preserved": 7,
+  "batches_processed": 50,
+  "batch_summaries": [
+    {
+      "batch_id": "LARGE-001",
+      "total_records": 200,
+      "synthetic_detected": 182,
+      "remediated_count": 181
+    },
+    {
+      "batch_id": "LARGE-002",
+      "total_records": 200,
+      "synthetic_detected": 172,
+      "remediated_count": 172
+    },
+    {
+      "batch_id": "LARGE-003",
+      "total_records": 200,
+      "synthetic_detected": 175,
+      "remediated_count": 174
+    },
+    {
+      "batch_id": "LARGE-004",
+      "total_records": 200,
+      "synthetic_detected": 180,
+      "remediated_count": 179
+    },
+    {
+      "batch_id": "LARGE-005",
+      "total_records": 200,
+      "synthetic_detected": 182,
+      "remediated_count": 182
+    },
+    {
+      "batch_id": "LARGE-006",
+      "total_records": 200,
+      "synthetic_detected": 183,
+      "remediated_count": 182
+    },
+    {
+      "batch_id": "LARGE-007",
+      "total_records": 200,
+      "synthetic_detected": 173,
+      "remediated_count": 173
+    },
+    {
+      "batch_id": "LARGE-008",
+      "total_records": 200,
+      "synthetic_detected": 165,
+      "remediated_count": 165
+    },
+    {
+      "batch_id": "LARGE-009",
+      "total_records": 200,
+      "synthetic_detected": 165,
+      "remediated_count": 165
+    },
+    {
+      "batch_id": "LARGE-010",
+      "total_records": 200,
+      "synthetic_detected": 191,
+      "remediated_count": 191
+    },
+    {
+      "batch_id": "LARGE-011",
+      "total_records": 200,
+      "synthetic_detected": 183,
+      "remediated_count": 183
+    },
+    {
+      "batch_id": "LARGE-012",
+      "total_records": 200,
+      "synthetic_detected": 186,
+      "remediated_count": 186
+    },
+    {
+      "batch_id": "LARGE-013",
+      "total_records": 200,
+      "synthetic_detected": 179,
+      "remediated_count": 179
+    },
+    {
+      "batch_id": "LARGE-014",
+      "total_records": 200,
+      "synthetic_detected": 177,
+      "remediated_count": 177
+    },
+    {
+      "batch_id": "LARGE-015",
+      "total_records": 200,
+      "synthetic_detected": 165,
+      "remediated_count": 165
+    },
+    {
+      "batch_id": "LARGE-016",
+      "total_records": 200,
+      "synthetic_detected": 151,
+      "remediated_count": 151
+    },
+    {
+      "batch_id": "LARGE-017",
+      "total_records": 200,
+      "synthetic_detected": 155,
+      "remediated_count": 155
+    },
+    {
+      "batch_id": "LARGE-018",
+      "total_records": 200,
+      "synthetic_detected": 154,
+      "remediated_count": 154
+    },
+    {
+      "batch_id": "LARGE-019",
+      "total_records": 200,
+      "synthetic_detected": 148,
+      "remediated_count": 148
+    },
+    {
+      "batch_id": "LARGE-020",
+      "total_records": 200,
+      "synthetic_detected": 166,
+      "remediated_count": 166
+    },
+    {
+      "batch_id": "LARGE-021",
+      "total_records": 200,
+      "synthetic_detected": 154,
+      "remediated_count": 154
+    },
+    {
+      "batch_id": "LARGE-022",
+      "total_records": 200,
+      "synthetic_detected": 171,
+      "remediated_count": 171
+    },
+    {
+      "batch_id": "LARGE-023",
+      "total_records": 200,
+      "synthetic_detected": 169,
+      "remediated_count": 169
+    },
+    {
+      "batch_id": "LARGE-024",
+      "total_records": 200,
+      "synthetic_detected": 152,
+      "remediated_count": 152
+    },
+    {
+      "batch_id": "LARGE-025",
+      "total_records": 200,
+      "synthetic_detected": 144,
+      "remediated_count": 144
+    },
+    {
+      "batch_id": "LARGE-026",
+      "total_records": 200,
+      "synthetic_detected": 158,
+      "remediated_count": 158
+    },
+    {
+      "batch_id": "LARGE-027",
+      "total_records": 200,
+      "synthetic_detected": 169,
+      "remediated_count": 169
+    },
+    {
+      "batch_id": "LARGE-028",
+      "total_records": 200,
+      "synthetic_detected": 154,
+      "remediated_count": 154
+    },
+    {
+      "batch_id": "LARGE-029",
+      "total_records": 200,
+      "synthetic_detected": 160,
+      "remediated_count": 160
+    },
+    {
+      "batch_id": "LARGE-030",
+      "total_records": 200,
+      "synthetic_detected": 169,
+      "remediated_count": 169
+    },
+    {
+      "batch_id": "LARGE-031",
+      "total_records": 200,
+      "synthetic_detected": 163,
+      "remediated_count": 163
+    },
+    {
+      "batch_id": "LARGE-032",
+      "total_records": 200,
+      "synthetic_detected": 168,
+      "remediated_count": 168
+    },
+    {
+      "batch_id": "LARGE-033",
+      "total_records": 200,
+      "synthetic_detected": 163,
+      "remediated_count": 163
+    },
+    {
+      "batch_id": "LARGE-034",
+      "total_records": 200,
+      "synthetic_detected": 182,
+      "remediated_count": 182
+    },
+    {
+      "batch_id": "LARGE-035",
+      "total_records": 200,
+      "synthetic_detected": 161,
+      "remediated_count": 161
+    },
+    {
+      "batch_id": "LARGE-036",
+      "total_records": 200,
+      "synthetic_detected": 164,
+      "remediated_count": 164
+    },
+    {
+      "batch_id": "LARGE-037",
+      "total_records": 200,
+      "synthetic_detected": 183,
+      "remediated_count": 183
+    },
+    {
+      "batch_id": "LARGE-038",
+      "total_records": 200,
+      "synthetic_detected": 173,
+      "remediated_count": 173
+    },
+    {
+      "batch_id": "LARGE-039",
+      "total_records": 200,
+      "synthetic_detected": 166,
+      "remediated_count": 166
+    },
+    {
+      "batch_id": "LARGE-040",
+      "total_records": 200,
+      "synthetic_detected": 175,
+      "remediated_count": 175
+    },
+    {
+      "batch_id": "LARGE-041",
+      "total_records": 200,
+      "synthetic_detected": 167,
+      "remediated_count": 167
+    },
+    {
+      "batch_id": "LARGE-042",
+      "total_records": 200,
+      "synthetic_detected": 162,
+      "remediated_count": 162
+    },
+    {
+      "batch_id": "LARGE-043",
+      "total_records": 200,
+      "synthetic_detected": 158,
+      "remediated_count": 158
+    },
+    {
+      "batch_id": "LARGE-044",
+      "total_records": 200,
+      "synthetic_detected": 163,
+      "remediated_count": 163
+    },
+    {
+      "batch_id": "LARGE-045",
+      "total_records": 200,
+      "synthetic_detected": 168,
+      "remediated_count": 168
+    },
+    {
+      "batch_id": "LARGE-046",
+      "total_records": 200,
+      "synthetic_detected": 160,
+      "remediated_count": 160
+    },
+    {
+      "batch_id": "LARGE-047",
+      "total_records": 200,
+      "synthetic_detected": 123,
+      "remediated_count": 123
+    },
+    {
+      "batch_id": "LARGE-048",
+      "total_records": 200,
+      "synthetic_detected": 134,
+      "remediated_count": 134
+    },
+    {
+      "batch_id": "LARGE-049",
+      "total_records": 200,
+      "synthetic_detected": 169,
+      "remediated_count": 169
+    },
+    {
+      "batch_id": "LARGE-050",
+      "total_records": 200,
+      "synthetic_detected": 184,
+      "remediated_count": 184
+    }
+  ]
+}

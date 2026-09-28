@@ -1,0 +1,1550 @@
+{
+  "report_type": "vocabulary-priority-report",
+  "phase": "6.2.9",
+  "disclaimer": "This prioritization is an internal Glova product/engineering content-production strategy, NOT an official CEFR or Cambridge standard.",
+  "total_learning_units": 9876,
+  "tier_distribution": {
+    "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 2777,
+    "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 2696,
+    "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 3669,
+    "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 734
+  },
+  "cefr_by_tier": {
+    "A1": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 265,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 69,
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 646,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 184
+    },
+    "A2": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 339,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 170,
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 817,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 85
+    },
+    "B1": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 635,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 461,
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 1256,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 94
+    },
+    "B2": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 837,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 839,
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": 950,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 152
+    },
+    "C1": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 340,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 651,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 96
+    },
+    "C2": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": 361,
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": 506,
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": 123
+    }
+  },
+  "top_50_highest_priority_units": [
+    {
+      "priority_rank": 1,
+      "candidate_id": "vocab_5139d2c842dff2b7",
+      "learning_unit_key": "not|adverb|A1|sense:1",
+      "word": "not",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00024234-r",
+        "recommended_sense_key": "not%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/nɑːt/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 14,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 2,
+      "candidate_id": "vocab_1d080c30290d2bcb",
+      "learning_unit_key": "man|noun|A1|sense:1",
+      "word": "man",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "10946328-n",
+        "recommended_sense_key": "man%1:18:05::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/mæn/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 112,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 3,
+      "candidate_id": "vocab_86cbef07f93bbc59",
+      "learning_unit_key": "try|noun|A1|sense:1",
+      "word": "try",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00791035-n",
+        "recommended_sense_key": "try%1:04:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/tɹaɪ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 125,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 4,
+      "candidate_id": "vocab_5424db6357c86758",
+      "learning_unit_key": "own|adjective|A1|sense:1",
+      "word": "own",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "01778519-s",
+        "recommended_sense_key": "own%5:00:00:personal:00",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/oʊn/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 129,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 5,
+      "candidate_id": "vocab_7e66e618be453b74",
+      "learning_unit_key": "little|adverb|A1|sense:1",
+      "word": "little",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00100468-r",
+        "recommended_sense_key": "little%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈlɪtəl/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 132,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 6,
+      "candidate_id": "vocab_86e5980f232b689c",
+      "learning_unit_key": "play|noun|A1|sense:1",
+      "word": "play",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "15512997-n",
+        "recommended_sense_key": "play%1:28:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/pleɪ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 158,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 7,
+      "candidate_id": "vocab_ffef627bfaec81b9",
+      "learning_unit_key": "home|noun|A1|sense:1",
+      "word": "home",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "08229879-n",
+        "recommended_sense_key": "home%1:14:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/hoʊm/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 161,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 8,
+      "candidate_id": "vocab_7b1424d739f0f0b1",
+      "learning_unit_key": "never|adverb|A1|sense:1",
+      "word": "never",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00021143-r",
+        "recommended_sense_key": "never%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈnevəɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 162,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 9,
+      "candidate_id": "vocab_94917e83cafef7d6",
+      "learning_unit_key": "course|noun|A1|sense:1",
+      "word": "course",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00895393-n",
+        "recommended_sense_key": "course%1:04:01::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/kɔːɹs/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 164,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 10,
+      "candidate_id": "vocab_0644abc18b222680",
+      "learning_unit_key": "case|noun|A1|sense:1",
+      "word": "case",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "03022274-n",
+        "recommended_sense_key": "case%1:06:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/keɪs/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 168,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 11,
+      "candidate_id": "vocab_8396d331655d87ab",
+      "learning_unit_key": "book|noun|A1|sense:1",
+      "word": "book",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02916819-n",
+        "recommended_sense_key": "book%1:06:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/bʊk/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 171,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 12,
+      "candidate_id": "vocab_517751047b0c3d7d",
+      "learning_unit_key": "kind|noun|A1|sense:1",
+      "word": "kind",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "05924014-n",
+        "recommended_sense_key": "kind%1:09:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/kaɪnd/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 176,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 13,
+      "candidate_id": "vocab_8a0963efb258f84e",
+      "learning_unit_key": "pay|noun|A1|sense:1",
+      "word": "pay",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "13509945-n",
+        "recommended_sense_key": "pay%1:21:01::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/peɪ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 220,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 14,
+      "candidate_id": "vocab_33badd7855a8f3af",
+      "learning_unit_key": "room|noun|A1|sense:1",
+      "word": "room",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "04168944-n",
+        "recommended_sense_key": "room%1:06:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ɹuːm/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 254,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 15,
+      "candidate_id": "vocab_a77e24e1e0095fc2",
+      "learning_unit_key": "party|noun|A1|sense:1",
+      "word": "party",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "07591167-n",
+        "recommended_sense_key": "party%1:11:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈpɑːɹti/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 299,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 16,
+      "candidate_id": "vocab_95fc8e1b1481caca",
+      "learning_unit_key": "almost|adverb|A1|sense:1",
+      "word": "almost",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00073115-r",
+        "recommended_sense_key": "almost%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈɔːlˌmoʊst/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 307,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 17,
+      "candidate_id": "vocab_284716f587bb0e64",
+      "learning_unit_key": "water|noun|A1|sense:1",
+      "word": "water",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "08085056-n",
+        "recommended_sense_key": "water%1:13:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈwɔːtəɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 322,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 18,
+      "candidate_id": "vocab_34f113d72c62d15a",
+      "learning_unit_key": "soon|adverb|A1|sense:1",
+      "word": "soon",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00034050-r",
+        "recommended_sense_key": "soon%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/suːn/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 325,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 19,
+      "candidate_id": "vocab_9616e973a8f7fc6f",
+      "learning_unit_key": "past|adverb|A1|sense:1",
+      "word": "past",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00420500-r",
+        "recommended_sense_key": "past%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/pæst/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 330,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 20,
+      "candidate_id": "vocab_d55916a44c47303e",
+      "learning_unit_key": "class|noun|A1|sense:1",
+      "word": "class",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00895393-n",
+        "recommended_sense_key": "class%1:04:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/klæs/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 362,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 21,
+      "candidate_id": "vocab_772c3d077c276963",
+      "learning_unit_key": "food|noun|A1|sense:1",
+      "word": "food",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "07701837-n",
+        "recommended_sense_key": "food%1:13:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/fuːd/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 367,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 22,
+      "candidate_id": "vocab_12747e6cda236d71",
+      "learning_unit_key": "ago|adverb|A1|sense:1",
+      "word": "ago",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00074043-r",
+        "recommended_sense_key": "ago%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/əˈɡoʊ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 372,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 23,
+      "candidate_id": "vocab_7560582857e45a28",
+      "learning_unit_key": "please|adverb|A1|sense:1",
+      "word": "please",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00010371-r",
+        "recommended_sense_key": "please%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/pliːz/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 471,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 24,
+      "candidate_id": "vocab_eeb9e9b2815db759",
+      "learning_unit_key": "front|adjective|A1|sense:1",
+      "word": "front",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00199694-a",
+        "recommended_sense_key": "front%3:00:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/fɹʌnt/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 488,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 25,
+      "candidate_id": "vocab_bc58a7d7d2760c6d",
+      "learning_unit_key": "club|noun|A1|sense:1",
+      "word": "club",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "08380521-n",
+        "recommended_sense_key": "club%1:14:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/klʌb/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 760,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 26,
+      "candidate_id": "vocab_858402185fe33c91",
+      "learning_unit_key": "movie|noun|A1|sense:1",
+      "word": "movie",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "06713490-n",
+        "recommended_sense_key": "movie%1:10:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈmuːvi/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 762,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 27,
+      "candidate_id": "vocab_9b0bd5cc868b332f",
+      "learning_unit_key": "fish|noun|A1|sense:1",
+      "word": "fish",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "07923269-n",
+        "recommended_sense_key": "fish%1:13:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/fɪʃ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 828,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 28,
+      "candidate_id": "vocab_2d2a425d909673bf",
+      "learning_unit_key": "bar|noun|A1|sense:1",
+      "word": "bar",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02835060-n",
+        "recommended_sense_key": "bar%1:06:05::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/bɑːɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 837,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 29,
+      "candidate_id": "vocab_841286bd5495498f",
+      "learning_unit_key": "dress|noun|A1|sense:1",
+      "word": "dress",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02773272-n",
+        "recommended_sense_key": "dress%1:06:02::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/dɹes/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 899,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 30,
+      "candidate_id": "vocab_08fa1c5b7e62999f",
+      "learning_unit_key": "hair|noun|A1|sense:1",
+      "word": "hair",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "05334000-n",
+        "recommended_sense_key": "hair%1:08:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/heɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 913,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 31,
+      "candidate_id": "vocab_4487deda13fa5cb1",
+      "learning_unit_key": "ok|adjective|A1|sense:1",
+      "word": "OK",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02094795-s",
+        "recommended_sense_key": "ok%5:00:00:satisfactory:00",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈoʊˈkeɪ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 925,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 32,
+      "candidate_id": "vocab_99a6f5d919c7a3bd",
+      "learning_unit_key": "daughter|noun|A1|sense:1",
+      "word": "daughter",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 100,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "10171220-n",
+        "recommended_sense_key": "daughter%1:18:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈdɔːtəɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 927,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 33,
+      "candidate_id": "vocab_ca227c019324bcc4",
+      "learning_unit_key": "all|adverb|A2|sense:1",
+      "word": "all",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00008390-r",
+        "recommended_sense_key": "all%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ɔːl/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 33,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 34,
+      "candidate_id": "vocab_9c2ebeaa0262512f",
+      "learning_unit_key": "show|noun|A2|sense:1",
+      "word": "show",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00521146-n",
+        "recommended_sense_key": "show%1:04:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ʃoʊ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 110,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 35,
+      "candidate_id": "vocab_42b4b553ca2fb5c1",
+      "learning_unit_key": "sure|adverb|A2|sense:1",
+      "word": "sure",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00145700-r",
+        "recommended_sense_key": "sure%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ʃʊɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 279,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 36,
+      "candidate_id": "vocab_3cf8f0c8b0a799a2",
+      "learning_unit_key": "low|adverb|A2|sense:1",
+      "word": "low",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00395846-r",
+        "recommended_sense_key": "low%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/loʊ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 283,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 37,
+      "candidate_id": "vocab_baf20e89f6f1aaad",
+      "learning_unit_key": "matter|verb|A2|sense:1",
+      "word": "matter",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02728031-v",
+        "recommended_sense_key": "matter%2:42:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈmætəɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 340,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 38,
+      "candidate_id": "vocab_a92f65c6c72d8093",
+      "learning_unit_key": "further|adjective|A2|sense:1",
+      "word": "further",
+      "part_of_speech": "adjective",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00448066-s",
+        "recommended_sense_key": "further%5:00:00:far:00",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈfɜːɹðəɹ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 400,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 39,
+      "candidate_id": "vocab_d23a3ee832a7982a",
+      "learning_unit_key": "perhaps|adverb|A2|sense:1",
+      "word": "perhaps",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00301718-r",
+        "recommended_sense_key": "perhaps%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/pəɹˈhæps/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 413,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 40,
+      "candidate_id": "vocab_d8e6e96619883e8d",
+      "learning_unit_key": "film|noun|A2|sense:1",
+      "word": "film",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "06713490-n",
+        "recommended_sense_key": "film%1:10:01::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/fɪlm/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 433,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 41,
+      "candidate_id": "vocab_7187fbb0d8016fcb",
+      "learning_unit_key": "round|adverb|A2|sense:1",
+      "word": "round",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00071520-r",
+        "recommended_sense_key": "round%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ɹaʊnd/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 519,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 42,
+      "candidate_id": "vocab_13159c3e0cb2ccc1",
+      "learning_unit_key": "opportunity|noun|A2|sense:1",
+      "word": "opportunity",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "14729870-n",
+        "recommended_sense_key": "opportunity%1:26:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˌɑːpəɹˈtuːnəti/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 520,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 43,
+      "candidate_id": "vocab_c31568311d019e3e",
+      "learning_unit_key": "certainly|adverb|A2|sense:1",
+      "word": "certainly",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00145700-r",
+        "recommended_sense_key": "certainly%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈsɜːɹtənli/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 536,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 44,
+      "candidate_id": "vocab_05a57ac4ffa3cfc3",
+      "learning_unit_key": "wrong|adverb|A2|sense:1",
+      "word": "wrong",
+      "part_of_speech": "adverb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00205343-r",
+        "recommended_sense_key": "wrong%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ɹɔːŋ/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 575,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 45,
+      "candidate_id": "vocab_db5565379cf2385f",
+      "learning_unit_key": "patient|noun|A2|sense:1",
+      "word": "patient",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "10600262-n",
+        "recommended_sense_key": "patient%1:18:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈpeɪʃənt/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 589,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 46,
+      "candidate_id": "vocab_b540302e5adbf7af",
+      "learning_unit_key": "lack|noun|A2|sense:1",
+      "word": "lack",
+      "part_of_speech": "noun",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "14694947-n",
+        "recommended_sense_key": "lack%1:26:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/læk/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 729,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 47,
+      "candidate_id": "vocab_5f33a20fe3ec9b78",
+      "learning_unit_key": "achieve|verb|A2|sense:1",
+      "word": "achieve",
+      "part_of_speech": "verb",
+      "cefr_level": "A2",
+      "priority_score": 99,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "02604901-v",
+        "recommended_sense_key": "achieve%2:41:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/əˈtʃiːv/",
+        "pronunciation_confidence": "HIGH_SINGLE_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 746,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 48,
+      "candidate_id": "vocab_a3ee93c56d7e8c13",
+      "learning_unit_key": "again|adverb|A1|sense:1",
+      "word": "again",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 98,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00040532-r",
+        "recommended_sense_key": "again%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/əˈɡen/",
+        "pronunciation_confidence": "MULTI_VARIANT_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 175,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 49,
+      "candidate_id": "vocab_d1a2e05dcc89103a",
+      "learning_unit_key": "business|noun|A1|sense:1",
+      "word": "business",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "priority_score": 98,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00583763-n",
+        "recommended_sense_key": "business%1:04:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ˈbɪznəs/",
+        "pronunciation_confidence": "MULTI_VARIANT_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 211,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    },
+    {
+      "priority_rank": 50,
+      "candidate_id": "vocab_d91e705cff02525f",
+      "learning_unit_key": "already|adverb|A1|sense:1",
+      "word": "already",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "priority_score": 98,
+      "priority_tier": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "fields_requiring_review": [
+        "meaning_th"
+      ],
+      "evidence_available": {
+        "sense_status": "MATCH_CONFIDENT",
+        "oewn_synset_id": "00031983-r",
+        "recommended_sense_key": "already%4:02:00::",
+        "has_verified_meaning_en": true,
+        "has_verified_ipa": true,
+        "phonetic_ipa": "/ɔlˈɹedi/",
+        "pronunciation_confidence": "MULTI_VARIANT_ENTRY",
+        "has_verified_example_en": true,
+        "frequency_rank": 302,
+        "frequency_source": "NGSL_1.2"
+      },
+      "reviewer_decision": null,
+      "reviewer_status": "PENDING_HUMAN_REVIEW",
+      "review_timestamp": null,
+      "review_version": "phase-6.2.9-v1",
+      "rejection_reason": null
+    }
+  ]
+}

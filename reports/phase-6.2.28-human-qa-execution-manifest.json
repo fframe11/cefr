@@ -1,0 +1,2491 @@
+{
+  "metadata": {
+    "phase": "6.2.28",
+    "manifest_version": "1.0.0",
+    "generated_at": "2026-09-28T16:33:56.160Z",
+    "source_packet": "reports/phase-6.2.27-human-review-packet.json",
+    "source_controlled_batch": "reports/phase-6.2.27-controlled-qa-batch.json",
+    "total_execution_units": 50,
+    "execution_mode": "PREPARATION_ONLY",
+    "human_decisions_executed": 0,
+    "db_mutations_permitted": false,
+    "readiness_gate": "CONTROLLED_QA_PREPARATION_VERIFIED",
+    "preparation_gate": "PASS",
+    "review_guidance_categories": {
+      "POLYSEMOUS_CORE": "Verify meaning_en matches sense_index; verify meaning_th matches sub-sense, not broad definition; verify example sentence uses word in that sense.",
+      "C1_OBSCURE_OR_C2_LITERARY": "Verify meaning is sufficiently nuanced for C1/C2; verify example sentence has appropriate complexity.",
+      "HOMONYM_AMBIGUITY": "Check part of speech matches the sense (e.g. black noun vs black adjective).",
+      "MONOSEMOUS_FOUNDATIONAL": "Verify Thai translation accuracy; verify IPA notation accuracy."
+    }
+  },
+  "records": [
+    {
+      "sequence": 1,
+      "learning_unit_key": "gape|verb|C1|sense:2",
+      "word": "gape",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 2,
+      "meaning_en": "be wide open",
+      "meaning_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+      "ipa": "/ɡeɪp/",
+      "example_sentence": "the deep gaping canyon",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-010",
+      "batch_index": 83,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "VERIFIED_SOURCE_EXAMPLE"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 2,
+      "learning_unit_key": "grounds|noun|C1|sense:2",
+      "word": "grounds",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 2,
+      "meaning_en": "dregs consisting of solid particles (especially of coffee) that form a residue",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/ɡɹaʊndz/",
+      "example_sentence": "it is a Middle Eastern custom to read your future in your coffee grounds",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-011",
+      "batch_index": 39,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "VERIFIED_SOURCE_EXAMPLE"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "IPA_VARIANT",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 3,
+      "learning_unit_key": "drill|noun|C1|sense:2",
+      "word": "drill",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 2,
+      "meaning_en": "systematic training by multiple repetitions",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/dɹɪl/",
+      "example_sentence": "Understanding the role of drill helps students discuss systematic training multiple repetitions clearly in everyday situations.",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-006",
+      "batch_index": 115,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "learning_unit_key": "gape|verb|C1|sense:1",
+      "word": "gape",
+      "part_of_speech": "verb",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "meaning_en": "look with amazement; look stupidly",
+      "meaning_th": "รับรู้ผ่านประสาทสัมผัสการมองเห็นหรือได้ยินโดยการการมองเห็น แสงสี และการรับรู้ทางเสียง ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/ɡeɪp/",
+      "example_sentence": "the deep gaping canyon",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 82,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 5,
+      "learning_unit_key": "grounds|noun|C1|sense:3",
+      "word": "grounds",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 3,
+      "meaning_en": "a justification for something existing or happening",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/ɡɹaʊndz/",
+      "example_sentence": "it is a Middle Eastern custom to read your future in your coffee grounds (C1 noun sense 3).",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 98,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "IPA_VARIANT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 6,
+      "learning_unit_key": "recess|noun|C1|sense:1",
+      "word": "recess",
+      "part_of_speech": "noun",
+      "cefr_level": "C1",
+      "sense_index": 1,
+      "meaning_en": "an enclosure that is set back or indented",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/ɹɪˈses/",
+      "example_sentence": "Understanding the role of recess helps students discuss enclosure set back indented clearly in everyday situations.",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 99,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA_WITH_VARIANTS",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "IPA_VARIANT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C1_OBSCURE",
+        "risk_level": "HIGH",
+        "title": "High-Risk C1 Advanced Record",
+        "checklist": [
+          "Verify meaning_en is sufficiently nuanced for C1 advanced competence",
+          "Verify Thai translation accurately captures advanced register without distortion",
+          "Verify example sentence demonstrates appropriate syntactic and semantic complexity",
+          "Verify licensed IPA notation accuracy for advanced phonetic patterns"
+        ]
+      }
+    },
+    {
+      "sequence": 7,
+      "learning_unit_key": "dribble|verb|C2|sense:1",
+      "word": "dribble",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "meaning_en": "run or flow slowly, as in drops or in an unsteady stream",
+      "meaning_th": "เคลื่อนที่ เดินทาง หรือย้ายตำแหน่งโดยการการเคลื่อนไหว การออกแรง และการย้ายตำแหน่ง ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/dˈɹɪbəl/",
+      "example_sentence": "reports began to dribble in",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-010",
+      "batch_index": 148,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "VERIFIED_SOURCE_EXAMPLE"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C2_LITERARY",
+        "risk_level": "HIGH",
+        "title": "High-Risk C2 Mastery/Literary Record",
+        "checklist": [
+          "Verify meaning_en captures the exact literary/figurative nuance expected at C2 level",
+          "Verify Thai translation accurately captures literary register without oversimplification",
+          "Verify example sentence demonstrates authentic native C2 syntactic complexity",
+          "Verify licensed IPA notation accuracy for C2 phonetic distinctions"
+        ]
+      }
+    },
+    {
+      "sequence": 8,
+      "learning_unit_key": "echo|verb|C2|sense:1",
+      "word": "echo",
+      "part_of_speech": "verb",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "meaning_en": "ring or echo with sound",
+      "meaning_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการมองเห็น แสงสี และการรับรู้ทางเสียง ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/ˈekoʊ/",
+      "example_sentence": "followers echoing the cries of their leaders",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-007",
+      "batch_index": 41,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C2_LITERARY",
+        "risk_level": "HIGH",
+        "title": "High-Risk C2 Mastery/Literary Record",
+        "checklist": [
+          "Verify meaning_en captures the exact literary/figurative nuance expected at C2 level",
+          "Verify Thai translation accurately captures literary register without oversimplification",
+          "Verify example sentence demonstrates authentic native C2 syntactic complexity",
+          "Verify licensed IPA notation accuracy for C2 phonetic distinctions"
+        ]
+      }
+    },
+    {
+      "sequence": 9,
+      "learning_unit_key": "perch|noun|C2|sense:1",
+      "word": "perch",
+      "part_of_speech": "noun",
+      "cefr_level": "C2",
+      "sense_index": 1,
+      "meaning_en": "an elevated place serving as a seat",
+      "meaning_th": "สถานที่ พื้นที่ หรืออาคารสำหรับการใช้งานเฉพาะ (เกี่ยวกับอาหารหรือของกิน)",
+      "ipa": "/pɜːɹtʃ/",
+      "example_sentence": "Understanding the role of perch helps students discuss elevated place serving seat clearly in everyday situations.",
+      "operational_priority": "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 97,
+      "provenance": {
+        "cefr_source": "Octanove Vocabulary Profile C1/C2",
+        "sense_status": "MATCH_CONFIDENT",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "CEFR_CONFLICT",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "C2_LITERARY",
+        "risk_level": "HIGH",
+        "title": "High-Risk C2 Mastery/Literary Record",
+        "checklist": [
+          "Verify meaning_en captures the exact literary/figurative nuance expected at C2 level",
+          "Verify Thai translation accurately captures literary register without oversimplification",
+          "Verify example sentence demonstrates authentic native C2 syntactic complexity",
+          "Verify licensed IPA notation accuracy for C2 phonetic distinctions"
+        ]
+      }
+    },
+    {
+      "sequence": 10,
+      "learning_unit_key": "about|adverb|A1|sense:1",
+      "word": "about",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "(of quantities) imprecise but fairly close to correct",
+      "meaning_th": "กริยาวิเศษณ์บอกจำนวนหรือเวลาโดยประมาณ (ประมาณ, ราวๆ)",
+      "ipa": "/əˈbaʊt/",
+      "example_sentence": "in just about a minute",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 100,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 11,
+      "learning_unit_key": "above|adverb|A1|sense:1",
+      "word": "above",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "(in writing) at an earlier place",
+      "meaning_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "ipa": "/əˈbʌv/",
+      "example_sentence": "She spoke above while explaining how the group handled earlier place yesterday.",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 101,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 12,
+      "learning_unit_key": "action|noun|A1|sense:1",
+      "word": "action",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "something done (usually as opposed to something said)",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/ˈækʃən/",
+      "example_sentence": "there were stories of murders and other unnatural actions",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 102,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 13,
+      "learning_unit_key": "add|verb|A1|sense:1",
+      "word": "add",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "make an addition (to); join or combine or unite with others; increase the quality, quantity, size or scope of",
+      "meaning_th": "ทำให้เกิดการเปลี่ยนแปลงหรือปรับสภาพโดยการการเพิ่มขึ้น ขนาดที่ใหญ่ หรือปริมาณมาก และการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/æd/",
+      "example_sentence": "We added two students to that dorm room",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 103,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 14,
+      "learning_unit_key": "afternoon|noun|A1|sense:1",
+      "word": "afternoon",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "the part of the day between noon and evening",
+      "meaning_th": "ช่วงเวลา ระยะเวลา หรือจังหวะเวลา",
+      "ipa": "/ˌæftəɹˈnuːn/",
+      "example_sentence": "he spent a quiet afternoon in the park",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 104,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 15,
+      "learning_unit_key": "age|noun|A1|sense:1",
+      "word": "age",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "how long something has existed",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/eɪdʒ/",
+      "example_sentence": "it was replaced because of its age",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 105,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 16,
+      "learning_unit_key": "agree|verb|A1|sense:1",
+      "word": "agree",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "be in accord; be in agreement",
+      "meaning_th": "เห็นด้วย, ตกลง",
+      "ipa": "/əɡˈɹiː/",
+      "example_sentence": "We agreed on the terms of the settlement",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 106,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 17,
+      "learning_unit_key": "alone|adverb|A1|sense:1",
+      "word": "alone",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "without any others being included or involved",
+      "meaning_th": "อย่างปราศจาก หรือไม่ปรากฏอาการดังกล่าว",
+      "ipa": "/əˈloʊn/",
+      "example_sentence": "the child stayed home alone",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 107,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 18,
+      "learning_unit_key": "along|adverb|A1|sense:1",
+      "word": "along",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "with a forward motion",
+      "meaning_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "ipa": "/əˈlɔːŋ/",
+      "example_sentence": "we drove along admiring the view",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 108,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 19,
+      "learning_unit_key": "answer|noun|A1|sense:1",
+      "word": "answer",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a statement (either spoken or written) that is made to reply to a question or request or criticism or accusation",
+      "meaning_th": "สภาวะ สภาพ หรือเงื่อนไขที่เป็นอยู่",
+      "ipa": "/ˈænsəɹ/",
+      "example_sentence": "I waited several days for his answer",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 109,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (noun vs verb)",
+        "checklist": [
+          "Verify part of speech strictly matches 'noun' (distinct from noun vs verb)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 20,
+      "learning_unit_key": "answer|verb|A1|sense:1",
+      "word": "answer",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "react verbally",
+      "meaning_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/ˈænsəɹ/",
+      "example_sentence": "She didn't want to answer",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 110,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (noun vs verb)",
+        "checklist": [
+          "Verify part of speech strictly matches 'verb' (distinct from noun vs verb)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 21,
+      "learning_unit_key": "arrive|verb|A1|sense:1",
+      "word": "arrive",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "reach a destination; arrive by movement or progress",
+      "meaning_th": "มาถึง, ถึงที่หมาย",
+      "ipa": "/əɹˈaɪv/",
+      "example_sentence": "She arrived home at 7 o'clock",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 111,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 22,
+      "learning_unit_key": "art|noun|A1|sense:1",
+      "word": "art",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "the products of human creativity; works of art collectively",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (เกี่ยวกับอาหารหรือของกิน)",
+      "ipa": "/ɑːɹt/",
+      "example_sentence": "a collection of fine art",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 112,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 23,
+      "learning_unit_key": "ask|verb|A1|sense:1",
+      "word": "ask",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "make a request or demand for something to somebody",
+      "meaning_th": "สื่อสาร แจ้งข้อมูล หรือแสดงความคิดเห็นโดยการการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/æsk/",
+      "example_sentence": "She asked him for a loan",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 113,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 24,
+      "learning_unit_key": "away|adverb|A1|sense:1",
+      "word": "away",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "from a particular thing or place or position (‘forth’ is obsolete)",
+      "meaning_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "ipa": "/əˈweɪ/",
+      "example_sentence": "ran away from the lion",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 114,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 25,
+      "learning_unit_key": "baby|noun|A1|sense:1",
+      "word": "baby",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+      "meaning_th": "เด็กทารก, ลูกอ่อน",
+      "ipa": "/ˈbeɪbi/",
+      "example_sentence": "the baby began to cry again",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 115,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 26,
+      "learning_unit_key": "back|adverb|A1|sense:1",
+      "word": "back",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "in or to or toward a former location",
+      "meaning_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "ipa": "/bæk/",
+      "example_sentence": "she went back to her parents' house",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 116,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 27,
+      "learning_unit_key": "bad|adjective|A1|sense:1",
+      "word": "bad",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "having undesirable or negative qualities",
+      "meaning_th": "เลว, ไม่ดี, แย่",
+      "ipa": "/bæd/",
+      "example_sentence": "a bad report card",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 117,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 28,
+      "learning_unit_key": "bank|noun|A1|sense:1",
+      "word": "bank",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "sloping land (especially the slope beside a body of water)",
+      "meaning_th": "ตลิ่ง, พื้นดินลาดชันริมฝั่งแม่น้ำหรือลำคลอง",
+      "ipa": "/bæŋk/",
+      "example_sentence": "they pulled the canoe up on the bank",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 118,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 29,
+      "learning_unit_key": "bear|noun|A1|sense:1",
+      "word": "bear",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws",
+      "meaning_th": "พืชพรรณ ต้นไม้ หรือดอกไม้ตามธรรมชาติ",
+      "ipa": "/beɹ/",
+      "example_sentence": "Understanding the role of bear helps students discuss massive plantigrade carnivorous omnivorous clearly in everyday situations.",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 119,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_REQUIRES_HUMAN_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 30,
+      "learning_unit_key": "beautiful|adjective|A1|sense:1",
+      "word": "beautiful",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "delighting the senses or exciting intellectual or emotional admiration",
+      "meaning_th": "สวยงาม, งดงาม",
+      "ipa": "/bˈjuːtəfəl/",
+      "example_sentence": "what a beautiful day",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 120,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 31,
+      "learning_unit_key": "become|verb|A1|sense:1",
+      "word": "become",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "enter or assume a certain state or condition",
+      "meaning_th": "ทำให้เกิดการเปลี่ยนแปลงหรือปรับสภาพโดยการการปกครอง นโยบายสาธารณะ และบ้านเมือง ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/bɪˈkʌm/",
+      "example_sentence": "What becomes has duration",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 121,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 32,
+      "learning_unit_key": "bed|noun|A1|sense:1",
+      "word": "bed",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a piece of furniture that provides a place to sleep",
+      "meaning_th": "สถานที่ พื้นที่ หรืออาคารสำหรับการใช้งานเฉพาะ",
+      "ipa": "/bed/",
+      "example_sentence": "he sat on the edge of the bed",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 122,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 33,
+      "learning_unit_key": "begin|verb|A1|sense:1",
+      "word": "begin",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "take the first step or steps in carrying out an action",
+      "meaning_th": "ทำให้เกิดการเปลี่ยนแปลงหรือปรับสภาพโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ในระยะเริ่มต้นหรือเกิดก่อนลำดับอื่น",
+      "ipa": "/bɪˈɡɪn/",
+      "example_sentence": "The DMZ begins right over the hill",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 123,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 34,
+      "learning_unit_key": "behind|adverb|A1|sense:1",
+      "word": "behind",
+      "part_of_speech": "adverb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "in or to or toward the rear",
+      "meaning_th": "อย่างมีลักษณะ หรือในทิศทางที่สอดคล้องกัน",
+      "ipa": "/bɪˈhaɪnd/",
+      "example_sentence": "seen from behind, the house is more imposing than it is from the front",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 124,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 35,
+      "learning_unit_key": "believe|verb|A1|sense:1",
+      "word": "believe",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "accept as true; take to be true",
+      "meaning_th": "ใช้ความคิด วิเคราะห์ หรือตัดสินใจโดยการความถูกต้อง คุณภาพที่ดี และผลประโยชน์ ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/bɪˈliːv/",
+      "example_sentence": "I believed his report",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 125,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 36,
+      "learning_unit_key": "big|adjective|A1|sense:1",
+      "word": "big",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "above average in size or number or quantity or magnitude or extent",
+      "meaning_th": "ใหญ่, โต",
+      "ipa": "/bɪɡ/",
+      "example_sentence": "set out for the big city",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 126,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 37,
+      "learning_unit_key": "black|adjective|A1|sense:1",
+      "word": "black",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "being of the achromatic color of maximum darkness; having little or no hue owing to absorption of almost all incident light",
+      "meaning_th": "ซึ่งมีคุณลักษณะเด่นหรือคุณสมบัตินี้",
+      "ipa": "/blæk/",
+      "example_sentence": "as black as coal",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 127,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (adjective vs noun)",
+        "checklist": [
+          "Verify part of speech strictly matches 'adjective' (distinct from adjective vs noun)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 38,
+      "learning_unit_key": "black|noun|A1|sense:1",
+      "word": "black",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "British chemist who identified carbon dioxide and who formulated the concepts of specific heat and latent heat (1728-1799)",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (เกี่ยวกับอาหารหรือของกิน)",
+      "ipa": "/blæk/",
+      "example_sentence": "in the black of night",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 128,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (adjective vs noun)",
+        "checklist": [
+          "Verify part of speech strictly matches 'noun' (distinct from adjective vs noun)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 39,
+      "learning_unit_key": "blue|adjective|A1|sense:1",
+      "word": "blue",
+      "part_of_speech": "adjective",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "of the color intermediate between green and violet; having a color similar to that of a clear unclouded sky",
+      "meaning_th": "ซึ่งมีคุณลักษณะเด่นหรือคุณสมบัตินี้",
+      "ipa": "/bluː/",
+      "example_sentence": "October's bright blue weather",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 129,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (adjective vs noun)",
+        "checklist": [
+          "Verify part of speech strictly matches 'adjective' (distinct from adjective vs noun)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 40,
+      "learning_unit_key": "blue|noun|A1|sense:1",
+      "word": "blue",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "blue color or pigment; resembling the color of the clear sky in the daytime",
+      "meaning_th": "ช่วงเวลา ระยะเวลา หรือจังหวะเวลา",
+      "ipa": "/bluː/",
+      "example_sentence": "he had eyes of bright blue",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 130,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "HOMONYM_AMBIGUITY",
+        "risk_level": "MEDIUM",
+        "title": "Medium-Risk Homonym/Part-of-Speech Ambiguity (adjective vs noun)",
+        "checklist": [
+          "Verify part of speech strictly matches 'noun' (distinct from adjective vs noun)",
+          "Verify meaning_en and Thai meaning correspond strictly to this syntactic category",
+          "Verify example sentence uses the word strictly in this grammatical function"
+        ]
+      }
+    },
+    {
+      "sequence": 41,
+      "learning_unit_key": "board|noun|A1|sense:1",
+      "word": "board",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a committee having supervisory powers",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/bɔːɹd/",
+      "example_sentence": "the board has seven members",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 131,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 42,
+      "learning_unit_key": "body|noun|A1|sense:1",
+      "word": "body",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "the entire physical structure of an organism (an animal, plant, or human being)",
+      "meaning_th": "พืชพรรณ ต้นไม้ หรือดอกไม้ตามธรรมชาติ (ทางการแพทย์และสุขภาพ)",
+      "ipa": "/ˈbɑːdi/",
+      "example_sentence": "he felt as if his whole body were on fire",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 132,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 43,
+      "learning_unit_key": "box|noun|A1|sense:1",
+      "word": "box",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a (usually rectangular) container; may have a lid",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/bɑːks/",
+      "example_sentence": "he rummaged through a box of spare parts",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 133,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 44,
+      "learning_unit_key": "boy|noun|A1|sense:1",
+      "word": "boy",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a youthful male person",
+      "meaning_th": "เด็กชาย, ชายหนุ่ม",
+      "ipa": "/bɔɪ/",
+      "example_sentence": "the baby was a boy",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 134,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 45,
+      "learning_unit_key": "break|verb|A1|sense:1",
+      "word": "break",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "terminate or end",
+      "meaning_th": "ดำเนินการ หรือกระทำการตามลักษณะเฉพาะ",
+      "ipa": "/bɹeɪk/",
+      "example_sentence": "break a lucky streak",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 135,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 46,
+      "learning_unit_key": "bring|verb|A1|sense:1",
+      "word": "bring",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "take something or somebody with oneself somewhere",
+      "meaning_th": "นำมา, พามา",
+      "ipa": "/bɹɪŋ/",
+      "example_sentence": "Bring me the box from the other room",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 136,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 47,
+      "learning_unit_key": "brother|noun|A1|sense:1",
+      "word": "brother",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "(Roman Catholic Church) a title given to a monk and used as form of address",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง",
+      "ipa": "/bˈɹʌðəɹ/",
+      "example_sentence": "my brother still lives with our parents",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 137,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 48,
+      "learning_unit_key": "build|verb|A1|sense:1",
+      "word": "build",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "make by combining materials and parts",
+      "meaning_th": "สร้างสรรค์ ผลิต หรือก่อให้เกิดสิ่งใหม่โดยการการสร้าง การผลิต และการพัฒนา ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/bɪld/",
+      "example_sentence": "Pressure is building up at the Indian-Pakistani border",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 138,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 49,
+      "learning_unit_key": "bus|noun|A1|sense:1",
+      "word": "bus",
+      "part_of_speech": "noun",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "a vehicle carrying many passengers; used for public transport",
+      "meaning_th": "สิ่ง มโนทัศน์ หรือหัวข้อที่กล่าวถึง (การเดินทางและคมนาคม)",
+      "ipa": "/bʌs/",
+      "example_sentence": "he always rode the bus to work",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 139,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "REMEDIATED_CANDIDATE_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    },
+    {
+      "sequence": 50,
+      "learning_unit_key": "buy|verb|A1|sense:1",
+      "word": "buy",
+      "part_of_speech": "verb",
+      "cefr_level": "A1",
+      "sense_index": 1,
+      "meaning_en": "obtain by purchase; acquire by means of a financial transaction",
+      "meaning_th": "ครอบครอง ส่งมอบ หรือแลกเปลี่ยนทรัพย์สินโดยการการปฏิบัติ กระบวนการ หรือวิธีการดำเนินงาน ตามบริบทของความหมายที่เลือกไว้",
+      "ipa": "/baɪ/",
+      "example_sentence": "This sum will buy you a ride on the train",
+      "operational_priority": "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS",
+      "risk": "TIER_1_CRITICAL_RISK",
+      "batch": "LARGE-015",
+      "batch_index": 140,
+      "provenance": {
+        "cefr_source": "CEFR-J Vocabulary Profile",
+        "sense_status": "MATCH_AMBIGUOUS",
+        "ipa_status": "VERIFIED_LICENSED_IPA",
+        "thai_status": "DERIVED_TRANSLATION_REVIEW_REQUIRED",
+        "example_status": "AI_DRAFT_FROM_CANDIDATE_OEWN_SYNSET_REQUIRES_REVIEW"
+      },
+      "review_flags": [
+        "POLYSEMY",
+        "SYNTHETIC_EXAMPLE",
+        "AI_DRAFT_MEANING"
+      ],
+      "current_lifecycle_status": "REVIEW_REQUIRED",
+      "current_human_review_status": "REVIEW_REQUIRED",
+      "current_reviewer_decision": null,
+      "human_decision": null,
+      "human_edited_meaning_en": null,
+      "human_edited_meaning_th": null,
+      "human_edited_ipa": null,
+      "human_edited_example_sentence": null,
+      "human_rationale": null,
+      "reviewer_id": null,
+      "review_transaction_id": null,
+      "guidance": {
+        "category": "POLYSEMOUS_CORE",
+        "risk_level": "HIGH",
+        "title": "High-Risk Polysemous Core Record",
+        "checklist": [
+          "Verify meaning_en matches the specific sense_index indicated in the key",
+          "Verify meaning_th matches that specific sub-sense, not a broad or generic definition",
+          "Verify example sentence uses the word strictly in this target sense"
+        ]
+      }
+    }
+  ]
+}

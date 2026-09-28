@@ -1,0 +1,543 @@
+{
+  "$schema": "https://glova.ai/schemas/vocabulary-pre-review-audit-v1.json",
+  "audit_phase": "PHASE_6_2_19_LARGE_PRE_REVIEW_AUDIT",
+  "generated_at": "2026-09-28T16:33:31.588Z",
+  "inventory_scope": {
+    "total_units": 10000,
+    "batches_scanned": 50,
+    "units_per_batch": 200
+  },
+  "exact_dataset_counts": {
+    "total_units": 10000,
+    "source_grounded": 48,
+    "no_lexical_source": 9952,
+    "pos_alignment": {
+      "POS_ALIGNED": 48,
+      "POS_SUSPECT": 0,
+      "POS_UNKNOWN": 9952
+    },
+    "sense_alignment": {
+      "SENSE_ALIGNED": 41,
+      "SENSE_AMBIGUOUS": 0,
+      "SENSE_CONFLICT": 7,
+      "NO_LEXICAL_MATCH": 9952
+    },
+    "cefr_compatibility": {
+      "compatible_lexical_evidence": 34,
+      "potentially_incompatible_sense": 14,
+      "no_usable_evidence": 9952
+    },
+    "candidate_readiness": {
+      "APPROVED_CANDIDATE_READY": 30,
+      "EDIT_REQUIRED_CANDIDATE": 11,
+      "HOLD_CANDIDATE": 7,
+      "UNRESOLVED": 9952
+    },
+    "human_review_boundary": {
+      "human_review_required": 10000,
+      "human_review_required_pct": 100,
+      "auto_approved_count": 0,
+      "active_transition_count": 0,
+      "production_supabase_mutations": 0,
+      "historical_human_reviews_preserved": 65,
+      "historical_decisions": {
+        "APPROVED": 62,
+        "HOLD": 2,
+        "EDIT_REQUIRED": 1,
+        "OTHER": 0
+      }
+    },
+    "staged_draft_quality_baseline": {
+      "staged_pos_aligned": 9699,
+      "staged_pos_suspect": 0,
+      "staged_pos_unknown": 301,
+      "staged_structural_gate_passed": 9996,
+      "staged_structural_gate_failed": 4
+    }
+  },
+  "bottleneck_ranking_by_count": [
+    {
+      "rank": 1,
+      "factor": "LACK_OF_LEXICAL_SOURCE_OR_INSUFFICIENT_CURATED_COVERAGE",
+      "description": "Headword and synset not present in grounded lexical registry",
+      "unit_count": 9952,
+      "percentage": 99.52
+    },
+    {
+      "rank": 2,
+      "factor": "CLOSED_CLASS_POS_UNKNOWN_TO_SEMANTIC_VALIDATOR",
+      "description": "Closed-class function words (prepositions, conjunctions, determiners) requiring specialized syntactic patterns",
+      "unit_count": 301,
+      "percentage": 3.01
+    },
+    {
+      "rank": 3,
+      "factor": "CEFR_OR_PEDAGOGICAL_SENSE_REGISTER_CONFLICT",
+      "description": "Lexical sense exists but has cross-level CEFR band gap (>1 band) or flagged pedagogical conflict",
+      "unit_count": 21,
+      "percentage": 0.21
+    },
+    {
+      "rank": 4,
+      "factor": "FAILED_THAI_STRUCTURAL_QUALITY_GATE",
+      "description": "Historical records with legacy template patterns exempted from remediation",
+      "unit_count": 4,
+      "percentage": 0.04
+    },
+    {
+      "rank": 5,
+      "factor": "AMBIGUOUS_POLYSEMY_IN_GROUNDED_SENSES",
+      "description": "Multiple candidate senses in grounded store without definitive definition keyword match",
+      "unit_count": 0,
+      "percentage": 0
+    },
+    {
+      "rank": 6,
+      "factor": "POS_MISMATCH_IN_GROUNDED_SENSES",
+      "description": "Grounded lexical entry semantic mismatch against learning unit grammatical category",
+      "unit_count": 0,
+      "percentage": 0
+    }
+  ],
+  "breakdowns": {
+    "cefr": {
+      "A1": {
+        "total": 1164,
+        "candidate_ready": 5,
+        "hold": 1,
+        "edit_required": 0,
+        "unresolved": 1158
+      },
+      "A2": {
+        "total": 1412,
+        "candidate_ready": 7,
+        "hold": 0,
+        "edit_required": 1,
+        "unresolved": 1404
+      },
+      "B1": {
+        "total": 2494,
+        "candidate_ready": 5,
+        "hold": 1,
+        "edit_required": 2,
+        "unresolved": 2486
+      },
+      "B2": {
+        "total": 2853,
+        "candidate_ready": 6,
+        "hold": 2,
+        "edit_required": 4,
+        "unresolved": 2841
+      },
+      "C1": {
+        "total": 1087,
+        "candidate_ready": 4,
+        "hold": 2,
+        "edit_required": 3,
+        "unresolved": 1078
+      },
+      "C2": {
+        "total": 990,
+        "candidate_ready": 3,
+        "hold": 1,
+        "edit_required": 1,
+        "unresolved": 985
+      }
+    },
+    "part_of_speech": {
+      "adverb": {
+        "total": 827,
+        "candidate_ready": 4,
+        "hold": 1,
+        "edit_required": 0,
+        "unresolved": 822
+      },
+      "noun": {
+        "total": 4976,
+        "candidate_ready": 12,
+        "hold": 2,
+        "edit_required": 5,
+        "unresolved": 4957
+      },
+      "adjective": {
+        "total": 2058,
+        "candidate_ready": 6,
+        "hold": 2,
+        "edit_required": 2,
+        "unresolved": 2048
+      },
+      "verb": {
+        "total": 1838,
+        "candidate_ready": 8,
+        "hold": 2,
+        "edit_required": 4,
+        "unresolved": 1824
+      },
+      "preposition": {
+        "total": 81,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 81
+      },
+      "determiner": {
+        "total": 46,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 46
+      },
+      "pronoun": {
+        "total": 83,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 83
+      },
+      "conjunction": {
+        "total": 38,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 38
+      },
+      "modal_auxiliary": {
+        "total": 13,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 13
+      },
+      "number": {
+        "total": 30,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 30
+      },
+      "interjection": {
+        "total": 9,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 9
+      },
+      "infinitive_to": {
+        "total": 1,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 1
+      }
+    },
+    "remediation_source": {
+      "GLOVA_CURATED_HEADWORD_REGISTRY": {
+        "total": 172,
+        "candidate_ready": 7,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 165
+      },
+      "CONTEXTUAL_POS_ALIGNED_DRAFTER": {
+        "total": 8142,
+        "candidate_ready": 20,
+        "hold": 6,
+        "edit_required": 8,
+        "unresolved": 8108
+      },
+      "GLOVA_OFFLINE_THAI_SENSE_DRAFTER_V1": {
+        "total": 1686,
+        "candidate_ready": 3,
+        "hold": 1,
+        "edit_required": 3,
+        "unresolved": 1679
+      },
+      "OTHER_OR_UNKNOWN": {
+        "total": 0,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 0
+      }
+    },
+    "review_risk_tier": {
+      "TIER_1_CRITICAL_RISK": {
+        "total": 7118,
+        "candidate_ready": 28,
+        "hold": 7,
+        "edit_required": 10,
+        "unresolved": 7073
+      },
+      "TIER_2_HIGH_RISK": {
+        "total": 806,
+        "candidate_ready": 2,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 804
+      },
+      "TIER_3_MEDIUM_RISK": {
+        "total": 2075,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 1,
+        "unresolved": 2074
+      },
+      "TIER_4_LOW_RISK": {
+        "total": 1,
+        "candidate_ready": 0,
+        "hold": 0,
+        "edit_required": 0,
+        "unresolved": 1
+      }
+    },
+    "priority_tier": {
+      "TIER_1_FAST_TRACK_SENSE_AND_IPA_LOCKED": {
+        "total": 2899,
+        "candidate_ready": 2,
+        "hold": 1,
+        "edit_required": 2,
+        "unresolved": 2894
+      },
+      "TIER_2_HIGH_VALUE_CORE_POLYSEMOUS": {
+        "total": 3669,
+        "candidate_ready": 14,
+        "hold": 3,
+        "edit_required": 2,
+        "unresolved": 3650
+      },
+      "TIER_3_STANDARD_POLYSEMOUS_AND_ADVANCED": {
+        "total": 2698,
+        "candidate_ready": 1,
+        "hold": 1,
+        "edit_required": 3,
+        "unresolved": 2693
+      },
+      "TIER_4_SPECIALIST_NO_MATCH_AND_CONFLICTS": {
+        "total": 734,
+        "candidate_ready": 13,
+        "hold": 2,
+        "edit_required": 4,
+        "unresolved": 715
+      }
+    }
+  },
+  "curated_expansion_summary": {
+    "units_benefiting_from_curated_grounding": 9970,
+    "distinct_headwords_needing_grounding": 8757,
+    "distinct_headwords_by_cefr": {
+      "A1": 1059,
+      "A2": 1346,
+      "B1": 2397,
+      "B2": 2760,
+      "C1": 1001,
+      "C2": 946
+    },
+    "distinct_headwords_by_pos": {
+      "adverb": 823,
+      "noun": 4916,
+      "adjective": 2037,
+      "verb": 1803,
+      "preposition": 80,
+      "determiner": 46,
+      "pronoun": 83,
+      "conjunction": 38,
+      "modal_auxiliary": 13,
+      "number": 30,
+      "interjection": 9,
+      "infinitive_to": 1
+    },
+    "queue_counts_by_priority": {
+      "priority_1_a1_core_foundational": 1059,
+      "priority_2_a2_elementary": 1235,
+      "priority_3_b1_intermediate": 2183,
+      "priority_4_b2_upper_intermediate": 2488,
+      "priority_5_c1_c2_advanced": 1792
+    }
+  },
+  "sample_evaluations": {
+    "grounded_samples": [
+      {
+        "learning_unit_key": "application|noun|B1|sense:1",
+        "word": "application",
+        "part_of_speech": "noun",
+        "claimed_cefr": "B1",
+        "candidate_thai": "การประยุกต์ใช้, การนำไปใช้",
+        "candidate_source": "GLOVA_CURATED_REGISTRY",
+        "rationale": "Exact synset alignment matched: 00961750-n"
+      },
+      {
+        "learning_unit_key": "availability|noun|B2|sense:1",
+        "word": "availability",
+        "part_of_speech": "noun",
+        "claimed_cefr": "B2",
+        "candidate_thai": "การเข้าถึงได้, ความสะดวกในการเข้าถึง",
+        "candidate_source": "GLOVA_CURATED_REGISTRY",
+        "rationale": "Exact synset alignment matched: 04788157-n"
+      },
+      {
+        "learning_unit_key": "action|noun|A1|sense:1",
+        "word": "action",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A1",
+        "candidate_thai": "การกระทำ, การปฏิบัติ",
+        "candidate_source": "GLOVA_CURATED_REGISTRY",
+        "rationale": "Strong definition semantic keyword overlap (something, done, usually, opposed, something, said)"
+      },
+      {
+        "learning_unit_key": "agree|verb|A1|sense:1",
+        "word": "agree",
+        "part_of_speech": "verb",
+        "claimed_cefr": "A1",
+        "candidate_thai": "เห็นด้วย, ตกลง",
+        "candidate_source": "GLOVA_CURATED_REGISTRY",
+        "rationale": "Exact synset alignment matched: 00840439-v"
+      },
+      {
+        "learning_unit_key": "baby|noun|A1|sense:1",
+        "word": "baby",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A1",
+        "candidate_thai": "เด็กทารก, ลูกอ่อน",
+        "candidate_source": "GLOVA_CURATED_REGISTRY",
+        "rationale": "Exact synset alignment matched: 10001672-n"
+      }
+    ],
+    "hold_samples": [
+      {
+        "learning_unit_key": "jog|verb|C1|sense:2",
+        "word": "jog",
+        "part_of_speech": "verb",
+        "claimed_cefr": "C1",
+        "candidate_thai": "พูดจ้อ, พล่ามเรื่อยเปื่อย",
+        "sense_status": "SENSE_CONFLICT",
+        "rationale": "Pedagogical conflict: literary chatter sense staged instead of common aerobic running exercise (A2/B1). Held for synset reassignment."
+      },
+      {
+        "learning_unit_key": "above|adverb|A1|sense:1",
+        "word": "above",
+        "part_of_speech": "adverb",
+        "claimed_cefr": "A1",
+        "candidate_thai": "ข้างต้น, ที่กล่าวมาแล้วข้างต้น",
+        "sense_status": "SENSE_CONFLICT",
+        "rationale": "Pedagogical CEFR conflict: textual reference sense (B1) mapped to beginner A1 unit. A1 requires physical spatial adverb (overhead, higher up). Held for senior review."
+      },
+      {
+        "learning_unit_key": "cast|noun|B2|sense:1",
+        "word": "cast",
+        "part_of_speech": "noun",
+        "claimed_cefr": "B2",
+        "candidate_thai": "แม่พิมพ์, เบ้าหล่อ",
+        "sense_status": "SENSE_CONFLICT",
+        "rationale": "Domain confusion & extreme polysemy: industrial mold sense erroneously tagged as Food domain. Held for domain clearing."
+      },
+      {
+        "learning_unit_key": "jog|verb|B1|sense:1",
+        "word": "jog",
+        "part_of_speech": "verb",
+        "claimed_cefr": "B1",
+        "candidate_thai": "พูดจ้อ, พล่ามเรื่อยเปื่อย",
+        "sense_status": "SENSE_CONFLICT",
+        "rationale": "Pedagogical conflict: literary chatter sense staged instead of common aerobic running exercise (A2/B1). Held for synset reassignment."
+      },
+      {
+        "learning_unit_key": "cast|noun|C1|sense:2",
+        "word": "cast",
+        "part_of_speech": "noun",
+        "claimed_cefr": "C1",
+        "candidate_thai": "แม่พิมพ์, เบ้าหล่อ",
+        "sense_status": "SENSE_CONFLICT",
+        "rationale": "Domain confusion & extreme polysemy: industrial mold sense erroneously tagged as Food domain. Held for domain clearing."
+      }
+    ],
+    "edit_required_samples": [
+      {
+        "learning_unit_key": "rich|adjective|C1|sense:2",
+        "word": "rich",
+        "part_of_speech": "adjective",
+        "claimed_cefr": "C1",
+        "candidate_target_cefr": "A1",
+        "cefr_note": "Potential CEFR mismatch: learning unit target is C1, but candidate sense is typically registered at A1 (gap: 4 bands)"
+      },
+      {
+        "learning_unit_key": "infant|noun|B2|sense:1",
+        "word": "infant",
+        "part_of_speech": "noun",
+        "claimed_cefr": "B2",
+        "candidate_target_cefr": "A1",
+        "cefr_note": "Potential CEFR mismatch: learning unit target is B2, but candidate sense is typically registered at A1 (gap: 3 bands)"
+      },
+      {
+        "learning_unit_key": "committee|noun|A2|sense:1",
+        "word": "committee",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A2",
+        "candidate_target_cefr": "B2",
+        "cefr_note": "Potential CEFR mismatch: learning unit target is A2, but candidate sense is typically registered at B2 (gap: 2 bands)"
+      },
+      {
+        "learning_unit_key": "favorable|adjective|B1|sense:1",
+        "word": "favorable",
+        "part_of_speech": "adjective",
+        "claimed_cefr": "B1",
+        "candidate_target_cefr": "C1",
+        "cefr_note": "Potential CEFR mismatch: learning unit target is B1, but candidate sense is typically registered at C1 (gap: 2 bands)"
+      },
+      {
+        "learning_unit_key": "commonwealth|noun|B2|sense:1",
+        "word": "commonwealth",
+        "part_of_speech": "noun",
+        "claimed_cefr": "B2",
+        "candidate_target_cefr": "A2",
+        "cefr_note": "Potential CEFR mismatch: learning unit target is B2, but candidate sense is typically registered at A2 (gap: 2 bands)"
+      }
+    ],
+    "unresolved_samples": [
+      {
+        "learning_unit_key": "ago|adverb|A1|sense:1",
+        "word": "ago",
+        "part_of_speech": "adverb",
+        "claimed_cefr": "A1",
+        "remediation_source": "glova_curated_lexical_registry_v1"
+      },
+      {
+        "learning_unit_key": "almost|adverb|A1|sense:1",
+        "word": "almost",
+        "part_of_speech": "adverb",
+        "claimed_cefr": "A1",
+        "remediation_source": "glova_curated_lexical_registry_v1"
+      },
+      {
+        "learning_unit_key": "bar|noun|A1|sense:1",
+        "word": "bar",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A1",
+        "remediation_source": "glova_contextual_thai_drafter_v2"
+      },
+      {
+        "learning_unit_key": "book|noun|A1|sense:1",
+        "word": "book",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A1",
+        "remediation_source": "glova_curated_lexical_registry_v1"
+      },
+      {
+        "learning_unit_key": "case|noun|A1|sense:1",
+        "word": "case",
+        "part_of_speech": "noun",
+        "claimed_cefr": "A1",
+        "remediation_source": "glova_contextual_thai_drafter_v2"
+      }
+    ]
+  },
+  "authoritative_invariants": {
+    "active_curated_db": 21,
+    "human_approved_staging": 7,
+    "learner_ready": 28,
+    "target": 10000,
+    "gap": 9972,
+    "overall_status": "NOT_READY",
+    "user_testing_authorized": false,
+    "production_supabase_mutations": 0,
+    "cefr_overwritten_by_lexical_source": false
+  }
+}

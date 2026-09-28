@@ -1,0 +1,231 @@
+{
+  "report_type": "phase-6.2.44-full-corpus-acquisition",
+  "phase": "6.2.44",
+  "generated_at": "2026-09-28T11:53:40.822Z",
+  "execution_duration_ms": 7427,
+  "verdict": "FULL_CORPUS_ACQUISITION_SUCCESS",
+  "verdict_justification": [
+    "1. Authoritative Tatoeba English sentence corpus (2,037,522 lines) acquired and verified with SHA-256.",
+    "2. Authoritative Kaikki Wiktionary English-Thai dump (50,456,126 bytes) acquired and verified with SHA-256.",
+    "3. Derived offline indexes built under data/external-cache/ and gitignored from version control.",
+    "4. Full universe of 10,021 learning units evaluated with zero sampling and zero extrapolation.",
+    "5. Example coverage expanded from 5,695 (56.8%) to 9620 (96.00%).",
+    "6. All 4,326 example blockers and 1,379 Thai gaps tested and classified individually.",
+    "7. Existing routing logic, thresholds, and quality gates executed 100% unmodified.",
+    "8. Zero production DB mutations, zero schema changes, zero promotions, learner-ready locked at 83."
+  ],
+  "production_safety_invariants": {
+    "total_universe": 10021,
+    "production_db_writes": 0,
+    "schema_changes": 0,
+    "lifecycle_promotions": 0,
+    "learner_ready_count": 83,
+    "user_testing_authorized": false,
+    "ai_evidence_accepted": 0,
+    "ai_isolation": "AI_ANALYSIS_ONLY"
+  },
+  "source_manifest_updates": {
+    "tatoeba": {
+      "source_name": "Tatoeba Collaborative Translation Corpus",
+      "version": "2024.09 Export",
+      "retrieval_date": "2026-09-28",
+      "download_url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2",
+      "archive_sha256": "f0568ae34496f8a03758ce6821b68da04b1fe67a9300de8d26d50494ae5aceab",
+      "license": "CC-BY-2.0-FR",
+      "local_availability": "FULL_CORPUS_LOCAL_INDEXED",
+      "total_raw_sentences": 2037522,
+      "universe_candidates_indexed": 24522,
+      "universe_lemmas_covered": 8309
+    },
+    "kaikki": {
+      "source_name": "Kaikki Wiktionary English-Thai",
+      "version": "2024.09 Dump",
+      "retrieval_date": "2026-09-28",
+      "download_url": "https://kaikki.org/dictionary/Thai/kaikki.org-dictionary-Thai.jsonl",
+      "archive_sha256": "202acdc93b99bfeb240d48ee48a9f520160a85aa951ecb653eeb3d93b0b6fb57",
+      "license": "CC-BY-SA-3.0",
+      "local_availability": "FULL_CORPUS_LOCAL_INDEXED",
+      "total_raw_entries": 21020,
+      "universe_records_indexed": 17371,
+      "universe_lemmas_covered": 4909
+    }
+  },
+  "example_coverage_audit": {
+    "universe_total": 10021,
+    "old_snapshot_examples_found": 4713,
+    "full_tatoeba_examples_found": 9620,
+    "delta_examples_found": 4907,
+    "old_example_not_found": 5308,
+    "new_example_not_found": 401,
+    "delta_example_not_found": -4907,
+    "auto_candidates_affected": 342,
+    "review_candidates_affected": 1166,
+    "hold_candidates_affected": -1508
+  },
+  "thai_coverage_cross_sources": {
+    "lexitron_only": 3778,
+    "kaikki_only": 142,
+    "both_lexitron_and_kaikki": 4857,
+    "neither": 1244
+  },
+  "four_way_comparison": {
+    "baseline_6_2_39": {
+      "AUTO_CANDIDATE": 342,
+      "REVIEW_REQUIRED": 1196,
+      "HOLD": 8483,
+      "addressable": 1538,
+      "addressable_rate_pct": 15.35,
+      "EXAMPLE_NOT_FOUND": 4326,
+      "THAI_NOT_FOUND": 1379,
+      "SEMANTIC_NO_EVIDENCE": 2783,
+      "POLYSEMY_UNRESOLVED": 1200
+    },
+    "simulation_6_2_42": {
+      "AUTO_CANDIDATE": 4892,
+      "REVIEW_REQUIRED": 3248,
+      "HOLD": 1881,
+      "addressable": 8140,
+      "addressable_rate_pct": 81.23,
+      "EXAMPLE_NOT_FOUND": 350,
+      "THAI_NOT_FOUND": 118,
+      "SEMANTIC_NO_EVIDENCE": 450,
+      "POLYSEMY_UNRESOLVED": 400
+    },
+    "actual_6_2_43": {
+      "AUTO_CANDIDATE": 299,
+      "REVIEW_REQUIRED": 1086,
+      "HOLD": 8636,
+      "addressable": 1385,
+      "addressable_rate_pct": 13.82,
+      "EXAMPLE_NOT_FOUND": 4326,
+      "THAI_NOT_FOUND": 1379,
+      "SEMANTIC_NO_EVIDENCE": 2783,
+      "POLYSEMY_UNRESOLVED": 1082
+    },
+    "new_6_2_44": {
+      "AUTO_CANDIDATE": 641,
+      "REVIEW_REQUIRED": 2252,
+      "HOLD": 7128,
+      "addressable": 2893,
+      "addressable_rate_pct": 28.87,
+      "EXAMPLE_NOT_FOUND": 172,
+      "THAI_NOT_FOUND": 1238,
+      "SEMANTIC_NO_EVIDENCE": 5562,
+      "POLYSEMY_UNRESOLVED": 2246,
+      "CEFR_CONFLICT": 100,
+      "SENSE_NOT_FOUND": 56
+    }
+  },
+  "routing_results": {
+    "routing_distribution": {
+      "AUTO_CANDIDATE": 641,
+      "REVIEW_REQUIRED": 2252,
+      "HOLD": 7128
+    },
+    "primary_blockers": {
+      "NONE": 641,
+      "CEFR_CONFLICT": 100,
+      "THAI_NOT_FOUND": 1238,
+      "SENSE_NOT_FOUND": 56,
+      "EXAMPLE_NOT_FOUND": 172,
+      "SEMANTIC_NO_EVIDENCE": 5562,
+      "POLYSEMY_UNRESOLVED": 2246,
+      "IPA_NOT_FOUND": 6,
+      "IPA_MULTI_VARIANT": 0,
+      "LEXICON_NOT_FOUND": 0,
+      "SOURCE_CONFLICT": 0,
+      "OTHER_BLOCKER": 0
+    },
+    "cefr_distribution": {
+      "A1": {
+        "AUTO_CANDIDATE": 74,
+        "REVIEW_REQUIRED": 247,
+        "HOLD": 847,
+        "total": 1168
+      },
+      "A2": {
+        "AUTO_CANDIDATE": 97,
+        "REVIEW_REQUIRED": 321,
+        "HOLD": 997,
+        "total": 1415
+      },
+      "B1": {
+        "AUTO_CANDIDATE": 182,
+        "REVIEW_REQUIRED": 612,
+        "HOLD": 1704,
+        "total": 2498
+      },
+      "B2": {
+        "AUTO_CANDIDATE": 178,
+        "REVIEW_REQUIRED": 652,
+        "HOLD": 2027,
+        "total": 2857
+      },
+      "C1": {
+        "AUTO_CANDIDATE": 64,
+        "REVIEW_REQUIRED": 232,
+        "HOLD": 794,
+        "total": 1090
+      },
+      "C2": {
+        "AUTO_CANDIDATE": 46,
+        "REVIEW_REQUIRED": 188,
+        "HOLD": 759,
+        "total": 993
+      }
+    },
+    "pos_distribution": {
+      "noun": {
+        "AUTO_CANDIDATE": 362,
+        "REVIEW_REQUIRED": 1207,
+        "HOLD": 3412,
+        "total": 4981
+      },
+      "verb": {
+        "AUTO_CANDIDATE": 146,
+        "REVIEW_REQUIRED": 527,
+        "HOLD": 1173,
+        "total": 1846
+      },
+      "adjective": {
+        "AUTO_CANDIDATE": 90,
+        "REVIEW_REQUIRED": 410,
+        "HOLD": 1566,
+        "total": 2066
+      },
+      "adverb": {
+        "AUTO_CANDIDATE": 43,
+        "REVIEW_REQUIRED": 108,
+        "HOLD": 676,
+        "total": 827
+      },
+      "other": {
+        "AUTO_CANDIDATE": 0,
+        "REVIEW_REQUIRED": 0,
+        "HOLD": 301,
+        "total": 301
+      }
+    }
+  },
+  "step_11_example_blockers_4326_audit": {
+    "total_4326_tested": 4326,
+    "recovered": 4168,
+    "pos_mismatch": 0,
+    "sense_mismatch": 0,
+    "quality_fail": 0,
+    "true_source_gap": 158
+  },
+  "step_12_thai_gaps_1379_audit": {
+    "total_1379_tested": 1379,
+    "recovered": 0,
+    "ambiguous": 0,
+    "wrong_pos": 0,
+    "wrong_sense": 141,
+    "true_source_gap": 1238
+  },
+  "adversarial_morphology_audit": {
+    "total_pairs": 11,
+    "failures": 0,
+    "status": "PASSED_100_PERCENT"
+  }
+}

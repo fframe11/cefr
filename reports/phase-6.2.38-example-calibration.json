@@ -1,0 +1,113 @@
+{
+  "phase": "6.2.38",
+  "title": "Phase 6.2.38 — Attested Example Evidence Calibration & Adversarial Morphology Report",
+  "generated_at": "2026-09-28T05:12:24.518Z",
+  "adversarial_morphology_suite": {
+    "total_pairs_tested": 11,
+    "all_pairs_blocked": true,
+    "test_cases": [
+      {
+        "lemma": "art",
+        "pos": "noun",
+        "sentence": "She wrote a comprehensive article on science.",
+        "target_derivative": "article",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"article\" is not a valid inflection of \"art\""
+      },
+      {
+        "lemma": "car",
+        "pos": "noun",
+        "sentence": "They bought a luxurious Persian carpet.",
+        "target_derivative": "carpet",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"carpet\" is not a valid inflection of \"car\""
+      },
+      {
+        "lemma": "care",
+        "pos": "verb",
+        "sentence": "Please be careful when handling hot liquids.",
+        "target_derivative": "careful",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"careful\" is not a valid inflection of \"care\""
+      },
+      {
+        "lemma": "act",
+        "pos": "verb",
+        "sentence": "Immediate emergency action was taken.",
+        "target_derivative": "action",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"action\" is not a valid inflection of \"act\""
+      },
+      {
+        "lemma": "class",
+        "pos": "noun",
+        "sentence": "This is a classic example of baroque architecture.",
+        "target_derivative": "classic",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"classic\" is not a valid inflection of \"class\""
+      },
+      {
+        "lemma": "day",
+        "pos": "noun",
+        "sentence": "The daylight illuminated the mountain peak.",
+        "target_derivative": "daylight",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"daylight\" is not a valid inflection of \"day\""
+      },
+      {
+        "lemma": "pan",
+        "pos": "noun",
+        "sentence": "Sudden panic spread through the market.",
+        "target_derivative": "panic",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"panic\" is not a valid inflection of \"pan\""
+      },
+      {
+        "lemma": "war",
+        "pos": "noun",
+        "sentence": "We must warn travelers about the storm.",
+        "target_derivative": "warn",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"warn\" is not a valid inflection of \"war\""
+      },
+      {
+        "lemma": "fat",
+        "pos": "noun",
+        "sentence": "His father worked as an architect.",
+        "target_derivative": "father",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"father\" is not a valid inflection of \"fat\""
+      },
+      {
+        "lemma": "dog",
+        "pos": "noun",
+        "sentence": "The religious dogma was questioned by scholars.",
+        "target_derivative": "dogma",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"dogma\" is not a valid inflection of \"dog\""
+      },
+      {
+        "lemma": "bus",
+        "pos": "noun",
+        "sentence": "She started an international logistics business.",
+        "target_derivative": "business",
+        "status": "BLOCKED_SUCCESSFULLY",
+        "reason": "Blocked false derivative \"business\" is not a valid inflection of \"bus\""
+      }
+    ]
+  },
+  "provenance_integrity": {
+    "sources_evaluated": [
+      "oewn_2024",
+      "tatoeba_pilot",
+      "glova_curated_seed_v1"
+    ],
+    "all_examples_retain_provenance": true,
+    "ai_draft_quarantine": {
+      "flag": "AI_DRAFT_ONLY",
+      "enforced": true,
+      "production_promotable": false,
+      "quarantine_rule": "AI-generated drafts are strictly quarantined as AI_DRAFT_ONLY and cannot be promoted to learner-ready status or mixed into attested evidence warehouses."
+    }
+  }
+}

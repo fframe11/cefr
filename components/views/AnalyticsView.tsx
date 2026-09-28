@@ -20,6 +20,13 @@ import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
 import { useTranslation } from '../../i18n';
+import {
+  GlovaButton,
+  GlovaCard,
+  GlovaBadge,
+  GlovaProgress,
+  GlovaFeedbackBubble,
+} from '../ui';
 
 interface AnalyticsViewProps {
   progress: UserProgressState;
@@ -142,13 +149,13 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 pb-12">
       {/* Top Banner: CEFR & Cambridge Score Summary */}
-      <div className="rounded-2xl bg-card border border-border/70 p-6 sm:p-8 shadow-xs">
+      <GlovaCard variant="elevated" className="p-6 sm:p-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/40">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
+              <GlovaBadge variant="accent">
                 CEFR {currentLevel}
-              </span>
+              </GlovaBadge>
               <span className="text-xs text-muted-foreground">
                 เป้าหมายการสอบ: Cambridge {progress.targetExam}
               </span>
@@ -172,8 +179,13 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           </div>
         </div>
 
+        <GlovaFeedbackBubble
+          currentSkill="analytics"
+          customTip="ระบบวิเคราะห์ผลลัพธ์การเรียนรู้รายทักษะ คำนวณความแม่นยำ และจัดกลุ่มจุดบกพร่องสะสมเพื่อแนะนำการฝึกซ่อมจุดอ่อนได้อย่างตรงจุด"
+        />
+
         {/* Can-Do Descriptors at Current CEFR Level */}
-        <div className="pt-5 space-y-2">
+        <div className="pt-2 space-y-2">
           <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider">
             {t('analytics.can_do_descriptors')}:
           </h4>
@@ -191,24 +203,24 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         </div>
 
         {/* Cambridge / CEFR Disclaimer */}
-        <div className="mt-5 p-3 rounded-xl bg-muted/40 border border-border/50 flex items-start gap-2.5 text-xs text-muted-foreground">
+        <div className="mt-2 p-3 rounded-xl bg-muted/40 border border-border/50 flex items-start gap-2.5 text-xs text-muted-foreground">
           <ShieldAlert className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
           <span>
             {analytics?.disclaimer ||
               'คะแนนและการวิเคราะห์ในระบบนี้เป็นค่าประเมินความพร้อมของแพลตฟอร์มเพื่อแนวทางการเรียนรู้เท่านั้น ไม่ใช่ผลสอบรับรองอย่างเป็นทางการจาก Cambridge English Qualifications'}
           </span>
         </div>
-      </div>
+      </GlovaCard>
 
       {/* Telemetry Overview Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-4 rounded-xl bg-card border border-border/70 shadow-xs space-y-1">
+        <GlovaCard className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">คำถามที่ทำทั้งหมด</span>
           <p className="text-2xl font-bold font-mono text-foreground">{totalAttempted}</p>
           <span className="text-[11px] text-muted-foreground">ข้อที่ทำแล้ว</span>
-        </div>
+        </GlovaCard>
 
-        <div className="p-4 rounded-xl bg-card border border-border/70 shadow-xs space-y-1">
+        <GlovaCard className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">{t('analytics.accuracy')}</span>
           {overallAccuracy !== null ? (
             <p className="text-2xl font-bold font-mono text-primary">{overallAccuracy}%</p>
@@ -218,27 +230,27 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           <span className="text-[11px] text-muted-foreground">
             {totalCorrect > 0 ? `ตอบถูก ${totalCorrect} ข้อ` : 'ต้องทำแบบฝึกหัดก่อน'}
           </span>
-        </div>
+        </GlovaCard>
 
-        <div className="p-4 rounded-xl bg-card border border-border/70 shadow-xs space-y-1">
+        <GlovaCard className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">จุดอ่อนสะสม</span>
           <p className="text-2xl font-bold font-mono text-amber-500">{weaknessesList.length}</p>
           <span className="text-[11px] text-muted-foreground">หัวข้อที่ควรซ่อม</span>
-        </div>
+        </GlovaCard>
 
-        <div className="p-4 rounded-xl bg-card border border-border/70 shadow-xs space-y-1">
+        <GlovaCard className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">Mock Exams ที่ส่งแล้ว</span>
           <p className="text-2xl font-bold font-mono text-foreground">
             {analytics?.overview.completed_mock_exams_count ?? 0}
           </p>
           <span className="text-[11px] text-muted-foreground">ชุดข้อสอบจำลอง</span>
-        </div>
+        </GlovaCard>
       </div>
 
       {/* Grid: 6 Skill Mastery Breakdown & Weakness Detection Engine */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left (7 cols): Detailed Skill Proficiency Bars */}
-        <div className="lg:col-span-7 rounded-2xl bg-card border border-border/70 p-5 sm:p-6 shadow-xs space-y-4">
+        <GlovaCard className="lg:col-span-7 p-5 sm:p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-border/40">
             <div className="flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
@@ -254,12 +266,13 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               title="ยังไม่มีข้อมูลประวัติการทำแบบฝึกหัด"
               description="เริ่มฝึกทำข้อสอบรายทักษะเพื่อเปิดระบบวิเคราะห์ความแม่นยำและความเชี่ยวชาญระดับภาษาของคุณ"
               action={
-                <button
+                <GlovaButton
+                  variant="primary"
+                  size="sm"
                   onClick={() => onNavigate('grammar')}
-                  className="py-2 px-4 rounded-lg bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"
                 >
                   เริ่มทำแบบฝึกหัด
-                </button>
+                </GlovaButton>
               }
             />
           ) : (
@@ -282,12 +295,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                       <span className="font-mono text-foreground font-semibold">{item.score}%</span>
                     </div>
                   </div>
-                  <div className="h-2.5 w-full bg-secondary rounded-full overflow-hidden">
-                    <div
-                      className={`h-full ${item.color} rounded-full transition-all duration-500`}
-                      style={{ width: `${item.score}%` }}
-                    />
-                  </div>
+                  <GlovaProgress value={item.score} showLabel={false} />
                 </div>
               ))}
             </div>
@@ -299,10 +307,10 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               {progress.masteredWordIds.length} คำ
             </span>
           </div>
-        </div>
+        </GlovaCard>
 
         {/* Right (5 cols): Targeted Weakness Remediation */}
-        <div className="lg:col-span-5 rounded-2xl bg-card border border-border/70 p-5 sm:p-6 shadow-xs space-y-4">
+        <GlovaCard className="lg:col-span-5 p-5 sm:p-6 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-border/40">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
@@ -310,9 +318,9 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                 {t('analytics.weakness_detection')}
               </h3>
             </div>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 font-medium">
+            <GlovaBadge variant="warning">
               {weaknessesList.length} จุด
-            </span>
+            </GlovaBadge>
           </div>
 
           {weaknessesList.length === 0 ? (
@@ -337,23 +345,25 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                     </p>
                   </div>
 
-                  <button
+                  <GlovaButton
+                    variant="secondary"
+                    size="sm"
+                    fullWidth
                     onClick={() => onStartRemediation(w.tag)}
-                    className="w-full py-2 px-3 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors touch-target"
                   >
-                    <Play className="w-3.5 h-3.5 fill-current" />
+                    <Play className="w-3.5 h-3.5 fill-current mr-1.5" />
                     <span>{t('analytics.remediation_action')}</span>
-                  </button>
+                  </GlovaButton>
                 </div>
               ))}
             </div>
           )}
-        </div>
+        </GlovaCard>
       </div>
 
       {/* Mock Exam History (if available) */}
       {analytics && analytics.mock_exam_history.length > 0 && (
-        <div className="rounded-2xl bg-card border border-border/70 p-5 sm:p-6 shadow-xs space-y-4">
+        <GlovaCard className="p-5 sm:p-6 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-border/40">
             <FileText className="w-4 h-4 text-primary" />
             <h3 className="font-semibold text-sm sm:text-base text-foreground">
@@ -379,7 +389,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               </div>
             ))}
           </div>
-        </div>
+        </GlovaCard>
       )}
     </div>
   );

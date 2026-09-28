@@ -1,0 +1,80 @@
+{
+  "phase": "6.2.37",
+  "baseline_phase": "6.2.36",
+  "authoritative_universe": 10021,
+  "baseline_breakdown": {
+    "AUTO_READY": 1829,
+    "REVIEW_REQUIRED": 4451,
+    "HOLD": 3741,
+    "learner_ready": 83
+  },
+  "primary_blockers_baseline": {
+    "POLYSEMY_UNRESOLVED": 3611,
+    "EXAMPLE_NOT_FOUND": 2734,
+    "NONE": 1829,
+    "THAI_NOT_FOUND": 861,
+    "SENSE_NOT_FOUND": 379,
+    "IPA_MULTI_VARIANT": 285,
+    "LEXICON_NOT_FOUND": 160,
+    "CEFR_CONFLICT": 100,
+    "IPA_HETERONYM": 33,
+    "IPA_NOT_FOUND": 25,
+    "EXAMPLE_QUALITY_FAIL": 4
+  },
+  "sample_audit": {
+    "sample_size": 300,
+    "stratification": {
+      "A1": 50,
+      "A2": 50,
+      "B1": 50,
+      "B2": 50,
+      "C1": 50,
+      "C2": 50
+    },
+    "sample_blockers": {
+      "POLYSEMY_UNRESOLVED": 180,
+      "EXAMPLE_NOT_FOUND": 72,
+      "NONE": 48
+    },
+    "semantic_disambiguation_sample": {
+      "confident": 28,
+      "confident_pct": "9.3%",
+      "ambiguous": 75,
+      "ambiguous_pct": "25%",
+      "no_evidence": 197,
+      "no_evidence_pct": "65.7%",
+      "single_candidate_cases": 97
+    },
+    "example_expansion_sample": {
+      "gained_oewn": 197,
+      "gained_tatoeba": 31,
+      "gained_both": 19,
+      "gained_any": 209,
+      "sample_example_coverage_pct": "69.7%"
+    },
+    "quadrant_analysis": {
+      "Q1_resolved_poly_and_example": 22,
+      "Q2_resolved_poly_missing_example": 6,
+      "Q3_unresolved_poly_found_example": 187,
+      "Q4_both_unresolved": 85
+    }
+  },
+  "simulation_projections": {
+    "simulation_label": "SIMULATION_ONLY_NO_DATABASE_MUTATION",
+    "polysemy_blockers_baseline": 3611,
+    "polysemy_simulated_resolved": 337,
+    "polysemy_simulated_remaining": 3274,
+    "example_blockers_baseline": 2734,
+    "example_simulated_resolved": 1253,
+    "example_simulated_remaining": 1481,
+    "projected_human_review_workload_reduction_pct": "7%"
+  },
+  "safety_invariants": {
+    "production_db_mutated": false,
+    "schema_altered": false,
+    "vocabulary_activated": false,
+    "learner_ready_count": 83,
+    "user_testing_authorized": false,
+    "overall_readiness": "NOT_READY"
+  }
+}

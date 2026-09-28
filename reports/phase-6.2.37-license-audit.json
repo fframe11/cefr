@@ -1,0 +1,100 @@
+{
+  "phase": "6.2.37",
+  "title": "Source License & Provenance Audit",
+  "audit_date": "2026-09-28T04:43:51.511Z",
+  "evaluation_context": "Glova University-Level English Learning Platform",
+  "sources": [
+    {
+      "source_id": "oewn_2024",
+      "source_name": "Open English WordNet 2024",
+      "origin_url": "https://en-word.net/",
+      "dataset_version": "2024",
+      "license_type": "CC-BY-4.0",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "Open English WordNet 2024 (English WordNet contributors)",
+      "compliance_status": "COMPLIANT",
+      "notes": "Permissive open lexical database, fully compatible with university deployment and production web delivery."
+    },
+    {
+      "source_id": "tatoeba",
+      "source_name": "Tatoeba Collaborative Translation Project (English Sentences)",
+      "origin_url": "https://tatoeba.org/",
+      "dataset_version": "2024.1",
+      "license_type": "CC BY 2.0 FR",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "Sentences from Tatoeba Project (https://tatoeba.org) contributed by community members under CC BY 2.0 FR.",
+      "compliance_status": "COMPLIANT",
+      "notes": "Text sentences strictly licensed under CC BY 2.0 FR. Audio recordings excluded due to non-commercial licenses."
+    },
+    {
+      "source_id": "lexitron_2_0",
+      "source_name": "LEXiTRON 2.0 English-Thai Dictionary (NECTEC)",
+      "origin_url": "https://www.nectec.or.th/",
+      "dataset_version": "2.0",
+      "license_type": "NECTEC Adaptation License (Academic / Educational / Commercial Adaptation)",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "This product is created by the adaptation of LEXiTRON developed by NECTEC (http://www.nectec.or.th/).",
+      "compliance_status": "COMPLIANT",
+      "notes": "Official permission granted for adaptation and inclusion in learning platforms with required copyright notice."
+    },
+    {
+      "source_id": "cefr_j_1_5",
+      "source_name": "CEFR-J Vocabulary Profile Version 1.5",
+      "origin_url": "http://www.cefr-j.org/",
+      "dataset_version": "1.5",
+      "license_type": "CC BY-NC 4.0 / Educational License",
+      "commercial_use": "CONDITIONAL",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "CEFR-J project (http://www.cefr-j.org/)",
+      "compliance_status": "COMPLIANT",
+      "notes": "Used for non-commercial pedagogical leveling and reference curriculum alignment in educational settings."
+    },
+    {
+      "source_id": "cmudict_0_7b",
+      "source_name": "Carnegie Mellon Pronouncing Dictionary (CMUdict)",
+      "origin_url": "http://www.speech.cs.cmu.edu/cgi-bin/cmudict",
+      "dataset_version": "0.7b",
+      "license_type": "Public Domain / BSD License",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "Carnegie Mellon University Pronouncing Dictionary (CMUdict 0.7b)",
+      "compliance_status": "COMPLIANT",
+      "notes": "Unrestricted open phonetic resource."
+    },
+    {
+      "source_id": "frequency_ngsl_nawl",
+      "source_name": "New General Service List (NGSL) & New Academic Word List (NAWL)",
+      "origin_url": "https://www.newgeneralservicelist.com/",
+      "dataset_version": "1.2",
+      "license_type": "CC-BY-4.0",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "NO",
+      "required_attribution_notice": "Browne, C., Culligan, B., & Phillips, J. (2013). The New General Service List.",
+      "compliance_status": "COMPLIANT",
+      "notes": "Gold-standard frequency corpus, freely redistributable with academic citation."
+    },
+    {
+      "source_id": "wiktionary_omw_2024",
+      "source_name": "Wiktionary Thai Subset & Open Multilingual Wordnet (OMW)",
+      "origin_url": "http://compling.hss.ntu.edu.sg/omw/",
+      "dataset_version": "2024.1",
+      "license_type": "CC-BY-SA-4.0",
+      "commercial_use": "ALLOWED",
+      "attribution_required": "REQUIRED",
+      "share_alike": "YES",
+      "required_attribution_notice": "Open Multilingual Wordnet and Wiktionary contributors under CC-BY-SA 4.0.",
+      "compliance_status": "COMPLIANT",
+      "notes": "Used solely as secondary corroboration consensus evidence."
+    }
+  ],
+  "overall_compliance": "ALL_TOUCHED_SOURCES_COMPLIANT"
+}
