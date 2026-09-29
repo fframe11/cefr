@@ -40,6 +40,7 @@ import {
   GlovaNextMove,
 } from '../ui/GlovaPrimitives';
 import { RankEmblem } from '../ranked/RankEmblem';
+import { CampaignBanner } from '../dashboard/CampaignBanner';
 import { CEFRTier } from '@/lib/design-tokens/tokens';
 import { RankTier } from '../../types/gamification';
 
@@ -279,6 +280,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
             </div>
           </SpotlightCard>
+
+          {/* PROMOTIONAL CAMPAIGN & COMMUNITY EVENT CAROUSEL */}
+          <CampaignBanner onNavigate={(route) => onNavigate(route as NavView)} />
 
           {/* B. MAIN INTERACTIVE EXPERIENCE: GLOVA CEFR PROGRESSION MATRIX */}
           {activeTab === 'path' ? (

@@ -208,3 +208,5 @@ export interface UserProgressState {
   };
   quickWinCompleted?: boolean;
 }
+
+export * from './campaign';
