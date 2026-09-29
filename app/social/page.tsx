@@ -362,7 +362,7 @@ export default function SocialPage() {
           }`}
         >
           <BookOpen className="w-3.5 h-3.5" />
-          <span>{isEn ? 'Study Together (Duo)' : 'เรียนคู่ (Duo)'}</span>
+          <span>{isEn ? 'Study Together Duo' : 'เรียนรู้คู่เพื่อนสนิท'}</span>
         </button>
       </div>
 

@@ -308,7 +308,7 @@ export default function ProfilePage() {
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400">
-                      ผู้ใช้ทั่วไป (Guest)
+                      {isEn ? 'Guest Learner' : 'ผู้ใช้ทั่วไป'}
                     </span>
                   )}
                 </div>
@@ -356,7 +356,7 @@ export default function ProfilePage() {
             </div>
           </section>
 
-          {/* 2. สถิติ (STATISTICS 2x2 GRID) */}
+          {/* 2. Statistics Grid */}
           <section className="space-y-4">
             <h2 className="text-lg font-black text-foreground tracking-tight">สถิติ</h2>
 
@@ -440,7 +440,7 @@ export default function ProfilePage() {
             </div>
           </section>
 
-          {/* 3. ความสำเร็จ (ACHIEVEMENTS LIST) */}
+          {/* 3. Achievements List */}
           <section className="space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-black text-foreground tracking-tight">ความสำเร็จ</h2>
@@ -462,7 +462,7 @@ export default function ProfilePage() {
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">เพลิงพระกาฬ (Fire Starter)</span>
+                      <span className="text-sm font-bold text-foreground">{isEn ? 'Fire Starter' : 'เพลิงพระกาฬ'}</span>
                       <span className="rounded-md bg-amber-500/15 px-2 py-0.5 text-[10px] font-black text-amber-700 dark:text-amber-300">
                         ระดับ 1
                       </span>
@@ -484,7 +484,7 @@ export default function ProfilePage() {
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">นักปราชญ์ (Scholar)</span>
+                      <span className="text-sm font-bold text-foreground">{isEn ? 'Scholar' : 'นักปราชญ์'}</span>
                       <span className="rounded-md bg-indigo-500/15 px-2 py-0.5 text-[10px] font-black text-indigo-700 dark:text-indigo-300">
                         ระดับ 1
                       </span>
@@ -506,7 +506,7 @@ export default function ProfilePage() {
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">แชมเปี้ยนลีก (Champion)</span>
+                      <span className="text-sm font-bold text-foreground">{isEn ? 'Champion' : 'แชมเปี้ยนลีก'}</span>
                       <span className="rounded-md bg-emerald-500/15 px-2 py-0.5 text-[10px] font-black text-emerald-700 dark:text-emerald-300">
                         ระดับ 1
                       </span>
@@ -522,7 +522,7 @@ export default function ProfilePage() {
             </div>
           </section>
 
-          {/* 4. การตั้งค่าเป้าหมายการเรียน (LEARNING GOALS) */}
+          {/* 4. Learning Goals */}
           <section className="rounded-3xl border border-border/60 bg-card p-6 shadow-xs space-y-5">
             <div className="flex items-center justify-between border-b border-border/40 pb-3">
               <div className="flex items-center gap-2">
@@ -535,7 +535,7 @@ export default function ProfilePage() {
             {/* Target Exam Pills */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                การสอบเป้าหมาย (Cambridge Exam Target)
+                {isEn ? 'Target Cambridge Exam' : 'การสอบเคมบริดจ์เป้าหมาย'}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 {CAMBRIDGE_EXAMS.map((exam) => {
@@ -742,7 +742,7 @@ export default function ProfilePage() {
               <div className="flex justify-between py-1.5 border-b border-border/40">
                 <span className="text-muted-foreground">สถานะ</span>
                 <span className="font-semibold text-foreground">
-                  {isAuthenticated ? 'สมาชิกที่ยืนยันแล้ว' : 'ผู้ใช้ทั่วไป (Guest)'}
+                  {isAuthenticated ? (isEn ? 'Verified Member' : 'สมาชิกที่ยืนยันแล้ว') : (isEn ? 'Guest Learner' : 'ผู้ใช้ทั่วไป')}
                 </span>
               </div>
               {isAuthenticated && (

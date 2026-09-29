@@ -401,12 +401,12 @@ export default function CompetePage() {
                   className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-700 px-8 py-3.5 text-sm font-bold text-white shadow-md shadow-indigo-500/25 transition-all hover:brightness-105 active:scale-[0.98]"
                 >
                   <Swords className="h-4 w-4" />
-                  {isEn ? 'Start Quick Battle' : 'เริ่มประลองความเร็ว (Quick Play)'}
+                  {isEn ? 'Start Quick Battle' : 'เริ่มประลองความเร็วด่วน'}
                 </button>
               </div>
 
               <div className="mt-6 border-t border-border/40 pt-4 text-xs text-muted-foreground">
-                <span>โหมดนี้มอบแต้ม XP สำหรับกระดาน League แต่จะไม่เปลี่ยนแปลงคะแนน Rank Rating (MMR)</span>
+                <span>{isEn ? 'This mode grants XP for the League board without affecting Rank Rating MMR' : 'โหมดนี้มอบแต้ม XP สำหรับกระดาน League แต่จะไม่เปลี่ยนแปลงคะแนน Rank Rating MMR'}</span>
               </div>
             </div>
           )}
@@ -519,14 +519,14 @@ export default function CompetePage() {
                   onClick={handleStartQuickBattle}
                   className="w-full rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white transition-all hover:bg-indigo-700"
                 >
-                  เล่น Quick Play อีกรอบ
+                  {isEn ? 'Play Quick Battle Again' : 'เล่นประลองด่วนอีกรอบ'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setCompeteMode('ranked')}
                   className="w-full rounded-xl border border-amber-500/30 bg-amber-500/10 py-2.5 text-xs font-bold text-amber-700 dark:text-amber-300 transition-all hover:bg-amber-500/20"
                 >
-                  ลองเข้าเล่นโหมดจัดอันดับ (Ranked Battle)
+                  {isEn ? 'Try Ranked Battle' : 'ลองเข้าเล่นโหมดจัดอันดับ Ranked Battle'}
                 </button>
               </div>
             </div>

@@ -164,7 +164,7 @@ function RankingContent() {
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                    {data?.seasonName || 'Season 1 — University League'} • {isEn ? `Ends in ${data?.endsInDays || 4} days` : `เหลืออีก ${data?.endsInDays || 4} วัน`}
+                    {data?.seasonName || 'Season 1: University League'} • {isEn ? `Ends in ${data?.endsInDays || 4} days` : `เหลืออีก ${data?.endsInDays || 4} วัน`}
                   </p>
                 </div>
               </div>

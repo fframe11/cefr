@@ -28,28 +28,29 @@ interface MobileBottomNavProps {
 }
 
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, onSelectView }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const primaryItems = [
-    { id: 'dashboard' as NavView, icon: LayoutDashboard },
-    { id: 'vocabulary' as NavView, icon: BookOpen },
-    { id: 'grammar' as NavView, icon: Sparkles },
-    { id: 'reading' as NavView, icon: BookMarked },
-    { id: 'mockExam' as NavView, icon: GraduationCap },
+    { id: 'dashboard' as NavView, icon: LayoutDashboard, labelEn: 'Home', labelTh: 'หน้าหลัก' },
+    { id: 'vocabulary' as NavView, icon: BookOpen, labelEn: 'Vocab', labelTh: 'คำศัพท์' },
+    { id: 'compete' as NavView, icon: Swords, labelEn: 'Arena', labelTh: 'ประลอง' },
+    { id: 'mockExam' as NavView, icon: GraduationCap, labelEn: 'Exams', labelTh: 'ข้อสอบ' },
+    { id: 'profile' as NavView, icon: User, labelEn: 'Profile', labelTh: 'โปรไฟล์' },
   ];
 
   const secondaryItems = [
-    { id: 'compete' as NavView, icon: Swords },
-    { id: 'ranking' as NavView, icon: Trophy },
-    { id: 'social' as NavView, icon: Users },
-    { id: 'achievements' as NavView, icon: Award },
-    { id: 'profile' as NavView, icon: User },
-    { id: 'assessment' as NavView, icon: ClipboardCheck },
-    { id: 'listening' as NavView, icon: Headphones },
-    { id: 'writing' as NavView, icon: PenTool },
-    { id: 'speaking' as NavView, icon: Mic },
-    { id: 'analytics' as NavView, icon: BarChart2 },
+    { id: 'grammar' as NavView, icon: Sparkles, labelEn: 'Grammar Studio', labelTh: 'สตูดิโอไวยากรณ์' },
+    { id: 'reading' as NavView, icon: BookMarked, labelEn: 'Reading Lab', labelTh: 'อ่านจับใจความ' },
+    { id: 'listening' as NavView, icon: Headphones, labelEn: 'Listening Studio', labelTh: 'สตูดิโอการฟัง' },
+    { id: 'writing' as NavView, icon: PenTool, labelEn: 'Writing Workspace', labelTh: 'ฝึกการเขียน' },
+    { id: 'speaking' as NavView, icon: Mic, labelEn: 'Speaking Lab', labelTh: 'ฝึกการออกเสียง' },
+    { id: 'ranking' as NavView, icon: Trophy, labelEn: 'University League', labelTh: 'ลีกมหาวิทยาลัย' },
+    { id: 'social' as NavView, icon: Users, labelEn: 'Study Together', labelTh: 'อ่านหนังสือกับเพื่อน' },
+    { id: 'achievements' as NavView, icon: Award, labelEn: 'Trophy Hall', labelTh: 'เหรียญความสำเร็จ' },
+    { id: 'assessment' as NavView, icon: ClipboardCheck, labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR' },
+    { id: 'analytics' as NavView, icon: BarChart2, labelEn: 'Skill Analytics', labelTh: 'วิเคราะห์ทักษะ' },
   ];
 
   const handleSelect = (view: NavView) => {
@@ -62,18 +63,24 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
       {/* Mobile Drawer Overlay */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs md:hidden"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs md:hidden animate-in fade-in duration-150"
           onClick={() => setDrawerOpen(false)}
         >
           <div
-            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-card border-t border-border rounded-t-2xl p-4 pb-safe animate-in slide-in-from-bottom duration-200"
+            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#FFFDF8] dark:bg-card border-t border-[#EDE8DF] dark:border-border rounded-t-3xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3 border-b border-border/40 mb-3">
-              <span className="font-semibold text-sm text-foreground">{t('nav.more_menu')}</span>
+            <div className="flex items-center justify-between pb-3.5 border-b border-[#EDE8DF] dark:border-border/40 mb-3">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#5B5CE2]" />
+                <span className="font-bold text-sm text-foreground font-display">
+                  {isEn ? 'All Learning Studios & Practice' : 'ทุกสตูดิโอและการฝึกฝน'}
+                </span>
+              </div>
               <button
+                type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="p-1.5 text-muted-foreground hover:text-foreground touch-target"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-[#EDE8DF]/60 transition-colors"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -87,17 +94,18 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                 return (
                   <button
                     key={item.id}
+                    type="button"
                     onClick={() => handleSelect(item.id)}
-                    className={`flex items-center gap-3 p-3 rounded-xl transition-all touch-target text-left ${
+                    className={`flex items-center gap-3 p-3 rounded-2xl transition-all text-left active:scale-[0.98] ${
                       isActive
-                        ? 'bg-primary/10 text-primary font-medium border border-primary/20'
-                        : 'text-foreground hover:bg-muted/60'
+                        ? 'bg-[#5B5CE2] text-white font-bold shadow-xs'
+                        : 'text-foreground hover:bg-[#E9E5FF]/40 dark:hover:bg-muted/40 font-medium'
                     }`}
                   >
-                    <Icon className="w-5 h-5 text-primary shrink-0" />
-                    <div className="min-w-0">
-                      <span className="block text-sm font-medium">{t(`nav.${item.id}`)}</span>
-                    </div>
+                    <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#5B5CE2] dark:text-indigo-400'}`} />
+                    <span className="text-xs font-display flex-1">
+                      {isEn ? item.labelEn : item.labelTh}
+                    </span>
                   </button>
                 );
               })}
@@ -108,41 +116,44 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
 
       {/* Fixed Bottom Bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-border/50 pb-safe shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#FFFDF8]/95 dark:bg-card/95 backdrop-blur-md border-t border-[#EDE8DF] dark:border-border/50 pb-safe shadow-lg"
         aria-label="Mobile Navigation"
       >
-        <div className="grid grid-cols-6 items-center h-15 px-1">
+        <div className="grid grid-cols-6 items-center h-16 px-1">
           {primaryItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
             return (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => onSelectView(item.id)}
-                className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all ${
-                  isActive ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-foreground'
+                className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
+                  isActive ? 'text-[#5B5CE2] dark:text-indigo-400 font-bold' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                <Icon className={`w-5 h-5 transition-all duration-150 ${isActive ? 'scale-110' : ''}`} />
-                <span className="text-[10px] mt-0.5 tracking-tight truncate max-w-full px-0.5">
-                  {t(`nav.${item.id}`)}
+                <Icon className={`w-4 h-4 transition-transform duration-150 ${isActive ? 'scale-115 text-[#5B5CE2]' : ''}`} />
+                <span className="text-[10px] mt-1 tracking-tight truncate max-w-full px-0.5 font-display">
+                  {isEn ? item.labelEn : item.labelTh}
                 </span>
+                {isActive && <span className="w-1 h-1 rounded-full bg-[#5B5CE2] mt-0.5" />}
               </button>
             );
           })}
 
           {/* More Menu Toggle */}
           <button
+            type="button"
             onClick={() => setDrawerOpen(true)}
-            className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all ${
+            className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
               drawerOpen || secondaryItems.some((s) => s.id === currentView)
-                ? 'text-primary font-semibold'
+                ? 'text-[#5B5CE2] font-bold'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
             aria-label="More navigation options"
           >
-            <MoreHorizontal className="w-5 h-5" />
-            <span className="text-[10px] mt-0.5">{t('common.more')}</span>
+            <MoreHorizontal className="w-4 h-4" />
+            <span className="text-[10px] mt-1 font-display">{isEn ? 'More' : 'เพิ่มเติม'}</span>
           </button>
         </div>
       </nav>

@@ -110,7 +110,7 @@ export const WritingView: React.FC = () => {
     setIsSubmitted(true);
     showToast(
       isEn ? 'Writing submitted' : 'ส่งงานเขียนเข้าสู่ระบบแล้ว',
-      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล',
+      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว อยู่ระหว่างรอการประเมินผล',
       'success'
     );
   };
@@ -200,7 +200,7 @@ export const WritingView: React.FC = () => {
               <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
                 <span>{isEn ? 'Target Word Count:' : 'เกณฑ์ความยาว:'}</span>
                 <span className="px-2 py-0.5 rounded-md bg-secondary text-foreground font-mono font-semibold">
-                  {currentPrompt.minWords}–{currentPrompt.maxWords} {isEn ? 'words' : 'คำ'}
+                  {currentPrompt.minWords}-{currentPrompt.maxWords} {isEn ? 'words' : 'คำ'}
                 </span>
               </div>
             </div>
@@ -331,8 +331,8 @@ export const WritingView: React.FC = () => {
                 <Clock className="w-4 h-4" aria-hidden="true" />
                 <span>
                   {isEn
-                    ? 'Response Recorded — Pending Cambridge Rubric Evaluation'
-                    : 'บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
+                    ? 'Response Recorded: Pending Cambridge Rubric Evaluation'
+                    : 'บันทึกงานเขียนสำเร็จ อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
                 </span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">

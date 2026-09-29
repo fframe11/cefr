@@ -98,7 +98,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         title: isEn ? 'Take CEFR Diagnostic Assessment' : 'ทำแบบทดสอบวัดระดับ CEFR Diagnostic Test',
         description: isEn
           ? 'Comprehensive 8-minute assessment across all CEFR bands (A1-C2) to generate your custom path.'
-          : 'ประเมินระดับความสามารถทางภาษาอังกฤษรอบด้าน (A1-C2) เพื่อปลดล็อกเส้นทางการเรียนเฉพาะคุณ',
+          : 'ประเมินระดับความสามารถทางภาษาอังกฤษรอบด้านครอบคลุม A1 ถึง C2 เพื่อปลดล็อกเส้นทางการเรียนเฉพาะคุณ',
         cta: isEn ? 'START ASSESSMENT' : 'เริ่มวัดระดับภาษา',
         skill: 'Diagnostic Placement',
         timeMin: 8,
@@ -274,7 +274,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   className="sm:w-auto"
                   leftIcon={<Swords className="w-4 h-4 text-[#5B5CE2]" />}
                 >
-                  {isEn ? 'Vocab Battle (4s)' : 'ประลองศัพท์ด่วน (4s)'}
+                  {isEn ? 'Vocab Battle 4s' : 'ประลองศัพท์ด่วน 4 วินาที'}
                 </TactileButton>
               </div>
             </div>
@@ -425,7 +425,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 },
                 {
                   id: 'compete',
-                  title: isEn ? 'Ranked Vocab Battle' : 'ประลองคำศัพท์จัดอันดับ (4s)',
+                  title: isEn ? 'Ranked Vocab Battle' : 'ประลองคำศัพท์จัดอันดับ 4 วินาที',
                   desc: isEn ? 'Fast-paced 4-second reflex challenges against university peers.' : 'ท้าทายความเร็วข้อละ 4 วินาที ไต่อันดับ MMR ในแรงก์ลีก',
                   icon: <Swords className="w-6 h-6 text-[#FF8F82]" />,
                   color: 'from-rose-500/10 to-rose-500/5',
