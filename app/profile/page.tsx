@@ -95,7 +95,10 @@ export default function ProfilePage() {
   );
   const [currentRankFrame, setCurrentRankFrame] = useState<RankFrameId>(
     (typeof window !== 'undefined' ? (localStorage.getItem('glova_rank_frame') as RankFrameId) : null) ||
-      'gaming_1'
+      'lottie_cyber_apex'
+  );
+  const [currentCustomFrameUrl, setCurrentCustomFrameUrl] = useState<string>(
+    (typeof window !== 'undefined' ? localStorage.getItem('glova_custom_frame_url') || '' : '')
   );
 
   // Ranked Competitive Profile
@@ -140,6 +143,8 @@ export default function ProfilePage() {
       if (stored) setCurrentAvatarUrl(stored);
       const frameStored = localStorage.getItem('glova_rank_frame') as RankFrameId | null;
       if (frameStored) setCurrentRankFrame(frameStored);
+      const customUrlStored = localStorage.getItem('glova_custom_frame_url');
+      if (customUrlStored) setCurrentCustomFrameUrl(customUrlStored);
     }
   }, [user]);
 
@@ -158,12 +163,18 @@ export default function ProfilePage() {
     setDisplayNameInput(currentName);
   }, [user]);
 
-  const handleSaveAvatar = async (newUrl: string, newFrame: RankFrameId) => {
+  const handleSaveAvatar = async (newUrl: string, newFrame: RankFrameId, customUrl?: string) => {
     setCurrentAvatarUrl(newUrl);
     setCurrentRankFrame(newFrame);
+    setCurrentCustomFrameUrl(customUrl || '');
     if (typeof window !== 'undefined') {
       localStorage.setItem('glova_custom_avatar_url', newUrl);
       localStorage.setItem('glova_rank_frame', newFrame);
+      if (customUrl) {
+        localStorage.setItem('glova_custom_frame_url', customUrl);
+      } else {
+        localStorage.removeItem('glova_custom_frame_url');
+      }
     }
     await updateAvatarUrl(newUrl);
   };
@@ -243,6 +254,7 @@ export default function ProfilePage() {
                   avatarUrl={currentAvatarUrl}
                   username={displayName}
                   frameId={currentRankFrame}
+                  customAnimationUrl={currentCustomFrameUrl || undefined}
                   size="xl"
                 />
 
@@ -777,6 +789,7 @@ export default function ProfilePage() {
         <AvatarEditorModal
           currentAvatarUrl={currentAvatarUrl}
           currentFrameId={currentRankFrame}
+          currentCustomFrameUrl={currentCustomFrameUrl}
           onSave={handleSaveAvatar}
           onClose={() => setAvatarModalOpen(false)}
         />

@@ -8,9 +8,11 @@ import { RankFrameId } from '@/types/gamification';
 interface AvatarEditorModalProps {
   currentAvatarUrl: string;
   currentFrameId: RankFrameId;
-  onSave: (avatarUrl: string, frameId: RankFrameId) => Promise<void>;
+  currentCustomFrameUrl?: string;
+  onSave: (avatarUrl: string, frameId: RankFrameId, customUrl?: string) => Promise<void>;
   onClose: () => void;
 }
+import { LOTTIE_FRAME_METADATA, LottieFrameId } from '../gamification/LottieProfileFrame';
 
 // Curated high quality avatars matching Glova university/student brand aesthetic
 const PRESET_AVATARS = [
@@ -24,23 +26,32 @@ const PRESET_AVATARS = [
   'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=240&auto=format&fit=crop&q=80',
 ];
 
-const AVAILABLE_FRAMES: RankFrameId[] = [
-  'cute_1',
-  'cute_2',
-  'cute_3',
+const LOTTIE_FRAMES: LottieFrameId[] = [
+  'lottie_cyber_apex',
+  'lottie_solar_radiance',
+  'lottie_mystic_emerald',
+  'lottie_sakura_starlight',
+];
+
+const CLASSIC_FRAMES: RankFrameId[] = [
   'gaming_1',
   'gaming_2',
   'gaming_3',
+  'cute_1',
+  'cute_2',
+  'cute_3',
 ];
 
 export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
   currentAvatarUrl,
   currentFrameId,
+  currentCustomFrameUrl,
   onSave,
   onClose,
 }) => {
   const [selectedAvatar, setSelectedAvatar] = useState<string>(currentAvatarUrl);
   const [selectedFrame, setSelectedFrame] = useState<RankFrameId>(currentFrameId);
+  const [customUrlInput, setCustomUrlInput] = useState<string>(currentCustomFrameUrl || '');
   const [isSaving, setIsSaving] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -66,7 +77,7 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
   const handleConfirm = async () => {
     setIsSaving(true);
     try {
-      await onSave(selectedAvatar, selectedFrame);
+      await onSave(selectedAvatar, selectedFrame, customUrlInput.trim() || undefined);
       onClose();
     } finally {
       setIsSaving(false);
@@ -104,10 +115,11 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
               avatarUrl={selectedAvatar}
               username="ตัวอย่าง"
               frameId={selectedFrame}
+              customAnimationUrl={customUrlInput.trim() || undefined}
               size="xl"
             />
             <p className="mt-3 text-xs font-semibold text-foreground">
-              กรอบปัจจุบัน: {RANK_FRAME_METADATA[selectedFrame]?.nameTh || 'ไม่มีกรอบ'}
+              กรอบปัจจุบัน: {customUrlInput.trim() ? 'URL อนิเมชันสาธารณะที่กำหนดเอง' : (RANK_FRAME_METADATA[selectedFrame]?.nameTh || 'ไม่มีกรอบ')}
             </p>
           </div>
 
@@ -168,13 +180,66 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
             </div>
           </div>
 
-          {/* Rank Frame Selector */}
+          {/* Lottie Open Source Animated Frames */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                3. กรอบอนิเมชัน Lottie (Open Source ถูกลิขสิทธิ์ 100%)
+              </h4>
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <Check className="h-3 w-3" />
+                <span>CC / MIT License (ปลอดภัย 100%)</span>
+              </span>
+            </div>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {LOTTIE_FRAMES.map((fId) => {
+                const isSelected = selectedFrame === fId;
+                const meta = LOTTIE_FRAME_METADATA[fId];
+                return (
+                  <button
+                    key={`lottie_frame_${fId}`}
+                    type="button"
+                    onClick={() => setSelectedFrame(fId)}
+                    className={`flex items-start gap-2.5 rounded-2xl border p-2.5 text-left transition-all ${
+                      isSelected
+                        ? 'border-emerald-500 bg-emerald-500/10 shadow-sm ring-1 ring-emerald-500/30 font-bold'
+                        : 'border-border/60 hover:border-emerald-500/40 hover:bg-muted/30'
+                    }`}
+                  >
+                    <span
+                      className="mt-0.5 h-3.5 w-3.5 rounded-full shrink-0 shadow-sm animate-pulse"
+                      style={{ backgroundColor: meta.color }}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="block text-xs font-bold truncate text-foreground">
+                          {meta.nameTh}
+                        </span>
+                        <span className="rounded bg-background/80 px-1 py-0.5 text-[8px] font-mono text-muted-foreground border border-border/40 shrink-0">
+                          Lottie
+                        </span>
+                      </div>
+                      <span className="block text-[10px] text-muted-foreground truncate">
+                        {meta.nameEn}
+                      </span>
+                      <div className="mt-1 flex items-center gap-1 text-[9px] text-emerald-600 dark:text-emerald-400 font-medium">
+                        <Sparkles className="h-2.5 w-2.5" />
+                        <span>Public Animated URL • {meta.license.split(' ')[0]}</span>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Classic SVG Vector Frames */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-              3. เลือกกรอบยศประจำตัว (Rank Frame)
+              4. หรือเลือกกรอบเวกเตอร์ Classic (Vector Halo)
             </h4>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {AVAILABLE_FRAMES.map((fId) => {
+              {CLASSIC_FRAMES.map((fId) => {
                 const isSelected = selectedFrame === fId;
                 const meta = RANK_FRAME_METADATA[fId];
                 return (
@@ -203,6 +268,53 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
                   </button>
                 );
               })}
+            </div>
+          </div>
+
+          {/* 5. Custom Public Lottie Animation URL Input */}
+          <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 space-y-2.5">
+            <div className="flex items-center justify-between">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
+                <span>5. หรือใส่ URL อนิเมชัน Lottie สาธารณะโดยตรง</span>
+              </h4>
+              <span className="text-[10px] font-mono text-muted-foreground">JSON / CDN</span>
+            </div>
+            <p className="text-[11px] text-muted-foreground">
+              สามารถใส่ Direct URL ของไฟล์ Lottie JSON จาก GitHub, jsdelivr, หรือ CDN สาธารณะที่ปลอดภัย
+            </p>
+            <div className="flex gap-2">
+              <input
+                type="url"
+                value={customUrlInput}
+                onChange={(e) => setCustomUrlInput(e.target.value)}
+                placeholder="https://raw.githubusercontent.com/.../data.json"
+                className="flex-1 rounded-xl border border-border/60 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20 font-mono"
+              />
+              {customUrlInput && (
+                <button
+                  type="button"
+                  onClick={() => setCustomUrlInput('')}
+                  className="rounded-xl px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-muted"
+                  title="ล้างค่า URL"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+            {customUrlInput.trim().startsWith('http') && (
+              <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
+                <Check className="h-3 w-3" />
+                <span>กำลังพรีวิวกรอบจาก URL สาธารณะที่ระบุ</span>
+              </p>
+            )}
+            <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-2.5 text-[11px] text-amber-700 dark:text-amber-300">
+              <p className="font-semibold flex items-center gap-1">
+                <span>🛡️ ความปลอดภัยลิขสิทธิ์ 100%</span>
+              </p>
+              <p className="text-[10px] text-muted-foreground mt-0.5">
+                ระบบ Glova อนุญาตเฉพาะไฟล์โอเพนซอร์ส (MIT, CC0, CC-BY) หรือ Public Domain เท่านั้น ห้ามนำ Assets ลิขสิทธิ์ของ Discord หรือ Steam มาใช้
+              </p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { RankFrameId } from '../../types/gamification';
 
 interface RankFrameProps {
   frameId?: RankFrameId;
+  customAnimationUrl?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   children?: React.ReactNode;
   avatarUrl?: string;
@@ -19,6 +20,8 @@ const SIZE_MAP = {
   lg: { container: 'w-20 h-20', svgSize: 96, avatarSize: 64 },
   xl: { container: 'w-28 h-28', svgSize: 136, avatarSize: 90 },
 };
+
+import { LottieProfileFrame, LOTTIE_FRAME_METADATA } from './LottieProfileFrame';
 
 export const RANK_FRAME_METADATA: Record<
   RankFrameId,
@@ -66,10 +69,39 @@ export const RANK_FRAME_METADATA: Record<
     rank: 3,
     color: '#06B6D4',
   },
+  lottie_cyber_apex: {
+    nameEn: 'Cyber Apex Pulsar (Lottie)',
+    nameTh: 'วงแหวนไซเบอร์พัลส์นีออน (Lottie)',
+    category: 'gaming',
+    rank: 1,
+    color: '#00F0FF',
+  },
+  lottie_solar_radiance: {
+    nameEn: 'Solar Radiance Flame (Lottie)',
+    nameTh: 'สุริยะรัศมีเพลิงทองคำ (Lottie)',
+    category: 'gaming',
+    rank: 2,
+    color: '#FFB800',
+  },
+  lottie_mystic_emerald: {
+    nameEn: 'Mystic Emerald Vortex (Lottie)',
+    nameTh: 'วอร์เท็กซ์มนตราหยกมรกต (Lottie)',
+    category: 'cute',
+    rank: 3,
+    color: '#10B981',
+  },
+  lottie_sakura_starlight: {
+    nameEn: 'Sakura Starlight Bloom (Lottie)',
+    nameTh: 'กลีบซากุระประกายดาวพาสเทล (Lottie)',
+    category: 'cute',
+    rank: 2,
+    color: '#F43F5E',
+  },
 };
 
 export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
   frameId,
+  customAnimationUrl,
   size = 'md',
   children,
   avatarUrl,
@@ -92,6 +124,23 @@ export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
       </div>
     )
   );
+
+  // If custom animation URL is provided or lottie frame selected, delegate to LottieProfileFrame
+  if (customAnimationUrl || (frameId && (frameId.startsWith('lottie_') || frameId in LOTTIE_FRAME_METADATA))) {
+    return (
+      <LottieProfileFrame
+        frameId={frameId as any}
+        customAnimationUrl={customAnimationUrl}
+        size={size}
+        avatarUrl={avatarUrl}
+        username={username}
+        className={className}
+        showBadge={showBadge}
+      >
+        {children}
+      </LottieProfileFrame>
+    );
+  }
 
   if (!frameId) {
     return (

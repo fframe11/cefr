@@ -40,13 +40,34 @@ export interface UserGameProfile {
 
 export type RankTier = 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond';
 
+export type LottieFrameId =
+  | 'lottie_cyber_apex'
+  | 'lottie_solar_radiance'
+  | 'lottie_mystic_emerald'
+  | 'lottie_sakura_starlight';
+
 export type RankFrameId =
   | 'cute_1'
   | 'cute_2'
   | 'cute_3'
   | 'gaming_1'
   | 'gaming_2'
-  | 'gaming_3';
+  | 'gaming_3'
+  | LottieFrameId;
+
+export interface LottieFrameMetadata {
+  id: LottieFrameId;
+  nameEn: string;
+  nameTh: string;
+  category: 'gaming' | 'cute';
+  rank: 1 | 2 | 3;
+  color: string;
+  animationUrl: string;
+  fallbackJsonPath: string;
+  license: string;
+  licenseUrl: string;
+  author: string;
+}
 
 export type FrameCategory = 'cute' | 'gaming';
 
