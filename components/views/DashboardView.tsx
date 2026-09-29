@@ -36,6 +36,8 @@ import {
   AnimatedNumber,
   SpotlightCard,
   LearningPathNode,
+  GlovaCartridge,
+  GlovaNextMove,
 } from '../ui/GlovaPrimitives';
 import { RankEmblem } from '../ranked/RankEmblem';
 import { CEFRTier } from '@/lib/design-tokens/tokens';
@@ -278,48 +280,127 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           </SpotlightCard>
 
-          {/* B. MAIN INTERACTIVE EXPERIENCE: PATH vs STUDIOS */}
+          {/* B. MAIN INTERACTIVE EXPERIENCE: GLOVA CEFR PROGRESSION MATRIX */}
           {activeTab === 'path' ? (
-            <div className="rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-10 shadow-xs relative overflow-hidden">
+            <div className="rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6">
               {/* Unit Progression Header */}
-              <div className="flex items-center justify-between pb-6 border-b border-[#EDE8DF] dark:border-border/30 gap-4 flex-wrap">
+              <div className="flex items-center justify-between pb-5 border-b border-[#EDE8DF] dark:border-border/30 gap-4 flex-wrap">
                 <div>
-                  <span className="text-xs font-bold text-[#5B5CE2] dark:text-indigo-400 uppercase tracking-wider">
-                    {isEn ? 'Active Unit 2 of 6' : 'บทเรียนปัจจุบัน: ตอนที่ 2 จาก 6'}
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-black text-foreground">
-                    {isEn ? 'Campus Life & Academic Collocations' : 'ชีวิตในมหาวิทยาลัยและคำศัพท์เชิงวิชาการ'}
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-[#5B5CE2] dark:text-indigo-400 uppercase tracking-wider font-tech">
+                      {isEn ? `Tier Progression: ${progress.currentLevel} → ${nextLvl}` : `ระดับการพัฒนา: ${progress.currentLevel} → ${nextLvl}`}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E9E5FF] text-[#5B5CE2]">
+                      {isEn ? 'Term 1 Active' : 'ภาคการเรียนที่ 1'}
+                    </span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-black text-foreground mt-0.5">
+                    {isEn ? 'Core Academic & Conversational Modules' : 'โมดูลภาษาอังกฤษเชิงวิชาการและการสื่อสาร'}
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold text-muted-foreground">3 / 6 Done</span>
+                <div className="flex items-center gap-3">
+                  <div className="text-right">
+                    <span className="text-xs font-bold text-foreground">3 / 6 {isEn ? 'Modules' : 'โมดูล'}</span>
+                    <div className="text-[10px] text-muted-foreground font-mono">50% Complete</div>
+                  </div>
                   <div className="w-24 h-2.5 rounded-full bg-[#EDE8DF] dark:bg-muted overflow-hidden">
-                    <div className="h-full rounded-full bg-emerald-500 w-[50%]" />
+                    <div className="h-full rounded-full bg-[#10B981] w-[50%]" />
                   </div>
                 </div>
               </div>
 
-              {/* Duolingo-inspired Stepped Path */}
-              <div className="relative py-8 flex flex-col items-center">
-                {/* Visual curved path background track */}
-                <div className="absolute top-12 bottom-12 w-2 rounded-full bg-[#EDE8DF]/60 dark:bg-muted/40 -z-0" />
+              {/* Glova Signature Cartridge Grid (Original Product Identity) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <GlovaCartridge
+                  id="mod-1"
+                  level={progress.currentLevel}
+                  skill="vocabulary"
+                  title={isEn ? 'High-Frequency Vocabulary' : 'คำศัพท์ความถี่สูงระดับพื้นฐาน'}
+                  subtitle={isEn ? 'Essential Oxford & Cambridge academic words' : 'คลังคำศัพท์จำเป็นสำหรับการเรียนและการสอบ'}
+                  status="completed"
+                  progress={100}
+                  lessonsCount={5}
+                  completedCount={5}
+                  xpReward={15}
+                  estimatedMinutes={4}
+                  onLaunch={() => onNavigate('vocabulary')}
+                />
 
-                <div className="w-full space-y-4">
-                  {pathNodes.map((node) => (
-                    <LearningPathNode
-                      key={node.id}
-                      level={node.level}
-                      unitTitle={node.unitTitle}
-                      topicTitle={node.topicTitle}
-                      status={node.status}
-                      xpReward={node.xpReward}
-                      offsetPercent={node.offsetPercent}
-                      ctaText={node.ctaText}
-                      onClick={node.onClick}
-                    />
-                  ))}
-                </div>
+                <GlovaCartridge
+                  id="mod-2"
+                  level={progress.currentLevel}
+                  skill="grammar"
+                  title={isEn ? 'Past vs. Present Perfect Tenses' : 'อดีตจบแล้ว vs ยังส่งผลถึงปัจจุบัน'}
+                  subtitle={isEn ? 'Sentence structures with timeline analysis' : 'โครงสร้างประโยคพร้อมโมชันไทม์ไลน์'}
+                  status="in-progress"
+                  progress={60}
+                  lessonsCount={5}
+                  completedCount={3}
+                  xpReward={20}
+                  estimatedMinutes={5}
+                  onLaunch={() => primaryAction.onStart()}
+                />
+
+                <GlovaCartridge
+                  id="mod-3"
+                  level={progress.currentLevel}
+                  skill="reading"
+                  title={isEn ? 'Contextual Campus Reading' : 'อ่านจับใจความและบทความมหาวิทยาลัย'}
+                  subtitle={isEn ? 'Skimming, scanning, and main idea extraction' : 'ฝึกการจับใจความและคำถามเชิงลึก'}
+                  status="ready"
+                  progress={0}
+                  lessonsCount={4}
+                  completedCount={0}
+                  xpReward={15}
+                  estimatedMinutes={6}
+                  onLaunch={() => onNavigate('reading')}
+                />
+
+                <GlovaCartridge
+                  id="mod-4"
+                  level={progress.currentLevel}
+                  skill="listening"
+                  title={isEn ? 'Conversational Audio & Nuance' : 'ฟังบทสนทนาและจับสำเนียง'}
+                  subtitle={isEn ? 'Real-world dialogues with native speaker audio' : 'ฟังและจับใจความบทสนทนาสถานการณ์จริง'}
+                  status="ready"
+                  progress={0}
+                  lessonsCount={4}
+                  completedCount={0}
+                  xpReward={15}
+                  estimatedMinutes={5}
+                  onLaunch={() => onNavigate('listening')}
+                />
+
+                <GlovaCartridge
+                  id="mod-5"
+                  level={nextLvl}
+                  skill="ranked"
+                  title={isEn ? '4s Speed Vocab Duel' : 'ประลองความเร็วคำศัพท์ 4 วินาที'}
+                  subtitle={isEn ? 'Test reflex and gain MMR in ranked arena' : 'ท้าทายความเร็วและไต่อันดับลีก'}
+                  status="ready"
+                  progress={30}
+                  lessonsCount={10}
+                  completedCount={3}
+                  xpReward={25}
+                  estimatedMinutes={3}
+                  onLaunch={() => onNavigate('compete')}
+                />
+
+                <GlovaCartridge
+                  id="mod-6"
+                  level={nextLvl}
+                  skill="writing"
+                  title={isEn ? `Checkpoint: ${progress.targetExam} Mock` : `ด่านวัดผล: ${progress.targetExam} Mock Exam`}
+                  subtitle={isEn ? 'Full Cambridge simulation to unlock next CEFR tier' : 'ข้อสอบจำลองเคมบริดจ์เพื่อปลดล็อกขั้นถัดไป'}
+                  status="locked"
+                  progress={0}
+                  lessonsCount={1}
+                  completedCount={0}
+                  xpReward={50}
+                  estimatedMinutes={20}
+                  onLaunch={() => onNavigate('mockExam')}
+                />
               </div>
             </div>
           ) : (

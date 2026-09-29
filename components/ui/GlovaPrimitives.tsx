@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Check, Lock, Sparkles, Star, Trophy, Zap, AlertCircle, ArrowRight } from 'lucide-react';
+import { Check, Lock, Sparkles, Star, Trophy, Zap, AlertCircle, ArrowRight, Clock } from 'lucide-react';
 
 // ============================================================================
 // 1. UIVERSE-INSPIRED TACTILE BUTTONS & MICRO-CONTROLS
@@ -263,7 +263,221 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
 };
 
 // ============================================================================
-// 5. DUOLINGO-INSPIRED LEARNING PATH NODE
+// 5. GLOVA SIGNATURE LEARNING MODULE CARTRIDGE (ORIGINAL PRODUCT IDENTITY)
+// ============================================================================
+
+export interface GlovaCartridgeProps {
+  id: string;
+  level: string; // A1, A2, B1, B2, C1, C2
+  skill: 'vocabulary' | 'grammar' | 'reading' | 'listening' | 'speaking' | 'writing' | 'ranked';
+  title: string;
+  subtitle?: string;
+  status: 'ready' | 'in-progress' | 'completed' | 'locked';
+  progress?: number; // 0 to 100
+  lessonsCount?: number;
+  completedCount?: number;
+  xpReward?: number;
+  estimatedMinutes?: number;
+  onLaunch?: () => void;
+  className?: string;
+}
+
+export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
+  id,
+  level,
+  skill,
+  title,
+  subtitle,
+  status,
+  progress = 0,
+  lessonsCount = 5,
+  completedCount = 0,
+  xpReward = 15,
+  estimatedMinutes = 5,
+  onLaunch,
+  className = '',
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  const skillColorMap = {
+    vocabulary: 'text-[#5B5CE2] bg-[#E9E5FF] border-[#C6BEF7]',
+    grammar: 'text-[#24233A] bg-[#F6D978] border-[#CCA735]',
+    reading: 'text-[#134E48] bg-[#B9E8D3] border-[#88C6AB]',
+    listening: 'text-[#9D174D] bg-[#FFE4E6] border-[#FDA4AF]',
+    speaking: 'text-[#9A3412] bg-[#FFEDD5] border-[#FDBA74]',
+    writing: 'text-[#5B5CE2] bg-[#E9E5FF] border-[#C6BEF7]',
+    ranked: 'text-white bg-[#5B5CE2] border-[#4041B5]',
+  }[skill];
+
+  return (
+    <motion.div
+      whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
+      className={`relative p-5 rounded-2xl bg-[#FFFDF8] dark:bg-card border transition-all duration-200 ${
+        status === 'ready'
+          ? 'border-[#5B5CE2] shadow-[0_8px_24px_-4px_rgba(91,92,226,0.12)] ring-1 ring-[#5B5CE2]/20'
+          : status === 'completed'
+          ? 'border-[#B9E8D3] shadow-[0_4px_16px_-4px_rgba(185,232,211,0.2)]'
+          : status === 'in-progress'
+          ? 'border-[#5B5CE2]/50 shadow-[0_4px_16px_-4px_rgba(91,92,226,0.08)]'
+          : 'border-[#EDE8DF] dark:border-border/40 opacity-70'
+      } ${className}`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-[#24233A] text-white">
+            {level}
+          </span>
+          <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
+            {skill}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
+          <Clock className="w-3.5 h-3.5 text-amber-500" />
+          <span>{estimatedMinutes}m</span>
+          <span className="text-[#24233A] dark:text-foreground font-bold">+{xpReward} XP</span>
+        </div>
+      </div>
+
+      <div className="mt-3.5 space-y-1">
+        <h4 className="text-base font-bold text-foreground tracking-tight leading-snug">
+          {title}
+        </h4>
+        {subtitle && (
+          <p className="text-xs text-muted-foreground leading-relaxed line-clamp-1">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      {status !== 'locked' && (
+        <div className="mt-4 pt-3 border-t border-[#EDE8DF] dark:border-border/40 flex items-center justify-between gap-3">
+          <div className="flex-1 space-y-1">
+            <div className="flex justify-between text-[11px] font-semibold text-muted-foreground">
+              <span>{status === 'completed' ? 'Completed' : `${completedCount}/${lessonsCount} Lessons`}</span>
+              <span>{Math.round(progress)}%</span>
+            </div>
+            <div className="w-full h-2 rounded-full bg-[#EDE8DF]/60 dark:bg-muted overflow-hidden">
+              <div
+                className={`h-full rounded-full transition-all duration-300 ${
+                  status === 'completed' ? 'bg-[#10B981]' : 'bg-[#5B5CE2]'
+                }`}
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
+
+          <div className="shrink-0">
+            <TactileButton
+              variant={status === 'completed' ? 'secondary' : status === 'ready' ? 'primary' : 'surface'}
+              size="sm"
+              onClick={onLaunch}
+              className="text-xs font-bold"
+            >
+              {status === 'completed' ? 'Review' : status === 'ready' ? 'Start' : 'Continue'}
+            </TactileButton>
+          </div>
+        </div>
+      )}
+
+      {status === 'locked' && (
+        <div className="mt-4 pt-3 border-t border-[#EDE8DF] dark:border-border/40 flex items-center justify-between text-xs text-muted-foreground font-semibold">
+          <span className="flex items-center gap-1.5">
+            <Lock className="w-3.5 h-3.5" /> Complete prior module
+          </span>
+          <span className="text-[11px]">Locked</span>
+        </div>
+      )}
+    </motion.div>
+  );
+};
+
+// ============================================================================
+// 5.1 GLOVA SIGNATURE "NEXT MOVE" ACTION HERO
+// ============================================================================
+
+export interface GlovaNextMoveProps {
+  title: string;
+  description: string;
+  categoryBadge: string;
+  estimatedMinutes: number;
+  xpReward: number;
+  primaryActionLabel: string;
+  secondaryActionLabel?: string;
+  onPrimaryAction: () => void;
+  onSecondaryAction?: () => void;
+  className?: string;
+}
+
+export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
+  title,
+  description,
+  categoryBadge,
+  estimatedMinutes,
+  xpReward,
+  primaryActionLabel,
+  secondaryActionLabel,
+  onPrimaryAction,
+  onSecondaryAction,
+  className = '',
+}) => {
+  return (
+    <div
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-[#FFFDF8] dark:bg-card border-2 border-[#5B5CE2]/30 shadow-[0_12px_36px_-6px_rgba(91,92,226,0.12)] space-y-5 ${className}`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E9E5FF] text-[#5B5CE2] text-xs font-bold tracking-wide border border-[#C6BEF7]">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>{categoryBadge}</span>
+        </span>
+        <div className="flex items-center gap-3 text-xs font-semibold text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <Clock className="w-3.5 h-3.5 text-amber-500" />
+            <span>{estimatedMinutes} min</span>
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-[#F6D978] text-[#24233A] font-bold text-xs">
+            +{xpReward} XP
+          </span>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight leading-snug">
+          {title}
+        </h2>
+        <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl font-grotesk">
+          {description}
+        </p>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-3 pt-1">
+        <TactileButton
+          variant="primary"
+          size="lg"
+          onClick={onPrimaryAction}
+          className="px-7 text-sm sm:text-base font-bold tracking-wide"
+          rightIcon={<ArrowRight className="w-4 h-4 ml-1" />}
+        >
+          {primaryActionLabel}
+        </TactileButton>
+
+        {secondaryActionLabel && onSecondaryAction && (
+          <TactileButton
+            variant="surface"
+            size="lg"
+            onClick={onSecondaryAction}
+            className="px-5 text-sm font-semibold"
+          >
+            {secondaryActionLabel}
+          </TactileButton>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// 5.2 BACKWARD COMPATIBLE LEARNING PATH NODE
 // ============================================================================
 
 export interface LearningPathNodeProps {
@@ -273,7 +487,7 @@ export interface LearningPathNodeProps {
   status: 'completed' | 'active' | 'review' | 'locked';
   xpReward?: number;
   lessonCount?: number;
-  offsetPercent?: number; // for winding path alignment (-25 to 25)
+  offsetPercent?: number;
   onClick?: () => void;
   ctaText?: string;
 }
