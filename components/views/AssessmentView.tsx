@@ -241,7 +241,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Submitting Spinner State
   if (isSubmitting) {
     return (
-      <div className="w-full max-w-[1536px] mx-auto py-16 text-center space-y-4 px-4 sm:px-6 lg:px-8">
+      <div className="w-full py-16 text-center space-y-4">
         <LoadingSpinner
           size="lg"
           text={isEn ? "Evaluating and computing language proficiency via server..." : "กำลังตรวจและประมวลผลระดับภาษาผ่านระบบเซิร์ฟเวอร์..."}
@@ -258,7 +258,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Error State
   if (submitError && !isCompleted) {
     return (
-      <div className="w-full max-w-[1536px] mx-auto py-12 space-y-4 px-4 sm:px-6 lg:px-8">
+      <div className="w-full py-12 space-y-4">
         <ErrorMessage
           title={isEn ? "Assessment Processing Error" : "เกิดข้อผิดพลาดในการประมวลผล"}
           message={submitError}
@@ -279,7 +279,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Results Screen
   if (isCompleted && result) {
     return (
-      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8 animate-in fade-in duration-300">
+      <div className="w-full space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Results Banner */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto shadow-sm">
@@ -448,7 +448,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 
   // Active Test Screen
   return (
-    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="w-full space-y-6 pb-12">
       {/* Mode Switcher: 3-Minute Quick Check vs Comprehensive Diagnostic */}
       <div className="flex items-center justify-center gap-2 p-1.5 rounded-xl bg-secondary/50 border border-border/40 max-w-sm mx-auto">
         <button

@@ -412,7 +412,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   // =========================================================================
   if (!isExamStarted && !isSubmitted) {
     return (
-      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full space-y-6 pb-12">
         {/* Header Hero Banner */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden">
           {/* Authentic Examination Setting Backdrop */}
@@ -482,11 +482,12 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {onOpenProfile && (
               <GlovaButton
                 variant="primary"
-                size="sm"
+                size="md"
+                leftIcon={<LogIn className="w-4 h-4" />}
                 onClick={onOpenProfile}
+                className="shrink-0 px-5"
               >
-                <LogIn className="w-3.5 h-3.5 mr-1" />
-                <span>{isEn ? 'Log In / Register' : 'เข้าสู่ระบบ / สมัครสมาชิก'}</span>
+                {isEn ? 'Sign In' : 'เข้าสู่ระบบ'}
               </GlovaButton>
             )}
           </div>
@@ -577,7 +578,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     const isTimedOut = examResult.status === 'timed_out';
 
     return (
-      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8 animate-in fade-in duration-300">
+      <div className="w-full space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Main Score Card */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div
@@ -719,7 +720,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   // VIEW 3: Active Exam Simulation Screen
   // =========================================================================
   return (
-    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="w-full space-y-6 pb-12">
       {/* Sticky Header: Exam Title, Timer, Autosave Status, and Submit Button */}
       <div className="sticky top-16 z-30 flex items-center justify-between gap-3 p-4 rounded-xl bg-card/95 border border-border/80 backdrop-blur-md shadow-xs">
         <div>

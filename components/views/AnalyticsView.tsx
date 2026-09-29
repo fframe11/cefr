@@ -88,7 +88,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   // Loading State
   if (isLoading) {
     return (
-      <div className="w-full max-w-[1536px] mx-auto py-16 text-center space-y-3 px-4 sm:px-6 lg:px-8">
+      <div className="w-full py-16 text-center space-y-3">
         <LoadingSpinner
           size="lg"
           text={isEn ? "Retrieving analytics and diagnostic breakdown from server..." : "กำลังดึงข้อมูลสถิติและการวิเคราะห์เชิงลึกจากเซิร์ฟเวอร์..."}
@@ -153,7 +153,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
       }));
 
   return (
-    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="w-full space-y-6 pb-12">
       {/* Top Banner: CEFR & Cambridge Score Summary */}
       <GlovaCard variant="elevated" className="p-6 sm:p-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/40">

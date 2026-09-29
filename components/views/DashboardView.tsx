@@ -123,9 +123,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, nextLvl, isEn]);
 
   return (
-    <div className="w-full space-y-8 max-w-[1400px] mx-auto pb-16">
+    <div className="w-full space-y-8 pb-16">
       {/* 1. Header / Playful Editorial Bubble Hero */}
-      <section className="rounded-[32px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-8 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] relative overflow-hidden">
+      <section className="rounded-[32px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-8 lg:p-10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] relative overflow-hidden">
         {/* Subtle Warm Photographic Ambient Backdrop */}
         <div
           className="absolute inset-0 pointer-events-none opacity-8 dark:opacity-10 overflow-hidden"
@@ -330,15 +330,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               }
             />
 
-            <div className="p-5 sm:p-6 rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] space-y-4">
-              <div className="flex items-center gap-2 flex-wrap text-xs text-muted-foreground">
+            <div className="p-6 sm:p-7 rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] space-y-5">
+              <div className="flex items-center gap-2.5 flex-wrap text-xs text-muted-foreground">
                 <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-bold border border-indigo-500/20">
                   {primaryActionConfig.skill}
                 </span>
                 <span>•</span>
                 <span className="font-mono font-semibold">{primaryActionConfig.difficulty}</span>
                 <span>•</span>
-                <span className="flex items-center gap-1 font-medium">
+                <span className="flex items-center gap-1.5 font-medium">
                   <Clock className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>
                     {primaryActionConfig.estimatedMinutes} {isEn ? 'min' : 'นาที'}
@@ -346,7 +346,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-indigo-500/8 border border-indigo-500/15 text-xs text-indigo-900 dark:text-indigo-200 leading-relaxed font-medium">
+              <div className="p-4 rounded-[18px] bg-indigo-500/8 border border-indigo-500/15 text-xs sm:text-sm text-indigo-900 dark:text-indigo-200 leading-relaxed font-medium">
                 {primaryActionConfig.reason}
               </div>
 
@@ -376,31 +376,31 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               }
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
               <GlovaCard
                 interactive
                 variant="bubble"
                 onClick={() => onNavigate('vocabulary')}
                 className="group"
               >
-                <GlovaCardContent className="p-5 flex flex-col justify-between h-full gap-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-3 rounded-[16px] bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 shrink-0">
-                      <BookOpen className="w-5 h-5" aria-hidden="true" />
+                <GlovaCardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
+                  <div className="flex flex-col gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0 shadow-2xs">
+                      <BookOpen className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                      <h3 className="font-bold text-base sm:text-lg text-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
                         {isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR'}
                       </h3>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
                         {isEn
                           ? 'Master CEFR A1-C2 vocabulary with spaced repetition and practical collocations.'
                           : 'เรียนรู้คำศัพท์ตามระดับ A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations'}
                       </p>
                     </div>
                   </div>
-                  <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                    <span>{isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}</span>
+                  <div className="pt-4 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs sm:text-sm font-bold text-indigo-600 dark:text-indigo-400">
+                    <span>{isEn ? 'Open Studio' : 'เปิดคลังคำศัพท์'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       aria-hidden="true"
@@ -415,23 +415,23 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 onClick={() => onNavigate('grammar')}
                 className="group"
               >
-                <GlovaCardContent className="p-5 flex flex-col justify-between h-full gap-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-3 rounded-[16px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
-                      <Sparkles className="w-5 h-5" aria-hidden="true" />
+                <GlovaCardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
+                  <div className="flex flex-col gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0 shadow-2xs">
+                      <Sparkles className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      <h3 className="font-bold text-base sm:text-lg text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-snug">
                         {isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}
                       </h3>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
                         {isEn
                           ? 'Master sentence structures and core tenses with practical usage examples.'
                           : 'ทำความเข้าใจโครงสร้างประโยคและ Tense สำคัญพร้อมคำอธิบายภาษาไทยและตัวอย่างใช้งาน'}
                       </p>
                     </div>
                   </div>
-                  <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                  <div className="pt-4 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400">
                     <span>{isEn ? 'Practice Grammar' : 'ฝึกทำแบบฝึกหัด'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -445,26 +445,26 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 interactive
                 variant="bubble"
                 onClick={() => onNavigate('mockExam')}
-                className="group sm:col-span-2 lg:col-span-1"
+                className="group md:col-span-2 xl:col-span-1"
               >
-                <GlovaCardContent className="p-5 flex flex-col justify-between h-full gap-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-3 rounded-[16px] bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 shrink-0">
-                      <Award className="w-5 h-5" aria-hidden="true" />
+                <GlovaCardContent className="p-6 sm:p-7 flex flex-col justify-between h-full gap-5">
+                  <div className="flex flex-col gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0 shadow-2xs">
+                      <Award className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                      <h3 className="font-bold text-base sm:text-lg text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug">
                         {isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}
                       </h3>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
                         {isEn
                           ? `Take realistic timed simulations for ${progress.targetExam} with instant analytics.`
                           : `ทำแบบทดสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและสรุปผลคะแนน`}
                       </p>
                     </div>
                   </div>
-                  <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-amber-600 dark:text-amber-400">
-                    <span>{isEn ? 'Browse Mock Exams' : 'เข้าสู่คลังข้อสอบ'}</span>
+                  <div className="pt-4 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs sm:text-sm font-bold text-amber-600 dark:text-amber-400">
+                    <span>{isEn ? 'Mock Exams' : 'เข้าสู่คลังข้อสอบ'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       aria-hidden="true"

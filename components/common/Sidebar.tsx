@@ -139,31 +139,29 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-sm transition-all group touch-target text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${
+                className={`w-full flex items-center rounded-xl text-sm transition-all group min-h-[44px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${
                   collapsedMode
                     ? 'justify-center p-2.5'
-                    : 'justify-between px-3 py-2.5'
+                    : 'justify-start px-3.5 py-2.5 gap-3'
                 } ${
                   isActive
                     ? 'bg-indigo-500/12 text-indigo-600 dark:text-indigo-400 font-semibold border border-indigo-500/25 shadow-xs'
                     : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60 border border-transparent'
                 }`}
               >
-                <div className={`flex items-center ${collapsedMode ? 'justify-center' : 'gap-3 min-w-0'}`}>
-                  <Icon
-                    className={`w-4 h-4 shrink-0 transition-colors ${
-                      isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-muted-foreground group-hover:text-foreground'
-                    }`}
-                  />
-                  {!collapsedMode && (
-                    <span className="truncate text-xs lg:text-sm font-medium">
-                      {itemLabel}
-                    </span>
-                  )}
-                </div>
+                <Icon
+                  className={`w-4 h-4 shrink-0 transition-colors ${
+                    isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-muted-foreground group-hover:text-foreground'
+                  }`}
+                />
+                {!collapsedMode && (
+                  <span className="truncate text-xs lg:text-sm font-medium flex-1 text-left">
+                    {itemLabel}
+                  </span>
+                )}
 
                 {!collapsedMode && item.badge && (
-                  <span className="hidden lg:inline-flex px-1.5 py-0.5 rounded text-[10px] font-semibold bg-secondary text-muted-foreground border border-border/40 shrink-0 ml-1">
+                  <span className="ml-auto hidden lg:inline-flex px-1.5 py-0.5 rounded text-[10px] font-semibold bg-secondary text-muted-foreground border border-border/40 shrink-0">
                     {item.badge}
                   </span>
                 )}

@@ -125,7 +125,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               <UserIcon className="w-4 h-4" />
             </div>
             <h2 id="profile-modal-title" className="text-base font-semibold text-foreground">
-              {status === 'authenticated' ? 'โปรไฟล์และการตั้งค่า' : 'เข้าสู่ระบบ / บัญชีผู้ใช้'}
+              {status === 'authenticated' ? 'โปรไฟล์ผู้ใช้' : 'เข้าสู่ระบบ'}
             </h2>
           </div>
           <button

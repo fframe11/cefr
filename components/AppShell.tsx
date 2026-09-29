@@ -124,8 +124,8 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         />
 
         {/* Main Content Area: Fluid width expanding naturally when sidebar is collapsed */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 max-w-full overflow-x-hidden pb-24 md:pb-8 transition-all duration-300">
-          <div className="w-full max-w-[1536px] mx-auto space-y-6">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 w-full overflow-x-hidden pb-24 md:pb-8 transition-all duration-300">
+          <div className="w-full space-y-6">
             {children}
           </div>
         </main>

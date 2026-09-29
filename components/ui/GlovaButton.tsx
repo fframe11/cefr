@@ -35,9 +35,9 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
     const shouldReduceMotion = useReducedMotion();
     const isDisabled = disabled || isLoading;
 
-    // Base styling ensuring 44px touch target on default/large sizes
+    // Base styling ensuring 44px touch target on default/large sizes with zero text wrapping
     const baseStyles =
-      'inline-flex items-center justify-center font-medium rounded-lg transition-colors select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50';
+      'inline-flex items-center justify-center whitespace-nowrap font-medium rounded-lg transition-colors select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50';
 
     const sizeStyles = {
       sm: 'text-xs h-9 px-3 gap-1.5 touch-target', // Still >= 44px tap target via .touch-target
@@ -76,14 +76,14 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
         {isLoading ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin shrink-0" aria-hidden="true" />
-            <span>{children}</span>
+            <span className="whitespace-nowrap truncate">{children}</span>
           </>
         ) : (
-          <>
-            {leftIcon && <span className="shrink-0">{leftIcon}</span>}
-            <span>{children}</span>
-            {rightIcon && <span className="shrink-0">{rightIcon}</span>}
-          </>
+          <span className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap">
+            {leftIcon && <span className="shrink-0 inline-flex items-center justify-center">{leftIcon}</span>}
+            <span className="whitespace-nowrap truncate">{children}</span>
+            {rightIcon && <span className="shrink-0 inline-flex items-center justify-center">{rightIcon}</span>}
+          </span>
         )}
       </motion.button>
     );
