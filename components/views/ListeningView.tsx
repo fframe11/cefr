@@ -35,7 +35,8 @@ interface ListeningViewProps {
 }
 
 export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionCompleted }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const [exercises, setExercises] = useState<ListeningExercise[]>(LISTENING_BANK);
   const [selectedExerciseId, setSelectedExerciseId] = useState<string>(LISTENING_BANK[0]?.id || '');
   const [showTranscript, setShowTranscript] = useState(false);
@@ -127,13 +128,17 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="LISTENING LAB"
-          title="ทักษะการฟังและการจับใจความ"
-          description="ฝึกฟังบทสนทนาและประกาศตามสำเนียงสากล พร้อมตอบคำถามวัดความเข้าใจตามรูปแบบข้อสอบ Cambridge"
+          title={isEn ? 'Listening Comprehension Lab' : 'ทักษะการฟังและการจับใจความ'}
+          description={
+            isEn
+              ? 'Practice listening to authentic international English dialogues and answer Cambridge comprehension questions.'
+              : 'ฝึกฟังบทสนทนาและประกาศตามสำเนียงสากล พร้อมตอบคำถามวัดความเข้าใจตามรูปแบบข้อสอบ Cambridge'
+          }
         />
 
         {currentExercise && (
@@ -175,7 +180,10 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       {/* Loading state indicator */}
       {loading && exercises.length === 0 && (
         <div className="min-h-[320px] flex items-center justify-center p-12">
-          <LoadingSpinner size="lg" text="กำลังโหลดแบบฝึกหัดฟัง..." />
+          <LoadingSpinner
+            size="lg"
+            text={isEn ? 'Loading listening exercises...' : 'กำลังโหลดแบบฝึกหัดฟัง...'}
+          />
         </div>
       )}
 
@@ -204,7 +212,9 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               {currentExercise.speakerAccents && (
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
                   <Volume2 className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
-                  <span>สำเนียง: {currentExercise.speakerAccents}</span>
+                  <span>
+                    {isEn ? `Accent: ${currentExercise.speakerAccents}` : `สำเนียง: ${currentExercise.speakerAccents}`}
+                  </span>
                 </div>
               )}
             </div>
@@ -253,7 +263,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 {showTranscript && (
                   <div className="mt-3 p-4 rounded-[20px] bg-[#FAF7F2] dark:bg-muted/30 border border-[#EDE8DF] dark:border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
                     <p className="font-sans text-[11px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">
-                      บทพูดภาษาอังกฤษ:
+                      {isEn ? 'English Audio Transcript:' : 'บทพูดภาษาอังกฤษ:'}
                     </p>
                     {currentExercise.audioScript}
                   </div>
@@ -274,21 +284,30 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
               {displayedQuestions.length > 0 && (
                 <span className="text-xs text-muted-foreground font-mono">
-                  ข้อที่ {activeQuestionIdx + 1} จาก {displayedQuestions.length}
+                  {isEn
+                    ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
+                    : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
                 </span>
               )}
             </div>
 
             {loadingQuestions && displayedQuestions.length === 0 && (
               <div className="min-h-[200px] flex items-center justify-center p-8">
-                <LoadingSpinner size="md" text="กำลังโหลดคำถามวัดความเข้าใจ..." />
+                <LoadingSpinner
+                  size="md"
+                  text={isEn ? 'Loading comprehension questions...' : 'กำลังโหลดคำถามวัดความเข้าใจ...'}
+                />
               </div>
             )}
 
             {!loadingQuestions && displayedQuestions.length === 0 && (
               <EmptyState
-                title="ยังไม่มีคำถามสำหรับบทเรียนนี้"
-                description="ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม"
+                title={isEn ? 'No questions available for this lesson yet' : 'ยังไม่มีคำถามสำหรับบทเรียนนี้'}
+                description={
+                  isEn
+                    ? 'Our academic team is currently preparing additional questions.'
+                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม'
+                }
               />
             )}
 
@@ -314,7 +333,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
                   >
-                    ข้อก่อนหน้า
+                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
                   </GlovaButton>
 
                   <GlovaButton
@@ -323,7 +342,13 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                     rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1 ? 'ข้อถัดไป' : 'บทเรียนถัดไป'}
+                    {activeQuestionIdx < displayedQuestions.length - 1
+                      ? isEn
+                        ? 'Next Question'
+                        : 'ข้อถัดไป'
+                      : isEn
+                      ? 'Next Lesson'
+                      : 'บทเรียนถัดไป'}
                   </GlovaButton>
                 </div>
               </div>

@@ -22,6 +22,7 @@ import {
   GLOVA_MOTION,
   CEFRTier,
 } from '@/lib/design-tokens/tokens';
+import { useTranslation } from '../../i18n';
 
 export interface GlovaFeedbackBubbleProps {
   currentView?: string;
@@ -45,6 +46,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
   className = '',
 }) => {
   const shouldReduceMotion = useReducedMotion();
+  const { t, language } = useTranslation();
 
   // State Machine
   const [state, setState] = useState<FeedbackState>('CLOSED');
@@ -248,7 +250,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
               <div className="flex items-center gap-2">
                 <MessageSquareHeart className="w-4 h-4 text-indigo-400 shrink-0" aria-hidden="true" />
                 <h3 id="feedback-dialog-title" className="text-sm font-bold tracking-tight text-foreground">
-                  ส่งความคิดเห็นถึงทีม Glova
+                  {t('feedback.title')}
                 </h3>
               </div>
               <button
@@ -265,9 +267,9 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
             {isSuccess ? (
               <div className="py-8 flex flex-col items-center justify-center text-center gap-2 text-emerald-400 animate-in fade-in-50 duration-200">
                 <CheckCircle2 className="w-10 h-10" />
-                <h4 className="text-base font-bold text-foreground">ขอบคุณสำหรับความคิดเห็น!</h4>
+                <h4 className="text-base font-bold text-foreground">{t('feedback.success_title')}</h4>
                 <p className="text-xs text-muted-foreground max-w-xs">
-                  ทีมงาน Glova ได้รับข้อมูลแล้ว และจะนำไปพัฒนาบทเรียนให้ดียิ่งขึ้นครับ
+                  {t('feedback.success_desc')}
                 </p>
               </div>
             ) : (
@@ -276,11 +278,12 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                 {/* Category Selector */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-semibold text-muted-foreground">
-                    ประเภทความคิดเห็น
+                    {language === 'th' ? 'ประเภทความคิดเห็น' : 'Feedback Category'}
                   </label>
                   <div className="grid grid-cols-2 gap-1.5">
                     {FEEDBACK_BUBBLE_CONFIG.categories.map((cat) => {
                       const isSelected = category === cat.id;
+                      const catLabel = language === 'en' ? (cat as any).labelEn || cat.labelTh : cat.labelTh;
                       return (
                         <button
                           key={cat.id}
@@ -293,7 +296,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                           }`}
                         >
                           <span className="shrink-0">{getCategoryIcon(cat.id as FeedbackCategory)}</span>
-                          <span className="truncate">{cat.labelTh}</span>
+                          <span className="truncate">{catLabel}</span>
                         </button>
                       );
                     })}
@@ -303,7 +306,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                 {/* Star Rating */}
                 <div className="flex items-center justify-between py-1">
                   <span className="text-xs font-semibold text-muted-foreground">
-                    ความพึงพอใจ
+                    {language === 'th' ? 'ความพึงพอใจ' : 'Satisfaction'}
                   </span>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -330,7 +333,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <label htmlFor="feedback-message" className="font-semibold">
-                      ข้อความ / รายละเอียด
+                      {language === 'th' ? 'ข้อความ / รายละเอียด' : 'Message / Details'}
                     </label>
                     <span className="tabular-nums text-[11px]">
                       {message.length}/{FEEDBACK_BUBBLE_CONFIG.maxMessageLength}
@@ -341,7 +344,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     ref={textareaRef}
                     rows={3}
                     maxLength={FEEDBACK_BUBBLE_CONFIG.maxMessageLength}
-                    placeholder="ระบุคำศัพท์ ประโยค หรือจุดที่พบปัญหา..."
+                    placeholder={t('feedback.message_placeholder')}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     disabled={isSubmitting}
@@ -362,7 +365,9 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     onChange={(e) => setIncludeMetadata(e.target.checked)}
                     className="rounded border-border text-indigo-600 focus:ring-indigo-500 h-3.5 w-3.5"
                   />
-                  <span>แนบข้อมูลหน้าปัจจุบันและระดับ CEFR ({cefrLevel || 'B1'}) เพื่อตรวจสอบเร็วขึ้น</span>
+                  <span>
+                    {t('feedback.attach_metadata', { level: cefrLevel || 'B1' })}
+                  </span>
                 </label>
 
                 {/* Submit Action */}
@@ -373,7 +378,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     disabled={isSubmitting}
                     className="px-3 py-2 text-xs font-medium rounded-lg text-muted-foreground hover:bg-secondary transition-colors"
                   >
-                    ยกเลิก
+                    {t('feedback.cancel')}
                   </button>
                   <button
                     type="submit"
@@ -383,12 +388,12 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        <span>กำลังส่ง...</span>
+                        <span>{t('feedback.sending')}</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-3.5 h-3.5" />
-                        <span>ส่งข้อความ</span>
+                        <span>{t('feedback.send')}</span>
                       </>
                     )}
                   </button>

@@ -51,6 +51,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   onStartRemediation,
 }) => {
   const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const currentLevelInfo =
     CEFR_LEVELS.find((l) => l.level === progress.currentLevel) || CEFR_LEVELS[0];
   const allLevels: CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -70,13 +71,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   const primaryActionConfig = React.useMemo(() => {
     if (topWeakness) {
       return {
-        title: `ทบทวนและซ่อมแซม: ${topWeakness.labelTh}`,
-        description: `ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ แนะนำให้ฝึกฝนทันทีเพื่อเสริมความมั่นใจ`,
-        reason: `แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ จุดนี้จะช่วยให้คุณก้าวสู่ระดับถัดไปได้เร็วที่สุด`,
+        title: isEn ? `Review & Remediate: ${topWeakness.tag}` : `ทบทวนและซ่อมแซม: ${topWeakness.labelTh}`,
+        description: isEn
+          ? `Detected ${topWeakness.errorCount} mistakes in practice tests. Recommended to practice now to strengthen confidence.`
+          : `ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ แนะนำให้ฝึกฝนทันทีเพื่อเสริมความมั่นใจ`,
+        reason: isEn
+          ? `Recommended because: Detected ${topWeakness.errorCount} mistakes in practice. Focusing here accelerates your path to ${nextLvl}.`
+          : `แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ จุดนี้จะช่วยให้คุณก้าวสู่ระดับถัดไปได้เร็วที่สุด`,
         skill: 'Grammar & Phrasing',
         difficulty: `${progress.currentLevel} → ${nextLvl}`,
         estimatedMinutes: 8,
-        ctaText: 'เริ่มฝึกจุดนี้ทันที',
+        ctaText: isEn ? 'Practice Now' : 'เริ่มฝึกจุดนี้ทันที',
         onStart: () => onStartRemediation(topWeakness.tag),
         icon: <AlertTriangle className="w-5 h-5 text-amber-500" aria-hidden="true" />,
       };
@@ -84,33 +89,41 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
     if (!progress.assessmentCompleted) {
       return {
-        title: 'ทำแบบทดสอบวัดระดับ CEFR Diagnostic Test',
-        description: 'ประเมินระดับความสามารถทางภาษาอังกฤษรอบด้าน (A1-C2) เพื่อปลดล็อกแผนการเรียนเฉพาะบุคคล',
-        reason: 'แนะนำเพราะ: ช่วยประเมินจุดแข็งและจุดที่ควรฝึกเพิ่ม เพื่อวางแผนการเรียน 5 นาทีต่อวันอย่างตรงจุด',
+        title: isEn ? 'Take CEFR Diagnostic Assessment' : 'ทำแบบทดสอบวัดระดับ CEFR Diagnostic Test',
+        description: isEn
+          ? 'Comprehensive proficiency assessment (A1-C2) to unlock your personalized learning journey.'
+          : 'ประเมินระดับความสามารถทางภาษาอังกฤษรอบด้าน (A1-C2) เพื่อปลดล็อกแผนการเรียนเฉพาะบุคคล',
+        reason: isEn
+          ? 'Recommended because: Pinpoints your current strengths and target areas for focused 5-minute daily practice.'
+          : 'แนะนำเพราะ: ช่วยประเมินจุดแข็งและจุดที่ควรฝึกเพิ่ม เพื่อวางแผนการเรียน 5 นาทีต่อวันอย่างตรงจุด',
         skill: 'Diagnostic Check',
         difficulty: `${progress.currentLevel}`,
         estimatedMinutes: 15,
-        ctaText: 'เริ่มวัดระดับภาษา',
+        ctaText: isEn ? 'Start Assessment' : 'เริ่มวัดระดับภาษา',
         onStart: () => onNavigate('assessment'),
         icon: <Sparkles className="w-5 h-5 text-indigo-500" aria-hidden="true" />,
       };
     }
 
     return {
-      title: `ฝึกฝนประจำวัน: คำศัพท์และไวยากรณ์ระดับ ${progress.currentLevel}`,
-      description: `ทบทวนคำศัพท์สำคัญตาม Spaced Repetition และทำแบบฝึกหัดสำหรับเป้าหมายสอบ ${progress.targetExam}`,
-      reason: `แนะนำเพราะ: คลังคำศัพท์สำคัญตามรอบความจำ Spaced Repetition ประจำวันช่วยเสริมความมั่นใจสู่ระดับ ${nextLvl}`,
+      title: isEn ? `Daily Practice: ${progress.currentLevel} Vocabulary & Grammar` : `ฝึกฝนประจำวัน: คำศัพท์และไวยากรณ์ระดับ ${progress.currentLevel}`,
+      description: isEn
+        ? `Review key vocabulary with Spaced Repetition and complete practice exercises for ${progress.targetExam}.`
+        : `ทบทวนคำศัพท์สำคัญตาม Spaced Repetition และทำแบบฝึกหัดสำหรับเป้าหมายสอบ ${progress.targetExam}`,
+      reason: isEn
+        ? `Recommended because: Daily Spaced Repetition reinforces memory retention for advancement to ${nextLvl}.`
+        : `แนะนำเพราะ: คลังคำศัพท์สำคัญตามรอบความจำ Spaced Repetition ประจำวันช่วยเสริมความมั่นใจสู่ระดับ ${nextLvl}`,
       skill: 'Vocabulary & Context',
       difficulty: `${progress.currentLevel} → ${nextLvl}`,
       estimatedMinutes: 10,
-      ctaText: 'เริ่มฝึกฝนทันที',
+      ctaText: isEn ? 'Start Practice Now' : 'เริ่มฝึกฝนทันที',
       onStart: () => onNavigate('vocabulary'),
       icon: <BookOpen className="w-5 h-5 text-indigo-500" aria-hidden="true" />,
     };
-  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, nextLvl]);
+  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, nextLvl, isEn]);
 
   return (
-    <div className="w-full space-y-8 max-w-6xl mx-auto pb-16">
+    <div className="w-full space-y-8 max-w-[1400px] mx-auto pb-16">
       {/* 1. Header / Playful Editorial Bubble Hero */}
       <section className="rounded-[32px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-8 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] relative overflow-hidden">
         {/* Subtle Warm Photographic Ambient Backdrop */}
@@ -150,7 +163,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               role="status"
             >
               <Flame className="w-4 h-4 text-amber-500 fill-amber-500/30" aria-hidden="true" />
-              <span>{progress.streakDays} วันต่อเนื่อง</span>
+              <span>{isEn ? `${progress.streakDays} Day Streak` : `${progress.streakDays} วันต่อเนื่อง`}</span>
             </div>
           </div>
 
@@ -162,18 +175,34 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <span>READY FOR A 7-MINUTE CHALLENGE?</span>
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-foreground">
-                เป้าหมายการสอบ: {progress.targetExam}
+                {isEn ? `Exam Target: ${progress.targetExam}` : `เป้าหมายการสอบ: ${progress.targetExam}`}
               </h1>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                ระดับภาษาปัจจุบันคือ{' '}
-                <strong className="text-foreground font-semibold">
-                  {language === 'th' ? currentLevelInfo.nameTh : currentLevelInfo.nameEn}
-                </strong>{' '}
-                เทียบเคียงคะแนนเคมบริดจ์ประมาณ{' '}
-                <strong className="text-indigo-600 dark:text-indigo-400 font-mono font-bold">
-                  {progress.estimatedCambridgeScore}
-                </strong>{' '}
-                คะแนน
+                {isEn ? (
+                  <>
+                    Current English proficiency is{' '}
+                    <strong className="text-foreground font-semibold">
+                      {currentLevelInfo.nameEn}
+                    </strong>
+                    , estimated Cambridge score is{' '}
+                    <strong className="text-indigo-600 dark:text-indigo-400 font-mono font-bold">
+                      {progress.estimatedCambridgeScore}
+                    </strong>{' '}
+                    points
+                  </>
+                ) : (
+                  <>
+                    ระดับภาษาปัจจุบันคือ{' '}
+                    <strong className="text-foreground font-semibold">
+                      {currentLevelInfo.nameTh}
+                    </strong>{' '}
+                    เทียบเคียงคะแนนเคมบริดจ์ประมาณ{' '}
+                    <strong className="text-indigo-600 dark:text-indigo-400 font-mono font-bold">
+                      {progress.estimatedCambridgeScore}
+                    </strong>{' '}
+                    คะแนน
+                  </>
+                )}
               </p>
             </div>
 
@@ -191,7 +220,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   className="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 font-semibold inline-flex items-center gap-1 transition-colors mt-0.5"
                 >
                   <RotateCcw className="w-3 h-3" aria-hidden="true" />
-                  <span>วัดระดับภาษาใหม่</span>
+                  <span>{isEn ? 'Retake Assessment' : 'วัดระดับภาษาใหม่'}</span>
                 </button>
               </div>
             </div>
@@ -200,8 +229,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           {/* Linear CEFR Journey Rail (Tactile Bubble Tracker) */}
           <div className="mt-4 pt-6 border-t border-[#EDE8DF] dark:border-border/30">
             <div className="flex items-center justify-between text-xs font-medium text-muted-foreground mb-4">
-              <span className="font-semibold text-foreground">เส้นทางการพัฒนา CEFR Framework</span>
-              <span className="text-foreground font-semibold">{`ระดับปัจจุบัน: ${progress.currentLevel} • คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${nextLvl}`}</span>
+              <span className="font-semibold text-foreground">
+                {isEn ? 'CEFR Framework Progression' : 'เส้นทางการพัฒนา CEFR Framework'}
+              </span>
+              <span className="text-foreground font-semibold">
+                {isEn
+                  ? `Current: ${progress.currentLevel} • Progressing toward ${nextLvl}`
+                  : `ระดับปัจจุบัน: ${progress.currentLevel} • คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${nextLvl}`}
+              </span>
             </div>
 
             {/* Visual Tactile Rail */}
@@ -261,7 +296,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400">
                   <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
-                  <span>ดำเนินการต่อจากจุดเดิม</span>
+                  <span>{isEn ? 'Resume where you left off' : 'ดำเนินการต่อจากจุดเดิม'}</span>
                 </div>
                 <h2 className="text-sm font-bold text-foreground">{progress.lastActivity.title}</h2>
                 <p className="text-xs text-muted-foreground">{progress.lastActivity.detail}</p>
@@ -277,7 +312,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 }}
                 className="inline-flex items-center justify-center px-4 py-2.5 rounded-[16px] bg-white dark:bg-card border border-[#EDE8DF] dark:border-border/60 hover:bg-indigo-50/50 dark:hover:bg-muted text-foreground text-xs font-bold transition-all shadow-xs shrink-0"
               >
-                <span>ทำต่อทันที</span>
+                <span>{isEn ? 'Continue' : 'ทำต่อทันที'}</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" aria-hidden="true" />
               </button>
             </div>
@@ -287,8 +322,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <section className="space-y-3">
             <GlovaSectionHeader
               eyebrow="TODAY'S NEXT STEP"
-              title="สิ่งที่คุณควรทำถัดไป"
-              description="ระบบคัดเลือกบทเรียนที่ช่วยพัฒนาทักษะได้ตรงจุดที่สุดตามข้อมูลการเรียนจริงของคุณ"
+              title={isEn ? "Today's Recommended Step" : "สิ่งที่คุณควรทำถัดไป"}
+              description={
+                isEn
+                  ? 'Curated to target high-impact areas based on your real performance data.'
+                  : 'ระบบคัดเลือกบทเรียนที่ช่วยพัฒนาทักษะได้ตรงจุดที่สุดตามข้อมูลการเรียนจริงของคุณ'
+              }
             />
 
             <div className="p-5 sm:p-6 rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)] space-y-4">
@@ -301,7 +340,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <span>•</span>
                 <span className="flex items-center gap-1 font-medium">
                   <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-                  <span>{primaryActionConfig.estimatedMinutes} นาที</span>
+                  <span>
+                    {primaryActionConfig.estimatedMinutes} {isEn ? 'min' : 'นาที'}
+                  </span>
                 </span>
               </div>
 
@@ -327,8 +368,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <section className="space-y-4 pt-2">
             <GlovaSectionHeader
               eyebrow="CURATED LEARNING PATHS"
-              title="โหมดการเรียนรู้หลัก"
-              description="เลือกเข้าสู่บทเรียนเฉพาะทางตามความต้องการ"
+              title={isEn ? 'Core Learning Studios' : 'โหมดการเรียนรู้หลัก'}
+              description={
+                isEn
+                  ? 'Access specialized studios tailored to your personal goals'
+                  : 'เลือกเข้าสู่บทเรียนเฉพาะทางตามความต้องการ'
+              }
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -345,15 +390,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                     <div>
                       <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                        คลังคำศัพท์ CEFR
+                        {isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR'}
                       </h3>
                       <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        เรียนรู้คำศัพท์ตามระดับ A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations
+                        {isEn
+                          ? 'Master CEFR A1-C2 vocabulary with spaced repetition and practical collocations.'
+                          : 'เรียนรู้คำศัพท์ตามระดับ A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations'}
                       </p>
                     </div>
                   </div>
                   <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                    <span>เปิดคลังคำศัพท์</span>
+                    <span>{isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       aria-hidden="true"
@@ -375,15 +422,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                     <div>
                       <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                        ไวยากรณ์ภาษาอังกฤษ
+                        {isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}
                       </h3>
                       <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        ทำความเข้าใจโครงสร้างประโยคและ Tense สำคัญพร้อมคำอธิบายภาษาไทยและตัวอย่างใช้งาน
+                        {isEn
+                          ? 'Master sentence structures and core tenses with practical usage examples.'
+                          : 'ทำความเข้าใจโครงสร้างประโยคและ Tense สำคัญพร้อมคำอธิบายภาษาไทยและตัวอย่างใช้งาน'}
                       </p>
                     </div>
                   </div>
                   <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                    <span>ฝึกทำแบบฝึกหัด</span>
+                    <span>{isEn ? 'Practice Grammar' : 'ฝึกทำแบบฝึกหัด'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       aria-hidden="true"
@@ -405,15 +454,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                     <div>
                       <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                        ข้อสอบจำลอง Cambridge
+                        {isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}
                       </h3>
                       <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        ทำแบบทดสอบเสมือนจริงของ {progress.targetExam} พร้อมจับเวลาและสรุปผลคะแนน
+                        {isEn
+                          ? `Take realistic timed simulations for ${progress.targetExam} with instant analytics.`
+                          : `ทำแบบทดสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและสรุปผลคะแนน`}
                       </p>
                     </div>
                   </div>
                   <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 flex items-center justify-between text-xs font-bold text-amber-600 dark:text-amber-400">
-                    <span>เข้าสู่คลังข้อสอบ</span>
+                    <span>{isEn ? 'Browse Mock Exams' : 'เข้าสู่คลังข้อสอบ'}</span>
                     <ArrowRight
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       aria-hidden="true"
@@ -431,14 +482,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <GlovaBubble
             variant="goal"
             size="md"
-            pillText={`${progress.minutesStudiedToday} นาที`}
+            pillText={isEn ? `${progress.minutesStudiedToday} min` : `${progress.minutesStudiedToday} นาที`}
             title={t('dashboard.study_time_today')}
-            subtitle={`เป้าหมาย: ${progress.dailyGoalMinutes} นาที/วัน`}
+            subtitle={
+              isEn
+                ? `Goal: ${progress.dailyGoalMinutes} min/day`
+                : `เป้าหมาย: ${progress.dailyGoalMinutes} นาที/วัน`
+            }
             progress={goalPercent}
           >
             <div className="text-xs font-medium text-amber-800 dark:text-amber-200">
               {goalPercent >= 100
-                ? 'บรรลุเป้าหมายแล้ว'
+                ? isEn
+                  ? 'Goal completed today!'
+                  : 'บรรลุเป้าหมายแล้ว'
+                : isEn
+                ? `${Math.max(0, progress.dailyGoalMinutes - progress.minutesStudiedToday)} min left`
                 : `ขาดอีก ${Math.max(0, progress.dailyGoalMinutes - progress.minutesStudiedToday)} นาที`}
             </div>
           </GlovaBubble>
@@ -447,13 +506,23 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <GlovaBubble
             variant="achievement"
             size="md"
-            pillText={`${progress.streakDays} วัน`}
+            pillText={isEn ? `${progress.streakDays} days` : `${progress.streakDays} วัน`}
             title={t('header.streak')}
-            subtitle="เรียนต่อเนื่องเพื่อคงความจำระยะยาว"
+            subtitle={
+              isEn ? 'Daily practice reinforces long-term retention' : 'เรียนต่อเนื่องเพื่อคงความจำระยะยาว'
+            }
           >
             <div className="flex items-center gap-1.5 text-xs font-bold text-orange-600 dark:text-orange-400">
               <Flame className="w-4 h-4 fill-current" aria-hidden="true" />
-              <span>{progress.streakDays >= 3 ? 'กำลังติดลม' : 'เริ่มต้นสะสมวัน'}</span>
+              <span>
+                {progress.streakDays >= 3
+                  ? isEn
+                    ? 'On a streak!'
+                    : 'กำลังติดลม'
+                  : isEn
+                  ? 'Building momentum'
+                  : 'เริ่มต้นสะสมวัน'}
+              </span>
             </div>
           </GlovaBubble>
 
@@ -461,16 +530,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <GlovaBubble
             variant="insight"
             size="md"
-            pillText="สถิติจริงจากระบบ"
-            title="สถิติการฝึกฝนสะสม"
-            subtitle={`${progress.masteredWordIds?.length || 0} คำศัพท์ที่เชี่ยวชาญแล้ว`}
+            pillText={isEn ? 'Verified Stats' : 'สถิติจริงจากระบบ'}
+            title={isEn ? 'Cumulative Practice' : 'สถิติการฝึกฝนสะสม'}
+            subtitle={
+              isEn
+                ? `${progress.masteredWordIds?.length || 0} mastered words`
+                : `${progress.masteredWordIds?.length || 0} คำศัพท์ที่เชี่ยวชาญแล้ว`
+            }
           >
             <div className="flex items-baseline justify-between pt-1">
               <span className="text-2xl font-black font-mono text-indigo-600 dark:text-indigo-400">
-                {`${progress.completedQuestionIds?.length || 0} ข้อ`}
+                {isEn
+                  ? `${progress.completedQuestionIds?.length || 0} items`
+                  : `${progress.completedQuestionIds?.length || 0} ข้อ`}
               </span>
               <span className="text-xs text-muted-foreground font-semibold">
-                สะสมคำตอบสำเร็จ
+                {isEn ? 'Total Completed' : 'สะสมคำตอบสำเร็จ'}
               </span>
             </div>
           </GlovaBubble>
@@ -484,7 +559,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   {t('dashboard.skill_stats')}
                 </h3>
               </div>
-              <span className="text-xs text-muted-foreground font-semibold">ความเชี่ยวชาญ 6 ทักษะ</span>
+              <span className="text-xs text-muted-foreground font-semibold">
+                {isEn ? '6-Skill Competency' : 'ความเชี่ยวชาญ 6 ทักษะ'}
+              </span>
             </div>
 
             <div className="space-y-3.5 my-4">
@@ -514,13 +591,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
 
             <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 text-xs text-muted-foreground flex items-center justify-between">
-              <span>ผลการทำแบบฝึกหัดจริง</span>
+              <span>{isEn ? 'Based on actual exercise attempts' : 'ผลการทำแบบฝึกหัดจริง'}</span>
               <button
                 type="button"
                 onClick={() => onNavigate('analytics')}
                 className="text-indigo-600 dark:text-indigo-400 hover:underline font-bold inline-flex items-center gap-1"
               >
-                <span>ดูวิเคราะห์เชิงลึก</span>
+                <span>{isEn ? 'Detailed Analytics' : 'ดูวิเคราะห์เชิงลึก'}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </button>
             </div>
@@ -538,7 +615,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </h3>
           </div>
           <span className="text-xs px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 font-bold">
-            {progress.weakTopics?.length || 0} จุดที่ควรเสริม
+            {progress.weakTopics?.length || 0} {isEn ? 'focus areas' : 'จุดที่ควรเสริม'}
           </span>
         </div>
 
@@ -549,10 +626,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <CheckCircle2 className="w-7 h-7" aria-hidden="true" />
               </div>
               <p className="text-base font-bold text-foreground mt-1">
-                ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ
+                {isEn ? 'Outstanding! No repeating mistake patterns found.' : 'ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ'}
               </p>
               <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
-                ทำแบบฝึกหัดหรือข้อสอบจำลองอย่างสม่ำเสมอ เพื่อให้ระบบช่วยตรวจจับจุดที่ต้องฝึกฝนเพิ่มเติม
+                {isEn
+                  ? 'Keep practicing consistently so the system can map your focus areas.'
+                  : 'ทำแบบฝึกหัดหรือข้อสอบจำลองอย่างสม่ำเสมอ เพื่อให้ระบบช่วยตรวจจับจุดที่ต้องฝึกฝนเพิ่มเติม'}
               </p>
               <GlovaButton
                 variant="outline"
@@ -560,7 +639,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 onClick={() => onNavigate('mockExam')}
                 className="mt-3 rounded-[16px]"
               >
-                ทดลองทำข้อสอบจำลอง
+                {isEn ? 'Try a Mock Exam' : 'ทดลองทำข้อสอบจำลอง'}
               </GlovaButton>
             </div>
           ) : (
@@ -575,7 +654,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       {w.labelTh}
                     </p>
                     <p className="text-[11px] text-rose-500 dark:text-rose-400 font-semibold mt-0.5">
-                      พบข้อผิดพลาด {w.errorCount} ครั้งในแบบทดสอบ
+                      {isEn
+                        ? `Encountered ${w.errorCount} mistakes in practice`
+                        : `พบข้อผิดพลาด ${w.errorCount} ครั้งในแบบทดสอบ`}
                     </p>
                   </div>
 
@@ -586,7 +667,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     onClick={() => onStartRemediation(w.tag)}
                     className="shrink-0 rounded-[14px]"
                   >
-                    ซ่อมจุดนี้
+                    {isEn ? 'Reinforce' : 'ซ่อมจุดนี้'}
                   </GlovaButton>
                 </div>
               ))}
@@ -595,14 +676,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/30 text-xs text-muted-foreground flex items-center justify-between">
-          <span>อิงตามสถิติข้อที่ตอบผิดจริง</span>
+          <span>
+            {isEn ? 'Derived from verified practice attempts' : 'อิงตามสถิติข้อที่ตอบผิดจริง'}
+          </span>
           {hasWeakness && (
             <button
               type="button"
               onClick={() => onNavigate('analytics')}
               className="text-indigo-600 dark:text-indigo-400 hover:underline font-bold inline-flex items-center gap-1"
             >
-              <span>ดูประวัติทั้งหมด</span>
+              <span>{isEn ? 'View Full History' : 'ดูประวัติทั้งหมด'}</span>
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           )}

@@ -43,7 +43,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   masteredWordIds = [],
   onToggleMastery,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'study' | 'browse'>('study');
@@ -149,21 +150,27 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   }, [viewMode, filteredWords.length]);
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="ACTIVE VOCABULARY LAB"
-          title="คลังคำศัพท์และการจำแบบ Spaced Repetition"
-          description="ฝึกฝนคำศัพท์ตามกรอบมาตรฐาน CEFR พร้อมเสียงอ่าน บริบทการใช้งาน และสถิติความจำจริง"
+          title={isEn ? 'CEFR Vocabulary Lab & Spaced Repetition' : 'คลังคำศัพท์และการจำแบบ Spaced Repetition'}
+          description={
+            isEn
+              ? 'Master CEFR vocabulary with authentic audio, real-world context, and memory retention tracking.'
+              : 'ฝึกฝนคำศัพท์ตามกรอบมาตรฐาน CEFR พร้อมเสียงอ่าน บริบทการใช้งาน และสถิติความจำจริง'
+          }
         />
 
         {/* Real Progress Context */}
         <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
           <div className="px-3.5 py-1.5 rounded-xl bg-card border border-border/60 text-xs font-medium text-foreground flex items-center gap-2 shadow-xs">
             <CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" />
-            <span>เชี่ยวชาญแล้ว:</span>
-            <span className="font-bold text-emerald-500">{`${masteredWordIds.length} คำ`}</span>
+            <span>{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
+            <span className="font-bold text-emerald-500">
+              {isEn ? `${masteredWordIds.length} words` : `${masteredWordIds.length} คำ`}
+            </span>
           </div>
 
           {/* View Mode Toggle */}
@@ -176,10 +183,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   ? 'bg-card text-foreground font-semibold shadow-xs border border-border/60'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
-              aria-label="โหมดฝึกคำศัพท์"
+              aria-label={isEn ? 'Study Flashcards' : 'โหมดฝึกคำศัพท์'}
             >
               <Layers className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>โหมดฝึกจำ</span>
+              <span>{isEn ? 'Flashcards' : 'โหมดฝึกจำ'}</span>
             </button>
             <button
               type="button"
@@ -189,10 +196,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   ? 'bg-card text-foreground font-semibold shadow-xs border border-border/60'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
-              aria-label="โหมดค้นหารายการ"
+              aria-label={isEn ? 'Browse Word Bank' : 'โหมดค้นหารายการ'}
             >
               <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>คลังรายการ</span>
+              <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
             </button>
           </div>
         </div>
@@ -203,7 +210,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         <div className="flex items-center gap-1.5 shrink-0">
           <span className="text-xs text-muted-foreground font-medium flex items-center gap-1 mr-1">
             <Filter className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>ระดับ:</span>
+            <span>{isEn ? 'Level:' : 'ระดับ:'}</span>
           </span>
           {(['ALL', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const).map((lvl) => (
             <button
@@ -220,7 +227,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   : 'bg-secondary/40 text-muted-foreground hover:text-foreground border-border/40 hover:bg-secondary'
               }`}
             >
-              {lvl === 'ALL' ? 'ทั้งหมด' : `CEFR ${lvl}`}
+              {lvl === 'ALL' ? (isEn ? 'All' : 'ทั้งหมด') : `CEFR ${lvl}`}
             </button>
           ))}
         </div>
@@ -235,7 +242,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               setSearchQuery(e.target.value);
               setCurrentIndex(0);
             }}
-            placeholder="ค้นหาคำศัพท์หรือความหมาย..."
+            placeholder={isEn ? 'Search vocabulary or meanings...' : 'ค้นหาคำศัพท์หรือความหมาย...'}
             className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-background border border-border/60 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
@@ -259,8 +266,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {/* Empty State */}
       {!loading && filteredWords.length === 0 && (
         <EmptyState
-          title="ไม่พบคำศัพท์ที่ตรงกับการค้นหา"
-          description="ลองปรับตัวกรองระดับ CEFR หรือคำค้นหาเพื่อเข้าถึงคำศัพท์อื่น"
+          title={isEn ? 'No matching vocabulary found' : 'ไม่พบคำศัพท์ที่ตรงกับการค้นหา'}
+          description={
+            isEn
+              ? 'Try adjusting your CEFR level filter or search keywords.'
+              : 'ลองปรับตัวกรองระดับ CEFR หรือคำค้นหาเพื่อเข้าถึงคำศัพท์อื่น'
+          }
           action={
             <GlovaButton
               variant="secondary"
@@ -270,7 +281,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setSearchQuery('');
               }}
             >
-              ล้างตัวกรอง
+              {isEn ? 'Reset Filter' : 'ล้างตัวกรอง'}
             </GlovaButton>
           }
         />
@@ -293,13 +304,15 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 </GlovaBadge>
                 {currentWord.topic && (
                   <span className="text-xs text-muted-foreground hidden sm:inline font-medium">
-                    หมวด: {currentWord.topic}
+                    {isEn ? `Topic: ${currentWord.topic}` : `หมวด: ${currentWord.topic}`}
                   </span>
                 )}
               </div>
 
               <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#FAF7F2] dark:bg-muted/40 px-3 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
-                คำที่ {currentIndex + 1} / {filteredWords.length}
+                {isEn
+                  ? `Word ${currentIndex + 1} of ${filteredWords.length}`
+                  : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
               </div>
             </div>
 
@@ -312,7 +325,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 <button
                   type="button"
                   onClick={(e) => handleSpeak(currentWord.word, e)}
-                  aria-label={`ฟังการออกเสียงคำว่า ${currentWord.word}`}
+                  aria-label={
+                    isEn
+                      ? `Listen to pronunciation for ${currentWord.word}`
+                      : `ฟังการออกเสียงคำว่า ${currentWord.word}`
+                  }
                   className="touch-target w-12 h-12 rounded-full bg-[#E9E5FF] dark:bg-indigo-950/40 hover:bg-[#DDD7FF] dark:hover:bg-indigo-900/50 text-[#5B5CE2] dark:text-indigo-400 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs shrink-0"
                 >
                   <Volume2 className="w-5 h-5" aria-hidden="true" />
@@ -334,10 +351,16 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     className="touch-target px-6 py-3 rounded-full bg-[#5B5CE2]/10 hover:bg-[#5B5CE2]/15 text-xs sm:text-sm font-bold text-[#5B5CE2] transition-all border border-[#5B5CE2]/25 inline-flex items-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" aria-hidden="true" />
-                    <span>แตะเพื่อแสดงความหมายและตัวอย่างประโยค</span>
+                    <span>
+                      {isEn
+                        ? 'Tap to reveal meaning & sentence context'
+                        : 'แตะเพื่อแสดงความหมายและตัวอย่างประโยค'}
+                    </span>
                   </button>
                   <p className="text-[11px] text-muted-foreground mt-2.5 font-medium">
-                    (หรือกดแป้น Spacebar เพื่อเปิดความหมาย)
+                    {isEn
+                      ? '(or press Spacebar to flip card)'
+                      : '(หรือกดแป้น Spacebar เพื่อเปิดความหมาย)'}
                   </p>
                 </div>
               ) : (
@@ -372,7 +395,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     <div className="p-5 rounded-[22px] bg-white dark:bg-card/80 border border-[#EDE8DF] dark:border-border/40 text-left space-y-1.5 shadow-xs">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">
                         <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
-                        <span>ตัวอย่างประโยคในบริบท:</span>
+                        <span>
+                          {isEn ? 'Example sentence in context:' : 'ตัวอย่างประโยคในบริบท:'}
+                        </span>
                       </div>
                       <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed">
                         {currentWord.exampleSentenceEn}
@@ -410,7 +435,13 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 onClick={() => onToggleMastery?.(currentWord.id, !isMastered)}
                 className="rounded-full"
               >
-                {isMastered ? 'จำได้แล้ว' : 'ทำเครื่องหมายว่าจำได้'}
+                {isMastered
+                  ? isEn
+                    ? 'Mastered'
+                    : 'จำได้แล้ว'
+                  : isEn
+                  ? 'Mark as Mastered'
+                  : 'ทำเครื่องหมายว่าจำได้'}
               </GlovaButton>
 
               <div className="flex items-center gap-2">
@@ -419,20 +450,20 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   size="sm"
                   leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
                   onClick={handlePrev}
-                  aria-label="คำก่อนหน้า"
+                  aria-label={isEn ? 'Previous word' : 'คำก่อนหน้า'}
                   className="rounded-full"
                 >
-                  <span className="hidden sm:inline">ก่อนหน้า</span>
+                  <span className="hidden sm:inline">{isEn ? 'Previous' : 'ก่อนหน้า'}</span>
                 </GlovaButton>
                 <GlovaButton
                   variant="primary"
                   size="sm"
                   rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                   onClick={handleNext}
-                  aria-label="คำถัดไป"
+                  aria-label={isEn ? 'Next word' : 'คำถัดไป'}
                   className="rounded-full"
                 >
-                  <span>คำถัดไป</span>
+                  <span>{isEn ? 'Next Word' : 'คำถัดไป'}</span>
                 </GlovaButton>
               </div>
             </div>
@@ -467,8 +498,24 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       className={`min-h-[44px] min-w-[44px] p-2.5 flex items-center justify-center rounded-md transition-colors ${
                         mastered ? 'text-emerald-500' : 'text-muted-foreground/40 hover:text-muted-foreground'
                       }`}
-                      aria-label={mastered ? 'บันทึกว่ายังจำไม่ได้' : 'บันทึกว่าจำได้แล้ว'}
-                      title={mastered ? 'คำศัพท์ที่จำได้แล้ว' : 'คลิกเพื่อบันทึกว่าจำได้'}
+                      aria-label={
+                        mastered
+                          ? isEn
+                            ? 'Mark as unmastered'
+                            : 'บันทึกว่ายังจำไม่ได้'
+                          : isEn
+                          ? 'Mark as mastered'
+                          : 'บันทึกว่าจำได้แล้ว'
+                      }
+                      title={
+                        mastered
+                          ? isEn
+                            ? 'Mastered word'
+                            : 'คำศัพท์ที่จำได้แล้ว'
+                          : isEn
+                          ? 'Click to mark as mastered'
+                          : 'คลิกเพื่อบันทึกว่าจำได้'
+                      }
                     >
                       <CheckCircle className="w-4 h-4 fill-current/10" aria-hidden="true" />
                     </button>
@@ -481,7 +528,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       </span>
                       <GlovaIconButton
                         icon={<Volume2 className="w-3.5 h-3.5 text-primary" aria-hidden="true" />}
-                        ariaLabel={`ฟังเสียงคำว่า ${w.word}`}
+                        ariaLabel={
+                          isEn ? `Listen to pronunciation for ${w.word}` : `ฟังเสียงคำว่า ${w.word}`
+                        }
                         size="sm"
                         variant="ghost"
                         onClick={(e) => handleSpeak(w.word, e)}
@@ -495,7 +544,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   </div>
 
                   <p className="text-xs font-semibold text-primary">
-                    {w.meaningTh}
+                    {isEn && w.meaningEn ? w.meaningEn : w.meaningTh}
                   </p>
 
                   {w.exampleSentenceEn && (

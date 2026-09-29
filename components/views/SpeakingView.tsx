@@ -32,7 +32,8 @@ import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion
 import { useTranslation } from '../../i18n';
 
 export const SpeakingView: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const { showToast } = useToast();
   const [prompts, setPrompts] = useState<SpeakingPrompt[]>(SPEAKING_BANK);
   const [selectedPromptId, setSelectedPromptId] = useState<string>(SPEAKING_BANK[0]?.id || '');
@@ -65,7 +66,7 @@ export const SpeakingView: React.FC = () => {
       }
     } catch (err: any) {
       console.warn('[SpeakingView] API fetch failed, falling back to static speaking bank:', err?.message || err);
-      setError(err?.friendlyMessage || 'ไม่สามารถโหลดหัวข้อพูดจากเซิร์ฟเวอร์ได้ กำลังแสดงข้อมูลสำรอง');
+      setError(err?.friendlyMessage || (isEn ? 'Could not load speaking prompts from server. Showing offline bank.' : 'ไม่สามารถโหลดหัวข้อพูดจากเซิร์ฟเวอร์ได้ กำลังแสดงข้อมูลสำรอง'));
       setPrompts(SPEAKING_BANK);
     } finally {
       setLoading(false);
@@ -118,14 +119,18 @@ export const SpeakingView: React.FC = () => {
         );
         setDetectedPhrases(matched);
       }
-      showToast('บันทึกเสียงเสร็จสิ้น', 'บันทึกคำตอบแล้วเพื่อการฝึกฝน', 'success');
+      showToast(
+        isEn ? 'Recording completed' : 'บันทึกเสียงเสร็จสิ้น',
+        isEn ? 'Your spoken response has been recorded for review.' : 'บันทึกคำตอบแล้วเพื่อการฝึกฝน',
+        'success'
+      );
       return;
     }
 
     if (!AudioService.isSpeechRecognitionSupported()) {
       showToast(
-        'เบราว์เซอร์นี้ยังไม่รองรับ Web Speech API',
-        'แนะนำให้ใช้งานบน Google Chrome หรือ Microsoft Edge เพื่อตรวจจับคำพูดอัตโนมัติ',
+        isEn ? 'Speech Recognition Unavailable' : 'เบราว์เซอร์นี้ยังไม่รองรับ Web Speech API',
+        isEn ? 'We recommend Chrome or Edge for live automatic transcription.' : 'แนะนำให้ใช้งานบน Google Chrome หรือ Microsoft Edge เพื่อตรวจจับคำพูดอัตโนมัติ',
         'info'
       );
       // Still allow recording timer mode
@@ -189,13 +194,13 @@ export const SpeakingView: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6 lg:px-8">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="SPEAKING LAB"
-          title="การพูดและออกเสียงเชิงโต้ตอบ"
-          description="ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"
+          title={isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
+          description={isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
         />
 
         {currentPrompt && (
@@ -240,7 +245,7 @@ export const SpeakingView: React.FC = () => {
       {/* Loading state indicator */}
       {loading && prompts.length === 0 && (
         <div className="min-h-[320px] flex items-center justify-center p-12">
-          <LoadingSpinner size="lg" text="กำลังโหลดหัวข้อการพูด..." />
+          <LoadingSpinner size="lg" text={isEn ? "Loading speaking topics..." : "กำลังโหลดหัวข้อการพูด..."} />
         </div>
       )}
 
@@ -275,7 +280,7 @@ export const SpeakingView: React.FC = () => {
                   onClick={handlePlayModel}
                   className="rounded-full"
                 >
-                  {isPlayingModel ? 'กำลังเล่นตัวอย่าง...' : 'ฟังตัวอย่างคำตอบ'}
+                  {isPlayingModel ? (isEn ? 'Playing sample...' : 'กำลังเล่นตัวอย่าง...') : (isEn ? 'Listen to Sample' : 'ฟังตัวอย่างคำตอบ')}
                 </GlovaButton>
               )}
             </div>
@@ -298,7 +303,7 @@ export const SpeakingView: React.FC = () => {
                 <div className="space-y-2">
                   <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
                     <HelpCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
-                    <span>แนวทางการตอบ:</span>
+                    <span>{isEn ? 'Guiding Questions & Structure:' : 'แนวทางการตอบ:'}</span>
                   </h4>
                   <ul className="space-y-1.5 text-xs text-muted-foreground">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
@@ -315,7 +320,7 @@ export const SpeakingView: React.FC = () => {
                 <div className="space-y-2">
                   <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
-                    <span>คำศัพท์และสำนวนเป้าหมาย:</span>
+                    <span>{isEn ? 'Target Vocabulary & Collocations:' : 'คำศัพท์และสำนวนเป้าหมาย:'}</span>
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {currentPrompt.targetPhrases.map((phrase, idx) => {
@@ -364,7 +369,7 @@ export const SpeakingView: React.FC = () => {
                     ? 'bg-[#FF8F82] text-white shadow-lg shadow-[#FF8F82]/30 ring-[#FF8F82]/20 hover:scale-105 active:scale-95'
                     : 'bg-[#5B5CE2] text-white hover:bg-[#4E4FD0] shadow-md shadow-indigo-500/25 ring-indigo-500/20 hover:scale-105 active:scale-95'
                 }`}
-                aria-label={isRecording ? 'หยุดบันทึกเสียง' : 'เริ่มบันทึกเสียง'}
+                aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
               >
                 {isRecording ? (
                   <MicOff className="w-8 h-8 sm:w-10 sm:h-10" aria-hidden="true" />
@@ -376,10 +381,10 @@ export const SpeakingView: React.FC = () => {
 
             <div className="space-y-1">
               <p className="text-base font-bold text-foreground">
-                {isRecording ? 'กำลังบันทึกเสียงของคุณ...' : 'แตะเพื่อเริ่มบันทึกเสียง'}
+                {isRecording ? (isEn ? 'Recording your voice...' : 'กำลังบันทึกเสียงของคุณ...') : (isEn ? 'Tap to Start Speaking' : 'แตะเพื่อเริ่มบันทึกเสียง')}
               </p>
               <p className="text-xs text-muted-foreground font-medium">
-                {isRecording ? 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย'}
+                {isRecording ? (isEn ? 'Speak in English, then tap again to stop' : 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด') : (isEn ? 'Follow the guiding points and integrate target collocations' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย')}
               </p>
             </div>
 
@@ -407,7 +412,11 @@ export const SpeakingView: React.FC = () => {
                 {detectedPhrases.length > 0 && (
                   <div className="pt-2 border-t border-border/40 text-xs text-emerald-500 flex items-center gap-1.5 font-medium">
                     <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
-                    <span>ตรวจพบวลีเป้าหมาย {detectedPhrases.length} จาก {currentPrompt.targetPhrases.length} วลี</span>
+                    <span>
+                      {isEn
+                        ? `Detected ${detectedPhrases.length} of ${currentPrompt.targetPhrases.length} target phrases`
+                        : `ตรวจพบวลีเป้าหมาย ${detectedPhrases.length} จาก ${currentPrompt.targetPhrases.length} วลี`}
+                    </span>
                   </div>
                 )}
               </div>
@@ -422,7 +431,7 @@ export const SpeakingView: React.FC = () => {
                   leftIcon={<RotateCcw className="w-4 h-4" aria-hidden="true" />}
                   onClick={handleReset}
                 >
-                  ฝึกใหม่อีกครั้ง
+                  {isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}
                 </GlovaButton>
               </div>
             )}
@@ -435,7 +444,7 @@ export const SpeakingView: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-500" aria-hidden="true" />
                   <h4 className="font-semibold text-sm sm:text-base text-foreground">
-                    ตัวอย่างคำตอบระดับคะแนนเต็ม
+                    {isEn ? 'Band 8+ Model Response' : 'ตัวอย่างคำตอบระดับคะแนนเต็ม'}
                   </h4>
                 </div>
 
@@ -445,7 +454,7 @@ export const SpeakingView: React.FC = () => {
                   leftIcon={showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
                 >
-                  {showModelAnswer ? 'ซ่อนตัวอย่าง' : 'ดูบทความตัวอย่าง'}
+                  {showModelAnswer ? (isEn ? 'Hide Model' : 'ซ่อนตัวอย่าง') : (isEn ? 'View Sample Response' : 'ดูบทความตัวอย่าง')}
                 </GlovaButton>
               </div>
 

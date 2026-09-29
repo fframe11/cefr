@@ -329,6 +329,7 @@ export interface MockExamCatalogItemDTO {
   name: string;
   target_cefr: CEFRLevel | string;
   description_th: string;
+  description_en?: string;
   total_duration_minutes: number;
   passing_score: number;
   version: number;

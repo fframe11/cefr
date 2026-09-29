@@ -33,7 +33,8 @@ import {
 import { useTranslation } from '../../i18n';
 
 export const WritingView: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const { showToast } = useToast();
   const [prompts, setPrompts] = useState<WritingPrompt[]>(WRITING_BANK);
   const [selectedPromptId, setSelectedPromptId] = useState<string>(WRITING_BANK[0]?.id || '');
@@ -86,30 +87,46 @@ export const WritingView: React.FC = () => {
 
   const handleCopyPhrase = (phrase: string) => {
     navigator.clipboard.writeText(phrase);
-    showToast('คัดลอกสำนวนแล้ว', phrase, 'info');
+    showToast(isEn ? 'Copied phrase' : 'คัดลอกสำนวนแล้ว', phrase, 'info');
   };
 
   const handleSaveDraft = () => {
-    showToast('บันทึกแบบร่างแล้ว', `บันทึกงานเขียน ${wordCount} คำเรียบร้อย`, 'success');
+    showToast(
+      isEn ? 'Draft saved' : 'บันทึกแบบร่างแล้ว',
+      isEn ? `Saved ${wordCount} words` : `บันทึกงานเขียน ${wordCount} คำเรียบร้อย`,
+      'success'
+    );
   };
 
   const handleSubmit = () => {
     if (wordCount < 5) {
-      showToast('กรุณาเขียนคำตอบก่อนส่ง', 'ต้องการเนื้อหาอย่างน้อยเพื่อทำการบันทึก', 'info');
+      showToast(
+        isEn ? 'Please write your response' : 'กรุณาเขียนคำตอบก่อนส่ง',
+        isEn ? 'Minimum content required' : 'ต้องการเนื้อหาอย่างน้อยเพื่อทำการบันทึก',
+        'info'
+      );
       return;
     }
     setIsSubmitted(true);
-    showToast('ส่งงานเขียนเข้าสู่ระบบแล้ว', 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล', 'success');
+    showToast(
+      isEn ? 'Writing submitted' : 'ส่งงานเขียนเข้าสู่ระบบแล้ว',
+      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล',
+      'success'
+    );
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="WRITING LAB"
-          title="ทักษะการเขียนและการสื่อสาร"
-          description="ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment"
+          title={isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
+          description={
+            isEn
+              ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
+              : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'
+          }
         />
 
         {currentPrompt && (
@@ -155,7 +172,10 @@ export const WritingView: React.FC = () => {
       {/* Loading state indicator */}
       {loading && prompts.length === 0 && (
         <div className="min-h-[320px] flex items-center justify-center p-12">
-          <LoadingSpinner size="lg" text="กำลังโหลดหัวข้องานเขียน..." />
+          <LoadingSpinner
+            size="lg"
+            text={isEn ? 'Loading writing prompts...' : 'กำลังโหลดหัวข้องานเขียน...'}
+          />
         </div>
       )}
 
@@ -178,9 +198,9 @@ export const WritingView: React.FC = () => {
               </div>
 
               <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
-                <span>เกณฑ์ความยาว:</span>
+                <span>{isEn ? 'Target Word Count:' : 'เกณฑ์ความยาว:'}</span>
                 <span className="px-2 py-0.5 rounded-md bg-secondary text-foreground font-mono font-semibold">
-                  {currentPrompt.minWords}–{currentPrompt.maxWords} คำ
+                  {currentPrompt.minWords}–{currentPrompt.maxWords} {isEn ? 'words' : 'คำ'}
                 </span>
               </div>
             </div>
@@ -212,7 +232,9 @@ export const WritingView: React.FC = () => {
               <div className="space-y-2">
                 <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
                   <FileCheck className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                  <span>ข้อกำหนดและประเด็นที่ต้องครอบคลุม:</span>
+                  <span>
+                    {isEn ? 'Requirements & Coverage Checklist:' : 'ข้อกำหนดและประเด็นที่ต้องครอบคลุม:'}
+                  </span>
                 </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
                   {currentPrompt.guidelinesTh.map((g, idx) => (
@@ -246,12 +268,20 @@ export const WritingView: React.FC = () => {
                     : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
                 }`}
               >
-                <span>{wordCount} คำ</span>
+                <span>
+                  {wordCount} {isEn ? 'words' : 'คำ'}
+                </span>
                 <span className="text-[10px] hidden sm:inline">
                   {isWithinWordCount
-                    ? '(ความยาวเหมาะสม)'
+                    ? isEn
+                      ? '(Optimal length)'
+                      : '(ความยาวเหมาะสม)'
                     : isUnderWordCount
-                    ? `(ขาดอีก ${currentPrompt.minWords - wordCount} คำ)`
+                    ? isEn
+                      ? `(${currentPrompt.minWords - wordCount} words needed)`
+                      : `(ขาดอีก ${currentPrompt.minWords - wordCount} คำ)`
+                    : isEn
+                    ? '(Exceeds limit)'
                     : '(เกินเกณฑ์กำหนด)'}
                 </span>
               </div>
@@ -264,7 +294,9 @@ export const WritingView: React.FC = () => {
                 setUserText(e.target.value);
                 if (isSubmitted) setIsSubmitted(false);
               }}
-              placeholder="พิมพ์คำตอบภาษาอังกฤษของคุณที่นี่..."
+              placeholder={
+                isEn ? 'Type your English answer here...' : 'พิมพ์คำตอบภาษาอังกฤษของคุณที่นี่...'
+              }
               rows={9}
               className="w-full p-4 rounded-xl bg-background border border-border/80 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 font-sans resize-y"
               aria-label="พื้นที่เขียนคำตอบ"
@@ -278,7 +310,7 @@ export const WritingView: React.FC = () => {
                 leftIcon={<Save className="w-4 h-4" aria-hidden="true" />}
                 onClick={handleSaveDraft}
               >
-                บันทึกแบบร่าง
+                {isEn ? 'Save Draft' : 'บันทึกแบบร่าง'}
               </GlovaButton>
 
               <GlovaButton
@@ -287,7 +319,7 @@ export const WritingView: React.FC = () => {
                 leftIcon={<Send className="w-4 h-4" aria-hidden="true" />}
                 onClick={handleSubmit}
               >
-                ส่งงานเขียน
+                {isEn ? 'Submit Writing' : 'ส่งงานเขียน'}
               </GlovaButton>
             </div>
           </GlovaCard>
@@ -297,10 +329,16 @@ export const WritingView: React.FC = () => {
             <div className="p-4 sm:p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 space-y-2 animate-in fade-in duration-200">
               <div className="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
                 <Clock className="w-4 h-4" aria-hidden="true" />
-                <span>บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge</span>
+                <span>
+                  {isEn
+                    ? 'Response Recorded — Pending Cambridge Rubric Evaluation'
+                    : 'บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
+                </span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                เนื่องจากงานเขียนเป็นข้อสอบอัตนัยตามมาตรฐาน CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง
+                {isEn
+                  ? 'Because writing is an open-ended CEFR assessment, your response has been saved. You can compare your work with the model answer and scoring rubric below.'
+                  : 'เนื่องจากงานเขียนเป็นข้อสอบอัตนัยตามมาตรฐาน CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง'}
               </p>
             </div>
           )}
@@ -322,7 +360,13 @@ export const WritingView: React.FC = () => {
                   leftIcon={showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
                 >
-                  {showModelAnswer ? 'ซ่อนตัวอย่าง' : 'ดูตัวอย่างคำตอบ'}
+                  {showModelAnswer
+                    ? isEn
+                      ? 'Hide Sample'
+                      : 'ซ่อนตัวอย่าง'
+                    : isEn
+                    ? 'View Sample Answer'
+                    : 'ดูตัวอย่างคำตอบ'}
                 </GlovaButton>
               </div>
 
@@ -339,7 +383,11 @@ export const WritingView: React.FC = () => {
             <div className="space-y-3 pt-2">
               <h4 className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5 uppercase tracking-wider">
                 <BookOpen className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                <span>สำนวนและวลีที่แนะนำ (คลิกเพื่อคัดลอก):</span>
+                <span>
+                  {isEn
+                    ? 'Recommended Phrases & Collocations (Click to copy):'
+                    : 'สำนวนและวลีที่แนะนำ (คลิกเพื่อคัดลอก):'}
+                </span>
               </h4>
 
               <div className="flex flex-wrap gap-2">

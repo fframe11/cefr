@@ -25,6 +25,9 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     setIsProfileModalOpen,
   } = useApp();
 
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState<boolean>(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = React.useState<boolean>(false);
+
   // Map pathname to NavView
   const currentView: NavView = React.useMemo(() => {
     if (!pathname || pathname === '/') return 'dashboard';
@@ -105,19 +108,26 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         onOpenProfile={() => setIsProfileModalOpen(true)}
         isAuthenticated={status === 'authenticated'}
         userEmail={user?.email || null}
+        onOpenMobileNav={() => setIsMobileNavOpen(true)}
       />
 
-      <div className="flex-1 flex w-full max-w-7xl mx-auto">
-        {/* Desktop / Tablet Sidebar (>= 768px) */}
+      <div className="flex-1 flex w-full min-h-[calc(100vh-4rem)]">
+        {/* Desktop / Tablet Sidebar (>= 768px) & Mobile Drawer (< 768px) */}
         <Sidebar
           currentView={currentView}
           onSelectView={handleSelectView}
           assessmentCompleted={progress.assessmentCompleted}
+          isCollapsed={isSidebarCollapsed}
+          onToggleCollapse={() => setIsSidebarCollapsed((prev) => !prev)}
+          isMobileOpen={isMobileNavOpen}
+          onCloseMobile={() => setIsMobileNavOpen(false)}
         />
 
-        {/* Main Content Area */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 max-w-full overflow-x-hidden pb-24 md:pb-8">
-          {children}
+        {/* Main Content Area: Fluid width expanding naturally when sidebar is collapsed */}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 max-w-full overflow-x-hidden pb-24 md:pb-8 transition-all duration-300">
+          <div className="w-full max-w-[1536px] mx-auto space-y-6">
+            {children}
+          </div>
         </main>
       </div>
 

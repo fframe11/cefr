@@ -71,7 +71,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   onComplete,
   onNavigateDashboard,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const { status, profile } = useAuth();
   const [assessmentMode, setAssessmentMode] = useState<'quick' | 'full'>('quick');
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -240,10 +241,15 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Submitting Spinner State
   if (isSubmitting) {
     return (
-      <div className="w-full max-w-xl mx-auto py-16 text-center space-y-4">
-        <LoadingSpinner size="lg" text="กำลังตรวจและประมวลผลระดับภาษาผ่านระบบเซิร์ฟเวอร์..." />
+      <div className="w-full max-w-[1536px] mx-auto py-16 text-center space-y-4 px-4 sm:px-6 lg:px-8">
+        <LoadingSpinner
+          size="lg"
+          text={isEn ? "Evaluating and computing language proficiency via server..." : "กำลังตรวจและประมวลผลระดับภาษาผ่านระบบเซิร์ฟเวอร์..."}
+        />
         <p className="text-xs text-muted-foreground">
-          ระบบกำลังวิเคราะห์ความเชี่ยวชาญทั้ง 6 ทักษะ และจุดอ่อนสะสมตามมาตรฐาน CEFR
+          {isEn
+            ? "Analyzing multi-skill proficiency and learning gaps against CEFR standards."
+            : "ระบบกำลังวิเคราะห์ความเชี่ยวชาญทั้ง 6 ทักษะ และจุดอ่อนสะสมตามมาตรฐาน CEFR"}
         </p>
       </div>
     );
@@ -252,9 +258,9 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Error State
   if (submitError && !isCompleted) {
     return (
-      <div className="w-full max-w-xl mx-auto py-12 space-y-4">
+      <div className="w-full max-w-[1536px] mx-auto py-12 space-y-4 px-4 sm:px-6 lg:px-8">
         <ErrorMessage
-          title="เกิดข้อผิดพลาดในการประมวลผล"
+          title={isEn ? "Assessment Processing Error" : "เกิดข้อผิดพลาดในการประมวลผล"}
           message={submitError}
           onRetry={() => processAndSubmitAnswers(answers)}
         />
@@ -263,7 +269,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             onClick={handleRestart}
             className="text-xs text-muted-foreground hover:text-foreground underline touch-target"
           >
-            เริ่มทำแบบประเมินใหม่อีกครั้ง
+            {isEn ? "Restart Assessment" : "เริ่มทำแบบประเมินใหม่อีกครั้ง"}
           </button>
         </div>
       </div>
@@ -273,7 +279,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Results Screen
   if (isCompleted && result) {
     return (
-      <div className="w-full max-w-3xl mx-auto space-y-6 pb-12 animate-in fade-in duration-300">
+      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8 animate-in fade-in duration-300">
         {/* Results Banner */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto shadow-sm">
@@ -282,10 +288,12 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 
           <div>
             <GlovaBadge variant="success" size="md">
-              การประเมินเสร็จสมบูรณ์
+              {isEn ? 'Assessment Complete' : 'การประเมินเสร็จสมบูรณ์'}
             </GlovaBadge>
             <h2 className="text-fluid-title font-bold text-foreground mt-3">
-              ระดับภาษาอังกฤษของคุณคือ CEFR {result.estimatedLevel}
+              {isEn
+                ? `Your estimated English level is CEFR ${result.estimatedLevel}`
+                : `ระดับภาษาอังกฤษของคุณคือ CEFR ${result.estimatedLevel}`}
             </h2>
 
             {/* Remotion CEFR Calibration Reveal Animation */}
@@ -304,8 +312,10 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             </div>
 
             <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
-              ตอบถูกต้อง {result.correctCount} จาก {result.totalQuestions} ข้อ ({result.percentage}%) คะแนนประเมินของแพลตฟอร์มเทียบเคียงได้{' '}
-              <span className="text-foreground font-semibold font-mono">{result.cambridgeScore}</span> คะแนน
+              {isEn
+                ? `Answered ${result.correctCount} of ${result.totalQuestions} questions correctly (${result.percentage}%). Platform equivalent score: `
+                : `ตอบถูกต้อง ${result.correctCount} จาก ${result.totalQuestions} ข้อ (${result.percentage}%) คะแนนประเมินของแพลตฟอร์มเทียบเคียงได้ `}
+              <span className="text-foreground font-semibold font-mono">{result.cambridgeScore}</span> {isEn ? 'pts' : 'คะแนน'}
             </p>
           </div>
 
@@ -324,7 +334,9 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
                   Cambridge {result.recommendedExam}
                 </p>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
-                  ระดับข้อสอบที่เหมาะสมที่สุดกับทักษะปัจจุบันของคุณ
+                  {isEn
+                    ? 'Optimal exam tier aligned with your current proficiency'
+                    : 'ระดับข้อสอบที่เหมาะสมที่สุดกับทักษะปัจจุบันของคุณ'}
                 </p>
               </div>
             </div>
@@ -342,7 +354,9 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
                   Cambridge {result.targetExam}
                 </p>
                 <p className="text-[11px] text-muted-foreground mt-0.5">
-                  เป้าหมายส่วนตัวของคุณ สามารถปรับเปลี่ยนได้ในการตั้งค่า
+                  {isEn
+                    ? 'Your personal target, customizable in profile settings'
+                    : 'เป้าหมายส่วนตัวของคุณ สามารถปรับเปลี่ยนได้ในการตั้งค่า'}
                 </p>
               </div>
             </div>
@@ -352,7 +366,9 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-left flex items-start gap-2.5">
             <ShieldAlert className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
             <div className="text-xs text-amber-200/90 leading-relaxed">
-              <span className="font-semibold text-amber-300">ข้อควรทราบเกี่ยวกับผลประเมิน: </span>
+              <span className="font-semibold text-amber-300">
+                {isEn ? 'Important assessment notice: ' : 'ข้อควรทราบเกี่ยวกับผลประเมิน: '}
+              </span>
               {result.disclaimer}
             </div>
           </div>
@@ -410,7 +426,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             size="lg"
             className="w-full sm:flex-1"
           >
-            <span>เริ่มเรียนตามแผนการเรียนรู้นี้</span>
+            <span>{isEn ? 'Start Learning with This Plan' : 'เริ่มเรียนตามแผนการเรียนรู้นี้'}</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </GlovaButton>
 
@@ -421,7 +437,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             className="w-full sm:w-auto"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
-            <span>ทำแบบประเมินอีกครั้ง</span>
+            <span>{isEn ? 'Retake Assessment' : 'ทำแบบประเมินอีกครั้ง'}</span>
           </GlovaButton>
         </div>
 
@@ -432,7 +448,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 
   // Active Test Screen
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-6 pb-12">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
       {/* Mode Switcher: 3-Minute Quick Check vs Comprehensive Diagnostic */}
       <div className="flex items-center justify-center gap-2 p-1.5 rounded-xl bg-secondary/50 border border-border/40 max-w-sm mx-auto">
         <button
@@ -444,7 +460,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          3-Minute Check (8 ข้อ)
+          {isEn ? '3-Minute Check • 8 Questions' : 'เช็กระดับด่วน 3 นาที • 8 ข้อ'}
         </button>
         <button
           type="button"
@@ -455,7 +471,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          Full Diagnostic (24 ข้อ)
+          {isEn ? 'Full Diagnostic • 24 Questions' : 'ประเมินเต็มรูปแบบ • 24 ข้อ'}
         </button>
       </div>
 
@@ -469,7 +485,9 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               <div className="flex items-center gap-2">
                 <GlovaBadge variant="accent" size="sm">CEFR Diagnostic</GlovaBadge>
                 <span className="text-muted-foreground">
-                  ข้อที่ {currentIdx + 1} จาก {DIAGNOSTIC_QUESTIONS.length}
+                  {isEn
+                    ? `Question ${currentIdx + 1} of ${DIAGNOSTIC_QUESTIONS.length}`
+                    : `ข้อที่ ${currentIdx + 1} จาก ${DIAGNOSTIC_QUESTIONS.length}`}
                 </span>
               </div>
               <span className="font-mono text-primary font-semibold">{progressPercent}%</span>

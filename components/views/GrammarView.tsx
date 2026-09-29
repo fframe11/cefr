@@ -38,7 +38,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   onQuestionCompleted,
   activeTopicId,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const [topics, setTopics] = useState<GrammarTopic[]>(GRAMMAR_BANK);
   const [selectedTopicId, setSelectedTopicId] = useState<string>(
     activeTopicId || GRAMMAR_BANK[0]?.id || ''
@@ -130,13 +131,17 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="GRAMMAR LAB"
-          title="ไวยากรณ์และการประยุกต์ใช้"
-          description="เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด"
+          title={isEn ? 'English Grammar Studio & Applications' : 'ไวยากรณ์และการประยุกต์ใช้'}
+          description={
+            isEn
+              ? 'Understand sentence structures, grammar rules, and practice with real questions and clear explanations.'
+              : 'เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด'
+          }
         />
 
         {currentTopic && (
@@ -168,7 +173,9 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               }`}
             >
               <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
-              <span className="truncate max-w-[180px]">{topic.titleTh}</span>
+              <span className="truncate max-w-[180px]">
+                {isEn ? topic.titleEn : topic.titleTh}
+              </span>
             </button>
           );
         })}
@@ -177,7 +184,10 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       {/* Loading state indicator */}
       {loading && topics.length === 0 && (
         <div className="min-h-[320px] flex items-center justify-center p-12">
-          <LoadingSpinner size="lg" text="กำลังโหลดหัวข้อไวยากรณ์..." />
+          <LoadingSpinner
+            size="lg"
+            text={isEn ? 'Loading grammar topics...' : 'กำลังโหลดหัวข้อไวยากรณ์...'}
+          />
         </div>
       )}
 
@@ -204,7 +214,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                   </span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
-                  {currentTopic.titleTh}
+                  {isEn ? currentTopic.titleEn : currentTopic.titleTh}
                 </h3>
               </div>
 
@@ -242,7 +252,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 <div className="pt-2 space-y-3">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" aria-hidden="true" />
-                    <span>โครงสร้างและกฎการใช้งาน:</span>
+                    <span>{isEn ? 'Structure & Usage Rules:' : 'โครงสร้างและกฎการใช้งาน:'}</span>
                   </div>
 
                   <div className="space-y-2.5">
@@ -255,7 +265,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                           {rule.formula}
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">
-                          {rule.explanationTh}
+                          {isEn && rule.explanationEn ? rule.explanationEn : rule.explanationTh}
                         </p>
                         <div className="pt-1.5 border-t border-border/30 text-[11px]">
                           <p className="font-medium text-foreground">{rule.exampleEn}</p>
@@ -272,7 +282,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 <div className="pt-2 space-y-2 border-t border-border/40">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-rose-400">
                     <AlertTriangle className="w-3.5 h-3.5 text-rose-400" aria-hidden="true" />
-                    <span>จุดผิดบ่อยที่ควรระวัง:</span>
+                    <span>{isEn ? 'Common Mistakes to Avoid:' : 'จุดผิดบ่อยที่ควรระวัง:'}</span>
                   </div>
 
                   <div className="space-y-2">
@@ -301,27 +311,36 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
                 <h4 className="font-semibold text-sm sm:text-base text-foreground">
-                  แบบฝึกหัดวัดความเข้าใจ
+                  {isEn ? 'Comprehension Practice' : 'แบบฝึกหัดวัดความเข้าใจ'}
                 </h4>
               </div>
 
               {displayedQuestions.length > 0 && (
                 <span className="text-xs text-muted-foreground font-mono">
-                  ข้อที่ {activeQuestionIdx + 1} จาก {displayedQuestions.length}
+                  {isEn
+                    ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
+                    : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
                 </span>
               )}
             </div>
 
             {loadingQuestions && displayedQuestions.length === 0 && (
               <div className="min-h-[260px] flex items-center justify-center p-8">
-                <LoadingSpinner size="md" text="กำลังโหลดแบบฝึกหัด..." />
+                <LoadingSpinner
+                  size="md"
+                  text={isEn ? 'Loading exercises...' : 'กำลังโหลดแบบฝึกหัด...'}
+                />
               </div>
             )}
 
             {!loadingQuestions && displayedQuestions.length === 0 && (
               <EmptyState
-                title="ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้"
-                description="ทีมผู้เชี่ยวชาญกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้"
+                title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
+                description={
+                  isEn
+                    ? 'Our academic team is currently preparing practice sets for this CEFR tier.'
+                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้'
+                }
               />
             )}
 
@@ -347,7 +366,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
                   >
-                    ข้อก่อนหน้า
+                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
                   </GlovaButton>
 
                   <GlovaButton
@@ -356,7 +375,13 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1 ? 'ข้อถัดไป' : 'หัวข้อถัดไป'}
+                    {activeQuestionIdx < displayedQuestions.length - 1
+                      ? isEn
+                        ? 'Next Question'
+                        : 'ข้อถัดไป'
+                      : isEn
+                      ? 'Next Topic'
+                      : 'หัวข้อถัดไป'}
                   </GlovaButton>
                 </div>
               </div>

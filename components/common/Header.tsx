@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Flame, Clock, Moon, Sun, RefreshCw, User as UserIcon } from 'lucide-react';
+import { Flame, Clock, Moon, Sun, RefreshCw, User as UserIcon, Menu } from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
 import { useTranslation } from '../../i18n';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -21,6 +21,7 @@ interface HeaderProps {
   onOpenProfile?: () => void;
   isAuthenticated?: boolean;
   userEmail?: string | null;
+  onOpenMobileNav?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -35,45 +36,59 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenProfile,
   isAuthenticated = false,
   userEmail,
+  onOpenMobileNav,
 }) => {
   const { t } = useTranslation();
   const goalPercent = Math.min(100, Math.round((minutesStudiedToday / dailyGoalMinutes) * 100));
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/90 backdrop-blur-md transition-colors pt-safe">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-        {/* Logo and Brand */}
-        <Link href="/" className="flex items-center gap-2.5 min-w-0 group hover:opacity-90 transition-opacity">
-          <div className="flex items-center justify-center shrink-0">
-            <GlovaLogo size={32} variant="radiant" ariaLabel="Glova" />
-          </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-base sm:text-lg tracking-tight truncate bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 bg-clip-text text-transparent">
-                Glova
-              </span>
-              <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-secondary text-muted-foreground border border-border/40">
-                {targetExam} {t('header.prep_suffix')}
-              </span>
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+        {/* Left: Mobile Nav Toggle + Logo and Brand */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {onOpenMobileNav && (
+            <button
+              type="button"
+              onClick={onOpenMobileNav}
+              className="md:hidden touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              aria-label="Open mobile navigation menu"
+            >
+              <Menu className="w-5 h-5" aria-hidden="true" />
+            </button>
+          )}
+
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-90 transition-opacity">
+            <div className="flex items-center justify-center shrink-0">
+              <GlovaLogo size={32} variant="radiant" ariaLabel="Glova" />
             </div>
-            <p className="text-[11px] text-muted-foreground truncate hidden xs:block">
-              {t('header.subtitle')}
-            </p>
-          </div>
-        </Link>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-base sm:text-lg tracking-tight truncate bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 bg-clip-text text-transparent">
+                  Glova
+                </span>
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-secondary text-muted-foreground border border-border/40">
+                  {targetExam} {t('header.prep_suffix')}
+                </span>
+              </div>
+              <p className="text-[11px] text-muted-foreground truncate hidden md:block">
+                {t('header.subtitle')}
+              </p>
+            </div>
+          </Link>
+        </div>
 
         {/* Status Indicators & Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* CEFR Level Badge */}
           <GlovaLevelBadge
             level={currentLevel as CEFRTier}
             size="sm"
-            className="hidden xs:inline-flex"
+            className="hidden sm:inline-flex"
           />
 
           {/* Streak Counter */}
           <div
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold shadow-xs"
+            className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold shadow-xs"
             title={`${streakDays} Day Study Streak`}
           >
             <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-amber-500" />
@@ -101,10 +116,10 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Language Switcher */}
           <LanguageSwitcher />
 
-          {/* Re-take Diagnostic Button */}
+          {/* Re-take Diagnostic Button (Desktop / Tablet only) */}
           <button
             onClick={onRetakeAssessment}
-            className="touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-md transition-colors"
+            className="hidden sm:inline-flex touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-md transition-colors"
             title={t('header.retake_assessment')}
             aria-label={t('header.retake_assessment')}
           >

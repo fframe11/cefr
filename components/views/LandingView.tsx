@@ -27,7 +27,7 @@ interface LandingViewProps {
 
 export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   const handleStart = () => {
     if (onStartLearning) {
@@ -41,7 +41,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
   const handleStartQuickCheck = () => {
     setIsQuickCheckOpen(true);
-    // Smooth scroll to quick check section if inline
     const el = document.getElementById('quick-check-experience');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -62,24 +61,24 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-border/40">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left: Value Proposition */}
             <div className="lg:col-span-6 space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-semibold tracking-wide border border-border/60">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-semibold tracking-wide border border-border/60">
                 <Clock className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                <span>How good is your English, really?</span>
+                <span>{t('landing.hero_badge')}</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.12]">
-                Discover what you can already do.{' '}
+                {t('landing.hero_title_part1')}{' '}
                 <span className="bg-gradient-to-r from-primary via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Improve only what matters.
+                  {t('landing.hero_title_part2')}
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                ค้นพบจุดแข็งที่คุณมี และทำความเข้าใจจุดที่กำลังฉุดคุณอยู่ โดยไม่ต้องเริ่มท่องจำใหม่ทั้งหมด เช็คได้ใน 3 นาทีผ่านสถานการณ์จริงในชีวิตประจำวัน ไม่ต้องสมัครสมาชิกล่วงหน้า
+                {t('landing.hero_desc')}
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
@@ -89,7 +88,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   onClick={handleStartQuickCheck}
                   className="px-7 py-3.5 text-base font-semibold shadow-sm shadow-primary/20 group"
                 >
-                  <span>เช็คระดับภาษาอังกฤษ (3 นาที)</span>
+                  <span>{t('landing.hero_cta_check')}</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </GlovaButton>
 
@@ -98,58 +97,56 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   onClick={handleExploreGlova}
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border/60 bg-card hover:bg-muted text-foreground text-sm font-semibold transition-colors"
                 >
-                  สำรวจระบบ Glova
+                  {t('landing.hero_cta_explore')}
                 </a>
               </div>
 
               <div className="flex items-center gap-6 pt-4 text-xs text-muted-foreground flex-wrap">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>8 สถานการณ์จริง (แชท, คาเฟ่, อีเมล)</span>
+                  <span>{t('landing.bullet_situations')}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>รับผล Personal Snapshot ทันที</span>
+                  <span>{t('landing.bullet_snapshot')}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>ไม่ต้องสมัครสมาชิกก่อน</span>
+                  <span>{t('landing.bullet_no_signup')}</span>
                 </div>
               </div>
             </div>
 
-            {/* Right: Remotion Visual Sequence & Editorial Photography */}
+            {/* Right: Unified Media & Visual Experience */}
             <div className="lg:col-span-6 space-y-4">
-              <div className="relative rounded-2xl overflow-hidden border border-border/60 bg-card shadow-sm">
-                {/* Remotion Storytelling Composition */}
-                <div className="aspect-video w-full overflow-hidden bg-background">
-                  <RemotionPlayerWrapper
-                    component={LandingHeroComposition}
-                    inputProps={{}}
-                    durationInFrames={180}
-                    aspectRatio="16/9"
-                    ariaLabel="Visual story of personalized CEFR learning journey"
-                  />
-                </div>
+              {/* Remotion Storytelling Composition */}
+              <div className="relative rounded-2xl overflow-hidden border border-border/60 bg-card shadow-sm aspect-video w-full">
+                <RemotionPlayerWrapper
+                  component={LandingHeroComposition}
+                  inputProps={{}}
+                  durationInFrames={180}
+                  aspectRatio="16/9"
+                  ariaLabel="Visual story of personalized CEFR learning journey"
+                />
               </div>
 
-              {/* Supporting Editorial Photographic Glimpse */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="overflow-hidden rounded-xl border border-border/50">
+              {/* Supporting Photographic Context */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="overflow-hidden rounded-xl border border-border/50 aspect-[4/3]">
                   <GlovaImage
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                     alt="Young adults collaborating naturally in a warm open workspace"
                     aspectRatio="aspect-[4/3]"
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-4 rounded-xl bg-card border border-border/50 flex flex-col justify-center space-y-1">
+                <div className="p-4 rounded-xl bg-card border border-border/50 flex flex-col justify-center space-y-1.5">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-primary">
                     <Heart className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>Calm Learning Ritual</span>
+                    <span>{t('landing.calm_ritual_title')}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-normal">
-                    พื้นที่ฝึกฝนส่วนตัวที่เงียบสงบ ไม่มีการกดดัน ไม่สร้างความเครียด เพื่อการพัฒนาอย่างยั่งยืน
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {t('landing.calm_ritual_desc')}
                   </p>
                 </div>
               </div>
@@ -164,13 +161,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <div className="text-center space-y-2 mb-8">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
               <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Low-Friction English Snapshot</span>
+              <span>{t('landing.quick_check_badge')}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-              เช็คระดับภาษาอังกฤษของคุณใน 3 นาที
+              {t('landing.quick_check_title')}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto">
-              ลองตอบ 8 สถานการณ์จริงที่คุณเจอในชีวิตประจำวันเพื่อรับ Personal English Snapshot ทันที โดยไม่มีการประเมินที่ทำให้รู้สึกผิด
+              {t('landing.quick_check_desc')}
             </p>
           </div>
           <QuickEnglishCheck onFinish={() => router.push('/')} />
@@ -182,13 +179,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-12">
           <div className="space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-              The Learning Shift
+              {t('landing.shift_badge')}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
-              ทำไมภาษาอังกฤษถึงเคยรู้สึกยาก
+              {t('landing.shift_title')}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
-              เปลี่ยนจากความรู้สึกเหนื่อยล้าในการท่องจำกฎเกณฑ์ สู่การซึมซับภาษาที่นำไปใช้งานได้จริง
+              {t('landing.shift_desc')}
             </p>
           </div>
 
@@ -196,20 +193,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {/* The Old Way */}
             <div className="p-6 rounded-2xl bg-background border border-border/60 space-y-4">
               <div className="inline-flex px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 text-xs font-semibold">
-                การเรียนแบบดั้งเดิม
+                {t('landing.old_way_title')}
               </div>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 shrink-0" />
-                  <span>ท่องตารางไวยากรณ์และกฎข้อยกเว้นมากมาย แต่ไม่รู้จะนำไปพูดอย่างไร</span>
+                  <span>{t('landing.old_way_item1')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 shrink-0" />
-                  <span>ท่องแฟลชการ์ดเป็นร้อยคำแต่จำบริบทจริงไม่ได้เมื่อต้องเขียน</span>
+                  <span>{t('landing.old_way_item2')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 shrink-0" />
-                  <span>ความกังวลเรื่องข้อผิดพลาดจนไม่กล้าออกเสียงสนทนา</span>
+                  <span>{t('landing.old_way_item3')}</span>
                 </li>
               </ul>
             </div>
@@ -217,20 +214,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {/* The Glova Way */}
             <div className="p-6 rounded-2xl bg-accent/40 border border-primary/20 space-y-4">
               <div className="inline-flex px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-                แนวทางของ Glova
+                {t('landing.glova_way_title')}
               </div>
               <ul className="space-y-3 text-sm text-foreground">
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>เห็นภาพการเปลี่ยนแปลงของประโยคผ่านแอนิเมชันไทม์ไลน์ที่เข้าใจง่าย</span>
+                  <span>{t('landing.glova_way_item1')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>เรียนรู้คำศัพท์พร้อมเสียงอ่านและจังหวะวรรณยุกต์ในบริบทจริง</span>
+                  <span>{t('landing.glova_way_item2')}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                  <span>สตูดิโอฝึกพูดและเขียนส่วนตัวที่ปลอดภัย พร้อมคำแนะนำที่ตรงจุด</span>
+                  <span>{t('landing.glova_way_item3')}</span>
                 </li>
               </ul>
             </div>
@@ -240,16 +237,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
       {/* 3. THE 6 IMMERSIVE SKILL STUDIOS */}
       <section id="studios" className="py-16 sm:py-24 border-b border-border/40">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-bold tracking-wider text-primary uppercase">
-              Comprehensive Growth
+              {t('landing.studios_badge')}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
-              6 สตูดิโอฝึกฝนทักษะอย่างลงตัว
+              {t('landing.studios_title')}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
-              ฝึกฝนทุกทักษะสอดคล้องกันตามกรอบมาตรฐาน CEFR ตั้งแต่ระดับ A1 ถึง C2
+              {t('landing.studios_desc')}
             </p>
           </div>
 
@@ -260,13 +257,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center">
                   <BookOpen className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">คลังคำศัพท์ในบริบท</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_vocab_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  เรียนรู้คำศัพท์พร้อมสัญลักษณ์โฟเนติกส์ การเน้นพยางค์ และตัวอย่างการใช้งานจริง ไม่ใช่เพียงคำแปลเดี่ยวๆ
+                  {t('landing.studio_vocab_desc')}
                 </p>
               </div>
               <Link href="/vocabulary" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>เปิดคลังคำศัพท์</span>
+                <span>{t('landing.studio_vocab_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -277,13 +274,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center">
                   <Sparkles className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">ไวยากรณ์เชิงภาพ</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_grammar_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  แอนิเมชันไทม์ไลน์ภาพอธิบายความแตกต่างของ Tense และโครงสร้างทางภาษา โดยไม่ต้องท่องสูตร
+                  {t('landing.studio_grammar_desc')}
                 </p>
               </div>
               <Link href="/grammar" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>เรียนรู้ไวยากรณ์</span>
+                <span>{t('landing.studio_grammar_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -294,13 +291,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
                   <Compass className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">อ่านบทความสารคดี</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_reading_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  บทความสั้นเนื้อหาร่วมสมัย จัดระยะบรรทัดสบายตา ช่วยสร้างนิสัยการอ่านภาษาอังกฤษแบบไม่ต้องแปลทุกคำ
+                  {t('landing.studio_reading_desc')}
                 </p>
               </div>
               <Link href="/reading" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>เริ่มฝึกอ่าน</span>
+                <span>{t('landing.studio_reading_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -311,13 +308,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-600 flex items-center justify-center">
                   <Headphones className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">การฟังสำเนียงสากล</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_listening_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  เครื่องเล่นเสียงที่ปรับความเร็วได้ พร้อมการจำลองคลื่นเสียง ให้คุณจับใจความสำคัญของบทสนทนาจริง
+                  {t('landing.studio_listening_desc')}
                 </p>
               </div>
               <Link href="/listening" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>ฟังบทสนทนา</span>
+                <span>{t('landing.studio_listening_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -328,13 +325,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center">
                   <PenTool className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">สตูดิโองานเขียน</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_writing_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  พื้นที่เขียนเรียงความและอีเมลที่เรียบง่าย มีระบบนับคำและคำแนะนำในการเรียบเรียงประโยค
+                  {t('landing.studio_writing_desc')}
                 </p>
               </div>
               <Link href="/writing" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>เขียนบทความ</span>
+                <span>{t('landing.studio_writing_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -345,13 +342,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center">
                   <Mic className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">สตูดิโอฝึกพูดส่วนตัว</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('landing.studio_speaking_title')}</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  อัดเสียงพูดตอบโต้ในสถานการณ์จำลองโดยไม่ต้องกังวลเรื่องสายตาคนอื่น สร้างความมั่นใจก่อนใช้จริง
+                  {t('landing.studio_speaking_desc')}
                 </p>
               </div>
               <Link href="/speaking" className="text-xs font-semibold text-primary inline-flex items-center gap-1 hover:underline pt-2">
-                <span>ฝึกออกเสียง</span>
+                <span>{t('landing.studio_speaking_action')}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </Link>
             </GlovaCard>
@@ -366,14 +363,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             <Clock className="w-6 h-6" aria-hidden="true" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-            หนึ่งความสำเร็จเล็กๆ ทุกวัน
+            {t('landing.habit_title')}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            คุณไม่จำเป็นต้องนั่งอ่านหนังสือวันละหลายชั่วโมง เพียง 5 ถึง 10 นาทีในเวลาที่คุณสะดวก ก็สะสมเป็นทักษะที่นำไปใช้ได้ตลอดชีวิต
+            {t('landing.habit_desc')}
           </p>
           <div className="pt-2">
             <GlovaButton variant="primary" size="md" onClick={handleStart} className="font-semibold">
-              เริ่มบทเรียนแรก 5 นาที
+              {t('landing.habit_cta')}
             </GlovaButton>
           </div>
         </div>
@@ -384,36 +381,36 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8">
           <div className="space-y-2">
             <span className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-              International Standard
+              {t('landing.cambridge_badge')}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
-              เชื่อมโยงมาตรฐาน Cambridge English Scale
+              {t('landing.cambridge_title')}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto">
-              ออกแบบโครงสร้างข้อสอบและคลังคำศัพท์ตามกรอบการวัดผลระดับสากล CEFR A1 ถึง C2
+              {t('landing.cambridge_desc')}
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
-              { level: 'A1', label: 'Beginner', desc: 'พื้นฐานเริ่มต้น' },
-              { level: 'A2', label: 'Key', desc: 'ระดับต้น (KET)' },
-              { level: 'B1', label: 'Preliminary', desc: 'ระดับกลาง (PET)' },
-              { level: 'B2', label: 'First', desc: 'ระดับกลางสูง (FCE)' },
-              { level: 'C1', label: 'Advanced', desc: 'ระดับสูง (CAE)' },
-              { level: 'C2', label: 'Mastery', desc: 'ระดับเชี่ยวชาญ' },
+              { level: 'A1', label: 'Beginner', descKey: 'landing.cefr_a1_desc' },
+              { level: 'A2', label: 'Key', descKey: 'landing.cefr_a2_desc' },
+              { level: 'B1', label: 'Preliminary', descKey: 'landing.cefr_b1_desc' },
+              { level: 'B2', label: 'First', descKey: 'landing.cefr_b2_desc' },
+              { level: 'C1', label: 'Advanced', descKey: 'landing.cefr_c1_desc' },
+              { level: 'C2', label: 'Mastery', descKey: 'landing.cefr_c2_desc' },
             ].map((item) => (
               <div key={item.level} className="p-3.5 rounded-xl bg-card border border-border/60 text-center space-y-1">
                 <span className="text-lg font-extrabold text-primary">{item.level}</span>
                 <div className="text-xs font-semibold text-foreground">{item.label}</div>
-                <div className="text-[11px] text-muted-foreground">{item.desc}</div>
+                <div className="text-[11px] text-muted-foreground">{t(item.descKey)}</div>
               </div>
             ))}
           </div>
 
           <div className="inline-flex items-center gap-2 text-xs text-muted-foreground bg-muted/30 px-4 py-2 rounded-full border border-border/50">
             <ShieldCheck className="w-4 h-4 text-primary" aria-hidden="true" />
-            <span>แบบฝึกหัดพัฒนาทักษะตามเกณฑ์มาตรฐาน CEFR สากล</span>
+            <span>{t('landing.cambridge_trust')}</span>
           </div>
         </div>
       </section>
@@ -422,10 +419,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section className="py-20 sm:py-28 bg-gradient-to-b from-card to-background text-center">
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight">
-            เส้นทางภาษาอังกฤษที่สร้างมาเพื่อคุณ
+            {t('landing.final_cta_title')}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
-            เริ่มต้นก้าวแรกได้ทันทีโดยไม่ต้องผูกบัตรเครดิต ทำแบบทดสอบวัดระดับเพื่อค้นหาจุดเริ่มต้นที่เหมาะสมกับคุณที่สุด
+            {t('landing.final_cta_desc')}
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <GlovaButton
@@ -434,7 +431,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               onClick={handleStart}
               className="px-8 py-4 text-base font-semibold shadow-md shadow-primary/25"
             >
-              เริ่มต้นทำแบบวัดระดับ CEFR
+              {t('landing.final_cta_button')}
             </GlovaButton>
           </div>
         </div>
@@ -442,16 +439,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
       {/* FOOTER */}
       <footer className="border-t border-border/40 py-8 bg-card text-center text-xs text-muted-foreground">
-        <div className="w-full max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="w-full max-w-[1536px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="font-bold text-foreground">Glova</span>
             <span>— CEFR English Learning Platform</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/" className="hover:text-foreground transition-colors">หน้าหลัก</Link>
-            <Link href="/assessment" className="hover:text-foreground transition-colors">วัดระดับ</Link>
-            <Link href="/vocabulary" className="hover:text-foreground transition-colors">คำศัพท์</Link>
-            <Link href="/mock-exams" className="hover:text-foreground transition-colors">สอบจำลอง</Link>
+            <Link href="/" className="hover:text-foreground transition-colors">{t('landing.footer_home')}</Link>
+            <Link href="/assessment" className="hover:text-foreground transition-colors">{t('landing.footer_assessment')}</Link>
+            <Link href="/vocabulary" className="hover:text-foreground transition-colors">{t('landing.footer_vocabulary')}</Link>
+            <Link href="/mock-exams" className="hover:text-foreground transition-colors">{t('landing.footer_mock_exams')}</Link>
           </div>
         </div>
       </footer>

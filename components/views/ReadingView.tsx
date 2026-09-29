@@ -33,7 +33,8 @@ interface ReadingViewProps {
 }
 
 export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const [passages, setPassages] = useState<ReadingPassage[]>(READING_BANK);
   const [selectedPassageId, setSelectedPassageId] = useState<string>(READING_BANK[0]?.id || '');
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
@@ -127,13 +128,17 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-6 pb-16 px-4 sm:px-6">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-16 px-4 sm:px-6">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <GlovaSectionHeader
           eyebrow="READING LAB"
-          title="อ่านจับใจความและวิเคราะห์บริบท"
-          description="ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge"
+          title={isEn ? 'Reading Lab & Analytical Comprehension' : 'อ่านจับใจความและวิเคราะห์บริบท'}
+          description={
+            isEn
+              ? 'Practice analytical reading aligned with CEFR standards and Cambridge exam preparation.'
+              : 'ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge'
+          }
         />
 
         {currentPassage && (
@@ -184,7 +189,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
           }`}
         >
           <FileText className="w-4 h-4" aria-hidden="true" />
-          <span>บทความ</span>
+          <span>{isEn ? 'Passage' : 'บทความ'}</span>
         </button>
         <button
           type="button"
@@ -196,7 +201,11 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
           }`}
         >
           <BookOpen className="w-4 h-4" aria-hidden="true" />
-          <span>คำถาม ({displayedQuestions.length} ข้อ)</span>
+          <span>
+            {isEn
+              ? `Questions (${displayedQuestions.length})`
+              : `คำถาม (${displayedQuestions.length} ข้อ)`}
+          </span>
         </button>
       </div>
 
@@ -234,11 +243,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
                   <span className="flex items-center gap-1 bg-[#FAF7F2] dark:bg-muted/40 px-2.5 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
                     <FileText className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
-                    <span>{currentPassage.wordCount} คำ</span>
+                    <span>
+                      {currentPassage.wordCount} {isEn ? 'words' : 'คำ'}
+                    </span>
                   </span>
                   <span className="flex items-center gap-1 bg-[#FAF7F2] dark:bg-muted/40 px-2.5 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
                     <Clock className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
-                    <span>~{estimatedReadingMinutes} นาที</span>
+                    <span>
+                      ~{estimatedReadingMinutes} {isEn ? 'min' : 'นาที'}
+                    </span>
                   </span>
                 </div>
               </div>
@@ -273,7 +286,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                   >
                     <BookMarked className="w-4 h-4" aria-hidden="true" />
                     <span>
-                      {isGlossaryOpen ? 'ซ่อนคลังคำศัพท์ประจำบทความ' : 'ดูคำศัพท์สำคัญในบทความ'}
+                      {isGlossaryOpen
+                        ? isEn
+                          ? 'Hide vocabulary glossary'
+                          : 'ซ่อนคลังคำศัพท์ประจำบทความ'
+                        : isEn
+                        ? 'View key vocabulary'
+                        : 'ดูคำศัพท์สำคัญในบทความ'}
                     </span>
                   </button>
 
@@ -301,27 +320,36 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
                 <h4 className="font-semibold text-sm sm:text-base text-foreground">
-                  คำถามวัดความเข้าใจ
+                  {isEn ? 'Comprehension Questions' : 'คำถามวัดความเข้าใจ'}
                 </h4>
               </div>
 
               {displayedQuestions.length > 0 && (
                 <span className="text-xs text-muted-foreground font-mono">
-                  ข้อที่ {activeQuestionIdx + 1} จาก {displayedQuestions.length}
+                  {isEn
+                    ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
+                    : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
                 </span>
               )}
             </div>
 
             {loadingQuestions && displayedQuestions.length === 0 && (
               <div className="min-h-[260px] flex items-center justify-center p-8">
-                <LoadingSpinner size="md" text="กำลังโหลดคำถาม..." />
+                <LoadingSpinner
+                  size="md"
+                  text={isEn ? 'Loading questions...' : 'กำลังโหลดคำถาม...'}
+                />
               </div>
             )}
 
             {!loadingQuestions && displayedQuestions.length === 0 && (
               <EmptyState
-                title="ยังไม่มีคำถามสำหรับบทความนี้"
-                description="ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม"
+                title={isEn ? 'No questions available for this passage yet' : 'ยังไม่มีคำถามสำหรับบทความนี้'}
+                description={
+                  isEn
+                    ? 'Our academic team is currently preparing additional questions.'
+                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม'
+                }
               />
             )}
 
@@ -347,7 +375,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
                   >
-                    ข้อก่อนหน้า
+                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
                   </GlovaButton>
 
                   <GlovaButton
@@ -356,7 +384,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                     rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1 ? 'ข้อถัดไป' : 'บทความถัดไป'}
+                    {activeQuestionIdx < displayedQuestions.length - 1
+                      ? isEn
+                        ? 'Next Question'
+                        : 'ข้อถัดไป'
+                      : isEn
+                      ? 'Next Passage'
+                      : 'บทความถัดไป'}
                   </GlovaButton>
                 </div>
               </div>

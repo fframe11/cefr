@@ -48,7 +48,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   onNavigate,
   onStartRemediation,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const { status } = useAuth();
   const [analytics, setAnalytics] = useState<UserAnalyticsResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(status === 'authenticated');
@@ -67,11 +68,11 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
       setAnalytics(data);
     } catch (err: any) {
       console.warn('Failed to fetch server analytics:', err);
-      setError(err?.friendlyMessage || err?.message || 'ไม่สามารถโหลดข้อมูลสถิติการเรียนรู้ได้');
+      setError(err?.friendlyMessage || err?.message || (isEn ? 'Failed to load analytics data' : 'ไม่สามารถโหลดข้อมูลสถิติการเรียนรู้ได้'));
     } finally {
       setIsLoading(false);
     }
-  }, [status]);
+  }, [status, isEn]);
 
   useEffect(() => {
     fetchAnalytics();
@@ -87,10 +88,15 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   // Loading State
   if (isLoading) {
     return (
-      <div className="w-full max-w-5xl mx-auto py-16 text-center space-y-3">
-        <LoadingSpinner size="lg" text="กำลังดึงข้อมูลสถิติและการวิเคราะห์เชิงลึกจากเซิร์ฟเวอร์..." />
+      <div className="w-full max-w-[1536px] mx-auto py-16 text-center space-y-3 px-4 sm:px-6 lg:px-8">
+        <LoadingSpinner
+          size="lg"
+          text={isEn ? "Retrieving analytics and diagnostic breakdown from server..." : "กำลังดึงข้อมูลสถิติและการวิเคราะห์เชิงลึกจากเซิร์ฟเวอร์..."}
+        />
         <p className="text-xs text-muted-foreground">
-          ระบบกำลังประมวลผลความแม่นยำรายทักษะ ประวัติการทำข้อสอบ และจุดอ่อนสะสม
+          {isEn
+            ? "Processing multi-skill accuracy, mock test histories, and identified learning gaps."
+            : "ระบบกำลังประมวลผลความแม่นยำรายทักษะ ประวัติการทำข้อสอบ และจุดอ่อนสะสม"}
         </p>
       </div>
     );
@@ -147,7 +153,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
       }));
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 pb-12">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
       {/* Top Banner: CEFR & Cambridge Score Summary */}
       <GlovaCard variant="elevated" className="p-6 sm:p-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/40">
@@ -157,31 +163,37 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                 CEFR {currentLevel}
               </GlovaBadge>
               <span className="text-xs text-muted-foreground">
-                เป้าหมายการสอบ: Cambridge {progress.targetExam}
+                {isEn ? `Exam Target: Cambridge ${progress.targetExam}` : `เป้าหมายการสอบ: Cambridge ${progress.targetExam}`}
               </span>
             </div>
             <h1 className="text-fluid-title font-bold text-foreground">
               {t('analytics.title')}
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-              {currentLevelInfo.descriptionTh}
+              {isEn ? (currentLevelInfo.descriptionEn || currentLevelInfo.descriptionTh) : currentLevelInfo.descriptionTh}
             </p>
           </div>
 
           <div className="p-4 rounded-xl bg-muted/40 border border-border/60 text-center shrink-0">
-            <span className="text-[11px] text-muted-foreground uppercase font-medium">คะแนนประเมินเทียบเคียง</span>
+            <span className="text-[11px] text-muted-foreground uppercase font-medium">
+              {isEn ? 'Estimated Cambridge Score' : 'คะแนนประเมินเทียบเคียง'}
+            </span>
             <p className="text-3xl font-extrabold text-primary font-mono mt-0.5">
               {estimatedScore}
             </p>
             <span className="text-[10px] text-muted-foreground block">
-              สเกลเทียบเคียง 80 - 230 คะแนน
+              {isEn ? 'Equivalent scale: 80 - 230 marks' : 'สเกลเทียบเคียง 80 - 230 คะแนน'}
             </span>
           </div>
         </div>
 
         <GlovaFeedbackBubble
           currentSkill="analytics"
-          customTip="ระบบวิเคราะห์ผลลัพธ์การเรียนรู้รายทักษะ คำนวณความแม่นยำ และจัดกลุ่มจุดบกพร่องสะสมเพื่อแนะนำการฝึกซ่อมจุดอ่อนได้อย่างตรงจุด"
+          customTip={
+            isEn
+              ? 'Diagnostic engine analyzes cross-skill performance, calculates accuracy, and clusters accumulated learning gaps for focused remediation.'
+              : 'ระบบวิเคราะห์ผลลัพธ์การเรียนรู้รายทักษะ คำนวณความแม่นยำ และจัดกลุ่มจุดบกพร่องสะสมเพื่อแนะนำการฝึกซ่อมจุดอ่อนได้อย่างตรงจุด'
+          }
         />
 
         {/* Can-Do Descriptors at Current CEFR Level */}
@@ -207,7 +219,9 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           <ShieldAlert className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
           <span>
             {analytics?.disclaimer ||
-              'คะแนนและการวิเคราะห์ในระบบนี้เป็นค่าประเมินความพร้อมของแพลตฟอร์มเพื่อแนวทางการเรียนรู้เท่านั้น ไม่ใช่ผลสอบรับรองอย่างเป็นทางการจาก Cambridge English Qualifications'}
+              (isEn
+                ? 'Scores and analytics in this platform are estimation benchmarks for learning guidance, not an official certification from Cambridge English Qualifications.'
+                : 'คะแนนและการวิเคราะห์ในระบบนี้เป็นค่าประเมินความพร้อมของแพลตฟอร์มเพื่อแนวทางการเรียนรู้เท่านั้น ไม่ใช่ผลสอบรับรองอย่างเป็นทางการจาก Cambridge English Qualifications')}
           </span>
         </div>
       </GlovaCard>
@@ -215,9 +229,13 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
       {/* Telemetry Overview Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         <GlovaCard className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">คำถามที่ทำทั้งหมด</span>
+          <span className="text-xs text-muted-foreground">
+            {isEn ? 'Total Questions' : 'คำถามที่ทำทั้งหมด'}
+          </span>
           <p className="text-2xl font-bold font-mono text-foreground">{totalAttempted}</p>
-          <span className="text-[11px] text-muted-foreground">ข้อที่ทำแล้ว</span>
+          <span className="text-[11px] text-muted-foreground">
+            {isEn ? 'Questions completed' : 'ข้อที่ทำแล้ว'}
+          </span>
         </GlovaCard>
 
         <GlovaCard className="p-4 space-y-1">
@@ -225,25 +243,37 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           {overallAccuracy !== null ? (
             <p className="text-2xl font-bold font-mono text-primary">{overallAccuracy}%</p>
           ) : (
-            <p className="text-sm font-medium text-muted-foreground pt-1">ไม่มีข้อมูล</p>
+            <p className="text-sm font-medium text-muted-foreground pt-1">
+              {isEn ? 'No data' : 'ไม่มีข้อมูล'}
+            </p>
           )}
           <span className="text-[11px] text-muted-foreground">
-            {totalCorrect > 0 ? `ตอบถูก ${totalCorrect} ข้อ` : 'ต้องทำแบบฝึกหัดก่อน'}
+            {totalCorrect > 0
+              ? (isEn ? `${totalCorrect} correct` : `ตอบถูก ${totalCorrect} ข้อ`)
+              : (isEn ? 'Requires practice sessions' : 'ต้องทำแบบฝึกหัดก่อน')}
           </span>
         </GlovaCard>
 
         <GlovaCard className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">จุดอ่อนสะสม</span>
+          <span className="text-xs text-muted-foreground">
+            {isEn ? 'Learning Gaps' : 'จุดอ่อนสะสม'}
+          </span>
           <p className="text-2xl font-bold font-mono text-amber-500">{weaknessesList.length}</p>
-          <span className="text-[11px] text-muted-foreground">หัวข้อที่ควรซ่อม</span>
+          <span className="text-[11px] text-muted-foreground">
+            {isEn ? 'Areas to reinforce' : 'หัวข้อที่ควรซ่อม'}
+          </span>
         </GlovaCard>
 
         <GlovaCard className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">Mock Exams ที่ส่งแล้ว</span>
+          <span className="text-xs text-muted-foreground">
+            {isEn ? 'Completed Mock Exams' : 'Mock Exams ที่ส่งแล้ว'}
+          </span>
           <p className="text-2xl font-bold font-mono text-foreground">
             {analytics?.overview.completed_mock_exams_count ?? 0}
           </p>
-          <span className="text-[11px] text-muted-foreground">ชุดข้อสอบจำลอง</span>
+          <span className="text-[11px] text-muted-foreground">
+            {isEn ? 'Mock exam sets' : 'ชุดข้อสอบจำลอง'}
+          </span>
         </GlovaCard>
       </div>
 
@@ -263,15 +293,15 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
           {totalAttempted === 0 && status === 'authenticated' ? (
             <EmptyState
-              title="ยังไม่มีข้อมูลประวัติการทำแบบฝึกหัด"
-              description="เริ่มฝึกทำข้อสอบรายทักษะเพื่อเปิดระบบวิเคราะห์ความแม่นยำและความเชี่ยวชาญระดับภาษาของคุณ"
+              title={isEn ? "No practice history recorded yet" : "ยังไม่มีข้อมูลประวัติการทำแบบฝึกหัด"}
+              description={isEn ? "Start practicing skill modules to unlock personalized accuracy telemetry and proficiency analytics." : "เริ่มฝึกทำข้อสอบรายทักษะเพื่อเปิดระบบวิเคราะห์ความแม่นยำและความเชี่ยวชาญระดับภาษาของคุณ"}
               action={
                 <GlovaButton
                   variant="primary"
                   size="sm"
                   onClick={() => onNavigate('grammar')}
                 >
-                  เริ่มทำแบบฝึกหัด
+                  {isEn ? "Start Practice" : "เริ่มทำแบบฝึกหัด"}
                 </GlovaButton>
               }
             />
@@ -284,12 +314,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                     <div className="flex items-center gap-2">
                       {item.accuracy !== null && item.attempted > 0 && (
                         <span className="text-[11px] text-muted-foreground">
-                          ความแม่นยำ {item.accuracy}%
+                          {isEn ? `Accuracy ${item.accuracy}%` : `ความแม่นยำ ${item.accuracy}%`}
                         </span>
                       )}
                       {item.pending > 0 && (
                         <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">
-                          รอตรวจ {item.pending} ข้อ
+                          {isEn ? `Pending ${item.pending}` : `รอตรวจ ${item.pending} ข้อ`}
                         </span>
                       )}
                       <span className="font-mono text-foreground font-semibold">{item.score}%</span>
@@ -302,9 +332,9 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           )}
 
           <div className="p-3 rounded-xl bg-muted/40 border border-border/40 mt-4 text-xs text-muted-foreground flex items-center justify-between">
-            <span>คำศัพท์ที่บันทึกว่าจำได้แล้ว:</span>
+            <span>{isEn ? 'Mastered vocabulary saved:' : 'คำศัพท์ที่บันทึกว่าจำได้แล้ว:'}</span>
             <span className="font-mono font-bold text-foreground">
-              {progress.masteredWordIds.length} คำ
+              {progress.masteredWordIds.length} {isEn ? 'words' : 'คำ'}
             </span>
           </div>
         </GlovaCard>
@@ -319,15 +349,19 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               </h3>
             </div>
             <GlovaBadge variant="warning">
-              {weaknessesList.length} จุด
+              {weaknessesList.length} {isEn ? 'areas' : 'จุด'}
             </GlovaBadge>
           </div>
 
           {weaknessesList.length === 0 ? (
             <div className="text-center py-10 text-muted-foreground text-xs space-y-2">
               <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-              <p className="font-medium text-foreground">ไม่พบจุดบกพร่องสะสม</p>
-              <p>ทำแบบฝึกหัดเพิ่มเติมเพื่อให้ระบบช่วยตรวจจับจุดที่ทำผิดซ้ำ</p>
+              <p className="font-medium text-foreground">
+                {isEn ? 'No recurring learning gaps detected' : 'ไม่พบจุดบกพร่องสะสม'}
+              </p>
+              <p>
+                {isEn ? 'Complete additional exercises to allow the system to detect recurring error patterns.' : 'ทำแบบฝึกหัดเพิ่มเติมเพื่อให้ระบบช่วยตรวจจับจุดที่ทำผิดซ้ำ'}
+              </p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -341,7 +375,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                       {w.labelTh}
                     </h4>
                     <p className="text-[11px] text-rose-400 mt-0.5">
-                      ทำผิดซ้ำ {w.errorCount} ครั้งล่าสุด
+                      {isEn ? `Missed ${w.errorCount} time(s) recently` : `ทำผิดซ้ำ ${w.errorCount} ครั้งล่าสุด`}
                     </p>
                   </div>
 
@@ -383,7 +417,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                 <div className="text-right">
                   <p className="font-mono font-bold text-foreground text-sm">{m.percentage_score}%</p>
                   <p className="text-muted-foreground text-[11px]">
-                    เทียบเคียง {m.estimated_cambridge_score} คะแนน
+                    {isEn ? `Equivalent ${m.estimated_cambridge_score} pts` : `เทียบเคียง ${m.estimated_cambridge_score} คะแนน`}
                   </p>
                 </div>
               </div>

@@ -73,6 +73,7 @@ export interface VocabularyWord {
 export interface GrammarRule {
   formula: string;
   explanationTh: string;
+  explanationEn?: string;
   exampleEn: string;
   exampleTh: string;
 }
@@ -81,6 +82,7 @@ export interface GrammarMistake {
   incorrect: string;
   correct: string;
   reasonTh: string;
+  reasonEn?: string;
 }
 
 export interface GrammarTopic {

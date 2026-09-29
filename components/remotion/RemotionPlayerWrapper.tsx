@@ -21,8 +21,8 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
   inputProps,
   durationInFrames,
   fps = 30,
-  compositionWidth = 640,
-  compositionHeight = 240,
+  compositionWidth,
+  compositionHeight,
   aspectRatio = '8/3',
   loop = true,
   className = '',
@@ -30,6 +30,10 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
 }: RemotionPlayerWrapperProps<T>) {
   const [mounted, setMounted] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Derive composition dimensions to avoid letterboxing/empty space
+  const resolvedWidth = compositionWidth || (aspectRatio === '16/9' || aspectRatio === '16:9' ? 1280 : aspectRatio === '4/3' ? 800 : aspectRatio === '1/1' ? 600 : 640);
+  const resolvedHeight = compositionHeight || (aspectRatio === '16/9' || aspectRatio === '16:9' ? 720 : aspectRatio === '4/3' ? 600 : aspectRatio === '1/1' ? 600 : 240);
 
   useEffect(() => {
     setMounted(true);
@@ -69,8 +73,8 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
         inputProps={{ ...inputProps, isStatic: false }}
         durationInFrames={durationInFrames}
         fps={fps}
-        compositionWidth={compositionWidth}
-        compositionHeight={compositionHeight}
+        compositionWidth={resolvedWidth}
+        compositionHeight={resolvedHeight}
         loop={loop}
         autoPlay={true}
         initiallyMuted={true}

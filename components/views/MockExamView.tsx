@@ -65,7 +65,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   onExamSubmitted,
   onOpenProfile,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isEn = language === 'en';
   const { status: authStatus } = useAuth();
   const { showToast } = useToast();
 
@@ -411,7 +412,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   // =========================================================================
   if (!isExamStarted && !isSubmitted) {
     return (
-      <div className="w-full max-w-4xl mx-auto space-y-6 pb-12">
+      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
         {/* Header Hero Banner */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden">
           {/* Authentic Examination Setting Backdrop */}
@@ -432,23 +433,31 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </div>
             <div>
               <h1 className="text-fluid-title font-bold text-foreground">
-                ห้องสอบจำลอง Cambridge English Qualifications
+                {isEn ? 'Cambridge English Qualifications Mock Examination' : 'ห้องสอบจำลอง Cambridge English Qualifications'}
               </h1>
               <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-lg mx-auto">
-                จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale
+                {isEn
+                  ? 'Simulate authentic exam conditions according to CEFR standards with automated timing and Cambridge English Scale calculations.'
+                  : 'จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale'}
               </p>
             </div>
 
           <GlovaFeedbackBubble
             currentSkill="reading"
-            customTip="แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ"
+            customTip={
+              isEn
+                ? 'Practice mock tests to evaluate test readiness and estimate your Cambridge English Scale score. All test sessions are automatically logged.'
+                : 'แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ'
+            }
           />
 
           {/* Official Cambridge Disclaimer */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/40 border border-border/60 text-[11px] text-muted-foreground text-left max-w-xl mx-auto">
             <HelpCircle className="w-4 h-4 shrink-0 text-muted-foreground" />
             <span>
-              แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications
+              {isEn
+                ? 'Practice mock test for skills evaluation, not an official certificate from Cambridge English Qualifications.'
+                : 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications'}
             </span>
           </div>
           </div>
@@ -460,9 +469,13 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="flex items-center gap-3">
               <AlertCircle className="w-5 h-5 shrink-0" />
               <div className="text-xs sm:text-sm">
-                <p className="font-semibold text-foreground">กรุณาเข้าสู่ระบบเพื่อทำ Mock Exam</p>
+                <p className="font-semibold text-foreground">
+                  {isEn ? 'Please log in to take Mock Exams' : 'กรุณาเข้าสู่ระบบเพื่อทำ Mock Exam'}
+                </p>
                 <p className="text-muted-foreground mt-0.5">
-                  การสอบจำลองมาตรฐานจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ
+                  {isEn
+                    ? 'Standard mock exams require session generation and permanent progress tracking on your account.'
+                    : 'การสอบจำลองมาตรฐานจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ'}
                 </p>
               </div>
             </div>
@@ -473,7 +486,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 onClick={onOpenProfile}
               >
                 <LogIn className="w-3.5 h-3.5 mr-1" />
-                <span>เข้าสู่ระบบ / สมัครสมาชิก</span>
+                <span>{isEn ? 'Log In / Register' : 'เข้าสู่ระบบ / สมัครสมาชิก'}</span>
               </GlovaButton>
             )}
           </div>
@@ -483,7 +496,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
         {isLoadingCatalog ? (
           <div className="py-16 text-center space-y-3">
             <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto" />
-            <p className="text-xs text-muted-foreground">กำลังโหลดรายการชุดข้อสอบจำลอง...</p>
+            <p className="text-xs text-muted-foreground">
+              {isEn ? 'Loading mock exam catalog...' : 'กำลังโหลดรายการชุดข้อสอบจำลอง...'}
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -512,7 +527,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       </div>
                       <span className="text-xs text-muted-foreground flex items-center gap-1 font-mono">
                         <Clock className="w-3.5 h-3.5" />
-                        <span>{exam.total_duration_minutes} นาที</span>
+                        <span>{exam.total_duration_minutes} {isEn ? 'min' : 'นาที'}</span>
                       </span>
                     </div>
 
@@ -520,12 +535,12 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       {exam.name}
                     </h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      {exam.description_th}
+                      {isEn ? (exam.description_en || exam.description_th) : exam.description_th}
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-border/40 space-y-1 text-xs text-muted-foreground">
-                      <p>• เกณฑ์ผ่าน: {exam.passing_score}% ขึ้นไป</p>
-                      <p>• มาตรฐานเป้าหมาย: CEFR {exam.target_cefr}</p>
+                      <p>{isEn ? `• Passing mark: ${exam.passing_score}%+` : `• เกณฑ์ผ่าน: ${exam.passing_score}% ขึ้นไป`}</p>
+                      <p>{isEn ? `• Target Level: CEFR ${exam.target_cefr}` : `• มาตรฐานเป้าหมาย: CEFR ${exam.target_cefr}`}</p>
                     </div>
                   </div>
 
@@ -542,7 +557,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       disabled={isStartingExam}
                       isLoading={isStartingExam && selectedExamId === exam.id}
                     >
-                      เริ่มทำข้อสอบชุดนี้
+                      {isEn ? 'Start This Exam' : 'เริ่มทำข้อสอบชุดนี้'}
                     </GlovaButton>
                   </div>
                 </GlovaCard>
@@ -562,7 +577,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     const isTimedOut = examResult.status === 'timed_out';
 
     return (
-      <div className="w-full max-w-4xl mx-auto space-y-6 pb-12 animate-in fade-in duration-300">
+      <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8 animate-in fade-in duration-300">
         {/* Main Score Card */}
         <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
           <div
@@ -590,12 +605,16 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </div>
 
             <h2 className="text-fluid-title font-bold text-foreground mt-2">
-              ผลสอบ Cambridge {examResult.exam.exam_code}: {examResult.estimated_cambridge_score} คะแนน
+              {isEn
+                ? `Cambridge ${examResult.exam.exam_code} Exam Result: ${examResult.estimated_cambridge_score} pts`
+                : `ผลสอบ Cambridge ${examResult.exam.exam_code}: ${examResult.estimated_cambridge_score} คะแนน`}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-              ระดับ CEFR ที่ประเมินได้: <span className="font-bold text-primary">{examResult.estimated_cefr_level}</span> • 
-              คะแนนปรนัย {examResult.objective_score} จาก {examResult.objective_total_marks} ข้อ ({examResult.objective_percentage}%) • 
-              เกณฑ์ผ่าน {examResult.exam.passing_score}%
+              {isEn ? 'Estimated CEFR Level:' : 'ระดับ CEFR ที่ประเมินได้:'}{' '}
+              <span className="font-bold text-primary">{examResult.estimated_cefr_level}</span>
+              {isEn
+                ? ` • Objective Score: ${examResult.objective_score} / ${examResult.objective_total_marks} marks (${examResult.objective_percentage}%) • Passing Mark: ${examResult.exam.passing_score}%`
+                : ` • คะแนนปรนัย ${examResult.objective_score} จาก ${examResult.objective_total_marks} ข้อ (${examResult.objective_percentage}%) • เกณฑ์ผ่าน ${examResult.exam.passing_score}%`}
             </p>
           </div>
 
@@ -607,7 +626,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 <span>{t('mock_exam.pending_eval')}</span>
               </div>
               <p className="text-muted-foreground leading-relaxed pl-6">
-                มีข้อสอบส่วนอัตนัยจำนวน {examResult.pending_subjective_marks} คะแนนที่รอรับการตรวจประเมิน คะแนนส่วนนี้จึงยังไม่ถูกนำมาคำนวณ และไม่มีการหักเป็น 0 คะแนน
+                {isEn
+                  ? `You have ${examResult.pending_subjective_marks} marks in subjective writing/speaking awaiting evaluation. These marks are excluded from instant calculation and will not default to 0.`
+                  : `มีข้อสอบส่วนอัตนัยจำนวน ${examResult.pending_subjective_marks} คะแนนที่รอรับการตรวจประเมิน คะแนนส่วนนี้จึงยังไม่ถูกนำมาคำนวณ และไม่มีการหักเป็น 0 คะแนน`}
               </p>
             </div>
           )}
@@ -619,7 +640,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               size="md"
               onClick={() => handleStartExam(examResult.exam.id)}
             >
-              ทำข้อสอบชุดนี้อีกครั้ง
+              {isEn ? 'Retake This Exam' : 'ทำข้อสอบชุดนี้อีกครั้ง'}
             </GlovaButton>
             <GlovaButton
               variant="outline"
@@ -631,7 +652,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 setSessionToken(null);
               }}
             >
-              กลับสู่หน้ารายการข้อสอบ
+              {isEn ? 'Back to Exam Catalog' : 'กลับสู่หน้ารายการข้อสอบ'}
             </GlovaButton>
           </div>
         </GlovaCard>
@@ -698,7 +719,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   // VIEW 3: Active Exam Simulation Screen
   // =========================================================================
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 pb-12">
+    <div className="w-full max-w-[1536px] mx-auto space-y-6 pb-12 px-4 sm:px-6 lg:px-8">
       {/* Sticky Header: Exam Title, Timer, Autosave Status, and Submit Button */}
       <div className="sticky top-16 z-30 flex items-center justify-between gap-3 p-4 rounded-xl bg-card/95 border border-border/80 backdrop-blur-md shadow-xs">
         <div>
@@ -716,19 +737,19 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {autosaveStatus === 'saving' && (
               <span className="text-muted-foreground flex items-center gap-1.5 text-[11px]">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-primary" />
-                <span>กำลังบันทึก...</span>
+                <span>{isEn ? 'Saving...' : 'กำลังบันทึก...'}</span>
               </span>
             )}
             {autosaveStatus === 'saved' && (
               <span className="text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5 text-[11px]">
                 <Check className="w-3.5 h-3.5" />
-                <span>บันทึกคำตอบแล้ว</span>
+                <span>{isEn ? 'Saved' : 'บันทึกคำตอบแล้ว'}</span>
               </span>
             )}
             {autosaveStatus === 'error' && (
               <span className="text-amber-500 dark:text-amber-400 flex items-center gap-1.5 text-[11px]">
                 <AlertCircle className="w-3.5 h-3.5" />
-                <span>บันทึกไม่สำเร็จ</span>
+                <span>{isEn ? 'Save failed' : 'บันทึกไม่สำเร็จ'}</span>
               </span>
             )}
           </div>
@@ -754,10 +775,10 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {isSubmitting ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                <span>กำลังส่ง...</span>
+                <span>{isEn ? 'Submitting...' : 'กำลังส่ง...'}</span>
               </>
             ) : (
-              <span>ส่งข้อสอบ</span>
+              <span>{isEn ? 'Submit Exam' : 'ส่งข้อสอบ'}</span>
             )}
           </button>
         </div>
@@ -771,7 +792,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="flex items-center justify-between pb-2">
               <div className="flex items-center gap-2">
                 <span className="text-xs text-muted-foreground font-medium">
-                  ข้อที่ {currentQuestionIdx + 1} จาก {questions.length}
+                  {isEn
+                    ? `Question ${currentQuestionIdx + 1} of ${questions.length}`
+                    : `ข้อที่ ${currentQuestionIdx + 1} จาก ${questions.length}`}
                 </span>
                 <span className="text-[11px] px-2 py-0.5 rounded bg-muted text-muted-foreground border border-border/50 capitalize">
                   {currentQuestion.sectionName}
@@ -789,7 +812,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               >
                 <Flag className="w-3.5 h-3.5" />
                 <span>
-                  {flaggedQuestionIds.includes(currentQuestion.id) ? 'ติดธงแล้ว' : 'ติดธงไว้ทบทวน'}
+                  {flaggedQuestionIds.includes(currentQuestion.id)
+                    ? (isEn ? 'Flagged' : 'ติดธงแล้ว')
+                    : (isEn ? 'Flag for review' : 'ติดธงไว้ทบทวน')}
                 </span>
               </button>
             </div>
@@ -839,13 +864,15 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 /* Subjective Text Answer Area */
                 <div className="space-y-2 pt-2">
                   <label className="text-xs text-muted-foreground font-medium">
-                    พิมพ์คำตอบสำหรับข้อสอบอัตนัยข้อนี้ (คำตอบจะถูกบันทึกอัตโนมัติ):
+                    {isEn
+                      ? 'Type your response for this subjective question (saved automatically):'
+                      : 'พิมพ์คำตอบสำหรับข้อสอบอัตนัยข้อนี้ (คำตอบจะถูกบันทึกอัตโนมัติ):'}
                   </label>
                   <textarea
                     rows={6}
                     value={answers[currentQuestion.id]?.text_answer || ''}
                     onChange={(e) => handleTextAnswerChange(currentQuestion.id, e.target.value)}
-                    placeholder="พิมพ์คำตอบของคุณที่นี่..."
+                    placeholder={isEn ? 'Type your answer here...' : 'พิมพ์คำตอบของคุณที่นี่...'}
                     className="w-full p-3 rounded-xl bg-background border border-border/70 text-xs sm:text-sm text-foreground focus:outline-hidden focus:ring-1 focus:ring-primary leading-relaxed resize-y"
                   />
                 </div>
@@ -861,7 +888,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 disabled={currentQuestionIdx === 0}
               >
                 <ArrowLeft className="w-4 h-4 mr-1" />
-                <span>ข้อก่อนหน้า</span>
+                <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
               </GlovaButton>
 
               <GlovaButton
@@ -874,7 +901,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 }
                 disabled={currentQuestionIdx === questions.length - 1}
               >
-                <span>ข้อถัดไป</span>
+                <span>{isEn ? 'Next' : 'ข้อถัดไป'}</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
               </GlovaButton>
             </div>
@@ -948,7 +975,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
       ) : (
         <div className="py-16 text-center space-y-3">
           <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto" />
-          <p className="text-xs text-muted-foreground">กำลังจัดเตรียมเซสชันข้อสอบ...</p>
+          <p className="text-xs text-muted-foreground">
+            {isEn ? 'Preparing exam session...' : 'กำลังจัดเตรียมเซสชันข้อสอบ...'}
+          </p>
         </div>
       )}
 
@@ -958,23 +987,34 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           <GlovaCard variant="elevated" className="w-full max-w-md p-6 space-y-4">
             <div className="flex items-center gap-3 text-amber-500">
               <AlertTriangle className="w-6 h-6 shrink-0" />
-              <h3 className="font-bold text-base text-foreground">ยืนยันการส่งข้อสอบ</h3>
+              <h3 className="font-bold text-base text-foreground">
+                {isEn ? 'Confirm Exam Submission' : 'ยืนยันการส่งข้อสอบ'}
+              </h3>
             </div>
 
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              คุณต้องการส่งข้อสอบชุดนี้หรือไม่? เมื่อส่งแล้วจะไม่สามารถกลับมาแก้ไขคำตอบได้อีก
+              {isEn
+                ? 'Are you sure you want to submit your exam? Once submitted, you cannot change your answers.'
+                : 'คุณต้องการส่งข้อสอบชุดนี้หรือไม่? เมื่อส่งแล้วจะไม่สามารถกลับมาแก้ไขคำตอบได้อีก'}
               {questions.length >
                 Object.values(answers).filter(
                   (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
                 ).length && (
                 <span className="flex items-center gap-1.5 mt-2 font-semibold text-amber-500">
                   <AlertTriangle className="w-4 h-4 shrink-0" />
-                  คุณยังมีข้อที่ไม่ได้ตอบอีก{' '}
-                  {questions.length -
-                    Object.values(answers).filter(
-                      (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
-                    ).length}{' '}
-                  ข้อ
+                  {isEn
+                    ? `You still have ${
+                        questions.length -
+                        Object.values(answers).filter(
+                          (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
+                        ).length
+                      } unanswered question(s).`
+                    : `คุณยังมีข้อที่ไม่ได้ตอบอีก ${
+                        questions.length -
+                        Object.values(answers).filter(
+                          (a) => a.selected_option_key !== null || (a.text_answer && a.text_answer.trim() !== '')
+                        ).length
+                      } ข้อ`}
                 </span>
               )}
             </p>
@@ -985,7 +1025,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 size="sm"
                 onClick={() => setIsConfirmSubmitOpen(false)}
               >
-                กลับไปทำต่อ
+                {isEn ? 'Continue Exam' : 'กลับไปทำต่อ'}
               </GlovaButton>
               <GlovaButton
                 variant="success"
@@ -994,7 +1034,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 disabled={isSubmitting}
                 isLoading={isSubmitting}
               >
-                ยืนยันส่งข้อสอบ
+                {isEn ? 'Confirm Submission' : 'ยืนยันส่งข้อสอบ'}
               </GlovaButton>
             </div>
           </GlovaCard>
