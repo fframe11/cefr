@@ -38,9 +38,10 @@ function RankingContent() {
   const userId = user?.id || 'guest_user';
   const searchParams = useSearchParams();
 
-  // Primary board toggle: 'xp' vs 'ranked'
-  const initialMode = searchParams.get('tab') === 'ranked' ? 'ranked' : 'ranked';
-  const [boardType, setBoardType] = useState<'xp' | 'ranked'>(initialMode);
+  // Primary board toggle: 'ranked' | 'xp' | 'friends'
+  const paramTab = searchParams.get('tab');
+  const initialMode = paramTab === 'xp' ? 'xp' : paramTab === 'friends' ? 'friends' : 'ranked';
+  const [boardType, setBoardType] = useState<'ranked' | 'xp' | 'friends'>(initialMode);
 
   // XP League sub-tabs
   const [activeTab, setActiveTab] = useState<'weekly' | 'monthly' | 'friends'>('weekly');
@@ -49,9 +50,10 @@ function RankingContent() {
 
   useEffect(() => {
     let isMounted = true;
-    if (boardType === 'xp') {
+    if (boardType === 'xp' || boardType === 'friends') {
       setLoading(true);
-      fetchLeaderboard(activeTab, userId)
+      const queryTab = boardType === 'friends' ? 'friends' : activeTab;
+      fetchLeaderboard(queryTab, userId)
         .then((res) => {
           if (isMounted) setData(res);
         })
@@ -67,45 +69,59 @@ function RankingContent() {
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 pb-16">
-      {/* 1. TOP DUAL LEADERBOARD TOGGLE */}
+      {/* 1. TOP TRIPLE LEADERBOARD TOGGLE */}
       <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card p-4 shadow-xs">
         <div>
           <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2 font-display">
             <Trophy className="w-6 h-6 text-amber-500" />
-            {isEn ? 'Leaderboard & Rankings' : 'ตารางจัดอันดับผู้เล่น'}
+            {isEn ? 'Leaderboard & Rankings' : 'ตารางจัดอันดับผู้เรียน'}
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-grotesk">
             {boardType === 'ranked'
-              ? (isEn ? 'Ranked Leaderboard: Ranks players strictly by competitive Skill Rating (MMR).' : 'กระดานจัดอันดับแข่งขัน: วัดคะแนนฝีมือ (MMR) จากการดวลคำศัพท์จริงจัง')
-              : (isEn ? 'XP Leaderboard: Measures total learning activity and effort this week.' : 'กระดานจัดอันดับ XP: วัดความขยันในการเรียนรู้รายสัปดาห์/รายเดือน')}
+              ? (isEn ? 'Ranked Leaderboard: Ranks players strictly by competitive Skill Rating.' : 'กระดานจัดอันดับแข่งขัน: จัดอันดับตามคะแนนฝีมือจากการประลองจริง')
+              : boardType === 'xp'
+              ? (isEn ? 'XP Leaderboard: Measures total learning activity and effort this week.' : 'กระดานความขยัน: จัดอันดับตามแต้มการเรียนรู้ที่สะสมได้')
+              : (isEn ? 'Friends Leaderboard: Compare learning milestones among your university peers.' : 'กระดานเพื่อนนักเรียน: เปรียบเทียบความก้าวหน้าในกลุ่มเพื่อนสนิท')}
           </p>
         </div>
 
-        {/* Binary Board Switcher */}
-        <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-muted/40 p-1.5 self-start sm:self-auto">
+        {/* 3-Board Switcher */}
+        <div className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/60 bg-muted/40 p-1.5 self-start sm:self-auto">
           <button
             type="button"
             onClick={() => setBoardType('ranked')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold font-display transition-all ${
               boardType === 'ranked'
                 ? 'bg-amber-500 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
             }`}
           >
             <Swords className="h-4 w-4" />
-            Ranked (คะแนนฝีมือ)
+            {isEn ? 'Ranked Battles' : 'โหมดแข่งขัน'}
           </button>
           <button
             type="button"
             onClick={() => setBoardType('xp')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold font-display transition-all ${
               boardType === 'xp'
                 ? 'bg-indigo-600 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
             }`}
           >
             <Zap className="h-4 w-4" />
-            XP League (ความขยัน)
+            {isEn ? 'XP League' : 'ลีกความขยัน'}
+          </button>
+          <button
+            type="button"
+            onClick={() => setBoardType('friends')}
+            className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold font-display transition-all ${
+              boardType === 'friends'
+                ? 'bg-emerald-600 text-white shadow-sm'
+                : 'text-muted-foreground hover:bg-muted/80'
+            }`}
+          >
+            <Users className="h-4 w-4" />
+            {isEn ? 'Friends' : 'กลุ่มเพื่อน'}
           </button>
         </div>
       </section>
@@ -124,28 +140,30 @@ function RankingContent() {
       )}
 
       {/* ========================================================= */}
-      {/* VIEW B: XP LEADERBOARD (LEARNING ACTIVITY) */}
+      {/* VIEW B: XP LEADERBOARD & FRIENDS LEADERBOARD */}
       {/* ========================================================= */}
-      {boardType === 'xp' && (
+      {(boardType === 'xp' || boardType === 'friends') && (
         <section className="space-y-6">
           {/* XP Season Header Hero */}
           <div className="rounded-3xl bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/70 p-6 sm:p-8 shadow-xs relative overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                  <Zap className="w-6 h-6" />
+                  {boardType === 'friends' ? <Users className="w-6 h-6" /> : <Zap className="w-6 h-6" />}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
                     <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-                      {isEn ? 'Weekly XP League' : 'ลีกความขยันประจำสัปดาห์ (XP)'}
+                      {boardType === 'friends'
+                        ? (isEn ? 'Friends Learning Standing' : 'ตารางคะแนนกลุ่มเพื่อนนักเรียน')
+                        : (isEn ? 'Weekly XP League' : 'ลีกความขยันประจำสัปดาห์')}
                     </h2>
                     <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-[10px] font-black uppercase">
                       {data?.userTier || 'Silver'} League
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                    {data?.seasonName || 'Season 39 — Bangkok University League'} • {isEn ? `Ends in ${data?.endsInDays || 4} days` : `เหลืออีก ${data?.endsInDays || 4} วัน`}
+                    {data?.seasonName || 'Season 1 — University League'} • {isEn ? `Ends in ${data?.endsInDays || 4} days` : `เหลืออีก ${data?.endsInDays || 4} วัน`}
                   </p>
                 </div>
               </div>

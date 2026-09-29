@@ -26,6 +26,7 @@ import { useTranslation } from '../../i18n';
 import { useAuth } from '../../context/AuthContext';
 import { fetchAchievements } from '../../lib/api/gamification';
 import { Achievement } from '../../types/gamification';
+import { ItemCard } from '../../components/ui/ItemCard';
 import { RemotionPlayerWrapper } from '../../components/remotion/RemotionPlayerWrapper';
 import { AchievementCelebrationComposition } from '../../components/remotion/GamificationCelebrations';
 
@@ -199,92 +200,43 @@ export default function AchievementsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredAchievements.map((item) => {
             const IconComponent = ICON_MAP[item.icon] || Award;
-            const currentProg = item.currentProgress ?? 0;
-            const progressPct = Math.min(100, Math.round((currentProg / item.maxProgress) * 100));
-
             return (
-              <div
+              <ItemCard
                 key={item.id}
-                className={`relative rounded-2xl p-5 border transition-all flex flex-col justify-between ${
-                  item.isUnlocked
-                    ? 'bg-[#FFFDF8] dark:bg-card/90 border-amber-300/40 dark:border-amber-400/20 shadow-xs ring-1 ring-amber-400/10'
-                    : 'bg-muted/15 dark:bg-muted/10 border-border/40 opacity-85'
-                }`}
-              >
-                <div>
-                  {/* Top Bar: Icon + XP Badge */}
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div
-                      className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-transform ${
-                        item.isUnlocked
-                          ? 'bg-gradient-to-tr from-amber-400 to-[#FF8F82] text-white shadow-xs'
-                          : 'bg-muted text-muted-foreground/60'
-                      }`}
+                id={item.id}
+                title={isEn ? item.titleEn : item.titleTh}
+                description={isEn ? item.descEn : item.descTh}
+                icon={<IconComponent className="w-6 h-6" />}
+                rarity={item.rarity || 'common'}
+                xpReward={item.xpReward}
+                isUnlocked={item.isUnlocked}
+                unlockedAt={item.unlockedAt}
+                progress={item.currentProgress}
+                maxProgress={item.maxProgress}
+                actionSlot={
+                  item.isUnlocked ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedForPreview(item);
+                        if (typeof window !== 'undefined') {
+                          import('canvas-confetti').then((confetti) => {
+                            confetti.default({
+                              particleCount: 40,
+                              spread: 55,
+                              origin: { y: 0.7 },
+                            });
+                          });
+                        }
+                      }}
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#5B5CE2]/10 hover:bg-[#5B5CE2]/20 text-[#5B5CE2] dark:text-[#8D8EFC] transition-colors"
                     >
-                      {item.isUnlocked ? (
-                        <IconComponent className="w-6 h-6" />
-                      ) : (
-                        <Lock className="w-5 h-5" />
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-[#5B5CE2]/10 text-[#5B5CE2] dark:text-[#8D8EFC] border border-[#5B5CE2]/20 tabular-nums">
-                        +{item.xpReward} XP
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Title & Description */}
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5">
-                      <h3 className="font-bold text-foreground text-sm tracking-tight">
-                        {isEn ? item.titleEn : item.titleTh}
-                      </h3>
-                      {item.isUnlocked && (
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      )}
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                      {isEn ? item.descEn : item.descTh}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom Bar: Progress or Unlocked Banner */}
-                <div className="mt-4 pt-3 border-t border-border/30">
-                  {item.isUnlocked ? (
-                    <div className="flex items-center justify-between">
-                      <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-                        {isEn ? 'Unlocked' : 'ปลดล็อกสำเร็จ'}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedForPreview(item)}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#5B5CE2]/10 hover:bg-[#5B5CE2]/20 text-[#5B5CE2] transition-colors"
-                      >
-                        <Play className="w-3 h-3 fill-current" />
-                        <span>{isEn ? 'Celebration' : 'ดูฉลอง'}</span>
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="space-y-1.5">
-                      <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
-                        <span>{isEn ? 'Progress' : 'ความคืบหน้า'}</span>
-                        <span className="font-bold tabular-nums">
-                          {currentProg} / {item.maxProgress} ({progressPct}%)
-                        </span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-muted/60 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-[#5B5CE2]/70 transition-all duration-300"
-                          style={{ width: `${progressPct}%` }}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
+                      <Play className="w-3 h-3 fill-current" />
+                      <span>{isEn ? 'Celebration' : 'ดูฉลอง'}</span>
+                    </button>
+                  ) : undefined
+                }
+              />
             );
           })}
         </div>

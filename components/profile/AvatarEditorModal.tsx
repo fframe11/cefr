@@ -1,83 +1,76 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { Upload, X, Check, Sparkles, Image as ImageIcon } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, Check, RefreshCw, Palette, User, Shield, Smile, Bot, Compass, Wand2 } from 'lucide-react';
 import { GlovaAvatarWithFrame, RANK_FRAME_METADATA } from '../gamification/RankFrame';
 import { RankFrameId } from '@/types/gamification';
+import { resolveDiceBearAvatar } from '@/lib/assets/asset-registry';
 
 interface AvatarEditorModalProps {
   currentAvatarUrl: string;
   currentFrameId: RankFrameId;
-  currentCustomFrameUrl?: string;
-  onSave: (avatarUrl: string, frameId: RankFrameId, customUrl?: string) => Promise<void>;
+  onSave: (avatarUrl: string, frameId: RankFrameId) => Promise<void>;
   onClose: () => void;
 }
-import { LOTTIE_FRAME_METADATA, LottieFrameId } from '../gamification/LottieProfileFrame';
 
-// Curated high quality avatars matching Glova university/student brand aesthetic
-const PRESET_AVATARS = [
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=240&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=240&auto=format&fit=crop&q=80',
+const DICEBEAR_STYLES = [
+  { id: 'lorelei', nameTh: 'ตัวการ์ตูนสดใส', nameEn: 'Lorelei Anime', icon: User },
+  { id: 'bottts-neutral', nameTh: 'หุ่นยนต์ไซเบอร์', nameEn: 'Bottts Cyber', icon: Bot },
+  { id: 'fun-emoji', nameTh: 'อีโมจิอารมณ์ดี', nameEn: 'Fun Emoji', icon: Smile },
+  { id: 'adventurer', nameTh: 'นักผจญภัย RPG', nameEn: 'Adventurer RPG', icon: Compass },
+  { id: 'pixel-art', nameTh: 'พิกเซลอาร์ตเรโทร', nameEn: 'Pixel Art', icon: Wand2 },
 ];
 
-const LOTTIE_FRAMES: LottieFrameId[] = [
-  'lottie_cyber_apex',
-  'lottie_solar_radiance',
-  'lottie_mystic_emerald',
-  'lottie_sakura_starlight',
+const BG_COLORS = [
+  { id: 'b6e3f4', name: 'Pastel Blue', hex: '#b6e3f4' },
+  { id: 'c0aede', name: 'Soft Lilac', hex: '#c0aede' },
+  { id: 'd1d4f9', name: 'Lavender', hex: '#d1d4f9' },
+  { id: 'ffd5dc', name: 'Blush Pink', hex: '#ffd5dc' },
+  { id: 'ffdfbf', name: 'Peach Warm', hex: '#ffdfbf' },
+  { id: 'b9e8d3', name: 'Mint Glow', hex: '#b9e8d3' },
 ];
 
-const CLASSIC_FRAMES: RankFrameId[] = [
-  'gaming_1',
-  'gaming_2',
-  'gaming_3',
+const INITIAL_FRAMES: RankFrameId[] = [
   'cute_1',
   'cute_2',
   'cute_3',
+  'gaming_1',
+  'gaming_2',
+  'gaming_3',
+  'lottie_cyber_apex',
+  'lottie_solar_radiance',
 ];
 
 export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
   currentAvatarUrl,
   currentFrameId,
-  currentCustomFrameUrl,
   onSave,
   onClose,
 }) => {
-  const [selectedAvatar, setSelectedAvatar] = useState<string>(currentAvatarUrl);
-  const [selectedFrame, setSelectedFrame] = useState<RankFrameId>(currentFrameId);
-  const [customUrlInput, setCustomUrlInput] = useState<string>(currentCustomFrameUrl || '');
+  const [selectedStyle, setSelectedStyle] = useState<string>('lorelei');
+  const [avatarSeed, setAvatarSeed] = useState<string>(() => `student_${Math.floor(1000 + Math.random() * 9000)}`);
+  const [selectedBg, setSelectedBg] = useState<string>('c0aede');
+  const [selectedFrame, setSelectedFrame] = useState<RankFrameId>(currentFrameId || 'cute_1');
   const [isSaving, setIsSaving] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  // Derive live DiceBear avatar URL
+  const activeAvatarUrl = resolveDiceBearAvatar(selectedStyle, avatarSeed, {
+    backgroundColor: selectedBg,
+  });
 
-    // Check size limit (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      alert('รูปภาพมีขนาดใหญ่เกิน 5MB กรุณาเลือกรูปอื่น');
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        setSelectedAvatar(reader.result);
-      }
-    };
-    reader.readAsDataURL(file);
+  const handleRandomize = () => {
+    const randomAdjectives = ['Swift', 'Bright', 'Clever', 'Cyber', 'Starlight', 'Golden', 'Apex', 'Cosmic'];
+    const randomNouns = ['Falcon', 'Scholar', 'Champion', 'Hero', 'Spark', 'Wizard', 'Novice', 'Maestro'];
+    const adj = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)];
+    const noun = randomNouns[Math.floor(Math.random() * randomNouns.length)];
+    const num = Math.floor(100 + Math.random() * 900);
+    setAvatarSeed(`${adj}${noun}_${num}`);
   };
 
   const handleConfirm = async () => {
     setIsSaving(true);
     try {
-      await onSave(selectedAvatar, selectedFrame, customUrlInput.trim() || undefined);
+      await onSave(activeAvatarUrl, selectedFrame);
       onClose();
     } finally {
       setIsSaving(false);
@@ -86,93 +79,111 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-2xl">
+      <div className="relative flex max-h-[92vh] w-full max-w-xl flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-2xl">
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-border/40 p-5">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400">
-              <Sparkles className="h-4 w-4" />
+            <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400">
+              <Sparkles className="h-5 w-5" />
             </span>
             <div>
-              <h3 className="text-base font-bold text-foreground">แก้ไขรูปโปรไฟล์และกรอบยศ</h3>
-              <p className="text-xs text-muted-foreground">อัปโหลดรูปของคุณเอง หรือเลือกรูปและกรอบที่ชอบ</p>
+              <h3 className="text-base font-bold text-foreground">แต่งตัวอวาตาร์และกรอบยศ (Dressing Room)</h3>
+              <p className="text-xs text-muted-foreground">สร้างอวาตาร์เฉพาะตัวด้วย DiceBear และเลือกกรอบยศที่ชอบ</p>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-xl p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+            className="rounded-full p-2 text-muted-foreground hover:bg-muted"
+            title="ปิดหน้าต่าง"
           >
-            <X className="h-5 w-5" />
+            ✕
           </button>
         </div>
 
         {/* Modal Body */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
-          {/* Live Preview Center Block */}
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-border/50 bg-muted/20 p-5">
-            <GlovaAvatarWithFrame
-              avatarUrl={selectedAvatar}
-              username="ตัวอย่าง"
-              frameId={selectedFrame}
-              customAnimationUrl={customUrlInput.trim() || undefined}
-              size="xl"
-            />
-            <p className="mt-3 text-xs font-semibold text-foreground">
-              กรอบปัจจุบัน: {customUrlInput.trim() ? 'URL อนิเมชันสาธารณะที่กำหนดเอง' : (RANK_FRAME_METADATA[selectedFrame]?.nameTh || 'ไม่มีกรอบ')}
-            </p>
+          {/* 1. LIVE AVATAR & FRAME PREVIEW */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 rounded-2xl border border-border/60 bg-muted/20 p-5">
+            <div className="flex flex-col items-center">
+              <GlovaAvatarWithFrame
+                size="xl"
+                avatarUrl={activeAvatarUrl}
+                frameId={selectedFrame}
+                username="Student"
+                showBadge
+              />
+              <span className="mt-3 text-xs font-bold text-foreground">
+                {RANK_FRAME_METADATA[selectedFrame]?.nameTh || 'กรอบยศ'}
+              </span>
+            </div>
+
+            <div className="flex flex-col gap-2 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={handleRandomize}
+                className="flex items-center justify-center gap-2 rounded-xl bg-primary/10 border border-primary/20 px-4 py-2.5 text-xs font-bold text-primary hover:bg-primary/20 transition-all active:translate-y-0.5"
+              >
+                <RefreshCw className="h-4 w-4" />
+                <span>สุ่มรูปลักษณ์ใหม่ (Randomize)</span>
+              </button>
+              <div className="text-[11px] text-muted-foreground text-center sm:text-left">
+                เมล็ดพันธุ์อวาตาร์: <code className="font-mono text-foreground font-semibold">{avatarSeed}</code>
+              </div>
+            </div>
           </div>
 
-          {/* Upload Custom Photo Option */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-              1. อัปโหลดรูปภาพของคุณเอง
-            </h4>
-            <input
-              type="file"
-              ref={fileInputRef}
-              accept="image/*"
-              className="hidden"
-              onChange={handleFileUpload}
-            />
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-primary/40 bg-primary/[0.04] p-4 text-xs font-bold text-primary transition-all hover:bg-primary/[0.08]"
-            >
-              <Upload className="h-4 w-4" />
-              <span>เลือกไฟล์รูปภาพจากเครื่องของคุณ (JPG, PNG, WebP)</span>
-            </button>
-          </div>
-
-          {/* Preset Avatars Gallery */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-              2. หรือเลือกรูปโปรไฟล์แนะนำ
-            </h4>
-            <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-4">
-              {PRESET_AVATARS.map((url, idx) => {
-                const isSelected = selectedAvatar === url;
+          {/* 2. AVATAR STYLE SELECTOR */}
+          <div className="space-y-2.5">
+            <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+              <User className="h-3.5 w-3.5 text-indigo-500" />
+              <span>1. เลือกสไตล์อวาตาร์ (DiceBear Modular Engine)</span>
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {DICEBEAR_STYLES.map((style) => {
+                const IconComponent = style.icon;
+                const isSelected = selectedStyle === style.id;
                 return (
                   <button
-                    key={`preset_${idx}`}
+                    key={style.id}
                     type="button"
-                    onClick={() => setSelectedAvatar(url)}
-                    className={`relative overflow-hidden rounded-2xl border-2 p-1 transition-all ${
+                    onClick={() => setSelectedStyle(style.id)}
+                    className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-all ${
                       isSelected
-                        ? 'border-amber-500 ring-2 ring-amber-500/20 shadow-sm'
-                        : 'border-border/60 hover:border-border'
+                        ? 'border-indigo-500 bg-indigo-500/10 font-bold text-indigo-600 dark:text-indigo-400 ring-1 ring-indigo-500/30'
+                        : 'border-border/60 hover:bg-muted/40 text-muted-foreground'
                     }`}
                   >
-                    <img
-                      src={url}
-                      alt={`Avatar preset ${idx + 1}`}
-                      className="aspect-square w-full rounded-xl object-cover"
-                    />
+                    <IconComponent className="h-4 w-4 shrink-0" />
+                    <span className="text-xs truncate">{style.nameTh}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. BACKGROUND COLOR SELECTOR */}
+          <div className="space-y-2.5">
+            <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+              <Palette className="h-3.5 w-3.5 text-amber-500" />
+              <span>2. สีพื้นหลังอวาตาร์</span>
+            </label>
+            <div className="flex flex-wrap gap-2.5">
+              {BG_COLORS.map((bg) => {
+                const isSelected = selectedBg === bg.id;
+                return (
+                  <button
+                    key={bg.id}
+                    type="button"
+                    onClick={() => setSelectedBg(bg.id)}
+                    className={`group relative h-9 w-9 rounded-xl transition-all border ${
+                      isSelected ? 'ring-2 ring-primary ring-offset-2 scale-105' : 'hover:scale-105'
+                    }`}
+                    style={{ backgroundColor: bg.hex }}
+                    title={bg.name}
+                  >
                     {isSelected && (
-                      <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-amber-500 text-white">
-                        <Check className="h-2.5 w-2.5" />
-                      </span>
+                      <Check className="h-4 w-4 text-slate-800 absolute inset-0 m-auto" />
                     )}
                   </button>
                 );
@@ -180,141 +191,45 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
             </div>
           </div>
 
-          {/* Lottie Open Source Animated Frames */}
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                3. กรอบอนิเมชัน Lottie (Open Source ถูกลิขสิทธิ์ 100%)
-              </h4>
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                <Check className="h-3 w-3" />
-                <span>CC / MIT License (ปลอดภัย 100%)</span>
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {LOTTIE_FRAMES.map((fId) => {
-                const isSelected = selectedFrame === fId;
-                const meta = LOTTIE_FRAME_METADATA[fId];
-                return (
-                  <button
-                    key={`lottie_frame_${fId}`}
-                    type="button"
-                    onClick={() => setSelectedFrame(fId)}
-                    className={`flex items-start gap-2.5 rounded-2xl border p-2.5 text-left transition-all ${
-                      isSelected
-                        ? 'border-emerald-500 bg-emerald-500/10 shadow-sm ring-1 ring-emerald-500/30 font-bold'
-                        : 'border-border/60 hover:border-emerald-500/40 hover:bg-muted/30'
-                    }`}
-                  >
-                    <span
-                      className="mt-0.5 h-3.5 w-3.5 rounded-full shrink-0 shadow-sm animate-pulse"
-                      style={{ backgroundColor: meta.color }}
-                    />
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center justify-between gap-1">
-                        <span className="block text-xs font-bold truncate text-foreground">
-                          {meta.nameTh}
-                        </span>
-                        <span className="rounded bg-background/80 px-1 py-0.5 text-[8px] font-mono text-muted-foreground border border-border/40 shrink-0">
-                          Lottie
-                        </span>
-                      </div>
-                      <span className="block text-[10px] text-muted-foreground truncate">
-                        {meta.nameEn}
-                      </span>
-                      <div className="mt-1 flex items-center gap-1 text-[9px] text-emerald-600 dark:text-emerald-400 font-medium">
-                        <Sparkles className="h-2.5 w-2.5" />
-                        <span>Public Animated URL • {meta.license.split(' ')[0]}</span>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          {/* 4. RANK FRAME SELECTOR (Approved 6 Initial Frames) */}
+          <div className="space-y-2.5">
+            <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+              <Shield className="h-3.5 w-3.5 text-rose-500" />
+              <span>3. เลือกสวมใส่กรอบโปรไฟล์ (6 Rank Frames + Lottie)</span>
+            </label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {INITIAL_FRAMES.map((frameId) => {
+                const meta = RANK_FRAME_METADATA[frameId];
+                if (!meta) return null;
+                const isSelected = selectedFrame === frameId;
 
-          {/* Classic SVG Vector Frames */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
-              4. หรือเลือกกรอบเวกเตอร์ Classic (Vector Halo)
-            </h4>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {CLASSIC_FRAMES.map((fId) => {
-                const isSelected = selectedFrame === fId;
-                const meta = RANK_FRAME_METADATA[fId];
                 return (
                   <button
-                    key={`frame_${fId}`}
+                    key={frameId}
                     type="button"
-                    onClick={() => setSelectedFrame(fId)}
-                    className={`flex items-center gap-2 rounded-xl border p-2 text-left transition-all ${
+                    onClick={() => setSelectedFrame(frameId)}
+                    className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-all ${
                       isSelected
-                        ? 'border-amber-500 bg-amber-500/10 font-bold'
+                        ? 'border-amber-500 bg-amber-500/10 font-bold ring-1 ring-amber-500/30'
                         : 'border-border/60 hover:bg-muted/40'
                     }`}
                   >
                     <span
-                      className="h-3 w-3 rounded-full shrink-0"
+                      className="h-3.5 w-3.5 rounded-full shrink-0"
                       style={{ backgroundColor: meta.color }}
                     />
                     <div className="min-w-0 flex-1">
-                      <span className="block text-[11px] truncate font-semibold text-foreground">
+                      <span className="block text-xs truncate font-semibold text-foreground">
                         {meta.nameTh}
                       </span>
-                      <span className="block text-[9px] text-muted-foreground uppercase">
-                        {meta.category} • อันดับ {meta.rank}
+                      <span className="block text-[10px] text-muted-foreground uppercase">
+                        {meta.category === 'cute' ? 'หมวดคิ้วท์' : 'หมวดเกมมิ่ง'} • อันดับ {meta.rank}
                       </span>
                     </div>
+                    {isSelected && <Check className="h-4 w-4 text-amber-500 shrink-0" />}
                   </button>
                 );
               })}
-            </div>
-          </div>
-
-          {/* 5. Custom Public Lottie Animation URL Input */}
-          <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 space-y-2.5">
-            <div className="flex items-center justify-between">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
-                <span>5. หรือใส่ URL อนิเมชัน Lottie สาธารณะโดยตรง</span>
-              </h4>
-              <span className="text-[10px] font-mono text-muted-foreground">JSON / CDN</span>
-            </div>
-            <p className="text-[11px] text-muted-foreground">
-              สามารถใส่ Direct URL ของไฟล์ Lottie JSON จาก GitHub, jsdelivr, หรือ CDN สาธารณะที่ปลอดภัย
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="url"
-                value={customUrlInput}
-                onChange={(e) => setCustomUrlInput(e.target.value)}
-                placeholder="https://raw.githubusercontent.com/.../data.json"
-                className="flex-1 rounded-xl border border-border/60 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20 font-mono"
-              />
-              {customUrlInput && (
-                <button
-                  type="button"
-                  onClick={() => setCustomUrlInput('')}
-                  className="rounded-xl px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-muted"
-                  title="ล้างค่า URL"
-                >
-                  <X className="h-3.5 w-3.5" />
-                </button>
-              )}
-            </div>
-            {customUrlInput.trim().startsWith('http') && (
-              <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
-                <Check className="h-3 w-3" />
-                <span>กำลังพรีวิวกรอบจาก URL สาธารณะที่ระบุ</span>
-              </p>
-            )}
-            <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-2.5 text-[11px] text-amber-700 dark:text-amber-300">
-              <p className="font-semibold flex items-center gap-1">
-                <span>🛡️ ความปลอดภัยลิขสิทธิ์ 100%</span>
-              </p>
-              <p className="text-[10px] text-muted-foreground mt-0.5">
-                ระบบ Glova อนุญาตเฉพาะไฟล์โอเพนซอร์ส (MIT, CC0, CC-BY) หรือ Public Domain เท่านั้น ห้ามนำ Assets ลิขสิทธิ์ของ Discord หรือ Steam มาใช้
-              </p>
             </div>
           </div>
         </div>
@@ -324,7 +239,7 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-xl px-4 py-2 text-xs font-semibold text-muted-foreground hover:bg-muted"
+            className="rounded-xl px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:bg-muted"
           >
             ยกเลิก
           </button>
@@ -332,14 +247,14 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
             type="button"
             disabled={isSaving}
             onClick={handleConfirm}
-            className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:brightness-105 disabled:opacity-50"
+            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-2.5 text-xs font-bold text-white shadow-sm hover:brightness-105 disabled:opacity-50 active:translate-y-0.5"
           >
             {isSaving ? (
               <span>กำลังบันทึก...</span>
             ) : (
               <>
                 <Check className="h-4 w-4" />
-                <span>บันทึกรูปโปรไฟล์</span>
+                <span>บันทึกการแต่งตัว</span>
               </>
             )}
           </button>

@@ -163,18 +163,12 @@ export default function ProfilePage() {
     setDisplayNameInput(currentName);
   }, [user]);
 
-  const handleSaveAvatar = async (newUrl: string, newFrame: RankFrameId, customUrl?: string) => {
+  const handleSaveAvatar = async (newUrl: string, newFrame: RankFrameId) => {
     setCurrentAvatarUrl(newUrl);
     setCurrentRankFrame(newFrame);
-    setCurrentCustomFrameUrl(customUrl || '');
     if (typeof window !== 'undefined') {
       localStorage.setItem('glova_custom_avatar_url', newUrl);
       localStorage.setItem('glova_rank_frame', newFrame);
-      if (customUrl) {
-        localStorage.setItem('glova_custom_frame_url', customUrl);
-      } else {
-        localStorage.removeItem('glova_custom_frame_url');
-      }
     }
     await updateAvatarUrl(newUrl);
   };
@@ -789,7 +783,6 @@ export default function ProfilePage() {
         <AvatarEditorModal
           currentAvatarUrl={currentAvatarUrl}
           currentFrameId={currentRankFrame}
-          currentCustomFrameUrl={currentCustomFrameUrl}
           onSave={handleSaveAvatar}
           onClose={() => setAvatarModalOpen(false)}
         />

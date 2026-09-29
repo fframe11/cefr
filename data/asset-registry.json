@@ -1,0 +1,418 @@
+[
+  {
+    "id": "ast_frame_cute_1",
+    "assetKey": "profile.frame.cute_1",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/cute_1",
+    "assetUrl": "/assets/frames/cute_1.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Sparkling Bubble Crown",
+      "nameTh": "มงกุฎฟองสบู่ประกายทอง",
+      "theme": "cute",
+      "rankTier": 1,
+      "color": "#F6D978"
+    }
+  },
+  {
+    "id": "ast_frame_cute_2",
+    "assetKey": "profile.frame.cute_2",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/cute_2",
+    "assetUrl": "/assets/frames/cute_2.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Pastel Star Ribbon",
+      "nameTh": "ริบบิ้นดวงดาวพาสเทล",
+      "theme": "cute",
+      "rankTier": 2,
+      "color": "#FF8F82"
+    }
+  },
+  {
+    "id": "ast_frame_cute_3",
+    "assetKey": "profile.frame.cute_3",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/cute_3",
+    "assetUrl": "/assets/frames/cute_3.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Mint Pearl Ring",
+      "nameTh": "วงแหวนไข่มุกมินต์",
+      "theme": "cute",
+      "rankTier": 3,
+      "color": "#B9E8D3"
+    }
+  },
+  {
+    "id": "ast_frame_gaming_1",
+    "assetKey": "profile.frame.gaming_1",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/gaming_1",
+    "assetUrl": "/assets/frames/gaming_1.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Apex Cyber Halo",
+      "nameTh": "วงแหวนพลังงานไซเบอร์แชมเปี้ยน",
+      "theme": "gaming",
+      "rankTier": 1,
+      "color": "#FFB800"
+    }
+  },
+  {
+    "id": "ast_frame_gaming_2",
+    "assetKey": "profile.frame.gaming_2",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/gaming_2",
+    "assetUrl": "/assets/frames/gaming_2.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Violet Pulse Conduits",
+      "nameTh": "เกราะสนามพลังพัลส์สีม่วง",
+      "theme": "gaming",
+      "rankTier": 2,
+      "color": "#A855F7"
+    }
+  },
+  {
+    "id": "ast_frame_gaming_3",
+    "assetKey": "profile.frame.gaming_3",
+    "category": "PROFILE_FRAME",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/frames/gaming_3",
+    "assetUrl": "/assets/frames/gaming_3.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Cobalt Hex Shield",
+      "nameTh": "โล่หกเหลี่ยมโคบอลต์ไฮเทค",
+      "theme": "gaming",
+      "rankTier": 3,
+      "color": "#06B6D4"
+    }
+  },
+  {
+    "id": "ast_lottie_cyber_apex",
+    "assetKey": "profile.frame.lottie_cyber_apex",
+    "category": "LOTTIE_ANIMATION",
+    "provider": "LottieFiles / Lottie Open Source",
+    "sourceUrl": "https://github.com/airbnb/lottie-web",
+    "assetUrl": "https://raw.githubusercontent.com/airbnb/lottie-web/master/demo/bodymovin/data.json",
+    "license": "MIT License",
+    "licenseUrl": "https://github.com/airbnb/lottie-web/blob/master/LICENSE.md",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Cyber Apex Pulsar",
+      "nameTh": "วงแหวนไซเบอร์พัลส์นีออน",
+      "theme": "gaming",
+      "rankTier": 1,
+      "color": "#00F0FF"
+    }
+  },
+  {
+    "id": "ast_lottie_solar_radiance",
+    "assetKey": "profile.frame.lottie_solar_radiance",
+    "category": "LOTTIE_ANIMATION",
+    "provider": "LottieFiles / Lottie Open Source",
+    "sourceUrl": "https://github.com/airbnb/lottie-web",
+    "assetUrl": "https://cdn.jsdelivr.net/gh/airbnb/lottie-web@master/demo/gordon/data.json",
+    "license": "MIT License",
+    "licenseUrl": "https://github.com/airbnb/lottie-web/blob/master/LICENSE.md",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Solar Radiance Flame",
+      "nameTh": "สุริยะรัศมีเพลิงทองคำ",
+      "theme": "gaming",
+      "rankTier": 2,
+      "color": "#FFB800"
+    }
+  },
+  {
+    "id": "ast_lottie_mystic_emerald",
+    "assetKey": "profile.frame.lottie_mystic_emerald",
+    "category": "LOTTIE_ANIMATION",
+    "provider": "LottieFiles / Lottie Open Source",
+    "sourceUrl": "https://github.com/airbnb/lottie-web",
+    "assetUrl": "https://raw.githubusercontent.com/airbnb/lottie-web/master/demo/starwars/data.json",
+    "license": "MIT License",
+    "licenseUrl": "https://github.com/airbnb/lottie-web/blob/master/LICENSE.md",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Mystic Emerald Vortex",
+      "nameTh": "วอร์เท็กซ์มนตราหยกมรกต",
+      "theme": "cute",
+      "rankTier": 3,
+      "color": "#10B981"
+    }
+  },
+  {
+    "id": "ast_lottie_sakura_starlight",
+    "assetKey": "profile.frame.lottie_sakura_starlight",
+    "category": "LOTTIE_ANIMATION",
+    "provider": "LottieFiles / Lottie Open Source",
+    "sourceUrl": "https://github.com/airbnb/lottie-web",
+    "assetUrl": "https://raw.githubusercontent.com/airbnb/lottie-web/master/demo/2016/data.json",
+    "license": "MIT License",
+    "licenseUrl": "https://github.com/airbnb/lottie-web/blob/master/LICENSE.md",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Sakura Starlight Bloom",
+      "nameTh": "กลีบซากุระประกายดาวพาสเทล",
+      "theme": "cute",
+      "rankTier": 2,
+      "color": "#F43F5E"
+    }
+  },
+  {
+    "id": "ast_emblem_bronze",
+    "assetKey": "rank.emblem.bronze",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/bronze.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Bronze",
+      "color": "#CD7F32",
+      "icon": "Shield"
+    }
+  },
+  {
+    "id": "ast_emblem_silver",
+    "assetKey": "rank.emblem.silver",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/silver.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Silver",
+      "color": "#94A3B8",
+      "icon": "Shield"
+    }
+  },
+  {
+    "id": "ast_emblem_gold",
+    "assetKey": "rank.emblem.gold",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/gold.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Gold",
+      "color": "#F59E0B",
+      "icon": "Award"
+    }
+  },
+  {
+    "id": "ast_emblem_platinum",
+    "assetKey": "rank.emblem.platinum",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/platinum.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Platinum",
+      "color": "#06B6D4",
+      "icon": "Zap"
+    }
+  },
+  {
+    "id": "ast_emblem_diamond",
+    "assetKey": "rank.emblem.diamond",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/diamond.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Diamond",
+      "color": "#8B5CF6",
+      "icon": "Gem"
+    }
+  },
+  {
+    "id": "ast_emblem_master",
+    "assetKey": "rank.emblem.master",
+    "category": "RANK_EMBLEM",
+    "provider": "Kenney / Lucide",
+    "sourceUrl": "https://kenney.nl / https://lucide.dev",
+    "assetUrl": "/assets/emblems/master.svg",
+    "license": "CC0 1.0 Universal / ISC",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Master",
+      "color": "#EF4444",
+      "icon": "Crown"
+    }
+  },
+  {
+    "id": "ast_avatar_dicebear_bottts",
+    "assetKey": "avatar.style.bottts_neutral",
+    "category": "AVATAR",
+    "provider": "DiceBear (Pablo Stanley)",
+    "sourceUrl": "https://api.dicebear.com/9.x/bottts-neutral",
+    "assetUrl": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+    "license": "Free for Personal and Commercial Use (Pablo Stanley / Core MIT)",
+    "licenseUrl": "https://www.dicebear.com/licenses",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "9.x",
+    "metadata": {
+      "styleName": "bottts-neutral",
+      "category": "robot"
+    }
+  },
+  {
+    "id": "ast_avatar_dicebear_lorelei",
+    "assetKey": "avatar.style.lorelei",
+    "category": "AVATAR",
+    "provider": "DiceBear (Lisa Wischofsky)",
+    "sourceUrl": "https://api.dicebear.com/9.x/lorelei",
+    "assetUrl": "https://api.dicebear.com/9.x/lorelei/svg",
+    "license": "CC0 1.0 Universal (Public Domain)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "9.x",
+    "metadata": {
+      "styleName": "lorelei",
+      "category": "character"
+    }
+  },
+  {
+    "id": "ast_avatar_dicebear_fun_emoji",
+    "assetKey": "avatar.style.fun_emoji",
+    "category": "AVATAR",
+    "provider": "DiceBear (Dennis Hickman)",
+    "sourceUrl": "https://api.dicebear.com/9.x/fun-emoji",
+    "assetUrl": "https://api.dicebear.com/9.x/fun-emoji/svg",
+    "license": "CC0 1.0 Universal (Public Domain)",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "9.x",
+    "metadata": {
+      "styleName": "fun-emoji",
+      "category": "emoji"
+    }
+  },
+  {
+    "id": "ast_avatar_dicebear_adventurer",
+    "assetKey": "avatar.style.adventurer",
+    "category": "AVATAR",
+    "provider": "DiceBear (Lisa Wischofsky)",
+    "sourceUrl": "https://api.dicebear.com/9.x/adventurer",
+    "assetUrl": "https://api.dicebear.com/9.x/adventurer/svg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "attributionRequired": true,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "9.x",
+    "metadata": {
+      "styleName": "adventurer",
+      "category": "rpg"
+    }
+  }
+]

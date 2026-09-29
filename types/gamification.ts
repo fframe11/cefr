@@ -83,6 +83,8 @@ export interface RankFrameInfo {
   accentColor: string;
 }
 
+export type ItemRarity = 'common' | 'rare' | 'epic' | 'legendary';
+
 export interface Achievement {
   id: string;
   code: string;
@@ -93,10 +95,35 @@ export interface Achievement {
   icon: string;
   xpReward: number;
   category: 'learning' | 'streak' | 'competition' | 'social';
+  rarity: ItemRarity;
   maxProgress: number;
   unlockedAt?: string;
   currentProgress?: number;
   isUnlocked?: boolean;
+}
+
+export interface DailyQuest {
+  id: string;
+  code: string;
+  titleEn: string;
+  titleTh: string;
+  descEn: string;
+  descTh: string;
+  xpReward: number;
+  category: 'vocabulary' | 'competition' | 'social' | 'review';
+  progress: number;
+  maxProgress: number;
+  isCompleted: boolean;
+  expiresAt: string;
+}
+
+export interface PersonalBest {
+  bestVocabularyScore: number;
+  bestStreak: number;
+  fastestCorrectMs: number;
+  highestRankRating: number;
+  longestLearningStreakDays: number;
+  weeklyXpRecord: number;
 }
 
 export interface RankingEntry {
@@ -190,3 +217,4 @@ export interface InviteInfo {
   invitedCount: number;
   earnedXp: number;
 }
+

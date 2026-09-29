@@ -43,6 +43,7 @@ import {
   CEFRTier,
 } from '../ui';
 import { RankBannerCard } from '../ui/aceternity';
+import { DailyQuestsAndPersonalBest } from '../gamification/DailyQuestsAndPersonalBest';
 
 interface DashboardViewProps {
   progress: UserProgressState;
@@ -444,6 +445,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 isPrimary
               />
             </div>
+          </section>
+
+          {/* Daily Quests & Personal Best Records */}
+          <section className="space-y-3 pt-1">
+            <DailyQuestsAndPersonalBest />
           </section>
 
           {/* Curated Learning Tracks Shelf */}
