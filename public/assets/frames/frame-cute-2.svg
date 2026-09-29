@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pastelRibbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFC5BE" />
+          <stop offset="100%" stop-color="#FF8F82" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="43" stroke="url(#pastelRibbonGrad)" stroke-width="3.5" />
+      <circle cx="50" cy="50" r="45" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4 6" />
+      <polygon points="50,6 52,12 58,12 53,16 55,22 50,18 45,22 47,16 42,12 48,12" fill="#F6D978" stroke="#FF8F82" stroke-width="0.8" />
+      <circle cx="16" cy="30" r="4" fill="#FFC5BE" />
+      <circle cx="84" cy="30" r="4" fill="#FFC5BE" />
+      <circle cx="50" cy="94" r="5" fill="url(#pastelRibbonGrad)" />
+    </svg>

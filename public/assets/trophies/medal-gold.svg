@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="m_gold" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#FDE047" />
+          <stop offset="1" stop-color="#D97706" />
+        </linearGradient>
+      </defs>
+      <!-- Ribbon -->
+      <polygon points="36,6 50,40 24,40 16,6" fill="#EF4444" />
+      <polygon points="64,6 50,40 76,40 84,6" fill="#3B82F6" />
+      <!-- Medal Coin -->
+      <circle cx="50" cy="62" r="26" fill="url(#m_gold)" stroke="#FEF08A" stroke-width="2.5" />
+      <circle cx="50" cy="62" r="21" stroke="#92400E" stroke-width="1.5" stroke-dasharray="3 3" fill="none" />
+      <text x="50" y="71" font-family="sans-serif" font-weight="900" font-size="24" fill="#78350F" text-anchor="middle">1</text>
+    </svg>

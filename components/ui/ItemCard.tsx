@@ -10,6 +10,7 @@ interface ItemCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  imageBadgeUrl?: string;
   rarity?: ItemRarity;
   xpReward?: number;
   isUnlocked?: boolean;
@@ -25,6 +26,7 @@ export const ItemCard: React.FC<ItemCardProps> = ({
   title,
   description,
   icon,
+  imageBadgeUrl,
   rarity = 'common',
   xpReward,
   isUnlocked = false,
@@ -74,7 +76,17 @@ export const ItemCard: React.FC<ItemCardProps> = ({
               border: isUnlocked ? `1px solid ${palette.color}40` : undefined,
             }}
           >
-            {isUnlocked ? (
+            {imageBadgeUrl ? (
+              <img
+                src={imageBadgeUrl}
+                alt={title}
+                width={36}
+                height={36}
+                className={`w-9 h-9 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 select-none pointer-events-none ${
+                  !isUnlocked ? 'grayscale opacity-50' : ''
+                }`}
+              />
+            ) : isUnlocked ? (
               icon
             ) : (
               <Lock className="h-5 w-5 text-muted-foreground/70" />

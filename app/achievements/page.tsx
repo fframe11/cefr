@@ -45,6 +45,21 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Crown,
 };
 
+const ACHIEVEMENT_IMAGE_MAP: Record<string, string> = {
+  first_lesson: '/assets/achievements/achievement-first-step.png',
+  streak_3: '/assets/achievements/achievement-streak-fire.png',
+  streak_7: '/assets/achievements/achievement-streak-fire.png',
+  vocab_100: '/assets/achievements/achievement-vocab-master.png',
+  vocab_500: '/assets/achievements/achievement-vocab-master.png',
+  grammar_master: '/assets/achievements/achievement-grammar-guru.png',
+  battle_win_1: '/assets/achievements/achievement-arena-conqueror.png',
+  battle_win_5: '/assets/achievements/achievement-arena-conqueror.png',
+  duo_study_1: '/assets/achievements/achievement-duo-partner.png',
+  perfect_quiz: '/assets/achievements/achievement-perfect-score.png',
+  cefr_level_up: '/assets/achievements/achievement-cambridge-ace.png',
+  top_10_rank: '/assets/achievements/achievement-crown-legend.png',
+};
+
 type CategoryFilter = 'all' | 'learning' | 'streak' | 'competition' | 'social';
 
 export default function AchievementsPage() {
@@ -207,6 +222,7 @@ export default function AchievementsPage() {
                 title={isEn ? item.titleEn : item.titleTh}
                 description={isEn ? item.descEn : item.descTh}
                 icon={<IconComponent className="w-6 h-6" />}
+                imageBadgeUrl={ACHIEVEMENT_IMAGE_MAP[item.id]}
                 rarity={item.rarity || 'common'}
                 xpReward={item.xpReward}
                 isUnlocked={item.isUnlocked}

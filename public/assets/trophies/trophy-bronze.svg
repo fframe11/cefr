@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="t_bronze" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#F59E0B" />
+          <stop offset="0.5" stop-color="#B45309" />
+          <stop offset="1" stop-color="#78350F" />
+        </linearGradient>
+      </defs>
+      <path d="M26 18 L74 18 L68 56 C68 66 58 72 50 72 C42 72 32 66 32 56 Z" fill="url(#t_bronze)" stroke="#FDE68A" stroke-width="2" />
+      <path d="M26 26 C14 26 14 44 26 48" stroke="url(#t_bronze)" stroke-width="4" stroke-linecap="round" fill="none" />
+      <path d="M74 26 C86 26 86 44 74 48" stroke="url(#t_bronze)" stroke-width="4" stroke-linecap="round" fill="none" />
+      <rect x="45" y="72" width="10" height="12" fill="url(#t_bronze)" />
+      <rect x="28" y="84" width="44" height="8" rx="2" fill="#451A03" stroke="#FDE68A" stroke-width="1.5" />
+      <polygon points="50,30 53,38 62,39 55,45 57,54 50,49 43,54 45,45 38,39 47,38" fill="#FFFFFF" />
+    </svg>

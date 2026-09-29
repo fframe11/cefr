@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_emerald" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#34D399" />
+          <stop offset="1" stop-color="#059669" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_emerald)" stroke="#A7F3D0" stroke-width="2.5" />
+      <!-- Greek Temple / Ionic Pillars -->
+      <path d="M26 36 L50 22 L74 36 Z" fill="#FFFFFF" stroke="#064E3B" stroke-width="2" />
+      <rect x="30" y="40" width="8" height="26" rx="2" fill="#FFFFFF" />
+      <rect x="46" y="40" width="8" height="26" rx="2" fill="#FFFFFF" />
+      <rect x="62" y="40" width="8" height="26" rx="2" fill="#FFFFFF" />
+      <rect x="22" y="68" width="56" height="6" rx="2" fill="#FFFFFF" stroke="#064E3B" stroke-width="1.5" />
+    </svg>

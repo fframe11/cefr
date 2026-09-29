@@ -110,7 +110,7 @@ export const WritingView: React.FC = () => {
     setIsSubmitted(true);
     showToast(
       isEn ? 'Writing submitted' : 'ส่งงานเขียนเข้าสู่ระบบแล้ว',
-      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว อยู่ระหว่างรอการประเมินผล',
+      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล',
       'success'
     );
   };
@@ -332,7 +332,7 @@ export const WritingView: React.FC = () => {
                 <span>
                   {isEn
                     ? 'Response Recorded: Pending Cambridge Rubric Evaluation'
-                    : 'บันทึกงานเขียนสำเร็จ อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
+                    : 'บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
                 </span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">

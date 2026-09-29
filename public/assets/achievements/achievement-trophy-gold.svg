@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_gold_trophy" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#FBBF24" />
+          <stop offset="1" stop-color="#B45309" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_gold_trophy)" stroke="#FEF08A" stroke-width="2.5" />
+      <!-- Trophy Cup -->
+      <path d="M34 26 L66 26 L62 52 C62 58 56 64 50 64 C44 64 38 58 38 52 Z" fill="#FFFFFF" stroke="#78350F" stroke-width="2" />
+      <path d="M34 32 C26 32 26 44 34 46" stroke="#FFFFFF" stroke-width="2.5" fill="none" />
+      <path d="M66 32 C74 32 74 44 66 46" stroke="#FFFFFF" stroke-width="2.5" fill="none" />
+      <rect x="46" y="64" width="8" height="10" fill="#FFFFFF" />
+      <rect x="36" y="74" width="28" height="6" rx="2" fill="#FFFFFF" />
+    </svg>

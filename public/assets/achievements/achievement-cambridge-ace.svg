@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_royal" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#6366F1" />
+          <stop offset="1" stop-color="#312E81" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_royal)" stroke="#C7D2FE" stroke-width="2.5" />
+      <!-- Laureled Shield -->
+      <path d="M50 22 L70 30 L66 60 L50 76 L34 60 L30 30 Z" fill="#FFFFFF" stroke="#FDE047" stroke-width="2" />
+      <text x="50" y="54" font-family="sans-serif" font-weight="900" font-size="14" fill="#312E81" text-anchor="middle">C2</text>
+    </svg>

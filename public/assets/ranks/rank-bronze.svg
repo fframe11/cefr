@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bronze_shield" x1="50" y1="5" x2="50" y2="95" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#D97706" />
+          <stop offset="0.5" stop-color="#B45309" />
+          <stop offset="1" stop-color="#78350F" />
+        </linearGradient>
+        <linearGradient id="bronze_core" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F59E0B" />
+          <stop offset="1" stop-color="#92400E" />
+        </linearGradient>
+      </defs>
+      <path d="M50 5 L85 20 L80 65 L50 95 L20 65 L15 20 Z" fill="url(#bronze_shield)" stroke="#FDE68A" stroke-width="2.5" />
+      <path d="M50 16 L74 28 L70 60 L50 82 L30 60 L26 28 Z" fill="url(#bronze_core)" opacity="0.9" />
+      <path d="M50 22 L65 30 L62 55 L50 72 Z" fill="#FBBF24" opacity="0.35" />
+      <polygon points="50,32 54,42 65,43 57,51 59,62 50,56 41,62 43,51 35,43 46,42" fill="#FEF3C7" stroke="#92400E" stroke-width="1" />
+    </svg>

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_violet" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#A78BFA" />
+          <stop offset="1" stop-color="#7C3AED" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_violet)" stroke="#DDD6FE" stroke-width="2.5" />
+      <!-- Lightning Bolt -->
+      <polygon points="56,18 32,50 48,50 40,82 72,44 54,44" fill="#FDE047" stroke="#FFFFFF" stroke-width="2" />
+    </svg>

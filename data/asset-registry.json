@@ -5,7 +5,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/cute_1",
-    "assetUrl": "/assets/frames/cute_1.svg",
+    "assetUrl": "/assets/frames/frame-cute-1.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -19,7 +19,9 @@
       "theme": "cute",
       "rankTier": 1,
       "color": "#F6D978"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-cute-1.svg",
+    "transparentPngUrl": "/assets/frames/frame-cute-1.png"
   },
   {
     "id": "ast_frame_cute_2",
@@ -27,7 +29,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/cute_2",
-    "assetUrl": "/assets/frames/cute_2.svg",
+    "assetUrl": "/assets/frames/frame-cute-2.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -41,7 +43,9 @@
       "theme": "cute",
       "rankTier": 2,
       "color": "#FF8F82"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-cute-2.svg",
+    "transparentPngUrl": "/assets/frames/frame-cute-2.png"
   },
   {
     "id": "ast_frame_cute_3",
@@ -49,7 +53,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/cute_3",
-    "assetUrl": "/assets/frames/cute_3.svg",
+    "assetUrl": "/assets/frames/frame-cute-3.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -63,7 +67,9 @@
       "theme": "cute",
       "rankTier": 3,
       "color": "#B9E8D3"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-cute-3.svg",
+    "transparentPngUrl": "/assets/frames/frame-cute-3.png"
   },
   {
     "id": "ast_frame_gaming_1",
@@ -71,7 +77,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/gaming_1",
-    "assetUrl": "/assets/frames/gaming_1.svg",
+    "assetUrl": "/assets/frames/frame-gaming-1.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -85,7 +91,9 @@
       "theme": "gaming",
       "rankTier": 1,
       "color": "#FFB800"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-gaming-1.svg",
+    "transparentPngUrl": "/assets/frames/frame-gaming-1.png"
   },
   {
     "id": "ast_frame_gaming_2",
@@ -93,7 +101,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/gaming_2",
-    "assetUrl": "/assets/frames/gaming_2.svg",
+    "assetUrl": "/assets/frames/frame-gaming-2.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -107,7 +115,9 @@
       "theme": "gaming",
       "rankTier": 2,
       "color": "#A855F7"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-gaming-2.svg",
+    "transparentPngUrl": "/assets/frames/frame-gaming-2.png"
   },
   {
     "id": "ast_frame_gaming_3",
@@ -115,7 +125,7 @@
     "category": "PROFILE_FRAME",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/frames/gaming_3",
-    "assetUrl": "/assets/frames/gaming_3.svg",
+    "assetUrl": "/assets/frames/frame-gaming-3.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -129,7 +139,9 @@
       "theme": "gaming",
       "rankTier": 3,
       "color": "#06B6D4"
-    }
+    },
+    "svgUrl": "/assets/frames/frame-gaming-3.svg",
+    "transparentPngUrl": "/assets/frames/frame-gaming-3.png"
   },
   {
     "id": "ast_lottie_cyber_apex",
@@ -225,7 +237,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/bronze.svg",
+    "assetUrl": "/assets/ranks/rank-bronze.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -237,7 +249,9 @@
       "tier": "Bronze",
       "color": "#CD7F32",
       "icon": "Shield"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-bronze.svg",
+    "transparentPngUrl": "/assets/ranks/rank-bronze.png"
   },
   {
     "id": "ast_emblem_silver",
@@ -245,7 +259,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/silver.svg",
+    "assetUrl": "/assets/ranks/rank-silver.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -257,7 +271,9 @@
       "tier": "Silver",
       "color": "#94A3B8",
       "icon": "Shield"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-silver.svg",
+    "transparentPngUrl": "/assets/ranks/rank-silver.png"
   },
   {
     "id": "ast_emblem_gold",
@@ -265,7 +281,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/gold.svg",
+    "assetUrl": "/assets/ranks/rank-gold.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -277,7 +293,9 @@
       "tier": "Gold",
       "color": "#F59E0B",
       "icon": "Award"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-gold.svg",
+    "transparentPngUrl": "/assets/ranks/rank-gold.png"
   },
   {
     "id": "ast_emblem_platinum",
@@ -285,7 +303,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/platinum.svg",
+    "assetUrl": "/assets/ranks/rank-platinum.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -297,7 +315,9 @@
       "tier": "Platinum",
       "color": "#06B6D4",
       "icon": "Zap"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-platinum.svg",
+    "transparentPngUrl": "/assets/ranks/rank-platinum.png"
   },
   {
     "id": "ast_emblem_diamond",
@@ -305,7 +325,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/diamond.svg",
+    "assetUrl": "/assets/ranks/rank-diamond.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -317,7 +337,9 @@
       "tier": "Diamond",
       "color": "#8B5CF6",
       "icon": "Gem"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-diamond.svg",
+    "transparentPngUrl": "/assets/ranks/rank-diamond.png"
   },
   {
     "id": "ast_emblem_master",
@@ -325,7 +347,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Kenney / Lucide",
     "sourceUrl": "https://kenney.nl / https://lucide.dev",
-    "assetUrl": "/assets/emblems/master.svg",
+    "assetUrl": "/assets/ranks/rank-master.png",
     "license": "CC0 1.0 Universal / ISC",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "attributionRequired": false,
@@ -337,7 +359,9 @@
       "tier": "Master",
       "color": "#EF4444",
       "icon": "Crown"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-master.svg",
+    "transparentPngUrl": "/assets/ranks/rank-master.png"
   },
   {
     "id": "ast_avatar_dicebear_bottts",
@@ -421,7 +445,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/bronze",
-    "assetUrl": "/assets/emblems/bronze.svg",
+    "assetUrl": "/assets/ranks/rank-bronze.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -434,7 +458,9 @@
       "nameEn": "Spartan Bronze Aegis",
       "nameTh": "ตราเกียรติยศบรอนซ์สปาร์ตัน",
       "color": "#D97706"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-bronze.svg",
+    "transparentPngUrl": "/assets/ranks/rank-bronze.png"
   },
   {
     "id": "ast_emblem_silver",
@@ -442,7 +468,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/silver",
-    "assetUrl": "/assets/emblems/silver.svg",
+    "assetUrl": "/assets/ranks/rank-silver.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -455,7 +481,9 @@
       "nameEn": "Winged Silver Aegis",
       "nameTh": "ตราเกียรติยศซิลเวอร์ปีกเงิน",
       "color": "#94A3B8"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-silver.svg",
+    "transparentPngUrl": "/assets/ranks/rank-silver.png"
   },
   {
     "id": "ast_emblem_gold",
@@ -463,7 +491,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/gold",
-    "assetUrl": "/assets/emblems/gold.svg",
+    "assetUrl": "/assets/ranks/rank-gold.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -476,7 +504,9 @@
       "nameEn": "Sovereign Gold Crown",
       "nameTh": "ตราเกียรติยศมงกุฎทองสุริยัน",
       "color": "#F59E0B"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-gold.svg",
+    "transparentPngUrl": "/assets/ranks/rank-gold.png"
   },
   {
     "id": "ast_emblem_platinum",
@@ -484,7 +514,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/platinum",
-    "assetUrl": "/assets/emblems/platinum.svg",
+    "assetUrl": "/assets/ranks/rank-platinum.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -497,7 +527,9 @@
       "nameEn": "Prismatic Platinum Hex",
       "nameTh": "ตราเกียรติยศแพลทินัมหกเหลี่ยมปริซึม",
       "color": "#06B6D4"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-platinum.svg",
+    "transparentPngUrl": "/assets/ranks/rank-platinum.png"
   },
   {
     "id": "ast_emblem_diamond",
@@ -505,7 +537,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/diamond",
-    "assetUrl": "/assets/emblems/diamond.svg",
+    "assetUrl": "/assets/ranks/rank-diamond.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -518,7 +550,9 @@
       "nameEn": "Nebula Diamond Star",
       "nameTh": "ตราเกียรติยศไดมอนด์เนบิวลา",
       "color": "#8B5CF6"
-    }
+    },
+    "svgUrl": "/assets/ranks/rank-diamond.svg",
+    "transparentPngUrl": "/assets/ranks/rank-diamond.png"
   },
   {
     "id": "ast_emblem_master",
@@ -526,7 +560,7 @@
     "category": "RANK_EMBLEM",
     "provider": "Glova Native Design",
     "sourceUrl": "https://glova.app/assets/emblems/master",
-    "assetUrl": "/assets/emblems/master.svg",
+    "assetUrl": "/assets/ranks/rank-master.png",
     "license": "Proprietary / Glova Platform Asset",
     "licenseUrl": "https://glova.app/license",
     "attributionRequired": false,
@@ -539,6 +573,88 @@
       "nameEn": "Crimson Dragon Sovereign",
       "nameTh": "ตราเกียรติยศมาสเตอร์มังกรเพลิง",
       "color": "#EF4444"
+    },
+    "svgUrl": "/assets/ranks/rank-master.svg",
+    "transparentPngUrl": "/assets/ranks/rank-master.png"
+  },
+  {
+    "id": "ast_achieve_first_step",
+    "assetKey": "achievement.badge.first_step",
+    "category": "ACHIEVEMENT_BADGE",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/achievements/first-step",
+    "assetUrl": "/assets/achievements/achievement-first-step.png",
+    "transparentPngUrl": "/assets/achievements/achievement-first-step.png",
+    "license": "Proprietary / Glova Platform Asset",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "First Footprint",
+      "nameTh": "ก้าวแรกสู่การเรียนรู้",
+      "category": "learning"
+    }
+  },
+  {
+    "id": "ast_achieve_vocab_master",
+    "assetKey": "achievement.badge.vocab_master",
+    "category": "ACHIEVEMENT_BADGE",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/achievements/vocab-master",
+    "assetUrl": "/assets/achievements/achievement-vocab-master.png",
+    "transparentPngUrl": "/assets/achievements/achievement-vocab-master.png",
+    "license": "Proprietary / Glova Platform Asset",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Lexical Scholar",
+      "nameTh": "ปราชญ์แห่งคลังคำศัพท์",
+      "category": "learning"
+    }
+  },
+  {
+    "id": "ast_achieve_streak_fire",
+    "assetKey": "achievement.badge.streak_fire",
+    "category": "ACHIEVEMENT_BADGE",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/achievements/streak-fire",
+    "assetUrl": "/assets/achievements/achievement-streak-fire.png",
+    "transparentPngUrl": "/assets/achievements/achievement-streak-fire.png",
+    "license": "Proprietary / Glova Platform Asset",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Unstoppable Momentum",
+      "nameTh": "เพลิงแห่งความมุ่งมั่น",
+      "category": "streak"
+    }
+  },
+  {
+    "id": "ast_achieve_arena_conqueror",
+    "assetKey": "achievement.badge.arena_conqueror",
+    "category": "ACHIEVEMENT_BADGE",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/achievements/arena-conqueror",
+    "assetUrl": "/assets/achievements/achievement-arena-conqueror.png",
+    "transparentPngUrl": "/assets/achievements/achievement-arena-conqueror.png",
+    "license": "Proprietary / Glova Platform Asset",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "nameEn": "Arena Conqueror",
+      "nameTh": "ผู้พิชิตสมรภูมิประลอง",
+      "category": "competition"
     }
   }
 ]

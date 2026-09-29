@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_indigo" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#818CF8" />
+          <stop offset="1" stop-color="#4F46E5" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_indigo)" stroke="#C7D2FE" stroke-width="2.5" />
+      <!-- Footprint Icon -->
+      <path d="M42 36 C42 30 46 26 50 26 C54 26 58 30 58 36 C58 46 44 54 44 62 L56 62 C56 70 52 74 48 74 C44 74 42 70 42 66 Z" fill="#FFFFFF" opacity="0.9" />
+      <circle cx="38" cy="26" r="3" fill="#FDE047" />
+      <circle cx="48" cy="20" r="3.5" fill="#FDE047" />
+      <circle cx="58" cy="20" r="3.5" fill="#FDE047" />
+      <circle cx="66" cy="26" r="3" fill="#FDE047" />
+    </svg>

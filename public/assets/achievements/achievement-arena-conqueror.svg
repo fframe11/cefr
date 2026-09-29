@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_rose" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#F43F5E" />
+          <stop offset="1" stop-color="#BE123C" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_rose)" stroke="#FECDD3" stroke-width="2.5" />
+      <!-- Crossed Swords -->
+      <path d="M26 26 L48 48 M52 52 L74 74 M22 30 L30 22 M70 78 L78 70" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+      <path d="M74 26 L52 48 M48 52 L26 74 M70 22 L78 30 M22 70 L30 78" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="50" cy="50" r="6" fill="#FDE047" stroke="#FFFFFF" stroke-width="1.5" />
+    </svg>

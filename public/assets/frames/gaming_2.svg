@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="violetPulseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#E9D5FF" />
+          <stop offset="50%" stop-color="#A855F7" />
+          <stop offset="100%" stop-color="#6366F1" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="44" stroke="url(#violetPulseGrad)" stroke-width="3.5" />
+      <circle cx="50" cy="50" r="46" stroke="#E9D5FF" stroke-width="1.8" stroke-dasharray="6 8" />
+      <path d="M25 10 L15 15 L10 25" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M75 10 L85 15 L90 25" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M90 75 L85 85 L75 90" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M10 75 L15 85 L25 90" stroke="#A855F7" stroke-width="2.5" stroke-linecap="round" />
+    </svg>

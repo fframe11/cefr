@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="plat_aegis" x1="50" y1="5" x2="50" y2="95" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#67E8F9" />
+          <stop offset="0.4" stop-color="#06B6D4" />
+          <stop offset="1" stop-color="#0E7490" />
+        </linearGradient>
+        <linearGradient id="plat_core" x1="30" y1="20" x2="70" y2="80" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#CFFAFE" />
+          <stop offset="1" stop-color="#0891B2" />
+        </linearGradient>
+      </defs>
+      <path d="M50 4 L92 24 L92 76 L50 96 L8 76 L8 24 Z" fill="url(#plat_aegis)" stroke="#E0F2FE" stroke-width="3" />
+      <polygon points="50,14 82,30 82,70 50,86 18,70 18,30" fill="#082F49" opacity="0.9" />
+      <polygon points="50,22 72,40 50,78 28,40" fill="url(#plat_core)" stroke="#A5F3FC" stroke-width="1.5" />
+      <polygon points="50,28 64,42 50,70 36,42" fill="#FFFFFF" opacity="0.4" />
+    </svg>

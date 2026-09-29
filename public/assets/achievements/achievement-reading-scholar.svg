@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_cyan" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#38BDF8" />
+          <stop offset="1" stop-color="#0284C7" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_cyan)" stroke="#BAE6FD" stroke-width="2.5" />
+      <!-- Scroll & Eyeglasses -->
+      <path d="M28 32 C28 28 34 26 40 26 L70 26 C74 26 76 28 76 32 L76 66 C76 70 70 72 64 72 L34 72 C30 72 28 70 28 66 Z" fill="#FFFFFF" opacity="0.95" />
+      <circle cx="44" cy="48" r="9" stroke="#0369A1" stroke-width="2.5" fill="#E0F2FE" opacity="0.5" />
+      <circle cx="62" cy="48" r="9" stroke="#0369A1" stroke-width="2.5" fill="#E0F2FE" opacity="0.5" />
+      <line x1="53" y1="48" x2="53" y2="48" stroke="#0369A1" stroke-width="3" stroke-linecap="round" />
+    </svg>

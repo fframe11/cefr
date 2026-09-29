@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg_amber" x1="0" y1="0" x2="100" y2="100">
+          <stop stop-color="#FCD34D" />
+          <stop offset="1" stop-color="#D97706" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="84" height="84" rx="24" fill="url(#bg_amber)" stroke="#FEF3C7" stroke-width="2.5" />
+      <!-- Open Book -->
+      <path d="M50 35 C42 30 30 32 24 35 L24 68 C30 65 42 64 50 70 C58 64 70 65 76 68 L76 35 C70 32 58 30 50 35 Z" fill="#FFFFFF" stroke="#78350F" stroke-width="2" />
+      <line x1="50" y1="35" x2="50" y2="70" stroke="#78350F" stroke-width="2" />
+      <polygon points="50,22 53,28 60,29 55,34 56,41 50,38 44,41 45,34 40,29 47,28" fill="#FEF08A" stroke="#B45309" stroke-width="1" />
+    </svg>

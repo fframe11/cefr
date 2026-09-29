@@ -9,6 +9,7 @@ export interface RankEmblemProps {
   showGlow?: boolean;
   className?: string;
   animate?: boolean;
+  useImage?: boolean;
 }
 
 const SIZE_MAP = {
@@ -31,6 +32,7 @@ export const RankEmblem: React.FC<RankEmblemProps> = ({
   showGlow = true,
   className = '',
   animate = true,
+  useImage = false,
 }) => {
   const { width, height, px } = SIZE_MAP[size] || SIZE_MAP.md;
 
@@ -213,7 +215,17 @@ export const RankEmblem: React.FC<RankEmblemProps> = ({
       role="img"
       aria-label={`Rank Emblem: ${tier}`}
     >
-      {renderSvgCrest()}
+      {useImage ? (
+        <img
+          src={`/assets/ranks/rank-${tier.toLowerCase()}.png`}
+          alt={`Rank Emblem ${tier}`}
+          width={width}
+          height={height}
+          className="w-full h-full object-contain select-none pointer-events-none drop-shadow-sm"
+        />
+      ) : (
+        renderSvgCrest()
+      )}
     </div>
   );
 };
