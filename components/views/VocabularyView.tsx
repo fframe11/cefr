@@ -280,47 +280,49 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {!loading && viewMode === 'study' && currentWord && (
         <div className="max-w-2xl mx-auto space-y-4">
           <GlovaCard
-            elevation="subtle"
-            className="min-h-[380px] p-6 sm:p-8 flex flex-col justify-between transition-all relative overflow-hidden"
+            variant="bubble"
+            elevation="bubble"
+            className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden"
           >
             {/* Card Header Context */}
-            <div className="flex items-center justify-between gap-3 pb-4 border-b border-border/40">
+            <div className="flex items-center justify-between gap-3 pb-4 border-b border-[#EDE8DF] dark:border-border/40">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentWord.cefrLevel} size="sm" />
-                <GlovaBadge variant="secondary" size="sm" className="capitalize">
+                <GlovaBadge variant="secondary" size="sm" className="capitalize rounded-full px-2.5">
                   {currentWord.partOfSpeech}
                 </GlovaBadge>
                 {currentWord.topic && (
-                  <span className="text-xs text-muted-foreground hidden sm:inline">
+                  <span className="text-xs text-muted-foreground hidden sm:inline font-medium">
                     หมวด: {currentWord.topic}
                   </span>
                 )}
               </div>
 
-              <div className="text-xs font-mono text-muted-foreground">
+              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#FAF7F2] dark:bg-muted/40 px-3 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
                 คำที่ {currentIndex + 1} / {filteredWords.length}
               </div>
             </div>
 
-            {/* Word Central Area */}
-            <div className="py-6 text-center space-y-3">
-              <div className="flex items-center justify-center gap-3">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight font-mono">
+            {/* Word Central Area - Word as the Hero */}
+            <div className="py-6 text-center space-y-4">
+              <div className="flex items-center justify-center gap-4 flex-wrap">
+                <h2 className="text-4xl sm:text-5xl font-black text-[#24233A] dark:text-foreground tracking-tight font-sans">
                   {currentWord.word}
                 </h2>
-                <GlovaIconButton
-                  icon={<Volume2 className="w-5 h-5 text-primary" aria-hidden="true" />}
-                  ariaLabel={`ฟังการออกเสียงคำว่า ${currentWord.word}`}
+                <button
+                  type="button"
                   onClick={(e) => handleSpeak(currentWord.word, e)}
-                  variant="default"
-                  size="md"
-                />
+                  aria-label={`ฟังการออกเสียงคำว่า ${currentWord.word}`}
+                  className="touch-target w-12 h-12 rounded-full bg-[#E9E5FF] dark:bg-indigo-950/40 hover:bg-[#DDD7FF] dark:hover:bg-indigo-900/50 text-[#5B5CE2] dark:text-indigo-400 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs shrink-0"
+                >
+                  <Volume2 className="w-5 h-5" aria-hidden="true" />
+                </button>
               </div>
 
               {currentWord.ipa && (
-                <p className="text-sm font-mono text-muted-foreground">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FAF7F2] dark:bg-muted/30 text-xs font-mono font-medium text-muted-foreground border border-[#EDE8DF] dark:border-border/30">
                   {currentWord.ipa}
-                </p>
+                </div>
               )}
 
               {/* Reveal Toggle Card */}
@@ -329,23 +331,23 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsRevealed(true)}
-                    className="touch-target px-5 py-2.5 rounded-xl bg-secondary/60 hover:bg-secondary text-xs sm:text-sm font-semibold text-foreground transition-all border border-border/60 hover:border-primary/40 inline-flex items-center gap-2 group"
+                    className="touch-target px-6 py-3 rounded-full bg-[#5B5CE2]/10 hover:bg-[#5B5CE2]/15 text-xs sm:text-sm font-bold text-[#5B5CE2] transition-all border border-[#5B5CE2]/25 inline-flex items-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                     <span>แตะเพื่อแสดงความหมายและตัวอย่างประโยค</span>
                   </button>
-                  <p className="text-[11px] text-muted-foreground mt-2">
+                  <p className="text-[11px] text-muted-foreground mt-2.5 font-medium">
                     (หรือกดแป้น Spacebar เพื่อเปิดความหมาย)
                   </p>
                 </div>
               ) : (
                 <div className="pt-4 space-y-4 animate-in fade-in duration-200">
-                  <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 space-y-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-primary">
+                  <div className="p-5 rounded-[22px] bg-[#FAF7F2] dark:bg-muted/30 border border-[#EDE8DF] dark:border-border/40 space-y-1.5 text-center shadow-xs">
+                    <h3 className="text-2xl sm:text-3xl font-black text-[#5B5CE2] dark:text-indigo-400">
                       {currentWord.meaningTh}
                     </h3>
                     {currentWord.meaningEn && (
-                      <p className="text-xs text-muted-foreground leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-medium">
                         {currentWord.meaningEn}
                       </p>
                     )}
@@ -367,15 +369,15 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
                   {/* Example in Context */}
                   {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
-                    <div className="p-4 rounded-xl bg-muted/30 border border-border/40 text-left space-y-1">
-                      <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground/80 mb-1">
-                        <BookOpen className="w-3.5 h-3.5 text-indigo-400" aria-hidden="true" />
+                    <div className="p-5 rounded-[22px] bg-white dark:bg-card/80 border border-[#EDE8DF] dark:border-border/40 text-left space-y-1.5 shadow-xs">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">
+                        <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>ตัวอย่างประโยคในบริบท:</span>
                       </div>
-                      <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed">
+                      <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed">
                         {currentWord.exampleSentenceEn}
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-muted-foreground font-medium">
                         {currentWord.exampleSentenceTh}
                       </p>
                     </div>
@@ -383,12 +385,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
                   {/* Collocations if present */}
                   {currentWord.collocations && currentWord.collocations.length > 0 && (
-                    <div className="pt-2 flex flex-wrap items-center justify-center gap-1.5">
-                      <span className="text-[11px] text-muted-foreground mr-1">Collocations:</span>
+                    <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
+                      <span className="text-xs text-muted-foreground font-semibold mr-1">Collocations:</span>
                       {currentWord.collocations.map((c, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded-md bg-secondary/80 text-[11px] font-mono text-foreground border border-border/40"
+                          className="px-3 py-1 rounded-full bg-white dark:bg-card text-xs font-mono font-medium text-foreground border border-[#EDE8DF] dark:border-border/40 shadow-xs"
                         >
                           {c}
                         </span>
@@ -400,12 +402,13 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             </div>
 
             {/* Bottom Actions: Mastery & Navigation */}
-            <div className="pt-4 border-t border-border/40 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-[#EDE8DF] dark:border-border/40 flex items-center justify-between gap-3 flex-wrap">
               <GlovaButton
                 variant={isMastered ? 'primary' : 'outline'}
                 size="sm"
-                leftIcon={isMastered ? <Check className="w-4 h-4 text-emerald-400" aria-hidden="true" /> : <CheckCircle className="w-4 h-4" aria-hidden="true" />}
+                leftIcon={isMastered ? <Check className="w-4 h-4 text-white" aria-hidden="true" /> : <CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" />}
                 onClick={() => onToggleMastery?.(currentWord.id, !isMastered)}
+                className="rounded-full"
               >
                 {isMastered ? 'จำได้แล้ว' : 'ทำเครื่องหมายว่าจำได้'}
               </GlovaButton>
@@ -417,6 +420,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
                   onClick={handlePrev}
                   aria-label="คำก่อนหน้า"
+                  className="rounded-full"
                 >
                   <span className="hidden sm:inline">ก่อนหน้า</span>
                 </GlovaButton>
@@ -426,6 +430,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                   onClick={handleNext}
                   aria-label="คำถัดไป"
+                  className="rounded-full"
                 >
                   <span>คำถัดไป</span>
                 </GlovaButton>

@@ -6,8 +6,8 @@ import { GLOVA_MOTION } from '@/lib/design-tokens/tokens';
 
 export interface GlovaCardProps extends React.HTMLAttributes<HTMLDivElement> {
   interactive?: boolean;
-  elevation?: 'flat' | 'subtle' | 'glow';
-  variant?: 'default' | 'elevated' | 'interactive' | 'outline';
+  elevation?: 'flat' | 'subtle' | 'glow' | 'bubble';
+  variant?: 'default' | 'elevated' | 'interactive' | 'outline' | 'bubble';
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
@@ -26,19 +26,25 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     ref
   ) => {
     const shouldReduceMotion = useReducedMotion();
-    const isInteractive = interactive || variant === 'interactive';
+    const isInteractive = interactive || variant === 'interactive' || variant === 'bubble' && Boolean(onClick);
+    const isBubble = variant === 'bubble' || elevation === 'bubble';
 
-    const resolvedElevation = elevation || (variant === 'elevated' ? 'subtle' : 'flat');
+    const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
       flat: 'bg-card border border-border/40 shadow-none',
       subtle: 'bg-card border border-border/40 shadow-sm',
       glow: 'bg-card border border-indigo-500/20 shadow-[0_4px_20px_-2px_rgba(99,102,241,0.12)]',
+      bubble: 'bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive
-      ? 'cursor-pointer hover:border-indigo-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50'
+      ? isBubble
+        ? 'cursor-pointer hover:border-indigo-500/30 hover:shadow-[0_14px_38px_-6px_rgba(91,92,226,0.12),0_4px_14px_-2px_rgba(36,35,58,0.06)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50'
+        : 'cursor-pointer hover:border-indigo-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50'
       : '';
+
+    const radiusClass = isBubble ? 'rounded-[26px]' : 'rounded-xl';
 
     if (isInteractive) {
       return (
@@ -55,7 +61,7 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
           }}
           whileHover={shouldReduceMotion ? undefined : GLOVA_MOTION.microInteractions.cardHover}
           transition={GLOVA_MOTION.spring.gentle}
-          className={`rounded-xl overflow-hidden ${elevationStyles} ${interactiveStyles} ${className}`}
+          className={`${radiusClass} overflow-hidden ${elevationStyles} ${interactiveStyles} ${className}`}
           {...(props as any)}
         >
           {children}
@@ -66,7 +72,7 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     return (
       <div
         ref={ref}
-        className={`rounded-xl overflow-hidden ${elevationStyles} ${className}`}
+        className={`${radiusClass} overflow-hidden ${elevationStyles} ${className}`}
         {...props}
       >
         {children}

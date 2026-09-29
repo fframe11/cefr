@@ -175,6 +175,12 @@ export const GLOVA_RADII = {
   innerElement: '0.375rem', // 6px (rounded-md)
   innerButton: '0.5rem',   // 8px (rounded-lg)
   pill: '9999px',          // rounded-full (chips, badges)
+  // Glova Bubble UI Radius System (Consumer-First, Warm & Playful)
+  bubbleControl: '0.875rem', // 14px (rounded-2xl / small interactive controls)
+  bubbleCard: '1.625rem',    // 26px (rounded-3xl / tactile cards)
+  bubbleHero: '2.25rem',     // 36px (rounded-[2.25rem] / hero learning blocks)
+  bubbleFeature: '2.75rem',  // 44px (rounded-[2.75rem] / large feature modules)
+  bubblePill: '9999px',      // rounded-full (badges, prompt chips, navigation pills)
   invariant: 'Inner component radius must always be strictly smaller than outer card radius',
 } as const;
 
@@ -182,6 +188,73 @@ export const GLOVA_SHADOWS = {
   subtle: '0 2px 8px rgba(0, 0, 0, 0.08)',
   ambientPrimary: '0 4px 20px -2px rgba(99, 102, 241, 0.15)',
   ambientSun: '0 4px 20px -2px rgba(245, 158, 11, 0.15)',
+  // Tactile Bubble Shadows
+  bubble: '0 8px 30px -4px rgba(36, 35, 58, 0.06), 0 2px 10px -2px rgba(36, 35, 58, 0.04)',
+  bubbleHover: '0 14px 38px -6px rgba(91, 92, 226, 0.12), 0 4px 14px -2px rgba(36, 35, 58, 0.06)',
+  bubbleWarm: '0 12px 32px -4px rgba(255, 143, 130, 0.15)',
+} as const;
+
+export const GLOVA_BUBBLE_TYPES = {
+  insight: {
+    bg: '#FFFDF8',
+    tint: '#FAF7F2',
+    border: 'rgba(91, 92, 226, 0.16)',
+    accent: '#5B5CE2',
+    pillBg: 'rgba(91, 92, 226, 0.10)',
+    pillText: '#5B5CE2',
+    titleEn: 'Insight',
+    titleTh: 'ข้อสังเกต',
+  },
+  goal: {
+    bg: '#FFFDF8',
+    tint: '#FFF9E6',
+    border: 'rgba(246, 217, 120, 0.45)',
+    accent: '#D97706',
+    pillBg: 'rgba(246, 217, 120, 0.35)',
+    pillText: '#92400E',
+    titleEn: "Today's Goal",
+    titleTh: 'เป้าหมายวันนี้',
+  },
+  challenge: {
+    bg: '#FFFDF8',
+    tint: '#FFF3F0',
+    border: 'rgba(255, 143, 130, 0.3)',
+    accent: '#FF8F82',
+    pillBg: 'rgba(255, 143, 130, 0.20)',
+    pillText: '#C53030',
+    titleEn: '7-Min Challenge',
+    titleTh: 'ชาเลนจ์ 7 นาที',
+  },
+  progress: {
+    bg: '#FFFDF8',
+    tint: '#EEFBF5',
+    border: 'rgba(185, 232, 211, 0.45)',
+    accent: '#10B981',
+    pillBg: 'rgba(185, 232, 211, 0.4)',
+    pillText: '#065F46',
+    titleEn: 'CEFR Progress',
+    titleTh: 'ความก้าวหน้า CEFR',
+  },
+  discovery: {
+    bg: '#FFFDF8',
+    tint: '#F5F3FF',
+    border: 'rgba(233, 229, 255, 0.7)',
+    accent: '#7C3AED',
+    pillBg: 'rgba(233, 229, 255, 0.65)',
+    pillText: '#5B21B6',
+    titleEn: 'Discovery',
+    titleTh: 'ค้นพบคำใหม่',
+  },
+  achievement: {
+    bg: '#FFFDF8',
+    tint: '#FFF7ED',
+    border: 'rgba(251, 146, 60, 0.3)',
+    accent: '#EA580C',
+    pillBg: 'rgba(254, 215, 170, 0.4)',
+    pillText: '#C2410C',
+    titleEn: 'Streak',
+    titleTh: 'สถิติต่อเนื่อง',
+  },
 } as const;
 
 export const GLOVA_MOTION = {

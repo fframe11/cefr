@@ -224,10 +224,10 @@ export const SpeakingView: React.FC = () => {
                 handleReset();
                 setShowModelAnswer(false);
               }}
-              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
+                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-indigo-500/20'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[#EDE8DF] dark:border-border/60 hover:bg-[#FAF7F2]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -253,11 +253,15 @@ export const SpeakingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
+          <GlovaCard
+            variant="bubble"
+            elevation="bubble"
+            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EDE8DF] dark:border-border/40">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
-                <span className="font-semibold text-sm sm:text-base text-foreground">
+                <span className="font-bold text-sm sm:text-base text-foreground">
                   {currentPrompt.title}
                 </span>
               </div>
@@ -267,8 +271,9 @@ export const SpeakingView: React.FC = () => {
                 <GlovaButton
                   variant="outline"
                   size="sm"
-                  leftIcon={<Volume2 className="w-4 h-4 text-primary" aria-hidden="true" />}
+                  leftIcon={<Volume2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />}
                   onClick={handlePlayModel}
+                  className="rounded-full"
                 >
                   {isPlayingModel ? 'กำลังเล่นตัวอย่าง...' : 'ฟังตัวอย่างคำตอบ'}
                 </GlovaButton>
@@ -276,12 +281,12 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-4 rounded-xl bg-muted/30 border border-border/40 space-y-1.5">
-              <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed whitespace-pre-line">
+            <div className="p-5 rounded-[22px] bg-white dark:bg-card/80 border border-[#EDE8DF] dark:border-border/40 space-y-1.5 shadow-xs">
+              <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
               </p>
               {currentPrompt.promptTh && (
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1 border-t border-border/30">
+                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-[#EDE8DF] dark:border-border/30">
                   {currentPrompt.promptTh}
                 </p>
               )}
@@ -291,14 +296,14 @@ export const SpeakingView: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               {currentPrompt.guidingQuestionsTh && currentPrompt.guidingQuestionsTh.length > 0 && (
                 <div className="space-y-2">
-                  <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
-                    <HelpCircle className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                  <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                    <HelpCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
                     <span>แนวทางการตอบ:</span>
                   </h4>
                   <ul className="space-y-1.5 text-xs text-muted-foreground">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-secondary/30 p-2 rounded-lg border border-border/30">
-                        <span className="font-bold text-primary">{idx + 1}.</span>
+                      <li key={idx} className="flex items-start gap-2 bg-[#FAF7F2] dark:bg-muted/30 p-2.5 rounded-[14px] border border-[#EDE8DF] dark:border-border/30">
+                        <span className="font-bold text-[#5B5CE2] dark:text-indigo-400">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>
                     ))}
@@ -308,7 +313,7 @@ export const SpeakingView: React.FC = () => {
 
               {currentPrompt.targetPhrases && currentPrompt.targetPhrases.length > 0 && (
                 <div className="space-y-2">
-                  <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                  <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
                     <span>คำศัพท์และสำนวนเป้าหมาย:</span>
                   </h4>
@@ -318,10 +323,10 @@ export const SpeakingView: React.FC = () => {
                       return (
                         <span
                           key={idx}
-                          className={`text-xs px-2.5 py-1 rounded-lg font-mono border transition-all ${
+                          className={`text-xs px-3 py-1 rounded-full font-mono border transition-all ${
                             isDetected
-                              ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30 font-semibold'
-                              : 'bg-secondary/40 text-muted-foreground border-border/40'
+                              ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 font-bold'
+                              : 'bg-white dark:bg-card text-muted-foreground border-[#EDE8DF] dark:border-border/40'
                           }`}
                         >
                           {phrase}
@@ -335,25 +340,29 @@ export const SpeakingView: React.FC = () => {
           </GlovaCard>
 
           {/* Interactive Recording Station Card */}
-          <GlovaCard elevation="subtle" className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4">
+          <GlovaCard
+            variant="bubble"
+            elevation="bubble"
+            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          >
             {/* Live Recording Timer */}
-            <div className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
-              <Clock className="w-4 h-4 text-primary" aria-hidden="true" />
+            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-[#FAF7F2] dark:bg-muted/40 px-3.5 py-1.5 rounded-full border border-[#EDE8DF] dark:border-border/30">
+              <Clock className="w-4 h-4 text-[#5B5CE2]" aria-hidden="true" />
               <span>
                 {Math.floor(recordingSeconds / 60)}:
                 {(recordingSeconds % 60).toString().padStart(2, '0')}
               </span>
             </div>
 
-            {/* Central Recording Button */}
+            {/* Central Recording Button (Calm, Supportive, Tactile) */}
             <div className="pt-2">
               <button
                 type="button"
                 onClick={handleToggleRecord}
-                className={`touch-target p-6 sm:p-8 rounded-full transition-all focus:outline-none focus:ring-4 ${
+                className={`touch-target p-6 sm:p-7 rounded-full transition-all focus:outline-none focus:ring-4 ${
                   isRecording
-                    ? 'bg-rose-500 text-white animate-pulse shadow-lg shadow-rose-500/25 ring-rose-500/30'
-                    : 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-md shadow-primary/25 ring-primary/20'
+                    ? 'bg-[#FF8F82] text-white shadow-lg shadow-[#FF8F82]/30 ring-[#FF8F82]/20 hover:scale-105 active:scale-95'
+                    : 'bg-[#5B5CE2] text-white hover:bg-[#4E4FD0] shadow-md shadow-indigo-500/25 ring-indigo-500/20 hover:scale-105 active:scale-95'
                 }`}
                 aria-label={isRecording ? 'หยุดบันทึกเสียง' : 'เริ่มบันทึกเสียง'}
               >
@@ -366,10 +375,10 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             <div className="space-y-1">
-              <p className="text-sm font-semibold text-foreground">
+              <p className="text-base font-bold text-foreground">
                 {isRecording ? 'กำลังบันทึกเสียงของคุณ...' : 'แตะเพื่อเริ่มบันทึกเสียง'}
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted-foreground font-medium">
                 {isRecording ? 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย'}
               </p>
             </div>

@@ -16,6 +16,7 @@ export interface GlovaLearningCardProps {
   onStart: () => void;
   icon?: React.ReactNode;
   isPrimary?: boolean;
+  variant?: 'default' | 'bubble';
   className?: string;
 }
 
@@ -32,12 +33,21 @@ export const GlovaLearningCard: React.FC<GlovaLearningCardProps> = ({
   onStart,
   icon,
   isPrimary = false,
+  variant = 'default',
   className = '',
 }) => {
+  const isBubble = variant === 'bubble';
   return (
     <GlovaCard
-      elevation={isPrimary ? 'glow' : 'subtle'}
-      className={`border ${isPrimary ? 'border-indigo-500/30 bg-gradient-to-br from-card via-card to-indigo-950/20' : 'border-border/40'} ${className}`}
+      elevation={isBubble ? 'bubble' : isPrimary ? 'glow' : 'subtle'}
+      variant={isBubble ? 'bubble' : 'default'}
+      className={`border ${
+        isBubble
+          ? 'border-[#EDE8DF] dark:border-border/40'
+          : isPrimary
+          ? 'border-indigo-500/30 bg-gradient-to-br from-card via-card to-indigo-950/20'
+          : 'border-border/40'
+      } ${className}`}
     >
       <GlovaCardContent className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div className="flex items-start gap-4">

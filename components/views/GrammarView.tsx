@@ -161,10 +161,10 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 setSelectedTopicId(topic.id);
                 setActiveQuestionIdx(0);
               }}
-              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
+                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-indigo-500/20'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[#EDE8DF] dark:border-border/60 hover:bg-[#FAF7F2]'
               }`}
             >
               <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
@@ -191,7 +191,11 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (5 cols): Grammar Concept & Rule Blueprint */}
           <div className="lg:col-span-5 space-y-4">
-            <GlovaCard elevation="subtle" className="p-5 sm:p-6 space-y-4">
+            <GlovaCard
+              variant="bubble"
+              elevation="bubble"
+              className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            >
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
@@ -220,9 +224,9 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               </div>
 
               {currentTopic.summaryTh && (
-                <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground flex items-start gap-2.5">
+                <div className="p-4 rounded-[20px] bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground flex items-start gap-2.5">
                   <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
-                  <span className="leading-relaxed font-medium">{currentTopic.summaryTh}</span>
+                  <span className="leading-relaxed font-semibold">{currentTopic.summaryTh}</span>
                 </div>
               )}
 
@@ -236,8 +240,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               {/* Formulas & Rules */}
               {currentTopic.rules && currentTopic.rules.length > 0 && (
                 <div className="pt-2 space-y-3">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground">
-                    <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                    <Sparkles className="w-3.5 h-3.5 text-indigo-500" aria-hidden="true" />
                     <span>โครงสร้างและกฎการใช้งาน:</span>
                   </div>
 
@@ -245,9 +249,9 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     {currentTopic.rules.map((rule, idx) => (
                       <div
                         key={idx}
-                        className="p-3.5 rounded-xl bg-muted/30 border border-border/40 space-y-2"
+                        className="p-4 rounded-[20px] bg-[#FAF7F2] dark:bg-muted/30 border border-[#EDE8DF] dark:border-border/40 space-y-2 shadow-xs"
                       >
-                        <div className="font-mono text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md border border-primary/20 inline-block break-word-safe">
+                        <div className="font-mono text-xs font-bold text-[#5B5CE2] dark:text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block break-word-safe">
                           {rule.formula}
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">

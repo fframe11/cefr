@@ -159,10 +159,10 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 setShowTranscript(false);
                 setActiveQuestionIdx(0);
               }}
-              className={`touch-target px-3.5 py-2 rounded-xl text-xs font-medium shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
-                  : 'bg-card text-muted-foreground hover:text-foreground border-border/60 hover:bg-secondary/40'
+                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-indigo-500/20'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[#EDE8DF] dark:border-border/60 hover:bg-[#FAF7F2]'
               }`}
             >
               <GlovaLevelBadge level={item.cefrLevel} size="sm" />
@@ -188,18 +188,22 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       {currentExercise && (
         <div className="space-y-6">
           {/* Audio Player Card (Dominant Player Station) */}
-          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
+          <GlovaCard
+            variant="bubble"
+            elevation="bubble"
+            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EDE8DF] dark:border-border/40">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentExercise.cefrLevel} size="sm" />
-                <span className="font-semibold text-sm sm:text-base text-foreground">
+                <span className="font-bold text-sm sm:text-base text-foreground">
                   {currentExercise.title}
                 </span>
               </div>
 
               {currentExercise.speakerAccents && (
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <Volume2 className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
+                  <Volume2 className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
                   <span>สำเนียง: {currentExercise.speakerAccents}</span>
                 </div>
               )}
@@ -227,11 +231,11 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
             {/* Progressive Disclosure Transcript Toggle */}
             {currentExercise.audioScript && (
-              <div className="pt-3 border-t border-border/40">
+              <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/40">
                 <button
                   type="button"
                   onClick={() => setShowTranscript(!showTranscript)}
-                  className="touch-target text-xs font-semibold text-muted-foreground hover:text-foreground flex items-center gap-1.5 transition-colors"
+                  className="touch-target text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 flex items-center gap-1.5 transition-colors"
                 >
                   {showTranscript ? (
                     <>
@@ -247,8 +251,8 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 </button>
 
                 {showTranscript && (
-                  <div className="mt-3 p-4 rounded-xl bg-muted/30 border border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-serif animate-in fade-in duration-200">
-                    <p className="font-sans text-[11px] font-semibold text-muted-foreground mb-1 uppercase tracking-wider">
+                  <div className="mt-3 p-4 rounded-[20px] bg-[#FAF7F2] dark:bg-muted/30 border border-[#EDE8DF] dark:border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
+                    <p className="font-sans text-[11px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">
                       บทพูดภาษาอังกฤษ:
                     </p>
                     {currentExercise.audioScript}
