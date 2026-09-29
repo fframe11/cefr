@@ -6,7 +6,8 @@ import {
   CompetitionAnswerResult,
   CompetitionSummary,
 } from '../../types/gamification';
-import { VocabularyWord } from '../../types';
+import { CEFRLevel, VocabularyWord } from '../../types';
+import { sampleRandomVocabulary, recordToVocabularyWord } from '../vocabulary/production-vocabulary';
 
 interface ServerSessionQuestion {
   questionId: string;
@@ -56,11 +57,17 @@ const STAGE_NAMES: Record<CompetitionDifficultyStage, string> = {
   5: 'Stage 5 — Apex (C1)',
 };
 
+
+
 /**
- * Filter vocabulary bank by CEFR stage, fallback to nearby levels if count is low
+ * Filter vocabulary bank by CEFR stage, sourced from verified production catalog
  */
 function getWordsForStage(stage: CompetitionDifficultyStage): VocabularyWord[] {
-  const targetCefr = STAGE_CEFR_MAP[stage];
+  const targetCefr = STAGE_CEFR_MAP[stage] as CEFRLevel;
+  const prodItems = sampleRandomVocabulary(targetCefr, 50);
+  if (prodItems.length >= 4) {
+    return prodItems.map((r) => recordToVocabularyWord(r));
+  }
   const matching = VOCABULARY_BANK.filter((w) => w.cefrLevel === targetCefr);
   if (matching.length >= 4) return matching;
   return VOCABULARY_BANK;

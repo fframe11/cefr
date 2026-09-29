@@ -3,6 +3,7 @@ import { createApiHandler } from '../_lib/handler/api-handler';
 import { createPublicServerClient } from '../_lib/supabase/client';
 import { validateQuery } from '../_lib/validation/validator';
 import { cefrLevelSchema, paginationSchema } from '../_lib/validation/common-schemas';
+import { searchProductionVocabulary } from '../../lib/vocabulary/production-vocabulary';
 
 const vocabularyQuerySchema = paginationSchema.extend({
   cefr_level: cefrLevelSchema.optional(),
@@ -47,20 +48,37 @@ export default createApiHandler(
       .order('id', { ascending: true })
       .range(offset, offset + query.limit - 1);
 
-    const { data: items, count, error } = await dbQuery;
+    try {
+      const { data: items, count, error } = await dbQuery;
 
-    if (error) {
-      throw error;
+      if (!error && items && items.length > 0) {
+        return {
+          items,
+          pagination: {
+            page: query.page,
+            limit: query.limit,
+            total: count || 0,
+            total_pages: Math.ceil((count || 0) / query.limit),
+          },
+        };
+      }
+    } catch (dbErr) {
+      console.warn('[ContentVocabulary] Supabase query failed, falling back to local production bank:', dbErr);
     }
 
+    // High-performance fallback to verified 3,860 production catalog
+    const local = searchProductionVocabulary({
+      cefr_level: query.cefr_level,
+      part_of_speech: query.part_of_speech,
+      topic: query.topic,
+      search: query.search,
+      page: query.page,
+      limit: query.limit,
+    });
+
     return {
-      items: items || [],
-      pagination: {
-        page: query.page,
-        limit: query.limit,
-        total: count || 0,
-        total_pages: Math.ceil((count || 0) / query.limit),
-      },
+      items: local.items,
+      pagination: local.pagination,
     };
   },
   {

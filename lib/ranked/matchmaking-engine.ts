@@ -7,8 +7,8 @@
  */
 
 import crypto from 'crypto';
-import { VOCABULARY_BANK } from '@/data/vocabularyBank';
-import { VocabularyWord } from '@/types';
+import { sampleRandomVocabulary, getAllProductionVocabulary } from '../vocabulary/production-vocabulary';
+import { CEFRLevel, VocabularyWord } from '@/types';
 import {
   CompetitiveGameMode,
   MatchmakingState,
@@ -67,9 +67,10 @@ export function getAcceptableRatingRange(waitDurationMs: number): number {
 
 /**
  * Filter vocabulary by player tier for appropriate difficulty curve
+ * Sourced directly from verified 3,860 production candidates.
  */
 function getQuestionsForTier(tier: RankTier): RankedQuestion[] {
-  let targetCefr: string[];
+  let targetCefr: CEFRLevel[];
   switch (tier) {
     case 'Bronze':
       targetCefr = ['A1', 'A2'];
@@ -85,39 +86,41 @@ function getQuestionsForTier(tier: RankTier): RankedQuestion[] {
       break;
     case 'Diamond':
     case 'Master':
-      targetCefr = ['C1', 'B2'];
+      targetCefr = ['C1', 'C2', 'B2'];
       break;
     default:
       targetCefr = ['B1'];
   }
 
-  const pool = VOCABULARY_BANK.filter((w) => targetCefr.includes(w.cefrLevel));
-  const fallback = pool.length >= 6 ? pool : VOCABULARY_BANK;
-
-  // Shuffle and pick 6 words
-  const selectedWords = [...fallback].sort(() => 0.5 - Math.random()).slice(0, 6);
+  let selectedWords = sampleRandomVocabulary(targetCefr, 6);
+  if (selectedWords.length < 6) {
+    const all = getAllProductionVocabulary();
+    selectedWords = [...all].sort(() => 0.5 - Math.random()).slice(0, 6);
+  }
 
   return selectedWords.map((word, idx) => {
-    // 3 distractors
-    const distractors = fallback
-      .filter((w) => w.id !== word.id)
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 3)
-      .map((w) => w.meaningTh);
+    // 3 plausible distractors from same CEFR/tier pool
+    const distractorCandidates = sampleRandomVocabulary(targetCefr, 20)
+      .filter((w) => w.id !== word.id && w.meaning_th !== word.meaning_th);
+    const distractorTexts = Array.from(new Set(distractorCandidates.map((w) => w.meaning_th))).slice(0, 3);
 
-    const allOptions = [word.meaningTh, ...distractors].sort(() => 0.5 - Math.random());
-    const correctIndex = allOptions.indexOf(word.meaningTh);
+    while (distractorTexts.length < 3) {
+      distractorTexts.push(`ความหมายสำรอง ${distractorTexts.length + 1}`);
+    }
+
+    const allOptions = [word.meaning_th, ...distractorTexts].sort(() => 0.5 - Math.random());
+    const correctIndex = allOptions.indexOf(word.meaning_th);
 
     return {
       id: `q_${idx + 1}_${word.id}`,
       prompt: `What is the meaning of "${word.word}"?`,
       targetWord: word.word,
-      cefrLevel: word.cefrLevel as any,
+      cefrLevel: word.cefr_level as any,
       options: allOptions,
       correctIndex,
-      definition: word.meaningEn,
-      exampleSentence: word.exampleSentenceEn,
-      thaiMeaning: word.meaningTh,
+      definition: word.meaning_en,
+      exampleSentence: word.example_sentence_en,
+      thaiMeaning: word.meaning_th,
     };
   });
 }

@@ -77,3 +77,56 @@ export async function getVocabulary(params: VocabularyQueryParams = {}): Promise
   const queryString = queryParts.length > 0 ? `?${queryParts.join('&')}` : '';
   return apiClient.get<VocabularyResponseDTO>(`/api/content/vocabulary${queryString}`, { skipAuth: true });
 }
+
+export interface ClientVocabularyQuestionDTO {
+  id: string;
+  skill: 'vocabulary';
+  cefrLevel: CEFRLevel;
+  type: string;
+  interactionType: string;
+  promptTh: string;
+  promptEn: string;
+  contextPassage?: string;
+  targetWord?: string;
+  options: Array<{ key: string; text: string }>;
+  difficultyWeight: number;
+}
+
+export interface VocabularyQuestionsResponseDTO {
+  questions: ClientVocabularyQuestionDTO[];
+  total: number;
+}
+
+export interface VocabularyAnswerSubmissionResult {
+  question_id: string;
+  target_word_id: string;
+  selected_key: string;
+  correct_key: string;
+  is_correct: boolean;
+  explanation_th: string;
+  explanation_en: string;
+}
+
+export async function getVocabularyQuestions(params: {
+  cefr_level?: CEFRLevel;
+  count?: number;
+  word_ids?: string;
+  interaction_types?: string;
+} = {}): Promise<VocabularyQuestionsResponseDTO> {
+  const queryParts: string[] = [];
+  if (params.cefr_level) queryParts.push(`cefr_level=${encodeURIComponent(params.cefr_level)}`);
+  if (params.count) queryParts.push(`count=${params.count}`);
+  if (params.word_ids) queryParts.push(`word_ids=${encodeURIComponent(params.word_ids)}`);
+  if (params.interaction_types) queryParts.push(`interaction_types=${encodeURIComponent(params.interaction_types)}`);
+
+  const qs = queryParts.length > 0 ? `?${queryParts.join('&')}` : '';
+  return apiClient.get<VocabularyQuestionsResponseDTO>(`/api/content/vocabulary/questions${qs}`, { skipAuth: true });
+}
+
+export async function submitVocabularyAnswer(payload: {
+  question_id: string;
+  selected_key: string;
+  target_word_id?: string;
+}): Promise<VocabularyAnswerSubmissionResult> {
+  return apiClient.post<VocabularyAnswerSubmissionResult>('/api/content/vocabulary/questions', payload, { skipAuth: true });
+}
