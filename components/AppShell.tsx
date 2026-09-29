@@ -2,6 +2,7 @@
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Header } from './common/Header';
+import { LandingBrandNav } from './landing/LandingBrandNav';
 import { Sidebar, NavView } from './common/Sidebar';
 import { MobileBottomNav } from './common/MobileBottomNav';
 import { ProfileModal } from './common/ProfileModal';
@@ -61,18 +62,13 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   if (isLandingRoute) {
     return (
       <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden selection:bg-primary/20 selection:text-primary">
-        <Header
-          currentLevel={progress.currentLevel}
-          streakDays={progress.streakDays}
-          minutesStudiedToday={progress.minutesStudiedToday}
-          dailyGoalMinutes={progress.dailyGoalMinutes}
-          targetExam={progress.targetExam}
-          onRetakeAssessment={() => router.push('/assessment')}
-          isDark={isDark}
-          onToggleTheme={toggleTheme}
-          onOpenProfile={() => setIsProfileModalOpen(true)}
+        <LandingBrandNav
+          onOpenAuthModal={() => setIsProfileModalOpen(true)}
+          onStartAssessment={() => router.push('/assessment')}
           isAuthenticated={status === 'authenticated'}
           userEmail={user?.email || null}
+          isDark={isDark}
+          onToggleTheme={toggleTheme}
         />
         <main className="flex-1 w-full min-w-0 max-w-full overflow-x-hidden">
           {children}

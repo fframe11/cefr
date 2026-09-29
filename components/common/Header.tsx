@@ -121,16 +121,20 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-90 transition-opacity">
-            <div className="flex items-center justify-center shrink-0">
-              <GlovaLogo size={32} variant="radiant" ariaLabel="Glova" />
+          <Link
+            href="/landing"
+            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] rounded-xl p-1 -m-1"
+            aria-label="Glova Home - Brand Showcase"
+          >
+            <div className="flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
+              <GlovaLogo size={32} variant="radiant" ariaLabel="Glova Brand Logo" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-base sm:text-lg tracking-tight truncate bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 bg-clip-text text-transparent">
+                <span className="font-black text-base sm:text-lg tracking-tight truncate bg-gradient-to-r from-[#5B5CE2] via-purple-600 to-amber-500 bg-clip-text text-transparent group-hover:brightness-110 transition-all">
                   Glova
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-secondary text-muted-foreground border border-border/40">
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-secondary text-muted-foreground border border-border/40">
                   {targetExam} {t('header.prep_suffix')}
                 </span>
               </div>
