@@ -29,7 +29,9 @@ import {
   GlovaBadge,
   GlovaCard,
   GlovaCardContent,
+  GlovaImage,
 } from '../ui';
+import { RemotionPlayerWrapper, PhoneticStressComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
 interface VocabularyViewProps {
@@ -347,6 +349,20 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                         {currentWord.meaningEn}
                       </p>
                     )}
+                  </div>
+
+                  {/* Remotion Phonetic Cadence & Stress Animation */}
+                  <div className="pt-1">
+                    <RemotionPlayerWrapper
+                      component={PhoneticStressComposition}
+                      inputProps={{
+                        word: currentWord.word,
+                        cefrLevel: currentWord.cefrLevel,
+                      }}
+                      durationInFrames={60}
+                      aspectRatio="16/9"
+                      ariaLabel={`Phonetic cadence animation for ${currentWord.word}`}
+                    />
                   </div>
 
                   {/* Example in Context */}

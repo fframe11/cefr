@@ -413,18 +413,31 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return (
       <div className="w-full max-w-4xl mx-auto space-y-6 pb-12">
         {/* Header Hero Banner */}
-        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
-          <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mx-auto">
-            <GraduationCap className="w-7 h-7" />
+        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden">
+          {/* Authentic Examination Setting Backdrop */}
+          <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
+            <img
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80"
+              alt="Structured exam desk with question paper and stationery"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              width={1600}
+              height={900}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/85 to-transparent" />
           </div>
-          <div>
-            <h1 className="text-fluid-title font-bold text-foreground">
-              ห้องสอบจำลอง Cambridge English Qualifications
-            </h1>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-lg mx-auto">
-              จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale
-            </p>
-          </div>
+          <div className="relative z-10 space-y-4">
+            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mx-auto">
+              <GraduationCap className="w-7 h-7" />
+            </div>
+            <div>
+              <h1 className="text-fluid-title font-bold text-foreground">
+                ห้องสอบจำลอง Cambridge English Qualifications
+              </h1>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-lg mx-auto">
+                จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale
+              </p>
+            </div>
 
           <GlovaFeedbackBubble
             currentSkill="reading"
@@ -437,6 +450,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <span>
               แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications
             </span>
+          </div>
           </div>
         </GlovaCard>
 

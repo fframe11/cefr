@@ -26,6 +26,7 @@ import {
   GlovaCardContent,
   GlovaBadge,
 } from '../ui';
+import { RemotionPlayerWrapper, GrammarTimelineComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
 interface GrammarViewProps {
@@ -201,6 +202,21 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight">
                   {currentTopic.titleTh}
                 </h3>
+              </div>
+
+              {/* Remotion Educational Grammar Timeline Aspect Animation */}
+              <div className="pt-1">
+                <RemotionPlayerWrapper
+                  component={GrammarTimelineComposition}
+                  inputProps={{
+                    tenseName: currentTopic.titleEn,
+                    exampleSentence: currentTopic.rules?.[0]?.exampleEn || 'I have completed the task.',
+                    timeframeLabel: `${currentTopic.cefrLevel} Aspect`,
+                  }}
+                  durationInFrames={90}
+                  aspectRatio="16/9"
+                  ariaLabel={`Grammar aspect animation for ${currentTopic.titleEn}`}
+                />
               </div>
 
               {currentTopic.summaryTh && (

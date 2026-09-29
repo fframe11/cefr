@@ -24,6 +24,7 @@
     "qa:integrity": "node scripts/content-pipeline/vocab/qa-integrity-check.mjs"
   },
   "dependencies": {
+    "@remotion/player": "4.0.529",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.117.1",
     "canvas-confetti": "^1.9.4",
@@ -33,6 +34,7 @@
     "next": "^15.5.26",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "remotion": "4.0.529",
     "tailwind-merge": "^2.6.0",
     "zod": "^4.6.5"
   },

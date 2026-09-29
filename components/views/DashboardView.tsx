@@ -29,6 +29,7 @@ import {
   GlovaProgressCard,
   GlovaLearningCard,
   GlovaSectionHeader,
+  GlovaImage,
   CEFRTier,
 } from '../ui';
 
@@ -96,7 +97,19 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     <div className="w-full space-y-8 max-w-6xl mx-auto pb-16">
       {/* 1. Header / Learner Hero Context */}
       <section className="rounded-2xl bg-card border border-border/40 p-5 sm:p-7 shadow-xs relative overflow-hidden">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        {/* Contextual Editorial Photography Backdrop */}
+        <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
+            alt="University students engaged in academic study and discussion"
+            className="w-full h-full object-cover"
+            loading="lazy"
+            width={1600}
+            height={900}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-card via-card/90 to-transparent" />
+        </div>
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2.5 flex-wrap">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold select-none">

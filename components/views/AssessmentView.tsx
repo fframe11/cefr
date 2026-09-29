@@ -32,6 +32,7 @@ import {
   GlovaSectionHeader,
   GlovaFeedbackBubble,
 } from '../ui';
+import { RemotionPlayerWrapper, CefrRevealComposition } from '../remotion';
 
 function toUserSkillStats(stats?: Record<string, number> | UserSkillStats): UserSkillStats {
   return {
@@ -284,7 +285,23 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             <h2 className="text-fluid-title font-bold text-foreground mt-3">
               ระดับภาษาอังกฤษของคุณคือ CEFR {result.estimatedLevel}
             </h2>
-            <p className="text-sm text-muted-foreground mt-1 max-w-md mx-auto">
+
+            {/* Remotion CEFR Calibration Reveal Animation */}
+            <div className="pt-2 max-w-lg mx-auto">
+              <RemotionPlayerWrapper
+                component={CefrRevealComposition}
+                inputProps={{
+                  targetLevel: result.estimatedLevel,
+                  cambridgeScore: result.cambridgeScore,
+                  confidencePct: result.percentage,
+                }}
+                durationInFrames={90}
+                aspectRatio="16/9"
+                ariaLabel="CEFR placement calibration reveal"
+              />
+            </div>
+
+            <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
               ตอบถูกต้อง {result.correctCount} จาก {result.totalQuestions} ข้อ ({result.percentage}%) คะแนนประเมินของแพลตฟอร์มเทียบเคียงได้{' '}
               <span className="text-foreground font-semibold font-mono">{result.cambridgeScore}</span> คะแนน
             </p>

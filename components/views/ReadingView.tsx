@@ -24,6 +24,7 @@ import {
   GlovaButton,
   GlovaCard,
   GlovaBadge,
+  GlovaImage,
 } from '../ui';
 import { useTranslation } from '../../i18n';
 
@@ -236,6 +237,16 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                     <span>~{estimatedReadingMinutes} นาที</span>
                   </span>
                 </div>
+              </div>
+
+              {/* Contextual Editorial Reading Photography */}
+              <div className="overflow-hidden rounded-xl">
+                <GlovaImage
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+                  alt="Agile engineering team collaborating around workspace laptops"
+                  aspectRatio="aspect-video"
+                  className="w-full max-h-48"
+                />
               </div>
 
               {/* Title */}
