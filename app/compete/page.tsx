@@ -50,6 +50,7 @@ import { RankedLobbyCard } from '@/components/ranked/RankedLobbyCard';
 import { RankedMatchScreen } from '@/components/ranked/RankedMatchScreen';
 import { RankedResultModal } from '@/components/ranked/RankedResultModal';
 import { RankedMistakeReviewModal } from '@/components/ranked/RankedMistakeReviewModal';
+import { SquadShareBanner, RankBannerCard } from '@/components/ui/aceternity';
 
 export default function CompetePage() {
   const { t, language } = useTranslation();
@@ -282,11 +283,11 @@ export default function CompetePage() {
       {/* 1. TOP MODE SWITCHER: RANKED VS QUICK PLAY */}
       <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card p-4 shadow-xs">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2 font-display">
             <Swords className="w-6 h-6 text-amber-500" />
             {isEn ? 'Arena Competition' : 'สมรภูมิแข่งขันภาษาอังกฤษ'}
           </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-grotesk">
             {competeMode === 'ranked'
               ? (isEn ? 'Official Ranked Mode: Performance changes your Rank Rating (MMR).' : 'โหมดจัดอันดับจริงจัง: ผลการแข่งมีผลต่อ Rank Rating โดยตรง แยกจากแต้ม XP')
               : (isEn ? 'Quick Play: Practice speed vocabulary battle with zero rating risk.' : 'โหมดเล่นเร็ว: ฝึกซ้อมประลองความเร็ว ไม่กระทบต่อ Rank Rating')}
@@ -298,7 +299,7 @@ export default function CompetePage() {
           <button
             type="button"
             onClick={() => setCompeteMode('ranked')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               competeMode === 'ranked'
                 ? 'bg-amber-500 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
@@ -310,7 +311,7 @@ export default function CompetePage() {
           <button
             type="button"
             onClick={() => setCompeteMode('quick')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               competeMode === 'quick'
                 ? 'bg-indigo-600 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
@@ -328,13 +329,16 @@ export default function CompetePage() {
       {competeMode === 'ranked' && (
         <section className="space-y-6">
           {rankedGameState === 'lobby' && rankedProfile && (
-            <RankedLobbyCard
-              profile={rankedProfile}
-              isSearching={isSearchingRanked}
-              searchDurationSec={searchTimerSec}
-              onStartMatchmaking={handleStartRankedMatchmaking}
-              onCancelMatchmaking={handleCancelRankedMatchmaking}
-            />
+            <>
+              <RankedLobbyCard
+                profile={rankedProfile}
+                isSearching={isSearchingRanked}
+                searchDurationSec={searchTimerSec}
+                onStartMatchmaking={handleStartRankedMatchmaking}
+                onCancelMatchmaking={handleCancelRankedMatchmaking}
+              />
+              <SquadShareBanner squadName="Chula Vanguard" memberCount={3} maxMembers={5} />
+            </>
           )}
 
           {rankedGameState === 'playing' && rankedPlayer1 && rankedPlayer2 && currentRankedQuestion && (

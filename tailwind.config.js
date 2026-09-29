@@ -48,6 +48,32 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'sans-serif'],
+        display: ['var(--font-display)', 'sans-serif'],
+        tech: ['var(--font-tech)', 'monospace'],
+        grotesk: ['var(--font-grotesk)', 'sans-serif'],
+      },
+      keyframes: {
+        'border-beam': {
+          '100%': {
+            'offset-distance': '100%',
+          },
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.03)' },
+        },
+      },
+      animation: {
+        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+      },
       minHeight: {
         'touch': '44px',
       },

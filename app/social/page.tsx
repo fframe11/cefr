@@ -25,6 +25,7 @@ import {
 } from '../../lib/api/gamification';
 import { PublicUserProfile, FriendRequest, InviteInfo } from '../../types/gamification';
 import { GlovaAvatarWithFrame } from '../../components/gamification/RankFrame';
+import { SquadShareBanner } from '@/components/ui/aceternity';
 
 export default function SocialPage() {
   const { t, language } = useTranslation();
@@ -95,7 +96,10 @@ export default function SocialPage() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8 pb-16">
+    <div className="w-full max-w-4xl mx-auto space-y-6 pb-16">
+      {/* University Squad Referral Banner */}
+      <SquadShareBanner squadName="Chula Vanguard" memberCount={3} maxMembers={5} />
+
       {/* 1. SOCIAL HUB HEADER */}
       <section className="rounded-3xl bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/70 p-6 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -104,10 +108,10 @@ export default function SocialPage() {
               <Users className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+              <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight font-display">
                 {isEn ? 'Friends & Study Squad' : 'เพื่อนและก๊วนเรียนภาษา'}
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-grotesk">
                 {isEn
                   ? 'Connect with university peers, track study streaks, and invite classmates'
                   : 'เชื่อมต่อกับเพื่อนนักศึกษา ติดตามสถิติการเรียน และร่วมประลองคำศัพท์'}

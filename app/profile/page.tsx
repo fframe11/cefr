@@ -406,6 +406,31 @@ export default function ProfilePage() {
                   <div className="text-xs font-medium text-muted-foreground">ครั้งที่อยู่ในท็อป 3</div>
                 </div>
               </div>
+
+              {/* Stat 5: Cambridge Estimated Score & Skill Breakdown */}
+              <div className="col-span-2 flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                  <Target className="h-6 w-6" />
+                </div>
+                <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div>
+                    <div className="text-sm sm:text-base font-black text-foreground">
+                      คะแนนเคมบริดจ์โดยประมาณ: {progress.estimatedCambridgeScore || 160} / 230
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      เป้าหมาย {progress.targetExam} • CEFR {progress.currentLevel}
+                    </div>
+                  </div>
+                  {progress.skillStats && (
+                    <div className="flex gap-2 text-[11px] font-tech text-muted-foreground">
+                      <span>R: {progress.skillStats.reading || 80}%</span>
+                      <span>L: {progress.skillStats.listening || 75}%</span>
+                      <span>G: {progress.skillStats.grammar || 85}%</span>
+                      <span>V: {progress.skillStats.vocabulary || 90}%</span>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </section>
 

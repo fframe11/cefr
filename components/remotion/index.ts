@@ -10,3 +10,7 @@ export type { CefrRevealProps } from './CefrRevealComposition';
 export type { LandingHeroCompositionProps } from './LandingHeroComposition';
 export { LevelUpCelebrationComposition, AchievementCelebrationComposition } from './GamificationCelebrations';
 export type { LevelUpCelebrationProps, AchievementCelebrationProps } from './GamificationCelebrations';
+export { RankedArenaShowcaseComposition } from './RankedArenaShowcaseComposition';
+export type { RankedArenaShowcaseProps } from './RankedArenaShowcaseComposition';
+export { SeasonPassRewardsComposition } from './SeasonPassRewardsComposition';
+export type { SeasonPassRewardsProps } from './SeasonPassRewardsComposition';

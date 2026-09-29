@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Chakra Petch', 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-tech: 'Rajdhani', 'Orbitron', monospace;
+    --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
     --background: 38 38% 96.5%; /* #FAF7F2 Warm Ivory / Soft Cream */
     --foreground: 243 25% 18%;   /* #24233A Deep Ink */
 

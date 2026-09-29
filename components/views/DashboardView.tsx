@@ -42,6 +42,7 @@ import {
   DiscoveryBubble,
   CEFRTier,
 } from '../ui';
+import { RankBannerCard } from '../ui/aceternity';
 
 interface DashboardViewProps {
   progress: UserProgressState;
@@ -290,28 +291,31 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </section>
 
+      {/* Season 1 Event Tournament Banner */}
+      <RankBannerCard seasonNumber={1} daysRemaining={18} />
+
       {/* 2. Playful Game & Social Arena Hero (Bubble-Gaming Hub) */}
       <section className="rounded-[28px] bg-gradient-to-tr from-[#5B5CE2]/10 via-[#F6D978]/10 to-[#FF8F82]/10 border border-[#5B5CE2]/20 p-6 sm:p-7 shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           {/* Left: Game Level & XP Bar */}
           <div className="space-y-3 max-w-lg">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1 rounded-full bg-[#5B5CE2] text-white font-black text-xs uppercase tracking-wider shadow-xs">
+              <span className="px-3 py-1 rounded-full bg-[#5B5CE2] text-white font-black text-xs uppercase tracking-wider shadow-xs font-tech">
                 Level 12 • Pathfinder
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 font-bold text-xs flex items-center gap-1.5">
+              <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 font-bold text-xs flex items-center gap-1.5 font-tech">
                 <Flame className="w-3.5 h-3.5 fill-current" />
                 <span>{progress.streakDays} Day Streak</span>
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-bold text-xs">
+              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-bold text-xs font-tech">
                 Bangkok League • Rank #10
               </span>
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight font-display">
                 {isEn ? 'Arena & Daily Vocabulary Battle' : 'สนามประลองคำศัพท์และลีกประจำสัปดาห์'}
               </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1 font-grotesk">
                 {isEn
                   ? 'Challenge your reflexes in 4-second battles, earn XP, and climb the university leaderboard with your study squad.'
                   : 'ท้าทายความเร็วกับแบบทดสอบจับเวลา 4 วินาที เก็บ XP ไต่ระดับลีก และแข่งกับเพื่อนนักศึกษา'}

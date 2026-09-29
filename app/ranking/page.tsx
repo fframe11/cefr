@@ -21,6 +21,7 @@ import { fetchLeaderboard } from '../../lib/api/gamification';
 import { RankingSeasonInfo, RankTier } from '../../types/gamification';
 import { GlovaAvatarWithFrame } from '../../components/gamification/RankFrame';
 import { RankedLeaderboardView } from '@/components/ranked/RankedLeaderboardView';
+import { RankBannerCard } from '@/components/ui/aceternity';
 
 const TIER_COLORS: Record<RankTier, { bg: string; text: string; border: string }> = {
   Diamond: { bg: 'bg-cyan-500/10', text: 'text-cyan-600 dark:text-cyan-400', border: 'border-cyan-500/30' },
@@ -69,11 +70,11 @@ function RankingContent() {
       {/* 1. TOP DUAL LEADERBOARD TOGGLE */}
       <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card p-4 shadow-xs">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2 font-display">
             <Trophy className="w-6 h-6 text-amber-500" />
             {isEn ? 'Leaderboard & Rankings' : 'ตารางจัดอันดับผู้เล่น'}
           </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-grotesk">
             {boardType === 'ranked'
               ? (isEn ? 'Ranked Leaderboard: Ranks players strictly by competitive Skill Rating (MMR).' : 'กระดานจัดอันดับแข่งขัน: วัดคะแนนฝีมือ (MMR) จากการดวลคำศัพท์จริงจัง')
               : (isEn ? 'XP Leaderboard: Measures total learning activity and effort this week.' : 'กระดานจัดอันดับ XP: วัดความขยันในการเรียนรู้รายสัปดาห์/รายเดือน')}
@@ -85,7 +86,7 @@ function RankingContent() {
           <button
             type="button"
             onClick={() => setBoardType('ranked')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               boardType === 'ranked'
                 ? 'bg-amber-500 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
@@ -97,7 +98,7 @@ function RankingContent() {
           <button
             type="button"
             onClick={() => setBoardType('xp')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               boardType === 'xp'
                 ? 'bg-indigo-600 text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
@@ -108,6 +109,10 @@ function RankingContent() {
           </button>
         </div>
       </section>
+
+      {/* Season 1 Event Banner */}
+      <RankBannerCard seasonNumber={1} daysRemaining={18} />
+
 
       {/* ========================================================= */}
       {/* VIEW A: DEDICATED RANKED LEADERBOARD */}
