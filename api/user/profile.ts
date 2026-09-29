@@ -37,14 +37,32 @@ export default createApiHandler(
     const supabase = createServiceRoleClient();
 
     if (req.method === 'GET') {
-      const { data: profile, error } = await supabase
+      let { data: profile, error } = await supabase
         .from('user_profiles')
         .select('*')
         .eq('id', user.id)
         .single();
 
       if (error || !profile) {
-        throw new NotFoundError('User profile not found.');
+        // Auto-provision profile for newly registered authenticated user
+        const { data: newProfile, error: insertError } = await supabase
+          .from('user_profiles')
+          .insert({
+            id: user.id,
+            current_cefr_level: 'A1',
+            target_exam: 'PET',
+            estimated_cambridge_score: 100,
+            streak_days: 0,
+            daily_goal_minutes: 20,
+            assessment_completed: false,
+          })
+          .select()
+          .single();
+
+        if (insertError || !newProfile) {
+          throw new NotFoundError('User profile not found.');
+        }
+        profile = newProfile;
       }
 
       return {

@@ -14,7 +14,10 @@ export interface AuthContextType {
   profile: UserProfileData | null;
   error: string | null;
   signInWithPassword: (email: string, password: string) => Promise<{ error: Error | null }>;
-  signUpWithPassword: (email: string, password: string) => Promise<{ error: Error | null }>;
+  signUpWithPassword: (
+    email: string,
+    password: string
+  ) => Promise<{ error: Error | null; confirmationRequired?: boolean }>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   updateProfile: (input: UpdateProfileInput) => Promise<UserProfileData>;
@@ -130,8 +133,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(data.session.user);
         setStatus('authenticated');
         await fetchUserProfile();
+        return { error: null, confirmationRequired: false };
       }
-      return { error: null };
+      return { error: null, confirmationRequired: true };
     } catch (err: any) {
       const errMsg = err?.message || 'ลงทะเบียนไม่สำเร็จ';
       setError(errMsg);
