@@ -116,7 +116,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         onOpenMobileNav={() => setIsMobileNavOpen(true)}
       />
 
-      <div className="flex-1 flex w-full min-h-[calc(100vh-4rem)]">
+      <div className="flex-1 flex w-full max-w-[1720px] mx-auto min-h-[calc(100vh-4rem)]">
         {/* Desktop / Tablet Sidebar (>= 768px) & Mobile Drawer (< 768px) */}
         <Sidebar
           currentView={currentView}

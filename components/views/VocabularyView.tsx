@@ -44,6 +44,8 @@ import {
   GlovaBadge,
   GlovaCard,
   GlovaCardContent,
+  LessonFeedbackDrawer,
+  TactileButton,
 } from '../ui';
 import { RemotionPlayerWrapper, PhoneticStressComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
@@ -498,22 +500,26 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              {/* Multiple Choice Options */}
-              <div className="grid grid-cols-1 gap-2.5">
+              {/* Multiple Choice Options with Uiverse tactile press */}
+              <div className="grid grid-cols-1 gap-3">
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
-                  let optionStyle = 'bg-card hover:bg-muted/50 border-border/60 text-foreground';
+                  let optionStyle =
+                    'bg-[#FFFDF8] dark:bg-card hover:bg-[#F7F3EA] dark:hover:bg-muted/60 border-2 border-[#EDE8DF] dark:border-border/60 text-foreground shadow-[0_3px_0_#EDE8DF] dark:shadow-none active:shadow-none active:translate-y-0.5';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
-                      optionStyle = 'bg-emerald-500/15 border-emerald-500 text-emerald-700 dark:text-emerald-300 font-semibold ring-1 ring-emerald-500/30';
+                      optionStyle =
+                        'bg-emerald-500/15 border-2 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold ring-2 ring-emerald-500/20 shadow-[0_3px_0_#10B981]';
                     } else if (isSelected && !answerResult.is_correct) {
-                      optionStyle = 'bg-rose-500/15 border-rose-500 text-rose-700 dark:text-rose-300 ring-1 ring-rose-500/30';
+                      optionStyle =
+                        'bg-rose-500/15 border-2 border-rose-500 text-rose-800 dark:text-rose-200 font-bold ring-2 ring-rose-500/20 shadow-[0_3px_0_#F43F5E]';
                     } else {
-                      optionStyle = 'opacity-50 border-border/40 text-muted-foreground';
+                      optionStyle = 'opacity-50 border-border/40 text-muted-foreground shadow-none';
                     }
                   } else if (isSelected) {
-                    optionStyle = 'bg-primary/10 border-primary text-primary font-semibold ring-2 ring-primary/20';
+                    optionStyle =
+                      'bg-[#5B5CE2]/10 border-2 border-[#5B5CE2] text-[#5B5CE2] dark:text-indigo-400 font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3px_0_#4041B5]';
                   }
 
                   return (
@@ -522,13 +528,13 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       type="button"
                       disabled={Boolean(selectedOption) || isSubmittingAnswer}
                       onClick={() => handleSelectOption(opt.key)}
-                      className={`touch-target w-full p-4 rounded-xl border text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
+                      className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-7 h-7 rounded-lg bg-muted flex items-center justify-center text-xs font-mono font-bold text-muted-foreground shrink-0">
+                        <span className="w-8 h-8 rounded-xl bg-muted flex items-center justify-center text-xs font-mono font-bold text-muted-foreground shrink-0 border border-border/40">
                           {opt.key}
                         </span>
-                        <span className="text-sm font-medium">{opt.text}</span>
+                        <span className="text-sm sm:text-base font-semibold">{opt.text}</span>
                       </div>
 
                       {answerResult && opt.key === answerResult.correct_key && (
@@ -542,38 +548,29 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 })}
               </div>
 
-              {/* Answer Explanation & Next Action */}
-              {answerResult && (
-                <div className="p-4 rounded-xl bg-muted/40 border border-border/50 space-y-3 animate-in fade-in duration-200">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      {answerResult.is_correct ? (
-                        <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                          <CheckCircle2 className="w-4 h-4" /> ถูกต้อง! (+10 XP)
-                        </span>
-                      ) : (
-                        <span className="text-xs font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1">
-                          <XCircle className="w-4 h-4" /> ยังไม่ถูกต้อง (+2 XP ความพยายาม)
-                        </span>
-                      )}
-                    </div>
-
-                    <GlovaButton
-                      variant="primary"
-                      size="sm"
-                      rightIcon={<ArrowRight className="w-4 h-4" aria-hidden="true" />}
-                      onClick={handleNextPracticeQuestion}
-                      className="rounded-full"
-                    >
-                      {practiceIndex + 1 < practiceQuestions.length ? (isEn ? 'Next Question' : 'ข้อถัดไป') : (isEn ? 'New Batch' : 'ชุดถัดไป')}
-                    </GlovaButton>
-                  </div>
-
-                  <p className="text-xs text-foreground/90 font-medium leading-relaxed">
-                    {answerResult.explanation_th || answerResult.explanation_en}
-                  </p>
-                </div>
-              )}
+              {/* Duolingo-inspired Bottom Feedback Drawer */}
+              <LessonFeedbackDrawer
+                isOpen={Boolean(answerResult)}
+                isCorrect={Boolean(answerResult?.is_correct)}
+                explanation={answerResult?.explanation_th || answerResult?.explanation_en}
+                correctAnswerText={
+                  answerResult && !answerResult.is_correct
+                    ? currentPracticeQ.options.find((o) => o.key === answerResult.correct_key)?.text
+                    : undefined
+                }
+                xpEarned={practiceStreak > 2 ? 15 : 10}
+                streakBonus={practiceStreak > 2}
+                onContinue={handleNextPracticeQuestion}
+                ctaText={
+                  practiceIndex + 1 < practiceQuestions.length
+                    ? isEn
+                      ? 'CONTINUE'
+                      : 'ข้อถัดไป'
+                    : isEn
+                    ? 'FINISH SESSION'
+                    : 'เสร็จสิ้นการฝึก'
+                }
+              />
             </GlovaCard>
           ) : (
             <div className="p-8 text-center bg-card rounded-2xl border border-border/60 space-y-3">

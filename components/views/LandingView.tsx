@@ -34,7 +34,7 @@ import {
   RankBannerCard,
   SquadShareBanner,
 } from '../ui/aceternity';
-import { GlovaButton, GlovaCard, GlovaImage } from '../ui';
+import { GlovaButton, GlovaCard, GlovaImage, ShinyText, TactileButton } from '../ui';
 import { useTranslation } from '../../i18n';
 import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
@@ -92,9 +92,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.12] font-display">
                 {t('landing.hero_title_part1')}{' '}
-                <span className="bg-gradient-to-r from-primary via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <ShinyText speedSec={4} className="font-extrabold">
                   {t('landing.hero_title_part2')}
-                </span>
+                </ShinyText>
               </h1>
 
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl font-grotesk">
@@ -102,23 +102,24 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <GlovaButton
+                <TactileButton
                   variant="primary"
                   size="lg"
                   onClick={handleStartQuickCheck}
-                  className="px-7 py-3.5 text-base font-semibold shadow-sm shadow-primary/20 group font-display tracking-wide"
+                  className="px-7 py-3.5 text-base font-semibold group font-display tracking-wide"
                 >
                   <span>{t('landing.hero_cta_check')}</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </GlovaButton>
+                </TactileButton>
 
-                <a
-                  href="#studios"
+                <TactileButton
+                  variant="surface"
+                  size="lg"
                   onClick={handleExploreGlova}
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border/60 bg-card hover:bg-muted text-foreground text-sm font-semibold transition-colors font-display"
+                  className="px-6 py-3.5 text-sm font-semibold font-display"
                 >
                   {t('landing.hero_cta_explore')}
-                </a>
+                </TactileButton>
               </div>
 
               <div className="flex items-center gap-6 pt-4 text-xs text-muted-foreground flex-wrap font-grotesk">
@@ -538,9 +539,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {t('landing.habit_desc')}
           </p>
           <div className="pt-2">
-            <GlovaButton variant="primary" size="md" onClick={handleStart} className="font-semibold font-display tracking-wide">
+            <TactileButton variant="primary" size="md" onClick={handleStart} className="font-semibold font-display tracking-wide">
               {t('landing.habit_cta')}
-            </GlovaButton>
+            </TactileButton>
           </div>
         </div>
       </section>
@@ -594,14 +595,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {t('landing.final_cta_desc')}
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <GlovaButton
+            <TactileButton
               variant="primary"
               size="lg"
               onClick={handleStart}
               className="px-8 py-4 text-base font-semibold shadow-md shadow-primary/25 font-display tracking-wide"
             >
               {t('landing.final_cta_button')}
-            </GlovaButton>
+            </TactileButton>
           </div>
         </div>
       </section>
@@ -611,7 +612,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         <div className="w-full max-w-[1536px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="font-bold text-foreground font-display">Glova</span>
-            <span>— CEFR English Learning Platform</span>
+            <span>· CEFR English Learning Platform</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/" className="hover:text-foreground transition-colors">{t('landing.footer_home')}</Link>

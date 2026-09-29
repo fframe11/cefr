@@ -154,19 +154,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-sm transition-all group min-h-[44px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 ${
+                className={`w-full flex items-center rounded-xl text-sm transition-all group min-h-[44px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50 ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3.5 py-2.5 gap-3'
                 } ${
                   isActive
-                    ? 'bg-indigo-500/12 text-indigo-600 dark:text-indigo-400 font-semibold border border-indigo-500/25 shadow-xs'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60 border border-transparent'
+                    ? 'bg-[#5B5CE2]/12 text-[#5B5CE2] dark:text-indigo-400 font-bold border-l-4 border-l-[#5B5CE2] border-y border-r border-[#5B5CE2]/20 shadow-[0_2px_8px_rgba(91,92,226,0.08)] translate-x-0.5'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-[#EDE8DF]/40 dark:hover:bg-muted/50 hover:translate-x-0.5 border border-transparent'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-colors ${
-                    isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-muted-foreground group-hover:text-foreground'
+                    isActive ? 'text-[#5B5CE2] dark:text-indigo-400' : 'text-muted-foreground group-hover:text-foreground'
                   }`}
                 />
                 {!collapsedMode && (
@@ -176,7 +176,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 )}
 
                 {!collapsedMode && item.badge && (
-                  <span className="ml-auto hidden lg:inline-flex px-1.5 py-0.5 rounded text-[10px] font-semibold bg-secondary text-muted-foreground border border-border/40 shrink-0">
+                  <span className="ml-auto hidden lg:inline-flex px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#EDE8DF]/70 dark:bg-muted text-muted-foreground border border-border/40 shrink-0">
                     {item.badge}
                   </span>
                 )}

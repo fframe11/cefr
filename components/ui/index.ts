@@ -16,6 +16,7 @@ export * from './GlovaAvatar';
 export * from './GlovaTooltip';
 export * from './GlovaFeedbackBubble';
 export * from './GlovaBubble';
+export * from './GlovaPrimitives';
 
 // Central token re-exports
 export * from '@/lib/design-tokens/tokens';
