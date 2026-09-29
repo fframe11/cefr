@@ -14,6 +14,10 @@ import {
   ClipboardCheck,
   User,
   X,
+  Swords,
+  Trophy,
+  Users,
+  Award,
 } from 'lucide-react';
 import { NavView } from './Sidebar';
 import { useTranslation } from '../../i18n';
@@ -36,6 +40,10 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
   ];
 
   const secondaryItems = [
+    { id: 'compete' as NavView, icon: Swords },
+    { id: 'ranking' as NavView, icon: Trophy },
+    { id: 'social' as NavView, icon: Users },
+    { id: 'achievements' as NavView, icon: Award },
     { id: 'profile' as NavView, icon: User },
     { id: 'assessment' as NavView, icon: ClipboardCheck },
     { id: 'listening' as NavView, icon: Headphones },

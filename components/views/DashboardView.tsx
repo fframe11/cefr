@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
   Flame,
   Clock,
@@ -16,6 +17,9 @@ import {
   RotateCcw,
   Zap,
   Compass,
+  Swords,
+  Trophy,
+  Users,
 } from 'lucide-react';
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
@@ -286,7 +290,81 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </section>
 
-      {/* 2. Asymmetric 70/30 Focal Stage */}
+      {/* 2. Playful Game & Social Arena Hero (Bubble-Gaming Hub) */}
+      <section className="rounded-[28px] bg-gradient-to-tr from-[#5B5CE2]/10 via-[#F6D978]/10 to-[#FF8F82]/10 border border-[#5B5CE2]/20 p-6 sm:p-7 shadow-xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          {/* Left: Game Level & XP Bar */}
+          <div className="space-y-3 max-w-lg">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="px-3 py-1 rounded-full bg-[#5B5CE2] text-white font-black text-xs uppercase tracking-wider shadow-xs">
+                Level 12 • Pathfinder
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 font-bold text-xs flex items-center gap-1.5">
+                <Flame className="w-3.5 h-3.5 fill-current" />
+                <span>{progress.streakDays} Day Streak</span>
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-bold text-xs">
+                Bangkok League • Rank #10
+              </span>
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+                {isEn ? 'Arena & Daily Vocabulary Battle' : 'สนามประลองคำศัพท์และลีกประจำสัปดาห์'}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                {isEn
+                  ? 'Challenge your reflexes in 4-second battles, earn XP, and climb the university leaderboard with your study squad.'
+                  : 'ท้าทายความเร็วกับแบบทดสอบจับเวลา 4 วินาที เก็บ XP ไต่ระดับลีก และแข่งกับเพื่อนนักศึกษา'}
+              </p>
+            </div>
+
+            {/* Level XP Progress Bar */}
+            <div className="space-y-1 pt-1">
+              <div className="flex items-center justify-between text-xs font-bold">
+                <span className="text-muted-foreground">{isEn ? 'Level Progress' : 'ความคืบหน้าเลเวล'}</span>
+                <span className="text-[#5B5CE2] tabular-nums font-black">1,250 / 1,500 XP (83%)</span>
+              </div>
+              <div className="w-full h-2.5 rounded-full bg-muted/60 overflow-hidden">
+                <div className="h-full rounded-full bg-gradient-to-r from-[#5B5CE2] to-[#FF8F82] w-[83%]" />
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Quick Action Cards */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
+            <Link
+              href="/compete"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-[#5B5CE2] hover:bg-[#4D4EC9] text-white font-black text-sm shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <Swords className="w-4 h-4" />
+              <span>{isEn ? 'Play Vocab Battle' : 'ประลองคำศัพท์ (4s)'}</span>
+            </Link>
+            <Link
+              href="/ranking"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-white dark:bg-card hover:bg-muted border border-border/60 text-foreground font-bold text-sm shadow-xs transition-colors"
+            >
+              <Trophy className="w-4 h-4 text-amber-500" />
+              <span>{isEn ? 'League' : 'อันดับลีก'}</span>
+            </Link>
+            <Link
+              href="/achievements"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-white dark:bg-card hover:bg-muted border border-border/60 text-foreground font-bold text-sm shadow-xs transition-colors"
+            >
+              <Award className="w-4 h-4 text-[#5B5CE2]" />
+              <span>{isEn ? 'Badges' : 'เหรียญตรา'}</span>
+            </Link>
+            <Link
+              href="/social"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-white dark:bg-card hover:bg-muted border border-border/60 text-foreground font-bold text-sm shadow-xs transition-colors"
+            >
+              <Users className="w-4 h-4 text-[#FF8F82]" />
+              <span>{isEn ? 'Friends' : 'เพื่อน'}</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Asymmetric 70/30 Focal Stage */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column (70% - 8 cols): What Next & Curated Action Paths */}
         <div className="lg:col-span-8 space-y-6">

@@ -16,6 +16,9 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   X,
+  Swords,
+  Trophy,
+  Users,
 } from 'lucide-react';
 import { GlovaLogo } from '../ui/GlovaLogo';
 
@@ -30,7 +33,11 @@ export type NavView =
   | 'speaking'
   | 'mockExam'
   | 'analytics'
-  | 'profile';
+  | 'profile'
+  | 'compete'
+  | 'ranking'
+  | 'social'
+  | 'achievements';
 
 export interface SidebarProps {
   currentView: NavView;
@@ -48,7 +55,7 @@ export interface NavItem {
   labelTh: string;
   icon: React.ComponentType<{ className?: string }>;
   badge?: string;
-  section: 'learn' | 'practice' | 'progress';
+  section: 'learn' | 'arena' | 'practice' | 'progress';
 }
 
 export const NAV_ITEMS: NavItem[] = [
@@ -59,6 +66,10 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'listening', labelEn: 'Listening', labelTh: 'ทักษะการฟัง', icon: Headphones, section: 'learn' },
   { id: 'writing', labelEn: 'Writing', labelTh: 'ทักษะการเขียน', icon: PenTool, section: 'learn' },
   { id: 'speaking', labelEn: 'Speaking', labelTh: 'การพูดและออกเสียง', icon: Mic, section: 'learn' },
+  { id: 'compete', labelEn: 'Vocab Battle', labelTh: 'ประลองคำศัพท์', icon: Swords, badge: '4s Fast', section: 'arena' },
+  { id: 'ranking', labelEn: 'League Leaderboard', labelTh: 'ตารางคะแนนลีก', icon: Trophy, badge: 'Top 3', section: 'arena' },
+  { id: 'social', labelEn: 'Friends & Squad', labelTh: 'เพื่อนและสังคม', icon: Users, section: 'arena' },
+  { id: 'achievements', labelEn: 'Achievements', labelTh: 'เหรียญความสำเร็จ', icon: Award, section: 'arena' },
   { id: 'assessment', labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR', icon: ClipboardCheck, badge: 'A1-C2', section: 'practice' },
   { id: 'mockExam', labelEn: 'Mock Exams', labelTh: 'สอบจำลอง Cambridge', icon: Award, badge: 'KET/PET/FCE', section: 'practice' },
   { id: 'analytics', labelEn: 'Performance', labelTh: 'วิเคราะห์จุดอ่อน', icon: BarChart2, section: 'progress' },
@@ -66,13 +77,14 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 interface NavSectionDef {
-  id: 'learn' | 'practice' | 'progress';
+  id: 'learn' | 'arena' | 'practice' | 'progress';
   labelEn: string;
   labelTh: string;
 }
 
 const NAV_SECTIONS: NavSectionDef[] = [
   { id: 'learn', labelEn: 'LEARN', labelTh: 'ทักษะการเรียนรู้' },
+  { id: 'arena', labelEn: 'ARENA & SOCIAL', labelTh: 'ประลองและชุมชน' },
   { id: 'practice', labelEn: 'PRACTICE', labelTh: 'ฝึกฝนและวัดผล' },
   { id: 'progress', labelEn: 'PROGRESS', labelTh: 'สถิติและความก้าวหน้า' },
 ];

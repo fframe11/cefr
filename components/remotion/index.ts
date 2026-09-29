@@ -8,5 +8,5 @@ export type { GrammarTimelineProps } from './GrammarTimelineComposition';
 export type { PhoneticStressProps, SyllableItem } from './PhoneticStressComposition';
 export type { CefrRevealProps } from './CefrRevealComposition';
 export type { LandingHeroCompositionProps } from './LandingHeroComposition';
-export type { ListeningWaveformProps } from './ListeningWaveformComposition';
-
+export { LevelUpCelebrationComposition, AchievementCelebrationComposition } from './GamificationCelebrations';
+export type { LevelUpCelebrationProps, AchievementCelebrationProps } from './GamificationCelebrations';

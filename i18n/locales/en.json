@@ -37,6 +37,10 @@
     "mockExam": "Mock Exams",
     "analytics": "Performance",
     "profile": "Profile & Goals",
+    "compete": "Vocab Battle",
+    "ranking": "Leaderboard",
+    "social": "Friends & Squad",
+    "achievements": "Achievements",
     "learning_journey": "Learning Journey",
     "more_menu": "Additional Modules"
   },
@@ -345,5 +349,32 @@
     "guest_account_notice": "You are currently exploring as a guest",
     "guest_sync_notice": "Sign up or sign in to save your learning history permanently across devices",
     "guest_convert_btn": "Create Account to Save Progress"
+  },
+  "gamification": {
+    "level": "Level",
+    "xp": "XP",
+    "streak": "Day Streak",
+    "battle": "Vocab Battle",
+    "ranking": "League",
+    "achievements": "Achievements",
+    "friends": "Friends",
+    "level_up": "Level Up!",
+    "achievement_unlocked": "Achievement Unlocked!",
+    "weekly_league": "Weekly League",
+    "vocab_battle_title": "4-Second Vocabulary Battle",
+    "vocab_battle_subtitle": "Test your reflexes and vocabulary recall. Answer accurately within 4 seconds to climb tiers and earn XP.",
+    "ready_to_battle": "Ready for Vocabulary Battle?",
+    "start_battle": "Start Battle Now",
+    "question": "Question",
+    "time_remaining": "Time Remaining",
+    "streak_bonus": "Streak Bonus",
+    "game_over": "Battle Complete!",
+    "missed_words": "Words to Review",
+    "leaderboard_title": "Weekly League & Leaderboard",
+    "top_podium": "Top 3 Podium",
+    "my_standing": "Your League Standing",
+    "friends_hub_title": "Friends & Study Squad",
+    "add_friend": "Add Friend",
+    "invite_link": "Copy Invite Link"
   }
 }
