@@ -376,5 +376,27 @@
     "friends_hub_title": "เพื่อนและก๊วนเรียนภาษา",
     "add_friend": "เพิ่มเพื่อน",
     "invite_link": "คัดลอกลิงก์ชวนเพื่อน"
+  },
+  "ranked": {
+    "title": "โหมดจัดอันดับการแข่งขัน",
+    "subtitle": "วัดระดับทักษะความสามารถจริงจังด้วยระบบ Rank Rating",
+    "find_match": "ค้นหาแมตช์แข่งขัน",
+    "searching_match": "กำลังค้นหาคู่ต่อสู้",
+    "cancel_search": "ยกเลิกการค้นหา",
+    "victory": "ชัยชนะ!",
+    "defeat": "พ่ายแพ้",
+    "draw": "เสมอ",
+    "rating_change": "การเปลี่ยนแปลง Rating",
+    "rank_up": "เลื่อนขั้นยศใหม่!",
+    "play_again": "เล่นอีกตา",
+    "review_mistakes": "ทบทวนคำที่ตอบผิด",
+    "view_leaderboard": "ดูกระดานจัดอันดับแรงก์",
+    "current_rank": "ยศปัจจุบัน",
+    "skill_rating": "คะแนนฝีมือ",
+    "peak_rank": "ยศสูงสุด",
+    "season": "ซีซัน 1",
+    "placement": "จัดอันดับแล้ว",
+    "placement_progress": "Placement {{current}}/5",
+    "demotion_protected": "คุ้มกันการตกชั้น {{count}} ตา"
   }
 }

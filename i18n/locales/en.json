@@ -376,5 +376,27 @@
     "friends_hub_title": "Friends & Study Squad",
     "add_friend": "Add Friend",
     "invite_link": "Copy Invite Link"
+  },
+  "ranked": {
+    "title": "Competitive Ranked Mode",
+    "subtitle": "Test your vocabulary skills with server-authoritative Rank Rating (MMR).",
+    "find_match": "Find Match",
+    "searching_match": "Searching for opponent...",
+    "cancel_search": "Cancel Search",
+    "victory": "Victory!",
+    "defeat": "Defeat",
+    "draw": "Draw",
+    "rating_change": "Rating Adjustment",
+    "rank_up": "Rank Promoted!",
+    "play_again": "Play Again",
+    "review_mistakes": "Review Mistakes",
+    "view_leaderboard": "View Ranked Leaderboard",
+    "current_rank": "Current Rank",
+    "skill_rating": "Skill Rating",
+    "peak_rank": "Peak Rank",
+    "season": "Season 1",
+    "placement": "Placed",
+    "placement_progress": "Placement {{current}}/5",
+    "demotion_protected": "{{count}} matches demotion protected"
   }
 }

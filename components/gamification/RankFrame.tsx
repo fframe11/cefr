@@ -6,7 +6,9 @@ import { RankFrameId } from '../../types/gamification';
 interface RankFrameProps {
   frameId?: RankFrameId;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  avatarUrl?: string;
+  username?: string;
   className?: string;
   showBadge?: boolean;
 }
@@ -70,15 +72,33 @@ export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
   frameId,
   size = 'md',
   children,
+  avatarUrl,
+  username,
   className = '',
   showBadge = false,
 }) => {
   const config = SIZE_MAP[size];
 
+  const content = children || (
+    avatarUrl ? (
+      <img
+        src={avatarUrl}
+        alt={username || 'Avatar'}
+        className="w-full h-full rounded-full object-cover aspect-square"
+      />
+    ) : (
+      <div className="w-full h-full rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center text-xs uppercase">
+        {(username || 'GL').slice(0, 2)}
+      </div>
+    )
+  );
+
   if (!frameId) {
     return (
       <div className={`relative inline-flex items-center justify-center shrink-0 ${config.container} ${className}`}>
-        {children}
+        <div className="relative z-10 w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+          {content}
+        </div>
       </div>
     );
   }
@@ -91,8 +111,8 @@ export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
       data-testid={`rank-frame-${frameId}`}
     >
       {/* Centered Avatar Content */}
-      <div className="relative z-10 rounded-full overflow-hidden flex items-center justify-center">
-        {children}
+      <div className="relative z-10 w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+        {content}
       </div>
 
       {/* SVG Animated Frame Overlay */}

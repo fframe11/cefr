@@ -26,6 +26,7 @@ export interface AuthContextType {
   refreshProfile: () => Promise<void>;
   updateProfile: (input: UpdateProfileInput) => Promise<UserProfileData>;
   updateDisplayName: (displayName: string) => Promise<{ error: Error | null }>;
+  updateAvatarUrl: (avatarUrl: string) => Promise<{ error: Error | null }>;
   syncGuestToAccount: () => Promise<{ syncedAttempts: number; error: Error | null }>;
 }
 
@@ -250,6 +251,28 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const updateAvatarUrl = async (avatarUrl: string): Promise<{ error: Error | null }> => {
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('glova_custom_avatar_url', avatarUrl);
+      }
+      if (status === 'authenticated') {
+        const { data, error: updateError } = await supabase.auth.updateUser({
+          data: {
+            avatar_url: avatarUrl,
+          },
+        });
+        if (updateError) throw updateError;
+        if (data?.user) {
+          setUser(data.user);
+        }
+      }
+      return { error: null };
+    } catch (err: any) {
+      return { error: err };
+    }
+  };
+
   const signOut = async () => {
     try {
       await supabase.auth.signOut();
@@ -290,6 +313,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     refreshProfile,
     updateProfile,
     updateDisplayName,
+    updateAvatarUrl,
     syncGuestToAccount,
   };
 
