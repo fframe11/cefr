@@ -25,7 +25,9 @@ import {
   GlovaButton,
   GlovaCard,
   GlovaBadge,
+  GlovaImage,
 } from '../ui';
+import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
 interface ListeningViewProps {
@@ -201,6 +203,17 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                   <span>สำเนียง: {currentExercise.speakerAccents}</span>
                 </div>
               )}
+            </div>
+
+            {/* Remotion Audio Waveform Visualization */}
+            <div className="pt-1">
+              <RemotionPlayerWrapper
+                component={ListeningWaveformComposition}
+                inputProps={{ isPlaying: true }}
+                durationInFrames={90}
+                aspectRatio="21/9"
+                ariaLabel="Listening audio waveform visualization"
+              />
             </div>
 
             {/* Audio Player Control */}

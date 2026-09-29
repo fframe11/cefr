@@ -28,6 +28,7 @@ import {
   GlovaButton,
   GlovaCard,
   GlovaBadge,
+  GlovaImage,
 } from '../ui';
 import { useTranslation } from '../../i18n';
 
@@ -182,6 +183,16 @@ export const WritingView: React.FC = () => {
                   {currentPrompt.minWords}–{currentPrompt.maxWords} คำ
                 </span>
               </div>
+            </div>
+
+            {/* Contextual Writing Studio Photo */}
+            <div className="overflow-hidden rounded-xl">
+              <GlovaImage
+                src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80"
+                alt="Creative writing notebook and fountain pen on natural wood desk"
+                aspectRatio="aspect-video"
+                className="w-full max-h-44"
+              />
             </div>
 
             {/* Prompt Description */}

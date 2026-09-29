@@ -48,6 +48,48 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     }
   };
 
+  const isLandingRoute = pathname === '/landing';
+
+  if (isLandingRoute) {
+    return (
+      <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+        <Header
+          currentLevel={progress.currentLevel}
+          streakDays={progress.streakDays}
+          minutesStudiedToday={progress.minutesStudiedToday}
+          dailyGoalMinutes={progress.dailyGoalMinutes}
+          targetExam={progress.targetExam}
+          onRetakeAssessment={() => router.push('/assessment')}
+          isDark={isDark}
+          onToggleTheme={toggleTheme}
+          onOpenProfile={() => setIsProfileModalOpen(true)}
+          isAuthenticated={status === 'authenticated'}
+          userEmail={user?.email || null}
+        />
+        <main className="flex-1 w-full min-w-0 max-w-full overflow-x-hidden">
+          {children}
+        </main>
+        <ProfileModal
+          isOpen={isProfileModalOpen}
+          onClose={() => setIsProfileModalOpen(false)}
+          currentLocalTargetExam={progress.targetExam}
+          currentLocalDailyGoal={progress.dailyGoalMinutes}
+          onProfileUpdated={({ targetExam, dailyGoalMinutes }) => {
+            const updated: UserProgressState = {
+              ...progress,
+              targetExam,
+              dailyGoalMinutes,
+            };
+            setProgress(updated);
+            if (status !== 'authenticated') {
+              saveUserProgress(updated);
+            }
+          }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Top Universal Header */}

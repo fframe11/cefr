@@ -1,7 +1,12 @@
 export { GrammarTimelineComposition } from './GrammarTimelineComposition';
 export { PhoneticStressComposition } from './PhoneticStressComposition';
 export { CefrRevealComposition } from './CefrRevealComposition';
+export { LandingHeroComposition } from './LandingHeroComposition';
+export { ListeningWaveformComposition } from './ListeningWaveformComposition';
 export { RemotionPlayerWrapper } from './RemotionPlayerWrapper';
 export type { GrammarTimelineProps } from './GrammarTimelineComposition';
 export type { PhoneticStressProps, SyllableItem } from './PhoneticStressComposition';
 export type { CefrRevealProps } from './CefrRevealComposition';
+export type { LandingHeroCompositionProps } from './LandingHeroComposition';
+export type { ListeningWaveformProps } from './ListeningWaveformComposition';
+

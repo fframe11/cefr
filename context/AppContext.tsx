@@ -42,7 +42,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const { showToast } = useToast();
   const { status, profile, refreshProfile } = useAuth();
   const [progress, setProgress] = useState<UserProgressState>(loadUserProgress);
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState<boolean>(false);
   const [remediationTopic, setRemediationTopic] = useState<string | undefined>(undefined);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 

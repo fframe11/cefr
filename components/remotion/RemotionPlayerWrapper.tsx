@@ -74,6 +74,7 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
         loop={loop}
         autoPlay={true}
         controls={false}
+        acknowledgeRemotionLicense={true}
         style={{
           width: '100%',
           height: '100%',

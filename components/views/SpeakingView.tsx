@@ -28,6 +28,7 @@ import {
   GlovaCard,
   GlovaBadge,
 } from '../ui';
+import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
 export const SpeakingView: React.FC = () => {
@@ -372,6 +373,19 @@ export const SpeakingView: React.FC = () => {
                 {isRecording ? 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย'}
               </p>
             </div>
+
+            {/* Remotion Live Speaking Waveform */}
+            {isRecording && (
+              <div className="w-full max-w-sm pt-2">
+                <RemotionPlayerWrapper
+                  component={ListeningWaveformComposition}
+                  inputProps={{ isPlaying: true }}
+                  durationInFrames={90}
+                  aspectRatio="21/9"
+                  ariaLabel="Live speaking waveform visualization"
+                />
+              </div>
+            )}
 
             {/* Speech Transcript Output Box */}
             {transcript && (

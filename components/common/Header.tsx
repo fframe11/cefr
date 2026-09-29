@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { Flame, Clock, Moon, Sun, RefreshCw, User as UserIcon } from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
 import { useTranslation } from '../../i18n';
@@ -42,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/90 backdrop-blur-md transition-colors pt-safe">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
         {/* Logo and Brand */}
-        <div className="flex items-center gap-2.5 min-w-0">
+        <Link href="/" className="flex items-center gap-2.5 min-w-0 group hover:opacity-90 transition-opacity">
           <div className="flex items-center justify-center shrink-0">
             <GlovaLogo size={32} variant="radiant" ariaLabel="Glova" />
           </div>
@@ -59,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
               {t('header.subtitle')}
             </p>
           </div>
-        </div>
+        </Link>
 
         {/* Status Indicators & Controls */}
         <div className="flex items-center gap-2 sm:gap-3">

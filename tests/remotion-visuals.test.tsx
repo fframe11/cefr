@@ -5,6 +5,8 @@ import {
   GrammarTimelineComposition,
   PhoneticStressComposition,
   CefrRevealComposition,
+  LandingHeroComposition,
+  ListeningWaveformComposition,
   RemotionPlayerWrapper,
 } from '../components/remotion';
 
@@ -68,5 +70,19 @@ describe('Remotion Visual & Educational Compositions', () => {
     expect(html).toContain('role="region"');
     expect(html).toContain('Grammar aspect timeline');
     expect(html).toContain('Past Continuous');
+  });
+
+  it('renders LandingHeroComposition in static mode with CEFR progression', () => {
+    const html = renderToString(<LandingHeroComposition isStatic={true} />);
+    expect(html).toContain('CEFR PROGRESSION');
+    expect(html).toContain('One Small Win Everyday');
+    expect(html).toContain('A1');
+    expect(html).toContain('C2');
+  });
+
+  it('renders ListeningWaveformComposition in static mode', () => {
+    const html = renderToString(<ListeningWaveformComposition isPlaying={true} isStatic={true} />);
+    expect(html).toBeDefined();
+    expect(html).toContain('background-color:#FAF7F2');
   });
 });
