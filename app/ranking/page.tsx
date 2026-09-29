@@ -24,6 +24,7 @@ import { RankedLeaderboardView } from '@/components/ranked/RankedLeaderboardView
 import { RankBannerCard } from '@/components/ui/aceternity';
 
 const TIER_COLORS: Record<RankTier, { bg: string; text: string; border: string }> = {
+  Master: { bg: 'bg-rose-500/10', text: 'text-rose-600 dark:text-rose-400', border: 'border-rose-500/30' },
   Diamond: { bg: 'bg-cyan-500/10', text: 'text-cyan-600 dark:text-cyan-400', border: 'border-cyan-500/30' },
   Platinum: { bg: 'bg-emerald-500/10', text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-500/30' },
   Gold: { bg: 'bg-amber-500/10', text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-500/30' },

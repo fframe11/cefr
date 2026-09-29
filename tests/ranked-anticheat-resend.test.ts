@@ -42,10 +42,11 @@ describe('GLOVA Ranked 4s Battle, Anti-Cheat & Resend Email Integration', () => 
     expect((clientQ as any).correctIndex).toBeUndefined();
     expect((clientQ as any).definition).toBeUndefined();
 
-    // 3. Submit valid on-time answer
+    // 3. Submit valid on-time answer (simulating 1.5s human reaction)
     const token = match.sessionToken;
     const currentQ = match.questions[match.currentQuestionIndex];
     const correctIdx = currentQ.correctIndex;
+    match.questionIssuedAt = Date.now() - 1500;
 
     const answerRes = submitRankedAnswer(match.matchId, p1Id, correctIdx, token);
     expect(answerRes).not.toBeNull();

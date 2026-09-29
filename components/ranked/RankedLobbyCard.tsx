@@ -155,7 +155,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
                 : 'bg-muted/60 text-muted-foreground hover:bg-muted'
             }`}
           >
-            Vocabulary Battle (คำศัพท์)
+            การประลองคำศัพท์
           </button>
           <button
             type="button"
@@ -163,7 +163,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
             className="cursor-not-allowed rounded-lg bg-muted/30 px-3 py-1.5 text-xs font-medium text-muted-foreground/60"
             title="กำลังพัฒนาสำหรับซีซันถัดไป"
           >
-            Grammar Battle (เร็ว ๆ นี้)
+            การประลองไวยากรณ์ • เร็ว ๆ นี้
           </button>
         </div>
 
@@ -191,7 +191,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-amber-500/20 transition-all hover:brightness-105 active:scale-[0.98]"
             >
               <Swords className="h-4 w-4" />
-              ค้นหาแมตช์แข่งขัน (Find Match)
+              ค้นหาแมตช์แข่งขัน
             </button>
           )}
         </div>

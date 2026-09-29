@@ -414,5 +414,131 @@
       "styleName": "adventurer",
       "category": "rpg"
     }
+  },
+  {
+    "id": "ast_emblem_bronze",
+    "assetKey": "rank.emblem.bronze",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/bronze",
+    "assetUrl": "/assets/emblems/bronze.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Bronze",
+      "nameEn": "Spartan Bronze Aegis",
+      "nameTh": "ตราเกียรติยศบรอนซ์สปาร์ตัน",
+      "color": "#D97706"
+    }
+  },
+  {
+    "id": "ast_emblem_silver",
+    "assetKey": "rank.emblem.silver",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/silver",
+    "assetUrl": "/assets/emblems/silver.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Silver",
+      "nameEn": "Winged Silver Aegis",
+      "nameTh": "ตราเกียรติยศซิลเวอร์ปีกเงิน",
+      "color": "#94A3B8"
+    }
+  },
+  {
+    "id": "ast_emblem_gold",
+    "assetKey": "rank.emblem.gold",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/gold",
+    "assetUrl": "/assets/emblems/gold.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Gold",
+      "nameEn": "Sovereign Gold Crown",
+      "nameTh": "ตราเกียรติยศมงกุฎทองสุริยัน",
+      "color": "#F59E0B"
+    }
+  },
+  {
+    "id": "ast_emblem_platinum",
+    "assetKey": "rank.emblem.platinum",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/platinum",
+    "assetUrl": "/assets/emblems/platinum.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Platinum",
+      "nameEn": "Prismatic Platinum Hex",
+      "nameTh": "ตราเกียรติยศแพลทินัมหกเหลี่ยมปริซึม",
+      "color": "#06B6D4"
+    }
+  },
+  {
+    "id": "ast_emblem_diamond",
+    "assetKey": "rank.emblem.diamond",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/diamond",
+    "assetUrl": "/assets/emblems/diamond.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Diamond",
+      "nameEn": "Nebula Diamond Star",
+      "nameTh": "ตราเกียรติยศไดมอนด์เนบิวลา",
+      "color": "#8B5CF6"
+    }
+  },
+  {
+    "id": "ast_emblem_master",
+    "assetKey": "rank.emblem.master",
+    "category": "RANK_EMBLEM",
+    "provider": "Glova Native Design",
+    "sourceUrl": "https://glova.app/assets/emblems/master",
+    "assetUrl": "/assets/emblems/master.svg",
+    "license": "Proprietary / Glova Platform Asset",
+    "licenseUrl": "https://glova.app/license",
+    "attributionRequired": false,
+    "commercialUseAllowed": true,
+    "modificationAllowed": true,
+    "status": "VERIFIED",
+    "version": "1.0.0",
+    "metadata": {
+      "tier": "Master",
+      "nameEn": "Crimson Dragon Sovereign",
+      "nameTh": "ตราเกียรติยศมาสเตอร์มังกรเพลิง",
+      "color": "#EF4444"
+    }
   }
 ]

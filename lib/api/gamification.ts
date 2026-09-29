@@ -114,6 +114,62 @@ export async function acceptFriendRequest(userId: string, requestId: string) {
   return res.json();
 }
 
+export async function declineFriendRequest(userId: string, requestId: string) {
+  const res = await fetch('/api/social/friends', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'decline', userId, requestId }),
+  });
+  return res.json();
+}
+
+export async function removeFriend(userId: string, targetUserId: string) {
+  const res = await fetch('/api/social/friends', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'remove', userId, targetUserId }),
+  });
+  return res.json();
+}
+
+export async function toggleFollow(userId: string, targetUserId: string) {
+  const res = await fetch('/api/social/follow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId, targetUserId }),
+  });
+  return res.json();
+}
+
+export async function createDuoSession(params: {
+  hostUserId: string;
+  partnerUserId: string;
+  cefrLevel?: string;
+  targetExam?: string;
+}) {
+  const res = await fetch('/api/social/study-together', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'create', ...params }),
+  });
+  return res.json();
+}
+
+export async function submitDuoSessionAnswer(params: {
+  sessionId: string;
+  userId: string;
+  questionIndex: number;
+  chosenIndex: number;
+  timeMs: number;
+}) {
+  const res = await fetch('/api/social/study-together', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'submit', ...params }),
+  });
+  return res.json();
+}
+
 export async function fetchInviteInfo(userId?: string): Promise<InviteInfo> {
   const res = await fetch(`/api/social/invite${userId ? `?userId=${encodeURIComponent(userId)}` : ''}`);
   const data = await res.json();

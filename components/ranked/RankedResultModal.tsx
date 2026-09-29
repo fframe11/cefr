@@ -5,6 +5,7 @@ import { RankedMatchResult } from '@/types/ranked';
 import { RankedTierBadge } from './RankedTierBadge';
 import { Trophy, Flame, Target, Sparkles, RotateCcw, BookOpen, BarChart3, ArrowUp, ArrowDown } from 'lucide-react';
 import Link from 'next/link';
+import { RemotionPlayerWrapper, RankPromotionCelebrationComposition } from '../remotion';
 
 interface RankedResultModalProps {
   result: RankedMatchResult;
@@ -23,18 +24,18 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
 
   let bannerBg = 'from-amber-500/20 via-background to-amber-500/5 border-amber-500/40';
   let titleColor = 'text-amber-500';
-  let titleText = 'ชัยชนะ! (VICTORY)';
+  let titleText = 'ชัยชนะ!';
   let outcomeDesc = 'คุณแสดงทักษะคำศัพท์ได้อย่างยอดเยี่ยม!';
 
   if (isLoss) {
     bannerBg = 'from-slate-500/15 via-background to-slate-500/5 border-border/60';
     titleColor = 'text-slate-600 dark:text-slate-300';
-    titleText = 'พ่ายแพ้ (DEFEAT)';
+    titleText = 'พ่ายแพ้';
     outcomeDesc = 'แมตช์นี้สูสีมาก ทบทวนข้อผิดพลาดเพื่อกลับมาชนะในตาต่อไป!';
   } else if (isDraw) {
     bannerBg = 'from-indigo-500/20 via-background to-indigo-500/5 border-indigo-500/40';
     titleColor = 'text-indigo-500';
-    titleText = 'เสมอ (DRAW)';
+    titleText = 'เสมอ';
     outcomeDesc = 'ทั้งสองฝ่ายทำผลงานได้ทัดเทียมกันอย่างน่าทึ่ง';
   }
 
@@ -45,11 +46,26 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
       <div
         className={`relative w-full max-w-lg overflow-hidden rounded-3xl border bg-card p-6 shadow-2xl bg-gradient-to-b ${bannerBg}`}
       >
-        {/* Promotion Celebration Banner */}
+        {/* Promotion Celebration Banner & Remotion Video Reveal */}
         {p1.isPromotion && (
-          <div className="mb-4 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-indigo-500 p-2 text-center text-xs font-black text-white shadow-sm">
-            <Sparkles className="h-4 w-4" />
-            <span>เลื่อนขั้นยศใหม่! (RANK PROMOTED TO {p1.tierAfter.tier.toUpperCase()})</span>
+          <div className="mb-4 space-y-3">
+            <div className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-indigo-500 p-2 text-center text-xs font-black text-white shadow-sm">
+              <Sparkles className="h-4 w-4" />
+              <span>เลื่อนขั้นสู่แรงก์ {p1.tierAfter.tier.toUpperCase()}!</span>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-amber-500/40 shadow-lg">
+              <RemotionPlayerWrapper
+                component={RankPromotionCelebrationComposition}
+                inputProps={{
+                  tier: p1.tierAfter.tier,
+                  rating: p1.ratingAfter,
+                }}
+                durationInFrames={60}
+                fps={30}
+                aspectRatio="16/9"
+                ariaLabel="Rank Promotion Celebration"
+              />
+            </div>
           </div>
         )}
 
@@ -121,7 +137,7 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 py-3 text-sm font-bold text-white shadow-md shadow-amber-500/20 transition-all hover:brightness-105 active:scale-[0.98]"
           >
             <RotateCcw className="h-4 w-4" />
-            เล่นอีกตา (Play Again)
+            เล่นอีกตา
           </button>
 
           {result.missedWords.length > 0 && (
@@ -140,7 +156,7 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
             className="flex w-full items-center justify-center gap-2 rounded-xl border border-border/60 bg-muted/30 py-2.5 text-sm font-semibold text-muted-foreground transition-all hover:bg-muted/60"
           >
             <BarChart3 className="h-4 w-4" />
-            ดูกระดานจัดอันดับแรงก์ (Ranked Leaderboard)
+            ดูกระดานจัดอันดับแรงก์
           </Link>
         </div>
       </div>

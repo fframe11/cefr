@@ -29,4 +29,5 @@ data/external-cache/
 *.bz2
 *.tar.bz2
 Vocab_src_pdf/
+scratch/
 

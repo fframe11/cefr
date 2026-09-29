@@ -306,7 +306,7 @@ export default function CompetePage() {
             }`}
           >
             <Trophy className="h-4 w-4" />
-            Ranked Battle (แรงก์)
+            โหมดจัดอันดับ
           </button>
           <button
             type="button"
@@ -318,7 +318,7 @@ export default function CompetePage() {
             }`}
           >
             <Zap className="h-4 w-4" />
-            Quick Play (ซ้อมฟรี)
+            ซ้อมด่วนทั่วไป
           </button>
         </div>
       </section>

@@ -38,7 +38,7 @@ export interface UserGameProfile {
   monthlyXp: number;
 }
 
-export type RankTier = 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond';
+export type RankTier = 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond' | 'Master';
 
 export type LottieFrameId =
   | 'lottie_cyber_apex'
@@ -216,5 +216,30 @@ export interface InviteInfo {
   inviteUrl: string;
   invitedCount: number;
   earnedXp: number;
+}
+
+export interface DuoQuestion {
+  id: string;
+  word: string;
+  meaning_th: string;
+  meaning_en: string;
+  options: string[];
+  correctIndex: number;
+}
+
+export interface DuoStudySession {
+  sessionId: string;
+  hostUser: PublicUserProfile;
+  partnerUser: PublicUserProfile;
+  cefrLevel: CEFRLevel;
+  targetExam?: string;
+  status: 'INVITED' | 'ACTIVE' | 'COMPLETED';
+  questions: DuoQuestion[];
+  hostAnswers: Array<{ questionIndex: number; isCorrect: boolean; timeMs: number; chosenIndex: number }>;
+  partnerAnswers: Array<{ questionIndex: number; isCorrect: boolean; timeMs: number; chosenIndex: number }>;
+  hostScore: number;
+  partnerScore: number;
+  createdAt: number;
+  completedAt?: number;
 }
 

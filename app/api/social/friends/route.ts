@@ -4,6 +4,7 @@ import {
   searchPublicLearners,
   sendFriendRequest,
   acceptFriendRequest,
+  declineFriendRequest,
   removeFriend,
 } from '../../../../lib/gamification/social-engine';
 import { updateAchievementProgress } from '../../../../lib/gamification/achievements';
@@ -41,6 +42,11 @@ export async function POST(request: NextRequest) {
       if (res.success) {
         updateAchievementProgress(userId, 'SOCIAL_BUTTERFLY', 1);
       }
+      return NextResponse.json(res);
+    }
+
+    if (action === 'decline') {
+      const res = declineFriendRequest(userId, requestId);
       return NextResponse.json(res);
     }
 

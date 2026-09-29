@@ -72,6 +72,8 @@ export function getAsset(assetKey: string): AssetRecord | null {
   return { ...asset };
 }
 
+export const getAssetByKey = getAsset;
+
 /**
  * Retrieves all verified assets for a given category.
  */
@@ -117,6 +119,20 @@ export function getInitialRankFrames(): AssetRecord[] {
     getAsset('profile.frame.gaming_2'),
     getAsset('profile.frame.gaming_3'),
   ].filter((f): f is AssetRecord => f !== null);
+}
+
+/**
+ * Resolves all 6 rank tier emblems with verified metadata.
+ */
+export function getRankEmblemAssets(): AssetRecord[] {
+  return [
+    getAsset('rank.emblem.bronze'),
+    getAsset('rank.emblem.silver'),
+    getAsset('rank.emblem.gold'),
+    getAsset('rank.emblem.platinum'),
+    getAsset('rank.emblem.diamond'),
+    getAsset('rank.emblem.master'),
+  ].filter((e): e is AssetRecord => e !== null);
 }
 
 /**

@@ -96,24 +96,25 @@ describe('Gamification: XP Engine & Ledger', () => {
 describe('Gamification: Achievements Catalog', () => {
   const achUserId = 'test_user_ach_' + Date.now();
 
-  it('contains 12 unique achievements across categories', () => {
-    expect(ACHIEVEMENTS_CATALOG.length).toBe(12);
+  it('contains at least 12 unique achievements across categories', () => {
+    expect(ACHIEVEMENTS_CATALOG.length).toBeGreaterThanOrEqual(12);
     const codes = new Set(ACHIEVEMENTS_CATALOG.map((a) => a.code));
-    expect(codes.size).toBe(12);
+    expect(codes.size).toBe(ACHIEVEMENTS_CATALOG.length);
   });
 
   it('unlocks achievement when target progress is reached', () => {
-    const initialList = getUserAchievements(achUserId);
-    const firstStep = initialList.find((a) => a.code === 'FIRST_STEP');
-    expect(firstStep?.isUnlocked).toBe(false);
+    const testUser = 'user_ach_test_' + Date.now();
+    const initialList = getUserAchievements(testUser);
+    const firstRanked = initialList.find((a) => a.code === 'FIRST_RANKED');
+    expect(firstRanked?.isUnlocked).toBe(false);
 
     // Update progress
-    const res = updateAchievementProgress(achUserId, 'FIRST_STEP', 1);
+    const res = updateAchievementProgress(testUser, 'FIRST_RANKED', 1);
     expect(res.newlyUnlocked).toBe(true);
     expect(res.achievement?.isUnlocked).toBe(true);
 
     // Further increments should return newlyUnlocked = false
-    const res2 = updateAchievementProgress(achUserId, 'FIRST_STEP', 1);
+    const res2 = updateAchievementProgress(testUser, 'FIRST_RANKED', 1);
     expect(res2.newlyUnlocked).toBe(false);
   });
 });

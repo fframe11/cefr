@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import { RankTier, RankDivision } from '@/types/ranked';
 import { Shield, Award, Zap, Gem, Crown } from 'lucide-react';
+import { RankEmblem } from './RankEmblem';
 
 interface RankedTierBadgeProps {
   tier: RankTier;
@@ -10,6 +9,7 @@ interface RankedTierBadgeProps {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   showDivision?: boolean;
   className?: string;
+  useEmblemIcon?: boolean;
 }
 
 const TIER_CONFIG: Record<
@@ -66,6 +66,7 @@ export const RankedTierBadge: React.FC<RankedTierBadgeProps> = ({
   size = 'md',
   showDivision = true,
   className = '',
+  useEmblemIcon = true,
 }) => {
   const config = TIER_CONFIG[tier] || TIER_CONFIG.Bronze;
   const { Icon } = config;
@@ -86,10 +87,14 @@ export const RankedTierBadge: React.FC<RankedTierBadgeProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center rounded-lg border font-medium transition-all ${config.badgeBg} ${sizeClasses} ${className}`}
+      className={`inline-flex items-center rounded-xl border font-medium transition-all ${config.badgeBg} ${sizeClasses} ${className}`}
     >
-      <Icon className={iconSizes} />
-      <span>
+      {useEmblemIcon ? (
+        <RankEmblem tier={tier} size={size === 'lg' ? 'sm' : 'xs'} showGlow={false} animate={false} />
+      ) : (
+        <Icon className={iconSizes} />
+      )}
+      <span className="font-semibold tracking-tight">
         {tier}
         {showDivision && tier !== 'Master' ? ` ${division}` : ''}
       </span>

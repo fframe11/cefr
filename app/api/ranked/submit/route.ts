@@ -4,7 +4,7 @@ import { submitRankedAnswer } from '@/lib/ranked/matchmaking-engine';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { matchId, userId = 'user_current', chosenIndex, sessionToken } = body;
+    const { matchId, userId = 'user_current', chosenIndex, sessionToken, questionId } = body;
 
     if (!matchId || chosenIndex === undefined || !sessionToken) {
       return NextResponse.json(
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = submitRankedAnswer(matchId, userId, chosenIndex, sessionToken);
+    const result = submitRankedAnswer(matchId, userId, chosenIndex, sessionToken, questionId);
     if (!result) {
       return NextResponse.json(
         { success: false, error: 'Invalid match, expired session, or unauthorized submission' },

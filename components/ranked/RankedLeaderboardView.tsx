@@ -43,9 +43,9 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
             <Trophy className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="text-sm font-bold text-foreground">กระดานจัดอันดับแข่งขัน (Ranked Leaderboard)</h3>
+            <h3 className="text-sm font-bold text-foreground">กระดานจัดอันดับโหมดแข่งขัน</h3>
             <p className="text-xs text-muted-foreground">
-              จัดลำดับตามระดับคะแนนฝีมือ (Rank Rating / MMR) แตกต่างจากกระดาน XP ที่นับตามความขยัน
+              จัดลำดับตามระดับคะแนนฝีมือ MMR แตกต่างจากกระดาน XP ที่นับตามความขยัน
             </p>
           </div>
         </div>

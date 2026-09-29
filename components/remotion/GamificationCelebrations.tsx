@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
+import { RankTier } from '@/types/ranked';
+import { RankEmblem } from '../ranked/RankEmblem';
 
 export interface LevelUpCelebrationProps {
   level: number;
@@ -134,3 +136,79 @@ export const AchievementCelebrationComposition: React.FC<AchievementCelebrationP
     </div>
   );
 };
+
+export interface RankPromotionCelebrationProps {
+  tier: RankTier;
+  rating: number;
+  isStatic?: boolean;
+}
+
+export const RankPromotionCelebrationComposition: React.FC<RankPromotionCelebrationProps> = ({
+  tier,
+  rating,
+  isStatic = false,
+}) => {
+  const frame = isStatic ? 30 : useCurrentFrame();
+
+  const scale = isStatic
+    ? 1
+    : interpolate(frame, [0, 15, 30], [0.5, 1.15, 1], {
+        extrapolateLeft: 'clamp',
+        extrapolateRight: 'clamp',
+      });
+
+  const opacity = isStatic
+    ? 1
+    : interpolate(frame, [0, 10], [0, 1], {
+        extrapolateLeft: 'clamp',
+        extrapolateRight: 'clamp',
+      });
+
+  const raysRotation = isStatic ? 0 : interpolate(frame, [0, 60], [0, 180]);
+
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center relative p-6 bg-gradient-to-b from-[#1E1B4B] via-[#0F172A] to-[#020617] text-white rounded-2xl overflow-hidden select-none">
+      {/* Background Rotating Sunburst Rays */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25"
+        style={{ transform: `rotate(${raysRotation}deg)` }}
+      >
+        <svg viewBox="0 0 200 200" className="w-[380px] h-[380px]">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <polygon
+              key={i}
+              points="100,100 92,0 108,0"
+              fill="#F59E0B"
+              transform={`rotate(${i * 22.5} 100 100)`}
+            />
+          ))}
+        </svg>
+      </div>
+
+      {/* Main Content */}
+      <div
+        className="relative z-10 flex flex-col items-center text-center space-y-3"
+        style={{ transform: `scale(${scale})`, opacity }}
+      >
+        <div className="drop-shadow-[0_0_24px_rgba(245,158,11,0.5)]">
+          <RankEmblem tier={tier} size="lg" animate={!isStatic} />
+        </div>
+
+        <div className="space-y-1">
+          <span className="text-[11px] font-black tracking-widest text-amber-400 uppercase">
+            RANK PROMOTION
+          </span>
+          <h2 className="text-2xl font-black text-white tracking-tight">
+            {tier.toUpperCase()} TIER
+          </h2>
+          <p className="text-xs text-slate-300 font-medium">คุณก้าวขึ้นสู่ระดับการแข่งขันที่สูงขึ้น</p>
+        </div>
+
+        <div className="px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-xs font-black text-amber-300 tabular-nums">
+          Rating {rating}
+        </div>
+      </div>
+    </div>
+  );
+};
+

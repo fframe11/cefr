@@ -5,7 +5,7 @@ import * as path from 'path';
 describe('Database Schema Migrations Verification', () => {
   const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-  it('should find all 8 approved migration files', () => {
+  it('should find all 9 approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
     expect(files).toEqual([
@@ -17,6 +17,7 @@ describe('Database Schema Migrations Verification', () => {
       '20260925000006_seed_content_bank.sql',
       '20260926000007_add_vocabulary_provenance_and_lifecycle.sql',
       '20260926000008_seed_vocabulary_pilot_batch.sql',
+      '20260929000009_seed_verified_production_vocabulary_3860.sql',
     ]);
   });
 

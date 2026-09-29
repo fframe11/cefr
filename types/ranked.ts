@@ -60,6 +60,7 @@ export interface RankedAnswerRecord {
   responseTimeMs: number;
   isLate: boolean;
   scoreAwarded: number;
+  isImpossibleReflex?: boolean;
 }
 
 export interface RankedMatchPlayer {

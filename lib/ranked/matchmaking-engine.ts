@@ -42,6 +42,14 @@ export interface MatchmakingQueueEntry {
 const matchmakingQueue = new Map<string, MatchmakingQueueEntry>();
 const activeMatches = new Map<string, RankedMatch>();
 
+/**
+ * Resets in-memory queues and matches for tests
+ */
+export function resetRankedEngineState(): void {
+  matchmakingQueue.clear();
+  activeMatches.clear();
+}
+
 // Realistic challenger university student personas for calibrated ghost matchmaking
 const CHALLENGER_PERSONAS = [
   { name: 'Korn_Chula', uni: 'Chulalongkorn University', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80', frame: 'gaming_1' },
@@ -70,37 +78,58 @@ export function getAcceptableRatingRange(waitDurationMs: number): number {
  * Sourced directly from verified 3,860 production candidates.
  */
 function getQuestionsForTier(tier: RankTier): RankedQuestion[] {
-  let targetCefr: CEFRLevel[];
+  let earlyCefr: CEFRLevel[];
+  let midCefr: CEFRLevel[];
+  let lateCefr: CEFRLevel[];
+
   switch (tier) {
     case 'Bronze':
-      targetCefr = ['A1', 'A2'];
+      earlyCefr = ['A1'];
+      midCefr = ['A1', 'A2'];
+      lateCefr = ['A2', 'B1'];
       break;
     case 'Silver':
-      targetCefr = ['A2', 'B1'];
+      earlyCefr = ['A2'];
+      midCefr = ['A2', 'B1'];
+      lateCefr = ['B1', 'B2'];
       break;
     case 'Gold':
-      targetCefr = ['B1', 'B2'];
+      earlyCefr = ['B1'];
+      midCefr = ['B1', 'B2'];
+      lateCefr = ['B2', 'C1'];
       break;
     case 'Platinum':
-      targetCefr = ['B2', 'C1'];
+      earlyCefr = ['B2'];
+      midCefr = ['B2', 'C1'];
+      lateCefr = ['C1', 'C2'];
       break;
     case 'Diamond':
     case 'Master':
-      targetCefr = ['C1', 'C2', 'B2'];
+      earlyCefr = ['B2', 'C1'];
+      midCefr = ['C1'];
+      lateCefr = ['C1', 'C2'];
       break;
     default:
-      targetCefr = ['B1'];
+      earlyCefr = ['B1'];
+      midCefr = ['B1', 'B2'];
+      lateCefr = ['B2'];
   }
 
-  let selectedWords = sampleRandomVocabulary(targetCefr, 6);
+  // Progressive 3-stage question difficulty curve (Early -> Mid -> Climax)
+  const earlyWords = sampleRandomVocabulary(earlyCefr, 2);
+  const midWords = sampleRandomVocabulary(midCefr, 2);
+  const lateWords = sampleRandomVocabulary(lateCefr, 2);
+
+  let selectedWords = [...earlyWords, ...midWords, ...lateWords];
   if (selectedWords.length < 6) {
     const all = getAllProductionVocabulary();
-    selectedWords = [...all].sort(() => 0.5 - Math.random()).slice(0, 6);
+    const needed = 6 - selectedWords.length;
+    selectedWords = [...selectedWords, ...all.slice(0, needed)];
   }
 
   return selectedWords.map((word, idx) => {
     // 3 plausible distractors from same CEFR/tier pool
-    const distractorCandidates = sampleRandomVocabulary(targetCefr, 20)
+    const distractorCandidates = sampleRandomVocabulary([word.cefr_level as any], 20)
       .filter((w) => w.id !== word.id && w.meaning_th !== word.meaning_th);
     const distractorTexts = Array.from(new Set(distractorCandidates.map((w) => w.meaning_th))).slice(0, 3);
 
@@ -299,7 +328,8 @@ export function submitRankedAnswer(
   matchId: string,
   userId: string,
   chosenIndex: number,
-  sessionToken: string
+  sessionToken: string,
+  questionId?: string
 ): QuestionSubmissionResult | null {
   const match = activeMatches.get(matchId);
   if (!match || match.state !== 'IN_PROGRESS') return null;
@@ -308,11 +338,23 @@ export function submitRankedAnswer(
   const currentQ = match.questions[match.currentQuestionIndex];
   if (!currentQ) return null;
 
+  // Replay protection: if client specifies questionId, it MUST match the current active question
+  if (questionId && questionId !== currentQ.id) {
+    return null;
+  }
+
+  // Duplicate answer / replay protection
+  const alreadyAnswered = match.player1.answers.some((a) => a.questionId === currentQ.id);
+  if (alreadyAnswered) {
+    return null;
+  }
+
   const now = Date.now();
   const timeTakenMs = now - match.questionIssuedAt;
   const isLate = timeTakenMs > 4300; // 4000ms + 300ms network tolerance
+  const isImpossibleReflex = timeTakenMs < 180; // Impossible human reaction threshold (<180ms)
 
-  const isCorrect = !isLate && chosenIndex === currentQ.correctIndex;
+  const isCorrect = !isLate && !isImpossibleReflex && chosenIndex === currentQ.correctIndex;
 
   // Calculate score
   let scoreAwarded = 0;
@@ -339,6 +381,7 @@ export function submitRankedAnswer(
     isCorrect,
     responseTimeMs: timeTakenMs,
     isLate,
+    isImpossibleReflex,
     scoreAwarded,
   });
 
