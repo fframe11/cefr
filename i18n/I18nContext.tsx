@@ -33,20 +33,22 @@ const interpolate = (template: string, params?: Record<string, string | number>)
 const I18nContext = createContext<I18nContextValue | undefined>(undefined);
 
 export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
+  const [language, setLanguageState] = useState<Language>('th');
+
+  useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === 'th' || stored === 'en') {
-        return stored;
-      }
-      if (typeof navigator !== 'undefined' && navigator.language) {
-        return navigator.language.toLowerCase().startsWith('th') ? 'th' : 'en';
+        setLanguageState(stored);
+      } else if (typeof navigator !== 'undefined' && navigator.language) {
+        if (!navigator.language.toLowerCase().startsWith('th')) {
+          setLanguageState('en');
+        }
       }
     } catch {
       // Fallback if localStorage or navigator is unavailable
     }
-    return 'th';
-  });
+  }, []);
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);

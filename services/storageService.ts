@@ -2,7 +2,7 @@ import { UserProgressState, CEFRLevel, CambridgeExamCode, SkillType } from '../t
 
 const STORAGE_KEY = 'cefr_platform_progress_v1';
 
-const DEFAULT_STATE: UserProgressState = {
+export const DEFAULT_STATE: UserProgressState = {
   currentLevel: 'A1',
   estimatedCambridgeScore: 110,
   streakDays: 3,

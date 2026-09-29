@@ -33,6 +33,7 @@ import {
   GlovaFeedbackBubble,
 } from '../ui';
 import { RemotionPlayerWrapper, CefrRevealComposition } from '../remotion';
+import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
 function toUserSkillStats(stats?: Record<string, number> | UserSkillStats): UserSkillStats {
   return {
@@ -72,6 +73,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 }) => {
   const { t } = useTranslation();
   const { status, profile } = useAuth();
+  const [assessmentMode, setAssessmentMode] = useState<'quick' | 'full'>('quick');
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -431,30 +433,62 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Active Test Screen
   return (
     <div className="w-full max-w-3xl mx-auto space-y-6 pb-12">
-      {/* Assessment Header & Progress Bar */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between text-xs font-medium">
-          <div className="flex items-center gap-2">
-            <GlovaBadge variant="accent" size="sm">CEFR Diagnostic</GlovaBadge>
-            <span className="text-muted-foreground">
-              ข้อที่ {currentIdx + 1} จาก {DIAGNOSTIC_QUESTIONS.length}
-            </span>
-          </div>
-          <span className="font-mono text-primary font-semibold">{progressPercent}%</span>
-        </div>
-
-        <GlovaProgress value={progressPercent} max={100} size="md" />
+      {/* Mode Switcher: 3-Minute Quick Check vs Comprehensive Diagnostic */}
+      <div className="flex items-center justify-center gap-2 p-1.5 rounded-xl bg-secondary/50 border border-border/40 max-w-sm mx-auto">
+        <button
+          type="button"
+          onClick={() => setAssessmentMode('quick')}
+          className={`flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all ${
+            assessmentMode === 'quick'
+              ? 'bg-card text-foreground shadow-xs'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          3-Minute Check (8 ข้อ)
+        </button>
+        <button
+          type="button"
+          onClick={() => setAssessmentMode('full')}
+          className={`flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all ${
+            assessmentMode === 'full'
+              ? 'bg-card text-foreground shadow-xs'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          Full Diagnostic (24 ข้อ)
+        </button>
       </div>
 
-      {/* Render Current Question */}
-      <QuestionCard
-        key={currentQuestion.id}
-        question={currentQuestion}
-        questionNumber={currentIdx + 1}
-        totalQuestions={DIAGNOSTIC_QUESTIONS.length}
-        onAnswer={handleAnswer}
-        showExplanationImmediately={true}
-      />
+      {assessmentMode === 'quick' ? (
+        <QuickEnglishCheck onFinish={onNavigateDashboard} />
+      ) : (
+        <>
+          {/* Assessment Header & Progress Bar */}
+          <div className="space-y-3">
+            <div className="flex items-center justify-between text-xs font-medium">
+              <div className="flex items-center gap-2">
+                <GlovaBadge variant="accent" size="sm">CEFR Diagnostic</GlovaBadge>
+                <span className="text-muted-foreground">
+                  ข้อที่ {currentIdx + 1} จาก {DIAGNOSTIC_QUESTIONS.length}
+                </span>
+              </div>
+              <span className="font-mono text-primary font-semibold">{progressPercent}%</span>
+            </div>
+
+            <GlovaProgress value={progressPercent} max={100} size="md" />
+          </div>
+
+          {/* Render Current Question */}
+          <QuestionCard
+            key={currentQuestion.id}
+            question={currentQuestion}
+            questionNumber={currentIdx + 1}
+            totalQuestions={DIAGNOSTIC_QUESTIONS.length}
+            onAnswer={handleAnswer}
+            showExplanationImmediately={true}
+          />
+        </>
+      )}
 
       <GlovaFeedbackBubble currentSkill="diagnostic" />
     </div>

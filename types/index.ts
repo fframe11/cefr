@@ -190,4 +190,19 @@ export interface UserProgressState {
   weakTopics: { tag: string; labelTh: string; errorCount: number; lastFailedAt: string }[];
   assessmentCompleted: boolean;
   targetExam: CambridgeExamCode;
+  englishSnapshot?: {
+    overallLevel: CEFRLevel;
+    estimatedCambridgeScore: number;
+    strongSkill: string;
+    growthArea: string;
+    nextStepRecommendation: string;
+    completedAt: string;
+  };
+  lastActivity?: {
+    type: 'vocabulary' | 'grammar' | 'reading' | 'listening' | 'writing' | 'speaking' | 'mockExam' | 'assessment';
+    title: string;
+    detail: string;
+    timestamp: string;
+  };
+  quickWinCompleted?: boolean;
 }

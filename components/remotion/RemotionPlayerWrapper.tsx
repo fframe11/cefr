@@ -73,6 +73,7 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
         compositionHeight={compositionHeight}
         loop={loop}
         autoPlay={true}
+        initiallyMuted={true}
         controls={false}
         acknowledgeRemotionLicense={true}
         style={{

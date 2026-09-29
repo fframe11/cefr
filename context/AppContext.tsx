@@ -1,6 +1,7 @@
 'use client';
 import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import {
+  DEFAULT_STATE,
   loadUserProgress,
   saveUserProgress,
   recordQuestionResult,
@@ -41,10 +42,15 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const router = useRouter();
   const { showToast } = useToast();
   const { status, profile, refreshProfile } = useAuth();
-  const [progress, setProgress] = useState<UserProgressState>(loadUserProgress);
+  const [progress, setProgress] = useState<UserProgressState>(DEFAULT_STATE);
   const [isDark, setIsDark] = useState<boolean>(false);
   const [remediationTopic, setRemediationTopic] = useState<string | undefined>(undefined);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+
+  useEffect(() => {
+    const local = loadUserProgress();
+    setProgress(local);
+  }, []);
 
   // Load canonical progress from API when authenticated
   const loadCanonicalProgress = useCallback(async () => {

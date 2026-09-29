@@ -61,10 +61,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   const topWeakness = hasWeakness ? progress.weakTopics[0] : null;
 
   const primaryActionConfig = React.useMemo(() => {
+    const nextLvl = allLevels[Math.min(allLevels.length - 1, currentLevelIdx + 1)];
     if (topWeakness) {
       return {
         title: `ทบทวนและซ่อมแซม: ${topWeakness.labelTh}`,
         description: `ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ แนะนำให้ฝึกฝนทันทีเพื่อเสริมความมั่นใจ`,
+        reason: `แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ จุดนี้จะช่วยให้คุณก้าวสู่ระดับถัดไปได้เร็วที่สุด`,
+        skill: 'Grammar & Phrasing',
+        difficulty: `${progress.currentLevel} → ${nextLvl}`,
         estimatedMinutes: 8,
         ctaText: 'เริ่มฝึกจุดนี้ทันที',
         onStart: () => onStartRemediation(topWeakness.tag),
@@ -76,6 +80,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       return {
         title: 'ทำแบบทดสอบวัดระดับ CEFR Diagnostic Test',
         description: 'ประเมินระดับความสามารถทางภาษาอังกฤษรอบด้าน (A1-C2) เพื่อปลดล็อกแผนการเรียนเฉพาะบุคคล',
+        reason: 'แนะนำเพราะ: ช่วยประเมินจุดแข็งและจุดที่ควรฝึกเพิ่ม เพื่อวางแผนการเรียน 5 นาทีต่อวันอย่างตรงจุด',
+        skill: 'Diagnostic Check',
+        difficulty: `${progress.currentLevel}`,
         estimatedMinutes: 15,
         ctaText: 'เริ่มวัดระดับภาษา',
         onStart: () => onNavigate('assessment'),
@@ -86,12 +93,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     return {
       title: `ฝึกฝนประจำวัน: คำศัพท์และไวยากรณ์ระดับ ${progress.currentLevel}`,
       description: `ทบทวนคำศัพท์สำคัญตาม Spaced Repetition และทำแบบฝึกหัดสำหรับเป้าหมายสอบ ${progress.targetExam}`,
+      reason: `แนะนำเพราะ: คลังคำศัพท์สำคัญตามรอบความจำ Spaced Repetition ประจำวันช่วยเสริมความมั่นใจสู่ระดับ ${nextLvl}`,
+      skill: 'Vocabulary & Context',
+      difficulty: `${progress.currentLevel} → ${nextLvl}`,
       estimatedMinutes: 10,
       ctaText: 'เริ่มฝึกฝนทันที',
       onStart: () => onNavigate('vocabulary'),
       icon: <BookOpen className="w-5 h-5 text-indigo-400" aria-hidden="true" />,
     };
-  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate]);
+  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, allLevels, currentLevelIdx]);
 
   return (
     <div className="w-full space-y-8 max-w-6xl mx-auto pb-16">
@@ -164,7 +174,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="mt-8 pt-6 border-t border-border/30">
           <div className="flex items-center justify-between text-xs font-medium text-muted-foreground mb-3">
             <span>เส้นทางการพัฒนา CEFR Framework</span>
-            <span className="text-foreground font-semibold">ระดับปัจจุบัน: {progress.currentLevel}</span>
+            <span className="text-foreground font-semibold">{`ระดับปัจจุบัน: ${progress.currentLevel} • คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${allLevels[Math.min(allLevels.length - 1, currentLevelIdx + 1)]}`}</span>
           </div>
 
           <div className="grid grid-cols-6 gap-2">
@@ -200,25 +210,69 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </section>
 
-      {/* 2. One Primary Learning Action (70/30 Focal Hero) */}
+      {/* 2. One Primary Learning Action (70/30 Focal Hero - What Next?) */}
       <section className="space-y-3">
         <GlovaSectionHeader
-          eyebrow="PRIMARY RECOMMENDED FOCUS"
+          eyebrow="TODAY'S NEXT STEP"
           title="สิ่งที่คุณควรทำถัดไป"
           description="ระบบคัดเลือกบทเรียนที่ช่วยพัฒนาทักษะได้ตรงจุดที่สุดตามข้อมูลการเรียนจริงของคุณ"
         />
 
-        <GlovaLearningCard
-          title={primaryActionConfig.title}
-          description={primaryActionConfig.description}
-          estimatedMinutes={primaryActionConfig.estimatedMinutes}
-          cefrLevel={progress.currentLevel as CEFRTier}
-          ctaText={primaryActionConfig.ctaText}
-          onStart={primaryActionConfig.onStart}
-          icon={primaryActionConfig.icon}
-          isPrimary
-        />
+        <div className="p-4 sm:p-5 rounded-xl bg-card border border-border/50 shadow-xs space-y-3">
+          <div className="flex items-center gap-2 flex-wrap text-xs text-muted-foreground">
+            <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-semibold">
+              {primaryActionConfig.skill}
+            </span>
+            <span>•</span>
+            <span className="font-mono">{primaryActionConfig.difficulty}</span>
+            <span>•</span>
+            <span className="flex items-center gap-1">
+              <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>{primaryActionConfig.estimatedMinutes} นาที</span>
+            </span>
+          </div>
+
+          <div className="p-3 rounded-lg bg-indigo-500/5 border border-indigo-500/20 text-xs text-indigo-700 dark:text-indigo-300">
+            {primaryActionConfig.reason}
+          </div>
+
+          <GlovaLearningCard
+            title={primaryActionConfig.title}
+            description={primaryActionConfig.description}
+            estimatedMinutes={primaryActionConfig.estimatedMinutes}
+            cefrLevel={progress.currentLevel as CEFRTier}
+            ctaText={primaryActionConfig.ctaText}
+            onStart={primaryActionConfig.onStart}
+            icon={primaryActionConfig.icon}
+            isPrimary
+          />
+        </div>
       </section>
+
+      {/* 2.1 RESUME WHERE YOU LEFT OFF (Attention-Friendly) */}
+      {progress.lastActivity && (
+        <section className="p-4 rounded-xl bg-background border border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="space-y-0.5">
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-primary">
+              <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>ดำเนินการต่อจากจุดเดิม</span>
+            </div>
+            <p className="text-sm font-bold text-foreground">{progress.lastActivity.title}</p>
+            <p className="text-xs text-muted-foreground">{progress.lastActivity.detail}</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              const view = progress.lastActivity?.type === 'assessment' ? 'assessment' : (progress.lastActivity?.type as NavView) || 'vocabulary';
+              onNavigate(view);
+            }}
+            className="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-card border border-border/60 hover:bg-muted text-foreground text-xs font-semibold transition-colors shrink-0"
+          >
+            <span>ทำต่อทันที</span>
+            <ArrowRight className="w-3.5 h-3.5 ml-1.5" aria-hidden="true" />
+          </button>
+        </section>
+      )}
 
       {/* 3. Compact Progress Summary Row */}
       <section className="space-y-3">

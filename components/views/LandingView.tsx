@@ -19,6 +19,7 @@ import {
 import { RemotionPlayerWrapper, LandingHeroComposition } from '../remotion';
 import { GlovaButton, GlovaCard, GlovaImage } from '../ui';
 import { useTranslation } from '../../i18n';
+import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
 interface LandingViewProps {
   onStartLearning?: () => void;
@@ -36,6 +37,27 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
     }
   };
 
+  const [isQuickCheckOpen, setIsQuickCheckOpen] = React.useState(false);
+
+  const handleStartQuickCheck = () => {
+    setIsQuickCheckOpen(true);
+    // Smooth scroll to quick check section if inline
+    const el = document.getElementById('quick-check-experience');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleExploreGlova = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById('studios');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push('/dashboard');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
       {/* 1. HERO SECTION */}
@@ -45,52 +67,53 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {/* Left: Value Proposition */}
             <div className="lg:col-span-6 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-semibold tracking-wide border border-border/60">
-                <Sparkles className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                <span>CEFR English Learning Experience</span>
+                <Clock className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                <span>How good is your English, really?</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.12]">
-                English that finally feels{' '}
+                Discover what you can already do.{' '}
                 <span className="bg-gradient-to-r from-primary via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  like yours.
+                  Improve only what matters.
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                หยุดท่องจำแบบเดิมๆ แล้วเริ่มต้นใช้ภาษาอังกฤษอย่างมั่นใจ ด้วยบทเรียนขนาดสั้น 5 นาทีที่ออกแบบตามจังหวะชีวิตจริง พร้อมระบบวัดระดับมาตรฐาน CEFR สากล
+                ค้นพบจุดแข็งที่คุณมี และทำความเข้าใจจุดที่กำลังฉุดคุณอยู่ โดยไม่ต้องเริ่มท่องจำใหม่ทั้งหมด เช็คได้ใน 3 นาทีผ่านสถานการณ์จริงในชีวิตประจำวัน ไม่ต้องสมัครสมาชิกล่วงหน้า
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                 <GlovaButton
                   variant="primary"
                   size="lg"
-                  onClick={handleStart}
+                  onClick={handleStartQuickCheck}
                   className="px-7 py-3.5 text-base font-semibold shadow-sm shadow-primary/20 group"
                 >
-                  <span>เริ่มวัดระดับฟรี 10 นาที</span>
+                  <span>เช็คระดับภาษาอังกฤษ (3 นาที)</span>
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </GlovaButton>
 
-                <Link
-                  href="/dashboard"
+                <a
+                  href="#studios"
+                  onClick={handleExploreGlova}
                   className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border/60 bg-card hover:bg-muted text-foreground text-sm font-semibold transition-colors"
                 >
-                  เข้าสู่หน้าหลักการเรียน
-                </Link>
+                  สำรวจระบบ Glova
+                </a>
               </div>
 
-              <div className="flex items-center gap-6 pt-4 text-xs text-muted-foreground">
+              <div className="flex items-center gap-6 pt-4 text-xs text-muted-foreground flex-wrap">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>มาตรฐาน Cambridge CEFR</span>
+                  <span>8 สถานการณ์จริง (แชท, คาเฟ่, อีเมล)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>บทเรียน 5 นาทีต่อวัน</span>
+                  <span>รับผล Personal Snapshot ทันที</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
-                  <span>ไม่มีค่าใช้จ่ายเริ่มต้น</span>
+                  <span>ไม่ต้องสมัครสมาชิกก่อน</span>
                 </div>
               </div>
             </div>
@@ -132,6 +155,25 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 1.5 CURIOSITY CHECK EXPERIENCE (3-Minute Real-Life Check) */}
+      <section id="quick-check-experience" className="py-12 sm:py-16 bg-accent/20 border-b border-border/40">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center space-y-2 mb-8">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>Low-Friction English Snapshot</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+              เช็คระดับภาษาอังกฤษของคุณใน 3 นาที
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto">
+              ลองตอบ 8 สถานการณ์จริงที่คุณเจอในชีวิตประจำวันเพื่อรับ Personal English Snapshot ทันที โดยไม่มีการประเมินที่ทำให้รู้สึกผิด
+            </p>
+          </div>
+          <QuickEnglishCheck onFinish={() => router.push('/')} />
         </div>
       </section>
 
@@ -197,7 +239,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* 3. THE 6 IMMERSIVE SKILL STUDIOS */}
-      <section className="py-16 sm:py-24 border-b border-border/40">
+      <section id="studios" className="py-16 sm:py-24 border-b border-border/40">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-bold tracking-wider text-primary uppercase">
