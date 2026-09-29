@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import {
   X,
   User as UserIcon,
@@ -15,6 +16,7 @@ import {
   CheckCircle2,
   ShieldCheck,
   Target,
+  ArrowRight,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from '../../i18n';
@@ -38,6 +40,33 @@ const CAMBRIDGE_EXAMS: { code: CambridgeExamCode; name: string; cefr: string }[]
 
 const PRESET_GOAL_MINUTES = [15, 20, 30, 45, 60];
 
+const GoogleSvgIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="#4285F4"
+      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.87c2.26-2.09 3.67-5.17 3.67-9.15z"
+    />
+    <path
+      fill="#34A853"
+      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.87-3.05c-1.08.72-2.45 1.16-4.06 1.16-3.13 0-5.78-2.11-6.73-4.96H1.28v3.15C3.26 21.36 7.34 24 12 24z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24 0-.75.13-1.52.38-2.24V6.61H1.28C.46 8.23 0 10.06 0 12c0 1.94.46 3.77 1.28 5.39l3.99-3.15z"
+    />
+    <path
+      fill="#EA4335"
+      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.28 6.61l3.99 3.15c.95-2.85 3.6-4.96 6.73-4.96z"
+    />
+  </svg>
+);
+
+const FacebookSvgIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  </svg>
+);
+
 export const ProfileModal: React.FC<ProfileModalProps> = ({
   isOpen,
   onClose,
@@ -45,7 +74,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   currentLocalDailyGoal,
   onProfileUpdated,
 }) => {
-  const { status, user, profile, signInWithPassword, signUpWithPassword, signOut, updateProfile } = useAuth();
+  const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signOut, updateProfile } = useAuth();
   const { t } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'guest'>('signin');
@@ -159,6 +188,24 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
     }
   };
 
+  const handleOAuthSignIn = async (provider: 'google' | 'facebook') => {
+    setAuthError(null);
+    setIsSubmitting(true);
+    try {
+      const { error } = await signInWithOAuth(provider);
+      if (error) {
+        const msg = error.message.toLowerCase();
+        if (msg.includes('not enabled') || msg.includes('validation_failed') || msg.includes('unsupported')) {
+          setAuthError(t('auth.oauth_unconfigured_msg'));
+        } else {
+          setAuthError(error.message || t('auth.err_general'));
+        }
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleSaveSettings = async () => {
     setIsSavingProfile(true);
     setProfileSuccessMsg(null);
@@ -236,6 +283,17 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               <p className="text-sm font-semibold text-foreground truncate">{user.email}</p>
             </div>
 
+            {/* Link to Full Profile Page */}
+            <Link
+              href="/profile"
+              onClick={onClose}
+              className="touch-target w-full py-2.5 px-4 rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 text-primary text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs"
+            >
+              <UserIcon className="w-4 h-4" />
+              <span>{t('auth.menu_profile')}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+
             {/* Metrics */}
             <div className="grid grid-cols-2 gap-2.5">
               <div className="p-3 rounded-xl bg-primary/5 border border-primary/15 flex items-center gap-2.5">
@@ -301,10 +359,10 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                     key={mins}
                     type="button"
                     onClick={() => setDailyGoal(mins)}
-                    className={`flex-1 py-1.5 rounded-lg border text-xs font-semibold flex items-center justify-center text-center transition-all ${
+                    className={`flex-1 py-1.5 rounded-lg border text-xs font-semibold transition-all ${
                       dailyGoal === mins
-                        ? 'bg-primary text-primary-foreground border-primary shadow-xs'
-                        : 'bg-secondary/40 border-border/40 text-muted-foreground hover:text-foreground'
+                        ? 'bg-primary text-primary-foreground border-primary'
+                        : 'bg-card text-foreground hover:bg-secondary border-border/70'
                     }`}
                   >
                     {mins}m
@@ -313,13 +371,14 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               </div>
             </div>
 
-            {/* Feedback messages */}
+            {/* Feedback & Actions */}
             {profileSuccessMsg && (
-              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs">
-                <Check className="w-4 h-4 shrink-0" />
+              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-medium">
+                <Check className="w-4 h-4 shrink-0 text-emerald-500" />
                 <span>{profileSuccessMsg}</span>
               </div>
             )}
+
             {authError && (
               <div className="flex items-center gap-2 p-2.5 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs">
                 <AlertCircle className="w-4 h-4 shrink-0" />
@@ -327,32 +386,34 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               </div>
             )}
 
-            {/* Action Buttons */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                type="button"
-                onClick={signOut}
-                className="flex-1 py-2.5 px-3 rounded-xl border border-border/80 text-xs font-semibold text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors flex items-center justify-center text-center gap-1.5 min-h-[44px]"
-              >
-                <LogOut className="w-4 h-4 shrink-0" />
-                <span>{t('auth.sign_out')}</span>
-              </button>
-
+            <div className="pt-2 flex gap-2">
               <button
                 type="button"
                 onClick={handleSaveSettings}
                 disabled={isSavingProfile}
-                className="flex-1 py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center min-h-[44px] shadow-xs"
+                className="flex-1 py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px]"
               >
-                {isSavingProfile ? t('auth.saving') : t('auth.save_settings')}
+                {isSavingProfile ? (
+                  <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
+                ) : (
+                  <span>{t('auth.save_settings')}</span>
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={signOut}
+                className="py-2.5 px-3 rounded-xl border border-destructive/30 bg-destructive/10 text-destructive text-xs font-medium hover:bg-destructive/15 transition-colors flex items-center justify-center text-center min-h-[44px]"
+                title={t('auth.sign_out')}
+              >
+                <LogOut className="w-4 h-4" />
               </button>
             </div>
           </div>
         ) : (
-          /* Unauthenticated Experience */
+          /* Unauthenticated Auth Tabs View */
           <div className="space-y-4">
-            {/* Segmented Top Tabs */}
-            <div className="flex rounded-xl bg-secondary/70 p-1 text-xs border border-border/40">
+            {/* Segmented Tab Switcher */}
+            <div className="flex p-1 bg-secondary/60 rounded-xl border border-border/50 text-xs">
               <button
                 type="button"
                 onClick={() => switchTab('signin')}
@@ -390,64 +451,99 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
             {/* TAB 1: SIGN IN */}
             {activeTab === 'signin' && (
-              <form onSubmit={handleSignIn} className="space-y-3.5">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-foreground">{t('auth.email_label')}</label>
-                  <div className="relative">
-                    <Mail className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-                    <input
-                      type="email"
-                      required
-                      autoComplete="username"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder={t('auth.email_placeholder')}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                    />
+              <div className="space-y-3.5">
+                <form onSubmit={handleSignIn} className="space-y-3">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-medium text-foreground">{t('auth.email_label')}</label>
+                    <div className="relative">
+                      <Mail className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
+                      <input
+                        type="email"
+                        required
+                        autoComplete="username"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder={t('auth.email_placeholder')}
+                        className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-foreground">{t('auth.password_label')}</label>
-                  <div className="relative">
-                    <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-                    <input
-                      type={showPassword ? 'text' : 'password'}
-                      required
-                      autoComplete="current-password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder={t('auth.password_placeholder')}
-                      className="w-full pl-9 pr-10 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
-                    >
-                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                    </button>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-medium text-foreground">{t('auth.password_label')}</label>
+                    <div className="relative">
+                      <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
+                      <input
+                        type={showPassword ? 'text' : 'password'}
+                        required
+                        autoComplete="current-password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder={t('auth.password_placeholder')}
+                        className="w-full pl-9 pr-10 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
+                      >
+                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
                   </div>
-                </div>
 
-                {authError && (
-                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    <span>{authError}</span>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px] mt-1"
-                >
-                  {isSubmitting ? (
-                    <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
-                  ) : (
-                    <span>{t('auth.signin_button')}</span>
+                  {authError && (
+                    <div className="flex items-center gap-2 p-2.5 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{authError}</span>
+                    </div>
                   )}
-                </button>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px] mt-1"
+                  >
+                    {isSubmitting ? (
+                      <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
+                    ) : (
+                      <span>{t('auth.signin_button')}</span>
+                    )}
+                  </button>
+                </form>
+
+                {/* Social Login Divider */}
+                <div className="relative my-3 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-border/60" />
+                  </div>
+                  <div className="relative bg-card px-3 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">
+                    {t('auth.or_divider')}
+                  </div>
+                </div>
+
+                {/* Social OAuth Buttons */}
+                <div className="space-y-2">
+                  <button
+                    type="button"
+                    onClick={() => handleOAuthSignIn('google')}
+                    disabled={isSubmitting}
+                    className="w-full py-2.5 px-4 rounded-xl border border-border bg-background hover:bg-secondary/70 text-foreground text-xs font-semibold transition-all flex items-center justify-center gap-2.5 min-h-[44px] shadow-2xs hover:shadow-xs disabled:opacity-50"
+                  >
+                    <GoogleSvgIcon className="w-4 h-4 shrink-0" />
+                    <span>{t('auth.continue_with_google')}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleOAuthSignIn('facebook')}
+                    disabled={isSubmitting}
+                    className="w-full py-2.5 px-4 rounded-xl border border-border bg-background hover:bg-secondary/70 text-foreground text-xs font-semibold transition-all flex items-center justify-center gap-2.5 min-h-[44px] shadow-2xs hover:shadow-xs disabled:opacity-50"
+                  >
+                    <FacebookSvgIcon className="w-4 h-4 shrink-0" />
+                    <span>{t('auth.continue_with_facebook')}</span>
+                  </button>
+                </div>
 
                 <div className="text-center pt-2 text-xs text-muted-foreground">
                   <span>{t('auth.no_account_prompt')} </span>
@@ -459,7 +555,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                     {t('auth.switch_to_signup')}
                   </button>
                 </div>
-              </form>
+              </div>
             )}
 
             {/* TAB 2: SIGN UP */}
@@ -485,82 +581,117 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSignUp} className="space-y-3.5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-foreground">{t('auth.email_label')}</label>
-                      <div className="relative">
-                        <Mail className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-                        <input
-                          type="email"
-                          required
-                          autoComplete="username"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder={t('auth.email_placeholder')}
-                          className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
+                  <div className="space-y-3.5">
+                    <form onSubmit={handleSignUp} className="space-y-3">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-foreground">{t('auth.email_label')}</label>
+                        <div className="relative">
+                          <Mail className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
+                          <input
+                            type="email"
+                            required
+                            autoComplete="username"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder={t('auth.email_placeholder')}
+                            className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-foreground">{t('auth.password_label')}</label>
-                      <div className="relative">
-                        <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-                        <input
-                          type={showPassword ? 'text' : 'password'}
-                          required
-                          minLength={6}
-                          autoComplete="new-password"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                          placeholder={t('auth.password_placeholder')}
-                          className="w-full pl-9 pr-10 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => setShowPassword(!showPassword)}
-                          className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
-                        >
-                          {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                        </button>
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-foreground">{t('auth.password_label')}</label>
+                        <div className="relative">
+                          <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
+                          <input
+                            type={showPassword ? 'text' : 'password'}
+                            required
+                            minLength={6}
+                            autoComplete="new-password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder={t('auth.password_placeholder')}
+                            className="w-full pl-9 pr-10 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
+                          >
+                            {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                          </button>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-foreground">{t('auth.confirm_password_label')}</label>
-                      <div className="relative">
-                        <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
-                        <input
-                          type={showPassword ? 'text' : 'password'}
-                          required
-                          minLength={6}
-                          autoComplete="new-password"
-                          value={confirmPassword}
-                          onChange={(e) => setConfirmPassword(e.target.value)}
-                          placeholder={t('auth.confirm_password_placeholder')}
-                          className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-foreground">{t('auth.confirm_password_label')}</label>
+                        <div className="relative">
+                          <Lock className="w-4 h-4 absolute left-3 top-3 text-muted-foreground" />
+                          <input
+                            type={showPassword ? 'text' : 'password'}
+                            required
+                            minLength={6}
+                            autoComplete="new-password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            placeholder={t('auth.confirm_password_placeholder')}
+                            className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-background border border-border text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                          />
+                        </div>
                       </div>
-                    </div>
 
-                    {authError && (
-                      <div className="flex items-center gap-2 p-2.5 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs">
-                        <AlertCircle className="w-4 h-4 shrink-0" />
-                        <span>{authError}</span>
-                      </div>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px] mt-1"
-                    >
-                      {isSubmitting ? (
-                        <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
-                      ) : (
-                        <span>{t('auth.signup_button')}</span>
+                      {authError && (
+                        <div className="flex items-center gap-2 p-2.5 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs">
+                          <AlertCircle className="w-4 h-4 shrink-0" />
+                          <span>{authError}</span>
+                        </div>
                       )}
-                    </button>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px] mt-1"
+                      >
+                        {isSubmitting ? (
+                          <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
+                        ) : (
+                          <span>{t('auth.signup_button')}</span>
+                        )}
+                      </button>
+                    </form>
+
+                    {/* Social Login Divider */}
+                    <div className="relative my-3 flex items-center justify-center">
+                      <div className="absolute inset-0 flex items-center">
+                        <div className="w-full border-t border-border/60" />
+                      </div>
+                      <div className="relative bg-card px-3 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">
+                        {t('auth.or_divider')}
+                      </div>
+                    </div>
+
+                    {/* Social OAuth Buttons */}
+                    <div className="space-y-2">
+                      <button
+                        type="button"
+                        onClick={() => handleOAuthSignIn('google')}
+                        disabled={isSubmitting}
+                        className="w-full py-2.5 px-4 rounded-xl border border-border bg-background hover:bg-secondary/70 text-foreground text-xs font-semibold transition-all flex items-center justify-center gap-2.5 min-h-[44px] shadow-2xs hover:shadow-xs disabled:opacity-50"
+                      >
+                        <GoogleSvgIcon className="w-4 h-4 shrink-0" />
+                        <span>{t('auth.continue_with_google')}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleOAuthSignIn('facebook')}
+                        disabled={isSubmitting}
+                        className="w-full py-2.5 px-4 rounded-xl border border-border bg-background hover:bg-secondary/70 text-foreground text-xs font-semibold transition-all flex items-center justify-center gap-2.5 min-h-[44px] shadow-2xs hover:shadow-xs disabled:opacity-50"
+                      >
+                        <FacebookSvgIcon className="w-4 h-4 shrink-0" />
+                        <span>{t('auth.continue_with_facebook')}</span>
+                      </button>
+                    </div>
 
                     <div className="text-center pt-2 text-xs text-muted-foreground">
                       <span>{t('auth.have_account_prompt')} </span>
@@ -572,21 +703,20 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                         {t('auth.switch_to_signin')}
                       </button>
                     </div>
-                  </form>
+                  </div>
                 )}
               </div>
             )}
 
-            {/* TAB 3: GUEST GOAL SETTINGS */}
+            {/* TAB 3: GUEST SETTINGS */}
             {activeTab === 'guest' && (
               <div className="space-y-4">
-                {/* Guest Info Badge */}
-                <div className="p-3 rounded-xl bg-secondary/50 border border-border/60 text-xs leading-relaxed space-y-1">
-                  <p className="font-semibold text-foreground flex items-center gap-1.5">
+                <div className="p-3.5 rounded-xl bg-secondary/50 border border-border/60 space-y-1.5">
+                  <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                    <span>{t('auth.guest_mode_badge')}</span>
-                  </p>
-                  <p className="text-[11px] text-muted-foreground">
+                    <span className="text-xs font-bold text-foreground">{t('auth.guest_mode_badge')}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {t('auth.guest_mode_desc')}
                   </p>
                 </div>
@@ -633,10 +763,10 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                         key={mins}
                         type="button"
                         onClick={() => setDailyGoal(mins)}
-                        className={`flex-1 py-1.5 rounded-lg border text-xs font-semibold flex items-center justify-center text-center transition-all ${
+                        className={`flex-1 py-1.5 rounded-lg border text-xs font-semibold transition-all ${
                           dailyGoal === mins
-                            ? 'bg-primary text-primary-foreground border-primary shadow-xs'
-                            : 'bg-secondary/40 border-border/40 text-muted-foreground hover:text-foreground'
+                            ? 'bg-primary text-primary-foreground border-primary'
+                            : 'bg-card text-foreground hover:bg-secondary border-border/70'
                         }`}
                       >
                         {mins}m
@@ -646,8 +776,8 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                 </div>
 
                 {profileSuccessMsg && (
-                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs">
-                    <Check className="w-4 h-4 shrink-0" />
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-medium">
+                    <Check className="w-4 h-4 shrink-0 text-emerald-500" />
                     <span>{profileSuccessMsg}</span>
                   </div>
                 )}
@@ -658,7 +788,11 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                   disabled={isSavingProfile}
                   className="w-full py-2.5 px-4 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 flex items-center justify-center text-center shadow-xs min-h-[44px]"
                 >
-                  {isSavingProfile ? t('auth.saving') : t('auth.save_settings')}
+                  {isSavingProfile ? (
+                    <LoadingSpinner size="sm" className="p-0 text-primary-foreground" />
+                  ) : (
+                    <span>{t('auth.save_settings')}</span>
+                  )}
                 </button>
               </div>
             )}

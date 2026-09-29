@@ -40,6 +40,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     if (pathname.startsWith('/speaking')) return 'speaking';
     if (pathname.startsWith('/mock-exams')) return 'mockExam';
     if (pathname.startsWith('/analytics')) return 'analytics';
+    if (pathname.startsWith('/profile')) return 'profile';
     return 'dashboard';
   }, [pathname]);
 

@@ -3,7 +3,10 @@ import React, { createContext, useContext, useState, useEffect, useCallback, Rea
 import type { User, Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabaseClient';
 import { getProfile, updateProfile as updateProfileApi } from '../lib/api/profile';
+import { syncGuestProgress } from '../lib/api/guest-sync';
+import { loadGuestAttempts, clearGuestAttempts } from '../services/storageService';
 import { UserProfileData, UpdateProfileInput } from '../lib/api/types';
+import { CambridgeExamCode } from '../types';
 
 export type AuthStatus = 'loading' | 'authenticated' | 'unauthenticated';
 
@@ -18,9 +21,12 @@ export interface AuthContextType {
     email: string,
     password: string
   ) => Promise<{ error: Error | null; confirmationRequired?: boolean }>;
+  signInWithOAuth: (provider: 'google' | 'facebook') => Promise<{ error: Error | null; url?: string }>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   updateProfile: (input: UpdateProfileInput) => Promise<UserProfileData>;
+  updateDisplayName: (displayName: string) => Promise<{ error: Error | null }>;
+  syncGuestToAccount: () => Promise<{ syncedAttempts: number; error: Error | null }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -43,10 +49,52 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setProfile(res.profile);
       }
     } catch (err: any) {
-      // In development or if user profile is being initialized
       console.warn('[AuthProvider] Failed to fetch server profile:', err?.message || err);
     }
   }, []);
+
+  const syncGuestToAccount = useCallback(async (): Promise<{ syncedAttempts: number; error: Error | null }> => {
+    try {
+      let syncedCount = 0;
+      const attempts = loadGuestAttempts();
+      if (attempts.length > 0) {
+        const res = await syncGuestProgress({ practice_attempts: attempts });
+        syncedCount = res.synced_count;
+        clearGuestAttempts();
+      }
+
+      // Sync guest exam target and daily practice minutes if present in local storage
+      if (typeof window !== 'undefined') {
+        const savedExam = localStorage.getItem('cefr_platform_target_exam') as CambridgeExamCode | null;
+        const savedMinutes = localStorage.getItem('cefr_platform_daily_goal_minutes');
+        const updatePayload: UpdateProfileInput = {};
+
+        if (savedExam && ['KET', 'PET', 'FCE', 'CAE'].includes(savedExam)) {
+          updatePayload.target_exam = savedExam;
+        }
+        if (savedMinutes) {
+          const parsed = parseInt(savedMinutes, 10);
+          if (!isNaN(parsed) && parsed >= 5 && parsed <= 180) {
+            updatePayload.daily_goal_minutes = parsed;
+          }
+        }
+
+        if (Object.keys(updatePayload).length > 0) {
+          try {
+            await updateProfileApi(updatePayload);
+          } catch {
+            // Ignore if profile already configured
+          }
+        }
+      }
+
+      await fetchUserProfile();
+      return { syncedAttempts: syncedCount, error: null };
+    } catch (err: any) {
+      console.warn('[AuthProvider] Guest migration error:', err?.message || err);
+      return { syncedAttempts: 0, error: err };
+    }
+  }, [fetchUserProfile]);
 
   // Initialize session on mount
   useEffect(() => {
@@ -62,6 +110,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           setUser(data.session.user);
           setStatus('authenticated');
           await fetchUserProfile();
+          // Perform automatic guest progress sync if guest attempts are present
+          await syncGuestToAccount();
         } else if (isMounted) {
           setSession(null);
           setUser(null);
@@ -89,6 +139,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           setStatus('authenticated');
           setError(null);
           await fetchUserProfile();
+          await syncGuestToAccount();
         }
       } else if (event === 'SIGNED_OUT') {
         setSession(null);
@@ -102,7 +153,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       isMounted = false;
       authListener?.subscription.unsubscribe();
     };
-  }, [fetchUserProfile]);
+  }, [fetchUserProfile, syncGuestToAccount]);
 
   const signInWithPassword = async (email: string, password: string) => {
     setError(null);
@@ -114,6 +165,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(data.session.user);
         setStatus('authenticated');
         await fetchUserProfile();
+        await syncGuestToAccount();
       }
       return { error: null };
     } catch (err: any) {
@@ -133,12 +185,67 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(data.session.user);
         setStatus('authenticated');
         await fetchUserProfile();
+        await syncGuestToAccount();
         return { error: null, confirmationRequired: false };
       }
       return { error: null, confirmationRequired: true };
     } catch (err: any) {
       const errMsg = err?.message || 'ลงทะเบียนไม่สำเร็จ';
       setError(errMsg);
+      return { error: err };
+    }
+  };
+
+  const signInWithOAuth = async (provider: 'google' | 'facebook'): Promise<{ error: Error | null; url?: string }> => {
+    setError(null);
+    try {
+      const redirectUrl =
+        typeof window !== 'undefined'
+          ? `${window.location.origin}/auth/callback`
+          : 'http://localhost:3000/auth/callback';
+
+      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: {
+          redirectTo: redirectUrl,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+        },
+      });
+
+      if (oauthError) throw oauthError;
+      if (data?.url) {
+        window.location.href = data.url;
+        return { error: null, url: data.url };
+      }
+      return { error: null };
+    } catch (err: any) {
+      const errMsg = err?.message || `${provider} OAuth sign-in failed.`;
+      setError(errMsg);
+      return { error: err };
+    }
+  };
+
+  const updateDisplayName = async (displayName: string): Promise<{ error: Error | null }> => {
+    try {
+      const trimmed = displayName.trim();
+      if (!trimmed) {
+        throw new Error('Display name cannot be empty.');
+      }
+      const { data, error: updateError } = await supabase.auth.updateUser({
+        data: {
+          display_name: trimmed,
+          full_name: trimmed,
+        },
+      });
+      if (updateError) throw updateError;
+      if (data?.user) {
+        setUser(data.user);
+      }
+      return { error: null };
+    } catch (err: any) {
       return { error: err };
     }
   };
@@ -178,9 +285,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     error,
     signInWithPassword,
     signUpWithPassword,
+    signInWithOAuth,
     signOut,
     refreshProfile,
     updateProfile,
+    updateDisplayName,
+    syncGuestToAccount,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

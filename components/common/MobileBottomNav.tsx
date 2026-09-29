@@ -12,6 +12,7 @@ import {
   Mic,
   BarChart2,
   ClipboardCheck,
+  User,
   X,
 } from 'lucide-react';
 import { NavView } from './Sidebar';
@@ -35,6 +36,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
   ];
 
   const secondaryItems = [
+    { id: 'profile' as NavView, icon: User },
     { id: 'assessment' as NavView, icon: ClipboardCheck },
     { id: 'listening' as NavView, icon: Headphones },
     { id: 'writing' as NavView, icon: PenTool },

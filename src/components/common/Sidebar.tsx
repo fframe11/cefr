@@ -23,7 +23,8 @@ export type NavView =
   | 'writing'
   | 'speaking'
   | 'mockExam'
-  | 'analytics';
+  | 'analytics'
+  | 'profile';
 
 interface SidebarProps {
   currentView: NavView;

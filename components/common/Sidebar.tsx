@@ -12,6 +12,7 @@ import {
   Mic,
   Award,
   BarChart2,
+  User,
   PanelLeftClose,
   PanelLeftOpen,
   X,
@@ -28,7 +29,8 @@ export type NavView =
   | 'writing'
   | 'speaking'
   | 'mockExam'
-  | 'analytics';
+  | 'analytics'
+  | 'profile';
 
 export interface SidebarProps {
   currentView: NavView;
@@ -60,6 +62,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'assessment', labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR', icon: ClipboardCheck, badge: 'A1-C2', section: 'practice' },
   { id: 'mockExam', labelEn: 'Mock Exams', labelTh: 'สอบจำลอง Cambridge', icon: Award, badge: 'KET/PET/FCE', section: 'practice' },
   { id: 'analytics', labelEn: 'Performance', labelTh: 'วิเคราะห์จุดอ่อน', icon: BarChart2, section: 'progress' },
+  { id: 'profile', labelEn: 'Profile & Goals', labelTh: 'โปรไฟล์และเป้าหมาย', icon: User, section: 'progress' },
 ];
 
 interface NavSectionDef {

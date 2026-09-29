@@ -1,13 +1,40 @@
 'use client';
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Flame, Clock, Moon, Sun, RefreshCw, User as UserIcon, Menu } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import {
+  Flame,
+  Clock,
+  Moon,
+  Sun,
+  RefreshCw,
+  User as UserIcon,
+  Menu,
+  ChevronDown,
+  LogOut,
+  Target,
+  BarChart2,
+} from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
 import { useTranslation } from '../../i18n';
+import { useAuth } from '../../context/AuthContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { GlovaLogo } from '../ui/GlovaLogo';
 import { GlovaLevelBadge } from '../ui/GlovaBadge';
 import { CEFRTier } from '@/lib/design-tokens/tokens';
+
+function getInitials(nameOrEmail?: string | null): string {
+  if (!nameOrEmail) return 'GL';
+  const clean = nameOrEmail.trim();
+  if (clean.includes('@')) {
+    return clean.split('@')[0].slice(0, 2).toUpperCase();
+  }
+  const parts = clean.split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+  return clean.slice(0, 2).toUpperCase();
+}
 
 interface HeaderProps {
   currentLevel: CEFRLevel;
@@ -38,8 +65,45 @@ export const Header: React.FC<HeaderProps> = ({
   userEmail,
   onOpenMobileNav,
 }) => {
+  const router = useRouter();
   const { t } = useTranslation();
+  const { user, signOut } = useAuth();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const goalPercent = Math.min(100, Math.round((minutesStudiedToday / dailyGoalMinutes) * 100));
+
+  // Close menu on click outside or escape key
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const displayName =
+    user?.user_metadata?.display_name ||
+    user?.user_metadata?.full_name ||
+    userEmail?.split('@')[0] ||
+    'Learner';
+
+  const initials = getInitials(displayName);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/90 backdrop-blur-md transition-colors pt-safe">
@@ -136,22 +200,105 @@ export const Header: React.FC<HeaderProps> = ({
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          {/* Profile & Auth Modal Trigger */}
-          <button
-            onClick={onOpenProfile}
-            className={`touch-target flex items-center gap-1.5 p-1.5 sm:px-2.5 sm:py-1.5 rounded-md border text-xs font-medium transition-colors ${
-              isAuthenticated
-                ? 'bg-primary/10 border-primary/20 text-primary hover:bg-primary/15'
-                : 'bg-secondary/60 border-border/40 text-muted-foreground hover:text-foreground hover:bg-secondary'
-            }`}
-            title={isAuthenticated ? `${t('header.profile_title')}: ${userEmail || 'User'}` : t('header.login')}
-            aria-label={t('header.profile_title')}
-          >
-            <UserIcon className="w-4 h-4 shrink-0" />
-            <span className="hidden lg:inline max-w-[120px] truncate">
-              {isAuthenticated ? (userEmail?.split('@')[0] || t('header.my_account')) : t('header.login')}
-            </span>
-          </button>
+          {/* Profile / Account Control */}
+          {isAuthenticated ? (
+            <div className="relative" ref={menuRef}>
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-border/60 bg-secondary/50 hover:bg-secondary text-xs font-medium text-foreground transition-all shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                aria-expanded={isMenuOpen}
+                aria-haspopup="menu"
+                aria-label={t('auth.menu_profile')}
+              >
+                <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white font-bold text-[10px] flex items-center justify-center shrink-0">
+                  {initials}
+                </div>
+                <span className="hidden lg:inline max-w-[100px] truncate font-semibold">
+                  {displayName}
+                </span>
+                <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {isMenuOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 mt-2 w-64 rounded-2xl bg-card border border-border/80 shadow-xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150"
+                >
+                  {/* User Header Preview */}
+                  <div className="p-3 rounded-xl bg-secondary/40 border border-border/40 mb-1 space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-foreground truncate max-w-[140px]">{displayName}</span>
+                      <GlovaLevelBadge level={currentLevel as CEFRTier} size="sm" />
+                    </div>
+                    <p className="text-[11px] text-muted-foreground truncate">{userEmail}</p>
+                  </div>
+
+                  {/* Menu Items */}
+                  <div className="space-y-0.5 text-xs font-medium">
+                    <Link
+                      href="/profile"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors"
+                      role="menuitem"
+                    >
+                      <UserIcon className="w-4 h-4 text-primary shrink-0" />
+                      <span>{t('auth.menu_profile')}</span>
+                    </Link>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        if (onOpenProfile) onOpenProfile();
+                      }}
+                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors text-left"
+                      role="menuitem"
+                    >
+                      <Target className="w-4 h-4 text-primary shrink-0" />
+                      <span>{t('auth.menu_goals')}</span>
+                    </button>
+
+                    <Link
+                      href="/analytics"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors"
+                      role="menuitem"
+                    >
+                      <BarChart2 className="w-4 h-4 text-indigo-500 shrink-0" />
+                      <span>{t('auth.menu_progress')}</span>
+                    </Link>
+
+                    <div className="my-1 border-t border-border/50" />
+
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        setIsMenuOpen(false);
+                        await signOut();
+                        router.push('/');
+                      }}
+                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-destructive hover:bg-destructive/10 transition-colors text-left"
+                      role="menuitem"
+                    >
+                      <LogOut className="w-4 h-4 shrink-0" />
+                      <span>{t('auth.menu_signout')}</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button
+              onClick={onOpenProfile}
+              className="touch-target flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border/60 bg-secondary/60 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
+              title={t('auth.signin_button')}
+              aria-label={t('auth.signin_button')}
+            >
+              <UserIcon className="w-4 h-4 shrink-0 text-primary" />
+              <span className="hidden sm:inline">{t('auth.signin_button')}</span>
+            </button>
+          )}
         </div>
       </div>
     </header>

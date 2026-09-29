@@ -1,28 +1,15 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
-const getEnvVar = (nextKey: string, viteKey: string): string => {
-  if (typeof process !== 'undefined' && process.env) {
-    if (process.env[nextKey]) return process.env[nextKey]!;
-    if (process.env[viteKey]) return process.env[viteKey]!;
-  }
-  try {
-    // @ts-ignore
-    if (typeof import.meta !== 'undefined' && import.meta.env) {
-      // @ts-ignore
-      if (import.meta.env[nextKey]) return import.meta.env[nextKey];
-      // @ts-ignore
-      if (import.meta.env[viteKey]) return import.meta.env[viteKey];
-    }
-  } catch {
-    // Ignore in non-Vite environments
-  }
-  return '';
-};
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  (typeof process !== 'undefined' && process.env ? process.env.SUPABASE_URL : '') ||
+  '';
 
-const supabaseUrl = getEnvVar('NEXT_PUBLIC_SUPABASE_URL', 'VITE_SUPABASE_URL');
 const supabaseAnonKey =
-  (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY) ||
-  getEnvVar('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'VITE_SUPABASE_ANON_KEY');
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  (typeof process !== 'undefined' && process.env ? process.env.SUPABASE_ANON_KEY : '') ||
+  '';
 
 /**
  * Browser-safe Supabase Client.
