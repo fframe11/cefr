@@ -261,7 +261,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 </button>
 
                 {showTranscript && (
-                  <div className="mt-3 p-4 rounded-[20px] bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
+                  <div className="mt-3 p-4 rounded-[20px] bg-[#DDD4C7] dark:bg-[#1E252D] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
                     <p className="font-sans text-[11px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">
                       {isEn ? 'English Audio Transcript:' : 'บทพูดภาษาอังกฤษ:'}
                     </p>

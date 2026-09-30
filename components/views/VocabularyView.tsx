@@ -381,7 +381,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center p-1 rounded-2xl bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] gap-1">
+          <div className="flex items-center p-1 rounded-2xl bg-[#DDD4C7] dark:bg-[#131920] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] gap-1">
             <button
               type="button"
               onClick={() => setViewMode('study')}
@@ -450,7 +450,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 selectedLevel === lvl
                   ? 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none'
-                  : 'bg-[#F0EAE1] text-[#25242A] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none'
+                  : 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All' : 'ทั้งหมด') : `CEFR ${lvl}`}
@@ -585,7 +585,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#F0EAE1] hover:bg-[#EDE6DD] border-2 border-[rgba(37,36,42,0.14)] text-[#25242A] shadow-[0_4px_0_0_#C5BDB2] active:translate-y-[4px] active:shadow-none';
+                    'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border-2 border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4px_0_0_#C5BDB2] dark:shadow-[0_4px_0_0_#0D1318] active:translate-y-[4px] active:shadow-none';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
@@ -595,11 +595,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       optionStyle =
                         'bg-rose-500/15 border-2 border-rose-500 text-rose-800 dark:text-rose-200 font-bold ring-2 ring-rose-500/20 shadow-[0_4px_0_0_#E11D48]';
                     } else {
-                      optionStyle = 'opacity-40 border-2 border-[rgba(37,36,42,0.10)] bg-[#F0EAE1]/50 text-muted-foreground shadow-none';
+                      optionStyle = 'opacity-40 border-2 border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.08)] bg-[#F0EAE1]/50 dark:bg-[#1A232C]/50 text-muted-foreground shadow-none';
                     }
                   } else if (isSelected) {
                     optionStyle =
-                      'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_4px_0_0_#5B5CE2] active:translate-y-[4px] active:shadow-none';
+                      'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] dark:text-[#A5A6F6] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_4px_0_0_#38399E] active:translate-y-[4px] active:shadow-none';
                   }
 
                   return (
@@ -611,7 +611,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-xl bg-[#DDD4C7] flex items-center justify-center text-xs font-mono font-bold text-[#25242A] shrink-0 border border-[rgba(37,36,42,0.12)]">
+                        <span className="w-8 h-8 rounded-xl bg-[#DDD4C7] dark:bg-[#222E3A] flex items-center justify-center text-xs font-mono font-bold text-[#25242A] dark:text-[#EDEBE8] shrink-0 border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
                           {opt.key}
                         </span>
                         <span className="text-sm sm:text-base font-bold">{opt.text}</span>
@@ -687,7 +687,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#DDD4C7] px-3 py-1 rounded-full border border-[rgba(37,36,42,0.12)]">
+              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#DDD4C7] dark:bg-[#222E3A] px-3 py-1 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
                 {isEn
                   ? `Word ${currentIndex + 1} of ${filteredWords.length}`
                   : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
@@ -697,7 +697,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             {/* Word Central Area - Word as the Hero */}
             <div className="py-6 text-center space-y-4">
               <div className="flex items-center justify-center gap-4 flex-wrap">
-                <h2 className="text-4xl sm:text-5xl font-black text-[#25242A] tracking-tight font-sans">
+                <h2 className="text-4xl sm:text-5xl font-black text-[#25242A] dark:text-[#EDEBE8] tracking-tight font-sans">
                   {currentWord.word}
                 </h2>
                 <button
@@ -715,7 +715,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               </div>
 
               {currentWord.ipa && (
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#DDD4C7] text-xs font-mono font-medium text-muted-foreground border border-[rgba(37,36,42,0.12)]">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#DDD4C7] dark:bg-[#222E3A] text-xs font-mono font-medium text-muted-foreground border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
                   {currentWord.ipa}
                 </div>
               )}

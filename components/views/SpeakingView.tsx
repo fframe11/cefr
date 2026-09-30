@@ -331,7 +331,7 @@ export const SpeakingView: React.FC = () => {
                           className={`text-xs px-3 py-1 rounded-full font-mono border transition-all ${
                             isDetected
                               ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 font-bold'
-                              : 'bg-[#F0EAE1] text-muted-foreground border-[rgba(37,36,42,0.12)]'
+                              : 'bg-[#F0EAE1] dark:bg-[#1A232C] text-muted-foreground border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]'
                           }`}
                         >
                           {phrase}
@@ -348,10 +348,10 @@ export const SpeakingView: React.FC = () => {
           <GlovaCard
             variant="bubble"
             elevation="bubble"
-            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-[#F0EAE1] dark:bg-[#1A232C] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
             {/* Live Recording Timer */}
-            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-[#DDD4C7] px-3.5 py-1.5 rounded-full border border-[rgba(37,36,42,0.12)]">
+            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-[#DDD4C7] dark:bg-[#222E3A] px-3.5 py-1.5 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
               <Clock className="w-4 h-4 text-[#5B5CE2]" aria-hidden="true" />
               <span>
                 {Math.floor(recordingSeconds / 60)}:

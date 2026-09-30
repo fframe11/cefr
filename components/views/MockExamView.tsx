@@ -838,8 +838,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                     const isSelected =
                       answers[currentQuestion.id]?.selected_option_key === option.key;
                     const optionStyle = isSelected
-                      ? 'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none'
-                      : 'bg-[#F0EAE1] hover:bg-[#EDE6DD] border-2 border-[rgba(37,36,42,0.14)] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:translate-y-[3.5px] active:shadow-none';
+                      ? 'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] dark:text-[#A5A6F6] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none'
+                      : 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border-2 border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#C5BDB2] dark:shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
 
                     return (
                       <button
@@ -851,7 +851,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                           className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 border ${
                             isSelected
                               ? 'bg-[#5B5CE2] text-white border-[#5B5CE2]'
-                              : 'bg-[#DDD4C7] text-[#25242A] border-[rgba(37,36,42,0.12)]'
+                              : 'bg-[#DDD4C7] dark:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]'
                           }`}
                         >
                           {option.key}
@@ -932,13 +932,13 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 const isFlagged = flaggedQuestionIds.includes(q.id);
                 const isCurrent = currentQuestionIdx === idx;
 
-                let btnClass = 'bg-[#F0EAE1] text-[#25242A] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none hover:bg-[#EDE6DD]';
+                let btnClass = 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none';
                 if (isCurrent) {
                   btnClass = 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none font-bold ring-2 ring-[#5B5CE2]/30';
                 } else if (isFlagged) {
                   btnClass = 'bg-[#E5A83B] text-white border-t border-white/20 shadow-[0_2px_0_0_#A86E12] active:translate-y-[2px] active:shadow-none font-bold';
                 } else if (isAnswered) {
-                  btnClass = 'bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[#5B5CE2]/40 shadow-[0_2px_0_0_rgba(91,92,226,0.3)] active:translate-y-[2px] active:shadow-none font-bold';
+                  btnClass = 'bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#A5A6F6] border border-[#5B5CE2]/40 shadow-[0_2px_0_0_rgba(91,92,226,0.3)] active:translate-y-[2px] active:shadow-none font-bold';
                 }
 
                 return (
