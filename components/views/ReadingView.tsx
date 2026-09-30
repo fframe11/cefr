@@ -167,7 +167,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
                   ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] hover:bg-[#DDD4C7]'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] dark:border-border/40 hover:bg-[#DDD4C7] dark:hover:bg-[#222E3A]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -229,10 +229,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
             <GlovaCard
               variant="bubble"
               elevation="bubble"
-              className="p-6 sm:p-8 space-y-5 rounded-[30px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+              className="p-6 sm:p-8 space-y-5 rounded-[30px] bg-[#F0EAE1] dark:bg-card border border-[rgba(37,36,42,0.12)] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               {/* Passage Metadata Bar */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(37,36,42,0.12)]">
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentPassage.cefrLevel} size="sm" />
                   <span className="text-xs text-muted-foreground font-mono font-medium">
@@ -241,13 +241,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 </div>
 
                 <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                  <span className="flex items-center gap-1 bg-[#DDD4C7] px-2.5 py-1 rounded-full border border-[rgba(37,36,42,0.12)]">
+                  <span className="flex items-center gap-1 bg-[#DDD4C7] dark:bg-muted/60 px-2.5 py-1 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-border/40">
                     <FileText className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
                     <span>
                       {currentPassage.wordCount} {isEn ? 'words' : 'คำ'}
                     </span>
                   </span>
-                  <span className="flex items-center gap-1 bg-[#DDD4C7] px-2.5 py-1 rounded-full border border-[rgba(37,36,42,0.12)]">
+                  <span className="flex items-center gap-1 bg-[#DDD4C7] dark:bg-muted/60 px-2.5 py-1 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-border/40">
                     <Clock className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
                     <span>
                       ~{estimatedReadingMinutes} {isEn ? 'min' : 'นาที'}

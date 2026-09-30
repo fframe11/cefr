@@ -54,6 +54,7 @@ export interface ProductionVocabularyRecord {
 let cachedProductionList: ProductionVocabularyRecord[] | null = null;
 let byIdMap: Map<string, ProductionVocabularyRecord> | null = null;
 let byGlovaIdMap: Map<string, ProductionVocabularyRecord> | null = null;
+let byWordMap: Map<string, ProductionVocabularyRecord> | null = null;
 let byCefrMap: Map<CEFRLevel, ProductionVocabularyRecord[]> | null = null;
 let byPosMap: Map<string, ProductionVocabularyRecord[]> | null = null;
 
@@ -90,12 +91,16 @@ function loadData(): ProductionVocabularyRecord[] {
   // Build indexes
   byIdMap = new Map();
   byGlovaIdMap = new Map();
+  byWordMap = new Map();
   byCefrMap = new Map();
   byPosMap = new Map();
 
   for (const item of cachedProductionList || []) {
     byIdMap.set(item.id, item);
     byGlovaIdMap.set(item.glova_id, item);
+    if (item.word) {
+      byWordMap.set(item.word.toLowerCase().trim(), item);
+    }
 
     if (!byCefrMap.has(item.cefr_level)) {
       byCefrMap.set(item.cefr_level, []);
@@ -127,11 +132,17 @@ export function getProductionVocabularyCount(): number {
 }
 
 /**
- * Find record by UUID or glova_id.
+ * Find record by UUID, glova_id, or word text (case-insensitive).
  */
-export function getProductionVocabularyById(idOrGlovaId: string): ProductionVocabularyRecord | undefined {
+export function getProductionVocabularyById(idOrGlovaIdOrWord: string): ProductionVocabularyRecord | undefined {
   loadData();
-  return byIdMap?.get(idOrGlovaId) || byGlovaIdMap?.get(idOrGlovaId);
+  if (!idOrGlovaIdOrWord) return undefined;
+  const normalized = idOrGlovaIdOrWord.toLowerCase().trim();
+  return (
+    byIdMap?.get(idOrGlovaIdOrWord) ||
+    byGlovaIdMap?.get(idOrGlovaIdOrWord) ||
+    byWordMap?.get(normalized)
+  );
 }
 
 /**

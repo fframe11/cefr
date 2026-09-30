@@ -164,12 +164,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 } ${
                   isActive
                     ? 'bg-[#5B5CE2] text-white font-black shadow-xs shadow-[#5B5CE2]/30'
-                    : 'text-[#6E6870] hover:text-[#25242A] hover:bg-[#F0EAE1] font-medium'
+                    : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] font-medium'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-white' : 'text-[#6E6870] group-hover:text-[#5B5CE2]'
+                    isActive ? 'text-white' : 'text-[#6E6870] dark:text-[#94A3B8] group-hover:text-[#5B5CE2]'
                   }`}
                 />
                 {!collapsedMode && (
@@ -203,17 +203,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-[rgba(37,36,42,0.12)] bg-[#E6DED2]/98 backdrop-blur-md shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
+        className={`hidden md:flex flex-col border-r border-[rgba(37,36,42,0.12)] dark:border-border/40 bg-[#E6DED2]/98 dark:bg-[#131920]/98 backdrop-blur-md shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
         {/* Top Header & Collapse Toggle */}
-        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-[rgba(37,36,42,0.12)] ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
+        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#58B993] animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#6E6870] font-mono select-none">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#6E6870] dark:text-[#94A3B8] font-mono select-none">
                 {isEn ? 'Learning Suite' : 'สตูดิโอการเรียนรู้'}
               </span>
             </div>
@@ -223,7 +223,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-[#6E6870] hover:text-[#25242A] hover:bg-[#F0EAE1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50 active:scale-95"
+              className="p-1.5 rounded-lg text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50 active:scale-95"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -243,13 +243,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-[rgba(37,36,42,0.12)] mt-auto">
-            <div className="p-3 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-xs space-y-1">
+          <div className="pt-3.5 border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 mt-auto">
+            <div className="p-3 rounded-2xl bg-[#F0EAE1] dark:bg-[#1A232C] border border-[rgba(37,36,42,0.12)] dark:border-border/40 shadow-xs space-y-1">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#5B5CE2]" />
-                <span className="text-[11px] font-black text-[#25242A] font-display">Cambridge Scale</span>
+                <span className="text-[11px] font-black text-[#25242A] dark:text-[#EDEBE8] font-display">Cambridge Scale</span>
               </div>
-              <p className="text-[10px] text-[#6E6870] font-grotesk leading-snug">
+              <p className="text-[10px] text-[#6E6870] dark:text-[#94A3B8] font-grotesk leading-snug">
                 CEFR A1 to C2 Framework &bull; KET, PET, FCE, CAE, CPE
               </p>
             </div>
@@ -268,18 +268,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#E6DED2] border-r border-[rgba(37,36,42,0.12)] p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-[#25242A]"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#E6DED2] dark:bg-[#131920] border-r border-[rgba(37,36,42,0.12)] dark:border-border/40 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-[#25242A] dark:text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-3 mb-2 border-b border-[rgba(37,36,42,0.12)]">
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
               <div className="flex items-center gap-2.5">
                 <GlovaLogo size={28} variant="radiant" ariaLabel="Glova" />
                 <div className="flex flex-col">
-                  <span className="font-black text-base text-[#25242A] font-display">
+                  <span className="font-black text-base text-[#25242A] dark:text-[#EDEBE8] font-display">
                     Glova
                   </span>
-                  <span className="text-[9px] font-mono text-[#6E6870] uppercase tracking-wider">
+                  <span className="text-[9px] font-mono text-[#6E6870] dark:text-[#94A3B8] uppercase tracking-wider">
                     Learning Suite
                   </span>
                 </div>
@@ -287,7 +287,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 type="button"
                 onClick={onCloseMobile}
-                className="p-1.5 rounded-lg text-[#6E6870] hover:text-[#25242A] hover:bg-[#F0EAE1] transition-colors"
+                className="p-1.5 rounded-lg text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] transition-colors"
                 aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5" />
@@ -300,10 +300,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </nav>
 
             {/* Drawer Footer */}
-            <div className="pt-3 border-t border-[rgba(37,36,42,0.12)] mt-4">
-              <div className="p-2.5 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] text-center">
-                <p className="text-[11px] font-bold text-[#25242A] font-display">Cambridge English Alignment</p>
-                <p className="text-[10px] text-[#6E6870] font-mono mt-0.5">CEFR A1 to C2 Framework</p>
+            <div className="pt-3 border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 mt-4">
+              <div className="p-2.5 rounded-xl bg-[#F0EAE1] dark:bg-[#1A232C] border border-[rgba(37,36,42,0.12)] dark:border-border/40 text-center">
+                <p className="text-[11px] font-bold text-[#25242A] dark:text-[#EDEBE8] font-display">Cambridge English Alignment</p>
+                <p className="text-[10px] text-[#6E6870] dark:text-[#94A3B8] font-mono mt-0.5">CEFR A1 to C2 Framework</p>
               </div>
             </div>
           </div>

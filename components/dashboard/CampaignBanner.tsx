@@ -305,7 +305,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={() => setIsPaused((prev) => !prev)}
               aria-label={isPaused ? (isEn ? 'Resume rotation' : 'เล่นต่อ') : (isEn ? 'Pause rotation' : 'หยุดหมุนชั่วคราว')}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
               {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
             </button>
@@ -315,7 +315,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={prevSlide}
               aria-label={isEn ? 'Previous Campaign' : 'แคมเปญก่อนหน้า'}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
             </button>
@@ -325,7 +325,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={nextSlide}
               aria-label={isEn ? 'Next Campaign' : 'แคมเปญถัดไป'}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
               <ChevronRight className="w-3.5 h-3.5" />
             </button>

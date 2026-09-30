@@ -232,7 +232,7 @@ export const SpeakingView: React.FC = () => {
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
                   ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] hover:bg-[#DDD4C7]'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] dark:border-border/40 hover:bg-[#DDD4C7] dark:hover:bg-[#222E3A]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -261,9 +261,9 @@ export const SpeakingView: React.FC = () => {
           <GlovaCard
             variant="bubble"
             elevation="bubble"
-            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#F0EAE1] dark:bg-card border border-[rgba(37,36,42,0.12)] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(37,36,42,0.12)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
                 <span className="font-bold text-sm sm:text-base text-foreground">
@@ -286,12 +286,12 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-5 rounded-[22px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] space-y-1.5 shadow-xs">
+            <div className="p-5 rounded-[22px] bg-[#F0EAE1] dark:bg-[#1A232C] border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-1.5 shadow-xs">
               <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
               </p>
               {currentPrompt.promptTh && (
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-[rgba(37,36,42,0.12)]">
+                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-[rgba(37,36,42,0.12)] dark:border-border/40">
                   {currentPrompt.promptTh}
                 </p>
               )}
@@ -307,7 +307,7 @@ export const SpeakingView: React.FC = () => {
                   </h4>
                   <ul className="space-y-1.5 text-xs text-muted-foreground">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-[#DDD4C7] p-2.5 rounded-[14px] border border-[rgba(37,36,42,0.12)]">
+                      <li key={idx} className="flex items-start gap-2 bg-[#DDD4C7] dark:bg-muted/40 p-2.5 rounded-[14px] border border-[rgba(37,36,42,0.12)] dark:border-border/40">
                         <span className="font-bold text-[#5B5CE2]">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>

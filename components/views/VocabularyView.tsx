@@ -47,7 +47,6 @@ import {
   LessonFeedbackDrawer,
   TactileButton,
 } from '../ui';
-import { RemotionPlayerWrapper, PhoneticStressComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
 interface VocabularyViewProps {
@@ -131,6 +130,71 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
     fetchVocabularyData();
   }, [fetchVocabularyData]);
 
+  // Generate instant resilient local questions for zero loading lag and 100% offline/ADHD responsiveness
+  const generateResilientQuestions = useCallback(
+    (targetWordOrId?: string): ClientVocabularyQuestionDTO[] => {
+      const pool = words.length >= 4 ? words : VOCABULARY_BANK;
+      const target = targetWordOrId
+        ? pool.find(
+            (w) =>
+              w.id === targetWordOrId ||
+              w.word.toLowerCase() === targetWordOrId.toLowerCase()
+          ) || pool[0]
+        : pool[Math.floor(Math.random() * pool.length)];
+
+      const otherWords = pool.filter((w) => w.id !== target.id);
+      const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
+      const questions: ClientVocabularyQuestionDTO[] = [];
+
+      // Primary target word question
+      const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningTh);
+      const allChoices = [target.meaningTh, ...distractors].sort(() => 0.5 - Math.random());
+      questions.push({
+        id: `vq_local_${target.id}_${Date.now()}`,
+        skill: 'vocabulary',
+        cefrLevel: target.cefrLevel,
+        type: 'multiple_choice',
+        interactionType: 'meaning_recognition',
+        promptEn: `What is the meaning of "${target.word}"?`,
+        promptTh: `คำว่า "${target.word}" มีความหมายตรงกับข้อใด?`,
+        contextPassage: target.exampleSentenceEn ? `"${target.exampleSentenceEn}"` : undefined,
+        targetWord: target.word,
+        options: allChoices.map((text, idx) => ({
+          key: (['A', 'B', 'C', 'D'][idx] || 'A') as 'A' | 'B' | 'C' | 'D',
+          text,
+        })),
+        difficultyWeight: 2,
+      });
+
+      // 4 additional questions from level pool
+      for (let i = 0; i < Math.min(4, shuffledOthers.length); i++) {
+        const cur = shuffledOthers[i];
+        const rest = pool.filter((w) => w.id !== cur.id);
+        const d = rest.slice(0, 3).map((w) => w.meaningTh);
+        const c = [cur.meaningTh, ...d].sort(() => 0.5 - Math.random());
+        questions.push({
+          id: `vq_local_${cur.id}_${Date.now()}_${i + 1}`,
+          skill: 'vocabulary',
+          cefrLevel: cur.cefrLevel,
+          type: 'multiple_choice',
+          interactionType: 'meaning_recognition',
+          promptEn: `What is the meaning of "${cur.word}"?`,
+          promptTh: `คำว่า "${cur.word}" มีความหมายตรงกับข้อใด?`,
+          contextPassage: cur.exampleSentenceEn ? `"${cur.exampleSentenceEn}"` : undefined,
+          targetWord: cur.word,
+          options: c.map((text, idx) => ({
+            key: (['A', 'B', 'C', 'D'][idx] || 'A') as 'A' | 'B' | 'C' | 'D',
+            text,
+          })),
+          difficultyWeight: 2,
+        });
+      }
+
+      return questions;
+    },
+    [words]
+  );
+
   // Load Practice Questions when entering practice mode
   const startPracticeSession = useCallback(
     async (targetWordId?: string) => {
@@ -148,14 +212,18 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
         if (res && res.questions && res.questions.length > 0) {
           setPracticeQuestions(res.questions);
+          return;
         }
       } catch (err) {
-        console.warn('[VocabularyView] Failed to fetch practice questions:', err);
+        console.warn('[VocabularyView] Failed to fetch practice questions, using resilient instant quiz:', err);
       } finally {
         setPracticeLoading(false);
       }
+
+      // Instant resilient fallback
+      setPracticeQuestions(generateResilientQuestions(targetWordId));
     },
-    [selectedLevel]
+    [selectedLevel, generateResilientQuestions]
   );
 
   useEffect(() => {
@@ -244,19 +312,31 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         setTotalXpGained((prev) => prev + 2);
       }
     } catch (err) {
-      console.warn('[VocabularyView] Failed to submit answer, evaluating locally:', err);
-      // Fallback evaluation
-      const isCorrect = optionKey === 'A';
+      console.warn('[VocabularyView] Failed to submit answer to server, evaluating locally with dictionary match:', err);
+      // High-fidelity fallback evaluation based on word bank dictionary
+      const pool = words.length > 0 ? words : VOCABULARY_BANK;
+      const targetObj = pool.find((w) => w.word.toLowerCase() === currentQ.targetWord?.toLowerCase());
+      const correctOpt = currentQ.options.find((opt) => opt.text === targetObj?.meaningTh) || currentQ.options[0];
+      const isCorrect = optionKey === correctOpt.key;
+
       setAnswerResult({
         question_id: currentQ.id,
-        target_word_id: '',
+        target_word_id: currentQ.targetWord || currentWord?.id || '',
         selected_key: optionKey,
-        correct_key: 'A',
+        correct_key: correctOpt.key,
         is_correct: isCorrect,
-        explanation_th: 'ผลลัพธ์ได้รับการบันทึกแล้ว',
-        explanation_en: 'Review answer recorded.',
+        explanation_th: `ความหมายของ "${currentQ.targetWord || currentWord?.word}" คือ "${targetObj?.meaningTh || correctOpt.text}"`,
+        explanation_en: `"${currentQ.targetWord || currentWord?.word}" means "${targetObj?.meaningEn || 'correct option'}"`,
       });
-      if (isCorrect) setPracticeScore((prev) => prev + 1);
+
+      if (isCorrect) {
+        setPracticeScore((prev) => prev + 1);
+        setPracticeStreak((prev) => prev + 1);
+        setTotalXpGained((prev) => prev + 10);
+      } else {
+        setPracticeStreak(0);
+        setTotalXpGained((prev) => prev + 2);
+      }
     } finally {
       setIsSubmittingAnswer(false);
     }
@@ -640,103 +720,73 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 </div>
               )}
 
-              {/* Reveal Toggle Card */}
-              {!isRevealed ? (
-                <div className="pt-6">
-                  <button
-                    type="button"
-                    onClick={() => setIsRevealed(true)}
-                    className="touch-target px-6 py-3 rounded-2xl bg-[#F0EAE1] hover:bg-[#EDE6DD] text-xs sm:text-sm font-bold text-[#25242A] transition-all border border-[rgba(37,36,42,0.14)] shadow-[0_3.5px_0_0_#C5BDB2] active:translate-y-[3.5px] active:shadow-none inline-flex items-center gap-2 group"
-                  >
-                    <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" aria-hidden="true" />
-                    <span>
-                      {isEn
-                        ? 'Tap to reveal meaning & sentence context'
-                        : 'แตะเพื่อแสดงความหมายและตัวอย่างประโยค'}
-                    </span>
-                  </button>
-                  <p className="text-[11px] text-muted-foreground mt-2.5 font-medium">
-                    {isEn
-                      ? '(or press Spacebar to flip card)'
-                      : '(หรือกดแป้น Spacebar เพื่อเปิดความหมาย)'}
-                  </p>
+              {/* Immediate Meaning & Definition (ADHD-Friendly: Zero Friction, Direct Display) */}
+              <div className="pt-4 space-y-4 animate-in fade-in duration-150">
+                {/* Thai Meaning Highlight & English Definition */}
+                <div className="p-5 sm:p-6 rounded-[24px] bg-[#DDD4C7] dark:bg-[#1E252D] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.1)] space-y-1.5 text-center shadow-xs">
+                  <div className="text-[11px] font-bold text-[#5B5CE2] dark:text-[#A5A6F6] uppercase tracking-wider">
+                    {isEn ? 'Meaning in Thai' : 'ความหมายภาษาไทย'}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#5B5CE2] dark:text-[#A5A6F6]">
+                    {currentWord.meaningTh}
+                  </h3>
+                  {currentWord.meaningEn && (
+                    <p className="text-xs sm:text-sm text-[#6E6870] dark:text-[#94A3B8] leading-relaxed font-medium pt-1">
+                      {currentWord.meaningEn}
+                    </p>
+                  )}
                 </div>
-              ) : (
-                <div className="pt-4 space-y-4 animate-in fade-in duration-200">
-                  <div className="p-5 rounded-[22px] bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] space-y-1.5 text-center shadow-xs">
-                    <h3 className="text-2xl sm:text-3xl font-black text-[#5B5CE2]">
-                      {currentWord.meaningTh}
-                    </h3>
-                    {currentWord.meaningEn && (
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-medium">
-                        {currentWord.meaningEn}
+
+                {/* Example in Context */}
+                {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
+                  <div className="p-5 rounded-[22px] bg-[#F0EAE1] dark:bg-[#182026] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.1)] text-left space-y-2 shadow-xs">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                      <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
+                      <span>
+                        {isEn ? 'Example sentence in context:' : 'ตัวอย่างประโยคในบริบทจริง:'}
+                      </span>
+                    </div>
+                    <p className="text-sm sm:text-base text-foreground font-semibold leading-relaxed">
+                      {currentWord.exampleSentenceEn}
+                    </p>
+                    {currentWord.exampleSentenceTh && (
+                      <p className="text-xs sm:text-sm text-muted-foreground font-medium">
+                        {currentWord.exampleSentenceTh}
                       </p>
                     )}
                   </div>
+                )}
 
-                  {/* Remotion Phonetic Cadence & Stress Animation */}
-                  <div className="pt-1">
-                    <RemotionPlayerWrapper
-                      component={PhoneticStressComposition}
-                      inputProps={{
-                        word: currentWord.word,
-                        cefrLevel: currentWord.cefrLevel,
-                      }}
-                      durationInFrames={60}
-                      aspectRatio="16/9"
-                      ariaLabel={`Phonetic cadence animation for ${currentWord.word}`}
-                    />
+                {/* Collocations */}
+                {currentWord.collocations && currentWord.collocations.length > 0 && (
+                  <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
+                    <span className="text-xs text-muted-foreground font-bold mr-1">Collocations:</span>
+                    {currentWord.collocations.map((c, i) => (
+                      <span
+                        key={i}
+                        className="px-3.5 py-1 rounded-full bg-[#DDD4C7] dark:bg-[#2A343E] text-xs font-mono font-bold text-foreground border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.12)] shadow-xs"
+                      >
+                        {c}
+                      </span>
+                    ))}
                   </div>
+                )}
 
-                  {/* Example in Context */}
-                  {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
-                    <div className="p-5 rounded-[22px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] text-left space-y-1.5 shadow-xs">
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">
-                        <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
-                        <span>
-                          {isEn ? 'Example sentence in context:' : 'ตัวอย่างประโยคในบริบท:'}
-                        </span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed">
-                        {currentWord.exampleSentenceEn}
-                      </p>
-                      <p className="text-xs text-muted-foreground font-medium">
-                        {currentWord.exampleSentenceTh}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Collocations */}
-                  {currentWord.collocations && currentWord.collocations.length > 0 && (
-                    <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-                      <span className="text-xs text-muted-foreground font-semibold mr-1">Collocations:</span>
-                      {currentWord.collocations.map((c, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 rounded-full bg-[#DDD4C7] text-xs font-mono font-medium text-foreground border border-[rgba(37,36,42,0.12)] shadow-xs"
-                        >
-                          {c}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Quick Test Prompt */}
-                  <div className="pt-2 text-center">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setViewMode('practice');
-                        startPracticeSession(currentWord.id);
-                      }}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white text-xs font-bold transition-all shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none border-t border-white/20"
-                    >
-                      <BrainCircuit className="w-4 h-4" aria-hidden="true" />
-                      <span>{isEn ? 'Test yourself on this word' : 'ทดสอบความจำคำนี้ทันที'}</span>
-                    </button>
-                  </div>
+                {/* Quick Test Prompt (3D Tactile Button) */}
+                <div className="pt-2 text-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setViewMode('practice');
+                      startPracticeSession(currentWord.word || currentWord.id);
+                    }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white text-xs sm:text-sm font-bold transition-all shadow-[0_4px_0_0_#38399E] active:translate-y-[4px] active:shadow-none border-t border-white/20 cursor-pointer"
+                  >
+                    <BrainCircuit className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Test yourself on this word' : 'ทดสอบความจำคำนี้ทันที'}</span>
+                  </button>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Bottom Actions: Mastery & Navigation */}

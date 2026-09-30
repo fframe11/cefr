@@ -66,7 +66,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   const { t, language } = useTranslation();
   const isEn = language === 'en';
 
-  const [heroTab, setHeroTab] = useState<'ranked' | 'cartridge' | 'stress'>('ranked');
+  const [heroTab, setHeroTab] = useState<'ranked' | 'cartridge' | 'journey'>('ranked');
   const [activeStudioTab, setActiveStudioTab] = useState<'vocab' | 'grammar' | 'reading' | 'listening' | 'speaking' | 'writing' | 'exam' | 'ranked'>('vocab');
 
   const handleStart = () => {
@@ -190,15 +190,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </button>
                   <button
                     type="button"
-                    onClick={() => setHeroTab('stress')}
+                    onClick={() => setHeroTab('journey')}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
-                      heroTab === 'stress'
+                      heroTab === 'journey'
                         ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
                         : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
                     }`}
                   >
-                    <Volume2 className="w-3.5 h-3.5" />
-                    <span>{isEn ? 'Audio Wave' : 'เสียงและการเน้น'}</span>
+                    <Compass className="w-3.5 h-3.5" />
+                    <span>{isEn ? 'CEFR Progression' : 'เส้นทาง CEFR'}</span>
                   </button>
                 </div>
 
@@ -243,22 +243,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 )}
 
-                {heroTab === 'stress' && (
+                {heroTab === 'journey' && (
                   <RemotionPlayerWrapper
-                    component={PhoneticStressComposition}
-                    inputProps={{
-                      word: 'COMPREHENSIVE',
-                      ipa: '/ˌkɒm.prɪˈhen.sɪv/',
-                      syllables: [
-                        { text: 'COM', stress: 'secondary', timeRatio: 0.2 },
-                        { text: 'pre', stress: 'none', timeRatio: 0.15 },
-                        { text: 'HEN', stress: 'primary', timeRatio: 0.4 },
-                        { text: 'sive', stress: 'none', timeRatio: 0.25 },
-                      ],
-                    }}
-                    durationInFrames={120}
+                    component={LandingHeroComposition}
+                    inputProps={{}}
+                    durationInFrames={180}
                     aspectRatio="16/9"
-                    ariaLabel="Phonetic stress interactive simulation"
+                    ariaLabel="Glova CEFR Learning Journey Progression Simulation"
                   />
                 )}
               </div>

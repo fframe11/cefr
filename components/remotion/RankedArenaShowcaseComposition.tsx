@@ -13,28 +13,35 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
 
   // Scene timings (180 frames = 6 seconds total loop)
   // 0 - 60 (0-2s): Question appears & 4s timer ticks down
-  // 60 - 90 (2-3s): Correct answer locked in (green glow)
-  // 90 - 150 (3-5s): Victory & MMR Surge (+28 MMR)
-  // 150 - 180 (5-6s): Settle / Loop reset
+  // 60 - 90 (2-3s): Correct answer Option A is clicked (presses down 4px, turns emerald)
+  // 90 - 150 (3-5s): Victory & XP/MMR Surge (+28 MMR, +25 XP, 3 Streak)
+  // 150 - 180 (5-6s): Settle & smooth loop reset
 
-  const timerProgress = interpolate(frame, [0, 60], [100, 35], {
+  const timerSeconds = interpolate(frame, [0, 60], [4.0, 1.2], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const questionOpacity = interpolate(frame, [0, 15], [0, 1], {
+  const timerProgress = interpolate(frame, [0, 60], [100, 30], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const answerLock = frame >= 60;
-  const mmrScale = spring({
+  const cardOpacity = interpolate(frame, [0, 15], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  const isAnswered = frame >= 60;
+  const isOptionPressed = frame >= 55 && frame < 65;
+
+  const rewardScale = spring({
     frame: frame - 80,
     fps,
-    config: { damping: 12, stiffness: 200 },
+    config: { damping: 14, stiffness: 220 },
   });
 
-  const mmrOpacity = interpolate(frame, [80, 95], [0, 1], {
+  const rewardOpacity = interpolate(frame, [80, 95], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -44,10 +51,9 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
       style={{
         width: '100%',
         height: '100%',
-        backgroundColor: '#0d0f17',
-        backgroundImage: 'radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15), transparent 70%)',
-        color: '#FFFFFF',
-        fontFamily: "'Chakra Petch', 'Orbitron', sans-serif",
+        backgroundColor: '#E6DED2',
+        color: '#25242A',
+        fontFamily: "'Plus Jakarta Sans', 'Noto Sans Thai', -apple-system, sans-serif",
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -58,66 +64,80 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
         overflow: 'hidden',
       }}
     >
-      {/* Background Esports Grid Overlay */}
+      {/* Subtle Warm Studio Background Pattern */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage:
-            'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
+            'radial-gradient(#C5BDB2 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+          opacity: 0.35,
           pointerEvents: 'none',
         }}
       />
 
-      {/* Arena Top Match Bar */}
+      {/* Top Matchup Header */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          maxWidth: '520px',
-          marginBottom: '16px',
+          maxWidth: '540px',
+          marginBottom: '14px',
           zIndex: 10,
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <div
             style={{
-              padding: '3px 10px',
-              borderRadius: '6px',
-              backgroundColor: 'rgba(234, 179, 8, 0.2)',
-              border: '1px solid rgba(234, 179, 8, 0.5)',
+              padding: '4px 12px',
+              borderRadius: '999px',
+              backgroundColor: '#5B5CE2',
+              borderTop: '1px solid rgba(255, 255, 255, 0.3)',
+              boxShadow: '0 2.5px 0 0 #38399E',
               fontSize: '11px',
-              fontWeight: 700,
-              color: '#FACC15',
-              letterSpacing: '1px',
+              fontWeight: 800,
+              color: '#FFFFFF',
+              letterSpacing: '0.5px',
             }}
           >
-            GOLD II
+            4s VOCAB SPEED BATTLE
           </div>
-          <span style={{ fontSize: '13px', color: '#94A3B8', fontWeight: 600 }}>1,480 MMR</span>
+          <span style={{ fontSize: '12px', color: '#6E6870', fontWeight: 700 }}>
+            Round 3/5
+          </span>
         </div>
 
-        {/* 4s Speed Timer Bar */}
+        {/* 4.0s Tactile Timer Capsule */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            background: 'rgba(30, 41, 59, 0.8)',
-            padding: '4px 12px',
+            background: '#F0EAE1',
+            padding: '5px 14px',
             borderRadius: '999px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(37, 36, 42, 0.12)',
+            boxShadow: '0 2px 0 0 #C5BDB2',
           }}
         >
-          <span style={{ fontSize: '11px', color: '#EF4444', fontWeight: 800 }}>⚡ 4.0s TIMER</span>
+          <span
+            style={{
+              fontSize: '12px',
+              color: timerSeconds <= 2.0 ? '#E98278' : '#5B5CE2',
+              fontWeight: 800,
+              fontFamily: 'monospace',
+            }}
+          >
+            ⏱ {timerSeconds.toFixed(1)}s
+          </span>
           <div
             style={{
-              width: '80px',
+              width: '60px',
               height: '6px',
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              backgroundColor: '#DDD4C7',
               borderRadius: '999px',
               overflow: 'hidden',
             }}
@@ -126,129 +146,243 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               style={{
                 width: `${timerProgress}%`,
                 height: '100%',
-                backgroundColor: timerProgress > 50 ? '#10B981' : '#EF4444',
-                transition: 'width 0.1s linear',
+                backgroundColor: timerSeconds <= 2.0 ? '#E98278' : '#5B5CE2',
+                borderRadius: '999px',
               }}
             />
           </div>
         </div>
       </div>
 
-      {/* Active Battle Card */}
+      {/* Main Authentic Battle Card */}
       <div
         style={{
           width: '100%',
-          maxWidth: '520px',
-          backgroundColor: 'rgba(15, 23, 42, 0.9)',
-          border: '1px solid rgba(99, 102, 241, 0.4)',
-          borderRadius: '16px',
-          padding: '20px 24px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-          opacity: questionOpacity,
+          maxWidth: '540px',
+          backgroundColor: '#F0EAE1',
+          border: '1.5px solid rgba(37, 36, 42, 0.14)',
+          borderRadius: '24px',
+          padding: '24px 28px',
+          boxShadow: '0 6px 0 0 #C5BDB2, 0 12px 24px rgba(37, 36, 42, 0.06)',
+          opacity: cardOpacity,
           zIndex: 10,
           position: 'relative',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#818CF8', letterSpacing: '1.5px' }}>
-            CEFR B2 VOCABULARY ARENA
+        {/* Word Info & CEFR Tag */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '10px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span
+              style={{
+                padding: '3px 10px',
+                borderRadius: '8px',
+                backgroundColor: '#DDD4C7',
+                border: '1px solid rgba(37, 36, 42, 0.12)',
+                fontSize: '11px',
+                fontWeight: 800,
+                color: '#5B5CE2',
+                fontFamily: 'monospace',
+              }}
+            >
+              B2 UPPER
+            </span>
+            <span style={{ fontSize: '12px', color: '#6E6870', fontWeight: 600 }}>
+              Adjective • Contextual Collocation
+            </span>
+          </div>
+          <span style={{ fontSize: '11px', color: '#10B981', fontWeight: 700 }}>
+            ● LIVE OPPONENT
           </span>
-          <span style={{ fontSize: '11px', color: '#64748B' }}>ROUND 3/5</span>
         </div>
 
-        <div style={{ fontSize: '26px', fontWeight: 800, color: '#F8FAFC', marginBottom: '4px', letterSpacing: '1px' }}>
-          PRAGMATIC
-        </div>
-        <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '16px', fontFamily: "'Space Grotesk', sans-serif" }}>
-          [adj.] Solving problems in a sensible way that suits the conditions.
+        {/* Target Word & Phonetics */}
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '4px' }}>
+          <div style={{ fontSize: '32px', fontWeight: 900, color: '#25242A', letterSpacing: '-0.5px' }}>
+            PRAGMATIC
+          </div>
+          <div style={{ fontSize: '13px', color: '#6E6870', fontStyle: 'italic' }}>
+            /præɡˈmæt.ɪk/
+          </div>
         </div>
 
-        {/* 4 Choices Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+        <div
+          style={{
+            fontSize: '13px',
+            color: '#25242A',
+            marginBottom: '18px',
+            backgroundColor: '#EDE6DD',
+            padding: '10px 14px',
+            borderRadius: '12px',
+            border: '1px solid rgba(37, 36, 42, 0.08)',
+            lineHeight: 1.45,
+          }}
+        >
+          &quot;We need a <strong style={{ color: '#5B5CE2' }}>pragmatic</strong> approach to solve this urgent timeline.&quot;
+        </div>
+
+        {/* 4 Tactile Option Choices */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          {/* Option A: Correct & Pressed */}
           <div
             style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
+              padding: '12px 16px',
+              borderRadius: '14px',
               fontSize: '13px',
-              fontWeight: 600,
-              backgroundColor: answerLock ? 'rgba(16, 185, 129, 0.25)' : 'rgba(30, 41, 59, 0.7)',
-              border: answerLock ? '1.5px solid #10B981' : '1px solid rgba(255, 255, 255, 0.1)',
-              color: answerLock ? '#34D399' : '#CBD5E1',
+              fontWeight: 700,
+              backgroundColor: isAnswered ? '#ECFDF5' : '#F0EAE1',
+              border: isAnswered
+                ? '2px solid #10B981'
+                : '1.5px solid rgba(37, 36, 42, 0.14)',
+              color: isAnswered ? '#065F46' : '#25242A',
+              boxShadow: isAnswered
+                ? 'none'
+                : isOptionPressed
+                ? 'none'
+                : '0 3.5px 0 0 #C5BDB2',
+              transform: isAnswered || isOptionPressed ? 'translateY(3.5px)' : 'none',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
+              transition: 'all 0.15s ease',
             }}
           >
-            <span>เน้นใช้ได้จริง / ยึดหลักปฏิบัติ</span>
-            {answerLock && <span>✓</span>}
+            <span>A. เน้นใช้ได้จริง / ปฏิบัติได้</span>
+            {isAnswered && (
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '18px',
+                  height: '18px',
+                  borderRadius: '999px',
+                  backgroundColor: '#10B981',
+                  color: '#FFFFFF',
+                  fontSize: '11px',
+                  fontWeight: 900,
+                }}
+              >
+                ✓
+              </span>
+            )}
           </div>
+
+          {/* Option B */}
           <div
             style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
+              padding: '12px 16px',
+              borderRadius: '14px',
               fontSize: '13px',
-              fontWeight: 500,
-              backgroundColor: 'rgba(30, 41, 59, 0.4)',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              color: '#64748B',
+              fontWeight: 600,
+              backgroundColor: '#F0EAE1',
+              border: '1.5px solid rgba(37, 36, 42, 0.14)',
+              color: isAnswered ? '#8D8790' : '#25242A',
+              opacity: isAnswered ? 0.45 : 1,
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
             }}
           >
-            เพ้อฝันเกินความเป็นจริง
+            B. เพ้อฝันเกินจริง
           </div>
+
+          {/* Option C */}
           <div
             style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
+              padding: '12px 16px',
+              borderRadius: '14px',
               fontSize: '13px',
-              fontWeight: 500,
-              backgroundColor: 'rgba(30, 41, 59, 0.4)',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              color: '#64748B',
+              fontWeight: 600,
+              backgroundColor: '#F0EAE1',
+              border: '1.5px solid rgba(37, 36, 42, 0.14)',
+              color: isAnswered ? '#8D8790' : '#25242A',
+              opacity: isAnswered ? 0.45 : 1,
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
             }}
           >
-            ซับซ้อนเข้าใจยาก
+            C. ซับซ้อนเข้าใจยาก
           </div>
+
+          {/* Option D */}
           <div
             style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
+              padding: '12px 16px',
+              borderRadius: '14px',
               fontSize: '13px',
-              fontWeight: 500,
-              backgroundColor: 'rgba(30, 41, 59, 0.4)',
-              border: '1px solid rgba(255, 255, 255, 0.05)',
-              color: '#64748B',
+              fontWeight: 600,
+              backgroundColor: '#F0EAE1',
+              border: '1.5px solid rgba(37, 36, 42, 0.14)',
+              color: isAnswered ? '#8D8790' : '#25242A',
+              opacity: isAnswered ? 0.45 : 1,
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
             }}
           >
-            ลังเลตัดสินใจไม่ได้
+            D. ลังเลตัดสินใจไม่ได้
           </div>
         </div>
 
-        {/* Victory MMR Surge Popup */}
+        {/* Victory Tactile Toast Overlay */}
         {frame >= 80 && (
           <div
             style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
-              transform: `translate(-50%, -50%) scale(${mmrScale})`,
-              opacity: mmrOpacity,
-              backgroundColor: 'rgba(15, 23, 42, 0.95)',
-              border: '2px solid #F59E0B',
-              borderRadius: '14px',
-              padding: '14px 28px',
-              boxShadow: '0 0 35px rgba(245, 158, 11, 0.4)',
+              transform: `translate(-50%, -50%) scale(${rewardScale})`,
+              opacity: rewardOpacity,
+              backgroundColor: '#F0EAE1',
+              border: '2px solid #5B5CE2',
+              borderRadius: '22px',
+              padding: '18px 32px',
+              boxShadow: '0 8px 0 0 #38399E, 0 16px 32px rgba(37, 36, 42, 0.15)',
               textAlign: 'center',
               zIndex: 30,
+              minWidth: '280px',
             }}
           >
-            <div style={{ fontSize: '11px', color: '#FBBF24', fontWeight: 700, letterSpacing: '2px' }}>
-              MATCH VICTORY
+            <div
+              style={{
+                fontSize: '11px',
+                color: '#5B5CE2',
+                fontWeight: 800,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                marginBottom: '2px',
+              }}
+            >
+              🎉 SPEED VICTORY!
             </div>
-            <div style={{ fontSize: '28px', fontWeight: 900, color: '#34D399', margin: '2px 0' }}>
+            <div
+              style={{
+                fontSize: '32px',
+                fontWeight: 900,
+                color: '#10B981',
+                margin: '2px 0',
+                letterSpacing: '-0.5px',
+              }}
+            >
               +28 MMR
             </div>
-            <div style={{ fontSize: '11px', color: '#94A3B8' }}>
-              Current: 1,508 MMR • Top 14%
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#25242A',
+                marginTop: '4px',
+              }}
+            >
+              <span style={{ color: '#E5A83B' }}>★ +25 XP</span>
+              <span>•</span>
+              <span style={{ color: '#E98278' }}>🔥 STREAK x3</span>
             </div>
           </div>
         )}

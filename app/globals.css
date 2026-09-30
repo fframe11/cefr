@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,12 +6,12 @@
 
 @layer base {
   :root {
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Chakra Petch', 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-tech: 'Rajdhani', 'Orbitron', monospace;
+    --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Plus Jakarta Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-tech: 'Space Grotesk', monospace;
     --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Glova Original Brand World Foundation */
+    /* Glova Original Brand World Foundation (Light Mode: Warm Tactile Earth) */
     --background: 36 25% 86%;     /* #E6DED2 Warm Earthy Page Background */
     --foreground: 250 8% 15%;     /* #25242A Dark Ink Text (WCAG AAA) */
 
@@ -38,27 +38,28 @@
   }
 
   .dark {
-    --background: 36 25% 86%;     /* #E6DED2 Consistent Master Palette */
-    --foreground: 250 8% 15%;     /* #25242A */
+    /* Glova Eye-Comfort Dark Mode (Restful Charcoal Navy, Never Harsh Pure Black) */
+    --background: 213 25% 10%;    /* #131920 Eye-Comfort Deep Navy Charcoal */
+    --foreground: 38 10% 92%;     /* #EDEBE8 Soft Glare-Free Cream Text */
 
-    --card: 36 33% 91%;           /* #F0EAE1 */
-    --card-foreground: 250 8% 15%;
+    --card: 211 26% 14%;          /* #1A232C Elevated Card Surface */
+    --card-foreground: 38 10% 92%;
 
-    --primary: 240 71% 62%;       /* #5B5CE2 */
-    --primary-foreground: 36 33% 98%;
+    --primary: 240 80% 67%;       /* #6869F0 Radiant Indigo Optimized for Dark */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 36 20% 82%;      /* #DDD4C7 */
-    --secondary-foreground: 250 8% 15%;
+    --secondary: 212 26% 18%;     /* #222E3A Sunken Inset / Muted Well */
+    --secondary-foreground: 38 10% 92%;
 
-    --muted: 36 20% 82%;
-    --muted-foreground: 285 4% 42%;
+    --muted: 212 26% 18%;         /* #222E3A */
+    --muted-foreground: 215 15% 65%; /* #94A3B8 Secondary Text */
 
-    --accent: 5 74% 69%;          /* #E98278 */
-    --accent-foreground: 36 33% 98%;
+    --accent: 5 82% 72%;          /* #F08C82 Warm Terracotta / Coral Rose */
+    --accent-foreground: 0 0% 100%;
 
-    --border: 250 8% 78%;
-    --input: 250 8% 78%;
-    --ring: 240 71% 62%;
+    --border: 212 20% 25%;        /* rgba(255, 255, 255, 0.12) */
+    --input: 212 20% 25%;
+    --ring: 240 80% 67%;
   }
 
   * {

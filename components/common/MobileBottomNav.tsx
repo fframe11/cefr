@@ -67,20 +67,20 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
           onClick={() => setDrawerOpen(false)}
         >
           <div
-            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#E6DED2] border-t border-[rgba(37,36,42,0.14)] rounded-t-3xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-[#25242A]"
+            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#E6DED2] dark:bg-[#131920] border-t border-[rgba(37,36,42,0.14)] dark:border-border/40 rounded-t-3xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-[#25242A] dark:text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3.5 border-b border-[rgba(37,36,42,0.12)] mb-3">
+            <div className="flex items-center justify-between pb-3.5 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 mb-3">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#5B5CE2]" />
-                <span className="font-bold text-sm text-[#25242A] font-display">
+                <span className="font-bold text-sm text-[#25242A] dark:text-[#EDEBE8] font-display">
                   {isEn ? 'All Learning Studios' : 'ทุกสตูดิโอการเรียนรู้'}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="p-1.5 rounded-full text-[#6E6870] hover:text-[#25242A] hover:bg-[#F0EAE1] transition-colors"
+                className="p-1.5 rounded-full text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] transition-colors"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -99,7 +99,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                     className={`flex items-center gap-3 p-3 rounded-2xl transition-all text-left active:scale-[0.98] ${
                       isActive
                         ? 'bg-[#5B5CE2] text-white font-bold shadow-xs'
-                        : 'text-[#25242A] hover:bg-[#F0EAE1] font-medium'
+                        : 'text-[#25242A] dark:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] font-medium'
                     }`}
                   >
                     <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#5B5CE2]'}`} />
@@ -116,7 +116,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
 
       {/* Fixed Bottom Bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#E6DED2]/98 backdrop-blur-md border-t border-[rgba(37,36,42,0.12)] pb-safe shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#E6DED2]/98 dark:bg-[#131920]/98 backdrop-blur-md border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 pb-safe shadow-lg"
         aria-label="Mobile Navigation"
       >
         <div className="grid grid-cols-6 items-center h-16 px-1">
@@ -129,7 +129,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                 type="button"
                 onClick={() => onSelectView(item.id)}
                 className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
-                  isActive ? 'text-[#5B5CE2] font-bold' : 'text-[#6E6870] hover:text-[#25242A]'
+                  isActive ? 'text-[#5B5CE2] font-bold' : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8]'
                 }`}
               >
                 <Icon className={`w-4 h-4 transition-transform duration-150 ${isActive ? 'scale-115 text-[#5B5CE2]' : ''}`} />
@@ -148,7 +148,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
             className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
               drawerOpen || secondaryItems.some((s) => s.id === currentView)
                 ? 'text-[#5B5CE2] font-bold'
-                : 'text-[#6E6870] hover:text-[#25242A]'
+                : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8]'
             }`}
             aria-label="More navigation options"
           >

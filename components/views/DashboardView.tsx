@@ -239,59 +239,73 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
           {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO */}
-          <SpotlightCard className="p-6 sm:p-8 border border-[rgba(37,36,42,0.12)] bg-[#F0EAE1] text-[#25242A] shadow-xs rounded-[28px]">
-            <div className="flex flex-col gap-5">
-              {/* Header Badges */}
-              <div className="flex items-center justify-between gap-3 flex-wrap">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5B5CE2] text-white text-xs font-black tracking-wide uppercase shadow-xs">
-                    <Sparkles className="w-3.5 h-3.5 text-white" />
-                    <span>{primaryAction.unitBadge}</span>
-                  </span>
-                  <span className="text-xs font-semibold text-[#5B5CE2]">
-                    {primaryAction.skill}
-                  </span>
+          <SpotlightCard className="p-6 sm:p-8 border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.1)] bg-[#F0EAE1] dark:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1 flex flex-col gap-4">
+                {/* Header Badges */}
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5B5CE2] text-white text-xs font-black tracking-wide uppercase shadow-xs">
+                      <Sparkles className="w-3.5 h-3.5 text-white" />
+                      <span>{primaryAction.unitBadge}</span>
+                    </span>
+                    <span className="text-xs font-semibold text-[#5B5CE2] dark:text-[#A5A6F6]">
+                      {primaryAction.skill}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs text-[#6E6870] dark:text-[#94A3B8] font-semibold">
+                    <Clock className="w-3.5 h-3.5 text-[#E98278]" />
+                    <span>{primaryAction.timeMin} {isEn ? 'minutes' : 'นาที'}</span>
+                    <span>•</span>
+                    <span className="text-[#5B5CE2] dark:text-[#A5A6F6] font-bold">+15 XP</span>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs text-[#6E6870] font-semibold">
-                  <Clock className="w-3.5 h-3.5 text-[#E98278]" />
-                  <span>{primaryAction.timeMin} {isEn ? 'minutes' : 'นาที'}</span>
-                  <span>•</span>
-                  <span className="text-[#5B5CE2] font-bold">+15 XP</span>
+                {/* Main Prompt */}
+                <div className="space-y-1.5">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#25242A] dark:text-[#EDEBE8] tracking-tight leading-snug">
+                    {primaryAction.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-[#6E6870] dark:text-[#94A3B8] leading-relaxed max-w-xl">
+                    {primaryAction.description}
+                  </p>
+                </div>
+
+                {/* Large Tactile Call To Action */}
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <TactileButton
+                    variant="primary"
+                    size="lg"
+                    onClick={primaryAction.onStart}
+                    className="px-8 cursor-pointer"
+                    rightIcon={<ArrowRight className="w-5 h-5" />}
+                  >
+                    {primaryAction.cta}
+                  </TactileButton>
+
+                  <TactileButton
+                    variant="surface"
+                    size="lg"
+                    onClick={() => onNavigate('compete')}
+                    className="sm:w-auto cursor-pointer"
+                    leftIcon={<Swords className="w-4 h-4 text-[#5B5CE2]" />}
+                  >
+                    {isEn ? 'Vocab Battle 4s' : 'ประลองศัพท์ด่วน 4 วินาที'}
+                  </TactileButton>
                 </div>
               </div>
 
-              {/* Main Prompt */}
-              <div className="space-y-2">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#25242A] tracking-tight leading-snug">
-                  {primaryAction.title}
-                </h2>
-                <p className="text-sm sm:text-base text-[#6E6870] leading-relaxed max-w-2xl">
-                  {primaryAction.description}
-                </p>
-              </div>
-
-              {/* Large Tactile Call To Action */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <TactileButton
-                  variant="primary"
-                  size="lg"
-                  onClick={primaryAction.onStart}
-                  className="px-8"
-                  rightIcon={<ArrowRight className="w-5 h-5" />}
-                >
-                  {primaryAction.cta}
-                </TactileButton>
-
-                <TactileButton
-                  variant="surface"
-                  size="lg"
-                  onClick={() => onNavigate('compete')}
-                  className="sm:w-auto"
-                  leftIcon={<Swords className="w-4 h-4 text-[#5B5CE2]" />}
-                >
-                  {isEn ? 'Vocab Battle 4s' : 'ประลองศัพท์ด่วน 4 วินาที'}
-                </TactileButton>
+              {/* Visual Learning Companion Emblem */}
+              <div className="hidden sm:flex flex-col items-center justify-center p-4 rounded-3xl bg-[#DDD4C7]/60 dark:bg-[#222E3A]/60 border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] shrink-0 shadow-xs">
+                <img
+                  src="/assets/decorative/mascot-glova-spark.png"
+                  alt="Glova Mascot Spark"
+                  className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-transform hover:scale-105"
+                />
+                <span className="text-[11px] font-black text-[#5B5CE2] dark:text-[#A5A6F6] mt-2 uppercase tracking-wide">
+                  {isEn ? 'Daily Focus' : 'ภารกิจวันนี้'}
+                </span>
               </div>
             </div>
           </SpotlightCard>
@@ -575,8 +589,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </div>
               </div>
 
-              <div className="w-10 h-10 rounded-full bg-[#DDD4C7] flex items-center justify-center font-mono font-bold text-xs text-[#25242A] border border-[rgba(37,36,42,0.12)]">
-                {progress.currentLevel}
+              <div className="flex flex-col items-center shrink-0">
+                <img
+                  src={`/assets/badges/badge-cefr-${progress.currentLevel.toLowerCase()}.png`}
+                  alt={`CEFR ${progress.currentLevel}`}
+                  className="w-12 h-12 object-contain drop-shadow-xs"
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[10px] font-mono font-bold text-[#5B5CE2] dark:text-[#A5A6F6]">
+                  {progress.currentLevel}
+                </span>
               </div>
             </div>
 
