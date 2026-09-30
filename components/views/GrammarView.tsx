@@ -168,8 +168,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#B8A7FF] text-[#17152B] border-[#B8A7FF] shadow-sm shadow-[#B8A7FF]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(184,167,255,0.16)] hover:bg-[#292544]'
+                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] hover:bg-[#DDD4C7]'
               }`}
             >
               <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
@@ -204,7 +204,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
             <GlovaCard
               variant="bubble"
               elevation="bubble"
-              className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+              className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
@@ -259,9 +259,9 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     {currentTopic.rules.map((rule, idx) => (
                       <div
                         key={idx}
-                        className="p-4 rounded-[20px] bg-[#292544] border border-[rgba(184,167,255,0.16)] space-y-2 shadow-xs"
+                        className="p-4 rounded-[20px] bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] space-y-2 shadow-xs"
                       >
-                        <div className="font-mono text-xs font-bold text-[#B8A7FF] bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block break-word-safe">
+                        <div className="font-mono text-xs font-bold text-[#5B5CE2] bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block break-word-safe">
                           {rule.formula}
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">

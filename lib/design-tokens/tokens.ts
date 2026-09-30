@@ -33,43 +33,39 @@ export interface FeedbackSubmissionPayload {
   };
 }
 
-export const DIGITAL_GARDEN_PALETTE = {
+export const GLOVA_ORIGINAL_PALETTE = {
   environment: {
-    background: '#17152B',
-    surface: '#211E38',
-    deepSurface: '#292544',
-    border: 'rgba(184, 167, 255, 0.16)',
-    borderSubtle: 'rgba(255, 248, 242, 0.08)',
-  },
-  accents: {
-    lavender: '#B8A7FF',
-    pink: '#FF8FB8',
-    coral: '#FF8F82',
-    mint: '#8DE0BE',
-    lime: '#C8E96B',
-    sky: '#8DCBFF',
-    yellow: '#F6D978',
+    background: '#E6DED2',     // Primary Page Background (Warm, muted, earthy base)
+    surface: '#F0EAE1',        // Elevated Content Area / Cards
+    surfaceSubtle: '#EDE6DD',  // Inset / Recessed Card
+    track: '#DDD4C7',          // Sunken progress track
+    border: 'rgba(37, 36, 42, 0.12)', // Crisp warm ink border
+    borderStrong: 'rgba(37, 36, 42, 0.22)',
   },
   text: {
-    primary: '#FFF8F2',
-    muted: '#B8B3C7',
-    subtle: '#7E7991',
+    primary: '#25242A',        // Dark Ink Text (WCAG AAA)
+    secondary: '#6E6870',      // Secondary Text (WCAG AA)
+    muted: '#8D8790',          // Muted labels / captions
+    inverse: '#FAF7F2',        // Light text on dark/primary buttons
+  },
+  brand: {
+    primary: '#5B5CE2',        // Glova Primary Radiant Indigo
+    primaryHover: '#4A4BCB',
+    accent: '#E98278',         // Glova Accent (Terracotta / Coral Rose)
+    accentHover: '#D97167',
+    softPrimary: '#DCD9FF',    // Soft Lavender / Indigo Tint
+    softAccent: '#FBE8E6',     // Soft Terracotta Tint
+    gold: '#E5A83B',           // XP / Rank Gold
+    mint: '#58B993',           // Success / Mastery
   },
 };
 
-export const DIGITAL_GARDEN_VOCABULARY = {
-  seed: { stage: 1, nameEn: 'Seed', nameTh: 'เมล็ดพันธุ์', meaning: 'Beginning / First step', color: '#8DE0BE' },
-  sprout: { stage: 2, nameEn: 'Sprout', nameTh: 'ต้นกล้า', meaning: 'Early progress', color: '#C8E96B' },
-  plant: { stage: 3, nameEn: 'Plant', nameTh: 'ต้นพฤกษาเล็ก', meaning: 'Active learning', color: '#8DE0BE' },
-  tree: { stage: 4, nameEn: 'Tree', nameTh: 'พฤกษาใหญ่', meaning: 'Growth / Mastery', color: '#B8A7FF' },
-  flower: { stage: 5, nameEn: 'Flower', nameTh: 'บุปผาบาน', meaning: 'Achievement', color: '#FF8FB8' },
-  butterfly: { stage: 6, nameEn: 'Butterfly', nameTh: 'ผีเสื้อสัญจร', meaning: 'Discovery / Movement', color: '#8DCBFF' },
-  crystal: { stage: 7, nameEn: 'Crystal', nameTh: 'ผลึกมนตรา', meaning: 'XP / Reward', color: '#F6D978' },
-  star: { stage: 8, nameEn: 'Star / Sparkle', nameTh: 'ดวงดารา', meaning: 'Special moment', color: '#F6D978' },
-  moon: { stage: 9, nameEn: 'Moon', nameTh: 'จันทรานำทาง', meaning: 'Journey / Time', color: '#B8A7FF' },
-  stone: { stage: 10, nameEn: 'Stone / Terrain', nameTh: 'ศิลาหลักชัย', meaning: 'Milestone', color: '#B8B3C7' },
-  arena: { stage: 11, nameEn: 'Arena', nameTh: 'สมรภูมิประลอง', meaning: 'Competition / Ranked', color: '#FF8F82' },
-  trophy: { stage: 12, nameEn: 'Trophy / Badge', nameTh: 'ถ้วยเกียรติยศ', meaning: 'Prestige / Rank', color: '#F6D978' },
+export const GLOVA_COLLECTIBLE_ECOSYSTEM = {
+  badge: { type: 'rank_emblem', base: '#F0EAE1', border: 'rgba(37, 36, 42, 0.16)' },
+  trophy: { type: 'achievement_trophy', base: '#F0EAE1', highlight: '#E5A83B' },
+  streak: { type: 'daily_flame', accent: '#E98278' },
+  xpGem: { type: 'reward_crystal', accent: '#5B5CE2' },
+  frame: { type: 'profile_frame', base: '#F0EAE1', border: '#5B5CE2' },
 };
 
 export const GLOVA_PALETTE = {

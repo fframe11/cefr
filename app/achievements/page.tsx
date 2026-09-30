@@ -104,10 +104,10 @@ export default function AchievementsPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8 pb-16">
       {/* 1. HERO HEADER */}
-      <section className="rounded-3xl bg-[#211E38] border border-[rgba(184,167,255,0.16)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
+      <section className="rounded-3xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B8A7FF]/10 border border-[#B8A7FF]/20 text-[#B8A7FF] dark:text-[#8D8EFC] text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B5CE2]/10 border border-[#5B5CE2]/20 text-[#5B5CE2] dark:text-[#8D8EFC] text-xs font-bold">
               <Award className="w-3.5 h-3.5" />
               <span>{isEn ? 'Milestones & Honors' : 'เกียรติยศและเหรียญรางวัล'}</span>
             </div>
@@ -124,7 +124,7 @@ export default function AchievementsPage() {
           {/* Quick Stats Grid */}
           <div className="flex items-center gap-4 bg-background/80 dark:bg-muted/40 p-4 rounded-2xl border border-border/40 shrink-0">
             <div className="text-center px-3 border-r border-border/40">
-              <div className="text-2xl font-black text-[#B8A7FF] tabular-nums">
+              <div className="text-2xl font-black text-[#5B5CE2] tabular-nums">
                 {unlockedCount} / {totalCount}
               </div>
               <div className="text-[11px] font-semibold text-muted-foreground">
@@ -148,7 +148,7 @@ export default function AchievementsPage() {
             <span className="text-muted-foreground">
               {isEn ? 'Total Completion Progress' : 'ความคืบหน้าการสะสมทั้งหมด'}
             </span>
-            <span className="text-[#B8A7FF] tabular-nums font-black">
+            <span className="text-[#5B5CE2] tabular-nums font-black">
               {Math.round((unlockedCount / totalCount) * 100)}%
             </span>
           </div>
@@ -182,7 +182,7 @@ export default function AchievementsPage() {
             onClick={() => setActiveCategory(tab.id)}
             className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
               activeCategory === tab.id
-                ? 'bg-[#B8A7FF] text-[#17152B] shadow-xs font-bold'
+                ? 'bg-[#5B5CE2] text-white shadow-xs font-bold'
                 : 'bg-muted/40 hover:bg-muted text-muted-foreground hover:text-foreground'
             }`}
           >
@@ -245,7 +245,7 @@ export default function AchievementsPage() {
                           });
                         }
                       }}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#B8A7FF]/10 hover:bg-[#B8A7FF]/20 text-[#B8A7FF] dark:text-[#8D8EFC] transition-colors"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#5B5CE2]/10 hover:bg-[#5B5CE2]/20 text-[#5B5CE2] dark:text-[#8D8EFC] transition-colors"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>{isEn ? 'Celebration' : 'ดูฉลอง'}</span>
@@ -259,7 +259,7 @@ export default function AchievementsPage() {
       )}
 
       {/* 4. CALL TO ACTION TO LEARN / COMPETE */}
-      <section className="rounded-3xl bg-gradient-to-tr from-[#B8A7FF]/10 via-[#FF8F82]/5 to-transparent border border-[#B8A7FF]/20 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <section className="rounded-3xl bg-gradient-to-tr from-[#B8A7FF]/10 via-[#FF8F82]/5 to-transparent border border-[#5B5CE2]/20 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <h3 className="text-base font-black text-foreground">
             {isEn ? 'Ready for the Next Milestone?' : 'พร้อมพิชิตเหรียญรางวัลถัดไปหรือยัง?'}
@@ -274,7 +274,7 @@ export default function AchievementsPage() {
         <div className="flex items-center gap-2">
           <Link
             href="/compete"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#B8A7FF] hover:bg-[#4D4EC9] text-white shadow-xs transition-colors shrink-0"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#5B5CE2] hover:bg-[#4D4EC9] text-white shadow-xs transition-colors shrink-0"
           >
             <Swords className="w-3.5 h-3.5" />
             <span>{isEn ? 'Vocabulary Battle' : 'ประลองคำศัพท์'}</span>
@@ -292,7 +292,7 @@ export default function AchievementsPage() {
       {/* 5. CELEBRATION PREVIEW MODAL */}
       {selectedForPreview && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="w-full max-w-sm bg-[#211E38] rounded-3xl border border-white/10 shadow-2xl p-6 relative flex flex-col items-center">
+          <div className="w-full max-w-sm bg-[#F0EAE1] rounded-3xl border border-white/10 shadow-2xl p-6 relative flex flex-col items-center">
             <button
               type="button"
               onClick={() => setSelectedForPreview(null)}
@@ -319,7 +319,7 @@ export default function AchievementsPage() {
             <button
               type="button"
               onClick={() => setSelectedForPreview(null)}
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#F6D978] to-[#FF8F82] hover:opacity-95 text-[#17152B] font-black text-xs shadow-md transition-transform active:scale-98"
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#E98278] to-[#FF8F82] hover:opacity-95 text-white font-black text-xs shadow-md transition-transform active:scale-98"
             >
               {isEn ? 'Awesome! Keep Going' : 'ยอดเยี่ยม! เรียนรู้ต่อ'}
             </button>

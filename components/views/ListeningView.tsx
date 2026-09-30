@@ -166,8 +166,8 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#B8A7FF] text-[#17152B] border-[#B8A7FF] shadow-sm shadow-[#B8A7FF]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(184,167,255,0.16)] hover:bg-[#292544]'
+                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] hover:bg-[#DDD4C7]'
               }`}
             >
               <GlovaLevelBadge level={item.cefrLevel} size="sm" />
@@ -199,9 +199,9 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
           <GlovaCard
             variant="bubble"
             elevation="bubble"
-            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(184,167,255,0.16)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(37,36,42,0.12)]">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentExercise.cefrLevel} size="sm" />
                 <span className="font-bold text-sm sm:text-base text-foreground">
@@ -241,7 +241,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
             {/* Progressive Disclosure Transcript Toggle */}
             {currentExercise.audioScript && (
-              <div className="pt-3 border-t border-[rgba(184,167,255,0.16)]">
+              <div className="pt-3 border-t border-[rgba(37,36,42,0.12)]">
                 <button
                   type="button"
                   onClick={() => setShowTranscript(!showTranscript)}
@@ -261,7 +261,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 </button>
 
                 {showTranscript && (
-                  <div className="mt-3 p-4 rounded-[20px] bg-[#292544] border border-[rgba(184,167,255,0.16)] text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
+                  <div className="mt-3 p-4 rounded-[20px] bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
                     <p className="font-sans text-[11px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">
                       {isEn ? 'English Audio Transcript:' : 'บทพูดภาษาอังกฤษ:'}
                     </p>

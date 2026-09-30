@@ -467,7 +467,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               className="p-6 sm:p-8 space-y-6"
             >
               {/* Practice Header with Streak & Score */}
-              <div className="flex items-center justify-between pb-3 border-b border-[rgba(184,167,255,0.16)]">
+              <div className="flex items-center justify-between pb-3 border-b border-[rgba(37,36,42,0.12)]">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentPracticeQ.cefrLevel} size="sm" />
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -505,7 +505,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#211E38] hover:bg-[#292544] border-2 border-[rgba(184,167,255,0.16)] text-[#FFF8F2] shadow-[0_3px_0_rgba(184,167,255,0.12)] active:shadow-none active:translate-y-0.5';
+                    'bg-[#F0EAE1] hover:bg-[#DDD4C7] border-2 border-[rgba(37,36,42,0.12)] text-[#25242A] shadow-[0_3px_0_rgba(37,36,42,0.10)] active:shadow-none active:translate-y-0.5';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
@@ -519,7 +519,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     }
                   } else if (isSelected) {
                     optionStyle =
-                      'bg-[#B8A7FF]/15 border-2 border-[#B8A7FF] text-[#B8A7FF] font-bold ring-2 ring-[#B8A7FF]/20 shadow-[0_3px_0_rgba(184,167,255,0.25)]';
+                      'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3px_0_rgba(37,36,42,0.20)]';
                   }
 
                   return (
@@ -594,7 +594,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden"
           >
             {/* Card Header Context */}
-            <div className="flex items-center justify-between gap-3 pb-4 border-b border-[rgba(184,167,255,0.16)]">
+            <div className="flex items-center justify-between gap-3 pb-4 border-b border-[rgba(37,36,42,0.12)]">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentWord.cefrLevel} size="sm" />
                 <GlovaBadge variant="secondary" size="sm" className="capitalize rounded-full px-2.5">
@@ -607,7 +607,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#292544] px-3 py-1 rounded-full border border-[rgba(184,167,255,0.16)]">
+              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#DDD4C7] px-3 py-1 rounded-full border border-[rgba(37,36,42,0.12)]">
                 {isEn
                   ? `Word ${currentIndex + 1} of ${filteredWords.length}`
                   : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
@@ -617,7 +617,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             {/* Word Central Area - Word as the Hero */}
             <div className="py-6 text-center space-y-4">
               <div className="flex items-center justify-center gap-4 flex-wrap">
-                <h2 className="text-4xl sm:text-5xl font-black text-[#FFF8F2] tracking-tight font-sans">
+                <h2 className="text-4xl sm:text-5xl font-black text-[#25242A] tracking-tight font-sans">
                   {currentWord.word}
                 </h2>
                 <button
@@ -628,14 +628,14 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       ? `Listen to pronunciation for ${currentWord.word}`
                       : `ฟังการออกเสียงคำว่า ${currentWord.word}`
                   }
-                  className="touch-target w-12 h-12 rounded-full bg-[#B8A7FF]/15 hover:bg-[#B8A7FF]/25 text-[#B8A7FF] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs shrink-0"
+                  className="touch-target w-12 h-12 rounded-full bg-[#5B5CE2]/15 hover:bg-[#5B5CE2]/25 text-[#5B5CE2] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs shrink-0"
                 >
                   <Volume2 className="w-5 h-5" aria-hidden="true" />
                 </button>
               </div>
 
               {currentWord.ipa && (
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#292544] text-xs font-mono font-medium text-muted-foreground border border-[rgba(184,167,255,0.16)]">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#DDD4C7] text-xs font-mono font-medium text-muted-foreground border border-[rgba(37,36,42,0.12)]">
                   {currentWord.ipa}
                 </div>
               )}
@@ -646,7 +646,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsRevealed(true)}
-                    className="touch-target px-6 py-3 rounded-full bg-[#B8A7FF]/15 hover:bg-[#B8A7FF]/25 text-xs sm:text-sm font-bold text-[#B8A7FF] transition-all border border-[rgba(184,167,255,0.25)] inline-flex items-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
+                    className="touch-target px-6 py-3 rounded-full bg-[#5B5CE2]/15 hover:bg-[#5B5CE2]/25 text-xs sm:text-sm font-bold text-[#5B5CE2] transition-all border border-[rgba(37,36,42,0.16)] inline-flex items-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                     <span>
@@ -663,8 +663,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 </div>
               ) : (
                 <div className="pt-4 space-y-4 animate-in fade-in duration-200">
-                  <div className="p-5 rounded-[22px] bg-[#292544] border border-[rgba(184,167,255,0.16)] space-y-1.5 text-center shadow-xs">
-                    <h3 className="text-2xl sm:text-3xl font-black text-[#B8A7FF]">
+                  <div className="p-5 rounded-[22px] bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] space-y-1.5 text-center shadow-xs">
+                    <h3 className="text-2xl sm:text-3xl font-black text-[#5B5CE2]">
                       {currentWord.meaningTh}
                     </h3>
                     {currentWord.meaningEn && (
@@ -690,7 +690,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
                   {/* Example in Context */}
                   {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
-                    <div className="p-5 rounded-[22px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] text-left space-y-1.5 shadow-xs">
+                    <div className="p-5 rounded-[22px] bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] text-left space-y-1.5 shadow-xs">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">
                         <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>
@@ -713,7 +713,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       {currentWord.collocations.map((c, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 rounded-full bg-[#292544] text-xs font-mono font-medium text-foreground border border-[rgba(184,167,255,0.16)] shadow-xs"
+                          className="px-3 py-1 rounded-full bg-[#DDD4C7] text-xs font-mono font-medium text-foreground border border-[rgba(37,36,42,0.12)] shadow-xs"
                         >
                           {c}
                         </span>
@@ -740,7 +740,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             </div>
 
             {/* Bottom Actions: Mastery & Navigation */}
-            <div className="pt-4 border-t border-[rgba(184,167,255,0.16)] flex items-center justify-between gap-3 flex-wrap">
+            <div className="pt-4 border-t border-[rgba(37,36,42,0.12)] flex items-center justify-between gap-3 flex-wrap">
               <GlovaButton
                 variant={isMastered ? 'primary' : 'outline'}
                 size="sm"

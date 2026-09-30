@@ -60,8 +60,8 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? 'bg-[#17152B]/95 backdrop-blur-md border-b border-[rgba(184,167,255,0.16)] shadow-xs text-[#FFF8F2]'
-          : 'bg-[#17152B]/80 backdrop-blur-xs border-b border-transparent text-[#FFF8F2]'
+          ? 'bg-[#E6DED2]/95 backdrop-blur-md border-b border-[rgba(37,36,42,0.12)] shadow-xs text-[#25242A]'
+          : 'bg-[#E6DED2]/80 backdrop-blur-xs border-b border-transparent text-[#25242A]'
       }`}
     >
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
@@ -74,7 +74,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           }}
-          className="flex items-center gap-2.5 shrink-0 group rounded-xl p-1 -m-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]"
+          className="flex items-center gap-2.5 shrink-0 group rounded-xl p-1 -m-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
           aria-label="Glova - Product Brand Showcase"
         >
           <div className="flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
@@ -82,15 +82,15 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="font-black text-xl tracking-tight bg-gradient-to-r from-[#B8A7FF] via-[#FF8FB8] to-[#F6D978] bg-clip-text text-transparent group-hover:brightness-110 transition-all font-display">
+              <span className="font-black text-xl tracking-tight text-[#25242A] group-hover:text-[#5B5CE2] transition-colors font-display">
                 Glova
               </span>
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#B8A7FF]/15 text-[#B8A7FF] border border-[#B8A7FF]/30">
-                Digital Garden
+              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#5B5CE2]/10 text-[#5B5CE2] border border-[#5B5CE2]/20">
+                Learning Studio
               </span>
             </div>
-            <span className="text-[10px] text-[#B8B3C7] font-semibold -mt-0.5 hidden md:block">
-              {isEn ? 'Your English Grows With You' : 'สวนการเรียนรู้ภาษาอังกฤษระดับมหาวิทยาลัย'}
+            <span className="text-[10px] text-[#6E6870] font-semibold -mt-0.5 hidden md:block">
+              {isEn ? 'Your English Grows With You' : 'โลกแห่งการเรียนรู้ภาษาอังกฤษระดับมหาวิทยาลัย'}
             </span>
           </div>
         </Link>
@@ -102,7 +102,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               key={item.id}
               type="button"
               onClick={() => scrollToSection(item.id)}
-              className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] transition-colors cursor-pointer select-none"
+              className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6E6870] hover:text-[#25242A] hover:bg-[#DDD4C7]/50 transition-colors cursor-pointer select-none"
             >
               {isEn ? item.labelEn : item.labelTh}
             </button>
@@ -116,10 +116,10 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           <button
             type="button"
             onClick={onToggleTheme}
-            className="touch-target p-2 text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]"
+            className="touch-target p-2 text-[#6E6870] hover:text-[#25242A] hover:bg-[#DDD4C7]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
             aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
           >
-            {isDark ? <Sun className="w-4 h-4 text-[#F6D978]" /> : <Moon className="w-4 h-4 text-[#B8A7FF]" />}
+            {isDark ? <Sun className="w-4 h-4 text-[#E98278]" /> : <Moon className="w-4 h-4 text-[#5B5CE2]" />}
           </button>
 
           {/* User Sign In / Dashboard Shortcut */}
@@ -129,16 +129,16 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               size="sm"
               onClick={() => router.push('/')}
               className="hidden sm:inline-flex text-xs font-bold"
-              leftIcon={<Compass className="w-3.5 h-3.5 text-[#B8A7FF]" />}
+              leftIcon={<Compass className="w-3.5 h-3.5 text-[#5B5CE2]" />}
             >
-              {isEn ? 'Open Garden' : 'เข้าสู่สวนการเรียน'}
+              {isEn ? 'Dashboard' : 'สตูดิโอการเรียน'}
             </TactileButton>
           ) : (
             <TactileButton
               variant="ghost"
               size="sm"
               onClick={() => (onOpenAuthModal ? onOpenAuthModal() : router.push('/'))}
-              className="hidden sm:inline-flex text-xs font-bold hover:bg-[#211E38]"
+              className="hidden sm:inline-flex text-xs font-bold hover:bg-[#DDD4C7]/50"
               leftIcon={<User className="w-3.5 h-3.5" />}
             >
               {isEn ? 'Sign In' : 'เข้าสู่ระบบ'}
@@ -156,7 +156,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
                 router.push('/assessment');
               }
             }}
-            className="text-xs font-bold px-4 py-2 font-display tracking-wide shadow-sm shadow-[#B8A7FF]/25"
+            className="text-xs font-bold px-4 py-2 font-display tracking-wide shadow-xs shadow-[#5B5CE2]/25"
             rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
           >
             {isEn ? 'English Check' : 'วัดระดับ CEFR'}
@@ -166,7 +166,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden touch-target p-2 text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]"
+            className="lg:hidden touch-target p-2 text-[#6E6870] hover:text-[#25242A] hover:bg-[#DDD4C7]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
             aria-label={mobileMenuOpen ? 'Close brand menu' : 'Open brand menu'}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -176,28 +176,28 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
 
       {/* Mobile Off-Canvas / Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[rgba(184,167,255,0.16)] bg-[#17152B] px-4 py-5 space-y-4 shadow-xl animate-in slide-in-from-top-2 duration-200 text-[#FFF8F2]">
+        <div className="lg:hidden border-t border-[rgba(37,36,42,0.12)] bg-[#E6DED2] px-4 py-5 space-y-4 shadow-lg animate-in slide-in-from-top-2 duration-200 text-[#25242A]">
           <div className="space-y-1">
             {navLinks.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => scrollToSection(item.id)}
-                className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#FFF8F2] hover:bg-[#211E38] transition-colors"
+                className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#25242A] hover:bg-[#DDD4C7]/50 transition-colors"
               >
                 {isEn ? item.labelEn : item.labelTh}
               </button>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-[rgba(184,167,255,0.16)] flex flex-col gap-2.5">
+          <div className="pt-3 border-t border-[rgba(37,36,42,0.12)] flex flex-col gap-2.5">
             {isAuthenticated ? (
               <TactileButton
                 variant="surface"
                 size="md"
                 fullWidth
                 onClick={() => router.push('/')}
-                leftIcon={<Compass className="w-4 h-4 text-[#B8A7FF]" />}
+                leftIcon={<Compass className="w-4 h-4 text-[#5B5CE2]" />}
               >
                 {isEn ? 'Go to Learning Dashboard' : 'ไปยังหน้าเรียนรู้'}
               </TactileButton>

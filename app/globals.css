@@ -11,54 +11,54 @@
     --font-tech: 'Rajdhani', 'Orbitron', monospace;
     --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Digital Garden Night Master Theme */
-    --background: 245 35% 13%;    /* #17152B Night Garden Background */
-    --foreground: 30 100% 97%;     /* #FFF8F2 Primary Botanical Glow */
+    /* Glova Original Brand World Foundation */
+    --background: 36 25% 86%;     /* #E6DED2 Warm Earthy Page Background */
+    --foreground: 250 8% 15%;     /* #25242A Dark Ink Text (WCAG AAA) */
 
-    --card: 246 30% 17%;          /* #211E38 Garden Surface */
-    --card-foreground: 30 100% 97%;
+    --card: 36 33% 91%;           /* #F0EAE1 Elevated Surface */
+    --card-foreground: 250 8% 15%;
 
-    --primary: 252 100% 83%;      /* #B8A7FF Digital Garden Lavender */
-    --primary-foreground: 245 35% 13%;
+    --primary: 240 71% 62%;       /* #5B5CE2 Glova Radiant Indigo */
+    --primary-foreground: 36 33% 98%;
 
-    --secondary: 248 29% 21%;     /* #292544 Deep Garden Surface */
-    --secondary-foreground: 30 100% 97%;
+    --secondary: 36 20% 82%;      /* #DDD4C7 Sunken Inset / Recessed Surface */
+    --secondary-foreground: 250 8% 15%;
 
-    --muted: 248 29% 21%;         /* #292544 */
-    --muted-foreground: 255 13% 75%; /* #B8B3C7 Muted Starlight */
+    --muted: 36 20% 82%;          /* #DDD4C7 */
+    --muted-foreground: 285 4% 42%; /* #6E6870 Secondary Text (WCAG AA) */
 
-    --accent: 252 100% 83%;       /* #B8A7FF */
-    --accent-foreground: 245 35% 13%;
+    --accent: 5 74% 69%;          /* #E98278 Glova Terracotta / Coral Rose Accent */
+    --accent-foreground: 36 33% 98%;
 
-    --border: 248 25% 26%;        /* rgba(184, 167, 255, 0.16) */
-    --input: 248 25% 26%;
-    --ring: 252 100% 83%;
+    --border: 250 8% 78%;         /* rgba(37, 36, 42, 0.12) */
+    --input: 250 8% 78%;
+    --ring: 240 71% 62%;
 
     --radius: 0.875rem;
   }
 
   .dark {
-    --background: 245 35% 13%;    /* #17152B */
-    --foreground: 30 100% 97%;     /* #FFF8F2 */
+    --background: 36 25% 86%;     /* #E6DED2 Consistent Master Palette */
+    --foreground: 250 8% 15%;     /* #25242A */
 
-    --card: 246 30% 17%;          /* #211E38 */
-    --card-foreground: 30 100% 97%;
+    --card: 36 33% 91%;           /* #F0EAE1 */
+    --card-foreground: 250 8% 15%;
 
-    --primary: 252 100% 83%;      /* #B8A7FF */
-    --primary-foreground: 245 35% 13%;
+    --primary: 240 71% 62%;       /* #5B5CE2 */
+    --primary-foreground: 36 33% 98%;
 
-    --secondary: 248 29% 21%;     /* #292544 */
-    --secondary-foreground: 30 100% 97%;
+    --secondary: 36 20% 82%;      /* #DDD4C7 */
+    --secondary-foreground: 250 8% 15%;
 
-    --muted: 248 29% 21%;
-    --muted-foreground: 255 13% 75%;
+    --muted: 36 20% 82%;
+    --muted-foreground: 285 4% 42%;
 
-    --accent: 252 100% 83%;
-    --accent-foreground: 245 35% 13%;
+    --accent: 5 74% 69%;          /* #E98278 */
+    --accent-foreground: 36 33% 98%;
 
-    --border: 248 25% 26%;
-    --input: 248 25% 26%;
-    --ring: 252 100% 83%;
+    --border: 250 8% 78%;
+    --input: 250 8% 78%;
+    --ring: 240 71% 62%;
   }
 
   * {
