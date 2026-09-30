@@ -182,10 +182,10 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
       </div>
 
       {/* 2. Platform Scientific Disclaimer */}
-      <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] flex items-start gap-3 shadow-inner">
-        <Info className="w-5 h-5 text-[#E5A93C] shrink-0 mt-0.5" />
-        <div className="text-xs text-[#94A3B8] leading-relaxed space-y-1">
-          <p className="font-semibold text-[#EDEBE8]">
+      <div className="p-4 rounded-xl bg-amber-50/70 dark:bg-[#141A22] border border-amber-200/80 dark:border-white/10 flex items-start gap-3 shadow-xs">
+        <Info className="w-5 h-5 text-amber-600 dark:text-[#E5A93C] shrink-0 mt-0.5" />
+        <div className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed space-y-1">
+          <p className="font-semibold text-slate-900 dark:text-[#EDEBE8]">
             {isEn
               ? 'Multi-Tier Lexical Engine (Dual-Classification Architecture)'
               : 'สถาปัตยกรรมคำศัพท์ 2 ระดับ (Dual-Classification System)'}
@@ -199,11 +199,11 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
       </div>
 
       {/* 3. Instrument Filter & Search Bar */}
-      <div className="p-4 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-inner space-y-3.5">
+      <div className="p-4 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-white/10 shadow-xs space-y-3.5">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Search Box */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-slate-400 dark:text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={search}
@@ -213,7 +213,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                   ? 'Search across 121,253 words, Thai meanings, collocations...'
                   : 'ค้นหาคำศัพท์จาก 121,253 คำ ความหมายภาษาไทย หรือวลีสัมพันธ์...'
               }
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs text-[#EDEBE8] placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#5B5CE2]/40"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] placeholder:text-slate-400 dark:placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
             />
           </div>
 
@@ -227,7 +227,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 setPage(1);
               }}
               aria-label={isEn ? 'Filter by part of speech' : 'กรองชนิดคำ'}
-              className="px-3 py-2 rounded-xl bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-[#5B5CE2]/40"
+              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
             >
               <option value="ALL">{isEn ? 'All Parts of Speech' : 'ทุกชนิดคำ'}</option>
               <option value="noun">{isEn ? 'Noun' : 'คำนาม'}</option>
@@ -244,7 +244,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 setPage(1);
               }}
               aria-label={isEn ? 'Filter by tier' : 'กรองตามระดับคลัง'}
-              className="px-3 py-2 rounded-xl bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-[#5B5CE2]/40"
+              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
             >
               <option value="ALL">{isEn ? 'All Tiers (121k)' : 'ทุกระดับ (121k)'}</option>
               <option value="TIER_1_VERIFIED">{isEn ? 'Tier 1: Verified (3.8k)' : 'ระดับ 1: ผ่านการตรวจสอบ (3.8k)'}</option>
@@ -255,7 +255,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
         {/* CEFR Level Buttons */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
-          <span className="text-xs text-[#94A3B8] font-bold mr-1 shrink-0 flex items-center gap-1">
+          <span className="text-xs text-slate-600 dark:text-[#94A3B8] font-bold mr-1 shrink-0 flex items-center gap-1">
             <Filter className="w-3 h-3" />
             <span>{isEn ? 'Profile Level:' : 'ระดับ CEFR:'}</span>
           </span>
@@ -269,8 +269,8 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               }}
               className={`touch-target px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 level === lvl
-                  ? 'bg-[#5B5CE2] text-white shadow-[0_2px_0_0_#38399E] border-t border-white/20'
-                  : 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318]'
+                  ? 'bg-indigo-600 dark:bg-[#5B5CE2] text-white shadow-[0_2px_0_0_#3730A3] dark:shadow-[0_2px_0_0_#38399E] border-t border-white/20'
+                  : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All Levels' : 'ทุกระดับ') : `CEFR ${lvl}`}
@@ -280,7 +280,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
       </div>
 
       {/* 4. Results Header & Count */}
-      <div className="flex items-center justify-between text-xs text-[#94A3B8] px-1">
+      <div className="flex items-center justify-between text-xs text-slate-600 dark:text-[#94A3B8] px-1">
         <span>
           {isEn
             ? `Displaying ${items.length} of ${totalCount.toLocaleString()} candidate entries (Page ${page} of ${totalPages})`
@@ -289,7 +289,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
         <button
           type="button"
           onClick={() => fetchUniverse()}
-          className="flex items-center gap-1 text-[#5B5CE2] hover:text-[#7C7DF4] font-medium"
+          className="flex items-center gap-1 text-indigo-600 dark:text-[#5B5CE2] hover:text-indigo-700 dark:hover:text-[#7C7DF4] font-medium"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
           <span>{isEn ? 'Refresh' : 'รีเฟรช'}</span>
@@ -302,25 +302,25 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
           {Array.from({ length: 12 }).map((_, i) => (
             <div
               key={i}
-              className="h-44 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.06)] animate-pulse p-4 space-y-3"
+              className="h-44 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 animate-pulse p-4 space-y-3"
             >
               <div className="flex items-center justify-between">
-                <div className="h-5 w-16 bg-[#1C2430] rounded-md" />
-                <div className="h-5 w-20 bg-[#1C2430] rounded-md" />
+                <div className="h-5 w-16 bg-slate-200 dark:bg-[#1C2430] rounded-md" />
+                <div className="h-5 w-20 bg-slate-200 dark:bg-[#1C2430] rounded-md" />
               </div>
-              <div className="h-6 w-32 bg-[#1C2430] rounded-md" />
-              <div className="h-4 w-48 bg-[#1C2430] rounded-md" />
-              <div className="h-4 w-full bg-[#1C2430] rounded-md" />
+              <div className="h-6 w-32 bg-slate-200 dark:bg-[#1C2430] rounded-md" />
+              <div className="h-4 w-48 bg-slate-200 dark:bg-[#1C2430] rounded-md" />
+              <div className="h-4 w-full bg-slate-200 dark:bg-[#1C2430] rounded-md" />
             </div>
           ))}
         </div>
       ) : items.length === 0 ? (
-        <div className="p-12 text-center rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-3">
-          <BookOpen className="w-10 h-10 text-[#64748B] mx-auto" />
-          <p className="text-base font-bold text-[#EDEBE8]">
+        <div className="p-12 text-center rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 space-y-3">
+          <BookOpen className="w-10 h-10 text-slate-400 dark:text-[#64748B] mx-auto" />
+          <p className="text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
             {isEn ? 'No candidates match your filters' : 'ไม่พบคำศัพท์ที่ตรงกับเงื่อนไขการค้นหา'}
           </p>
-          <p className="text-xs text-[#94A3B8]">
+          <p className="text-xs text-slate-600 dark:text-[#94A3B8]">
             {isEn
               ? 'Try clearing the search query or selecting "All Levels".'
               : 'ลองล้างคำค้นหาหรือเลือกดูทุกระดับ CEFR'}
@@ -346,13 +346,13 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               <div
                 key={candidate.id}
                 onClick={() => setSelectedCandidate(candidate)}
-                className="group relative p-4 rounded-2xl bg-[#141A22] hover:bg-[#18202A] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.16)] shadow-[0_2px_0_0_#0D1318] transition-all cursor-pointer flex flex-col justify-between space-y-3"
+                className="group relative p-4 rounded-2xl bg-white hover:bg-indigo-50/40 dark:bg-[#141A22] dark:hover:bg-[#18202A] border border-slate-200/90 hover:border-indigo-300 dark:border-white/10 dark:hover:border-white/20 shadow-[0_2px_0_0_#E2E8F0] dark:shadow-[0_2px_0_0_#0D1318] transition-all cursor-pointer flex flex-col justify-between space-y-3"
               >
                 {/* Card Top: Badges & Tier */}
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <GlovaLevelBadge level={candidate.cefr_level} size="sm" />
-                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-md bg-[#1C2430] text-[#94A3B8] border border-[rgba(255,255,255,0.06)]">
+                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8] border border-slate-200 dark:border-white/10">
                       {candidate.part_of_speech}
                     </span>
                   </div>
@@ -360,8 +360,8 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                   <span
                     className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border ${
                       isTier1
-                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                        : 'bg-[#5B5CE2]/15 text-[#A5A6F6] border-[#5B5CE2]/25'
+                        ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20'
+                        : 'bg-indigo-500/10 text-indigo-700 dark:text-[#A5A6F6] border-indigo-500/25'
                     }`}
                   >
                     {isTier1 ? 'TIER 1 • VERIFIED' : 'TIER 2 • CANDIDATE'}
@@ -371,20 +371,20 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 {/* Word & Pronunciation */}
                 <div className="space-y-1">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-xl font-black font-sans text-[#EDEBE8] tracking-tight group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-black font-sans text-slate-900 dark:text-[#EDEBE8] tracking-tight group-hover:text-indigo-600 dark:group-hover:text-white transition-colors">
                       {candidate.word}
                     </h3>
                     <button
                       type="button"
                       onClick={(e) => handleSpeak(candidate.word, e)}
                       aria-label={`Pronounce ${candidate.word}`}
-                      className="w-8 h-8 rounded-xl bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] flex items-center justify-center transition-all shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none border border-[rgba(255,255,255,0.08)] shrink-0"
+                      className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-100 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] flex items-center justify-center transition-all shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none border border-slate-200 dark:border-white/10 shrink-0"
                     >
-                      <Volume2 className="w-4 h-4 text-[#5B5CE2]" />
+                      <Volume2 className="w-4 h-4 text-indigo-600 dark:text-[#5B5CE2]" />
                     </button>
                   </div>
                   {candidate.ipa && (
-                    <div className="text-[11px] font-mono text-[#64748B]">
+                    <div className="text-[11px] font-mono text-slate-500 dark:text-[#64748B]">
                       {candidate.ipa}
                     </div>
                   )}
@@ -392,21 +392,21 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
                 {/* Bilingual Meanings */}
                 <div className="space-y-1 pt-1">
-                  <p className="text-sm font-bold text-[#5B5CE2]">
+                  <p className="text-sm font-bold text-indigo-600 dark:text-[#5B5CE2]">
                     {candidate.meaning_th}
                   </p>
-                  <p className="text-xs text-[#94A3B8] line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-[#94A3B8] line-clamp-2 leading-relaxed">
                     {candidate.meaning_en}
                   </p>
                 </div>
 
                 {/* Example or Collocations Preview */}
                 {candidate.collocations && candidate.collocations.length > 0 && (
-                  <div className="pt-2 border-t border-[rgba(255,255,255,0.06)] flex items-center gap-1.5 overflow-hidden">
-                    <span className="text-[10px] text-[#64748B] font-mono shrink-0">Colloc:</span>
-                    <div className="flex items-center gap-1 overflow-x-hidden text-[10px] text-[#94A3B8] font-mono">
+                  <div className="pt-2 border-t border-slate-100 dark:border-white/10 flex items-center gap-1.5 overflow-hidden">
+                    <span className="text-[10px] text-slate-500 dark:text-[#64748B] font-mono shrink-0">Colloc:</span>
+                    <div className="flex items-center gap-1 overflow-x-hidden text-[10px] text-slate-600 dark:text-[#94A3B8] font-mono">
                       {candidate.collocations.slice(0, 2).map((c, idx) => (
-                        <span key={idx} className="px-1.5 py-0.5 rounded bg-[#0F141C] border border-[rgba(255,255,255,0.04)] truncate">
+                        <span key={idx} className="px-1.5 py-0.5 rounded bg-slate-50 dark:bg-[#0F141C] border border-slate-200/80 dark:border-white/10 truncate">
                           {c}
                         </span>
                       ))}
@@ -421,13 +421,13 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
       {/* 6. Pagination Controls: Tactical Studio Control Bar */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between p-3 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-inner flex-wrap gap-3">
+        <div className="flex items-center justify-between p-3 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-white/10 shadow-xs flex-wrap gap-3">
           <div className="flex items-center gap-1">
             <button
               type="button"
               disabled={page <= 1 || loading}
               onClick={() => setPage(1)}
-              className="p-2 rounded-xl bg-[#1C2430] hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318]"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]"
               aria-label="First page"
             >
               <ChevronsLeft className="w-4 h-4" />
@@ -436,14 +436,14 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               type="button"
               disabled={page <= 1 || loading}
               onClick={() => setPage((p) => Math.max(1, p - 1))}
-              className="p-2 rounded-xl bg-[#1C2430] hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318]"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]"
               aria-label="Previous page"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="text-xs font-mono font-semibold text-[#EDEBE8]">
+          <div className="text-xs font-mono font-semibold text-slate-900 dark:text-[#EDEBE8]">
             {isEn
               ? `Page ${page.toLocaleString()} of ${totalPages.toLocaleString()}`
               : `หน้า ${page.toLocaleString()} / ${totalPages.toLocaleString()}`}
@@ -454,7 +454,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               type="button"
               disabled={page >= totalPages || loading}
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-              className="p-2 rounded-xl bg-[#1C2430] hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318]"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]"
               aria-label="Next page"
             >
               <ChevronRight className="w-4 h-4" />
@@ -463,7 +463,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               type="button"
               disabled={page >= totalPages || loading}
               onClick={() => setPage(totalPages)}
-              className="p-2 rounded-xl bg-[#1C2430] hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318]"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] disabled:opacity-30 disabled:pointer-events-none text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]"
               aria-label="Last page"
             >
               <ChevronsRight className="w-4 h-4" />
@@ -475,25 +475,25 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
       {/* 7. Detailed Candidate Inspection Drawer / Modal */}
       {selectedCandidate && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
           onClick={() => setSelectedCandidate(null)}
         >
           <div
-            className="w-full max-w-xl rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.12)] p-6 sm:p-7 space-y-5 shadow-2xl animate-in zoom-in-95 duration-150"
+            className="w-full max-w-xl rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-white/15 p-6 sm:p-7 space-y-5 shadow-2xl animate-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-[rgba(255,255,255,0.08)]">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={selectedCandidate.cefr_level} size="md" />
-                <span className="text-xs font-mono uppercase px-2.5 py-1 rounded-md bg-[#1C2430] text-[#94A3B8] border border-[rgba(255,255,255,0.08)]">
+                <span className="text-xs font-mono uppercase px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8] border border-slate-200 dark:border-white/10">
                   {selectedCandidate.part_of_speech}
                 </span>
                 <span
                   className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md border ${
                     selectedCandidate.tier === 'TIER_1_VERIFIED'
-                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                      : 'bg-[#5B5CE2]/15 text-[#A5A6F6] border-[#5B5CE2]/25'
+                      ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20'
+                      : 'bg-indigo-500/10 text-indigo-700 dark:text-[#A5A6F6] border-indigo-500/25'
                   }`}
                 >
                   {selectedCandidate.tier === 'TIER_1_VERIFIED'
@@ -505,7 +505,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               <button
                 type="button"
                 onClick={() => setSelectedCandidate(null)}
-                className="w-8 h-8 rounded-xl bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] flex items-center justify-center border border-[rgba(255,255,255,0.08)]"
+                className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-700 dark:text-[#EDEBE8] flex items-center justify-center border border-slate-200 dark:border-white/10"
               >
                 ✕
               </button>
@@ -514,13 +514,13 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             {/* Word Central Focus */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <h2 className="text-3xl sm:text-4xl font-black text-[#EDEBE8]">
+                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-[#EDEBE8]">
                   {selectedCandidate.word}
                 </h2>
                 <button
                   type="button"
                   onClick={() => handleSpeak(selectedCandidate.word)}
-                  className="px-4 py-2 rounded-xl bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#38399E] border-t border-white/20"
+                  className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 dark:bg-[#5B5CE2] dark:hover:bg-[#4E4FD6] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#3730A3] dark:shadow-[0_2.5px_0_0_#38399E] border-t border-white/20"
                 >
                   <Volume2 className="w-4 h-4" />
                   <span>{isEn ? 'Listen' : 'ฟังเสียง'}</span>
@@ -528,39 +528,39 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               </div>
 
               {selectedCandidate.ipa && (
-                <div className="text-sm font-mono text-[#64748B]">
+                <div className="text-sm font-mono text-slate-500 dark:text-[#64748B]">
                   {selectedCandidate.ipa}
                 </div>
               )}
             </div>
 
             {/* Meanings */}
-            <div className="p-4 rounded-xl bg-[#0F141C] border border-[rgba(255,255,255,0.08)] space-y-2">
-              <div className="text-xs uppercase font-mono font-bold text-[#5B5CE2]">
+            <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-[#0F141C] border border-indigo-200/80 dark:border-white/10 space-y-2">
+              <div className="text-xs uppercase font-mono font-bold text-indigo-700 dark:text-[#5B5CE2]">
                 {isEn ? 'Thai Meaning' : 'ความหมายภาษาไทย'}
               </div>
-              <p className="text-2xl font-bold text-[#EDEBE8]">
+              <p className="text-2xl font-bold text-slate-900 dark:text-[#EDEBE8]">
                 {selectedCandidate.meaning_th}
               </p>
-              <div className="pt-2 text-xs uppercase font-mono font-bold text-[#94A3B8]">
+              <div className="pt-2 text-xs uppercase font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
                 {isEn ? 'English Definition' : 'คำนิยามภาษาอังกฤษ'}
               </div>
-              <p className="text-sm text-[#94A3B8] leading-relaxed">
+              <p className="text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed">
                 {selectedCandidate.meaning_en}
               </p>
             </div>
 
             {/* Example Sentences */}
             {(selectedCandidate.example_sentence_en || selectedCandidate.example_sentence_th) && (
-              <div className="p-4 rounded-xl bg-[#1C2430] border border-[rgba(255,255,255,0.08)] space-y-1.5">
-                <span className="text-xs font-mono font-bold text-[#10B981]">
+              <div className="p-4 rounded-xl bg-emerald-50/60 dark:bg-[#1C2430] border border-emerald-200/80 dark:border-white/10 space-y-1.5">
+                <span className="text-xs font-mono font-bold text-emerald-700 dark:text-[#10B981]">
                   {isEn ? 'Context Example:' : 'ตัวอย่างบริบทการใช้งาน:'}
                 </span>
-                <p className="text-sm font-semibold text-[#EDEBE8]">
+                <p className="text-sm font-semibold text-slate-900 dark:text-[#EDEBE8]">
                   {selectedCandidate.example_sentence_en}
                 </p>
                 {selectedCandidate.example_sentence_th && (
-                  <p className="text-xs text-[#94A3B8]">
+                  <p className="text-xs text-slate-600 dark:text-[#94A3B8]">
                     {selectedCandidate.example_sentence_th}
                   </p>
                 )}
@@ -570,14 +570,14 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             {/* Collocations */}
             {selectedCandidate.collocations && selectedCandidate.collocations.length > 0 && (
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#94A3B8]">
+                <span className="text-xs font-mono font-bold text-slate-600 dark:text-[#94A3B8]">
                   {isEn ? 'Frequent Collocations:' : 'กลุ่มคำสัมพันธ์ (Collocations):'}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedCandidate.collocations.map((c, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 rounded-lg bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs font-mono text-[#EDEBE8]"
+                      className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-800 dark:text-[#EDEBE8]"
                     >
                       {c}
                     </span>
@@ -587,7 +587,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             )}
 
             {/* Source & Metadata Attribution */}
-            <div className="pt-3 border-t border-[rgba(255,255,255,0.08)] flex items-center justify-between text-[11px] font-mono text-[#64748B]">
+            <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-[#64748B]">
               <span>Source: {selectedCandidate.source}</span>
               <span>Domain: {selectedCandidate.domain}</span>
             </div>

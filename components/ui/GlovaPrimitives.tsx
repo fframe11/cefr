@@ -49,16 +49,16 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       xl: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_6px_0_0_#38399E] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
     },
     secondary: {
-      sm: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#0D1318] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-bold',
-      md: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-bold',
-      lg: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#0D1318] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-bold',
-      xl: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#0D1318] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-bold',
+      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
     },
     surface: {
-      sm: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#0D1318] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      md: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      lg: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#0D1318] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      xl: 'bg-[#1C2430] hover:bg-[#253040] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#0D1318] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      sm: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      md: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      lg: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      xl: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
     },
     accent: {
       sm: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_2.5px_0_0_#B8574E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-bold',
@@ -79,10 +79,10 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       xl: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_6px_0_0_#9E2024] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-bold',
     },
     ghost: {
-      sm: 'bg-transparent hover:bg-[#1C2430] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-      md: 'bg-transparent hover:bg-[#1C2430] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-      lg: 'bg-transparent hover:bg-[#1C2430] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-      xl: 'bg-transparent hover:bg-[#1C2430] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      sm: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      md: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      lg: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      xl: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
     },
   };
 
@@ -153,7 +153,7 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
   return (
     <div
       role="tablist"
-      className={`inline-flex items-center p-1.5 rounded-2xl bg-[#141A22] dark:bg-[#131920] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] max-w-full overflow-x-auto no-scrollbar ${className}`}
+      className={`inline-flex items-center p-1.5 rounded-2xl bg-slate-100 dark:bg-[#131920] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] max-w-full overflow-x-auto no-scrollbar ${className}`}
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -165,15 +165,15 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
             onClick={() => onChange(tab.id)}
             className={`relative flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold tracking-tight transition-colors z-10 shrink-0 select-none ${
               isActive
-                ? 'text-[#25242A] dark:text-[#EDEBE8]'
-                : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8]'
+                ? 'text-slate-900 dark:text-[#EDEBE8]'
+                : 'text-slate-500 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8]'
             }`}
           >
             {isActive && (
               <motion.div
                 layoutId={`active-tab-${variant}`}
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
-                className="absolute inset-0 bg-[#1C2430] dark:bg-[#1A232C] rounded-xl shadow-[0_2px_8px_rgba(37,36,42,0.08)] border border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.12)] -z-10"
+                className="absolute inset-0 bg-white dark:bg-[#1C2430] rounded-xl shadow-xs dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] border border-slate-200 dark:border-[rgba(255,255,255,0.12)] -z-10"
               />
             )}
             {tab.icon && <span className="w-4 h-4 shrink-0">{tab.icon}</span>}
@@ -183,7 +183,7 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
                 className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
                   isActive
                     ? 'bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#A5A6F6]'
-                    : 'bg-[#E6DED2] dark:bg-[#222E3A] text-[#6E6870] dark:text-[#94A3B8]'
+                    : 'bg-slate-200 dark:bg-[#222E3A] text-slate-600 dark:text-[#94A3B8]'
                 }`}
               >
                 {tab.badge}
@@ -209,7 +209,7 @@ export interface ShinyTextProps {
 export const ShinyText: React.FC<ShinyTextProps> = ({ children, className = '', speedSec = 4 }) => {
   return (
     <span
-      className={`inline-block bg-[linear-gradient(110deg,#25242A,45%,#5B5CE2,55%,#25242A)] dark:bg-[linear-gradient(110deg,#EDEBE8,45%,#A5A6F6,55%,#EDEBE8)] bg-[length:250%_100%] bg-clip-text text-transparent animate-shimmer ${className}`}
+      className={`inline-block bg-[linear-gradient(110deg,#0F172A,45%,#4F46E5,55%,#0F172A)] dark:bg-[linear-gradient(110deg,#EDEBE8,45%,#A5A6F6,55%,#EDEBE8)] bg-[length:250%_100%] bg-clip-text text-transparent animate-shimmer ${className}`}
       style={{ animationDuration: `${speedSec}s` }}
     >
       {children}
@@ -278,7 +278,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative overflow-hidden rounded-[24px] bg-[#1C2430] dark:bg-[#1A232C] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] shadow-[0_4px_24px_-4px_rgba(37,36,42,0.06)] ${className}`}
+      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.3)] text-slate-900 dark:text-[#EDEBE8] ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
@@ -331,31 +331,31 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
   const shouldReduceMotion = useReducedMotion();
 
   const skillColorMap = {
-    vocabulary: 'text-[#5B5CE2] bg-[#5B5CE2]/10 border-[#5B5CE2]/25',
-    grammar: 'text-[#E5A83B] bg-[#E5A83B]/10 border-[#E5A83B]/25',
-    reading: 'text-[#58B993] bg-[#58B993]/10 border-[#58B993]/25',
-    listening: 'text-[#3B82F6] bg-[#3B82F6]/10 border-[#3B82F6]/25',
-    speaking: 'text-[#E98278] bg-[#E98278]/10 border-[#E98278]/25',
-    writing: 'text-[#8B5CF6] bg-[#8B5CF6]/10 border-[#8B5CF6]/25',
+    vocabulary: 'text-[#4F46E5] dark:text-[#818CF8] bg-[#4F46E5]/10 border-[#4F46E5]/25',
+    grammar: 'text-[#D97706] dark:text-[#FBBF24] bg-[#F59E0B]/10 border-[#F59E0B]/25',
+    reading: 'text-[#059669] dark:text-[#34D399] bg-[#10B981]/10 border-[#10B981]/25',
+    listening: 'text-[#2563EB] dark:text-[#60A5FA] bg-[#3B82F6]/10 border-[#3B82F6]/25',
+    speaking: 'text-[#E11D48] dark:text-[#FB7185] bg-[#F43F5E]/10 border-[#F43F5E]/25',
+    writing: 'text-[#7C3AED] dark:text-[#A78BFA] bg-[#8B5CF6]/10 border-[#8B5CF6]/25',
     ranked: 'text-white bg-[#E98278] border-[#D97167] font-black',
   }[skill];
 
   return (
     <motion.div
       whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
-      className={`relative p-5 rounded-2xl bg-[#1C2430] dark:bg-[#1A232C] border transition-all duration-200 ${
+      className={`relative p-5 rounded-2xl bg-white dark:bg-[#1C2430] border transition-all duration-200 ${
         status === 'ready'
           ? 'border-[#5B5CE2] shadow-[0_8px_24px_-4px_rgba(91,92,226,0.15)] ring-1 ring-[#5B5CE2]/30'
           : status === 'completed'
-          ? 'border-[#58B993] shadow-[0_4px_16px_-4px_rgba(88,185,147,0.15)]'
+          ? 'border-[#10B981] shadow-[0_4px_16px_-4px_rgba(16,185,129,0.15)]'
           : status === 'in-progress'
           ? 'border-[#5B5CE2]/40 shadow-[0_4px_16px_-4px_rgba(91,92,226,0.08)]'
-          : 'border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.08)] opacity-60'
+          : 'border-slate-200 dark:border-[rgba(255,255,255,0.08)] opacity-60'
       } ${className}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-[#E6DED2] dark:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)]">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#222E3A] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
             {level}
           </span>
           <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
@@ -363,35 +363,35 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-semibold text-[#6E6870] dark:text-[#94A3B8]">
-          <Clock className="w-3.5 h-3.5 text-[#E5A83B]" />
+        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8]">
+          <Clock className="w-3.5 h-3.5 text-[#F59E0B]" />
           <span>{estimatedMinutes}m</span>
-          <span className="text-[#25242A] dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
+          <span className="text-slate-900 dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
         </div>
       </div>
 
       <div className="mt-3.5 space-y-1">
-        <h4 className="text-base font-bold text-[#25242A] dark:text-[#EDEBE8] tracking-tight leading-snug">
+        <h4 className="text-base font-bold text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-snug">
           {title}
         </h4>
         {subtitle && (
-          <p className="text-xs text-[#6E6870] dark:text-[#94A3B8] leading-relaxed line-clamp-1">
+          <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-1">
             {subtitle}
           </p>
         )}
       </div>
 
       {status !== 'locked' && (
-        <div className="mt-4 pt-3 border-t border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
+        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
           <div className="flex-1 space-y-1">
-            <div className="flex justify-between text-[11px] font-semibold text-[#6E6870] dark:text-[#94A3B8]">
+            <div className="flex justify-between text-[11px] font-semibold text-slate-500 dark:text-[#94A3B8]">
               <span>{status === 'completed' ? 'Completed' : `${completedCount}/${lessonsCount} Lessons`}</span>
               <span>{Math.round(progress)}%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-[#141A22] dark:bg-[#131920] overflow-hidden">
+            <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#131920] overflow-hidden">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${
-                  status === 'completed' ? 'bg-[#58B993]' : 'bg-[#5B5CE2]'
+                  status === 'completed' ? 'bg-[#10B981]' : 'bg-[#5B5CE2]'
                 }`}
                 style={{ width: `${progress}%` }}
               />
@@ -416,7 +416,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
       )}
 
       {status === 'locked' && (
-        <div className="mt-4 pt-3 border-t border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between text-xs text-[#6E6870] dark:text-[#94A3B8] font-semibold">
+        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between text-xs text-slate-500 dark:text-[#94A3B8] font-semibold">
           <span className="flex items-center gap-1.5">
             <Lock className="w-3.5 h-3.5" /> Complete prior module
           </span>
@@ -458,29 +458,29 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-[#1C2430] dark:bg-[#1A232C] border-2 border-[#5B5CE2]/25 shadow-[0_12px_36px_-6px_rgba(37,36,42,0.08)] space-y-5 ${className}`}
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#1C2430] border-2 border-[#5B5CE2]/30 shadow-[0_12px_36px_-6px_rgba(91,92,226,0.1)] space-y-5 ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DCD9FF] text-[#5B5CE2] dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] text-xs font-bold tracking-wide border border-[#5B5CE2]/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEF2FF] text-[#4F46E5] dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] text-xs font-bold tracking-wide border border-[#5B5CE2]/30">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{categoryBadge}</span>
         </span>
-        <div className="flex items-center gap-3 text-xs font-semibold text-[#6E6870] dark:text-[#94A3B8]">
+        <div className="flex items-center gap-3 text-xs font-semibold text-slate-500 dark:text-[#94A3B8]">
           <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5 text-[#E5A83B]" />
+            <Clock className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>{estimatedMinutes} min</span>
           </span>
-          <span className="px-2.5 py-0.5 rounded-full bg-[#E5A83B] text-white font-bold text-xs">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#F59E0B] text-white font-bold text-xs">
             +{xpReward} XP
           </span>
         </div>
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl sm:text-2xl font-black text-[#25242A] dark:text-[#EDEBE8] tracking-tight leading-snug">
+        <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-snug">
           {title}
         </h2>
-        <p className="text-sm text-[#6E6870] dark:text-[#94A3B8] leading-relaxed max-w-2xl font-grotesk">
+        <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-2xl font-grotesk">
           {description}
         </p>
       </div>
@@ -544,10 +544,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
   // Status visual configurations with Glova palette
   const config = {
     completed: {
-      bg: 'bg-[#58B993] hover:bg-[#4BA883] shadow-[#387D60]',
-      ring: 'ring-[#58B993]/30',
+      bg: 'bg-[#10B981] hover:bg-[#059669] shadow-[#047857]',
+      ring: 'ring-[#10B981]/30',
       icon: <Check className="w-8 h-8 text-white stroke-[3]" />,
-      badgeBg: 'bg-[#58B993] text-white',
+      badgeBg: 'bg-[#10B981] text-white',
     },
     active: {
       bg: 'bg-[#5B5CE2] hover:bg-[#4A4BCB] shadow-[#3A3B9E]',
@@ -556,16 +556,16 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       badgeBg: 'bg-[#5B5CE2] text-white',
     },
     review: {
-      bg: 'bg-[#E5A83B] hover:bg-[#D6962A] shadow-[#B57816]',
-      ring: 'ring-[#E5A83B]/30',
+      bg: 'bg-[#F59E0B] hover:bg-[#D97706] shadow-[#B45309]',
+      ring: 'ring-[#F59E0B]/30',
       icon: <Zap className="w-8 h-8 text-white fill-current" />,
-      badgeBg: 'bg-[#E5A83B] text-white',
+      badgeBg: 'bg-[#F59E0B] text-white',
     },
     locked: {
-      bg: 'bg-[#141A22] dark:bg-[#222E3A] shadow-[#B8AE9F] dark:shadow-[#131920]',
+      bg: 'bg-slate-200 dark:bg-[#222E3A] shadow-[#CBD5E1] dark:shadow-[#131920]',
       ring: 'ring-transparent',
-      icon: <Lock className="w-6 h-6 text-[#6E6870] dark:text-[#94A3B8]" />,
-      badgeBg: 'bg-[#141A22] dark:bg-[#222E3A] text-[#6E6870] dark:text-[#94A3B8]',
+      icon: <Lock className="w-6 h-6 text-slate-500 dark:text-[#94A3B8]" />,
+      badgeBg: 'bg-slate-200 dark:bg-[#222E3A] text-slate-600 dark:text-[#94A3B8]',
     },
   }[status];
 
@@ -616,17 +616,17 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
         {config.icon}
 
         {/* Level Tag Pill attached to node */}
-        <span className="absolute -bottom-2 px-2 py-0.5 rounded-full text-[10px] font-mono font-black shadow-xs border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] bg-[#1C2430] dark:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8]">
+        <span className="absolute -bottom-2 px-2 py-0.5 rounded-full text-[10px] font-mono font-black shadow-xs border border-slate-200 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#1C2430] text-slate-900 dark:text-[#EDEBE8]">
           {level}
         </span>
       </motion.button>
 
       {/* Topic Title Label */}
       <div className="mt-3 text-center max-w-[160px]">
-        <h4 className="text-xs sm:text-sm font-bold text-[#25242A] dark:text-[#EDEBE8] leading-tight line-clamp-2">
+        <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-[#EDEBE8] leading-tight line-clamp-2">
           {topicTitle}
         </h4>
-        <span className="text-[11px] text-[#5B5CE2] dark:text-[#A5A6F6] font-semibold">
+        <span className="text-[11px] text-[#4F46E5] dark:text-[#A5A6F6] font-semibold">
           +{xpReward} XP
         </span>
       </div>
@@ -669,15 +669,15 @@ export const LessonFeedbackDrawer: React.FC<LessonFeedbackDrawerProps> = ({
           transition={{ type: 'spring', stiffness: 400, damping: 35 }}
           className={`fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 border-t-2 shadow-2xl backdrop-blur-md ${
             isCorrect
-              ? 'bg-[#1C2430]/98 dark:bg-[#1A232C]/98 border-[#58B993] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(37,36,42,0.12)]'
-              : 'bg-[#1C2430]/98 dark:bg-[#1A232C]/98 border-[#E98278] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(37,36,42,0.12)]'
+              ? 'bg-white/98 dark:bg-[#1A232C]/98 border-[#10B981] text-slate-900 dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(15,23,42,0.12)]'
+              : 'bg-white/98 dark:bg-[#1A232C]/98 border-[#F43F5E] text-slate-900 dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(15,23,42,0.12)]'
           }`}
         >
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm ${
-                  isCorrect ? 'bg-[#58B993] text-white' : 'bg-[#E98278] text-white'
+                  isCorrect ? 'bg-[#10B981] text-white' : 'bg-[#F43F5E] text-white'
                 }`}
               >
                 {isCorrect ? <Check className="w-7 h-7 stroke-[3]" /> : <AlertCircle className="w-7 h-7 stroke-[3]" />}
@@ -685,29 +685,29 @@ export const LessonFeedbackDrawer: React.FC<LessonFeedbackDrawerProps> = ({
 
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-black tracking-tight text-[#25242A] dark:text-[#EDEBE8]">
+                  <h3 className="text-lg sm:text-xl font-black tracking-tight text-slate-900 dark:text-[#EDEBE8]">
                     {isCorrect ? 'Excellent!' : 'Correct solution:'}
                   </h3>
                   {isCorrect && (
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#58B993] text-white font-mono font-black text-xs">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#10B981] text-white font-mono font-black text-xs">
                       +{xpEarned} XP
                     </span>
                   )}
                   {streakBonus && (
-                    <span className="px-2 py-0.5 rounded-full bg-[#E5A83B] text-white font-black text-xs flex items-center gap-1">
+                    <span className="px-2 py-0.5 rounded-full bg-[#F59E0B] text-white font-black text-xs flex items-center gap-1">
                       <Sparkles className="w-3 h-3" /> Streak!
                     </span>
                   )}
                 </div>
 
                 {!isCorrect && correctAnswerText && (
-                  <p className="text-base font-bold text-[#E98278] leading-snug">
+                  <p className="text-base font-bold text-[#E11D48] dark:text-[#FB7185] leading-snug">
                     {correctAnswerText}
                   </p>
                 )}
 
                 {explanation && (
-                  <p className="text-xs sm:text-sm font-medium text-[#6E6870] dark:text-[#94A3B8] leading-relaxed max-w-xl">
+                  <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl">
                     {explanation}
                   </p>
                 )}
@@ -754,25 +754,25 @@ export const StudioMetric: React.FC<StudioMetricProps> = ({
   className = '',
 }) => {
   const accentColor = {
-    gold: 'text-[#E5A93C]',
-    mint: 'text-[#10B981]',
-    indigo: 'text-[#5B5CE2]',
-    coral: 'text-[#F43F5E]',
-    neutral: 'text-[#EDEBE8]',
+    gold: 'text-[#D97706] dark:text-[#E5A93C]',
+    mint: 'text-[#059669] dark:text-[#10B981]',
+    indigo: 'text-[#4F46E5] dark:text-[#818CF8]',
+    coral: 'text-[#E11D48] dark:text-[#F43F5E]',
+    neutral: 'text-slate-900 dark:text-[#EDEBE8]',
   }[variant];
 
   return (
-    <div className={`p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-inner space-y-1.5 ${className}`}>
-      <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
+    <div className={`p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs dark:shadow-inner space-y-1.5 ${className}`}>
+      <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
         <span>{label}</span>
-        {icon && <span className="w-4 h-4 shrink-0 text-[#94A3B8]">{icon}</span>}
+        {icon && <span className="w-4 h-4 shrink-0 text-slate-500 dark:text-[#94A3B8]">{icon}</span>}
       </div>
       <div className="flex items-baseline justify-between">
         <span className={`text-2xl font-black font-mono tracking-tight ${accentColor}`}>
           {value}
         </span>
         {delta && (
-          <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#1C2430] text-[#94A3B8] border border-[rgba(255,255,255,0.06)]">
+          <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8] border border-slate-200 dark:border-[rgba(255,255,255,0.06)]">
             {delta}
           </span>
         )}

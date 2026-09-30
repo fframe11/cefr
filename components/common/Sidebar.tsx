@@ -162,16 +162,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 } ${
                   isActive
                     ? 'bg-[#5B5CE2] text-white font-bold shadow-[0_2px_0_#3839A0]'
-                    : 'text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] font-medium'
+                    : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] font-medium'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-white' : 'text-[#94A3B8] group-hover:text-[#EDEBE8]'
+                    isActive ? 'text-white' : 'text-slate-500 dark:text-[#94A3B8] group-hover:text-slate-900 dark:group-hover:text-[#EDEBE8]'
                   }`}
                 />
                 {!collapsedMode && (
-                  <span className="truncate text-xs font-display flex-1 text-left">
+                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-white' : 'text-slate-700 dark:text-[#EDEBE8]'}`}>
                     {itemLabel}
                   </span>
                 )}
@@ -197,17 +197,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-[rgba(255,255,255,0.08)] bg-[#141A22] shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-[2px_0_12px_rgba(0,0,0,0.4)] ${
+        className={`hidden md:flex flex-col border-r border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#141A22] shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-xs dark:shadow-[2px_0_12px_rgba(0,0,0,0.4)] ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
         {/* Top Header & Collapse Toggle */}
-        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-[rgba(255,255,255,0.08)] ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
+        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-slate-200/90 dark:border-white/10 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]" />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#94A3B8] font-mono select-none">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8] font-mono select-none">
                 {isEn ? 'Studio Suite' : 'สตูดิโอการเรียนรู้'}
               </span>
             </div>
@@ -217,7 +217,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] active:scale-95"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#1C2430] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] active:scale-95"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -237,13 +237,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-[rgba(255,255,255,0.08)] mt-auto">
-            <div className="p-3 rounded-xl bg-[#1C2430] border border-[rgba(255,255,255,0.08)] shadow-inner space-y-1">
+          <div className="pt-3.5 border-t border-slate-200/90 dark:border-white/10 mt-auto">
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-[#1C2430] border border-slate-200 dark:border-white/10 shadow-xs dark:shadow-inner space-y-1">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#E5A93C]" />
-                <span className="text-[11px] font-bold text-[#EDEBE8] font-display">Cambridge Standard</span>
+                <span className="text-[11px] font-bold text-slate-800 dark:text-[#EDEBE8] font-display">Cambridge Standard</span>
               </div>
-              <p className="text-[10px] text-[#94A3B8] font-mono leading-snug">
+              <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono leading-snug">
                 CEFR A1 to C2 Framework &bull; KET, PET, FCE, CAE, CPE
               </p>
             </div>
@@ -262,18 +262,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#141A22] border-r border-[rgba(255,255,255,0.08)] p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-[#EDEBE8]"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-[#141A22] border-r border-slate-200 dark:border-white/10 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-3 mb-2 border-b border-[rgba(255,255,255,0.08)]">
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-200 dark:border-white/10">
               <div className="flex items-center gap-2.5">
                 <GlovaLogo size={28} variant="radiant" ariaLabel="Glova" />
                 <div className="flex flex-col">
-                  <span className="font-black text-base text-[#EDEBE8] font-display">
+                  <span className="font-black text-base text-slate-900 dark:text-[#EDEBE8] font-display">
                     Glova
                   </span>
-                  <span className="text-[10px] text-[#94A3B8] font-mono">
+                  <span className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono">
                     Cambridge Learning Suite
                   </span>
                 </div>
@@ -282,7 +282,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button
                   type="button"
                   onClick={onCloseMobile}
-                  className="p-1.5 rounded-lg text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                  className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#1C2430] transition-colors"
                   aria-label="Close mobile menu"
                 >
                   <X className="w-5 h-5" />

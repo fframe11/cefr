@@ -43,10 +43,10 @@ export const GlovaLearningCard: React.FC<GlovaLearningCardProps> = ({
       variant={isBubble ? 'bubble' : 'default'}
       className={`border ${
         isBubble
-          ? 'border-[rgba(255,255,255,0.08)] bg-[#141A22] text-[#EDEBE8]'
+          ? 'border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#141A22] text-slate-900 dark:text-[#EDEBE8]'
           : isPrimary
-          ? 'border-[#5B5CE2]/35 dark:border-[#5B5CE2]/50 bg-[#141A22] text-[#EDEBE8]'
-          : 'border-[rgba(255,255,255,0.08)] bg-card text-foreground'
+          ? 'border-[#5B5CE2]/35 dark:border-[#5B5CE2]/50 bg-white dark:bg-[#141A22] text-slate-900 dark:text-[#EDEBE8]'
+          : 'border-slate-200/80 dark:border-white/10 bg-card text-foreground'
       } ${className}`}
     >
       <GlovaCardContent className="p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-6">

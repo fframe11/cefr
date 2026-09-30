@@ -396,7 +396,7 @@ export const WritingView: React.FC = () => {
                     key={idx}
                     type="button"
                     onClick={() => handleCopyPhrase(phraseObj.phrase)}
-                    className="touch-target px-3.5 py-1.5 rounded-xl bg-[#1C2430] hover:bg-[#253040] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none text-xs text-[#EDEBE8] flex items-center gap-2 transition-all group cursor-pointer"
+                    className="touch-target px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] border border-slate-200/80 dark:border-white/10 shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none text-xs text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2 transition-all group cursor-pointer"
                   >
                     <span className="font-bold">{phraseObj.phrase}</span>
                     <span className="text-muted-foreground text-[11px]">({phraseObj.meaningTh})</span>

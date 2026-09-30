@@ -26,12 +26,12 @@ export interface CampaignBannerProps {
 }
 
 const TYPE_ICONS: Record<CampaignType, React.ReactNode> = {
-  RANKED: <Swords className="w-3.5 h-3.5 text-[#F6D978]" />,
-  CHALLENGE: <Flame className="w-3.5 h-3.5 text-[#FF8F82]" />,
-  EVENT: <Trophy className="w-3.5 h-3.5 text-[#F6D978]" />,
-  REWARD: <Gift className="w-3.5 h-3.5 text-[#B9E8D3]" />,
-  ANNOUNCEMENT: <Megaphone className="w-3.5 h-3.5 text-[#5B5CE2]" />,
-  FEATURE: <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]" />,
+  RANKED: <Swords className="w-3.5 h-3.5 text-white" />,
+  CHALLENGE: <Flame className="w-3.5 h-3.5 text-white" />,
+  EVENT: <Trophy className="w-3.5 h-3.5 text-white" />,
+  REWARD: <Gift className="w-3.5 h-3.5 text-white" />,
+  ANNOUNCEMENT: <Megaphone className="w-3.5 h-3.5 text-white" />,
+  FEATURE: <Sparkles className="w-3.5 h-3.5 text-white" />,
 };
 
 export const CampaignBanner: React.FC<CampaignBannerProps> = ({
@@ -144,12 +144,44 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
   const ctaLabel = isEn ? current.cta_labelEn : current.cta_labelTh;
   const reward = isEn ? current.rewardEn : current.rewardTh;
 
-  const bgGradient =
-    current.theme?.backgroundGradient ||
-    'from-[#5B5CE2]/15 via-[#FFFDF8] to-[#FFFDF8] dark:from-[#5B5CE2]/20 dark:via-[#24233A] dark:to-card';
-  const borderAccent = current.theme?.borderAccent || 'border-[#5B5CE2]/25 dark:border-border/60';
-  const badgeBg = current.theme?.badgeBg || 'bg-[#5B5CE2]';
-  const badgeTextColor = current.theme?.badgeText || 'text-white';
+  const CAMPAIGN_STYLES: Record<string, { bgGradient: string; borderAccent: string; badgeBg: string }> = {
+    camp_ranked_season_01: {
+      bgGradient: 'from-indigo-500/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/25 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-indigo-300/90 dark:border-[#5B5CE2]/35',
+      badgeBg: 'bg-indigo-600 dark:bg-[#5B5CE2]',
+    },
+    camp_vocab_sprint_300: {
+      bgGradient: 'from-rose-500/15 via-amber-50/70 to-white dark:from-rose-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-rose-300/90 dark:border-rose-500/35',
+      badgeBg: 'bg-rose-600 dark:bg-rose-500',
+    },
+    camp_xp_weekend_blitz: {
+      bgGradient: 'from-emerald-500/15 via-amber-50/60 to-white dark:from-emerald-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-emerald-300/90 dark:border-emerald-500/35',
+      badgeBg: 'bg-emerald-600 dark:bg-emerald-500',
+    },
+    camp_speed_battle_feature: {
+      bgGradient: 'from-violet-500/15 via-indigo-50/70 to-white dark:from-violet-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-violet-300/90 dark:border-violet-500/35',
+      badgeBg: 'bg-violet-600 dark:bg-violet-500',
+    },
+    camp_winter_championship_upcoming: {
+      bgGradient: 'from-sky-500/15 via-indigo-50/70 to-white dark:from-sky-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-sky-300/90 dark:border-sky-500/35',
+      badgeBg: 'bg-sky-600 dark:bg-sky-500',
+    },
+  };
+
+  const resolvedStyle = CAMPAIGN_STYLES[current.id] || {
+    bgGradient: current.theme?.backgroundGradient || 'from-indigo-500/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/20 dark:via-[#141A22] dark:to-[#1C2430]',
+    borderAccent: current.theme?.borderAccent || 'border-indigo-300/90 dark:border-border/60',
+    badgeBg: 'bg-indigo-600 dark:bg-[#5B5CE2]',
+  };
+
+  const bgGradient = resolvedStyle.bgGradient;
+  const borderAccent = resolvedStyle.borderAccent;
+  const badgeBg = resolvedStyle.badgeBg;
+  const badgeTextColor = 'text-white';
 
   const handleCtaClick = () => {
     if (onNavigate && current.target_route) {

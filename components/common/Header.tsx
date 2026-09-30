@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenMobileNav,
 }) => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const { user, signOut } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
   const initials = getInitials(displayName);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[rgba(255,255,255,0.08)] bg-[#141A22]/95 backdrop-blur-md transition-colors pt-safe shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/90 dark:border-white/10 bg-white/95 dark:bg-[#141A22]/95 backdrop-blur-md transition-colors pt-safe shadow-xs dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         {/* Left: Mobile Nav Toggle + Studio Brand */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenMobileNav}
-              className="md:hidden touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+              className="md:hidden touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
               aria-label="Open mobile navigation menu"
             >
               <Menu className="w-5 h-5" aria-hidden="true" />
@@ -129,15 +129,15 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-black text-base sm:text-lg tracking-tight font-display text-[#EDEBE8] flex items-center gap-1">
+                <span className="font-black text-base sm:text-lg tracking-tight font-display text-slate-900 dark:text-[#EDEBE8] flex items-center gap-1">
                   Glova
                   <span className="w-1.5 h-1.5 rounded-full bg-[#E5A93C] shadow-[0_0_8px_#E5A93C]" />
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#1C2430] text-[#E5A93C] border border-[#E5A93C]/30 shadow-xs">
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-50 dark:bg-[#1C2430] text-amber-700 dark:text-[#E5A93C] border border-amber-300 dark:border-[#E5A93C]/30 shadow-xs">
                   {targetExam} {t('header.prep_suffix')}
                 </span>
               </div>
-              <p className="text-[10px] text-[#94A3B8] font-mono truncate hidden md:block">
+              <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono truncate hidden md:block">
                 Cambridge CEFR Linguistic Studio
               </p>
             </div>
@@ -155,24 +155,24 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Streak Flame Telemetry */}
           <div
-            className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 rounded-md bg-[#0F141C] border border-amber-500/25 text-[#E5A93C] text-xs font-mono font-bold shadow-inner"
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 dark:bg-[#0F141C] border border-amber-200 dark:border-amber-500/25 text-amber-700 dark:text-[#E5A93C] text-xs font-mono font-bold shadow-xs dark:shadow-inner"
             title={`${streakDays} Day Study Streak`}
           >
-            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-[#E5A93C]" />
+            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-amber-600 dark:text-[#E5A93C]" />
             <span className="tabular-nums">{streakDays}</span>
-            <span className="hidden md:inline text-amber-300/80 font-normal">{t('common.days')}</span>
+            <span className="hidden md:inline text-amber-800 dark:text-amber-300/80 font-normal">{t('common.days')}</span>
           </div>
 
           {/* Daily Goal Telemetry */}
           <div
-            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs font-mono"
+            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs font-mono"
             title={`Today: ${minutesStudiedToday} of ${dailyGoalMinutes} minutes`}
           >
-            <Clock className="w-3.5 h-3.5 text-[#94A3B8] shrink-0" />
-            <span className="text-[#EDEBE8] font-bold tabular-nums">
+            <Clock className="w-3.5 h-3.5 text-slate-500 dark:text-[#94A3B8] shrink-0" />
+            <span className="text-slate-900 dark:text-[#EDEBE8] font-bold tabular-nums">
               {minutesStudiedToday}/{dailyGoalMinutes}m
             </span>
-            <div className="w-10 h-1.5 bg-[#1C2430] rounded-full overflow-hidden border border-[rgba(255,255,255,0.05)]">
+            <div className="w-10 h-1.5 bg-slate-200 dark:bg-[#1C2430] rounded-full overflow-hidden border border-slate-300 dark:border-white/10">
               <div
                 className="h-full bg-[#10B981] rounded-full transition-all duration-300 shadow-[0_0_6px_#10B981]"
                 style={{ width: `${goalPercent}%` }}
@@ -186,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Re-take Diagnostic Button */}
           <button
             onClick={onRetakeAssessment}
-            className="hidden sm:inline-flex touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-md border border-[rgba(255,255,255,0.06)] transition-colors active:scale-95"
+            className="hidden sm:inline-flex touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-md border border-slate-200 dark:border-white/10 transition-colors active:scale-95"
             title={t('header.retake_assessment')}
             aria-label={t('header.retake_assessment')}
           >
@@ -196,11 +196,11 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Theme Switcher Toggle */}
           <button
             onClick={onToggleTheme}
-            className="touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-md border border-[rgba(255,255,255,0.06)] transition-colors active:scale-95"
+            className="touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-md border border-slate-200 dark:border-white/10 transition-colors active:scale-95"
             title={t('header.switch_theme')}
             aria-label={t('header.switch_theme')}
           >
-            {isDark ? <Sun className="w-4 h-4 text-[#E5A93C]" /> : <Moon className="w-4 h-4 text-[#94A3B8]" />}
+            {isDark ? <Sun className="w-4 h-4 text-[#E5A93C]" /> : <Moon className="w-4 h-4 text-[#5B5CE2]" />}
           </button>
 
           {/* Account Profile Capsule */}
@@ -209,7 +209,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-[rgba(255,255,255,0.12)] bg-[#1C2430] hover:bg-[#222E3A] text-xs font-medium text-[#EDEBE8] transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-[#1C2430] hover:bg-slate-200/80 dark:hover:bg-[#222E3A] text-xs font-medium text-slate-900 dark:text-[#EDEBE8] transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
                 aria-expanded={isMenuOpen}
                 aria-haspopup="menu"
                 aria-label={t('auth.menu_profile')}
@@ -220,7 +220,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="hidden sm:inline font-mono text-[11px] truncate max-w-[100px]">
                   {displayName}
                 </span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8] hidden sm:block shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-500 dark:text-[#94A3B8] hidden sm:block shrink-0" />
               </button>
 
               {/* Profile Dropdown Menu */}
@@ -228,14 +228,14 @@ export const Header: React.FC<HeaderProps> = ({
                 <div
                   role="menu"
                   aria-orientation="vertical"
-                  className="absolute right-0 mt-2 w-56 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[#141A22] text-[#EDEBE8] shadow-2xl p-1.5 space-y-1 z-50 animate-in fade-in-50 zoom-in-95 duration-100"
+                  className="absolute right-0 mt-2 w-56 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-[#141A22] text-slate-900 dark:text-[#EDEBE8] shadow-2xl p-1.5 space-y-1 z-50 animate-in fade-in-50 zoom-in-95 duration-100"
                 >
-                  <div className="px-3 py-2 border-b border-[rgba(255,255,255,0.08)]">
-                    <p className="text-xs font-bold text-[#EDEBE8] truncate">{displayName}</p>
-                    <p className="text-[10px] text-[#94A3B8] font-mono truncate">{user?.email}</p>
+                  <div className="px-3 py-2 border-b border-slate-200 dark:border-white/10">
+                    <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] truncate">{displayName}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono truncate">{user?.email}</p>
                     <div className="mt-1 flex items-center gap-1.5">
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#10B981]" />
-                      <span className="text-[10px] text-[#94A3B8] font-mono">
+                      <span className="text-[10px] text-slate-600 dark:text-[#94A3B8] font-mono">
                         CEFR {currentLevel} • {targetExam}
                       </span>
                     </div>
@@ -248,9 +248,9 @@ export const Header: React.FC<HeaderProps> = ({
                       setIsMenuOpen(false);
                       if (onOpenProfile) onOpenProfile();
                     }}
-                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-slate-800 dark:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] transition-colors"
                   >
-                    <UserIcon className="w-4 h-4 text-[#94A3B8]" />
+                    <UserIcon className="w-4 h-4 text-slate-500 dark:text-[#94A3B8]" />
                     <span>{t('auth.menu_profile')}</span>
                   </button>
 
@@ -261,13 +261,13 @@ export const Header: React.FC<HeaderProps> = ({
                       setIsMenuOpen(false);
                       router.push('/analytics');
                     }}
-                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-slate-900 dark:text-[#EDEBE8] hover:bg-slate-100 dark:bg-[#1C2430] transition-colors"
                   >
                     <BarChart2 className="w-4 h-4 text-[#94A3B8]" />
                     <span>{t('sidebar.analytics')}</span>
                   </button>
 
-                  <div className="border-t border-[rgba(255,255,255,0.08)] pt-1">
+                  <div className="border-t border-slate-200/80 dark:border-white/10 pt-1">
                     <button
                       role="menuitem"
                       type="button"
@@ -285,11 +285,11 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenProfile}
-              className="touch-target inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#5B5CE2] text-white text-xs font-bold shadow-[0_2px_0_#3839A0] hover:bg-[#4E4FD6] active:translate-y-0.5 transition-all"
-              aria-label={t('auth.sign_in')}
+              className="touch-target inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-indigo-600 dark:bg-[#5B5CE2] text-white text-xs font-bold shadow-[0_2px_0_#3730A3] dark:shadow-[0_2px_0_#3839A0] hover:bg-indigo-700 dark:hover:bg-[#4E4FD6] active:translate-y-0.5 transition-all"
+              aria-label={language === 'en' ? 'Sign In' : 'เข้าสู่ระบบ'}
             >
               <UserIcon className="w-3.5 h-3.5" />
-              <span>{t('auth.sign_in')}</span>
+              <span>{language === 'en' ? 'Sign In' : 'เข้าสู่ระบบ'}</span>
             </button>
           )}
         </div>

@@ -67,20 +67,20 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
           onClick={() => setDrawerOpen(false)}
         >
           <div
-            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#141A22] border-t border-[rgba(255,255,255,0.12)] rounded-t-2xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-[#EDEBE8]"
+            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-white dark:bg-[#141A22] border-t border-[rgba(255,255,255,0.12)] rounded-t-2xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-slate-900 dark:text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3.5 border-b border-[rgba(255,255,255,0.08)] mb-3">
+            <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/80 dark:border-white/10 mb-3">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#5B5CE2] shadow-[0_0_8px_#5B5CE2]" />
-                <span className="font-bold text-sm text-[#EDEBE8] font-display">
+                <span className="font-bold text-sm text-slate-900 dark:text-[#EDEBE8] font-display">
                   {isEn ? 'All Learning Studios' : 'ทุกสตูดิโอการเรียนรู้'}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="p-1.5 rounded-lg text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                className="p-1.5 rounded-lg text-[#94A3B8] hover:text-slate-900 dark:text-[#EDEBE8] hover:bg-slate-100 dark:bg-[#1C2430] transition-colors"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -99,7 +99,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                     className={`flex items-center gap-3 p-3 rounded-xl transition-all text-left active:translate-y-0.5 ${
                       isActive
                         ? 'bg-[#5B5CE2] text-white font-bold shadow-[0_2px_0_#3839A0]'
-                        : 'text-[#EDEBE8] hover:bg-[#1C2430] font-medium'
+                        : 'text-slate-900 dark:text-[#EDEBE8] hover:bg-slate-100 dark:bg-[#1C2430] font-medium'
                     }`}
                   >
                     <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#5B5CE2]'}`} />
@@ -116,7 +116,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
 
       {/* Fixed Bottom Bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#141A22]/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.08)] pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.5)]"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white dark:bg-[#141A22]/95 backdrop-blur-md border-t border-slate-200/80 dark:border-white/10 pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.5)]"
         aria-label="Mobile Navigation"
       >
         <div className="flex items-center justify-around px-2 py-1.5 max-w-md mx-auto">
@@ -133,7 +133,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                 className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg text-[10px] font-medium transition-all min-w-[56px] ${
                   isActive
                     ? 'text-[#5B5CE2] font-bold'
-                    : 'text-[#94A3B8] hover:text-[#EDEBE8]'
+                    : 'text-[#94A3B8] hover:text-slate-900 dark:text-[#EDEBE8]'
                 }`}
                 aria-label={label}
                 aria-current={isActive ? 'page' : undefined}
@@ -154,7 +154,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
           <button
             type="button"
             onClick={() => setDrawerOpen(!drawerOpen)}
-            className="flex flex-col items-center justify-center py-1 px-2.5 rounded-lg text-[10px] font-medium text-[#94A3B8] hover:text-[#EDEBE8] transition-all min-w-[56px]"
+            className="flex flex-col items-center justify-center py-1 px-2.5 rounded-lg text-[10px] font-medium text-[#94A3B8] hover:text-slate-900 dark:text-[#EDEBE8] transition-all min-w-[56px]"
             aria-label={isEn ? 'More' : 'เพิ่มเติม'}
             aria-expanded={drawerOpen}
           >

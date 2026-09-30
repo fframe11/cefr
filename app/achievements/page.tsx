@@ -104,7 +104,7 @@ export default function AchievementsPage() {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-8 pb-16">
       {/* 1. HERO HEADER */}
-      <section className="rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
+      <section className="rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B5CE2]/10 border border-[#5B5CE2]/20 text-[#5B5CE2] dark:text-[#8D8EFC] text-xs font-bold">
@@ -292,7 +292,7 @@ export default function AchievementsPage() {
       {/* 5. CELEBRATION PREVIEW MODAL */}
       {selectedForPreview && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="w-full max-w-sm bg-[#141A22] rounded-3xl border border-white/10 shadow-2xl p-6 relative flex flex-col items-center">
+          <div className="w-full max-w-sm bg-white dark:bg-[#141A22] rounded-3xl border border-white/10 shadow-2xl p-6 relative flex flex-col items-center">
             <button
               type="button"
               onClick={() => setSelectedForPreview(null)}

@@ -85,11 +85,11 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   };
 
   return (
-    <div className="min-h-screen bg-[#0D1117] text-[#EDEBE8] selection:bg-[#5B5CE2]/20 selection:text-[#5B5CE2]">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0D1117] text-slate-900 dark:text-[#EDEBE8] selection:bg-[#5B5CE2]/20 selection:text-[#5B5CE2]">
       {/* =====================================================================
           1. HERO SECTION: BRAND SHOWCASE & IMMEDIATE CLARITY
           ===================================================================== */}
-      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-[rgba(255,255,255,0.08)]">
+      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <BackgroundBeams />
 
         <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,24 +97,24 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {/* Left Column: Brand Value Proposition (Editorial Hierarchy) */}
             <div className="lg:col-span-6 space-y-6 text-left">
               {/* Prestigious Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold tracking-wide border border-[rgba(255,255,255,0.08)]">
-                <Sparkles className="w-3.5 h-3.5 text-[#5B5CE2]" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#818CF8] text-xs font-bold tracking-wide border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
+                <Sparkles className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#5B5CE2]" aria-hidden="true" />
                 <span className="font-tech uppercase">
                   {isEn ? 'The Modern University English Platform' : 'มาตรฐานใหม่การเตรียมภาษาอังกฤษมหาวิทยาลัย'}
                 </span>
               </div>
 
               {/* Dominant Headline with ShinyText */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#EDEBE8] tracking-tight leading-[1.12] font-display">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-[1.12] font-display">
                 {isEn ? 'Your English.' : 'ภาษาอังกฤษของคุณ.'}{' '}
-                <ShinyText speedSec={3.5} className="font-black text-[#5B5CE2] block sm:inline">
+                <ShinyText speedSec={3.5} className="font-black text-[#4F46E5] dark:text-[#5B5CE2] block sm:inline">
                   {isEn ? 'Your True Level.' : 'ระดับที่แท้จริง.'}
                 </ShinyText>{' '}
                 {isEn ? 'Your Next Move.' : 'ก้าวต่อไปที่คุณมั่นใจ.'}
               </h1>
 
               {/* Informative Subtext */}
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl font-grotesk">
+              <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl font-grotesk">
                 {isEn
                   ? 'Glova unites 3,860 verified Oxford & Cambridge terms, animated grammar timelines, and 4-second reflex duels into an interconnected university learning ecosystem. Discover where you stand in 3 minutes.'
                   : 'Glova เชื่อมโยงคลังคำศัพท์วิชาการ 3,860 คำ ไทม์ไลน์ไวยากรณ์เข้าใจง่าย และการประลองความเร็ว 4 วินาทีเข้าด้วยกัน เพื่อให้คุณเข้าใจจุดแข็งจุดอ่อนและพัฒนาตรงจุดทันที'}
@@ -143,17 +143,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
 
               {/* Trust & Proof Badges */}
-              <div className="flex items-center gap-5 pt-4 text-xs font-semibold text-muted-foreground flex-wrap font-grotesk">
+              <div className="flex items-center gap-5 pt-4 text-xs font-semibold text-slate-600 dark:text-[#94A3B8] flex-wrap font-grotesk">
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#10B981]" aria-hidden="true" />
+                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
                   <span>{isEn ? '8 Real-Life Scenarios' : '8 สถานการณ์จริงในชีวิต'}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#10B981]" aria-hidden="true" />
+                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
                   <span>{isEn ? 'Instant CEFR Tier Diagnostic' : 'สรุปผลระดับ CEFR ทันที'}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#10B981]" aria-hidden="true" />
+                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
                   <span>{isEn ? 'Zero Upfront Sign-Up' : 'เริ่มได้ทันทีไม่ต้องสมัครก่อน'}</span>
                 </div>
               </div>
@@ -163,14 +163,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             <div className="lg:col-span-6 space-y-4">
               {/* Interactive Composition Mode Switcher */}
               <div className="flex items-center justify-between gap-2 px-1">
-                <div className="flex items-center gap-1 rounded-2xl bg-[#141A22] p-1 border border-[rgba(255,255,255,0.08)] text-xs font-bold">
+                <div className="flex items-center gap-1 rounded-2xl bg-slate-100 dark:bg-[#141A22] p-1 border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs font-bold">
                   <button
                     type="button"
                     onClick={() => setHeroTab('ranked')}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'ranked'
                         ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
+                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
                     }`}
                   >
                     <Swords className="w-3.5 h-3.5" />
@@ -182,7 +182,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'cartridge'
                         ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
+                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
                     }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
@@ -194,7 +194,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'journey'
                         ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
+                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
                     }`}
                   >
                     <Compass className="w-3.5 h-3.5" />
@@ -202,14 +202,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </button>
                 </div>
 
-                <span className="text-[11px] font-tech text-muted-foreground hidden sm:flex items-center gap-1 font-bold">
+                <span className="text-[11px] font-tech text-slate-500 dark:text-[#94A3B8] hidden sm:flex items-center gap-1 font-bold">
                   <Play className="w-3 h-3 text-[#10B981] fill-[#10B981] animate-pulse" />
                   REMOTION ENGINE
                 </span>
               </div>
 
               {/* Dynamic Showcase Screen */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-[rgba(37,36,42,0.20)] bg-[#141A22] shadow-xl aspect-video w-full">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-[#141A22] shadow-xl aspect-video w-full">
                 <BorderBeam size={220} duration={8} colorFrom="#5B5CE2" colorTo="#5B5CE2" />
 
                 {heroTab === 'ranked' && (
@@ -223,7 +223,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 )}
 
                 {heroTab === 'cartridge' && (
-                  <div className="h-full w-full bg-[#141A22] p-6 flex flex-col justify-center">
+                  <div className="h-full w-full bg-slate-50 dark:bg-[#141A22] p-6 flex flex-col justify-center">
                     <div className="max-w-md mx-auto w-full">
                       <GlovaCartridge
                         id="hero-cartridge-demo"
@@ -256,7 +256,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
               {/* Contextual Photography & Calm Study Atmosphere */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] aspect-[4/3]">
+                <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] aspect-[4/3]">
                   <GlovaImage
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                     alt="University students studying together in a warm modern space"
@@ -264,12 +264,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] flex flex-col justify-center space-y-1.5 shadow-xs">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#5B5CE2]">
-                    <Heart className="w-3.5 h-3.5 fill-[#5B5CE2]" aria-hidden="true" />
+                <div className="p-5 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-center space-y-1.5 shadow-xs">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#4F46E5] dark:text-[#5B5CE2]">
+                    <Heart className="w-3.5 h-3.5 fill-[#4F46E5] dark:fill-[#5B5CE2]" aria-hidden="true" />
                     <span className="font-display">{isEn ? 'Sustainable Study Ritual' : 'กิจวัตรการเรียนรู้ที่ยั่งยืน'}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'No pressure, no guilt trips, and no cartoon noise. 5 to 10 minutes of focused active recall builds lasting fluency.'
                       : 'ไร้ความกดดัน ไม่สร้างความรู้สึกผิด เรียนรู้วันละ 5-10 นาทีเพื่อสะสมความเข้าใจและความมั่นใจระยะยาว'}
@@ -284,20 +284,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           2. BRAND STORY: WHAT IS GLOVA & WHY IT MATTERS (EDITORIAL STORYTELLING)
           ===================================================================== */}
-      <section id="story" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
+      <section id="story" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Section Header */}
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
+            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'The Philosophy of Glova' : 'ปรัชญาและหลักการของ GLOVA'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display leading-tight">
               {isEn ? 'Language learning was broken.' : 'การเรียนภาษาแบบเดิมมีข้อจำกัด.'}{' '}
-              <span className="text-[#5B5CE2]">
+              <span className="text-[#4F46E5] dark:text-[#5B5CE2]">
                 {isEn ? 'We rebuilt it from the ground up.' : 'เราจึงออกแบบระบบใหม่ทั้งหมด.'}
               </span>
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-grotesk">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
               {isEn
                 ? 'Traditional learning forces you to memorize tables of disconnected rules or swipe through endless trivia. Glova treats English as a connected instrument with 10 coordinated pillars.'
                 : 'การท่องจำตารางไวยากรณ์หรือการสไลด์แฟลชการ์ดที่ไม่รู้ที่มา ทำให้เสียเวลาแต่ไม่ได้ทักษะใช้งานจริง Glova จึงรวม 10 เสาหลักการเรียนรู้เข้าด้วยกันเพื่อผลลัพธ์ที่จับต้องได้'}
@@ -307,13 +307,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* The Contrast Architecture (Old Way vs Glova Way) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* The Old Way */}
-            <div className="p-8 rounded-3xl bg-[#141A22] border border-rose-200 dark:border-rose-900/40 space-y-6 shadow-xs">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300 text-xs font-bold">
+            <div className="p-8 rounded-3xl bg-rose-50/40 dark:bg-[#141A22] border border-rose-200 dark:border-rose-900/40 space-y-6 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950/50 dark:text-rose-300 text-xs font-bold">
                 <span className="w-2 h-2 rounded-full bg-rose-500" />
                 <span>{isEn ? 'The Traditional Way (Rote & Disconnected)' : 'การเรียนแบบเดิม (ท่องจำและแยกส่วน)'}</span>
               </div>
 
-              <div className="space-y-4 text-sm text-muted-foreground font-grotesk">
+              <div className="space-y-4 text-sm text-slate-700 dark:text-[#94A3B8] font-grotesk">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
                   <p>{isEn ? 'Memorizing tense formulas without feeling time anchors or real-life context.' : 'ท่องสูตรไวยากรณ์ตามตาราง แต่ไม่เคยเข้าใจมุมมองเวลาในการใช้งานจริง'}</p>
@@ -334,27 +334,27 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* The Glova Way */}
-            <div className="p-8 rounded-3xl bg-[#141A22] border-2 border-[rgba(184,167,255,0.35)] space-y-6 shadow-md shadow-[#5B5CE2]/10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
+            <div className="p-8 rounded-3xl bg-indigo-50/40 dark:bg-[#141A22] border-2 border-indigo-200 dark:border-[rgba(184,167,255,0.35)] space-y-6 shadow-md shadow-[#5B5CE2]/10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#A5A6F6] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{isEn ? 'The Glova Standard: Connected and Active' : 'มาตรฐาน Glova เชื่อมโยงและนำไปใช้จริง'}</span>
               </div>
 
-              <div className="space-y-4 text-sm text-[#EDEBE8] font-grotesk font-medium">
+              <div className="space-y-4 text-sm text-slate-900 dark:text-[#EDEBE8] font-grotesk font-medium">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#5B5CE2]/20 text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
                   <p>{isEn ? 'Animated grammar timelines show exactly when an action happened and why it matters.' : 'ไทม์ไลน์ภาพเคลื่อนไหวแสดงชัดเจนว่าเหตุการณ์เกิดเมื่อใดและส่งผลอย่างไร'}</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#5B5CE2]/20 text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
                   <p>{isEn ? '3,860 verified Oxford & Cambridge terms with acoustic stress graphs and native audio.' : 'คลังคำศัพท์ 3,860 คำพร้อมกราฟิกความดังพยางค์และการออกเสียงจากเจ้าของภาษา'}</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#5B5CE2]/20 text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
                   <p>{isEn ? 'Judgment-free private speaking & writing studios with instant diagnostic rubric feedback.' : 'สตูดิโอฝึกพูดและเขียนส่วนตัว พร้อมเกณฑ์ประเมินคะแนน CEFR อัตโนมัติ'}</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#5B5CE2]/20 text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
                   <p>{isEn ? 'Competitive 4-second reflex matchmaking that builds instinct under realistic time pressure.' : 'สมรภูมิประลองคำศัพท์ 4 วินาที สร้างสัญชาตญาณตอบสนองที่ฉับไว'}</p>
                 </div>
               </div>
@@ -363,7 +363,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
           {/* The 10 Coordinated Pillars */}
           <div className="space-y-6 pt-4">
-            <h3 className="text-xl sm:text-2xl font-black text-foreground tracking-tight font-display">
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'The 10 Integrated Pillars of the Glova Ecosystem' : '10 เสาหลักแห่งระบบการเรียนรู้ Glova'}
             </h3>
 
@@ -382,12 +382,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               ].map((pillar, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-1 hover:border-[rgba(37,36,42,0.25)] transition-colors"
+                  className="p-4 rounded-2xl bg-slate-50 dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-1 hover:border-indigo-300 dark:hover:border-white/20 transition-colors"
                 >
-                  <span className="text-xs font-black text-[#5B5CE2] font-tech">
+                  <span className="text-xs font-black text-[#4F46E5] dark:text-[#5B5CE2] font-tech">
                     {isEn ? pillar.titleEn : pillar.titleTh}
                   </span>
-                  <div className="text-[11px] text-muted-foreground font-semibold">
+                  <div className="text-[11px] text-slate-600 dark:text-[#94A3B8] font-semibold">
                     {isEn ? pillar.descEn : pillar.descTh}
                   </div>
                 </div>
@@ -400,17 +400,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           3. INTERACTIVE PRODUCT SHOWCASE: THE 8 STUDIOS
           ===================================================================== */}
-      <section id="studios" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
+      <section id="studios" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Showcase Section Heading */}
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
+            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Interactive Product Capabilities' : 'ระบบการทำงานจริงของสตูดิโอ'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Experience Glova in Action' : 'สัมผัสสตูดิโอการเรียนรู้ของ Glova'}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
               {isEn
                 ? 'Each studio is engineered with its own unique tactile interface, matching the exact cognitive demands of that linguistic skill.'
                 : 'แต่ละสตูดิโอถูกออกแบบด้วยอินเทอร์เฟซเฉพาะตัวตามลักษณะของทักษะภาษานั้นๆ เพื่อการฝึกฝนที่มีประสิทธิภาพสูงสุด'}
@@ -439,7 +439,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   className={`touch-target px-4 py-2 rounded-2xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 cursor-pointer border ${
                     isActive
                       ? 'bg-[#5B5CE2] text-white border-t border-white/25 shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none'
-                      : 'bg-[#141A22] text-muted-foreground hover:text-foreground border border-[rgba(255,255,255,0.08)] shadow-[0_2.5px_0_0_#0D1318] active:translate-y-[2.5px] active:shadow-none hover:bg-[#253040]'
+                      : 'bg-white dark:bg-[#141A22] text-slate-700 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:translate-y-[2.5px] active:shadow-none hover:bg-slate-50 dark:hover:bg-[#253040]'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -450,18 +450,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           </div>
 
           {/* Interactive Studio Preview Canvas */}
-          <div className="rounded-3xl border-2 border-[rgba(255,255,255,0.08)] bg-[#141A22] p-6 sm:p-10 shadow-lg shadow-black/[0.03]">
+          <div className="rounded-3xl border-2 border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#141A22] p-6 sm:p-10 shadow-lg shadow-black/[0.03]">
             {/* 1. VOCABULARY SHOWCASE */}
             {activeStudioTab === 'vocab' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(255,255,255,0.08)]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
                     CEFR B2 · VOCABULARY LAB
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Spaced Active Recall & Phonetics' : 'การดึงความจำแบบกระจายระยะและการออกเสียง'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Study with genuine acoustic stress markers, IPA transcription, and contextual university collocations. Words are automatically scheduled for review right before you forget them.'
                       : 'ฝึกฝนด้วยสัญลักษณ์สัทศาสตร์ IPA และกราฟิกแสดงน้ำหนักพยางค์ คำศัพท์จะถูกจัดคิวทบทวนอัตโนมัติในจังหวะที่เหมาะสมตามอัลกอริทึม Spaced Repetition'}
@@ -473,18 +473,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-4">
-                  <div className="flex items-center justify-between text-xs font-bold text-muted-foreground">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500 dark:text-[#94A3B8]">
                     <span className="font-mono">Word 1 of 3,860</span>
-                    <span className="text-[#10B981]">Mastered in 2 sessions</span>
+                    <span className="text-[#059669] dark:text-[#10B981]">Mastered in 2 sessions</span>
                   </div>
-                  <div className="p-8 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-3 shadow-xs">
-                    <div className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#5B5CE2]/15 text-[#5B5CE2]">
+                  <div className="p-8 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-center space-y-3 shadow-xs">
+                    <div className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#4F46E5]/10 text-[#4F46E5] dark:bg-[#5B5CE2]/15 dark:text-[#5B5CE2]">
                       Academic Adjective
                     </div>
-                    <h4 className="text-3xl font-black text-foreground">pragmatic</h4>
-                    <p className="text-sm font-mono text-muted-foreground">/præɡˈmæt.ɪk/</p>
-                    <p className="text-xs text-muted-foreground pt-1">
+                    <h4 className="text-3xl font-black text-slate-900 dark:text-[#EDEBE8]">pragmatic</h4>
+                    <p className="text-sm font-mono text-slate-500 dark:text-[#94A3B8]">/præɡˈmæt.ɪk/</p>
+                    <p className="text-xs text-slate-600 dark:text-[#94A3B8] pt-1">
                       {isEn ? 'Solving problems in a sensible way that suits the conditions that really exist.' : 'เน้นการปฏิบัติจริงและแก้ปัญหาตามความเป็นจริง'}
                     </p>
                     <div className="pt-3 flex justify-center gap-2">
@@ -504,13 +504,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'grammar' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-white border border-[#CCA735]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#F59E0B] text-white border border-[#D97706]">
                     CEFR B1 · GRAMMAR TIMELINE
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Animated Timeline Sentence Mechanics' : 'ไทม์ไลน์ภาพเคลื่อนไหวบอกกาลเวลา'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Never confuse Past Simple with Present Perfect again. Animated visual anchors show the exact relationship between the event time and the present moment.'
                       : 'หมดปัญหาความสับสนระหว่าง Past Simple กับ Present Perfect ด้วยเส้นไทม์ไลน์ที่ทำให้เห็นจุดของเวลาและความเชื่อมโยงถึงปัจจุบันอย่างชัดเจน'}
@@ -522,15 +522,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-4">
-                  <div className="p-6 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-4">
-                    <div className="text-xs font-bold text-muted-foreground uppercase tracking-wide">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
+                  <div className="p-6 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
+                    <div className="text-xs font-bold text-slate-500 dark:text-[#94A3B8] uppercase tracking-wide">
                       Timeline Blueprint: Past Finished vs Present Relevance
                     </div>
-                    <div className="relative py-4 border-b border-[rgba(255,255,255,0.08)] space-y-2">
+                    <div className="relative py-4 border-b border-slate-100 dark:border-[rgba(255,255,255,0.08)] space-y-2">
                       <div className="flex items-center justify-between text-xs font-bold">
-                        <span className="text-rose-600">Past Simple: I lived in London (1998-2002)</span>
-                        <span className="text-[11px] text-muted-foreground">Finished in past</span>
+                        <span className="text-rose-600 dark:text-rose-400">Past Simple: I lived in London (1998-2002)</span>
+                        <span className="text-[11px] text-slate-500 dark:text-[#94A3B8]">Finished in past</span>
                       </div>
                       <div className="w-full h-2 rounded-full bg-rose-100 dark:bg-rose-950/40 overflow-hidden">
                         <div className="w-1/3 h-full bg-rose-500 rounded-full" />
@@ -538,8 +538,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     </div>
                     <div className="relative py-2 space-y-2">
                       <div className="flex items-center justify-between text-xs font-bold">
-                        <span className="text-[#10B981]">Present Perfect: I have lived in London for 3 years</span>
-                        <span className="text-[11px] text-muted-foreground">Still living now</span>
+                        <span className="text-[#059669] dark:text-[#10B981]">Present Perfect: I have lived in London for 3 years</span>
+                        <span className="text-[11px] text-slate-500 dark:text-[#94A3B8]">Still living now</span>
                       </div>
                       <div className="w-full h-2 rounded-full bg-emerald-100 dark:bg-emerald-950/40 overflow-hidden">
                         <div className="w-full h-full bg-[#10B981] rounded-full" />
@@ -554,13 +554,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'reading' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#B9E8D3] text-[#134E48] border border-[#88C6AB]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#D1FAE5] text-[#065F46] border border-[#6EE7B7]">
                     CEFR B2 · READING LAB
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Split-Pane Analytical Reading' : 'อ่านจับใจความและบทความมหาวิทยาลัย'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Practice skimming, scanning, and deep comprehension questions on campus themes with built-in vocabulary drawer and Cambridge exam formatting.'
                       : 'ฝึกการอ่านจับใจความอย่างรวดเร็ว (Skimming & Scanning) พร้อมคลังคำศัพท์ประจำบทความและชุดคำถามวัดความเข้าใจตามมาตรฐานเคมบริดจ์'}
@@ -572,13 +572,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-xs space-y-2">
-                    <div className="font-bold text-foreground">The Psychology of Group Work in University Seminars</div>
-                    <p className="text-muted-foreground leading-relaxed line-clamp-3">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs space-y-2">
+                    <div className="font-bold text-slate-900 dark:text-[#EDEBE8]">The Psychology of Group Work in University Seminars</div>
+                    <p className="text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-3">
                       Collaborative problem-solving frequently exposes disparities in team members' prior exposure to academic discourse. Lecturers note that structured role allocation significantly alleviates communication barriers...
                     </p>
-                    <div className="pt-2 flex items-center justify-between text-[11px] font-semibold text-[#5B5CE2]">
+                    <div className="pt-2 flex items-center justify-between text-[11px] font-semibold text-[#4F46E5] dark:text-[#5B5CE2]">
                       <span>Vocabulary: 420 words</span>
                       <span>Cambridge FCE Reading Part 5</span>
                     </div>
@@ -594,10 +594,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   <span className="px-3 py-1 rounded-full text-xs font-black bg-[#FFE4E6] text-[#9D174D] border border-[#FDA4AF]">
                     CEFR B1 · LISTENING STUDIO
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Audio Waveform & Accent Variety' : 'ฟังสำเนียงสากลพร้อมคลื่นเสียง'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Listen to dialogues across British, North American, and Australian accents with adjustable playback speed and progressive disclosure transcripts.'
                       : 'ฝึกฟังบทสนทนาสถานการณ์จริงจากสำเนียงสากลหลากหลาย ปรับความเร็วเสียงได้ พร้อมตัวเลือกเปิดปิดสคริปต์เมื่อต้องการตรวจทาน'}
@@ -609,15 +609,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-3 text-center">
-                    <div className="text-xs font-bold text-muted-foreground">Dialect: Standard British Accent · Speed: 1.0x</div>
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3 text-center">
+                    <div className="text-xs font-bold text-slate-500 dark:text-[#94A3B8]">Dialect: Standard British Accent · Speed: 1.0x</div>
                     <div className="flex items-center justify-center gap-1.5 h-12">
                       {[40, 70, 90, 30, 80, 100, 60, 40, 85, 95, 50, 65, 80, 40].map((h, i) => (
-                        <div key={i} className="w-1.5 rounded-full bg-[#5B5CE2]" style={{ height: `${h}%` }} />
+                        <div key={i} className="w-1.5 rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2]" style={{ height: `${h}%` }} />
                       ))}
                     </div>
-                    <p className="text-xs text-muted-foreground font-grotesk italic">
+                    <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk italic">
                       "Could you tell me where the postgraduate student registry is located?"
                     </p>
                   </div>
@@ -632,10 +632,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   <span className="px-3 py-1 rounded-full text-xs font-black bg-[#FFEDD5] text-[#9A3412] border border-[#FDBA74]">
                     CEFR B2 · SPEAKING LAB
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Safe Recording & Phonetic Stress' : 'บันทึกเสียงและฝึกการเน้นพยางค์อย่างมั่นใจ'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Record simulated campus dialogues in a private, judgment-free environment with native model audio comparisons and phonetic stress indicators.'
                       : 'ฝึกพูดและบันทึกเสียงในพื้นที่ส่วนตัวไร้ความกังวล พร้อมระบบเปรียบเทียบเสียงกับเจ้าของภาษาและตรวจจับการเน้นพยางค์'}
@@ -647,14 +647,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-6 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-4">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-6 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-center space-y-4">
                     <div className="w-14 h-14 rounded-full bg-rose-100 text-rose-600 mx-auto flex items-center justify-center">
                       <Mic className="w-7 h-7" />
                     </div>
                     <div className="space-y-1">
-                      <div className="text-sm font-bold text-foreground">Prompt: Describe your university study goals</div>
-                      <div className="text-xs text-muted-foreground">Speech recognition active · Target time: 60s</div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-[#EDEBE8]">Prompt: Describe your university study goals</div>
+                      <div className="text-xs text-slate-500 dark:text-[#94A3B8]">Speech recognition active · Target time: 60s</div>
                     </div>
                   </div>
                 </div>
@@ -665,13 +665,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'writing' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(255,255,255,0.08)]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
                     CEFR B1 · WRITING WORKSPACE
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Distraction-Free Workspace & CEFR Rubric' : 'พื้นที่ฝึกเขียนพร้อมตัววัดเกณฑ์ CEFR'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Draft essays and emails with real-time target word count meters, Cambridge rubric checklists, model answers, and draft autosaving.'
                       : 'เขียนบทความและอีเมลด้วยตัวนับจำนวนคำแบบเรียลไทม์ พร้อมเช็กลิสต์เกณฑ์การให้คะแนนแบบเคมบริดจ์และตัวอย่างงานเขียน'}
@@ -683,19 +683,19 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-2 text-xs">
-                    <div className="flex justify-between font-bold text-foreground">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-2 text-xs">
+                    <div className="flex justify-between font-bold text-slate-900 dark:text-[#EDEBE8]">
                       <span>Target: Formal Email to Professor</span>
-                      <span className="text-[#10B981]">112 / 120 words (Optimal)</span>
+                      <span className="text-[#059669] dark:text-[#10B981]">112 / 120 words (Optimal)</span>
                     </div>
-                    <div className="w-full h-2 rounded-full bg-emerald-100 overflow-hidden">
+                    <div className="w-full h-2 rounded-full bg-emerald-100 dark:bg-emerald-950/50 overflow-hidden">
                       <div className="w-[93%] h-full bg-[#10B981] rounded-full" />
                     </div>
                     <div className="pt-2 flex gap-2">
-                      <span className="px-2 py-0.5 rounded bg-muted text-[10px] font-bold">Content: 5/5</span>
-                      <span className="px-2 py-0.5 rounded bg-muted text-[10px] font-bold">Communicative: 4/5</span>
-                      <span className="px-2 py-0.5 rounded bg-muted text-[10px] font-bold">Organization: 5/5</span>
+                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Content: 5/5</span>
+                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Communicative: 4/5</span>
+                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Organization: 5/5</span>
                     </div>
                   </div>
                 </div>
@@ -706,13 +706,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'exam' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-white border border-[#CCA735]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#F59E0B] text-white border border-[#D97706]">
                     CAMBRIDGE QUALIFICATIONS
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? 'Full Cambridge Simulation Hall' : 'ห้องสอบจำลอง KET, PET และ FCE'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Simulate authentic Cambridge English qualifications with server-timed countdowns, answer autosaving, question navigator matrix, and scaled CEFR reports.'
                       : 'จำลองบรรยากาศการสอบเคมบริดจ์เสมือนจริง ทั้งระบบจับเวลานับถอยหลัง บันทึกคำตอบอัตโนมัติ และรายงานผลคะแนนเทียบระดับ CEFR ละเอียดทุกทักษะ'}
@@ -724,18 +724,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-xs space-y-3">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs space-y-3">
                     <div className="flex items-center justify-between font-bold">
-                      <span className="text-foreground">B1 Preliminary (PET) Full Mock</span>
-                      <span className="text-amber-500 font-mono">42:15 Remaining</span>
+                      <span className="text-slate-900 dark:text-[#EDEBE8]">B1 Preliminary (PET) Full Mock</span>
+                      <span className="text-amber-600 dark:text-amber-400 font-mono">42:15 Remaining</span>
                     </div>
                     <div className="grid grid-cols-6 gap-1.5 pt-1">
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((q) => (
                         <div
                           key={q}
                           className={`p-2 rounded text-center font-bold text-[11px] ${
-                            q <= 5 ? 'bg-[#10B981] text-white' : q === 6 ? 'bg-[#5B5CE2] text-white' : 'bg-muted text-muted-foreground'
+                            q <= 5 ? 'bg-[#10B981] text-white' : q === 6 ? 'bg-[#5B5CE2] text-white' : 'bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8]'
                           }`}
                         >
                           Q{q}
@@ -754,10 +754,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2] text-white border border-[#5B5CE2]/40">
                     COMPETITIVE RANKED ARENA
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
                     {isEn ? '4-Second Speed Reflex Duels' : 'ดวลความเร็วคำศัพท์ 4 วินาที'}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-grotesk">
+                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
                     {isEn
                       ? 'Test your English instincts in real-time. Gain Rank Rating (MMR), climb university divisions from Bronze to Master, and earn animated profile frames.'
                       : 'ทดสอบความแม่นยำและไหวพริบภายใต้เวลา 4 วินาทีต่อข้อ ชิงคะแนน MMR ไต่อันดับลีกมหาวิทยาลัย และปลดล็อกกรอบรูปโปรไฟล์ระดับตำนาน'}
@@ -769,11 +769,11 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-5 rounded-2xl bg-[#141A22] text-white space-y-3 text-center">
+                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-5 rounded-2xl bg-indigo-950 dark:bg-[#141A22] text-white space-y-3 text-center">
                     <div className="text-xs font-bold text-amber-400 font-tech">GOLD III · BANGKOK UNIVERSITY LEAGUE</div>
                     <div className="text-2xl font-black text-white">MATCH VICTORY (+28 MMR)</div>
-                    <p className="text-xs text-zinc-400">Current Rating: 1,508 MMR · Top 14% University Learners</p>
+                    <p className="text-xs text-indigo-200 dark:text-zinc-400">Current Rating: 1,508 MMR · Top 14% University Learners</p>
                   </div>
                 </div>
               </div>
@@ -785,16 +785,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           4. THE 7-STAGE LEARNING JOURNEY (SCROLL STORYTELLING)
           ===================================================================== */}
-      <section id="journey" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
+      <section id="journey" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
+            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Continuous Growth Architecture' : 'เส้นทางการพัฒนาที่ชัดเจน'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'How You Progress with Glova' : 'ก้าวหน้าอย่างเป็นระบบในทุกวัน'}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
               {isEn
                 ? 'From your first 3-minute diagnostic check to passing Cambridge qualifications, every step is deliberate and measured.'
                 : 'ตั้งแต่การวัดระดับครั้งแรก 3 นาที ไปจนถึงการสอบผ่านวุฒิบัตรเคมบริดจ์ ทุกขั้นตอนถูกคิดมาเพื่อการก้าวหน้าอย่างมั่นใจ'}
@@ -813,20 +813,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             ].map((st, i) => (
               <div
                 key={st.step}
-                className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-2 relative"
+                className="p-5 rounded-2xl bg-slate-50 dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-2 relative"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-black text-[#5B5CE2]">
+                  <span className="text-xs font-mono font-black text-[#4F46E5] dark:text-[#5B5CE2]">
                     {st.step}
                   </span>
                   {i < 6 && (
-                    <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/50 hidden lg:block" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 dark:text-[#94A3B8]/50 hidden lg:block" />
                   )}
                 </div>
-                <h4 className="text-base font-black text-foreground font-display">
+                <h4 className="text-base font-black text-slate-900 dark:text-[#EDEBE8] font-display">
                   {isEn ? st.titleEn : st.titleTh}
                 </h4>
-                <p className="text-xs text-muted-foreground font-grotesk leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
                   {isEn ? st.descEn : st.descTh}
                 </p>
               </div>
@@ -838,16 +838,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           5. GAMIFICATION SHOWCASE: GAMES THAT KEEP YOU LEARNING
           ===================================================================== */}
-      <section id="arena" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
+      <section id="arena" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
+            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Purpose-Driven Gaming Layer' : 'ระบบเกมที่ส่งเสริมการเรียนรู้'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Games Built to Keep You Progressing' : 'เกมที่ช่วยให้คุณอยากเรียนต่อทุกวัน'}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
               {isEn
                 ? 'We gamified the return loop, not the academic content. XP rewards, ranked tiers, and university squads motivate you to show up every day.'
                 : 'เรานำกลไกเกมมาช่วยสร้างแรงจูงใจในการกลับมาฝึกฝนอย่างสม่ำเสมอ ทั้งแต้ม XP อันดับลีก และการเรียนคู่กับเพื่อนมหาวิทยาลัย'}
@@ -862,14 +862,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* Gamification Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
             {/* 1. Ranked Tiers */}
-            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
                 <Trophy className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-black text-foreground font-display">
+              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
                 {isEn ? '6 Competitive Rank Tiers' : 'ระบบจัดอันดับ 6 ลีก'}
               </h3>
-              <p className="text-xs text-muted-foreground font-grotesk leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
                 {isEn
                   ? 'Climb from Bronze to Master through 4-second speed reflex battles. Your MMR reflects real vocabulary retrieval speed under pressure.'
                   : 'ไต่อันดับตั้งแต่ Bronze ถึง Master ผ่านการประลองความเร็ว 4 วินาที แต้ม MMR สะท้อนความไวในการดึงคำศัพท์มาใช้จริง'}
@@ -877,14 +877,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* 2. Animated Rank Frames */}
-            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center font-bold">
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-black text-foreground font-display">
+              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
                 {isEn ? 'Animated Profile Emblems' : 'กรอบรูปโปรไฟล์ระดับตำนาน'}
               </h3>
-              <p className="text-xs text-muted-foreground font-grotesk leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
                 {isEn
                   ? 'Unlock exclusive animated gamer and fantasy profile frames through Season Pass achievements and tournament milestones.'
                   : 'สะสมกรอบรูปโปรไฟล์อนิเมชันระดับพิเศษสไตล์เกมเมอร์และแฟนตาซี จากการทำภารกิจ Season Pass และการแข่งขัน'}
@@ -892,14 +892,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* 3. Triple Leaderboards */}
-            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#5B5CE2]/10 text-[#5B5CE2] flex items-center justify-center font-bold">
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
+              <div className="w-12 h-12 rounded-2xl bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center font-bold">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-black text-foreground font-display">
+              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
                 {isEn ? 'Triple Leaderboards' : 'ตารางคะแนน 3 รูปแบบ'}
               </h3>
-              <p className="text-xs text-muted-foreground font-grotesk leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
                 {isEn
                   ? 'Compete on the Skill MMR board, celebrate effort on the Weekly XP board, and track milestones with university study buddies.'
                   : 'จัดอันดับทั้งกระดานฝีมือ MMR กระดานความขยันประจำสัปดาห์ XP และกระดานเปรียบเทียบกับเพื่อนสนิท'}
@@ -912,17 +912,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           6. DIAGNOSTIC CURIOSITY CHECK (LOW-FRICTION SNAPSHOT)
           ===================================================================== */}
-      <section id="quick-check-experience" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
+      <section id="quick-check-experience" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-3 mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
               <Clock className="w-3.5 h-3.5" aria-hidden="true" />
               <span className="font-tech">{isEn ? 'Low-Friction English Snapshot' : 'แบบวัดระดับภาษาอังกฤษใน 3 นาที'}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Check Your English in 3 Minutes' : 'ทดสอบความรู้ภาษาอังกฤษใน 3 นาที'}
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto font-grotesk">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto font-grotesk">
               {isEn
                 ? 'Respond to 8 everyday university scenarios to receive your instant personal CEFR snapshot without any stress or upfront sign-up.'
                 : 'ตอบคำถามจำลอง 8 สถานการณ์จริงเพื่อรับการประเมินระดับ CEFR ส่วนบุคคลทันที โดยไม่ต้องลงทะเบียนก่อน'}
@@ -936,16 +936,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           7. ACADEMIC TRUST & CAMBRIDGE QUALIFICATIONS
           ===================================================================== */}
-      <section id="cambridge" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
+      <section id="cambridge" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
           <div className="space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
+            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'International Benchmark Scale' : 'มาตรฐานระดับสากล'}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Aligned with Cambridge English & CEFR Standards' : 'สอดคล้องกับมาตรฐานเคมบริดจ์และกรอบ CEFR'}
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto font-grotesk">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto font-grotesk">
               {isEn
                 ? 'Every skill, practice question, and mock examination is calibrated directly to international Common European Framework criteria.'
                 : 'ทุกแบบฝึกหัด คำถาม และข้อสอบจำลอง ถูกเทียบเคียงตามกรอบมาตรฐานยุโรป CEFR จากระดับ A1 ถึง C2 อย่างเคร่งครัด'}
@@ -963,18 +963,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             ].map((item) => (
               <div
                 key={item.level}
-                className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-1 shadow-xs hover:border-[rgba(184,167,255,0.35)] transition-colors"
+                className="p-5 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] text-center space-y-1 shadow-xs hover:border-[#4F46E5]/50 dark:hover:border-[rgba(184,167,255,0.35)] transition-colors"
               >
-                <span className="text-2xl font-black text-[#5B5CE2] font-tech">{item.level}</span>
-                <div className="text-xs font-bold text-foreground font-display">{isEn ? item.labelEn : item.labelTh}</div>
-                <div className="text-[11px] font-mono font-bold text-[#10B981]">{item.exam}</div>
-                <div className="text-[10px] text-muted-foreground font-grotesk pt-1">{t(item.infoId)}</div>
+                <span className="text-2xl font-black text-[#4F46E5] dark:text-[#5B5CE2] font-tech">{item.level}</span>
+                <div className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] font-display">{isEn ? item.labelEn : item.labelTh}</div>
+                <div className="text-[11px] font-mono font-bold text-[#059669] dark:text-[#10B981]">{item.exam}</div>
+                <div className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-grotesk pt-1">{t(item.infoId)}</div>
               </div>
             ))}
           </div>
 
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground bg-[#141A22] px-5 py-2.5 rounded-full border border-[rgba(255,255,255,0.08)] shadow-xs font-grotesk">
-            <ShieldCheck className="w-4 h-4 text-[#10B981]" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-[#94A3B8] bg-white dark:bg-[#141A22] px-5 py-2.5 rounded-full border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs font-grotesk">
+            <ShieldCheck className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
             <span>{isEn ? 'Rigorous CEFR alignment for university entrance and exchange qualifications' : 'มาตรฐาน CEFR รองรับการสอบเข้ามหาวิทยาลัยและทุนแลกเปลี่ยนสากล'}</span>
           </div>
         </div>
@@ -983,18 +983,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           8. FINAL INSPIRING CTA: DIRECT CONVERSION TO PRODUCT FLOW
           ===================================================================== */}
-      <section className="py-20 sm:py-28 bg-[#0D1117] text-center border-b border-[rgba(255,255,255,0.08)]">
+      <section className="py-20 sm:py-28 bg-white dark:bg-[#0D1117] text-center border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isEn ? 'Begin Your University English Journey' : 'เริ่มต้นการเดินทางภาษาอังกฤษของคุณ'}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
             {isEn ? 'Ready to discover your true English level?' : 'พร้อมค้นพบระดับภาษาอังกฤษที่แท้จริงหรือยัง?'}
           </h2>
 
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed font-grotesk">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto leading-relaxed font-grotesk">
             {isEn
               ? 'No credit card, no forced signup, and no rigid schedules. Take the 3-minute diagnostic assessment and start mastering English on your own terms.'
               : 'ไม่ต้องใช้บัตรเครดิต ไม่บังคับลงทะเบียนก่อน และเรียนรู้ได้ตามจังหวะเวลาที่คุณสะดวก ทำแบบวัดระดับ 3 นาทีแล้วก้าวไปข้างหน้าอย่างมั่นใจ'}
@@ -1026,16 +1026,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           9. DEFENSIVE MULTI-COLUMN BRAND FOOTER
           ===================================================================== */}
-      <footer className="py-12 bg-[#141A22] border-t border-[rgba(255,255,255,0.08)] text-xs text-muted-foreground font-grotesk">
+      <footer className="py-12 bg-slate-100 dark:bg-[#141A22] border-t border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Col 1: Brand */}
             <div className="space-y-3 col-span-2 md:col-span-1">
               <div className="flex items-center gap-2">
-                <span className="font-black text-lg text-foreground font-display">Glova</span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#5B5CE2]/15 text-[#5B5CE2]">CEFR A1 to C2</span>
+                <span className="font-black text-lg text-slate-900 dark:text-[#EDEBE8] font-display">Glova</span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2]">CEFR A1 to C2</span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed">
                 {isEn
                   ? 'University-scale English learning and Cambridge qualification platform.'
                   : 'แพลตฟอร์มเตรียมความพร้อมภาษาอังกฤษและข้อสอบเคมบริดจ์ระดับมหาวิทยาลัย'}
@@ -1044,53 +1044,53 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
             {/* Col 2: The 6 Studios */}
             <div className="space-y-2">
-              <div className="font-bold text-foreground uppercase tracking-wider text-[11px]">
+              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
                 {isEn ? 'Learning Studios' : 'สตูดิโอการเรียน'}
               </div>
               <ul className="space-y-1.5">
-                <li><Link href="/vocabulary" className="hover:text-foreground transition-colors">{isEn ? 'Vocabulary Lab' : 'คลังคำศัพท์'}</Link></li>
-                <li><Link href="/grammar" className="hover:text-foreground transition-colors">{isEn ? 'Grammar Timelines' : 'ไวยากรณ์'}</Link></li>
-                <li><Link href="/reading" className="hover:text-foreground transition-colors">{isEn ? 'Reading Lab' : 'การอ่านจับใจความ'}</Link></li>
-                <li><Link href="/listening" className="hover:text-foreground transition-colors">{isEn ? 'Listening Studio' : 'การฟังสำเนียง'}</Link></li>
-                <li><Link href="/speaking" className="hover:text-foreground transition-colors">{isEn ? 'Speaking Lab' : 'การพูดและออกเสียง'}</Link></li>
-                <li><Link href="/writing" className="hover:text-foreground transition-colors">{isEn ? 'Writing Workspace' : 'การเขียน'}</Link></li>
+                <li><Link href="/vocabulary" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Vocabulary Lab' : 'คลังคำศัพท์'}</Link></li>
+                <li><Link href="/grammar" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Grammar Timelines' : 'ไวยากรณ์'}</Link></li>
+                <li><Link href="/reading" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Reading Lab' : 'การอ่านจับใจความ'}</Link></li>
+                <li><Link href="/listening" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Listening Studio' : 'การฟังสำเนียง'}</Link></li>
+                <li><Link href="/speaking" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Speaking Lab' : 'การพูดและออกเสียง'}</Link></li>
+                <li><Link href="/writing" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Writing Workspace' : 'การเขียน'}</Link></li>
               </ul>
             </div>
 
             {/* Col 3: Arena & Testing */}
             <div className="space-y-2">
-              <div className="font-bold text-foreground uppercase tracking-wider text-[11px]">
+              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
                 {isEn ? 'Arena & Assessment' : 'การประลองและวัดผล'}
               </div>
               <ul className="space-y-1.5">
-                <li><Link href="/compete" className="hover:text-foreground transition-colors">{isEn ? 'Ranked Arena (4s)' : 'สมรภูมิประลอง 4s'}</Link></li>
-                <li><Link href="/ranking" className="hover:text-foreground transition-colors">{isEn ? 'Triple Leaderboards' : 'ตารางคะแนนลีก'}</Link></li>
-                <li><Link href="/assessment" className="hover:text-foreground transition-colors">{isEn ? 'Diagnostic Test' : 'แบบวัดระดับ CEFR'}</Link></li>
-                <li><Link href="/mock-exams" className="hover:text-foreground transition-colors">{isEn ? 'Cambridge Mock Exams' : 'สอบจำลอง KET/PET/FCE'}</Link></li>
-                <li><Link href="/social" className="hover:text-foreground transition-colors">{isEn ? 'Study Together' : 'ห้องเรียนคู่เพื่อน'}</Link></li>
+                <li><Link href="/compete" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Ranked Arena (4s)' : 'สมรภูมิประลอง 4s'}</Link></li>
+                <li><Link href="/ranking" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Triple Leaderboards' : 'ตารางคะแนนลีก'}</Link></li>
+                <li><Link href="/assessment" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Diagnostic Test' : 'แบบวัดระดับ CEFR'}</Link></li>
+                <li><Link href="/mock-exams" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Cambridge Mock Exams' : 'สอบจำลอง KET/PET/FCE'}</Link></li>
+                <li><Link href="/social" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Study Together' : 'ห้องเรียนคู่เพื่อน'}</Link></li>
               </ul>
             </div>
 
             {/* Col 4: Platform & Identity */}
             <div className="space-y-2">
-              <div className="font-bold text-foreground uppercase tracking-wider text-[11px]">
+              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
                 {isEn ? 'Platform' : 'แพลตฟอร์ม'}
               </div>
               <ul className="space-y-1.5">
-                <li><Link href="/" className="hover:text-foreground transition-colors">{isEn ? 'Learning Dashboard' : 'หน้าหลักการเรียน'}</Link></li>
-                <li><Link href="/profile" className="hover:text-foreground transition-colors">{isEn ? 'Player Profile & Frames' : 'โปรไฟล์และกรอบรูป'}</Link></li>
-                <li><Link href="/achievements" className="hover:text-foreground transition-colors">{isEn ? 'Achievements Room' : 'คลังความสำเร็จ'}</Link></li>
-                <li><Link href="/analytics" className="hover:text-foreground transition-colors">{isEn ? 'Skill Analytics' : 'สถิติและจุดอ่อน'}</Link></li>
+                <li><Link href="/" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Learning Dashboard' : 'หน้าหลักการเรียน'}</Link></li>
+                <li><Link href="/profile" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Player Profile & Frames' : 'โปรไฟล์และกรอบรูป'}</Link></li>
+                <li><Link href="/achievements" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Achievements Room' : 'คลังความสำเร็จ'}</Link></li>
+                <li><Link href="/analytics" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Skill Analytics' : 'สถิติและจุดอ่อน'}</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+          <div className="pt-8 border-t border-slate-200 dark:border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
             <div>
               © 2026 Glova English Platform. All rights reserved.
             </div>
             <div className="flex items-center gap-4">
-              <span>Warm Earth Foundation • Radiant Indigo • Terracotta Accent • Glova Tactile Identity</span>
+              <span>Vibrant Light & Obsidian Dark Dual-Theme Architecture • Glova Tactile Identity</span>
             </div>
           </div>
         </div>

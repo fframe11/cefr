@@ -27,10 +27,10 @@
     "theme": {
       "primaryColor": "#5B5CE2",
       "accentColor": "#F6D978",
-      "backgroundGradient": "from-[#5B5CE2]/15 via-[#E9E5FF]/30 to-[#FFFDF8] dark:from-[#5B5CE2]/20 dark:via-[#24233A] dark:to-card",
-      "badgeBg": "bg-[#5B5CE2]",
+      "backgroundGradient": "from-indigo-500/15 via-violet-50/70 to-white dark:from-[#5B5CE2]/20 dark:via-[#141A22] dark:to-[#1C2430]",
+      "badgeBg": "bg-indigo-600 dark:bg-[#5B5CE2]",
       "badgeText": "text-white",
-      "borderAccent": "border-[#5B5CE2]/30"
+      "borderAccent": "border-indigo-300/80 dark:border-[#5B5CE2]/30"
     },
     "is_external_shareable": true,
     "public_slug": "ranked-season-01"
@@ -61,12 +61,12 @@
     "target_route": "vocabulary",
     "show_when_upcoming": true,
     "theme": {
-      "primaryColor": "#FF8F82",
+      "primaryColor": "#F43F5E",
       "accentColor": "#F6D978",
-      "backgroundGradient": "from-[#FF8F82]/15 via-[#FFFDF8] to-[#FFFDF8] dark:from-[#FF8F82]/20 dark:via-[#24233A] dark:to-card",
-      "badgeBg": "bg-[#FF8F82]",
+      "backgroundGradient": "from-rose-500/15 via-amber-50/60 to-white dark:from-rose-500/20 dark:via-[#141A22] dark:to-[#1C2430]",
+      "badgeBg": "bg-rose-600",
       "badgeText": "text-white",
-      "borderAccent": "border-[#FF8F82]/30"
+      "borderAccent": "border-rose-300/80 dark:border-rose-500/30"
     },
     "is_external_shareable": true,
     "public_slug": "vocab-sprint-300"
@@ -99,10 +99,10 @@
     "theme": {
       "primaryColor": "#10B981",
       "accentColor": "#F6D978",
-      "backgroundGradient": "from-[#B9E8D3]/25 via-[#FFFDF8] to-[#FFFDF8] dark:from-emerald-950/30 dark:via-[#24233A] dark:to-card",
+      "backgroundGradient": "from-emerald-500/15 via-teal-50/60 to-white dark:from-emerald-950/30 dark:via-[#141A22] dark:to-[#1C2430]",
       "badgeBg": "bg-emerald-600",
       "badgeText": "text-white",
-      "borderAccent": "border-emerald-500/30"
+      "borderAccent": "border-emerald-300/80 dark:border-emerald-500/30"
     },
     "is_external_shareable": true,
     "public_slug": "xp-weekend-blitz"
@@ -135,10 +135,10 @@
     "theme": {
       "primaryColor": "#8B5CF6",
       "accentColor": "#06B6D4",
-      "backgroundGradient": "from-purple-500/15 via-[#FFFDF8] to-[#FFFDF8] dark:from-purple-950/30 dark:via-[#24233A] dark:to-card",
+      "backgroundGradient": "from-purple-500/15 via-fuchsia-50/60 to-white dark:from-purple-950/30 dark:via-[#141A22] dark:to-[#1C2430]",
       "badgeBg": "bg-purple-600",
       "badgeText": "text-white",
-      "borderAccent": "border-purple-500/30"
+      "borderAccent": "border-purple-300/80 dark:border-purple-500/30"
     },
     "is_external_shareable": true,
     "public_slug": "speed-battle-feature"
@@ -171,10 +171,10 @@
     "theme": {
       "primaryColor": "#06B6D4",
       "accentColor": "#F6D978",
-      "backgroundGradient": "from-cyan-500/15 via-[#FFFDF8] to-[#FFFDF8] dark:from-cyan-950/30 dark:via-[#24233A] dark:to-card",
+      "backgroundGradient": "from-cyan-500/15 via-sky-50/60 to-white dark:from-cyan-950/30 dark:via-[#141A22] dark:to-[#1C2430]",
       "badgeBg": "bg-cyan-600",
       "badgeText": "text-white",
-      "borderAccent": "border-cyan-500/30"
+      "borderAccent": "border-cyan-300/80 dark:border-cyan-500/30"
     },
     "is_external_shareable": true,
     "public_slug": "winter-championship-2026"

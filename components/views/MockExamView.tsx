@@ -839,7 +839,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       answers[currentQuestion.id]?.selected_option_key === option.key;
                     const optionStyle = isSelected
                       ? 'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] dark:text-[#A5A6F6] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none'
-                      : 'bg-[#1C2430] hover:bg-[#253040] border-2 border-[rgba(255,255,255,0.08)] text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
+                      : 'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] border-2 border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
 
                     return (
                       <button
@@ -851,7 +851,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                           className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 border ${
                             isSelected
                               ? 'bg-[#5B5CE2] text-white border-[#5B5CE2]'
-                              : 'bg-[#1C2430] text-[#EDEBE8] border-[rgba(255,255,255,0.08)]'
+                              : 'bg-slate-100 dark:bg-[#1C2430] text-slate-900 dark:text-[#EDEBE8] border-slate-200/80 dark:border-white/10'
                           }`}
                         >
                           {option.key}
@@ -932,7 +932,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 const isFlagged = flaggedQuestionIds.includes(q.id);
                 const isCurrent = currentQuestionIdx === idx;
 
-                let btnClass = 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none';
+                let btnClass = 'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] border border-slate-200/80 dark:border-white/10 shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none';
                 if (isCurrent) {
                   btnClass = 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none font-bold ring-2 ring-[#5B5CE2]/30';
                 } else if (isFlagged) {

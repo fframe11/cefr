@@ -232,7 +232,7 @@ export const SpeakingView: React.FC = () => {
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
                   ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(255,255,255,0.08)] hover:bg-[#141A22] dark:hover:bg-[#222E3A]'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#141A22] dark:hover:bg-[#222E3A]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -261,9 +261,9 @@ export const SpeakingView: React.FC = () => {
           <GlovaCard
             variant="bubble"
             elevation="bubble"
-            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(255,255,255,0.08)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
                 <span className="font-bold text-sm sm:text-base text-foreground">
@@ -286,12 +286,12 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-5 rounded-[22px] bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-1.5 shadow-xs">
+            <div className="p-5 rounded-[22px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 space-y-1.5 shadow-xs">
               <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
               </p>
               {currentPrompt.promptTh && (
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-[rgba(255,255,255,0.08)]">
+                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-slate-200/80 dark:border-white/10">
                   {currentPrompt.promptTh}
                 </p>
               )}
@@ -307,7 +307,7 @@ export const SpeakingView: React.FC = () => {
                   </h4>
                   <ul className="space-y-1.5 text-xs text-muted-foreground">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-[#1C2430] p-2.5 rounded-[14px] border border-[rgba(255,255,255,0.08)]">
+                      <li key={idx} className="flex items-start gap-2 bg-slate-100 dark:bg-[#1C2430] p-2.5 rounded-[14px] border border-slate-200/80 dark:border-white/10">
                         <span className="font-bold text-[#5B5CE2]">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>
@@ -331,7 +331,7 @@ export const SpeakingView: React.FC = () => {
                           className={`text-xs px-3 py-1 rounded-full font-mono border transition-all ${
                             isDetected
                               ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 font-bold'
-                              : 'bg-[#141A22] text-muted-foreground border-[rgba(255,255,255,0.08)]'
+                              : 'bg-white dark:bg-[#141A22] text-muted-foreground border-slate-200/80 dark:border-white/10'
                           }`}
                         >
                           {phrase}
@@ -348,10 +348,10 @@ export const SpeakingView: React.FC = () => {
           <GlovaCard
             variant="bubble"
             elevation="bubble"
-            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
             {/* Live Recording Timer */}
-            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-[#1C2430] px-3.5 py-1.5 rounded-full border border-[rgba(255,255,255,0.08)]">
+            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-slate-100 dark:bg-[#1C2430] px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10">
               <Clock className="w-4 h-4 text-[#5B5CE2]" aria-hidden="true" />
               <span>
                 {Math.floor(recordingSeconds / 60)}:

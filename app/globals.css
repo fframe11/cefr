@@ -11,18 +11,45 @@
     --font-tech: 'Space Grotesk', monospace;
     --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Glova Physical Studio Academy Foundation (Dominant Obsidian & Architectural Canvas) */
+    /* Glova Light Mode Foundation — Vibrant, Colorful & High-Contrast */
+    --background: 210 40% 98%;    /* #F8FAFC Crisp Bright Canvas */
+    --foreground: 222 47% 11%;    /* #0F172A Sharp, Bold Dark Text (WCAG AAA) */
+
+    --card: 0 0% 100%;            /* #FFFFFF Crisp Bright Card Surface */
+    --card-foreground: 222 47% 11%; /* #0F172A Deep High-Contrast Text */
+
+    --primary: 243 75% 59%;       /* #4F46E5 Glova Laser Indigo */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;   /* #F1F5F9 Inset/Interactive Plate */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 94%;         /* #E2E8F0 Inset Well */
+    --muted-foreground: 215 16% 40%; /* #334155 Secondary Clear Text */
+
+    --accent: 38 92% 50%;         /* #F59E0B Golden Sunburst */
+    --accent-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;        /* #E2E8F0 Clean border */
+    --input: 214 32% 91%;
+    --ring: 243 75% 59%;
+
+    --radius: 0.875rem;
+  }
+
+  .dark {
+    /* Glova Dark Mode — Deep Obsidian Canvas, Dark Cards (#141A22), Bright White Text */
     --background: 215 28% 7%;     /* #0D1117 Deep Obsidian Studio Floor */
-    --foreground: 38 10% 92%;     /* #EDEBE8 High-Contrast Soft White (WCAG AAA) */
+    --foreground: 38 10% 94%;     /* #F8FAFC High-Contrast Crisp White Text */
 
-    --card: 214 27% 11%;          /* #141A22 Solid Studio Chassis Surface */
-    --card-foreground: 38 10% 92%;
+    --card: 214 27% 11%;          /* #141A22 Studio Chassis Surface */
+    --card-foreground: 38 10% 94%; /* #F8FAFC */
 
-    --primary: 240 71% 62%;       /* #5B5CE2 Glova Studio Laser Indigo */
+    --primary: 240 75% 65%;       /* #6364F3 Studio Laser Indigo */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 215 26% 15%;     /* #1C2430 Physical Cartridge Plate */
-    --secondary-foreground: 38 10% 92%;
+    --secondary-foreground: 38 10% 94%;
 
     --muted: 215 28% 9%;          /* #0F141C Recessed Bay / Inset Well */
     --muted-foreground: 215 15% 65%; /* #94A3B8 Secondary Telemetry */
@@ -31,33 +58,6 @@
     --accent-foreground: 215 28% 7%;
 
     --border: 215 20% 20%;        /* rgba(255, 255, 255, 0.10) */
-    --input: 215 20% 18%;
-    --ring: 240 71% 62%;
-
-    --radius: 0.875rem;
-  }
-
-  .dark {
-    /* Glova Eye-Comfort Physical Studio (Restful, Zero Pure Black #000000, Zero White Cards) */
-    --background: 215 28% 7%;     /* #0D1117 Deep Obsidian Floor */
-    --foreground: 38 10% 92%;     /* #EDEBE8 High-Contrast Soft White */
-
-    --card: 214 27% 11%;          /* #141A22 Studio Chassis Surface */
-    --card-foreground: 38 10% 92%;
-
-    --primary: 240 75% 65%;       /* #6364F3 Studio Laser Indigo */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 215 26% 15%;     /* #1C2430 Physical Cartridge Plate */
-    --secondary-foreground: 38 10% 92%;
-
-    --muted: 215 28% 9%;          /* #0F141C Inset Well */
-    --muted-foreground: 215 15% 65%; /* #94A3B8 Telemetry */
-
-    --accent: 38 78% 57%;         /* #E5A93C Master Guild Gold */
-    --accent-foreground: 215 28% 7%;
-
-    --border: 215 20% 20%;
     --input: 215 20% 18%;
     --ring: 240 75% 65%;
   }
@@ -136,8 +136,14 @@
   background: hsl(var(--muted-foreground) / 0.4);
 }
 
-/* Glova Physical Studio Architectural Grid & Tactile Hardware Invariants */
+/* Glova Studio Architectural Grid & Hardware Invariants */
 .bg-studio-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+}
+.dark .bg-studio-grid {
   background-size: 28px 28px;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
@@ -145,18 +151,33 @@
 }
 
 .studio-chassis {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+}
+.dark .studio-chassis {
   background-color: #141A22;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 4px 16px -2px rgba(0, 0, 0, 0.5);
 }
 
 .studio-cartridge {
+  background-color: #F8FAFC;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+}
+.dark .studio-cartridge {
   background-color: #1C2430;
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .studio-well {
+  background-color: #F1F5F9;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: inset 0 2px 4px 0 rgba(15, 23, 42, 0.04);
+}
+.dark .studio-well {
   background-color: #0F141C;
   border: 1px solid rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.6), 0 1px 0 0 rgba(255, 255, 255, 0.04);
@@ -164,12 +185,18 @@
 
 .tactile-key {
   position: relative;
-  box-shadow: 0 3px 0 0 #0D1318, 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 0 0 #CBD5E1, 0 4px 10px rgba(15, 23, 42, 0.08);
   transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.dark .tactile-key {
+  box-shadow: 0 3px 0 0 #0D1318, 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .tactile-key:active {
   transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #CBD5E1, 0 2px 4px rgba(15, 23, 42, 0.08);
+}
+.dark .tactile-key:active {
   box-shadow: 0 1px 0 0 #0D1318, 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 

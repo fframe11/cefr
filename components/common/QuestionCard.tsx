@@ -146,7 +146,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           const isThisCorrect = isOptionCorrect(option.key, option.isCorrect);
 
           let btnStyle =
-            'bg-[#1C2430] hover:bg-[#253040] border-2 border-[rgba(255,255,255,0.08)] dark:border-[rgba(255,255,255,0.1)] text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
+            'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] border-2 border-slate-200/80 dark:border-white/10 dark:border-[rgba(255,255,255,0.1)] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
 
           if (submitted) {
             if (isPending && isSelected) {
@@ -156,7 +156,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             } else if (isSelected && !isThisCorrect) {
               btnStyle = 'border-2 border-rose-500 bg-rose-500/15 text-rose-800 dark:text-rose-200 font-bold shadow-[0_3.5px_0_0_#E11D48]';
             } else {
-              btnStyle = 'opacity-40 border-2 border-[rgba(255,255,255,0.08)] bg-[#141A22]/50 dark:bg-[#1A232C]/50 text-muted-foreground shadow-none';
+              btnStyle = 'opacity-40 border-2 border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#141A22]/50 dark:bg-[#1A232C]/50 text-muted-foreground shadow-none';
             }
           } else if (isSelected) {
             btnStyle = 'border-2 border-[#5B5CE2] bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#38399E] active:translate-y-[3.5px] active:shadow-none';
@@ -227,7 +227,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           className={`w-full py-3 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all touch-target ${
             selectedOption && !isSubmitting
               ? 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:translate-y-[4px] active:shadow-none border-t border-white/25 cursor-pointer'
-              : 'bg-[#141A22] dark:bg-[#1A232C] text-muted-foreground cursor-not-allowed shadow-none'
+              : 'bg-white dark:bg-[#141A22] dark:bg-[#1A232C] text-muted-foreground cursor-not-allowed shadow-none'
           }`}
         >
           {isSubmitting ? (
