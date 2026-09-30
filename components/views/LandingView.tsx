@@ -50,8 +50,10 @@ import {
 import {
   TactileButton,
   ShinyText,
+  DecryptedText,
   SpotlightCard,
   GlovaCartridge,
+  VibeCoderSourceDock,
 } from '../ui/GlovaPrimitives';
 import { GlovaImage } from '../ui/GlovaImage';
 import { useTranslation } from '../../i18n';
@@ -92,21 +94,29 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
         <BackgroundBeams />
 
-        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Brand Value Proposition (Editorial Hierarchy) */}
             <div className="lg:col-span-6 space-y-6 text-left">
-              {/* Prestigious Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#818CF8] text-xs font-bold tracking-wide border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-                <Sparkles className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#5B5CE2]" aria-hidden="true" />
-                <span className="font-tech uppercase">
-                  {isEn ? 'The Modern University English Platform' : 'มาตรฐานใหม่การเตรียมภาษาอังกฤษมหาวิทยาลัย'}
+              {/* Prestigious Tri-Hybrid Eyebrow */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-2.5 py-1 rounded-full bg-[#FF4655] text-white text-[11px] font-mono font-black uppercase tracking-wider">
+                  TERRARIA × VALORANT × DUOLINGO
                 </span>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#818CF8] text-xs font-bold tracking-wide border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
+                  <Sparkles className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#5B5CE2]" aria-hidden="true" />
+                  <span className="font-tech uppercase">
+                    {isEn ? 'The Modern University English Platform' : 'มาตรฐานใหม่การเตรียมภาษาอังกฤษมหาวิทยาลัย'}
+                  </span>
+                </div>
               </div>
 
-              {/* Dominant Headline with ShinyText */}
+              {/* Dominant Headline with DecryptedText & ShinyText */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-[1.12] font-display">
-                {isEn ? 'Your English.' : 'ภาษาอังกฤษของคุณ.'}{' '}
+                <DecryptedText
+                  text={isEn ? 'Your English.' : 'ภาษาอังกฤษของคุณ.'}
+                  animateOn="hover"
+                />{' '}
                 <ShinyText speedSec={3.5} className="font-black text-[#4F46E5] dark:text-[#5B5CE2] block sm:inline">
                   {isEn ? 'Your True Level.' : 'ระดับที่แท้จริง.'}
                 </ShinyText>{' '}
@@ -116,8 +126,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               {/* Informative Subtext */}
               <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl font-grotesk">
                 {isEn
-                  ? 'Glova unites 3,860 verified Oxford & Cambridge terms, animated grammar timelines, and 4-second reflex duels into an interconnected university learning ecosystem. Discover where you stand in 3 minutes.'
-                  : 'Glova เชื่อมโยงคลังคำศัพท์วิชาการ 3,860 คำ ไทม์ไลน์ไวยากรณ์เข้าใจง่าย และการประลองความเร็ว 4 วินาทีเข้าด้วยกัน เพื่อให้คุณเข้าใจจุดแข็งจุดอ่อนและพัฒนาตรงจุดทันที'}
+                  ? 'Glova unites 3,860 verified Oxford & Cambridge terms, Terraria biome progression, Valorant 4-second reflex duels, and Duolingo 3D mastery loops. Discover where you stand in 3 minutes.'
+                  : 'Glova ผสานการไต่ระดับไบโอมแบบ Terraria การประลองความเร็ว 4 วินาทีสไตล์ Valorant และปุ่มกด 3D สุดมันส์แบบ Duolingo เข้ากับคลังคำศัพท์วิชาการ 3,860 คำ'}
               </p>
 
               {/* Primary & Secondary Tactile Actions */}
@@ -133,7 +143,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 </TactileButton>
 
                 <TactileButton
-                  variant="surface"
+                  variant="valorant"
                   size="lg"
                   onClick={() => scrollToSection('studios')}
                   className="px-6 py-4 text-sm font-bold font-display"
@@ -278,6 +288,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
             </div>
           </div>
+
+          {/* 5-Sites Vibe-Coder Architecture Dock */}
+          <VibeCoderSourceDock isEn={isEn} />
         </div>
       </section>
 

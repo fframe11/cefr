@@ -10,6 +10,9 @@ import {
   TrendingUp,
   Sparkles,
   BookOpen,
+  BookMarked,
+  Headphones,
+  PenTool,
   CheckCircle2,
   AlertTriangle,
   Play,
@@ -33,8 +36,12 @@ import {
   TactileButton,
   SlidingTabs,
   ShinyText,
+  DecryptedText,
   AnimatedNumber,
   SpotlightCard,
+  TacticalHudFrame,
+  TerrariaHotbarBar,
+  VibeCoderSourceDock,
   LearningPathNode,
   GlovaCartridge,
   GlovaNextMove,
@@ -194,13 +201,94 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     ];
   }, [progress.currentLevel, nextLvl, progress.targetExam, primaryAction, onNavigate, isEn]);
 
+  const hotbarSlots = React.useMemo(
+    () => [
+      {
+        slotNumber: 1,
+        id: 'slot-vocab',
+        label: isEn ? 'Lexical Tome (Vocab)' : 'คัมภีร์คำศัพท์ CEFR',
+        rarity: 'hallowed' as const,
+        stackCount: '3,860',
+        icon: <BookOpen className="w-4 h-4 text-[#4F46E5] dark:text-[#818CF8]" />,
+        onSelect: () => onNavigate('vocabulary'),
+      },
+      {
+        slotNumber: 2,
+        id: 'slot-grammar',
+        label: isEn ? 'Syntax Anvil (Grammar)' : 'ทั่งตีไวยากรณ์ 18 บท',
+        rarity: 'gold' as const,
+        stackCount: '18',
+        icon: <Sparkles className="w-4 h-4 text-[#D97706] dark:text-[#FBBF24]" />,
+        onSelect: () => onNavigate('grammar'),
+      },
+      {
+        slotNumber: 3,
+        id: 'slot-reading',
+        label: isEn ? 'Lore Scroll (Reading)' : 'ม้วนคัมภีร์การอ่าน',
+        rarity: 'celestial' as const,
+        stackCount: '42',
+        icon: <BookMarked className="w-4 h-4 text-[#059669] dark:text-[#34D399]" />,
+        onSelect: () => onNavigate('reading'),
+      },
+      {
+        slotNumber: 4,
+        id: 'slot-listening',
+        label: isEn ? 'Echo Crystal (Audio)' : 'ผลึกเสียงสำเนียงจริง',
+        rarity: 'silver' as const,
+        stackCount: '36',
+        icon: <Headphones className="w-4 h-4 text-[#0284C7] dark:text-[#38BDF8]" />,
+        onSelect: () => onNavigate('listening'),
+      },
+      {
+        slotNumber: 5,
+        id: 'slot-compete',
+        label: isEn ? 'Valorant 4s Speed Duel' : 'ดวลคำศัพท์ 4 วินาที',
+        rarity: 'crimson' as const,
+        stackCount: '4s MMR',
+        icon: <Swords className="w-4 h-4 text-[#FF4655]" />,
+        onSelect: () => onNavigate('compete'),
+      },
+      {
+        slotNumber: 6,
+        id: 'slot-exam',
+        label: isEn ? 'Boss Trial (Mock Exam)' : 'บอสด่านสอบ Cambridge',
+        rarity: 'copper' as const,
+        stackCount: progress.targetExam,
+        icon: <Award className="w-4 h-4 text-[#D97706] dark:text-[#E5A93C]" />,
+        onSelect: () => onNavigate('mockExam'),
+      },
+    ],
+    [isEn, onNavigate, progress.targetExam]
+  );
+
   return (
-    <div className="w-full max-w-[1440px] mx-auto space-y-8 pb-16">
+    <div className="w-full max-w-[1440px] mx-auto space-y-6 pb-16">
       {/* 1. TOP VIEW MODE SWITCH (Path vs All Studios) */}
-      <div className="flex items-center justify-between gap-4 flex-wrap pb-2 border-b border-slate-200 dark:border-white/10">
+      <div className="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-slate-200 dark:border-white/10">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2">
-            <span>{isEn ? 'Your Learning Dashboard' : 'แดชบอร์ดการเรียนรู้ของคุณ'}</span>
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase tracking-wider bg-[#FF4655] text-white">
+              TERRARIA × VALORANT × DUOLINGO
+            </span>
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-300/70 dark:border-emerald-500/30">
+              {progress.currentLevel === 'A1'
+                ? 'BIOME: FOREST SANCTUARY // IRON'
+                : progress.currentLevel === 'A2'
+                ? 'BIOME: CAVERN DEPTHS // BRONZE'
+                : progress.currentLevel === 'B1'
+                ? 'BIOME: JUNGLE TEMPLE // SILVER'
+                : progress.currentLevel === 'B2'
+                ? 'BIOME: DUNGEON KEEP // GOLD'
+                : progress.currentLevel === 'C1'
+                ? 'BIOME: HALLOWED SPIRE // DIAMOND'
+                : 'BIOME: CELESTIAL NEBULA // RADIANT'}
+            </span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2 flex-wrap">
+            <DecryptedText
+              text={isEn ? 'Your Learning Dashboard' : 'แดชบอร์ดการเรียนรู้ของคุณ'}
+              animateOn="hover"
+            />
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#4F46E5]/10 text-[#4F46E5] dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] font-mono font-bold border border-[#5B5CE2]/25">
               {progress.currentLevel} → {nextLvl}
             </span>
@@ -224,7 +312,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <SlidingTabs
           tabs={[
-            { id: 'path', label: isEn ? 'Learning Path' : 'เส้นทางการเรียน', icon: <Compass className="w-4 h-4" /> },
+            { id: 'path', label: isEn ? 'Biome Quest Path' : 'เส้นทางเควสต์ CEFR', icon: <Compass className="w-4 h-4" /> },
             { id: 'studios', label: isEn ? 'All Studios' : 'คลังสตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
           ]}
           activeTab={activeTab}
@@ -232,22 +320,32 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         />
       </div>
 
-      {/* 2. BALANCED 2-COLUMN LAYOUT (65% Primary Journey + 35% Contextual Rail) */}
+      {/* 1.5 TERRARIA 6-SLOT HOTBAR INVENTORY STRIP (Uiverse.io x Terraria) */}
+      <TerrariaHotbarBar
+        items={hotbarSlots}
+        title={isEn ? 'Active Loadout & Studio Inventory' : 'ช่องเก็บไอเทมสตูดิโอ (กดเลือกเพื่อเข้าฝึกทันที)'}
+        subtitle="Slots [1]-[6] • Rarity: Copper → Celestial"
+      />
+
+      {/* 2. BALANCED 2-COLUMN LAYOUT (Godly.design Melius 65% Primary Journey + 35% Tactical HUD Rail) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* ========================================================================= */}
         {/* LEFT COLUMN: WHAT TO DO NOW HERO + STEPPED PATH (8 cols)                  */}
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
-          {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO */}
-          <SpotlightCard className="p-6 sm:p-8 border-2 border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] bg-gradient-to-br from-indigo-50/80 via-white to-amber-50/50 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] text-slate-900 dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative">
+          {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO (21st.dev x Aceternity x Valorant/Duolingo) */}
+          <SpotlightCard className="p-6 sm:p-8 border-2 border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] bg-gradient-to-br from-indigo-50/80 via-white to-rose-50/50 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] text-slate-900 dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex-1 flex flex-col gap-4">
                 {/* Header Badges */}
                 <div className="flex items-center justify-between gap-3 flex-wrap">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2] text-white text-xs font-black tracking-wide uppercase shadow-xs">
                       <Sparkles className="w-3.5 h-3.5 text-white" />
                       <span>{primaryAction.unitBadge}</span>
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-md bg-rose-100 text-rose-800 dark:bg-[#FF4655]/20 dark:text-[#FF4655] border border-rose-300 dark:border-[#FF4655]/30 text-[10px] font-mono font-black uppercase">
+                      AGENT CONTRACT // {progress.currentLevel}
                     </span>
                     <span className="text-xs font-bold text-[#4F46E5] dark:text-[#A5A6F6]">
                       {primaryAction.skill}
@@ -258,7 +356,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     <Clock className="w-3.5 h-3.5 text-[#F43F5E]" />
                     <span>{primaryAction.timeMin} {isEn ? 'minutes' : 'นาที'}</span>
                     <span>•</span>
-                    <span className="text-[#4F46E5] dark:text-[#A5A6F6] font-bold">+15 XP</span>
+                    <span className="text-[#059669] dark:text-[#34D399] font-black">+15 XP</span>
                   </div>
                 </div>
 
@@ -272,7 +370,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </p>
                 </div>
 
-                {/* Large Tactile Call To Action */}
+                {/* Large Tactile Call To Action (Duolingo 3D + Valorant Crimson Duel) */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <TactileButton
                     variant="primary"
@@ -285,30 +383,33 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </TactileButton>
 
                   <TactileButton
-                    variant="surface"
+                    variant="valorant"
                     size="lg"
                     onClick={() => onNavigate('compete')}
                     className="sm:w-auto cursor-pointer"
-                    leftIcon={<Swords className="w-4 h-4 text-[#4F46E5] dark:text-[#5B5CE2]" />}
+                    leftIcon={<Swords className="w-4 h-4 text-white" />}
                   >
-                    {isEn ? 'Vocab Battle 4s' : 'ประลองศัพท์ด่วน 4 วินาที'}
+                    {isEn ? 'Valorant Vocab Duel 4s' : 'ดวลคำศัพท์ด่วน 4 วินาที (MMR)'}
                   </TactileButton>
                 </div>
               </div>
 
               {/* Visual Learning Companion Emblem */}
-              <div className="hidden sm:flex flex-col items-center justify-center p-4 rounded-3xl bg-white/90 dark:bg-[#1C2430]/60 border border-indigo-100 dark:border-[rgba(255,255,255,0.08)] shrink-0 shadow-xs">
+              <div className="hidden sm:flex flex-col items-center justify-center p-4 rounded-3xl bg-white/95 dark:bg-[#1C2430]/80 border-2 border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] shrink-0 shadow-xs">
                 <img
                   src="/assets/decorative/mascot-glova-spark.png"
                   alt="Glova Mascot Spark"
                   className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-transform hover:scale-105"
                 />
                 <span className="text-[11px] font-black text-[#4F46E5] dark:text-[#A5A6F6] mt-2 uppercase tracking-wide">
-                  {isEn ? 'Daily Focus' : 'ภารกิจวันนี้'}
+                  {isEn ? 'Biome Companion' : 'คู่หูภารกิจวันนี้'}
                 </span>
               </div>
             </div>
           </SpotlightCard>
+
+          {/* 5-SITES VIBE-CODER ENGINE DOCK */}
+          <VibeCoderSourceDock isEn={isEn} />
 
           {/* RESUME LAST ACTIVITY */}
           {progress.lastActivity && (
@@ -679,16 +780,21 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </p>
           </div>
 
-          {/* 3. RANKED LEAGUE STANDING (Heraldic Crest) */}
-          <div className="p-5 rounded-[24px] bg-gradient-to-br from-indigo-50/70 via-white to-amber-50/40 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#141A22] border border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8]">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-[rgba(255,255,255,0.08)]">
+          {/* 3. RANKED LEAGUE STANDING (Valorant Tactical HUD x Heraldic Crest) */}
+          <TacticalHudFrame
+            calloutCode="VALORANT // RANKED ARENA"
+            biomeLabel="Top 10 Division"
+            accentVariant="crimson"
+            className="bg-gradient-to-br from-rose-50/70 via-white to-amber-50/40 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] space-y-4"
+          >
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Trophy className="w-4 h-4 text-[#F59E0B]" />
                 <span className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider">
                   {isEn ? 'RANKED ARENA' : 'สมรภูมิประลอง'}
                 </span>
               </div>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#A5A6F6] font-bold font-mono border border-[#5B5CE2]/25">
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 dark:bg-[#FF4655]/20 text-rose-800 dark:text-[#FF4655] font-bold font-mono border border-rose-300 dark:border-[#FF4655]/30">
                 Top 10
               </span>
             </div>
@@ -700,13 +806,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   Gold III • Bangkok League
                 </h4>
                 <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-0.5">
-                  Rating: <span className="font-mono font-bold text-[#4F46E5] dark:text-[#A5A6F6]">1,420 MMR</span>
+                  Rating: <span className="font-mono font-bold text-[#E11D48] dark:text-[#FF4655]">1,420 MMR</span>
                 </p>
               </div>
             </div>
 
             <TactileButton
-              variant="primary"
+              variant="valorant"
               size="sm"
               fullWidth
               onClick={() => onNavigate('compete')}
@@ -714,7 +820,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             >
               {isEn ? 'ENTER VOCAB BATTLE' : 'เข้าสู่สนามประลอง'}
             </TactileButton>
-          </div>
+          </TacticalHudFrame>
 
           {/* 4. DAILY QUESTS */}
           <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3.5 text-slate-900 dark:text-[#EDEBE8]">

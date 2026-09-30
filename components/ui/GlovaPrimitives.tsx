@@ -2,14 +2,39 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Check, Lock, Sparkles, Star, Trophy, Zap, AlertCircle, ArrowRight, Clock } from 'lucide-react';
+import {
+  Check,
+  Lock,
+  Sparkles,
+  Star,
+  Trophy,
+  Zap,
+  AlertCircle,
+  ArrowRight,
+  Clock,
+  Swords,
+  Shield,
+  Compass,
+  Flame,
+  Layers,
+  Terminal,
+} from 'lucide-react';
 
 // ============================================================================
-// 1. UIVERSE-INSPIRED TACTILE BUTTONS & MICRO-CONTROLS
+// 1. UIVERSE.IO × DUOLINGO × VALORANT TACTILE 3D BUTTONS
 // ============================================================================
 
 export interface TactileButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'accent' | 'warning' | 'danger' | 'ghost' | 'surface';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'accent'
+    | 'warning'
+    | 'danger'
+    | 'ghost'
+    | 'surface'
+    | 'valorant'
+    | 'duolingo';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
   leftIcon?: React.ReactNode;
@@ -32,7 +57,6 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
 
-  // Size base styling
   const sizeStyles = {
     sm: 'px-3.5 py-1.5 text-xs rounded-xl min-h-[36px]',
     md: 'px-5 py-2.5 text-sm rounded-2xl min-h-[44px]',
@@ -40,13 +64,25 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
     xl: 'px-8 py-4 text-lg rounded-[22px] min-h-[56px]',
   }[size];
 
-  // Variant styling with physical tactile 3D extrusion (zero-blur bottom shadow and specular rim)
+  // Physical tactile 3D extrusion (Uiverse.io + Duolingo 3D ledge + Valorant crimson)
   const variantDepthStyles: Record<string, Record<string, string>> = {
     primary: {
       sm: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_2.5px_0_0_#38399E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
       md: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
       lg: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_5px_0_0_#38399E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
       xl: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_6px_0_0_#38399E] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
+    },
+    valorant: {
+      sm: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_2.5px_0_0_#9E1B26] active:shadow-none active:translate-y-[2.5px] border-t border-white/30 font-black tracking-wide',
+      md: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_4px_0_0_#9E1B26] active:shadow-none active:translate-y-[4px] border-t border-white/30 font-black tracking-wide',
+      lg: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_5px_0_0_#9E1B26] active:shadow-none active:translate-y-[5px] border-t-2 border-white/30 font-black tracking-wide',
+      xl: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_6px_0_0_#9E1B26] active:shadow-none active:translate-y-[6px] border-t-2 border-white/30 font-black tracking-wide',
+    },
+    duolingo: {
+      sm: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_2.5px_0_0_#047857] active:shadow-none active:translate-y-[2.5px] border-t border-white/30 font-black',
+      md: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_4px_0_0_#047857] active:shadow-none active:translate-y-[4px] border-t border-white/30 font-black',
+      lg: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_5px_0_0_#047857] active:shadow-none active:translate-y-[5px] border-t-2 border-white/30 font-black',
+      xl: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_6px_0_0_#047857] active:shadow-none active:translate-y-[6px] border-t-2 border-white/30 font-black',
     },
     secondary: {
       sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
@@ -125,7 +161,7 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
 };
 
 // ============================================================================
-// 2. 21ST.DEV-INSPIRED ANIMATED SLIDING TABS
+// 2. 21ST.DEV × GODLY.DESIGN ANIMATED SLIDING TABS
 // ============================================================================
 
 export interface TabItem {
@@ -197,8 +233,69 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
 };
 
 // ============================================================================
-// 3. REACT BITS-INSPIRED SHINY TEXT & ANIMATED NUMBER
+// 3. REACTBITS.DEV - DECRYPTED TEXT, SHINY TEXT & ANIMATED NUMBER (COUNTUP)
 // ============================================================================
+
+export interface DecryptedTextProps {
+  text: string;
+  speed?: number;
+  maxIterations?: number;
+  characters?: string;
+  className?: string;
+  animateOn?: 'hover' | 'view' | 'both';
+}
+
+export const DecryptedText: React.FC<DecryptedTextProps> = ({
+  text,
+  speed = 32,
+  maxIterations = 8,
+  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//<>[]',
+  className = '',
+  animateOn = 'both',
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+  const [displayText, setDisplayText] = useState(text);
+  const [isScrambling, setIsScrambling] = useState(false);
+
+  const triggerScramble = () => {
+    if (shouldReduceMotion || isScrambling) return;
+    setIsScrambling(true);
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setDisplayText(
+        text
+          .split('')
+          .map((char, idx) => {
+            if (char === ' ') return ' ';
+            if (idx < Math.floor((iteration / maxIterations) * text.length)) {
+              return text[idx];
+            }
+            return characters[Math.floor(Math.random() * characters.length)];
+          })
+          .join('')
+      );
+      iteration += 1;
+      if (iteration > maxIterations) {
+        clearInterval(interval);
+        setDisplayText(text);
+        setIsScrambling(false);
+      }
+    }, speed);
+  };
+
+  useEffect(() => {
+    setDisplayText(text);
+  }, [text]);
+
+  return (
+    <span
+      onMouseEnter={animateOn === 'hover' || animateOn === 'both' ? triggerScramble : undefined}
+      className={`inline-block cursor-default ${className}`}
+    >
+      {displayText}
+    </span>
+  );
+};
 
 export interface ShinyTextProps {
   children: React.ReactNode;
@@ -231,7 +328,6 @@ export const AnimatedNumber: React.FC<{ value: number; className?: string }> = (
     const step = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const current = Math.round(start + (end - start) * ease);
       setDisplayValue(current);
@@ -248,7 +344,7 @@ export const AnimatedNumber: React.FC<{ value: number; className?: string }> = (
 };
 
 // ============================================================================
-// 4. ACETERNITY-INSPIRED SUBTLE SPOTLIGHT CARD
+// 4. UI.ACETERNITY.COM - SPOTLIGHT CARD & VALORANT TACTICAL HUD FRAME
 // ============================================================================
 
 export interface SpotlightCardProps {
@@ -293,8 +389,286 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   );
 };
 
+export interface TacticalHudFrameProps {
+  children: React.ReactNode;
+  calloutCode?: string;
+  biomeLabel?: string;
+  accentVariant?: 'crimson' | 'indigo' | 'emerald' | 'gold';
+  className?: string;
+}
+
+export const TacticalHudFrame: React.FC<TacticalHudFrameProps> = ({
+  children,
+  calloutCode = 'VALORANT // AGENT CONTRACT',
+  biomeLabel,
+  accentVariant = 'indigo',
+  className = '',
+}) => {
+  const cornerColor = {
+    crimson: 'border-[#FF4655]',
+    indigo: 'border-[#4F46E5] dark:border-[#5B5CE2]',
+    emerald: 'border-[#10B981]',
+    gold: 'border-[#F59E0B]',
+  }[accentVariant];
+
+  const badgeStyle = {
+    crimson: 'bg-[#FF4655]/10 text-[#E11D48] dark:text-[#FF4655] border-[#FF4655]/30',
+    indigo: 'bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#A5A6F6] border-[#4F46E5]/30',
+    emerald: 'bg-[#10B981]/10 text-[#059669] dark:text-[#34D399] border-[#10B981]/30',
+    gold: 'bg-[#F59E0B]/10 text-[#D97706] dark:text-[#FBBF24] border-[#F59E0B]/30',
+  }[accentVariant];
+
+  return (
+    <div
+      className={`relative rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] p-5 shadow-xs text-slate-900 dark:text-[#EDEBE8] ${className}`}
+    >
+      {/* Valorant Angular Corner Brackets */}
+      <span className={`pointer-events-none absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 rounded-tl-md ${cornerColor}`} />
+      <span className={`pointer-events-none absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 rounded-tr-md ${cornerColor}`} />
+      <span className={`pointer-events-none absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 rounded-bl-md ${cornerColor}`} />
+      <span className={`pointer-events-none absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 rounded-br-md ${cornerColor}`} />
+
+      {(calloutCode || biomeLabel) && (
+        <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100 dark:border-[rgba(255,255,255,0.06)]">
+          <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase tracking-wider border ${badgeStyle}`}>
+            {calloutCode}
+          </span>
+          {biomeLabel && (
+            <span className="text-[10px] font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
+              {biomeLabel}
+            </span>
+          )}
+        </div>
+      )}
+      {children}
+    </div>
+  );
+};
+
 // ============================================================================
-// 5. GLOVA SIGNATURE LEARNING MODULE CARTRIDGE (ORIGINAL PRODUCT IDENTITY)
+// 5. TERRARIA × VALORANT × DUOLINGO - HOTBAR INVENTORY & BIOME BANNER
+// ============================================================================
+
+export interface TerrariaHotbarSlotItem {
+  slotNumber: number;
+  id: string;
+  label: string;
+  rarity: 'copper' | 'silver' | 'gold' | 'hallowed' | 'crimson' | 'celestial';
+  stackCount: string;
+  icon: React.ReactNode;
+  isActive?: boolean;
+  onSelect: () => void;
+}
+
+export const TerrariaHotbarBar: React.FC<{
+  items: TerrariaHotbarSlotItem[];
+  title?: string;
+  subtitle?: string;
+  className?: string;
+}> = ({ items, title, subtitle, className = '' }) => {
+  const rarityStyles: Record<TerrariaHotbarSlotItem['rarity'], { border: string; pill: string; bg: string }> = {
+    copper: {
+      border: 'border-amber-300 dark:border-amber-500/40 hover:border-amber-500',
+      pill: 'bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300',
+      bg: 'bg-amber-50/70 dark:bg-[#1C2430]',
+    },
+    silver: {
+      border: 'border-sky-300 dark:border-sky-500/40 hover:border-sky-500',
+      pill: 'bg-sky-100 text-sky-800 dark:bg-sky-500/20 dark:text-sky-300',
+      bg: 'bg-sky-50/70 dark:bg-[#1C2430]',
+    },
+    gold: {
+      border: 'border-yellow-400 dark:border-yellow-500/40 hover:border-yellow-500',
+      pill: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300',
+      bg: 'bg-yellow-50/70 dark:bg-[#1C2430]',
+    },
+    hallowed: {
+      border: 'border-indigo-300 dark:border-indigo-500/40 hover:border-indigo-500',
+      pill: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-500/20 dark:text-indigo-300',
+      bg: 'bg-indigo-50/70 dark:bg-[#1C2430]',
+    },
+    crimson: {
+      border: 'border-rose-300 dark:border-[#FF4655]/50 hover:border-[#FF4655]',
+      pill: 'bg-rose-100 text-rose-800 dark:bg-[#FF4655]/20 dark:text-[#FF4655]',
+      bg: 'bg-rose-50/70 dark:bg-[#1C2430]',
+    },
+    celestial: {
+      border: 'border-emerald-300 dark:border-emerald-500/40 hover:border-emerald-500',
+      pill: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300',
+      bg: 'bg-emerald-50/70 dark:bg-[#1C2430]',
+    },
+  };
+
+  return (
+    <div
+      className={`p-4 sm:p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3.5 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+    >
+      <div className="flex items-center justify-between gap-2 flex-wrap">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-black uppercase tracking-wider bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 border border-amber-300/80 dark:border-amber-500/30">
+            TERRARIA HOTBAR // QUICK EQUIP
+          </span>
+          {title && (
+            <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-[#EDEBE8]">
+              {title}
+            </span>
+          )}
+        </div>
+        {subtitle && (
+          <span className="text-[11px] font-mono text-slate-500 dark:text-[#94A3B8]">
+            {subtitle}
+          </span>
+        )}
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+        {items.map((slot) => {
+          const r = rarityStyles[slot.rarity];
+          return (
+            <motion.button
+              key={slot.id}
+              type="button"
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ y: 2 }}
+              onClick={slot.onSelect}
+              className={`relative p-3 rounded-2xl border-2 text-left transition-all cursor-pointer select-none shadow-[0_3px_0_0_rgba(15,23,42,0.08)] dark:shadow-[0_3px_0_0_#090D16] active:shadow-none active:translate-y-[3px] ${r.bg} ${r.border}`}
+            >
+              <div className="flex items-center justify-between gap-1 mb-2">
+                <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-black bg-white/90 dark:bg-[#0D1117] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10">
+                  [{slot.slotNumber}]
+                </span>
+                <span className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold ${r.pill}`}>
+                  {slot.stackCount}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 flex items-center justify-center shrink-0">
+                  {slot.icon}
+                </div>
+                <span className="text-xs font-extrabold text-slate-900 dark:text-[#EDEBE8] leading-tight line-clamp-2">
+                  {slot.label}
+                </span>
+              </div>
+            </motion.button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// 5.1 5-SITES VIBE-CODER ENGINE MATRIX (21st.dev, Godly, Aceternity, Uiverse, ReactBits)
+// ============================================================================
+
+export const VIBE_CODER_SOURCES = [
+  {
+    id: '21st',
+    rank: '#1',
+    name: '21st.dev',
+    url: 'https://21st.dev/',
+    roleTh: 'Hero Bento & คลัง Component ระดับโปรดักชัน',
+    roleEn: 'Production Hero Bento & Modular Registry',
+    fusionTag: 'TERRARIA × VALORANT BENTO',
+    badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] dark:border-[#5B5CE2]/40',
+  },
+  {
+    id: 'godly',
+    rank: '#2',
+    name: 'Godly.design (Melius)',
+    url: 'https://godly.design/website/melius/',
+    roleTh: 'โครงสร้าง Asymmetric 2-Column & Motion Pacing',
+    roleEn: 'Editorial Asymmetric Framing & Pacing',
+    fusionTag: 'MELIUS ASYMMETRIC HUD',
+    badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-500/20 dark:text-emerald-300 dark:border-emerald-500/40',
+  },
+  {
+    id: 'aceternity',
+    rank: '#3',
+    name: 'Aceternity UI',
+    url: 'https://ui.aceternity.com/',
+    roleTh: 'Spotlight Card, 3D Tilt & Tactical Border Beam',
+    roleEn: 'Spotlight Card, 3D Tilt & Tactical Border Beam',
+    fusionTag: 'VALORANT AGENT GLOW',
+    badgeClass: 'bg-rose-100 text-rose-800 border-rose-300 dark:bg-[#FF4655]/20 dark:text-[#FF4655] dark:border-[#FF4655]/40',
+  },
+  {
+    id: 'uiverse',
+    rank: '#4',
+    name: 'Uiverse.io',
+    url: 'https://uiverse.io/',
+    roleTh: 'ปุ่มกด 3D Duolingo Tactile & ช่องเก็บของ Terraria Hotbar',
+    roleEn: 'Duolingo 3D Push Buttons & Terraria Hotbar Slots',
+    fusionTag: 'DUOLINGO × TERRARIA 3D',
+    badgeClass: 'bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-500/40',
+  },
+  {
+    id: 'reactbits',
+    rank: '#5',
+    name: 'React Bits',
+    url: 'https://reactbits.dev/',
+    roleTh: 'Decrypted Text, Shiny Text & ตัวเลขวิ่ง CountUp',
+    roleEn: 'Decrypted Cipher Text, ShinyText & CountUp',
+    fusionTag: 'VALORANT CIPHER REVEAL',
+    badgeClass: 'bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-500/20 dark:text-sky-300 dark:border-sky-500/40',
+  },
+] as const;
+
+export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string }> = ({
+  isEn = false,
+  className = '',
+}) => {
+  return (
+    <div
+      className={`p-5 rounded-[24px] bg-gradient-to-r from-indigo-50/80 via-white to-rose-50/70 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+    >
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider bg-[#FF4655] text-white">
+            TRI-HYBRID ENGINE // 5 VIBE-CODER SITES
+          </span>
+          <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-[#EDEBE8]">
+            {isEn
+              ? 'Terraria × Valorant × Duolingo / Powered by 5 Vibe-Coder Libraries'
+              : 'ผสาน Terraria × Valorant × Duolingo จากคลังต้นฉบับ 5 เว็บ Vibe Coders'}
+          </h3>
+        </div>
+        <span className="text-[11px] font-mono font-bold text-[#4F46E5] dark:text-[#A5A6F6]">
+          MIT / Open-Source Registry Active
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5">
+        {VIBE_CODER_SOURCES.map((site) => (
+          <div
+            key={site.id}
+            className="p-3 rounded-2xl bg-white dark:bg-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-between gap-2 shadow-2xs"
+          >
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between gap-1">
+                <span className="text-[10px] font-mono font-black text-slate-500 dark:text-[#94A3B8]">
+                  {site.rank} {site.name}
+                </span>
+                <span className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-black border ${site.badgeClass}`}>
+                  {site.fusionTag}
+                </span>
+              </div>
+              <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] leading-snug">
+                {isEn ? site.roleEn : site.roleTh}
+              </p>
+            </div>
+            <div className="text-[10px] font-mono text-slate-500 dark:text-[#94A3B8] truncate">
+              {site.url.replace('https://', '')}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// 5.2 GLOVA SIGNATURE LEARNING MODULE CARTRIDGE (TERRARIA × VALORANT × DUOLINGO)
 // ============================================================================
 
 export interface GlovaCartridgeProps {
@@ -337,8 +711,17 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
     listening: 'text-[#2563EB] dark:text-[#60A5FA] bg-[#3B82F6]/10 border-[#3B82F6]/25',
     speaking: 'text-[#E11D48] dark:text-[#FB7185] bg-[#F43F5E]/10 border-[#F43F5E]/25',
     writing: 'text-[#7C3AED] dark:text-[#A78BFA] bg-[#8B5CF6]/10 border-[#8B5CF6]/25',
-    ranked: 'text-white bg-[#E98278] border-[#D97167] font-black',
+    ranked: 'text-white bg-[#FF4655] border-[#D93746] font-black',
   }[skill];
+
+  const biomeTagMap: Record<string, string> = {
+    A1: 'Forest Biome // Iron',
+    A2: 'Cavern Biome // Bronze',
+    B1: 'Jungle Temple // Silver',
+    B2: 'Dungeon Keep // Gold',
+    C1: 'Hallowed Spire // Diamond',
+    C2: 'Celestial Nebula // Radiant',
+  };
 
   return (
     <motion.div
@@ -354,16 +737,19 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
       } ${className}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#222E3A] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
             {level}
           </span>
           <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
             {skill}
           </span>
+          <span className="hidden sm:inline-block text-[10px] font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
+            {biomeTagMap[level] || 'Forest Biome'}
+          </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8]">
+        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8] shrink-0">
           <Clock className="w-3.5 h-3.5 text-[#F59E0B]" />
           <span>{estimatedMinutes}m</span>
           <span className="text-slate-900 dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
@@ -391,7 +777,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
             <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#131920] overflow-hidden">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${
-                  status === 'completed' ? 'bg-[#10B981]' : 'bg-[#5B5CE2]'
+                  status === 'completed' ? 'bg-[#10B981]' : skill === 'ranked' ? 'bg-[#FF4655]' : 'bg-[#5B5CE2]'
                 }`}
                 style={{ width: `${progress}%` }}
               />
@@ -400,7 +786,15 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
 
           <div className="shrink-0">
             <TactileButton
-              variant={status === 'completed' ? 'secondary' : status === 'ready' ? 'primary' : 'surface'}
+              variant={
+                status === 'completed'
+                  ? 'duolingo'
+                  : skill === 'ranked'
+                  ? 'valorant'
+                  : status === 'ready'
+                  ? 'primary'
+                  : 'surface'
+              }
               size="sm"
               onClick={onLaunch}
               className="text-xs font-bold"
@@ -409,10 +803,6 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
             </TactileButton>
           </div>
         </div>
-      )}
-
-      {status !== 'locked' && (
-        <div className="hidden" />
       )}
 
       {status === 'locked' && (
@@ -428,7 +818,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
 };
 
 // ============================================================================
-// 5.1 GLOVA SIGNATURE "NEXT MOVE" ACTION HERO
+// 5.3 GLOVA SIGNATURE "NEXT MOVE" ACTION HERO
 // ============================================================================
 
 export interface GlovaNextMoveProps {
@@ -512,7 +902,7 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 };
 
 // ============================================================================
-// 5.2 PROGRESSIVE LEARNING PATH NODE (GLOVA SIGNATURE PROGRESSION)
+// 5.4 PROGRESSIVE LEARNING PATH NODE (DUOLINGO × TERRARIA STEPPING STONES)
 // ============================================================================
 
 export interface LearningPathNodeProps {
@@ -541,7 +931,6 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
   const shouldReduceMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
 
-  // Status visual configurations with Glova palette
   const config = {
     completed: {
       bg: 'bg-[#10B981] hover:bg-[#059669] shadow-[#047857]',
@@ -556,10 +945,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       badgeBg: 'bg-[#5B5CE2] text-white',
     },
     review: {
-      bg: 'bg-[#F59E0B] hover:bg-[#D97706] shadow-[#B45309]',
-      ring: 'ring-[#F59E0B]/30',
+      bg: 'bg-[#FF4655] hover:bg-[#E63946] shadow-[#9E1B26]',
+      ring: 'ring-[#FF4655]/30',
       icon: <Zap className="w-8 h-8 text-white fill-current" />,
-      badgeBg: 'bg-[#F59E0B] text-white',
+      badgeBg: 'bg-[#FF4655] text-white',
     },
     locked: {
       bg: 'bg-slate-200 dark:bg-[#222E3A] shadow-[#CBD5E1] dark:shadow-[#131920]',
@@ -574,7 +963,6 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       className="relative flex flex-col items-center my-6"
       style={{ transform: `translateX(${offsetPercent}%)` }}
     >
-      {/* Active Node Pulsing Ambient Rings */}
       {status === 'active' && !shouldReduceMotion && (
         <motion.div
           animate={{ scale: [1, 1.25, 1], opacity: [0.6, 0, 0.6] }}
@@ -584,7 +972,6 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
         />
       )}
 
-      {/* Floating Prompt Speech Bubble for Active Node */}
       {status === 'active' && (
         <motion.div
           initial={{ y: 5, opacity: 0 }}
@@ -599,7 +986,6 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
         </motion.div>
       )}
 
-      {/* Tactile Circular Node Button */}
       <motion.button
         type="button"
         disabled={status === 'locked'}
@@ -615,13 +1001,11 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       >
         {config.icon}
 
-        {/* Level Tag Pill attached to node */}
         <span className="absolute -bottom-2 px-2 py-0.5 rounded-full text-[10px] font-mono font-black shadow-xs border border-slate-200 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#1C2430] text-slate-900 dark:text-[#EDEBE8]">
           {level}
         </span>
       </motion.button>
 
-      {/* Topic Title Label */}
       <div className="mt-3 text-center max-w-[160px]">
         <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-[#EDEBE8] leading-tight line-clamp-2">
           {topicTitle}
@@ -635,7 +1019,7 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
 };
 
 // ============================================================================
-// 6. GLOVA SIGNATURE LESSON FEEDBACK DRAWER
+// 6. DUOLINGO × VALORANT SIGNATURE LESSON FEEDBACK DRAWER
 // ============================================================================
 
 export interface LessonFeedbackDrawerProps {
@@ -670,14 +1054,14 @@ export const LessonFeedbackDrawer: React.FC<LessonFeedbackDrawerProps> = ({
           className={`fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 border-t-2 shadow-2xl backdrop-blur-md ${
             isCorrect
               ? 'bg-white/98 dark:bg-[#1A232C]/98 border-[#10B981] text-slate-900 dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(15,23,42,0.12)]'
-              : 'bg-white/98 dark:bg-[#1A232C]/98 border-[#F43F5E] text-slate-900 dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(15,23,42,0.12)]'
+              : 'bg-white/98 dark:bg-[#1A232C]/98 border-[#FF4655] text-slate-900 dark:text-[#EDEBE8] shadow-[0_-8px_32px_rgba(15,23,42,0.12)]'
           }`}
         >
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm ${
-                  isCorrect ? 'bg-[#10B981] text-white' : 'bg-[#F43F5E] text-white'
+                  isCorrect ? 'bg-[#10B981] text-white' : 'bg-[#FF4655] text-white'
                 }`}
               >
                 {isCorrect ? <Check className="w-7 h-7 stroke-[3]" /> : <AlertCircle className="w-7 h-7 stroke-[3]" />}
@@ -716,7 +1100,7 @@ export const LessonFeedbackDrawer: React.FC<LessonFeedbackDrawerProps> = ({
 
             <div className="shrink-0 pt-2 sm:pt-0">
               <TactileButton
-                variant={isCorrect ? 'primary' : 'danger'}
+                variant={isCorrect ? 'duolingo' : 'valorant'}
                 size="lg"
                 onClick={onContinue}
                 className="w-full sm:w-auto px-8"
@@ -757,7 +1141,7 @@ export const StudioMetric: React.FC<StudioMetricProps> = ({
     gold: 'text-[#D97706] dark:text-[#E5A93C]',
     mint: 'text-[#059669] dark:text-[#10B981]',
     indigo: 'text-[#4F46E5] dark:text-[#818CF8]',
-    coral: 'text-[#E11D48] dark:text-[#F43F5E]',
+    coral: 'text-[#E11D48] dark:text-[#FF4655]',
     neutral: 'text-slate-900 dark:text-[#EDEBE8]',
   }[variant];
 

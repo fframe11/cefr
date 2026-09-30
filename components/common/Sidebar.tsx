@@ -238,13 +238,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
           <div className="pt-3.5 border-t border-slate-200/90 dark:border-white/10 mt-auto">
-            <div className="p-3 rounded-xl bg-slate-50 dark:bg-[#1C2430] border border-slate-200 dark:border-white/10 shadow-xs dark:shadow-inner space-y-1">
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#E5A93C]" />
-                <span className="text-[11px] font-bold text-slate-800 dark:text-[#EDEBE8] font-display">Cambridge Standard</span>
+            <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-white/10 shadow-xs dark:shadow-inner space-y-1">
+              <div className="flex items-center justify-between gap-1.5">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#FF4655]" />
+                  <span className="text-[11px] font-black text-slate-900 dark:text-[#EDEBE8] font-display">
+                    Tri-Hybrid Engine
+                  </span>
+                </div>
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-black bg-[#FF4655] text-white">
+                  5 SITES
+                </span>
               </div>
-              <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono leading-snug">
-                CEFR A1 to C2 Framework &bull; KET, PET, FCE, CAE, CPE
+              <p className="text-[10px] text-slate-600 dark:text-[#94A3B8] font-mono leading-snug">
+                Terraria Biome &bull; Valorant HUD &bull; Duolingo 3D
               </p>
             </div>
           </div>

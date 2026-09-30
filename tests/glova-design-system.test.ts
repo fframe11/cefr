@@ -169,4 +169,17 @@ describe('Glova Design System & Token Foundation', () => {
       expect(mobileSize).toBeGreaterThanOrEqual(44);
     });
   });
+
+  describe('7. Tri-Hybrid (Terraria x Valorant x Duolingo) & 5 Vibe-Coder Sites Registry', () => {
+    it('should include all 5 mandated Vibe-Coder reference sites', async () => {
+      const { VIBE_CODER_SOURCES } = await import('../components/ui/GlovaPrimitives');
+      expect(VIBE_CODER_SOURCES).toHaveLength(5);
+      const urls = VIBE_CODER_SOURCES.map((s) => s.url);
+      expect(urls).toContain('https://21st.dev/');
+      expect(urls).toContain('https://godly.design/website/melius/');
+      expect(urls).toContain('https://ui.aceternity.com/');
+      expect(urls).toContain('https://uiverse.io/');
+      expect(urls).toContain('https://reactbits.dev/');
+    });
+  });
 });
