@@ -169,8 +169,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     onClick={() => setHeroTab('ranked')}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'ranked'
-                        ? 'bg-[#5B5CE2] text-white shadow-xs font-bold'
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
+                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
                     }`}
                   >
                     <Swords className="w-3.5 h-3.5" />
@@ -181,8 +181,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     onClick={() => setHeroTab('cartridge')}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'cartridge'
-                        ? 'bg-[#5B5CE2] text-white shadow-xs font-bold'
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
+                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
                     }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
@@ -193,8 +193,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     onClick={() => setHeroTab('stress')}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                       heroTab === 'stress'
-                        ? 'bg-[#5B5CE2] text-white shadow-xs font-bold'
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
+                        : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
                     }`}
                   >
                     <Volume2 className="w-3.5 h-3.5" />
@@ -447,8 +447,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   onClick={() => setActiveStudioTab(tab.id as any)}
                   className={`touch-target px-4 py-2 rounded-2xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 cursor-pointer border ${
                     isActive
-                      ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/25'
-                      : 'bg-[#F0EAE1] text-muted-foreground hover:text-foreground border-[rgba(37,36,42,0.12)] dark:border-border/60 hover:bg-[#F0EAE1]/50'
+                      ? 'bg-[#5B5CE2] text-white border-t border-white/25 shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none'
+                      : 'bg-[#F0EAE1] text-muted-foreground hover:text-foreground border border-[rgba(37,36,42,0.14)] shadow-[0_2.5px_0_0_#C5BDB2] active:translate-y-[2.5px] active:shadow-none hover:bg-[#EDE6DD]'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />

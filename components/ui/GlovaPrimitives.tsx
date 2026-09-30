@@ -32,40 +32,71 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
 
-  // Size styling
+  // Size base styling
   const sizeStyles = {
-    sm: 'px-3 py-1.5 text-xs rounded-xl shadow-[0_2.5px_0]',
-    md: 'px-5 py-2.5 text-sm rounded-2xl shadow-[0_3.5px_0]',
-    lg: 'px-6 py-3.5 text-base rounded-2xl shadow-[0_4.5px_0]',
-    xl: 'px-8 py-4 text-lg rounded-[22px] shadow-[0_5px_0]',
+    sm: 'px-3.5 py-1.5 text-xs rounded-xl min-h-[36px]',
+    md: 'px-5 py-2.5 text-sm rounded-2xl min-h-[44px]',
+    lg: 'px-6 py-3.5 text-base rounded-2xl min-h-[48px]',
+    xl: 'px-8 py-4 text-lg rounded-[22px] min-h-[56px]',
   }[size];
 
-  // Variant styling with physical tactile 3D bevel (bottom shadow)
-  const variantStyles = {
-    primary:
-      'bg-[#5B5CE2] hover:bg-[#4A4BCB] text-white shadow-[#3A3B9E] active:shadow-none border-t border-white/20 font-black',
-    secondary:
-      'bg-[#F0EAE1] hover:bg-[#E6DED2] text-[#25242A] shadow-[#C8C0B5] active:shadow-none border border-[rgba(37,36,42,0.14)] font-bold',
-    accent:
-      'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[#B8574E] active:shadow-none font-bold border-t border-white/20',
-    warning:
-      'bg-[#E5A83B] hover:bg-[#D6962A] text-white shadow-[#B57816] active:shadow-none font-bold',
-    danger:
-      'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[#A82529] active:shadow-none font-bold border-t border-white/20',
-    surface:
-      'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[#DDD4C7] active:shadow-none border border-[rgba(37,36,42,0.12)] font-semibold',
-    ghost:
-      'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none hover:shadow-none border border-transparent font-medium',
-  }[variant];
+  // Variant styling with physical tactile 3D extrusion (zero-blur bottom shadow and specular rim)
+  const variantDepthStyles: Record<string, Record<string, string>> = {
+    primary: {
+      sm: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_2.5px_0_0_#38399E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
+      md: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
+      lg: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_5px_0_0_#38399E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
+      xl: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_6px_0_0_#38399E] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
+    },
+    secondary: {
+      sm: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_2.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)] font-bold',
+      md: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)] font-bold',
+      lg: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_4.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)] font-bold',
+      xl: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_5.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[5.5px] border border-[rgba(37,36,42,0.14)] font-bold',
+    },
+    surface: {
+      sm: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_2.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)] font-semibold',
+      md: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)] font-semibold',
+      lg: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_4.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)] font-semibold',
+      xl: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_5.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[5.5px] border border-[rgba(37,36,42,0.14)] font-semibold',
+    },
+    accent: {
+      sm: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_2.5px_0_0_#B8574E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-bold',
+      md: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_4px_0_0_#B8574E] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-bold',
+      lg: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_5px_0_0_#B8574E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-bold',
+      xl: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_6px_0_0_#B8574E] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-bold',
+    },
+    warning: {
+      sm: 'bg-[#E5A83B] hover:bg-[#D6962A] text-white shadow-[0_2.5px_0_0_#A86E12] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-bold',
+      md: 'bg-[#E5A83B] hover:bg-[#D6962A] text-white shadow-[0_4px_0_0_#A86E12] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-bold',
+      lg: 'bg-[#E5A83B] hover:bg-[#D6962A] text-white shadow-[0_5px_0_0_#A86E12] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-bold',
+      xl: 'bg-[#E5A83B] hover:bg-[#D6962A] text-white shadow-[0_6px_0_0_#A86E12] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-bold',
+    },
+    danger: {
+      sm: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_2.5px_0_0_#9E2024] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-bold',
+      md: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_4px_0_0_#9E2024] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-bold',
+      lg: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_5px_0_0_#9E2024] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-bold',
+      xl: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_6px_0_0_#9E2024] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-bold',
+    },
+    ghost: {
+      sm: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      md: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      lg: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      xl: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+    },
+  };
+
+  const styleClasses = variantDepthStyles[variant]?.[size] || variantDepthStyles.primary[size];
+  const depressDistance = variant === 'ghost' ? 1 : size === 'sm' ? 2.5 : size === 'lg' ? 5 : size === 'xl' ? 6 : 4;
 
   return (
     <motion.button
       whileHover={shouldReduceMotion || disabled ? undefined : { scale: 1.01 }}
-      whileTap={shouldReduceMotion || disabled ? undefined : { y: size === 'sm' ? 2 : size === 'lg' ? 4 : 3 }}
-      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+      whileTap={shouldReduceMotion || disabled ? undefined : { y: depressDistance }}
+      transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${variantStyles} ${
+      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${styleClasses} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}
       {...(props as any)}

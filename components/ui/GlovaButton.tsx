@@ -37,28 +37,49 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
 
     // Base styling ensuring 44px touch target on default/large sizes with zero text wrapping
     const baseStyles =
-      'inline-flex items-center justify-center whitespace-nowrap font-medium rounded-lg transition-colors select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50';
+      'inline-flex items-center justify-center whitespace-nowrap font-bold transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
 
     const sizeStyles = {
-      sm: 'text-xs h-9 px-3 gap-1.5 touch-target', // Still >= 44px tap target via .touch-target
-      md: 'text-sm h-11 px-4 gap-2 min-h-[44px]',
-      lg: 'text-base h-12 px-6 gap-2.5 min-h-[48px]',
+      sm: 'text-xs h-9 px-3.5 gap-1.5 touch-target rounded-xl',
+      md: 'text-sm h-11 px-5 gap-2 min-h-[44px] rounded-2xl',
+      lg: 'text-base h-12 px-6 gap-2.5 min-h-[48px] rounded-2xl',
     }[size];
 
-    const variantStyles = {
-      primary:
-        'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm hover:from-indigo-500 hover:to-violet-500 active:from-indigo-700 active:to-violet-700',
-      secondary:
-        'bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border/40',
-      outline:
-        'border border-border bg-transparent hover:bg-muted/40 text-foreground',
-      ghost:
-        'bg-transparent hover:bg-muted/50 text-foreground hover:text-foreground',
-      destructive:
-        'bg-rose-600 text-white hover:bg-rose-500 active:bg-rose-700 shadow-sm',
-      success:
-        'bg-emerald-600 text-white hover:bg-emerald-500 active:bg-emerald-700 shadow-sm',
-    }[variant];
+    const variantDepthStyles: Record<string, Record<string, string>> = {
+      primary: {
+        sm: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_2.5px_0_0_#38399E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',
+        md: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:shadow-none active:translate-y-[4px] border-t border-white/25',
+        lg: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_5px_0_0_#38399E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
+      },
+      secondary: {
+        sm: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_2.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)]',
+        md: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)]',
+        lg: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] text-[#25242A] shadow-[0_4.5px_0_0_#C5BDB2] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)]',
+      },
+      outline: {
+        sm: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] text-[#25242A] shadow-[0_2px_0_0_#C5BDB2] active:shadow-none active:translate-y-[2px] border-2 border-[rgba(37,36,42,0.16)]',
+        md: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] text-[#25242A] shadow-[0_3px_0_0_#C5BDB2] active:shadow-none active:translate-y-[3px] border-2 border-[rgba(37,36,42,0.16)]',
+        lg: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] text-[#25242A] shadow-[0_4px_0_0_#C5BDB2] active:shadow-none active:translate-y-[4px] border-2 border-[rgba(37,36,42,0.16)]',
+      },
+      ghost: {
+        sm: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        md: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        lg: 'bg-transparent hover:bg-[#F0EAE1] text-[#25242A] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+      },
+      destructive: {
+        sm: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_2.5px_0_0_#9E2024] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',
+        md: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_4px_0_0_#9E2024] active:shadow-none active:translate-y-[4px] border-t border-white/25',
+        lg: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_5px_0_0_#9E2024] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
+      },
+      success: {
+        sm: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_2.5px_0_0_#047857] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',
+        md: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_4px_0_0_#047857] active:shadow-none active:translate-y-[4px] border-t border-white/25',
+        lg: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_5px_0_0_#047857] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
+      },
+    };
+
+    const styleClasses = variantDepthStyles[variant]?.[size] || variantDepthStyles.primary[size];
+    const depressDistance = variant === 'ghost' ? 1 : size === 'sm' ? 2.5 : size === 'lg' ? 5 : 4;
 
     return (
       <motion.button
@@ -67,10 +88,10 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
         disabled={isDisabled}
         onClick={onClick}
         aria-busy={isLoading}
-        whileHover={shouldReduceMotion || isDisabled ? undefined : GLOVA_MOTION.microInteractions.buttonHover}
-        whileTap={shouldReduceMotion || isDisabled ? undefined : GLOVA_MOTION.microInteractions.buttonTap}
-        transition={GLOVA_MOTION.spring.snappy}
-        className={`${baseStyles} ${sizeStyles} ${variantStyles} ${fullWidth ? 'w-full' : ''} ${className}`}
+        whileHover={shouldReduceMotion || isDisabled ? undefined : { scale: 1.01 }}
+        whileTap={shouldReduceMotion || isDisabled ? undefined : { y: depressDistance }}
+        transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+        className={`${baseStyles} ${sizeStyles} ${styleClasses} ${fullWidth ? 'w-full' : ''} ${className}`}
         {...(props as any)}
       >
         {isLoading ? (

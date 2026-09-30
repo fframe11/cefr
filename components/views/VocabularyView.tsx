@@ -301,14 +301,14 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center p-1 rounded-xl bg-muted/40 border border-border/60">
+          <div className="flex items-center p-1 rounded-2xl bg-[#DDD4C7] border border-[rgba(37,36,42,0.12)] gap-1">
             <button
               type="button"
               onClick={() => setViewMode('study')}
-              className={`touch-target px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors ${
+              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'study'
-                  ? 'bg-card text-foreground font-semibold shadow-xs border border-border/60'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20'
+                  : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
               }`}
               aria-label={isEn ? 'Study Flashcards' : 'โหมดการ์ดคำศัพท์'}
             >
@@ -322,24 +322,24 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setViewMode('practice');
                 if (practiceQuestions.length === 0) startPracticeSession();
               }}
-              className={`touch-target px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors ${
+              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'practice'
-                  ? 'bg-card text-foreground font-semibold shadow-xs border border-border/60'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20'
+                  : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
               }`}
               aria-label={isEn ? 'Quick Practice' : 'โหมดทดสอบความจำ'}
             >
-              <BrainCircuit className="w-3.5 h-3.5 text-indigo-500" aria-hidden="true" />
+              <BrainCircuit className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Practice Quiz' : 'โหมดฝึกจำ'}</span>
             </button>
 
             <button
               type="button"
               onClick={() => setViewMode('browse')}
-              className={`touch-target px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors ${
+              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'browse'
-                  ? 'bg-card text-foreground font-semibold shadow-xs border border-border/60'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20'
+                  : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
               }`}
               aria-label={isEn ? 'Browse Word Bank' : 'โหมดคลังคำศัพท์'}
             >
@@ -351,10 +351,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       </div>
 
       {/* Level & POS Filter Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-xl bg-card border border-border/60 shadow-xs">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-2xl bg-card border border-[rgba(37,36,42,0.12)] shadow-xs">
         {/* CEFR Level Selector */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
-          <span className="text-xs text-muted-foreground font-medium flex items-center gap-1 mr-1 shrink-0">
+          <span className="text-xs text-muted-foreground font-bold flex items-center gap-1 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{isEn ? 'Level:' : 'ระดับ:'}</span>
           </span>
@@ -367,10 +367,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setCurrentIndex(0);
                 setIsRevealed(false);
               }}
-              className={`touch-target px-3 py-1 rounded-lg text-xs font-medium transition-all border shrink-0 ${
+              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 selectedLevel === lvl
-                  ? 'bg-primary text-primary-foreground border-primary font-semibold shadow-xs'
-                  : 'bg-secondary/40 text-muted-foreground hover:text-foreground border-border/40 hover:bg-secondary'
+                  ? 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none'
+                  : 'bg-[#F0EAE1] text-[#25242A] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All' : 'ทั้งหมด') : `CEFR ${lvl}`}
@@ -505,21 +505,21 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#F0EAE1] hover:bg-[#DDD4C7] border-2 border-[rgba(37,36,42,0.12)] text-[#25242A] shadow-[0_3px_0_rgba(37,36,42,0.10)] active:shadow-none active:translate-y-0.5';
+                    'bg-[#F0EAE1] hover:bg-[#EDE6DD] border-2 border-[rgba(37,36,42,0.14)] text-[#25242A] shadow-[0_4px_0_0_#C5BDB2] active:translate-y-[4px] active:shadow-none';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
                       optionStyle =
-                        'bg-emerald-500/15 border-2 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold ring-2 ring-emerald-500/20 shadow-[0_3px_0_#10B981]';
+                        'bg-emerald-500/15 border-2 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold ring-2 ring-emerald-500/20 shadow-[0_4px_0_0_#059669]';
                     } else if (isSelected && !answerResult.is_correct) {
                       optionStyle =
-                        'bg-rose-500/15 border-2 border-rose-500 text-rose-800 dark:text-rose-200 font-bold ring-2 ring-rose-500/20 shadow-[0_3px_0_#F43F5E]';
+                        'bg-rose-500/15 border-2 border-rose-500 text-rose-800 dark:text-rose-200 font-bold ring-2 ring-rose-500/20 shadow-[0_4px_0_0_#E11D48]';
                     } else {
-                      optionStyle = 'opacity-50 border-border/40 text-muted-foreground shadow-none';
+                      optionStyle = 'opacity-40 border-2 border-[rgba(37,36,42,0.10)] bg-[#F0EAE1]/50 text-muted-foreground shadow-none';
                     }
                   } else if (isSelected) {
                     optionStyle =
-                      'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3px_0_rgba(37,36,42,0.20)]';
+                      'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_4px_0_0_#5B5CE2] active:translate-y-[4px] active:shadow-none';
                   }
 
                   return (
@@ -531,10 +531,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-xl bg-muted flex items-center justify-center text-xs font-mono font-bold text-muted-foreground shrink-0 border border-border/40">
+                        <span className="w-8 h-8 rounded-xl bg-[#DDD4C7] flex items-center justify-center text-xs font-mono font-bold text-[#25242A] shrink-0 border border-[rgba(37,36,42,0.12)]">
                           {opt.key}
                         </span>
-                        <span className="text-sm sm:text-base font-semibold">{opt.text}</span>
+                        <span className="text-sm sm:text-base font-bold">{opt.text}</span>
                       </div>
 
                       {answerResult && opt.key === answerResult.correct_key && (
@@ -628,7 +628,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       ? `Listen to pronunciation for ${currentWord.word}`
                       : `ฟังการออกเสียงคำว่า ${currentWord.word}`
                   }
-                  className="touch-target w-12 h-12 rounded-full bg-[#5B5CE2]/15 hover:bg-[#5B5CE2]/25 text-[#5B5CE2] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-xs shrink-0"
+                  className="touch-target w-12 h-12 rounded-2xl bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white flex items-center justify-center transition-all shadow-[0_3.5px_0_0_#38399E] active:translate-y-[3.5px] active:shadow-none border-t border-white/25 shrink-0"
                 >
                   <Volume2 className="w-5 h-5" aria-hidden="true" />
                 </button>
@@ -646,7 +646,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsRevealed(true)}
-                    className="touch-target px-6 py-3 rounded-full bg-[#5B5CE2]/15 hover:bg-[#5B5CE2]/25 text-xs sm:text-sm font-bold text-[#5B5CE2] transition-all border border-[rgba(37,36,42,0.16)] inline-flex items-center gap-2 group hover:scale-[1.02] active:scale-[0.98]"
+                    className="touch-target px-6 py-3 rounded-2xl bg-[#F0EAE1] hover:bg-[#EDE6DD] text-xs sm:text-sm font-bold text-[#25242A] transition-all border border-[rgba(37,36,42,0.14)] shadow-[0_3.5px_0_0_#C5BDB2] active:translate-y-[3.5px] active:shadow-none inline-flex items-center gap-2 group"
                   >
                     <Sparkles className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                     <span>
@@ -729,7 +729,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                         setViewMode('practice');
                         startPracticeSession(currentWord.id);
                       }}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 hover:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition-all border border-indigo-500/20"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white text-xs font-bold transition-all shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none border-t border-white/20"
                     >
                       <BrainCircuit className="w-4 h-4" aria-hidden="true" />
                       <span>{isEn ? 'Test yourself on this word' : 'ทดสอบความจำคำนี้ทันที'}</span>

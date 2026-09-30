@@ -145,20 +145,21 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           const isSelected = selectedOption === option.key;
           const isThisCorrect = isOptionCorrect(option.key, option.isCorrect);
 
-          let btnStyle = 'border-border/60 hover:border-primary/50 hover:bg-muted/40 text-foreground';
+          let btnStyle =
+            'bg-[#F0EAE1] hover:bg-[#EDE6DD] border-2 border-[rgba(37,36,42,0.14)] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:translate-y-[3.5px] active:shadow-none';
 
           if (submitted) {
             if (isPending && isSelected) {
-              btnStyle = 'border-amber-500/50 bg-amber-500/10 text-amber-500 font-semibold';
+              btnStyle = 'border-2 border-amber-500 bg-amber-500/15 text-amber-800 dark:text-amber-200 font-bold shadow-[0_3.5px_0_0_#D97706]';
             } else if (isThisCorrect) {
-              btnStyle = 'border-emerald-500/50 bg-emerald-500/10 text-emerald-400 font-semibold';
+              btnStyle = 'border-2 border-emerald-500 bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 font-bold shadow-[0_3.5px_0_0_#059669]';
             } else if (isSelected && !isThisCorrect) {
-              btnStyle = 'border-rose-500/50 bg-rose-500/10 text-rose-400';
+              btnStyle = 'border-2 border-rose-500 bg-rose-500/15 text-rose-800 dark:text-rose-200 font-bold shadow-[0_3.5px_0_0_#E11D48]';
             } else {
-              btnStyle = 'opacity-50 border-border text-muted-foreground';
+              btnStyle = 'opacity-40 border-2 border-[rgba(37,36,42,0.10)] bg-[#F0EAE1]/50 text-muted-foreground shadow-none';
             }
           } else if (isSelected) {
-            btnStyle = 'border-primary bg-primary/10 text-primary font-semibold ring-1 ring-primary';
+            btnStyle = 'border-2 border-[#5B5CE2] bg-[#5B5CE2]/15 text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none';
           }
 
           return (
@@ -166,7 +167,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               key={option.key}
               onClick={() => handleSelect(option.key)}
               disabled={submitted || isSubmitting}
-              className={`w-full text-left p-3.5 rounded-xl border transition-all touch-target flex items-center justify-between gap-3 ${btnStyle} ${
+              className={`w-full text-left p-3.5 rounded-2xl border-2 transition-all touch-target flex items-center justify-between gap-3 ${btnStyle} ${
                 submitted || isSubmitting ? 'cursor-default' : 'cursor-pointer'
               }`}
               role="radio"
@@ -223,10 +224,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           onClick={handleManualSubmit}
           disabled={!selectedOption || isSubmitting}
-          className={`w-full py-2.5 rounded-lg font-medium text-sm flex items-center justify-center gap-2 transition-all touch-target ${
+          className={`w-full py-3 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all touch-target ${
             selectedOption && !isSubmitting
-              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-              : 'bg-muted text-muted-foreground cursor-not-allowed'
+              ? 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:translate-y-[4px] active:shadow-none border-t border-white/25 cursor-pointer'
+              : 'bg-[#DDD4C7] text-muted-foreground cursor-not-allowed shadow-none'
           }`}
         >
           {isSubmitting ? (

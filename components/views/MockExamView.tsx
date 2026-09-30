@@ -771,7 +771,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           <button
             onClick={() => setIsConfirmSubmitOpen(true)}
             disabled={isSubmitting}
-            className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-semibold text-xs shadow-xs transition-all touch-target flex items-center gap-1.5"
+            className="px-4 py-2.5 rounded-2xl bg-[#10B981] hover:bg-[#059669] disabled:opacity-50 text-white font-bold text-xs shadow-[0_3px_0_0_#047857] active:translate-y-[3px] active:shadow-none transition-all touch-target flex items-center gap-1.5 border-t border-white/20 cursor-pointer"
           >
             {isSubmitting ? (
               <>
@@ -833,30 +833,30 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
               {/* Multiple Choice Options or Subjective Text Input */}
               {currentQuestion.options && currentQuestion.options.length > 0 ? (
-                <div className="space-y-2.5 pt-2">
+                <div className="space-y-3 pt-2">
                   {currentQuestion.options.map((option) => {
                     const isSelected =
                       answers[currentQuestion.id]?.selected_option_key === option.key;
+                    const optionStyle = isSelected
+                      ? 'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none'
+                      : 'bg-[#F0EAE1] hover:bg-[#EDE6DD] border-2 border-[rgba(37,36,42,0.14)] text-[#25242A] shadow-[0_3.5px_0_0_#C5BDB2] active:translate-y-[3.5px] active:shadow-none';
+
                     return (
                       <button
                         key={option.key}
                         onClick={() => handleSelectOption(currentQuestion.id, option.key)}
-                        className={`w-full min-h-[44px] p-3 rounded-xl border text-left flex items-center gap-3 transition-all touch-target break-word-safe ${
-                          isSelected
-                            ? 'bg-primary/10 border-primary text-primary font-medium'
-                            : 'border-border/60 hover:bg-muted/40 text-foreground'
-                        }`}
+                        className={`w-full min-h-[48px] p-3.5 rounded-2xl text-left flex items-center gap-3 transition-all touch-target break-word-safe cursor-pointer ${optionStyle}`}
                       >
                         <span
-                          className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold shrink-0 border ${
+                          className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 border ${
                             isSelected
-                              ? 'bg-primary text-primary-foreground border-primary'
-                              : 'bg-muted text-muted-foreground border-border'
+                              ? 'bg-[#5B5CE2] text-white border-[#5B5CE2]'
+                              : 'bg-[#DDD4C7] text-[#25242A] border-[rgba(37,36,42,0.12)]'
                           }`}
                         >
                           {option.key}
                         </span>
-                        <span className="text-xs sm:text-sm">{option.text}</span>
+                        <span className="text-xs sm:text-sm font-semibold">{option.text}</span>
                       </button>
                     );
                   })}
@@ -932,24 +932,24 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 const isFlagged = flaggedQuestionIds.includes(q.id);
                 const isCurrent = currentQuestionIdx === idx;
 
-                let btnClass = 'bg-muted/40 text-muted-foreground border-border/60 hover:bg-muted';
+                let btnClass = 'bg-[#F0EAE1] text-[#25242A] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none hover:bg-[#EDE6DD]';
                 if (isCurrent) {
-                  btnClass = 'ring-2 ring-primary border-primary text-foreground font-bold';
+                  btnClass = 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none font-bold ring-2 ring-[#5B5CE2]/30';
                 } else if (isFlagged) {
-                  btnClass = 'bg-amber-500/15 text-amber-400 border-amber-500/30';
+                  btnClass = 'bg-[#E5A83B] text-white border-t border-white/20 shadow-[0_2px_0_0_#A86E12] active:translate-y-[2px] active:shadow-none font-bold';
                 } else if (isAnswered) {
-                  btnClass = 'bg-primary/10 text-primary border-primary/20 font-medium';
+                  btnClass = 'bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[#5B5CE2]/40 shadow-[0_2px_0_0_rgba(91,92,226,0.3)] active:translate-y-[2px] active:shadow-none font-bold';
                 }
 
                 return (
                   <button
                     key={q.id}
                     onClick={() => setCurrentQuestionIdx(idx)}
-                    className={`h-9 rounded-lg border text-xs font-mono flex items-center justify-center transition-all touch-target relative ${btnClass}`}
+                    className={`h-9 rounded-xl text-xs font-mono font-bold flex items-center justify-center transition-all touch-target relative cursor-pointer ${btnClass}`}
                   >
                     <span>{idx + 1}</span>
                     {isFlagged && (
-                      <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-amber-400" />
+                      <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 border border-white" />
                     )}
                   </button>
                 );

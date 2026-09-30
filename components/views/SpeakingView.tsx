@@ -364,10 +364,10 @@ export const SpeakingView: React.FC = () => {
               <button
                 type="button"
                 onClick={handleToggleRecord}
-                className={`touch-target p-6 sm:p-7 rounded-full transition-all focus:outline-none focus:ring-4 ${
+                className={`touch-target p-6 sm:p-7 rounded-3xl transition-all focus:outline-none focus:ring-4 cursor-pointer select-none ${
                   isRecording
-                    ? 'bg-[#FF8F82] text-white shadow-lg shadow-[#FF8F82]/30 ring-[#FF8F82]/20 hover:scale-105 active:scale-95'
-                    : 'bg-[#5B5CE2] text-white hover:bg-[#4E4FD0] shadow-md shadow-indigo-500/25 ring-indigo-500/20 hover:scale-105 active:scale-95'
+                    ? 'bg-[#E98278] text-white shadow-[0_6px_0_0_#B8574E] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#E98278]/20 animate-pulse'
+                    : 'bg-[#5B5CE2] text-white hover:bg-[#4E4FD6] shadow-[0_6px_0_0_#38399E] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#5B5CE2]/20'
                 }`}
                 aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
               >

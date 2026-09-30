@@ -64,14 +64,15 @@ describe('Glova Core Components & Primitives Suite', () => {
   });
 
   describe('2. GlovaButton & GlovaIconButton', () => {
-    it('should render primary button with radiant gradient and accessible label', () => {
+    it('should render primary button with 3D extrusion shadow and accessible label', () => {
       const html = renderToString(
         <GlovaButton variant="primary" size="md">
           Start Practice
         </GlovaButton>
       );
       expect(html).toContain('Start Practice');
-      expect(html).toContain('from-indigo-600 to-violet-600');
+      expect(html).toContain('bg-[#5B5CE2]');
+      expect(html).toContain('shadow-[0_4px_0_0_#38399E]');
       expect(html).toContain('min-h-[44px]');
     });
 

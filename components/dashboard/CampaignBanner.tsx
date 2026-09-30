@@ -305,9 +305,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={() => setIsPaused((prev) => !prev)}
               aria-label={isPaused ? (isEn ? 'Resume rotation' : 'เล่นต่อ') : (isEn ? 'Pause rotation' : 'หยุดหมุนชั่วคราว')}
-              className="p-1.5 rounded-lg bg-white/70 dark:bg-card/70 hover:bg-white dark:hover:bg-card border border-[#EDE8DF] dark:border-border/40 text-muted-foreground hover:text-foreground transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
-              {isPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
+              {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
             </button>
 
             {/* Previous Slide */}
@@ -315,7 +315,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={prevSlide}
               aria-label={isEn ? 'Previous Campaign' : 'แคมเปญก่อนหน้า'}
-              className="p-1.5 rounded-lg bg-white/70 dark:bg-card/70 hover:bg-white dark:hover:bg-card border border-[#EDE8DF] dark:border-border/40 text-muted-foreground hover:text-foreground transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
             </button>
@@ -325,7 +325,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
               type="button"
               onClick={nextSlide}
               aria-label={isEn ? 'Next Campaign' : 'แคมเปญถัดไป'}
-              className="p-1.5 rounded-lg bg-white/70 dark:bg-card/70 hover:bg-white dark:hover:bg-card border border-[#EDE8DF] dark:border-border/40 text-muted-foreground hover:text-foreground transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] border border-[rgba(37,36,42,0.14)] shadow-[0_2px_0_0_#C5BDB2] active:translate-y-[2px] active:shadow-none text-[#25242A] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
             >
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
