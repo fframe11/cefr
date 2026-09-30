@@ -60,8 +60,8 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? 'bg-[#E6DED2]/95 dark:bg-[#131920]/95 backdrop-blur-md border-b border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] shadow-xs text-[#25242A] dark:text-[#EDEBE8]'
-          : 'bg-[#E6DED2]/80 dark:bg-[#131920]/80 backdrop-blur-xs border-b border-transparent text-[#25242A] dark:text-[#EDEBE8]'
+          ? 'bg-[#0D1117]/95 backdrop-blur-md border-b border-[rgba(255,255,255,0.08)] shadow-xs text-[#EDEBE8]'
+          : 'bg-[#0D1117]/80 backdrop-blur-xs border-b border-transparent text-[#EDEBE8]'
       }`}
     >
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
@@ -82,7 +82,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="font-black text-xl tracking-tight text-[#25242A] dark:text-[#EDEBE8] group-hover:text-[#5B5CE2] dark:group-hover:text-[#A5A6F6] transition-colors font-display">
+              <span className="font-black text-xl tracking-tight text-[#EDEBE8] group-hover:text-[#5B5CE2] dark:group-hover:text-[#A5A6F6] transition-colors font-display">
                 Glova
               </span>
               <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#5B5CE2]/10 dark:bg-[#5B5CE2]/20 text-[#5B5CE2] dark:text-[#A5A6F6] border border-[#5B5CE2]/20">
@@ -102,7 +102,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               key={item.id}
               type="button"
               onClick={() => scrollToSection(item.id)}
-              className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#DDD4C7]/50 dark:hover:bg-[#222E3A]/50 transition-colors cursor-pointer select-none"
+              className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#6E6870] dark:text-[#94A3B8] hover:text-[#EDEBE8] dark:hover:text-[#EDEBE8] hover:bg-[#141A22]/50 dark:hover:bg-[#222E3A]/50 transition-colors cursor-pointer select-none"
             >
               {isEn ? item.labelEn : item.labelTh}
             </button>
@@ -116,7 +116,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           <button
             type="button"
             onClick={onToggleTheme}
-            className="touch-target p-2 text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#DDD4C7]/50 dark:hover:bg-[#222E3A]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+            className="touch-target p-2 text-[#6E6870] dark:text-[#94A3B8] hover:text-[#EDEBE8] dark:hover:text-[#EDEBE8] hover:bg-[#141A22]/50 dark:hover:bg-[#222E3A]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
             aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {isDark ? <Sun className="w-4 h-4 text-[#E98278]" /> : <Moon className="w-4 h-4 text-[#5B5CE2]" />}
@@ -138,7 +138,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               variant="ghost"
               size="sm"
               onClick={() => (onOpenAuthModal ? onOpenAuthModal() : router.push('/'))}
-              className="hidden sm:inline-flex text-xs font-bold hover:bg-[#DDD4C7]/50"
+              className="hidden sm:inline-flex text-xs font-bold hover:bg-[#141A22]/50"
               leftIcon={<User className="w-3.5 h-3.5" />}
             >
               {isEn ? 'Sign In' : 'เข้าสู่ระบบ'}
@@ -166,7 +166,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden touch-target p-2 text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#DDD4C7]/50 dark:hover:bg-[#222E3A]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+            className="lg:hidden touch-target p-2 text-[#6E6870] dark:text-[#94A3B8] hover:text-[#EDEBE8] dark:hover:text-[#EDEBE8] hover:bg-[#141A22]/50 dark:hover:bg-[#222E3A]/50 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
             aria-label={mobileMenuOpen ? 'Close brand menu' : 'Open brand menu'}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -176,21 +176,21 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
 
       {/* Mobile Off-Canvas / Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] bg-[#E6DED2] dark:bg-[#131920] px-4 py-5 space-y-4 shadow-lg animate-in slide-in-from-top-2 duration-200 text-[#25242A] dark:text-[#EDEBE8]">
+        <div className="lg:hidden border-t border-[rgba(255,255,255,0.08)] bg-[#141A22] px-4 py-5 space-y-4 shadow-lg animate-in slide-in-from-top-2 duration-200 text-[#EDEBE8]">
           <div className="space-y-1">
             {navLinks.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => scrollToSection(item.id)}
-                className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#25242A] dark:text-[#EDEBE8] hover:bg-[#DDD4C7]/50 dark:hover:bg-[#222E3A]/50 transition-colors"
+                className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#EDEBE8] hover:bg-[#141A22]/50 dark:hover:bg-[#222E3A]/50 transition-colors"
               >
                 {isEn ? item.labelEn : item.labelTh}
               </button>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] flex flex-col gap-2.5">
+          <div className="pt-3 border-t border-[rgba(255,255,255,0.08)] flex flex-col gap-2.5">
             {isAuthenticated ? (
               <TactileButton
                 variant="surface"

@@ -52,7 +52,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
         width: '100%',
         height: '100%',
         backgroundColor: '#E6DED2',
-        color: '#25242A',
+        color: '#EDEBE8',
         fontFamily: "'Plus Jakarta Sans', 'Noto Sans Thai', -apple-system, sans-serif",
         display: 'flex',
         flexDirection: 'column',
@@ -70,7 +70,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
           position: 'absolute',
           inset: 0,
           backgroundImage:
-            'radial-gradient(#C5BDB2 1px, transparent 1px)',
+            'radial-gradient(#0D1318 1px, transparent 1px)',
           backgroundSize: '20px 20px',
           opacity: 0.35,
           pointerEvents: 'none',
@@ -116,11 +116,11 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            background: '#F0EAE1',
+            background: '#141A22',
             padding: '5px 14px',
             borderRadius: '999px',
             border: '1px solid rgba(37, 36, 42, 0.12)',
-            boxShadow: '0 2px 0 0 #C5BDB2',
+            boxShadow: '0 2px 0 0 #0D1318',
           }}
         >
           <span
@@ -137,7 +137,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
             style={{
               width: '60px',
               height: '6px',
-              backgroundColor: '#DDD4C7',
+              backgroundColor: '#1C2430',
               borderRadius: '999px',
               overflow: 'hidden',
             }}
@@ -159,11 +159,11 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
         style={{
           width: '100%',
           maxWidth: '540px',
-          backgroundColor: '#F0EAE1',
+          backgroundColor: '#141A22',
           border: '1.5px solid rgba(37, 36, 42, 0.14)',
           borderRadius: '24px',
           padding: '24px 28px',
-          boxShadow: '0 6px 0 0 #C5BDB2, 0 12px 24px rgba(37, 36, 42, 0.06)',
+          boxShadow: '0 6px 0 0 #0D1318, 0 12px 24px rgba(37, 36, 42, 0.06)',
           opacity: cardOpacity,
           zIndex: 10,
           position: 'relative',
@@ -183,7 +183,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               style={{
                 padding: '3px 10px',
                 borderRadius: '8px',
-                backgroundColor: '#DDD4C7',
+                backgroundColor: '#1C2430',
                 border: '1px solid rgba(37, 36, 42, 0.12)',
                 fontSize: '11px',
                 fontWeight: 800,
@@ -204,7 +204,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
 
         {/* Target Word & Phonetics */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '4px' }}>
-          <div style={{ fontSize: '32px', fontWeight: 900, color: '#25242A', letterSpacing: '-0.5px' }}>
+          <div style={{ fontSize: '32px', fontWeight: 900, color: '#EDEBE8', letterSpacing: '-0.5px' }}>
             PRAGMATIC
           </div>
           <div style={{ fontSize: '13px', color: '#6E6870', fontStyle: 'italic' }}>
@@ -215,9 +215,9 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
         <div
           style={{
             fontSize: '13px',
-            color: '#25242A',
+            color: '#EDEBE8',
             marginBottom: '18px',
-            backgroundColor: '#EDE6DD',
+            backgroundColor: '#253040',
             padding: '10px 14px',
             borderRadius: '12px',
             border: '1px solid rgba(37, 36, 42, 0.08)',
@@ -236,16 +236,16 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               borderRadius: '14px',
               fontSize: '13px',
               fontWeight: 700,
-              backgroundColor: isAnswered ? '#ECFDF5' : '#F0EAE1',
+              backgroundColor: isAnswered ? '#ECFDF5' : '#141A22',
               border: isAnswered
                 ? '2px solid #10B981'
                 : '1.5px solid rgba(37, 36, 42, 0.14)',
-              color: isAnswered ? '#065F46' : '#25242A',
+              color: isAnswered ? '#065F46' : '#EDEBE8',
               boxShadow: isAnswered
                 ? 'none'
                 : isOptionPressed
                 ? 'none'
-                : '0 3.5px 0 0 #C5BDB2',
+                : '0 3.5px 0 0 #0D1318',
               transform: isAnswered || isOptionPressed ? 'translateY(3.5px)' : 'none',
               display: 'flex',
               alignItems: 'center',
@@ -281,11 +281,11 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               borderRadius: '14px',
               fontSize: '13px',
               fontWeight: 600,
-              backgroundColor: '#F0EAE1',
+              backgroundColor: '#141A22',
               border: '1.5px solid rgba(37, 36, 42, 0.14)',
-              color: isAnswered ? '#8D8790' : '#25242A',
+              color: isAnswered ? '#8D8790' : '#EDEBE8',
               opacity: isAnswered ? 0.45 : 1,
-              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #0D1318',
             }}
           >
             B. เพ้อฝันเกินจริง
@@ -298,11 +298,11 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               borderRadius: '14px',
               fontSize: '13px',
               fontWeight: 600,
-              backgroundColor: '#F0EAE1',
+              backgroundColor: '#141A22',
               border: '1.5px solid rgba(37, 36, 42, 0.14)',
-              color: isAnswered ? '#8D8790' : '#25242A',
+              color: isAnswered ? '#8D8790' : '#EDEBE8',
               opacity: isAnswered ? 0.45 : 1,
-              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #0D1318',
             }}
           >
             C. ซับซ้อนเข้าใจยาก
@@ -315,11 +315,11 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               borderRadius: '14px',
               fontSize: '13px',
               fontWeight: 600,
-              backgroundColor: '#F0EAE1',
+              backgroundColor: '#141A22',
               border: '1.5px solid rgba(37, 36, 42, 0.14)',
-              color: isAnswered ? '#8D8790' : '#25242A',
+              color: isAnswered ? '#8D8790' : '#EDEBE8',
               opacity: isAnswered ? 0.45 : 1,
-              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #C5BDB2',
+              boxShadow: isAnswered ? 'none' : '0 3.5px 0 0 #0D1318',
             }}
           >
             D. ลังเลตัดสินใจไม่ได้
@@ -335,7 +335,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               left: '50%',
               transform: `translate(-50%, -50%) scale(${rewardScale})`,
               opacity: rewardOpacity,
-              backgroundColor: '#F0EAE1',
+              backgroundColor: '#141A22',
               border: '2px solid #5B5CE2',
               borderRadius: '22px',
               padding: '18px 32px',
@@ -376,7 +376,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
                 gap: '8px',
                 fontSize: '12px',
                 fontWeight: 700,
-                color: '#25242A',
+                color: '#EDEBE8',
                 marginTop: '4px',
               }}
             >

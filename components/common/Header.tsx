@@ -14,6 +14,7 @@ import {
   LogOut,
   Target,
   BarChart2,
+  Sparkles,
 } from 'lucide-react';
 import { CEFRLevel, CambridgeExamCode } from '../../types';
 import { useTranslation } from '../../i18n';
@@ -73,48 +74,45 @@ export const Header: React.FC<HeaderProps> = ({
 
   const goalPercent = Math.min(100, Math.round((minutesStudiedToday / dailyGoalMinutes) * 100));
 
-  // Close menu on click outside or escape key
   useEffect(() => {
     if (!isMenuOpen) return;
-
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false);
       }
     };
-
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsMenuOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMenuOpen]);
 
-  const displayName =
-    user?.user_metadata?.display_name ||
-    user?.user_metadata?.full_name ||
-    userEmail?.split('@')[0] ||
-    'Learner';
+  const handleSignOut = async () => {
+    setIsMenuOpen(false);
+    await signOut();
+    router.push('/landing');
+  };
 
+  const displayName = user?.user_metadata?.full_name || user?.email || userEmail || 'Learner';
   const initials = getInitials(displayName);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/90 backdrop-blur-md transition-colors pt-safe">
+    <header className="sticky top-0 z-40 w-full border-b border-[rgba(255,255,255,0.08)] bg-[#141A22]/95 backdrop-blur-md transition-colors pt-safe shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        {/* Left: Mobile Nav Toggle + Logo and Brand */}
+        {/* Left: Mobile Nav Toggle + Studio Brand */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {onOpenMobileNav && (
             <button
               type="button"
               onClick={onOpenMobileNav}
-              className="md:hidden touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              className="md:hidden touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
               aria-label="Open mobile navigation menu"
             >
               <Menu className="w-5 h-5" aria-hidden="true" />
@@ -131,21 +129,22 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-black text-base sm:text-lg tracking-tight truncate bg-gradient-to-r from-[#5B5CE2] via-purple-600 to-amber-500 bg-clip-text text-transparent group-hover:brightness-110 transition-all">
+                <span className="font-black text-base sm:text-lg tracking-tight font-display text-[#EDEBE8] flex items-center gap-1">
                   Glova
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E5A93C] shadow-[0_0_8px_#E5A93C]" />
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-secondary text-muted-foreground border border-border/40">
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#1C2430] text-[#E5A93C] border border-[#E5A93C]/30 shadow-xs">
                   {targetExam} {t('header.prep_suffix')}
                 </span>
               </div>
-              <p className="text-[11px] text-muted-foreground truncate hidden md:block">
-                {t('header.subtitle')}
+              <p className="text-[10px] text-[#94A3B8] font-mono truncate hidden md:block">
+                Cambridge CEFR Linguistic Studio
               </p>
             </div>
           </Link>
         </div>
 
-        {/* Status Indicators & Controls */}
+        {/* Center/Right Status Indicators & Hardware Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* CEFR Level Badge */}
           <GlovaLevelBadge
@@ -154,28 +153,28 @@ export const Header: React.FC<HeaderProps> = ({
             className="hidden sm:inline-flex"
           />
 
-          {/* Streak Counter */}
+          {/* Streak Flame Telemetry */}
           <div
-            className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold shadow-xs"
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 rounded-md bg-[#0F141C] border border-amber-500/25 text-[#E5A93C] text-xs font-mono font-bold shadow-inner"
             title={`${streakDays} Day Study Streak`}
           >
-            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-amber-500" />
-            <span className="tabular-nums font-bold">{streakDays}</span>
-            <span className="hidden md:inline text-amber-400/80 font-normal">{t('common.days')}</span>
+            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-[#E5A93C]" />
+            <span className="tabular-nums">{streakDays}</span>
+            <span className="hidden md:inline text-amber-300/80 font-normal">{t('common.days')}</span>
           </div>
 
-          {/* Daily Goal Progress */}
+          {/* Daily Goal Telemetry */}
           <div
-            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-secondary/60 border border-border/40 text-xs"
+            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0F141C] border border-[rgba(255,255,255,0.08)] text-xs font-mono"
             title={`Today: ${minutesStudiedToday} of ${dailyGoalMinutes} minutes`}
           >
-            <Clock className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-            <span className="text-foreground font-medium tabular-nums">
+            <Clock className="w-3.5 h-3.5 text-[#94A3B8] shrink-0" />
+            <span className="text-[#EDEBE8] font-bold tabular-nums">
               {minutesStudiedToday}/{dailyGoalMinutes}m
             </span>
-            <div className="w-10 h-1.5 bg-secondary rounded-full overflow-hidden">
+            <div className="w-10 h-1.5 bg-[#1C2430] rounded-full overflow-hidden border border-[rgba(255,255,255,0.05)]">
               <div
-                className="h-full bg-emerald-500 rounded-full transition-all duration-300"
+                className="h-full bg-[#10B981] rounded-full transition-all duration-300 shadow-[0_0_6px_#10B981]"
                 style={{ width: `${goalPercent}%` }}
               />
             </div>
@@ -184,109 +183,99 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Language Switcher */}
           <LanguageSwitcher />
 
-          {/* Re-take Diagnostic Button (Desktop / Tablet only) */}
+          {/* Re-take Diagnostic Button */}
           <button
             onClick={onRetakeAssessment}
-            className="hidden sm:inline-flex touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-md transition-colors"
+            className="hidden sm:inline-flex touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-md border border-[rgba(255,255,255,0.06)] transition-colors active:scale-95"
             title={t('header.retake_assessment')}
             aria-label={t('header.retake_assessment')}
           >
             <RefreshCw className="w-4 h-4" />
           </button>
 
-          {/* Theme Toggle */}
+          {/* Theme Switcher Toggle */}
           <button
             onClick={onToggleTheme}
-            className="touch-target p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/60 rounded-md transition-colors"
+            className="touch-target p-2 text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] rounded-md border border-[rgba(255,255,255,0.06)] transition-colors active:scale-95"
             title={t('header.switch_theme')}
             aria-label={t('header.switch_theme')}
           >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            {isDark ? <Sun className="w-4 h-4 text-[#E5A93C]" /> : <Moon className="w-4 h-4 text-[#94A3B8]" />}
           </button>
 
-          {/* Profile / Account Control */}
+          {/* Account Profile Capsule */}
           {isAuthenticated ? (
             <div className="relative" ref={menuRef}>
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-border/60 bg-secondary/50 hover:bg-secondary text-xs font-medium text-foreground transition-all shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-[rgba(255,255,255,0.12)] bg-[#1C2430] hover:bg-[#222E3A] text-xs font-medium text-[#EDEBE8] transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
                 aria-expanded={isMenuOpen}
                 aria-haspopup="menu"
                 aria-label={t('auth.menu_profile')}
               >
-                <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white font-bold text-[10px] flex items-center justify-center shrink-0">
+                <div className="w-6 h-6 rounded-full bg-[#5B5CE2] text-white font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-white/20">
                   {initials}
                 </div>
-                <span className="hidden lg:inline max-w-[100px] truncate font-semibold">
+                <span className="hidden sm:inline font-mono text-[11px] truncate max-w-[100px]">
                   {displayName}
                 </span>
-                <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className="w-3.5 h-3.5 text-[#94A3B8] hidden sm:block shrink-0" />
               </button>
 
+              {/* Profile Dropdown Menu */}
               {isMenuOpen && (
                 <div
                   role="menu"
-                  className="absolute right-0 mt-2 w-64 rounded-2xl bg-card border border-border/80 shadow-xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150"
+                  aria-orientation="vertical"
+                  className="absolute right-0 mt-2 w-56 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[#141A22] text-[#EDEBE8] shadow-2xl p-1.5 space-y-1 z-50 animate-in fade-in-50 zoom-in-95 duration-100"
                 >
-                  {/* User Header Preview */}
-                  <div className="p-3 rounded-xl bg-secondary/40 border border-border/40 mb-1 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-foreground truncate max-w-[140px]">{displayName}</span>
-                      <GlovaLevelBadge level={currentLevel as CEFRTier} size="sm" />
+                  <div className="px-3 py-2 border-b border-[rgba(255,255,255,0.08)]">
+                    <p className="text-xs font-bold text-[#EDEBE8] truncate">{displayName}</p>
+                    <p className="text-[10px] text-[#94A3B8] font-mono truncate">{user?.email}</p>
+                    <div className="mt-1 flex items-center gap-1.5">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                      <span className="text-[10px] text-[#94A3B8] font-mono">
+                        CEFR {currentLevel} • {targetExam}
+                      </span>
                     </div>
-                    <p className="text-[11px] text-muted-foreground truncate">{userEmail}</p>
                   </div>
 
-                  {/* Menu Items */}
-                  <div className="space-y-0.5 text-xs font-medium">
-                    <Link
-                      href="/profile"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors"
-                      role="menuitem"
-                    >
-                      <UserIcon className="w-4 h-4 text-primary shrink-0" />
-                      <span>{t('auth.menu_profile')}</span>
-                    </Link>
+                  <button
+                    role="menuitem"
+                    type="button"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      if (onOpenProfile) onOpenProfile();
+                    }}
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                  >
+                    <UserIcon className="w-4 h-4 text-[#94A3B8]" />
+                    <span>{t('auth.menu_profile')}</span>
+                  </button>
 
+                  <button
+                    role="menuitem"
+                    type="button"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      router.push('/analytics');
+                    }}
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
+                  >
+                    <BarChart2 className="w-4 h-4 text-[#94A3B8]" />
+                    <span>{t('sidebar.analytics')}</span>
+                  </button>
+
+                  <div className="border-t border-[rgba(255,255,255,0.08)] pt-1">
                     <button
+                      role="menuitem"
                       type="button"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        if (onOpenProfile) onOpenProfile();
-                      }}
-                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors text-left"
-                      role="menuitem"
+                      onClick={handleSignOut}
+                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-colors"
                     >
-                      <Target className="w-4 h-4 text-primary shrink-0" />
-                      <span>{t('auth.menu_goals')}</span>
-                    </button>
-
-                    <Link
-                      href="/analytics"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-secondary transition-colors"
-                      role="menuitem"
-                    >
-                      <BarChart2 className="w-4 h-4 text-indigo-500 shrink-0" />
-                      <span>{t('auth.menu_progress')}</span>
-                    </Link>
-
-                    <div className="my-1 border-t border-border/50" />
-
-                    <button
-                      type="button"
-                      onClick={async () => {
-                        setIsMenuOpen(false);
-                        await signOut();
-                        router.push('/');
-                      }}
-                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-destructive hover:bg-destructive/10 transition-colors text-left"
-                      role="menuitem"
-                    >
-                      <LogOut className="w-4 h-4 shrink-0" />
-                      <span>{t('auth.menu_signout')}</span>
+                      <LogOut className="w-4 h-4 text-[#F43F5E]" />
+                      <span>{t('auth.sign_out')}</span>
                     </button>
                   </div>
                 </div>
@@ -294,13 +283,13 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           ) : (
             <button
+              type="button"
               onClick={onOpenProfile}
-              className="touch-target flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border/60 bg-secondary/60 text-xs font-semibold text-foreground hover:bg-secondary transition-colors"
-              title={t('auth.signin_button')}
-              aria-label={t('auth.signin_button')}
+              className="touch-target inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#5B5CE2] text-white text-xs font-bold shadow-[0_2px_0_#3839A0] hover:bg-[#4E4FD6] active:translate-y-0.5 transition-all"
+              aria-label={t('auth.sign_in')}
             >
-              <UserIcon className="w-4 h-4 shrink-0 text-primary" />
-              <span className="hidden sm:inline">{t('auth.signin_button')}</span>
+              <UserIcon className="w-3.5 h-3.5" />
+              <span>{t('auth.sign_in')}</span>
             </button>
           )}
         </div>

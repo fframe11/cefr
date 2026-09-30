@@ -221,7 +221,7 @@ export default function SocialPage() {
       <SquadShareBanner squadName="Chula Vanguard" memberCount={3} maxMembers={5} />
 
       {/* 1. SOCIAL HUB HEADER */}
-      <section className="rounded-3xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
+      <section className="rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-600 text-white flex items-center justify-center shadow-sm shrink-0">

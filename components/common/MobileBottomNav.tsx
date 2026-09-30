@@ -28,7 +28,7 @@ interface MobileBottomNavProps {
 }
 
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, onSelectView }) => {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const isEn = language === 'en';
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -63,24 +63,24 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
       {/* Mobile Drawer Overlay */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs md:hidden animate-in fade-in duration-150"
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs md:hidden animate-in fade-in duration-150"
           onClick={() => setDrawerOpen(false)}
         >
           <div
-            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#E6DED2] dark:bg-[#131920] border-t border-[rgba(37,36,42,0.14)] dark:border-border/40 rounded-t-3xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-[#25242A] dark:text-[#EDEBE8]"
+            className="fixed bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto bg-[#141A22] border-t border-[rgba(255,255,255,0.12)] rounded-t-2xl p-5 pb-safe shadow-2xl animate-in slide-in-from-bottom duration-200 text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3.5 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 mb-3">
+            <div className="flex items-center justify-between pb-3.5 border-b border-[rgba(255,255,255,0.08)] mb-3">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#5B5CE2]" />
-                <span className="font-bold text-sm text-[#25242A] dark:text-[#EDEBE8] font-display">
+                <span className="w-2 h-2 rounded-full bg-[#5B5CE2] shadow-[0_0_8px_#5B5CE2]" />
+                <span className="font-bold text-sm text-[#EDEBE8] font-display">
                   {isEn ? 'All Learning Studios' : 'ทุกสตูดิโอการเรียนรู้'}
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="p-1.5 rounded-full text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] transition-colors"
+                className="p-1.5 rounded-lg text-[#94A3B8] hover:text-[#EDEBE8] hover:bg-[#1C2430] transition-colors"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -96,10 +96,10 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                     key={item.id}
                     type="button"
                     onClick={() => handleSelect(item.id)}
-                    className={`flex items-center gap-3 p-3 rounded-2xl transition-all text-left active:scale-[0.98] ${
+                    className={`flex items-center gap-3 p-3 rounded-xl transition-all text-left active:translate-y-0.5 ${
                       isActive
-                        ? 'bg-[#5B5CE2] text-white font-bold shadow-xs'
-                        : 'text-[#25242A] dark:text-[#EDEBE8] hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] font-medium'
+                        ? 'bg-[#5B5CE2] text-white font-bold shadow-[0_2px_0_#3839A0]'
+                        : 'text-[#EDEBE8] hover:bg-[#1C2430] font-medium'
                     }`}
                   >
                     <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#5B5CE2]'}`} />
@@ -116,44 +116,54 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
 
       {/* Fixed Bottom Bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#E6DED2]/98 dark:bg-[#131920]/98 backdrop-blur-md border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 pb-safe shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#141A22]/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.08)] pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.5)]"
         aria-label="Mobile Navigation"
       >
-        <div className="grid grid-cols-6 items-center h-16 px-1">
+        <div className="flex items-center justify-around px-2 py-1.5 max-w-md mx-auto">
           {primaryItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
+            const label = isEn ? item.labelEn : item.labelTh;
+
             return (
               <button
                 key={item.id}
                 type="button"
-                onClick={() => onSelectView(item.id)}
-                className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
-                  isActive ? 'text-[#5B5CE2] font-bold' : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8]'
+                onClick={() => handleSelect(item.id)}
+                className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg text-[10px] font-medium transition-all min-w-[56px] ${
+                  isActive
+                    ? 'text-[#5B5CE2] font-bold'
+                    : 'text-[#94A3B8] hover:text-[#EDEBE8]'
                 }`}
+                aria-label={label}
+                aria-current={isActive ? 'page' : undefined}
               >
-                <Icon className={`w-4 h-4 transition-transform duration-150 ${isActive ? 'scale-115 text-[#5B5CE2]' : ''}`} />
-                <span className="text-[10px] mt-1 tracking-tight truncate max-w-full px-0.5 font-display">
-                  {isEn ? item.labelEn : item.labelTh}
-                </span>
-                {isActive && <span className="w-1 h-1 rounded-full bg-[#5B5CE2] mt-0.5" />}
+                <div
+                  className={`p-1 rounded-lg transition-transform ${
+                    isActive ? 'bg-[#5B5CE2]/15 scale-110 shadow-xs' : ''
+                  }`}
+                >
+                  <Icon className="w-4 h-4 shrink-0" />
+                </div>
+                <span className="mt-0.5 font-display tracking-tight text-[10px]">{label}</span>
               </button>
             );
           })}
 
-          {/* More Menu Toggle */}
+          {/* More trigger button */}
           <button
             type="button"
-            onClick={() => setDrawerOpen(true)}
-            className={`flex flex-col items-center justify-center h-full min-h-[44px] transition-all active:scale-95 ${
-              drawerOpen || secondaryItems.some((s) => s.id === currentView)
-                ? 'text-[#5B5CE2] font-bold'
-                : 'text-[#6E6870] dark:text-[#94A3B8] hover:text-[#25242A] dark:hover:text-[#EDEBE8]'
-            }`}
-            aria-label="More navigation options"
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            className="flex flex-col items-center justify-center py-1 px-2.5 rounded-lg text-[10px] font-medium text-[#94A3B8] hover:text-[#EDEBE8] transition-all min-w-[56px]"
+            aria-label={isEn ? 'More' : 'เพิ่มเติม'}
+            aria-expanded={drawerOpen}
           >
-            <MoreHorizontal className="w-4 h-4" />
-            <span className="text-[10px] mt-1 font-display">{isEn ? 'More' : 'เพิ่มเติม'}</span>
+            <div className="p-1 rounded-lg">
+              <MoreHorizontal className="w-4 h-4 shrink-0" />
+            </div>
+            <span className="mt-0.5 font-display tracking-tight text-[10px]">
+              {isEn ? 'More' : 'เพิ่มเติม'}
+            </span>
           </button>
         </div>
       </nav>

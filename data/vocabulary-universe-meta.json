@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-09-30T09:45:20.459Z",
+  "total_candidates": 121253,
+  "tier_1_verified_seed": 3813,
+  "tier_2_extended_universe": 117440,
+  "cefr_distribution": {
+    "A1": 8021,
+    "A2": 18630,
+    "B1": 31371,
+    "B2": 32378,
+    "C1": 19672,
+    "C2": 11181
+  },
+  "pos_distribution": {
+    "noun": 64974,
+    "verb": 17695,
+    "adjective": 22804,
+    "phrase": 4186,
+    "adverb": 4431,
+    "preposition": 112,
+    "interjection": 131,
+    "conjunction": 77,
+    "pronoun": 100,
+    "idiom": 3953,
+    "abbreviation": 184,
+    "other": 45,
+    "prefix": 207,
+    "slang": 2217,
+    "suffix": 125,
+    "determiner": 12
+  },
+  "cefr_disclaimer": "Official Cambridge CEFR claims are restricted strictly to verified seed items. Extended candidates carry platform classification estimates."
+}

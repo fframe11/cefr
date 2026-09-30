@@ -52,19 +52,19 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
         lg: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_5px_0_0_#38399E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
       },
       secondary: {
-        sm: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#C5BDB2] dark:shadow-[0_2.5px_0_0_#0F141B] active:shadow-none active:translate-y-[2.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)]',
-        md: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#C5BDB2] dark:shadow-[0_3.5px_0_0_#0F141B] active:shadow-none active:translate-y-[3.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)]',
-        lg: 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#C5BDB2] dark:shadow-[0_4.5px_0_0_#0F141B] active:shadow-none active:translate-y-[4.5px] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)]',
+        sm: 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-[rgba(255,255,255,0.08)]',
+        md: 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-[rgba(255,255,255,0.08)]',
+        lg: 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-[rgba(255,255,255,0.08)]',
       },
       outline: {
-        sm: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] dark:bg-[#1A232C]/80 dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:shadow-none active:translate-y-[2px] border-2 border-[rgba(37,36,42,0.16)] dark:border-[rgba(255,255,255,0.14)]',
-        md: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] dark:bg-[#1A232C]/80 dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_3px_0_0_#C5BDB2] dark:shadow-[0_3px_0_0_#0F141B] active:shadow-none active:translate-y-[3px] border-2 border-[rgba(37,36,42,0.16)] dark:border-[rgba(255,255,255,0.14)]',
-        lg: 'bg-[#F0EAE1]/80 hover:bg-[#F0EAE1] dark:bg-[#1A232C]/80 dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4px_0_0_#C5BDB2] dark:shadow-[0_4px_0_0_#0F141B] active:shadow-none active:translate-y-[4px] border-2 border-[rgba(37,36,42,0.16)] dark:border-[rgba(255,255,255,0.14)]',
+        sm: 'bg-[#141A22]/80 hover:bg-[#1C2430] text-[#EDEBE8] shadow-[0_2px_0_0_#0D1318] active:shadow-none active:translate-y-[2px] border border-[rgba(255,255,255,0.12)]',
+        md: 'bg-[#141A22]/80 hover:bg-[#1C2430] text-[#EDEBE8] shadow-[0_3px_0_0_#0D1318] active:shadow-none active:translate-y-[3px] border border-[rgba(255,255,255,0.12)]',
+        lg: 'bg-[#141A22]/80 hover:bg-[#1C2430] text-[#EDEBE8] shadow-[0_4px_0_0_#0D1318] active:shadow-none active:translate-y-[4px] border border-[rgba(255,255,255,0.12)]',
       },
       ghost: {
-        sm: 'bg-transparent hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-        md: 'bg-transparent hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-        lg: 'bg-transparent hover:bg-[#F0EAE1] dark:hover:bg-[#1A232C] text-[#25242A] dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        sm: 'bg-transparent hover:bg-[#1C2430] text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        md: 'bg-transparent hover:bg-[#1C2430] text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        lg: 'bg-transparent hover:bg-[#1C2430] text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
       },
       destructive: {
         sm: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_2.5px_0_0_#9E2024] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',

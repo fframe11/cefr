@@ -48,6 +48,7 @@ import {
   TactileButton,
 } from '../ui';
 import { useTranslation } from '../../i18n';
+import { ExtendedUniverseView } from '../vocabulary/ExtendedUniverseView';
 
 interface VocabularyViewProps {
   masteredWordIds?: string[];
@@ -64,7 +65,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'ALL'>('ALL');
   const [selectedPos, setSelectedPos] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState<'study' | 'practice' | 'browse'>('study');
+  const [viewMode, setViewMode] = useState<'study' | 'practice' | 'browse' | 'universe'>('study');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
 
@@ -381,7 +382,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center p-1 rounded-2xl bg-[#DDD4C7] dark:bg-[#131920] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)] gap-1">
+          <div className="flex items-center p-1 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] gap-1">
             <button
               type="button"
               onClick={() => setViewMode('study')}
@@ -426,12 +427,27 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
             </button>
+          
+            <button
+              type="button"
+              onClick={() => setViewMode('universe')}
+              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
+                viewMode === 'universe'
+                  ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20'
+                  : 'text-muted-foreground hover:text-foreground active:translate-y-0.5'
+              }`}
+              aria-label={isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์ 121k'}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+              <span>{isEn ? 'Lexical Universe (121k)' : 'จักรวาลศัพท์ 121k'}</span>
+            </button>
           </div>
         </div>
       </div>
 
       {/* Level & POS Filter Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-2xl bg-card border border-[rgba(37,36,42,0.12)] shadow-xs">
+      {viewMode !== 'universe' && (
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-2xl bg-card border border-[rgba(255,255,255,0.08)] shadow-xs">
         {/* CEFR Level Selector */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
           <span className="text-xs text-muted-foreground font-bold flex items-center gap-1 mr-1 shrink-0">
@@ -450,7 +466,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 selectedLevel === lvl
                   ? 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none'
-                  : 'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] text-[#25242A] dark:text-[#EDEBE8] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none'
+                  : 'bg-[#1C2430] hover:bg-[#253040] text-[#EDEBE8] border border-[rgba(255,255,255,0.08)] shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All' : 'ทั้งหมด') : `CEFR ${lvl}`}
@@ -492,6 +508,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           </div>
         </div>
       </div>
+      )}
 
       {/* Loading State */}
       {loading && words.length === 0 && (
@@ -509,7 +526,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       )}
 
       {/* Empty State */}
-      {!loading && filteredWords.length === 0 && (
+      {!loading && viewMode !== 'universe' && filteredWords.length === 0 && (
         <EmptyState
           title={isEn ? 'No matching vocabulary found' : 'ไม่พบคำศัพท์ที่ตรงกับการค้นหา'}
           description={
@@ -547,7 +564,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               className="p-6 sm:p-8 space-y-6"
             >
               {/* Practice Header with Streak & Score */}
-              <div className="flex items-center justify-between pb-3 border-b border-[rgba(37,36,42,0.12)]">
+              <div className="flex items-center justify-between pb-3 border-b border-[rgba(255,255,255,0.08)]">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentPracticeQ.cefrLevel} size="sm" />
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -585,7 +602,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border-2 border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.08)] text-[#25242A] dark:text-[#EDEBE8] shadow-[0_4px_0_0_#C5BDB2] dark:shadow-[0_4px_0_0_#0D1318] active:translate-y-[4px] active:shadow-none';
+                    'bg-[#1C2430] hover:bg-[#253040] border-2 border-[rgba(255,255,255,0.08)] text-[#EDEBE8] shadow-[0_4px_0_0_#0D1318] active:translate-y-[4px] active:shadow-none';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
@@ -595,7 +612,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       optionStyle =
                         'bg-rose-500/15 border-2 border-rose-500 text-rose-800 dark:text-rose-200 font-bold ring-2 ring-rose-500/20 shadow-[0_4px_0_0_#E11D48]';
                     } else {
-                      optionStyle = 'opacity-40 border-2 border-[rgba(37,36,42,0.10)] dark:border-[rgba(255,255,255,0.08)] bg-[#F0EAE1]/50 dark:bg-[#1A232C]/50 text-muted-foreground shadow-none';
+                      optionStyle = 'opacity-40 border-2 border-[rgba(255,255,255,0.08)] bg-[#141A22]/50 text-muted-foreground shadow-none';
                     }
                   } else if (isSelected) {
                     optionStyle =
@@ -611,7 +628,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-xl bg-[#DDD4C7] dark:bg-[#222E3A] flex items-center justify-center text-xs font-mono font-bold text-[#25242A] dark:text-[#EDEBE8] shrink-0 border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
+                        <span className="w-8 h-8 rounded-xl bg-[#1C2430] flex items-center justify-center text-xs font-mono font-bold text-[#EDEBE8] shrink-0 border border-[rgba(255,255,255,0.08)]">
                           {opt.key}
                         </span>
                         <span className="text-sm sm:text-base font-bold">{opt.text}</span>
@@ -674,7 +691,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden"
           >
             {/* Card Header Context */}
-            <div className="flex items-center justify-between gap-3 pb-4 border-b border-[rgba(37,36,42,0.12)]">
+            <div className="flex items-center justify-between gap-3 pb-4 border-b border-[rgba(255,255,255,0.08)]">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentWord.cefrLevel} size="sm" />
                 <GlovaBadge variant="secondary" size="sm" className="capitalize rounded-full px-2.5">
@@ -687,7 +704,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#DDD4C7] dark:bg-[#222E3A] px-3 py-1 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
+              <div className="text-xs font-mono font-semibold text-muted-foreground bg-[#1C2430] px-3 py-1 rounded-full border border-[rgba(255,255,255,0.08)]">
                 {isEn
                   ? `Word ${currentIndex + 1} of ${filteredWords.length}`
                   : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
@@ -697,7 +714,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             {/* Word Central Area - Word as the Hero */}
             <div className="py-6 text-center space-y-4">
               <div className="flex items-center justify-center gap-4 flex-wrap">
-                <h2 className="text-4xl sm:text-5xl font-black text-[#25242A] dark:text-[#EDEBE8] tracking-tight font-sans">
+                <h2 className="text-4xl sm:text-5xl font-black text-[#EDEBE8] tracking-tight font-sans">
                   {currentWord.word}
                 </h2>
                 <button
@@ -715,7 +732,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               </div>
 
               {currentWord.ipa && (
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#DDD4C7] dark:bg-[#222E3A] text-xs font-mono font-medium text-muted-foreground border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.08)]">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#1C2430] text-xs font-mono font-medium text-muted-foreground border border-[rgba(255,255,255,0.08)]">
                   {currentWord.ipa}
                 </div>
               )}
@@ -723,7 +740,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {/* Immediate Meaning & Definition (ADHD-Friendly: Zero Friction, Direct Display) */}
               <div className="pt-4 space-y-4 animate-in fade-in duration-150">
                 {/* Thai Meaning Highlight & English Definition */}
-                <div className="p-5 sm:p-6 rounded-[24px] bg-[#DDD4C7] dark:bg-[#1E252D] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.1)] space-y-1.5 text-center shadow-xs">
+                <div className="p-5 sm:p-6 rounded-[24px] bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-1.5 text-center shadow-xs">
                   <div className="text-[11px] font-bold text-[#5B5CE2] dark:text-[#A5A6F6] uppercase tracking-wider">
                     {isEn ? 'Meaning in Thai' : 'ความหมายภาษาไทย'}
                   </div>
@@ -739,7 +756,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
                 {/* Example in Context */}
                 {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
-                  <div className="p-5 rounded-[22px] bg-[#F0EAE1] dark:bg-[#182026] border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.1)] text-left space-y-2 shadow-xs">
+                  <div className="p-5 rounded-[22px] bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-left space-y-2 shadow-xs">
                     <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400">
                       <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>
@@ -764,7 +781,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     {currentWord.collocations.map((c, i) => (
                       <span
                         key={i}
-                        className="px-3.5 py-1 rounded-full bg-[#DDD4C7] dark:bg-[#2A343E] text-xs font-mono font-bold text-foreground border border-[rgba(37,36,42,0.12)] dark:border-[rgba(255,255,255,0.12)] shadow-xs"
+                        className="px-3.5 py-1 rounded-full bg-[#1C2430] text-xs font-mono font-bold text-foreground border border-[rgba(255,255,255,0.08)] shadow-xs"
                       >
                         {c}
                       </span>
@@ -790,7 +807,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             </div>
 
             {/* Bottom Actions: Mastery & Navigation */}
-            <div className="pt-4 border-t border-[rgba(37,36,42,0.12)] flex items-center justify-between gap-3 flex-wrap">
+            <div className="pt-4 border-t border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3 flex-wrap">
               <GlovaButton
                 variant={isMastered ? 'primary' : 'outline'}
                 size="sm"
@@ -930,6 +947,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             })}
           </div>
         </div>
+      )}
+
+      {/* 5. MODE: Extended Lexical Universe (121k Candidates) */}
+      {viewMode === 'universe' && (
+        <ExtendedUniverseView isEn={isEn} />
       )}
     </div>
   );

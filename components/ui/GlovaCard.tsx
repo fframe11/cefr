@@ -32,10 +32,10 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
-      flat: 'bg-card border border-border/40 border-[rgba(37,36,42,0.12)] shadow-none text-foreground',
-      subtle: 'bg-card border border-border/40 border-[rgba(37,36,42,0.12)] shadow-xs text-foreground',
+      flat: 'bg-card border border-border/40 border-[rgba(255,255,255,0.08)] shadow-none text-foreground',
+      subtle: 'bg-card border border-border/40 border-[rgba(255,255,255,0.08)] shadow-xs text-foreground',
       glow: 'bg-card border border-[#5B5CE2]/30 shadow-[0_4px_20px_-2px_rgba(91,92,226,0.12)] text-foreground',
-      bubble: 'bg-[#F0EAE1] dark:bg-card border border-[rgba(37,36,42,0.12)] dark:border-border/40 text-[#25242A] dark:text-foreground shadow-[0_8px_30px_-4px_rgba(37,36,42,0.06)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.3)]',
+      bubble: 'bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-[#25242A] dark:text-foreground shadow-[0_8px_30px_-4px_rgba(37,36,42,0.06)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.3)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive

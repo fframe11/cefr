@@ -85,11 +85,11 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   };
 
   return (
-    <div className="min-h-screen bg-[#E6DED2] text-[#25242A] selection:bg-[#5B5CE2]/20 selection:text-[#5B5CE2]">
+    <div className="min-h-screen bg-[#0D1117] text-[#EDEBE8] selection:bg-[#5B5CE2]/20 selection:text-[#5B5CE2]">
       {/* =====================================================================
           1. HERO SECTION: BRAND SHOWCASE & IMMEDIATE CLARITY
           ===================================================================== */}
-      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
+      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-[rgba(255,255,255,0.08)]">
         <BackgroundBeams />
 
         <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +97,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {/* Left Column: Brand Value Proposition (Editorial Hierarchy) */}
             <div className="lg:col-span-6 space-y-6 text-left">
               {/* Prestigious Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold tracking-wide border border-[rgba(37,36,42,0.16)]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold tracking-wide border border-[rgba(255,255,255,0.08)]">
                 <Sparkles className="w-3.5 h-3.5 text-[#5B5CE2]" aria-hidden="true" />
                 <span className="font-tech uppercase">
                   {isEn ? 'The Modern University English Platform' : 'มาตรฐานใหม่การเตรียมภาษาอังกฤษมหาวิทยาลัย'}
@@ -105,7 +105,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
 
               {/* Dominant Headline with ShinyText */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#25242A] tracking-tight leading-[1.12] font-display">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#EDEBE8] tracking-tight leading-[1.12] font-display">
                 {isEn ? 'Your English.' : 'ภาษาอังกฤษของคุณ.'}{' '}
                 <ShinyText speedSec={3.5} className="font-black text-[#5B5CE2] block sm:inline">
                   {isEn ? 'Your True Level.' : 'ระดับที่แท้จริง.'}
@@ -163,7 +163,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             <div className="lg:col-span-6 space-y-4">
               {/* Interactive Composition Mode Switcher */}
               <div className="flex items-center justify-between gap-2 px-1">
-                <div className="flex items-center gap-1 rounded-2xl bg-[#DDD4C7] p-1 border border-[rgba(37,36,42,0.12)] dark:border-border/50 text-xs font-bold">
+                <div className="flex items-center gap-1 rounded-2xl bg-[#141A22] p-1 border border-[rgba(255,255,255,0.08)] text-xs font-bold">
                   <button
                     type="button"
                     onClick={() => setHeroTab('ranked')}
@@ -209,7 +209,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
 
               {/* Dynamic Showcase Screen */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-[rgba(37,36,42,0.20)] bg-[#F0EAE1] shadow-xl aspect-video w-full">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-[rgba(37,36,42,0.20)] bg-[#141A22] shadow-xl aspect-video w-full">
                 <BorderBeam size={220} duration={8} colorFrom="#5B5CE2" colorTo="#5B5CE2" />
 
                 {heroTab === 'ranked' && (
@@ -223,7 +223,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 )}
 
                 {heroTab === 'cartridge' && (
-                  <div className="h-full w-full bg-[#F0EAE1] p-6 flex flex-col justify-center">
+                  <div className="h-full w-full bg-[#141A22] p-6 flex flex-col justify-center">
                     <div className="max-w-md mx-auto w-full">
                       <GlovaCartridge
                         id="hero-cartridge-demo"
@@ -256,7 +256,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
               {/* Contextual Photography & Calm Study Atmosphere */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="overflow-hidden rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/50 aspect-[4/3]">
+                <div className="overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] aspect-[4/3]">
                   <GlovaImage
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                     alt="University students studying together in a warm modern space"
@@ -264,7 +264,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-5 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/50 flex flex-col justify-center space-y-1.5 shadow-xs">
+                <div className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] flex flex-col justify-center space-y-1.5 shadow-xs">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-[#5B5CE2]">
                     <Heart className="w-3.5 h-3.5 fill-[#5B5CE2]" aria-hidden="true" />
                     <span className="font-display">{isEn ? 'Sustainable Study Ritual' : 'กิจวัตรการเรียนรู้ที่ยั่งยืน'}</span>
@@ -284,14 +284,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           2. BRAND STORY: WHAT IS GLOVA & WHY IT MATTERS (EDITORIAL STORYTELLING)
           ===================================================================== */}
-      <section id="story" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 bg-[#E6DED2]/60">
+      <section id="story" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Section Header */}
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'The Philosophy of Glova' : 'ปรัชญาและหลักการของ GLOVA'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#25242A] tracking-tight font-display leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display leading-tight">
               {isEn ? 'Language learning was broken.' : 'การเรียนภาษาแบบเดิมมีข้อจำกัด.'}{' '}
               <span className="text-[#5B5CE2]">
                 {isEn ? 'We rebuilt it from the ground up.' : 'เราจึงออกแบบระบบใหม่ทั้งหมด.'}
@@ -307,7 +307,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* The Contrast Architecture (Old Way vs Glova Way) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* The Old Way */}
-            <div className="p-8 rounded-3xl bg-[#F0EAE1] border border-rose-200 dark:border-rose-900/40 space-y-6 shadow-xs">
+            <div className="p-8 rounded-3xl bg-[#141A22] border border-rose-200 dark:border-rose-900/40 space-y-6 shadow-xs">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300 text-xs font-bold">
                 <span className="w-2 h-2 rounded-full bg-rose-500" />
                 <span>{isEn ? 'The Traditional Way (Rote & Disconnected)' : 'การเรียนแบบเดิม (ท่องจำและแยกส่วน)'}</span>
@@ -334,13 +334,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* The Glova Way */}
-            <div className="p-8 rounded-3xl bg-[#F0EAE1] border-2 border-[rgba(184,167,255,0.35)] space-y-6 shadow-md shadow-[#5B5CE2]/10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(37,36,42,0.14)]">
+            <div className="p-8 rounded-3xl bg-[#141A22] border-2 border-[rgba(184,167,255,0.35)] space-y-6 shadow-md shadow-[#5B5CE2]/10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{isEn ? 'The Glova Standard: Connected and Active' : 'มาตรฐาน Glova เชื่อมโยงและนำไปใช้จริง'}</span>
               </div>
 
-              <div className="space-y-4 text-sm text-[#25242A] font-grotesk font-medium">
+              <div className="space-y-4 text-sm text-[#EDEBE8] font-grotesk font-medium">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#5B5CE2]/20 text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
                   <p>{isEn ? 'Animated grammar timelines show exactly when an action happened and why it matters.' : 'ไทม์ไลน์ภาพเคลื่อนไหวแสดงชัดเจนว่าเหตุการณ์เกิดเมื่อใดและส่งผลอย่างไร'}</p>
@@ -382,7 +382,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               ].map((pillar, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/50 shadow-xs space-y-1 hover:border-[rgba(37,36,42,0.25)] transition-colors"
+                  className="p-4 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-1 hover:border-[rgba(37,36,42,0.25)] transition-colors"
                 >
                   <span className="text-xs font-black text-[#5B5CE2] font-tech">
                     {isEn ? pillar.titleEn : pillar.titleTh}
@@ -400,14 +400,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           3. INTERACTIVE PRODUCT SHOWCASE: THE 8 STUDIOS
           ===================================================================== */}
-      <section id="studios" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
+      <section id="studios" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Showcase Section Heading */}
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Interactive Product Capabilities' : 'ระบบการทำงานจริงของสตูดิโอ'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#25242A] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Experience Glova in Action' : 'สัมผัสสตูดิโอการเรียนรู้ของ Glova'}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
@@ -439,7 +439,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   className={`touch-target px-4 py-2 rounded-2xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 cursor-pointer border ${
                     isActive
                       ? 'bg-[#5B5CE2] text-white border-t border-white/25 shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none'
-                      : 'bg-[#F0EAE1] text-muted-foreground hover:text-foreground border border-[rgba(37,36,42,0.14)] shadow-[0_2.5px_0_0_#C5BDB2] active:translate-y-[2.5px] active:shadow-none hover:bg-[#EDE6DD]'
+                      : 'bg-[#141A22] text-muted-foreground hover:text-foreground border border-[rgba(255,255,255,0.08)] shadow-[0_2.5px_0_0_#0D1318] active:translate-y-[2.5px] active:shadow-none hover:bg-[#253040]'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -450,12 +450,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           </div>
 
           {/* Interactive Studio Preview Canvas */}
-          <div className="rounded-3xl border-2 border-[rgba(37,36,42,0.12)] dark:border-border/60 bg-[#F0EAE1] p-6 sm:p-10 shadow-lg shadow-black/[0.03]">
+          <div className="rounded-3xl border-2 border-[rgba(255,255,255,0.08)] bg-[#141A22] p-6 sm:p-10 shadow-lg shadow-black/[0.03]">
             {/* 1. VOCABULARY SHOWCASE */}
             {activeStudioTab === 'vocab' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(37,36,42,0.16)]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(255,255,255,0.08)]">
                     CEFR B2 · VOCABULARY LAB
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
@@ -473,12 +473,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-4">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-4">
                   <div className="flex items-center justify-between text-xs font-bold text-muted-foreground">
                     <span className="font-mono">Word 1 of 3,860</span>
                     <span className="text-[#10B981]">Mastered in 2 sessions</span>
                   </div>
-                  <div className="p-8 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 text-center space-y-3 shadow-xs">
+                  <div className="p-8 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-3 shadow-xs">
                     <div className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#5B5CE2]/15 text-[#5B5CE2]">
                       Academic Adjective
                     </div>
@@ -504,7 +504,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'grammar' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-[#E6DED2] border border-[#CCA735]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-white border border-[#CCA735]">
                     CEFR B1 · GRAMMAR TIMELINE
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
@@ -522,12 +522,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-4">
-                  <div className="p-6 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 space-y-4">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-4">
+                  <div className="p-6 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-4">
                     <div className="text-xs font-bold text-muted-foreground uppercase tracking-wide">
                       Timeline Blueprint: Past Finished vs Present Relevance
                     </div>
-                    <div className="relative py-4 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-2">
+                    <div className="relative py-4 border-b border-[rgba(255,255,255,0.08)] space-y-2">
                       <div className="flex items-center justify-between text-xs font-bold">
                         <span className="text-rose-600">Past Simple: I lived in London (1998-2002)</span>
                         <span className="text-[11px] text-muted-foreground">Finished in past</span>
@@ -572,8 +572,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-4 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 text-xs space-y-2">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-xs space-y-2">
                     <div className="font-bold text-foreground">The Psychology of Group Work in University Seminars</div>
                     <p className="text-muted-foreground leading-relaxed line-clamp-3">
                       Collaborative problem-solving frequently exposes disparities in team members' prior exposure to academic discourse. Lecturers note that structured role allocation significantly alleviates communication barriers...
@@ -609,8 +609,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-4 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 space-y-3 text-center">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-3 text-center">
                     <div className="text-xs font-bold text-muted-foreground">Dialect: Standard British Accent · Speed: 1.0x</div>
                     <div className="flex items-center justify-center gap-1.5 h-12">
                       {[40, 70, 90, 30, 80, 100, 60, 40, 85, 95, 50, 65, 80, 40].map((h, i) => (
@@ -647,8 +647,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-6 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 text-center space-y-4">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-6 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-4">
                     <div className="w-14 h-14 rounded-full bg-rose-100 text-rose-600 mx-auto flex items-center justify-center">
                       <Mic className="w-7 h-7" />
                     </div>
@@ -665,7 +665,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'writing' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(37,36,42,0.16)]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[rgba(255,255,255,0.08)]">
                     CEFR B1 · WRITING WORKSPACE
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
@@ -683,8 +683,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-4 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 space-y-2 text-xs">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] space-y-2 text-xs">
                     <div className="flex justify-between font-bold text-foreground">
                       <span>Target: Formal Email to Professor</span>
                       <span className="text-[#10B981]">112 / 120 words (Optimal)</span>
@@ -706,7 +706,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             {activeStudioTab === 'exam' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-[#E6DED2] border border-[#CCA735]">
+                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#E98278] text-white border border-[#CCA735]">
                     CAMBRIDGE QUALIFICATIONS
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-display">
@@ -724,8 +724,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-4 rounded-xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 text-xs space-y-3">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-4 rounded-xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-xs space-y-3">
                     <div className="flex items-center justify-between font-bold">
                       <span className="text-foreground">B1 Preliminary (PET) Full Mock</span>
                       <span className="text-amber-500 font-mono">42:15 Remaining</span>
@@ -769,8 +769,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 bg-[#DDD4C7] p-6 rounded-2xl border border-[rgba(37,36,42,0.12)] dark:border-border/40 space-y-3">
-                  <div className="p-5 rounded-2xl bg-[#F0EAE1] text-white space-y-3 text-center">
+                <div className="lg:col-span-7 bg-[#141A22] p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] space-y-3">
+                  <div className="p-5 rounded-2xl bg-[#141A22] text-white space-y-3 text-center">
                     <div className="text-xs font-bold text-amber-400 font-tech">GOLD III · BANGKOK UNIVERSITY LEAGUE</div>
                     <div className="text-2xl font-black text-white">MATCH VICTORY (+28 MMR)</div>
                     <p className="text-xs text-zinc-400">Current Rating: 1,508 MMR · Top 14% University Learners</p>
@@ -785,13 +785,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           4. THE 7-STAGE LEARNING JOURNEY (SCROLL STORYTELLING)
           ===================================================================== */}
-      <section id="journey" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 bg-[#E6DED2]/60">
+      <section id="journey" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Continuous Growth Architecture' : 'เส้นทางการพัฒนาที่ชัดเจน'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#25242A] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'How You Progress with Glova' : 'ก้าวหน้าอย่างเป็นระบบในทุกวัน'}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
@@ -813,7 +813,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             ].map((st, i) => (
               <div
                 key={st.step}
-                className="p-5 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 shadow-xs space-y-2 relative"
+                className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-2 relative"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-black text-[#5B5CE2]">
@@ -838,13 +838,13 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           5. GAMIFICATION SHOWCASE: GAMES THAT KEEP YOU LEARNING
           ===================================================================== */}
-      <section id="arena" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
+      <section id="arena" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
               {isEn ? 'Purpose-Driven Gaming Layer' : 'ระบบเกมที่ส่งเสริมการเรียนรู้'}
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#25242A] tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#EDEBE8] tracking-tight font-display">
               {isEn ? 'Games Built to Keep You Progressing' : 'เกมที่ช่วยให้คุณอยากเรียนต่อทุกวัน'}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground font-grotesk">
@@ -862,7 +862,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* Gamification Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
             {/* 1. Ranked Tiers */}
-            <div className="p-6 rounded-3xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 shadow-xs space-y-3">
+            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">
                 <Trophy className="w-6 h-6" />
               </div>
@@ -877,7 +877,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* 2. Animated Rank Frames */}
-            <div className="p-6 rounded-3xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 shadow-xs space-y-3">
+            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center font-bold">
                 <Sparkles className="w-6 h-6" />
               </div>
@@ -892,7 +892,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
 
             {/* 3. Triple Leaderboards */}
-            <div className="p-6 rounded-3xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 shadow-xs space-y-3">
+            <div className="p-6 rounded-3xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
               <div className="w-12 h-12 rounded-2xl bg-[#5B5CE2]/10 text-[#5B5CE2] flex items-center justify-center font-bold">
                 <Users className="w-6 h-6" />
               </div>
@@ -912,10 +912,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           6. DIAGNOSTIC CURIOSITY CHECK (LOW-FRICTION SNAPSHOT)
           ===================================================================== */}
-      <section id="quick-check-experience" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40 bg-[#E6DED2]/60">
+      <section id="quick-check-experience" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0D1117]">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-3 mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(37,36,42,0.16)]">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
               <Clock className="w-3.5 h-3.5" aria-hidden="true" />
               <span className="font-tech">{isEn ? 'Low-Friction English Snapshot' : 'แบบวัดระดับภาษาอังกฤษใน 3 นาที'}</span>
             </div>
@@ -936,7 +936,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           7. ACADEMIC TRUST & CAMBRIDGE QUALIFICATIONS
           ===================================================================== */}
-      <section id="cambridge" className="py-16 sm:py-24 border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
+      <section id="cambridge" className="py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
           <div className="space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-black tracking-wider text-[#5B5CE2] uppercase font-tech">
@@ -963,7 +963,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             ].map((item) => (
               <div
                 key={item.level}
-                className="p-5 rounded-2xl bg-[#F0EAE1] border border-[rgba(37,36,42,0.12)] dark:border-border/60 text-center space-y-1 shadow-xs hover:border-[rgba(184,167,255,0.35)] transition-colors"
+                className="p-5 rounded-2xl bg-[#141A22] border border-[rgba(255,255,255,0.08)] text-center space-y-1 shadow-xs hover:border-[rgba(184,167,255,0.35)] transition-colors"
               >
                 <span className="text-2xl font-black text-[#5B5CE2] font-tech">{item.level}</span>
                 <div className="text-xs font-bold text-foreground font-display">{isEn ? item.labelEn : item.labelTh}</div>
@@ -973,7 +973,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             ))}
           </div>
 
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground bg-[#F0EAE1] px-5 py-2.5 rounded-full border border-[rgba(37,36,42,0.12)] dark:border-border/60 shadow-xs font-grotesk">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground bg-[#141A22] px-5 py-2.5 rounded-full border border-[rgba(255,255,255,0.08)] shadow-xs font-grotesk">
             <ShieldCheck className="w-4 h-4 text-[#10B981]" aria-hidden="true" />
             <span>{isEn ? 'Rigorous CEFR alignment for university entrance and exchange qualifications' : 'มาตรฐาน CEFR รองรับการสอบเข้ามหาวิทยาลัยและทุนแลกเปลี่ยนสากล'}</span>
           </div>
@@ -983,9 +983,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           8. FINAL INSPIRING CTA: DIRECT CONVERSION TO PRODUCT FLOW
           ===================================================================== */}
-      <section className="py-20 sm:py-28 bg-[#E6DED2]/60 text-center border-b border-[rgba(37,36,42,0.12)] dark:border-border/40">
+      <section className="py-20 sm:py-28 bg-[#0D1117] text-center border-b border-[rgba(255,255,255,0.08)]">
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(37,36,42,0.16)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] text-xs font-bold border border-[rgba(255,255,255,0.08)]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isEn ? 'Begin Your University English Journey' : 'เริ่มต้นการเดินทางภาษาอังกฤษของคุณ'}</span>
           </div>
@@ -1026,7 +1026,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* =====================================================================
           9. DEFENSIVE MULTI-COLUMN BRAND FOOTER
           ===================================================================== */}
-      <footer className="py-12 bg-[#F0EAE1] border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 text-xs text-muted-foreground font-grotesk">
+      <footer className="py-12 bg-[#141A22] border-t border-[rgba(255,255,255,0.08)] text-xs text-muted-foreground font-grotesk">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Col 1: Brand */}
@@ -1085,7 +1085,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[rgba(37,36,42,0.12)] dark:border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+          <div className="pt-8 border-t border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
             <div>
               © 2026 Glova English Platform. All rights reserved.
             </div>

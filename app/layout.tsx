@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className="light" suppressHydrationWarning>
-      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
+    <html lang="th" className="dark" suppressHydrationWarning>
+      <body className="min-h-screen bg-background text-foreground bg-studio-grid antialiased selection:bg-primary/25 selection:text-white">
         <Providers>{children}</Providers>
       </body>
     </html>
