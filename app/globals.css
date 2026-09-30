@@ -11,53 +11,54 @@
     --font-tech: 'Rajdhani', 'Orbitron', monospace;
     --font-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    --background: 38 38% 96.5%; /* #FAF7F2 Warm Ivory / Soft Cream */
-    --foreground: 243 25% 18%;   /* #24233A Deep Ink */
+    /* Digital Garden Night Master Theme */
+    --background: 245 35% 13%;    /* #17152B Night Garden Background */
+    --foreground: 30 100% 97%;     /* #FFF8F2 Primary Botanical Glow */
 
-    --card: 43 100% 98.8%;       /* #FFFDF8 Warm Pure White */
-    --card-foreground: 243 25% 18%;
+    --card: 246 30% 17%;          /* #211E38 Garden Surface */
+    --card-foreground: 30 100% 97%;
 
-    --primary: 240 72% 62%;      /* #5B5CE2 Glova Radiant Indigo */
-    --primary-foreground: 0 0% 100%;
+    --primary: 252 100% 83%;      /* #B8A7FF Digital Garden Lavender */
+    --primary-foreground: 245 35% 13%;
 
-    --secondary: 38 25% 94%;     /* #F4EFEA Soft Muted Cream */
-    --secondary-foreground: 243 25% 18%;
+    --secondary: 248 29% 21%;     /* #292544 Deep Garden Surface */
+    --secondary-foreground: 30 100% 97%;
 
-    --muted: 38 25% 94%;         /* #F4EFEA */
-    --muted-foreground: 246 8% 50%; /* #77758A Muted Plum */
+    --muted: 248 29% 21%;         /* #292544 */
+    --muted-foreground: 255 13% 75%; /* #B8B3C7 Muted Starlight */
 
-    --accent: 249 100% 95%;      /* #E9E5FF Soft Lavender */
-    --accent-foreground: 240 72% 45%;
+    --accent: 252 100% 83%;       /* #B8A7FF */
+    --accent-foreground: 245 35% 13%;
 
-    --border: 38 20% 90%;        /* #EDE8DF Warm Sand */
-    --input: 38 20% 90%;
-    --ring: 240 72% 62%;
+    --border: 248 25% 26%;        /* rgba(184, 167, 255, 0.16) */
+    --input: 248 25% 26%;
+    --ring: 252 100% 83%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 245 35% 13%;    /* #17152B */
+    --foreground: 30 100% 97%;     /* #FFF8F2 */
 
-    --card: 240 10% 5.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 246 30% 17%;          /* #211E38 */
+    --card-foreground: 30 100% 97%;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 252 100% 83%;      /* #B8A7FF */
+    --primary-foreground: 245 35% 13%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 248 29% 21%;     /* #292544 */
+    --secondary-foreground: 30 100% 97%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 248 29% 21%;
+    --muted-foreground: 255 13% 75%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 252 100% 83%;
+    --accent-foreground: 245 35% 13%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 248 25% 26%;
+    --input: 248 25% 26%;
+    --ring: 252 100% 83%;
   }
 
   * {

@@ -166,8 +166,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-indigo-500/20'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[#EDE8DF] dark:border-border/60 hover:bg-[#FAF7F2]'
+                  ? 'bg-[#B8A7FF] text-[#17152B] border-[#B8A7FF] shadow-sm shadow-[#B8A7FF]/20 font-bold'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-[rgba(184,167,255,0.16)] hover:bg-[#292544]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -229,10 +229,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
             <GlovaCard
               variant="bubble"
               elevation="bubble"
-              className="p-6 sm:p-8 space-y-5 rounded-[30px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+              className="p-6 sm:p-8 space-y-5 rounded-[30px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               {/* Passage Metadata Bar */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EDE8DF] dark:border-border/40">
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(184,167,255,0.16)]">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentPassage.cefrLevel} size="sm" />
                   <span className="text-xs text-muted-foreground font-mono font-medium">
@@ -241,13 +241,13 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 </div>
 
                 <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                  <span className="flex items-center gap-1 bg-[#FAF7F2] dark:bg-muted/40 px-2.5 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
+                  <span className="flex items-center gap-1 bg-[#292544] px-2.5 py-1 rounded-full border border-[rgba(184,167,255,0.16)]">
                     <FileText className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
                     <span>
                       {currentPassage.wordCount} {isEn ? 'words' : 'คำ'}
                     </span>
                   </span>
-                  <span className="flex items-center gap-1 bg-[#FAF7F2] dark:bg-muted/40 px-2.5 py-1 rounded-full border border-[#EDE8DF] dark:border-border/30">
+                  <span className="flex items-center gap-1 bg-[#292544] px-2.5 py-1 rounded-full border border-[rgba(184,167,255,0.16)]">
                     <Clock className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
                     <span>
                       ~{estimatedReadingMinutes} {isEn ? 'min' : 'นาที'}
@@ -257,7 +257,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               </div>
 
               {/* Contextual Editorial Reading Photography */}
-              <div className="overflow-hidden rounded-[22px] border border-[#EDE8DF] dark:border-border/30 shadow-xs">
+              <div className="overflow-hidden rounded-[22px] border border-[rgba(184,167,255,0.16)] shadow-xs">
                 <GlovaImage
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
                   alt="Agile engineering team collaborating around workspace laptops"

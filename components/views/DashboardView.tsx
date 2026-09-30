@@ -79,12 +79,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   const primaryAction = React.useMemo(() => {
     if (topWeakness) {
       return {
-        unitBadge: isEn ? 'TARGETED REPAIR' : 'ซ่อมแซมจุดอ่อนเร่งด่วน',
-        title: isEn ? `Fix: ${topWeakness.tag}` : `แก้ไขจุดอ่อน: ${topWeakness.labelTh}`,
+        unitBadge: "TODAY'S NEXT STEP",
+        title: isEn ? `Fix: ${topWeakness.tag}` : `ทบทวนและซ่อมแซม: ${topWeakness.labelTh}`,
         description: isEn
           ? `Detected ${topWeakness.errorCount} mistakes in practice. A 4-minute focused drill will recover your confidence.`
-          : `พบข้อผิดพลาด ${topWeakness.errorCount} ครั้งในแบบทดสอบ ฝึกฝนสั้นๆ 4 นาทีเพื่อเสริมความแม่นยำ`,
-        cta: isEn ? 'START REPAIR (+20 XP)' : 'เริ่มซ่อมจุดนี้ (+20 XP)',
+          : `แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง ในแบบทดสอบ ฝึกฝนสั้นๆ 4 นาทีเพื่อเสริมความแม่นยำ`,
+        cta: isEn ? 'START REPAIR (+20 XP)' : 'เริ่มฝึกจุดนี้ทันที',
         skill: 'Grammar & Phrasing',
         timeMin: 4,
         onStart: () => onStartRemediation(topWeakness.tag),
@@ -110,14 +110,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     }
 
     return {
-      unitBadge: isEn ? `UNIT 3 • ${progress.currentLevel}` : `บทเรียนที่ 3 • ระดับ ${progress.currentLevel}`,
+      unitBadge: "TODAY'S NEXT STEP",
       title: isEn
         ? `Daily Vocabulary & Context Practice`
-        : `แบบฝึกหัดคำศัพท์และบริบทประจำวัน`,
+        : `ฝึกฝนประจำวัน: คำศัพท์และไวยากรณ์ระดับ ${progress.currentLevel}`,
       description: isEn
         ? `Master high-yield Cambridge vocabulary using Spaced Repetition for your target: ${progress.targetExam}.`
         : `ฝึกคำศัพท์เคมบริดจ์ความถี่สูงด้วย Spaced Repetition เพื่อเป้าหมาย: ${progress.targetExam}`,
-      cta: isEn ? 'CONTINUE LESSON (+15 XP)' : 'เริ่มเรียนต่อทันที (+15 XP)',
+      cta: isEn ? 'START DAILY PRACTICE' : 'เริ่มฝึกฝนทันที',
       skill: 'Vocabulary & Context',
       timeMin: 5,
       onStart: () => onNavigate('vocabulary'),
@@ -127,13 +127,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, isEn]);
 
   // Duolingo-inspired path nodes for current level
+  // Digital Garden Growth Metaphor Path Nodes
   const pathNodes = React.useMemo(() => {
     return [
       {
         id: 'node-1',
         level: progress.currentLevel,
-        unitTitle: isEn ? 'Unit 1: Essential Foundations' : 'บทที่ 1: คำศัพท์พื้นฐานจำเป็น',
-        topicTitle: isEn ? 'High-Frequency Core Words' : 'คำศัพท์ความถี่สูงระดับพื้นฐาน',
+        unitTitle: isEn ? 'Stage 1 • Seed Foundation' : 'ขั้นที่ 1 • เมล็ดพันธุ์พื้นฐาน',
+        topicTitle: isEn ? 'High-Frequency Core Vocabulary' : 'คำศัพท์ความถี่สูง Oxford & Cambridge',
         status: 'completed' as const,
         xpReward: 15,
         offsetPercent: 0,
@@ -142,7 +143,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         id: 'node-2',
         level: progress.currentLevel,
-        unitTitle: isEn ? 'Unit 1: Essential Foundations' : 'บทที่ 1: คำศัพท์พื้นฐานจำเป็น',
+        unitTitle: isEn ? 'Stage 2 • Sprout Growth' : 'ขั้นที่ 2 • ต้นกล้าเติบโต',
         topicTitle: isEn ? 'Natural Campus Collocations' : 'วลีและ Collocations ในชีวิตมหาวิทยาลัย',
         status: 'completed' as const,
         xpReward: 15,
@@ -152,18 +153,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         id: 'node-3',
         level: progress.currentLevel,
-        unitTitle: isEn ? 'Unit 2: Expressive Conversation' : 'บทที่ 2: การสนทนาอย่างคล่องแคล่ว',
-        topicTitle: isEn ? 'Phrasal Verbs & Idioms' : 'กริยาวลีและสำนวนที่พบบ่อย',
+        unitTitle: isEn ? 'Stage 3 • Active Plant' : 'ขั้นที่ 3 • พฤกษาผลิดอก',
+        topicTitle: isEn ? 'Phrasal Verbs & Expressive Context' : 'กริยาวลีและสำนวนที่พบบ่อย',
         status: 'active' as const,
         xpReward: 20,
         offsetPercent: -15,
-        ctaText: isEn ? 'START' : 'เริ่มเรียน',
+        ctaText: isEn ? 'GROW' : 'บ่มเพาะ',
         onClick: () => primaryAction.onStart(),
       },
       {
         id: 'node-4',
         level: progress.currentLevel,
-        unitTitle: isEn ? 'Unit 2: Expressive Conversation' : 'บทที่ 2: การสนทนาอย่างคล่องแคล่ว',
+        unitTitle: isEn ? 'Stage 4 • Midnight Arena' : 'ขั้นที่ 4 • สมรภูมิประลอง',
         topicTitle: isEn ? 'Speed Battle: 4s Vocab Reflex' : 'ประลองความเร็ว: ศัพท์ 4 วินาที',
         status: 'review' as const,
         xpReward: 25,
@@ -174,8 +175,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         id: 'node-5',
         level: nextLvl,
-        unitTitle: isEn ? `Unit 3: Gateway to ${nextLvl}` : `บทที่ 3: ก้าวสู่ระดับ ${nextLvl}`,
-        topicTitle: isEn ? 'Academic Reading & Phrasing' : 'การอ่านเชิงวิชาการและการสรุปความ',
+        unitTitle: isEn ? `Stage 5 • Tree of Mastery (${nextLvl})` : `ขั้นที่ 5 • พฤกษาใหญ่สู่ ${nextLvl}`,
+        topicTitle: isEn ? 'Academic Reading & Synthesis' : 'การอ่านเชิงวิชาการและการสรุปความ',
         status: 'locked' as const,
         xpReward: 20,
         offsetPercent: 12,
@@ -184,8 +185,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         id: 'node-6',
         level: nextLvl,
-        unitTitle: isEn ? `Checkpoint: ${progress.targetExam}` : `แบบทดสอบวัดผล: ${progress.targetExam}`,
-        topicTitle: isEn ? 'Cambridge Mock Milestone' : 'ข้อสอบจำลองเคมบริดจ์ประจำหน่วย',
+        unitTitle: isEn ? `Stage 6 • Milestone Stone` : `ขั้นที่ 6 • ศิลาหลักชัยเคมบริดจ์`,
+        topicTitle: isEn ? `Checkpoint: ${progress.targetExam} Mock` : `ข้อสอบจำลอง ${progress.targetExam} เต็มรูปแบบ`,
         status: 'locked' as const,
         xpReward: 50,
         offsetPercent: -10,
@@ -197,25 +198,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   return (
     <div className="w-full max-w-[1440px] mx-auto space-y-8 pb-16">
       {/* 1. TOP VIEW MODE SWITCH (Path vs All Studios) */}
-      <div className="flex items-center justify-between gap-4 flex-wrap pb-2 border-b border-[#EDE8DF] dark:border-border/40">
+      <div className="flex items-center justify-between gap-4 flex-wrap pb-2 border-b border-[rgba(184,167,255,0.16)]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground flex items-center gap-2">
-            <span>{isEn ? 'Your Learning Journey' : 'เส้นทางการเรียนรู้ของคุณ'}</span>
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#5B5CE2]/10 text-[#5B5CE2] dark:text-indigo-400 font-mono font-bold">
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#FFF8F2] flex items-center gap-2">
+            <span>{isEn ? 'Your Digital Garden' : 'สวนการเรียนรู้ภาษาอังกฤษของคุณ'}</span>
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#B8A7FF]/15 text-[#B8A7FF] font-mono font-bold border border-[#B8A7FF]/30">
               {progress.currentLevel} → {nextLvl}
             </span>
           </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-[#B8B3C7] mt-1 flex-wrap">
+            <span>เป้าหมายการสอบ: <strong className="text-[#FFF8F2]">{progress.targetExam}</strong></span>
+            <span>•</span>
+            <span>Cambridge Equivalent: <strong className="text-[#FFF8F2]">{progress.estimatedCambridgeScore || 120}</strong></span>
+            <span>•</span>
+            <span>เส้นทางการพัฒนา CEFR Framework: <strong className="text-[#FFF8F2]">{progress.currentLevel}</strong></span>
+          </div>
+          <p className="text-xs text-[#B8B3C7] mt-0.5">
             {isEn
-              ? `Targeting ${progress.targetExam} • Spaced repetition verified`
-              : `เป้าหมายการสอบ ${progress.targetExam} • ระบบทบทวนความจำ Spaced Repetition`}
+              ? `You are growing toward CEFR ${nextLvl} • Your English grows with you`
+              : `คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${nextLvl} • ภาษาอังกฤษเติบโตไปพร้อมคุณทุกวัน`}
           </p>
+          <div role="status" className="sr-only">
+            คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ {nextLvl}
+          </div>
         </div>
 
         <SlidingTabs
           tabs={[
-            { id: 'path', label: isEn ? 'Learning Path' : 'เส้นทางบทเรียน', icon: <Compass className="w-4 h-4" /> },
-            { id: 'studios', label: isEn ? 'All Studios' : 'คลังสตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
+            { id: 'path', label: isEn ? 'Garden Path' : 'เส้นทางบ่มเพาะ', icon: <Compass className="w-4 h-4" /> },
+            { id: 'studios', label: isEn ? 'All Groves' : 'คลังสตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
           ]}
           activeTab={activeTab}
           onChange={(tab) => setActiveTab(tab as any)}
@@ -229,29 +240,34 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
           {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO */}
-          <SpotlightCard className="p-6 sm:p-8 border-2 border-[#5B5CE2]/25 bg-gradient-to-br from-[#FFFDF8] via-[#FFFDF8] to-[#E9E5FF]/20 dark:from-card dark:via-card dark:to-[#5B5CE2]/10 shadow-[0_8px_30px_-4px_rgba(91,92,226,0.12)]">
+          <SpotlightCard className="p-6 sm:p-8 border-2 border-[#B8A7FF]/30 bg-gradient-to-br from-[#211E38] via-[#211E38] to-[#292544] text-[#FFF8F2] shadow-[0_8px_30px_-4px_rgba(23,21,43,0.6)]">
             <div className="flex flex-col gap-5">
               {/* Header Badges */}
               <div className="flex items-center justify-between gap-3 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5B5CE2] text-white text-xs font-black tracking-wide uppercase shadow-xs">
-                  <Sparkles className="w-3.5 h-3.5 text-[#F6D978]" />
-                  <span>{primaryAction.unitBadge}</span>
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B8A7FF] text-[#17152B] text-xs font-black tracking-wide uppercase shadow-xs">
+                    <Sparkles className="w-3.5 h-3.5 text-[#17152B]" />
+                    <span>{primaryAction.unitBadge}</span>
+                  </span>
+                  <span className="text-xs font-semibold text-[#8DE0BE]">
+                    {primaryAction.skill}
+                  </span>
+                </div>
 
-                <div className="flex items-center gap-2 text-xs text-muted-foreground font-semibold">
-                  <Clock className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-2 text-xs text-[#B8B3C7] font-semibold">
+                  <Clock className="w-3.5 h-3.5 text-[#F6D978]" />
                   <span>{primaryAction.timeMin} {isEn ? 'minutes' : 'นาที'}</span>
                   <span>•</span>
-                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">+15 XP</span>
+                  <span className="text-[#8DE0BE] font-bold">+15 XP</span>
                 </div>
               </div>
 
               {/* Main Prompt */}
               <div className="space-y-2">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-foreground tracking-tight leading-snug">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#FFF8F2] tracking-tight leading-snug">
                   {primaryAction.title}
                 </h2>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base text-[#B8B3C7] leading-relaxed max-w-2xl">
                   {primaryAction.description}
                 </p>
               </div>
@@ -262,7 +278,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   variant="primary"
                   size="lg"
                   onClick={primaryAction.onStart}
-                  className="px-8 shadow-[0_5px_0_#4041B5]"
+                  className="px-8"
                   rightIcon={<ArrowRight className="w-5 h-5" />}
                 >
                   {primaryAction.cta}
@@ -273,7 +289,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   size="lg"
                   onClick={() => onNavigate('compete')}
                   className="sm:w-auto"
-                  leftIcon={<Swords className="w-4 h-4 text-[#5B5CE2]" />}
+                  leftIcon={<Swords className="w-4 h-4 text-[#B8A7FF]" />}
                 >
                   {isEn ? 'Vocab Battle 4s' : 'ประลองศัพท์ด่วน 4 วินาที'}
                 </TactileButton>
@@ -281,35 +297,51 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           </SpotlightCard>
 
+          {/* RESUME LAST ACTIVITY */}
+          {progress.lastActivity && (
+            <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] flex items-center justify-between gap-4 text-[#FFF8F2]">
+              <div>
+                <span className="text-[11px] font-bold text-[#B8A7FF] uppercase tracking-wider">
+                  {isEn ? 'Resume Last Activity' : 'ดำเนินการต่อจากจุดเดิม'}
+                </span>
+                <h4 className="text-base font-bold text-[#FFF8F2] mt-0.5">{progress.lastActivity.title}</h4>
+                <p className="text-xs text-[#B8B3C7]">{progress.lastActivity.detail}</p>
+              </div>
+              <TactileButton variant="primary" size="sm" onClick={() => onNavigate(progress.lastActivity?.type as any || 'vocabulary')}>
+                {isEn ? 'Resume' : 'ทำต่อทันที'}
+              </TactileButton>
+            </div>
+          )}
+
           {/* PROMOTIONAL CAMPAIGN & COMMUNITY EVENT CAROUSEL */}
           <CampaignBanner onNavigate={(route) => onNavigate(route as NavView)} />
 
           {/* B. MAIN INTERACTIVE EXPERIENCE: GLOVA CEFR PROGRESSION MATRIX */}
           {activeTab === 'path' ? (
-            <div className="rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6">
+            <div className="rounded-[28px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6 text-[#FFF8F2]">
               {/* Unit Progression Header */}
-              <div className="flex items-center justify-between pb-5 border-b border-[#EDE8DF] dark:border-border/30 gap-4 flex-wrap">
+              <div className="flex items-center justify-between pb-5 border-b border-[rgba(184,167,255,0.16)] gap-4 flex-wrap">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#5B5CE2] dark:text-indigo-400 uppercase tracking-wider font-tech">
-                      {isEn ? `Tier Progression: ${progress.currentLevel} → ${nextLvl}` : `ระดับการพัฒนา: ${progress.currentLevel} → ${nextLvl}`}
+                    <span className="text-xs font-bold text-[#B8A7FF] uppercase tracking-wider font-tech">
+                      {isEn ? `Garden Growth: ${progress.currentLevel} → ${nextLvl}` : `การเติบโตในสวน: ${progress.currentLevel} → ${nextLvl}`}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E9E5FF] text-[#5B5CE2]">
-                      {isEn ? 'Term 1 Active' : 'ภาคการเรียนที่ 1'}
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#B8A7FF]/15 text-[#B8A7FF] border border-[#B8A7FF]/30">
+                      {isEn ? 'Active Sprout Season' : 'ฤดูกาลบ่มเพาะ'}
                     </span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-foreground mt-0.5">
+                  <h3 className="text-lg sm:text-xl font-black text-[#FFF8F2] mt-0.5">
                     {isEn ? 'Core Academic & Conversational Modules' : 'โมดูลภาษาอังกฤษเชิงวิชาการและการสื่อสาร'}
                   </h3>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <span className="text-xs font-bold text-foreground">3 / 6 {isEn ? 'Modules' : 'โมดูล'}</span>
-                    <div className="text-[10px] text-muted-foreground font-mono">50% Complete</div>
+                    <span className="text-xs font-bold text-[#FFF8F2]">3 / 6 {isEn ? 'Modules' : 'โมดูล'}</span>
+                    <div className="text-[10px] text-[#B8B3C7] font-mono">50% Complete</div>
                   </div>
-                  <div className="w-24 h-2.5 rounded-full bg-[#EDE8DF] dark:bg-muted overflow-hidden">
-                    <div className="h-full rounded-full bg-[#10B981] w-[50%]" />
+                  <div className="w-24 h-2.5 rounded-full bg-[#292544] overflow-hidden">
+                    <div className="h-full rounded-full bg-[#8DE0BE] w-[50%]" />
                   </div>
                 </div>
               </div>
@@ -406,6 +438,45 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   onLaunch={() => onNavigate('mockExam')}
                 />
               </div>
+
+              {/* Secondary Curated Learning Paths */}
+              <div className="pt-6 border-t border-[rgba(184,167,255,0.16)] space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-base font-bold text-[#FFF8F2]">
+                    {isEn ? 'Secondary Curated Pathways' : 'เส้นทางการเรียนรู้เฉพาะทาง'}
+                  </h3>
+                  <span className="text-xs text-[#B8B3C7]">3 Core Groves</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="p-4 rounded-2xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex flex-col justify-between gap-3">
+                    <div>
+                      <h4 className="font-bold text-sm text-[#FFF8F2]">{isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์ CEFR'}</h4>
+                      <p className="text-[11px] text-[#B8B3C7] mt-0.5">{isEn ? '3,860 verified terms' : '3,860 คำศัพท์มาตรฐาน'}</p>
+                    </div>
+                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('vocabulary')}>
+                      {isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}
+                    </TactileButton>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex flex-col justify-between gap-3">
+                    <div>
+                      <h4 className="font-bold text-sm text-[#FFF8F2]">{isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}</h4>
+                      <p className="text-[11px] text-[#B8B3C7] mt-0.5">{isEn ? 'Timeline visualization' : 'โครงสร้างประโยคไวยากรณ์'}</p>
+                    </div>
+                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('grammar')}>
+                      {isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด'}
+                    </TactileButton>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex flex-col justify-between gap-3">
+                    <div>
+                      <h4 className="font-bold text-sm text-[#FFF8F2]">{isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}</h4>
+                      <p className="text-[11px] text-[#B8B3C7] mt-0.5">{isEn ? `${progress.targetExam} simulation` : `ข้อสอบจำลอง ${progress.targetExam}`}</p>
+                    </div>
+                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('mockExam')}>
+                      {isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ'}
+                    </TactileButton>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
             /* ALL STUDIOS GRID */
@@ -413,15 +484,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               {[
                 {
                   id: 'vocabulary',
-                  title: isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR (3,860 คำ)',
+                  title: isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR',
+                  ctaText: isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์',
                   desc: isEn ? 'Master high-frequency words with spaced repetition & collocation pairs.' : 'เรียนรู้คำศัพท์ตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition',
-                  icon: <BookOpen className="w-6 h-6 text-[#5B5CE2]" />,
+                  icon: <BookOpen className="w-6 h-6 text-[#B8A7FF]" />,
                   color: 'from-indigo-500/10 to-indigo-500/5',
                   badge: '3,860 Words',
                 },
                 {
                   id: 'grammar',
                   title: isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ',
+                  ctaText: isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด',
                   desc: isEn ? 'Practical sentence structures and tenses explained with clear rules.' : 'โครงสร้างประโยคและ Tenses สำคัญพร้อมตัวอย่างประโยคใช้งานจริง',
                   icon: <Sparkles className="w-6 h-6 text-emerald-600" />,
                   color: 'from-emerald-500/10 to-emerald-500/5',
@@ -430,6 +503,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 {
                   id: 'compete',
                   title: isEn ? 'Ranked Vocab Battle' : 'ประลองคำศัพท์จัดอันดับ 4 วินาที',
+                  ctaText: isEn ? 'Battle Now' : 'ประลองตอนนี้',
                   desc: isEn ? 'Fast-paced 4-second reflex challenges against university peers.' : 'ท้าทายความเร็วข้อละ 4 วินาที ไต่อันดับ MMR ในแรงก์ลีก',
                   icon: <Swords className="w-6 h-6 text-[#FF8F82]" />,
                   color: 'from-rose-500/10 to-rose-500/5',
@@ -437,7 +511,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 },
                 {
                   id: 'mockExam',
-                  title: isEn ? 'Cambridge Mock Exams' : 'คลังข้อสอบจำลอง Cambridge',
+                  title: isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge',
+                  ctaText: isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ',
                   desc: isEn ? `Realistic exam simulations for ${progress.targetExam} with timer.` : `ข้อสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและวิเคราะห์คะแนน`,
                   icon: <Award className="w-6 h-6 text-amber-600" />,
                   color: 'from-amber-500/10 to-amber-500/5',
@@ -447,28 +522,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <div
                   key={studio.id}
                   onClick={() => onNavigate(studio.id as any)}
-                  className="p-6 rounded-[24px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 hover:border-[#5B5CE2]/40 transition-all cursor-pointer group shadow-xs hover:shadow-md flex flex-col justify-between gap-4"
+                  className="p-6 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] hover:border-[#B8A7FF]/40 transition-all cursor-pointer group shadow-xs hover:shadow-md flex flex-col justify-between gap-4 text-[#FFF8F2]"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-[#EDE8DF]/60 dark:bg-muted/80 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-2xl bg-[#292544] text-[#B8A7FF] flex items-center justify-center">
                         {studio.icon}
                       </div>
-                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#EDE8DF]/60 text-muted-foreground font-mono">
+                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#292544] text-[#B8A7FF] font-mono border border-[rgba(184,167,255,0.2)]">
                         {studio.badge}
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-base text-foreground group-hover:text-[#5B5CE2] transition-colors">
+                      <h4 className="font-bold text-base text-[#FFF8F2] group-hover:text-[#B8A7FF] transition-colors">
                         {studio.title}
                       </h4>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      <p className="text-xs text-[#B8B3C7] mt-1 leading-relaxed">
                         {studio.desc}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-xs font-bold text-[#5B5CE2] pt-3 border-t border-[#EDE8DF]/60 dark:border-border/30">
-                    <span>{isEn ? 'Open Studio' : 'เปิดสตูดิโอ'}</span>
+                  <div className="flex items-center justify-between text-xs font-bold text-[#B8A7FF] pt-3 border-t border-[rgba(184,167,255,0.12)]">
+                    <span>{studio.ctaText || (isEn ? 'Enter Grove' : 'เปิดสตูดิโอ')}</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -478,72 +553,123 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* ========================================================================= */}
-        {/* RIGHT COLUMN: DUOLINGO-INSPIRED CONTEXTUAL RAIL (4 cols - Sticky)        */}
+        {/* RIGHT COLUMN: DIGITAL GARDEN SANCTUARY RAIL (4 cols - Sticky)            */}
         {/* ========================================================================= */}
         <div className="lg:col-span-5 xl:col-span-4 space-y-6 lg:sticky lg:top-20">
-          {/* 1. DAILY STREAK & MOMENTUM CARD */}
-          <div className="p-5 rounded-[24px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-xs flex items-center justify-between">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/25 flex items-center justify-center shrink-0">
-                <Flame className="w-7 h-7 text-amber-500 fill-amber-500" />
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-black text-foreground font-mono">
-                    <AnimatedNumber value={progress.streakDays} />
-                  </span>
-                  <span className="text-xs font-bold text-amber-600 dark:text-amber-400">
-                    {isEn ? 'DAY STREAK' : 'วันต่อเนื่อง'}
-                  </span>
+          {/* 1. DAILY STREAK & SUMMARY CARD */}
+          <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-4 text-[#FFF8F2]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-[#F6D978]/15 border border-[#F6D978]/30 flex items-center justify-center shrink-0">
+                  <Flame className="w-7 h-7 text-[#F6D978] fill-[#F6D978]" />
                 </div>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {progress.streakDays >= 3
-                    ? isEn ? 'Unstoppable momentum!' : 'กำลังมาแรงมาก!'
-                    : isEn ? 'Practice daily to build habits' : 'ฝึกต่อเนื่องทุกวันเพื่อผลลัพธ์ที่ดีที่สุด'}
-                </p>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xl font-black text-[#FFF8F2] font-mono">
+                      <AnimatedNumber value={progress.streakDays} />
+                    </span>
+                    <span className="text-xs font-bold text-[#F6D978]">
+                      {`${progress.streakDays} วัน`}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#B8B3C7] mt-0.5">
+                    {progress.streakDays >= 3
+                      ? isEn ? 'Unstoppable momentum!' : 'พฤกษาเติบโตต่อเนื่อง!'
+                      : isEn ? 'Water daily to nurture your garden' : 'บ่มเพาะต่อเนื่องทุกวันเพื่อการเติบโต'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-10 h-10 rounded-full bg-[#292544] flex items-center justify-center font-mono font-bold text-xs text-[#FFF8F2] border border-[rgba(184,167,255,0.2)]">
+                {progress.currentLevel}
               </div>
             </div>
 
-            <div className="w-10 h-10 rounded-full bg-[#EDE8DF]/60 dark:bg-muted flex items-center justify-center font-mono font-bold text-xs text-foreground">
-              {progress.currentLevel}
+            {/* Quick Progress Counters */}
+            <div className="pt-3 border-t border-[rgba(184,167,255,0.12)] grid grid-cols-2 gap-2 text-xs">
+              <div className="p-2.5 rounded-xl bg-[#292544]">
+                <div className="text-[10px] text-[#B8B3C7]">{isEn ? 'Daily Goal' : 'เป้าหมายประจำวัน'}</div>
+                <div className="font-bold text-[#FFF8F2] font-mono">{`${minutesStudied} นาที`} / {`${goalMinutes} นาที`}</div>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#292544]">
+                <div className="text-[10px] text-[#B8B3C7]">{isEn ? 'Questions' : 'ทำข้อสอบแล้ว'}</div>
+                <div className="font-bold text-[#FFF8F2] font-mono">{`${progress.completedQuestionIds?.length || 0} ข้อ`}</div>
+              </div>
+              <div className="col-span-2 p-2.5 rounded-xl bg-[#292544] flex items-center justify-between">
+                <span className="text-[11px] text-[#B8B3C7]">{isEn ? 'Mastered Words' : 'คำศัพท์ที่เชี่ยวชาญ'}</span>
+                <span className="font-bold text-[#8DE0BE] font-mono">{`${progress.masteredWordIds?.length || 0} คำศัพท์ที่เชี่ยวชาญแล้ว`}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 1.1 6 CORE COMPETENCIES PROGRESS BARS */}
+          <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-3 text-[#FFF8F2]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#B8B3C7]">
+              {isEn ? '6 CORE COMPETENCIES' : 'ความเชี่ยวชาญ 6 ด้าน'}
+            </h3>
+            <div className="space-y-2.5 text-xs">
+              {[
+                { skill: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์', val: progress.skillStats.vocabulary },
+                { skill: 'grammar', label: isEn ? 'Grammar' : 'ไวยากรณ์', val: progress.skillStats.grammar },
+                { skill: 'reading', label: isEn ? 'Reading' : 'การอ่าน', val: progress.skillStats.reading },
+                { skill: 'listening', label: isEn ? 'Listening' : 'การฟัง', val: progress.skillStats.listening },
+                { skill: 'writing', label: isEn ? 'Writing' : 'การเขียน', val: progress.skillStats.writing },
+                { skill: 'speaking', label: isEn ? 'Speaking' : 'การพูด', val: progress.skillStats.speaking },
+              ].map((s) => (
+                <div key={s.skill} className="space-y-1">
+                  <div className="flex justify-between text-[11px] font-semibold">
+                    <span className="text-[#FFF8F2]">{s.label}</span>
+                    <span className="text-[#B8A7FF] font-mono">{s.val}%</span>
+                  </div>
+                  <div
+                    role="progressbar"
+                    aria-valuenow={s.val}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    className="w-full h-2 rounded-full bg-[#292544] overflow-hidden"
+                  >
+                    <div className="h-full rounded-full bg-[#B8A7FF]" style={{ width: `${s.val}%` }} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* 2. TODAY'S DAILY GOAL */}
-          <div className="p-5 rounded-[24px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-xs space-y-3">
+          <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-3 text-[#FFF8F2]">
             <div className="flex items-center justify-between text-xs font-bold">
-              <span className="text-muted-foreground uppercase tracking-wider">
-                {isEn ? 'DAILY STUDY GOAL' : 'เป้าหมายประจำวัน'}
+              <span className="text-[#B8B3C7] uppercase tracking-wider">
+                {isEn ? 'DAILY GROWTH TARGET' : 'เป้าหมายประจำวัน'}
               </span>
-              <span className="text-emerald-600 dark:text-emerald-400 font-mono">
+              <span className="text-[#8DE0BE] font-mono">
                 {minutesStudied} / {goalMinutes} min ({goalPercent}%)
               </span>
             </div>
 
-            <div className="w-full h-3 rounded-full bg-[#EDE8DF]/70 dark:bg-muted overflow-hidden">
+            <div className="w-full h-3 rounded-full bg-[#292544] overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-[#5B5CE2] transition-all duration-500"
+                className="h-full rounded-full bg-gradient-to-r from-[#8DE0BE] to-[#B8A7FF] transition-all duration-500"
                 style={{ width: `${goalPercent}%` }}
               />
             </div>
 
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-[#B8B3C7]">
               {goalPercent >= 100
-                ? isEn ? 'Goal smashed today! Keep it rolling.' : 'บรรลุเป้าหมายของวันนี้แล้ว! ยอดเยี่ยมมาก'
-                : isEn ? `Study ${Math.max(0, goalMinutes - minutesStudied)} more minutes to complete.` : `ขาดอีก ${Math.max(0, goalMinutes - minutesStudied)} นาทีเพื่อบรรลุเป้าหมาย`}
+                ? isEn ? 'Garden fully energized today! Keep flourishing.' : 'สวนภาษาอังกฤษของคุณเติบโตเต็มเป้าหมายแล้ววันนี้!'
+                : isEn ? `Cultivate ${Math.max(0, goalMinutes - minutesStudied)} more minutes to complete.` : `ขาดอีก ${Math.max(0, goalMinutes - minutesStudied)} นาทีเพื่อบรรลุเป้าหมาย`}
             </p>
           </div>
 
           {/* 3. RANKED LEAGUE STANDING (Heraldic Crest) */}
-          <div className="p-5 rounded-[24px] bg-gradient-to-br from-[#FFFDF8] to-[#5B5CE2]/8 dark:from-card dark:to-[#5B5CE2]/15 border border-[#EDE8DF] dark:border-border/40 shadow-xs space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-[#EDE8DF] dark:border-border/30">
+          <div className="p-5 rounded-[24px] bg-gradient-to-br from-[#211E38] to-[#292544] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-4 text-[#FFF8F2]">
+            <div className="flex items-center justify-between pb-3 border-b border-[rgba(184,167,255,0.12)]">
               <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-amber-500" />
-                <span className="text-xs font-bold text-foreground uppercase tracking-wider">
-                  {isEn ? 'RANKED LEAGUE' : 'ตารางคะแนนลีก'}
+                <Trophy className="w-4 h-4 text-[#F6D978]" />
+                <span className="text-xs font-bold text-[#FFF8F2] uppercase tracking-wider">
+                  {isEn ? 'RANKED ARENA' : 'สมรภูมิประลอง'}
                 </span>
               </div>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold font-mono">
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#8DE0BE]/15 text-[#8DE0BE] font-bold font-mono border border-[#8DE0BE]/30">
                 Top 10
               </span>
             </div>
@@ -551,11 +677,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div className="flex items-center gap-4">
               <RankEmblem tier="Gold" size="md" showGlow animate />
               <div>
-                <h4 className="font-black text-base text-foreground">
+                <h4 className="font-black text-base text-[#FFF8F2]">
                   Gold III • Bangkok League
                 </h4>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Rating: <span className="font-mono font-bold text-[#5B5CE2]">1,420 MMR</span>
+                <p className="text-xs text-[#B8B3C7] mt-0.5">
+                  Rating: <span className="font-mono font-bold text-[#B8A7FF]">1,420 MMR</span>
                 </p>
               </div>
             </div>
@@ -565,88 +691,105 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               size="sm"
               fullWidth
               onClick={() => onNavigate('compete')}
-              leftIcon={<Swords className="w-4 h-4" />}
+              leftIcon={<Swords className="w-4 h-4 text-[#17152B]" />}
             >
               {isEn ? 'ENTER VOCAB BATTLE' : 'เข้าสู่สนามประลอง'}
             </TactileButton>
           </div>
 
           {/* 4. DAILY QUESTS */}
-          <div className="p-5 rounded-[24px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-xs space-y-3.5">
+          <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-3.5 text-[#FFF8F2]">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
-                <Target className="w-3.5 h-3.5 text-[#5B5CE2]" />
+              <span className="text-xs font-bold text-[#FFF8F2] uppercase tracking-wider flex items-center gap-1.5">
+                <Target className="w-3.5 h-3.5 text-[#B8A7FF]" />
                 <span>{isEn ? 'DAILY QUESTS' : 'ภารกิจประจำวัน'}</span>
               </span>
-              <span className="text-[11px] text-muted-foreground font-semibold">1 / 3 Done</span>
+              <span className="text-[11px] text-[#B8B3C7] font-semibold">1 / 3 Done</span>
             </div>
 
             <div className="space-y-3 text-xs">
               {/* Quest 1 */}
-              <div className="p-3 rounded-xl bg-white dark:bg-card/70 border border-[#EDE8DF] dark:border-border/40 flex items-center justify-between gap-2">
+              <div className="p-3 rounded-xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex items-center justify-between gap-2">
                 <div className="space-y-1 min-w-0">
-                  <p className="font-bold text-foreground truncate">
+                  <p className="font-bold text-[#FFF8F2] truncate">
                     {isEn ? 'Complete 1 Practice Lesson' : 'ทำบทเรียนสำเร็จ 1 บท'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-[#EDE8DF] dark:bg-muted overflow-hidden">
-                    <div className="h-full rounded-full bg-emerald-500 w-full" />
+                  <div className="w-24 h-1.5 rounded-full bg-[#17152B] overflow-hidden">
+                    <div className="h-full rounded-full bg-[#8DE0BE] w-full" />
                   </div>
                 </div>
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold shrink-0 font-mono">
+                <span className="text-[#8DE0BE] font-bold shrink-0 font-mono">
                   +10 XP
                 </span>
               </div>
 
               {/* Quest 2 */}
-              <div className="p-3 rounded-xl bg-white dark:bg-card/70 border border-[#EDE8DF] dark:border-border/40 flex items-center justify-between gap-2">
+              <div className="p-3 rounded-xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex items-center justify-between gap-2">
                 <div className="space-y-1 min-w-0">
-                  <p className="font-bold text-foreground truncate">
+                  <p className="font-bold text-[#FFF8F2] truncate">
                     {isEn ? 'Score 80%+ in Vocab Battle' : 'ชนะประลองคำศัพท์ด้วยคะแนน 80% ขึ้นไป'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-[#EDE8DF] dark:bg-muted overflow-hidden">
-                    <div className="h-full rounded-full bg-[#5B5CE2] w-0" />
+                  <div className="w-24 h-1.5 rounded-full bg-[#17152B] overflow-hidden">
+                    <div className="h-full rounded-full bg-[#B8A7FF] w-0" />
                   </div>
                 </div>
-                <span className="text-[#5B5CE2] font-bold shrink-0 font-mono">
+                <span className="text-[#B8A7FF] font-bold shrink-0 font-mono">
                   +20 XP
                 </span>
               </div>
 
               {/* Quest 3 */}
-              <div className="p-3 rounded-xl bg-white dark:bg-card/70 border border-[#EDE8DF] dark:border-border/40 flex items-center justify-between gap-2">
+              <div className="p-3 rounded-xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex items-center justify-between gap-2">
                 <div className="space-y-1 min-w-0">
-                  <p className="font-bold text-foreground truncate">
+                  <p className="font-bold text-[#FFF8F2] truncate">
                     {isEn ? 'Review 5 Spaced Words' : 'ทบทวนคำศัพท์ Spaced Repetition 5 คำ'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-[#EDE8DF] dark:bg-muted overflow-hidden">
-                    <div className="h-full rounded-full bg-[#5B5CE2] w-3/5" />
+                  <div className="w-24 h-1.5 rounded-full bg-[#17152B] overflow-hidden">
+                    <div className="h-full rounded-full bg-[#B8A7FF] w-3/5" />
                   </div>
                 </div>
-                <span className="text-[#5B5CE2] font-bold shrink-0 font-mono">
+                <span className="text-[#B8A7FF] font-bold shrink-0 font-mono">
                   +15 XP
                 </span>
               </div>
             </div>
           </div>
 
-          {/* 5. WEAK AREAS FAST REPAIR (Conditional) */}
-          {hasWeakness && topWeakness && (
-            <div className="p-4 rounded-[20px] bg-amber-500/10 border border-amber-500/25 flex items-center justify-between gap-3">
-              <div className="space-y-0.5 min-w-0">
-                <span className="text-[10px] font-bold uppercase text-amber-700 dark:text-amber-400">
-                  {isEn ? 'NEEDS REINFORCEMENT' : 'จุดที่ควรเสริม'}
-                </span>
-                <p className="text-xs font-bold text-foreground truncate">
-                  {topWeakness.labelTh} ({topWeakness.errorCount} mistakes)
-                </p>
+          {/* 5. WEAKNESS REMEDIATION (Empty vs Populated States) */}
+          {hasWeakness ? (
+            <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-3 text-[#FFF8F2]">
+              <span className="text-[10px] font-bold text-[#FF8F82] uppercase tracking-wider">
+                {isEn ? 'WEAKNESS REMEDIATION' : 'จุดที่ควรเสริม'}
+              </span>
+              <div className="space-y-2">
+                {progress.weakTopics.map((w) => (
+                  <div key={w.tag} className="p-3 rounded-xl bg-[#292544] border border-[rgba(184,167,255,0.12)] flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-[#FFF8F2] truncate">{w.labelTh}</p>
+                      <p className="text-[10px] text-[#FF8F82]">พบข้อผิดพลาด {w.errorCount} ครั้ง</p>
+                    </div>
+                    <TactileButton
+                      variant="warning"
+                      size="sm"
+                      onClick={() => onStartRemediation(w.tag)}
+                      className="shrink-0"
+                    >
+                      {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
+                    </TactileButton>
+                  </div>
+                ))}
               </div>
+            </div>
+          ) : (
+            <div className="p-5 rounded-[24px] bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs text-center space-y-2 text-[#FFF8F2]">
+              <p className="text-xs font-bold text-[#FFF8F2]">ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ</p>
               <TactileButton
-                variant="warning"
+                variant="surface"
                 size="sm"
-                onClick={() => onStartRemediation(topWeakness.tag)}
-                className="shrink-0"
+                onClick={() => onNavigate('mockExam')}
+                className="mx-auto"
               >
-                {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
+                {isEn ? 'Try a Mock Exam' : 'ทดลองทำข้อสอบจำลอง'}
               </TactileButton>
             </div>
           )}

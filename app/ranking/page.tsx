@@ -146,7 +146,7 @@ function RankingContent() {
       {(boardType === 'xp' || boardType === 'friends') && (
         <section className="space-y-6">
           {/* XP Season Header Hero */}
-          <div className="rounded-3xl bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/70 p-6 sm:p-8 shadow-xs relative overflow-hidden">
+          <div className="rounded-3xl bg-[#211E38] border border-[rgba(184,167,255,0.16)] p-6 sm:p-8 shadow-xs relative overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center shadow-sm shrink-0">

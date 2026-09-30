@@ -32,16 +32,16 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
-      flat: 'bg-card border border-border/40 shadow-none',
-      subtle: 'bg-card border border-border/40 shadow-sm',
-      glow: 'bg-card border border-indigo-500/20 shadow-[0_4px_20px_-2px_rgba(99,102,241,0.12)]',
-      bubble: 'bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/40 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]',
+      flat: 'bg-card border border-border/40 shadow-none text-foreground',
+      subtle: 'bg-card border border-border/40 shadow-sm text-foreground',
+      glow: 'bg-card border border-[#B8A7FF]/30 shadow-[0_4px_20px_-2px_rgba(184,167,255,0.15)] text-foreground',
+      bubble: 'bg-[#211E38] border border-[rgba(184,167,255,0.16)] text-[#FFF8F2] shadow-[0_8px_30px_-4px_rgba(23,21,43,0.6)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive
       ? isBubble
-        ? 'cursor-pointer hover:border-indigo-500/30 hover:shadow-[0_14px_38px_-6px_rgba(91,92,226,0.12),0_4px_14px_-2px_rgba(36,35,58,0.06)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50'
-        : 'cursor-pointer hover:border-indigo-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50'
+        ? 'cursor-pointer hover:border-[#B8A7FF]/40 hover:shadow-[0_14px_38px_-6px_rgba(184,167,255,0.18)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]/50'
+        : 'cursor-pointer hover:border-[#B8A7FF]/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]/50'
       : '';
 
     const radiusClass = isBubble ? 'rounded-[26px]' : 'rounded-xl';

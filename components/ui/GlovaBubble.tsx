@@ -179,8 +179,8 @@ export const GlovaBubble: React.FC<GlovaBubbleProps> = ({
     </div>
   );
 
-  const containerClasses = `relative flex flex-col transition-all duration-200 border bg-[#FFFDF8] dark:bg-card ${sizeStyles} ${className}`;
-  const customBorderColor = typeConfig ? typeConfig.border : 'rgba(36, 35, 58, 0.08)';
+  const containerClasses = `relative flex flex-col transition-all duration-200 border bg-[#211E38] text-[#FFF8F2] ${sizeStyles} ${className}`;
+  const customBorderColor = typeConfig ? typeConfig.border : 'rgba(184, 167, 255, 0.16)';
 
   if (isInteractive) {
     return (

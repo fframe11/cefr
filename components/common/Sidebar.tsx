@@ -62,20 +62,20 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'dashboard', labelEn: 'Dashboard', labelTh: 'หน้าหลักการเรียน', icon: LayoutDashboard, section: 'learn' },
-  { id: 'vocabulary', labelEn: 'Vocabulary Lab', labelTh: 'คลังคำศัพท์ Oxford', icon: BookOpen, badge: '3,860', section: 'learn' },
-  { id: 'grammar', labelEn: 'Grammar Studio', labelTh: 'ไวยากรณ์และไทม์ไลน์', icon: Sparkles, section: 'learn' },
-  { id: 'reading', labelEn: 'Reading Lab', labelTh: 'อ่านจับใจความวิชาการ', icon: BookMarked, section: 'learn' },
-  { id: 'listening', labelEn: 'Listening Studio', labelTh: 'สตูดิโอการฟังสำเนียง', icon: Headphones, section: 'learn' },
-  { id: 'writing', labelEn: 'Writing Workspace', labelTh: 'พื้นที่ฝึกเขียนเรียงความ', icon: PenTool, section: 'learn' },
-  { id: 'speaking', labelEn: 'Speaking Lab', labelTh: 'ฝึกการพูดและออกเสียง', icon: Mic, section: 'learn' },
-  { id: 'compete', labelEn: 'Ranked Arena 4s', labelTh: 'ประลองคำศัพท์ 4 วินาที', icon: Swords, badge: 'MMR', section: 'arena' },
+  { id: 'vocabulary', labelEn: 'Vocabulary Garden', labelTh: 'สวนคำศัพท์ Oxford', icon: BookOpen, badge: '3,860', section: 'learn' },
+  { id: 'grammar', labelEn: 'Grammar Grove', labelTh: 'พฤกษาไวยากรณ์', icon: Sparkles, section: 'learn' },
+  { id: 'reading', labelEn: 'Reading Meadow', labelTh: 'ทุ่งการอ่านวิชาการ', icon: BookMarked, section: 'learn' },
+  { id: 'listening', labelEn: 'Listening Pond', labelTh: 'สระสายธารแห่งเสียง', icon: Headphones, section: 'learn' },
+  { id: 'writing', labelEn: 'Writing Sanctuary', labelTh: 'เรือนเขียนเรียงความ', icon: PenTool, section: 'learn' },
+  { id: 'speaking', labelEn: 'Speaking Grove', labelTh: 'ลานฝึกสำเนียงและพูด', icon: Mic, section: 'learn' },
+  { id: 'compete', labelEn: 'Ranked Arena 4s', labelTh: 'สมรภูมิประลองคำศัพท์', icon: Swords, badge: 'MMR', section: 'arena' },
   { id: 'ranking', labelEn: 'University League', labelTh: 'ตารางคะแนนลีกมหาวิทยาลัย', icon: Trophy, badge: 'Top 3', section: 'arena' },
-  { id: 'social', labelEn: 'Study Together', labelTh: 'อ่านหนังสือกับเพื่อน', icon: Users, badge: 'Live', section: 'arena' },
-  { id: 'achievements', labelEn: 'Trophy Hall', labelTh: 'เหรียญความสำเร็จ', icon: Award, section: 'arena' },
+  { id: 'social', labelEn: 'Study Garden Friends', labelTh: 'ร่วมบ่มเพาะกับเพื่อน', icon: Users, badge: 'Live', section: 'arena' },
+  { id: 'achievements', labelEn: 'Trophy & Flower Sanctuary', labelTh: 'สวนบุปผาและเกียรติยศ', icon: Award, section: 'arena' },
   { id: 'assessment', labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR แม่นยำ', icon: ClipboardCheck, badge: 'A1-C2', section: 'practice' },
   { id: 'mockExam', labelEn: 'Cambridge Mock Hall', labelTh: 'สอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', section: 'practice' },
   { id: 'analytics', labelEn: 'Skill Analytics', labelTh: 'วิเคราะห์ทักษะและจุดอ่อน', icon: BarChart2, section: 'progress' },
-  { id: 'profile', labelEn: 'Profile & Dossier', labelTh: 'โปรไฟล์และเป้าหมาย', icon: User, section: 'progress' },
+  { id: 'profile', labelEn: 'My Digital Garden', labelTh: 'สวนอังกฤษของฉัน', icon: User, section: 'progress' },
 ];
 
 interface NavSectionDef {
@@ -85,10 +85,10 @@ interface NavSectionDef {
 }
 
 const NAV_SECTIONS: NavSectionDef[] = [
-  { id: 'learn', labelEn: 'LEARNING STUDIOS', labelTh: 'สตูดิโอการเรียนรู้' },
-  { id: 'arena', labelEn: 'ARENA & SOCIAL', labelTh: 'สมรภูมิและชุมชน' },
-  { id: 'practice', labelEn: 'PRACTICE HALL', labelTh: 'ฝึกฝนและข้อสอบจำลอง' },
-  { id: 'progress', labelEn: 'STUDY PROGRESS', labelTh: 'ความก้าวหน้าและโปรไฟล์' },
+  { id: 'learn', labelEn: 'DIGITAL GARDEN GROVES', labelTh: 'อุทยานการเรียนรู้' },
+  { id: 'arena', labelEn: 'ARENA & COMPETITION', labelTh: 'สมรภูมิและเกียรติยศ' },
+  { id: 'practice', labelEn: 'MILESTONE & EXAMS', labelTh: 'ศิลาหลักชัยและข้อสอบ' },
+  { id: 'progress', labelEn: 'SANCTUARY & PROFILE', labelTh: 'สวนส่วนตัวและสถิติ' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -157,19 +157,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-sm transition-all group min-h-[42px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50 active:scale-[0.98] ${
+                className={`w-full flex items-center rounded-xl text-sm transition-all group min-h-[42px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]/50 active:scale-[0.98] ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
                 } ${
                   isActive
-                    ? 'bg-[#5B5CE2] text-white font-bold shadow-xs shadow-[#5B5CE2]/25'
-                    : 'text-[#24233A] dark:text-foreground/80 hover:text-foreground hover:bg-[#E9E5FF]/40 dark:hover:bg-muted/40 font-medium'
+                    ? 'bg-[#B8A7FF] text-[#17152B] font-black shadow-xs shadow-[#B8A7FF]/30'
+                    : 'text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] font-medium'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-white' : 'text-muted-foreground group-hover:text-[#5B5CE2] dark:group-hover:text-indigo-400'
+                    isActive ? 'text-[#17152B]' : 'text-[#B8A7FF]/70 group-hover:text-[#B8A7FF]'
                   }`}
                 />
                 {!collapsedMode && (
@@ -182,10 +182,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold shrink-0 ${
                       isActive
-                        ? 'bg-white/20 text-white'
+                        ? 'bg-[#17152B]/20 text-[#17152B]'
                         : item.badge === 'Live' || item.badge === 'MMR'
-                        ? 'bg-[#FF8F82]/15 text-[#FF8F82]'
-                        : 'bg-[#EDE8DF]/80 dark:bg-muted text-muted-foreground'
+                        ? 'bg-[#FF8F82]/20 text-[#FF8F82] border border-[#FF8F82]/30'
+                        : 'bg-[#292544] text-[#B8A7FF] border border-[rgba(184,167,255,0.2)]'
                     }`}
                   >
                     {item.badge}
@@ -203,18 +203,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-[#EDE8DF] dark:border-border/40 bg-white/70 dark:bg-card/40 backdrop-blur-xs shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
+        className={`hidden md:flex flex-col border-r border-[rgba(184,167,255,0.16)] bg-[#17152B]/95 backdrop-blur-md shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
         {/* Top Header & Collapse Toggle */}
-        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-[#EDE8DF] dark:border-border/40 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
+        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-[rgba(184,167,255,0.16)] ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground font-mono select-none">
-                {isEn ? 'Learning Suite' : 'ห้องเรียนภาษาอังกฤษ'}
+              <span className="w-2 h-2 rounded-full bg-[#8DE0BE] animate-pulse" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#B8B3C7] font-mono select-none">
+                {isEn ? 'Garden Suite' : 'อุทยานการเรียนรู้'}
               </span>
             </div>
           )}
@@ -223,7 +223,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-[#EDE8DF]/60 dark:hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50 active:scale-95"
+              className="p-1.5 rounded-lg text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8A7FF]/50 active:scale-95"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -243,13 +243,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-[#EDE8DF] dark:border-border/40 mt-auto">
-            <div className="p-3 rounded-2xl bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/60 shadow-xs space-y-1">
+          <div className="pt-3.5 border-t border-[rgba(184,167,255,0.16)] mt-auto">
+            <div className="p-3 rounded-2xl bg-[#211E38] border border-[rgba(184,167,255,0.16)] shadow-xs space-y-1">
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#5B5CE2]" />
-                <span className="text-[11px] font-black text-foreground font-display">Cambridge Scale</span>
+                <ShieldCheck className="w-3.5 h-3.5 text-[#B8A7FF]" />
+                <span className="text-[11px] font-black text-[#FFF8F2] font-display">Cambridge Scale</span>
               </div>
-              <p className="text-[10px] text-muted-foreground font-grotesk leading-snug">
+              <p className="text-[10px] text-[#B8B3C7] font-grotesk leading-snug">
                 CEFR A1 to C2 Framework &bull; KET, PET, FCE, CAE, CPE
               </p>
             </div>
@@ -260,7 +260,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* 2. Mobile Off-Canvas Drawer (< 768px) */}
       {isMobileOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs md:hidden animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs md:hidden animate-in fade-in duration-200"
           onClick={onCloseMobile}
           aria-hidden="true"
         >
@@ -268,26 +268,26 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#FFFDF8] dark:bg-card border-r border-[#EDE8DF] dark:border-border p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#17152B] border-r border-[rgba(184,167,255,0.16)] p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-[#FFF8F2]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#EDE8DF] dark:border-border/40">
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-[rgba(184,167,255,0.16)]">
               <div className="flex items-center gap-2.5">
                 <GlovaLogo size={28} variant="radiant" ariaLabel="Glova" />
                 <div className="flex flex-col">
-                  <span className="font-black text-base text-[#5B5CE2] dark:text-indigo-400 font-display">
+                  <span className="font-black text-base text-[#B8A7FF] font-display">
                     Glova
                   </span>
-                  <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-wider">
-                    University English
+                  <span className="text-[9px] font-mono text-[#B8B3C7] uppercase tracking-wider">
+                    Digital Garden
                   </span>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={onCloseMobile}
-                className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-[#EDE8DF]/60 dark:hover:bg-secondary transition-colors"
+                className="p-1.5 rounded-lg text-[#B8B3C7] hover:text-[#FFF8F2] hover:bg-[#211E38] transition-colors"
                 aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5" />
@@ -300,10 +300,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </nav>
 
             {/* Drawer Footer */}
-            <div className="pt-3 border-t border-[#EDE8DF] dark:border-border/40 mt-4">
-              <div className="p-2.5 rounded-xl bg-white dark:bg-muted/40 border border-[#EDE8DF] dark:border-border/40 text-center">
-                <p className="text-[11px] font-bold text-foreground font-display">Cambridge English Alignment</p>
-                <p className="text-[10px] text-muted-foreground font-mono mt-0.5">CEFR A1 to C2 Framework</p>
+            <div className="pt-3 border-t border-[rgba(184,167,255,0.16)] mt-4">
+              <div className="p-2.5 rounded-xl bg-[#211E38] border border-[rgba(184,167,255,0.16)] text-center">
+                <p className="text-[11px] font-bold text-[#FFF8F2] font-display">Cambridge English Alignment</p>
+                <p className="text-[10px] text-[#B8B3C7] font-mono mt-0.5">CEFR A1 to C2 Framework</p>
               </div>
             </div>
           </div>
