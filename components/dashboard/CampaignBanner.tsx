@@ -9,10 +9,6 @@ import {
   Swords,
   Gift,
   Megaphone,
-  ChevronLeft,
-  ChevronRight,
-  Pause,
-  Play,
   ArrowRight,
   Clock,
   Award,
@@ -42,7 +38,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
   campaigns: propCampaigns,
   onNavigate,
   className = '',
-  autoRotateInterval = 6500,
+  autoRotateInterval = 5000,
 }) => {
   const { isEnglish } = useTranslation();
   const isEn = isEnglish;
@@ -64,8 +60,6 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
   }, [propCampaigns]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
 
   // Swipe gesture tracking
   const touchStartX = useRef<number | null>(null);
@@ -88,9 +82,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
     setCurrentIndex(index);
   }, []);
 
-  // 2. Auto-rotation timer
+  // 2. Auto-rotation timer (continuously advances slides)
   useEffect(() => {
-    if (total <= 1 || isPaused || isFocused || shouldReduceMotion) {
+    if (total <= 1 || shouldReduceMotion) {
       return;
     }
 
@@ -99,7 +93,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
     }, autoRotateInterval);
 
     return () => clearInterval(timer);
-  }, [total, isPaused, isFocused, shouldReduceMotion, autoRotateInterval]);
+  }, [total, shouldReduceMotion, autoRotateInterval]);
 
   // 3. Touch swipe handlers for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -168,13 +162,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
       role="region"
       aria-roledescription="carousel"
       aria-label={isEn ? 'Promotional Campaigns and Events' : 'แคมเปญและกิจกรรมพิเศษ'}
-      aria-live={isPaused ? 'polite' : 'off'}
+      aria-live="polite"
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -269,11 +259,10 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* CAROUSEL CONTROLS TOOLBAR (Uiverse / Godly.design micro-controls) */}
+      {/* Centered Pagination Indicators (Clickable to switch slides directly) */}
       {total > 1 && (
-        <div className="relative z-10 mt-5 pt-3 border-t border-[#EDE8DF]/70 dark:border-border/30 flex items-center justify-between gap-3 text-xs">
-          {/* Pagination Indicators (Dots / Pills) */}
-          <div className="flex items-center gap-1.5" role="tablist" aria-label="Slides">
+        <div className="relative z-10 mt-5 pt-3 border-t border-[#EDE8DF]/70 dark:border-border/30 flex items-center justify-center">
+          <div className="flex items-center gap-1.5" role="tablist" aria-label={isEn ? 'Slide Navigation' : 'เลื่อนหน้าแคมเปญ'}>
             {campaigns.map((camp, idx) => {
               const isActive = idx === currentIndex;
               return (
@@ -284,51 +273,18 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
                   aria-selected={isActive}
                   aria-label={`${isEn ? 'Go to slide' : 'ไปยังสไลด์ที่'} ${idx + 1}`}
                   onClick={() => goToSlide(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#5B5CE2] ${
-                    isActive
-                      ? 'w-7 bg-[#5B5CE2] shadow-xs'
-                      : 'w-2 bg-[#77758A]/30 hover:bg-[#77758A]/60'
-                  }`}
-                />
+                  className="p-1.5 -m-0.5 flex items-center justify-center cursor-pointer group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#5B5CE2] rounded-full transition-transform active:scale-90"
+                >
+                  <span
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      isActive
+                        ? 'w-7 bg-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/30'
+                        : 'w-2.5 bg-[#77758A]/35 dark:bg-[#77758A]/45 group-hover:bg-[#5B5CE2]/60 group-hover:scale-125'
+                    }`}
+                  />
+                </button>
               );
             })}
-          </div>
-
-          {/* Stepper & Play/Pause Controls */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-[11px] font-mono text-muted-foreground mr-1.5">
-              {currentIndex + 1} / {total}
-            </span>
-
-            {/* Play/Pause Toggle */}
-            <button
-              type="button"
-              onClick={() => setIsPaused((prev) => !prev)}
-              aria-label={isPaused ? (isEn ? 'Resume rotation' : 'เล่นต่อ') : (isEn ? 'Pause rotation' : 'หยุดหมุนชั่วคราว')}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
-            >
-              {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
-            </button>
-
-            {/* Previous Slide */}
-            <button
-              type="button"
-              onClick={prevSlide}
-              aria-label={isEn ? 'Previous Campaign' : 'แคมเปญก่อนหน้า'}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
-            >
-              <ChevronLeft className="w-3.5 h-3.5" />
-            </button>
-
-            {/* Next Slide */}
-            <button
-              type="button"
-              onClick={nextSlide}
-              aria-label={isEn ? 'Next Campaign' : 'แคมเปญถัดไป'}
-              className="p-2 rounded-xl bg-[#F0EAE1] hover:bg-[#EDE6DD] dark:bg-[#1A232C] dark:hover:bg-[#222E3A] border border-[rgba(37,36,42,0.14)] dark:border-[rgba(255,255,255,0.1)] shadow-[0_2px_0_0_#C5BDB2] dark:shadow-[0_2px_0_0_#0F141B] active:translate-y-[2px] active:shadow-none text-[#25242A] dark:text-[#EDEBE8] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B5CE2] cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
           </div>
         </div>
       )}
