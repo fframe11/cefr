@@ -45,6 +45,10 @@ import {
   LearningPathNode,
   GlovaCartridge,
   GlovaNextMove,
+  BorderBeam,
+  BentoGrid,
+  BentoCard,
+  ShimmerButton,
 } from '../ui/GlovaPrimitives';
 import { RankEmblem } from '../ranked/RankEmblem';
 import { CampaignBanner } from '../dashboard/CampaignBanner';
@@ -334,7 +338,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
           {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO (21st.dev x Aceternity x Valorant/Duolingo) */}
-          <SpotlightCard className="p-6 sm:p-8 border-2 border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] bg-gradient-to-br from-indigo-50/80 via-white to-rose-50/50 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] text-slate-900 dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative">
+          <SpotlightCard
+            showBorderBeam={true}
+            borderBeamProps={{
+              size: 260,
+              duration: 9,
+              colorFrom: '#FF4655', // Valorant Crimson laser
+              colorTo: '#5B5CE2',   // Glova Indigo trail
+              borderWidth: 2,
+            }}
+            className="p-6 sm:p-8 border-2 border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] bg-gradient-to-br from-indigo-50/80 via-white to-rose-50/50 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] text-slate-900 dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative"
+          >
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex-1 flex flex-col gap-4">
                 {/* Header Badges */}
@@ -593,8 +607,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
             </div>
           ) : (
-            /* ALL STUDIOS GRID */
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            /* ALL STUDIOS 21ST.DEV BENTO GRID */
+            <BentoGrid className="auto-rows-[16rem]">
               {[
                 {
                   id: 'vocabulary',
@@ -603,62 +617,53 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   desc: isEn ? 'Master high-frequency words with spaced repetition & collocation pairs.' : 'เรียนรู้คำศัพท์ตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition',
                   icon: <BookOpen className="w-6 h-6 text-[#4F46E5] dark:text-[#5B5CE2]" />,
                   badge: '3,860 Words',
+                  accent: 'indigo' as const,
+                  colSpan: 'md:col-span-2',
                 },
                 {
                   id: 'grammar',
                   title: isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ',
                   ctaText: isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด',
                   desc: isEn ? 'Practical sentence structures and tenses explained with clear rules.' : 'โครงสร้างประโยคและ Tenses สำคัญพร้อมตัวอย่างประโยคใช้งานจริง',
-                  icon: <Sparkles className="w-6 h-6 text-[#4F46E5] dark:text-[#5B5CE2]" />,
+                  icon: <Sparkles className="w-6 h-6 text-[#D97706] dark:text-[#FBBF24]" />,
                   badge: '18 Topics',
+                  accent: 'amber' as const,
+                  colSpan: 'md:col-span-1',
                 },
                 {
                   id: 'compete',
                   title: isEn ? 'Ranked Vocab Battle' : 'ประลองคำศัพท์จัดอันดับ 4 วินาที',
                   ctaText: isEn ? 'Battle Now' : 'ประลองตอนนี้',
                   desc: isEn ? 'Fast-paced 4-second reflex challenges against university peers.' : 'ท้าทายความเร็วข้อละ 4 วินาที ไต่อันดับ MMR ในแรงก์ลีก',
-                  icon: <Swords className="w-6 h-6 text-[#E11D48] dark:text-[#E98278]" />,
+                  icon: <Swords className="w-6 h-6 text-[#FF4655]" />,
                   badge: 'Ranked MMR',
+                  accent: 'crimson' as const,
+                  colSpan: 'md:col-span-1',
                 },
                 {
                   id: 'mockExam',
                   title: isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge',
                   ctaText: isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ',
                   desc: isEn ? `Realistic exam simulations for ${progress.targetExam} with timer.` : `ข้อสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและวิเคราะห์คะแนน`,
-                  icon: <Award className="w-6 h-6 text-[#E11D48] dark:text-[#E98278]" />,
+                  icon: <Award className="w-6 h-6 text-[#059669] dark:text-[#10B981]" />,
                   badge: 'KET / PET / FCE',
+                  accent: 'emerald' as const,
+                  colSpan: 'md:col-span-2',
                 },
               ].map((studio) => (
-                <div
+                <BentoCard
                   key={studio.id}
-                  onClick={() => onNavigate(studio.id as any)}
-                  className="p-6 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] hover:border-[#5B5CE2]/50 transition-all cursor-pointer group shadow-xs hover:shadow-md flex flex-col justify-between gap-4 text-slate-900 dark:text-[#EDEBE8]"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-[#1C2430] text-[#4F46E5] dark:text-[#A5A6F6] flex items-center justify-center">
-                        {studio.icon}
-                      </div>
-                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-[#1C2430] text-[#4F46E5] dark:text-[#A5A6F6] font-mono border border-indigo-200 dark:border-[rgba(255,255,255,0.08)]">
-                        {studio.badge}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-base text-slate-900 dark:text-[#EDEBE8] group-hover:text-[#4F46E5] dark:group-hover:text-[#A5A6F6] transition-colors">
-                        {studio.title}
-                      </h4>
-                      <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-1 leading-relaxed">
-                        {studio.desc}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between text-xs font-bold text-[#4F46E5] dark:text-[#A5A6F6] pt-3 border-t border-slate-100 dark:border-[rgba(255,255,255,0.08)]">
-                    <span>{studio.ctaText || (isEn ? 'Enter Studio' : 'เปิดสตูดิโอ')}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
+                  name={studio.title}
+                  className={studio.colSpan}
+                  icon={studio.icon}
+                  description={studio.desc}
+                  cta={studio.ctaText}
+                  badge={studio.badge}
+                  accentVariant={studio.accent}
+                  onCtaClick={() => onNavigate(studio.id as any)}
+                />
               ))}
-            </div>
+            </BentoGrid>
           )}
         </div>
 

@@ -28,6 +28,14 @@ import {
   GlovaCard,
   GlovaBadge,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -197,11 +205,19 @@ export const SpeakingView: React.FC = () => {
     <div className="w-full space-y-6 pb-16">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="SPEAKING LAB"
-          title={isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
-          description={isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
-        />
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <DecryptedText text="SPEAKING LAB" speed={40} maxIterations={12} revealDirection="start" />
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            {isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+            {isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
+          </p>
+        </div>
 
         {currentPrompt && (
           <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
@@ -258,9 +274,15 @@ export const SpeakingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <GlovaCard
-            variant="bubble"
-            elevation="bubble"
+          <SpotlightCard
+            spotlightColor="rgba(16, 185, 129, 0.15)"
+            showBorderBeam={true}
+            borderBeamProps={{
+              colorFrom: '#10B981',
+              colorTo: '#5B5CE2',
+              duration: 12,
+              size: 240,
+            }}
             className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
@@ -342,14 +364,15 @@ export const SpeakingView: React.FC = () => {
                 </div>
               )}
             </div>
-          </GlovaCard>
+          </SpotlightCard>
 
           {/* Interactive Recording Station Card */}
-          <GlovaCard
-            variant="bubble"
-            elevation="bubble"
-            className="p-6 sm:p-8 flex flex-col items-center text-center space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          <TacticalHudFrame
+            agentName="STUDIO // AUDIO COGNITION"
+            statusText={isRecording ? 'LIVE INPUT' : 'STANDBY'}
+            accentColor="emerald"
           >
+          <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
             {/* Live Recording Timer */}
             <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-slate-100 dark:bg-[#1C2430] px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10">
               <Clock className="w-4 h-4 text-[#5B5CE2]" aria-hidden="true" />
@@ -425,17 +448,19 @@ export const SpeakingView: React.FC = () => {
             {/* Action Bar (Reset) */}
             {transcript && (
               <div className="pt-2">
-                <GlovaButton
-                  variant="outline"
+                <TactileButton
+                  variant="neutral"
                   size="sm"
-                  leftIcon={<RotateCcw className="w-4 h-4" aria-hidden="true" />}
                   onClick={handleReset}
+                  className="flex items-center gap-1.5"
                 >
-                  {isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}
-                </GlovaButton>
+                  <RotateCcw className="w-4 h-4" aria-hidden="true" />
+                  <span>{isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}</span>
+                </TactileButton>
               </div>
             )}
-          </GlovaCard>
+          </div>
+          </TacticalHudFrame>
 
           {/* Sample Model Answer Box */}
           {currentPrompt.modelAnswer && (

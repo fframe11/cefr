@@ -42,6 +42,14 @@ import {
   GlovaProgress,
   GlovaFeedbackBubble,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 
 interface MockExamViewProps {
   onExamSubmitted: (cambridgeScore: number) => void;
@@ -414,7 +422,17 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return (
       <div className="w-full space-y-6 pb-12">
         {/* Header Hero Banner */}
-        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden">
+        <SpotlightCard
+          spotlightColor="rgba(168, 85, 247, 0.15)"
+          showBorderBeam={true}
+          borderBeamProps={{
+            colorFrom: '#A855F7',
+            colorTo: '#5B5CE2',
+            duration: 14,
+            size: 260,
+          }}
+          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+        >
           {/* Authentic Examination Setting Backdrop */}
           <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
             <img
@@ -432,6 +450,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               <GraduationCap className="w-7 h-7" />
             </div>
             <div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-purple-500/15 text-purple-600 dark:text-purple-300 border border-purple-500/25">
+                  <DecryptedText text="CAMBRIDGE ARENA" speed={40} maxIterations={12} revealDirection="start" />
+                </span>
+              </div>
               <h1 className="text-fluid-title font-bold text-foreground">
                 {isEn ? 'Cambridge English Qualifications Mock Examination' : 'ห้องสอบจำลอง Cambridge English Qualifications'}
               </h1>
@@ -461,7 +484,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </span>
           </div>
           </div>
-        </GlovaCard>
+        </SpotlightCard>
 
         {/* Guest Mode Auth Required Warning Banner */}
         {authStatus !== 'authenticated' && (
@@ -506,14 +529,21 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {catalogExams.map((exam) => {
               const isSelected = selectedExamId === exam.id;
               return (
-                <GlovaCard
+                <SpotlightCard
                   key={exam.id}
-                  variant={isSelected ? 'elevated' : 'interactive'}
+                  spotlightColor={isSelected ? 'rgba(91, 92, 226, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
+                  showBorderBeam={isSelected}
+                  borderBeamProps={{
+                    colorFrom: '#5B5CE2',
+                    colorTo: '#A855F7',
+                    duration: 10,
+                    size: 180,
+                  }}
                   onClick={() => setSelectedExamId(exam.id)}
-                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between ${
+                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-white dark:bg-[#141A22] border ${
                     isSelected
-                      ? 'border-primary ring-2 ring-primary/40 bg-primary/5'
-                      : ''
+                      ? 'border-[#5B5CE2] shadow-md shadow-[#5B5CE2]/10 ring-1 ring-[#5B5CE2]/30'
+                      : 'border-slate-200/80 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
                   }`}
                 >
                   <div>
@@ -546,22 +576,28 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                   </div>
 
                   <div className="mt-5">
-                    <GlovaButton
-                      variant="primary"
+                    <TactileButton
+                      variant={isSelected ? "primary" : "neutral"}
                       size="sm"
-                      fullWidth
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedExamId(exam.id);
                         handleStartExam(exam.id);
                       }}
                       disabled={isStartingExam}
-                      isLoading={isStartingExam && selectedExamId === exam.id}
+                      className="w-full flex items-center justify-center gap-2"
                     >
-                      {isEn ? 'Start This Exam' : 'เริ่มทำข้อสอบชุดนี้'}
-                    </GlovaButton>
+                      {isStartingExam && selectedExamId === exam.id ? (
+                        <>
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <span>{isEn ? 'Preparing Exam...' : 'กำลังจัดเตรียม...'}</span>
+                        </>
+                      ) : (
+                        <span>{isEn ? 'Start This Exam' : 'เริ่มทำข้อสอบชุดนี้'}</span>
+                      )}
+                    </TactileButton>
                   </div>
-                </GlovaCard>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -580,7 +616,17 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return (
       <div className="w-full space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Main Score Card */}
-        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
+        <SpotlightCard
+          spotlightColor={isPassed ? 'rgba(16, 185, 129, 0.15)' : 'rgba(245, 158, 11, 0.15)'}
+          showBorderBeam={true}
+          borderBeamProps={{
+            colorFrom: isPassed ? '#10B981' : '#F59E0B',
+            colorTo: '#5B5CE2',
+            duration: 12,
+            size: 240,
+          }}
+          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+        >
           <div
             className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto ${
               isPassed
@@ -656,7 +702,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               {isEn ? 'Back to Exam Catalog' : 'กลับสู่หน้ารายการข้อสอบ'}
             </GlovaButton>
           </div>
-        </GlovaCard>
+        </SpotlightCard>
 
         {/* Section & Skill Diagnostics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

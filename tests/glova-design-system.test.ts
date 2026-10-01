@@ -181,5 +181,11 @@ describe('Glova Design System & Token Foundation', () => {
       expect(urls).toContain('https://uiverse.io/');
       expect(urls).toContain('https://reactbits.dev/');
     });
+
+    it('should export 21st.dev BorderBeam component with customizable parameters', async () => {
+      const { BorderBeam } = await import('../components/ui/GlovaPrimitives');
+      expect(BorderBeam).toBeDefined();
+      expect(typeof BorderBeam).toBe('function');
+    });
   });
 });

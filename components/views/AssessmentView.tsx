@@ -32,6 +32,14 @@ import {
   GlovaSectionHeader,
   GlovaFeedbackBubble,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, CefrRevealComposition } from '../remotion';
 import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
@@ -281,7 +289,17 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
     return (
       <div className="w-full space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Results Banner */}
-        <GlovaCard variant="elevated" className="p-6 sm:p-8 text-center space-y-4">
+        <SpotlightCard
+          spotlightColor="rgba(16, 185, 129, 0.15)"
+          showBorderBeam={true}
+          borderBeamProps={{
+            colorFrom: '#10B981',
+            colorTo: '#5B5CE2',
+            duration: 12,
+            size: 260,
+          }}
+          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+        >
           <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto shadow-sm">
             <Award className="w-8 h-8" />
           </div>
@@ -372,7 +390,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
               {result.disclaimer}
             </div>
           </div>
-        </GlovaCard>
+        </SpotlightCard>
 
         {/* Skill Proficiency Breakdown */}
         <GlovaCard variant="interactive" className="p-5 sm:p-6 space-y-4">
@@ -478,7 +496,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
       {assessmentMode === 'quick' ? (
         <QuickEnglishCheck onFinish={onNavigateDashboard} />
       ) : (
-        <>
+        <div className="space-y-4">
           {/* Assessment Header & Progress Bar */}
           <div className="space-y-3">
             <div className="flex items-center justify-between text-xs font-medium">
@@ -496,16 +514,22 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             <GlovaProgress value={progressPercent} max={100} size="md" />
           </div>
 
-          {/* Render Current Question */}
-          <QuestionCard
-            key={currentQuestion.id}
-            question={currentQuestion}
-            questionNumber={currentIdx + 1}
-            totalQuestions={DIAGNOSTIC_QUESTIONS.length}
-            onAnswer={handleAnswer}
-            showExplanationImmediately={true}
-          />
-        </>
+          {/* Render Current Question inside Tactical HUD Frame */}
+          <TacticalHudFrame
+            agentName="STUDIO // CEFR PLACEMENT"
+            statusText={`Q ${currentIdx + 1}/${DIAGNOSTIC_QUESTIONS.length}`}
+            accentColor="indigo"
+          >
+            <QuestionCard
+              key={currentQuestion.id}
+              question={currentQuestion}
+              questionNumber={currentIdx + 1}
+              totalQuestions={DIAGNOSTIC_QUESTIONS.length}
+              onAnswer={handleAnswer}
+              showExplanationImmediately={true}
+            />
+          </TacticalHudFrame>
+        </div>
       )}
 
       <GlovaFeedbackBubble currentSkill="diagnostic" />

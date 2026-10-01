@@ -20,6 +20,21 @@ import {
   Terminal,
 } from 'lucide-react';
 
+// Re-export core Glova UI primitives for seamless backward compatibility
+export * from './GlovaLogo';
+export * from './GlovaButton';
+export * from './GlovaIconButton';
+export * from './GlovaCard';
+export * from './GlovaBadge';
+export * from './GlovaProgress';
+export * from './GlovaLearningCard';
+export * from './GlovaSectionHeader';
+export * from './GlovaImage';
+export * from './GlovaAvatar';
+export * from './GlovaTooltip';
+export * from './GlovaFeedbackBubble';
+export * from './GlovaBubble';
+
 // ============================================================================
 // 1. UIVERSE.IO × DUOLINGO × VALORANT TACTILE 3D BUTTONS
 // ============================================================================
@@ -28,11 +43,12 @@ export interface TactileButtonProps extends React.ButtonHTMLAttributes<HTMLButto
   variant?:
     | 'primary'
     | 'secondary'
+    | 'surface'
+    | 'neutral'
     | 'accent'
     | 'warning'
     | 'danger'
     | 'ghost'
-    | 'surface'
     | 'valorant'
     | 'duolingo';
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -85,6 +101,12 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       xl: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_6px_0_0_#047857] active:shadow-none active:translate-y-[6px] border-t-2 border-white/30 font-black',
     },
     secondary: {
+      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+    },
+    neutral: {
       sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
       md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
       lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
@@ -243,6 +265,7 @@ export interface DecryptedTextProps {
   characters?: string;
   className?: string;
   animateOn?: 'hover' | 'view' | 'both';
+  revealDirection?: 'start' | 'end' | 'center';
 }
 
 export const DecryptedText: React.FC<DecryptedTextProps> = ({
@@ -252,6 +275,7 @@ export const DecryptedText: React.FC<DecryptedTextProps> = ({
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789//<>[]',
   className = '',
   animateOn = 'both',
+  revealDirection = 'start',
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState(text);
@@ -347,22 +371,101 @@ export const AnimatedNumber: React.FC<{ value: number; className?: string }> = (
 // 4. UI.ACETERNITY.COM - SPOTLIGHT CARD & VALORANT TACTICAL HUD FRAME
 // ============================================================================
 
-export interface SpotlightCardProps {
+export interface BorderBeamProps {
+  size?: number;
+  duration?: number;
+  delay?: number;
+  colorFrom?: string;
+  colorTo?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  reverse?: boolean;
+  initialOffset?: number;
+  borderWidth?: number;
+}
+
+export const BorderBeam: React.FC<BorderBeamProps> = ({
+  className = '',
+  size = 200,
+  delay = 0,
+  duration = 12,
+  colorFrom = '#FF4655', // Valorant Crimson
+  colorTo = '#5B5CE2',   // Glova Indigo
+  reverse = false,
+  initialOffset = 0,
+  borderWidth = 1.5,
+  style,
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return (
+      <div
+        className={`pointer-events-none absolute inset-0 rounded-[inherit] border border-[#FF4655]/30 ${className}`}
+        style={style}
+      />
+    );
+  }
+
+  return (
+    <div
+      style={
+        {
+          '--border-beam-width': `${borderWidth}px`,
+          ...style,
+        } as React.CSSProperties
+      }
+      className={`pointer-events-none absolute inset-0 rounded-[inherit] border-[length:var(--border-beam-width)] border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [-webkit-mask-composite:source-out] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)] ${className}`}
+    >
+      <motion.div
+        className="absolute aspect-square pointer-events-none"
+        style={{
+          width: size,
+          offsetPath: `rect(0 auto auto 0 round calc(var(--border-beam-width) * 4))`,
+          background: `linear-gradient(to left, ${colorFrom}, ${colorTo}, transparent)`,
+        }}
+        initial={{ offsetDistance: `${initialOffset}%` }}
+        animate={{
+          offsetDistance: reverse
+            ? [`${100 - initialOffset}%`, `${-initialOffset}%`]
+            : [`${initialOffset}%`, `${100 + initialOffset}%`],
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: 'linear',
+          duration,
+          delay: -delay,
+        }}
+      />
+    </div>
+  );
+};
+
+export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   spotlightColor?: string;
+  showBorderBeam?: boolean;
+  borderBeamProps?: BorderBeamProps;
 }
 
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
   spotlightColor = 'rgba(91, 92, 226, 0.08)',
+  showBorderBeam = false,
+  borderBeamProps,
+  onMouseMove,
+  onMouseEnter,
+  onMouseLeave,
+  ...props
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (onMouseMove) onMouseMove(e);
     if (!divRef.current) return;
     const rect = divRef.current.getBoundingClientRect();
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -372,9 +475,16 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
     <div
       ref={divRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
+      onMouseEnter={(e) => {
+        setOpacity(1);
+        if (onMouseEnter) onMouseEnter(e);
+      }}
+      onMouseLeave={(e) => {
+        setOpacity(0);
+        if (onMouseLeave) onMouseLeave(e);
+      }}
       className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.3)] text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      {...props}
     >
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
@@ -384,6 +494,16 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         }}
         aria-hidden="true"
       />
+      {showBorderBeam && (
+        <BorderBeam
+          size={borderBeamProps?.size ?? 250}
+          duration={borderBeamProps?.duration ?? 10}
+          colorFrom={borderBeamProps?.colorFrom ?? '#FF4655'}
+          colorTo={borderBeamProps?.colorTo ?? '#5B5CE2'}
+          borderWidth={borderBeamProps?.borderWidth ?? 2}
+          {...borderBeamProps}
+        />
+      )}
       <div className="relative z-10">{children}</div>
     </div>
   );
@@ -392,50 +512,66 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
 export interface TacticalHudFrameProps {
   children: React.ReactNode;
   calloutCode?: string;
+  agentName?: string;
   biomeLabel?: string;
-  accentVariant?: 'crimson' | 'indigo' | 'emerald' | 'gold';
+  statusText?: string;
+  accentVariant?: 'crimson' | 'indigo' | 'emerald' | 'gold' | 'amber' | 'purple';
+  accentColor?: 'crimson' | 'indigo' | 'emerald' | 'gold' | 'amber' | 'purple' | string;
   className?: string;
 }
 
 export const TacticalHudFrame: React.FC<TacticalHudFrameProps> = ({
   children,
-  calloutCode = 'VALORANT // AGENT CONTRACT',
+  calloutCode,
+  agentName,
   biomeLabel,
-  accentVariant = 'indigo',
+  statusText,
+  accentVariant,
+  accentColor,
   className = '',
 }) => {
-  const cornerColor = {
+  const effectiveCode = agentName || calloutCode || 'VALORANT // AGENT CONTRACT';
+  const effectiveLabel = statusText || biomeLabel;
+  const rawVariant = (accentColor || accentVariant || 'indigo') as string;
+  const variantKey = rawVariant === 'amber' ? 'gold' : rawVariant;
+
+  const cornerColor: Record<string, string> = {
     crimson: 'border-[#FF4655]',
     indigo: 'border-[#4F46E5] dark:border-[#5B5CE2]',
     emerald: 'border-[#10B981]',
     gold: 'border-[#F59E0B]',
-  }[accentVariant];
+    purple: 'border-[#8B5CF6]',
+  };
 
-  const badgeStyle = {
+  const badgeStyle: Record<string, string> = {
     crimson: 'bg-[#FF4655]/10 text-[#E11D48] dark:text-[#FF4655] border-[#FF4655]/30',
     indigo: 'bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#A5A6F6] border-[#4F46E5]/30',
     emerald: 'bg-[#10B981]/10 text-[#059669] dark:text-[#34D399] border-[#10B981]/30',
     gold: 'bg-[#F59E0B]/10 text-[#D97706] dark:text-[#FBBF24] border-[#F59E0B]/30',
-  }[accentVariant];
+    purple: 'bg-[#8B5CF6]/10 text-[#7C3AED] dark:text-[#C4B5FD] border-[#8B5CF6]/30',
+  };
+
+  const activeCorner = cornerColor[variantKey] || cornerColor.indigo;
+  const activeBadge = badgeStyle[variantKey] || badgeStyle.indigo;
 
   return (
     <div
       className={`relative rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] p-5 shadow-xs text-slate-900 dark:text-[#EDEBE8] ${className}`}
     >
       {/* Valorant Angular Corner Brackets */}
-      <span className={`pointer-events-none absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 rounded-tl-md ${cornerColor}`} />
-      <span className={`pointer-events-none absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 rounded-tr-md ${cornerColor}`} />
-      <span className={`pointer-events-none absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 rounded-bl-md ${cornerColor}`} />
-      <span className={`pointer-events-none absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 rounded-br-md ${cornerColor}`} />
+      <span className={`pointer-events-none absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 rounded-tl-md ${activeCorner}`} />
+      <span className={`pointer-events-none absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 rounded-tr-md ${activeCorner}`} />
+      <span className={`pointer-events-none absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 rounded-bl-md ${activeCorner}`} />
+      <span className={`pointer-events-none absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 rounded-br-md ${activeCorner}`} />
 
-      {(calloutCode || biomeLabel) && (
+      {(effectiveCode || effectiveLabel) && (
         <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100 dark:border-[rgba(255,255,255,0.06)]">
-          <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase tracking-wider border ${badgeStyle}`}>
-            {calloutCode}
+          <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase tracking-wider border ${activeBadge}`}>
+            {effectiveCode}
           </span>
-          {biomeLabel && (
+          {effectiveLabel && (
             <span className="text-[10px] font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
-              {biomeLabel}
+              {effectiveLabel}
             </span>
           )}
         </div>
@@ -1162,5 +1298,244 @@ export const StudioMetric: React.FC<StudioMetricProps> = ({
         )}
       </div>
     </div>
+  );
+};
+
+// ============================================================================
+// 8. 21ST.DEV - BENTO GRID & BENTO CARD
+// ============================================================================
+
+export interface BentoGridProps {
+  children: React.ReactNode;
+  className?: string;
+  cols?: number;
+}
+
+export const BentoGrid: React.FC<BentoGridProps> = ({ children, className = '', cols = 3 }) => {
+  const colClass =
+    cols === 4
+      ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-auto'
+      : cols === 2
+      ? 'grid-cols-1 md:grid-cols-2 auto-rows-auto'
+      : 'grid-cols-1 md:grid-cols-3 auto-rows-[22rem]';
+
+  return (
+    <div className={`grid gap-4 w-full ${colClass} ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+export interface BentoCardProps {
+  name?: string;
+  className?: string;
+  background?: React.ReactNode;
+  icon?: React.ReactNode;
+  description?: string;
+  href?: string;
+  cta?: string;
+  onCtaClick?: () => void;
+  badge?: string;
+  accentVariant?: 'indigo' | 'crimson' | 'emerald' | 'amber';
+  children?: React.ReactNode;
+  colSpan?: number;
+}
+
+export const BentoCard: React.FC<BentoCardProps> = ({
+  name,
+  className = '',
+  background,
+  icon,
+  description,
+  cta = 'Enter Studio',
+  onCtaClick,
+  badge,
+  accentVariant = 'indigo',
+  children,
+  colSpan = 3,
+}) => {
+  const accentBorder = {
+    indigo: 'hover:border-[#5B5CE2]/60 hover:shadow-[0_8px_30px_rgba(91,92,226,0.12)]',
+    crimson: 'hover:border-[#FF4655]/60 hover:shadow-[0_8px_30px_rgba(255,70,85,0.12)]',
+    emerald: 'hover:border-[#10B981]/60 hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)]',
+    amber: 'hover:border-[#F59E0B]/60 hover:shadow-[0_8px_30px_rgba(245,158,11,0.12)]',
+  }[accentVariant];
+
+  const colSpanClass =
+    colSpan === 1
+      ? 'col-span-1'
+      : colSpan === 2
+      ? 'col-span-1 md:col-span-2'
+      : 'col-span-1 md:col-span-3';
+
+  if (children && !name) {
+    return (
+      <div
+        className={`relative flex flex-col justify-between overflow-hidden rounded-[22px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs transition-all duration-300 ${colSpanClass} ${className}`}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      key={name}
+      className={`group relative ${colSpanClass} flex flex-col justify-between overflow-hidden rounded-[26px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs transition-all duration-300 ${accentBorder} ${className}`}
+    >
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity">
+        {background}
+      </div>
+
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-2 p-6 transition-all duration-300">
+        <div className="flex items-center justify-between">
+          <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-[#1C2430] border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-[#EDEBE8] group-hover:scale-110 transition-transform">
+            {icon}
+          </div>
+          {badge && (
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8] border border-slate-200 dark:border-white/10">
+              {badge}
+            </span>
+          )}
+        </div>
+        <h3 className="text-xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight mt-2">
+          {name}
+        </h3>
+        <p className="max-w-lg text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      <div className="pointer-events-auto z-10 p-6 pt-0">
+        <TactileButton
+          variant={accentVariant === 'crimson' ? 'valorant' : 'primary'}
+          size="sm"
+          onClick={onCtaClick}
+          className="text-xs font-bold"
+          rightIcon={<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
+        >
+          {cta}
+        </TactileButton>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// 9. 21ST.DEV × MAGIC UI - SHIMMER BUTTON (HIGH IMPACT CTA)
+// ============================================================================
+
+export interface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  shimmerColor?: string;
+  shimmerSize?: string;
+  borderRadius?: string;
+  shimmerDuration?: string;
+  background?: string;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const ShimmerButton: React.FC<ShimmerButtonProps> = ({
+  shimmerColor = '#ffffff',
+  shimmerSize = '0.08em',
+  shimmerDuration = '2.5s',
+  borderRadius = '18px',
+  background = 'rgba(91, 92, 226, 1)',
+  className = '',
+  children,
+  onClick,
+  disabled,
+  ...props
+}) => {
+  return (
+    <button
+      style={
+        {
+          '--spread': '90deg',
+          '--shimmer-color': shimmerColor,
+          '--radius': borderRadius,
+          '--speed': shimmerDuration,
+          '--cut': shimmerSize,
+          '--bg': background,
+        } as React.CSSProperties
+      }
+      className={`group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden [border-radius:var(--radius)] border border-white/20 px-6 py-3 whitespace-nowrap text-white [background:var(--bg)] font-black text-sm select-none shadow-[0_4px_16px_rgba(91,92,226,0.3)] transform-gpu transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none ${className}`}
+      onClick={onClick}
+      disabled={disabled}
+      {...(props as any)}
+    >
+      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none">
+        <div
+          className="absolute -inset-full animate-spin"
+          style={{
+            animationDuration: shimmerDuration,
+            background:
+              'conic-gradient(from 270deg, transparent 0, var(--shimmer-color) 45deg, transparent 90deg)',
+          }}
+        />
+      </div>
+
+      <span className="relative z-10 flex items-center justify-center gap-2 font-display">
+        {children}
+      </span>
+
+      <div className="absolute inset-0 size-full rounded-[inherit] px-4 py-1.5 shadow-[inset_0_-4px_8px_rgba(255,255,255,0.2)] group-hover:shadow-[inset_0_-6px_10px_rgba(255,255,255,0.35)] transition-all pointer-events-none" />
+    </button>
+  );
+};
+
+// ============================================================================
+// 10. REACTBITS.DEV - BLUR TEXT REVEAL
+// ============================================================================
+
+export interface BlurTextProps {
+  text: string;
+  delay?: number;
+  className?: string;
+  animateBy?: 'words' | 'letters';
+  direction?: 'top' | 'bottom';
+}
+
+export const BlurText: React.FC<BlurTextProps> = ({
+  text,
+  delay = 50,
+  className = '',
+  animateBy = 'words',
+  direction = 'top',
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+  const elements = animateBy === 'words' ? text.split(' ') : text.split('');
+
+  if (shouldReduceMotion) {
+    return <span className={className}>{text}</span>;
+  }
+
+  return (
+    <span className={`inline-block ${className}`}>
+      {elements.map((el, i) => (
+        <motion.span
+          key={i}
+          initial={{
+            filter: 'blur(8px)',
+            opacity: 0,
+            y: direction === 'top' ? -12 : 12,
+          }}
+          animate={{
+            filter: 'blur(0px)',
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.35,
+            delay: (i * delay) / 1000,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="inline-block"
+        >
+          {el}
+          {animateBy === 'words' && i < elements.length - 1 && '\u00A0'}
+        </motion.span>
+      ))}
+    </span>
   );
 };

@@ -25,7 +25,13 @@ import {
   GlovaCard,
   GlovaCardContent,
   GlovaBadge,
-} from '../ui';
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, GrammarTimelineComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -134,15 +140,21 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
     <div className="w-full space-y-6 pb-16">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="GRAMMAR LAB"
-          title={isEn ? 'English Grammar Studio & Applications' : 'ไวยากรณ์และการประยุกต์ใช้'}
-          description={
-            isEn
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <DecryptedText text="GRAMMAR LAB" speed={40} maxIterations={12} revealDirection="start" />
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            {isEn ? 'English Grammar Studio & Applications' : 'ไวยากรณ์และการประยุกต์ใช้'}
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+            {isEn
               ? 'Understand sentence structures, grammar rules, and practice with real questions and clear explanations.'
-              : 'เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด'
-          }
-        />
+              : 'เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด'}
+          </p>
+        </div>
 
         {currentTopic && (
           <div className="flex items-center gap-2 shrink-0">
@@ -201,9 +213,15 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (5 cols): Grammar Concept & Rule Blueprint */}
           <div className="lg:col-span-5 space-y-4">
-            <GlovaCard
-              variant="bubble"
-              elevation="bubble"
+            <SpotlightCard
+              spotlightColor="rgba(91, 92, 226, 0.15)"
+              showBorderBeam={true}
+              borderBeamProps={{
+                colorFrom: '#F59E0B',
+                colorTo: '#5B5CE2',
+                duration: 12,
+                size: 200,
+              }}
               className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               <div className="space-y-1.5">
@@ -302,11 +320,16 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                   </div>
                 </div>
               )}
-            </GlovaCard>
+            </SpotlightCard>
           </div>
 
           {/* Right Column (7 cols): Dominant Practice Task with QuestionCard */}
           <div className="lg:col-span-7 space-y-4">
+            <TacticalHudFrame
+              agentName="STUDIO // PRACTICE DRILL"
+              statusText={displayedQuestions.length > 0 ? `Q ${activeQuestionIdx + 1}/${displayedQuestions.length}` : 'ONLINE'}
+              accentColor="emerald"
+            >
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -359,33 +382,38 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
                 {/* Next / Previous Question Action Bar */}
                 <div className="flex items-center justify-between pt-2">
-                  <GlovaButton
-                    variant="secondary"
+                  <TactileButton
+                    variant="neutral"
                     size="sm"
-                    leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
+                    className="flex items-center gap-1.5"
                   >
-                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
-                  </GlovaButton>
+                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                  </TactileButton>
 
-                  <GlovaButton
+                  <TactileButton
                     variant="primary"
                     size="sm"
-                    rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
+                    className="flex items-center gap-1.5"
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1
-                      ? isEn
-                        ? 'Next Question'
-                        : 'ข้อถัดไป'
-                      : isEn
-                      ? 'Next Topic'
-                      : 'หัวข้อถัดไป'}
-                  </GlovaButton>
+                    <span>
+                      {activeQuestionIdx < displayedQuestions.length - 1
+                        ? isEn
+                          ? 'Next Question'
+                          : 'ข้อถัดไป'
+                        : isEn
+                        ? 'Next Topic'
+                        : 'หัวข้อถัดไป'}
+                    </span>
+                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                  </TactileButton>
                 </div>
               </div>
             )}
+            </TacticalHudFrame>
           </div>
         </div>
       )}

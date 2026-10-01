@@ -30,6 +30,14 @@ import {
   GlovaBadge,
   GlovaImage,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { useTranslation } from '../../i18n';
 
 export const WritingView: React.FC = () => {
@@ -119,15 +127,21 @@ export const WritingView: React.FC = () => {
     <div className="w-full space-y-6 pb-16">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="WRITING LAB"
-          title={isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
-          description={
-            isEn
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <DecryptedText text="WRITING LAB" speed={40} maxIterations={12} revealDirection="start" />
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+            {isEn
               ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
-              : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'
-          }
-        />
+              : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'}
+          </p>
+        </div>
 
         {currentPrompt && (
           <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
@@ -188,7 +202,17 @@ export const WritingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
+          <SpotlightCard
+            spotlightColor="rgba(236, 72, 153, 0.15)"
+            showBorderBeam={true}
+            borderBeamProps={{
+              colorFrom: '#EC4899',
+              colorTo: '#5B5CE2',
+              duration: 12,
+              size: 240,
+            }}
+            className="p-5 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
@@ -246,10 +270,14 @@ export const WritingView: React.FC = () => {
                 </ul>
               </div>
             )}
-          </GlovaCard>
+          </SpotlightCard>
 
           {/* Interactive Writing Canvas */}
-          <GlovaCard elevation="subtle" className="p-5 sm:p-7 space-y-4">
+          <TacticalHudFrame
+            agentName="STUDIO // WRITING WORKBENCH"
+            statusText={`${wordCount} WORDS`}
+            accentColor="purple"
+          >
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
               <div className="flex items-center gap-2">
                 <PenTool className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -304,25 +332,27 @@ export const WritingView: React.FC = () => {
 
             {/* Action Bar */}
             <div className="flex items-center justify-between gap-3 pt-2">
-              <GlovaButton
-                variant="outline"
+              <TactileButton
+                variant="neutral"
                 size="sm"
-                leftIcon={<Save className="w-4 h-4" aria-hidden="true" />}
                 onClick={handleSaveDraft}
+                className="flex items-center gap-1.5"
               >
-                {isEn ? 'Save Draft' : 'บันทึกแบบร่าง'}
-              </GlovaButton>
+                <Save className="w-4 h-4" aria-hidden="true" />
+                <span>{isEn ? 'Save Draft' : 'บันทึกแบบร่าง'}</span>
+              </TactileButton>
 
-              <GlovaButton
+              <TactileButton
                 variant="primary"
                 size="sm"
-                leftIcon={<Send className="w-4 h-4" aria-hidden="true" />}
                 onClick={handleSubmit}
+                className="flex items-center gap-1.5"
               >
-                {isEn ? 'Submit Writing' : 'ส่งงานเขียน'}
-              </GlovaButton>
+                <Send className="w-4 h-4" aria-hidden="true" />
+                <span>{isEn ? 'Submit Writing' : 'ส่งงานเขียน'}</span>
+              </TactileButton>
             </div>
-          </GlovaCard>
+          </TacticalHudFrame>
 
           {/* 3. Feedback State (Pending Evaluation & Model Answer) */}
           {isSubmitted && (

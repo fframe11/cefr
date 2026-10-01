@@ -54,6 +54,10 @@ import {
   SpotlightCard,
   GlovaCartridge,
   VibeCoderSourceDock,
+  ShimmerButton,
+  BentoGrid,
+  BentoCard,
+  BlurText,
 } from '../ui/GlovaPrimitives';
 import { GlovaImage } from '../ui/GlovaImage';
 import { useTranslation } from '../../i18n';
@@ -130,17 +134,19 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   : 'Glova ผสานการไต่ระดับไบโอมแบบ Terraria การประลองความเร็ว 4 วินาทีสไตล์ Valorant และปุ่มกด 3D สุดมันส์แบบ Duolingo เข้ากับคลังคำศัพท์วิชาการ 3,860 คำ'}
               </p>
 
-              {/* Primary & Secondary Tactile Actions */}
+              {/* Primary & Secondary Tactile Actions (21st.dev ShimmerButton + Uiverse Tactile) */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <TactileButton
-                  variant="primary"
-                  size="lg"
+                <ShimmerButton
+                  shimmerColor="#ffffff"
+                  shimmerDuration="2.5s"
+                  background="rgba(91, 92, 226, 1)"
+                  borderRadius="20px"
+                  className="px-8 py-4 text-base font-black shadow-lg shadow-[#5B5CE2]/30"
                   onClick={() => scrollToSection('quick-check-experience')}
-                  className="px-8 py-4 text-base font-bold font-display tracking-wide shadow-md shadow-[#5B5CE2]/25"
-                  rightIcon={<ArrowRight className="w-4 h-4 ml-1" />}
                 >
-                  {isEn ? 'Check English Level (3 mins)' : 'วัดระดับภาษาอังกฤษ (3 นาที)'}
-                </TactileButton>
+                  <span>{isEn ? 'Check English Level (3 mins)' : 'วัดระดับภาษาอังกฤษ (3 นาที)'}</span>
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </ShimmerButton>
 
                 <TactileButton
                   variant="valorant"

@@ -27,6 +27,17 @@ import {
   GlovaProgress,
   GlovaFeedbackBubble,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  BentoGrid,
+  BentoCard,
+  DecryptedText,
+  ShinyText,
+  AnimatedNumber,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 
 interface AnalyticsViewProps {
   progress: UserProgressState;
@@ -155,14 +166,27 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   return (
     <div className="w-full space-y-6 pb-12">
       {/* Top Banner: CEFR & Cambridge Score Summary */}
-      <GlovaCard variant="elevated" className="p-6 sm:p-8 space-y-6">
+      <SpotlightCard
+        spotlightColor="rgba(91, 92, 226, 0.15)"
+        showBorderBeam={true}
+        borderBeamProps={{
+          colorFrom: '#5B5CE2',
+          colorTo: '#10B981',
+          duration: 12,
+          size: 260,
+        }}
+        className="p-6 sm:p-8 space-y-6 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+      >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/40">
           <div>
             <div className="flex items-center gap-2 mb-1">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+                <DecryptedText text="DIAGNOSTIC TELEMETRY" speed={40} maxIterations={12} revealDirection="start" />
+              </span>
               <GlovaBadge variant="accent">
                 CEFR {currentLevel}
               </GlovaBadge>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs text-muted-foreground hidden sm:inline">
                 {isEn ? `Exam Target: Cambridge ${progress.targetExam}` : `เป้าหมายการสอบ: Cambridge ${progress.targetExam}`}
               </span>
             </div>
@@ -179,7 +203,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               {isEn ? 'Estimated Cambridge Score' : 'คะแนนประเมินเทียบเคียง'}
             </span>
             <p className="text-3xl font-extrabold text-primary font-mono mt-0.5">
-              {estimatedScore}
+              <AnimatedNumber value={estimatedScore} />
             </p>
             <span className="text-[10px] text-muted-foreground block">
               {isEn ? 'Equivalent scale: 80 - 230 marks' : 'สเกลเทียบเคียง 80 - 230 คะแนน'}
@@ -224,24 +248,28 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                 : 'คะแนนและการวิเคราะห์ในระบบนี้เป็นค่าประเมินความพร้อมของแพลตฟอร์มเพื่อแนวทางการเรียนรู้เท่านั้น ไม่ใช่ผลสอบรับรองอย่างเป็นทางการจาก Cambridge English Qualifications')}
           </span>
         </div>
-      </GlovaCard>
+      </SpotlightCard>
 
-      {/* Telemetry Overview Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <GlovaCard className="p-4 space-y-1">
+      {/* Telemetry Overview Bento Grid (21st.dev / Magic UI) */}
+      <BentoGrid cols={4} className="gap-3 sm:gap-4">
+        <BentoCard colSpan={1} className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">
             {isEn ? 'Total Questions' : 'คำถามที่ทำทั้งหมด'}
           </span>
-          <p className="text-2xl font-bold font-mono text-foreground">{totalAttempted}</p>
+          <p className="text-2xl font-bold font-mono text-foreground">
+            <AnimatedNumber value={totalAttempted} />
+          </p>
           <span className="text-[11px] text-muted-foreground">
             {isEn ? 'Questions completed' : 'ข้อที่ทำแล้ว'}
           </span>
-        </GlovaCard>
+        </BentoCard>
 
-        <GlovaCard className="p-4 space-y-1">
+        <BentoCard colSpan={1} className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">{t('analytics.accuracy')}</span>
           {overallAccuracy !== null ? (
-            <p className="text-2xl font-bold font-mono text-primary">{overallAccuracy}%</p>
+            <p className="text-2xl font-bold font-mono text-primary">
+              <AnimatedNumber value={overallAccuracy} />%
+            </p>
           ) : (
             <p className="text-sm font-medium text-muted-foreground pt-1">
               {isEn ? 'No data' : 'ไม่มีข้อมูล'}
@@ -252,30 +280,32 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               ? (isEn ? `${totalCorrect} correct` : `ตอบถูก ${totalCorrect} ข้อ`)
               : (isEn ? 'Requires practice sessions' : 'ต้องทำแบบฝึกหัดก่อน')}
           </span>
-        </GlovaCard>
+        </BentoCard>
 
-        <GlovaCard className="p-4 space-y-1">
+        <BentoCard colSpan={1} className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">
             {isEn ? 'Learning Gaps' : 'จุดอ่อนสะสม'}
           </span>
-          <p className="text-2xl font-bold font-mono text-amber-500">{weaknessesList.length}</p>
+          <p className="text-2xl font-bold font-mono text-amber-500">
+            <AnimatedNumber value={weaknessesList.length} />
+          </p>
           <span className="text-[11px] text-muted-foreground">
             {isEn ? 'Areas to reinforce' : 'หัวข้อที่ควรซ่อม'}
           </span>
-        </GlovaCard>
+        </BentoCard>
 
-        <GlovaCard className="p-4 space-y-1">
+        <BentoCard colSpan={1} className="p-4 space-y-1">
           <span className="text-xs text-muted-foreground">
             {isEn ? 'Completed Mock Exams' : 'Mock Exams ที่ส่งแล้ว'}
           </span>
           <p className="text-2xl font-bold font-mono text-foreground">
-            {analytics?.overview.completed_mock_exams_count ?? 0}
+            <AnimatedNumber value={analytics?.overview.completed_mock_exams_count ?? 0} />
           </p>
           <span className="text-[11px] text-muted-foreground">
             {isEn ? 'Mock exam sets' : 'ชุดข้อสอบจำลอง'}
           </span>
-        </GlovaCard>
-      </div>
+        </BentoCard>
+      </BentoGrid>
 
       {/* Grid: 6 Skill Mastery Breakdown & Weakness Detection Engine */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">

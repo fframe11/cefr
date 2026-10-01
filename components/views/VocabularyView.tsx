@@ -46,7 +46,13 @@ import {
   GlovaCardContent,
   LessonFeedbackDrawer,
   TactileButton,
-} from '../ui';
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  AnimatedNumber,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { useTranslation } from '../../i18n';
 import { ExtendedUniverseView } from '../vocabulary/ExtendedUniverseView';
 
@@ -358,26 +364,38 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. Learning Context Header */}
+      {/* 1. Learning Context Header (reactbits DecryptedText & ShinyText) */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="ACTIVE VOCABULARY LAB"
-          title={isEn ? 'CEFR Vocabulary Lab & Active Review' : 'คลังคำศัพท์และการจำแบบ Spaced Repetition'}
-          description={
-            isEn
+        <div>
+          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider bg-[#5B5CE2] text-white">
+              VOCABULARY TOME // 3,860 WORDS
+            </span>
+            <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 border border-amber-300/70 dark:border-amber-500/30">
+              SPACED REPETITION ENGINE
+            </span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight flex items-center gap-2 flex-wrap">
+            <DecryptedText text={isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์และการจำ'} animateOn="hover" />
+            <ShinyText speedSec={4} className="font-black text-[#5B5CE2] dark:text-[#A5A6F6]">
+              {isEn ? '& Spaced Review' : 'Spaced Repetition'}
+            </ShinyText>
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] mt-1 max-w-2xl font-grotesk">
+            {isEn
               ? 'Study 3,860 verified vocabulary units with native phonetic stress, contextual examples, collocations, and server-graded practice.'
-              : 'เรียนรู้คำศัพท์มาตรฐาน 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'
-          }
-        />
+              : 'เรียนรู้คำศัพท์มาตรฐาน 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
+          </p>
+        </div>
 
         {/* Status Indicators & View Mode Toggle */}
         <div className="flex items-center gap-2.5 self-start sm:self-center shrink-0 flex-wrap">
-          {/* Mastered Counter */}
-          <div className="px-3.5 py-1.5 rounded-xl bg-card border border-border/60 text-xs font-medium text-foreground flex items-center gap-2 shadow-xs">
-            <CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+          {/* Mastered Counter with reactbits AnimatedNumber */}
+          <div className="px-4 py-2 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-white/10 text-xs font-semibold text-slate-800 dark:text-[#EDEBE8] flex items-center gap-2 shadow-xs">
+            <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />
             <span>{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
-            <span className="font-bold text-emerald-500">
-              {isEn ? `${masteredWordIds.length} words` : `${masteredWordIds.length} คำ`}
+            <span className="font-mono font-black text-emerald-600 dark:text-emerald-400 text-sm">
+              <AnimatedNumber value={masteredWordIds.length} /> {isEn ? 'words' : 'คำ'}
             </span>
           </div>
 
@@ -682,13 +700,19 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       )}
 
-      {/* 3. MODE: Active Study Mode (Flashcard & Pronunciation) */}
+      {/* 3. MODE: Active Study Mode (Flashcard & Pronunciation) - Aceternity SpotlightCard x 21st.dev BorderBeam */}
       {!loading && viewMode === 'study' && currentWord && (
         <div className="max-w-2xl mx-auto space-y-4">
-          <GlovaCard
-            variant="bubble"
-            elevation="bubble"
-            className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden"
+          <SpotlightCard
+            showBorderBeam={true}
+            borderBeamProps={{
+              size: 260,
+              duration: 9,
+              colorFrom: '#5B5CE2',
+              colorTo: '#10B981',
+              borderWidth: 2,
+            }}
+            className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-[28px] border-2 border-indigo-200/90 dark:border-white/10 shadow-lg"
           >
             {/* Card Header Context */}
             <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-white/10">
@@ -847,7 +871,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 </GlovaButton>
               </div>
             </div>
-          </GlovaCard>
+          </SpotlightCard>
         </div>
       )}
 

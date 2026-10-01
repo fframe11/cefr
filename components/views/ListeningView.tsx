@@ -27,6 +27,14 @@ import {
   GlovaBadge,
   GlovaImage,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -131,15 +139,21 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
     <div className="w-full space-y-6 pb-16">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="LISTENING LAB"
-          title={isEn ? 'Listening Comprehension Lab' : 'ทักษะการฟังและการจับใจความ'}
-          description={
-            isEn
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <DecryptedText text="LISTENING LAB" speed={40} maxIterations={12} revealDirection="start" />
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            {isEn ? 'Listening Comprehension Lab' : 'ทักษะการฟังและการจับใจความ'}
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+            {isEn
               ? 'Practice listening to authentic international English dialogues and answer Cambridge comprehension questions.'
-              : 'ฝึกฟังบทสนทนาและประกาศตามสำเนียงสากล พร้อมตอบคำถามวัดความเข้าใจตามรูปแบบข้อสอบ Cambridge'
-          }
-        />
+              : 'ฝึกฟังบทสนทนาและประกาศตามสำเนียงสากล พร้อมตอบคำถามวัดความเข้าใจตามรูปแบบข้อสอบ Cambridge'}
+          </p>
+        </div>
 
         {currentExercise && (
           <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
@@ -196,9 +210,15 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       {currentExercise && (
         <div className="space-y-6">
           {/* Audio Player Card (Dominant Player Station) */}
-          <GlovaCard
-            variant="bubble"
-            elevation="bubble"
+          <SpotlightCard
+            spotlightColor="rgba(6, 182, 212, 0.15)"
+            showBorderBeam={true}
+            borderBeamProps={{
+              colorFrom: '#06B6D4',
+              colorTo: '#5B5CE2',
+              duration: 12,
+              size: 220,
+            }}
             className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
@@ -270,10 +290,15 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 )}
               </div>
             )}
-          </GlovaCard>
+          </SpotlightCard>
 
           {/* Comprehension Questions Section */}
           <div className="space-y-4">
+            <TacticalHudFrame
+              agentName="STUDIO // LISTENING DRILL"
+              statusText={displayedQuestions.length > 0 ? `Q ${activeQuestionIdx + 1}/${displayedQuestions.length}` : 'ONLINE'}
+              accentColor="amber"
+            >
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
               <div className="flex items-center gap-2">
                 <Headphones className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -326,33 +351,38 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
                 {/* Navigation Buttons */}
                 <div className="flex items-center justify-between pt-2">
-                  <GlovaButton
-                    variant="secondary"
+                  <TactileButton
+                    variant="neutral"
                     size="sm"
-                    leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
+                    className="flex items-center gap-1.5"
                   >
-                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
-                  </GlovaButton>
+                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                  </TactileButton>
 
-                  <GlovaButton
+                  <TactileButton
                     variant="primary"
                     size="sm"
-                    rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
+                    className="flex items-center gap-1.5"
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1
-                      ? isEn
-                        ? 'Next Question'
-                        : 'ข้อถัดไป'
-                      : isEn
-                      ? 'Next Lesson'
-                      : 'บทเรียนถัดไป'}
-                  </GlovaButton>
+                    <span>
+                      {activeQuestionIdx < displayedQuestions.length - 1
+                        ? isEn
+                          ? 'Next Question'
+                          : 'ข้อถัดไป'
+                        : isEn
+                        ? 'Next Lesson'
+                        : 'บทเรียนถัดไป'}
+                    </span>
+                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                  </TactileButton>
                 </div>
               </div>
             )}
+            </TacticalHudFrame>
           </div>
         </div>
       )}

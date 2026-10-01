@@ -26,6 +26,14 @@ import {
   GlovaBadge,
   GlovaImage,
 } from '../ui';
+import {
+  TactileButton,
+  SpotlightCard,
+  BorderBeam,
+  DecryptedText,
+  ShinyText,
+  TacticalHudFrame,
+} from '../ui/GlovaPrimitives';
 import { useTranslation } from '../../i18n';
 
 interface ReadingViewProps {
@@ -131,15 +139,21 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
     <div className="w-full space-y-6 pb-16">
       {/* 1. Learning Context Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <GlovaSectionHeader
-          eyebrow="READING LAB"
-          title={isEn ? 'Reading Lab & Analytical Comprehension' : 'อ่านจับใจความและวิเคราะห์บริบท'}
-          description={
-            isEn
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <DecryptedText text="READING LAB" speed={40} maxIterations={12} revealDirection="start" />
+            </span>
+          </div>
+          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            {isEn ? 'Reading Lab & Analytical Comprehension' : 'อ่านจับใจความและวิเคราะห์บริบท'}
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+            {isEn
               ? 'Practice analytical reading aligned with CEFR standards and Cambridge exam preparation.'
-              : 'ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge'
-          }
-        />
+              : 'ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge'}
+          </p>
+        </div>
 
         {currentPassage && (
           <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
@@ -226,9 +240,15 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (6 cols): Reading Passage Canvas */}
           <div className={`lg:col-span-6 space-y-4 ${activeTab === 'questions' ? 'hidden lg:block' : 'block'}`}>
-            <GlovaCard
-              variant="bubble"
-              elevation="bubble"
+            <SpotlightCard
+              spotlightColor="rgba(91, 92, 226, 0.15)"
+              showBorderBeam={true}
+              borderBeamProps={{
+                colorFrom: '#5B5CE2',
+                colorTo: '#3B82F6',
+                duration: 14,
+                size: 200,
+              }}
               className="p-6 sm:p-8 space-y-5 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               {/* Passage Metadata Bar */}
@@ -311,11 +331,16 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                   )}
                 </div>
               )}
-            </GlovaCard>
+            </SpotlightCard>
           </div>
 
           {/* Right Column (6 cols): Comprehension Questions */}
           <div className={`lg:col-span-6 space-y-4 ${activeTab === 'passage' ? 'hidden lg:block' : 'block'}`}>
+            <TacticalHudFrame
+              agentName="STUDIO // READING DRILL"
+              statusText={displayedQuestions.length > 0 ? `Q ${activeQuestionIdx + 1}/${displayedQuestions.length}` : 'ONLINE'}
+              accentColor="indigo"
+            >
             <div className="flex items-center justify-between pb-2 border-b border-border/40">
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
@@ -368,33 +393,38 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
 
                 {/* Question Navigation Controls */}
                 <div className="flex items-center justify-between pt-2">
-                  <GlovaButton
-                    variant="secondary"
+                  <TactileButton
+                    variant="neutral"
                     size="sm"
-                    leftIcon={<ChevronLeft className="w-4 h-4" aria-hidden="true" />}
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
+                    className="flex items-center gap-1.5"
                   >
-                    {isEn ? 'Previous' : 'ข้อก่อนหน้า'}
-                  </GlovaButton>
+                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                  </TactileButton>
 
-                  <GlovaButton
+                  <TactileButton
                     variant="primary"
                     size="sm"
-                    rightIcon={<ChevronRight className="w-4 h-4" aria-hidden="true" />}
                     onClick={handleNextQuestion}
+                    className="flex items-center gap-1.5"
                   >
-                    {activeQuestionIdx < displayedQuestions.length - 1
-                      ? isEn
-                        ? 'Next Question'
-                        : 'ข้อถัดไป'
-                      : isEn
-                      ? 'Next Passage'
-                      : 'บทความถัดไป'}
-                  </GlovaButton>
+                    <span>
+                      {activeQuestionIdx < displayedQuestions.length - 1
+                        ? isEn
+                          ? 'Next Question'
+                          : 'ข้อถัดไป'
+                        : isEn
+                        ? 'Next Passage'
+                        : 'บทความถัดไป'}
+                    </span>
+                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                  </TactileButton>
                 </div>
               </div>
             )}
+            </TacticalHudFrame>
           </div>
         </div>
       )}
