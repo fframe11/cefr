@@ -26,39 +26,14 @@ import {
   Trophy,
   Users,
   Check,
-  BrainCircuit,
-  Volume2,
-  FileText,
-  GraduationCap,
-  Calendar,
-  Lock,
+  Star,
+  Mail,
+  Phone,
+  Gamepad2,
+  ChevronLeft,
+  ChevronRight,
+  Search,
 } from 'lucide-react';
-import {
-  RemotionPlayerWrapper,
-  GlovaHeroCinematicVideo,
-  LandingHeroComposition,
-  RankedArenaShowcaseComposition,
-  SeasonPassRewardsComposition,
-  PhoneticStressComposition,
-} from '../remotion';
-import {
-  BackgroundBeams,
-  BorderBeam,
-  GlowingCard,
-  RankBannerCard,
-  SquadShareBanner,
-} from '../ui/aceternity';
-import {
-  TactileButton,
-  ShinyText,
-  DecryptedText,
-  SpotlightCard,
-  ShimmerButton,
-  BentoGrid,
-  BentoCard,
-  BlurText,
-} from '../ui/GlovaPrimitives';
-import { GlovaImage } from '../ui/GlovaImage';
 import { useTranslation } from '../../i18n';
 import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
@@ -71,13 +46,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   const { t, language } = useTranslation();
   const isEn = language === 'en';
 
-  const [activeStudioTab, setActiveStudioTab] = useState<'vocab' | 'grammar' | 'reading' | 'listening' | 'speaking' | 'writing' | 'exam' | 'ranked'>('vocab');
+  const [isDiagnosticOpen, setIsDiagnosticOpen] = useState(false);
+  const [selectedStudioIdx, setSelectedStudioIdx] = useState(0);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
 
   const handleStart = () => {
     if (onStartLearning) {
       onStartLearning();
     } else {
-      router.push('/assessment');
+      setIsDiagnosticOpen(true);
     }
   };
 
@@ -88,149 +66,249 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
     }
   };
 
+  // The 8 Studios Catalog for the Interactive "Your Lovely Learning Studio" Section
+  const studios = [
+    {
+      id: 'vocabulary',
+      nameEn: 'CEFR Vocabulary Studio',
+      nameTh: 'คลังคำศัพท์ CEFR 3,860 คำ',
+      level: 'A1 - C2',
+      timeEn: '5-10 Mins / day',
+      timeTh: '5-10 นาที / วัน',
+      rating: '4.95',
+      reviews: '12,420',
+      descEn: 'Master high-frequency vocabulary with spaced repetition, contextual collocations, and native audio.',
+      descTh: 'เรียนรู้คำศัพท์ความถี่สูงตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition และตัวอย่างประโยคใช้งานจริง',
+      icon: <BookOpen className="w-5 h-5 text-white" />,
+      color: '#5B5CE2',
+      route: '/vocabulary',
+    },
+    {
+      id: 'grammar',
+      nameEn: 'Grammar Logic Blueprint',
+      nameTh: 'ไวยากรณ์และโครงสร้างประโยค',
+      level: 'A1 - C1',
+      timeEn: '8-12 Mins / lesson',
+      timeTh: '8-12 นาที / บทเรียน',
+      rating: '4.92',
+      reviews: '9,810',
+      descEn: 'Practical sentence patterns, functional tenses, and academic writing structures explained clearly.',
+      descTh: 'ทำความเข้าใจ Tenses และโครงสร้างประโยคสำคัญโดยไม่มีสูตรท่องจำที่ซับซ้อน พร้อมแบบฝึกหัดโต้ตอบ',
+      icon: <Sparkles className="w-5 h-5 text-white" />,
+      color: '#F59E0B',
+      route: '/grammar',
+    },
+    {
+      id: 'compete',
+      nameEn: 'Ranked Speed Vocab Arena',
+      nameTh: 'ประลองคำศัพท์ 4 วินาที (MMR)',
+      level: 'Real-Time Battle',
+      timeEn: '4s per round',
+      timeTh: '4 วินาที / ข้อ',
+      rating: '4.98',
+      reviews: '18,500',
+      descEn: 'Fast-paced reflex challenges against university peers. Climb divisions from Bronze to Grandmaster.',
+      descTh: 'ท้าทายความเร็วและไหวพริบข้อละ 4 วินาที แข่งขันไต่อันดับ MMR กับเพื่อนในระดับมหาวิทยาลัยทั่วประเทศ',
+      icon: <Swords className="w-5 h-5 text-white" />,
+      color: '#EF4444',
+      route: '/compete',
+    },
+    {
+      id: 'mockExam',
+      nameEn: 'Cambridge Mock Exams Vault',
+      nameTh: 'คลังข้อสอบจำลอง Cambridge',
+      level: 'KET / PET / FCE',
+      timeEn: '45-90 Mins / test',
+      timeTh: '45-90 นาที / ชุด',
+      rating: '4.94',
+      reviews: '8,230',
+      descEn: 'Authentic Cambridge exam simulation with countdown timer, auto-scoring, and CEFR band diagnosis.',
+      descTh: 'จำลองการทำข้อสอบ KET, PET, FCE เสมือนจริง พร้อมระบบจับเวลาและวิเคราะห์คะแนนเทียบระดับ CEFR',
+      icon: <Award className="w-5 h-5 text-white" />,
+      color: '#10B981',
+      route: '/mock-exams',
+    },
+    {
+      id: 'speaking',
+      nameEn: 'AI Speaking & Fluency Clinic',
+      nameTh: 'ห้องปฏิบัติการทักษะการพูด',
+      level: 'A2 - C1',
+      timeEn: '5-10 Mins / session',
+      timeTh: '5-10 นาที / เซสชัน',
+      rating: '4.90',
+      reviews: '7,150',
+      descEn: 'Practice spoken English with acoustic waveform feedback, stress rhythm detection, and fluency metrics.',
+      descTh: 'ฝึกสนทนาและออกเสียงพร้อมระบบตรวจจับคลื่นเสียง (Waveform) และจังหวะเน้นเสียง (Stress & Rhythm)',
+      icon: <Mic className="w-5 h-5 text-white" />,
+      color: '#06B6D4',
+      route: '/speaking',
+    },
+    {
+      id: 'listening',
+      nameEn: 'Acoustic Listening Lab',
+      nameTh: 'สตูดิโอฝึกการฟังสำเนียงสากล',
+      level: 'A1 - C2',
+      timeEn: '5-8 Mins / track',
+      timeTh: '5-8 นาที / เรื่อง',
+      rating: '4.91',
+      reviews: '6,400',
+      descEn: 'Train auditory comprehension with authentic university dialogues, lectures, and accents.',
+      descTh: 'ฝึกฟังบทสนทนาและการบรรยายวิชาการสำเนียงธรรมชาติ พร้อมสคริปต์ถอดเสียงและข้อสอบจับใจความ',
+      icon: <Headphones className="w-5 h-5 text-white" />,
+      color: '#8B5CF6',
+      route: '/listening',
+    },
+  ];
+
+  const currentStudio = studios[selectedStudioIdx];
+
+  const handlePrevStudio = () => {
+    setSelectedStudioIdx((prev) => (prev === 0 ? studios.length - 1 : prev - 1));
+  };
+
+  const handleNextStudio = () => {
+    setSelectedStudioIdx((prev) => (prev === studios.length - 1 ? 0 : prev + 1));
+  };
+
+  // Best Players Leaderboard Mock Data (Matching Dribbble Table Structure)
+  const topPlayers = [
+    { rank: 1, name: 'Martin_Luis98', earned: '14,820 XP', mastered: '1,420 words', streak: '38 Days', tier: 'Grandmaster', division: 'Castle Apex', avatarBg: 'bg-amber-400' },
+    { rank: 2, name: 'Sophia_Chen', earned: '12,450 XP', mastered: '1,180 words', streak: '26 Days', tier: 'Master I', division: 'Emerald Keep', avatarBg: 'bg-emerald-400' },
+    { rank: 3, name: 'Liam_Nathaporn', earned: '11,200 XP', mastered: '980 words', streak: '19 Days', tier: 'Diamond II', division: 'Cobalt Citadel', avatarBg: 'bg-indigo-400' },
+    { rank: 4, name: 'Emma_Watson88', earned: '9,940 XP', mastered: '840 words', streak: '14 Days', tier: 'Platinum III', division: 'Silver Bastion', avatarBg: 'bg-rose-400' },
+    { rank: 5, name: 'Alex_Vander', earned: '8,760 XP', mastered: '720 words', streak: '12 Days', tier: 'Gold I', division: 'Bronze Ward', avatarBg: 'bg-sky-400' },
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0D1117] text-slate-900 dark:text-[#EDEBE8] selection:bg-[#5B5CE2]/20 selection:text-[#5B5CE2]">
+    <div className="min-h-screen bg-[#2155E6] text-white selection:bg-[#FFC533] selection:text-[#1E293B] overflow-x-hidden font-sans">
       {/* =====================================================================
-          1. HERO SECTION: BRAND SHOWCASE & IMMEDIATE CLARITY
+          1. HERO SECTION: "Play In The Competition Right Now"
+          (Dribbble Game Stream Hero with Vibrant Royal Cobalt & 3D Kart Mascot)
           ===================================================================== */}
-      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
-        <BackgroundBeams />
+      <section id="overview" className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-28">
+        {/* Playful Hand-Drawn Doodle SVG Accents in Background */}
+        <div className="absolute inset-0 pointer-events-none opacity-20 select-none overflow-hidden" aria-hidden="true">
+          {/* Sun Doodle */}
+          <svg className="absolute top-12 left-10 w-24 h-24 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="50" cy="50" r="18" />
+            <line x1="50" y1="15" x2="50" y2="24" strokeLinecap="round" />
+            <line x1="50" y1="76" x2="50" y2="85" strokeLinecap="round" />
+            <line x1="15" y1="50" x2="24" y2="50" strokeLinecap="round" />
+            <line x1="76" y1="50" x2="85" y2="50" strokeLinecap="round" />
+            <line x1="25" y1="25" x2="32" y2="32" strokeLinecap="round" />
+            <line x1="68" y1="68" x2="75" y2="75" strokeLinecap="round" />
+            <line x1="25" y1="75" x2="32" y2="68" strokeLinecap="round" />
+            <line x1="68" y1="32" x2="75" y2="25" strokeLinecap="round" />
+          </svg>
 
-        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left Column: Brand Value Proposition (Editorial Hierarchy) */}
-            <div className="lg:col-span-6 space-y-6 text-left">
-              {/* Prestigious Academic Eyebrow */}
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] text-[11px] font-mono font-bold uppercase tracking-wider border border-[#5B5CE2]/30 shadow-xs">
-                  {isEn ? 'CAMBRIDGE & CEFR BENCHMARK' : 'มาตรฐาน CEFR & CAMBRIDGE สากล'}
-                </span>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#818CF8] text-xs font-bold tracking-wide border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-                  <Sparkles className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#5B5CE2]" aria-hidden="true" />
-                  <span className="font-tech uppercase">
-                    {isEn ? 'The Modern University English Platform' : 'มาตรฐานใหม่การเตรียมภาษาอังกฤษมหาวิทยาลัย'}
-                  </span>
-                </div>
+          {/* Paper Airplane Doodle */}
+          <svg className="absolute top-20 right-1/3 w-20 h-20 text-white transform -rotate-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M20 50 L85 20 L55 85 L45 55 Z" strokeLinejoin="round" />
+            <line x1="85" y1="20" x2="45" y2="55" />
+          </svg>
+
+          {/* Clock / Medal Doodle */}
+          <svg className="absolute bottom-16 left-1/4 w-20 h-20 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="50" cy="50" r="28" />
+            <polyline points="50,30 50,50 64,50" strokeLinecap="round" />
+            <circle cx="50" cy="14" r="5" />
+          </svg>
+
+          {/* Clinking Glasses Doodle */}
+          <svg className="absolute bottom-12 left-12 w-20 h-20 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M30 45 L40 65 L40 85 M25 85 L55 85" strokeLinecap="round" />
+            <path d="M70 45 L60 65 L60 85 M45 85 L75 85" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            {/* Left Column: Game-Stream Headline & High-Converting CTAs */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.08] font-display">
+                  {isEn ? (
+                    <>
+                      Play In The <br />
+                      <span className="text-[#FFC533]">Competition</span> <br />
+                      Right Now
+                    </>
+                  ) : (
+                    <>
+                      เข้าสู่สนามประลอง <br />
+                      <span className="text-[#FFC533]">ทักษะภาษาอังกฤษ</span> <br />
+                      ไต่อันดับตอนนี้เลย
+                    </>
+                  )}
+                </h1>
+
+                <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                  {isEn
+                    ? "Let's enjoy, play and learn in a great and priceless place and earn awards. Master 3,860 Oxford & Cambridge terms with real-world scenarios."
+                    : 'ร่วมสนุก ท้าทาย และเรียนรู้ภาษาอังกฤษตามกรอบ CEFR มาตรฐานสากล A1-C2 ครบ 3,860 คำ พร้อมระบบดวลความเร็ว 4 วินาทีและไต่อันดับ MMR'}
+                </p>
               </div>
 
-              {/* Dominant Headline with DecryptedText & ShinyText */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-[1.12] font-display">
-                <DecryptedText
-                  text={isEn ? 'Your English.' : 'ภาษาอังกฤษของคุณ.'}
-                  animateOn="hover"
-                />{' '}
-                <ShinyText speedSec={3.5} className="font-black text-[#4F46E5] dark:text-[#5B5CE2] block sm:inline">
-                  {isEn ? 'Your True Level.' : 'ระดับที่แท้จริง.'}
-                </ShinyText>{' '}
-                {isEn ? 'Your Next Move.' : 'ก้าวต่อไปที่คุณมั่นใจ.'}
-              </h1>
-
-              {/* Informative Subtext */}
-              <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl font-grotesk">
-                {isEn
-                  ? 'Glova transforms your English mastery through 3,860 verified Oxford & Cambridge academic terms, real-time diagnostic calibration, and immersive interactive studios. Discover your true CEFR proficiency in 3 minutes.'
-                  : 'Glova ยกระดับทักษะภาษาอังกฤษของคุณด้วยคลังคำศัพท์มาตรฐาน Oxford & Cambridge กว่า 3,860 คำ ระบบวิเคราะห์วัดระดับ CEFR แม่นยำ และสตูดิโอฝึกฝนทักษะครบวงจร ค้นพบระดับที่แท้จริงของคุณได้ใน 3 นาที'}
-              </p>
-
-              {/* Primary & Secondary Tactile Actions (21st.dev ShimmerButton + Uiverse Tactile) */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <ShimmerButton
-                  shimmerColor="#ffffff"
-                  shimmerDuration="2.5s"
-                  background="rgba(91, 92, 226, 1)"
-                  borderRadius="20px"
-                  className="px-8 py-4 text-base font-black shadow-lg shadow-[#5B5CE2]/30"
-                  onClick={() => scrollToSection('quick-check-experience')}
+              {/* Action Buttons: Matching Dribbble Sunburst Yellow Pill Button */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                <button
+                  type="button"
+                  onClick={handleStart}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#FFC533] hover:bg-[#FFB814] text-[#1E293B] font-black text-base tracking-wide shadow-xl shadow-[#FFC533]/30 active:translate-y-1 hover:scale-102 transition-all cursor-pointer select-none"
                 >
-                  <span>{isEn ? 'Check English Level (3 mins)' : 'วัดระดับภาษาอังกฤษ (3 นาที)'}</span>
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </ShimmerButton>
+                  <span>{isEn ? 'Sign Up' : 'เริ่มวัดระดับฟรี (3 นาที)'}</span>
+                  <ChevronRight className="w-5 h-5 stroke-[3]" />
+                </button>
 
-                <TactileButton
-                  variant="valorant"
-                  size="lg"
+                <button
+                  type="button"
                   onClick={() => scrollToSection('studios')}
-                  className="px-6 py-4 text-sm font-bold font-display"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/15 hover:bg-white/25 text-white font-bold text-sm sm:text-base border border-white/20 backdrop-blur-md active:translate-y-1 transition-all cursor-pointer select-none"
                 >
-                  {isEn ? 'Explore The 8 Studios' : 'สำรวจทั้ง 8 สตูดิโอ'}
-                </TactileButton>
+                  <Gamepad2 className="w-5 h-5 text-[#FFC533]" />
+                  <span>{isEn ? 'Explore 8 Studios' : 'สำรวจ 8 สตูดิโอ'}</span>
+                </button>
               </div>
 
-              {/* Trust & Proof Badges */}
-              <div className="flex items-center gap-5 pt-4 text-xs font-semibold text-slate-600 dark:text-[#94A3B8] flex-wrap font-grotesk">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
-                  <span>{isEn ? '8 Real-Life Scenarios' : '8 สถานการณ์จริงในชีวิต'}</span>
+              {/* Social Proof & Value Checkmarks */}
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-white/85">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC533]" />
+                  <span>{isEn ? '3,860 Cambridge Terms' : '3,860 คำศัพท์มาตรฐาน'}</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
-                  <span>{isEn ? 'Instant CEFR Tier Diagnostic' : 'สรุปผลระดับ CEFR ทันที'}</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC533]" />
+                  <span>{isEn ? 'Zero Upfront Registration' : 'เริ่มได้ทันทีไม่ต้องสมัคร'}</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
-                  <span>{isEn ? 'Zero Upfront Sign-Up' : 'เริ่มได้ทันทีไม่ต้องสมัครก่อน'}</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC533]" />
+                  <span>{isEn ? 'Cross-Platform Ready' : 'รองรับทุกอุปกรณ์'}</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: High-Impact Cinematic Video Showcase */}
-            <div className="lg:col-span-6 space-y-4">
-              {/* Video Header Status Indicator */}
-              <div className="flex items-center px-2">
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10B981]"></span>
-                  </span>
-                  <span className="text-[11px] font-mono font-bold tracking-wider text-slate-700 dark:text-[#A5A6F6] uppercase">
-                    {isEn ? 'CAMPUS STUDY & SPEAKING LAB // REAL-WORLD IMMERSION' : 'บรรยากาศการเรียนและห้องปฏิบัติการทักษะภาษาอังกฤษจริง'}
-                  </span>
-                </div>
-              </div>
-
-              {/* Dynamic 16:9 Showcase Screen with BorderBeam and Spotlight */}
-              <SpotlightCard
-                spotlightColor="rgba(91, 92, 226, 0.15)"
-                showBorderBeam={true}
-                borderBeamProps={{
-                  size: 260,
-                  duration: 8,
-                  colorFrom: '#5B5CE2',
-                  colorTo: '#10B981',
-                }}
-                className="overflow-hidden rounded-3xl border-2 border-slate-200 dark:border-white/10 bg-[#0B0F17] shadow-2xl aspect-video w-full"
-              >
-                <RemotionPlayerWrapper
-                  component={GlovaHeroCinematicVideo}
-                  inputProps={{}}
-                  durationInFrames={240}
-                  aspectRatio="16/9"
-                  ariaLabel="Glova Neural English Diagnostic Cinematic Video"
+            {/* Right Column: 3D Mascot & Blue Kart Visual (Exact Dribbble Style) */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg lg:max-w-xl aspect-square rounded-[36px] overflow-hidden bg-gradient-to-tr from-[#1B46C6] to-[#255DEE] p-2 shadow-2xl border-4 border-white/20 group">
+                {/* 3D Mascot & Kart Image */}
+                <img
+                  src="/assets/dribbble-mascot-kart.jpg"
+                  alt="3D Champion Mascot with Blue Karting Vehicle - STPlay / Glova Style"
+                  className="w-full h-full object-cover rounded-[30px] transition-transform duration-700 group-hover:scale-105"
                 />
-              </SpotlightCard>
 
-              {/* Contextual Photography & Calm Study Atmosphere */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] aspect-[4/3] group">
-                  <img
-                    src="/assets/hero-speaking-lab.jpg"
-                    alt="University student in English language and speaking laboratory"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/10 text-[10px] font-mono font-bold text-emerald-400">
-                    {isEn ? 'AI SPEAKING CLINIC' : 'ห้องปฏิบัติการทักษะการพูด'}
-                  </div>
+                {/* Floating HUD Badge 1: Ranked Division (Top Left) */}
+                <div className="absolute top-5 left-5 px-4 py-2 rounded-2xl bg-[#1845C2]/85 backdrop-blur-md border border-white/20 shadow-lg flex items-center gap-2.5">
+                  <div className="w-3 h-3 rounded-full bg-[#10B981] animate-ping" />
+                  <span className="text-xs font-mono font-black tracking-wider text-white uppercase">
+                    RANKED ARENA // S1 ACTIVE
+                  </span>
                 </div>
-                <div className="p-5 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-center space-y-1.5 shadow-xs">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#4F46E5] dark:text-[#5B5CE2]">
-                    <Heart className="w-3.5 h-3.5 fill-[#4F46E5] dark:fill-[#5B5CE2]" aria-hidden="true" />
-                    <span className="font-display">{isEn ? 'Sustainable Study Ritual' : 'กิจวัตรการเรียนรู้ที่ยั่งยืน'}</span>
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'No pressure, no guilt trips, and no cartoon noise. 5 to 10 minutes of focused active recall builds lasting fluency.'
-                      : 'ไร้ความกดดัน ไม่สร้างความรู้สึกผิด เรียนรู้วันละ 5-10 นาทีเพื่อสะสมความเข้าใจและความมั่นใจระยะยาว'}
-                  </p>
+
+                {/* Floating HUD Badge 2: Golden Trophy Status (Bottom Right) */}
+                <div className="absolute bottom-5 right-5 px-4 py-2.5 rounded-2xl bg-[#FFC533] text-[#1E293B] shadow-xl flex items-center gap-2 font-black text-xs sm:text-sm">
+                  <Trophy className="w-4 h-4 fill-[#1E293B]" />
+                  <span>100% Free CEFR Check</span>
                 </div>
               </div>
             </div>
@@ -239,819 +317,527 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* =====================================================================
-          2. BRAND STORY: WHAT IS GLOVA & WHY IT MATTERS (EDITORIAL STORYTELLING)
+          2. SECTION: "Why Glova?" (Why ST Play? - 3-Card Grid)
+          (Dribbble 3-Card Feature Architecture with 3D Safe, Basket & Gift Box)
           ===================================================================== */}
-      <section id="story" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
+      <section id="why-glova" className="py-20 lg:py-28 bg-[#1E4FD8] border-t border-b border-white/10 relative">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {/* Section Header */}
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
-              {isEn ? 'The Philosophy of Glova' : 'ปรัชญาและหลักการของ GLOVA'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display leading-tight">
-              {isEn ? 'Language learning was broken.' : 'การเรียนภาษาแบบเดิมมีข้อจำกัด.'}{' '}
-              <span className="text-[#4F46E5] dark:text-[#5B5CE2]">
-                {isEn ? 'We rebuilt it from the ground up.' : 'เราจึงออกแบบระบบใหม่ทั้งหมด.'}
-              </span>
+          {/* Centered Heading */}
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-display">
+              {isEn ? 'Why Glova?' : 'ทำไมต้อง Glova?'}
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
+            <p className="text-sm sm:text-base text-white/80 font-medium leading-relaxed">
               {isEn
-                ? 'Traditional learning forces you to memorize tables of disconnected rules or swipe through endless trivia. Glova treats English as a connected instrument with 10 coordinated pillars.'
-                : 'การท่องจำตารางไวยากรณ์หรือการสไลด์แฟลชการ์ดที่ไม่รู้ที่มา ทำให้เสียเวลาแต่ไม่ได้ทักษะใช้งานจริง Glova จึงรวม 10 เสาหลักการเรียนรู้เข้าด้วยกันเพื่อผลลัพธ์ที่จับต้องได้'}
+                ? "Experience a university-grade English platform built for true competence, speed, and real-world fluency."
+                : 'สัมผัสประสบการณ์เรียนรู้ภาษาอังกฤษมาตรฐานสากล ที่ออกแบบมาเพื่อความคล่องแคล่ว ท้าทาย และนำไปใช้ได้จริง'}
             </p>
           </div>
 
-          {/* The Contrast Architecture (Old Way vs Glova Way) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            {/* The Old Way */}
-            <div className="p-8 rounded-3xl bg-rose-50/40 dark:bg-[#141A22] border border-rose-200 dark:border-rose-900/40 space-y-6 shadow-xs">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-950/50 dark:text-rose-300 text-xs font-bold">
-                <span className="w-2 h-2 rounded-full bg-rose-500" />
-                <span>{isEn ? 'The Traditional Way (Rote & Disconnected)' : 'การเรียนแบบเดิม (ท่องจำและแยกส่วน)'}</span>
+          {/* 3-Card Responsive Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {/* Card 1: Reliable Platform (3D Safe with Gold Coins) */}
+            <div className="rounded-[32px] bg-[#2155E6] border-2 border-white/15 p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+              <div className="space-y-6">
+                <div className="w-full aspect-square max-h-56 rounded-2xl overflow-hidden bg-[#1845C2] border border-white/10 flex items-center justify-center p-2">
+                  <img
+                    src="/assets/dribbble-safe-coins.jpg"
+                    alt="3D Blue Safe with Gold Coins - Reliable Platform"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="space-y-2 text-center sm:text-left">
+                  <h3 className="text-2xl font-black text-white font-display">
+                    {isEn ? 'Reliable Platform' : 'มาตรฐานระดับสากล'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+                    {isEn
+                      ? 'Feel free to work and study with us. Aligned 100% with Cambridge & CEFR rubrics from A1 to C2.'
+                      : 'มั่นใจได้ในมาตรฐานการประเมิน อิงตามกรอบ CEFR และข้อสอบ Cambridge KET, PET, FCE แท้ 100%'}
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-4 text-sm text-slate-700 dark:text-[#94A3B8] font-grotesk">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
-                  <p>{isEn ? 'Memorizing tense formulas without feeling time anchors or real-life context.' : 'ท่องสูตรไวยากรณ์ตามตาราง แต่ไม่เคยเข้าใจมุมมองเวลาในการใช้งานจริง'}</p>
+              <button
+                type="button"
+                onClick={() => scrollToSection('cambridge')}
+                className="w-full py-3.5 px-4 rounded-xl bg-white text-[#1845C2] hover:bg-[#FFC533] hover:text-[#1E293B] font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>{isEn ? 'Learn More' : 'ดูรายละเอียดมาตรฐาน'}</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Card 2: Multi Culture Place (3D Stationery Basket) */}
+            <div className="rounded-[32px] bg-[#2155E6] border-2 border-white/15 p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+              <div className="space-y-6">
+                <div className="w-full aspect-square max-h-56 rounded-2xl overflow-hidden bg-[#1845C2] border border-white/10 flex items-center justify-center p-2">
+                  <img
+                    src="/assets/dribbble-basket-tools.jpg"
+                    alt="3D Blue Basket with Stationery Tools - Multi Culture Place"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">2</div>
-                  <p>{isEn ? 'Learning isolated vocabulary words without phonetic syllable stress or collocations.' : 'จำคำศัพท์เดี่ยวๆ โดยไม่รู้การลงน้ำหนักพยางค์หรือกลุ่มคำที่ฝรั่งใช้คู่กัน'}</p>
+                <div className="space-y-2 text-center sm:text-left">
+                  <h3 className="text-2xl font-black text-white font-display">
+                    {isEn ? 'Multi Culture Place' : 'ระบบนิเวศ 8 สตูดิโอ'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+                    {isEn
+                      ? "We've done it carefully and simply. Complete ecosystem spanning vocab, grammar, listening, speaking, reading, and writing."
+                      : 'รวมเครื่องมือฝึกฝนครบทุกมิติในที่เดียว ทั้งคำศัพท์ ไวยากรณ์ ฟัง พูด อ่าน เขียน และห้องสอบจำลอง'}
+                  </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">3</div>
-                  <p>{isEn ? 'Constant speaking anxiety and fear of making grammatical errors.' : 'กลัวการพูดผิดและไม่มั่นใจเมื่อต้องสื่อสารกับชาวต่างชาติหรือในห้องเรียน'}</p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection('studios')}
+                className="w-full py-3.5 px-4 rounded-xl bg-white text-[#1845C2] hover:bg-[#FFC533] hover:text-[#1E293B] font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>{isEn ? 'Learn More' : 'สำรวจ 8 สตูดิโอ'}</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Card 3: Weekly Awards (3D Gift Box) */}
+            <div className="rounded-[32px] bg-[#2155E6] border-2 border-white/15 p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+              <div className="space-y-6">
+                <div className="w-full aspect-square max-h-56 rounded-2xl overflow-hidden bg-[#1845C2] border border-white/10 flex items-center justify-center p-2">
+                  <img
+                    src="/assets/dribbble-gift-box.jpg"
+                    alt="3D Blue Gift Box with Ribbon - Weekly Awards"
+                    className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950/80 text-rose-600 flex items-center justify-center shrink-0 text-xs font-bold">4</div>
-                  <p>{isEn ? 'Cartoon games that waste time on simple gamification without actual CEFR progress.' : 'เกมการ์ตูนที่เน้นความเพลิดเพลินแต่ไม่ช่วยยกระดับคะแนนสอบหรือการใช้งานจริง'}</p>
+                <div className="space-y-2 text-center sm:text-left">
+                  <h3 className="text-2xl font-black text-white font-display">
+                    {isEn ? 'Weekly Awards' : 'รางวัลประจำสัปดาห์'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+                    {isEn
+                      ? 'Weekly awards for the best students. Climb the MMR rankings, win badges, and claim limited profile frames.'
+                      : 'ประลองความเร็วสะสมคะแนน MMR ใน Academic League ลุ้นรับเหรียญรางวัล ฉายา และของรางวัลประจำสัปดาห์'}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection('leaderboard')}
+                className="w-full py-3.5 px-4 rounded-xl bg-white text-[#1845C2] hover:bg-[#FFC533] hover:text-[#1E293B] font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>{isEn ? 'Learn More' : 'ดูทำเนียบผู้เรียน'}</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          3. SECTION: "Your Lovely Learning Studio" (Your Lovely Learning Game)
+          (Dribbble 3D Hands Holding Controller + Interactive Studio Selector)
+          ===================================================================== */}
+      <section id="studios" className="py-20 lg:py-28 bg-[#2155E6] relative">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            {/* Left Column: 3D Hands with Controller + Studio Flipping Navigation */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-md aspect-square rounded-[36px] overflow-hidden bg-gradient-to-tr from-[#1B46C6] to-[#255DEE] p-2 shadow-2xl border-4 border-white/20 group">
+                <img
+                  src="/assets/dribbble-hands-controller.jpg"
+                  alt="3D Hands Holding Game Controller - Your Lovely Learning Game"
+                  className="w-full h-full object-cover rounded-[30px] transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Arrow Navigation Controls (Matching Dribbble Video Frame 13s) */}
+                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between pointer-events-auto">
+                  <button
+                    type="button"
+                    onClick={handlePrevStudio}
+                    className="w-12 h-12 rounded-xl bg-[#1845C2]/90 hover:bg-[#FFC533] hover:text-[#1E293B] text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all shadow-lg active:scale-95 cursor-pointer"
+                    aria-label="Previous Studio"
+                  >
+                    <ChevronLeft className="w-6 h-6 stroke-[3]" />
+                  </button>
+
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#1845C2]/90 backdrop-blur-md text-xs font-mono font-bold text-white border border-white/20">
+                    {selectedStudioIdx + 1} / {studios.length}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={handleNextStudio}
+                    className="w-12 h-12 rounded-xl bg-[#FFC533] hover:bg-[#FFB814] text-[#1E293B] flex items-center justify-center transition-all shadow-lg active:scale-95 cursor-pointer"
+                    aria-label="Next Studio"
+                  >
+                    <ChevronRight className="w-6 h-6 stroke-[3]" />
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* The Glova Way */}
-            <div className="p-8 rounded-3xl bg-indigo-50/40 dark:bg-[#141A22] border-2 border-indigo-200 dark:border-[rgba(184,167,255,0.35)] space-y-6 shadow-md shadow-[#5B5CE2]/10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#A5A6F6] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{isEn ? 'The Glova Standard: Connected and Active' : 'มาตรฐาน Glova เชื่อมโยงและนำไปใช้จริง'}</span>
+            {/* Right Column: Studio Information & Metric Badges */}
+            <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#FFC533] text-xs font-bold border border-white/20">
+                  <Star className="w-3.5 h-3.5 fill-[#FFC533]" />
+                  <span>{currentStudio.level}</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-display">
+                  {isEn ? currentStudio.nameEn : currentStudio.nameTh}
+                </h2>
+                <p className="text-base sm:text-lg text-white/85 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                  {isEn ? currentStudio.descEn : currentStudio.descTh}
+                </p>
               </div>
 
-              <div className="space-y-4 text-sm text-slate-900 dark:text-[#EDEBE8] font-grotesk font-medium">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
-                  <p>{isEn ? 'Animated grammar timelines show exactly when an action happened and why it matters.' : 'ไทม์ไลน์ภาพเคลื่อนไหวแสดงชัดเจนว่าเหตุการณ์เกิดเมื่อใดและส่งผลอย่างไร'}</p>
+              {/* Dribbble Metric Badges Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#1845C2] border border-white/15 text-left space-y-1">
+                  <div className="text-[10px] font-mono font-bold tracking-wider text-white/60 uppercase">
+                    ESTIMATED TIME
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-white font-display">
+                    {isEn ? currentStudio.timeEn : currentStudio.timeTh}
+                  </div>
+                  <div className="text-[11px] text-white/70">
+                    {isEn ? 'Daily micro-habit' : 'ฝึกสม่ำเสมอทุกวัน'}
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
-                  <p>{isEn ? '3,860 verified Oxford & Cambridge terms with acoustic stress graphs and native audio.' : 'คลังคำศัพท์ 3,860 คำพร้อมกราฟิกความดังพยางค์และการออกเสียงจากเจ้าของภาษา'}</p>
+
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#1845C2] border border-white/15 text-left space-y-1">
+                  <div className="text-[10px] font-mono font-bold tracking-wider text-white/60 uppercase">
+                    ACCESS TIER
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-white font-display">
+                    Instant Access
+                  </div>
+                  <div className="text-[11px] text-white/70">
+                    {isEn ? 'No paywall required' : 'เริ่มเรียนได้ทันที'}
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
-                  <p>{isEn ? 'Judgment-free private speaking & writing studios with instant diagnostic rubric feedback.' : 'สตูดิโอฝึกพูดและเขียนส่วนตัว พร้อมเกณฑ์ประเมินคะแนน CEFR อัตโนมัติ'}</p>
+
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#1845C2] border border-white/15 text-left space-y-1">
+                  <div className="text-[10px] font-mono font-bold tracking-wider text-white/60 uppercase">
+                    STUDIO RATING
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-[#FFC533] flex items-center gap-1 font-display">
+                    <span>{currentStudio.rating}</span>
+                    <Star className="w-5 h-5 fill-[#FFC533]" />
+                  </div>
+                  <div className="text-[11px] text-white/70">
+                    {isEn ? `${currentStudio.reviews} reviews` : `จากผู้เรียน ${currentStudio.reviews} คน`}
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#4F46E5]/15 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center shrink-0 text-xs font-bold border border-[#5B5CE2]/30">✓</div>
-                  <p>{isEn ? 'Competitive 4-second reflex matchmaking that builds instinct under realistic time pressure.' : 'สมรภูมิประลองคำศัพท์ 4 วินาที สร้างสัญชาตญาณตอบสนองที่ฉับไว'}</p>
-                </div>
+              </div>
+
+              {/* Direct Studio Launch Button */}
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={() => router.push(currentStudio.route)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#FFC533] hover:bg-[#FFB814] text-[#1E293B] font-black text-base shadow-xl shadow-[#FFC533]/25 active:translate-y-1 transition-all cursor-pointer select-none"
+                >
+                  <span>{isEn ? `Enter ${currentStudio.nameEn}` : `เปิดสตูดิโอนี้ (${currentStudio.nameTh})`}</span>
+                  <ArrowRight className="w-5 h-5 stroke-[3]" />
+                </button>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* The 10 Coordinated Pillars */}
-          <div className="space-y-6 pt-4">
-            <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'The 10 Integrated Pillars of the Glova Ecosystem' : '10 เสาหลักแห่งระบบการเรียนรู้ Glova'}
-            </h3>
+      {/* =====================================================================
+          4. SECTION: "Best Players" (Ranked Leaderboard Table)
+          (Dribbble High-Score Arena Table Architecture)
+          ===================================================================== */}
+      <section id="leaderboard" className="py-20 lg:py-28 bg-[#1E4FD8] border-t border-b border-white/10 relative">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Centered Heading */}
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#FFC533] text-xs font-bold border border-white/20">
+              <Trophy className="w-3.5 h-3.5 fill-[#FFC533]" />
+              <span>ACADEMIC LEAGUE // SEASON 1</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-display">
+              {isEn ? 'Best Players' : 'ทำเนียบผู้เรียนคะแนนสูงสุด'}
+            </h2>
+            <p className="text-sm sm:text-base text-white/80 font-medium">
+              {isEn
+                ? 'Top students dominating the Ranked Speed Vocabulary battle and CEFR mock exams this week.'
+                : 'รายชื่อผู้เรียนที่ทำคะแนน MMR สูงสุดจากการประลองคำศัพท์และแบบทดสอบจำลองในสัปดาห์นี้'}
+            </p>
+          </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-              {[
-                { titleEn: '01. Diagnostic', titleTh: '01. วัดระดับ', descEn: '3-min situation check', descTh: 'วัดผลใน 3 นาที' },
-                { titleEn: '02. Vocabulary', titleTh: '02. คำศัพท์', descEn: '3,860 verified terms', descTh: 'คลัง 3,860 คำ' },
-                { titleEn: '03. Grammar', titleTh: '03. ไวยากรณ์', descEn: 'Motion timelines', descTh: 'โมชั่นไทม์ไลน์' },
-                { titleEn: '04. Reading', titleTh: '04. การอ่าน', descEn: 'Campus contexts', descTh: 'บทความวิชาการ' },
-                { titleEn: '05. Listening', titleTh: '05. การฟัง', descEn: 'Waveform audio player', descTh: 'จับสำเนียงสากล' },
-                { titleEn: '06. Speaking', titleTh: '06. การพูด', descEn: 'Phonetic stress meter', descTh: 'ออกเสียงเน้นพยางค์' },
-                { titleEn: '07. Writing', titleTh: '07. การเขียน', descEn: 'CEFR rubric checker', descTh: 'ตรวจเกณฑ์เคมบริดจ์' },
-                { titleEn: '08. Mock Exams', titleTh: '08. สอบจำลอง', descEn: 'KET, PET & FCE tests', descTh: 'ข้อสอบเสมือนจริง' },
-                { titleEn: '09. Review', titleTh: '09. ทบทวน', descEn: 'Spaced repair engine', descTh: 'ซ่อมแซมจุดอ่อน' },
-                { titleEn: '10. Ranked', titleTh: '10. ประลอง', descEn: '4s reflex arena & MMR', descTh: 'ดวลไต่อันดับลีก' },
-              ].map((pillar, idx) => (
+          {/* Dribbble Style Table Card */}
+          <div className="max-w-4xl mx-auto rounded-[32px] bg-[#1845C2] border-2 border-white/15 shadow-2xl overflow-hidden">
+            {/* Table Header Row */}
+            <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#143AA6] text-[11px] font-mono font-bold tracking-wider text-white/70 border-b border-white/10 uppercase">
+              <div className="col-span-5 sm:col-span-4 flex items-center gap-2">
+                <span>STUDENT</span>
+              </div>
+              <div className="col-span-3 sm:col-span-2 text-right sm:text-left">
+                <span>EARNED</span>
+              </div>
+              <div className="hidden sm:block sm:col-span-2">
+                <span>MASTERED</span>
+              </div>
+              <div className="hidden sm:block sm:col-span-2">
+                <span>STREAK</span>
+              </div>
+              <div className="col-span-4 sm:col-span-2 text-right">
+                <span>TIER</span>
+              </div>
+            </div>
+
+            {/* Table Body Rows */}
+            <div className="divide-y divide-white/10">
+              {topPlayers.map((player) => (
                 <div
-                  key={idx}
-                  className="p-4 rounded-2xl bg-slate-50 dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-1 hover:border-indigo-300 dark:hover:border-white/20 transition-colors"
+                  key={player.rank}
+                  className="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-white/5 transition-colors text-sm"
                 >
-                  <span className="text-xs font-black text-[#4F46E5] dark:text-[#5B5CE2] font-tech">
-                    {isEn ? pillar.titleEn : pillar.titleTh}
-                  </span>
-                  <div className="text-[11px] text-slate-600 dark:text-[#94A3B8] font-semibold">
-                    {isEn ? pillar.descEn : pillar.descTh}
+                  {/* Student Name & Avatar */}
+                  <div className="col-span-5 sm:col-span-4 flex items-center gap-3">
+                    <span className="font-mono font-bold text-xs w-5 text-white/60">
+                      {player.rank === 1 ? '🥇 1' : player.rank === 2 ? '🥈 2' : player.rank === 3 ? '🥉 3' : `#${player.rank}`}
+                    </span>
+                    <div className={`w-8 h-8 rounded-full ${player.avatarBg} text-[#1E293B] font-black text-xs flex items-center justify-center shrink-0`}>
+                      {player.name.slice(0, 2).toUpperCase()}
+                    </div>
+                    <span className="font-bold text-white truncate">{player.name}</span>
+                  </div>
+
+                  {/* Earned XP */}
+                  <div className="col-span-3 sm:col-span-2 text-right sm:text-left font-mono font-bold text-[#FFC533]">
+                    {player.earned}
+                  </div>
+
+                  {/* Words Mastered */}
+                  <div className="hidden sm:block sm:col-span-2 font-mono text-white/80">
+                    {player.mastered}
+                  </div>
+
+                  {/* Win Streak */}
+                  <div className="hidden sm:block sm:col-span-2 font-mono text-[#10B981] font-bold">
+                    🔥 {player.streak}
+                  </div>
+
+                  {/* Tier */}
+                  <div className="col-span-4 sm:col-span-2 text-right">
+                    <span className="inline-flex px-2.5 py-1 rounded-lg text-xs font-bold bg-white/10 text-white border border-white/15">
+                      {player.tier}
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* =====================================================================
-          3. INTERACTIVE PRODUCT SHOWCASE: THE 8 STUDIOS
-          ===================================================================== */}
-      <section id="studios" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
-        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Showcase Section Heading */}
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
-              {isEn ? 'Interactive Product Capabilities' : 'ระบบการทำงานจริงของสตูดิโอ'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'Experience Glova in Action' : 'สัมผัสสตูดิโอการเรียนรู้ของ Glova'}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
-              {isEn
-                ? 'Each studio is engineered with its own unique tactile interface, matching the exact cognitive demands of that linguistic skill.'
-                : 'แต่ละสตูดิโอถูกออกแบบด้วยอินเทอร์เฟซเฉพาะตัวตามลักษณะของทักษะภาษานั้นๆ เพื่อการฝึกฝนที่มีประสิทธิภาพสูงสุด'}
-            </p>
-          </div>
-
-          {/* Studio Navigation Tabs */}
-          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {[
-              { id: 'vocab', labelEn: 'Vocabulary Studio', labelTh: 'คลังคำศัพท์ CEFR', icon: BookOpen },
-              { id: 'grammar', labelEn: 'Grammar Studio', labelTh: 'สตูดิโอไวยากรณ์', icon: Sparkles },
-              { id: 'reading', labelEn: 'Reading Studio', labelTh: 'สตูดิโออ่านจับใจความ', icon: Compass },
-              { id: 'listening', labelEn: 'Listening Studio', labelTh: 'สตูดิโอการฟัง', icon: Headphones },
-              { id: 'speaking', labelEn: 'Speaking Studio', labelTh: 'สตูดิโอการออกเสียง', icon: Mic },
-              { id: 'writing', labelEn: 'Writing Studio', labelTh: 'สตูดิโอการเขียน', icon: PenTool },
-              { id: 'exam', labelEn: 'Cambridge Exam Vault', labelTh: 'คลังข้อสอบเคมบริดจ์', icon: Award },
-              { id: 'ranked', labelEn: 'Ranked Arena 4s', labelTh: 'สมรภูมิติดสปีด 4s', icon: Swords },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeStudioTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveStudioTab(tab.id as any)}
-                  className={`touch-target px-4 py-2 rounded-2xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 cursor-pointer border ${
-                    isActive
-                      ? 'bg-[#5B5CE2] text-white border-t border-white/25 shadow-[0_3px_0_0_#38399E] active:translate-y-[3px] active:shadow-none'
-                      : 'bg-white dark:bg-[#141A22] text-slate-700 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:translate-y-[2.5px] active:shadow-none hover:bg-slate-50 dark:hover:bg-[#253040]'
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  <span>{isEn ? tab.labelEn : tab.labelTh}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Interactive Studio Preview Canvas */}
-          <div className="rounded-3xl border-2 border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#141A22] p-6 sm:p-10 shadow-lg shadow-black/[0.03]">
-            {/* 1. VOCABULARY SHOWCASE */}
-            {activeStudioTab === 'vocab' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-                    CEFR B2 · VOCABULARY LAB
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Spaced Active Recall & Phonetics' : 'การดึงความจำแบบกระจายระยะและการออกเสียง'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Study with genuine acoustic stress markers, IPA transcription, and contextual university collocations. Words are automatically scheduled for review right before you forget them.'
-                      : 'ฝึกฝนด้วยสัญลักษณ์สัทศาสตร์ IPA และกราฟิกแสดงน้ำหนักพยางค์ คำศัพท์จะถูกจัดคิวทบทวนอัตโนมัติในจังหวะที่เหมาะสมตามอัลกอริทึม Spaced Repetition'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/vocabulary')}>
-                      {isEn ? 'Launch Vocabulary Studio' : 'เปิดสตูดิโอคำศัพท์'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
-                  <div className="flex items-center justify-between text-xs font-bold text-slate-500 dark:text-[#94A3B8]">
-                    <span className="font-mono">Word 1 of 3,860</span>
-                    <span className="text-[#059669] dark:text-[#10B981]">Mastered in 2 sessions</span>
-                  </div>
-                  <div className="p-8 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-center space-y-3 shadow-xs">
-                    <div className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#4F46E5]/10 text-[#4F46E5] dark:bg-[#5B5CE2]/15 dark:text-[#5B5CE2]">
-                      Academic Adjective
-                    </div>
-                    <h4 className="text-3xl font-black text-slate-900 dark:text-[#EDEBE8]">pragmatic</h4>
-                    <p className="text-sm font-mono text-slate-500 dark:text-[#94A3B8]">/præɡˈmæt.ɪk/</p>
-                    <p className="text-xs text-slate-600 dark:text-[#94A3B8] pt-1">
-                      {isEn ? 'Solving problems in a sensible way that suits the conditions that really exist.' : 'เน้นการปฏิบัติจริงและแก้ปัญหาตามความเป็นจริง'}
-                    </p>
-                    <div className="pt-3 flex justify-center gap-2">
-                      <TactileButton variant="surface" size="sm" leftIcon={<Volume2 className="w-3.5 h-3.5 text-[#5B5CE2]" />}>
-                        {isEn ? 'Listen Audio' : 'ฟังการออกเสียง'}
-                      </TactileButton>
-                      <TactileButton variant="secondary" size="sm" leftIcon={<Check className="w-3.5 h-3.5" />}>
-                        {isEn ? 'Mark Mastered' : 'บันทึกว่าจำได้แล้ว'}
-                      </TactileButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 2. GRAMMAR SHOWCASE */}
-            {activeStudioTab === 'grammar' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#F59E0B] text-white border border-[#D97706]">
-                    CEFR B1 · GRAMMAR TIMELINE
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Animated Timeline Sentence Mechanics' : 'ไทม์ไลน์ภาพเคลื่อนไหวบอกกาลเวลา'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Never confuse Past Simple with Present Perfect again. Animated visual anchors show the exact relationship between the event time and the present moment.'
-                      : 'หมดปัญหาความสับสนระหว่าง Past Simple กับ Present Perfect ด้วยเส้นไทม์ไลน์ที่ทำให้เห็นจุดของเวลาและความเชื่อมโยงถึงปัจจุบันอย่างชัดเจน'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/grammar')}>
-                      {isEn ? 'Launch Grammar Studio' : 'เปิดสตูดิโอไวยากรณ์'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
-                  <div className="p-6 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-4">
-                    <div className="text-xs font-bold text-slate-500 dark:text-[#94A3B8] uppercase tracking-wide">
-                      Timeline Blueprint: Past Finished vs Present Relevance
-                    </div>
-                    <div className="relative py-4 border-b border-slate-100 dark:border-[rgba(255,255,255,0.08)] space-y-2">
-                      <div className="flex items-center justify-between text-xs font-bold">
-                        <span className="text-rose-600 dark:text-rose-400">Past Simple: I lived in London (1998-2002)</span>
-                        <span className="text-[11px] text-slate-500 dark:text-[#94A3B8]">Finished in past</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-rose-100 dark:bg-rose-950/40 overflow-hidden">
-                        <div className="w-1/3 h-full bg-rose-500 rounded-full" />
-                      </div>
-                    </div>
-                    <div className="relative py-2 space-y-2">
-                      <div className="flex items-center justify-between text-xs font-bold">
-                        <span className="text-[#059669] dark:text-[#10B981]">Present Perfect: I have lived in London for 3 years</span>
-                        <span className="text-[11px] text-slate-500 dark:text-[#94A3B8]">Still living now</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-emerald-100 dark:bg-emerald-950/40 overflow-hidden">
-                        <div className="w-full h-full bg-[#10B981] rounded-full" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 3. READING SHOWCASE */}
-            {activeStudioTab === 'reading' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#D1FAE5] text-[#065F46] border border-[#6EE7B7]">
-                    CEFR B2 · READING LAB
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Split-Pane Analytical Reading' : 'อ่านจับใจความและบทความมหาวิทยาลัย'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Practice skimming, scanning, and deep comprehension questions on campus themes with built-in vocabulary drawer and Cambridge exam formatting.'
-                      : 'ฝึกการอ่านจับใจความอย่างรวดเร็ว (Skimming & Scanning) พร้อมคลังคำศัพท์ประจำบทความและชุดคำถามวัดความเข้าใจตามมาตรฐานเคมบริดจ์'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/reading')}>
-                      {isEn ? 'Launch Reading Lab' : 'เปิดสตูดิโอการอ่าน'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs space-y-2">
-                    <div className="font-bold text-slate-900 dark:text-[#EDEBE8]">The Psychology of Group Work in University Seminars</div>
-                    <p className="text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-3">
-                      Collaborative problem-solving frequently exposes disparities in team members' prior exposure to academic discourse. Lecturers note that structured role allocation significantly alleviates communication barriers...
-                    </p>
-                    <div className="pt-2 flex items-center justify-between text-[11px] font-semibold text-[#4F46E5] dark:text-[#5B5CE2]">
-                      <span>Vocabulary: 420 words</span>
-                      <span>Cambridge FCE Reading Part 5</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 4. LISTENING SHOWCASE */}
-            {activeStudioTab === 'listening' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#FFE4E6] text-[#9D174D] border border-[#FDA4AF]">
-                    CEFR B1 · LISTENING STUDIO
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Audio Waveform & Accent Variety' : 'ฟังสำเนียงสากลพร้อมคลื่นเสียง'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Listen to dialogues across British, North American, and Australian accents with adjustable playback speed and progressive disclosure transcripts.'
-                      : 'ฝึกฟังบทสนทนาสถานการณ์จริงจากสำเนียงสากลหลากหลาย ปรับความเร็วเสียงได้ พร้อมตัวเลือกเปิดปิดสคริปต์เมื่อต้องการตรวจทาน'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/listening')}>
-                      {isEn ? 'Launch Listening Studio' : 'เปิดสตูดิโอการฟัง'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3 text-center">
-                    <div className="text-xs font-bold text-slate-500 dark:text-[#94A3B8]">Dialect: Standard British Accent · Speed: 1.0x</div>
-                    <div className="flex items-center justify-center gap-1.5 h-12">
-                      {[40, 70, 90, 30, 80, 100, 60, 40, 85, 95, 50, 65, 80, 40].map((h, i) => (
-                        <div key={i} className="w-1.5 rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2]" style={{ height: `${h}%` }} />
-                      ))}
-                    </div>
-                    <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk italic">
-                      "Could you tell me where the postgraduate student registry is located?"
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 5. SPEAKING SHOWCASE */}
-            {activeStudioTab === 'speaking' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#FFEDD5] text-[#9A3412] border border-[#FDBA74]">
-                    CEFR B2 · SPEAKING LAB
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Safe Recording & Phonetic Stress' : 'บันทึกเสียงและฝึกการเน้นพยางค์อย่างมั่นใจ'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Record simulated campus dialogues in a private, judgment-free environment with native model audio comparisons and phonetic stress indicators.'
-                      : 'ฝึกพูดและบันทึกเสียงในพื้นที่ส่วนตัวไร้ความกังวล พร้อมระบบเปรียบเทียบเสียงกับเจ้าของภาษาและตรวจจับการเน้นพยางค์'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/speaking')}>
-                      {isEn ? 'Launch Speaking Lab' : 'เปิดสตูดิโอการพูด'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-6 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-center space-y-4">
-                    <div className="w-14 h-14 rounded-full bg-rose-100 text-rose-600 mx-auto flex items-center justify-center">
-                      <Mic className="w-7 h-7" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-sm font-bold text-slate-900 dark:text-[#EDEBE8]">Prompt: Describe your university study goals</div>
-                      <div className="text-xs text-slate-500 dark:text-[#94A3B8]">Speech recognition active · Target time: 60s</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 6. WRITING SHOWCASE */}
-            {activeStudioTab === 'writing' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-                    CEFR B1 · WRITING WORKSPACE
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Distraction-Free Workspace & CEFR Rubric' : 'พื้นที่ฝึกเขียนพร้อมตัววัดเกณฑ์ CEFR'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Draft essays and emails with real-time target word count meters, Cambridge rubric checklists, model answers, and draft autosaving.'
-                      : 'เขียนบทความและอีเมลด้วยตัวนับจำนวนคำแบบเรียลไทม์ พร้อมเช็กลิสต์เกณฑ์การให้คะแนนแบบเคมบริดจ์และตัวอย่างงานเขียน'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/writing')}>
-                      {isEn ? 'Launch Writing Workspace' : 'เปิดสตูดิโอการเขียน'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-2 text-xs">
-                    <div className="flex justify-between font-bold text-slate-900 dark:text-[#EDEBE8]">
-                      <span>Target: Formal Email to Professor</span>
-                      <span className="text-[#059669] dark:text-[#10B981]">112 / 120 words (Optimal)</span>
-                    </div>
-                    <div className="w-full h-2 rounded-full bg-emerald-100 dark:bg-emerald-950/50 overflow-hidden">
-                      <div className="w-[93%] h-full bg-[#10B981] rounded-full" />
-                    </div>
-                    <div className="pt-2 flex gap-2">
-                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Content: 5/5</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Communicative: 4/5</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] text-[10px] font-bold">Organization: 5/5</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 7. CAMBRIDGE MOCK EXAM SHOWCASE */}
-            {activeStudioTab === 'exam' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#F59E0B] text-white border border-[#D97706]">
-                    CAMBRIDGE QUALIFICATIONS
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? 'Full Cambridge Simulation Hall' : 'ห้องสอบจำลอง KET, PET และ FCE'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Simulate authentic Cambridge English qualifications with server-timed countdowns, answer autosaving, question navigator matrix, and scaled CEFR reports.'
-                      : 'จำลองบรรยากาศการสอบเคมบริดจ์เสมือนจริง ทั้งระบบจับเวลานับถอยหลัง บันทึกคำตอบอัตโนมัติ และรายงานผลคะแนนเทียบระดับ CEFR ละเอียดทุกทักษะ'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/mock-exams')}>
-                      {isEn ? 'Launch Mock Exams' : 'เปิดห้องสอบจำลอง'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-4 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs space-y-3">
-                    <div className="flex items-center justify-between font-bold">
-                      <span className="text-slate-900 dark:text-[#EDEBE8]">B1 Preliminary (PET) Full Mock</span>
-                      <span className="text-amber-600 dark:text-amber-400 font-mono">42:15 Remaining</span>
-                    </div>
-                    <div className="grid grid-cols-6 gap-1.5 pt-1">
-                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((q) => (
-                        <div
-                          key={q}
-                          className={`p-2 rounded text-center font-bold text-[11px] ${
-                            q <= 5 ? 'bg-[#10B981] text-white' : q === 6 ? 'bg-[#5B5CE2] text-white' : 'bg-slate-100 dark:bg-[#1C2430] text-slate-600 dark:text-[#94A3B8]'
-                          }`}
-                        >
-                          Q{q}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 8. RANKED 4S ARENA SHOWCASE */}
-            {activeStudioTab === 'ranked' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-5 space-y-4 text-left">
-                  <span className="px-3 py-1 rounded-full text-xs font-black bg-[#5B5CE2] text-white border border-[#5B5CE2]/40">
-                    COMPETITIVE RANKED ARENA
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-                    {isEn ? '4-Second Speed Reflex Duels' : 'ดวลความเร็วคำศัพท์ 4 วินาที'}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed font-grotesk">
-                    {isEn
-                      ? 'Test your English instincts in real-time. Gain Rank Rating (MMR), climb university divisions from Bronze to Master, and earn animated profile frames.'
-                      : 'ทดสอบความแม่นยำและไหวพริบภายใต้เวลา 4 วินาทีต่อข้อ ชิงคะแนน MMR ไต่อันดับลีกมหาวิทยาลัย และปลดล็อกกรอบรูปโปรไฟล์ระดับตำนาน'}
-                  </p>
-                  <div className="pt-2">
-                    <TactileButton variant="primary" size="md" onClick={() => router.push('/compete')}>
-                      {isEn ? 'Enter Ranked Arena' : 'เข้าสู่สมรภูมิประลอง'}
-                    </TactileButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-7 bg-slate-50 dark:bg-[#1C2430] p-6 rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] space-y-3">
-                  <div className="p-5 rounded-2xl bg-indigo-950 dark:bg-[#141A22] text-white space-y-3 text-center">
-                    <div className="text-xs font-bold text-amber-400 font-tech">GOLD III · BANGKOK UNIVERSITY LEAGUE</div>
-                    <div className="text-2xl font-black text-white">MATCH VICTORY (+28 MMR)</div>
-                    <p className="text-xs text-indigo-200 dark:text-zinc-400">Current Rating: 1,508 MMR · Top 14% University Learners</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          4. THE 7-STAGE LEARNING JOURNEY (SCROLL STORYTELLING)
-          ===================================================================== */}
-      <section id="journey" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
-        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
-              {isEn ? 'Continuous Growth Architecture' : 'เส้นทางการพัฒนาที่ชัดเจน'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'How You Progress with Glova' : 'ก้าวหน้าอย่างเป็นระบบในทุกวัน'}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
-              {isEn
-                ? 'From your first 3-minute diagnostic check to passing Cambridge qualifications, every step is deliberate and measured.'
-                : 'ตั้งแต่การวัดระดับครั้งแรก 3 นาที ไปจนถึงการสอบผ่านวุฒิบัตรเคมบริดจ์ ทุกขั้นตอนถูกคิดมาเพื่อการก้าวหน้าอย่างมั่นใจ'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4">
-            {[
-              { step: '01', titleEn: 'Check', titleTh: 'วัดระดับ', descEn: '3-min scenario diagnostic snapshot', descTh: 'ประเมินจุดเริ่มต้นใน 3 นาที' },
-              { step: '02', titleEn: 'Map', titleTh: 'ระบุจุดอ่อน', descEn: 'Diagnose specific grammar & vocab gaps', descTh: 'วิเคราะห์ช่องว่างทางไวยากรณ์' },
-              { step: '03', titleEn: 'Practice', titleTh: 'ฝึกฝน', descEn: '5-minute daily bite-sized cartridges', descTh: 'เรียนผ่านตลับบทเรียน 5 นาที' },
-              { step: '04', titleEn: 'Review', titleTh: 'ทบทวน', descEn: 'Spaced repetition active recall', descTh: 'ทบทวนคำศัพท์ตามรอบเวลา' },
-              { step: '05', titleEn: 'Repair', titleTh: 'แก้ไข', descEn: 'Targeted drills on recent mistakes', descTh: 'แบบฝึกเจาะจงจุดที่เคยตอบผิด' },
-              { step: '06', titleEn: 'Duel', titleTh: 'ประลอง', descEn: '4s speed reflex battles for instinct', descTh: 'ดวลจับเวลา 4s สร้างความว่องไว' },
-              { step: '07', titleEn: 'Certify', titleTh: 'สอบผ่าน', descEn: 'Unlock Cambridge qualification mocks', descTh: 'สอบข้อสอบจำลองเพื่อเลื่อนระดับ' },
-            ].map((st, i) => (
-              <div
-                key={st.step}
-                className="p-5 rounded-2xl bg-slate-50 dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-2 relative"
+            {/* Table Footer CTA */}
+            <div className="p-6 bg-[#143AA6] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-white/70 font-medium text-center sm:text-left">
+                {isEn ? 'Want to join the leaderboard? Challenge players in the 4-second vocab battle.' : 'ต้องการขึ้นสู่ทำเนียบอันดับ? เข้าสู่การประลองความเร็ว 4 วินาทีได้ทันที'}
+              </span>
+              <button
+                type="button"
+                onClick={() => router.push('/compete')}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#FFC533] hover:bg-[#FFB814] text-[#1E293B] font-black text-xs shadow-md active:translate-y-0.5 transition-all cursor-pointer"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-black text-[#4F46E5] dark:text-[#5B5CE2]">
-                    {st.step}
-                  </span>
-                  {i < 6 && (
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 dark:text-[#94A3B8]/50 hidden lg:block" />
-                  )}
-                </div>
-                <h4 className="text-base font-black text-slate-900 dark:text-[#EDEBE8] font-display">
-                  {isEn ? st.titleEn : st.titleTh}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
-                  {isEn ? st.descEn : st.descTh}
+                <span>{isEn ? 'Enter Ranked Arena' : 'เข้าสู่สมรภูมิประลอง'}</span>
+                <ChevronRight className="w-4 h-4 stroke-[3]" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          5. SECTION: "Have A Question?" (High-Conversion Call To Action Banner)
+          (Dribbble Question Container with Email & Phone Support)
+          ===================================================================== */}
+      <section id="contact" className="py-20 lg:py-28 bg-[#2155E6] relative">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto rounded-[36px] bg-[#1845C2] border-2 border-white/20 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            {/* Ambient Background Doodles */}
+            <div className="absolute right-0 bottom-0 pointer-events-none opacity-10" aria-hidden="true">
+              <svg className="w-64 h-64 text-white" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="40" />
+              </svg>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+              {/* Left Column: Heading, Subtitle & Yellow Button */}
+              <div className="md:col-span-7 space-y-4 text-center md:text-left">
+                <h3 className="text-3xl sm:text-4xl font-black text-white font-display">
+                  {isEn ? 'Have A Question?' : 'มีคำถามหรือข้อสงสัย?'}
+                </h3>
+                <p className="text-sm sm:text-base text-white/80 leading-relaxed font-medium max-w-md mx-auto md:mx-0">
+                  {isEn
+                    ? 'Find, explore and learn in an awesome place. Our academic team is ready to support your CEFR journey.'
+                    : 'ค้นพบและพัฒนาทักษะภาษาอังกฤษในพื้นที่การเรียนรู้ที่ยอดเยี่ยม ทีมผู้เชี่ยวชาญพร้อมให้คำแนะนำในทุกขั้นตอน'}
                 </p>
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection('why-glova')}
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FFC533] hover:bg-[#FFB814] text-[#1E293B] font-black text-sm shadow-lg shadow-[#FFC533]/25 active:translate-y-0.5 transition-all cursor-pointer"
+                  >
+                    <span>{isEn ? 'About Us' : 'เกี่ยวกับเรา'}</span>
+                    <ChevronRight className="w-4 h-4 stroke-[3]" />
+                  </button>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* =====================================================================
-          5. GAMIFICATION SHOWCASE: GAMES THAT KEEP YOU LEARNING
-          ===================================================================== */}
-      <section id="arena" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
-        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
-              {isEn ? 'Purpose-Driven Gaming Layer' : 'ระบบเกมที่ส่งเสริมการเรียนรู้'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'Games Built to Keep You Progressing' : 'เกมที่ช่วยให้คุณอยากเรียนต่อทุกวัน'}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] font-grotesk">
-              {isEn
-                ? 'We gamified the return loop, not the academic content. XP rewards, ranked tiers, and university squads motivate you to show up every day.'
-                : 'เรานำกลไกเกมมาช่วยสร้างแรงจูงใจในการกลับมาฝึกฝนอย่างสม่ำเสมอ ทั้งแต้ม XP อันดับลีก และการเรียนคู่กับเพื่อนมหาวิทยาลัย'}
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            <RankBannerCard seasonNumber={1} daysRemaining={18} />
-            <SquadShareBanner squadName="Chula Vanguard" memberCount={3} maxMembers={5} />
-          </div>
-
-          {/* Gamification Pillar Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            {/* 1. Ranked Tiers */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
-                <Trophy className="w-6 h-6" />
+              {/* Vertical Divider (Desktop Only) */}
+              <div className="hidden md:block md:col-span-1 flex justify-center">
+                <div className="w-[1.5px] h-32 bg-white/20" />
               </div>
-              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
-                {isEn ? '6 Competitive Rank Tiers' : 'ระบบจัดอันดับ 6 ลีก'}
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
-                {isEn
-                  ? 'Climb from Bronze to Master through 4-second speed reflex battles. Your MMR reflects real vocabulary retrieval speed under pressure.'
-                  : 'ไต่อันดับตั้งแต่ Bronze ถึง Master ผ่านการประลองความเร็ว 4 วินาที แต้ม MMR สะท้อนความไวในการดึงคำศัพท์มาใช้จริง'}
-              </p>
-            </div>
 
-            {/* 2. Animated Rank Frames */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
-                {isEn ? 'Animated Profile Emblems' : 'กรอบรูปโปรไฟล์ระดับตำนาน'}
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
-                {isEn
-                  ? 'Unlock exclusive animated gamer and fantasy profile frames through Season Pass achievements and tournament milestones.'
-                  : 'สะสมกรอบรูปโปรไฟล์อนิเมชันระดับพิเศษสไตล์เกมเมอร์และแฟนตาซี จากการทำภารกิจ Season Pass และการแข่งขัน'}
-              </p>
-            </div>
+              {/* Right Column: Direct Contact Info Blocks */}
+              <div className="md:col-span-4 space-y-4">
+                {/* Email Support Block */}
+                <div className="flex items-center gap-4 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-[#FFC533]" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white">support@glova.edu</div>
+                    <div className="text-xs text-white/60">{isEn ? 'Less than 20 mins' : 'ตอบกลับภายใน 20 นาที'}</div>
+                  </div>
+                </div>
 
-            {/* 3. Triple Leaderboards */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] flex items-center justify-center font-bold">
-                <Users className="w-6 h-6" />
+                {/* Phone / Line Support Block */}
+                <div className="flex items-center gap-4 p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-[#FFC533]" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white">+66 2 123 4567</div>
+                    <div className="text-xs text-white/60">{isEn ? 'From 08:00 to 21:00' : 'ทุกวัน 08:00 - 21:00 น.'}</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-black text-slate-900 dark:text-[#EDEBE8] font-display">
-                {isEn ? 'Triple Leaderboards' : 'ตารางคะแนน 3 รูปแบบ'}
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk leading-relaxed">
-                {isEn
-                  ? 'Compete on the Skill MMR board, celebrate effort on the Weekly XP board, and track milestones with university study buddies.'
-                  : 'จัดอันดับทั้งกระดานฝีมือ MMR กระดานความขยันประจำสัปดาห์ XP และกระดานเปรียบเทียบกับเพื่อนสนิท'}
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          6. DIAGNOSTIC CURIOSITY CHECK (LOW-FRICTION SNAPSHOT)
+          6. FOOTER (Matching Dribbble STPlay Footer)
           ===================================================================== */}
-      <section id="quick-check-experience" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] bg-white dark:bg-[#0D1117]">
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center space-y-3 mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-              <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-              <span className="font-tech">{isEn ? 'Low-Friction English Snapshot' : 'แบบวัดระดับภาษาอังกฤษใน 3 นาที'}</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'Check Your English in 3 Minutes' : 'ทดสอบความรู้ภาษาอังกฤษใน 3 นาที'}
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto font-grotesk">
-              {isEn
-                ? 'Respond to 8 everyday university scenarios to receive your instant personal CEFR snapshot without any stress or upfront sign-up.'
-                : 'ตอบคำถามจำลอง 8 สถานการณ์จริงเพื่อรับการประเมินระดับ CEFR ส่วนบุคคลทันที โดยไม่ต้องลงทะเบียนก่อน'}
-            </p>
-          </div>
-
-          <QuickEnglishCheck onFinish={() => router.push('/')} />
-        </div>
-      </section>
-
-      {/* =====================================================================
-          7. ACADEMIC TRUST & CAMBRIDGE QUALIFICATIONS
-          ===================================================================== */}
-      <section id="cambridge" className="py-16 sm:py-24 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
-        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
-          <div className="space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-black tracking-wider text-[#4F46E5] dark:text-[#5B5CE2] uppercase font-tech">
-              {isEn ? 'International Benchmark Scale' : 'มาตรฐานระดับสากล'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-              {isEn ? 'Aligned with Cambridge English & CEFR Standards' : 'สอดคล้องกับมาตรฐานเคมบริดจ์และกรอบ CEFR'}
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto font-grotesk">
-              {isEn
-                ? 'Every skill, practice question, and mock examination is calibrated directly to international Common European Framework criteria.'
-                : 'ทุกแบบฝึกหัด คำถาม และข้อสอบจำลอง ถูกเทียบเคียงตามกรอบมาตรฐานยุโรป CEFR จากระดับ A1 ถึง C2 อย่างเคร่งครัด'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {[
-              { level: 'A1', labelEn: 'Beginner', labelTh: 'พื้นฐาน', exam: 'Foundational', infoId: 'landing.cefr_a1_desc' },
-              { level: 'A2', labelEn: 'Elementary', labelTh: 'เบื้องต้น', exam: 'Cambridge KET', infoId: 'landing.cefr_a2_desc' },
-              { level: 'B1', labelEn: 'Intermediate', labelTh: 'ระดับกลาง', exam: 'Cambridge PET', infoId: 'landing.cefr_b1_desc' },
-              { level: 'B2', labelEn: 'Upper Intermediate', labelTh: 'กลางขั้นสูง', exam: 'Cambridge FCE', infoId: 'landing.cefr_b2_desc' },
-              { level: 'C1', labelEn: 'Advanced', labelTh: 'ระดับสูง', exam: 'Cambridge CAE', infoId: 'landing.cefr_c1_desc' },
-              { level: 'C2', labelEn: 'Mastery', labelTh: 'เชี่ยวชาญ', exam: 'Cambridge CPE', infoId: 'landing.cefr_c2_desc' },
-            ].map((item) => (
-              <div
-                key={item.level}
-                className="p-5 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] text-center space-y-1 shadow-xs hover:border-[#4F46E5]/50 dark:hover:border-[rgba(184,167,255,0.35)] transition-colors"
-              >
-                <span className="text-2xl font-black text-[#4F46E5] dark:text-[#5B5CE2] font-tech">{item.level}</span>
-                <div className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] font-display">{isEn ? item.labelEn : item.labelTh}</div>
-                <div className="text-[11px] font-mono font-bold text-[#059669] dark:text-[#10B981]">{item.exam}</div>
-                <div className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-grotesk pt-1">{t(item.infoId)}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-[#94A3B8] bg-white dark:bg-[#141A22] px-5 py-2.5 rounded-full border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs font-grotesk">
-            <ShieldCheck className="w-4 h-4 text-[#059669] dark:text-[#10B981]" aria-hidden="true" />
-            <span>{isEn ? 'Rigorous CEFR alignment for university entrance and exchange qualifications' : 'มาตรฐาน CEFR รองรับการสอบเข้ามหาวิทยาลัยและทุนแลกเปลี่ยนสากล'}</span>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          8. FINAL INSPIRING CTA: DIRECT CONVERSION TO PRODUCT FLOW
-          ===================================================================== */}
-      <section className="py-20 sm:py-28 bg-white dark:bg-[#0D1117] text-center border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)]">
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2] text-xs font-bold border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{isEn ? 'Begin Your University English Journey' : 'เริ่มต้นการเดินทางภาษาอังกฤษของคุณ'}</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight font-display">
-            {isEn ? 'Ready to discover your true English level?' : 'พร้อมค้นพบระดับภาษาอังกฤษที่แท้จริงหรือยัง?'}
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] max-w-lg mx-auto leading-relaxed font-grotesk">
-            {isEn
-              ? 'No credit card, no forced signup, and no rigid schedules. Take the 3-minute diagnostic assessment and start mastering English on your own terms.'
-              : 'ไม่ต้องใช้บัตรเครดิต ไม่บังคับลงทะเบียนก่อน และเรียนรู้ได้ตามจังหวะเวลาที่คุณสะดวก ทำแบบวัดระดับ 3 นาทีแล้วก้าวไปข้างหน้าอย่างมั่นใจ'}
-          </p>
-
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <TactileButton
-              variant="primary"
-              size="lg"
-              onClick={handleStart}
-              className="px-8 py-4 text-base font-bold shadow-md shadow-[#5B5CE2]/25 font-display tracking-wide"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-            >
-              {isEn ? 'Start CEFR Diagnostic Test' : 'เริ่มแบบวัดระดับ CEFR ฟรี'}
-            </TactileButton>
-
-            <TactileButton
-              variant="surface"
-              size="lg"
-              onClick={() => router.push('/')}
-              className="px-6 py-4 text-sm font-bold font-display"
-            >
-              {isEn ? 'Enter Learning Dashboard' : 'เข้าสู่หน้าหลักการเรียน'}
-            </TactileButton>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          9. DEFENSIVE MULTI-COLUMN BRAND FOOTER
-          ===================================================================== */}
-      <footer className="py-12 bg-slate-100 dark:bg-[#141A22] border-t border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs text-slate-600 dark:text-[#94A3B8] font-grotesk">
+      <footer className="py-12 bg-[#1845C2] border-t border-white/15 text-white">
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Col 1: Brand */}
-            <div className="space-y-3 col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2">
-                <span className="font-black text-lg text-slate-900 dark:text-[#EDEBE8] font-display">Glova</span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#5B5CE2]">CEFR A1 to C2</span>
-              </div>
-              <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-                {isEn
-                  ? 'University-scale English learning and Cambridge qualification platform.'
-                  : 'แพลตฟอร์มเตรียมความพร้อมภาษาอังกฤษและข้อสอบเคมบริดจ์ระดับมหาวิทยาลัย'}
-              </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <span className="font-black text-2xl tracking-tight text-white font-display">
+                Glova<span className="text-[#FFC533]">Play</span>
+              </span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/15 text-white">
+                CEFR Stream
+              </span>
             </div>
 
-            {/* Col 2: The 6 Studios */}
-            <div className="space-y-2">
-              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
-                {isEn ? 'Learning Studios' : 'สตูดิโอการเรียน'}
-              </div>
-              <ul className="space-y-1.5">
-                <li><Link href="/vocabulary" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Vocabulary Lab' : 'คลังคำศัพท์'}</Link></li>
-                <li><Link href="/grammar" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Grammar Timelines' : 'ไวยากรณ์'}</Link></li>
-                <li><Link href="/reading" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Reading Lab' : 'การอ่านจับใจความ'}</Link></li>
-                <li><Link href="/listening" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Listening Studio' : 'การฟังสำเนียง'}</Link></li>
-                <li><Link href="/speaking" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Speaking Lab' : 'การพูดและออกเสียง'}</Link></li>
-                <li><Link href="/writing" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Writing Workspace' : 'การเขียน'}</Link></li>
-              </ul>
+            {/* Footer Navigation Links */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold text-white/80">
+              <button type="button" onClick={() => scrollToSection('overview')} className="hover:text-white cursor-pointer">
+                {isEn ? '• About' : '• เกี่ยวกับเรา'}
+              </button>
+              <button type="button" onClick={() => scrollToSection('studios')} className="hover:text-white cursor-pointer">
+                {isEn ? '• Learning (8 Studios)' : '• คลัง 8 สตูดิโอ'}
+              </button>
+              <button type="button" onClick={() => scrollToSection('why-glova')} className="hover:text-white cursor-pointer">
+                {isEn ? '• Services & Rubrics' : '• มาตรฐาน CEFR'}
+              </button>
+              <button type="button" onClick={() => scrollToSection('contact')} className="hover:text-white cursor-pointer">
+                {isEn ? '• Contact' : '• ติดต่อสอบถาม'}
+              </button>
             </div>
 
-            {/* Col 3: Arena & Testing */}
-            <div className="space-y-2">
-              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
-                {isEn ? 'Arena & Assessment' : 'การประลองและวัดผล'}
-              </div>
-              <ul className="space-y-1.5">
-                <li><Link href="/compete" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Ranked Arena (4s)' : 'สมรภูมิประลอง 4s'}</Link></li>
-                <li><Link href="/ranking" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Triple Leaderboards' : 'ตารางคะแนนลีก'}</Link></li>
-                <li><Link href="/assessment" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Diagnostic Test' : 'แบบวัดระดับ CEFR'}</Link></li>
-                <li><Link href="/mock-exams" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Cambridge Mock Exams' : 'สอบจำลอง KET/PET/FCE'}</Link></li>
-                <li><Link href="/social" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Study Together' : 'ห้องเรียนคู่เพื่อน'}</Link></li>
-              </ul>
-            </div>
-
-            {/* Col 4: Platform & Identity */}
-            <div className="space-y-2">
-              <div className="font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider text-[11px]">
-                {isEn ? 'Platform' : 'แพลตฟอร์ม'}
-              </div>
-              <ul className="space-y-1.5">
-                <li><Link href="/" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Learning Dashboard' : 'หน้าหลักการเรียน'}</Link></li>
-                <li><Link href="/profile" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Player Profile & Frames' : 'โปรไฟล์และกรอบรูป'}</Link></li>
-                <li><Link href="/achievements" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Achievements Room' : 'คลังความสำเร็จ'}</Link></li>
-                <li><Link href="/analytics" className="hover:text-slate-900 dark:hover:text-[#EDEBE8] transition-colors">{isEn ? 'Skill Analytics' : 'สถิติและจุดอ่อน'}</Link></li>
-              </ul>
+            {/* Social Icons */}
+            <div className="flex items-center gap-2">
+              {['in', 'tw', 'fb'].map((net) => (
+                <div
+                  key={net}
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#FFC533] hover:text-[#1E293B] text-white flex items-center justify-center font-bold text-xs transition-colors cursor-pointer"
+                >
+                  {net}
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="pt-8 border-t border-slate-200 dark:border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+          {/* Bottom Bar: Copyright & Newsletter */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
             <div>
-              © 2026 Glova English Platform. All rights reserved.
+              {isEn ? '© 2026 Glova STPlay. All rights reserved.' : '© 2026 Glova STPlay. สงวนลิขสิทธิ์ทั้งหมด'}
             </div>
-            <div className="flex items-center gap-4">
-              <span>Vibrant Light & Obsidian Dark Dual-Theme Architecture • Glova Tactile Identity</span>
+
+            {/* Newsletter Input matching Dribbble "Our newspaper" */}
+            <div className="flex items-center gap-2 w-full md:w-auto justify-center">
+              <span className="text-white font-bold hidden sm:inline">
+                {isEn ? 'Our newsletter:' : 'รับข่าวสาร:'}
+              </span>
+              <div className="flex items-center rounded-xl bg-white/10 border border-white/20 p-1 w-full max-w-xs">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder={isEn ? 'Your email' : 'อีเมลของคุณ'}
+                  className="px-3 py-1.5 bg-transparent text-xs text-white placeholder-white/50 focus:outline-none w-full"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (newsletterEmail) setNewsletterSubscribed(true);
+                  }}
+                  className="px-3.5 py-1.5 rounded-lg bg-[#FFC533] text-[#1E293B] font-extrabold text-xs shrink-0 cursor-pointer hover:bg-[#FFB814]"
+                >
+                  {newsletterSubscribed ? '✓' : isEn ? 'Search' : 'ติดตาม'}
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* =====================================================================
+          7. QUICK ENGLISH CHECK MODAL (Zero-Friction 3-Minute Diagnostic Test)
+          ===================================================================== */}
+      {isDiagnosticOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="w-full max-w-2xl bg-white dark:bg-[#141A22] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-white/10 text-slate-900 dark:text-[#EDEBE8] relative max-h-[90vh] overflow-y-auto">
+            <button
+              type="button"
+              onClick={() => setIsDiagnosticOpen(false)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center font-bold text-sm cursor-pointer"
+              aria-label="Close diagnostic check"
+            >
+              ✕
+            </button>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#4F46E5] dark:text-[#5B5CE2]" />
+                <span className="text-xs font-mono font-bold tracking-wider text-[#4F46E5] dark:text-[#A5A6F6] uppercase">
+                  {isEn ? 'Official Diagnostic Test' : 'แบบวัดระดับภาษาอังกฤษ 3 นาที'}
+                </span>
+              </div>
+
+              <QuickEnglishCheck
+                onFinish={() => {
+                  setIsDiagnosticOpen(false);
+                  router.push('/assessment');
+                }}
+                onClose={() => setIsDiagnosticOpen(false)}
+                isModal={true}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
