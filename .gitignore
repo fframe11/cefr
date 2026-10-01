@@ -30,4 +30,5 @@ data/external-cache/
 *.tar.bz2
 Vocab_src_pdf/
 scratch/
+tools/
 
