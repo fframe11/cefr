@@ -201,12 +201,13 @@
 }
 
 /* =========================================================================
-   Shakuro Rune Realms Authentic Game Portal Styles (5-Source Frontend)
+   Glova High-Fidelity Design System (5-Source Frontend Architecture)
    ========================================================================= */
-.font-rune {
-  font-family: 'Cinzel', serif;
+.font-rune, .font-heading {
+  font-family: 'Plus Jakarta Sans', 'Cinzel', sans-serif;
 }
 
+.glova-gold-btn,
 .rune-gold-btn {
   background: linear-gradient(180deg, #FBBF24 0%, #D97706 45%, #92400E 100%);
   border: 1px solid #FDE68A;
@@ -216,18 +217,21 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
   transition: all 0.15s ease-in-out;
 }
+.glova-gold-btn:hover,
 .rune-gold-btn:hover {
   background: linear-gradient(180deg, #FCD34D 0%, #F59E0B 45%, #B45309 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8),
               inset 0 -2px 0 rgba(0, 0, 0, 0.5),
               0 6px 24px rgba(245, 158, 11, 0.65);
 }
+.glova-gold-btn:active,
 .rune-gold-btn:active {
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6),
               0 2px 6px rgba(217, 119, 6, 0.3);
 }
 
+.glova-silver-btn,
 .rune-silver-btn {
   background: linear-gradient(180deg, #475569 0%, #334155 45%, #1E293B 100%);
   border: 1px solid #94A3B8;
@@ -237,17 +241,20 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   transition: all 0.15s ease-in-out;
 }
+.glova-silver-btn:hover,
 .rune-silver-btn:hover {
   background: linear-gradient(180deg, #64748B 0%, #475569 45%, #334155 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
               0 6px 20px rgba(15, 23, 42, 0.7);
 }
+.glova-silver-btn:active,
 .rune-silver-btn:active {
   transform: translateY(2px);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7),
               0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.glova-card,
 .rune-card {
   background: radial-gradient(120% 120% at 50% 0%, #0F172A 0%, #070B14 100%);
   border: 1px solid rgba(245, 158, 11, 0.25);
@@ -260,6 +267,7 @@
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+.animate-glova-shine,
 .animate-rune-shine {
   animation: rune-shine 4s linear infinite;
 }

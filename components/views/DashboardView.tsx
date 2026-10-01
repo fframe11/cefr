@@ -238,7 +238,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'hallowed' as const,
         stackCount: '',
         icon: <BookOpen className="w-4 h-4 text-[#2155E6] dark:text-[#60A5FA]" />,
-        image: '/assets/rune-golem.png',
+        image: '/assets/dribbble-basket-tools.jpg',
         onSelect: () => onNavigate('vocabulary'),
       },
       {
@@ -248,7 +248,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'gold' as const,
         stackCount: '',
         icon: <Sparkles className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
-        image: '/assets/rune-coins.png',
+        image: '/assets/dribbble-safe-coins.jpg',
         onSelect: () => onNavigate('grammar'),
       },
       {
@@ -278,7 +278,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'crimson' as const,
         stackCount: '',
         icon: <Swords className="w-4 h-4 text-[#FF4655]" />,
-        image: '/assets/rune-clash.png',
+        image: '/assets/dribbble-hands-controller.jpg',
         onSelect: () => onNavigate('compete'),
       },
       {
@@ -288,7 +288,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'copper' as const,
         stackCount: '',
         icon: <Award className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
-        image: '/assets/rune-airship.png',
+        image: '/assets/dribbble-gift-box.jpg',
         onSelect: () => onNavigate('mockExam'),
       },
     ],
@@ -531,8 +531,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* LEFT COLUMN: WHAT TO DO NOW HERO + STEPPED PATH (8 cols)                  */}
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
-          {/* A. SHAKURO RUNE REALMS PRIMARY HERO BANNER */}
-          <div className="rune-card relative overflow-hidden rounded-[28px] text-white p-6 sm:p-8 border border-[#F59E0B]/30 shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_25px_rgba(245,158,11,0.15)]">
+          {/* A. GLOVA CEFR PRIMARY HERO BANNER */}
+          <div className="glova-card relative overflow-hidden rounded-[28px] text-white p-6 sm:p-8 border border-[#F59E0B]/30 shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_25px_rgba(245,158,11,0.15)]">
             {/* Ambient Celestial Glow */}
             <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#0EA5E9]/15 blur-3xl pointer-events-none" />
             <div className="absolute top-0 right-1/3 w-60 h-60 rounded-full bg-[#F59E0B]/10 blur-3xl pointer-events-none" />
@@ -541,11 +541,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="flex-1 flex flex-col gap-3.5">
                 {/* Header Pills */}
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F59E0B]/15 text-[#FDE68A] text-[11px] font-rune font-bold uppercase tracking-wider border border-[#F59E0B]/30">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F59E0B]/15 text-[#FDE68A] text-[11px] font-bold uppercase tracking-wider border border-[#F59E0B]/30">
                     <span className="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse" />
                     <span>{primaryAction.unitBadge}</span>
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#070B14] text-[#FDE68A] border border-[#F59E0B]/40 text-[10px] font-rune font-bold uppercase">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#070B14] text-[#FDE68A] border border-[#F59E0B]/40 text-[10px] font-bold uppercase">
                     CEFR LEVEL {progress.currentLevel}
                   </span>
                   <span className="text-xs text-slate-300 font-semibold">
@@ -555,7 +555,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
                 {/* Main Heading */}
                 <div className="space-y-1">
-                  <h2 className="font-rune text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
+                  <h2 className="font-extrabold text-xl sm:text-2xl lg:text-3xl font-display text-white tracking-tight leading-snug">
                     {primaryAction.title}
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
@@ -563,12 +563,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </p>
                 </div>
 
-                {/* Tactile Metallic Action Buttons (uiverse.io x Rune Realms) */}
+                {/* Tactile Metallic Action Buttons (Glova 5-Source Styling) */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <button
                     type="button"
                     onClick={primaryAction.onStart}
-                    className="rune-gold-btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-rune font-bold text-xs uppercase tracking-widest cursor-pointer select-none"
+                    className="glova-gold-btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-bold text-xs uppercase tracking-wider cursor-pointer select-none"
                   >
                     <span>{primaryAction.cta}</span>
                     <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -577,7 +577,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigate('compete')}
-                    className="rune-silver-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-rune font-bold text-xs uppercase tracking-widest cursor-pointer select-none"
+                    className="glova-silver-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-bold text-xs uppercase tracking-wider cursor-pointer select-none"
                   >
                     <Swords className="w-4 h-4 text-[#FDE68A]" />
                     <span>{isEn ? 'Speed Vocab Duel (MMR)' : 'ดวลความเร็วคำศัพท์ 4 วิ'}</span>
@@ -587,18 +587,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     href="/landing"
                     className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg text-xs font-bold text-slate-300 hover:text-[#FDE68A] hover:bg-white/5 transition-colors"
                   >
-                    <span>{isEn ? 'Rune Portal' : 'หน้ารวมข้อมูล'}</span>
+                    <span>{isEn ? 'Platform Overview' : 'ภาพรวมแพลตฟอร์ม'}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
 
-              {/* 3D Warrior Artwork from Rune Realms Shot */}
+              {/* Glova Active Learners Photo */}
               <div className="relative shrink-0 flex items-center justify-center">
                 <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-[#F59E0B]/40 shadow-[0_0_25px_rgba(245,158,11,0.3)] bg-[#070B14] group">
                   <img
-                    src="/assets/rune-hero-warrior.png"
-                    alt="Rune Warrior Champion"
+                    src="/assets/hero-students-study.jpg"
+                    alt="Glova Active Learners"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
