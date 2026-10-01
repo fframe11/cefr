@@ -183,7 +183,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10B981]"></span>
                   </span>
                   <span className="text-[11px] font-mono font-bold tracking-wider text-slate-700 dark:text-[#A5A6F6] uppercase">
-                    {isEn ? 'AI DIAGNOSTIC ENGINE // LIVE NEURAL PREVIEW' : 'ระบบจำลองการวิเคราะห์ CEFR แบบเรียลไทม์'}
+                    {isEn ? 'CAMPUS STUDY & SPEAKING LAB // REAL-WORLD IMMERSION' : 'บรรยากาศการเรียนและห้องปฏิบัติการทักษะภาษาอังกฤษจริง'}
                   </span>
                 </div>
               </div>
@@ -211,13 +211,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
               {/* Contextual Photography & Calm Study Atmosphere */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] aspect-[4/3]">
-                  <GlovaImage
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-                    alt="University students studying together in a warm modern space"
-                    aspectRatio="aspect-[4/3]"
-                    className="w-full h-full object-cover"
+                <div className="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-[rgba(255,255,255,0.08)] aspect-[4/3] group">
+                  <img
+                    src="/assets/hero-speaking-lab.jpg"
+                    alt="University student in English language and speaking laboratory"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/10 text-[10px] font-mono font-bold text-emerald-400">
+                    {isEn ? 'AI SPEAKING CLINIC' : 'ห้องปฏิบัติการทักษะการพูด'}
+                  </div>
                 </div>
                 <div className="p-5 rounded-2xl bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-center space-y-1.5 shadow-xs">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-[#4F46E5] dark:text-[#5B5CE2]">
