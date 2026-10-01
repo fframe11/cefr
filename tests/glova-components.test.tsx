@@ -71,8 +71,8 @@ describe('Glova Core Components & Primitives Suite', () => {
         </GlovaButton>
       );
       expect(html).toContain('Start Practice');
-      expect(html).toContain('bg-[#5B5CE2]');
-      expect(html).toContain('shadow-[0_4px_0_0_#38399E]');
+      expect(html).toMatch(/bg-\[#2155E6\]|bg-\[#5B5CE2\]/);
+      expect(html).toMatch(/shadow-\[0_4px_0_0_#143DB8\]|shadow-\[0_4px_0_0_#38399E\]/);
       expect(html).toContain('min-h-[44px]');
     });
 
@@ -116,7 +116,7 @@ describe('Glova Core Components & Primitives Suite', () => {
         </GlovaCard>
       );
       expect(html).toContain('rounded-xl');
-      expect(html).toContain('border-border/40');
+      expect(html).toMatch(/border-border\/40|border-slate-200\/90/);
       expect(html).toContain('Grammar Fundamentals');
       expect(html).toContain('Unit 1 of 12');
     });

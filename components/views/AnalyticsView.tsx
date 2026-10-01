@@ -167,20 +167,20 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
     <div className="w-full space-y-6 pb-12">
       {/* Top Banner: CEFR & Cambridge Score Summary */}
       <SpotlightCard
-        spotlightColor="rgba(91, 92, 226, 0.15)"
+        spotlightColor="rgba(33, 85, 230, 0.15)"
         showBorderBeam={true}
         borderBeamProps={{
-          colorFrom: '#5B5CE2',
-          colorTo: '#10B981',
+          colorFrom: '#2155E6',
+          colorTo: '#FFE600',
           duration: 12,
           size: 260,
         }}
-        className="p-6 sm:p-8 space-y-6 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+        className="p-6 sm:p-8 space-y-6 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-border/40">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
                 <DecryptedText text="DIAGNOSTIC TELEMETRY" speed={40} maxIterations={12} revealDirection="start" />
               </span>
               <GlovaBadge variant="accent">

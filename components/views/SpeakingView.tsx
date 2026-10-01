@@ -207,7 +207,7 @@ export const SpeakingView: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
               <DecryptedText text="SPEAKING LAB" speed={40} maxIterations={12} revealDirection="start" />
             </span>
           </div>
@@ -247,8 +247,8 @@ export const SpeakingView: React.FC = () => {
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#141A22] dark:hover:bg-[#222E3A]'
+                  ? 'bg-[#2155E6] text-white border-[#2155E6] shadow-sm shadow-[#2155E6]/25 font-bold ring-2 ring-[#2155E6]/20'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#0B1224] dark:hover:bg-[#15203B]'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -275,15 +275,15 @@ export const SpeakingView: React.FC = () => {
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
           <SpotlightCard
-            spotlightColor="rgba(16, 185, 129, 0.15)"
+            spotlightColor="rgba(33, 85, 230, 0.15)"
             showBorderBeam={true}
             borderBeamProps={{
-              colorFrom: '#10B981',
-              colorTo: '#5B5CE2',
+              colorFrom: '#2155E6',
+              colorTo: '#FFE600',
               duration: 12,
               size: 240,
             }}
-            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
@@ -298,7 +298,7 @@ export const SpeakingView: React.FC = () => {
                 <GlovaButton
                   variant="outline"
                   size="sm"
-                  leftIcon={<Volume2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />}
+                  leftIcon={<Volume2 className="w-4 h-4 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />}
                   onClick={handlePlayModel}
                   className="rounded-full"
                 >
@@ -308,7 +308,7 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-5 rounded-[22px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 space-y-1.5 shadow-xs">
+            <div className="p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 space-y-1.5 shadow-xs">
               <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
               </p>
@@ -324,13 +324,13 @@ export const SpeakingView: React.FC = () => {
               {currentPrompt.guidingQuestionsTh && currentPrompt.guidingQuestionsTh.length > 0 && (
                 <div className="space-y-2">
                   <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                    <HelpCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                    <HelpCircle className="w-3.5 h-3.5 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />
                     <span>{isEn ? 'Guiding Questions & Structure:' : 'แนวทางการตอบ:'}</span>
                   </h4>
                   <ul className="space-y-1.5 text-xs text-muted-foreground">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-slate-100 dark:bg-[#1C2430] p-2.5 rounded-[14px] border border-slate-200/80 dark:border-white/10">
-                        <span className="font-bold text-[#5B5CE2]">{idx + 1}.</span>
+                      <li key={idx} className="flex items-start gap-2 bg-slate-100 dark:bg-[#101A30] p-2.5 rounded-[14px] border border-slate-200/80 dark:border-white/10">
+                        <span className="font-bold text-[#2155E6]">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>
                     ))}
@@ -353,7 +353,7 @@ export const SpeakingView: React.FC = () => {
                           className={`text-xs px-3 py-1 rounded-full font-mono border transition-all ${
                             isDetected
                               ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 font-bold'
-                              : 'bg-white dark:bg-[#141A22] text-muted-foreground border-slate-200/80 dark:border-white/10'
+                              : 'bg-white dark:bg-[#0B1224] text-muted-foreground border-slate-200/80 dark:border-white/10'
                           }`}
                         >
                           {phrase}
@@ -374,8 +374,8 @@ export const SpeakingView: React.FC = () => {
           >
           <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
             {/* Live Recording Timer */}
-            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-slate-100 dark:bg-[#1C2430] px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10">
-              <Clock className="w-4 h-4 text-[#5B5CE2]" aria-hidden="true" />
+            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-slate-100 dark:bg-[#101A30] px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10">
+              <Clock className="w-4 h-4 text-[#FFE600]" aria-hidden="true" />
               <span>
                 {Math.floor(recordingSeconds / 60)}:
                 {(recordingSeconds % 60).toString().padStart(2, '0')}
@@ -390,7 +390,7 @@ export const SpeakingView: React.FC = () => {
                 className={`touch-target p-6 sm:p-7 rounded-3xl transition-all focus:outline-none focus:ring-4 cursor-pointer select-none ${
                   isRecording
                     ? 'bg-[#E98278] text-white shadow-[0_6px_0_0_#B8574E] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#E98278]/20 animate-pulse'
-                    : 'bg-[#5B5CE2] text-white hover:bg-[#4E4FD6] shadow-[0_6px_0_0_#38399E] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#5B5CE2]/20'
+                    : 'bg-[#2155E6] text-white hover:bg-[#1C4AC9] shadow-[0_6px_0_0_#143DB8] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#2155E6]/20'
                 }`}
                 aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
               >

@@ -108,7 +108,7 @@ export const ItemCard: React.FC<ItemCardProps> = ({
 
             {/* XP Pill */}
             {xpReward && (
-              <span className="px-2 py-0.5 rounded-full text-xs font-black bg-[#5B5CE2]/10 text-[#5B5CE2] dark:text-[#8D8EFC] border border-[#5B5CE2]/20 tabular-nums">
+              <span className="px-2 py-0.5 rounded-full text-xs font-black bg-[#2155E6]/10 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/20 tabular-nums">
                 +{xpReward} XP
               </span>
             )}

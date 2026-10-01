@@ -142,7 +142,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#60A5FA] border border-[#2155E6]/25">
               <DecryptedText text="GRAMMAR LAB" speed={40} maxIterations={12} revealDirection="start" />
             </span>
           </div>
@@ -180,8 +180,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#141A22] dark:hover:bg-[#222E3A]'
+                  ? 'bg-[#2155E6] text-white border-[#2155E6] shadow-sm shadow-[#2155E6]/20 font-bold'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#0B1224] dark:hover:bg-[#15203B]'
               }`}
             >
               <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
@@ -214,15 +214,15 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
           {/* Left Column (6 cols): Grammar Concept & Rule Blueprint */}
           <div className="lg:col-span-6 space-y-4">
             <SpotlightCard
-              spotlightColor="rgba(91, 92, 226, 0.15)"
+              spotlightColor="rgba(33, 85, 230, 0.15)"
               showBorderBeam={true}
               borderBeamProps={{
-                colorFrom: '#F59E0B',
-                colorTo: '#5B5CE2',
+                colorFrom: '#2155E6',
+                colorTo: '#FFE600',
                 duration: 12,
                 size: 200,
               }}
-              className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+              className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
             >
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
@@ -260,10 +260,10 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
               {/* Core Concept - Formatted as Full-Width Pedagogical Card without AI markdown symbols */}
               {currentTopic.conceptTh && (
-                <div className="w-full p-4 sm:p-5 rounded-2xl bg-indigo-50/70 dark:bg-[#18202C] border border-indigo-200/80 dark:border-white/10 space-y-3">
+                <div className="w-full p-4 sm:p-5 rounded-2xl bg-indigo-50/70 dark:bg-[#101A30] border border-indigo-200/80 dark:border-white/10 space-y-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#5B5CE2]" />
-                    <span className="text-[11px] font-mono font-bold tracking-wider text-[#5B5CE2] dark:text-[#A5A6F6] uppercase">
+                    <span className="w-2 h-2 rounded-full bg-[#2155E6]" />
+                    <span className="text-[11px] font-mono font-bold tracking-wider text-[#2155E6] dark:text-[#6893FF] uppercase">
                       {isEn ? 'Core Linguistic Concept' : 'หลักการและบริบทการนำไปใช้'}
                     </span>
                   </div>
@@ -286,7 +286,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               {currentTopic.rules && currentTopic.rules.length > 0 && (
                 <div className="pt-2 space-y-3">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
-                    <Sparkles className="w-3.5 h-3.5 text-indigo-500" aria-hidden="true" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#FFE600]" aria-hidden="true" />
                     <span>{isEn ? 'Structure & Usage Rules:' : 'โครงสร้างและกฎการใช้งาน:'}</span>
                   </div>
 
@@ -294,9 +294,9 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     {currentTopic.rules.map((rule, idx) => (
                       <div
                         key={idx}
-                        className="p-4 rounded-[20px] bg-slate-100 dark:bg-[#1C2430] border border-slate-200/80 dark:border-white/10 space-y-2 shadow-xs"
+                        className="p-4 rounded-[20px] bg-slate-100 dark:bg-[#101A30] border border-slate-200/80 dark:border-white/10 space-y-2 shadow-xs"
                       >
-                        <div className="font-mono text-xs font-bold text-[#5B5CE2] bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block break-word-safe">
+                        <div className="font-mono text-xs font-bold text-[#2155E6] bg-[#2155E6]/10 px-3 py-1 rounded-full border border-[#2155E6]/25 inline-block break-word-safe">
                           {rule.formula}
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">

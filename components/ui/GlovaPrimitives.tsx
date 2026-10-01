@@ -80,13 +80,13 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
     xl: 'px-8 py-4 text-lg rounded-[22px] min-h-[56px]',
   }[size];
 
-  // Physical tactile 3D extrusion (Uiverse.io + Duolingo 3D ledge + Valorant crimson)
+  // Physical tactile 3D extrusion (Dribbble Electric Cobalt + Tactile 3D ledge)
   const variantDepthStyles: Record<string, Record<string, string>> = {
     primary: {
-      sm: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_2.5px_0_0_#38399E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
-      md: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
-      lg: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_5px_0_0_#38399E] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
-      xl: 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_6px_0_0_#38399E] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
+      sm: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_2.5px_0_0_#143DB8] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
+      md: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_4px_0_0_#143DB8] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
+      lg: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_5px_0_0_#143DB8] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
+      xl: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_6px_0_0_#143DB8] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
     },
     valorant: {
       sm: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_2.5px_0_0_#9E1B26] active:shadow-none active:translate-y-[2.5px] border-t border-white/30 font-black tracking-wide',
@@ -154,7 +154,7 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${styleClasses} ${
+      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${styleClasses} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}
       {...(props as any)}
@@ -389,8 +389,8 @@ export const BorderBeam: React.FC<BorderBeamProps> = ({
   size = 200,
   delay = 0,
   duration = 12,
-  colorFrom = '#FF4655', // Valorant Crimson
-  colorTo = '#5B5CE2',   // Glova Indigo
+  colorFrom = '#2155E6', // Dribbble Electric Cobalt
+  colorTo = '#FFE600',   // Dribbble Electric Yellow
   reverse = false,
   initialOffset = 0,
   borderWidth = 1.5,
@@ -401,7 +401,7 @@ export const BorderBeam: React.FC<BorderBeamProps> = ({
   if (shouldReduceMotion) {
     return (
       <div
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] border border-[#FF4655]/30 ${className}`}
+        className={`pointer-events-none absolute inset-0 rounded-[inherit] border border-[#2155E6]/30 ${className}`}
         style={style}
       />
     );
@@ -452,7 +452,7 @@ export interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement>
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
-  spotlightColor = 'rgba(91, 92, 226, 0.08)',
+  spotlightColor = 'rgba(33, 85, 230, 0.08)',
   showBorderBeam = false,
   borderBeamProps,
   onMouseMove,
@@ -483,7 +483,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         setOpacity(0);
         if (onMouseLeave) onMouseLeave(e);
       }}
-      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.3)] text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#0B1224] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.3)] text-slate-900 dark:text-[#EDEBE8] ${className}`}
       {...props}
     >
       <div
@@ -498,8 +498,8 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         <BorderBeam
           size={borderBeamProps?.size ?? 250}
           duration={borderBeamProps?.duration ?? 10}
-          colorFrom={borderBeamProps?.colorFrom ?? '#FF4655'}
-          colorTo={borderBeamProps?.colorTo ?? '#5B5CE2'}
+          colorFrom={borderBeamProps?.colorFrom ?? '#2155E6'}
+          colorTo={borderBeamProps?.colorTo ?? '#FFE600'}
           borderWidth={borderBeamProps?.borderWidth ?? 2}
           {...borderBeamProps}
         />
@@ -530,14 +530,14 @@ export const TacticalHudFrame: React.FC<TacticalHudFrameProps> = ({
   accentColor,
   className = '',
 }) => {
-  const effectiveCode = agentName || calloutCode || 'VALORANT // AGENT CONTRACT';
+  const effectiveCode = agentName || calloutCode || 'CEFR // TACTICAL HUD';
   const effectiveLabel = statusText || biomeLabel;
   const rawVariant = (accentColor || accentVariant || 'indigo') as string;
   const variantKey = rawVariant === 'amber' ? 'gold' : rawVariant;
 
   const cornerColor: Record<string, string> = {
     crimson: 'border-[#FF4655]',
-    indigo: 'border-[#4F46E5] dark:border-[#5B5CE2]',
+    indigo: 'border-[#2155E6] dark:border-[#2155E6]',
     emerald: 'border-[#10B981]',
     gold: 'border-[#F59E0B]',
     purple: 'border-[#8B5CF6]',
@@ -706,7 +706,7 @@ export const VIBE_CODER_SOURCES = [
     roleTh: 'Hero Bento & คลัง Component ระดับโปรดักชัน',
     roleEn: 'Production Hero Bento & Modular Registry',
     fusionTag: 'PRODUCTION BENTO',
-    badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] dark:border-[#5B5CE2]/40',
+    badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-[#2155E6]/20 dark:text-[#6893FF] dark:border-[#2155E6]/40',
   },
   {
     id: 'godly',
@@ -756,11 +756,11 @@ export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string 
 }) => {
   return (
     <div
-      className={`p-5 rounded-[24px] bg-gradient-to-r from-indigo-50/80 via-white to-rose-50/70 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      className={`p-5 rounded-[24px] bg-gradient-to-r from-indigo-50/80 via-white to-rose-50/70 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
     >
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2] text-white">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6] text-white">
             COMPONENT ARCHITECTURE // 5 SITES
           </span>
           <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
@@ -862,19 +862,19 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
   return (
     <motion.div
       whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
-      className={`relative p-5 rounded-2xl bg-white dark:bg-[#1C2430] border transition-all duration-200 ${
+      className={`relative p-5 rounded-2xl bg-white dark:bg-[#101A30] border transition-all duration-200 ${
         status === 'ready'
-          ? 'border-[#5B5CE2] shadow-[0_8px_24px_-4px_rgba(91,92,226,0.15)] ring-1 ring-[#5B5CE2]/30'
+          ? 'border-[#2155E6] shadow-[0_8px_24px_-4px_rgba(33,85,230,0.15)] ring-1 ring-[#2155E6]/30'
           : status === 'completed'
           ? 'border-[#10B981] shadow-[0_4px_16px_-4px_rgba(16,185,129,0.15)]'
           : status === 'in-progress'
-          ? 'border-[#5B5CE2]/40 shadow-[0_4px_16px_-4px_rgba(91,92,226,0.08)]'
+          ? 'border-[#2155E6]/40 shadow-[0_4px_16px_-4px_rgba(33,85,230,0.08)]'
           : 'border-slate-200 dark:border-[rgba(255,255,255,0.08)] opacity-60'
       } ${className}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#222E3A] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
             {level}
           </span>
           <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
@@ -886,7 +886,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
         </div>
 
         <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8] shrink-0">
-          <Clock className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <Clock className="w-3.5 h-3.5 text-[#FFE600]" />
           <span>{estimatedMinutes}m</span>
           <span className="text-slate-900 dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
         </div>
@@ -913,7 +913,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
             <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#131920] overflow-hidden">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${
-                  status === 'completed' ? 'bg-[#10B981]' : skill === 'ranked' ? 'bg-[#FF4655]' : 'bg-[#5B5CE2]'
+                  status === 'completed' ? 'bg-[#10B981]' : skill === 'ranked' ? 'bg-[#FF4655]' : 'bg-[#2155E6]'
                 }`}
                 style={{ width: `${progress}%` }}
               />
@@ -984,19 +984,19 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#1C2430] border-2 border-[#5B5CE2]/30 shadow-[0_12px_36px_-6px_rgba(91,92,226,0.1)] space-y-5 ${className}`}
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#2155E6]/30 shadow-[0_12px_36px_-6px_rgba(33,85,230,0.1)] space-y-5 ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EEF2FF] text-[#4F46E5] dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] text-xs font-bold tracking-wide border border-[#5B5CE2]/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2155E6]/10 text-[#2155E6] dark:bg-[#2155E6]/20 dark:text-[#6893FF] text-xs font-bold tracking-wide border border-[#2155E6]/30">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{categoryBadge}</span>
         </span>
         <div className="flex items-center gap-3 text-xs font-semibold text-slate-500 dark:text-[#94A3B8]">
           <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5 text-[#F59E0B]" />
+            <Clock className="w-3.5 h-3.5 text-[#FFE600]" />
             <span>{estimatedMinutes} min</span>
           </span>
-          <span className="px-2.5 py-0.5 rounded-full bg-[#F59E0B] text-white font-bold text-xs">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#FFE600] text-[#0B1224] font-bold text-xs">
             +{xpReward} XP
           </span>
         </div>
@@ -1075,10 +1075,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       badgeBg: 'bg-[#10B981] text-white',
     },
     active: {
-      bg: 'bg-[#5B5CE2] hover:bg-[#4A4BCB] shadow-[#3A3B9E]',
-      ring: 'ring-[#5B5CE2]/35',
+      bg: 'bg-[#2155E6] hover:bg-[#1C4AC9] shadow-[#143DB8]',
+      ring: 'ring-[#2155E6]/35',
       icon: <Star className="w-8 h-8 text-white fill-white stroke-[1.5]" />,
-      badgeBg: 'bg-[#5B5CE2] text-white',
+      badgeBg: 'bg-[#2155E6] text-white',
     },
     review: {
       bg: 'bg-[#FF4655] hover:bg-[#E63946] shadow-[#9E1B26]',
@@ -1103,7 +1103,7 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
         <motion.div
           animate={{ scale: [1, 1.25, 1], opacity: [0.6, 0, 0.6] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute w-24 h-24 rounded-full bg-[#5B5CE2]/20 -top-2"
+          className="absolute w-24 h-24 rounded-full bg-[#2155E6]/20 -top-2"
           aria-hidden="true"
         />
       )}
@@ -1114,10 +1114,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
           animate={{ y: 0, opacity: 1 }}
           className="mb-2 z-20"
         >
-          <div className="relative px-3.5 py-1.5 rounded-full bg-[#5B5CE2] text-white text-xs font-black tracking-wider uppercase shadow-md flex items-center gap-1.5">
+          <div className="relative px-3.5 py-1.5 rounded-full bg-[#2155E6] text-white text-xs font-black tracking-wider uppercase shadow-md flex items-center gap-1.5">
             <Sparkles className="w-3 h-3 text-white" />
             <span>{ctaText}</span>
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#5B5CE2] rotate-45" />
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#2155E6] rotate-45" />
           </div>
         </motion.div>
       )}
@@ -1355,7 +1355,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
   colSpan = 3,
 }) => {
   const accentBorder = {
-    indigo: 'hover:border-[#5B5CE2]/60 hover:shadow-[0_8px_30px_rgba(91,92,226,0.12)]',
+    indigo: 'hover:border-[#2155E6]/60 hover:shadow-[0_8px_30px_rgba(33,85,230,0.12)]',
     crimson: 'hover:border-[#FF4655]/60 hover:shadow-[0_8px_30px_rgba(255,70,85,0.12)]',
     emerald: 'hover:border-[#10B981]/60 hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)]',
     amber: 'hover:border-[#F59E0B]/60 hover:shadow-[0_8px_30px_rgba(245,158,11,0.12)]',

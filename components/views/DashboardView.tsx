@@ -210,25 +210,25 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         slotNumber: 1,
         id: 'slot-vocab',
-        label: isEn ? 'Lexical Tome (Vocab)' : 'คัมภีร์คำศัพท์ CEFR',
+        label: isEn ? 'Lexical Tome' : 'คัมภีร์คำศัพท์ CEFR',
         rarity: 'hallowed' as const,
         stackCount: '3,860',
-        icon: <BookOpen className="w-4 h-4 text-[#4F46E5] dark:text-[#818CF8]" />,
+        icon: <BookOpen className="w-4 h-4 text-[#2155E6] dark:text-[#60A5FA]" />,
         onSelect: () => onNavigate('vocabulary'),
       },
       {
         slotNumber: 2,
         id: 'slot-grammar',
-        label: isEn ? 'Syntax Anvil (Grammar)' : 'ทั่งตีไวยากรณ์ 18 บท',
+        label: isEn ? 'Syntax Anvil' : 'ทั่งตีไวยากรณ์ 18 บท',
         rarity: 'gold' as const,
         stackCount: '18',
-        icon: <Sparkles className="w-4 h-4 text-[#D97706] dark:text-[#FBBF24]" />,
+        icon: <Sparkles className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
         onSelect: () => onNavigate('grammar'),
       },
       {
         slotNumber: 3,
         id: 'slot-reading',
-        label: isEn ? 'Lore Scroll (Reading)' : 'ม้วนคัมภีร์การอ่าน',
+        label: isEn ? 'Lore Scroll' : 'ม้วนคัมภีร์การอ่าน',
         rarity: 'celestial' as const,
         stackCount: '42',
         icon: <BookMarked className="w-4 h-4 text-[#059669] dark:text-[#34D399]" />,
@@ -237,7 +237,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         slotNumber: 4,
         id: 'slot-listening',
-        label: isEn ? 'Echo Crystal (Audio)' : 'ผลึกเสียงสำเนียงจริง',
+        label: isEn ? 'Echo Crystal' : 'ผลึกเสียงสำเนียงจริง',
         rarity: 'silver' as const,
         stackCount: '36',
         icon: <Headphones className="w-4 h-4 text-[#0284C7] dark:text-[#38BDF8]" />,
@@ -258,7 +258,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         label: isEn ? 'Cambridge Mock Exam' : 'ชุดข้อสอบจำลอง Cambridge',
         rarity: 'copper' as const,
         stackCount: progress.targetExam,
-        icon: <Award className="w-4 h-4 text-[#D97706] dark:text-[#E5A93C]" />,
+        icon: <Award className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
         onSelect: () => onNavigate('mockExam'),
       },
     ],
@@ -271,7 +271,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-slate-200 dark:border-white/10">
         <div>
           <div className="flex items-center gap-2 mb-1 flex-wrap">
-            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/30">
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/30">
               ADAPTIVE CEFR FRAMEWORK
             </span>
             <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-300/70 dark:border-emerald-500/30">
@@ -293,7 +293,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               text={isEn ? 'Your Learning Dashboard' : 'แดชบอร์ดการเรียนรู้ของคุณ'}
               animateOn="hover"
             />
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#4F46E5]/10 text-[#4F46E5] dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] font-mono font-bold border border-[#5B5CE2]/25">
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#2155E6]/10 text-[#2155E6] dark:bg-[#2155E6]/20 dark:text-[#6893FF] font-mono font-bold border border-[#2155E6]/25">
               {progress.currentLevel} → {nextLvl}
             </span>
           </h1>
@@ -317,7 +317,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <SlidingTabs
           tabs={[
             { id: 'path', label: isEn ? 'CEFR Learning Path' : 'เส้นทางเรียนรู้ CEFR', icon: <Compass className="w-4 h-4" /> },
-            { id: 'studios', label: isEn ? 'All Studios (8)' : 'คลัง 8 สตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
+            { id: 'studios', label: isEn ? 'All Studios' : 'สตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
           ]}
           activeTab={activeTab}
           onChange={(tab) => setActiveTab(tab as any)}
@@ -327,10 +327,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* DYNAMIC VIEW SWITCHER: ALL STUDIOS CATALOG VS STEPPED PATH */}
       {activeTab === 'studios' ? (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[28px] bg-gradient-to-r from-indigo-50/90 via-white to-emerald-50/60 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] border border-slate-200/90 dark:border-white/10 shadow-xs flex items-center justify-between gap-6 flex-wrap">
+          <div className="p-6 sm:p-8 rounded-[28px] bg-gradient-to-r from-indigo-50/90 via-white to-emerald-50/60 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-white/10 shadow-xs flex items-center justify-between gap-6 flex-wrap">
             <div className="space-y-1.5 max-w-2xl">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2] text-white">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6] text-white">
                   CURRICULUM REPERTOIRE
                 </span>
                 <span className="text-xs font-mono font-bold text-[#059669] dark:text-[#34D399]">
@@ -366,20 +366,34 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 title: isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR',
                 ctaText: isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์',
                 desc: isEn ? 'Master high-frequency words with spaced repetition & collocation pairs.' : 'เรียนรู้คำศัพท์ตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition',
-                icon: <BookOpen className="w-6 h-6 text-[#4F46E5] dark:text-[#5B5CE2]" />,
+                icon: <BookOpen className="w-6 h-6 text-[#2155E6] dark:text-[#60A5FA]" />,
                 badge: '3,860 Words',
                 accent: 'indigo' as const,
                 colSpan: 'sm:col-span-2 lg:col-span-2',
+                background: (
+                  <img
+                    src="/assets/dribbble-safe-coins.jpg"
+                    alt=""
+                    className="w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity"
+                  />
+                ),
               },
               {
                 id: 'grammar',
                 title: isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ',
                 ctaText: isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด',
                 desc: isEn ? 'Practical sentence structures and tenses explained with clear rules.' : 'โครงสร้างประโยคและ Tenses สำคัญพร้อมตัวอย่างประโยคใช้งานจริง',
-                icon: <Sparkles className="w-6 h-6 text-[#D97706] dark:text-[#FBBF24]" />,
+                icon: <Sparkles className="w-6 h-6 text-[#FFE600] dark:text-[#FFE600]" />,
                 badge: '18 Topics',
                 accent: 'amber' as const,
                 colSpan: 'sm:col-span-1 lg:col-span-1',
+                background: (
+                  <img
+                    src="/assets/dribbble-basket-tools.jpg"
+                    alt=""
+                    className="w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity"
+                  />
+                ),
               },
               {
                 id: 'compete',
@@ -390,16 +404,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 badge: 'Ranked MMR',
                 accent: 'crimson' as const,
                 colSpan: 'sm:col-span-1 lg:col-span-1',
+                background: (
+                  <img
+                    src="/assets/dribbble-hands-controller.jpg"
+                    alt=""
+                    className="w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity"
+                  />
+                ),
               },
               {
                 id: 'mockExam',
                 title: isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge',
                 ctaText: isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ',
                 desc: isEn ? `Realistic exam simulations for ${progress.targetExam} with timer.` : `ข้อสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและวิเคราะห์คะแนน`,
-                icon: <Award className="w-6 h-6 text-[#059669] dark:text-[#10B981]" />,
+                icon: <Award className="w-6 h-6 text-[#FFE600] dark:text-[#FFE600]" />,
                 badge: 'KET / PET / FCE',
                 accent: 'emerald' as const,
                 colSpan: 'sm:col-span-2 lg:col-span-2',
+                background: (
+                  <img
+                    src="/assets/dribbble-gift-box.jpg"
+                    alt=""
+                    className="w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity"
+                  />
+                ),
               },
               {
                 id: 'listening',
@@ -451,6 +479,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 cta={studio.ctaText}
                 badge={studio.badge}
                 accentVariant={studio.accent}
+                background={(studio as any).background}
                 onCtaClick={() => onNavigate(studio.id as any)}
               />
             ))}
@@ -472,90 +501,183 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* LEFT COLUMN: WHAT TO DO NOW HERO + STEPPED PATH (8 cols)                  */}
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
-          {/* A. "WHAT SHOULD I DO RIGHT NOW?" PRIMARY ACTION HERO (21st.dev x Aceternity x Valorant/Duolingo) */}
-          <SpotlightCard
-            showBorderBeam={true}
-            borderBeamProps={{
-              size: 260,
-              duration: 9,
-              colorFrom: '#FF4655', // Valorant Crimson laser
-              colorTo: '#5B5CE2',   // Glova Indigo trail
-              borderWidth: 2,
-            }}
-            className="p-6 sm:p-8 border-2 border-indigo-200/90 dark:border-[rgba(255,255,255,0.08)] bg-gradient-to-br from-indigo-50/80 via-white to-rose-50/50 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] text-slate-900 dark:text-[#EDEBE8] shadow-xs rounded-[28px] overflow-hidden relative"
-          >
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex-1 flex flex-col gap-4">
-                {/* Header Badges */}
-                <div className="flex items-center justify-between gap-3 flex-wrap">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2] text-white text-xs font-black tracking-wide uppercase shadow-xs">
-                      <Sparkles className="w-3.5 h-3.5 text-white" />
-                      <span>{primaryAction.unitBadge}</span>
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-md bg-rose-100 text-rose-800 dark:bg-[#FF4655]/20 dark:text-[#FF4655] border border-rose-300 dark:border-[#FF4655]/30 text-[10px] font-mono font-black uppercase">
-                      AGENT CONTRACT // {progress.currentLevel}
-                    </span>
-                    <span className="text-xs font-bold text-[#4F46E5] dark:text-[#A5A6F6]">
-                      {primaryAction.skill}
-                    </span>
-                  </div>
+          {/* A. DRIBBBLE GAME-STREAM PRIMARY HERO BANNER */}
+          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-[#2155E6] via-[#1B47C2] to-[#123696] text-white p-6 sm:p-8 shadow-2xl border border-white/15">
+            {/* Subtle background glow */}
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
 
-                  <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-[#94A3B8] font-semibold">
-                    <Clock className="w-3.5 h-3.5 text-[#F43F5E]" />
-                    <span>{primaryAction.timeMin} {isEn ? 'minutes' : 'นาที'}</span>
-                    <span>•</span>
-                    <span className="text-[#059669] dark:text-[#34D399] font-black">+15 XP</span>
-                  </div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1 flex flex-col gap-3.5">
+                {/* Header Pills */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[11px] font-mono font-black uppercase tracking-wider backdrop-blur-sm border border-white/20">
+                    <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
+                    <span>{primaryAction.unitBadge}</span>
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-black/20 text-[#FFE600] border border-[#FFE600]/30 text-[10px] font-mono font-black uppercase">
+                    CEFR LEVEL {progress.currentLevel}
+                  </span>
+                  <span className="text-xs text-blue-100 font-semibold">
+                    {primaryAction.skill}
+                  </span>
                 </div>
 
-                {/* Main Prompt */}
-                <div className="space-y-1.5">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-snug">
+                {/* Main Heading */}
+                <div className="space-y-1">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                     {primaryAction.title}
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl">
+                  <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-xl">
                     {primaryAction.description}
                   </p>
                 </div>
 
-                {/* Large Tactile Call To Action (Duolingo 3D + Valorant Crimson Duel) */}
+                {/* Tactile Action Buttons */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                  <TactileButton
-                    variant="primary"
-                    size="lg"
+                  <button
+                    type="button"
                     onClick={primaryAction.onStart}
-                    className="px-8 cursor-pointer"
-                    rightIcon={<ArrowRight className="w-5 h-5" />}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#FFE600] text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,230,0,0.4)] hover:bg-[#FFE600]/95 hover:scale-105 active:scale-95 transition-all cursor-pointer"
                   >
-                    {primaryAction.cta}
-                  </TactileButton>
+                    <span>{primaryAction.cta}</span>
+                    <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  </button>
 
-                  <TactileButton
-                    variant="valorant"
-                    size="lg"
+                  <button
+                    type="button"
                     onClick={() => onNavigate('compete')}
-                    className="sm:w-auto cursor-pointer"
-                    leftIcon={<Swords className="w-4 h-4 text-white" />}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm border border-white/25 active:scale-95 transition-all cursor-pointer backdrop-blur-sm"
                   >
-                    {isEn ? 'Speed Vocab Duel (MMR)' : 'ดวลความเร็วคำศัพท์ (MMR)'}
-                  </TactileButton>
+                    <Swords className="w-4 h-4 text-[#FFE600]" />
+                    <span>{isEn ? 'Speed Vocab Duel (MMR)' : 'ดวลความเร็วคำศัพท์ 4 วิ'}</span>
+                  </button>
                 </div>
               </div>
 
-              {/* Visual Learning Companion Emblem */}
-              <div className="hidden sm:flex flex-col items-center justify-center p-4 rounded-3xl bg-white/95 dark:bg-[#1C2430]/80 border-2 border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] shrink-0 shadow-xs">
-                <img
-                  src="/assets/decorative/mascot-glova-spark.png"
-                  alt="Glova Mascot Spark"
-                  className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-transform hover:scale-105"
-                />
-                <span className="text-[11px] font-black text-[#4F46E5] dark:text-[#A5A6F6] mt-2 uppercase tracking-wide">
-                  {isEn ? 'Daily AI Companion' : 'คู่หูการเรียนรู้วันนี้'}
-                </span>
+              {/* 3D Mascot Kart Asset from Dribbble */}
+              <div className="relative shrink-0 flex items-center justify-center">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl bg-white/10 backdrop-blur-sm group">
+                  <img
+                    src="/assets/dribbble-mascot-kart.jpg"
+                    alt="Glova Mascot Kart"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               </div>
             </div>
-          </SpotlightCard>
+          </div>
+
+          {/* B. DRIBBBLE SLIDE 2 INSPIRATION: ACTIVE CONTENDERS & LIVE STUDY SQUAD */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1224] border border-slate-200/90 dark:border-slate-800/80 shadow-xs space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]" />
+                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-display">
+                  {isEn ? 'Live Study Squad & Active Contenders' : 'เพื่อนร่วมเรียนและคู่ประลองออนไลน์'}
+                </h3>
+              </div>
+              <span className="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-500/20">
+                {isEn ? '6 ONLINE' : 'ออนไลน์ 6 คน'}
+              </span>
+            </div>
+
+            {/* Horizontal Scrollable Contenders Row (Dribbble Slide 2 Transfer List) */}
+            <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-1">
+              {/* + Add / Invite */}
+              <button
+                type="button"
+                onClick={() => onNavigate('social')}
+                className="flex flex-col items-center gap-1.5 shrink-0 group focus-visible:outline-none"
+              >
+                <div className="w-12 h-12 rounded-full border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:border-[#2155E6] group-hover:text-[#2155E6] transition-colors">
+                  <span className="text-lg font-bold">+</span>
+                </div>
+                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">
+                  {isEn ? 'Invite' : 'เชิญเพื่อน'}
+                </span>
+              </button>
+
+              {/* Contender 1: Mary */}
+              <div className="flex flex-col items-center gap-1.5 shrink-0">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80"
+                    alt="Mary"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 shadow-sm"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                </div>
+                <div className="text-center">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Mary</div>
+                  <span className="text-[9px] font-mono font-bold text-amber-600 dark:text-amber-400">A2</span>
+                </div>
+              </div>
+
+              {/* Contender 2: David */}
+              <div className="flex flex-col items-center gap-1.5 shrink-0">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
+                    alt="David"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-blue-500 shadow-sm"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                </div>
+                <div className="text-center">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">David</div>
+                  <span className="text-[9px] font-mono font-bold text-blue-500 dark:text-blue-400">B1</span>
+                </div>
+              </div>
+
+              {/* Contender 3: Sarah */}
+              <div className="flex flex-col items-center gap-1.5 shrink-0">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
+                    alt="Sarah"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500 shadow-sm"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                </div>
+                <div className="text-center">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Sarah</div>
+                  <span className="text-[9px] font-mono font-bold text-emerald-600 dark:text-emerald-400">B2</span>
+                </div>
+              </div>
+
+              {/* Contender 4: William */}
+              <div className="flex flex-col items-center gap-1.5 shrink-0">
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
+                    alt="William"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-purple-500 shadow-sm"
+                  />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                </div>
+                <div className="text-center">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">William</div>
+                  <span className="text-[9px] font-mono font-bold text-purple-600 dark:text-purple-400">C1</span>
+                </div>
+              </div>
+
+              {/* Contender 5: Frame (You) */}
+              <div className="flex flex-col items-center gap-1.5 shrink-0">
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#2155E6] to-[#FFE600] p-0.5 shadow-sm">
+                    <div className="w-full h-full rounded-full bg-[#0B1224] flex items-center justify-center font-bold text-xs text-white">
+                      YOU
+                    </div>
+                  </div>
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                </div>
+                <div className="text-center">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Frame</div>
+                  <span className="text-[9px] font-mono font-bold text-[#FFE600]">Gold II</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* RESUME LAST ACTIVITY */}
           {progress.lastActivity && (
@@ -582,10 +704,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="flex items-center justify-between pb-5 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] gap-4 flex-wrap">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#4F46E5] dark:text-[#A5A6F6] uppercase tracking-wider font-tech">
+                    <span className="text-xs font-bold text-[#2155E6] dark:text-[#6893FF] uppercase tracking-wider font-tech">
                       {isEn ? `Progression: ${progress.currentLevel} → ${nextLvl}` : `การพัฒนา: ${progress.currentLevel} → ${nextLvl}`}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/20 text-[#4F46E5] dark:text-[#A5A6F6] border border-[#5B5CE2]/20">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#2155E6]/10 dark:bg-[#2155E6]/20 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/20">
                       {isEn ? 'Active Studio Term' : 'ภาคการเรียนรู้ปัจจุบัน'}
                     </span>
                   </div>
@@ -600,7 +722,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     <div className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono">50% Complete</div>
                   </div>
                   <div className="w-24 h-2.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2]" style={{ width: '50%' }} />
+                    <div className="h-full rounded-full bg-[#2155E6]" style={{ width: '50%' }} />
                   </div>
                 </div>
               </div>
@@ -800,13 +922,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* 1.1 6 CORE COMPETENCIES PROGRESS BARS */}
-          <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3 text-slate-900 dark:text-[#EDEBE8]">
+          <div className="p-5 rounded-[24px] bg-white dark:bg-[#0B1224] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3 text-slate-900 dark:text-[#EDEBE8]">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8]">
               {isEn ? '6 CORE COMPETENCIES' : 'ความเชี่ยวชาญ 6 ด้าน'}
             </h3>
             <div className="space-y-2.5 text-xs">
               {[
-                { skill: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์', val: progress.skillStats.vocabulary, color: 'bg-[#4F46E5] dark:bg-[#5B5CE2]' },
+                { skill: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์', val: progress.skillStats.vocabulary, color: 'bg-[#2155E6]' },
                 { skill: 'grammar', label: isEn ? 'Grammar' : 'ไวยากรณ์', val: progress.skillStats.grammar, color: 'bg-[#F59E0B]' },
                 { skill: 'reading', label: isEn ? 'Reading' : 'การอ่าน', val: progress.skillStats.reading, color: 'bg-[#10B981]' },
                 { skill: 'listening', label: isEn ? 'Listening' : 'การฟัง', val: progress.skillStats.listening, color: 'bg-[#0EA5E9]' },
@@ -816,7 +938,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <div key={s.skill} className="space-y-1">
                   <div className="flex justify-between text-[11px] font-semibold">
                     <span className="text-slate-800 dark:text-[#EDEBE8]">{s.label}</span>
-                    <span className="text-[#4F46E5] dark:text-[#A5A6F6] font-mono">{s.val}%</span>
+                    <span className="text-[#2155E6] dark:text-[#6893FF] font-mono">{s.val}%</span>
                   </div>
                   <div
                     role="progressbar"
@@ -857,47 +979,48 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </p>
           </div>
 
-          {/* 3. RANKED LEAGUE STANDING (Academic Tactical HUD x Heraldic Crest) */}
-          <TacticalHudFrame
-            calloutCode="ACADEMIC LEAGUE // RANKED ARENA"
-            biomeLabel="Top 10 Division"
-            accentVariant="crimson"
-            className="bg-gradient-to-br from-rose-50/70 via-white to-amber-50/40 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] space-y-4"
-          >
+          {/* 3. DRIBBBLE GAME-STREAM RANKED LEAGUE HUD CARD */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#2155E6]/15 via-white to-blue-50/40 dark:from-[#0B1224] dark:via-[#111C38] dark:to-[#0B1224] border border-[#2155E6]/30 dark:border-blue-500/20 p-5 shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-[#F59E0B]" />
-                <span className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider">
-                  {isEn ? 'RANKED ARENA' : 'สมรภูมิประลอง'}
+                <Trophy className="w-4 h-4 text-[#FFE600]" />
+                <span className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                  {isEn ? 'RANKED BATTLE ARENA' : 'สมรภูมิประลองจัดอันดับ'}
                 </span>
               </div>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 dark:bg-[#FF4655]/20 text-rose-800 dark:text-[#FF4655] font-bold font-mono border border-rose-300 dark:border-[#FF4655]/30">
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#FFE600] text-slate-950 font-black font-mono shadow-xs">
                 Top 10
               </span>
             </div>
 
             <div className="flex items-center gap-4">
-              <RankEmblem tier="Gold" size="md" showGlow animate />
-              <div>
-                <h4 className="font-black text-base text-slate-900 dark:text-[#EDEBE8]">
-                  Gold III • Bangkok League
+              <div className="relative shrink-0">
+                <img
+                  src="/assets/dribbble-hands-controller.jpg"
+                  alt="Ranked Controller"
+                  className="w-16 h-16 rounded-xl object-cover border border-[#2155E6]/30 shadow-md"
+                />
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-black text-sm sm:text-base text-slate-900 dark:text-white truncate">
+                  Gold II • Bangkok League
                 </h4>
                 <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-0.5">
-                  Rating: <span className="font-mono font-bold text-[#E11D48] dark:text-[#FF4655]">1,420 MMR</span>
+                  Rating: <span className="font-mono font-bold text-[#2155E6] dark:text-[#60A5FA]">1,420 MMR</span>
                 </p>
               </div>
             </div>
 
-            <TactileButton
-              variant="valorant"
-              size="sm"
-              fullWidth
+            <button
+              type="button"
               onClick={() => onNavigate('compete')}
-              leftIcon={<Swords className="w-4 h-4 text-white" />}
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#FFE600] hover:bg-[#FFE600]/90 text-slate-950 font-black text-xs uppercase tracking-wider shadow-[0_4px_14px_rgba(255,230,0,0.3)] active:scale-98 transition-all cursor-pointer"
             >
-              {isEn ? 'ENTER VOCAB BATTLE' : 'เข้าสู่สนามประลอง'}
-            </TactileButton>
-          </TacticalHudFrame>
+              <Swords className="w-4 h-4" />
+              <span>{isEn ? 'ENTER VOCAB BATTLE' : 'เข้าสู่สนามประลอง'}</span>
+            </button>
+          </div>
 
           {/* 4. DAILY QUESTS */}
           <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3.5 text-slate-900 dark:text-[#EDEBE8]">
@@ -932,10 +1055,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     {isEn ? 'Score 80%+ in Vocab Battle' : 'ชนะประลองคำศัพท์ด้วยคะแนน 80% ขึ้นไป'}
                   </p>
                   <div className="w-24 h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#4F46E5] dark:bg-[#5B5CE2]" style={{ width: '0%' }} />
+                    <div className="h-full rounded-full bg-[#2155E6]" style={{ width: '0%' }} />
                   </div>
                 </div>
-                <span className="text-[#4F46E5] dark:text-[#A5A6F6] font-bold shrink-0 font-mono">
+                <span className="text-[#2155E6] dark:text-[#6893FF] font-bold shrink-0 font-mono">
                   +20 XP
                 </span>
               </div>

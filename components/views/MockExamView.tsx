@@ -423,15 +423,15 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
       <div className="w-full space-y-6 pb-12">
         {/* Header Hero Banner */}
         <SpotlightCard
-          spotlightColor="rgba(168, 85, 247, 0.15)"
+          spotlightColor="rgba(33, 85, 230, 0.15)"
           showBorderBeam={true}
           borderBeamProps={{
-            colorFrom: '#A855F7',
-            colorTo: '#5B5CE2',
+            colorFrom: '#2155E6',
+            colorTo: '#FFE600',
             duration: 14,
             size: 260,
           }}
-          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
         >
           {/* Authentic Examination Setting Backdrop */}
           <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
@@ -446,7 +446,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-card via-card/85 to-transparent" />
           </div>
           <div className="relative z-10 space-y-4">
-            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 rounded-2xl bg-[#2155E6]/10 border border-[#2155E6]/25 text-[#2155E6] dark:text-[#6893FF] flex items-center justify-center mx-auto">
               <GraduationCap className="w-7 h-7" />
             </div>
             <div>
@@ -531,18 +531,18 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               return (
                 <SpotlightCard
                   key={exam.id}
-                  spotlightColor={isSelected ? 'rgba(91, 92, 226, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
+                  spotlightColor={isSelected ? 'rgba(33, 85, 230, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
                   showBorderBeam={isSelected}
                   borderBeamProps={{
-                    colorFrom: '#5B5CE2',
-                    colorTo: '#A855F7',
+                    colorFrom: '#2155E6',
+                    colorTo: '#FFE600',
                     duration: 10,
                     size: 180,
                   }}
                   onClick={() => setSelectedExamId(exam.id)}
-                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-white dark:bg-[#141A22] border ${
+                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-white dark:bg-[#0B1224] border ${
                     isSelected
-                      ? 'border-[#5B5CE2] shadow-md shadow-[#5B5CE2]/10 ring-1 ring-[#5B5CE2]/30'
+                      ? 'border-[#2155E6] shadow-md shadow-[#2155E6]/15 ring-2 ring-[#2155E6]/30'
                       : 'border-slate-200/80 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
                   }`}
                 >
@@ -621,11 +621,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           showBorderBeam={true}
           borderBeamProps={{
             colorFrom: isPassed ? '#10B981' : '#F59E0B',
-            colorTo: '#5B5CE2',
+            colorTo: '#2155E6',
             duration: 12,
             size: 240,
           }}
-          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
         >
           <div
             className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto ${
@@ -884,8 +884,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                     const isSelected =
                       answers[currentQuestion.id]?.selected_option_key === option.key;
                     const optionStyle = isSelected
-                      ? 'bg-[#5B5CE2]/15 border-2 border-[#5B5CE2] text-[#5B5CE2] dark:text-[#A5A6F6] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#5B5CE2] active:translate-y-[3.5px] active:shadow-none'
-                      : 'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] border-2 border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
+                      ? 'bg-[#2155E6]/15 border-2 border-[#2155E6] text-[#2155E6] dark:text-[#6893FF] font-bold ring-2 ring-[#2155E6]/20 shadow-[0_3.5px_0_0_#143DB8] active:translate-y-[3.5px] active:shadow-none'
+                      : 'bg-slate-100 dark:bg-[#101A30] hover:bg-[#15203B] border-2 border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
 
                     return (
                       <button
@@ -896,8 +896,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                         <span
                           className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 border ${
                             isSelected
-                              ? 'bg-[#5B5CE2] text-white border-[#5B5CE2]'
-                              : 'bg-slate-100 dark:bg-[#1C2430] text-slate-900 dark:text-[#EDEBE8] border-slate-200/80 dark:border-white/10'
+                              ? 'bg-[#2155E6] text-white border-[#2155E6]'
+                              : 'bg-slate-100 dark:bg-[#101A30] text-slate-900 dark:text-[#EDEBE8] border-slate-200/80 dark:border-white/10'
                           }`}
                         >
                           {option.key}
@@ -978,13 +978,13 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 const isFlagged = flaggedQuestionIds.includes(q.id);
                 const isCurrent = currentQuestionIdx === idx;
 
-                let btnClass = 'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] border border-slate-200/80 dark:border-white/10 shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none';
+                let btnClass = 'bg-slate-100 dark:bg-[#101A30] hover:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] border border-slate-200/80 dark:border-white/10 shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none';
                 if (isCurrent) {
-                  btnClass = 'bg-[#5B5CE2] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none font-bold ring-2 ring-[#5B5CE2]/30';
+                  btnClass = 'bg-[#2155E6] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#143DB8] active:translate-y-[2.5px] active:shadow-none font-bold ring-2 ring-[#2155E6]/30';
                 } else if (isFlagged) {
                   btnClass = 'bg-[#E5A83B] text-white border-t border-white/20 shadow-[0_2px_0_0_#A86E12] active:translate-y-[2px] active:shadow-none font-bold';
                 } else if (isAnswered) {
-                  btnClass = 'bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#A5A6F6] border border-[#5B5CE2]/40 shadow-[0_2px_0_0_rgba(91,92,226,0.3)] active:translate-y-[2px] active:shadow-none font-bold';
+                  btnClass = 'bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/40 shadow-[0_2px_0_0_rgba(33,85,230,0.3)] active:translate-y-[2px] active:shadow-none font-bold';
                 }
 
                 return (

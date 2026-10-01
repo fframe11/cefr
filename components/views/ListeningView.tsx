@@ -141,7 +141,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/25">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
               <DecryptedText text="LISTENING LAB" speed={40} maxIterations={12} revealDirection="start" />
             </span>
           </div>
@@ -180,8 +180,8 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               }}
               className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#5B5CE2] text-white border-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/20 font-bold'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#141A22] dark:hover:bg-[#222E3A]'
+                  ? 'bg-[#2155E6] text-white border-[#2155E6] shadow-sm shadow-[#2155E6]/25 font-bold ring-2 ring-[#2155E6]/20'
+                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#0B1224] dark:hover:bg-[#15203B]'
               }`}
             >
               <GlovaLevelBadge level={item.cefrLevel} size="sm" />
@@ -211,15 +211,15 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
         <div className="space-y-6">
           {/* Audio Player Card (Dominant Player Station) */}
           <SpotlightCard
-            spotlightColor="rgba(6, 182, 212, 0.15)"
+            spotlightColor="rgba(33, 85, 230, 0.15)"
             showBorderBeam={true}
             borderBeamProps={{
-              colorFrom: '#06B6D4',
-              colorTo: '#5B5CE2',
+              colorFrom: '#2155E6',
+              colorTo: '#FFE600',
               duration: 12,
               size: 220,
             }}
-            className="p-6 sm:p-8 space-y-4 rounded-[30px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+            className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
@@ -231,7 +231,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
               {currentExercise.speakerAccents && (
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
-                  <Volume2 className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                  <Volume2 className="w-3.5 h-3.5 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />
                   <span>
                     {isEn ? `Accent: ${currentExercise.speakerAccents}` : `สำเนียง: ${currentExercise.speakerAccents}`}
                   </span>
@@ -265,7 +265,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 <button
                   type="button"
                   onClick={() => setShowTranscript(!showTranscript)}
-                  className="touch-target text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 flex items-center gap-1.5 transition-colors"
+                  className="touch-target text-xs font-bold text-[#2155E6] dark:text-[#6893FF] hover:text-[#1C4AC9] flex items-center gap-1.5 transition-colors"
                 >
                   {showTranscript ? (
                     <>
@@ -281,7 +281,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 </button>
 
                 {showTranscript && (
-                  <div className="mt-3 p-4 rounded-[20px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
+                  <div className="mt-3 p-4 rounded-[20px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 text-xs sm:text-sm text-foreground/90 leading-relaxed font-sans animate-in fade-in duration-200">
                     <p className="font-sans text-[11px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">
                       {isEn ? 'English Audio Transcript:' : 'บทพูดภาษาอังกฤษ:'}
                     </p>

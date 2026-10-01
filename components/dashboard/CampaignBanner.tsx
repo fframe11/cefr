@@ -12,6 +12,8 @@ import {
   ArrowRight,
   Clock,
   Award,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { Campaign, CampaignType } from '../../types/campaign';
 import { getActiveCampaigns } from '../../lib/campaigns';
@@ -291,9 +293,31 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
         </motion.div>
       </AnimatePresence>
 
-      {/* Centered Pagination Indicators (Clickable to switch slides directly) */}
+      {/* Pagination & Slide Navigation Controls */}
       {total > 1 && (
-        <div className="relative z-10 mt-5 pt-3 border-t border-[#EDE8DF]/70 dark:border-border/30 flex items-center justify-center">
+        <div className="relative z-10 mt-5 pt-3 border-t border-[#EDE8DF]/70 dark:border-border/30 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              aria-label={isEn ? 'Previous Campaign' : 'แคมเปญก่อนหน้า'}
+              onClick={prevSlide}
+              className="p-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <span className="text-xs font-mono font-medium text-slate-500 dark:text-[#94A3B8]">
+              {currentIndex + 1} / {total}
+            </span>
+            <button
+              type="button"
+              aria-label={isEn ? 'Next Campaign' : 'แคมเปญถัดไป'}
+              onClick={nextSlide}
+              className="p-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
           <div className="flex items-center gap-1.5" role="tablist" aria-label={isEn ? 'Slide Navigation' : 'เลื่อนหน้าแคมเปญ'}>
             {campaigns.map((camp, idx) => {
               const isActive = idx === currentIndex;

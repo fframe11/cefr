@@ -135,11 +135,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
             const Icon = item.icon;
             const itemLabel = isEn ? item.labelEn : item.labelTh;
 
-            let badgeClasses = 'bg-[#5B5CE2]/15 text-[#5B5CE2] border border-[#5B5CE2]/30';
+            let badgeClasses = 'bg-[#2155E6]/15 text-[#2155E6] dark:text-[#60A5FA] border border-[#2155E6]/30';
             if (item.badgeStyle === 'gold') {
-              badgeClasses = 'bg-amber-500/15 text-[#E5A93C] border border-amber-500/30';
+              badgeClasses = 'bg-[#FFE600] text-slate-950 font-black shadow-xs';
             } else if (item.badgeStyle === 'coral') {
-              badgeClasses = 'bg-[#F43F5E]/15 text-[#F43F5E] border border-[#F43F5E]/30';
+              badgeClasses = 'bg-[#FF4655]/15 text-[#FF4655] border border-[#FF4655]/30';
             } else if (item.badgeStyle === 'mint') {
               badgeClasses = 'bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30';
             }
@@ -155,14 +155,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] active:translate-y-0.5 ${
+                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] active:translate-y-0.5 ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
                 } ${
                   isActive
-                    ? 'bg-[#5B5CE2] text-white font-bold shadow-[0_2px_0_#3839A0]'
-                    : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] font-medium'
+                    ? 'bg-[#2155E6] text-white font-bold shadow-[0_4px_16px_rgba(33,85,230,0.35)] ring-1 ring-white/20'
+                    : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#111C38] font-medium'
                 }`}
               >
                 <Icon
@@ -179,7 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {!collapsedMode && item.badge && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
-                      isActive ? 'bg-white/20 text-white' : badgeClasses
+                      isActive ? 'bg-[#FFE600] text-slate-950 font-black shadow-xs' : badgeClasses
                     }`}
                   >
                     {item.badge}
@@ -197,16 +197,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#141A22] shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-xs dark:shadow-[2px_0_12px_rgba(0,0,0,0.4)] ${
+        className={`hidden md:flex flex-col border-r border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-[#0B1224] shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-xs dark:shadow-[2px_0_12px_rgba(0,0,0,0.5)] ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
         {/* Top Header & Collapse Toggle */}
-        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-slate-200/90 dark:border-white/10 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
+        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-slate-200/90 dark:border-slate-800/80 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]" />
+              <span className="w-2 h-2 rounded-full bg-[#FFE600] shadow-[0_0_8px_#FFE600]" />
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8] font-mono select-none">
                 {isEn ? 'Studio Suite' : 'สตูดิโอการเรียนรู้'}
               </span>
@@ -217,7 +217,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#1C2430] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] active:scale-95"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#111C38] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] active:scale-95"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -237,16 +237,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-slate-200/90 dark:border-white/10 mt-auto">
-            <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-white/10 shadow-xs dark:shadow-inner space-y-1">
+          <div className="pt-3.5 border-t border-slate-200/90 dark:border-slate-800/80 mt-auto">
+            <div className="p-3 rounded-xl bg-blue-50/70 dark:bg-[#111C38] border border-blue-200/80 dark:border-slate-800/80 shadow-xs dark:shadow-inner space-y-1">
               <div className="flex items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#5B5CE2]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#2155E6]" />
                   <span className="text-[11px] font-bold text-slate-900 dark:text-[#EDEBE8]">
                     CEFR & Cambridge
                   </span>
                 </div>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30">
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#FFE600] text-slate-950">
                   VERIFIED
                 </span>
               </div>
@@ -269,7 +269,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-[#141A22] border-r border-slate-200 dark:border-white/10 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-[#EDEBE8]"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-[#0B1224] border-r border-slate-200 dark:border-slate-800/80 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-[#EDEBE8]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}

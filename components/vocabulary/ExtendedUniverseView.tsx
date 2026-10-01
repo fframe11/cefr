@@ -269,8 +269,8 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               }}
               className={`touch-target px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 level === lvl
-                  ? 'bg-indigo-600 dark:bg-[#5B5CE2] text-white shadow-[0_2px_0_0_#3730A3] dark:shadow-[0_2px_0_0_#38399E] border-t border-white/20'
-                  : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]'
+                  ? 'bg-[#2155E6] text-white shadow-[0_2px_0_0_#143DB8] border-t border-white/20'
+                  : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All Levels' : 'ทุกระดับ') : `CEFR ${lvl}`}
@@ -289,7 +289,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
         <button
           type="button"
           onClick={() => fetchUniverse()}
-          className="flex items-center gap-1 text-indigo-600 dark:text-[#5B5CE2] hover:text-indigo-700 dark:hover:text-[#7C7DF4] font-medium"
+          className="flex items-center gap-1 text-[#2155E6] dark:text-[#6893FF] hover:text-[#1C4AC9] font-medium"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
           <span>{isEn ? 'Refresh' : 'รีเฟรช'}</span>
@@ -380,7 +380,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                       aria-label={`Pronounce ${candidate.word}`}
                       className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-100 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] flex items-center justify-center transition-all shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none border border-slate-200 dark:border-white/10 shrink-0"
                     >
-                      <Volume2 className="w-4 h-4 text-indigo-600 dark:text-[#5B5CE2]" />
+                      <Volume2 className="w-4 h-4 text-[#2155E6] dark:text-[#6893FF]" />
                     </button>
                   </div>
                   {candidate.ipa && (
@@ -392,7 +392,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
                 {/* Bilingual Meanings */}
                 <div className="space-y-1 pt-1">
-                  <p className="text-sm font-bold text-indigo-600 dark:text-[#5B5CE2]">
+                  <p className="text-sm font-bold text-[#2155E6] dark:text-[#6893FF]">
                     {candidate.meaning_th}
                   </p>
                   <p className="text-xs text-slate-600 dark:text-[#94A3B8] line-clamp-2 leading-relaxed">
@@ -520,7 +520,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 <button
                   type="button"
                   onClick={() => handleSpeak(selectedCandidate.word)}
-                  className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 dark:bg-[#5B5CE2] dark:hover:bg-[#4E4FD6] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#3730A3] dark:shadow-[0_2.5px_0_0_#38399E] border-t border-white/20"
+                  className="px-4 py-2 rounded-xl bg-[#2155E6] hover:bg-[#1C4AC9] dark:bg-[#2155E6] dark:hover:bg-[#1C4AC9] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#143DB8] dark:shadow-[0_2.5px_0_0_#143DB8] border-t border-white/20"
                 >
                   <Volume2 className="w-4 h-4" />
                   <span>{isEn ? 'Listen' : 'ฟังเสียง'}</span>
@@ -535,8 +535,8 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             </div>
 
             {/* Meanings */}
-            <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-[#0F141C] border border-indigo-200/80 dark:border-white/10 space-y-2">
-              <div className="text-xs uppercase font-mono font-bold text-indigo-700 dark:text-[#5B5CE2]">
+            <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-[#0B1224] border border-indigo-200/80 dark:border-white/10 space-y-2">
+              <div className="text-xs uppercase font-mono font-bold text-[#2155E6] dark:text-[#6893FF]">
                 {isEn ? 'Thai Meaning' : 'ความหมายภาษาไทย'}
               </div>
               <p className="text-2xl font-bold text-slate-900 dark:text-[#EDEBE8]">
