@@ -28,6 +28,7 @@ import {
   Shield,
   Compass,
   Mic,
+  ExternalLink,
 } from 'lucide-react';
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
@@ -237,7 +238,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'hallowed' as const,
         stackCount: '',
         icon: <BookOpen className="w-4 h-4 text-[#2155E6] dark:text-[#60A5FA]" />,
-        image: '/assets/dribbble-basket-tools.jpg',
+        image: '/assets/rune-golem.png',
         onSelect: () => onNavigate('vocabulary'),
       },
       {
@@ -247,7 +248,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'gold' as const,
         stackCount: '',
         icon: <Sparkles className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
-        image: '/assets/dribbble-safe-coins.jpg',
+        image: '/assets/rune-coins.png',
         onSelect: () => onNavigate('grammar'),
       },
       {
@@ -277,7 +278,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'crimson' as const,
         stackCount: '',
         icon: <Swords className="w-4 h-4 text-[#FF4655]" />,
-        image: '/assets/dribbble-hands-controller.jpg',
+        image: '/assets/rune-clash.png',
         onSelect: () => onNavigate('compete'),
       },
       {
@@ -287,7 +288,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         rarity: 'copper' as const,
         stackCount: '',
         icon: <Award className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
-        image: '/assets/dribbble-gift-box.jpg',
+        image: '/assets/rune-airship.png',
         onSelect: () => onNavigate('mockExam'),
       },
     ],
@@ -530,43 +531,44 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* LEFT COLUMN: WHAT TO DO NOW HERO + STEPPED PATH (8 cols)                  */}
         {/* ========================================================================= */}
         <div className="lg:col-span-7 xl:col-span-8 space-y-8">
-          {/* A. DRIBBBLE GAME-STREAM PRIMARY HERO BANNER */}
-          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-[#2155E6] via-[#1B47C2] to-[#123696] text-white p-6 sm:p-8 shadow-2xl border border-white/15">
-            {/* Subtle background glow */}
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
+          {/* A. SHAKURO RUNE REALMS PRIMARY HERO BANNER */}
+          <div className="rune-card relative overflow-hidden rounded-[28px] text-white p-6 sm:p-8 border border-[#F59E0B]/30 shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_25px_rgba(245,158,11,0.15)]">
+            {/* Ambient Celestial Glow */}
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#0EA5E9]/15 blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-1/3 w-60 h-60 rounded-full bg-[#F59E0B]/10 blur-3xl pointer-events-none" />
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex-1 flex flex-col gap-3.5">
                 {/* Header Pills */}
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[11px] font-mono font-black uppercase tracking-wider backdrop-blur-sm border border-white/20">
-                    <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F59E0B]/15 text-[#FDE68A] text-[11px] font-rune font-bold uppercase tracking-wider border border-[#F59E0B]/30">
+                    <span className="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse" />
                     <span>{primaryAction.unitBadge}</span>
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-black/20 text-[#FFE600] border border-[#FFE600]/30 text-[10px] font-mono font-black uppercase">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#070B14] text-[#FDE68A] border border-[#F59E0B]/40 text-[10px] font-rune font-bold uppercase">
                     CEFR LEVEL {progress.currentLevel}
                   </span>
-                  <span className="text-xs text-blue-100 font-semibold">
+                  <span className="text-xs text-slate-300 font-semibold">
                     {primaryAction.skill}
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <div className="space-y-1">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
+                  <h2 className="font-rune text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
                     {primaryAction.title}
                   </h2>
-                  <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-xl">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
                     {primaryAction.description}
                   </p>
                 </div>
 
-                {/* Tactile Action Buttons */}
+                {/* Tactile Metallic Action Buttons (uiverse.io x Rune Realms) */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <button
                     type="button"
                     onClick={primaryAction.onStart}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#FFE600] text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,230,0,0.4)] hover:bg-[#FFE600]/95 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                    className="rune-gold-btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-rune font-bold text-xs uppercase tracking-widest cursor-pointer select-none"
                   >
                     <span>{primaryAction.cta}</span>
                     <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -575,20 +577,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigate('compete')}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm border border-white/25 active:scale-95 transition-all cursor-pointer backdrop-blur-sm"
+                    className="rune-silver-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-rune font-bold text-xs uppercase tracking-widest cursor-pointer select-none"
                   >
-                    <Swords className="w-4 h-4 text-[#FFE600]" />
+                    <Swords className="w-4 h-4 text-[#FDE68A]" />
                     <span>{isEn ? 'Speed Vocab Duel (MMR)' : 'ดวลความเร็วคำศัพท์ 4 วิ'}</span>
                   </button>
+
+                  <Link
+                    href="/landing"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg text-xs font-bold text-slate-300 hover:text-[#FDE68A] hover:bg-white/5 transition-colors"
+                  >
+                    <span>{isEn ? 'Rune Portal' : 'หน้ารวมข้อมูล'}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
 
-              {/* 3D Mascot Kart Asset from Dribbble */}
+              {/* 3D Warrior Artwork from Rune Realms Shot */}
               <div className="relative shrink-0 flex items-center justify-center">
-                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl bg-white/10 backdrop-blur-sm group">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-[#F59E0B]/40 shadow-[0_0_25px_rgba(245,158,11,0.3)] bg-[#070B14] group">
                   <img
-                    src="/assets/dribbble-mascot-kart.jpg"
-                    alt="Glova Mascot Kart"
+                    src="/assets/rune-hero-warrior.png"
+                    alt="Rune Warrior Champion"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

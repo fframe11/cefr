@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -198,5 +198,69 @@
 }
 .dark .tactile-key:active {
   box-shadow: 0 1px 0 0 #0D1318, 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================================
+   Shakuro Rune Realms Authentic Game Portal Styles (5-Source Frontend)
+   ========================================================================= */
+.font-rune {
+  font-family: 'Cinzel', serif;
+}
+
+.rune-gold-btn {
+  background: linear-gradient(180deg, #FBBF24 0%, #D97706 45%, #92400E 100%);
+  border: 1px solid #FDE68A;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+              inset 0 -2px 0 rgba(0, 0, 0, 0.4),
+              0 4px 16px rgba(217, 119, 6, 0.45);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  transition: all 0.15s ease-in-out;
+}
+.rune-gold-btn:hover {
+  background: linear-gradient(180deg, #FCD34D 0%, #F59E0B 45%, #B45309 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8),
+              inset 0 -2px 0 rgba(0, 0, 0, 0.5),
+              0 6px 24px rgba(245, 158, 11, 0.65);
+}
+.rune-gold-btn:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6),
+              0 2px 6px rgba(217, 119, 6, 0.3);
+}
+
+.rune-silver-btn {
+  background: linear-gradient(180deg, #475569 0%, #334155 45%, #1E293B 100%);
+  border: 1px solid #94A3B8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+              inset 0 -2px 0 rgba(0, 0, 0, 0.5),
+              0 4px 14px rgba(15, 23, 42, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  transition: all 0.15s ease-in-out;
+}
+.rune-silver-btn:hover {
+  background: linear-gradient(180deg, #64748B 0%, #475569 45%, #334155 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+              0 6px 20px rgba(15, 23, 42, 0.7);
+}
+.rune-silver-btn:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7),
+              0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.rune-card {
+  background: radial-gradient(120% 120% at 50% 0%, #0F172A 0%, #070B14 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+              0 10px 30px -5px rgba(0, 0, 0, 0.8),
+              0 0 20px -5px rgba(245, 158, 11, 0.15);
+}
+
+@keyframes rune-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.animate-rune-shine {
+  animation: rune-shine 4s linear infinite;
 }
 
