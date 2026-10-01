@@ -211,8 +211,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       {/* 2. Main Learning Activity: 2-Column Responsive Layout */}
       {currentTopic && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column (5 cols): Grammar Concept & Rule Blueprint */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Left Column (6 cols): Grammar Concept & Rule Blueprint */}
+          <div className="lg:col-span-6 space-y-4">
             <SpotlightCard
               spotlightColor="rgba(91, 92, 226, 0.15)"
               showBorderBeam={true}
@@ -222,7 +222,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 duration: 12,
                 size: 200,
               }}
-              className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
+              className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(36,35,58,0.06),0_2px_10px_-2px_rgba(36,35,58,0.04)]"
             >
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
@@ -237,7 +237,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               </div>
 
               {/* Remotion Educational Grammar Timeline Aspect Animation */}
-              <div className="pt-1">
+              <div className="pt-1 w-full overflow-hidden rounded-2xl">
                 <RemotionPlayerWrapper
                   component={GrammarTimelineComposition}
                   inputProps={{
@@ -252,16 +252,33 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               </div>
 
               {currentTopic.summaryTh && (
-                <div className="p-4 rounded-[20px] bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground flex items-start gap-2.5">
+                <div className="w-full p-4 rounded-[20px] bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground flex items-start gap-2.5">
                   <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
                   <span className="leading-relaxed font-semibold">{currentTopic.summaryTh}</span>
                 </div>
               )}
 
-              {/* Core Concept */}
+              {/* Core Concept - Formatted as Full-Width Pedagogical Card without AI markdown symbols */}
               {currentTopic.conceptTh && (
-                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
-                  {currentTopic.conceptTh}
+                <div className="w-full p-4 sm:p-5 rounded-2xl bg-indigo-50/70 dark:bg-[#18202C] border border-indigo-200/80 dark:border-white/10 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#5B5CE2]" />
+                    <span className="text-[11px] font-mono font-bold tracking-wider text-[#5B5CE2] dark:text-[#A5A6F6] uppercase">
+                      {isEn ? 'Core Linguistic Concept' : 'หลักการและบริบทการนำไปใช้'}
+                    </span>
+                  </div>
+                  <div className="space-y-2.5 text-xs sm:text-sm text-slate-700 dark:text-[#CBD5E1] leading-relaxed">
+                    {currentTopic.conceptTh
+                      .replace(/\*\*/g, '')
+                      .replace(/^\s*-\s+/gm, '')
+                      .split('\n\n')
+                      .filter((para) => para.trim().length > 0)
+                      .map((para, pIdx) => (
+                        <p key={pIdx} className="leading-relaxed">
+                          {para.trim()}
+                        </p>
+                      ))}
+                  </div>
                 </div>
               )}
 
@@ -323,8 +340,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
             </SpotlightCard>
           </div>
 
-          {/* Right Column (7 cols): Dominant Practice Task with QuestionCard */}
-          <div className="lg:col-span-7 space-y-4">
+          {/* Right Column (6 cols): Dominant Practice Task with QuestionCard */}
+          <div className="lg:col-span-6 space-y-4">
             <TacticalHudFrame
               agentName="STUDIO // PRACTICE DRILL"
               statusText={displayedQuestions.length > 0 ? `Q ${activeQuestionIdx + 1}/${displayedQuestions.length}` : 'ONLINE'}

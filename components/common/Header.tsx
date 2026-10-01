@@ -146,21 +146,21 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Center/Right Status Indicators & Hardware Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-          {/* Terraria Biome x Valorant Agent Division Pill */}
-          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-[#0F141C] border border-indigo-200 dark:border-[#5B5CE2]/30 text-[10px] font-mono font-black text-indigo-800 dark:text-[#A5A6F6]">
-            <Sparkles className="w-3 h-3 text-[#FF4655]" />
+          {/* Dynamic CEFR Level Accreditation Pill */}
+          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-[#0F141C] border border-indigo-200 dark:border-[#5B5CE2]/30 text-[10px] font-mono font-bold text-indigo-800 dark:text-[#A5A6F6]">
+            <Sparkles className="w-3 h-3 text-[#5B5CE2]" />
             <span>
               {currentLevel === 'A1'
-                ? 'FOREST BIOME // IRON'
+                ? 'CEFR A1 // NOVICE DRILL'
                 : currentLevel === 'A2'
-                ? 'CAVERN BIOME // BRONZE'
+                ? 'CEFR A2 // ELEMENTARY CORE'
                 : currentLevel === 'B1'
-                ? 'JUNGLE TEMPLE // SILVER'
+                ? 'CEFR B1 // INTERMEDIATE APEX'
                 : currentLevel === 'B2'
-                ? 'DUNGEON KEEP // GOLD'
+                ? 'CEFR B2 // UPPER VANTAGE'
                 : currentLevel === 'C1'
-                ? 'HALLOWED SPIRE // DIAMOND'
-                : 'CELESTIAL // RADIANT'}
+                ? 'CEFR C1 // ADVANCED SCHOLAR'
+                : 'CEFR C2 // MASTERY LAUREATE'}
             </span>
           </div>
 

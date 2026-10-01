@@ -8,31 +8,31 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
     titleTh: 'กาลปัจจุบันทั่วไป vs. กำลังกระทำในขณะนี้',
     cefrLevel: 'A1',
     summaryTh: 'เข้าใจความแตกต่างระหว่างสิ่งที่ทำเป็นประจำ (ความจริง/นิสัย) กับสิ่งที่กำลังเกิดขึ้นในวินาทีนี้',
-    conceptTh: `ในภาษาอังกฤษ เมื่อต้องการบอกเล่าเรื่องราว เราต้องเลือกใช้ Tense ให้ตรงกับบริบทเวลา:
-1. **Present Simple**: ใช้กับ "ความจริงทั่วไป", "กฎธรรมชาติ", หรือ "กิจวัตรประจำวัน/นิสัย"
-   - เช่น ฉันดื่มกาแฟทุกเช้า (ทำเป็นประจำ)
-2. **Present Continuous**: ใช้กับเหตุการณ์ที่ "กำลังเกิดขึ้นอยู่ ณ ตอนนี้" หรือ "กำลังดำเนินอยู่ในช่วงนี้"
-   - เช่น ฉันกำลังดื่มกาแฟอยู่ (ถือแก้วดื่มอยู่ตอนนี้)`,
+    conceptTh: `หัวใจสำคัญของการเลือกใช้สองกาลนี้อยู่ที่มิติของเวลาและความถี่ในการกระทำ
+
+ข้อแรก Present Simple ใช้บอกเล่าเรื่องราวที่เป็นความจริงทั่วไป กฎเกณฑ์ตามธรรมชาติ หรือพฤติกรรมและกิจวัตรประจำวัน ตัวอย่างเช่น การดื่มกาแฟทุกเช้าเป็นนิสัยประจำตัว
+
+ข้อสอง Present Continuous ใช้กับเหตุการณ์ที่กำลังเกิดขึ้นอยู่ต่อหน้าในขณะพูด หรือกำลังดำเนินอยู่ในช่วงเวลานี้ ตัวอย่างเช่น การกำลังถือแก้วกาแฟดื่มอยู่ในวินาทีนี้`,
     conceptEn: 'Present Simple describes habits, general facts, and routines. Present Continuous describes actions happening right now at the moment of speaking.',
     rules: [
       {
         formula: 'Subject + V.1 (เติม -s/-es เมื่อประธานเป็น He, She, It)',
-        explanationTh: 'Present Simple: สังเกตคำบอกความถี่ (always, usually, every day, often)',
+        explanationTh: 'Present Simple: สังเกตคำบอกความถี่ เช่น always, usually, every day, often',
         exampleEn: 'He walks to the office every morning.',
-        exampleTh: 'เขาเดินไปที่ทำงานทุกเช้า (เป็นกิจวัตร)',
+        exampleTh: 'เขาเดินไปที่ทำงานทุกเช้า เป็นกิจวัตร',
       },
       {
         formula: 'Subject + is/am/are + V.ing',
-        explanationTh: 'Present Continuous: สังเกตคำบอกเวลา (now, at the moment, right now, Look!)',
+        explanationTh: 'Present Continuous: สังเกตคำบอกเวลา เช่น now, at the moment, right now, Look!',
         exampleEn: 'He is walking to the office right now.',
-        exampleTh: 'เขากำลังเดินไปที่ทำงานอยู่ ณ ตอนนี้ (กำลังก้าวเดินอยู่)',
+        exampleTh: 'เขากำลังเดินไปที่ทำงานอยู่ ณ ตอนนี้ กำลังก้าวเดินอยู่',
       },
     ],
     commonMistakes: [
       {
         incorrect: 'She eat breakfast every day.',
         correct: 'She eats breakfast every day.',
-        reasonTh: 'เมื่อประธานเป็นเอกพจน์ (She) ใน Present Simple กริยาต้องเติม -s หรือ -es เสมอ',
+        reasonTh: 'เมื่อประธานเป็นเอกพจน์ (She) ใน Present Simple กริยาต้องเติม s หรือ es เสมอ',
       },
       {
         incorrect: 'I am playing football every Sunday.',
@@ -87,15 +87,11 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
     titleTh: 'อดีตจบแล้ว vs. อดีตที่ยังเชื่อมโยงถึงปัจจุบัน',
     cefrLevel: 'A2',
     summaryTh: 'จุดปราบเซียนของผู้เรียนไทย: อดีตที่ระบุเวลาเจาะจง vs. ประสบการณ์หรือสิ่งที่ทำแล้วยังส่งผลต่อปัจจุบัน',
-    conceptTh: `คนไทยมักสับสนระหว่าง Past Simple กับ Present Perfect เพราะในภาษาไทยใช้คำว่า "แล้ว" เหมือนกัน:
-1. **Past Simple (Subject + V.2)**:
-   - ใช้กับเหตุการณ์ที่ "เกิดขึ้นและจบลงไปแล้วในอดีตอย่างเด็ดขาด"
-   - มักระบุเวลาชัดเจน เช่น yesterday, last night, 2 years ago, in 2020
-   - ตัวอย่าง: I lost my key yesterday. (เมื่อวานทำกุญแจหาย ตอนนี้อาจหาเจอแล้วหรือไม่รู้ แต่เน้นว่าเมื่อวานหาย)
-2. **Present Perfect (Subject + have/has + V.3)**:
-   - ใช้พูดถึง "เหตุการณ์ในอดีตที่ยังส่งผลหรือยังเกี่ยวข้องกับปัจจุบัน"
-   - หรือใช้บอก "ประสบการณ์ชีวิตว่าเคย/ไม่เคยทำ" โดยไม่เน้นเวลา
-   - ตัวอย่าง: I have lost my key. (ฉันทำกุญแจหาย และ "ตอนนี้กุญแจก็ยังหายอยู่ เข้าบ้านไม่ได้")`,
+    conceptTh: `สาเหตุหลักที่ทำให้สับสนการใช้งาน มาจากภาษาไทยมักใช้คำว่า "แล้ว" สื่อความหมายในทั้งสองบริบท
+
+ข้อแรก Past Simple (Subject + V.2) ใช้เจาะจงเหตุการณ์ที่เกิดขึ้นและจบสมบูรณ์ไปแล้วในอดีตอย่างเด็ดขาด มักมีคำบอกเวลาชัดเจน เช่น yesterday, last night, 2 years ago, in 2020 ตัวอย่างเช่น I lost my key yesterday ซึ่งเป็นการเน้นช่วงเวลาเมื่อวานนี้
+
+ข้อสอง Present Perfect (Subject + have/has + V.3) ใช้เน้นผลลัพธ์หรือประสบการณ์ที่ยังคงส่งผลและเชื่อมโยงมาถึงปัจจุบัน โดยไม่เน้นจุดเวลา ตัวอย่างเช่น I have lost my key ซึ่งหมายความว่าทำกุญแจหายและในปัจจุบันก็ยังคงหากุญแจดอกนั้นไม่พบ`,
     conceptEn: 'Past Simple specifies a finished action at a definite time in the past. Present Perfect connects a past action or experience to the present moment.',
     rules: [
       {
@@ -152,13 +148,11 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
     titleTh: 'ประโยคเงื่อนไข: สิ่งที่เป็นไปได้จริง vs. สิ่งสมมติในปัจจุบัน',
     cefrLevel: 'B1',
     summaryTh: 'แยกแยะระหว่างเงื่อนไขที่เป็นไปได้จริงในอนาคต (Type 1) กับการจินตนาการสิ่งที่ไม่จริงในปัจจุบัน (Type 2)',
-    conceptTh: `If-Clause มีบทบาทสำคัญอย่างยิ่งในการสอบ Cambridge PET และ FCE:
-1. **First Conditional (เป็นไปได้จริงในอนาคต)**:
-   - โครงสร้าง: If + Present Simple, will + กริยาช่อง 1
-   - เช่น If it rains tomorrow, we will cancel the picnic. (ถ้าพรุ่งนี้ฝนตก เราจะยกเลิกการไปปิกนิก)
-2. **Second Conditional (สมมติสิ่งที่ไม่จริงในปัจจุบัน / ฝันกลางวัน)**:
-   - โครงสร้าง: If + Past Simple, would + กริยาช่อง 1
-   - เช่น If I won the lottery, I would travel around the world. (ถ้าฉันถูกรางวัลที่ 1 ฉันจะไปเที่ยวรอบโลก, ตอนนี้ยังไม่ถูก เป็นเรื่องสมมติ)`,
+    conceptTh: `ประโยคเงื่อนไข If-Clause แบ่งตามระดับความเป็นไปได้ของเหตุการณ์อย่างเป็นระบบ
+
+ข้อแรก First Conditional มุ่งเน้นสถานการณ์ที่เป็นเหตุเป็นผลและมีความเป็นไปได้จริงในอนาคต โครงสร้างใช้ประโยคเงื่อนไขคู่กับคำว่า will เช่น หากวันพรุ่งนี้มีฝนตก เราจะยกเลิกกิจกรรมปิกนิก
+
+ข้อสอง Second Conditional เป็นการสมมติสถานการณ์ที่ตรงข้ามกับความจริงในปัจจุบัน หรือความคาดหวังในจินตนาการ โครงสร้างใช้รูปอดีตคู่กับ would เช่น หากฉันถูกรางวัลใหญ่ ฉันจะออกเดินทางท่องเที่ยวรอบโลก`,
     conceptEn: 'First Conditional deals with likely future events (If + present, will + infinitive). Second Conditional deals with hypothetical or improbable present/future events (If + past, would + infinitive).',
     rules: [
       {
@@ -215,13 +209,11 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
     titleTh: 'ประธานถูกกระทำ & ประโยคขยายความ (Relative Clauses)',
     cefrLevel: 'B2',
     summaryTh: 'การใช้ภาษาทางการในข้อสอบ B2 First (FCE): เน้นผู้ถูกกระทำ และการขยายคำนามอย่างมีชั้นเชิง',
-    conceptTh: `ในระดับ B2 การเขียนและการอ่านจะมีความเป็นทางการ (Formal) และซับซ้อนมากขึ้น:
-1. **Passive Voice (ประธานถูกกระทำ)**:
-   - โครงสร้าง: Subject + be + V.3
-   - นิยมใช้ในรายงานข่าว บทความวิชาการ หรือเมื่อไม่ต้องการเน้นตัวผู้กระทำ
-2. **Relative Clauses (ประโยคเชื่อมความ)**:
-   - **Defining Clause**: ให้ข้อมูลชี้เฉพาะ ถ้าตัดออกจะสื่อความหมายไม่ครบ (ไม่ต้องใส่เครื่องหมายจุลภาค ,)
-   - **Non-Defining Clause**: ให้ข้อมูลเสริม ถ้าตัดออกประโยคหลักก็ยังสมบูรณ์ (ต้องใส่เครื่องหมายจุลภาค , คั่นหน้าหลัง และห้ามใช้ that)`,
+    conceptTh: `การสื่อสารภาษาอังกฤษเชิงวิชาการและการทำงานระดับสากล นิยมใช้โครงสร้างที่กระชับและเป็นทางการ
+
+ข้อแรก Passive Voice เหมาะสำหรับกรณีที่ต้องการเน้นผู้ถูกกระทำ วัตถุ ผลลัพธ์ หรือข้อค้นพบมากกว่าตัวบุคคลที่ลงมือทำ มักพบเห็นเป็นประจำในรายงานข่าวและงานวิจัย
+
+ข้อสอง Relative Clauses ช่วยเชื่อมโยงข้อมูลหลายประโยคเข้าด้วยกันอย่างราบรื่น โดย Defining Clause ให้ข้อมูลสำคัญที่ชี้เฉพาะ ส่วน Non-Defining Clause ให้ข้อมูลเสริมที่มีเครื่องหมายจุลภาคคั่นหน้าหลัง`,
     conceptEn: 'Passive Voice highlights the action/receiver rather than the agent. Relative clauses combine ideas smoothly using relative pronouns (who, which, that, where, whose).',
     rules: [
       {
@@ -278,13 +270,11 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
     titleTh: 'การสลับประธานกริยาเพื่อเน้นย้ำ (Inversion) & เงื่อนไขข้ามกาลเวลา',
     cefrLevel: 'C1',
     summaryTh: 'ทักษะไวยากรณ์ระดับสูงสำหรับข้อสอบ C1 Advanced (CAE): สร้างประโยคที่ทรงพลังและแม่นยำทางวาทศิลป์',
-    conceptTh: `ในภาษาอังกฤษระดับ C1-C2 โครงสร้างไวยากรณ์จะช่วยเพิ่มพลังความหมายและความสละสลวย:
-1. **Negative Inversion (การกลับประโยค)**:
-   - เมื่อเรานำคำวิเศษณ์ที่มีความหมายเชิงปฏิเสธหรือจำกัดความ (เช่น Never, Rarely, Seldom, Hardly, Under no circumstances) มาขึ้นต้นประโยค จะต้อง "สลับกริยาช่วย (Auxiliary Verb) มาไว้หน้าประธาน" เหมือนประโยคคำถาม
-   - เช่น Rarely have I seen such dedication. (ไม่บ่อยนักที่ฉันเคยเห็นความทุ่มเทเช่นนี้)
-2. **Mixed Conditionals (เงื่อนไขผสม)**:
-   - เหตุในอดีตส่งผลต่อปัจจุบัน: If + Past Perfect, would + V.inf
-   - เช่น If I had accepted that job last year, I would live in London now. (ถ้าปีที่แล้วฉันตกลงรับงานนั้น ปัจจุบันฉันคงอาศัยอยู่ในลอนดอน)`,
+    conceptTh: `โครงสร้างไวยากรณ์ระดับสูงช่วยเพิ่มพลังความน่าเชื่อถือและความสละสลวยทางวาทศิลป์
+
+ข้อแรก Negative Inversion นำคำวิเศษณ์ที่มีความหมายเชิงปฏิเสธหรือจำกัดขอบเขตมาวางไว้หน้าประโยคเพื่อการเน้นย้ำ โดยต้องสลับตำแหน่งกริยาช่วยมาไว้หน้าประธานตามลำดับ เช่น Rarely have I seen such dedication
+
+ข้อสอง Mixed Conditionals เชื่อมโยงเงื่อนไขในอดีตที่ไม่ได้เกิดขึ้นจริง เข้ากับผลลัพธ์ที่ตามมาในปัจจุบัน เช่น หากในอดีตตัดสินใจตอบรับงานนั้น ปัจจุบันคงได้ใช้ชีวิตอยู่ในเมืองที่ต้องการ`,
     conceptEn: 'Inversion places an auxiliary verb before the subject after negative or restrictive adverbs for emphasis. Mixed conditionals link a past hypothesis with a present consequence or vice versa.',
     rules: [
       {

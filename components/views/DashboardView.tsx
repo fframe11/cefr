@@ -27,6 +27,7 @@ import {
   ChevronRight,
   Shield,
   Compass,
+  Mic,
 } from 'lucide-react';
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
@@ -41,7 +42,6 @@ import {
   SpotlightCard,
   TacticalHudFrame,
   TerrariaHotbarBar,
-  VibeCoderSourceDock,
   LearningPathNode,
   GlovaCartridge,
   GlovaNextMove,
@@ -246,7 +246,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         slotNumber: 5,
         id: 'slot-compete',
-        label: isEn ? 'Valorant 4s Speed Duel' : 'ดวลคำศัพท์ 4 วินาที',
+        label: isEn ? 'Speed Vocab Duel' : 'ดวลความเร็วคำศัพท์',
         rarity: 'crimson' as const,
         stackCount: '4s MMR',
         icon: <Swords className="w-4 h-4 text-[#FF4655]" />,
@@ -255,7 +255,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         slotNumber: 6,
         id: 'slot-exam',
-        label: isEn ? 'Boss Trial (Mock Exam)' : 'บอสด่านสอบ Cambridge',
+        label: isEn ? 'Cambridge Mock Exam' : 'ชุดข้อสอบจำลอง Cambridge',
         rarity: 'copper' as const,
         stackCount: progress.targetExam,
         icon: <Award className="w-4 h-4 text-[#D97706] dark:text-[#E5A93C]" />,
@@ -271,21 +271,21 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-slate-200 dark:border-white/10">
         <div>
           <div className="flex items-center gap-2 mb-1 flex-wrap">
-            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase tracking-wider bg-[#FF4655] text-white">
-              TERRARIA × VALORANT × DUOLINGO
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] border border-[#5B5CE2]/30">
+              ADAPTIVE CEFR FRAMEWORK
             </span>
             <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-300/70 dark:border-emerald-500/30">
               {progress.currentLevel === 'A1'
-                ? 'BIOME: FOREST SANCTUARY // IRON'
+                ? 'LEVEL: A1 NOVICE // FOUNDATION'
                 : progress.currentLevel === 'A2'
-                ? 'BIOME: CAVERN DEPTHS // BRONZE'
+                ? 'LEVEL: A2 ELEMENTARY // ESSENTIALS'
                 : progress.currentLevel === 'B1'
-                ? 'BIOME: JUNGLE TEMPLE // SILVER'
+                ? 'LEVEL: B1 INTERMEDIATE // FLUENCY'
                 : progress.currentLevel === 'B2'
-                ? 'BIOME: DUNGEON KEEP // GOLD'
+                ? 'LEVEL: B2 UPPER-INTERMEDIATE // VANTAGE'
                 : progress.currentLevel === 'C1'
-                ? 'BIOME: HALLOWED SPIRE // DIAMOND'
-                : 'BIOME: CELESTIAL NEBULA // RADIANT'}
+                ? 'LEVEL: C1 ADVANCED // EFFECTIVE OPERATIONAL'
+                : 'LEVEL: C2 MASTERY // EXPERT NATIVE'}
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2 flex-wrap">
@@ -316,13 +316,148 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <SlidingTabs
           tabs={[
-            { id: 'path', label: isEn ? 'Biome Quest Path' : 'เส้นทางเควสต์ CEFR', icon: <Compass className="w-4 h-4" /> },
-            { id: 'studios', label: isEn ? 'All Studios' : 'คลังสตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
+            { id: 'path', label: isEn ? 'CEFR Learning Path' : 'เส้นทางเรียนรู้ CEFR', icon: <Compass className="w-4 h-4" /> },
+            { id: 'studios', label: isEn ? 'All Studios (8)' : 'คลัง 8 สตูดิโอทั้งหมด', icon: <BookOpen className="w-4 h-4" /> },
           ]}
           activeTab={activeTab}
           onChange={(tab) => setActiveTab(tab as any)}
         />
       </div>
+
+      {/* DYNAMIC VIEW SWITCHER: ALL STUDIOS CATALOG VS STEPPED PATH */}
+      {activeTab === 'studios' ? (
+        <div className="space-y-6">
+          <div className="p-6 sm:p-8 rounded-[28px] bg-gradient-to-r from-indigo-50/90 via-white to-emerald-50/60 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] border border-slate-200/90 dark:border-white/10 shadow-xs flex items-center justify-between gap-6 flex-wrap">
+            <div className="space-y-1.5 max-w-2xl">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2] text-white">
+                  CURRICULUM REPERTOIRE
+                </span>
+                <span className="text-xs font-mono font-bold text-[#059669] dark:text-[#34D399]">
+                  8 SPECIALIZED STUDIOS ACTIVE
+                </span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight">
+                {isEn ? 'All 8 Dedicated Learning Studios' : 'คลังสตูดิโอการเรียนรู้ทั้ง 8 ด้าน'}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+                {isEn
+                  ? 'Access any core skill module directly. Practice vocabulary, review grammar rules, compete in fast-paced duels, or challenge Cambridge mock exams.'
+                  : 'เลือกเข้าฝึกฝนทักษะเฉพาะด้านได้ทันที ทั้งคลังคำศัพท์ ไวยากรณ์ การประลองความเร็ว 4 วินาที และการสอบจำลองเคมบริดจ์'}
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <TactileButton
+                variant="primary"
+                size="sm"
+                onClick={() => setActiveTab('path')}
+                leftIcon={<Compass className="w-4 h-4" />}
+              >
+                {isEn ? 'Back to CEFR Path' : 'กลับไปที่เส้นทางเรียนรู้'}
+              </TactileButton>
+            </div>
+          </div>
+
+          {/* ALL 8 STUDIOS BENTO GRID */}
+          <BentoGrid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                id: 'vocabulary',
+                title: isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR',
+                ctaText: isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์',
+                desc: isEn ? 'Master high-frequency words with spaced repetition & collocation pairs.' : 'เรียนรู้คำศัพท์ตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition',
+                icon: <BookOpen className="w-6 h-6 text-[#4F46E5] dark:text-[#5B5CE2]" />,
+                badge: '3,860 Words',
+                accent: 'indigo' as const,
+                colSpan: 'sm:col-span-2 lg:col-span-2',
+              },
+              {
+                id: 'grammar',
+                title: isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ',
+                ctaText: isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด',
+                desc: isEn ? 'Practical sentence structures and tenses explained with clear rules.' : 'โครงสร้างประโยคและ Tenses สำคัญพร้อมตัวอย่างประโยคใช้งานจริง',
+                icon: <Sparkles className="w-6 h-6 text-[#D97706] dark:text-[#FBBF24]" />,
+                badge: '18 Topics',
+                accent: 'amber' as const,
+                colSpan: 'sm:col-span-1 lg:col-span-1',
+              },
+              {
+                id: 'compete',
+                title: isEn ? 'Speed Vocab Duel' : 'ประลองคำศัพท์จัดอันดับ',
+                ctaText: isEn ? 'Battle Now' : 'ประลองตอนนี้',
+                desc: isEn ? 'Fast-paced 4-second reflex challenges against university peers.' : 'ท้าทายความเร็วข้อละ 4 วินาที ไต่อันดับ MMR ในแรงก์ลีก',
+                icon: <Swords className="w-6 h-6 text-[#FF4655]" />,
+                badge: 'Ranked MMR',
+                accent: 'crimson' as const,
+                colSpan: 'sm:col-span-1 lg:col-span-1',
+              },
+              {
+                id: 'mockExam',
+                title: isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge',
+                ctaText: isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ',
+                desc: isEn ? `Realistic exam simulations for ${progress.targetExam} with timer.` : `ข้อสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและวิเคราะห์คะแนน`,
+                icon: <Award className="w-6 h-6 text-[#059669] dark:text-[#10B981]" />,
+                badge: 'KET / PET / FCE',
+                accent: 'emerald' as const,
+                colSpan: 'sm:col-span-2 lg:col-span-2',
+              },
+              {
+                id: 'listening',
+                title: isEn ? 'Listening Studio' : 'สตูดิโอการฟังและการออกเสียง',
+                ctaText: isEn ? 'Start Listening' : 'เริ่มฝึกทักษะการฟัง',
+                desc: isEn ? 'High-fidelity audio with variable speed controls and accent immersion.' : 'บทสนทนาสถานการณ์จริงพร้อมระบบปรับความเร็วเสียงและถอดเสียงแบบคำต่อคำ',
+                icon: <Headphones className="w-6 h-6 text-sky-500" />,
+                badge: 'Native Audio',
+                accent: 'indigo' as const,
+                colSpan: 'sm:col-span-1 lg:col-span-1',
+              },
+              {
+                id: 'speaking',
+                title: isEn ? 'Academic Speaking Studio' : 'สตูดิโอฝึกพูดและสัทศาสตร์',
+                ctaText: isEn ? 'Practice Speaking' : 'เริ่มฝึกการพูด',
+                desc: isEn ? 'Phonetic IPA pronunciation feedback and real-time oral fluency calibration.' : 'ระบบวิเคราะห์การออกเสียงและสัทศาสตร์พร้อมคำแนะนำปรับปรุงแบบเรียลไทม์',
+                icon: <Mic className="w-6 h-6 text-violet-500" />,
+                badge: 'IPA Feedback',
+                accent: 'indigo' as const,
+                colSpan: 'sm:col-span-1 lg:col-span-1',
+              },
+              {
+                id: 'writing',
+                title: isEn ? 'Writing & Composition Lab' : 'สตูดิโอการเขียนและเรียบเรียง',
+                ctaText: isEn ? 'Start Writing' : 'เริ่มฝึกการเขียน',
+                desc: isEn ? 'Essay drafting with automated Cambridge rubric evaluation and lexical diversity.' : 'ฝึกเขียนเรียงความและจดหมายพร้อมการวิเคราะห์คำศัพท์และความถูกต้องของไวยากรณ์',
+                icon: <PenTool className="w-6 h-6 text-amber-500" />,
+                badge: 'AI Rubric',
+                accent: 'amber' as const,
+                colSpan: 'sm:col-span-2 lg:col-span-2',
+              },
+              {
+                id: 'assessment',
+                title: isEn ? 'Diagnostic CEFR Assessment' : 'ระบบทดสอบวัดระดับ CEFR',
+                ctaText: isEn ? 'Take Assessment' : 'เริ่มทำแบบวัดระดับ',
+                desc: isEn ? 'Comprehensive multi-skill diagnostic engine to evaluate your baseline CEFR band.' : 'แบบประเมินทักษะภาษาอังกฤษรอบด้าน 3 นาทีเพื่อสอบเทียบระดับที่แท้จริงของคุณ',
+                icon: <Target className="w-6 h-6 text-emerald-500" />,
+                badge: 'CEFR Benchmark',
+                accent: 'emerald' as const,
+                colSpan: 'sm:col-span-2 lg:col-span-2',
+              },
+            ].map((studio) => (
+              <BentoCard
+                key={studio.id}
+                name={studio.title}
+                className={studio.colSpan}
+                icon={studio.icon}
+                description={studio.desc}
+                cta={studio.ctaText}
+                badge={studio.badge}
+                accentVariant={studio.accent}
+                onCtaClick={() => onNavigate(studio.id as any)}
+              />
+            ))}
+          </BentoGrid>
+        </div>
+      ) : (
+        <>
 
       {/* 1.5 TERRARIA 6-SLOT HOTBAR INVENTORY STRIP (Uiverse.io x Terraria) */}
       <TerrariaHotbarBar
@@ -403,7 +538,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     className="sm:w-auto cursor-pointer"
                     leftIcon={<Swords className="w-4 h-4 text-white" />}
                   >
-                    {isEn ? 'Valorant Vocab Duel 4s' : 'ดวลคำศัพท์ด่วน 4 วินาที (MMR)'}
+                    {isEn ? 'Speed Vocab Duel (MMR)' : 'ดวลความเร็วคำศัพท์ (MMR)'}
                   </TactileButton>
                 </div>
               </div>
@@ -416,14 +551,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-transform hover:scale-105"
                 />
                 <span className="text-[11px] font-black text-[#4F46E5] dark:text-[#A5A6F6] mt-2 uppercase tracking-wide">
-                  {isEn ? 'Biome Companion' : 'คู่หูภารกิจวันนี้'}
+                  {isEn ? 'Daily AI Companion' : 'คู่หูการเรียนรู้วันนี้'}
                 </span>
               </div>
             </div>
           </SpotlightCard>
-
-          {/* 5-SITES VIBE-CODER ENGINE DOCK */}
-          <VibeCoderSourceDock isEn={isEn} />
 
           {/* RESUME LAST ACTIVITY */}
           {progress.lastActivity && (
@@ -445,8 +577,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <CampaignBanner onNavigate={(route) => onNavigate(route as NavView)} />
 
           {/* B. MAIN INTERACTIVE EXPERIENCE: GLOVA CEFR PROGRESSION MATRIX */}
-          {activeTab === 'path' ? (
-            <div className="rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6 text-slate-900 dark:text-[#EDEBE8]">
+          <div className="rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6 text-slate-900 dark:text-[#EDEBE8]">
               {/* Unit Progression Header */}
               <div className="flex items-center justify-between pb-5 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] gap-4 flex-wrap">
                 <div>
@@ -606,66 +737,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </div>
               </div>
             </div>
-          ) : (
-            /* ALL STUDIOS 21ST.DEV BENTO GRID */
-            <BentoGrid className="auto-rows-[16rem]">
-              {[
-                {
-                  id: 'vocabulary',
-                  title: isEn ? 'CEFR Vocabulary Studio' : 'คลังคำศัพท์ CEFR',
-                  ctaText: isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์',
-                  desc: isEn ? 'Master high-frequency words with spaced repetition & collocation pairs.' : 'เรียนรู้คำศัพท์ตามระดับ A1-C2 พร้อมระบบทบทวน Spaced Repetition',
-                  icon: <BookOpen className="w-6 h-6 text-[#4F46E5] dark:text-[#5B5CE2]" />,
-                  badge: '3,860 Words',
-                  accent: 'indigo' as const,
-                  colSpan: 'md:col-span-2',
-                },
-                {
-                  id: 'grammar',
-                  title: isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ',
-                  ctaText: isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด',
-                  desc: isEn ? 'Practical sentence structures and tenses explained with clear rules.' : 'โครงสร้างประโยคและ Tenses สำคัญพร้อมตัวอย่างประโยคใช้งานจริง',
-                  icon: <Sparkles className="w-6 h-6 text-[#D97706] dark:text-[#FBBF24]" />,
-                  badge: '18 Topics',
-                  accent: 'amber' as const,
-                  colSpan: 'md:col-span-1',
-                },
-                {
-                  id: 'compete',
-                  title: isEn ? 'Ranked Vocab Battle' : 'ประลองคำศัพท์จัดอันดับ 4 วินาที',
-                  ctaText: isEn ? 'Battle Now' : 'ประลองตอนนี้',
-                  desc: isEn ? 'Fast-paced 4-second reflex challenges against university peers.' : 'ท้าทายความเร็วข้อละ 4 วินาที ไต่อันดับ MMR ในแรงก์ลีก',
-                  icon: <Swords className="w-6 h-6 text-[#FF4655]" />,
-                  badge: 'Ranked MMR',
-                  accent: 'crimson' as const,
-                  colSpan: 'md:col-span-1',
-                },
-                {
-                  id: 'mockExam',
-                  title: isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge',
-                  ctaText: isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ',
-                  desc: isEn ? `Realistic exam simulations for ${progress.targetExam} with timer.` : `ข้อสอบเสมือนจริงของ ${progress.targetExam} พร้อมจับเวลาและวิเคราะห์คะแนน`,
-                  icon: <Award className="w-6 h-6 text-[#059669] dark:text-[#10B981]" />,
-                  badge: 'KET / PET / FCE',
-                  accent: 'emerald' as const,
-                  colSpan: 'md:col-span-2',
-                },
-              ].map((studio) => (
-                <BentoCard
-                  key={studio.id}
-                  name={studio.title}
-                  className={studio.colSpan}
-                  icon={studio.icon}
-                  description={studio.desc}
-                  cta={studio.ctaText}
-                  badge={studio.badge}
-                  accentVariant={studio.accent}
-                  onCtaClick={() => onNavigate(studio.id as any)}
-                />
-              ))}
-            </BentoGrid>
-          )}
-        </div>
+          </div>
 
         {/* ========================================================================= */}
         {/* RIGHT COLUMN: GLOVA LEARNING COMPANION RAIL (4 cols - Sticky)             */}
@@ -785,9 +857,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </p>
           </div>
 
-          {/* 3. RANKED LEAGUE STANDING (Valorant Tactical HUD x Heraldic Crest) */}
+          {/* 3. RANKED LEAGUE STANDING (Academic Tactical HUD x Heraldic Crest) */}
           <TacticalHudFrame
-            calloutCode="VALORANT // RANKED ARENA"
+            calloutCode="ACADEMIC LEAGUE // RANKED ARENA"
             biomeLabel="Top 10 Division"
             accentVariant="crimson"
             className="bg-gradient-to-br from-rose-50/70 via-white to-amber-50/40 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#1C2430] space-y-4"
@@ -925,6 +997,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           )}
         </div>
       </div>
+      </>
+      )}
     </div>
   );
 };

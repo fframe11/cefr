@@ -641,8 +641,8 @@ export const TerrariaHotbarBar: React.FC<{
     >
       <div className="flex items-center justify-between gap-2 flex-wrap">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-black uppercase tracking-wider bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 border border-amber-300/80 dark:border-amber-500/30">
-            TERRARIA HOTBAR // QUICK EQUIP
+          <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30">
+            STUDIO LOADOUT // QUICK SELECT
           </span>
           {title && (
             <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-[#EDEBE8]">
@@ -705,7 +705,7 @@ export const VIBE_CODER_SOURCES = [
     url: 'https://21st.dev/',
     roleTh: 'Hero Bento & คลัง Component ระดับโปรดักชัน',
     roleEn: 'Production Hero Bento & Modular Registry',
-    fusionTag: 'TERRARIA × VALORANT BENTO',
+    fusionTag: 'PRODUCTION BENTO',
     badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-[#5B5CE2]/20 dark:text-[#A5A6F6] dark:border-[#5B5CE2]/40',
   },
   {
@@ -715,7 +715,7 @@ export const VIBE_CODER_SOURCES = [
     url: 'https://godly.design/website/melius/',
     roleTh: 'โครงสร้าง Asymmetric 2-Column & Motion Pacing',
     roleEn: 'Editorial Asymmetric Framing & Pacing',
-    fusionTag: 'MELIUS ASYMMETRIC HUD',
+    fusionTag: 'EDITORIAL ASYMMETRIC HUD',
     badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-500/20 dark:text-emerald-300 dark:border-emerald-500/40',
   },
   {
@@ -725,7 +725,7 @@ export const VIBE_CODER_SOURCES = [
     url: 'https://ui.aceternity.com/',
     roleTh: 'Spotlight Card, 3D Tilt & Tactical Border Beam',
     roleEn: 'Spotlight Card, 3D Tilt & Tactical Border Beam',
-    fusionTag: 'VALORANT AGENT GLOW',
+    fusionTag: 'TACTICAL AMBIENT GLOW',
     badgeClass: 'bg-rose-100 text-rose-800 border-rose-300 dark:bg-[#FF4655]/20 dark:text-[#FF4655] dark:border-[#FF4655]/40',
   },
   {
@@ -733,9 +733,9 @@ export const VIBE_CODER_SOURCES = [
     rank: '#4',
     name: 'Uiverse.io',
     url: 'https://uiverse.io/',
-    roleTh: 'ปุ่มกด 3D Duolingo Tactile & ช่องเก็บของ Terraria Hotbar',
-    roleEn: 'Duolingo 3D Push Buttons & Terraria Hotbar Slots',
-    fusionTag: 'DUOLINGO × TERRARIA 3D',
+    roleTh: 'ปุ่มกด 3D Tactile & ช่องเลือกโมดูลเรียนรู้ Hotbar',
+    roleEn: 'Tactile 3D Push Buttons & Modular Hotbar Slots',
+    fusionTag: 'TACTILE 3D HUD',
     badgeClass: 'bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-500/40',
   },
   {
@@ -745,7 +745,7 @@ export const VIBE_CODER_SOURCES = [
     url: 'https://reactbits.dev/',
     roleTh: 'Decrypted Text, Shiny Text & ตัวเลขวิ่ง CountUp',
     roleEn: 'Decrypted Cipher Text, ShinyText & CountUp',
-    fusionTag: 'VALORANT CIPHER REVEAL',
+    fusionTag: 'CIPHER TEXT REVEAL',
     badgeClass: 'bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-500/20 dark:text-sky-300 dark:border-sky-500/40',
   },
 ] as const;
@@ -760,13 +760,13 @@ export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string 
     >
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider bg-[#FF4655] text-white">
-            TRI-HYBRID ENGINE // 5 VIBE-CODER SITES
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#5B5CE2] text-white">
+            COMPONENT ARCHITECTURE // 5 SITES
           </span>
-          <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-[#EDEBE8]">
+          <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
             {isEn
-              ? 'Terraria × Valorant × Duolingo / Powered by 5 Vibe-Coder Libraries'
-              : 'ผสาน Terraria × Valorant × Duolingo จากคลังต้นฉบับ 5 เว็บ Vibe Coders'}
+              ? 'Engineered with 5 Premier Frontend Component Registries'
+              : 'สถาปัตยกรรม UI คุณภาพสูงจากคลังคอมโพเนนต์ระดับสากลทั้ง 5 แหล่ง'}
           </h3>
         </div>
         <span className="text-[11px] font-mono font-bold text-[#4F46E5] dark:text-[#A5A6F6]">

@@ -35,6 +35,7 @@ import {
 } from 'lucide-react';
 import {
   RemotionPlayerWrapper,
+  GlovaHeroCinematicVideo,
   LandingHeroComposition,
   RankedArenaShowcaseComposition,
   SeasonPassRewardsComposition,
@@ -52,8 +53,6 @@ import {
   ShinyText,
   DecryptedText,
   SpotlightCard,
-  GlovaCartridge,
-  VibeCoderSourceDock,
   ShimmerButton,
   BentoGrid,
   BentoCard,
@@ -72,7 +71,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   const { t, language } = useTranslation();
   const isEn = language === 'en';
 
-  const [heroTab, setHeroTab] = useState<'ranked' | 'cartridge' | 'journey'>('ranked');
   const [activeStudioTab, setActiveStudioTab] = useState<'vocab' | 'grammar' | 'reading' | 'listening' | 'speaking' | 'writing' | 'exam' | 'ranked'>('vocab');
 
   const handleStart = () => {
@@ -102,10 +100,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Brand Value Proposition (Editorial Hierarchy) */}
             <div className="lg:col-span-6 space-y-6 text-left">
-              {/* Prestigious Tri-Hybrid Eyebrow */}
+              {/* Prestigious Academic Eyebrow */}
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="px-2.5 py-1 rounded-full bg-[#FF4655] text-white text-[11px] font-mono font-black uppercase tracking-wider">
-                  TERRARIA × VALORANT × DUOLINGO
+                <span className="px-3 py-1 rounded-full bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] text-[11px] font-mono font-bold uppercase tracking-wider border border-[#5B5CE2]/30 shadow-xs">
+                  {isEn ? 'CAMBRIDGE & CEFR BENCHMARK' : 'มาตรฐาน CEFR & CAMBRIDGE สากล'}
                 </span>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4F46E5]/10 dark:bg-[#5B5CE2]/15 text-[#4F46E5] dark:text-[#818CF8] text-xs font-bold tracking-wide border border-[#4F46E5]/20 dark:border-[rgba(255,255,255,0.08)]">
                   <Sparkles className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#5B5CE2]" aria-hidden="true" />
@@ -130,8 +128,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               {/* Informative Subtext */}
               <p className="text-base sm:text-lg text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-xl font-grotesk">
                 {isEn
-                  ? 'Glova unites 3,860 verified Oxford & Cambridge terms, Terraria biome progression, Valorant 4-second reflex duels, and Duolingo 3D mastery loops. Discover where you stand in 3 minutes.'
-                  : 'Glova ผสานการไต่ระดับไบโอมแบบ Terraria การประลองความเร็ว 4 วินาทีสไตล์ Valorant และปุ่มกด 3D สุดมันส์แบบ Duolingo เข้ากับคลังคำศัพท์วิชาการ 3,860 คำ'}
+                  ? 'Glova transforms your English mastery through 3,860 verified Oxford & Cambridge academic terms, real-time diagnostic calibration, and immersive interactive studios. Discover your true CEFR proficiency in 3 minutes.'
+                  : 'Glova ยกระดับทักษะภาษาอังกฤษของคุณด้วยคลังคำศัพท์มาตรฐาน Oxford & Cambridge กว่า 3,860 คำ ระบบวิเคราะห์วัดระดับ CEFR แม่นยำ และสตูดิโอฝึกฝนทักษะครบวงจร ค้นพบระดับที่แท้จริงของคุณได้ใน 3 นาที'}
               </p>
 
               {/* Primary & Secondary Tactile Actions (21st.dev ShimmerButton + Uiverse Tactile) */}
@@ -175,100 +173,41 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
             </div>
 
-            {/* Right Column: Interactive Product Showcase Arena */}
+            {/* Right Column: High-Impact Cinematic Video Showcase */}
             <div className="lg:col-span-6 space-y-4">
-              {/* Interactive Composition Mode Switcher */}
-              <div className="flex items-center justify-between gap-2 px-1">
-                <div className="flex items-center gap-1 rounded-2xl bg-slate-100 dark:bg-[#141A22] p-1 border border-slate-200 dark:border-[rgba(255,255,255,0.08)] text-xs font-bold">
-                  <button
-                    type="button"
-                    onClick={() => setHeroTab('ranked')}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
-                      heroTab === 'ranked'
-                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
-                    }`}
-                  >
-                    <Swords className="w-3.5 h-3.5" />
-                    <span>{isEn ? 'Ranked Arena 4s' : 'ประลองความเร็ว 4s'}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setHeroTab('cartridge')}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
-                      heroTab === 'cartridge'
-                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
-                    }`}
-                  >
-                    <Layers className="w-3.5 h-3.5" />
-                    <span>{isEn ? 'Glova Cartridge' : 'ตลับการเรียนรู้'}</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setHeroTab('journey')}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
-                      heroTab === 'journey'
-                        ? 'bg-[#5B5CE2] text-white shadow-[0_2.5px_0_0_#38399E] active:translate-y-[2.5px] active:shadow-none border-t border-white/20 font-bold'
-                        : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] active:translate-y-0.5'
-                    }`}
-                  >
-                    <Compass className="w-3.5 h-3.5" />
-                    <span>{isEn ? 'CEFR Progression' : 'เส้นทาง CEFR'}</span>
-                  </button>
+              {/* Video Header Status Indicator */}
+              <div className="flex items-center px-2">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10B981]"></span>
+                  </span>
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-slate-700 dark:text-[#A5A6F6] uppercase">
+                    {isEn ? 'AI DIAGNOSTIC ENGINE // LIVE NEURAL PREVIEW' : 'ระบบจำลองการวิเคราะห์ CEFR แบบเรียลไทม์'}
+                  </span>
                 </div>
-
-                <span className="text-[11px] font-tech text-slate-500 dark:text-[#94A3B8] hidden sm:flex items-center gap-1 font-bold">
-                  <Play className="w-3 h-3 text-[#10B981] fill-[#10B981] animate-pulse" />
-                  REMOTION ENGINE
-                </span>
               </div>
 
-              {/* Dynamic Showcase Screen */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-[#141A22] shadow-xl aspect-video w-full">
-                <BorderBeam size={220} duration={8} colorFrom="#5B5CE2" colorTo="#5B5CE2" />
-
-                {heroTab === 'ranked' && (
-                  <RemotionPlayerWrapper
-                    component={RankedArenaShowcaseComposition}
-                    inputProps={{}}
-                    durationInFrames={180}
-                    aspectRatio="16/9"
-                    ariaLabel="Ranked Mode 4-Second Vocabulary Battle Remotion Simulation"
-                  />
-                )}
-
-                {heroTab === 'cartridge' && (
-                  <div className="h-full w-full bg-slate-50 dark:bg-[#141A22] p-6 flex flex-col justify-center">
-                    <div className="max-w-md mx-auto w-full">
-                      <GlovaCartridge
-                        id="hero-cartridge-demo"
-                        level="B2"
-                        skill="vocabulary"
-                        title={isEn ? 'Advanced Academic Collocations' : 'กลุ่มคำศัพท์เชิงวิชาการขั้นสูง'}
-                        subtitle={isEn ? 'Cambridge FCE vocabulary with contextual audio' : 'คลังคำศัพท์เคมบริดจ์พร้อมระบบออกเสียงและตัวอย่างประโยค'}
-                        status="ready"
-                        progress={40}
-                        lessonsCount={5}
-                        completedCount={2}
-                        xpReward={25}
-                        estimatedMinutes={4}
-                        onLaunch={() => router.push('/vocabulary')}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {heroTab === 'journey' && (
-                  <RemotionPlayerWrapper
-                    component={LandingHeroComposition}
-                    inputProps={{}}
-                    durationInFrames={180}
-                    aspectRatio="16/9"
-                    ariaLabel="Glova CEFR Learning Journey Progression Simulation"
-                  />
-                )}
-              </div>
+              {/* Dynamic 16:9 Showcase Screen with BorderBeam and Spotlight */}
+              <SpotlightCard
+                spotlightColor="rgba(91, 92, 226, 0.15)"
+                showBorderBeam={true}
+                borderBeamProps={{
+                  size: 260,
+                  duration: 8,
+                  colorFrom: '#5B5CE2',
+                  colorTo: '#10B981',
+                }}
+                className="overflow-hidden rounded-3xl border-2 border-slate-200 dark:border-white/10 bg-[#0B0F17] shadow-2xl aspect-video w-full"
+              >
+                <RemotionPlayerWrapper
+                  component={GlovaHeroCinematicVideo}
+                  inputProps={{}}
+                  durationInFrames={240}
+                  aspectRatio="16/9"
+                  ariaLabel="Glova Neural English Diagnostic Cinematic Video"
+                />
+              </SpotlightCard>
 
               {/* Contextual Photography & Calm Study Atmosphere */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
@@ -294,9 +233,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </div>
             </div>
           </div>
-
-          {/* 5-Sites Vibe-Coder Architecture Dock */}
-          <VibeCoderSourceDock isEn={isEn} />
         </div>
       </section>
 

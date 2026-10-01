@@ -14,3 +14,5 @@ export { RankedArenaShowcaseComposition } from './RankedArenaShowcaseComposition
 export type { RankedArenaShowcaseProps } from './RankedArenaShowcaseComposition';
 export { SeasonPassRewardsComposition } from './SeasonPassRewardsComposition';
 export type { SeasonPassRewardsProps } from './SeasonPassRewardsComposition';
+export { GlovaHeroCinematicVideo } from './GlovaHeroCinematicVideo';
+export type { GlovaHeroCinematicVideoProps } from './GlovaHeroCinematicVideo';
