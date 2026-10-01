@@ -86,12 +86,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   const hasWeakness = progress.weakTopics && progress.weakTopics.length > 0;
   const topWeakness = hasWeakness ? progress.weakTopics[0] : null;
 
+  // Helper to format topic tags and titles into clean, capitalized English without raw AI-like underscores
+  const formatTopicTitle = React.useCallback(
+    (topic: { tag: string; labelTh?: string }) => {
+      if (!isEn && topic.labelTh) {
+        return topic.labelTh.replace(/_/g, ' ');
+      }
+      const raw = isEn
+        ? (topic.tag || topic.labelTh || '')
+        : (topic.labelTh || topic.tag || '');
+      return raw
+        .replace(/_/g, ' ')
+        .split(' ')
+        .filter(Boolean)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ')
+        .replace(/\bVs\b/g, 'vs');
+    },
+    [isEn]
+  );
+
   // Primary Action logic
   const primaryAction = React.useMemo(() => {
     if (topWeakness) {
+      const formattedTitle = formatTopicTitle(topWeakness);
       return {
         unitBadge: "TODAY'S NEXT STEP",
-        title: isEn ? `Fix: ${topWeakness.tag}` : `ทบทวนและซ่อมแซม: ${topWeakness.labelTh}`,
+        title: isEn
+          ? `Practice: ${formattedTitle}`
+          : `ทบทวนและซ่อมแซม: ${topWeakness.labelTh || formattedTitle}`,
         description: isEn
           ? `Detected ${topWeakness.errorCount} mistakes in practice. A 4-minute focused drill will recover your confidence.`
           : `แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง ในแบบทดสอบ ฝึกฝนสั้นๆ 4 นาทีเพื่อเสริมความแม่นยำ`,
@@ -135,7 +158,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       icon: <BookOpen className="w-5 h-5 text-indigo-500" />,
       isWeakness: false,
     };
-  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, isEn]);
+  }, [topWeakness, progress.assessmentCompleted, progress.currentLevel, progress.targetExam, onStartRemediation, onNavigate, isEn, formatTopicTitle]);
 
   // Glova Stepped Unit Path Nodes for Current Level
   const pathNodes = React.useMemo(() => {
@@ -210,59 +233,65 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {
         slotNumber: 1,
         id: 'slot-vocab',
-        label: isEn ? 'Lexical Tome' : 'คัมภีร์คำศัพท์ CEFR',
+        label: isEn ? 'Vocab Tome' : 'คลังคำศัพท์',
         rarity: 'hallowed' as const,
-        stackCount: '3,860',
+        stackCount: '',
         icon: <BookOpen className="w-4 h-4 text-[#2155E6] dark:text-[#60A5FA]" />,
+        image: '/assets/dribbble-basket-tools.jpg',
         onSelect: () => onNavigate('vocabulary'),
       },
       {
         slotNumber: 2,
         id: 'slot-grammar',
-        label: isEn ? 'Syntax Anvil' : 'ทั่งตีไวยากรณ์ 18 บท',
+        label: isEn ? 'Syntax Anvil' : 'ไวยากรณ์',
         rarity: 'gold' as const,
-        stackCount: '18',
+        stackCount: '',
         icon: <Sparkles className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
+        image: '/assets/dribbble-safe-coins.jpg',
         onSelect: () => onNavigate('grammar'),
       },
       {
         slotNumber: 3,
         id: 'slot-reading',
-        label: isEn ? 'Lore Scroll' : 'ม้วนคัมภีร์การอ่าน',
+        label: isEn ? 'Reading Scroll' : 'การอ่าน',
         rarity: 'celestial' as const,
-        stackCount: '42',
+        stackCount: '',
         icon: <BookMarked className="w-4 h-4 text-[#059669] dark:text-[#34D399]" />,
+        image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&auto=format&fit=crop&q=80',
         onSelect: () => onNavigate('reading'),
       },
       {
         slotNumber: 4,
         id: 'slot-listening',
-        label: isEn ? 'Echo Crystal' : 'ผลึกเสียงสำเนียงจริง',
+        label: isEn ? 'Echo Crystal' : 'การฟัง',
         rarity: 'silver' as const,
-        stackCount: '36',
+        stackCount: '',
         icon: <Headphones className="w-4 h-4 text-[#0284C7] dark:text-[#38BDF8]" />,
+        image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=300&auto=format&fit=crop&q=80',
         onSelect: () => onNavigate('listening'),
       },
       {
         slotNumber: 5,
         id: 'slot-compete',
-        label: isEn ? 'Speed Vocab Duel' : 'ดวลความเร็วคำศัพท์',
+        label: isEn ? 'Speed Duel' : 'ดวลความเร็ว',
         rarity: 'crimson' as const,
-        stackCount: '4s MMR',
+        stackCount: '',
         icon: <Swords className="w-4 h-4 text-[#FF4655]" />,
+        image: '/assets/dribbble-hands-controller.jpg',
         onSelect: () => onNavigate('compete'),
       },
       {
         slotNumber: 6,
         id: 'slot-exam',
-        label: isEn ? 'Cambridge Mock Exam' : 'ชุดข้อสอบจำลอง Cambridge',
+        label: isEn ? 'Mock Exam' : 'ข้อสอบจำลอง',
         rarity: 'copper' as const,
-        stackCount: progress.targetExam,
+        stackCount: '',
         icon: <Award className="w-4 h-4 text-[#FFE600] dark:text-[#FFE600]" />,
+        image: '/assets/dribbble-gift-box.jpg',
         onSelect: () => onNavigate('mockExam'),
       },
     ],
-    [isEn, onNavigate, progress.targetExam]
+    [isEn, onNavigate]
   );
 
   return (
@@ -491,8 +520,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* 1.5 TERRARIA 6-SLOT HOTBAR INVENTORY STRIP (Uiverse.io x Terraria) */}
       <TerrariaHotbarBar
         items={hotbarSlots}
-        title={isEn ? 'Active Loadout & Studio Inventory' : 'ช่องเก็บไอเทมสตูดิโอ (กดเลือกเพื่อเข้าฝึกทันที)'}
-        subtitle="Slots [1]-[6] • Rarity: Copper → Celestial"
+        title={isEn ? 'Studio Inventory & Quick Select' : 'ช่องเก็บไอเทมสตูดิโอ (กดเลือกเพื่อเข้าฝึกทันที)'}
+        subtitle={isEn ? 'Equipment Rack' : 'แท่นอุปกรณ์สตูดิโอ'}
       />
 
       {/* 2. BALANCED 2-COLUMN LAYOUT (Godly.design Melius 65% Primary Journey + 35% Tactical HUD Rail) */}
@@ -524,7 +553,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
                 {/* Main Heading */}
                 <div className="space-y-1">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
                     {primaryAction.title}
                   </h2>
                   <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed max-w-xl">
@@ -733,6 +762,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-1"
                   level={progress.currentLevel}
                   skill="vocabulary"
+                  image="/assets/dribbble-basket-tools.jpg"
                   title={isEn ? 'High-Frequency Vocabulary' : 'คำศัพท์ความถี่สูงระดับพื้นฐาน'}
                   subtitle={isEn ? 'Essential Oxford & Cambridge academic words' : 'คลังคำศัพท์จำเป็นสำหรับการเรียนและการสอบ'}
                   status="completed"
@@ -748,6 +778,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-2"
                   level={progress.currentLevel}
                   skill="grammar"
+                  image="/assets/dribbble-safe-coins.jpg"
                   title={isEn ? 'Past vs. Present Perfect Tenses' : 'อดีตจบแล้ว vs ยังส่งผลถึงปัจจุบัน'}
                   subtitle={isEn ? 'Sentence structures with timeline analysis' : 'โครงสร้างประโยคพร้อมโมชันไทม์ไลน์'}
                   status="in-progress"
@@ -763,6 +794,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-3"
                   level={progress.currentLevel}
                   skill="reading"
+                  image="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=80"
                   title={isEn ? 'Contextual Campus Reading' : 'อ่านจับใจความและบทความมหาวิทยาลัย'}
                   subtitle={isEn ? 'Skimming, scanning, and main idea extraction' : 'ฝึกการจับใจความและคำถามเชิงลึก'}
                   status="ready"
@@ -778,6 +810,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-4"
                   level={progress.currentLevel}
                   skill="listening"
+                  image="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&auto=format&fit=crop&q=80"
                   title={isEn ? 'Conversational Audio & Nuance' : 'ฟังบทสนทนาและจับสำเนียง'}
                   subtitle={isEn ? 'Real-world dialogues with native speaker audio' : 'ฟังและจับใจความบทสนทนาสถานการณ์จริง'}
                   status="ready"
@@ -793,6 +826,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-5"
                   level={nextLvl}
                   skill="ranked"
+                  image="/assets/dribbble-hands-controller.jpg"
                   title={isEn ? '4s Speed Vocab Duel' : 'ประลองความเร็วคำศัพท์ 4 วินาที'}
                   subtitle={isEn ? 'Test reflex and gain MMR in ranked arena' : 'ท้าทายความเร็วและไต่อันดับลีก'}
                   status="ready"
@@ -808,6 +842,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   id="mod-6"
                   level={nextLvl}
                   skill="writing"
+                  image="/assets/dribbble-gift-box.jpg"
                   title={isEn ? `Checkpoint: ${progress.targetExam} Mock` : `ด่านวัดผล: ${progress.targetExam} Mock Exam`}
                   subtitle={isEn ? 'Full Cambridge simulation to unlock next CEFR tier' : 'ข้อสอบจำลองเคมบริดจ์เพื่อปลดล็อกขั้นถัดไป'}
                   status="locked"
@@ -828,33 +863,77 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </h3>
                   <span className="text-xs text-slate-500 dark:text-[#94A3B8]">3 Core Studios</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="p-4 rounded-2xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-between gap-3">
-                    <div>
-                      <h4 className="font-bold text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์ CEFR'}</h4>
-                      <p className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-0.5">{isEn ? '3,860 verified terms' : '3,860 คำศัพท์มาตรฐาน'}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
+                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                      <img
+                        src="/assets/dribbble-basket-tools.jpg"
+                        alt="Vocabulary"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#2155E6] text-white">
+                        VOCABULARY
+                      </span>
                     </div>
-                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('vocabulary')}>
-                      {isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}
-                    </TactileButton>
+                    <div className="p-4 space-y-3">
+                      <div>
+                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์ CEFR'}</h4>
+                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? '3,860 verified terms' : '3,860 คำศัพท์มาตรฐาน'}</p>
+                      </div>
+                      <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('vocabulary')}>
+                        {isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}
+                      </TactileButton>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-amber-50/70 dark:bg-[#1C2430] border border-amber-200/80 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-between gap-3">
-                    <div>
-                      <h4 className="font-bold text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}</h4>
-                      <p className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-0.5">{isEn ? 'Timeline visualization' : 'โครงสร้างประโยคไวยากรณ์'}</p>
+
+                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
+                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                      <img
+                        src="/assets/dribbble-safe-coins.jpg"
+                        alt="Grammar"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#F59E0B] text-slate-950">
+                        GRAMMAR
+                      </span>
                     </div>
-                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('grammar')}>
-                      {isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด'}
-                    </TactileButton>
+                    <div className="p-4 space-y-3">
+                      <div>
+                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}</h4>
+                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? 'Timeline visualization' : 'โครงสร้างประโยคไวยากรณ์'}</p>
+                      </div>
+                      <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('grammar')}>
+                        {isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด'}
+                      </TactileButton>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-[#1C2430] border border-emerald-200/80 dark:border-[rgba(255,255,255,0.08)] flex flex-col justify-between gap-3">
-                    <div>
-                      <h4 className="font-bold text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}</h4>
-                      <p className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-0.5">{isEn ? `${progress.targetExam} simulation` : `ข้อสอบจำลอง ${progress.targetExam}`}</p>
+
+                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
+                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                      <img
+                        src="/assets/dribbble-gift-box.jpg"
+                        alt="Exam"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#10B981] text-white">
+                        MOCK EXAM
+                      </span>
                     </div>
-                    <TactileButton variant="primary" size="sm" onClick={() => onNavigate('mockExam')}>
-                      {isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ'}
-                    </TactileButton>
+                    <div className="p-4 space-y-3">
+                      <div>
+                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}</h4>
+                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? `${progress.targetExam} simulation` : `ข้อสอบจำลอง ${progress.targetExam}`}</p>
+                      </div>
+                      <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('mockExam')}>
+                        {isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ'}
+                      </TactileButton>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1034,12 +1113,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
             <div className="space-y-3 text-xs">
               {/* Quest 1 */}
-              <div className="p-3 rounded-xl bg-emerald-50/70 dark:bg-[#1C2430] border border-emerald-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
-                <div className="space-y-1 min-w-0">
+              <div className="p-3 rounded-xl bg-emerald-50/70 dark:bg-[#1C2430] border border-emerald-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
+                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-emerald-300/60 dark:border-white/10 shadow-xs">
+                  <img src="/assets/dribbble-basket-tools.jpg" alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="space-y-1 min-w-0 flex-1">
                   <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
                     {isEn ? 'Complete 1 Practice Lesson' : 'ทำบทเรียนสำเร็จ 1 บท'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
+                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
                     <div className="h-full rounded-full bg-[#10B981]" style={{ width: '100%' }} />
                   </div>
                 </div>
@@ -1049,12 +1131,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Quest 2 */}
-              <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
-                <div className="space-y-1 min-w-0">
+              <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
+                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-indigo-300/60 dark:border-white/10 shadow-xs">
+                  <img src="/assets/dribbble-hands-controller.jpg" alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="space-y-1 min-w-0 flex-1">
                   <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
                     {isEn ? 'Score 80%+ in Vocab Battle' : 'ชนะประลองคำศัพท์ด้วยคะแนน 80% ขึ้นไป'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
+                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
                     <div className="h-full rounded-full bg-[#2155E6]" style={{ width: '0%' }} />
                   </div>
                 </div>
@@ -1064,12 +1149,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Quest 3 */}
-              <div className="p-3 rounded-xl bg-amber-50/70 dark:bg-[#1C2430] border border-amber-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
-                <div className="space-y-1 min-w-0">
+              <div className="p-3 rounded-xl bg-amber-50/70 dark:bg-[#1C2430] border border-amber-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
+                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-amber-300/60 dark:border-white/10 shadow-xs">
+                  <img src="/assets/dribbble-safe-coins.jpg" alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="space-y-1 min-w-0 flex-1">
                   <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
                     {isEn ? 'Review 5 Spaced Words' : 'ทบทวนคำศัพท์ Spaced Repetition 5 คำ'}
                   </p>
-                  <div className="w-24 h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
+                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
                     <div className="h-full rounded-full bg-[#F59E0B]" style={{ width: '60%' }} />
                   </div>
                 </div>
@@ -1087,22 +1175,27 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 {isEn ? 'WEAKNESS REMEDIATION' : 'จุดที่ควรเสริม'}
               </span>
               <div className="space-y-2">
-                {progress.weakTopics.map((w) => (
-                  <div key={w.tag} className="p-3 rounded-xl bg-rose-50/70 dark:bg-[#1C2430] border border-rose-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
-                    <div className="min-w-0">
-                      <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] truncate">{w.labelTh}</p>
-                      <p className="text-[10px] text-[#E11D48] dark:text-[#E98278]">พบข้อผิดพลาด {w.errorCount} ครั้ง</p>
+                {progress.weakTopics.map((w) => {
+                  const displayTitle = !isEn && w.labelTh ? w.labelTh.replace(/_/g, ' ') : formatTopicTitle(w);
+                  return (
+                    <div key={w.tag} className="p-3 rounded-xl bg-rose-50/70 dark:bg-[#1C2430] border border-rose-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] truncate">{displayTitle}</p>
+                        <p className="text-[10px] text-[#E11D48] dark:text-[#E98278]">
+                          {isEn ? `Found ${w.errorCount} mistakes` : `พบข้อผิดพลาด ${w.errorCount} ครั้ง`}
+                        </p>
+                      </div>
+                      <TactileButton
+                        variant="warning"
+                        size="sm"
+                        onClick={() => onStartRemediation(w.tag)}
+                        className="shrink-0"
+                      >
+                        {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
+                      </TactileButton>
                     </div>
-                    <TactileButton
-                      variant="warning"
-                      size="sm"
-                      onClick={() => onStartRemediation(w.tag)}
-                      className="shrink-0"
-                    >
-                      {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
-                    </TactileButton>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ) : (

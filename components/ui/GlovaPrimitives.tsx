@@ -592,6 +592,7 @@ export interface TerrariaHotbarSlotItem {
   rarity: 'copper' | 'silver' | 'gold' | 'hallowed' | 'crimson' | 'celestial';
   stackCount: string;
   icon: React.ReactNode;
+  image?: string;
   isActive?: boolean;
   onSelect: () => void;
 }
@@ -602,89 +603,100 @@ export const TerrariaHotbarBar: React.FC<{
   subtitle?: string;
   className?: string;
 }> = ({ items, title, subtitle, className = '' }) => {
-  const rarityStyles: Record<TerrariaHotbarSlotItem['rarity'], { border: string; pill: string; bg: string }> = {
+  const rarityStyles: Record<TerrariaHotbarSlotItem['rarity'], { border: string; glow: string; bg: string; dot: string }> = {
     copper: {
-      border: 'border-amber-300 dark:border-amber-500/40 hover:border-amber-500',
-      pill: 'bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300',
-      bg: 'bg-amber-50/70 dark:bg-[#1C2430]',
+      border: 'border-amber-400/80 hover:border-amber-300',
+      glow: 'hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]',
+      bg: 'bg-gradient-to-b from-amber-500/20 via-[#0F172A] to-black/90',
+      dot: 'bg-amber-400 shadow-[0_0_6px_#F59E0B]',
     },
     silver: {
-      border: 'border-sky-300 dark:border-sky-500/40 hover:border-sky-500',
-      pill: 'bg-sky-100 text-sky-800 dark:bg-sky-500/20 dark:text-sky-300',
-      bg: 'bg-sky-50/70 dark:bg-[#1C2430]',
+      border: 'border-sky-400/80 hover:border-sky-300',
+      glow: 'hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]',
+      bg: 'bg-gradient-to-b from-sky-500/20 via-[#0F172A] to-black/90',
+      dot: 'bg-sky-400 shadow-[0_0_6px_#38BDF8]',
     },
     gold: {
-      border: 'border-yellow-400 dark:border-yellow-500/40 hover:border-yellow-500',
-      pill: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300',
-      bg: 'bg-yellow-50/70 dark:bg-[#1C2430]',
+      border: 'border-yellow-400/90 hover:border-yellow-300',
+      glow: 'hover:shadow-[0_0_20px_rgba(255,230,0,0.45)]',
+      bg: 'bg-gradient-to-b from-yellow-500/20 via-[#0F172A] to-black/90',
+      dot: 'bg-[#FFE600] shadow-[0_0_6px_#FFE600]',
     },
     hallowed: {
-      border: 'border-indigo-300 dark:border-indigo-500/40 hover:border-indigo-500',
-      pill: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-500/20 dark:text-indigo-300',
-      bg: 'bg-indigo-50/70 dark:bg-[#1C2430]',
+      border: 'border-[#2155E6] hover:border-blue-400',
+      glow: 'hover:shadow-[0_0_20px_rgba(33,85,230,0.45)]',
+      bg: 'bg-gradient-to-b from-[#2155E6]/25 via-[#0F172A] to-black/90',
+      dot: 'bg-[#2155E6] shadow-[0_0_6px_#2155E6]',
     },
     crimson: {
-      border: 'border-rose-300 dark:border-[#FF4655]/50 hover:border-[#FF4655]',
-      pill: 'bg-rose-100 text-rose-800 dark:bg-[#FF4655]/20 dark:text-[#FF4655]',
-      bg: 'bg-rose-50/70 dark:bg-[#1C2430]',
+      border: 'border-[#FF4655] hover:border-red-400',
+      glow: 'hover:shadow-[0_0_20px_rgba(255,70,85,0.5)]',
+      bg: 'bg-gradient-to-b from-[#FF4655]/25 via-[#0F172A] to-black/90',
+      dot: 'bg-[#FF4655] shadow-[0_0_6px_#FF4655]',
     },
     celestial: {
-      border: 'border-emerald-300 dark:border-emerald-500/40 hover:border-emerald-500',
-      pill: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300',
-      bg: 'bg-emerald-50/70 dark:bg-[#1C2430]',
+      border: 'border-emerald-400/80 hover:border-emerald-300',
+      glow: 'hover:shadow-[0_0_20px_rgba(16,185,129,0.45)]',
+      bg: 'bg-gradient-to-b from-emerald-500/20 via-[#0F172A] to-black/90',
+      dot: 'bg-emerald-400 shadow-[0_0_6px_#10B981]',
     },
   };
 
   return (
     <div
-      className={`p-4 sm:p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3.5 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      className={`p-3.5 sm:p-5 rounded-[24px] bg-gradient-to-b from-[#0F172A] via-[#0B1224] to-[#060A14] border border-slate-700/60 shadow-[0_12px_40px_rgba(0,0,0,0.5)] space-y-3.5 text-white ${className}`}
     >
-      <div className="flex items-center justify-between gap-2 flex-wrap">
+      <div className="flex items-center justify-between gap-2 flex-wrap px-1">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30">
-            STUDIO LOADOUT // QUICK SELECT
+          <span className="w-2 h-2 rounded-full bg-[#FFE600] animate-pulse shadow-[0_0_8px_#FFE600]" />
+          <span className="text-xs sm:text-sm font-black text-white tracking-wide uppercase font-display">
+            {title || 'STUDIO LOADOUT'}
           </span>
-          {title && (
-            <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-[#EDEBE8]">
-              {title}
-            </span>
-          )}
         </div>
-        {subtitle && (
-          <span className="text-[11px] font-mono text-slate-500 dark:text-[#94A3B8]">
-            {subtitle}
-          </span>
-        )}
+        <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+          HOTBAR • QUICK SELECT
+        </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {items.map((slot) => {
           const r = rarityStyles[slot.rarity];
           return (
             <motion.button
               key={slot.id}
               type="button"
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ y: 2 }}
+              whileHover={{ y: -3, scale: 1.03 }}
+              whileTap={{ y: 2, scale: 0.97 }}
               onClick={slot.onSelect}
-              className={`relative p-3 rounded-2xl border-2 text-left transition-all cursor-pointer select-none shadow-[0_3px_0_0_rgba(15,23,42,0.08)] dark:shadow-[0_3px_0_0_#090D16] active:shadow-none active:translate-y-[3px] ${r.bg} ${r.border}`}
+              className={`relative aspect-[4/5] p-3 rounded-2xl border-2 flex flex-col items-center justify-between text-center transition-all cursor-pointer select-none group shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_6px_20px_rgba(0,0,0,0.4)] ${r.bg} ${r.border} ${r.glow}`}
             >
-              <div className="flex items-center justify-between gap-1 mb-2">
-                <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-black bg-white/90 dark:bg-[#0D1117] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10">
-                  [{slot.slotNumber}]
-                </span>
-                <span className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold ${r.pill}`}>
-                  {slot.stackCount}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 flex items-center justify-center shrink-0">
-                  {slot.icon}
-                </div>
-                <span className="text-xs font-extrabold text-slate-900 dark:text-[#EDEBE8] leading-tight line-clamp-2">
-                  {slot.label}
+              {/* Top rarity indicator pip (NO NUMBERS) */}
+              <div className="w-full flex items-center justify-between">
+                <span className={`w-2 h-2 rounded-full ${r.dot}`} />
+                <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400 group-hover:text-white transition-colors">
+                  {slot.rarity}
                 </span>
               </div>
+
+              {/* Large Hero 3D Item graphic */}
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 my-auto flex items-center justify-center">
+                {slot.image ? (
+                  <img
+                    src={slot.image}
+                    alt={slot.label}
+                    className="w-full h-full object-cover rounded-2xl drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)] group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 pointer-events-none border border-white/10"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                    {slot.icon}
+                  </div>
+                )}
+              </div>
+
+              {/* Clean game title */}
+              <span className="text-xs font-black text-white tracking-tight leading-tight line-clamp-1 group-hover:text-[#FFE600] transition-colors drop-shadow-sm w-full">
+                {slot.label}
+              </span>
             </motion.button>
           );
         })}
@@ -813,6 +825,7 @@ export interface GlovaCartridgeProps {
   skill: 'vocabulary' | 'grammar' | 'reading' | 'listening' | 'speaking' | 'writing' | 'ranked';
   title: string;
   subtitle?: string;
+  image?: string;
   status: 'ready' | 'in-progress' | 'completed' | 'locked';
   progress?: number; // 0 to 100
   lessonsCount?: number;
@@ -829,6 +842,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
   skill,
   title,
   subtitle,
+  image,
   status,
   progress = 0,
   lessonsCount = 5,
@@ -862,7 +876,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
   return (
     <motion.div
       whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
-      className={`relative p-5 rounded-2xl bg-white dark:bg-[#101A30] border transition-all duration-200 ${
+      className={`relative p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#101A30] border transition-all duration-200 group flex flex-col justify-between ${
         status === 'ready'
           ? 'border-[#2155E6] shadow-[0_8px_24px_-4px_rgba(33,85,230,0.15)] ring-1 ring-[#2155E6]/30'
           : status === 'completed'
@@ -872,35 +886,60 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
           : 'border-slate-200 dark:border-[rgba(255,255,255,0.08)] opacity-60'
       } ${className}`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
-            {level}
-          </span>
-          <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
-            {skill}
-          </span>
-          <span className="hidden sm:inline-block text-[10px] font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
-            {biomeTagMap[level] || 'Forest Biome'}
-          </span>
-        </div>
+      <div>
+        {image ? (
+          <div className="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden mb-3.5 border border-slate-200/80 dark:border-white/10 bg-slate-100 dark:bg-slate-900">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+            <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 flex-wrap">
+              <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-black bg-black/60 text-white backdrop-blur-md border border-white/20">
+                {level}
+              </span>
+              <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold uppercase backdrop-blur-md ${skillColorMap}`}>
+                {skill}
+              </span>
+            </div>
+            <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-[#FFE600] text-slate-950 shadow-sm">
+              +{xpReward} XP
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
+                {level}
+              </span>
+              <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
+                {skill}
+              </span>
+              <span className="hidden sm:inline-block text-[10px] font-mono font-bold text-slate-500 dark:text-[#94A3B8]">
+                {biomeTagMap[level] || 'Forest Biome'}
+              </span>
+            </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8] shrink-0">
-          <Clock className="w-3.5 h-3.5 text-[#FFE600]" />
-          <span>{estimatedMinutes}m</span>
-          <span className="text-slate-900 dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
-        </div>
-      </div>
-
-      <div className="mt-3.5 space-y-1">
-        <h4 className="text-base font-bold text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-snug">
-          {title}
-        </h4>
-        {subtitle && (
-          <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-1">
-            {subtitle}
-          </p>
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-[#94A3B8] shrink-0">
+              <Clock className="w-3.5 h-3.5 text-[#FFE600]" />
+              <span>{estimatedMinutes}m</span>
+              <span className="text-slate-900 dark:text-[#EDEBE8] font-bold">+{xpReward} XP</span>
+            </div>
+          </div>
         )}
+
+        <div className="space-y-1">
+          <h4 className="text-base font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight leading-snug">
+            {title}
+          </h4>
+          {subtitle && (
+            <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed line-clamp-1">
+              {subtitle}
+            </p>
+          )}
+        </div>
       </div>
 
       {status !== 'locked' && (
