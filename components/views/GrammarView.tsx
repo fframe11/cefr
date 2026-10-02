@@ -19,19 +19,8 @@ import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
 import {
-  GlovaSectionHeader,
   GlovaLevelBadge,
-  GlovaButton,
-  GlovaCard,
-  GlovaCardContent,
-  GlovaBadge,
-  TactileButton,
-  SpotlightCard,
-  BorderBeam,
-  DecryptedText,
-  ShinyText,
-  TacticalHudFrame,
-} from '../ui/GlovaPrimitives';
+} from '../ui';
 import { RemotionPlayerWrapper, GrammarTimelineComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -141,7 +130,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
       <nav
         aria-label="Grammar sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Studio Identity */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -163,7 +152,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
           {/* Current Active Topic Indicator */}
           {currentTopic && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
               <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
               <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
                 {currentTopic.titleEn}
@@ -213,7 +202,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
                   ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
+                  : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
@@ -245,7 +234,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (6 cols): Grammar Concept & Rule Blueprint */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
@@ -256,6 +245,17 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
                   {isEn ? currentTopic.titleEn : currentTopic.titleTh}
                 </h3>
+              </div>
+
+              {/* Contextual Editorial Grammar Photography */}
+              <div className="overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs relative">
+                <img
+                  src="/images/learning/grammar_hero.jpg"
+                  alt="Student mastering English grammar structures and sentence patterns"
+                  width={800}
+                  height={380}
+                  className="w-full max-h-44 object-cover"
+                />
               </div>
 
               {/* Remotion Educational Grammar Timeline Aspect Animation */}
@@ -274,7 +274,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               </div>
 
               {currentTopic.summaryTh && (
-                <div className="w-full p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-start gap-2.5 shadow-xs">
+                <div className="w-full p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-start gap-2.5 shadow-xs">
                   <Lightbulb className="w-4 h-4 text-[#FA5D5D] shrink-0 mt-0.5" aria-hidden="true" />
                   <span className="leading-relaxed font-semibold">{currentTopic.summaryTh}</span>
                 </div>
@@ -282,7 +282,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
               {/* Core Concept - Formatted as Full-Width Pedagogical Card without AI markdown symbols */}
               {currentTopic.conceptTh && (
-                <div className="w-full p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-3 shadow-xs">
+                <div className="w-full p-4 sm:p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 space-y-3 shadow-xs">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#FA5D5D]" />
                     <span className="text-[11px] font-mono font-bold tracking-wider text-[#FA5D5D] uppercase">
@@ -316,7 +316,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                     {currentTopic.rules.map((rule, idx) => (
                       <div
                         key={idx}
-                        className="p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-2 shadow-xs"
+                        className="p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 space-y-2 shadow-xs"
                       >
                         <div className="font-mono text-xs font-bold text-[#D98200] dark:text-[#FFBA38] bg-[#FEF5E5] dark:bg-[#2B2010] border border-[#FDE5BC] dark:border-amber-500/20 px-3 py-1 rounded-full inline-block break-word-safe">
                           {rule.formula}
@@ -364,89 +364,87 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
           {/* Right Column (6 cols): Dominant Practice Task with QuestionCard */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-              <div className="flex items-center justify-between pb-3 border-b border-[#EAE4D5] dark:border-white/10">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
-                  <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
-                    {isEn ? 'Comprehension Practice' : 'แบบฝึกหัดวัดความเข้าใจ'}
-                  </h4>
-                </div>
-
-                {displayedQuestions.length > 0 && (
-                  <span className="text-xs text-slate-500 dark:text-slate-400 font-mono font-bold bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10">
-                    {isEn
-                      ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
-                      : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
-                  </span>
-                )}
+            <div className="flex items-center justify-between pb-1 px-1">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
+                <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
+                  {isEn ? 'Comprehension Practice' : 'แบบฝึกหัดวัดความเข้าใจ'}
+                </h4>
               </div>
 
-              {loadingQuestions && displayedQuestions.length === 0 && (
-                <div className="min-h-[260px] flex items-center justify-center p-8">
-                  <LoadingSpinner
-                    size="md"
-                    text={isEn ? 'Loading exercises...' : 'กำลังโหลดแบบฝึกหัด...'}
-                  />
-                </div>
-              )}
-
-              {!loadingQuestions && displayedQuestions.length === 0 && (
-                <EmptyState
-                  title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
-                  description={
-                    isEn
-                      ? 'Our academic team is currently preparing practice sets for this CEFR tier.'
-                      : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้'
-                  }
-                />
-              )}
-
-              {currentQuestion && (
-                <div className="space-y-4">
-                  <QuestionCard
-                    key={currentQuestion.id}
-                    question={currentQuestion}
-                    questionNumber={activeQuestionIdx + 1}
-                    totalQuestions={displayedQuestions.length}
-                    onAnswer={(selectedKey, isCorrect) => {
-                      onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
-                    }}
-                    showExplanationImmediately={true}
-                  />
-
-                  {/* Next / Previous Question Action Bar */}
-                  <div className="flex items-center justify-between pt-2">
-                    <button
-                      type="button"
-                      onClick={handlePrevQuestion}
-                      disabled={activeQuestionIdx === 0}
-                      className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-                    >
-                      <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                      <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={handleNextQuestion}
-                      className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
-                    >
-                      <span>
-                        {activeQuestionIdx < displayedQuestions.length - 1
-                          ? isEn
-                            ? 'Next Question'
-                            : 'ข้อถัดไป'
-                          : isEn
-                          ? 'Next Topic'
-                          : 'หัวข้อถัดไป'}
-                      </span>
-                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
-                    </button>
-                  </div>
-                </div>
+              {displayedQuestions.length > 0 && (
+                <span className="text-xs text-slate-600 dark:text-slate-300 font-mono font-bold bg-white dark:bg-[#1E1B28] px-3.5 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                  {isEn
+                    ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
+                    : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
+                </span>
               )}
             </div>
+
+            {loadingQuestions && displayedQuestions.length === 0 && (
+              <div className="min-h-[260px] flex items-center justify-center p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-[#EAE4D5] dark:border-white/10">
+                <LoadingSpinner
+                  size="md"
+                  text={isEn ? 'Loading exercises...' : 'กำลังโหลดแบบฝึกหัด...'}
+                />
+              </div>
+            )}
+
+            {!loadingQuestions && displayedQuestions.length === 0 && (
+              <EmptyState
+                title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
+                description={
+                  isEn
+                    ? 'Our academic team is currently preparing practice sets for this CEFR tier.'
+                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้'
+                }
+              />
+            )}
+
+            {currentQuestion && (
+              <div className="space-y-4">
+                <QuestionCard
+                  key={currentQuestion.id}
+                  question={currentQuestion}
+                  questionNumber={activeQuestionIdx + 1}
+                  totalQuestions={displayedQuestions.length}
+                  onAnswer={(selectedKey, isCorrect) => {
+                    onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
+                  }}
+                  showExplanationImmediately={true}
+                />
+
+                {/* Next / Previous Question Action Bar */}
+                <div className="flex items-center justify-between pt-2">
+                  <button
+                    type="button"
+                    onClick={handlePrevQuestion}
+                    disabled={activeQuestionIdx === 0}
+                    className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  >
+                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleNextQuestion}
+                    className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
+                  >
+                    <span>
+                      {activeQuestionIdx < displayedQuestions.length - 1
+                        ? isEn
+                          ? 'Next Question'
+                          : 'ข้อถัดไป'
+                        : isEn
+                        ? 'Next Topic'
+                        : 'หัวข้อถัดไป'}
+                    </span>
+                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

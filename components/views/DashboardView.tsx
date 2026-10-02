@@ -335,9 +335,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* Floating Bubble Tags (Around Center) */}
-          <div className="absolute top-1 left-2 sm:left-12 px-2.5 sm:px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FBBF24] font-bold text-[11px] sm:text-xs shadow-xs border border-[#FDE5BC] dark:border-amber-500/20 flex items-center gap-1">
+          <div className="absolute top-1 left-2 sm:left-12 px-2.5 sm:px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FBBF24] font-bold text-[11px] sm:text-xs shadow-xs border border-[#FDE5BC] dark:border-amber-500/20 flex items-center gap-1.5">
             <span>#Math</span>
-            <span className="text-[10px]">📈</span>
+            <TrendingUp className="w-3 h-3 text-[#D98200] dark:text-[#FBBF24]" aria-hidden="true" />
           </div>
 
           <div className="absolute top-1 right-2 sm:right-10 px-2.5 sm:px-3.5 py-1 rounded-full bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] dark:text-rose-300 font-bold text-[11px] sm:text-xs shadow-xs border border-[#FCD3D1] dark:border-rose-500/20">
@@ -668,7 +668,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="bg-[#FA5D5D] text-white rounded-[22px] p-4.5 shadow-sm flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-black text-sm">
-                    🏆
+                    <Trophy className="w-4 h-4 text-white" aria-hidden="true" />
                   </div>
                   <div>
                     <div className="font-black text-base leading-tight">#1</div>
@@ -685,7 +685,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="bg-[#EAECE6] dark:bg-[#1E2E28] text-slate-900 dark:text-slate-100 rounded-[22px] p-4.5 shadow-sm flex items-center justify-between border border-slate-300/40 dark:border-white/10">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-slate-300 dark:bg-white/10 flex items-center justify-center font-black text-sm text-slate-700 dark:text-slate-200">
-                    🥈
+                    <Award className="w-4 h-4 text-slate-700 dark:text-slate-200" aria-hidden="true" />
                   </div>
                   <div>
                     <div className="font-black text-base leading-tight">#2</div>
@@ -702,7 +702,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="bg-[#FFBA38] text-slate-950 rounded-[22px] p-4.5 shadow-sm flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center font-black text-sm">
-                    🥉
+                    <Award className="w-4 h-4 text-slate-950" aria-hidden="true" />
                   </div>
                   <div>
                     <div className="font-black text-base leading-tight">#3</div>

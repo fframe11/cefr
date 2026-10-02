@@ -28,14 +28,6 @@ import {
   GlovaCard,
   GlovaBadge,
 } from '../ui';
-import {
-  TactileButton,
-  SpotlightCard,
-  BorderBeam,
-  DecryptedText,
-  ShinyText,
-  TacticalHudFrame,
-} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -206,7 +198,7 @@ export const SpeakingView: React.FC = () => {
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
       <nav
         aria-label="Speaking sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Studio Identity */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -227,7 +219,7 @@ export const SpeakingView: React.FC = () => {
           <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
 
           {currentPrompt && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
               <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
               <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
                 Part {currentPrompt.part}
@@ -276,7 +268,7 @@ export const SpeakingView: React.FC = () => {
               className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
                   ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
+                  : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -302,7 +294,7 @@ export const SpeakingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
@@ -316,7 +308,7 @@ export const SpeakingView: React.FC = () => {
                 <button
                   type="button"
                   onClick={handlePlayModel}
-                  className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  className="touch-target px-4 py-2 rounded-full bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
                   <Volume2 className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
                   <span>
@@ -326,8 +318,23 @@ export const SpeakingView: React.FC = () => {
               )}
             </div>
 
+            {/* Contextual Editorial Speaking Photography */}
+            <div className="overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs relative">
+              <img
+                src="/images/learning/speaking_hero.jpg"
+                alt="Professional speech coach engaged in speaking consultation"
+                width={800}
+                height={380}
+                className="w-full max-h-48 object-cover"
+              />
+              <div className="absolute bottom-2.5 right-2.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono font-bold border border-white/20 flex items-center gap-1.5">
+                <Mic className="w-3 h-3 text-[#FA5D5D]" />
+                <span>Conversational Studio Ready</span>
+              </div>
+            </div>
+
             {/* Prompt Description */}
-            <div className="p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 shadow-xs">
+            <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 shadow-xs">
               <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-semibold leading-relaxed whitespace-pre-line font-sans">
                 {currentPrompt.promptEn}
               </p>
@@ -348,7 +355,7 @@ export const SpeakingView: React.FC = () => {
                   </h4>
                   <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-white dark:bg-[#0B1224] p-3 rounded-[18px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                      <li key={idx} className="flex items-start gap-2 bg-[#FAF8F3] dark:bg-[#252131] p-3 rounded-[18px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                         <span className="font-bold text-[#FA5D5D]">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>
@@ -372,7 +379,7 @@ export const SpeakingView: React.FC = () => {
                           className={`text-xs px-3.5 py-1.5 rounded-full font-mono border transition-all shadow-xs ${
                             isDetected
                               ? 'bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border-[#C5EBDA] dark:border-emerald-500/20 font-bold'
-                              : 'bg-white dark:bg-[#0B1224] text-slate-700 dark:text-slate-300 border-[#EAE4D5] dark:border-white/10'
+                              : 'bg-[#FAF8F3] dark:bg-[#252131] text-slate-700 dark:text-slate-300 border-[#EAE4D5] dark:border-white/10'
                           }`}
                         >
                           {phrase}
@@ -386,10 +393,10 @@ export const SpeakingView: React.FC = () => {
           </div>
 
           {/* Interactive Recording Station Card */}
-          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
               {/* Live Recording Timer */}
-              <div className="flex items-center gap-2 font-mono text-sm font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-[#0B1224] px-4 py-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+              <div className="flex items-center gap-2 font-mono text-sm font-bold text-slate-700 dark:text-slate-300 bg-[#FAF8F3] dark:bg-[#252131] px-4 py-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                 <Clock className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
                 <span>
                   {Math.floor(recordingSeconds / 60)}:
@@ -441,7 +448,7 @@ export const SpeakingView: React.FC = () => {
 
               {/* Speech Transcript Output Box */}
               {transcript && (
-                <div className="w-full max-w-xl text-left p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 space-y-2 animate-in fade-in duration-200 shadow-xs">
+                <div className="w-full max-w-xl text-left p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 space-y-2 animate-in fade-in duration-200 shadow-xs">
                   <span className="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider block font-mono">
                     {t('speaking.speech_transcript')}:
                   </span>
@@ -466,7 +473,7 @@ export const SpeakingView: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                    className="touch-target px-5 py-2.5 rounded-full bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                   >
                     <RotateCcw className="w-4 h-4" aria-hidden="true" />
                     <span>{isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}</span>
@@ -478,7 +485,7 @@ export const SpeakingView: React.FC = () => {
 
           {/* Sample Model Answer Box */}
           {currentPrompt.modelAnswer && (
-            <div className="p-5 sm:p-6 space-y-3 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="p-5 sm:p-6 space-y-3 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
@@ -490,7 +497,7 @@ export const SpeakingView: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
-                  className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  className="touch-target px-4 py-2 rounded-full bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
                   {showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
                   <span>{showModelAnswer ? (isEn ? 'Hide Model' : 'ซ่อนตัวอย่าง') : (isEn ? 'View Sample Response' : 'ดูบทความตัวอย่าง')}</span>
@@ -498,7 +505,7 @@ export const SpeakingView: React.FC = () => {
               </div>
 
               {showModelAnswer && (
-                <div className="mt-3 p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200 shadow-xs">
+                <div className="mt-3 p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200 shadow-xs">
                   {currentPrompt.modelAnswer}
                 </div>
               )}

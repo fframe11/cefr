@@ -45,14 +45,7 @@ import {
   GlovaCard,
   GlovaCardContent,
   LessonFeedbackDrawer,
-  TactileButton,
-  SpotlightCard,
-  BorderBeam,
-  DecryptedText,
-  ShinyText,
-  AnimatedNumber,
-  TacticalHudFrame,
-} from '../ui/GlovaPrimitives';
+} from '../ui';
 import { useTranslation } from '../../i18n';
 import { ExtendedUniverseView } from '../vocabulary/ExtendedUniverseView';
 
@@ -367,7 +360,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
       <nav
         aria-label="Vocabulary sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Studio Identity */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -388,7 +381,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
 
           {/* Mode Switcher Pills */}
-          <div className="flex items-center p-1 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 gap-1 flex-wrap">
+          <div className="flex items-center p-1 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 gap-1 flex-wrap">
             <button
               type="button"
               onClick={() => setViewMode('study')}
@@ -481,10 +474,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
       {/* Level & POS Filter Bar */}
       {viewMode !== 'universe' && (
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-xl bg-[#070B16]/85 backdrop-blur-md border border-white/10 shadow-sm text-white">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm text-slate-800 dark:text-slate-200">
         {/* CEFR Level Selector */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
-          <span className="text-xs text-muted-foreground font-bold flex items-center gap-1 mr-1 shrink-0">
+          <span className="text-xs text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{isEn ? 'Level:' : 'ระดับ:'}</span>
           </span>
@@ -497,10 +490,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setCurrentIndex(0);
                 setIsRevealed(false);
               }}
-              className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer ${
                 selectedLevel === lvl
-                  ? 'bg-[#2155E6] text-white border-t border-white/20 shadow-[0_2.5px_0_0_#143DB8] active:translate-y-[2.5px] active:shadow-none'
-                  : 'bg-slate-100 hover:bg-indigo-50 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none'
+                  ? 'bg-[#FA5D5D] text-white shadow-xs'
+                  : 'bg-[#FAF8F3] hover:bg-[#F3EFE6] dark:bg-[#252131] dark:hover:bg-[#2E293D] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All' : 'ทั้งหมด') : `CEFR ${lvl}`}
@@ -518,7 +511,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               setCurrentIndex(0);
             }}
             aria-label={isEn ? 'Filter by part of speech' : 'กรองตามชนิดคำ'}
-            className="px-2.5 py-1.5 rounded-lg bg-background border border-border/60 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="px-3 py-1.5 rounded-full bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 cursor-pointer"
           >
             <option value="ALL">{isEn ? 'All Parts of Speech' : 'ทุกชนิดคำ'}</option>
             <option value="noun">{isEn ? 'Nouns' : 'คำนาม'}</option>
@@ -528,7 +521,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
           {/* Search Input */}
           <div className="relative min-w-[180px] sm:min-w-[220px] w-full">
-            <Search className="w-3.5 h-3.5 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
             <input
               type="text"
               value={searchQuery}
@@ -537,7 +530,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setCurrentIndex(0);
               }}
               placeholder={isEn ? 'Search word, Thai meaning...' : 'ค้นหาคำศัพท์ หรือความหมายไทย...'}
-              className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-background border border-border/60 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="w-full pl-8 pr-3 py-1.5 rounded-full bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20"
             />
           </div>
         </div>
@@ -631,26 +624,26 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              {/* Multiple Choice Options with Uiverse tactile press */}
+              {/* Multiple Choice Options with Mondly soft pill design */}
               <div className="grid grid-cols-1 gap-3">
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#0B1224]/80 hover:bg-[#101A30] border-2 border-white/10 text-slate-100 shadow-[0_3px_0_0_#050811] active:translate-y-[3px] active:shadow-none hover:border-[#F59E0B]/40';
+                    'bg-[#FAF8F3] dark:bg-[#13111C]/60 hover:bg-slate-100 dark:hover:bg-[#252233] border border-border/80 text-slate-800 dark:text-slate-200';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
                       optionStyle =
-                        'bg-emerald-500/15 border-2 border-emerald-500 text-emerald-300 font-bold ring-2 ring-emerald-500/20 shadow-[0_3px_0_0_#059669]';
+                        'bg-emerald-500/10 border-2 border-emerald-500 text-emerald-800 dark:text-emerald-300 font-bold shadow-xs';
                     } else if (isSelected && !answerResult.is_correct) {
                       optionStyle =
-                        'bg-rose-500/15 border-2 border-rose-500 text-rose-300 font-bold ring-2 ring-rose-500/20 shadow-[0_3px_0_0_#E11D48]';
+                        'bg-rose-500/10 border-2 border-rose-500 text-rose-800 dark:text-rose-300 font-bold shadow-xs';
                     } else {
-                      optionStyle = 'opacity-40 border-2 border-white/5 bg-[#050811] text-slate-500 shadow-none';
+                      optionStyle = 'opacity-40 border border-border/40 bg-[#FAF8F3]/50 dark:bg-[#13111C]/30 text-slate-500';
                     }
                   } else if (isSelected) {
                     optionStyle =
-                      'bg-[#F59E0B]/15 border-2 border-[#F59E0B] text-[#FDE68A] font-bold ring-2 ring-[#F59E0B]/20 shadow-[0_3px_0_0_#B45309] active:translate-y-[3px] active:shadow-none';
+                      'bg-[#FA5D5D]/10 border-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF8080] font-bold shadow-xs';
                   }
 
                   return (
@@ -659,10 +652,14 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       type="button"
                       disabled={Boolean(selectedOption) || isSubmittingAnswer}
                       onClick={() => handleSelectOption(opt.key)}
-                      className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 ${optionStyle}`}
+                      className={`w-full p-4 rounded-2xl text-left transition-all flex items-center justify-between gap-3 cursor-pointer ${optionStyle}`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-xl bg-white dark:bg-[#101A30] flex items-center justify-center text-xs font-mono font-bold text-slate-900 dark:text-[#EDEBE8] shrink-0 border border-slate-200 dark:border-white/10">
+                        <span className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-mono font-bold shrink-0 border ${
+                          isSelected
+                            ? 'bg-[#FA5D5D] text-white border-[#FA5D5D]'
+                            : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border-border/80'
+                        }`}>
                           {opt.key}
                         </span>
                         <span className="text-sm sm:text-base font-bold">{opt.text}</span>
@@ -719,7 +716,27 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {/* 3. MODE: Active Study Mode (Flashcard & Pronunciation) */}
       {!loading && viewMode === 'study' && currentWord && (
         <div className="max-w-2xl mx-auto space-y-4">
-          <div className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          {/* Authentic Outcrowd Mondly Vocabulary Studio Context Banner */}
+          <div className="relative w-full aspect-[24/9] rounded-[22px] overflow-hidden border border-[#EAE4D5] dark:border-white/10 shadow-xs bg-slate-100 dark:bg-slate-800">
+            <img
+              src="/images/learning/vocab_hero.jpg"
+              alt="Students collaborating and acquiring CEFR language vocabulary"
+              width={800}
+              height={300}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white">
+              <span className="px-3 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[11px] font-mono font-bold border border-white/20">
+                Active Lexical Acquisition
+              </span>
+              <span className="px-3 py-0.5 rounded-full bg-[#FA5D5D] text-white text-[11px] font-bold shadow-xs">
+                CEFR {currentWord.cefrLevel} Studio
+              </span>
+            </div>
+          </div>
+
+          <div className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             {/* Card Header Context */}
             <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
@@ -734,7 +751,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 )}
               </div>
 
-              <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+              <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-[#FAF8F3] dark:bg-[#252131] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                 {isEn
                   ? `Word ${currentIndex + 1} of ${filteredWords.length}`
                   : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
@@ -762,7 +779,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               </div>
 
               {currentWord.ipa && (
-                <div className="inline-block px-3.5 py-1 rounded-full bg-white dark:bg-[#0B1224] text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-[#FAF8F3] dark:bg-[#252131] text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10">
                   {currentWord.ipa}
                 </div>
               )}
@@ -770,7 +787,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {/* Immediate Meaning & Definition */}
               <div className="pt-4 space-y-4 animate-in fade-in duration-150">
                 {/* Thai Meaning Highlight & English Definition */}
-                <div className="p-5 sm:p-6 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 text-center shadow-xs">
+                <div className="p-5 sm:p-6 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 text-center shadow-xs">
                   <div className="text-[11px] font-bold text-[#FA5D5D] uppercase tracking-wider font-mono">
                     {isEn ? 'Meaning in Thai' : 'ความหมายภาษาไทย'}
                   </div>
@@ -811,7 +828,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     {currentWord.collocations.map((c, i) => (
                       <span
                         key={i}
-                        className="px-3.5 py-1 rounded-full bg-white dark:bg-[#0B1224] text-xs font-mono font-bold text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs"
+                        className="px-3.5 py-1 rounded-full bg-[#FAF8F3] dark:bg-[#252131] text-xs font-mono font-bold text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs"
                       >
                         {c}
                       </span>

@@ -27,14 +27,6 @@ import {
   GlovaBadge,
   GlovaImage,
 } from '../ui';
-import {
-  TactileButton,
-  SpotlightCard,
-  BorderBeam,
-  DecryptedText,
-  ShinyText,
-  TacticalHudFrame,
-} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
 
@@ -140,7 +132,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
       <nav
         aria-label="Listening sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Studio Identity */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -161,7 +153,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
           <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
 
           {currentExercise && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
               <GlovaLevelBadge level={currentExercise.cefrLevel} size="sm" />
               <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
                 {currentExercise.targetExam}
@@ -212,7 +204,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
                   ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
+                  : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={item.cefrLevel} size="sm" />
@@ -241,7 +233,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       {currentExercise && (
         <div className="space-y-6">
           {/* Audio Player Card (Dominant Player Station) */}
-          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentExercise.cefrLevel} size="sm" />
@@ -251,13 +243,29 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               </div>
 
               {currentExercise.speakerAccents && (
-                <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 font-mono font-medium bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10">
+                <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 font-mono font-medium bg-[#FAF8F3] dark:bg-[#252131] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10">
                   <Volume2 className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
                   <span>
                     {isEn ? `Accent: ${currentExercise.speakerAccents}` : `สำเนียง: ${currentExercise.speakerAccents}`}
                   </span>
                 </div>
               )}
+            </div>
+
+            {/* Contextual Editorial Listening Photography */}
+            <div className="relative w-full aspect-[21/9] sm:aspect-[24/9] rounded-[22px] overflow-hidden border border-[#EAE4D5] dark:border-white/10 shadow-xs bg-slate-100 dark:bg-slate-800">
+              <img
+                src="/images/learning/listening_hero.jpg"
+                alt="Student listening attentively with headphones in modern language lab"
+                width={800}
+                height={340}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-2.5 right-2.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono font-bold border border-white/20 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Audio Stream Active</span>
+              </div>
             </div>
 
             {/* Remotion Audio Waveform Visualization */}
@@ -302,7 +310,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 </button>
 
                 {showTranscript && (
-                  <div className="mt-3 p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-sans animate-in fade-in duration-200 shadow-xs">
+                  <div className="mt-3 p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-sans animate-in fade-in duration-200 shadow-xs">
                     <p className="text-[11px] font-bold text-[#FA5D5D] mb-1 uppercase tracking-wider font-mono">
                       {isEn ? 'English Audio Transcript:' : 'บทพูดภาษาอังกฤษ:'}
                     </p>
@@ -314,8 +322,8 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
           </div>
 
           {/* Comprehension Questions Section */}
-          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-            <div className="flex items-center justify-between pb-3 border-b border-[#EAE4D5] dark:border-white/10">
+          <div className="w-full space-y-4">
+            <div className="flex items-center justify-between pb-1 px-1">
               <div className="flex items-center gap-2">
                 <Headphones className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
                 <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
@@ -324,7 +332,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
               </div>
 
               {displayedQuestions.length > 0 && (
-                <span className="text-xs text-slate-500 dark:text-slate-400 font-mono font-bold bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10">
+                <span className="text-xs text-slate-600 dark:text-slate-300 font-mono font-bold bg-white dark:bg-[#1E1B28] px-3.5 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                   {isEn
                     ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
                     : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
@@ -333,7 +341,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
             </div>
 
             {loadingQuestions && displayedQuestions.length === 0 && (
-              <div className="min-h-[200px] flex items-center justify-center p-8">
+              <div className="min-h-[200px] flex items-center justify-center p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-[#EAE4D5] dark:border-white/10">
                 <LoadingSpinner
                   size="md"
                   text={isEn ? 'Loading comprehension questions...' : 'กำลังโหลดคำถามวัดความเข้าใจ...'}
@@ -371,7 +379,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                     type="button"
                     onClick={handlePrevQuestion}
                     disabled={activeQuestionIdx === 0}
-                    className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                    className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                   >
                     <ChevronLeft className="w-4 h-4" aria-hidden="true" />
                     <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>

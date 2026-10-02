@@ -34,6 +34,7 @@ export interface AuthMeResponse {
 
 export interface UserProfileData {
   id: string;
+  display_name?: string | null;
   current_cefr_level: CEFRLevel;
   target_exam: CambridgeExamCode;
   estimated_cambridge_score: number;

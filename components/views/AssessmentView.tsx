@@ -32,14 +32,6 @@ import {
   GlovaSectionHeader,
   GlovaFeedbackBubble,
 } from '../ui';
-import {
-  TactileButton,
-  SpotlightCard,
-  BorderBeam,
-  DecryptedText,
-  ShinyText,
-  TacticalHudFrame,
-} from '../ui/GlovaPrimitives';
 import { RemotionPlayerWrapper, CefrRevealComposition } from '../remotion';
 import { QuickEnglishCheck } from '../diagnostic/QuickEnglishCheck';
 
@@ -289,7 +281,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
     return (
       <div className="w-full space-y-6 pb-12 animate-in fade-in duration-300">
         {/* Results Banner */}
-        <div className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+        <div className="p-6 sm:p-8 text-center space-y-5 rounded-[32px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm">
           <div className="w-16 h-16 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center mx-auto shadow-sm">
             <Award className="w-8 h-8 text-white" />
           </div>
@@ -330,7 +322,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           {/* Exam Targets: Recommended Exam vs Target Exam explicitly separated */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left pt-2">
             {/* Platform Recommended Exam */}
-            <div className="p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 flex items-start gap-3 shadow-xs">
+            <div className="p-4 sm:p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 flex items-start gap-3 shadow-xs">
               <div className="w-10 h-10 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 flex items-center justify-center shrink-0">
                 <Compass className="w-5 h-5" />
               </div>
@@ -350,7 +342,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             </div>
 
             {/* User Target Exam Preference */}
-            <div className="p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 flex items-start gap-3 shadow-xs">
+            <div className="p-4 sm:p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 flex items-start gap-3 shadow-xs">
               <div className="w-10 h-10 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] flex items-center justify-center shrink-0">
                 <Target className="w-5 h-5 text-[#D98200] dark:text-[#FFBA38]" />
               </div>
@@ -383,8 +375,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
         </div>
 
         {/* Skill Proficiency Breakdown */}
-        <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-          <div className="flex items-center gap-2 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
+        <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm">
+          <div className="flex items-center gap-2 pb-3 border-b border-border/80">
             <BarChart3 className="w-4 h-4 text-[#FA5D5D]" />
             <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
               {t('assessment.skill_breakdown')}
@@ -393,7 +385,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {Object.entries(result.skillStats).map(([skill, val]) => (
-              <div key={skill} className="p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-2 shadow-xs">
+              <div key={skill} className="p-4 rounded-[20px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 space-y-2 shadow-xs">
                 <div className="flex justify-between text-xs font-bold">
                   <span className="capitalize text-slate-900 dark:text-white">{t(`skills.${skill}`)}</span>
                   <span className="font-mono text-[#FA5D5D]">{val}%</span>
@@ -405,8 +397,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
         </div>
 
         {/* Personalized Learning Path Recommendations */}
-        <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-          <div className="flex items-center gap-2 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
+        <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm">
+          <div className="flex items-center gap-2 pb-3 border-b border-border/80">
             <Sparkles className="w-4 h-4 text-[#FA5D5D]" />
             <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
               {t('assessment.personalized_path')}
@@ -417,7 +409,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             {result.learningPathRecommendations.map((rec, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 p-3.5 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-xs"
+                className="flex items-start gap-3 p-3.5 rounded-[18px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 text-xs sm:text-sm text-slate-800 dark:text-slate-200 shadow-xs"
               >
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                 <span className="leading-relaxed font-sans">{rec}</span>
@@ -431,7 +423,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <button
             type="button"
             onClick={onNavigateDashboard}
-            className="touch-target w-full sm:flex-1 py-3 px-6 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-sm font-black flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer"
+            className="touch-target w-full sm:flex-1 py-3 px-6 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer"
           >
             <span>{isEn ? 'Start Learning with This Plan' : 'เริ่มเรียนตามแผนการเรียนรู้นี้'}</span>
             <ArrowRight className="w-4 h-4" />
@@ -440,7 +432,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <button
             type="button"
             onClick={handleRestart}
-            className="touch-target w-full sm:w-auto py-3 px-6 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-700 dark:text-slate-200 text-sm font-bold flex items-center justify-center gap-2 hover:bg-slate-100 dark:hover:bg-white/10 transition-all shadow-xs cursor-pointer"
+            className="touch-target w-full sm:w-auto py-3 px-6 rounded-full bg-white dark:bg-[#1E1B28] border border-border/80 text-slate-700 dark:text-slate-200 text-sm font-bold flex items-center justify-center gap-2 hover:bg-slate-100 dark:hover:bg-white/10 transition-all shadow-xs cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             <span>{isEn ? 'Retake Assessment' : 'ทำแบบประเมินอีกครั้ง'}</span>
@@ -455,10 +447,10 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
   // Active Test Screen
   return (
     <div className="w-full space-y-6 pb-12">
-      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      {/* 1. TOP SUB-NAV BAR (Mondly Language Learning Style) */}
       <nav
         aria-label="Diagnostic sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-border/80 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Studio Identity */}
         <div className="flex items-center gap-3 flex-wrap">
@@ -479,7 +471,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
 
           {/* Mode Switcher Pills */}
-          <div className="flex items-center gap-1.5 p-1 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+          <div className="flex items-center gap-1.5 p-1 rounded-full bg-white dark:bg-[#13111C]/60 border border-border/80 shadow-xs">
             <button
               type="button"
               onClick={() => setAssessmentMode('quick')}
@@ -524,7 +516,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
       ) : (
         <div className="space-y-4">
           {/* Assessment Header & Progress Bar */}
-          <div className="p-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 space-y-3 shadow-sm">
+          <div className="p-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-border/80 space-y-3 shadow-sm">
             <div className="flex items-center justify-between text-xs font-bold">
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 font-mono text-xs">
@@ -542,8 +534,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
             <GlovaProgress value={progressPercent} max={100} size="md" />
           </div>
 
-          {/* Render Current Question inside EduMaster Chassis */}
-          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          {/* Render Current Question inside Clean Wrapper (No redundant card nesting) */}
+          <div className="w-full">
             <QuestionCard
               key={currentQuestion.id}
               question={currentQuestion}
