@@ -74,6 +74,15 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   };
 
   const isLandingRoute = pathname === '/landing';
+  const isAuthRoute = pathname === '/login' || pathname === '/signup';
+
+  if (isAuthRoute) {
+    return (
+      <div className="min-h-screen bg-game-canvas text-foreground">
+        {children}
+      </div>
+    );
+  }
 
   if (isLandingRoute) {
     return (

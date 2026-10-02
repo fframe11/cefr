@@ -277,12 +277,25 @@ export const Header: React.FC<HeaderProps> = ({
                     type="button"
                     onClick={() => {
                       setIsMenuOpen(false);
+                      router.push('/profile');
+                    }}
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-slate-800 dark:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] transition-colors"
+                  >
+                    <Target className="w-4 h-4 text-slate-500 dark:text-[#94A3B8]" />
+                    <span>{t('auth.menu_goals')}</span>
+                  </button>
+
+                  <button
+                    role="menuitem"
+                    type="button"
+                    onClick={() => {
+                      setIsMenuOpen(false);
                       router.push('/analytics');
                     }}
                     className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-slate-900 dark:text-[#EDEBE8] hover:bg-slate-100 dark:bg-[#1C2430] transition-colors"
                   >
                     <BarChart2 className="w-4 h-4 text-[#94A3B8]" />
-                    <span>{t('sidebar.analytics')}</span>
+                    <span>{t('auth.menu_progress')}</span>
                   </button>
 
                   <div className="border-t border-slate-200/80 dark:border-white/10 pt-1">
@@ -293,7 +306,7 @@ export const Header: React.FC<HeaderProps> = ({
                       className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-[#F43F5E] hover:bg-[#F43F5E]/10 transition-colors"
                     >
                       <LogOut className="w-4 h-4 text-[#F43F5E]" />
-                      <span>{t('auth.sign_out')}</span>
+                      <span>{t('auth.menu_signout')}</span>
                     </button>
                   </div>
                 </div>
