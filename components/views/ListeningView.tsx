@@ -53,7 +53,17 @@ interface ListeningViewProps {
 type TabType = 'test' | 'files' | 'transcript' | 'feedback' | 'more';
 
 export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionCompleted }) => {
-  const router = useRouter();
+  let router: { push: (url: string) => void } | null = null;
+  try {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    router = useRouter();
+  } catch {
+    router = {
+      push: (url: string) => {
+        if (typeof window !== 'undefined') window.location.href = url;
+      },
+    };
+  }
   const { t, language } = useTranslation();
   const isEn = language === 'en';
   const { showToast } = useToast();
@@ -988,11 +998,11 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-emerald-500" />
                     <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
-                      {isEn ? 'Full English Audio Transcript' : 'บทสนทนาภาษาอังกฤษฉบับสมบูรณ์'}
+                      {isEn ? 'Full English Audio Transcript' : 'บทพูดภาษาอังกฤษ:'}
                     </h3>
                   </div>
                   <span className="text-xs font-mono font-bold text-slate-500">
-                    {currentExercise.cefrLevel} Level Audio
+                    CEFR {currentExercise.cefrLevel} Level Audio
                   </span>
                 </div>
 

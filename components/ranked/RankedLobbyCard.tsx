@@ -6,6 +6,8 @@ import { RankedTierBadge } from './RankedTierBadge';
 import { GlovaAvatarWithFrame } from '../gamification/RankFrame';
 import { Swords, Trophy, ShieldAlert, Sparkles, Flame, Loader2, XCircle } from 'lucide-react';
 import { getDivisionProgress } from '@/lib/ranked/rating-engine';
+import { useRouter } from 'next/navigation';
+import { toast } from '@/components/common/Toast';
 
 interface RankedLobbyCardProps {
   profile: RankedProfile;
@@ -22,6 +24,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
   onStartMatchmaking,
   onCancelMatchmaking,
 }) => {
+  const router = useRouter();
   const [selectedMode, setSelectedMode] = useState<CompetitiveGameMode>('vocabulary');
   const progress = getDivisionProgress(profile.rating);
 
@@ -159,11 +162,24 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
           </button>
           <button
             type="button"
-            disabled
-            className="cursor-not-allowed rounded-lg bg-slate-100/60 dark:bg-muted/30 px-3 py-1.5 text-xs font-medium text-slate-400 dark:text-muted-foreground/60"
-            title="กำลังพัฒนาสำหรับซีซันถัดไป"
+            onClick={() =>
+              toast.info(
+                'โหมดการประลองไวยากรณ์ (Grammar Ranked Arena) กำลังเตรียมเปิดใน Season 2! ระหว่างนี้คุณสามารถฝึกฝนใน Grammar Studio ได้ทันทีครับ',
+                {
+                  action: {
+                    label: 'ไปที่ Grammar Studio',
+                    onClick: () => router.push('/grammar'),
+                  },
+                }
+              )
+            }
+            className="rounded-lg bg-slate-100 dark:bg-muted/30 hover:bg-slate-200 dark:hover:bg-muted/60 px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-muted-foreground transition-all cursor-pointer active:scale-95 flex items-center gap-1.5"
+            title="คลิกเพื่อดูรายละเอียดโหมดไวยากรณ์ Season 2"
           >
-            การประลองไวยากรณ์ • เร็ว ๆ นี้
+            <span>การประลองไวยากรณ์</span>
+            <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              เร็ว ๆ นี้
+            </span>
           </button>
         </div>
 

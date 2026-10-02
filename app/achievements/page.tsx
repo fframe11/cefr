@@ -296,7 +296,7 @@ export default function AchievementsPage() {
             <button
               type="button"
               onClick={() => setSelectedForPreview(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute top-4 right-4 p-1.5 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-slate-700 dark:text-white transition-colors cursor-pointer"
               aria-label="Close"
             >
               <X className="w-4 h-4" />

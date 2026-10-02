@@ -36,7 +36,7 @@ const NativeGrammarTimeline: React.FC<{
       <div className="flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#FA5D5D] animate-pulse" />
         <span className="font-bold text-[#FA5D5D] uppercase tracking-wider text-[11px]">
-          {isEn ? 'Grammar Timeline Aspect' : 'เส้นเวลาโครงสร้างไวยากรณ์ (Timeline Aspect)'}
+          {isEn ? 'Grammar Timeline Aspect' : 'เส้นเวลาโครงสร้างไวยากรณ์'}
         </span>
       </div>
       <span className="px-2 py-0.5 rounded-md bg-white/10 text-slate-300 text-[10px] font-bold">
@@ -88,7 +88,17 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   onQuestionCompleted,
   activeTopicId,
 }) => {
-  const router = useRouter();
+  let router: { push: (url: string) => void } | null = null;
+  try {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    router = useRouter();
+  } catch {
+    router = {
+      push: (url: string) => {
+        if (typeof window !== 'undefined') window.location.href = url;
+      },
+    };
+  }
   const { t, language } = useTranslation();
   const isEn = language === 'en';
   const [topics, setTopics] = useState<GrammarTopic[]>(GRAMMAR_BANK);

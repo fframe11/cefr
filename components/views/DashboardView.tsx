@@ -30,6 +30,9 @@ import {
   Send,
   MessageSquare,
   Volume2,
+  X,
+  Bot,
+  Loader2,
 } from 'lucide-react';
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
@@ -84,6 +87,83 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     },
     [isEn]
   );
+
+  // AI Mentor Consultation Modal State
+  const [isMentorModalOpen, setIsMentorModalOpen] = useState(false);
+  const [mentorInput, setMentorInput] = useState('');
+  const [mentorHistory, setMentorHistory] = useState<
+    Array<{
+      sender: 'user' | 'mentor';
+      text: string;
+      action?: { label: string; view?: NavView; weakTag?: string };
+    }>
+  >([
+    {
+      sender: 'mentor',
+      text: isEn
+        ? `Hello! I'm your Glova AI Linguistic Mentor. You are currently at CEFR ${progress.currentLevel}. How can I assist your study routine today?`
+        : `สวัสดีครับ! ผมคือ Glova AI Mentor ผู้ช่วยวิเคราะห์ภาษาอังกฤษระดับ CEFR ${progress.currentLevel} ของคุณ วันนี้อยากให้ช่วยวิเคราะห์จุดอ่อน หรือมีคำถามเรื่องไวยากรณ์/คำศัพท์เรื่องไหนสอบถามได้เลยครับ`,
+    },
+  ]);
+  const [isMentorThinking, setIsMentorThinking] = useState(false);
+
+  const handleAskMentor = (promptText?: string) => {
+    const q = (promptText || mentorInput).trim();
+    if (!q) return;
+
+    setMentorHistory((prev) => [...prev, { sender: 'user', text: q }]);
+    if (!promptText) setMentorInput('');
+    setIsMentorThinking(true);
+
+    setTimeout(() => {
+      let reply = '';
+      let action: { label: string; view?: NavView; weakTag?: string } | undefined;
+
+      const lowerQ = q.toLowerCase();
+      if (lowerQ.includes('จุดอ่อน') || lowerQ.includes('weakness') || lowerQ.includes('วิเคราะห์')) {
+        if (topWeakness) {
+          reply = isEn
+            ? `Based on recent diagnostic assessments, your primary area for improvement is "${formatTopicTitle(topWeakness)}" with ${topWeakness.errorCount} recorded mistakes. Targeted practice will quickly close this gap!`
+            : `จากการประเมินล่าสุด จุดที่ควรเสริมความมั่นใจที่สุดคือเรื่อง "${formatTopicTitle(topWeakness)}" (พบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง) แนะนำให้ทำแบบฝึกหัดเฉพาะจุดเพื่อเพิ่มคะแนนได้ทันทีครับ`;
+          action = {
+            label: isEn ? 'Remediate this weakness now' : 'ฝึกแก้จุดอ่อนเรื่องนี้ทันที',
+            weakTag: topWeakness.tag,
+          };
+        } else {
+          reply = isEn
+            ? `Great progress! You currently don't have critical weak topics. Keep strengthening vocabulary and timed exam stamina.`
+            : `ยอดเยี่ยมมากครับ! ตอนนี้คุณไม่มีจุดอ่อนวิกฤตเลย ทักษะโดยรวมสมดุลดีมาก แนะนำให้ลุยคลังคำศัพท์และสอบจำลอง Mock Exam ต่อเนื่องครับ`;
+          action = {
+            label: isEn ? 'Open Vocabulary Studio' : 'ไปที่คลังคำศัพท์',
+            view: 'vocabulary',
+          };
+        }
+      } else if (lowerQ.includes('คำศัพท์') || lowerQ.includes('vocab')) {
+        reply = isEn
+          ? `For CEFR ${progress.currentLevel}, focus on precision collocations and phrasal verbs in context rather than isolated definitions.`
+          : `สำหรับระดับ CEFR ${progress.currentLevel} เทคนิคที่ดีที่สุดคือการจำคำศัพท์พร้อมประโยคบริบทและ Collocations เพื่อให้นำไปใช้จริงได้ทันทีในข้อสอบครับ`;
+        action = {
+          label: isEn ? 'Explore Vocabulary Studio' : 'เปิดสตูดิโอคำศัพท์',
+          view: 'vocabulary',
+        };
+      } else if (lowerQ.includes('สอบ') || lowerQ.includes('exam') || lowerQ.includes('cambridge')) {
+        reply = isEn
+          ? `In Cambridge exams, time management in Reading & Use of English is critical. Practice eliminating distractor choices fast.`
+          : `การสอบ Cambridge Exam ข้อสอบพาร์ท Reading & Use of English มักมีตัวเลือกหลอก เทคนิคสำคัญคือการดู Part of Speech และตัดช้อยส์ที่ไม่เข้ากับโครงสร้างประโยคออกก่อนครับ`;
+        action = {
+          label: isEn ? 'Start Cambridge Mock Exam' : 'เริ่มสอบจำลอง Cambridge',
+          view: 'mockExam',
+        };
+      } else {
+        reply = isEn
+          ? `Excellent query regarding "${q}". To excel at CEFR ${progress.currentLevel}, consistent daily practice with spaced repetition will yield the highest retention.`
+          : `คำถามที่ดีมากเกี่ยวกับ "${q}" ครับ สำหรับเป้าหมายระดับ CEFR ${progress.currentLevel} การฝึกอย่างสม่ำเสมอวันละ 15-20 นาทีพร้อมระบบทบทวนแบบ Spaced Repetition จะช่วยให้จำได้อย่างแม่นยำที่สุดครับ`;
+      }
+
+      setMentorHistory((prev) => [...prev, { sender: 'mentor', text: reply, action }]);
+      setIsMentorThinking(false);
+    }, 500);
+  };
 
   // Primary Action logic
   const primaryAction = React.useMemo(() => {
@@ -424,8 +504,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
                 <button
                   type="button"
-                  aria-label="Send message"
-                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors shrink-0"
+                  onClick={() => setIsMentorModalOpen(true)}
+                  aria-label="Consult AI Mentor"
+                  title="ปรึกษา Glova AI Mentor"
+                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 text-white flex items-center justify-center transition-all shrink-0 cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5 text-white" />
                 </button>
@@ -900,6 +982,150 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         </div>
       </div>
+
+      {/* AI Mentor Interactive Consultation Dialog */}
+      {isMentorModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mentor-dialog-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
+          onClick={() => setIsMentorModalOpen(false)}
+        >
+          <div
+            className="w-full max-w-lg bg-white dark:bg-[#0F1626] rounded-3xl border border-slate-200 dark:border-white/10 shadow-2xl p-6 relative flex flex-col max-h-[85vh] text-slate-900 dark:text-white overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200/80 dark:border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#047857] flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+                  <Bot className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 id="mentor-dialog-title" className="text-base font-black tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                    Glova AI Mentor
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10B981]" />
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {isEn ? `CEFR Level ${progress.currentLevel} Adaptive Guidance` : `ที่ปรึกษาการเรียนภาษาอังกฤษ CEFR ${progress.currentLevel}`}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsMentorModalOpen(false)}
+                aria-label="Close mentor modal"
+                className="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Quick Prompts Bar */}
+            <div className="py-3 flex items-center gap-2 overflow-x-auto no-scrollbar">
+              <span className="text-[11px] font-bold text-slate-400 shrink-0">
+                {isEn ? 'Quick Ask:' : 'ถามด่วน:'}
+              </span>
+              <button
+                type="button"
+                onClick={() => handleAskMentor(isEn ? 'Analyze my weakest topic' : 'วิเคราะห์จุดอ่อนสำคัญที่สุดของฉัน')}
+                className="px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all shrink-0 active:scale-95"
+              >
+                {isEn ? 'Weakest Topic' : 'วิเคราะห์จุดอ่อน'}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleAskMentor(isEn ? 'Vocabulary study tips' : 'แนะนำเทคนิคจำคำศัพท์ CEFR')}
+                className="px-3 py-1 rounded-full text-[11px] font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 hover:bg-blue-500/20 transition-all shrink-0 active:scale-95"
+              >
+                {isEn ? 'Vocab Strategy' : 'เทคนิคจำศัพท์'}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleAskMentor(isEn ? 'Cambridge exam strategy' : 'ขอเทคนิคสอบ Cambridge Exam')}
+                className="px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 hover:bg-amber-500/20 transition-all shrink-0 active:scale-95"
+              >
+                {isEn ? 'Exam Strategy' : 'เทคนิคทำข้อสอบ'}
+              </button>
+            </div>
+
+            {/* Chat Messages Body */}
+            <div className="flex-1 overflow-y-auto space-y-3.5 pr-1 py-2">
+              {mentorHistory.map((msg, idx) => (
+                <div
+                  key={`msg_${idx}`}
+                  className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
+                >
+                  <div
+                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-xs leading-relaxed ${
+                      msg.sender === 'user'
+                        ? 'bg-emerald-600 text-white font-medium rounded-br-xs'
+                        : 'bg-slate-100 dark:bg-[#1A2336] text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-white/10 rounded-bl-xs'
+                    }`}
+                  >
+                    <p>{msg.text}</p>
+
+                    {/* Integrated Action Button */}
+                    {msg.action && (
+                      <div className="mt-3 pt-2.5 border-t border-slate-200/60 dark:border-white/10">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsMentorModalOpen(false);
+                            if (msg.action?.weakTag) {
+                              onStartRemediation(msg.action.weakTag);
+                            } else if (msg.action?.view) {
+                              onNavigate(msg.action.view);
+                            }
+                          }}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-black bg-[#FA5D5D] hover:bg-[#ff4747] text-white shadow-xs active:scale-95 transition-all"
+                        >
+                          <span>{msg.action.label}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              {isMentorThinking && (
+                <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 py-1">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-500" />
+                  <span>{isEn ? 'AI Mentor is analyzing...' : 'Glova AI กำลังวิเคราะห์...'}</span>
+                </div>
+              )}
+            </div>
+
+            {/* Question Input Form */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAskMentor();
+              }}
+              className="mt-3 pt-3 border-t border-slate-200/80 dark:border-white/10 flex items-center gap-2"
+            >
+              <input
+                type="text"
+                value={mentorInput}
+                onChange={(e) => setMentorInput(e.target.value)}
+                placeholder={isEn ? 'Ask Glova Mentor anything about English...' : 'พิมพ์คำถามเรื่องภาษาอังกฤษหรือขอคำแนะนำ...'}
+                className="flex-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3.5 py-2.5 text-xs text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              />
+              <button
+                type="submit"
+                disabled={!mentorInput.trim() || isMentorThinking}
+                aria-label="Send question to AI mentor"
+                className="p-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed text-white shadow-xs active:scale-95 transition-all shrink-0 cursor-pointer"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

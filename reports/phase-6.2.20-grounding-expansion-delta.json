@@ -1,7 +1,7 @@
 {
   "$schema": "https://glova.ai/schemas/vocabulary-grounding-expansion-delta-v1.json",
   "phase": "PHASE_6_2_20_GROUNDING_EXPANSION_DELTA",
-  "generated_at": "2026-10-02T04:03:08.483Z",
+  "generated_at": "2026-10-02T19:41:42.020Z",
   "sample_size": 200,
   "comparison_table": {
     "source_grounded": {

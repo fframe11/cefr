@@ -40,6 +40,7 @@ import { fetchRankedProfile } from '@/lib/api/ranked';
 import { RankedProfile } from '@/types/ranked';
 import { fetchAchievements } from '@/lib/api/gamification';
 import { Achievement, RankFrameId } from '@/types/gamification';
+import { toast } from '@/components/common/Toast';
 
 const CAMBRIDGE_EXAMS: { code: CambridgeExamCode; name: string; cefr: string }[] = [
   { code: 'KET', name: 'A2 Key', cefr: 'A2' },
@@ -107,9 +108,31 @@ export default function ProfilePage() {
   // Featured Achievements
   const [featuredAchievements, setFeaturedAchievements] = useState<Achievement[]>([]);
 
-  // Social Sidebar Tabs
+  // Social Sidebar Tabs & Study Buddies
   const [socialTab, setSocialTab] = useState<'following' | 'followers'>('following');
   const [copiedInvite, setCopiedInvite] = useState(false);
+  const [studyBuddies, setStudyBuddies] = useState(STUDY_BUDDIES);
+
+  const handleToggleFollow = (handle: string) => {
+    setStudyBuddies((prev) =>
+      prev.map((buddy) => {
+        if (buddy.handle === handle) {
+          const nextState = !buddy.isFollowing;
+          toast.success(
+            nextState
+              ? isEn
+                ? `Now following ${buddy.name}`
+                : `เริ่มติดตาม ${buddy.name} แล้ว`
+              : isEn
+              ? `Unfollowed ${buddy.name}`
+              : `เลิกติดตาม ${buddy.name} แล้ว`
+          );
+          return { ...buddy, isFollowing: nextState };
+        }
+        return buddy;
+      })
+    );
+  };
 
   // Local state for goals & display name
   const [selectedExam, setSelectedExam] = useState<CambridgeExamCode>(progress.targetExam);
@@ -681,7 +704,7 @@ export default function ProfilePage() {
 
               {/* Study Buddies List */}
               <div className="space-y-2.5">
-                {STUDY_BUDDIES.map((buddy, idx) => (
+                {studyBuddies.map((buddy, idx) => (
                   <div key={`buddy_${idx}`} className="flex items-center justify-between p-3 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                     <div className="flex items-center gap-3 min-w-0">
                       <GlovaAvatarWithFrame
@@ -702,13 +725,15 @@ export default function ProfilePage() {
 
                     <button
                       type="button"
-                      className={`shrink-0 rounded-full px-3.5 py-1.5 text-[11px] font-bold transition-all shadow-xs ${
+                      onClick={() => handleToggleFollow(buddy.handle)}
+                      aria-label={buddy.isFollowing ? `Unfollow ${buddy.name}` : `Follow ${buddy.name}`}
+                      className={`shrink-0 rounded-full px-3.5 py-1.5 text-[11px] font-bold transition-all shadow-xs active:scale-95 cursor-pointer ${
                         buddy.isFollowing
                           ? 'border border-[#EAE4D5] dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-500 hover:bg-slate-100'
                           : 'bg-[#FA5D5D] hover:bg-[#ff4747] text-white'
                       }`}
                     >
-                      {buddy.isFollowing ? 'กำลังติดตาม' : 'ติดตาม'}
+                      {buddy.isFollowing ? (isEn ? 'Following' : 'กำลังติดตาม') : (isEn ? 'Follow' : 'ติดตาม')}
                     </button>
                   </div>
                 ))}
