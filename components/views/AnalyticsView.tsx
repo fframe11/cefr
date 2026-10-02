@@ -118,7 +118,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
     return (
       <div className="w-full max-w-5xl mx-auto py-12">
         <ErrorMessage
-          title="เกิดข้อผิดพลาดในการโหลดข้อมูลสถิติ"
+          title={isEn ? "Unable to load telemetry analytics" : "ไม่สามารถโหลดข้อมูลสถิติได้ในขณะนี้"}
           message={error}
           onRetry={fetchAnalytics}
         />
@@ -357,8 +357,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
           {totalAttempted === 0 && status === 'authenticated' ? (
             <EmptyState
-              title={isEn ? "No practice history recorded yet" : "ยังไม่มีข้อมูลประวัติการทำแบบฝึกหัด"}
-              description={isEn ? "Start practicing skill modules to unlock personalized accuracy telemetry and proficiency analytics." : "เริ่มฝึกทำข้อสอบรายทักษะเพื่อเปิดระบบวิเคราะห์ความแม่นยำและความเชี่ยวชาญระดับภาษาของคุณ"}
+              title={isEn ? "No practice history recorded yet" : "ยังไม่มีประวัติการทำแบบฝึกหัด"}
+              description={isEn ? "Start practicing skill modules to unlock personalized accuracy telemetry and proficiency analytics." : "ยังไม่มีประวัติการทำแบบฝึกหัด เริ่มทำแบบฝึกหัดแรกของคุณเพื่อเปิดระบบวิเคราะห์ความเชี่ยวชาญระดับภาษา"}
               action={
                 <GlovaButton
                   variant="primary"
@@ -366,7 +366,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                   onClick={() => onNavigate('grammar')}
                   className="rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white"
                 >
-                  {isEn ? "Start Practice" : "เริ่มทำแบบฝึกหัด"}
+                  {isEn ? "Start Your First Exercise" : "เริ่มทำแบบฝึกหัดแรกของคุณ"}
                 </GlovaButton>
               }
             />

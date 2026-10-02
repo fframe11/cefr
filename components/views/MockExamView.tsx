@@ -269,7 +269,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
       console.error('Failed to start mock exam:', err);
       showToast(
         'ไม่สามารถเริ่มการสอบได้',
-        err.friendlyMessage || err.message || 'เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์',
+        err.friendlyMessage || err.message || 'ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาตรวจสอบสัญญาณอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง',
         'error'
       );
     } finally {
@@ -846,10 +846,10 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             {isSubmitting ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                <span>{isEn ? 'Submitting...' : 'กำลังส่ง...'}</span>
+                <span>{isEn ? 'Submitting...' : 'กำลังส่งข้อสอบ...'}</span>
               </>
             ) : (
-              <span>{isEn ? 'Submit Exam' : 'ส่งข้อสอบ'}</span>
+              <span>{isEn ? 'Submit Exam for Evaluation' : 'ส่งข้อสอบเพื่อประเมินผล'}</span>
             )}
           </button>
         </div>
@@ -1091,7 +1091,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 onClick={() => setIsConfirmSubmitOpen(false)}
                 className="px-5 py-2.5 rounded-full bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 text-slate-700 dark:text-slate-300 text-xs font-bold hover:bg-slate-100 dark:hover:bg-white/10 shadow-xs active:scale-95 transition-all cursor-pointer"
               >
-                {isEn ? 'Continue Exam' : 'กลับไปทำต่อ'}
+                {isEn ? 'Continue Exam' : 'กลับไปทำข้อสอบต่อ'}
               </button>
               <button
                 type="button"
@@ -1099,7 +1099,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 disabled={isSubmitting}
                 className="px-5 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] disabled:opacity-50 text-white text-xs font-bold shadow-sm active:scale-95 transition-all cursor-pointer"
               >
-                {isEn ? 'Confirm Submission' : 'ยืนยันส่งข้อสอบ'}
+                {isEn ? 'Confirm Submission' : 'ยืนยันการส่งข้อสอบ'}
               </button>
             </div>
           </div>

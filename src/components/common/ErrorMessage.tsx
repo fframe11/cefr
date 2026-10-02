@@ -9,8 +9,8 @@ export interface ErrorMessageProps {
 }
 
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({
-  title = 'เกิดข้อผิดพลาด',
-  message,
+  title = 'ไม่สามารถดำเนินการได้ในขณะนี้',
+  message = 'กรุณาตรวจสอบข้อมูลที่กรอกหรือสัญญาณอินเทอร์เน็ต แล้วลองใหม่อีกครั้ง',
   onRetry,
   className = '',
 }) => {
@@ -22,18 +22,18 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
       <div className="flex items-start gap-3">
         <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
         <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-semibold">{title}</h4>
-          <p className="text-xs sm:text-sm text-destructive/90 mt-0.5 leading-relaxed">{message}</p>
+          <h4 className="text-sm font-semibold leading-normal">{title}</h4>
+          <p className="text-xs sm:text-sm text-destructive/90 mt-0.5 leading-normal max-w-readable">{message}</p>
         </div>
       </div>
       {onRetry && (
         <div className="pl-8">
           <button
             onClick={onRetry}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-destructive/15 hover:bg-destructive/25 text-xs font-semibold transition-colors touch-target"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-destructive/15 hover:bg-destructive/25 text-xs font-semibold transition-colors touch-target cursor-pointer"
           >
             <RefreshCw className="w-3.5 h-3.5" />
-            <span>ลองใหม่อีกครั้ง</span>
+            <span>ลองโหลดข้อมูลอีกครั้ง</span>
           </button>
         </div>
       )}

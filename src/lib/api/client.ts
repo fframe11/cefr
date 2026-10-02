@@ -1,5 +1,5 @@
 import { supabase } from '../supabaseClient';
-import { ApiError, ApiResponse } from './types';
+import { ApiError, ApiResponse, ApiErrorResponse } from './types';
 
 export interface RequestOptions extends Omit<RequestInit, 'body'> {
   body?: unknown;
@@ -82,8 +82,8 @@ export class ApiClient {
 
     if (!response.ok || !payload || payload.success === false) {
       const status = response.status;
-      const errorObj = (payload && !payload.success) ? payload.error : null;
-      const message = errorObj?.message || response.statusText || 'เกิดข้อผิดพลาดในการร้องขอ';
+      const errorObj = (payload && !payload.success) ? (payload as ApiErrorResponse).error : null;
+      const message = errorObj?.message || response.statusText || 'ไม่สามารถส่งคำขอข้อมูลได้ กรุณาลองใหม่อีกครั้ง';
       const code = errorObj?.code || `HTTP_${status}`;
       const details = errorObj?.details;
 

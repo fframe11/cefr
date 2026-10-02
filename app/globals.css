@@ -88,15 +88,29 @@
     line-break: strict;
   }
 
-  /* Optimal Reading Line-Height Scale: Heading 1.2, Title 1.5, Body 1.5, Label 1.5 */
-  h1, h2 {
-    line-height: 1.2;
+  /* Optimal Reading Line-Height Scale (Ref: Mark Tnc.UX/UI):
+     - Heading (h1, h2): 1.2
+     - Title (h3, h4): 1.5
+     - Body (p): 1.5
+     - Label (label): 1.5
+     - Caption (small, figcaption, caption): 1.5
+  */
+  h1, h2, .heading-1, .heading-2 {
+    line-height: 1.2 !important;
   }
-  h3, h4, h5 {
-    line-height: 1.45;
+  h3, h4, h5, h6, .title-3, .title-4 {
+    line-height: 1.5 !important;
   }
-  p, span, label {
+  p, span, label, caption, small, figcaption, .caption {
     line-height: 1.5;
+  }
+
+  /* Balanced Line Length (Measure): 30-65 characters per line (Target: 65ch) (Ref: Mark Tnc.UX/UI) */
+  .max-w-readable,
+  .prose p,
+  .reading-passage,
+  article p {
+    max-width: 65ch;
   }
 }
 

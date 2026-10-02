@@ -314,8 +314,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 {currentPassage.title}
               </h3>
 
-              {/* Passage Content with Optimal Typography */}
-              <div className="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200 space-y-3 font-normal whitespace-pre-line selection:bg-[#FA5D5D]/20">
+              {/* Passage Content with Optimal Typography (65ch measure) */}
+              <div className="text-sm sm:text-base leading-normal text-slate-800 dark:text-slate-200 space-y-3 font-normal whitespace-pre-line selection:bg-[#FA5D5D]/20 max-w-readable">
                 {currentPassage.content}
               </div>
 
@@ -390,8 +390,8 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 title={isEn ? 'No questions available for this passage yet' : 'ยังไม่มีคำถามสำหรับบทความนี้'}
                 description={
                   isEn
-                    ? 'Our academic team is currently preparing additional questions.'
-                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม'
+                    ? 'Our academic team is currently preparing additional questions. Please select another passage from above to continue.'
+                    : 'ยังไม่มีคำถามสำหรับบทความนี้ในขณะนี้ กรุณาเลือกบทอ่านเรื่องอื่นจากแถบด้านบนเพื่อฝึกฝนต่อ'
                 }
               />
             )}

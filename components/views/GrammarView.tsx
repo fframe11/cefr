@@ -445,8 +445,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
               description={
                 isEn
-                  ? 'Our academic team is currently preparing practice sets for this CEFR tier.'
-                  : 'ทีมวิชาการกำลังจัดเตรียมข้อสอบเพิ่มเติมสำหรับระดับนี้'
+                  ? 'Our academic team is currently preparing practice sets for this tier. Please select another grammar topic from the sidebar to continue.'
+                  : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้ในขณะนี้ กรุณาเลือกหัวข้อไวยากรณ์หรือระดับ CEFR อื่นจากเมนูด้านซ้ายเพื่อเริ่มฝึกฝน'
               }
             />
           )}

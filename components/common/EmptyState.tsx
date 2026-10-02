@@ -22,9 +22,9 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
       <div className="w-12 h-12 rounded-full bg-muted/60 flex items-center justify-center text-muted-foreground mb-3">
         {icon || <Inbox className="w-6 h-6" />}
       </div>
-      <h3 className="text-sm sm:text-base font-semibold text-foreground">{title}</h3>
+      <h3 className="text-sm sm:text-base font-semibold text-foreground leading-normal">{title}</h3>
       {description && (
-        <p className="text-xs sm:text-sm text-muted-foreground max-w-sm mt-1 mb-4 leading-relaxed">
+        <p className="text-xs sm:text-sm text-muted-foreground max-w-readable mt-1.5 mb-4 leading-normal">
           {description}
         </p>
       )}

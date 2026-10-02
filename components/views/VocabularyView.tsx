@@ -555,11 +555,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {/* Empty State */}
       {!loading && viewMode !== 'universe' && filteredWords.length === 0 && (
         <EmptyState
-          title={isEn ? 'No matching vocabulary found' : 'ไม่พบคำศัพท์ที่ตรงกับการค้นหา'}
+          title={isEn ? 'No matching vocabulary found' : 'ไม่พบคำศัพท์ที่ตรงกับเงื่อนไขการค้นหา'}
           description={
             isEn
-              ? 'Try adjusting your CEFR level filter, part of speech, or search keywords.'
-              : 'ลองปรับตัวกรองระดับ CEFR หรือคำค้นหาเพื่อเข้าถึงคำศัพท์อื่น'
+              ? 'No words match your current filters. Clear all filters to view the complete vocabulary repository.'
+              : 'ยังไม่มีคำศัพท์ที่ตรงกับตัวกรองปัจจุบัน กดปุ่มด้านล่างเพื่อล้างตัวกรองและดูคำศัพท์ทั้งหมด'
           }
           action={
             <GlovaButton
@@ -571,7 +571,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setSearchQuery('');
               }}
             >
-              {isEn ? 'Reset Filter' : 'ล้างตัวกรอง'}
+              {isEn ? 'Clear filters to view all words' : 'ล้างตัวกรองเพื่อดูคำศัพท์ทั้งหมด'}
             </GlovaButton>
           }
         />
@@ -696,11 +696,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 ctaText={
                   practiceIndex + 1 < practiceQuestions.length
                     ? isEn
-                      ? 'CONTINUE'
-                      : 'ข้อถัดไป'
+                      ? 'CONTINUE TO NEXT QUESTION'
+                      : 'ทำแบบทดสอบข้อถัดไป'
                     : isEn
-                    ? 'FINISH SESSION'
-                    : 'เสร็จสิ้นการฝึก'
+                    ? 'VIEW PRACTICE SUMMARY'
+                    : 'ดูสรุปผลการฝึกฝน'
                 }
               />
             </GlovaCard>
@@ -710,7 +710,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {isEn ? 'Practice session completed!' : 'จบแบบฝึกจำชุดนี้เรียบร้อยแล้ว!'}
               </p>
               <GlovaButton variant="primary" size="sm" onClick={() => startPracticeSession()}>
-                {isEn ? 'Start Next Session' : 'เริ่มฝึกชุดใหม่'}
+                {isEn ? 'Start Next Practice Set' : 'เริ่มฝึกคำศัพท์ชุดใหม่'}
               </GlovaButton>
             </div>
           )}

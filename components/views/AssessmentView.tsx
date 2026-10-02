@@ -260,7 +260,7 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
     return (
       <div className="w-full py-12 space-y-4">
         <ErrorMessage
-          title={isEn ? "Assessment Processing Error" : "เกิดข้อผิดพลาดในการประมวลผล"}
+          title={isEn ? "Unable to process assessment results" : "ไม่สามารถประมวลผลคะแนนการประเมินได้ในขณะนี้"}
           message={submitError}
           onRetry={() => processAndSubmitAnswers(answers)}
         />

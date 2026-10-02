@@ -816,8 +816,8 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                     title={isEn ? 'No test questions available for this module yet' : 'ยังไม่มีข้อสอบสำหรับบทเรียนนี้'}
                     description={
                       isEn
-                        ? 'Cambridge certified examiners are crafting questions for this session.'
-                        : 'ผู้ตรวจข้อสอบเคมบริดจ์กำลังจัดเตรียมคำถามเพิ่มเติม'
+                        ? 'Cambridge certified examiners are crafting questions for this session. Please select another audio exercise to continue.'
+                        : 'ยังไม่มีข้อสอบสำหรับบทเรียนนี้ในขณะนี้ กรุณาเลือกบทเรียนเสียงอื่นจากแถบด้านบนเพื่อเริ่มฝึกฟัง'
                     }
                   />
                 )}
