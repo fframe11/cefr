@@ -298,13 +298,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   return (
     <div className="w-full max-w-[1440px] mx-auto space-y-6 pb-16">
       {/* 1. TOP VIEW MODE SWITCH (Path vs All Studios) */}
-      <div className="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-slate-200 dark:border-white/10">
+      <div className="flex items-center justify-between gap-4 flex-wrap pb-3 border-b border-white/10">
         <div>
           <div className="flex items-center gap-2 mb-1 flex-wrap">
-            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/30">
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30">
               ADAPTIVE CEFR FRAMEWORK
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 border border-emerald-300/70 dark:border-emerald-500/30">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#10B981]/20 text-[#6EE7B7] border border-[#10B981]/30">
               {progress.currentLevel === 'A1'
                 ? 'LEVEL: A1 NOVICE // FOUNDATION'
                 : progress.currentLevel === 'A2'
@@ -318,23 +318,23 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 : 'LEVEL: C2 MASTERY // EXPERT NATIVE'}
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2 flex-wrap">
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-2 flex-wrap font-display">
             <DecryptedText
               text={isEn ? 'Your Learning Dashboard' : 'แดชบอร์ดการเรียนรู้ของคุณ'}
               animateOn="hover"
             />
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#2155E6]/10 text-[#2155E6] dark:bg-[#2155E6]/20 dark:text-[#6893FF] font-mono font-bold border border-[#2155E6]/25">
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#F59E0B]/15 text-[#FDE68A] font-mono font-bold border border-[#F59E0B]/30">
               {progress.currentLevel} → {nextLvl}
             </span>
           </h1>
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] mt-1 flex-wrap">
-            <span>เป้าหมายการสอบ: <strong className="text-slate-900 dark:text-[#EDEBE8]">{progress.targetExam}</strong></span>
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-300 mt-1 flex-wrap font-mono">
+            <span>เป้าหมายการสอบ: <strong className="text-white">{progress.targetExam}</strong></span>
             <span>•</span>
-            <span>Cambridge Equivalent: <strong className="text-slate-900 dark:text-[#EDEBE8]">{progress.estimatedCambridgeScore || 120}</strong></span>
+            <span>Cambridge Equivalent: <strong className="text-white">{progress.estimatedCambridgeScore || 120}</strong></span>
             <span>•</span>
-            <span>เส้นทางการพัฒนา CEFR Framework: <strong className="text-slate-900 dark:text-[#EDEBE8]">{progress.currentLevel}</strong></span>
+            <span>เส้นทางการพัฒนา CEFR Framework: <strong className="text-[#FDE68A]">{progress.currentLevel}</strong></span>
           </div>
-          <p className="text-xs text-slate-500 dark:text-[#94A3B8] mt-0.5">
+          <p className="text-xs text-slate-400 mt-0.5">
             {isEn
               ? `Advancing toward CEFR ${nextLvl} • Your English grows with you`
               : `คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${nextLvl} • ภาษาอังกฤษเติบโตไปพร้อมคุณทุกวัน`}
@@ -357,34 +357,34 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* DYNAMIC VIEW SWITCHER: ALL STUDIOS CATALOG VS STEPPED PATH */}
       {activeTab === 'studios' ? (
         <div className="space-y-6">
-          <div className="p-6 sm:p-8 rounded-[28px] bg-gradient-to-r from-indigo-50/90 via-white to-emerald-50/60 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-white/10 shadow-xs flex items-center justify-between gap-6 flex-wrap">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.7)] flex items-center justify-between gap-6 flex-wrap text-white">
             <div className="space-y-1.5 max-w-2xl">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6] text-white">
+                <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#F59E0B] text-slate-950">
                   CURRICULUM REPERTOIRE
                 </span>
-                <span className="text-xs font-mono font-bold text-[#059669] dark:text-[#34D399]">
+                <span className="text-xs font-mono font-bold text-[#34D399]">
                   8 SPECIALIZED STUDIOS ACTIVE
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-[#EDEBE8] tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight font-display">
                 {isEn ? 'All 8 Dedicated Learning Studios' : 'คลังสตูดิโอการเรียนรู้ทั้ง 8 ด้าน'}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 {isEn
                   ? 'Access any core skill module directly. Practice vocabulary, review grammar rules, compete in fast-paced duels, or challenge Cambridge mock exams.'
                   : 'เลือกเข้าฝึกฝนทักษะเฉพาะด้านได้ทันที ทั้งคลังคำศัพท์ ไวยากรณ์ การประลองความเร็ว 4 วินาที และการสอบจำลองเคมบริดจ์'}
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <TactileButton
-                variant="primary"
-                size="sm"
+              <button
+                type="button"
                 onClick={() => setActiveTab('path')}
-                leftIcon={<Compass className="w-4 h-4" />}
+                className="glova-gold-btn inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider cursor-pointer"
               >
-                {isEn ? 'Back to CEFR Path' : 'กลับไปที่เส้นทางเรียนรู้'}
-              </TactileButton>
+                <Compass className="w-4 h-4" />
+                <span>{isEn ? 'Back to CEFR Path' : 'กลับไปที่เส้นทางเรียนรู้'}</span>
+              </button>
             </div>
           </div>
 
@@ -607,15 +607,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* B. DRIBBBLE SLIDE 2 INSPIRATION: ACTIVE CONTENDERS & LIVE STUDY SQUAD */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1224] border border-slate-200/90 dark:border-slate-800/80 shadow-xs space-y-3">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#070B16]/85 backdrop-blur-md border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.6)] space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981]" />
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-display">
+                <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider font-display">
                   {isEn ? 'Live Study Squad & Active Contenders' : 'เพื่อนร่วมเรียนและคู่ประลองออนไลน์'}
                 </h3>
               </div>
-              <span className="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-500/20">
+              <span className="text-[10px] font-mono font-bold text-[#34D399] bg-[#10B981]/15 px-2 py-0.5 rounded-md border border-[#10B981]/30">
                 {isEn ? '6 ONLINE' : 'ออนไลน์ 6 คน'}
               </span>
             </div>
@@ -628,10 +628,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 onClick={() => onNavigate('social')}
                 className="flex flex-col items-center gap-1.5 shrink-0 group focus-visible:outline-none"
               >
-                <div className="w-12 h-12 rounded-full border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:border-[#2155E6] group-hover:text-[#2155E6] transition-colors">
+                <div className="w-12 h-12 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center text-slate-400 group-hover:border-[#F59E0B] group-hover:text-[#FDE68A] transition-colors">
                   <span className="text-lg font-bold">+</span>
                 </div>
-                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">
+                <span className="text-[10px] font-semibold text-slate-400 group-hover:text-white">
                   {isEn ? 'Invite' : 'เชิญเพื่อน'}
                 </span>
               </button>
@@ -642,13 +642,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <img
                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80"
                     alt="Mary"
-                    className="w-12 h-12 rounded-full object-cover border-2 border-amber-400 shadow-sm"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-amber-400/70 shadow-sm"
                   />
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
                 </div>
                 <div className="text-center">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Mary</div>
-                  <span className="text-[9px] font-mono font-bold text-amber-600 dark:text-amber-400">A2</span>
+                  <div className="text-[11px] font-bold text-white">Mary</div>
+                  <span className="text-[9px] font-mono font-bold text-[#FDE68A]">A2</span>
                 </div>
               </div>
 
@@ -658,13 +658,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
                     alt="David"
-                    className="w-12 h-12 rounded-full object-cover border-2 border-blue-500 shadow-sm"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-sky-400/70 shadow-sm"
                   />
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
                 </div>
                 <div className="text-center">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">David</div>
-                  <span className="text-[9px] font-mono font-bold text-blue-500 dark:text-blue-400">B1</span>
+                  <div className="text-[11px] font-bold text-white">David</div>
+                  <span className="text-[9px] font-mono font-bold text-sky-400">B1</span>
                 </div>
               </div>
 
@@ -674,13 +674,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <img
                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
                     alt="Sarah"
-                    className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500 shadow-sm"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400/70 shadow-sm"
                   />
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
                 </div>
                 <div className="text-center">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Sarah</div>
-                  <span className="text-[9px] font-mono font-bold text-emerald-600 dark:text-emerald-400">B2</span>
+                  <div className="text-[11px] font-bold text-white">Sarah</div>
+                  <span className="text-[9px] font-mono font-bold text-emerald-400">B2</span>
                 </div>
               </div>
 
@@ -690,29 +690,29 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <img
                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
                     alt="William"
-                    className="w-12 h-12 rounded-full object-cover border-2 border-purple-500 shadow-sm"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-purple-400/70 shadow-sm"
                   />
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
                 </div>
                 <div className="text-center">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">William</div>
-                  <span className="text-[9px] font-mono font-bold text-purple-600 dark:text-purple-400">C1</span>
+                  <div className="text-[11px] font-bold text-white">William</div>
+                  <span className="text-[9px] font-mono font-bold text-purple-400">C1</span>
                 </div>
               </div>
 
               {/* Contender 5: Frame (You) */}
               <div className="flex flex-col items-center gap-1.5 shrink-0">
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#2155E6] to-[#FFE600] p-0.5 shadow-sm">
-                    <div className="w-full h-full rounded-full bg-[#0B1224] flex items-center justify-center font-bold text-xs text-white">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#F59E0B] to-[#FFE600] p-0.5 shadow-sm">
+                    <div className="w-full h-full rounded-full bg-[#070B16] flex items-center justify-center font-bold text-xs text-[#FDE68A]">
                       YOU
                     </div>
                   </div>
-                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                  <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
                 </div>
                 <div className="text-center">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white">Frame</div>
-                  <span className="text-[9px] font-mono font-bold text-[#FFE600]">Gold II</span>
+                  <div className="text-[11px] font-bold text-white">Frame</div>
+                  <span className="text-[9px] font-mono font-bold text-[#FDE68A]">Gold II</span>
                 </div>
               </div>
             </div>
@@ -720,17 +720,21 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           {/* RESUME LAST ACTIVITY */}
           {progress.lastActivity && (
-            <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-4 text-slate-900 dark:text-[#EDEBE8] shadow-xs">
+            <div className="p-5 rounded-2xl bg-[#070B16]/85 backdrop-blur-md border border-white/10 flex items-center justify-between gap-4 text-white shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
               <div>
-                <span className="text-[11px] font-bold text-[#4F46E5] dark:text-[#A5A6F6] uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-[#FDE68A] uppercase tracking-wider font-mono">
                   {isEn ? 'Resume Last Activity' : 'ดำเนินการต่อจากจุดเดิม'}
                 </span>
-                <h4 className="text-base font-bold text-slate-900 dark:text-[#EDEBE8] mt-0.5">{progress.lastActivity.title}</h4>
-                <p className="text-xs text-slate-600 dark:text-[#94A3B8]">{progress.lastActivity.detail}</p>
+                <h4 className="text-base font-bold text-white mt-0.5">{progress.lastActivity.title}</h4>
+                <p className="text-xs text-slate-400">{progress.lastActivity.detail}</p>
               </div>
-              <TactileButton variant="primary" size="sm" onClick={() => onNavigate(progress.lastActivity?.type as any || 'vocabulary')}>
+              <button
+                type="button"
+                onClick={() => onNavigate(progress.lastActivity?.type as any || 'vocabulary')}
+                className="glova-gold-btn inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider cursor-pointer"
+              >
                 {isEn ? 'Resume' : 'ทำต่อทันที'}
-              </TactileButton>
+              </button>
             </div>
           )}
 
@@ -738,30 +742,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <CampaignBanner onNavigate={(route) => onNavigate(route as NavView)} />
 
           {/* B. MAIN INTERACTIVE EXPERIENCE: GLOVA CEFR PROGRESSION MATRIX */}
-          <div className="rounded-[28px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6 text-slate-900 dark:text-[#EDEBE8]">
+          <div className="rounded-2xl bg-[#070B16]/85 backdrop-blur-md border border-white/10 p-6 sm:p-8 shadow-[0_12px_36px_rgba(0,0,0,0.7)] relative overflow-hidden space-y-6 text-white">
               {/* Unit Progression Header */}
-              <div className="flex items-center justify-between pb-5 border-b border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] gap-4 flex-wrap">
+              <div className="flex items-center justify-between pb-5 border-b border-white/10 gap-4 flex-wrap">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#2155E6] dark:text-[#6893FF] uppercase tracking-wider font-tech">
+                    <span className="text-xs font-bold text-[#FDE68A] uppercase tracking-wider font-mono">
                       {isEn ? `Progression: ${progress.currentLevel} → ${nextLvl}` : `การพัฒนา: ${progress.currentLevel} → ${nextLvl}`}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#2155E6]/10 dark:bg-[#2155E6]/20 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/20">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30 font-mono">
                       {isEn ? 'Active Studio Term' : 'ภาคการเรียนรู้ปัจจุบัน'}
                     </span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-[#EDEBE8] mt-0.5">
+                  <h3 className="text-lg sm:text-xl font-black text-white mt-0.5 font-display">
                     {isEn ? 'Core Academic & Conversational Modules' : 'โมดูลภาษาอังกฤษเชิงวิชาการและการสื่อสาร'}
                   </h3>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="text-right">
-                    <span className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8]">3 / 6 {isEn ? 'Modules' : 'โมดูล'}</span>
-                    <div className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono">50% Complete</div>
+                  <div className="text-right font-mono">
+                    <span className="text-xs font-bold text-white">3 / 6 {isEn ? 'Modules' : 'โมดูล'}</span>
+                    <div className="text-[10px] text-slate-400">50% Complete</div>
                   </div>
-                  <div className="w-24 h-2.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#2155E6]" style={{ width: '50%' }} />
+                  <div className="w-24 h-2.5 rounded-full bg-[#030712] border border-white/10 overflow-hidden">
+                    <div className="h-full rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B]" style={{ width: '50%' }} />
                   </div>
                 </div>
               </div>
@@ -866,31 +870,31 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Secondary Curated Learning Paths */}
-              <div className="pt-6 border-t border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] space-y-4">
+              <div className="pt-6 border-t border-white/10 space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
+                  <h3 className="text-base font-bold text-white font-display">
                     {isEn ? 'Secondary Curated Pathways' : 'เส้นทางการเรียนรู้เฉพาะทาง'}
                   </h3>
-                  <span className="text-xs text-slate-500 dark:text-[#94A3B8]">3 Core Studios</span>
+                  <span className="text-xs text-slate-400 font-mono">3 Core Studios</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
-                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="rounded-xl overflow-hidden bg-[#0B1224]/90 border border-white/10 hover:border-[#F59E0B]/40 shadow-md flex flex-col justify-between group transition-colors">
+                    <div className="relative h-28 w-full overflow-hidden bg-[#070B16]">
                       <img
                         src="/assets/dribbble-basket-tools.jpg"
                         alt="Vocabulary"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#2155E6] text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070B16] via-transparent to-transparent" />
+                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#F59E0B] text-slate-950">
                         VOCABULARY
                       </span>
                     </div>
                     <div className="p-4 space-y-3">
                       <div>
-                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์ CEFR'}</h4>
-                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? '3,860 verified terms' : '3,860 คำศัพท์มาตรฐาน'}</p>
+                        <h4 className="font-black text-sm text-white">{isEn ? 'CEFR Vocabulary Lab' : 'คลังคำศัพท์ CEFR'}</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5 font-mono">{isEn ? '3,860 verified terms' : '3,860 คำศัพท์มาตรฐาน'}</p>
                       </div>
                       <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('vocabulary')}>
                         {isEn ? 'Open Vocabulary' : 'เปิดคลังคำศัพท์'}
@@ -898,23 +902,23 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                   </div>
 
-                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
-                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="rounded-xl overflow-hidden bg-[#0B1224]/90 border border-white/10 hover:border-[#F59E0B]/40 shadow-md flex flex-col justify-between group transition-colors">
+                    <div className="relative h-28 w-full overflow-hidden bg-[#070B16]">
                       <img
                         src="/assets/dribbble-safe-coins.jpg"
                         alt="Grammar"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070B16] via-transparent to-transparent" />
                       <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#F59E0B] text-slate-950">
                         GRAMMAR
                       </span>
                     </div>
                     <div className="p-4 space-y-3">
                       <div>
-                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}</h4>
-                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? 'Timeline visualization' : 'โครงสร้างประโยคไวยากรณ์'}</p>
+                        <h4 className="font-black text-sm text-white">{isEn ? 'English Grammar Studio' : 'ไวยากรณ์ภาษาอังกฤษ'}</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5 font-mono">{isEn ? 'Timeline visualization' : 'โครงสร้างประโยคไวยากรณ์'}</p>
                       </div>
                       <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('grammar')}>
                         {isEn ? 'Practice Exercises' : 'ฝึกทำแบบฝึกหัด'}
@@ -922,26 +926,26 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
                   </div>
 
-                  <div className="rounded-2xl overflow-hidden bg-white dark:bg-[#1C2430] border border-slate-200/80 dark:border-[rgba(255,255,255,0.08)] shadow-xs flex flex-col justify-between group">
-                    <div className="relative h-28 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="rounded-xl overflow-hidden bg-[#0B1224]/90 border border-white/10 hover:border-[#F59E0B]/40 shadow-md flex flex-col justify-between group transition-colors">
+                    <div className="relative h-28 w-full overflow-hidden bg-[#070B16]">
                       <img
                         src="/assets/dribbble-gift-box.jpg"
                         alt="Exam"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070B16] via-transparent to-transparent" />
                       <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#10B981] text-white">
                         MOCK EXAM
                       </span>
                     </div>
                     <div className="p-4 space-y-3">
                       <div>
-                        <h4 className="font-black text-sm text-slate-900 dark:text-[#EDEBE8]">{isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}</h4>
-                        <p className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-0.5">{isEn ? `${progress.targetExam} simulation` : `ข้อสอบจำลอง ${progress.targetExam}`}</p>
+                        <h4 className="font-black text-sm text-white">{isEn ? 'Cambridge Mock Exams' : 'ข้อสอบจำลอง Cambridge'}</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5 font-mono">{isEn ? `${progress.targetExam} simulation` : `ข้อสอบจำลอง ${progress.targetExam}`}</p>
                       </div>
                       <TactileButton variant="primary" size="sm" fullWidth onClick={() => onNavigate('mockExam')}>
-                        {isEn ? 'Enter Exam Vault' : 'เข้าสู่คลังข้อสอบ'}
+                        {isEn ? 'Take Mock Exam' : 'เข้าสู่คลังข้อสอบ'}
                       </TactileButton>
                     </div>
                   </div>
@@ -951,133 +955,19 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
         {/* ========================================================================= */}
-        {/* RIGHT COLUMN: GLOVA LEARNING COMPANION RAIL (4 cols - Sticky)             */}
+        {/* RIGHT COLUMN: TACTICAL ESPORTS TELEMETRY STACK (BorisWick Inspired)       */}
         {/* ========================================================================= */}
-        <div className="lg:col-span-5 xl:col-span-4 space-y-6 lg:sticky lg:top-20">
-          {/* 1. DAILY STREAK & SUMMARY CARD */}
-          <div className="p-5 rounded-[24px] bg-gradient-to-br from-amber-50/70 via-white to-orange-50/40 dark:from-[#141A22] dark:via-[#141A22] dark:to-[#141A22] border border-amber-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8]">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-[#E98278]/15 border border-amber-200 dark:border-[#E98278]/30 flex items-center justify-center shrink-0">
-                  <Flame className="w-7 h-7 text-[#F59E0B] dark:text-[#E98278] fill-[#F59E0B] dark:fill-[#E98278]" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xl font-black text-slate-900 dark:text-[#EDEBE8] font-mono">
-                      <AnimatedNumber value={progress.streakDays} />
-                    </span>
-                    <span className="text-xs font-bold text-[#D97706] dark:text-[#E98278]">
-                      {`${progress.streakDays} วัน`}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-0.5">
-                    {progress.streakDays >= 3
-                      ? isEn ? 'Unstoppable momentum!' : 'โมเมนตัมกำลังดี พัฒนาต่อเนื่อง!'
-                      : isEn ? 'Practice daily to build fluency' : 'ฝึกฝนต่อเนื่องทุกวันเพื่อสร้างความคล่องแคล่ว'}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center shrink-0">
-                <img
-                  src={`/assets/badges/badge-cefr-${progress.currentLevel.toLowerCase()}.png`}
-                  alt={`CEFR ${progress.currentLevel}`}
-                  className="w-12 h-12 object-contain drop-shadow-xs"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-[10px] font-mono font-bold text-[#4F46E5] dark:text-[#A5A6F6]">
-                  {progress.currentLevel}
-                </span>
-              </div>
-            </div>
-
-            {/* Quick Progress Counters */}
-            <div className="pt-3 border-t border-slate-100 dark:border-[rgba(255,255,255,0.08)] grid grid-cols-2 gap-2 text-xs">
-              <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#1C2430] border border-slate-200/70 dark:border-white/5">
-                <div className="text-[10px] text-slate-500 dark:text-[#94A3B8]">{isEn ? 'Daily Goal' : 'เป้าหมายประจำวัน'}</div>
-                <div className="font-bold text-slate-900 dark:text-[#EDEBE8] font-mono">{`${minutesStudied} นาที`} / {`${goalMinutes} นาที`}</div>
-              </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#1C2430] border border-slate-200/70 dark:border-white/5">
-                <div className="text-[10px] text-slate-500 dark:text-[#94A3B8]">{isEn ? 'Questions' : 'ทำข้อสอบแล้ว'}</div>
-                <div className="font-bold text-slate-900 dark:text-[#EDEBE8] font-mono">{`${progress.completedQuestionIds?.length || 0} ข้อ`}</div>
-              </div>
-              <div className="col-span-2 p-2.5 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-100 dark:border-white/5 flex items-center justify-between">
-                <span className="text-[11px] text-slate-600 dark:text-[#94A3B8]">{isEn ? 'Mastered Words' : 'คำศัพท์ที่เชี่ยวชาญ'}</span>
-                <span className="font-bold text-[#4F46E5] dark:text-[#A5A6F6] font-mono">{`${progress.masteredWordIds?.length || 0} คำศัพท์ที่เชี่ยวชาญแล้ว`}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* 1.1 6 CORE COMPETENCIES PROGRESS BARS */}
-          <div className="p-5 rounded-[24px] bg-white dark:bg-[#0B1224] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3 text-slate-900 dark:text-[#EDEBE8]">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8]">
-              {isEn ? '6 CORE COMPETENCIES' : 'ความเชี่ยวชาญ 6 ด้าน'}
-            </h3>
-            <div className="space-y-2.5 text-xs">
-              {[
-                { skill: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์', val: progress.skillStats.vocabulary, color: 'bg-[#2155E6]' },
-                { skill: 'grammar', label: isEn ? 'Grammar' : 'ไวยากรณ์', val: progress.skillStats.grammar, color: 'bg-[#F59E0B]' },
-                { skill: 'reading', label: isEn ? 'Reading' : 'การอ่าน', val: progress.skillStats.reading, color: 'bg-[#10B981]' },
-                { skill: 'listening', label: isEn ? 'Listening' : 'การฟัง', val: progress.skillStats.listening, color: 'bg-[#0EA5E9]' },
-                { skill: 'writing', label: isEn ? 'Writing' : 'การเขียน', val: progress.skillStats.writing, color: 'bg-[#8B5CF6]' },
-                { skill: 'speaking', label: isEn ? 'Speaking' : 'การพูด', val: progress.skillStats.speaking, color: 'bg-[#F43F5E]' },
-              ].map((s) => (
-                <div key={s.skill} className="space-y-1">
-                  <div className="flex justify-between text-[11px] font-semibold">
-                    <span className="text-slate-800 dark:text-[#EDEBE8]">{s.label}</span>
-                    <span className="text-[#2155E6] dark:text-[#6893FF] font-mono">{s.val}%</span>
-                  </div>
-                  <div
-                    role="progressbar"
-                    aria-valuenow={s.val}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                    className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#0F141C] overflow-hidden"
-                  >
-                    <div className={`h-full rounded-full ${s.color}`} style={{ width: `${s.val}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* 2. TODAY'S DAILY GOAL */}
-          <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3 text-slate-900 dark:text-[#EDEBE8]">
-            <div className="flex items-center justify-between text-xs font-bold">
-              <span className="text-slate-500 dark:text-[#94A3B8] uppercase tracking-wider">
-                {isEn ? 'DAILY STUDY TARGET' : 'เป้าหมายประจำวัน'}
-              </span>
-              <span className="text-[#4F46E5] dark:text-[#A5A6F6] font-mono">
-                {minutesStudied} / {goalMinutes} min ({goalPercent}%)
-              </span>
-            </div>
-
-            <div className="w-full h-3 rounded-full bg-slate-100 dark:bg-[#0F141C] overflow-hidden">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-[#4F46E5] via-[#8B5CF6] to-[#F43F5E] transition-all duration-500"
-                style={{ width: `${goalPercent}%` }}
-              />
-            </div>
-
-            <p className="text-xs text-slate-600 dark:text-[#94A3B8]">
-              {goalPercent >= 100
-                ? isEn ? 'Daily target fully reached! Keep up the great pace.' : 'บรรลุเป้าหมายประจำวันเรียบร้อยแล้ว! รักษาระดับการเรียนรู้ต่อไป'
-                : isEn ? `Study ${Math.max(0, goalMinutes - minutesStudied)} more minutes to complete.` : `ขาดอีก ${Math.max(0, goalMinutes - minutesStudied)} นาทีเพื่อบรรลุเป้าหมาย`}
-            </p>
-          </div>
-
-          {/* 3. DRIBBBLE GAME-STREAM RANKED LEAGUE HUD CARD */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#2155E6]/15 via-white to-blue-50/40 dark:from-[#0B1224] dark:via-[#111C38] dark:to-[#0B1224] border border-[#2155E6]/30 dark:border-blue-500/20 p-5 shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8]">
+        <div className="lg:col-span-5 xl:col-span-4 space-y-4 lg:sticky lg:top-20">
+          {/* 1. RANKED BATTLE ARENA SPOTLIGHT HUD */}
+          <div className="relative overflow-hidden rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 p-5 shadow-[0_12px_36px_rgba(0,0,0,0.7)] space-y-4 text-white">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-[#FFE600]" />
-                <span className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                <Trophy className="w-4 h-4 text-[#F59E0B]" />
+                <span className="text-xs font-bold text-white uppercase tracking-wider font-display">
                   {isEn ? 'RANKED BATTLE ARENA' : 'สมรภูมิประลองจัดอันดับ'}
                 </span>
               </div>
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#FFE600] text-slate-950 font-black font-mono shadow-xs">
+              <span className="text-[10px] px-2.5 py-0.5 rounded font-black font-mono bg-[#F59E0B] text-slate-950 shadow-xs">
                 Top 10
               </span>
             </div>
@@ -1087,16 +977,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <img
                   src="/assets/dribbble-hands-controller.jpg"
                   alt="Ranked Controller"
-                  className="w-16 h-16 rounded-xl object-cover border border-[#2155E6]/30 shadow-md"
+                  className="w-16 h-16 rounded-xl object-cover border border-[#F59E0B]/40 shadow-md"
                 />
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#10B981] border-2 border-white dark:border-[#0B1224]" />
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#10B981] border-2 border-[#070B16]" />
               </div>
               <div className="min-w-0">
-                <h4 className="font-black text-sm sm:text-base text-slate-900 dark:text-white truncate">
+                <h4 className="font-black text-sm sm:text-base text-white truncate font-display">
                   Gold II • Bangkok League
                 </h4>
-                <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-0.5">
-                  Rating: <span className="font-mono font-bold text-[#2155E6] dark:text-[#60A5FA]">1,420 MMR</span>
+                <p className="text-xs text-slate-400 mt-0.5 font-mono">
+                  Rating: <span className="font-bold text-[#FDE68A]">1,420 MMR</span>
                 </p>
               </div>
             </div>
@@ -1104,123 +994,215 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <button
               type="button"
               onClick={() => onNavigate('compete')}
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#FFE600] hover:bg-[#FFE600]/90 text-slate-950 font-black text-xs uppercase tracking-wider shadow-[0_4px_14px_rgba(255,230,0,0.3)] active:scale-98 transition-all cursor-pointer"
+              className="glova-gold-btn w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-slate-950 font-black text-xs uppercase tracking-wider shadow-md cursor-pointer select-none"
             >
               <Swords className="w-4 h-4" />
               <span>{isEn ? 'ENTER VOCAB BATTLE' : 'เข้าสู่สนามประลอง'}</span>
             </button>
           </div>
 
-          {/* 4. DAILY QUESTS */}
-          <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3.5 text-slate-900 dark:text-[#EDEBE8]">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] uppercase tracking-wider flex items-center gap-1.5">
-                <Target className="w-3.5 h-3.5 text-[#4F46E5] dark:text-[#A5A6F6]" />
-                <span>{isEn ? 'DAILY QUESTS' : 'ภารกิจประจำวัน'}</span>
-              </span>
-              <span className="text-[11px] text-slate-500 dark:text-[#94A3B8] font-semibold">1 / 3 Done</span>
-            </div>
-
-            <div className="space-y-3 text-xs">
-              {/* Quest 1 */}
-              <div className="p-3 rounded-xl bg-emerald-50/70 dark:bg-[#1C2430] border border-emerald-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
-                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-emerald-300/60 dark:border-white/10 shadow-xs">
-                  <img src="/assets/dribbble-basket-tools.jpg" alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="space-y-1 min-w-0 flex-1">
-                  <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
-                    {isEn ? 'Complete 1 Practice Lesson' : 'ทำบทเรียนสำเร็จ 1 บท'}
-                  </p>
-                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#10B981]" style={{ width: '100%' }} />
+          {/* 2. UNIFIED TACTICAL TELEMETRY CONSOLE (Hairline Dividers) */}
+          <div className="rounded-2xl bg-[#070B16]/85 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.7)] divide-y divide-white/10 overflow-hidden text-white">
+            {/* Section A: Daily Streak & Target Telemetry */}
+            <div className="p-5 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#F59E0B]/15 border border-[#F59E0B]/30 flex items-center justify-center shrink-0">
+                    <Flame className="w-5 h-5 text-[#F59E0B] fill-[#F59E0B]" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5 font-mono">
+                      <span className="text-lg font-black text-white">
+                        <AnimatedNumber value={progress.streakDays} />
+                      </span>
+                      <span className="text-xs font-bold text-[#FDE68A]">
+                        {`${progress.streakDays} วัน`}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-400">
+                      {progress.streakDays >= 3
+                        ? isEn ? 'Momentum Active' : 'โมเมนตัมกำลังดี พัฒนาต่อเนื่อง!'
+                        : isEn ? 'Daily fluency drill' : 'ฝึกต่อเนื่องเพื่อสร้างความคล่อง'}
+                    </p>
                   </div>
                 </div>
-                <span className="text-[#059669] dark:text-[#34D399] font-bold shrink-0 font-mono">
-                  +10 XP
-                </span>
+
+                <div className="flex flex-col items-center shrink-0">
+                  <img
+                    src={`/assets/badges/badge-cefr-${progress.currentLevel.toLowerCase()}.png`}
+                    alt={`CEFR ${progress.currentLevel}`}
+                    className="w-10 h-10 object-contain drop-shadow-xs"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                  <span className="text-[9px] font-mono font-bold text-[#FDE68A]">
+                    {progress.currentLevel}
+                  </span>
+                </div>
               </div>
 
-              {/* Quest 2 */}
-              <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-[#1C2430] border border-indigo-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
-                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-indigo-300/60 dark:border-white/10 shadow-xs">
-                  <img src="/assets/dribbble-hands-controller.jpg" alt="" className="w-full h-full object-cover" />
+              {/* Progress Counters */}
+              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <div className="p-2.5 rounded-xl bg-[#0B1224]/80 border border-white/5">
+                  <div className="text-[10px] text-slate-400 font-sans">{isEn ? 'Daily Goal' : 'เป้าหมายประจำวัน'}</div>
+                  <div className="font-bold text-white">{isEn ? `${minutesStudied}m / ${goalMinutes}m` : `${minutesStudied} นาที / ${goalMinutes} นาที`}</div>
                 </div>
-                <div className="space-y-1 min-w-0 flex-1">
-                  <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
-                    {isEn ? 'Score 80%+ in Vocab Battle' : 'ชนะประลองคำศัพท์ด้วยคะแนน 80% ขึ้นไป'}
-                  </p>
-                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#2155E6]" style={{ width: '0%' }} />
-                  </div>
+                <div className="p-2.5 rounded-xl bg-[#0B1224]/80 border border-white/5">
+                  <div className="text-[10px] text-slate-400 font-sans">{isEn ? 'Questions' : 'ทำข้อสอบแล้ว'}</div>
+                  <div className="font-bold text-white">{`${progress.completedQuestionIds?.length || 0} ข้อ`}</div>
                 </div>
-                <span className="text-[#2155E6] dark:text-[#6893FF] font-bold shrink-0 font-mono">
-                  +20 XP
-                </span>
-              </div>
-
-              {/* Quest 3 */}
-              <div className="p-3 rounded-xl bg-amber-50/70 dark:bg-[#1C2430] border border-amber-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-3">
-                <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-amber-300/60 dark:border-white/10 shadow-xs">
-                  <img src="/assets/dribbble-safe-coins.jpg" alt="" className="w-full h-full object-cover" />
+                <div className="col-span-2 p-2.5 rounded-xl bg-[#0B1224]/80 border border-white/5 flex items-center justify-between">
+                  <span className="text-[11px] text-slate-400 font-sans">{isEn ? 'Mastered Words' : 'คำศัพท์ที่เชี่ยวชาญ'}</span>
+                  <span className="font-bold text-[#FDE68A]">{isEn ? `${progress.masteredWordIds?.length || 0} words` : `${progress.masteredWordIds?.length || 0} คำศัพท์ที่เชี่ยวชาญแล้ว`}</span>
                 </div>
-                <div className="space-y-1 min-w-0 flex-1">
-                  <p className="font-bold text-slate-900 dark:text-[#EDEBE8] truncate">
-                    {isEn ? 'Review 5 Spaced Words' : 'ทบทวนคำศัพท์ Spaced Repetition 5 คำ'}
-                  </p>
-                  <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-[#0F141C] overflow-hidden">
-                    <div className="h-full rounded-full bg-[#F59E0B]" style={{ width: '60%' }} />
-                  </div>
-                </div>
-                <span className="text-[#D97706] dark:text-[#FBBF24] font-bold shrink-0 font-mono">
-                  +15 XP
-                </span>
               </div>
             </div>
-          </div>
 
-          {/* 5. WEAKNESS REMEDIATION (Empty vs Populated States) */}
-          {hasWeakness ? (
-            <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-3 text-slate-900 dark:text-[#EDEBE8]">
-              <span className="text-[10px] font-bold text-[#E11D48] dark:text-[#E98278] uppercase tracking-wider">
+            {/* Section B: 6 Core Competencies Progress Meters */}
+            <div className="p-5 space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+                {isEn ? '6 CORE COMPETENCIES' : 'ความเชี่ยวชาญ 6 ด้าน'}
+              </h3>
+              <div className="space-y-2.5 text-xs">
+                {[
+                  { skill: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์', val: progress.skillStats.vocabulary, color: 'bg-[#F59E0B]' },
+                  { skill: 'grammar', label: isEn ? 'Grammar' : 'ไวยากรณ์', val: progress.skillStats.grammar, color: 'bg-amber-400' },
+                  { skill: 'reading', label: isEn ? 'Reading' : 'การอ่าน', val: progress.skillStats.reading, color: 'bg-emerald-400' },
+                  { skill: 'listening', label: isEn ? 'Listening' : 'การฟัง', val: progress.skillStats.listening, color: 'bg-sky-400' },
+                  { skill: 'writing', label: isEn ? 'Writing' : 'การเขียน', val: progress.skillStats.writing, color: 'bg-violet-400' },
+                  { skill: 'speaking', label: isEn ? 'Speaking' : 'การพูด', val: progress.skillStats.speaking, color: 'bg-rose-400' },
+                ].map((s) => (
+                  <div key={s.skill} className="space-y-1">
+                    <div className="flex justify-between text-[11px] font-semibold">
+                      <span className="text-slate-200">{s.label}</span>
+                      <span className="text-[#FDE68A] font-mono">{s.val}%</span>
+                    </div>
+                    <div
+                      role="progressbar"
+                      aria-valuenow={s.val}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      className="w-full h-1.5 rounded-full bg-[#030712] border border-white/5 overflow-hidden"
+                    >
+                      <div className={`h-full rounded-full ${s.color}`} style={{ width: `${s.val}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Section C: Daily Quests */}
+            <div className="p-5 space-y-3.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5 font-display">
+                  <Target className="w-3.5 h-3.5 text-[#F59E0B]" />
+                  <span>{isEn ? 'DAILY QUESTS' : 'ภารกิจประจำวัน'}</span>
+                </span>
+                <span className="text-[11px] text-slate-400 font-mono">1 / 3 Done</span>
+              </div>
+
+              <div className="space-y-2.5 text-xs">
+                {/* Quest 1 */}
+                <div className="p-3 rounded-xl bg-[#0B1224]/80 border border-white/5 flex items-center justify-between gap-3">
+                  <div className="w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                    <img src="/assets/dribbble-basket-tools.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="space-y-1 min-w-0 flex-1">
+                    <p className="font-bold text-slate-200 truncate">
+                      {isEn ? 'Complete 1 Practice Lesson' : 'ทำบทเรียนสำเร็จ 1 บท'}
+                    </p>
+                    <div className="w-full h-1.5 rounded-full bg-[#030712] overflow-hidden">
+                      <div className="h-full rounded-full bg-[#10B981]" style={{ width: '100%' }} />
+                    </div>
+                  </div>
+                  <span className="text-[#34D399] font-bold shrink-0 font-mono text-[11px]">
+                    +10 XP
+                  </span>
+                </div>
+
+                {/* Quest 2 */}
+                <div className="p-3 rounded-xl bg-[#0B1224]/80 border border-white/5 flex items-center justify-between gap-3">
+                  <div className="w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                    <img src="/assets/dribbble-hands-controller.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="space-y-1 min-w-0 flex-1">
+                    <p className="font-bold text-slate-200 truncate">
+                      {isEn ? 'Score 80%+ in Vocab Battle' : 'ชนะประลองคำศัพท์ด้วยคะแนน 80% ขึ้นไป'}
+                    </p>
+                    <div className="w-full h-1.5 rounded-full bg-[#030712] overflow-hidden">
+                      <div className="h-full rounded-full bg-[#F59E0B]" style={{ width: '0%' }} />
+                    </div>
+                  </div>
+                  <span className="text-[#FDE68A] font-bold shrink-0 font-mono text-[11px]">
+                    +20 XP
+                  </span>
+                </div>
+
+                {/* Quest 3 */}
+                <div className="p-3 rounded-xl bg-[#0B1224]/80 border border-white/5 flex items-center justify-between gap-3">
+                  <div className="w-9 h-9 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                    <img src="/assets/dribbble-safe-coins.jpg" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="space-y-1 min-w-0 flex-1">
+                    <p className="font-bold text-slate-200 truncate">
+                      {isEn ? 'Review 5 Spaced Words' : 'ทบทวนคำศัพท์ Spaced Repetition 5 คำ'}
+                    </p>
+                    <div className="w-full h-1.5 rounded-full bg-[#030712] overflow-hidden">
+                      <div className="h-full rounded-full bg-[#F59E0B]" style={{ width: '60%' }} />
+                    </div>
+                  </div>
+                  <span className="text-[#FDE68A] font-bold shrink-0 font-mono text-[11px]">
+                    +15 XP
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Section D: Weakness Remediation */}
+            <div className="p-5 space-y-3">
+              <span className="text-[10px] font-bold text-[#F43F5E] uppercase tracking-wider font-mono">
                 {isEn ? 'WEAKNESS REMEDIATION' : 'จุดที่ควรเสริม'}
               </span>
-              <div className="space-y-2">
-                {progress.weakTopics.map((w) => {
-                  const displayTitle = !isEn && w.labelTh ? w.labelTh.replace(/_/g, ' ') : formatTopicTitle(w);
-                  return (
-                    <div key={w.tag} className="p-3 rounded-xl bg-rose-50/70 dark:bg-[#1C2430] border border-rose-200/80 dark:border-[rgba(255,255,255,0.08)] flex items-center justify-between gap-2">
-                      <div className="min-w-0">
-                        <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8] truncate">{displayTitle}</p>
-                        <p className="text-[10px] text-[#E11D48] dark:text-[#E98278]">
-                          {isEn ? `Found ${w.errorCount} mistakes` : `พบข้อผิดพลาด ${w.errorCount} ครั้ง`}
-                        </p>
+              {hasWeakness ? (
+                <div className="space-y-2">
+                  {progress.weakTopics.map((w) => {
+                    const displayTitle = !isEn && w.labelTh ? w.labelTh.replace(/_/g, ' ') : formatTopicTitle(w);
+                    return (
+                      <div key={w.tag} className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-between gap-2">
+                        <div className="min-w-0">
+                          <p className="text-xs font-bold text-slate-200 truncate">{displayTitle}</p>
+                          <p className="text-[10px] text-rose-400 font-mono">
+                            {isEn ? `Found ${w.errorCount} mistakes` : `พบข้อผิดพลาด ${w.errorCount} ครั้ง`}
+                          </p>
+                        </div>
+                        <TactileButton
+                          variant="warning"
+                          size="sm"
+                          onClick={() => onStartRemediation(w.tag)}
+                          className="shrink-0"
+                        >
+                          {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
+                        </TactileButton>
                       </div>
-                      <TactileButton
-                        variant="warning"
-                        size="sm"
-                        onClick={() => onStartRemediation(w.tag)}
-                        className="shrink-0"
-                      >
-                        {isEn ? 'Repair' : 'ซ่อมจุดนี้'}
-                      </TactileButton>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="text-center py-2 space-y-2">
+                  <p className="text-xs font-bold text-slate-300">ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ</p>
+                  <TactileButton
+                    variant="surface"
+                    size="sm"
+                    onClick={() => onNavigate('mockExam')}
+                    className="mx-auto"
+                  >
+                    {isEn ? 'Try a Mock Exam' : 'ทดลองทำข้อสอบจำลอง'}
+                  </TactileButton>
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="p-5 rounded-[24px] bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs text-center space-y-2 text-slate-900 dark:text-[#EDEBE8]">
-              <p className="text-xs font-bold text-slate-900 dark:text-[#EDEBE8]">ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ</p>
-              <TactileButton
-                variant="surface"
-                size="sm"
-                onClick={() => onNavigate('mockExam')}
-                className="mx-auto"
-              >
-                {isEn ? 'Try a Mock Exam' : 'ทดลองทำข้อสอบจำลอง'}
-              </TactileButton>
-            </div>
-          )}
+          </div>
         </div>
       </div>
       </>

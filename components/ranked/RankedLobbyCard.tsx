@@ -37,22 +37,22 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
   }
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-[#2155E6]/30 dark:border-blue-500/30 bg-gradient-to-br from-[#2155E6]/10 via-background to-blue-950/15 p-6 shadow-md">
+    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl">
       {/* Top Banner Tag */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/40 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
         <div className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2155E6] text-white shadow-sm">
-            <Swords className="h-4 w-4" />
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#F59E0B] text-slate-950 font-black shadow-sm">
+            <Swords className="h-4 w-4 text-slate-950" />
           </span>
           <div>
-            <h3 className="text-base font-black text-foreground font-display">RANKED BATTLE ARENA</h3>
-            <p className="text-xs text-muted-foreground">Season 1: Genesis • การแข่งขันวัดระดับความสามารถจริงจัง</p>
+            <h3 className="text-base font-black text-white font-display">RANKED BATTLE ARENA</h3>
+            <p className="text-xs text-slate-400">Season 1: Genesis • การแข่งขันวัดระดับความสามารถจริงจัง</p>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#2155E6]/15 px-3 py-1 text-xs font-bold text-[#2155E6] dark:text-[#60A5FA] border border-[#2155E6]/30">
-            <Trophy className="h-3.5 w-3.5 text-[#FFE600]" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F59E0B]/15 px-3 py-1 text-xs font-bold text-[#FDE68A] border border-[#F59E0B]/30">
+            <Trophy className="h-3.5 w-3.5 text-[#F59E0B]" />
             Rank Rating (MMR)
           </span>
         </div>
@@ -185,14 +185,14 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
               </button>
             </div>
           ) : (
-            <button
-              type="button"
-              onClick={() => onStartMatchmaking(selectedMode)}
-              className="inline-flex items-center gap-2 rounded-full bg-[#FFE600] hover:bg-[#FFE600]/90 px-7 py-3 text-xs sm:text-sm font-black text-slate-950 uppercase tracking-wider shadow-[0_4px_16px_rgba(255,230,0,0.35)] transition-all active:scale-[0.98] cursor-pointer"
-            >
-              <Swords className="h-4 w-4" />
-              ค้นหาแมตช์แข่งขัน
-            </button>
+              <button
+                type="button"
+                onClick={() => onStartMatchmaking(selectedMode)}
+                className="inline-flex items-center gap-2 rounded-xl glova-gold-btn px-7 py-3 text-xs sm:text-sm font-black text-slate-950 uppercase tracking-wider shadow-lg transition-all active:scale-[0.98] cursor-pointer"
+              >
+                <Swords className="h-4 w-4 text-slate-950" />
+                ค้นหาแมตช์แข่งขัน
+              </button>
           )}
         </div>
       </div>

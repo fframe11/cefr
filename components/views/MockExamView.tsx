@@ -426,12 +426,12 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           spotlightColor="rgba(33, 85, 230, 0.15)"
           showBorderBeam={true}
           borderBeamProps={{
-            colorFrom: '#2155E6',
-            colorTo: '#FFE600',
+            colorFrom: '#F59E0B',
+            colorTo: '#FDE68A',
             duration: 14,
             size: 260,
           }}
-          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
+          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
         >
           {/* Authentic Examination Setting Backdrop */}
           <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
@@ -531,19 +531,19 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               return (
                 <SpotlightCard
                   key={exam.id}
-                  spotlightColor={isSelected ? 'rgba(33, 85, 230, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
+                  spotlightColor={isSelected ? 'rgba(245, 158, 11, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
                   showBorderBeam={isSelected}
                   borderBeamProps={{
-                    colorFrom: '#2155E6',
-                    colorTo: '#FFE600',
+                    colorFrom: '#F59E0B',
+                    colorTo: '#FDE68A',
                     duration: 10,
                     size: 180,
                   }}
                   onClick={() => setSelectedExamId(exam.id)}
-                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-white dark:bg-[#0B1224] border ${
+                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-[#070B16]/90 backdrop-blur-md border ${
                     isSelected
-                      ? 'border-[#2155E6] shadow-md shadow-[#2155E6]/15 ring-2 ring-[#2155E6]/30'
-                      : 'border-slate-200/80 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
+                      ? 'border-[#F59E0B] shadow-lg shadow-[#F59E0B]/20 ring-2 ring-[#F59E0B]/30'
+                      : 'border-white/10 hover:border-[#F59E0B]/40'
                   }`}
                 >
                   <div>
@@ -621,11 +621,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           showBorderBeam={true}
           borderBeamProps={{
             colorFrom: isPassed ? '#10B981' : '#F59E0B',
-            colorTo: '#2155E6',
+            colorTo: '#FDE68A',
             duration: 12,
             size: 240,
           }}
-          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
+          className="p-6 sm:p-8 text-center space-y-4 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-white/10 shadow-2xl"
         >
           <div
             className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto ${

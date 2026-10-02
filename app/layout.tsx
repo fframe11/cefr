@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th" className="dark" suppressHydrationWarning>
-      <body className="min-h-screen bg-background text-foreground bg-studio-grid antialiased selection:bg-primary/25 selection:text-white">
+      <body className="min-h-screen bg-game-canvas text-slate-100 antialiased selection:bg-[#F59E0B]/25 selection:text-white relative font-sans">
         <Providers>{children}</Providers>
       </body>
     </html>

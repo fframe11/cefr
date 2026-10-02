@@ -294,11 +294,11 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           showBorderBeam={true}
           borderBeamProps={{
             colorFrom: '#10B981',
-            colorTo: '#2155E6',
+            colorTo: '#F59E0B',
             duration: 12,
             size: 260,
           }}
-          className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
+          className="p-6 sm:p-8 text-center space-y-4 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#10B981]/30 shadow-2xl"
         >
           <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center mx-auto shadow-sm">
             <Award className="w-8 h-8" />

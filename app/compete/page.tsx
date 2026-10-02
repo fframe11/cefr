@@ -281,13 +281,13 @@ export default function CompetePage() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 pb-16">
       {/* 1. TOP MODE SWITCHER: RANKED VS QUICK PLAY */}
-      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-border/70 bg-card p-4 shadow-xs">
+      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-5 shadow-xl">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight flex items-center gap-2 font-display">
-            <Swords className="w-6 h-6 text-amber-500" />
+          <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2 font-display">
+            <Swords className="w-6 h-6 text-[#F59E0B]" />
             {isEn ? 'Arena Competition' : 'สมรภูมิแข่งขันภาษาอังกฤษ'}
           </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-grotesk">
+          <p className="text-xs sm:text-sm text-slate-400 mt-0.5 font-grotesk">
             {competeMode === 'ranked'
               ? (isEn ? 'Official Ranked Mode: Performance changes your Rank Rating (MMR).' : 'โหมดจัดอันดับจริงจัง: ผลการแข่งมีผลต่อ Rank Rating โดยตรง แยกจากแต้ม XP')
               : (isEn ? 'Quick Play: Practice speed vocabulary battle with zero rating risk.' : 'โหมดเล่นเร็ว: ฝึกซ้อมประลองความเร็ว ไม่กระทบต่อ Rank Rating')}
@@ -295,14 +295,14 @@ export default function CompetePage() {
         </div>
 
         {/* Binary Mode Switch */}
-        <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-muted/40 p-1.5 self-start sm:self-auto">
+        <div className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-[#0B1224] p-1.5 self-start sm:self-auto">
           <button
             type="button"
             onClick={() => setCompeteMode('ranked')}
             className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               competeMode === 'ranked'
-                ? 'bg-amber-500 text-white shadow-sm'
-                : 'text-muted-foreground hover:bg-muted/80'
+                ? 'bg-[#F59E0B] text-slate-950 font-black shadow-md'
+                : 'text-slate-400 hover:text-white hover:bg-white/5'
             }`}
           >
             <Trophy className="h-4 w-4" />
@@ -313,8 +313,8 @@ export default function CompetePage() {
             onClick={() => setCompeteMode('quick')}
             className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
               competeMode === 'quick'
-                ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-muted-foreground hover:bg-muted/80'
+                ? 'bg-[#F59E0B] text-slate-950 font-black shadow-md'
+                : 'text-slate-400 hover:text-white hover:bg-white/5'
             }`}
           >
             <Zap className="h-4 w-4" />
@@ -380,14 +380,14 @@ export default function CompetePage() {
         <section className="space-y-6">
           {/* Quick Play Lobby Card */}
           {quickGameState === 'idle' && (
-            <div className="rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/[0.06] via-background to-teal-500/[0.05] p-6 sm:p-8 text-center shadow-xs">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+            <div className="rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 text-center shadow-xl">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/30">
                 <Zap className="h-7 w-7" />
               </div>
-              <h2 className="mt-4 text-2xl font-black text-foreground">
+              <h2 className="mt-4 text-2xl font-black text-white">
                 {isEn ? 'Vocabulary Speed Battle (Quick Play)' : 'ประลองคำศัพท์จับเวลา 4 วินาที (เล่นเร็ว)'}
               </h2>
-              <p className="mx-auto mt-2 max-w-lg text-xs sm:text-sm text-muted-foreground">
+              <p className="mx-auto mt-2 max-w-lg text-xs sm:text-sm text-slate-400">
                 {isEn
                   ? 'Practice answering vocabulary under 4 seconds across 5 adaptive CEFR stages. Earn learning XP without affecting your Rank Rating!'
                   : 'ฝึกตอบคำศัพท์ภายใน 4 วินาที ไต่ระดับความยาก Stage 1 (A1) ถึง Stage 5 (C1) รับแต้ม XP ปกติ ไม่กระทบต่อ Rank Rating'}
@@ -398,9 +398,9 @@ export default function CompetePage() {
                   type="button"
                   onClick={handleStartQuickBattle}
                   disabled={isQuickSubmitting}
-                  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-700 px-8 py-3.5 text-sm font-bold text-white shadow-md shadow-indigo-500/25 transition-all hover:brightness-105 active:scale-[0.98]"
+                  className="inline-flex items-center gap-2 rounded-xl glova-gold-btn px-8 py-3.5 text-sm font-black text-slate-950 shadow-lg active:translate-y-[2px]"
                 >
-                  <Swords className="h-4 w-4" />
+                  <Swords className="h-4 w-4 text-slate-950" />
                   {isEn ? 'Start Quick Battle' : 'เริ่มประลองความเร็วด่วน'}
                 </button>
               </div>

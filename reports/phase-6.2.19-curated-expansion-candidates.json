@@ -2,7 +2,7 @@
   "$schema": "https://glova.ai/schemas/vocabulary-curated-expansion-queue-v1.json",
   "phase": "PHASE_6_2_19_CURATED_EXPANSION_CANDIDATE_QUEUE",
   "notice": "PROPOSED CANDIDATE QUEUE FOR FUTURE REGISTRY EXPANSION. THIS IS NOT AN APPROVAL QUEUE. NO AUTOMATIC MODIFICATIONS PERFORMED.",
-  "generated_at": "2026-09-29T12:22:27.735Z",
+  "generated_at": "2026-10-02T04:03:06.581Z",
   "total_candidates": 8757,
   "total_learning_units_covered": 9970,
   "priority_band_counts": {

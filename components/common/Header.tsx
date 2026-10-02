@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
   const initials = getInitials(displayName);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/90 dark:border-white/10 bg-white/95 dark:bg-[#141A22]/95 backdrop-blur-md transition-colors pt-safe shadow-xs dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+    <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#070B16]/90 backdrop-blur-md transition-colors pt-safe shadow-[0_4px_25px_rgba(0,0,0,0.8)] text-slate-100">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         {/* Left: Mobile Nav Toggle + Studio Brand */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenMobileNav}
-              className="md:hidden touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+              className="md:hidden touch-target p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]"
               aria-label="Open mobile navigation menu"
             >
               <Menu className="w-5 h-5" aria-hidden="true" />
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <Link
             href="/landing"
-            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2] rounded-xl p-1 -m-1"
+            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] rounded-xl p-1 -m-1"
             aria-label="Glova Home - Brand Showcase"
           >
             <div className="flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
@@ -129,15 +129,15 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-black text-base sm:text-lg tracking-tight font-display text-slate-900 dark:text-[#EDEBE8] flex items-center gap-1">
+                <span className="font-black text-base sm:text-lg tracking-tight font-display text-white flex items-center gap-1">
                   Glova
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E5A93C] shadow-[0_0_8px_#E5A93C]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B]" />
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-50 dark:bg-[#1C2430] text-amber-700 dark:text-[#E5A93C] border border-amber-300 dark:border-[#E5A93C]/30 shadow-xs">
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30 shadow-xs">
                   {targetExam} {t('header.prep_suffix')}
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono truncate hidden md:block">
+              <p className="text-[10px] text-slate-400 font-mono truncate hidden md:block">
                 Cambridge CEFR Linguistic Studio
               </p>
             </div>
@@ -147,8 +147,8 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Center/Right Status Indicators & Hardware Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* Dynamic CEFR Level Accreditation Pill */}
-          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-[#0F141C] border border-indigo-200 dark:border-[#5B5CE2]/30 text-[10px] font-mono font-bold text-indigo-800 dark:text-[#A5A6F6]">
-            <Sparkles className="w-3 h-3 text-[#5B5CE2]" />
+          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0B1224] border border-[#F59E0B]/30 text-[10px] font-mono font-bold text-[#FDE68A]">
+            <Sparkles className="w-3 h-3 text-[#F59E0B]" />
             <span>
               {currentLevel === 'A1'
                 ? 'CEFR A1 // NOVICE DRILL'
@@ -173,24 +173,24 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Streak Flame Telemetry */}
           <div
-            className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 dark:bg-[#0F141C] border border-amber-200 dark:border-amber-500/25 text-amber-700 dark:text-[#E5A93C] text-xs font-mono font-bold shadow-xs dark:shadow-inner"
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 rounded-md bg-[#0B1224] border border-[#F59E0B]/30 text-[#FDE68A] text-xs font-mono font-bold shadow-inner"
             title={`${streakDays} Day Study Streak`}
           >
-            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-amber-600 dark:text-[#E5A93C]" />
+            <Flame className="w-3.5 h-3.5 shrink-0 fill-amber-500/30 text-[#F59E0B]" />
             <span className="tabular-nums">{streakDays}</span>
-            <span className="hidden md:inline text-amber-800 dark:text-amber-300/80 font-normal">{t('common.days')}</span>
+            <span className="hidden md:inline text-slate-300 font-normal">{t('common.days')}</span>
           </div>
 
           {/* Daily Goal Telemetry */}
           <div
-            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs font-mono"
+            className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0B1224] border border-white/10 text-xs font-mono text-slate-200"
             title={`Today: ${minutesStudiedToday} of ${dailyGoalMinutes} minutes`}
           >
-            <Clock className="w-3.5 h-3.5 text-slate-500 dark:text-[#94A3B8] shrink-0" />
-            <span className="text-slate-900 dark:text-[#EDEBE8] font-bold tabular-nums">
+            <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+            <span className="text-white font-bold tabular-nums">
               {minutesStudiedToday}/{dailyGoalMinutes}m
             </span>
-            <div className="w-10 h-1.5 bg-slate-200 dark:bg-[#1C2430] rounded-full overflow-hidden border border-slate-300 dark:border-white/10">
+            <div className="w-10 h-1.5 bg-[#1C2430] rounded-full overflow-hidden border border-white/10">
               <div
                 className="h-full bg-[#10B981] rounded-full transition-all duration-300 shadow-[0_0_6px_#10B981]"
                 style={{ width: `${goalPercent}%` }}
@@ -204,7 +204,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Re-take Diagnostic Button */}
           <button
             onClick={onRetakeAssessment}
-            className="hidden sm:inline-flex touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-md border border-slate-200 dark:border-white/10 transition-colors active:scale-95"
+            className="hidden sm:inline-flex touch-target p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-md border border-white/10 transition-colors active:scale-95"
             title={t('header.retake_assessment')}
             aria-label={t('header.retake_assessment')}
           >
@@ -214,11 +214,11 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Theme Switcher Toggle */}
           <button
             onClick={onToggleTheme}
-            className="touch-target p-2 text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#1C2430] rounded-md border border-slate-200 dark:border-white/10 transition-colors active:scale-95"
+            className="touch-target p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-md border border-white/10 transition-colors active:scale-95"
             title={t('header.switch_theme')}
             aria-label={t('header.switch_theme')}
           >
-            {isDark ? <Sun className="w-4 h-4 text-[#E5A93C]" /> : <Moon className="w-4 h-4 text-[#5B5CE2]" />}
+            {isDark ? <Sun className="w-4 h-4 text-[#F59E0B]" /> : <Moon className="w-4 h-4 text-[#38BDF8]" />}
           </button>
 
           {/* Account Profile Capsule */}
@@ -227,18 +227,18 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-[#1C2430] hover:bg-slate-200/80 dark:hover:bg-[#222E3A] text-xs font-medium text-slate-900 dark:text-[#EDEBE8] transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]"
+                className="touch-target flex items-center gap-2 p-1 sm:px-2.5 sm:py-1 rounded-full sm:rounded-xl border border-white/15 bg-[#0B1224] hover:bg-white/10 text-xs font-medium text-white transition-all shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]"
                 aria-expanded={isMenuOpen}
                 aria-haspopup="menu"
                 aria-label={t('auth.menu_profile')}
               >
-                <div className="w-6 h-6 rounded-full bg-[#5B5CE2] text-white font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-white/20">
+                <div className="w-6 h-6 rounded-full bg-[#F59E0B] text-slate-950 font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-white/20">
                   {initials}
                 </div>
                 <span className="hidden sm:inline font-mono text-[11px] truncate max-w-[100px]">
                   {displayName}
                 </span>
-                <ChevronDown className="w-3.5 h-3.5 text-slate-500 dark:text-[#94A3B8] hidden sm:block shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400 hidden sm:block shrink-0" />
               </button>
 
               {/* Profile Dropdown Menu */}

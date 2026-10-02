@@ -135,13 +135,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
             const Icon = item.icon;
             const itemLabel = isEn ? item.labelEn : item.labelTh;
 
-            let badgeClasses = 'bg-[#2155E6]/15 text-[#2155E6] dark:text-[#60A5FA] border border-[#2155E6]/30';
+            let badgeClasses = 'bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30';
             if (item.badgeStyle === 'gold') {
-              badgeClasses = 'bg-[#FFE600] text-slate-950 font-black shadow-xs';
+              badgeClasses = 'bg-[#F59E0B] text-slate-950 font-black shadow-xs';
             } else if (item.badgeStyle === 'coral') {
-              badgeClasses = 'bg-[#FF4655]/15 text-[#FF4655] border border-[#FF4655]/30';
+              badgeClasses = 'bg-[#FF4655]/20 text-[#FF4655] border border-[#FF4655]/40';
             } else if (item.badgeStyle === 'mint') {
-              badgeClasses = 'bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30';
+              badgeClasses = 'bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40';
             }
 
             return (
@@ -155,23 +155,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] active:translate-y-0.5 ${
+                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] active:translate-y-0.5 ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
                 } ${
                   isActive
-                    ? 'bg-[#2155E6] text-white font-bold shadow-[0_4px_16px_rgba(33,85,230,0.35)] ring-1 ring-white/20'
-                    : 'text-slate-600 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-[#EDEBE8] hover:bg-slate-100 dark:hover:bg-[#111C38] font-medium'
+                    ? 'bg-[#F59E0B]/15 border-l-2 border-[#F59E0B] text-[#FDE68A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5 font-medium'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-white' : 'text-slate-500 dark:text-[#94A3B8] group-hover:text-slate-900 dark:group-hover:text-[#EDEBE8]'
+                    isActive ? 'text-[#F59E0B]' : 'text-slate-400 group-hover:text-white'
                   }`}
                 />
                 {!collapsedMode && (
-                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-white' : 'text-slate-700 dark:text-[#EDEBE8]'}`}>
+                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#FDE68A]' : 'text-slate-300 group-hover:text-white'}`}>
                     {itemLabel}
                   </span>
                 )}
@@ -179,7 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {!collapsedMode && item.badge && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
-                      isActive ? 'bg-[#FFE600] text-slate-950 font-black shadow-xs' : badgeClasses
+                      isActive ? 'bg-[#F59E0B] text-slate-950 font-black shadow-xs' : badgeClasses
                     }`}
                   >
                     {item.badge}
@@ -197,17 +197,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-[#0B1224] shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-xs dark:shadow-[2px_0_12px_rgba(0,0,0,0.5)] ${
+        className={`hidden md:flex flex-col border-r border-white/10 bg-[#070B16]/95 backdrop-blur-md shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
         {/* Top Header & Collapse Toggle */}
-        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-slate-200/90 dark:border-slate-800/80 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
+        <div className={`flex items-center pb-2.5 mb-1.5 border-b border-white/10 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#FFE600] shadow-[0_0_8px_#FFE600]" />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-[#94A3B8] font-mono select-none">
+              <span className="w-2 h-2 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B]" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono select-none">
                 {isEn ? 'Studio Suite' : 'สตูดิโอการเรียนรู้'}
               </span>
             </div>
@@ -217,7 +217,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#111C38] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] active:scale-95"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] active:scale-95"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -237,20 +237,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-slate-200/90 dark:border-slate-800/80 mt-auto">
-            <div className="p-3 rounded-xl bg-blue-50/70 dark:bg-[#111C38] border border-blue-200/80 dark:border-slate-800/80 shadow-xs dark:shadow-inner space-y-1">
+          <div className="pt-3.5 border-t border-white/10 mt-auto">
+            <div className="p-3 rounded-xl bg-[#0B1224]/80 border border-white/10 shadow-inner space-y-1">
               <div className="flex items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#2155E6]" />
-                  <span className="text-[11px] font-bold text-slate-900 dark:text-[#EDEBE8]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#F59E0B]" />
+                  <span className="text-[11px] font-bold text-slate-200">
                     CEFR & Cambridge
                   </span>
                 </div>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#FFE600] text-slate-950">
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#F59E0B] text-slate-950">
                   VERIFIED
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono leading-snug">
+              <p className="text-[10px] text-slate-400 font-mono leading-snug">
                 3,860 Oxford Lexicon &bull; 6 Core Skills
               </p>
             </div>
@@ -269,18 +269,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white dark:bg-[#0B1224] border-r border-slate-200 dark:border-slate-800/80 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-[#EDEBE8]"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-[#070B16]/98 backdrop-blur-xl border-r border-white/10 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-200 dark:border-white/10">
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-white/10">
               <div className="flex items-center gap-2.5">
                 <GlovaLogo size={28} variant="radiant" ariaLabel="Glova" />
                 <div className="flex flex-col">
-                  <span className="font-black text-base text-slate-900 dark:text-[#EDEBE8] font-display">
+                  <span className="font-black text-base text-white font-display">
                     Glova
                   </span>
-                  <span className="text-[10px] text-slate-500 dark:text-[#94A3B8] font-mono">
+                  <span className="text-[10px] text-slate-400 font-mono">
                     Cambridge Learning Suite
                   </span>
                 </div>
@@ -289,7 +289,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button
                   type="button"
                   onClick={onCloseMobile}
-                  className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-[#94A3B8] dark:hover:text-[#EDEBE8] dark:hover:bg-[#1C2430] transition-colors"
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
                   aria-label="Close mobile menu"
                 >
                   <X className="w-5 h-5" />
@@ -303,8 +303,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </nav>
 
             {/* Drawer Footer */}
-            <div className="pt-3 border-t border-[rgba(255,255,255,0.08)] mt-auto text-center">
-              <span className="text-[10px] text-[#94A3B8] font-mono">
+            <div className="pt-3 border-t border-white/10 mt-auto text-center">
+              <span className="text-[10px] text-slate-400 font-mono">
                 Glova &bull; CEFR English Platform
               </span>
             </div>

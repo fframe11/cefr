@@ -43,7 +43,13 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const { showToast } = useToast();
   const { status, profile, refreshProfile } = useAuth();
   const [progress, setProgress] = useState<UserProgressState>(DEFAULT_STATE);
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('glova_theme');
+      if (stored) return stored === 'dark';
+    }
+    return true; // Default to dark obsidian theme matching BorisWick & Knightopia
+  });
   const [remediationTopic, setRemediationTopic] = useState<string | undefined>(undefined);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
@@ -142,9 +148,15 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     if (isDark) {
       document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
+      try {
+        localStorage.setItem('glova_theme', 'dark');
+      } catch {}
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
+      try {
+        localStorage.setItem('glova_theme', 'light');
+      } catch {}
     }
   }, [isDark]);
 

@@ -245,10 +245,10 @@ export const SpeakingView: React.FC = () => {
                 handleReset();
                 setShowModelAnswer(false);
               }}
-              className={`touch-target px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#2155E6] text-white border-[#2155E6] shadow-sm shadow-[#2155E6]/25 font-bold ring-2 ring-[#2155E6]/20'
-                  : 'bg-white dark:bg-card text-muted-foreground hover:text-foreground border-slate-200/80 dark:border-white/10 hover:bg-white dark:bg-[#0B1224] dark:hover:bg-[#15203B]'
+                  ? 'bg-[#F59E0B] text-slate-950 border-[#F59E0B] shadow-md shadow-[#F59E0B]/25 font-black'
+                  : 'bg-[#070B16]/90 text-slate-400 hover:text-white border-white/10 hover:border-[#F59E0B]/40'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -275,15 +275,15 @@ export const SpeakingView: React.FC = () => {
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
           <SpotlightCard
-            spotlightColor="rgba(33, 85, 230, 0.15)"
+            spotlightColor="rgba(245, 158, 11, 0.15)"
             showBorderBeam={true}
             borderBeamProps={{
-              colorFrom: '#2155E6',
-              colorTo: '#FFE600',
+              colorFrom: '#F59E0B',
+              colorTo: '#FDE68A',
               duration: 12,
               size: 240,
             }}
-            className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 shadow-[0_8px_30px_-4px_rgba(11,18,36,0.12),0_2px_10px_-2px_rgba(11,18,36,0.08)]"
+            className="p-6 sm:p-8 space-y-4 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
@@ -298,7 +298,7 @@ export const SpeakingView: React.FC = () => {
                 <GlovaButton
                   variant="outline"
                   size="sm"
-                  leftIcon={<Volume2 className="w-4 h-4 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />}
+                  leftIcon={<Volume2 className="w-4 h-4 text-[#F59E0B]" aria-hidden="true" />}
                   onClick={handlePlayModel}
                   className="rounded-full"
                 >
@@ -308,7 +308,7 @@ export const SpeakingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-slate-200/80 dark:border-white/10 space-y-1.5 shadow-xs">
+            <div className="p-5 rounded-xl bg-[#0B1224] border border-white/10 space-y-1.5 shadow-inner">
               <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
                 {currentPrompt.promptEn}
               </p>

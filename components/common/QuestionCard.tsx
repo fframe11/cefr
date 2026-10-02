@@ -146,20 +146,20 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           const isThisCorrect = isOptionCorrect(option.key, option.isCorrect);
 
           let btnStyle =
-            'bg-slate-100 dark:bg-[#1C2430] hover:bg-[#253040] border-2 border-slate-200/80 dark:border-white/10 dark:border-[rgba(255,255,255,0.1)] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#0D1318] active:translate-y-[3.5px] active:shadow-none';
+            'bg-[#0B1224]/80 hover:bg-[#101A30] border-2 border-white/10 text-slate-100 shadow-[0_3px_0_0_#050811] active:translate-y-[3px] active:shadow-none hover:border-[#F59E0B]/40';
 
           if (submitted) {
             if (isPending && isSelected) {
-              btnStyle = 'border-2 border-amber-500 bg-amber-500/15 text-amber-800 dark:text-amber-200 font-bold shadow-[0_3.5px_0_0_#D97706]';
+              btnStyle = 'border-2 border-amber-500 bg-amber-500/15 text-amber-200 font-bold shadow-[0_3px_0_0_#D97706]';
             } else if (isThisCorrect) {
-              btnStyle = 'border-2 border-emerald-500 bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 font-bold shadow-[0_3.5px_0_0_#059669]';
+              btnStyle = 'border-2 border-emerald-500 bg-emerald-500/15 text-emerald-300 font-bold shadow-[0_3px_0_0_#059669]';
             } else if (isSelected && !isThisCorrect) {
-              btnStyle = 'border-2 border-rose-500 bg-rose-500/15 text-rose-800 dark:text-rose-200 font-bold shadow-[0_3.5px_0_0_#E11D48]';
+              btnStyle = 'border-2 border-rose-500 bg-rose-500/15 text-rose-300 font-bold shadow-[0_3px_0_0_#E11D48]';
             } else {
-              btnStyle = 'opacity-40 border-2 border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#141A22]/50 dark:bg-[#1A232C]/50 text-muted-foreground shadow-none';
+              btnStyle = 'opacity-40 border-2 border-white/5 bg-[#050811] text-slate-500 shadow-none';
             }
           } else if (isSelected) {
-            btnStyle = 'border-2 border-[#5B5CE2] bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#8283FF] font-bold ring-2 ring-[#5B5CE2]/20 shadow-[0_3.5px_0_0_#38399E] active:translate-y-[3.5px] active:shadow-none';
+            btnStyle = 'border-2 border-[#F59E0B] bg-[#F59E0B]/15 text-[#FDE68A] font-bold ring-2 ring-[#F59E0B]/20 shadow-[0_3px_0_0_#B45309] active:translate-y-[3px] active:shadow-none';
           }
 
           return (
@@ -224,10 +224,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           onClick={handleManualSubmit}
           disabled={!selectedOption || isSubmitting}
-          className={`w-full py-3 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all touch-target ${
+          className={`w-full py-3 rounded-xl font-black text-sm flex items-center justify-center gap-2 transition-all touch-target ${
             selectedOption && !isSubmitting
-              ? 'bg-[#5B5CE2] hover:bg-[#4E4FD6] text-white shadow-[0_4px_0_0_#38399E] active:translate-y-[4px] active:shadow-none border-t border-white/25 cursor-pointer'
-              : 'bg-white dark:bg-[#141A22] dark:bg-[#1A232C] text-muted-foreground cursor-not-allowed shadow-none'
+              ? 'glova-gold-btn text-slate-950 shadow-md active:translate-y-[2px] cursor-pointer'
+              : 'bg-[#0B1224] border border-white/10 text-slate-500 cursor-not-allowed shadow-none'
           }`}
         >
           {isSubmitting ? (

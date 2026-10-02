@@ -32,16 +32,16 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
-      flat: 'bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-none text-slate-900 dark:text-[#EDEBE8]',
-      subtle: 'bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs text-slate-900 dark:text-[#EDEBE8]',
-      glow: 'bg-white dark:bg-[#141A22] border border-[#5B5CE2]/30 shadow-[0_4px_20px_-2px_rgba(91,92,226,0.12)] text-slate-900 dark:text-[#EDEBE8]',
-      bubble: 'bg-white dark:bg-[#141A22] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] text-slate-900 dark:text-[#EDEBE8] shadow-[0_8px_30px_-4px_rgba(15,23,42,0.06)] dark:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.3)]',
+      flat: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 shadow-none text-slate-100',
+      subtle: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-slate-100',
+      glow: 'bg-[#070B16]/85 backdrop-blur-md border border-[#F59E0B]/30 shadow-[0_4px_24px_rgba(245,158,11,0.15)] text-white',
+      bubble: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 text-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.6)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive
       ? isBubble
-        ? 'cursor-pointer hover:border-[#5B5CE2]/40 hover:shadow-[0_14px_38px_-6px_rgba(91,92,226,0.12)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50'
-        : 'cursor-pointer hover:border-[#5B5CE2]/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B5CE2]/50'
+        ? 'cursor-pointer hover:border-[#F59E0B]/40 hover:shadow-[0_14px_38px_-6px_rgba(245,158,11,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]/50'
+        : 'cursor-pointer hover:border-[#F59E0B]/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]/50'
       : '';
 
     const radiusClass = isBubble ? 'rounded-[26px]' : 'rounded-xl';
