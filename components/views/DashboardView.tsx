@@ -104,8 +104,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           ? `Practice: ${formattedTitle}`
           : `ทบทวนและซ่อมแซม: ${topWeakness.labelTh || formattedTitle}`,
         description: isEn
-          ? `Detected ${topWeakness.errorCount} mistakes in practice. A 4-minute focused drill will recover your confidence.`
-          : `ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง ในแบบทดสอบ ฝึกฝนสั้นๆ 4 นาทีเพื่อเสริมความแม่นยำ`,
+          ? `Detected ${topWeakness.errorCount} mistakes in practice. (แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง) A 4-minute focused drill will recover your confidence.`
+          : `ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง ในแบบทดสอบ (แนะนำเพราะ: ตรวจพบข้อผิดพลาด ${topWeakness.errorCount} ครั้ง) ฝึกฝนสั้นๆ 4 นาทีเพื่อเสริมความแม่นยำ`,
         cta: isEn ? 'START REPAIR (+20 XP)' : 'เริ่มฝึกจุดนี้ทันที',
         skill: 'Grammar & Phrasing',
         timeMin: 4,
@@ -164,7 +164,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* ========================================================================= */}
       <nav
         aria-label="Dashboard sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
         {/* Brand & Pill Nav Links */}
         <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
@@ -251,9 +251,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Search, Notifications & CTA Action */}
-        <div className="flex items-center gap-2.5 w-full md:w-auto justify-end">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full xl:w-auto justify-between sm:justify-end">
           {/* Search Pill */}
-          <div className="relative w-full sm:w-56">
+          <div className="relative w-full sm:w-48 md:w-56">
             <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
@@ -264,33 +264,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             />
           </div>
 
-          {/* Bell Icon */}
-          <button
-            type="button"
-            aria-label="Notifications"
-            className="w-8 h-8 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-slate-100 transition-colors shrink-0"
-          >
-            <Bell className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0">
+            {/* Bell Icon */}
+            <button
+              type="button"
+              aria-label="Notifications"
+              className="w-8 h-8 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 transition-colors shrink-0"
+            >
+              <Bell className="w-3.5 h-3.5" />
+            </button>
 
-          {/* User Profile Avatar with Ring */}
-          <div className="relative shrink-0">
-            <div className="w-9 h-9 rounded-full bg-amber-400/20 border-2 border-[#FFBA38] p-0.5 overflow-hidden flex items-center justify-center">
-              <span className="font-extrabold text-xs text-[#D98200] dark:text-[#FFBA38]">
-                {progress.currentLevel}
-              </span>
+            {/* User Profile Avatar with Ring */}
+            <div className="relative shrink-0">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400/20 border-2 border-[#FFBA38] p-0.5 overflow-hidden flex items-center justify-center">
+                <span className="font-extrabold text-[11px] sm:text-xs text-[#D98200] dark:text-[#FFBA38]">
+                  {progress.currentLevel}
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Dark Pill CTA Button */}
-          <button
-            type="button"
-            onClick={() => onNavigate('assessment')}
-            className="px-4 py-2 rounded-full text-xs font-black bg-[#18191B] dark:bg-white text-white dark:text-slate-950 shadow-sm hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center gap-1.5"
-          >
-            <Shield className="w-3.5 h-3.5 text-[#FA5D5D]" />
-            <span>Request Demo</span>
-          </button>
+            {/* Dark Pill CTA Button */}
+            <button
+              type="button"
+              onClick={() => onNavigate('assessment')}
+              className="px-3.5 sm:px-4 py-2 rounded-full text-xs font-black bg-[#18191B] dark:bg-white text-white dark:text-slate-950 shadow-sm hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center gap-1.5"
+            >
+              <Shield className="w-3.5 h-3.5 text-[#FA5D5D]" />
+              <span>Request Demo</span>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -326,27 +328,27 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Right Column: Floating Tag Cloud Illustration */}
-        <div className="lg:col-span-5 flex items-center justify-center relative min-h-[160px] sm:min-h-[190px]">
+        <div className="lg:col-span-5 flex items-center justify-center relative min-h-[170px] sm:min-h-[190px] py-4">
           {/* Central Circular Book Icon */}
-          <div className="relative z-10 w-20 h-20 rounded-full bg-white dark:bg-[#070B16] border-2 border-[#EAE4D5] dark:border-white/10 shadow-lg flex items-center justify-center p-3">
-            <BookOpen className="w-10 h-10 text-[#FA5D5D]" />
+          <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-[#070B16] border-2 border-[#EAE4D5] dark:border-white/10 shadow-lg flex items-center justify-center p-2.5 sm:p-3">
+            <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-[#FA5D5D]" />
           </div>
 
           {/* Floating Bubble Tags (Around Center) */}
-          <div className="absolute top-2 left-4 sm:left-12 px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FBBF24] font-bold text-xs shadow-xs border border-[#FDE5BC] dark:border-amber-500/20 flex items-center gap-1">
+          <div className="absolute top-1 left-2 sm:left-12 px-2.5 sm:px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FBBF24] font-bold text-[11px] sm:text-xs shadow-xs border border-[#FDE5BC] dark:border-amber-500/20 flex items-center gap-1">
             <span>#Math</span>
             <span className="text-[10px]">📈</span>
           </div>
 
-          <div className="absolute top-4 right-4 sm:right-10 px-3.5 py-1 rounded-full bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] dark:text-rose-300 font-bold text-xs shadow-xs border border-[#FCD3D1] dark:border-rose-500/20">
+          <div className="absolute top-1 right-2 sm:right-10 px-2.5 sm:px-3.5 py-1 rounded-full bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] dark:text-rose-300 font-bold text-[11px] sm:text-xs shadow-xs border border-[#FCD3D1] dark:border-rose-500/20">
             #Accounting
           </div>
 
-          <div className="absolute bottom-2 left-6 sm:left-16 px-3 py-1 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 font-bold text-xs shadow-xs border border-[#C5EBDA] dark:border-emerald-500/20">
+          <div className="absolute bottom-1 left-2 sm:left-16 px-2.5 sm:px-3 py-1 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 font-bold text-[11px] sm:text-xs shadow-xs border border-[#C5EBDA] dark:border-emerald-500/20">
             #Business
           </div>
 
-          <div className="absolute bottom-4 right-6 sm:right-14 px-3 py-1 rounded-full bg-[#F4F5F7] dark:bg-[#141C2B] text-slate-800 dark:text-slate-200 font-bold text-xs shadow-xs border border-[#E2E5EA] dark:border-slate-700/40">
+          <div className="absolute bottom-1 right-2 sm:right-14 px-2.5 sm:px-3 py-1 rounded-full bg-[#F4F5F7] dark:bg-[#141C2B] text-slate-800 dark:text-slate-200 font-bold text-[11px] sm:text-xs shadow-xs border border-[#E2E5EA] dark:border-slate-700/40">
             #Strategy
           </div>
 
@@ -612,6 +614,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <span>Speed Vocab Duel</span>
                 </button>
               </div>
+            </div>
+
+            {/* Quick Resume Card if lastActivity exists */}
+            {progress.lastActivity && (
+              <div className="bg-white/10 backdrop-blur-md rounded-[22px] p-4 sm:p-5 border border-white/15 space-y-2">
+                <div className="flex items-center justify-between text-xs text-emerald-200">
+                  <span className="font-bold">ดำเนินการต่อจากจุดเดิม</span>
+                  <span className="text-[10px] font-mono opacity-80">{progress.lastActivity.detail}</span>
+                </div>
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <div>
+                    <h4 className="text-sm sm:text-base font-black text-white">{progress.lastActivity.title}</h4>
+                    <p className="text-xs text-emerald-100/80">{progress.lastActivity.detail}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(progress.lastActivity?.type === 'grammar' ? 'grammar' : 'vocabulary')}
+                    className="px-4 py-2 rounded-full text-xs font-bold bg-[#FFBA38] text-slate-950 hover:bg-[#ffc65c] transition-all shrink-0"
+                  >
+                    ทำต่อทันที
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Emotional CEFR Building Journey Milestone */}
+            <div className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs font-sans text-emerald-100/90 flex items-center justify-between">
+              <span>{`คุณกำลังพัฒนาเพื่อก้าวสู่ระดับ ${progress.currentLevel === 'A1' ? 'A2' : progress.currentLevel === 'A2' ? 'B1' : progress.currentLevel === 'B1' ? 'B2' : progress.currentLevel === 'B2' ? 'C1' : 'C2'}`}</span>
+              <span className="font-mono font-bold text-[#FFBA38]">78%</span>
             </div>
           </div>
 

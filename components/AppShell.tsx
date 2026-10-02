@@ -26,7 +26,23 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     setIsProfileModalOpen,
   } = useApp();
 
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState<boolean>(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState<boolean>(() => {
+    if (typeof window !== 'undefined' && window.innerWidth > 0) {
+      return window.innerWidth < 1024;
+    }
+    return false;
+  });
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        setIsSidebarCollapsed(true);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState<boolean>(false);
 
   // Map pathname to NavView
