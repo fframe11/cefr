@@ -262,7 +262,7 @@ const MainAppContent: React.FC = () => {
           {currentView === 'dashboard' && (
             <DashboardView
               progress={progress}
-              onNavigate={setCurrentView}
+              onNavigate={(v) => setCurrentView(v as NavView)}
               onStartRemediation={handleStartRemediation}
             />
           )}

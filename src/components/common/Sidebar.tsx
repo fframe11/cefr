@@ -23,6 +23,7 @@ export type NavView =
   | 'writing'
   | 'speaking'
   | 'mockExam'
+  | 'mock-exam'
   | 'analytics'
   | 'profile'
   | 'compete'

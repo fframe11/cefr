@@ -43,6 +43,28 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Background Prefetching: Pre-cache primary learning studios into browser memory
+  React.useEffect(() => {
+    const studios = [
+      '/dashboard',
+      '/vocabulary',
+      '/grammar',
+      '/reading',
+      '/listening',
+      '/mock-exams',
+      '/assessment',
+      '/compete',
+      '/ranking',
+      '/profile',
+    ];
+    studios.forEach((r) => {
+      try {
+        router.prefetch(r);
+      } catch {}
+    });
+  }, [router]);
+
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState<boolean>(false);
 
   // Map pathname to NavView

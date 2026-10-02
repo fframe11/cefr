@@ -109,7 +109,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [selectedExam, setSelectedExam] = useState<CambridgeExamCode>('B2');
+  const [selectedExam, setSelectedExam] = useState<CambridgeExamCode>('FCE');
   const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
