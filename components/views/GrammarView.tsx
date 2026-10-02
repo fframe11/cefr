@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { GRAMMAR_BANK } from '../../data/grammarBank';
 import { GrammarTopic, Question } from '../../types';
 import { QuestionCard } from '../common/QuestionCard';
@@ -87,6 +88,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   onQuestionCompleted,
   activeTopicId,
 }) => {
+  const router = useRouter();
   const { t, language } = useTranslation();
   const isEn = language === 'en';
   const [topics, setTopics] = useState<GrammarTopic[]>(GRAMMAR_BANK);
@@ -182,91 +184,74 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
-      <nav
-        aria-label="Grammar sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Studio Identity */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Grammar Studio
-              </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                GRAMMAR LAB // A1-C2
-              </span>
-            </div>
-          </div>
-
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {/* Current Active Topic Indicator */}
-          {currentTopic && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-              <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
-              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-                {currentTopic.titleEn}
-              </span>
-            </div>
-          )}
+      {/* Top Header: Topic Selector Pills Carousel & Test/Study Tab Switcher */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-3 border-b border-slate-200/80 dark:border-white/10">
+        {/* Topic Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-1 max-w-full">
+          {topics.map((topic) => {
+            const isSelected = topic.id === currentTopic?.id;
+            return (
+              <button
+                key={topic.id}
+                type="button"
+                onClick={() => {
+                  setSelectedTopicId(topic.id);
+                  setActiveQuestionIdx(0);
+                }}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 cursor-pointer ${
+                  isSelected
+                    ? 'bg-[#3B82F6] dark:bg-[#3B82F6] text-white shadow-xs font-black'
+                    : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
+                }`}
+              >
+                <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
+                <span className="truncate max-w-[170px]">
+                  {isEn ? topic.titleEn : topic.titleTh}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Cambridge Badge & Topic Counter */}
-        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
-          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>{isEn ? `${topics.length} Grammar Topics` : `${topics.length} หัวข้อไวยากรณ์`}</span>
-          </div>
-
-          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Interactive Grammar</span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Title & Description */}
-      <div className="space-y-1">
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-          {isEn ? 'English Grammar Studio & Applications' : 'ไวยากรณ์และการประยุกต์ใช้'}
-        </h1>
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
-          {isEn
-            ? 'Understand sentence structures, grammar rules, and practice with real questions and clear explanations.'
-            : 'เข้าใจโครงสร้างประโยค กฎไวยากรณ์ และฝึกฝนด้วยโจทย์จริงพร้อมคำอธิบายละเอียด'}
-        </p>
-      </div>
-
-      {/* Topic Switcher Pills Carousel */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-        {topics.map((topic) => {
-          const isSelected = topic.id === currentTopic?.id;
-          return (
+        {/* Tab Switcher: Test vs Study */}
+        {currentTopic && (
+          <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shrink-0 self-start md:self-auto">
             <button
-              key={topic.id}
               type="button"
-              onClick={() => {
-                setSelectedTopicId(topic.id);
-                setActiveQuestionIdx(0);
-              }}
-              className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
-                isSelected
-                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
+              onClick={() => setActiveGrammarTab('test')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                activeGrammarTab === 'test'
+                  ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <GlovaLevelBadge level={topic.cefrLevel} size="sm" />
-              <span className="truncate max-w-[180px]">
-                {isEn ? topic.titleEn : topic.titleTh}
-              </span>
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>{isEn ? 'Practice Test' : 'ทำแบบทดสอบ'}</span>
+              {displayedQuestions.length > 0 && (
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
+                  activeGrammarTab === 'test'
+                    ? 'bg-white/20 text-white'
+                    : 'bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300'
+                }`}>
+                  {displayedQuestions.length}
+                </span>
+              )}
             </button>
-          );
-        })}
+
+            <button
+              type="button"
+              onClick={() => setActiveGrammarTab('study')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                activeGrammarTab === 'study'
+                  ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>{isEn ? 'Learn Concept' : 'เรียนรู้เนื้อหา'}</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Loading state indicator */}
@@ -280,97 +265,172 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       )}
 
       {/* Error state */}
-      {error && (
+      {error && topics.length === 0 && (
         <ErrorMessage message={error} onRetry={fetchTopics} />
       )}
 
-      {/* Tab Switcher: Strictly Separate Practice Test vs Learn Concept */}
-      {currentTopic && (
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EAE4D5] dark:border-white/10 pb-4">
-          <div className="flex items-center gap-2 p-1 rounded-2xl bg-slate-100 dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 w-fit">
+      {/* 2. Main View Mode: Dedicated Test Tab (Matching Reference Images 1 & 2) */}
+      {currentTopic && activeGrammarTab === 'test' && (
+        <div className="max-w-4xl mx-auto w-full space-y-6">
+          {/* Top Lesson Unit Header */}
+          <div className="flex items-center justify-between pb-1 px-1">
+            <div>
+              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                Unit {topics.findIndex((t) => t.id === currentTopic.id) + 1 || 1}
+              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+                {currentTopic.titleEn}
+              </h2>
+            </div>
             <button
               type="button"
-              onClick={() => setActiveGrammarTab('test')}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-                activeGrammarTab === 'test'
-                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
-              }`}
+              onClick={() => {
+                const nextIdx = (topics.findIndex((t) => t.id === currentTopic.id) + 1) % topics.length;
+                setSelectedTopicId(topics[nextIdx].id);
+                setActiveQuestionIdx(0);
+              }}
+              className="flex items-center gap-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors cursor-pointer group"
             >
-              <CheckCircle2 className="w-4 h-4" />
-              <span>{isEn ? 'Practice Test' : 'ทำแบบทดสอบ'}</span>
-              {displayedQuestions.length > 0 && (
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono ${
-                  activeGrammarTab === 'test'
-                    ? 'bg-white/20 text-white'
-                    : 'bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300'
-                }`}>
-                  {displayedQuestions.length}
-                </span>
-              )}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveGrammarTab('study')}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-                activeGrammarTab === 'study'
-                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>{isEn ? 'Learn Concept' : 'เรียนรู้เนื้อหา'}</span>
+              <span>{isEn ? 'Next lesson' : 'บทเรียนถัดไป'}</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
 
-          {activeGrammarTab === 'test' && (
-            <button
-              type="button"
-              onClick={() => setActiveGrammarTab('study')}
-              className="flex items-center gap-1.5 text-xs font-bold text-[#FA5D5D] hover:underline cursor-pointer self-start sm:self-auto"
-            >
-              <Lightbulb className="w-4 h-4" />
-              <span>{isEn ? 'Review grammar rules' : 'เปิดอ่านสรุปเนื้อหาก่อนทำโจทย์'}</span>
-            </button>
-          )}
+          {/* Hero Concept Card Banner with Orbiting Ellipse Art & Cosmic Swirl (from Image 2) */}
+          <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+              {/* Left Column: Headline + Orbiting Ellipse Artwork + Feature Pills */}
+              <div className="space-y-6 max-w-lg">
+                <div className="relative inline-block">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
+                    One small word,<br />one big difference<br />in meaning
+                  </h3>
 
-          {activeGrammarTab === 'study' && (
-            <button
-              type="button"
-              onClick={() => setActiveGrammarTab('test')}
-              className="flex items-center gap-1.5 text-xs font-bold text-[#FA5D5D] hover:underline cursor-pointer self-start sm:self-auto"
-            >
-              <ChevronRight className="w-4 h-4" />
-              <span>{isEn ? 'Go to practice test' : 'ไปทำแบบทดสอบ'}</span>
-            </button>
-          )}
-        </div>
-      )}
+                  {/* Playful orbiting ellipse SVG and colored dots matching reference screenshot */}
+                  <svg
+                    className="absolute -top-3 -left-4 w-64 h-32 pointer-events-none select-none opacity-85"
+                    viewBox="0 0 256 128"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <ellipse cx="120" cy="64" rx="105" ry="46" stroke="#93C5FD" strokeWidth="1.5" strokeDasharray="3 3" transform="rotate(-7 120 64)" />
+                    <ellipse cx="120" cy="64" rx="114" ry="40" stroke="#60A5FA" strokeWidth="1.2" strokeOpacity="0.4" transform="rotate(12 120 64)" />
+                    <circle cx="230" cy="54" r="5" fill="#38BDF8" />
+                    <circle cx="16" cy="88" r="4.5" fill="#FA5D5D" />
+                    <circle cx="196" cy="106" r="3.5" fill="#FA5D5D" />
+                    <circle cx="100" cy="18" r="3" fill="#38BDF8" />
+                  </svg>
+                </div>
 
-      {/* 2. Main View Mode: Dedicated Test Tab (Strictly Questions Only) */}
-      {currentTopic && activeGrammarTab === 'test' && (
-        <div className="max-w-4xl mx-auto w-full space-y-5">
-          <div className="flex items-center justify-between pb-1 px-1">
-            <div className="flex items-center gap-2.5">
-              <GlovaLevelBadge level={currentTopic.cefrLevel} size="sm" />
-              <div>
-                <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
-                  {isEn ? currentTopic.titleEn : currentTopic.titleTh}
-                </h4>
-                <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                  {isEn ? 'Practice Question Set' : 'ชุดแบบทดสอบวัดระดับ'}
-                </p>
+                {/* Feature Micro-Badges: G, V, P */}
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-white/10 border border-slate-200/80 dark:border-white/10 shadow-xs text-xs">
+                    <span className="w-5 h-5 rounded-md bg-slate-900 text-white font-extrabold flex items-center justify-center text-[10px]">
+                      G
+                    </span>
+                    <span className="font-bold text-slate-800 dark:text-slate-200">
+                      {currentTopic.titleEn.split(' ')[0] || 'Articles'}
+                    </span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-white/10 border border-slate-200/80 dark:border-white/10 shadow-xs text-xs">
+                    <span className="w-5 h-5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-extrabold flex items-center justify-center text-[10px] border border-slate-200 dark:border-white/10">
+                      V
+                    </span>
+                    <span className="font-bold text-slate-800 dark:text-slate-200">
+                      Collocation: word pairs
+                    </span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-white/10 border border-slate-200/80 dark:border-white/10 shadow-xs text-xs">
+                    <span className="w-5 h-5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-extrabold flex items-center justify-center text-[10px] border border-slate-200 dark:border-white/10">
+                      P
+                    </span>
+                    <span className="font-bold text-slate-800 dark:text-slate-200">
+                      Sentence stress
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Character Vector Art with Cosmic Wave (from Image 2) */}
+              <div className="shrink-0 relative w-60 h-44 sm:w-72 sm:h-48 flex items-center justify-center select-none pointer-events-none">
+                <svg width="250" height="180" viewBox="0 0 250 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M25 45 C65 15, 125 50, 155 85 C185 120, 235 115, 245 80 C255 45, 225 15, 190 20 C155 25, 135 60, 105 95 C75 130, 15 145, 10 105 C5 65, 0 60, 25 45 Z"
+                    fill="#1E2235"
+                  />
+                  <circle cx="45" cy="50" r="14" fill="#3B82F6" />
+                  <circle cx="45" cy="50" r="7.5" fill="#F8FAFC" />
+                  <ellipse cx="45" cy="50" rx="20" ry="7.5" stroke="#93C5FD" strokeWidth="1.2" transform="rotate(-25 45 50)" />
+                  <circle cx="210" cy="40" r="3" fill="#FA5D5D" />
+                  <circle cx="225" cy="72" r="2" fill="#FFFFFF" />
+                  <circle cx="175" cy="105" r="2.5" fill="#38BDF8" />
+                  <circle cx="85" cy="125" r="2" fill="#FFFFFF" />
+                  <rect x="120" y="65" width="28" height="42" rx="9" fill="#3B82F6" />
+                  <rect x="122" y="105" width="11" height="38" rx="3.5" fill="#1E293B" />
+                  <rect x="136" y="105" width="11" height="38" rx="3.5" fill="#1E293B" />
+                  <rect x="119" y="141" width="15" height="5.5" rx="2.5" fill="#FFFFFF" />
+                  <rect x="135" y="141" width="15" height="5.5" rx="2.5" fill="#FFFFFF" />
+                  <circle cx="134" cy="48" r="10" fill="#FBCFE8" />
+                  <path d="M124 45 C124 38, 144 38, 144 45 Z" fill="#1E293B" />
+                  <rect x="130" y="74" width="8" height="14" rx="2" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+                </svg>
               </div>
             </div>
+          </div>
 
-            {displayedQuestions.length > 0 && (
-              <span className="text-xs text-slate-700 dark:text-slate-200 font-mono font-bold bg-white dark:bg-[#1E1B28] px-4 py-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-                {isEn
-                  ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
-                  : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
+          {/* Skill Navigation Tabs with Blue Underline Indicator (from Image 1 & 2) */}
+          <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto border-b border-slate-200/80 dark:border-white/10 pb-0.5 scrollbar-none pt-1">
+            {[
+              { key: 'reading', label: 'Reading', route: '/reading' },
+              { key: 'grammar', label: 'Grammar', route: '/grammar' },
+              { key: 'pronunciation', label: 'Pronunciation', route: '/speaking' },
+              { key: 'listening', label: 'Listening', route: '/listening' },
+              { key: 'vocabulary', label: 'Vocabulary', route: '/vocabulary' },
+              { key: 'speaking', label: 'Speaking', route: '/speaking' },
+            ].map((skill) => {
+              const isActive = skill.key === 'grammar';
+              return (
+                <button
+                  key={skill.key}
+                  type="button"
+                  onClick={() => {
+                    if (!isActive && skill.route) {
+                      router.push(skill.route);
+                    }
+                  }}
+                  className={`relative pb-3 text-sm font-semibold transition-all shrink-0 cursor-pointer ${
+                    isActive
+                      ? 'text-slate-900 dark:text-white font-extrabold'
+                      : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                  }`}
+                >
+                  <span>{skill.label}</span>
+                  {isActive && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#3B82F6] rounded-full" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Task / Instruction Header (from Image 1 & 2) */}
+          <div className="space-y-1.5 pt-1">
+            <div className="flex items-center gap-2.5">
+              <span className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/60 text-[#2563EB] dark:text-blue-400 font-extrabold text-xs flex items-center justify-center">
+                1
               </span>
-            )}
+              <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
+                {isEn ? 'Grammar Application' : 'ไวยากรณ์และการประยุกต์ใช้'}
+              </h4>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium pl-8.5">
+              <span className="font-extrabold text-slate-900 dark:text-white mr-2">A</span>
+              {isEn
+                ? 'Choose the correct form to complete each sentence according to grammar rules.'
+                : 'เลือกรูปคำและโครงสร้างประโยคที่ถูกต้องตามหลักไวยากรณ์'}
+            </p>
           </div>
 
           {loadingQuestions && displayedQuestions.length === 0 && (
@@ -393,45 +453,47 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
             />
           )}
 
-          {currentQuestion && (
-            <div className="space-y-4">
-              <QuestionCard
-                key={currentQuestion.id}
-                question={currentQuestion}
-                questionNumber={activeQuestionIdx + 1}
-                totalQuestions={displayedQuestions.length}
-                onAnswer={(selectedKey, isCorrect) => {
-                  onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
-                }}
-                showExplanationImmediately={true}
-              />
+          {/* Stacked Question Cards matching Image 1 & Image 2 (Question 1, Question 2 ...) */}
+          {displayedQuestions.length > 0 && (
+            <div className="space-y-5">
+              {displayedQuestions.map((q, idx) => (
+                <QuestionCard
+                  key={q.id}
+                  question={q}
+                  questionNumber={idx + 1}
+                  totalQuestions={displayedQuestions.length}
+                  onAnswer={(selectedKey, isCorrect) => {
+                    onQuestionCompleted?.(q.id, isCorrect, q.weaknessTag);
+                  }}
+                  showExplanationImmediately={true}
+                />
+              ))}
 
-              {/* Next / Previous Question Action Bar */}
-              <div className="flex items-center justify-between pt-2">
+              {/* Action Bar for Progression */}
+              <div className="flex items-center justify-between pt-3">
                 <button
                   type="button"
-                  onClick={handlePrevQuestion}
-                  disabled={activeQuestionIdx === 0}
-                  className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  onClick={() => {
+                    const prevIdx = (topics.findIndex((t) => t.id === currentTopic.id) - 1 + topics.length) % topics.length;
+                    setSelectedTopicId(topics[prevIdx].id);
+                    setActiveQuestionIdx(0);
+                  }}
+                  className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
                   <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                  <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                  <span>{isEn ? 'Previous Topic' : 'หัวข้อก่อนหน้า'}</span>
                 </button>
 
                 <button
                   type="button"
-                  onClick={handleNextQuestion}
+                  onClick={() => {
+                    const nextIdx = (topics.findIndex((t) => t.id === currentTopic.id) + 1) % topics.length;
+                    setSelectedTopicId(topics[nextIdx].id);
+                    setActiveQuestionIdx(0);
+                  }}
                   className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
                 >
-                  <span>
-                    {activeQuestionIdx < displayedQuestions.length - 1
-                      ? isEn
-                        ? 'Next Question'
-                        : 'ข้อถัดไป'
-                      : isEn
-                      ? 'Next Topic'
-                      : 'หัวข้อถัดไป'}
-                  </span>
+                  <span>{isEn ? 'Next Topic' : 'หัวข้อถัดไป'}</span>
                   <ChevronRight className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
