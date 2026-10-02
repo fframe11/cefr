@@ -167,7 +167,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   const [isRecording, setIsRecording] = useState(false);
   const [hasRecorded, setHasRecorded] = useState(false);
   const [activeCefr, setActiveCefr] = useState<CefrLevelKey>('B1');
-  const [heroLangIdx, setHeroLangIdx] = useState(0);
   const [selectedQuizAnswer, setSelectedQuizAnswer] = useState('different');
   const [selectedHeroLevelKey, setSelectedHeroLevelKey] = useState<'A1' | 'B1' | 'C1' | 'C2'>('C1');
   const [isLiveVideoPlaying, setIsLiveVideoPlaying] = useState(true);
@@ -212,13 +211,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   ];
 
   const currentHeroLevel = heroLevelCatalog.find((l) => l.key === selectedHeroLevelKey) || heroLevelCatalog[2];
-
-  const heroLanguages = [
-    { name: isEn ? 'English' : 'อังกฤษ', flag: UkFlagSvg, tag: 'CEFR C1' },
-    { name: isEn ? 'Spanish' : 'สเปน', flag: SpanishFlagSvg, tag: 'DELE B2' },
-    { name: isEn ? 'French' : 'ฝรั่งเศส', flag: FrenchFlagSvg, tag: 'DALF C1' },
-    { name: isEn ? 'Thai' : 'ไทย', flag: ThaiFlagSvg, tag: 'Everyday Fluency' },
-  ];
 
   const handleStart = () => {
     if (onStartLearning) {
@@ -310,62 +302,6 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       setHasRecorded(true);
     }, 1800);
   };
-
-  // 4 Pastel Tutor Profiles from Outcrowd Dribbble Keyframes
-  const tutors = [
-    {
-      id: 'jordan',
-      name: 'Jordan Burgess',
-      photo: '/images/landing/mondly_tutor_jordan.jpg',
-      bgClass: 'bg-[#DDF0FF] dark:bg-[#152332]',
-      tagBg: 'bg-[#0284C7]/15 text-[#0284C7] dark:text-[#38BDF8]',
-      specialty: isEn ? 'Business English & IELTS' : 'ภาษาอังกฤษธุรกิจและการสอบ IELTS',
-      rating: '4.9',
-      reviews: '124',
-      rate: '$28',
-      nativeFlag: UkFlagSvg,
-      lessonsGiven: '850+ Lessons',
-    },
-    {
-      id: 'madeleine',
-      name: 'Madeleine Pitts',
-      photo: '/images/landing/mondly_tutor_madeleine.jpg',
-      bgClass: 'bg-[#FFF7D6] dark:bg-[#2A2616]',
-      tagBg: 'bg-[#D97706]/15 text-[#D97706] dark:text-[#FBBF24]',
-      specialty: isEn ? 'Conversational Fluency' : 'การสนทนาโต้ตอบคล่องแคล่ว',
-      rating: '5.0',
-      reviews: '98',
-      rate: '$32',
-      nativeFlag: UsFlagSvg,
-      lessonsGiven: '1,200+ Lessons',
-    },
-    {
-      id: 'maxwell',
-      name: 'Maxwell Tan',
-      photo: '/images/landing/mondly_tutor_maxwell.jpg',
-      bgClass: 'bg-[#EAE4FF] dark:bg-[#231E33]',
-      tagBg: 'bg-[#7C3AED]/15 text-[#7C3AED] dark:text-[#A78BFA]',
-      specialty: isEn ? 'Academic Writing & CAE' : 'การเขียนวิชาการและข้อสอบ CAE',
-      rating: '4.9',
-      reviews: '87',
-      rate: '$35',
-      nativeFlag: UkFlagSvg,
-      lessonsGiven: '640+ Lessons',
-    },
-    {
-      id: 'kaitlin',
-      name: 'Kaitlin Hale',
-      photo: '/images/landing/mondly_tutor_kaitlin.jpg',
-      bgClass: 'bg-[#FFE8DE] dark:bg-[#301E1A]',
-      tagBg: 'bg-[#EA580C]/15 text-[#EA580C] dark:text-[#FB923C]',
-      specialty: isEn ? 'Pronunciation & Phonics' : 'การออกเสียงสากลและโฟนิกส์',
-      rating: '4.8',
-      reviews: '156',
-      rate: '$25',
-      nativeFlag: UsFlagSvg,
-      lessonsGiven: '920+ Lessons',
-    },
-  ];
 
   // 8 Specialized Modular Studios
   const studios = [
@@ -660,42 +596,25 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 dark:bg-white/10 border border-[#FA5D5D]/25 shadow-2xs backdrop-blur-xs">
             <span className="w-2 h-2 rounded-full bg-[#FA5D5D] animate-pulse" />
             <span className="text-xs font-bold text-[#FA5D5D] uppercase tracking-wider">
-              {isEn ? 'Language Learning Reimagined • CEFR A1-C2' : 'การเรียนภาษาแนวใหม่ตามมาตรฐานสากล CEFR'}
+              {isEn ? 'English Learning Reimagined • CEFR A1-C2' : 'การเรียนรู้ภาษาอังกฤษด้วยตนเองตามมาตรฐานสากล CEFR'}
             </span>
           </div>
 
-          {/* Centered Headline with Interactive Cursor Tag on Language */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[4rem] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+          {/* Centered Contiguous Headline (Senior UI Polish - Natural Typography Flow) */}
+          <h1 className="text-3xl sm:text-5xl lg:text-[3.75rem] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.2] max-w-4xl mx-auto">
             {isEn ? (
               <>
-                Easy{' '}
-                <span className="relative inline-block cursor-pointer" onClick={() => setHeroLangIdx((p) => (p + 1) % heroLanguages.length)}>
-                  <span className="px-3.5 py-1 rounded-2xl bg-white dark:bg-[#1E1B28] border-2 border-slate-900 dark:border-white shadow-sm text-slate-900 dark:text-white inline-flex items-center gap-2">
-                    {React.createElement(heroLanguages[heroLangIdx].flag, { className: 'w-5 h-5' })}
-                    <span>{heroLanguages[heroLangIdx].name}</span>
-                  </span>
-                  {/* Outcrowd Black Arrow Cursor Badge */}
-                  <span className="hidden sm:flex absolute -bottom-4 right-0 translate-y-full px-2 py-0.5 rounded-md bg-slate-950 text-white text-[10px] font-bold shadow-md items-center gap-1 z-10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FA5D5D]" />
-                    <span>{heroLanguages[heroLangIdx].tag}</span>
-                  </span>
-                </span>{' '}
-                mastery with our platform
+                Master English with Confidence Through{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA5D5D] via-amber-500 to-[#FA5D5D]">
+                  Cambridge CEFR Standards
+                </span>
               </>
             ) : (
               <>
-                เก่งภาษา{' '}
-                <span className="relative inline-block cursor-pointer" onClick={() => setHeroLangIdx((p) => (p + 1) % heroLanguages.length)}>
-                  <span className="px-3.5 py-1 rounded-2xl bg-white dark:bg-[#1E1B28] border-2 border-slate-900 dark:border-white shadow-sm text-slate-900 dark:text-white inline-flex items-center gap-2">
-                    {React.createElement(heroLanguages[heroLangIdx].flag, { className: 'w-5 h-5' })}
-                    <span>{heroLanguages[heroLangIdx].name}</span>
-                  </span>
-                  <span className="hidden sm:flex absolute -bottom-4 right-0 translate-y-full px-2 py-0.5 rounded-md bg-slate-950 text-white text-[10px] font-bold shadow-md items-center gap-1 z-10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FA5D5D]" />
-                    <span>{heroLanguages[heroLangIdx].tag}</span>
-                  </span>
-                </span>{' '}
-                อย่างมั่นใจด้วยหลักสูตรระดับโลก
+                เก่งภาษาอังกฤษอย่างมั่นใจ ด้วยหลักสูตรและแบบฝึกหัด{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA5D5D] via-amber-500 to-[#FA5D5D]">
+                  มาตรฐาน CEFR สากล
+                </span>
               </>
             )}
           </h1>
@@ -703,8 +622,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* Subtitle */}
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto pt-2">
             {isEn
-              ? 'Discover a world of opportunities with our comprehensive courses tailored to all levels. Master languages effortlessly and connect with cultures worldwide.'
-              : 'เปิดรับทุกโอกาสแห่งการเรียนรู้ด้วยหลักสูตรครบวงจรที่ปรับให้เหมาะกับทุกระดับ พัฒนาทักษะภาษาอังกฤษอย่างเป็นธรรมชาติและสื่อสารกับผู้คนทั่วโลกได้อย่างมั่นใจ'}
+              ? 'Develop all 6 English language skills systematically at your own pace from A1 to C2 with authentic practice exercises and Cambridge exam simulations.'
+              : 'พัฒนาทักษะภาษาอังกฤษทั้ง 6 ด้านด้วยตนเองอย่างเป็นระบบ ครอบคลุมตั้งแต่ระดับ A1 ถึง C2 พร้อมคลังข้อสอบและแบบฝึกหัดเสมือนจริง'}
           </p>
 
           {/* Centered Dual Pill CTAs */}
@@ -729,24 +648,21 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </button>
           </div>
 
-          {/* Social Proof Learner Stack */}
-          <div className="flex items-center justify-center gap-3 pt-2 text-xs text-slate-600 dark:text-slate-400">
-            <div className="flex -space-x-2">
-              <span className="w-8 h-8 rounded-full border-2 border-white dark:border-[#13111C] bg-[#FA5D5D]/20 text-[#FA5D5D] font-bold text-xs flex items-center justify-center">J</span>
-              <span className="w-8 h-8 rounded-full border-2 border-white dark:border-[#13111C] bg-[#38BDF8]/20 text-[#38BDF8] font-bold text-xs flex items-center justify-center">M</span>
-              <span className="w-8 h-8 rounded-full border-2 border-white dark:border-[#13111C] bg-[#10B981]/20 text-[#10B981] font-bold text-xs flex items-center justify-center">K</span>
-              <span className="w-8 h-8 rounded-full border-2 border-white dark:border-[#13111C] bg-[#F59E0B]/20 text-[#F59E0B] font-bold text-xs flex items-center justify-center">+</span>
+          {/* Verified Accreditation Standard Banner (Zero Fake User Metrics) */}
+          <div className="flex items-center justify-center gap-2 pt-2 text-xs text-slate-600 dark:text-slate-400 flex-wrap">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 font-bold font-mono">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span>{isEn ? 'Cambridge English Scale Aligned' : 'มาตรฐานเคมบริดจ์สากล'}</span>
             </div>
-            <div className="flex items-center gap-1.5 font-semibold">
-              <span className="flex text-amber-500">
-                <Star className="w-3.5 h-3.5 fill-amber-500" />
-                <Star className="w-3.5 h-3.5 fill-amber-500" />
-                <Star className="w-3.5 h-3.5 fill-amber-500" />
-                <Star className="w-3.5 h-3.5 fill-amber-500" />
-                <Star className="w-3.5 h-3.5 fill-amber-500" />
-              </span>
-              <span className="font-bold text-slate-900 dark:text-white">4.9</span>
-              <span>• {isEn ? '60k+ active learners worldwide' : 'ผู้เรียนกว่า 60,000 คนทั่วโลก'}</span>
+            <span className="hidden sm:inline text-slate-400">•</span>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/25 font-bold font-mono">
+              <Layers className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+              <span>{isEn ? '6 Core Skill Studios • A1 to C2' : 'ครอบคลุม 6 ทักษะ A1 - C2'}</span>
+            </div>
+            <span className="hidden sm:inline text-slate-400">•</span>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-400 border border-sky-500/25 font-bold font-mono">
+              <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+              <span>{isEn ? '500+ Practice Exercises' : 'แบบฝึกหัดกว่า 500+ ชุด'}</span>
             </div>
           </div>
         </div>
@@ -865,7 +781,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
           {/* Bottom Floating Row: Live Coaching Room Status & Interactive Video Bar */}
           <div className="relative z-20 flex flex-col md:flex-row items-stretch md:items-end justify-between gap-4 w-full pt-6">
-            {/* Floating Card 3: Live Coaching Room Status */}
+            {/* Floating Card 3: AI Speaking Lab Status */}
             <div className="inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-3 rounded-2xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-2xl">
               <span className="relative flex h-3 w-3 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -873,10 +789,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               </span>
               <div className="text-left min-w-0">
                 <span className="text-xs font-bold text-slate-900 dark:text-white block truncate">
-                  {isEn ? 'Live Speaking Room • Active Now' : 'ห้องสนทนาสด • พร้อมฝึกทันที'}
+                  {isEn ? 'AI Speaking & Accent Lab • Active' : 'ห้องฝึกพูดและสำเนียง AI • พร้อมฝึกทันที'}
                 </span>
                 <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
-                  {isEn ? 'Join 24 learners in Oxford Accent Clinic' : 'มีผู้เรียน 24 คนกำลังฝึกสำเนียงบริติช'}
+                  {isEn ? 'Automated speech feedback & phoneme clinic' : 'ประเมินสำเนียงและจังหวะการพูดด้วย AI ทันที'}
                 </span>
               </div>
               <button
@@ -884,17 +800,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 onClick={() => router.push('/speaking')}
                 className="ml-2 px-3 py-1.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-[11px] font-bold shadow-xs cursor-pointer transition-colors shrink-0"
               >
-                {isEn ? 'Join' : 'เข้าร่วม'}
+                {isEn ? 'Practice' : 'ฝึกพูด'}
               </button>
             </div>
 
-            {/* Floating Interactive Video Player Bar (Outcrowd Mondly Live Video Simulation) */}
+            {/* Floating Interactive Video Player Bar (Oxford Audio Lecture Simulation) */}
             <div className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-black/75 backdrop-blur-md text-white border border-white/15 shadow-2xl text-xs">
               <button
                 type="button"
                 onClick={() => setIsLiveVideoPlaying(!isLiveVideoPlaying)}
                 className="w-8 h-8 rounded-full bg-white/20 hover:bg-[#FA5D5D] text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
-                aria-label={isLiveVideoPlaying ? 'Pause video' : 'Play video'}
+                aria-label={isLiveVideoPlaying ? 'Pause audio' : 'Play audio'}
               >
                 {isLiveVideoPlaying ? <Square className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
               </button>
@@ -902,7 +818,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
                 <span className="font-semibold text-white/90 truncate max-w-[180px] sm:max-w-[220px]">
-                  {isEn ? 'Sarah Mitchell • Oxford Tutor' : 'ซาร่าห์ มิทเชลล์ • ติวเตอร์อ็อกซ์ฟอร์ด'}
+                  {isEn ? 'Oxford English Listening Lab' : 'สตูดิโอการฟัง • เสียงบรรยายมาตรฐานอ็อกซ์ฟอร์ด'}
                 </span>
               </div>
 
@@ -929,20 +845,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. SECTION 2: 50+ LANGUAGES FLAG CARPET (Outcrowd Mondly Keyframe 5s)      */}
+      {/* 2. SECTION 2: CEFR CURRICULUM ARCHITECTURE                                */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#38BDF8]/10 text-[#0284C7] dark:text-[#38BDF8] border border-[#38BDF8]/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Global Multilingual Reach' : 'ครอบคลุมภาษาสากลทั่วโลก'}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10B981]/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
+            {isEn ? 'CEFR & Cambridge Benchmark' : 'มาตรฐานสากล CEFR และเคมบริดจ์'}
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'We have teachers in over 50 languages!' : 'เรามีบทเรียนและครูผู้สอนมากกว่า 50 ภาษา!'}
+            {isEn ? 'Comprehensive English Curriculum Across All CEFR Bands' : 'หลักสูตรภาษาอังกฤษครบวงจร ครอบคลุมทุกระดับ CEFR'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'From beginner foundation to master proficiency, learn with native-calibrated materials tailored to your native mother tongue.'
-              : 'ตั้งแต่ระดับเริ่มต้น A1 ไปจนถึง C2 ฝึกฝนด้วยเนื้อหาที่เทียบมาตรฐานเคมบริดจ์และออกแบบมาให้เข้าใจง่าย'}
+              ? 'From foundational A1 to master C2 proficiency, master English systematically through self-paced standardized drills.'
+              : 'ตั้งแต่ระดับเริ่มต้น A1 ไปจนถึงระดับเชี่ยวชาญ C2 เรียนรู้ด้วยตนเองอย่างเป็นระบบผ่านแบบฝึกหัดมาตรฐานสากล'}
           </p>
           <div className="pt-2">
             <button
@@ -950,42 +866,51 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               onClick={() => scrollToSection('studios')}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-[#FA5D5D] dark:hover:bg-[#FA5D5D] dark:hover:text-white font-bold text-xs transition-colors cursor-pointer shadow-sm"
             >
-              <span>{isEn ? 'Find your tutor' : 'ค้นหาครูและบทเรียน'}</span>
+              <span>{isEn ? 'Explore skill studios' : 'สำรวจสตูดิโอการเรียนรู้'}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
-        {/* Grid of Rounded Country Language Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3.5">
+        {/* Grid of 6 CEFR Bands + Core Skill Focus */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
           {[
-            { name: isEn ? 'British English' : 'ภาษาอังกฤษ สำเนียงบริติช', flag: UkFlagSvg, count: '3,860 Words' },
-            { name: isEn ? 'American English' : 'ภาษาอังกฤษ สำเนียงอเมริกัน', flag: UsFlagSvg, count: '3,450 Words' },
-            { name: isEn ? 'Spanish' : 'ภาษาสเปน', flag: SpanishFlagSvg, count: '2,900 Words' },
-            { name: isEn ? 'French' : 'ภาษาฝรั่งเศส', flag: FrenchFlagSvg, count: '2,640 Words' },
-            { name: isEn ? 'German' : 'ภาษาเยอรมัน', flag: GermanFlagSvg, count: '2,400 Words' },
-            { name: isEn ? 'Italian' : 'ภาษาอิตาลี', flag: ItalianFlagSvg, count: '2,150 Words' },
-            { name: isEn ? 'Japanese' : 'ภาษาญี่ปุ่น', flag: JapaneseFlagSvg, count: '2,800 Words' },
-            { name: isEn ? 'Thai' : 'ภาษาไทย', flag: ThaiFlagSvg, count: 'Native Engine' },
-          ].map((lang, idx) => {
-            const Flag = lang.flag;
-            return (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl bg-white dark:bg-[#1E1B28] border border-border/80 shadow-2xs hover:border-[#FA5D5D]/50 hover:shadow-md transition-all flex items-center gap-3 cursor-default"
-              >
-                <Flag className="w-6 h-6 shrink-0" />
-                <div className="min-w-0">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white block truncate">
-                    {lang.name}
-                  </span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
-                    {lang.count}
-                  </span>
-                </div>
+            { level: 'A1', name: isEn ? 'Breakthrough' : 'ระดับเริ่มต้น', exam: 'Pre-A1', badgeColor: '#10B981', desc: '500+ Words' },
+            { level: 'A2', name: isEn ? 'Waystage' : 'ระดับพื้นฐาน', exam: 'A2 Key (KET)', badgeColor: '#38BDF8', desc: '1,200+ Words' },
+            { level: 'B1', name: isEn ? 'Threshold' : 'ระดับกลาง', exam: 'B1 Prelim (PET)', badgeColor: '#F59E0B', desc: '2,000+ Words' },
+            { level: 'B2', name: isEn ? 'Vantage' : 'ระดับกลางสูง', exam: 'B2 First (FCE)', badgeColor: '#FA5D5D', desc: '2,800+ Words' },
+            { level: 'C1', name: isEn ? 'Effective' : 'ระดับสูง', exam: 'C1 Adv (CAE)', badgeColor: '#8B5CF6', desc: '3,860+ Words' },
+            { level: 'C2', name: isEn ? 'Mastery' : 'ระดับเชี่ยวชาญ', exam: 'C2 Proficiency', badgeColor: '#EC4899', desc: '4,500+ Words' },
+          ].map((band, idx) => (
+            <div
+              key={idx}
+              className="p-4 rounded-2xl bg-white dark:bg-[#1E1B28] border border-border/80 shadow-2xs hover:border-[#FA5D5D]/50 hover:shadow-md transition-all flex flex-col justify-between gap-2 cursor-pointer group"
+              onClick={() => {
+                setActiveCefr(band.level as CefrLevelKey);
+                scrollToSection('framework');
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className="px-2 py-0.5 rounded-lg text-xs font-mono font-black text-white"
+                  style={{ backgroundColor: band.badgeColor }}
+                >
+                  {band.level}
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 group-hover:text-[#FA5D5D] transition-colors">
+                  {band.exam}
+                </span>
               </div>
-            );
-          })}
+              <div className="min-w-0">
+                <span className="text-xs font-bold text-slate-900 dark:text-white block truncate">
+                  {band.name}
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
+                  {band.desc}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -1143,133 +1068,169 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. SECTION 4: TUTORS FOR DIFFERENT LEARNING NEEDS (4 Pastel Cards)         */}
+      {/* 4. SECTION 4: 4 CORE SELF-STUDY STUDIOS (4 Pastel Cards)                  */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Expert Instruction' : 'ทีมผู้เชี่ยวชาญระดับแนวหน้า'}
+            {isEn ? 'Self-Paced Mastery' : '4 เสาหลักการเรียนรู้ด้วยตนเอง'}
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Tutors for different learning needs' : 'ครูผู้สอนที่ตอบโจทย์ทุกเป้าหมายการเรียนรู้'}
+            {isEn ? 'Specialized Studios for Every Learning Goal' : 'สตูดิโอเฉพาะทางเพื่อการฝึกฝนอย่างตรงจุด'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Connect with verified native tutors for 1-on-1 personalized feedback, interview simulation, and Cambridge preparation.'
-              : 'เรียนรู้กับครูเจ้าของภาษาและผู้เชี่ยวชาญข้อสอบเคมบริดจ์ เพื่อการฝึกฝนแบบตัวต่อตัวและตรวจข้อสอบอย่างแม่นยำ'}
+              ? 'Focus on your specific language goals with structured drills, automated diagnostics, and instant feedback.'
+              : 'เลือกพัฒนาทักษะเฉพาะด้านที่ต้องการด้วยแบบฝึกหัดมาตรฐาน ระบบตรวจคำตอบอัตโนมัติ และคำอธิบายเชิงลึก'}
           </p>
         </div>
 
-        {/* 4 Pastel Tutor Cards Grid (Outcrowd Mondly Keyframe 25s) */}
+        {/* 4 Pastel Studio Cards Grid (Outcrowd Mondly Keyframe 25s) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tutors.map((tutor) => {
-            const NativeFlag = tutor.nativeFlag;
-            return (
-              <div
-                key={tutor.id}
-                className={`rounded-[32px] ${tutor.bgClass} border border-border/80 p-6 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-200 group`}
-              >
-                <div className="space-y-4">
-                  {/* Tutor Portrait Image Frame */}
-                  <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-md relative bg-white/50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={tutor.photo}
-                      alt={tutor.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                      width={400}
-                      height={400}
-                      loading="lazy"
-                    />
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-xs flex items-center gap-1.5 text-[11px] font-bold shadow-xs">
-                      <NativeFlag className="w-3.5 h-3.5" />
-                      <span className="text-slate-800 dark:text-slate-200">{tutor.rate} / hr</span>
-                    </div>
-                  </div>
-
-                  {/* Tutor Name & Ratings */}
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{tutor.name}</h3>
-                      <div className="flex items-center gap-1 text-xs font-bold text-amber-500">
-                        <Star className="w-3.5 h-3.5 fill-amber-500" />
-                        <span>{tutor.rating}</span>
-                      </div>
-                    </div>
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                      {tutor.reviews} {isEn ? 'student reviews' : 'รีวิวจากผู้เรียน'} • {tutor.lessonsGiven}
-                    </span>
-                  </div>
-
-                  {/* Specialty Tag Badge */}
-                  <div className="pt-1">
-                    <span className={`inline-block px-3 py-1 rounded-xl text-xs font-bold ${tutor.tagBg}`}>
-                      {tutor.specialty}
-                    </span>
+          {[
+            {
+              id: 'listening',
+              name: isEn ? 'Listening Studio' : 'สตูดิโอการฟังและจับใจความ',
+              photo: '/images/landing/mondly_tutor_jordan.jpg',
+              bgClass: 'bg-[#DDF0FF] dark:bg-[#152332]',
+              tagBg: 'bg-[#0284C7]/15 text-[#0284C7] dark:text-[#38BDF8]',
+              level: 'A1 - C1',
+              metric: isEn ? '140 Audio Drills' : '140 แบบฝึกการฟัง',
+              tag: isEn ? 'British & American Accents' : 'สำเนียงบริติชและอเมริกัน',
+              route: '/listening',
+            },
+            {
+              id: 'reading',
+              name: isEn ? 'Reading Studio' : 'สตูดิโอการอ่านวิเคราะห์',
+              photo: '/images/landing/mondly_tutor_madeleine.jpg',
+              bgClass: 'bg-[#FFF7D6] dark:bg-[#2A2616]',
+              tagBg: 'bg-[#D97706]/15 text-[#D97706] dark:text-[#FBBF24]',
+              level: 'A2 - C2',
+              metric: isEn ? '85 Academic Passages' : '85 บทความวิเคราะห์',
+              tag: isEn ? 'Timed Comprehension' : 'จับเวลาอ่านจับใจความ',
+              route: '/reading',
+            },
+            {
+              id: 'grammar',
+              name: isEn ? 'Grammar Studio' : 'สตูดิโอไวยากรณ์เคมบริดจ์',
+              photo: '/images/landing/mondly_tutor_maxwell.jpg',
+              bgClass: 'bg-[#EAE4FF] dark:bg-[#231E33]',
+              tagBg: 'bg-[#7C3AED]/15 text-[#7C3AED] dark:text-[#A78BFA]',
+              level: 'A2 - C1',
+              metric: isEn ? '120 Sentence Drills' : '120 แบบฝึกโครงสร้าง',
+              tag: isEn ? 'Clause Restructuring' : 'วิเคราะห์โครงสร้างประโยค',
+              route: '/grammar',
+            },
+            {
+              id: 'speaking',
+              name: isEn ? 'Speaking Studio' : 'สตูดิโอการพูดและสำเนียง AI',
+              photo: '/images/landing/mondly_tutor_kaitlin.jpg',
+              bgClass: 'bg-[#FFE8DE] dark:bg-[#301E1A]',
+              tagBg: 'bg-[#EA580C]/15 text-[#EA580C] dark:text-[#FB923C]',
+              level: 'A2 - C2',
+              metric: isEn ? '64 Interactive Tasks' : '64 สถานการณ์สนทนา',
+              tag: isEn ? 'Phoneme Recognition' : 'ตรวจการออกเสียง AI',
+              route: '/speaking',
+            },
+          ].map((item) => (
+            <div
+              key={item.id}
+              className={`rounded-[32px] ${item.bgClass} border border-border/80 p-6 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-200 group`}
+            >
+              <div className="space-y-4">
+                {/* Photo / Studio Showcase Frame */}
+                <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-md relative bg-white/50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.photo}
+                    alt={item.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-xs flex items-center gap-1.5 text-[11px] font-bold shadow-xs">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span className="text-slate-800 dark:text-slate-200">CEFR {item.level}</span>
                   </div>
                 </div>
 
-                {/* Card Action Button */}
-                <div className="pt-5 mt-4 border-t border-black/5 dark:border-white/10">
-                  <button
-                    type="button"
-                    onClick={handleStart}
-                    className="w-full py-2.5 rounded-2xl bg-white dark:bg-[#1E1B28] hover:bg-[#FA5D5D] hover:text-white dark:hover:bg-[#FA5D5D] text-slate-900 dark:text-white font-bold text-xs shadow-2xs border border-border transition-colors cursor-pointer flex items-center justify-center gap-1.5"
-                  >
-                    <span>{isEn ? 'Book trial session' : 'จองคาบทดลองเรียน'}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                {/* Studio Name & Metrics */}
+                <div>
+                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{item.name}</h3>
+                  <span className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">
+                    {item.metric}
+                  </span>
+                </div>
+
+                {/* Specialty Tag Badge */}
+                <div className="pt-1">
+                  <span className={`inline-block px-3 py-1 rounded-xl text-xs font-bold ${item.tagBg}`}>
+                    {item.tag}
+                  </span>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Card Action Button */}
+              <div className="pt-5 mt-4 border-t border-black/5 dark:border-white/10">
+                <button
+                  type="button"
+                  onClick={() => router.push(item.route)}
+                  className="w-full py-2.5 rounded-2xl bg-white dark:bg-[#1E1B28] hover:bg-[#FA5D5D] hover:text-white dark:hover:bg-[#FA5D5D] text-slate-900 dark:text-white font-bold text-xs shadow-2xs border border-border transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <span>{isEn ? 'Enter Studio' : 'เข้าสู่สตูดิโอ'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. SECTION 5: LEARN OR TEACH ONLINE (Outcrowd Mondly Keyframe 30s)        */}
+      {/* 5. SECTION 5: TWO TAILORED SELF-STUDY PATHWAYS (Outcrowd Mondly Keyframe)  */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10B981]/10 text-emerald-600 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Two Paths • One Platform' : 'สองเส้นทาง • บนแพลตฟอร์มเดียว'}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10B981]/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
+            {isEn ? 'Two Pathways • One Platform' : 'สองเส้นทางการฝึกฝน • บนแพลตฟอร์มเดียว'}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Learn or teach online' : 'เรียนรู้หรือสอนออนไลน์ตามเวลาที่คุณเลือก'}
+            {isEn ? 'Tailored Self-Study for Every Learning Objective' : 'ออกแบบการเรียนรู้ด้วยตนเองตามเป้าหมายที่คุณกำหนด'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Whether you want to learn a new language or share your expert knowledge with students, our platform provides all the tools to succeed.'
-              : 'ไม่ว่าคุณจะต้องการเรียนรู้เพื่อความคล่องแคล่ว หรือร่วมเป็นผู้สอนเพื่อแบ่งปันความรู้ เรามีเครื่องมือครบครันรองรับทุกการเติบโต'}
+              ? 'Whether you need targeted skill drills or full-length timed Cambridge exam simulations, our platform provides all the tools to succeed.'
+              : 'ไม่ว่าคุณจะต้องการเจาะลึกเฉพาะทักษะที่ต้องการพัฒนา หรือต้องการจำลองการสอบเคมบริดจ์เต็มรูปแบบ เรามีเครื่องมือพร้อมรองรับทุกเป้าหมาย'}
           </p>
         </div>
 
         {/* 2 Wide Feature Stage Containers from Outcrowd Dribbble Shot 30s */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          {/* Card 1: Begin your learning journey (Sunny Golden Amber Container) */}
+          {/* Card 1: Intensive Skill Studios (Sunny Golden Amber Container) */}
           <div className="rounded-[36px] sm:rounded-[44px] bg-[#FEF3C7] dark:bg-[#2A2312] border border-amber-300/80 dark:border-amber-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
             <div className="space-y-6">
               <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-900 dark:text-amber-300 uppercase tracking-wider inline-block">
-                {isEn ? 'For Students & Professionals' : 'สำหรับผู้เรียนและคนทำงาน'}
+                {isEn ? 'Targeted Practice' : 'ฝึกฝนทักษะเฉพาะด้าน'}
               </span>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                  {isEn ? 'Begin your learning journey' : 'เริ่มต้นการเดินทางสู่ความคล่องแคล่ว'}
+                  {isEn ? 'Intensive Skill Studios' : 'สตูดิโอฝึกฝนทักษะเฉพาะด้านแบบเข้มข้น'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {isEn
-                    ? 'Learning a new language has never been easier. With our platform, you can start speaking a new language from day one.'
-                    : 'การเรียนภาษาใหม่ง่ายกว่าที่เคย เริ่มต้นฝึกสนทนาและโต้ตอบได้จริงตั้งแต่วันแรกที่เข้าเรียน'}
+                    ? 'Strengthen weak areas across listening, reading, writing, speaking, grammar, and Oxford vocabulary with immediate diagnostic feedback.'
+                    : 'เสริมจุดแข็งและแก้ไขจุดอ่อนได้อย่างตรงจุด ทั้งการฟัง การอ่าน การเขียน การพูด ไวยากรณ์ และคำศัพท์มาตรฐาน Oxford'}
                 </p>
               </div>
 
-              {/* Checklist from Dribbble shot */}
+              {/* Checklist */}
               <div className="space-y-3 pt-1">
                 {[
-                  isEn ? 'Choose a tutor - for free!' : 'เลือกติวเตอร์ที่ถูกใจ - ทดลองฟรี!',
-                  isEn ? 'Quick response and start of classes' : 'เริ่มเรียนได้ทันทีและตอบรับรวดเร็ว',
-                  isEn ? 'Live classes online 24/7' : 'คลาสเรียนสดออนไลน์ตลอด 24 ชั่วโมง',
-                  isEn ? 'Learn in small groups or 1-on-1' : 'เลือกเรียนได้ทั้งกลุ่มย่อยและแบบตัวต่อตัว',
+                  isEn ? 'Spaced Repetition algorithm for lasting recall' : 'ระบบทบทวนคำศัพท์ตามระยะเวลาที่สมองจะลืม (Spaced Repetition)',
+                  isEn ? 'Instant syntax and error correction feedback' : 'ตรวจคำตอบทันทีพร้อมเฉลยละเอียดและวิเคราะห์โครงสร้าง',
+                  isEn ? 'Practice 24/7 on your own schedule' : 'ฝึกฝนได้ทุกที่ทุกเวลาตามจังหวะที่คุณสะดวกตลอด 24 ชั่วโมง',
+                  isEn ? 'Unified telemetry across all 6 CEFR tiers' : 'แดชบอร์ดติดตามความก้าวหน้าครอบคลุมทั้ง 6 ระดับ CEFR',
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
                     <span className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
@@ -1280,20 +1241,20 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 ))}
               </div>
 
-              {/* Button from Dribbble Shot */}
+              {/* Button */}
               <div className="pt-2">
                 <button
                   type="button"
-                  onClick={handleStart}
+                  onClick={() => scrollToSection('studios')}
                   className="px-8 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-2"
                 >
-                  <span>{isEn ? 'Start learning' : 'เริ่มต้นเรียนรู้'}</span>
+                  <span>{isEn ? 'Start Skill Practice' : 'เริ่มต้นฝึกฝนทักษะ'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
 
-            {/* Embedded In-App Activity Mockup (Dribbble 30s Screenshot Replica) */}
+            {/* Embedded In-App Activity Mockup */}
             <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-black/5 dark:border-white/10 shadow-lg space-y-4">
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <span className="font-extrabold text-xs text-slate-900 dark:text-white flex items-center gap-1.5">
@@ -1321,48 +1282,48 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 </div>
               </div>
 
-              {/* By platform list */}
+              {/* Studio Breakdown list */}
               <div className="space-y-1.5 pt-1 text-[11px]">
                 <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                  <span>8 lessons Glova Platform</span>
-                  <span className="font-mono font-bold text-slate-900 dark:text-white">12.5 h</span>
+                  <span>Listening & Audio Lab</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">6.5 h</span>
                 </div>
                 <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                  <span>5 lessons Zoom Audio</span>
-                  <span className="font-mono font-bold text-slate-900 dark:text-white">6.8 h</span>
+                  <span>Reading Comprehension</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">5.8 h</span>
                 </div>
                 <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                  <span>3 lessons Google Meet</span>
-                  <span className="font-mono font-bold text-slate-900 dark:text-white">4.2 h</span>
+                  <span>Grammar & Syntax Surgery</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">5.4 h</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Teach online on your schedule (Soft Lavender Lilac Container) */}
+          {/* Card 2: Cambridge Timed Simulations (Soft Lavender Lilac Container) */}
           <div className="rounded-[36px] sm:rounded-[44px] bg-[#EDE9FE] dark:bg-[#221B32] border border-purple-300/80 dark:border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
             <div className="space-y-6">
               <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500/20 text-purple-900 dark:text-purple-300 uppercase tracking-wider inline-block">
-                {isEn ? 'For Educators & Tutors' : 'สำหรับครูและติวเตอร์'}
+                {isEn ? 'Exam Certification' : 'จำลองการสอบเคมบริดจ์'}
               </span>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                  {isEn ? 'Teach online on your schedule' : 'สอนออนไลน์ตามตารางเวลาที่คุณเลือก'}
+                  {isEn ? 'Timed Cambridge Exam Simulations' : 'คลังข้อสอบเคมบริดจ์จำลองจับเวลาจริง'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {isEn
-                    ? 'Earn money sharing your expert knowledge with students. Sign up to start tutoring online with our global platform.'
-                    : 'สร้างรายได้ด้วยการแบ่งปันความเชี่ยวชาญด้านภาษาแก่นักเรียนทั่วโลก จัดตารางและกำหนดอัตราค่าสอนได้อย่างอิสระ'}
+                    ? 'Take full-length authentic simulations for KET, PET, FCE, and CAE scored against the Cambridge English Scale.'
+                    : 'สัมผัสสนามสอบเสมือนจริงสำหรับ KET, PET, FCE และ CAE พร้อมระบบจับเวลาและตัดเกรดเทียบ Cambridge English Scale'}
                 </p>
               </div>
 
-              {/* Checklist from Dribbble shot */}
+              {/* Checklist */}
               <div className="space-y-3 pt-1">
                 {[
-                  isEn ? 'Find new students worldwide' : 'เข้าถึงผู้เรียนใหม่ๆ จากทั่วทุกมุมโลก',
-                  isEn ? 'Set the price for classes' : 'กำหนดอัตราค่าเรียนได้ด้วยตัวเอง',
-                  isEn ? 'Grow your tutoring business' : 'สร้างฐานนักเรียนประจำและเติบโตอย่างมั่นคง',
-                  isEn ? 'Get paid securely and on time' : 'ระบบรับชำระเงินที่ปลอดภัยและตรงเวลา',
+                  isEn ? 'Authentic exam sections with calibrated papers' : 'โครงสร้างข้อสอบเทียบเคียงมาตรฐานสนามสอบเคมบริดจ์จริง',
+                  isEn ? 'Real-time countdown timer matching official papers' : 'ระบบจับเวลาถอยหลังเสมือนอยู่ในห้องสอบจริง',
+                  isEn ? 'Official Cambridge English Scale scoring (100-230)' : 'แปลงคะแนนเทียบเคียง Cambridge English Scale (100 - 230)',
+                  isEn ? 'Actionable readiness report before test day' : 'วิเคราะห์ความพร้อมก่อนสอบจริงและชี้เป้าจุดที่ต้องทบทวน',
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
                     <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0">
@@ -1373,59 +1334,59 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 ))}
               </div>
 
-              {/* Button from Dribbble Shot */}
+              {/* Button */}
               <div className="pt-2">
                 <button
                   type="button"
-                  onClick={handleStart}
+                  onClick={() => router.push('/mock-exams')}
                   className="px-8 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-2"
                 >
-                  <span>{isEn ? 'Become a tutor' : 'สมัครเป็นผู้สอน'}</span>
+                  <span>{isEn ? 'Explore Cambridge Vault' : 'เข้าสู่คลังข้อสอบเคมบริดจ์'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
 
-            {/* Embedded In-App Schedule Mockup (Dribbble 30s Screenshot Replica) */}
+            {/* Embedded In-App Exam Readiness Mockup */}
             <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-black/5 dark:border-white/10 shadow-lg space-y-3">
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <span className="font-extrabold text-xs text-slate-900 dark:text-white flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-purple-600" />
-                  <span>My schedule: Today</span>
+                  <GraduationCap className="w-3.5 h-3.5 text-purple-600" />
+                  <span>Cambridge Exam Readiness</span>
                 </span>
                 <span className="text-[10px] text-emerald-600 font-bold px-2 py-0.5 rounded-md bg-emerald-500/10">
-                  3 Classes Booked
+                  4 Exams Calibrated
                 </span>
               </div>
 
               <div className="space-y-2 pt-1 text-[11px]">
+                <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-500/20 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-900 dark:text-white block">A2 Key (KET) Simulation</span>
+                    <span className="text-[10px] text-slate-500">Cambridge Scale: 120 – 139</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-md bg-white dark:bg-black/30">
+                    Ready
+                  </span>
+                </div>
+
+                <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-500/20 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-900 dark:text-white block">B1 Preliminary (PET) Simulation</span>
+                    <span className="text-[10px] text-slate-500">Cambridge Scale: 140 – 159</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded-md bg-white dark:bg-black/30">
+                    In Progress
+                  </span>
+                </div>
+
                 <div className="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-500/20 flex items-center justify-between">
                   <div>
-                    <span className="font-bold text-slate-900 dark:text-white block">Technical English for Beginners</span>
-                    <span className="text-[10px] text-slate-500">10:30 – 12:00 • CEFR A2</span>
+                    <span className="font-bold text-slate-900 dark:text-white block">B2 First (FCE) Simulation</span>
+                    <span className="text-[10px] text-slate-500">Cambridge Scale: 160 – 179</span>
                   </div>
                   <span className="text-[10px] font-bold text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded-md bg-white dark:bg-black/30">
-                    Live Now
-                  </span>
-                </div>
-
-                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-border/60 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-slate-900 dark:text-white block">English Punctuation Made Easy</span>
-                    <span className="text-[10px] text-slate-500">13:00 – 14:00 • CEFR B2</span>
-                  </div>
-                  <span className="text-[10px] font-bold text-slate-500 px-2 py-0.5 rounded-md bg-slate-200/60 dark:bg-white/10">
-                    Upcoming
-                  </span>
-                </div>
-
-                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-border/60 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-slate-900 dark:text-white block">Cambridge CAE Writing Intensive</span>
-                    <span className="text-[10px] text-slate-500">16:00 – 17:30 • CEFR C1</span>
-                  </div>
-                  <span className="text-[10px] font-bold text-slate-500 px-2 py-0.5 rounded-md bg-slate-200/60 dark:bg-white/10">
-                    Confirmed
+                    Target Tier
                   </span>
                 </div>
               </div>
@@ -1625,51 +1586,53 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* ========================================================================= */}
-      {/* 6.5 SECTION 6.5: SOCIAL PROOF & TESTIMONIALS MASONRY (Outcrowd Mondly)    */}
+      {/* 6.5 SECTION 6.5: SCIENTIFIC SELF-STUDY STANDARDS & METHODOLOGY             */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Proven Results' : 'ผลลัพธ์ที่พิสูจน์ได้จริง'}
+            {isEn ? 'Pedagogical Standards' : 'มาตรฐานและระเบียบวิธีเรียนรู้'}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Loved by learners and educators worldwide' : 'เสียงตอบรับจากผู้เรียนและคุณครูทั่วโลก'}
+            {isEn ? 'Engineered for Independent Self-Study Success' : 'ออกแบบตามหลักภาษาศาสตร์สากลเพื่อการเรียนรู้ด้วยตนเอง'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Read how thousands of students have transformed their fluency and passed their Cambridge exams.'
-              : 'อ่านเรื่องราวความสำเร็จจากผู้เรียนจริงที่ยกระดับภาษาอังกฤษและสอบผ่านข้อสอบเคมบริดจ์ได้สำเร็จ'}
+              ? 'Our four pedagogical pillars ensure structured progression, accurate diagnostic benchmarking, and lasting memory retention.'
+              : 'สี่เสาหลักด้านระเบียบวิธีเรียนรู้ ช่วยสร้างความเข้าใจอย่างเป็นระบบ ประเมินระดับแม่นยำ และเสริมสร้างความจำระยะยาว'}
           </p>
         </div>
 
         {/* Asymmetric Masonry Grid matching Outcrowd Mondly shot */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
-          {/* Card 1: Hanna Jane Quote (Soft Lavender 6 Cols) */}
+          {/* Card 1: Cambridge English Scale Alignment (Soft Lavender 6 Cols) */}
           <div className="lg:col-span-6 rounded-[36px] bg-[#EDE9FE] dark:bg-[#221B32] border border-purple-200/60 dark:border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
             <div className="space-y-4">
-              <div className="flex text-amber-500 gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-500" />
-                ))}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-900 dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5 text-purple-700 dark:text-purple-400" />
+                <span>Cambridge Official Framework</span>
               </div>
-              <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
-                "{isEn
-                  ? 'The flexibility was amazing! I could choose when and what I would study without feeling overwhelmed.'
-                  : 'ความยืดหยุ่นยอดเยี่ยมมาก! ฉันสามารถเลือกเวลาและหัวข้อที่ต้องการเรียนได้เองโดยไม่รู้สึกเครียด'}"
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                {isEn ? 'Direct Cambridge Scale Alignment' : 'เทียบเคียง Cambridge English Scale สากล'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                {isEn
+                  ? 'Every practice question, diagnostic rubric, and mock exam score is calibrated against the official Cambridge English Scale (100 - 230), guaranteeing real-world exam readiness.'
+                  : 'ทุกข้อสอบ เกณฑ์การประเมิน และการแปลงผลคะแนน ได้รับการเทียบเคียงตามมาตรฐานทางการของ Cambridge English Scale (100 - 230) เพื่อความแม่นยำในการวัดผลเสมือนสนามสอบจริง'}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-purple-200 dark:border-white/10 flex items-center justify-between">
               <div>
-                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Hanna Jane</span>
-                <span className="text-[11px] text-purple-700 dark:text-purple-300">CEFR B2 Graduate • London</span>
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Assessment Standard</span>
+                <span className="text-[11px] text-purple-700 dark:text-purple-300">KET • PET • FCE • CAE</span>
               </div>
               <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/80 dark:bg-black/30 text-purple-800 dark:text-purple-200">
-                Verified Student
+                100 - 230 Scale
               </span>
             </div>
           </div>
 
-          {/* Card 2: 91% Stat Card with Authentic Photo (6 Cols) */}
+          {/* Card 2: Oxford Lexical Corpus with Authentic Photo (6 Cols) */}
           <div className="lg:col-span-6 rounded-[36px] overflow-hidden shadow-lg border border-border/80 relative min-h-[300px] flex items-end p-8 sm:p-10 group">
             {/* Authentic Photographic Background */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1685,55 +1648,57 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
 
             <div className="relative z-10 space-y-2 text-white">
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl sm:text-5xl font-black font-mono">91%</span>
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Verified Metric</span>
+                <span className="text-4xl sm:text-5xl font-black font-mono">3,860+</span>
+                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Oxford Lexical Items</span>
               </div>
               <p className="text-sm sm:text-base font-bold text-white/95 leading-snug max-w-md">
                 {isEn
-                  ? 'Students reported improved conversational confidence and vocabulary recall within 30 days.'
-                  : 'ผู้เรียนกว่า 91% ยืนยันว่ามีความมั่นใจในการสนทนาและจำคำศัพท์ได้แม่นยำขึ้นภายใน 30 วันแรก'}
+                  ? 'Core vocabulary catalog curated according to Oxford 3000 and 5000 frequency bands with authentic audio pronunciation.'
+                  : 'คลังคำศัพท์มาตรฐานคัดสรรตามมาตรฐาน Oxford 3000 และ 5000 ครอบคลุมตั้งแต่ A1 ถึง C2 พร้อมไฟล์เสียงเจ้าของภาษา'}
               </p>
             </div>
           </div>
 
-          {/* Card 3: Kristin Watson Quote (6 Cols) */}
+          {/* Card 3: Cognitive Spaced Repetition (6 Cols) */}
           <div className="lg:col-span-6 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
             <div className="space-y-4">
-              <div className="flex text-amber-500 gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-500" />
-                ))}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+                <Clock className="w-3.5 h-3.5" />
+                <span>Ebbinghaus Memory Model</span>
               </div>
-              <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
-                "{isEn
-                  ? 'Each lesson is slightly more challenging than the previous lesson, keeping me motivated and consistently progressing.'
-                  : 'ทุกบทเรียนมีความท้าทายเพิ่มขึ้นทีละขั้นอย่างพอเหมาะ ทำให้ฉันมีแรงจูงใจในการเรียนรู้อย่างต่อเนื่องทุกวัน'}"
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                {isEn ? 'Cognitive Spaced Repetition' : 'ระบบทวนซ้ำตามเส้นโค้งการลืม'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                {isEn
+                  ? 'Our intelligent scheduler dynamically queues up your weakest vocabulary and grammar structures right before cognitive decay occurs, maximizing long-term memory.'
+                  : 'ระบบจะคัดเลือกคำศัพท์และโครงสร้างไวยากรณ์ที่คุณมักตอบผิดมาให้ทบทวนซ้ำอย่างแม่นยำตามเส้นโค้งการลืมของ Ebbinghaus เพื่อความจำที่ถาวร'}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-border/60 flex items-center justify-between">
               <div>
-                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Kristin Watson</span>
-                <span className="text-[11px] text-slate-500">Cambridge CAE Candidate</span>
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Memory Optimization</span>
+                <span className="text-[11px] text-slate-500">Automated Review Queue</span>
               </div>
               <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">
-                CAE Score: 194
+                Retention Engine
               </span>
             </div>
           </div>
 
-          {/* Card 4: Golden Sunny Amber CTA Card (6 Cols) */}
+          {/* Card 4: 100% Self-Paced Independence (Golden Sunny Amber 6 Cols) */}
           <div className="lg:col-span-6 rounded-[36px] bg-[#FEF3C7] dark:bg-[#2A2312] border border-amber-300/80 dark:border-amber-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
             <div className="space-y-3">
               <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-300 uppercase tracking-wider inline-block">
-                Start Today
+                100% Self-Study Freedom
               </span>
               <h3 className="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-                {isEn ? 'Learn a new language and unlock new possibilities' : 'เรียนรู้ภาษาใหม่และเปิดรับทุกความเป็นไปได้'}
+                {isEn ? 'Learn at Your Own Pace, Anytime' : 'เรียนรู้ด้วยตนเองอย่างอิสระ 24 ชม.'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                 {isEn
-                  ? 'Take the first step towards fluency with certified native tutors and Cambridge simulations.'
-                  : 'เริ่มต้นก้าวแรกสู่อนาคตที่เปิดกว้างด้วยหลักสูตรมาตรฐานสากลและระบบฝึกฝนอัจฉริยะ'}
+                  ? 'No scheduling tutors, no waiting for classes, and no hidden fees. Access all 6 skill studios and timed Cambridge simulations on your schedule.'
+                  : 'ไม่ต้องรอคิวครูผู้สอน ไม่มีเงื่อนไขผูกมัด เข้าถึงทั้ง 6 สตูดิโอทักษะและคลังข้อสอบเคมบริดจ์ได้ทันทีตามเวลาที่คุณสะดวกตลอด 24 ชั่วโมง'}
               </p>
             </div>
             <div className="pt-6">
@@ -1742,7 +1707,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 onClick={handleStart}
                 className="px-7 py-3 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer inline-flex items-center gap-2"
               >
-                <span>{isEn ? 'Start free trial' : 'เริ่มทดลองเรียนฟรี'}</span>
+                <span>{isEn ? 'Start free diagnostic' : 'เริ่มทำแบบทดสอบวัดระดับ'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -2085,8 +2050,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </h2>
             <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
               {isEn
-                ? 'Join 60,000+ active learners reaching their goals. Take our free 15-minute diagnostic test and get your personalized learning path.'
-                : 'ร่วมเรียนรู้ไปกับเพื่อนๆ กว่า 60,000 คน เริ่มต้นด้วยแบบทดสอบวัดระดับ 15 นาทีฟรีเพื่อรับแผนการเรียนเฉพาะบุคคล'}
+                ? 'Master Cambridge CEFR standards through self-paced precision practice. Take our free 15-minute diagnostic test and get your personalized learning path.'
+                : 'ยกระดับภาษาอังกฤษสู่มาตรฐานเคมบริดจ์สากลด้วยการเรียนรู้ด้วยตนเองอย่างเป็นระบบ เริ่มต้นด้วยแบบทดสอบวัดระดับ 15 นาทีฟรีเพื่อรับแผนการเรียนเฉพาะบุคคล'}
             </p>
           </div>
 
