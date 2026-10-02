@@ -272,3 +272,46 @@
   animation: rune-shine 4s linear infinite;
 }
 
+/* =========================================================================
+   Atmospheric Gaming Background & Environmental Depth Invariants
+   (Inspired by BorisWick Gaming Dashboard & Knightopia Cinematic Canvas)
+   ========================================================================= */
+.bg-game-canvas {
+  background-color: #030712;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(245, 158, 11, 0.16) 0%, transparent 65%),
+    radial-gradient(circle 800px at 15% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
+    radial-gradient(circle 900px at 85% 65%, rgba(99, 102, 241, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217, 119, 6, 0.14) 0%, transparent 70%),
+    linear-gradient(180deg, #030712 0%, #060B18 50%, #02050E 100%);
+  background-attachment: fixed;
+}
+
+.gaming-vignette {
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
+}
+
+.gaming-horizon-line {
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.4) 50%, transparent 100%);
+  height: 1px;
+}
+
+.podium-pedestal-gold {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 100%);
+  border-top: 2px solid #F59E0B;
+  box-shadow: 0 -10px 30px rgba(245, 158, 11, 0.25);
+}
+
+.podium-pedestal-silver {
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.2) 0%, rgba(148, 163, 184, 0.04) 50%, transparent 100%);
+  border-top: 2px solid #94A3B8;
+  box-shadow: 0 -10px 25px rgba(148, 163, 184, 0.15);
+}
+
+.podium-pedestal-copper {
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.2) 0%, rgba(217, 119, 6, 0.04) 50%, transparent 100%);
+  border-top: 2px solid #D97706;
+  box-shadow: 0 -10px 25px rgba(217, 119, 6, 0.15);
+}
+
+
