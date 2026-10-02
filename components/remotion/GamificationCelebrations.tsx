@@ -114,8 +114,7 @@ export const AchievementCelebrationComposition: React.FC<AchievementCelebrationP
       >
         {/* Glowing Badge */}
         <div
-          className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#F6D978] to-[#FF8F82] p-1 shadow-lg flex items-center justify-center"
-          style={{ filter: `drop-shadow(0 0 ${glowPulse * 16}px rgba(246, 217, 120, 0.6))` }}
+          className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#F6D978] to-[#FF8F82] p-1 flex items-center justify-center shadow-[0_0_24px_rgba(246,217,120,0.5)]"
         >
           <div className="w-full h-full rounded-full bg-[#1A192B] flex items-center justify-center">
             <span className="text-2xl">🏆</span>

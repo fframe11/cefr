@@ -36,30 +36,30 @@ export const SquadShareBanner: React.FC<SquadShareBannerProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white ${className}`}
     >
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
         {/* Left Side: Squad Status & Mission */}
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F59E0B]/15 px-3 py-0.5 text-xs font-bold text-[#FDE68A] border border-[#F59E0B]/30">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 dark:bg-[#F59E0B]/15 px-3 py-0.5 text-xs font-bold text-amber-700 dark:text-[#FDE68A] border border-amber-500/30 dark:border-[#F59E0B]/30">
               <Users className="h-3.5 w-3.5 text-[#F59E0B]" />
               UNIVERSITY SQUAD
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#0B1224] px-2.5 py-0.5 text-xs font-mono font-medium text-slate-300 border border-white/10">
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-[#0B1224] px-2.5 py-0.5 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">
               {squadName} ({memberCount}/{maxMembers} คน)
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-bold text-emerald-400 border border-emerald-500/30">
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
               <Sparkles className="h-3 w-3" />
               XP BOOST +25%
             </span>
           </div>
 
           <div>
-            <h2 className="text-xl md:text-2xl font-black font-display tracking-tight text-white">
+            <h2 className="text-xl md:text-2xl font-black font-display tracking-tight text-slate-900 dark:text-white">
               ชวนเพื่อนมาตั้งตี้ รับ Boost XP x2 & ปลดล็อกฉายาพิเศษ
             </h2>
-            <p className="mt-1 text-sm text-slate-400 font-grotesk max-w-xl">
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 font-grotesk max-w-xl">
               รวมกลุ่มฝึกคำศัพท์กับเพื่อนร่วมมหาวิทยาลัย ยิ่งตี้ใหญ่ ยิ่งคูณโบนัส XP สูงสุดถึง 100%
             </p>
           </div>
@@ -70,7 +70,7 @@ export const SquadShareBanner: React.FC<SquadShareBannerProps> = ({
           <button
             type="button"
             onClick={handleCopyLink}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0B1224] px-4 py-2.5 text-sm font-semibold text-slate-200 shadow-sm transition-all hover:bg-white/5 active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#0B1224] px-4 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 shadow-sm transition-all hover:bg-slate-200 dark:hover:bg-white/5 active:scale-[0.98]"
           >
             {copied ? (
               <>

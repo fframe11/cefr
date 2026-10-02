@@ -37,21 +37,21 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl">
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white">
       {/* Top Banner Tag */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 dark:border-white/10 pb-4">
         <div className="flex items-center gap-2">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#F59E0B] text-slate-950 font-black shadow-sm">
             <Swords className="h-4 w-4 text-slate-950" />
           </span>
           <div>
-            <h3 className="text-base font-black text-white font-display">RANKED BATTLE ARENA</h3>
-            <p className="text-xs text-slate-400">Season 1: Genesis • การแข่งขันวัดระดับความสามารถจริงจัง</p>
+            <h3 className="text-base font-black text-slate-900 dark:text-white font-display">RANKED BATTLE ARENA</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Season 1: Genesis • การแข่งขันวัดระดับความสามารถจริงจัง</p>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F59E0B]/15 px-3 py-1 text-xs font-bold text-[#FDE68A] border border-[#F59E0B]/30">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 dark:bg-[#F59E0B]/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-[#FDE68A] border border-amber-500/30 dark:border-[#F59E0B]/30">
             <Trophy className="h-3.5 w-3.5 text-[#F59E0B]" />
             Rank Rating (MMR)
           </span>
@@ -108,17 +108,17 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
 
         {/* Career & Season Insights */}
         <div className="sm:col-span-7 grid grid-cols-3 gap-2.5">
-          <div className="rounded-xl border border-border/40 bg-card/60 p-3 text-center">
-            <span className="text-[11px] text-muted-foreground">อันดับสูงสุด (Peak)</span>
+          <div className="rounded-xl border border-slate-200/80 dark:border-border/40 bg-slate-50/80 dark:bg-card/60 p-3 text-center">
+            <span className="text-[11px] text-slate-500 dark:text-muted-foreground font-medium">อันดับสูงสุด (Peak)</span>
             <div className="mt-1 flex justify-center">
               <RankedTierBadge tier={profile.peakTier} division={profile.peakDivision} size="xs" />
             </div>
-            <span className="mt-1 block text-xs font-bold text-foreground">{profile.peakRating} MMR</span>
+            <span className="mt-1 block text-xs font-bold text-slate-900 dark:text-foreground">{profile.peakRating} MMR</span>
           </div>
 
-          <div className="rounded-xl border border-border/40 bg-card/60 p-3 text-center">
-            <span className="text-[11px] text-muted-foreground">ผลงานซีซัน (W/L)</span>
-            <div className="mt-1 text-sm font-bold text-foreground">
+          <div className="rounded-xl border border-slate-200/80 dark:border-border/40 bg-slate-50/80 dark:bg-card/60 p-3 text-center">
+            <span className="text-[11px] text-slate-500 dark:text-muted-foreground font-medium">ผลงานซีซัน (W/L)</span>
+            <div className="mt-1 text-sm font-bold text-slate-900 dark:text-foreground">
               {profile.wins}W - {profile.losses}L
             </div>
             <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
@@ -126,16 +126,16 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
             </span>
           </div>
 
-          <div className="rounded-xl border border-border/40 bg-card/60 p-3 text-center">
-            <span className="text-[11px] text-muted-foreground">การคุ้มกันยศ</span>
-            <div className="mt-1 text-sm font-bold text-foreground">
+          <div className="rounded-xl border border-slate-200/80 dark:border-border/40 bg-slate-50/80 dark:bg-card/60 p-3 text-center">
+            <span className="text-[11px] text-slate-500 dark:text-muted-foreground font-medium">การคุ้มกันยศ</span>
+            <div className="mt-1 text-sm font-bold text-slate-900 dark:text-foreground">
               {profile.demotionProtectedMatches > 0 ? (
                 <span className="text-[#2155E6] dark:text-[#60A5FA]">คุ้มกัน {profile.demotionProtectedMatches} ตา</span>
               ) : (
-                <span className="text-muted-foreground">มาตรฐาน</span>
+                <span className="text-slate-500 dark:text-muted-foreground">มาตรฐาน</span>
               )}
             </div>
-            <span className="text-[10px] text-muted-foreground">
+            <span className="text-[10px] text-slate-400 dark:text-muted-foreground">
               {profile.isPlaced ? 'จัดอันดับแล้ว' : `Placement ${profile.placementMatchesPlayed}/5`}
             </span>
           </div>
@@ -143,16 +143,16 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
       </div>
 
       {/* Mode Selection Tabs */}
-      <div className="mt-5 border-t border-border/40 pt-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-5 border-t border-slate-200/80 dark:border-border/40 pt-4 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold text-muted-foreground">โหมดแข่งขัน:</span>
+          <span className="text-xs font-semibold text-slate-700 dark:text-muted-foreground">โหมดแข่งขัน:</span>
           <button
             type="button"
             onClick={() => setSelectedMode('vocabulary')}
             className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
               selectedMode === 'vocabulary'
                 ? 'bg-[#2155E6] text-white shadow-sm font-bold'
-                : 'bg-muted/60 text-muted-foreground hover:bg-muted'
+                : 'bg-slate-100 dark:bg-muted/60 text-slate-600 dark:text-muted-foreground hover:bg-slate-200'
             }`}
           >
             การประลองคำศัพท์ 4 วิ
@@ -160,7 +160,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
           <button
             type="button"
             disabled
-            className="cursor-not-allowed rounded-lg bg-muted/30 px-3 py-1.5 text-xs font-medium text-muted-foreground/60"
+            className="cursor-not-allowed rounded-lg bg-slate-100/60 dark:bg-muted/30 px-3 py-1.5 text-xs font-medium text-slate-400 dark:text-muted-foreground/60"
             title="กำลังพัฒนาสำหรับซีซันถัดไป"
           >
             การประลองไวยากรณ์ • เร็ว ๆ นี้
@@ -198,10 +198,10 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
       </div>
 
       {/* Rules Notice */}
-      <div className="mt-4 flex items-start gap-2 rounded-xl bg-muted/40 p-3 text-xs text-muted-foreground">
+      <div className="mt-4 flex items-start gap-2 rounded-xl bg-slate-100/80 dark:bg-muted/40 p-3 text-xs text-slate-600 dark:text-muted-foreground">
         <ShieldAlert className="h-4 w-4 shrink-0 text-amber-500 mt-0.5" />
         <div>
-          <span className="font-semibold text-foreground">กฎโหมดจัดอันดับ: </span>
+          <span className="font-semibold text-slate-900 dark:text-foreground">กฎโหมดจัดอันดับ: </span>
           ตอบคำถามคำศัพท์ 6 ข้อในเวลาข้อละ 4 วินาที • หากชนะ Rating จะเพิ่มขึ้น (+20 ถึง +40) หากแพ้ Rating จะลดลง (-8 ถึง -24)
           • ระบบใช้กฎ Elo MMR ฝั่งเซิร์ฟเวอร์แบบเด็ดขาด ไม่สามารถส่งผลเท็จได้
         </div>

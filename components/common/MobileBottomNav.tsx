@@ -133,12 +133,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
                 className={`flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] transition-all min-w-[54px] active:scale-95 ${
                   isActive
                     ? 'bg-[#FA5D5D] text-white font-bold shadow-[0_2px_12px_rgba(250,93,93,0.35)] ring-1 ring-[#FA5D5D]/20'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white font-medium'
                 }`}
                 aria-label={label}
                 aria-current={isActive ? 'page' : undefined}
               >
-                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-500 dark:text-slate-400'}`} />
+                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-600 dark:text-slate-400'}`} />
                 <span className="mt-0.5 font-display tracking-tight text-[10px]">{label}</span>
               </button>
             );
@@ -148,7 +148,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
           <button
             type="button"
             onClick={() => setDrawerOpen(!drawerOpen)}
-            className="flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all min-w-[54px] active:scale-95"
+            className="flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] font-medium text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-all min-w-[54px] active:scale-95"
             aria-label={isEn ? 'More' : 'เพิ่มเติม'}
             aria-expanded={drawerOpen}
           >

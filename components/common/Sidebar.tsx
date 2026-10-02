@@ -125,7 +125,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div key={section.id} className="space-y-1 py-1.5">
           {!collapsedMode && (
             <div className="px-3 pb-1 pt-1.5 flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold tracking-wider text-slate-400 dark:text-[#94A3B8] uppercase select-none">
+              <span className="text-[10px] font-mono font-bold tracking-wider text-slate-500 dark:text-[#94A3B8] uppercase select-none">
                 {sectionTitle}
               </span>
             </div>
@@ -163,16 +163,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 } ${
                   isActive
                     ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-white/5 font-medium'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-400 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white'
+                    isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
                   }`}
                 />
                 {!collapsedMode && (
-                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white'}`}>
+                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white'}`}>
                     {itemLabel}
                   </span>
                 )}

@@ -79,6 +79,10 @@ export function RemotionPlayerWrapper<T extends Record<string, any>>({
         autoPlay={true}
         initiallyMuted={true}
         controls={false}
+        clickToPlay={false}
+        renderLoading={() => null}
+        showPosterWhenUnplayed={false}
+        showPosterWhenBuffering={false}
         acknowledgeRemotionLicense={true}
         style={{
           width: '100%',

@@ -483,7 +483,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         setOpacity(0);
         if (onMouseLeave) onMouseLeave(e);
       }}
-      className={`relative overflow-hidden rounded-[24px] bg-[#070B16]/90 backdrop-blur-md border border-white/10 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] text-slate-100 ${className}`}
+      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#070B16]/90 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100 ${className}`}
       {...props}
     >
       <div

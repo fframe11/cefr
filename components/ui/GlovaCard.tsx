@@ -32,16 +32,16 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
-      flat: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 shadow-none text-slate-100',
-      subtle: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-slate-100',
-      glow: 'bg-[#070B16]/85 backdrop-blur-md border border-[#F59E0B]/30 shadow-[0_4px_24px_rgba(245,158,11,0.15)] text-white',
-      bubble: 'bg-[#070B16]/85 backdrop-blur-md border border-border/40 dark:border-white/10 text-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.6)]',
+      flat: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-none text-slate-900 dark:text-slate-100',
+      subtle: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100',
+      glow: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-[#F59E0B]/40 dark:border-[#F59E0B]/30 shadow-[0_4px_20px_rgba(245,158,11,0.12)] text-slate-900 dark:text-white',
+      bubble: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive
       ? isBubble
-        ? 'cursor-pointer hover:border-[#F59E0B]/40 hover:shadow-[0_14px_38px_-6px_rgba(245,158,11,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]/50'
-        : 'cursor-pointer hover:border-[#F59E0B]/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B]/50'
+        ? 'cursor-pointer hover:border-[#FA5D5D]/50 hover:shadow-[0_10px_25px_-4px_rgba(250,93,93,0.15)] dark:hover:border-[#F59E0B]/40 dark:hover:shadow-[0_14px_38px_-6px_rgba(245,158,11,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D]/50'
+        : 'cursor-pointer hover:border-[#FA5D5D]/40 dark:hover:border-[#F59E0B]/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D]/50'
       : '';
 
     const radiusClass = isBubble ? 'rounded-[26px]' : 'rounded-xl';

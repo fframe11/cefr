@@ -618,7 +618,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   {currentPracticeQ.promptEn || currentPracticeQ.promptTh}
                 </h3>
                 {currentPracticeQ.contextPassage && (
-                  <div className="p-4 rounded-xl bg-muted/40 border border-border/40 text-sm font-medium text-foreground italic">
+                  <div className="p-4 rounded-xl bg-slate-100 dark:bg-muted/40 border border-slate-200/80 dark:border-border/40 text-sm font-semibold text-slate-800 dark:text-foreground italic">
                     {currentPracticeQ.contextPassage}
                   </div>
                 )}
@@ -629,7 +629,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {currentPracticeQ.options.map((opt) => {
                   const isSelected = selectedOption === opt.key;
                   let optionStyle =
-                    'bg-[#FAF8F3] dark:bg-[#13111C]/60 hover:bg-slate-100 dark:hover:bg-[#252233] border border-border/80 text-slate-800 dark:text-slate-200';
+                    'bg-slate-50 dark:bg-[#13111C]/60 hover:bg-slate-100 dark:hover:bg-[#252233] border border-slate-200 dark:border-border/80 text-slate-800 dark:text-slate-200';
 
                   if (answerResult) {
                     if (opt.key === answerResult.correct_key) {
@@ -639,7 +639,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       optionStyle =
                         'bg-rose-500/10 border-2 border-rose-500 text-rose-800 dark:text-rose-300 font-bold shadow-xs';
                     } else {
-                      optionStyle = 'opacity-40 border border-border/40 bg-[#FAF8F3]/50 dark:bg-[#13111C]/30 text-slate-500';
+                      optionStyle = 'opacity-40 border border-slate-200/60 dark:border-border/40 bg-slate-50/50 dark:bg-[#13111C]/30 text-slate-500';
                     }
                   } else if (isSelected) {
                     optionStyle =
