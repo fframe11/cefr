@@ -232,15 +232,44 @@ export default function ProfilePage() {
   const handle = displayName.toLowerCase().replace(/\s+/g, '_');
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8 pb-24 font-sans text-foreground">
+    <div className="w-full max-w-6xl mx-auto px-4 py-8 pb-24 font-sans text-foreground space-y-6">
+      {/* EduMaster Sub-Nav Bar */}
+      <nav className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+            <Sparkles className="w-5 h-5 text-white" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+              {isEn ? 'Student Profile & Settings' : 'โปรไฟล์และการตั้งค่าการเรียน'}
+            </span>
+            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+              CEFR {progress.currentLevel} • CAMBRIDGE {progress.targetExam}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2.5 flex-wrap sm:justify-end">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Flame className="w-3.5 h-3.5 fill-[#D98200] text-[#D98200]" />
+            <span>{profile?.streak_days || progress.streakDays || 14} วันต่อเนื่อง</span>
+          </div>
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Trophy className="w-3.5 h-3.5" />
+            <span>{rankedProfile?.tier || 'Gold'} {rankedProfile?.division || 'II'}</span>
+          </div>
+        </div>
+      </nav>
+
       {/* 2-Column Asymmetric Layout (Left: 68%, Right: 32%) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* ========================================================= */}
         {/* LEFT MAIN COLUMN (~68%) */}
         {/* ========================================================= */}
-        <div className="lg:col-span-8 space-y-8">
+        <div className="lg:col-span-8 space-y-6">
           {/* 1. HERO PROFILE IDENTITY CARD */}
-          <section className="relative overflow-hidden rounded-3xl border border-border/60 bg-card p-6 sm:p-8 shadow-xs">
+          <section className="relative overflow-hidden rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               {/* Avatar with Camera/Edit Overlay */}
               <div className="relative group shrink-0">
@@ -257,7 +286,7 @@ export default function ProfilePage() {
                   type="button"
                   onClick={() => setAvatarModalOpen(true)}
                   aria-label="เปลี่ยนรูปโปรไฟล์"
-                  className="absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shadow-md ring-2 ring-background transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                  className="absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white shadow-sm ring-2 ring-white dark:ring-[#070B16] transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                   title="คลิกเพื่ออัปโหลดหรือเปลี่ยนรูปโปรไฟล์"
                 >
                   <Camera className="h-4 w-4" />
@@ -274,26 +303,26 @@ export default function ProfilePage() {
                         type="text"
                         value={displayNameInput}
                         onChange={(e) => setDisplayNameInput(e.target.value)}
-                        className="rounded-xl border border-primary bg-background px-3 py-1.5 text-lg font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="rounded-full border border-[#FA5D5D] bg-white dark:bg-[#0B1224] px-4 py-1.5 text-lg font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 shadow-xs"
                         autoFocus
                       />
                       <button
                         type="submit"
                         disabled={isSavingName}
-                        className="rounded-xl bg-primary p-2 text-white hover:bg-primary/90"
+                        className="rounded-full bg-[#FA5D5D] p-2 text-white hover:bg-[#ff4747] shadow-xs"
                       >
                         <Check className="h-4 w-4" />
                       </button>
                     </form>
                   ) : (
                     <div className="flex items-center gap-2">
-                      <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
+                      <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                         {displayName}
                       </h1>
                       <button
                         type="button"
                         onClick={() => setIsEditingName(true)}
-                        className="rounded-lg p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                        className="rounded-full p-1.5 text-slate-400 hover:bg-white dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white transition-colors"
                         title="แก้ไขชื่อที่แสดง"
                       >
                         <Edit2 className="h-4 w-4" />
@@ -302,47 +331,47 @@ export default function ProfilePage() {
                   )}
 
                   {isAuthenticated ? (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                      <ShieldCheck className="h-3 w-3" />
+                    <span className="inline-flex items-center gap-1 rounded-full border border-[#C5EBDA] dark:border-emerald-500/20 bg-[#E3F6ED] dark:bg-[#102B22] px-3 py-1 text-xs font-semibold text-[#1E7E52] dark:text-emerald-300">
+                      <ShieldCheck className="h-3.5 w-3.5" />
                       ยืนยันแล้ว
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-[#FDE5BC] dark:border-amber-500/20 bg-[#FEF5E5] dark:bg-[#2B2010] px-3 py-1 text-xs font-semibold text-[#D98200] dark:text-[#FFBA38]">
                       {isEn ? 'Guest Learner' : 'ผู้ใช้ทั่วไป'}
                     </span>
                   )}
                 </div>
 
                 {/* Handle & Join Date */}
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-xs text-muted-foreground">
-                  <span className="font-semibold text-foreground/80">@{handle}</span>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                  <span className="font-semibold text-slate-700 dark:text-slate-300">@{handle}</span>
                   <span>•</span>
                   <span>เข้าร่วมเมื่อ กันยายน 2026</span>
                 </div>
 
                 {/* Social Counters */}
-                <div className="flex items-center justify-center sm:justify-start gap-4 pt-1 text-xs">
+                <div className="flex items-center justify-center sm:justify-start gap-4 pt-1 text-xs font-sans">
                   <button
                     type="button"
                     onClick={() => setSocialTab('following')}
-                    className="font-semibold text-foreground hover:text-primary transition-colors"
+                    className="font-semibold text-slate-700 dark:text-slate-300 hover:text-[#FA5D5D] transition-colors"
                   >
-                    กำลังติดตาม <span className="font-bold text-primary">12</span> คน
+                    กำลังติดตาม <span className="font-bold text-[#FA5D5D]">12</span> คน
                   </button>
-                  <span className="text-muted-foreground">•</span>
+                  <span className="text-slate-400">•</span>
                   <button
                     type="button"
                     onClick={() => setSocialTab('followers')}
-                    className="font-semibold text-foreground hover:text-primary transition-colors"
+                    className="font-semibold text-slate-700 dark:text-slate-300 hover:text-[#FA5D5D] transition-colors"
                   >
-                    ผู้ติดตาม <span className="font-bold text-primary">24</span> คน
+                    ผู้ติดตาม <span className="font-bold text-[#FA5D5D]">24</span> คน
                   </button>
                 </div>
 
                 {/* Target Exam & Rank Ribbon */}
                 <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-xl border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-700 dark:text-indigo-300">
-                    <Target className="h-3.5 w-3.5" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs">
+                    <Target className="h-3.5 w-3.5 text-[#FA5D5D]" />
                     เป้าหมาย: {selectedExam} (CEFR {CAMBRIDGE_EXAMS.find((e) => e.code === selectedExam)?.cefr || 'B2'})
                   </span>
 
@@ -358,77 +387,77 @@ export default function ProfilePage() {
 
           {/* 2. Statistics Grid */}
           <section className="space-y-4">
-            <h2 className="text-lg font-black text-foreground tracking-tight">สถิติ</h2>
+            <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">สถิติ</h2>
 
             <div className="grid grid-cols-2 gap-3.5">
               {/* Stat 1: Day Streak */}
-              <div className="flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-amber-500/15 text-amber-500">
-                  <Flame className="h-6 w-6 fill-amber-500" />
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200]">
+                  <Flame className="h-6 w-6 fill-[#D98200]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xl sm:text-2xl font-black text-foreground tabular-nums">
+                  <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tabular-nums font-mono">
                     {profile?.streak_days || progress.streakDays || 14}
                   </div>
-                  <div className="text-xs font-medium text-muted-foreground">วันต่อเนื่อง</div>
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">วันต่อเนื่อง</div>
                 </div>
               </div>
 
               {/* Stat 2: Total XP */}
-              <div className="flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
-                  <Zap className="h-6 w-6 fill-indigo-500" />
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
+                  <Zap className="h-6 w-6 fill-[#FA5D5D]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xl sm:text-2xl font-black text-foreground tabular-nums">
+                  <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tabular-nums font-mono">
                     {(2450).toLocaleString()}
                   </div>
-                  <div className="text-xs font-medium text-muted-foreground">XP ทั้งหมด</div>
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">XP ทั้งหมด</div>
                 </div>
               </div>
 
               {/* Stat 3: Current League / MMR */}
-              <div className="flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52]">
                   <Award className="h-6 w-6" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-base sm:text-lg font-black text-foreground truncate">
+                  <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white truncate">
                     {rankedProfile?.tier || 'Gold'} {rankedProfile?.division || 'II'}
                   </div>
-                  <div className="text-xs font-medium text-muted-foreground">
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                     ลีกปัจจุบัน ({rankedProfile?.rating || 1284} MMR)
                   </div>
                 </div>
               </div>
 
               {/* Stat 4: Top 3 Finishes */}
-              <div className="flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-purple-500/15 text-purple-600 dark:text-purple-400">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">
                   <Trophy className="h-6 w-6" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xl sm:text-2xl font-black text-foreground tabular-nums">5</div>
-                  <div className="text-xs font-medium text-muted-foreground">ครั้งที่อยู่ในท็อป 3</div>
+                  <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tabular-nums font-mono">5</div>
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">ครั้งที่อยู่ในท็อป 3</div>
                 </div>
               </div>
 
               {/* Stat 5: Cambridge Estimated Score & Skill Breakdown */}
-              <div className="col-span-2 flex items-center gap-3.5 rounded-2xl border border-border/60 bg-card p-4 shadow-2xs">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+              <div className="col-span-2 flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
                   <Target className="h-6 w-6" />
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <div className="text-sm sm:text-base font-black text-foreground">
-                      คะแนนเคมบริดจ์โดยประมาณ: {progress.estimatedCambridgeScore || 160} / 230
+                    <div className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+                      คะแนนเคมบริดจ์โดยประมาณ: <span className="text-[#FA5D5D] font-mono">{progress.estimatedCambridgeScore || 160}</span> / 230
                     </div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-mono">
                       เป้าหมาย {progress.targetExam} • CEFR {progress.currentLevel}
                     </div>
                   </div>
                   {progress.skillStats && (
-                    <div className="flex gap-2 text-[11px] font-tech text-muted-foreground">
+                    <div className="flex gap-2 text-[11px] font-mono text-slate-600 dark:text-slate-400 font-bold">
                       <span>R: {progress.skillStats.reading || 80}%</span>
                       <span>L: {progress.skillStats.listening || 75}%</span>
                       <span>G: {progress.skillStats.grammar || 85}%</span>
@@ -441,80 +470,80 @@ export default function ProfilePage() {
           </section>
 
           {/* 3. Achievements List */}
-          <section className="space-y-4">
+          <section className="p-6 sm:p-8 space-y-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md shadow-sm">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-black text-foreground tracking-tight">ความสำเร็จ</h2>
+              <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">ความสำเร็จ</h2>
               <Link
                 href="/achievements"
-                className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
+                className="text-xs font-bold text-[#FA5D5D] hover:underline flex items-center gap-1 font-mono"
               >
                 <span>ดูทั้งหมด</span>
                 <ChevronRight className="h-3.5 w-3.5" />
               </Link>
             </div>
 
-            <div className="divide-y divide-border/40 rounded-3xl border border-border/60 bg-card overflow-hidden shadow-xs">
+            <div className="divide-y divide-[#EAE4D5] dark:divide-white/10 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] overflow-hidden shadow-xs">
               {/* Achievement 1: Fire Starter */}
-              <div className="flex items-center gap-4 p-5 hover:bg-muted/20 transition-colors">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400">
-                  <Flame className="h-7 w-7 fill-amber-500" />
+              <div className="flex items-center gap-4 p-5 hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FEF5E5] text-[#D98200] dark:bg-[#2B2010]">
+                  <Flame className="h-6 w-6 fill-[#D98200]" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">{isEn ? 'Fire Starter' : 'เพลิงพระกาฬ'}</span>
-                      <span className="rounded-md bg-amber-500/15 px-2 py-0.5 text-[10px] font-black text-amber-700 dark:text-amber-300">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">{isEn ? 'Fire Starter' : 'เพลิงพระกาฬ'}</span>
+                      <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-amber-700 dark:text-amber-300">
                         ระดับ 1
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-muted-foreground tabular-nums">3/3</span>
+                    <span className="text-xs font-mono font-bold text-slate-400 tabular-nums">3/3</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">เรียนต่อเนื่องกัน 3 วันให้สำเร็จ</p>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted/60">
-                    <div className="h-full rounded-full bg-amber-500 w-full" />
+                  <p className="text-xs text-slate-500 dark:text-slate-400">เรียนต่อเนื่องกัน 3 วันให้สำเร็จ</p>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-white/10">
+                    <div className="h-full rounded-full bg-[#FA5D5D] w-full" />
                   </div>
                 </div>
               </div>
 
               {/* Achievement 2: Sage */}
-              <div className="flex items-center gap-4 p-5 hover:bg-muted/20 transition-colors">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-600 dark:text-indigo-400">
-                  <Sparkles className="h-7 w-7" />
+              <div className="flex items-center gap-4 p-5 hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+                  <Sparkles className="h-6 w-6" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">{isEn ? 'Scholar' : 'นักปราชญ์'}</span>
-                      <span className="rounded-md bg-indigo-500/15 px-2 py-0.5 text-[10px] font-black text-indigo-700 dark:text-indigo-300">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">{isEn ? 'Scholar' : 'นักปราชญ์'}</span>
+                      <span className="rounded-full bg-indigo-500/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300">
                         ระดับ 1
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-muted-foreground tabular-nums">80/100</span>
+                    <span className="text-xs font-mono font-bold text-slate-400 tabular-nums">80/100</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">สะสมแต้มให้ครบ 100 XP</p>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted/60">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">สะสมแต้มให้ครบ 100 XP</p>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-white/10">
                     <div className="h-full rounded-full bg-indigo-500 w-4/5" />
                   </div>
                 </div>
               </div>
 
               {/* Achievement 3: Champion */}
-              <div className="flex items-center gap-4 p-5 hover:bg-muted/20 transition-colors">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400">
-                  <Trophy className="h-7 w-7" />
+              <div className="flex items-center gap-4 p-5 hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E3F6ED] text-[#1E7E52] dark:bg-[#102B22]">
+                  <Trophy className="h-6 w-6" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-foreground">{isEn ? 'Champion' : 'แชมเปี้ยนลีก'}</span>
-                      <span className="rounded-md bg-emerald-500/15 px-2 py-0.5 text-[10px] font-black text-emerald-700 dark:text-emerald-300">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">{isEn ? 'Champion' : 'แชมเปี้ยนลีก'}</span>
+                      <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-emerald-700 dark:text-emerald-300">
                         ระดับ 1
                       </span>
                     </div>
-                    <span className="text-xs font-bold text-muted-foreground tabular-nums">1/1</span>
+                    <span className="text-xs font-mono font-bold text-slate-400 tabular-nums">1/1</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">ปลดล็อกตารางคะแนนแข่งขันและจบ 10 บทเรียน</p>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted/60">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">ปลดล็อกตารางคะแนนแข่งขันและจบ 10 บทเรียน</p>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-white/10">
                     <div className="h-full rounded-full bg-emerald-500 w-full" />
                   </div>
                 </div>
@@ -523,18 +552,20 @@ export default function ProfilePage() {
           </section>
 
           {/* 4. Learning Goals */}
-          <section className="rounded-3xl border border-border/60 bg-card p-6 shadow-xs space-y-5">
-            <div className="flex items-center justify-between border-b border-border/40 pb-3">
-              <div className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-primary" />
-                <h3 className="text-base font-bold text-foreground">เป้าหมายการเรียนรู้ประจำวัน</h3>
+          <section className="p-6 sm:p-8 space-y-5 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md shadow-sm">
+            <div className="flex items-center justify-between border-b border-[#EAE4D5] dark:border-white/10 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
+                  <Target className="h-4 w-4" />
+                </div>
+                <h3 className="text-base font-extrabold text-slate-900 dark:text-white">เป้าหมายการเรียนรู้ประจำวัน</h3>
               </div>
-              <span className="text-xs text-muted-foreground">ปรับระดับความเข้มข้นได้ตลอดเวลา</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">ปรับระดับความเข้มข้นได้ตลอดเวลา</span>
             </div>
 
             {/* Target Exam Pills */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
                 {isEn ? 'Target Cambridge Exam' : 'การสอบเคมบริดจ์เป้าหมาย'}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -545,14 +576,14 @@ export default function ProfilePage() {
                       key={exam.code}
                       type="button"
                       onClick={() => setSelectedExam(exam.code)}
-                      className={`p-3 rounded-2xl border text-center transition-all flex flex-col items-center justify-center gap-1 ${
+                      className={`p-3.5 rounded-[20px] border text-center transition-all flex flex-col items-center justify-center gap-1 shadow-xs ${
                         isSelected
-                          ? 'border-primary bg-primary text-white font-bold shadow-xs'
-                          : 'border-border/60 bg-background text-foreground hover:bg-muted'
+                          ? 'border-[#FA5D5D] bg-[#FA5D5D] text-white font-bold shadow-xs'
+                          : 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] text-slate-800 dark:text-slate-200 hover:border-slate-300'
                       }`}
                     >
                       <span className="text-xs font-bold">{exam.name}</span>
-                      <span className={`text-[10px] ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
+                      <span className={`text-[10px] font-mono ${isSelected ? 'text-white/80' : 'text-slate-400'}`}>
                         CEFR {exam.cefr}
                       </span>
                     </button>
@@ -563,8 +594,8 @@ export default function ProfilePage() {
 
             {/* Daily Goal Minutes */}
             <div className="space-y-2 pt-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                เวลาเรียนต่อวัน: <span className="text-primary font-black">{dailyGoal} นาที</span>
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
+                เวลาเรียนต่อวัน: <span className="text-[#FA5D5D] font-black">{dailyGoal} นาที</span>
               </label>
               <div className="flex flex-wrap gap-2">
                 {PRESET_GOAL_MINUTES.map((mins) => {
@@ -574,10 +605,10 @@ export default function ProfilePage() {
                       key={mins}
                       type="button"
                       onClick={() => setDailyGoal(mins)}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                      className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                         isSelected
-                          ? 'bg-primary text-white shadow-2xs'
-                          : 'bg-muted/50 text-foreground hover:bg-muted'
+                          ? 'bg-[#FA5D5D] text-white shadow-xs'
+                          : 'bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5'
                       }`}
                     >
                       {mins} นาที
@@ -592,12 +623,12 @@ export default function ProfilePage() {
                 type="button"
                 onClick={handleSaveGoals}
                 disabled={isSavingGoals}
-                className="rounded-xl bg-primary px-6 py-2.5 text-xs font-bold text-white transition-all hover:bg-primary/90 disabled:opacity-50"
+                className="rounded-full bg-[#FA5D5D] px-6 py-2.5 text-xs font-bold text-white transition-all hover:bg-[#ff4747] disabled:opacity-50 shadow-xs"
               >
                 {isSavingGoals ? 'กำลังบันทึก...' : 'บันทึกเป้าหมาย'}
               </button>
               {goalsSuccessMsg && (
-                <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-mono">
                   <Check className="h-3.5 w-3.5" />
                   {goalsSuccessMsg}
                 </span>
@@ -611,16 +642,16 @@ export default function ProfilePage() {
         {/* ========================================================= */}
         <div className="lg:col-span-4 space-y-6">
           {/* 1. FRIENDS / SOCIAL TABS CARD */}
-          <section className="rounded-3xl border border-border/60 bg-card overflow-hidden shadow-xs">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md overflow-hidden shadow-sm">
             {/* Tab Header */}
-            <div className="grid grid-cols-2 border-b border-border/40 text-center font-bold text-xs">
+            <div className="grid grid-cols-2 border-b border-[#EAE4D5] dark:border-white/10 text-center font-bold text-xs">
               <button
                 type="button"
                 onClick={() => setSocialTab('following')}
                 className={`py-3.5 transition-colors ${
                   socialTab === 'following'
-                    ? 'border-b-2 border-primary text-primary font-black bg-primary/[0.03]'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'border-b-2 border-[#FA5D5D] text-[#FA5D5D] font-black bg-[#FA5D5D]/[0.04]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 กำลังติดตาม
@@ -630,8 +661,8 @@ export default function ProfilePage() {
                 onClick={() => setSocialTab('followers')}
                 className={`py-3.5 transition-colors ${
                   socialTab === 'followers'
-                    ? 'border-b-2 border-primary text-primary font-black bg-primary/[0.03]'
-                    : 'text-muted-foreground hover:text-foreground'
+                    ? 'border-b-2 border-[#FA5D5D] text-[#FA5D5D] font-black bg-[#FA5D5D]/[0.04]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 ผู้ติดตาม
@@ -641,17 +672,17 @@ export default function ProfilePage() {
             {/* Friends Content */}
             <div className="p-5 space-y-4">
               {/* Community Encourage Message */}
-              <div className="flex items-start gap-3 rounded-2xl bg-amber-500/[0.08] border border-amber-500/20 p-3.5">
-                <Users className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
-                <p className="text-xs leading-relaxed text-amber-900 dark:text-amber-200 font-medium">
+              <div className="flex items-start gap-3 rounded-[20px] bg-[#FEF5E5] dark:bg-[#2B2010] border border-[#FDE5BC] dark:border-amber-500/20 p-3.5">
+                <Users className="h-5 w-5 text-[#D98200] shrink-0 mt-0.5" />
+                <p className="text-xs leading-relaxed text-[#D98200] dark:text-[#FFBA38] font-medium">
                   ถ้ามีคนเรียนเป็นเพื่อนด้วยแล้วจะสนุก และเห็นผลขึ้นอีกเท่าตัวเลยนะ!
                 </p>
               </div>
 
               {/* Study Buddies List */}
-              <div className="divide-y divide-border/30">
+              <div className="space-y-2.5">
                 {STUDY_BUDDIES.map((buddy, idx) => (
-                  <div key={`buddy_${idx}`} className="flex items-center justify-between py-3">
+                  <div key={`buddy_${idx}`} className="flex items-center justify-between p-3 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                     <div className="flex items-center gap-3 min-w-0">
                       <GlovaAvatarWithFrame
                         avatarUrl={buddy.avatar}
@@ -660,10 +691,10 @@ export default function ProfilePage() {
                         size="sm"
                       />
                       <div className="min-w-0">
-                        <span className="block text-xs font-bold text-foreground truncate">
+                        <span className="block text-xs font-bold text-slate-900 dark:text-white truncate">
                           {buddy.name}
                         </span>
-                        <span className="block text-[10px] text-muted-foreground truncate">
+                        <span className="block text-[10px] text-slate-400 truncate">
                           {buddy.uni}
                         </span>
                       </div>
@@ -671,10 +702,10 @@ export default function ProfilePage() {
 
                     <button
                       type="button"
-                      className={`shrink-0 rounded-xl px-3 py-1.5 text-[11px] font-bold transition-all ${
+                      className={`shrink-0 rounded-full px-3.5 py-1.5 text-[11px] font-bold transition-all shadow-xs ${
                         buddy.isFollowing
-                          ? 'border border-border/60 bg-muted/40 text-muted-foreground hover:bg-muted'
-                          : 'bg-primary text-white shadow-xs hover:bg-primary/90'
+                          ? 'border border-[#EAE4D5] dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-500 hover:bg-slate-100'
+                          : 'bg-[#FA5D5D] hover:bg-[#ff4747] text-white'
                       }`}
                     >
                       {buddy.isFollowing ? 'กำลังติดตาม' : 'ติดตาม'}
@@ -686,32 +717,32 @@ export default function ProfilePage() {
           </section>
 
           {/* 2. ADD FRIENDS ACTION CARD */}
-          <section className="rounded-3xl border border-border/60 bg-card p-5 shadow-xs space-y-3">
-            <h3 className="text-xs font-black uppercase tracking-wider text-muted-foreground">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
               เพิ่มเพื่อน
             </h3>
 
             <div className="space-y-2">
               <Link
                 href="/social?tab=search"
-                className="flex items-center justify-between rounded-2xl border border-border/50 bg-background p-3.5 text-xs font-bold text-foreground hover:bg-muted/40 transition-colors"
+                className="flex items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors shadow-xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
                     <Search className="h-4 w-4" />
                   </div>
                   <span>ค้นหาเพื่อน</span>
                 </div>
-                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                <ChevronRight className="h-4 w-4 text-slate-400" />
               </Link>
 
               <button
                 type="button"
                 onClick={handleCopyInvite}
-                className="flex w-full items-center justify-between rounded-2xl border border-border/50 bg-background p-3.5 text-xs font-bold text-foreground hover:bg-muted/40 transition-colors text-left"
+                className="flex w-full items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors text-left shadow-xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FEF5E5] text-[#D98200] dark:bg-[#2B2010]">
                     <Share2 className="h-4 w-4" />
                   </div>
                   <div>
@@ -726,29 +757,29 @@ export default function ProfilePage() {
                 {copiedInvite ? (
                   <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                 ) : (
-                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  <ChevronRight className="h-4 w-4 text-slate-400" />
                 )}
               </button>
             </div>
           </section>
 
           {/* 3. ACCOUNT ACTIONS & LOGOUT */}
-          <section className="rounded-3xl border border-border/60 bg-card p-5 shadow-xs space-y-3">
-            <h3 className="text-xs font-black uppercase tracking-wider text-muted-foreground">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
               บัญชีผู้ใช้
             </h3>
 
             <div className="space-y-2 text-xs">
-              <div className="flex justify-between py-1.5 border-b border-border/40">
-                <span className="text-muted-foreground">สถานะ</span>
-                <span className="font-semibold text-foreground">
+              <div className="flex justify-between py-1.5 border-b border-[#EAE4D5] dark:border-white/10">
+                <span className="text-slate-500 dark:text-slate-400">สถานะ</span>
+                <span className="font-semibold text-slate-900 dark:text-white">
                   {isAuthenticated ? (isEn ? 'Verified Member' : 'สมาชิกที่ยืนยันแล้ว') : (isEn ? 'Guest Learner' : 'ผู้ใช้ทั่วไป')}
                 </span>
               </div>
               {isAuthenticated && (
-                <div className="flex justify-between py-1.5 border-b border-border/40">
-                  <span className="text-muted-foreground">อีเมล</span>
-                  <span className="font-semibold text-foreground truncate max-w-[170px]">{user?.email}</span>
+                <div className="flex justify-between py-1.5 border-b border-[#EAE4D5] dark:border-white/10">
+                  <span className="text-slate-500 dark:text-slate-400">อีเมล</span>
+                  <span className="font-semibold text-slate-900 dark:text-white truncate max-w-[170px]">{user?.email}</span>
                 </div>
               )}
             </div>
@@ -758,7 +789,7 @@ export default function ProfilePage() {
                 <button
                   type="button"
                   onClick={handleSignOut}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-500/30 bg-rose-500/10 py-2.5 text-xs font-bold text-rose-600 transition-colors hover:bg-rose-500/15 dark:text-rose-400"
+                  className="flex w-full items-center justify-center gap-2 rounded-full border border-rose-200 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/30 py-2.5 text-xs font-bold text-rose-600 transition-colors hover:bg-rose-100 dark:text-rose-400"
                 >
                   <LogOut className="h-4 w-4" />
                   <span>ออกจากระบบ</span>
@@ -767,7 +798,7 @@ export default function ProfilePage() {
                 <button
                   type="button"
                   onClick={() => setIsProfileModalOpen(true)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-2.5 text-xs font-bold text-white transition-all hover:bg-primary/90 shadow-xs"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] py-2.5 text-xs font-bold text-white transition-all shadow-xs"
                 >
                   <span>สร้างบัญชีเพื่อบันทึกผลถาวร</span>
                   <ArrowRight className="h-4 w-4" />

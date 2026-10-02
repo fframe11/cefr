@@ -34,6 +34,7 @@ import {
   LogIn,
   FileText,
   HelpCircle,
+  Sparkles,
 } from 'lucide-react';
 import {
   GlovaButton,
@@ -421,81 +422,97 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   if (!isExamStarted && !isSubmitted) {
     return (
       <div className="w-full space-y-6 pb-12">
-        {/* Header Hero Banner */}
-        <SpotlightCard
-          spotlightColor="rgba(33, 85, 230, 0.15)"
-          showBorderBeam={true}
-          borderBeamProps={{
-            colorFrom: '#F59E0B',
-            colorTo: '#FDE68A',
-            duration: 14,
-            size: 260,
-          }}
-          className="p-6 sm:p-8 text-center space-y-4 relative overflow-hidden rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
+        {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+        <nav
+          aria-label="Mock exam sub-navigation"
+          className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
         >
-          {/* Authentic Examination Setting Backdrop */}
-          <div className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-15 overflow-hidden" aria-hidden="true">
-            <img
-              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80"
-              alt="Structured exam desk with question paper and stationery"
-              className="w-full h-full object-cover"
-              loading="lazy"
-              width={1600}
-              height={900}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/85 to-transparent" />
+          {/* Brand & Studio Identity */}
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <GraduationCap className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Cambridge Mock Exams
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                CAMBRIDGE ARENA // A2-C1
+              </span>
+            </div>
           </div>
-          <div className="relative z-10 space-y-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#2155E6]/10 border border-[#2155E6]/25 text-[#2155E6] dark:text-[#6893FF] flex items-center justify-center mx-auto">
-              <GraduationCap className="w-7 h-7" />
+
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {/* Catalog counter chip */}
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+              {isEn ? `${catalogExams.length} Official Sets` : `${catalogExams.length} ชุดข้อสอบมาตรฐาน`}
+            </span>
+          </div>
+
+          {/* Status Chips */}
+          <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+            <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Timed Simulation</span>
+            </div>
+
+            <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Cambridge Scale</span>
+            </div>
+          </div>
+        </nav>
+
+        {/* Header Hero Banner */}
+        <div className="p-6 sm:p-8 text-center space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm relative overflow-hidden">
+          <div className="relative z-10 space-y-3">
+            <div className="w-14 h-14 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center mx-auto shadow-sm">
+              <GraduationCap className="w-7 h-7 text-white" />
             </div>
             <div>
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-purple-500/15 text-purple-600 dark:text-purple-300 border border-purple-500/25">
-                  <DecryptedText text="CAMBRIDGE ARENA" speed={40} maxIterations={12} revealDirection="start" />
-                </span>
-              </div>
-              <h1 className="text-fluid-title font-bold text-foreground">
+              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                 {isEn ? 'Cambridge English Qualifications Mock Examination' : 'ห้องสอบจำลอง Cambridge English Qualifications'}
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-lg mx-auto">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-lg mx-auto font-sans">
                 {isEn
                   ? 'Simulate authentic exam conditions according to CEFR standards with automated timing and Cambridge English Scale calculations.'
                   : 'จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale'}
               </p>
             </div>
 
-          <GlovaFeedbackBubble
-            currentSkill="reading"
-            customTip={
-              isEn
-                ? 'Practice mock tests to evaluate test readiness and estimate your Cambridge English Scale score. All test sessions are automatically logged.'
-                : 'แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ'
-            }
-          />
+            <GlovaFeedbackBubble
+              currentSkill="reading"
+              customTip={
+                isEn
+                  ? 'Practice mock tests to evaluate test readiness and estimate your Cambridge English Scale score. All test sessions are automatically logged.'
+                  : 'แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ'
+              }
+            />
 
-          {/* Official Cambridge Disclaimer */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/40 border border-border/60 text-[11px] text-muted-foreground text-left max-w-xl mx-auto">
-            <HelpCircle className="w-4 h-4 shrink-0 text-muted-foreground" />
-            <span>
-              {isEn
-                ? 'Practice mock test for skills evaluation, not an official certificate from Cambridge English Qualifications.'
-                : 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications'}
-            </span>
+            {/* Official Cambridge Disclaimer */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-[11px] text-slate-600 dark:text-slate-400 text-left max-w-xl mx-auto shadow-xs">
+              <HelpCircle className="w-4 h-4 shrink-0 text-slate-400" />
+              <span>
+                {isEn
+                  ? 'Practice mock test for skills evaluation, not an official certificate from Cambridge English Qualifications.'
+                  : 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications'}
+              </span>
+            </div>
           </div>
-          </div>
-        </SpotlightCard>
+        </div>
 
         {/* Guest Mode Auth Required Warning Banner */}
         {authStatus !== 'authenticated' && (
-          <div className="rounded-xl p-4 bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+          <div className="rounded-[22px] p-4 sm:p-5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-500/20 text-slate-800 dark:text-amber-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
             <div className="flex items-center gap-3">
-              <AlertCircle className="w-5 h-5 shrink-0" />
+              <AlertCircle className="w-5 h-5 shrink-0 text-amber-600 dark:text-amber-400" />
               <div className="text-xs sm:text-sm">
-                <p className="font-semibold text-foreground">
+                <p className="font-bold text-slate-900 dark:text-white">
                   {isEn ? 'Please log in to take Mock Exams' : 'กรุณาเข้าสู่ระบบเพื่อทำ Mock Exam'}
                 </p>
-                <p className="text-muted-foreground mt-0.5">
+                <p className="text-slate-600 dark:text-slate-400 mt-0.5 font-sans">
                   {isEn
                     ? 'Standard mock exams require session generation and permanent progress tracking on your account.'
                     : 'การสอบจำลองมาตรฐานจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ'}
@@ -503,15 +520,14 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               </div>
             </div>
             {onOpenProfile && (
-              <GlovaButton
-                variant="primary"
-                size="md"
-                leftIcon={<LogIn className="w-4 h-4" />}
+              <button
+                type="button"
                 onClick={onOpenProfile}
-                className="shrink-0 px-5"
+                className="shrink-0 px-5 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-bold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all cursor-pointer"
               >
-                {isEn ? 'Sign In' : 'เข้าสู่ระบบ'}
-              </GlovaButton>
+                <LogIn className="w-4 h-4" />
+                <span>{isEn ? 'Sign In' : 'เข้าสู่ระบบ'}</span>
+              </button>
             )}
           </div>
         )}
@@ -519,73 +535,68 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
         {/* Exam Cards Grid */}
         {isLoadingCatalog ? (
           <div className="py-16 text-center space-y-3">
-            <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto" />
-            <p className="text-xs text-muted-foreground">
+            <Loader2 className="w-8 h-8 animate-spin text-[#FA5D5D] mx-auto" />
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {isEn ? 'Loading mock exam catalog...' : 'กำลังโหลดรายการชุดข้อสอบจำลอง...'}
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {catalogExams.map((exam) => {
               const isSelected = selectedExamId === exam.id;
               return (
-                <SpotlightCard
+                <div
                   key={exam.id}
-                  spotlightColor={isSelected ? 'rgba(245, 158, 11, 0.2)' : 'rgba(255, 255, 255, 0.05)'}
-                  showBorderBeam={isSelected}
-                  borderBeamProps={{
-                    colorFrom: '#F59E0B',
-                    colorTo: '#FDE68A',
-                    duration: 10,
-                    size: 180,
-                  }}
                   onClick={() => setSelectedExamId(exam.id)}
-                  className={`p-5 cursor-pointer transition-all flex flex-col justify-between rounded-2xl bg-[#070B16]/90 backdrop-blur-md border ${
+                  className={`p-6 cursor-pointer transition-all flex flex-col justify-between rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border ${
                     isSelected
-                      ? 'border-[#F59E0B] shadow-lg shadow-[#F59E0B]/20 ring-2 ring-[#F59E0B]/30'
-                      : 'border-white/10 hover:border-[#F59E0B]/40'
+                      ? 'border-[#FA5D5D] shadow-md ring-2 ring-[#FA5D5D]/20'
+                      : 'border-[#EAE4D5] dark:border-white/10 hover:border-[#FA5D5D]/40'
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-1.5">
-                        <GlovaBadge variant="accent">
+                        <span className="px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold">
                           {exam.exam_code}
-                        </GlovaBadge>
-                        <GlovaBadge variant="outline">
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-white dark:bg-[#0B1224] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 text-xs font-mono font-bold">
                           CEFR {exam.target_cefr}
-                        </GlovaBadge>
+                        </span>
                       </div>
-                      <span className="text-xs text-muted-foreground flex items-center gap-1 font-mono">
-                        <Clock className="w-3.5 h-3.5" />
+                      <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 font-mono font-semibold">
+                        <Clock className="w-3.5 h-3.5 text-[#FA5D5D]" />
                         <span>{exam.total_duration_minutes} {isEn ? 'min' : 'นาที'}</span>
                       </span>
                     </div>
 
-                    <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">
+                    <h3 className="font-extrabold text-base text-slate-900 dark:text-white mb-1.5">
                       {exam.name}
                     </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                       {isEn ? (exam.description_en || exam.description_th) : exam.description_th}
                     </p>
 
-                    <div className="mt-4 pt-3 border-t border-border/40 space-y-1 text-xs text-muted-foreground">
+                    <div className="mt-4 pt-3 border-t border-[#EAE4D5] dark:border-white/10 space-y-1 text-xs text-slate-500 dark:text-slate-400 font-sans">
                       <p>{isEn ? `• Passing mark: ${exam.passing_score}%+` : `• เกณฑ์ผ่าน: ${exam.passing_score}% ขึ้นไป`}</p>
                       <p>{isEn ? `• Target Level: CEFR ${exam.target_cefr}` : `• มาตรฐานเป้าหมาย: CEFR ${exam.target_cefr}`}</p>
                     </div>
                   </div>
 
-                  <div className="mt-5">
-                    <TactileButton
-                      variant={isSelected ? "primary" : "neutral"}
-                      size="sm"
+                  <div className="mt-6">
+                    <button
+                      type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedExamId(exam.id);
                         handleStartExam(exam.id);
                       }}
                       disabled={isStartingExam}
-                      className="w-full flex items-center justify-center gap-2"
+                      className={`touch-target w-full py-2.5 px-4 rounded-full text-xs font-black flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#FA5D5D] hover:bg-[#ff4747] text-white'
+                          : 'bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10'
+                      }`}
                     >
                       {isStartingExam && selectedExamId === exam.id ? (
                         <>
@@ -595,9 +606,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       ) : (
                         <span>{isEn ? 'Start This Exam' : 'เริ่มทำข้อสอบชุดนี้'}</span>
                       )}
-                    </TactileButton>
+                    </button>
                   </div>
-                </SpotlightCard>
+                </div>
               );
             })}
           </div>

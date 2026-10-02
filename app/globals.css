@@ -279,6 +279,17 @@
    (Inspired by BorisWick Gaming Dashboard & Knightopia Cinematic Canvas)
    ========================================================================= */
 .bg-game-canvas {
+  background-color: #FAF8F3;
+  background-image: 
+    radial-gradient(circle 800px at 15% 20%, rgba(250, 93, 93, 0.04) 0%, transparent 60%),
+    radial-gradient(circle 900px at 85% 65%, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+    linear-gradient(180deg, #FAF8F3 0%, #F5F1E9 100%);
+  background-attachment: fixed;
+}
+
+.dark .bg-game-canvas,
+html.dark .bg-game-canvas,
+html.dark body.bg-game-canvas {
   background-color: #030712;
   background-image: 
     radial-gradient(ellipse 90% 60% at 50% -10%, rgba(245, 158, 11, 0.16) 0%, transparent 65%),

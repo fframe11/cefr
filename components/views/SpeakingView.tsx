@@ -203,33 +203,61 @@ export const SpeakingView: React.FC = () => {
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. Learning Context Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
-              <DecryptedText text="SPEAKING LAB" speed={40} maxIterations={12} revealDirection="start" />
-            </span>
+      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      <nav
+        aria-label="Speaking sub-navigation"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+      >
+        {/* Brand & Studio Identity */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <Mic className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Speaking Studio
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                SPEAKING LAB // CEFR
+              </span>
+            </div>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-            {isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
-          </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
-            {isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
-          </p>
+
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {currentPrompt && (
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+              <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
+              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+                Part {currentPrompt.part}
+              </span>
+            </div>
+          )}
         </div>
 
-        {currentPrompt && (
-          <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
-            <GlovaLevelBadge level={currentPrompt.cefrLevel} size="md" />
-            <GlovaBadge variant="secondary" size="sm">
-              Part {currentPrompt.part}
-            </GlovaBadge>
-            <GlovaBadge variant="outline" size="sm">
-              {currentPrompt.targetExam}
-            </GlovaBadge>
+        {/* Counter and Status Chips */}
+        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Mic className="w-3.5 h-3.5" />
+            <span>{isEn ? `${prompts.length} Speaking Prompts` : `${prompts.length} หัวข้อการพูด`}</span>
           </div>
-        )}
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Voice Cognition</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Title & Description */}
+      <div className="space-y-1">
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+          {isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
+          {isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
+        </p>
       </div>
 
       {/* Topic Selector Tabs */}
@@ -245,10 +273,10 @@ export const SpeakingView: React.FC = () => {
                 handleReset();
                 setShowModelAnswer(false);
               }}
-              className={`touch-target px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
-                  ? 'bg-[#F59E0B] text-slate-950 border-[#F59E0B] shadow-md shadow-[#F59E0B]/25 font-black'
-                  : 'bg-[#070B16]/90 text-slate-400 hover:text-white border-white/10 hover:border-[#F59E0B]/40'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
+                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -274,46 +302,37 @@ export const SpeakingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <SpotlightCard
-            spotlightColor="rgba(245, 158, 11, 0.15)"
-            showBorderBeam={true}
-            borderBeamProps={{
-              colorFrom: '#F59E0B',
-              colorTo: '#FDE68A',
-              duration: 12,
-              size: 240,
-            }}
-            className="p-6 sm:p-8 space-y-4 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
-          >
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
+          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
-                <span className="font-bold text-sm sm:text-base text-foreground">
+                <span className="font-extrabold text-base text-slate-900 dark:text-white">
                   {currentPrompt.title}
                 </span>
               </div>
 
               {/* Sample Audio Button */}
               {currentPrompt.modelAnswer && (
-                <GlovaButton
-                  variant="outline"
-                  size="sm"
-                  leftIcon={<Volume2 className="w-4 h-4 text-[#F59E0B]" aria-hidden="true" />}
+                <button
+                  type="button"
                   onClick={handlePlayModel}
-                  className="rounded-full"
+                  className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
-                  {isPlayingModel ? (isEn ? 'Playing sample...' : 'กำลังเล่นตัวอย่าง...') : (isEn ? 'Listen to Sample' : 'ฟังตัวอย่างคำตอบ')}
-                </GlovaButton>
+                  <Volume2 className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
+                  <span>
+                    {isPlayingModel ? (isEn ? 'Playing sample...' : 'กำลังเล่นตัวอย่าง...') : (isEn ? 'Listen to Sample' : 'ฟังตัวอย่างคำตอบ')}
+                  </span>
+                </button>
               )}
             </div>
 
             {/* Prompt Description */}
-            <div className="p-5 rounded-xl bg-[#0B1224] border border-white/10 space-y-1.5 shadow-inner">
-              <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed whitespace-pre-line">
+            <div className="p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 shadow-xs">
+              <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-semibold leading-relaxed whitespace-pre-line font-sans">
                 {currentPrompt.promptEn}
               </p>
               {currentPrompt.promptTh && (
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-slate-200/80 dark:border-white/10">
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-[#EAE4D5] dark:border-white/10">
                   {currentPrompt.promptTh}
                 </p>
               )}
@@ -323,14 +342,14 @@ export const SpeakingView: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               {currentPrompt.guidingQuestionsTh && currentPrompt.guidingQuestionsTh.length > 0 && (
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                    <HelpCircle className="w-3.5 h-3.5 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <HelpCircle className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
                     <span>{isEn ? 'Guiding Questions & Structure:' : 'แนวทางการตอบ:'}</span>
                   </h4>
-                  <ul className="space-y-1.5 text-xs text-muted-foreground">
+                  <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
                     {currentPrompt.guidingQuestionsTh.map((q, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-slate-100 dark:bg-[#101A30] p-2.5 rounded-[14px] border border-slate-200/80 dark:border-white/10">
-                        <span className="font-bold text-[#2155E6]">{idx + 1}.</span>
+                      <li key={idx} className="flex items-start gap-2 bg-white dark:bg-[#0B1224] p-3 rounded-[18px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                        <span className="font-bold text-[#FA5D5D]">{idx + 1}.</span>
                         <span>{q}</span>
                       </li>
                     ))}
@@ -340,8 +359,8 @@ export const SpeakingView: React.FC = () => {
 
               {currentPrompt.targetPhrases && currentPrompt.targetPhrases.length > 0 && (
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
                     <span>{isEn ? 'Target Vocabulary & Collocations:' : 'คำศัพท์และสำนวนเป้าหมาย:'}</span>
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -350,10 +369,10 @@ export const SpeakingView: React.FC = () => {
                       return (
                         <span
                           key={idx}
-                          className={`text-xs px-3 py-1 rounded-full font-mono border transition-all ${
+                          className={`text-xs px-3.5 py-1.5 rounded-full font-mono border transition-all shadow-xs ${
                             isDetected
-                              ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 font-bold'
-                              : 'bg-white dark:bg-[#0B1224] text-muted-foreground border-slate-200/80 dark:border-white/10'
+                              ? 'bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border-[#C5EBDA] dark:border-emerald-500/20 font-bold'
+                              : 'bg-white dark:bg-[#0B1224] text-slate-700 dark:text-slate-300 border-[#EAE4D5] dark:border-white/10'
                           }`}
                         >
                           {phrase}
@@ -364,131 +383,126 @@ export const SpeakingView: React.FC = () => {
                 </div>
               )}
             </div>
-          </SpotlightCard>
+          </div>
 
           {/* Interactive Recording Station Card */}
-          <TacticalHudFrame
-            agentName="STUDIO // AUDIO COGNITION"
-            statusText={isRecording ? 'LIVE INPUT' : 'STANDBY'}
-            accentColor="emerald"
-          >
-          <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
-            {/* Live Recording Timer */}
-            <div className="flex items-center gap-2 font-mono text-sm font-semibold text-muted-foreground bg-slate-100 dark:bg-[#101A30] px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10">
-              <Clock className="w-4 h-4 text-[#FFE600]" aria-hidden="true" />
-              <span>
-                {Math.floor(recordingSeconds / 60)}:
-                {(recordingSeconds % 60).toString().padStart(2, '0')}
-              </span>
-            </div>
-
-            {/* Central Recording Button (Calm, Supportive, Tactile) */}
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={handleToggleRecord}
-                className={`touch-target p-6 sm:p-7 rounded-3xl transition-all focus:outline-none focus:ring-4 cursor-pointer select-none ${
-                  isRecording
-                    ? 'bg-[#E98278] text-white shadow-[0_6px_0_0_#B8574E] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#E98278]/20 animate-pulse'
-                    : 'bg-[#2155E6] text-white hover:bg-[#1C4AC9] shadow-[0_6px_0_0_#143DB8] border-t-2 border-white/30 active:translate-y-[6px] active:shadow-none ring-4 ring-[#2155E6]/20'
-                }`}
-                aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
-              >
-                {isRecording ? (
-                  <MicOff className="w-8 h-8 sm:w-10 sm:h-10" aria-hidden="true" />
-                ) : (
-                  <Mic className="w-8 h-8 sm:w-10 sm:h-10" aria-hidden="true" />
-                )}
-              </button>
-            </div>
-
-            <div className="space-y-1">
-              <p className="text-base font-bold text-foreground">
-                {isRecording ? (isEn ? 'Recording your voice...' : 'กำลังบันทึกเสียงของคุณ...') : (isEn ? 'Tap to Start Speaking' : 'แตะเพื่อเริ่มบันทึกเสียง')}
-              </p>
-              <p className="text-xs text-muted-foreground font-medium">
-                {isRecording ? (isEn ? 'Speak in English, then tap again to stop' : 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด') : (isEn ? 'Follow the guiding points and integrate target collocations' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย')}
-              </p>
-            </div>
-
-            {/* Remotion Live Speaking Waveform */}
-            {isRecording && (
-              <div className="w-full max-w-sm pt-2">
-                <RemotionPlayerWrapper
-                  component={ListeningWaveformComposition}
-                  inputProps={{ isPlaying: true }}
-                  durationInFrames={90}
-                  aspectRatio="21/9"
-                  ariaLabel="Live speaking waveform visualization"
-                />
-              </div>
-            )}
-
-            {/* Speech Transcript Output Box */}
-            {transcript && (
-              <div className="w-full max-w-xl text-left p-4 rounded-xl bg-muted/40 border border-border/60 text-xs sm:text-sm text-foreground/90 space-y-2 animate-in fade-in duration-200">
-                <span className="font-semibold text-xs text-muted-foreground uppercase tracking-wider block">
-                  {t('speaking.speech_transcript')}:
+          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
+              {/* Live Recording Timer */}
+              <div className="flex items-center gap-2 font-mono text-sm font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-[#0B1224] px-4 py-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                <Clock className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
+                <span>
+                  {Math.floor(recordingSeconds / 60)}:
+                  {(recordingSeconds % 60).toString().padStart(2, '0')}
                 </span>
-                <p className="leading-relaxed font-serif">{transcript}</p>
-
-                {detectedPhrases.length > 0 && (
-                  <div className="pt-2 border-t border-border/40 text-xs text-emerald-500 flex items-center gap-1.5 font-medium">
-                    <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
-                    <span>
-                      {isEn
-                        ? `Detected ${detectedPhrases.length} of ${currentPrompt.targetPhrases.length} target phrases`
-                        : `ตรวจพบวลีเป้าหมาย ${detectedPhrases.length} จาก ${currentPrompt.targetPhrases.length} วลี`}
-                    </span>
-                  </div>
-                )}
               </div>
-            )}
 
-            {/* Action Bar (Reset) */}
-            {transcript && (
+              {/* Central Recording Button (EduMaster Soft Coral Circle) */}
               <div className="pt-2">
-                <TactileButton
-                  variant="neutral"
-                  size="sm"
-                  onClick={handleReset}
-                  className="flex items-center gap-1.5"
+                <button
+                  type="button"
+                  onClick={handleToggleRecord}
+                  className={`touch-target w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center transition-all focus:outline-none focus:ring-4 cursor-pointer select-none shadow-md ${
+                    isRecording
+                      ? 'bg-rose-500 text-white ring-4 ring-rose-300 dark:ring-rose-900/50 animate-pulse'
+                      : 'bg-[#FA5D5D] hover:bg-[#ff4747] text-white ring-4 ring-[#FA5D5D]/20 active:scale-95'
+                  }`}
+                  aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
                 >
-                  <RotateCcw className="w-4 h-4" aria-hidden="true" />
-                  <span>{isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}</span>
-                </TactileButton>
+                  {isRecording ? (
+                    <MicOff className="w-9 h-9 sm:w-11 sm:h-11" aria-hidden="true" />
+                  ) : (
+                    <Mic className="w-9 h-9 sm:w-11 sm:h-11" aria-hidden="true" />
+                  )}
+                </button>
               </div>
-            )}
+
+              <div className="space-y-1">
+                <p className="text-lg font-black text-slate-900 dark:text-white">
+                  {isRecording ? (isEn ? 'Recording your voice...' : 'กำลังบันทึกเสียงของคุณ...') : (isEn ? 'Tap to Start Speaking' : 'แตะเพื่อเริ่มบันทึกเสียง')}
+                </p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  {isRecording ? (isEn ? 'Speak in English, then tap again to stop' : 'พูดคำตอบเป็นภาษาอังกฤษ จากนั้นแตะอีกครั้งเพื่อหยุด') : (isEn ? 'Follow the guiding points and integrate target collocations' : 'พูดตามแนวทางคำถามและใช้วลีเป้าหมาย')}
+                </p>
+              </div>
+
+              {/* Remotion Live Speaking Waveform */}
+              {isRecording && (
+                <div className="w-full max-w-sm pt-2 rounded-[22px] overflow-hidden">
+                  <RemotionPlayerWrapper
+                    component={ListeningWaveformComposition}
+                    inputProps={{ isPlaying: true }}
+                    durationInFrames={90}
+                    aspectRatio="21/9"
+                    ariaLabel="Live speaking waveform visualization"
+                  />
+                </div>
+              )}
+
+              {/* Speech Transcript Output Box */}
+              {transcript && (
+                <div className="w-full max-w-xl text-left p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 space-y-2 animate-in fade-in duration-200 shadow-xs">
+                  <span className="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider block font-mono">
+                    {t('speaking.speech_transcript')}:
+                  </span>
+                  <p className="leading-relaxed font-serif">{transcript}</p>
+
+                  {detectedPhrases.length > 0 && (
+                    <div className="pt-2 border-t border-[#EAE4D5] dark:border-white/10 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 font-bold">
+                      <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
+                      <span>
+                        {isEn
+                          ? `Detected ${detectedPhrases.length} of ${currentPrompt.targetPhrases.length} target phrases`
+                          : `ตรวจพบวลีเป้าหมาย ${detectedPhrases.length} จาก ${currentPrompt.targetPhrases.length} วลี`}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Action Bar (Reset) */}
+              {transcript && (
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  >
+                    <RotateCcw className="w-4 h-4" aria-hidden="true" />
+                    <span>{isEn ? 'Practice Again' : 'ฝึกใหม่อีกครั้ง'}</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
-          </TacticalHudFrame>
 
           {/* Sample Model Answer Box */}
           {currentPrompt.modelAnswer && (
-            <GlovaCard elevation="subtle" className="p-5 sm:p-6 space-y-3">
+            <div className="p-5 sm:p-6 space-y-3 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-amber-500" aria-hidden="true" />
-                  <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                  <Sparkles className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
+                  <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
                     {isEn ? 'Band 8+ Model Response' : 'ตัวอย่างคำตอบระดับคะแนนเต็ม'}
                   </h4>
                 </div>
 
-                <GlovaButton
-                  variant="ghost"
-                  size="sm"
-                  leftIcon={showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
+                <button
+                  type="button"
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
+                  className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
-                  {showModelAnswer ? (isEn ? 'Hide Model' : 'ซ่อนตัวอย่าง') : (isEn ? 'View Sample Response' : 'ดูบทความตัวอย่าง')}
-                </GlovaButton>
+                  {showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
+                  <span>{showModelAnswer ? (isEn ? 'Hide Model' : 'ซ่อนตัวอย่าง') : (isEn ? 'View Sample Response' : 'ดูบทความตัวอย่าง')}</span>
+                </button>
               </div>
 
               {showModelAnswer && (
-                <div className="mt-3 p-4 rounded-xl bg-muted/40 border border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200">
+                <div className="mt-3 p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200 shadow-xs">
                   {currentPrompt.modelAnswer}
                 </div>
               )}
-            </GlovaCard>
+            </div>
           )}
         </div>
       )}

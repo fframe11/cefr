@@ -281,28 +281,32 @@ export default function CompetePage() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 pb-16">
       {/* 1. TOP MODE SWITCHER: RANKED VS QUICK PLAY */}
-      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-5 shadow-xl">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2 font-display">
-            <Swords className="w-6 h-6 text-[#F59E0B]" />
-            {isEn ? 'Arena Competition' : 'สมรภูมิแข่งขันภาษาอังกฤษ'}
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-400 mt-0.5 font-grotesk">
-            {competeMode === 'ranked'
-              ? (isEn ? 'Official Ranked Mode: Performance changes your Rank Rating (MMR).' : 'โหมดจัดอันดับจริงจัง: ผลการแข่งมีผลต่อ Rank Rating โดยตรง แยกจากแต้ม XP')
-              : (isEn ? 'Quick Play: Practice speed vocabulary battle with zero rating risk.' : 'โหมดเล่นเร็ว: ฝึกซ้อมประลองความเร็ว ไม่กระทบต่อ Rank Rating')}
-          </p>
+      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-4 sm:p-5 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+            <Swords className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2 font-display">
+              {isEn ? 'Arena Competition' : 'สมรภูมิแข่งขันภาษาอังกฤษ'}
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+              {competeMode === 'ranked'
+                ? (isEn ? 'Official Ranked Mode: Performance changes your Rank Rating (MMR).' : 'โหมดจัดอันดับจริงจัง: ผลการแข่งมีผลต่อ Rank Rating โดยตรง แยกจากแต้ม XP')
+                : (isEn ? 'Quick Play: Practice speed vocabulary battle with zero rating risk.' : 'โหมดเล่นเร็ว: ฝึกซ้อมประลองความเร็ว ไม่กระทบต่อ Rank Rating')}
+            </p>
+          </div>
         </div>
 
         {/* Binary Mode Switch */}
-        <div className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-[#0B1224] p-1.5 self-start sm:self-auto">
+        <div className="flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-1.5 self-start sm:self-auto shadow-xs">
           <button
             type="button"
             onClick={() => setCompeteMode('ranked')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all ${
               competeMode === 'ranked'
-                ? 'bg-[#F59E0B] text-slate-950 font-black shadow-md'
-                : 'text-slate-400 hover:text-white hover:bg-white/5'
+                ? 'bg-[#FA5D5D] text-white font-extrabold shadow-xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Trophy className="h-4 w-4" />
@@ -311,10 +315,10 @@ export default function CompetePage() {
           <button
             type="button"
             onClick={() => setCompeteMode('quick')}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all ${
               competeMode === 'quick'
-                ? 'bg-[#F59E0B] text-slate-950 font-black shadow-md'
-                : 'text-slate-400 hover:text-white hover:bg-white/5'
+                ? 'bg-[#FA5D5D] text-white font-extrabold shadow-xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Zap className="h-4 w-4" />
@@ -380,14 +384,14 @@ export default function CompetePage() {
         <section className="space-y-6">
           {/* Quick Play Lobby Card */}
           {quickGameState === 'idle' && (
-            <div className="rounded-2xl border border-white/10 bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 text-center shadow-xl">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/30">
+            <div className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-8 sm:p-10 text-center shadow-sm">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] shadow-xs">
                 <Zap className="h-7 w-7" />
               </div>
-              <h2 className="mt-4 text-2xl font-black text-white">
+              <h2 className="mt-4 text-2xl font-black text-slate-900 dark:text-white">
                 {isEn ? 'Vocabulary Speed Battle (Quick Play)' : 'ประลองคำศัพท์จับเวลา 4 วินาที (เล่นเร็ว)'}
               </h2>
-              <p className="mx-auto mt-2 max-w-lg text-xs sm:text-sm text-slate-400">
+              <p className="mx-auto mt-2 max-w-lg text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 {isEn
                   ? 'Practice answering vocabulary under 4 seconds across 5 adaptive CEFR stages. Earn learning XP without affecting your Rank Rating!'
                   : 'ฝึกตอบคำศัพท์ภายใน 4 วินาที ไต่ระดับความยาก Stage 1 (A1) ถึง Stage 5 (C1) รับแต้ม XP ปกติ ไม่กระทบต่อ Rank Rating'}
@@ -398,14 +402,14 @@ export default function CompetePage() {
                   type="button"
                   onClick={handleStartQuickBattle}
                   disabled={isQuickSubmitting}
-                  className="inline-flex items-center gap-2 rounded-xl glova-gold-btn px-8 py-3.5 text-sm font-black text-slate-950 shadow-lg active:translate-y-[2px]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] px-8 py-3.5 text-sm font-bold text-white shadow-sm active:translate-y-[1px] transition-all"
                 >
-                  <Swords className="h-4 w-4 text-slate-950" />
+                  <Swords className="h-4 w-4 text-white" />
                   {isEn ? 'Start Quick Battle' : 'เริ่มประลองความเร็วด่วน'}
                 </button>
               </div>
 
-              <div className="mt-6 border-t border-border/40 pt-4 text-xs text-muted-foreground">
+              <div className="mt-6 border-t border-[#EAE4D5] dark:border-white/10 pt-4 text-xs text-slate-500 dark:text-slate-400">
                 <span>{isEn ? 'This mode grants XP for the League board without affecting Rank Rating MMR' : 'โหมดนี้มอบแต้ม XP สำหรับกระดาน League แต่จะไม่เปลี่ยนแปลงคะแนน Rank Rating MMR'}</span>
               </div>
             </div>
@@ -413,36 +417,36 @@ export default function CompetePage() {
 
           {/* Quick Play Match Active */}
           {(quickGameState === 'playing' || quickGameState === 'feedback') && quickQuestion && (
-            <div className="relative mx-auto max-w-2xl rounded-3xl border border-border/60 bg-card p-6 shadow-xl">
+            <div className="relative mx-auto max-w-2xl rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
               {/* Quick Play Header */}
-              <div className="flex items-center justify-between border-b border-border/40 pb-4">
+              <div className="flex items-center justify-between border-b border-[#EAE4D5] dark:border-white/10 pb-4">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-lg bg-indigo-500/10 px-2.5 py-1 text-xs font-bold text-indigo-700 dark:text-indigo-300">
+                  <span className="rounded-full bg-[#FA5D5D]/10 px-3 py-1 text-xs font-mono font-bold text-[#FA5D5D]">
                     {quickQuestion.stageName}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   {quickStreak > 1 && (
-                    <span className="flex items-center gap-1 text-xs font-black text-rose-500">
-                      <Flame className="h-4 w-4 fill-rose-500" />
+                    <span className="flex items-center gap-1 text-xs font-mono font-bold text-[#FA5D5D]">
+                      <Flame className="h-4 w-4 fill-[#FA5D5D]" />
                       {quickStreak} STREAK
                     </span>
                   )}
-                  <span className="text-sm font-black text-amber-500">{quickScore} XP</span>
+                  <span className="text-sm font-mono font-black text-amber-500">{quickScore} XP</span>
                 </div>
               </div>
 
               {/* 4s Timer Bar */}
               <div className="mt-4">
                 <div className="flex justify-between text-xs font-bold mb-1">
-                  <span className="text-muted-foreground">เวลาตอบ:</span>
-                  <span className="text-indigo-600 dark:text-indigo-400">
+                  <span className="text-slate-500 dark:text-slate-400 font-mono">เวลาตอบ:</span>
+                  <span className="text-[#FA5D5D] font-mono">
                     {(quickTimeLeftMs / 1000).toFixed(1)}s
                   </span>
                 </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-muted/60">
+                <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-white/10">
                   <div
-                    className="h-full rounded-full bg-indigo-500 transition-all duration-75"
+                    className="h-full rounded-full bg-[#FA5D5D] transition-all duration-75"
                     style={{ width: `${(quickTimeLeftMs / 4000) * 100}%` }}
                   />
                 </div>
@@ -450,8 +454,8 @@ export default function CompetePage() {
 
               {/* Question */}
               <div className="mt-6 text-center">
-                <h3 className="text-lg font-bold text-foreground">{quickQuestion.prompt}</h3>
-                <div className="mt-2 text-2xl font-black text-indigo-600 dark:text-indigo-400">
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200">{quickQuestion.prompt}</h3>
+                <div className="mt-2 text-2xl font-black text-[#FA5D5D]">
                   "{quickQuestion.word}"
                 </div>
               </div>
@@ -459,12 +463,12 @@ export default function CompetePage() {
               {/* Options */}
               <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {quickQuestion.options.map((opt, idx) => {
-                  let style = 'border-border/60 bg-card hover:bg-muted/40 text-foreground';
+                  let style = 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] hover:border-[#FA5D5D] text-slate-800 dark:text-slate-200';
                   if (quickGameState === 'feedback') {
                     if (opt === quickFeedbackResult?.correctAnswerText) {
-                      style = 'border-emerald-500 bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 font-bold';
+                      style = 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-800 dark:text-emerald-200 font-bold';
                     } else if (opt === quickSelectedOption) {
-                      style = 'border-rose-500 bg-rose-500/15 text-rose-800 dark:text-rose-200 line-through';
+                      style = 'border-rose-500 bg-rose-50 dark:bg-rose-950/20 text-rose-800 dark:text-rose-200 line-through';
                     } else {
                       style = 'opacity-40';
                     }
@@ -476,9 +480,9 @@ export default function CompetePage() {
                       type="button"
                       disabled={quickGameState === 'feedback'}
                       onClick={() => handleQuickAnswerSubmit(opt)}
-                      className={`flex items-center gap-3 rounded-2xl border-2 p-3.5 text-left text-xs sm:text-sm font-semibold transition-all ${style}`}
+                      className={`flex items-center gap-3 rounded-[20px] border-2 p-4 text-left text-xs sm:text-sm font-semibold transition-all shadow-xs ${style}`}
                     >
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-muted text-xs font-bold text-muted-foreground">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-600 dark:text-slate-300">
                         {String.fromCharCode(65 + idx)}
                       </span>
                       <span>{opt}</span>
@@ -491,40 +495,40 @@ export default function CompetePage() {
 
           {/* Quick Play Summary */}
           {quickGameState === 'finished' && quickSummary && (
-            <div className="mx-auto max-w-lg rounded-3xl border border-border/60 bg-card p-6 text-center shadow-xl">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+            <div className="mx-auto max-w-lg rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-8 text-center shadow-sm">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
                 <Trophy className="h-7 w-7" />
               </div>
-              <h2 className="mt-3 text-xl font-black text-foreground">จบการประลอง Quick Play!</h2>
-              <p className="mt-1 text-xs text-muted-foreground">คุณทำคะแนนได้ {quickSummary.finalScore} XP ในแมตช์นี้</p>
+              <h2 className="mt-3 text-xl font-black text-slate-900 dark:text-white">จบการประลอง Quick Play!</h2>
+              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">คุณทำคะแนนได้ {quickSummary.finalScore} XP ในแมตช์นี้</p>
 
               <div className="mt-5 grid grid-cols-3 gap-2">
-                <div className="rounded-xl border border-border/40 bg-muted/30 p-3">
-                  <span className="text-[10px] text-muted-foreground">คะแนนรวม</span>
-                  <div className="mt-1 text-sm font-bold text-foreground">{quickSummary.finalScore} XP</div>
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                  <span className="text-[10px] font-mono text-slate-400">คะแนนรวม</span>
+                  <div className="mt-1 text-sm font-mono font-black text-slate-900 dark:text-white">{quickSummary.finalScore} XP</div>
                 </div>
-                <div className="rounded-xl border border-border/40 bg-muted/30 p-3">
-                  <span className="text-[10px] text-muted-foreground">ความแม่นยำ</span>
-                  <div className="mt-1 text-sm font-bold text-foreground">{quickSummary.accuracyPercent}%</div>
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                  <span className="text-[10px] font-mono text-slate-400">ความแม่นยำ</span>
+                  <div className="mt-1 text-sm font-mono font-black text-[#FA5D5D]">{quickSummary.accuracyPercent}%</div>
                 </div>
-                <div className="rounded-xl border border-border/40 bg-muted/30 p-3">
-                  <span className="text-[10px] text-muted-foreground">คอมโบสูงสุด</span>
-                  <div className="mt-1 text-sm font-bold text-foreground">{quickSummary.maxStreak}</div>
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                  <span className="text-[10px] font-mono text-slate-400">คอมโบสูงสุด</span>
+                  <div className="mt-1 text-sm font-mono font-black text-amber-500">{quickSummary.maxStreak}</div>
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-2">
+              <div className="mt-6 flex flex-col gap-2.5">
                 <button
                   type="button"
                   onClick={handleStartQuickBattle}
-                  className="w-full rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white transition-all hover:bg-indigo-700"
+                  className="w-full rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] py-3 text-xs font-bold text-white transition-all shadow-xs"
                 >
                   {isEn ? 'Play Quick Battle Again' : 'เล่นประลองด่วนอีกรอบ'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setCompeteMode('ranked')}
-                  className="w-full rounded-xl border border-amber-500/30 bg-amber-500/10 py-2.5 text-xs font-bold text-amber-700 dark:text-amber-300 transition-all hover:bg-amber-500/20"
+                  className="w-full rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] py-3 text-xs font-bold text-slate-800 dark:text-slate-200 transition-all hover:bg-slate-50 dark:hover:bg-white/5 shadow-xs"
                 >
                   {isEn ? 'Try Ranked Battle' : 'ลองเข้าเล่นโหมดจัดอันดับ Ranked Battle'}
                 </button>
@@ -536,3 +540,4 @@ export default function CompetePage() {
     </div>
   );
 }
+

@@ -165,47 +165,79 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-12">
-      {/* Top Banner: CEFR & Cambridge Score Summary */}
-      <SpotlightCard
-        spotlightColor="rgba(245, 158, 11, 0.15)"
-        showBorderBeam={true}
-        borderBeamProps={{
-          colorFrom: '#F59E0B',
-          colorTo: '#FDE68A',
-          duration: 12,
-          size: 260,
-        }}
-        className="p-6 sm:p-8 space-y-6 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
+      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      <nav
+        aria-label="Skill analytics sub-navigation"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
       >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+        {/* Brand & Studio Identity */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <TrendingUp className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Skill Analytics
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                DIAGNOSTIC TELEMETRY // CEFR {currentLevel}
+              </span>
+            </div>
+          </div>
+
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {/* Level Badge */}
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+              {isEn ? `Target: Cambridge ${progress.targetExam}` : `เป้าหมาย: Cambridge ${progress.targetExam}`}
+            </span>
+          </div>
+        </div>
+
+        {/* Status Chips */}
+        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>Cambridge Score: {estimatedScore}</span>
+          </div>
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <AlertTriangle className="w-3.5 h-3.5" />
+            <span>{weaknessesList.length} Learning Gaps</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Header Diagnostic Card */}
+      <div className="p-6 sm:p-8 space-y-6 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EAE4D5] dark:border-white/10">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30">
-                <DecryptedText text="DIAGNOSTIC TELEMETRY" speed={40} maxIterations={12} revealDirection="start" />
-              </span>
-              <GlovaBadge variant="accent">
+              <span className="px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold">
                 CEFR {currentLevel}
-              </GlovaBadge>
-              <span className="text-xs text-muted-foreground hidden sm:inline">
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline font-mono">
                 {isEn ? `Exam Target: Cambridge ${progress.targetExam}` : `เป้าหมายการสอบ: Cambridge ${progress.targetExam}`}
               </span>
             </div>
-            <h1 className="text-fluid-title font-bold text-foreground">
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               {t('analytics.title')}
             </h1>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 font-sans">
               {isEn ? (currentLevelInfo.descriptionEn || currentLevelInfo.descriptionTh) : currentLevelInfo.descriptionTh}
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-muted/40 border border-border/60 text-center shrink-0">
-            <span className="text-[11px] text-muted-foreground uppercase font-medium">
+          <div className="p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-center shrink-0 shadow-xs">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-bold font-mono">
               {isEn ? 'Estimated Cambridge Score' : 'คะแนนประเมินเทียบเคียง'}
             </span>
-            <p className="text-3xl font-extrabold text-primary font-mono mt-0.5">
+            <p className="text-3xl font-black text-[#FA5D5D] font-mono mt-0.5">
               <AnimatedNumber value={estimatedScore} />
             </p>
-            <span className="text-[10px] text-muted-foreground block">
+            <span className="text-[10px] text-slate-400 block font-mono">
               {isEn ? 'Equivalent scale: 80 - 230 marks' : 'สเกลเทียบเคียง 80 - 230 คะแนน'}
             </span>
           </div>
@@ -222,25 +254,25 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
         {/* Can-Do Descriptors at Current CEFR Level */}
         <div className="pt-2 space-y-2">
-          <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider">
+          <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono">
             {t('analytics.can_do_descriptors')}:
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-1">
             {currentLevelInfo.canDoDescriptorsTh.map((desc, i) => (
               <div
                 key={i}
-                className="p-3 rounded-lg bg-muted/30 border border-border/40 text-xs text-foreground flex items-start gap-2"
+                className="p-3.5 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 flex items-start gap-2 shadow-xs"
               >
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{desc}</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span className="leading-relaxed font-sans">{desc}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Cambridge / CEFR Disclaimer */}
-        <div className="mt-2 p-3 rounded-xl bg-muted/40 border border-border/50 flex items-start gap-2.5 text-xs text-muted-foreground">
-          <ShieldAlert className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+        <div className="mt-2 p-3.5 rounded-[22px] bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-500/20 flex items-start gap-2.5 text-xs text-slate-600 dark:text-amber-200/90 shadow-xs font-sans">
+          <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
           <span>
             {analytics?.disclaimer ||
               (isEn
@@ -248,77 +280,79 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                 : 'คะแนนและการวิเคราะห์ในระบบนี้เป็นค่าประเมินความพร้อมของแพลตฟอร์มเพื่อแนวทางการเรียนรู้เท่านั้น ไม่ใช่ผลสอบรับรองอย่างเป็นทางการจาก Cambridge English Qualifications')}
           </span>
         </div>
-      </SpotlightCard>
+      </div>
 
-      {/* Telemetry Overview Bento Grid (21st.dev / Magic UI) */}
-      <BentoGrid cols={4} className="gap-3 sm:gap-4">
-        <BentoCard colSpan={1} className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">
+      {/* Telemetry Overview Grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
             {isEn ? 'Total Questions' : 'คำถามที่ทำทั้งหมด'}
           </span>
-          <p className="text-2xl font-bold font-mono text-foreground">
+          <p className="text-2xl sm:text-3xl font-black font-mono text-slate-900 dark:text-white">
             <AnimatedNumber value={totalAttempted} />
           </p>
-          <span className="text-[11px] text-muted-foreground">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 block font-sans">
             {isEn ? 'Questions completed' : 'ข้อที่ทำแล้ว'}
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard colSpan={1} className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">{t('analytics.accuracy')}</span>
+        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">{t('analytics.accuracy')}</span>
           {overallAccuracy !== null ? (
-            <p className="text-2xl font-bold font-mono text-primary">
+            <p className="text-2xl sm:text-3xl font-black font-mono text-[#FA5D5D]">
               <AnimatedNumber value={overallAccuracy} />%
             </p>
           ) : (
-            <p className="text-sm font-medium text-muted-foreground pt-1">
+            <p className="text-sm font-semibold text-slate-400 pt-1 font-sans">
               {isEn ? 'No data' : 'ไม่มีข้อมูล'}
             </p>
           )}
-          <span className="text-[11px] text-muted-foreground">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 block font-sans">
             {totalCorrect > 0
               ? (isEn ? `${totalCorrect} correct` : `ตอบถูก ${totalCorrect} ข้อ`)
               : (isEn ? 'Requires practice sessions' : 'ต้องทำแบบฝึกหัดก่อน')}
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard colSpan={1} className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">
+        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
             {isEn ? 'Learning Gaps' : 'จุดอ่อนสะสม'}
           </span>
-          <p className="text-2xl font-bold font-mono text-amber-500">
+          <p className="text-2xl sm:text-3xl font-black font-mono text-amber-500">
             <AnimatedNumber value={weaknessesList.length} />
           </p>
-          <span className="text-[11px] text-muted-foreground">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 block font-sans">
             {isEn ? 'Areas to reinforce' : 'หัวข้อที่ควรซ่อม'}
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard colSpan={1} className="p-4 space-y-1">
-          <span className="text-xs text-muted-foreground">
+        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
             {isEn ? 'Completed Mock Exams' : 'Mock Exams ที่ส่งแล้ว'}
           </span>
-          <p className="text-2xl font-bold font-mono text-foreground">
+          <p className="text-2xl sm:text-3xl font-black font-mono text-slate-900 dark:text-white">
             <AnimatedNumber value={analytics?.overview.completed_mock_exams_count ?? 0} />
           </p>
-          <span className="text-[11px] text-muted-foreground">
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 block font-sans">
             {isEn ? 'Mock exam sets' : 'ชุดข้อสอบจำลอง'}
           </span>
-        </BentoCard>
-      </BentoGrid>
+        </div>
+      </div>
 
       {/* Grid: 6 Skill Mastery Breakdown & Weakness Detection Engine */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left (7 cols): Detailed Skill Proficiency Bars */}
-        <GlovaCard className="lg:col-span-7 p-5 sm:p-6 space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-border/40">
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              <h3 className="font-semibold text-sm sm:text-base text-foreground">
+        <div className="lg:col-span-7 p-6 sm:p-8 space-y-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="flex items-center justify-between pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
                 {t('analytics.skill_proficiency')}
               </h3>
             </div>
-            <span className="text-xs text-muted-foreground font-mono">100% Scale</span>
+            <span className="text-xs text-slate-400 font-mono font-semibold">100% Scale</span>
           </div>
 
           {totalAttempted === 0 && status === 'authenticated' ? (
@@ -330,6 +364,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                   variant="primary"
                   size="sm"
                   onClick={() => onNavigate('grammar')}
+                  className="rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white"
                 >
                   {isEn ? "Start Practice" : "เริ่มทำแบบฝึกหัด"}
                 </GlovaButton>
@@ -338,21 +373,21 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           ) : (
             <div className="space-y-4 pt-1">
               {skillsData.map((item) => (
-                <div key={item.name} className="space-y-1.5">
-                  <div className="flex justify-between text-xs font-medium">
-                    <span className="text-foreground">{item.name}</span>
+                <div key={item.name} className="space-y-1.5 p-3.5 rounded-[20px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                  <div className="flex justify-between text-xs font-semibold">
+                    <span className="text-slate-800 dark:text-slate-200">{item.name}</span>
                     <div className="flex items-center gap-2">
                       {item.accuracy !== null && item.attempted > 0 && (
-                        <span className="text-[11px] text-muted-foreground">
+                        <span className="text-[11px] text-slate-400 font-mono">
                           {isEn ? `Accuracy ${item.accuracy}%` : `ความแม่นยำ ${item.accuracy}%`}
                         </span>
                       )}
                       {item.pending > 0 && (
-                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono font-bold">
                           {isEn ? `Pending ${item.pending}` : `รอตรวจ ${item.pending} ข้อ`}
                         </span>
                       )}
-                      <span className="font-mono text-foreground font-semibold">{item.score}%</span>
+                      <span className="font-mono text-slate-900 dark:text-white font-extrabold">{item.score}%</span>
                     </div>
                   </div>
                   <GlovaProgress value={item.score} showLabel={false} />
@@ -361,35 +396,37 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             </div>
           )}
 
-          <div className="p-3 rounded-xl bg-muted/40 border border-border/40 mt-4 text-xs text-muted-foreground flex items-center justify-between">
-            <span>{isEn ? 'Mastered vocabulary saved:' : 'คำศัพท์ที่บันทึกว่าจำได้แล้ว:'}</span>
-            <span className="font-mono font-bold text-foreground">
+          <div className="p-3.5 rounded-[20px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 mt-4 text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between shadow-xs">
+            <span className="font-medium font-sans">{isEn ? 'Mastered vocabulary saved:' : 'คำศัพท์ที่บันทึกว่าจำได้แล้ว:'}</span>
+            <span className="font-mono font-bold text-slate-900 dark:text-white">
               {progress.masteredWordIds.length} {isEn ? 'words' : 'คำ'}
             </span>
           </div>
-        </GlovaCard>
+        </div>
 
         {/* Right (5 cols): Targeted Weakness Remediation */}
-        <GlovaCard className="lg:col-span-5 p-5 sm:p-6 space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-border/40">
-            <div className="flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-amber-500" />
-              <h3 className="font-semibold text-sm sm:text-base text-foreground">
+        <div className="lg:col-span-5 p-6 sm:p-8 space-y-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="flex items-center justify-between pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                <AlertTriangle className="w-4 h-4" />
+              </div>
+              <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
                 {t('analytics.weakness_detection')}
               </h3>
             </div>
-            <GlovaBadge variant="warning">
+            <span className="px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold">
               {weaknessesList.length} {isEn ? 'areas' : 'จุด'}
-            </GlovaBadge>
+            </span>
           </div>
 
           {weaknessesList.length === 0 ? (
-            <div className="text-center py-10 text-muted-foreground text-xs space-y-2">
-              <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
-              <p className="font-medium text-foreground">
+            <div className="text-center py-10 text-slate-500 dark:text-slate-400 text-xs space-y-2">
+              <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto" />
+              <p className="font-bold text-slate-800 dark:text-slate-200">
                 {isEn ? 'No recurring learning gaps detected' : 'ไม่พบจุดบกพร่องสะสม'}
               </p>
-              <p>
+              <p className="font-sans">
                 {isEn ? 'Complete additional exercises to allow the system to detect recurring error patterns.' : 'ทำแบบฝึกหัดเพิ่มเติมเพื่อให้ระบบช่วยตรวจจับจุดที่ทำผิดซ้ำ'}
               </p>
             </div>
@@ -398,13 +435,13 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               {weaknessesList.map((w) => (
                 <div
                   key={w.tag}
-                  className="p-3.5 rounded-xl bg-muted/40 border border-border/60 space-y-2.5"
+                  className="p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-3 shadow-xs"
                 >
                   <div>
-                    <h4 className="text-xs sm:text-sm font-semibold text-foreground">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white font-sans">
                       {w.labelTh}
                     </h4>
-                    <p className="text-[11px] text-rose-400 mt-0.5">
+                    <p className="text-[11px] text-rose-500 dark:text-rose-400 mt-0.5 font-mono font-semibold">
                       {isEn ? `Missed ${w.errorCount} time(s) recently` : `ทำผิดซ้ำ ${w.errorCount} ครั้งล่าสุด`}
                     </p>
                   </div>
@@ -414,46 +451,49 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                     size="sm"
                     fullWidth
                     onClick={() => onStartRemediation(w.tag)}
+                    className="rounded-full bg-slate-50 hover:bg-slate-100 dark:bg-[#121B2F] dark:hover:bg-[#192642] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 font-bold"
                   >
-                    <Play className="w-3.5 h-3.5 fill-current mr-1.5" />
+                    <Play className="w-3.5 h-3.5 fill-current mr-1.5 text-[#FA5D5D]" />
                     <span>{t('analytics.remediation_action')}</span>
                   </GlovaButton>
                 </div>
               ))}
             </div>
           )}
-        </GlovaCard>
+        </div>
       </div>
 
       {/* Mock Exam History (if available) */}
       {analytics && analytics.mock_exam_history.length > 0 && (
-        <GlovaCard className="p-5 sm:p-6 space-y-4">
-          <div className="flex items-center gap-2 pb-3 border-b border-border/40">
-            <FileText className="w-4 h-4 text-primary" />
-            <h3 className="font-semibold text-sm sm:text-base text-foreground">
+        <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="flex items-center gap-2.5 pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+            <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
+              <FileText className="w-4 h-4" />
+            </div>
+            <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
               {t('analytics.mock_exam_history')}
             </h3>
           </div>
 
-          <div className="divide-y divide-border/40">
+          <div className="divide-y divide-[#EAE4D5] dark:divide-white/10">
             {analytics.mock_exam_history.map((m) => (
-              <div key={m.id} className="py-3 flex items-center justify-between text-xs">
+              <div key={m.id} className="py-3.5 flex items-center justify-between text-xs">
                 <div>
-                  <p className="font-semibold text-foreground text-sm">{m.exam_title}</p>
-                  <p className="text-muted-foreground mt-0.5">
+                  <p className="font-bold text-slate-900 dark:text-white text-sm">{m.exam_title}</p>
+                  <p className="text-slate-500 dark:text-slate-400 mt-0.5 font-mono">
                     Cambridge {m.exam_code} • CEFR {m.estimated_cefr_level}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono font-bold text-foreground text-sm">{m.percentage_score}%</p>
-                  <p className="text-muted-foreground text-[11px]">
+                  <p className="font-mono font-black text-slate-900 dark:text-white text-sm">{m.percentage_score}%</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-[11px] font-mono">
                     {isEn ? `Equivalent ${m.estimated_cambridge_score} pts` : `เทียบเคียง ${m.estimated_cambridge_score} คะแนน`}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-        </GlovaCard>
+        </div>
       )}
     </div>
   );

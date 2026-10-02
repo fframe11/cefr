@@ -111,7 +111,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-slate-100 flex flex-col overflow-x-hidden selection:bg-[#F59E0B]/25 selection:text-white relative">
+    <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100 flex flex-col overflow-x-hidden selection:bg-[#FA5D5D]/25 selection:text-white relative">
       {/* Top Universal Header */}
       <Header
         currentLevel={progress.currentLevel}

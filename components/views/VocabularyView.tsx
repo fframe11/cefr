@@ -364,47 +364,38 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. Learning Context Header (reactbits DecryptedText & ShinyText) */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider bg-[#2155E6] text-white">
-              ACTIVE VOCABULARY LAB // 3,860 WORDS
-            </span>
-            <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-[#FFE600] text-slate-950 font-black shadow-xs">
-              SPACED REPETITION ENGINE
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2 flex-wrap">
-            <DecryptedText text={isEn ? 'CEFR Vocabulary Lab & Spaced Review' : 'คลังคำศัพท์และการจำแบบ Spaced Repetition'} animateOn="hover" />
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl font-grotesk">
-            {isEn
-              ? 'Study 3,860 verified vocabulary units with native phonetic stress, contextual examples, collocations, and server-graded practice.'
-              : 'เรียนรู้คำศัพท์มาตรฐาน 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
-          </p>
-        </div>
-
-        {/* Status Indicators & View Mode Toggle */}
-        <div className="flex items-center gap-2.5 self-start sm:self-center shrink-0 flex-wrap">
-          {/* Mastered Counter with reactbits AnimatedNumber */}
-          <div className="px-4 py-2 rounded-xl bg-[#070B16]/90 border border-white/10 text-xs font-semibold text-white flex items-center gap-2 shadow-sm font-mono">
-            <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
-            <span className="text-slate-300">{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
-            <span className="font-mono font-black text-[#FDE68A] text-sm">
-              {`${masteredWordIds.length} ${isEn ? 'words' : 'คำ'}`}
-            </span>
+      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      <nav
+        aria-label="Vocabulary sub-navigation"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+      >
+        {/* Brand & Studio Identity */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Vocabulary Studio
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                ACTIVE VOCABULARY LAB // 3,860 WORDS
+              </span>
+            </div>
           </div>
 
-          {/* Mode Switcher */}
-          <div className="flex items-center p-1 rounded-xl bg-[#070B16]/90 border border-white/10 gap-1">
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {/* Mode Switcher Pills */}
+          <div className="flex items-center p-1 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 gap-1 flex-wrap">
             <button
               type="button"
               onClick={() => setViewMode('study')}
-              className={`touch-target px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all ${
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'study'
-                  ? 'bg-[#F59E0B] text-slate-950 font-black shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
               aria-label={isEn ? 'Study Flashcards' : 'โหมดการ์ดคำศัพท์'}
             >
@@ -418,10 +409,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 setViewMode('practice');
                 if (practiceQuestions.length === 0) startPracticeSession();
               }}
-              className={`touch-target px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all ${
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'practice'
-                  ? 'bg-[#F59E0B] text-slate-950 font-black shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
               aria-label={isEn ? 'Quick Practice' : 'โหมดทดสอบความจำ'}
             >
@@ -432,24 +423,24 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             <button
               type="button"
               onClick={() => setViewMode('browse')}
-              className={`touch-target px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all ${
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'browse'
-                  ? 'bg-[#F59E0B] text-slate-950 font-black shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
               aria-label={isEn ? 'Browse Word Bank' : 'โหมดคลังคำศัพท์'}
             >
               <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
             </button>
-          
+
             <button
               type="button"
               onClick={() => setViewMode('universe')}
-              className={`touch-target px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all ${
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
                 viewMode === 'universe'
-                  ? 'bg-[#F59E0B] text-slate-950 font-black shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
               aria-label={isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}
             >
@@ -458,6 +449,34 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             </button>
           </div>
         </div>
+
+        {/* Mastered Counter Capsule & Spaced Repetition Indicator */}
+        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" />
+            <span>{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
+            <span className="font-black text-slate-950 dark:text-white">
+              {`${masteredWordIds.length} ${isEn ? 'words' : 'คำ'}`}
+            </span>
+          </div>
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>SPACED REPETITION ENGINE</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Title & Hero Description */}
+      <div className="space-y-1">
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+          {isEn ? 'CEFR Vocabulary Lab & Spaced Review' : 'คลังคำศัพท์และการจำแบบ Spaced Repetition'}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl font-sans">
+          {isEn
+            ? 'Study 3,860 verified vocabulary units with native phonetic stress, contextual examples, collocations, and server-graded practice.'
+            : 'เรียนรู้คำศัพท์มาตรฐาน 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
+        </p>
       </div>
 
       {/* Level & POS Filter Bar */}
@@ -697,35 +716,25 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       )}
 
-      {/* 3. MODE: Active Study Mode (Flashcard & Pronunciation) - Aceternity SpotlightCard x 21st.dev BorderBeam */}
+      {/* 3. MODE: Active Study Mode (Flashcard & Pronunciation) */}
       {!loading && viewMode === 'study' && currentWord && (
         <div className="max-w-2xl mx-auto space-y-4">
-          <SpotlightCard
-            showBorderBeam={true}
-            borderBeamProps={{
-              size: 260,
-              duration: 9,
-              colorFrom: '#F59E0B',
-              colorTo: '#FDE68A',
-              borderWidth: 2,
-            }}
-            className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
-          >
+          <div className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             {/* Card Header Context */}
-            <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/10">
+            <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentWord.cefrLevel} size="sm" />
-                <span className="capitalize rounded-full px-2.5 py-0.5 text-xs font-mono font-bold bg-[#F59E0B]/15 text-[#FDE68A] border border-[#F59E0B]/30">
+                <span className="capitalize rounded-full px-2.5 py-0.5 text-xs font-mono font-bold bg-[#FA5D5D]/15 text-[#FA5D5D] border border-[#FA5D5D]/30">
                   {currentWord.partOfSpeech}
                 </span>
                 {currentWord.topic && (
-                  <span className="text-xs text-slate-400 hidden sm:inline font-medium">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline font-medium">
                     {isEn ? `Topic: ${currentWord.topic}` : `หมวด: ${currentWord.topic}`}
                   </span>
                 )}
               </div>
 
-              <div className="text-xs font-mono font-bold text-slate-300 bg-[#0B1224] px-3 py-1 rounded-full border border-white/10">
+              <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                 {isEn
                   ? `Word ${currentIndex + 1} of ${filteredWords.length}`
                   : `คำที่ ${currentIndex + 1} / ${filteredWords.length}`}
@@ -735,7 +744,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             {/* Word Central Area - Word as the Hero */}
             <div className="py-6 text-center space-y-4">
               <div className="flex items-center justify-center gap-4 flex-wrap">
-                <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight font-sans">
+                <h2 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-sans">
                   {currentWord.word}
                 </h2>
                 <button
@@ -746,30 +755,30 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       ? `Listen to pronunciation for ${currentWord.word}`
                       : `ฟังการออกเสียงคำว่า ${currentWord.word}`
                   }
-                  className="touch-target w-12 h-12 rounded-xl glova-gold-btn text-slate-950 flex items-center justify-center transition-all shadow-md active:translate-y-[2px] shrink-0 cursor-pointer"
+                  className="touch-target w-12 h-12 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white flex items-center justify-center transition-all shadow-md active:scale-95 shrink-0 cursor-pointer"
                 >
-                  <Volume2 className="w-5 h-5 text-slate-950" aria-hidden="true" />
+                  <Volume2 className="w-5 h-5 text-white" aria-hidden="true" />
                 </button>
               </div>
 
               {currentWord.ipa && (
-                <div className="inline-block px-3.5 py-1 rounded-full bg-[#0B1224] text-xs font-mono font-semibold text-slate-300 border border-white/10">
+                <div className="inline-block px-3.5 py-1 rounded-full bg-white dark:bg-[#0B1224] text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10">
                   {currentWord.ipa}
                 </div>
               )}
 
-              {/* Immediate Meaning & Definition (ADHD-Friendly: Zero Friction, Direct Display) */}
+              {/* Immediate Meaning & Definition */}
               <div className="pt-4 space-y-4 animate-in fade-in duration-150">
                 {/* Thai Meaning Highlight & English Definition */}
-                <div className="p-5 sm:p-6 rounded-xl bg-[#0B1224]/90 border border-white/10 space-y-1.5 text-center shadow-inner">
-                  <div className="text-[11px] font-bold text-[#F59E0B] uppercase tracking-wider font-mono">
+                <div className="p-5 sm:p-6 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-1.5 text-center shadow-xs">
+                  <div className="text-[11px] font-bold text-[#FA5D5D] uppercase tracking-wider font-mono">
                     {isEn ? 'Meaning in Thai' : 'ความหมายภาษาไทย'}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                     {currentWord.meaningTh}
                   </h3>
                   {currentWord.meaningEn && (
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-medium pt-1">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium pt-1">
                       {currentWord.meaningEn}
                     </p>
                   )}
@@ -777,18 +786,18 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
                 {/* Example in Context */}
                 {(currentWord.exampleSentenceEn || currentWord.exampleSentenceTh) && (
-                  <div className="p-5 rounded-xl bg-[#0B1224]/70 border border-white/10 text-left space-y-2">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#F59E0B]">
+                  <div className="p-5 rounded-[22px] bg-[#FEF5E5] dark:bg-[#2B2010] border border-[#FDE5BC] dark:border-amber-500/20 text-left space-y-2">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#D98200] dark:text-[#FFBA38]">
                       <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>
                         {isEn ? 'Example sentence in context:' : 'ตัวอย่างประโยคในบริบทจริง:'}
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base text-slate-100 font-semibold leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-900 dark:text-slate-100 font-semibold leading-relaxed">
                       {currentWord.exampleSentenceEn}
                     </p>
                     {currentWord.exampleSentenceTh && (
-                      <p className="text-xs sm:text-sm text-slate-400 font-medium">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
                         {currentWord.exampleSentenceTh}
                       </p>
                     )}
@@ -798,11 +807,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 {/* Collocations */}
                 {currentWord.collocations && currentWord.collocations.length > 0 && (
                   <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
-                    <span className="text-xs text-slate-400 font-bold mr-1">Collocations:</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-bold mr-1">Collocations:</span>
                     {currentWord.collocations.map((c, i) => (
                       <span
                         key={i}
-                        className="px-3.5 py-1 rounded-full bg-[#0B1224] text-xs font-mono font-bold text-[#FDE68A] border border-[#F59E0B]/30"
+                        className="px-3.5 py-1 rounded-full bg-white dark:bg-[#0B1224] text-xs font-mono font-bold text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs"
                       >
                         {c}
                       </span>
@@ -810,7 +819,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   </div>
                 )}
 
-                {/* Quick Test Prompt (3D Tactile Button) */}
+                {/* Quick Test Prompt (Tactile Button) */}
                 <div className="pt-2 text-center">
                   <button
                     type="button"
@@ -818,9 +827,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                       setViewMode('practice');
                       startPracticeSession(currentWord.word || currentWord.id);
                     }}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glova-gold-btn text-slate-950 text-xs sm:text-sm font-black transition-all shadow-md active:translate-y-[2px] cursor-pointer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs sm:text-sm font-black transition-all shadow-md active:scale-95 cursor-pointer"
                   >
-                    <BrainCircuit className="w-4 h-4 text-slate-950" aria-hidden="true" />
+                    <BrainCircuit className="w-4 h-4 text-white" aria-hidden="true" />
                     <span>{isEn ? 'Test yourself on this word' : 'ทดสอบความจำคำนี้ทันที'}</span>
                   </button>
                 </div>
@@ -868,7 +877,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 </GlovaButton>
               </div>
             </div>
-          </SpotlightCard>
+          </div>
         </div>
       )}
 

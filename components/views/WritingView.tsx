@@ -125,35 +125,63 @@ export const WritingView: React.FC = () => {
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. Learning Context Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
-              <DecryptedText text="WRITING LAB" speed={40} maxIterations={12} revealDirection="start" />
-            </span>
+      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      <nav
+        aria-label="Writing sub-navigation"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+      >
+        {/* Brand & Studio Identity */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <PenTool className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Writing Studio
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                WRITING LAB // CEFR
+              </span>
+            </div>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-            {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
-          </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
-            {isEn
-              ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
-              : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'}
-          </p>
+
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {currentPrompt && (
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+              <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
+              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+                {currentPrompt.taskType}
+              </span>
+            </div>
+          )}
         </div>
 
-        {currentPrompt && (
-          <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
-            <GlovaLevelBadge level={currentPrompt.cefrLevel} size="md" />
-            <GlovaBadge variant="secondary" size="sm">
-              {currentPrompt.taskType}
-            </GlovaBadge>
-            <GlovaBadge variant="outline" size="sm">
-              {currentPrompt.targetExam}
-            </GlovaBadge>
+        {/* Counter and Status Chips */}
+        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <PenTool className="w-3.5 h-3.5" />
+            <span>{isEn ? `${prompts.length} Writing Tasks` : `${prompts.length} หัวข้องานเขียน`}</span>
           </div>
-        )}
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Cambridge Rubric</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Title & Description */}
+      <div className="space-y-1">
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+          {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
+          {isEn
+            ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
+            : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'}
+        </p>
       </div>
 
       {/* Task Selector Tabs */}
@@ -170,10 +198,10 @@ export const WritingView: React.FC = () => {
                 setIsSubmitted(false);
                 setShowModelAnswer(false);
               }}
-              className={`touch-target px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
-                  ? 'bg-[#F59E0B] text-slate-950 border-[#F59E0B] shadow-md shadow-[#F59E0B]/25 font-black'
-                  : 'bg-[#070B16]/90 text-slate-400 hover:text-white border-white/10 hover:border-[#F59E0B]/40'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
+                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -202,35 +230,25 @@ export const WritingView: React.FC = () => {
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <SpotlightCard
-            spotlightColor="rgba(245, 158, 11, 0.15)"
-            showBorderBeam={true}
-            borderBeamProps={{
-              colorFrom: '#F59E0B',
-              colorTo: '#FDE68A',
-              duration: 12,
-              size: 240,
-            }}
-            className="p-5 sm:p-7 space-y-4 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
-          >
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40">
+          <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
-                <span className="font-semibold text-sm sm:text-base text-foreground">
+                <span className="font-extrabold text-base text-slate-900 dark:text-white">
                   {currentPrompt.title}
                 </span>
               </div>
 
-              <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
+              <div className="text-xs font-medium text-slate-600 dark:text-slate-400 flex items-center gap-2">
                 <span>{isEn ? 'Target Word Count:' : 'เกณฑ์ความยาว:'}</span>
-                <span className="px-2 py-0.5 rounded-md bg-secondary text-foreground font-mono font-semibold">
+                <span className="px-3 py-1 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-900 dark:text-white font-mono font-bold shadow-xs">
                   {currentPrompt.minWords}-{currentPrompt.maxWords} {isEn ? 'words' : 'คำ'}
                 </span>
               </div>
             </div>
 
             {/* Contextual Writing Studio Photo */}
-            <div className="overflow-hidden rounded-xl">
+            <div className="overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
               <GlovaImage
                 src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80"
                 alt="Creative writing notebook and fountain pen on natural wood desk"
@@ -240,12 +258,12 @@ export const WritingView: React.FC = () => {
             </div>
 
             {/* Prompt Description */}
-            <div className="p-4 rounded-xl bg-muted/30 border border-border/40 space-y-2">
-              <p className="text-xs sm:text-sm text-foreground font-medium leading-relaxed whitespace-pre-line">
+            <div className="p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-2 shadow-xs">
+              <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-medium leading-relaxed whitespace-pre-line font-sans">
                 {currentPrompt.promptEn}
               </p>
               {currentPrompt.promptTh && (
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1 border-t border-border/30">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-[#EAE4D5] dark:border-white/10">
                   {currentPrompt.promptTh}
                 </p>
               )}
@@ -254,15 +272,15 @@ export const WritingView: React.FC = () => {
             {/* Guidelines Checklist */}
             {currentPrompt.guidelinesTh && currentPrompt.guidelinesTh.length > 0 && (
               <div className="space-y-2">
-                <h4 className="text-xs font-semibold text-foreground flex items-center gap-1.5">
-                  <FileCheck className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <FileCheck className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
                   <span>
                     {isEn ? 'Requirements & Coverage Checklist:' : 'ข้อกำหนดและประเด็นที่ต้องครอบคลุม:'}
                   </span>
                 </h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
                   {currentPrompt.guidelinesTh.map((g, idx) => (
-                    <li key={idx} className="flex items-start gap-2 bg-secondary/30 p-2.5 rounded-lg border border-border/30">
+                    <li key={idx} className="flex items-start gap-2 bg-white dark:bg-[#0B1224] p-3 rounded-[18px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" aria-hidden="true" />
                       <span>{g}</span>
                     </li>
@@ -270,30 +288,26 @@ export const WritingView: React.FC = () => {
                 </ul>
               </div>
             )}
-          </SpotlightCard>
+          </div>
 
           {/* Interactive Writing Canvas */}
-          <TacticalHudFrame
-            agentName="STUDIO // WRITING WORKBENCH"
-            statusText={`${wordCount} WORDS`}
-            accentColor="purple"
-          >
-            <div className="flex items-center justify-between pb-2 border-b border-border/40">
+          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="flex items-center justify-between pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
-                <PenTool className="w-4 h-4 text-primary" aria-hidden="true" />
-                <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                <PenTool className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
+                <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
                   {t('writing.your_writing')}
                 </h4>
               </div>
 
               {/* Real-time Word Counter Status */}
               <div
-                className={`text-xs px-2.5 py-1 rounded-md font-mono font-medium flex items-center gap-1.5 ${
+                className={`text-xs px-3.5 py-1.5 rounded-full font-mono font-bold flex items-center gap-1.5 shadow-xs ${
                   isWithinWordCount
-                    ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20'
+                    ? 'bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20'
                     : isUnderWordCount
-                    ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
-                    : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
+                    ? 'bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20'
+                    : 'bg-rose-50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-500/20'
                 }`}
               >
                 <span>
@@ -326,38 +340,36 @@ export const WritingView: React.FC = () => {
                 isEn ? 'Type your English answer here...' : 'พิมพ์คำตอบภาษาอังกฤษของคุณที่นี่...'
               }
               rows={9}
-              className="w-full p-4 rounded-xl bg-background border border-border/80 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 font-sans resize-y"
+              className="w-full p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-sm leading-relaxed text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 font-sans resize-y shadow-xs"
               aria-label="พื้นที่เขียนคำตอบ"
             />
 
             {/* Action Bar */}
             <div className="flex items-center justify-between gap-3 pt-2">
-              <TactileButton
-                variant="neutral"
-                size="sm"
+              <button
+                type="button"
                 onClick={handleSaveDraft}
-                className="flex items-center gap-1.5"
+                className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
               >
                 <Save className="w-4 h-4" aria-hidden="true" />
                 <span>{isEn ? 'Save Draft' : 'บันทึกแบบร่าง'}</span>
-              </TactileButton>
+              </button>
 
-              <TactileButton
-                variant="primary"
-                size="sm"
+              <button
+                type="button"
                 onClick={handleSubmit}
-                className="flex items-center gap-1.5"
+                className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
               >
                 <Send className="w-4 h-4" aria-hidden="true" />
                 <span>{isEn ? 'Submit Writing' : 'ส่งงานเขียน'}</span>
-              </TactileButton>
+              </button>
             </div>
-          </TacticalHudFrame>
+          </div>
 
           {/* 3. Feedback State (Pending Evaluation & Model Answer) */}
           {isSubmitted && (
-            <div className="p-4 sm:p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 space-y-2 animate-in fade-in duration-200">
-              <div className="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
+            <div className="p-4 sm:p-5 rounded-[22px] bg-indigo-50 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-500/20 space-y-2 animate-in fade-in duration-200 shadow-xs">
+              <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-bold text-sm">
                 <Clock className="w-4 h-4" aria-hidden="true" />
                 <span>
                   {isEn
@@ -365,7 +377,7 @@ export const WritingView: React.FC = () => {
                     : 'บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                 {isEn
                   ? 'Because writing is an open-ended CEFR assessment, your response has been saved. You can compare your work with the model answer and scoring rubric below.'
                   : 'เนื่องจากงานเขียนเป็นข้อสอบอัตนัยตามมาตรฐาน CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง'}
@@ -375,44 +387,46 @@ export const WritingView: React.FC = () => {
 
           {/* Sample Model Answer Box */}
           {currentPrompt.sampleModelAnswer && (
-            <GlovaCard elevation="subtle" className="p-5 sm:p-6 space-y-3">
+            <div className="p-5 sm:p-6 space-y-3 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-amber-500" aria-hidden="true" />
-                  <h4 className="font-semibold text-sm sm:text-base text-foreground">
+                  <Sparkles className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
+                  <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
                     {t('writing.model_answer')}
                   </h4>
                 </div>
 
-                <GlovaButton
-                  variant="ghost"
-                  size="sm"
-                  leftIcon={showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
+                <button
+                  type="button"
                   onClick={() => setShowModelAnswer(!showModelAnswer)}
+                  className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
-                  {showModelAnswer
-                    ? isEn
-                      ? 'Hide Sample'
-                      : 'ซ่อนตัวอย่าง'
-                    : isEn
-                    ? 'View Sample Answer'
-                    : 'ดูตัวอย่างคำตอบ'}
-                </GlovaButton>
+                  {showModelAnswer ? <EyeOff className="w-3.5 h-3.5" aria-hidden="true" /> : <Eye className="w-3.5 h-3.5" aria-hidden="true" />}
+                  <span>
+                    {showModelAnswer
+                      ? isEn
+                        ? 'Hide Sample'
+                        : 'ซ่อนตัวอย่าง'
+                      : isEn
+                      ? 'View Sample Answer'
+                      : 'ดูตัวอย่างคำตอบ'}
+                  </span>
+                </button>
               </div>
 
               {showModelAnswer && (
-                <div className="mt-3 p-4 rounded-xl bg-muted/40 border border-border/40 text-xs sm:text-sm text-foreground/90 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200">
+                <div className="mt-3 p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-serif whitespace-pre-line animate-in fade-in duration-200 shadow-xs">
                   {currentPrompt.sampleModelAnswer}
                 </div>
               )}
-            </GlovaCard>
+            </div>
           )}
 
           {/* Useful Phrases Bank (Secondary Subordinate Information) */}
           {currentPrompt.usefulPhrases && currentPrompt.usefulPhrases.length > 0 && (
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5 uppercase tracking-wider">
-                <BookOpen className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+              <h4 className="text-xs font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1.5 uppercase tracking-wider font-mono">
+                <BookOpen className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
                 <span>
                   {isEn
                     ? 'Recommended Phrases & Collocations (Click to copy):'
@@ -426,11 +440,11 @@ export const WritingView: React.FC = () => {
                     key={idx}
                     type="button"
                     onClick={() => handleCopyPhrase(phraseObj.phrase)}
-                    className="touch-target px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#101A30] hover:bg-[#15203B] border border-slate-200/80 dark:border-white/10 shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none text-xs text-slate-900 dark:text-[#EDEBE8] flex items-center gap-2 transition-all group cursor-pointer"
+                    className="touch-target px-4 py-2 rounded-full bg-white dark:bg-[#0B1224] hover:bg-slate-100 dark:hover:bg-white/10 border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 flex items-center gap-2 transition-all group shadow-xs cursor-pointer"
                   >
                     <span className="font-bold">{phraseObj.phrase}</span>
-                    <span className="text-muted-foreground text-[11px]">({phraseObj.meaningTh})</span>
-                    <Copy className="w-3 h-3 text-muted-foreground group-hover:text-[#2155E6] dark:group-hover:text-[#6893FF] transition-colors" aria-hidden="true" />
+                    <span className="text-slate-500 dark:text-slate-400 text-[11px]">({phraseObj.meaningTh})</span>
+                    <Copy className="w-3 h-3 text-slate-400 group-hover:text-[#FA5D5D] transition-colors" aria-hidden="true" />
                   </button>
                 ))}
               </div>

@@ -137,32 +137,63 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. Learning Context Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6]/15 text-[#2155E6] dark:text-[#6893FF] border border-[#2155E6]/25">
-              <DecryptedText text="READING LAB" speed={40} maxIterations={12} revealDirection="start" />
-            </span>
+      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
+      <nav
+        aria-label="Reading sub-navigation"
+        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+      >
+        {/* Brand & Studio Identity */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                Reading Studio
+              </span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                READING LAB // CEFR
+              </span>
+            </div>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-            {isEn ? 'Reading Lab & Analytical Comprehension' : 'อ่านจับใจความและวิเคราะห์บริบท'}
-          </h1>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
-            {isEn
-              ? 'Practice analytical reading aligned with CEFR standards and Cambridge exam preparation.'
-              : 'ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge'}
-          </p>
+
+          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+          {currentPassage && (
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+              <GlovaLevelBadge level={currentPassage.cefrLevel} size="sm" />
+              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+                {currentPassage.targetExam}
+              </span>
+            </div>
+          )}
         </div>
 
-        {currentPassage && (
-          <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
-            <GlovaLevelBadge level={currentPassage.cefrLevel} size="md" />
-            <GlovaBadge variant="outline" size="sm">
-              {currentPassage.targetExam}
-            </GlovaBadge>
+        {/* Counter and Status Chips */}
+        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <FileText className="w-3.5 h-3.5" />
+            <span>{isEn ? `${passages.length} Passages` : `${passages.length} บทความ`}</span>
           </div>
-        )}
+
+          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Analytical Reading</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Title & Description */}
+      <div className="space-y-1">
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+          {isEn ? 'Reading Lab & Analytical Comprehension' : 'อ่านจับใจความและวิเคราะห์บริบท'}
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
+          {isEn
+            ? 'Practice analytical reading aligned with CEFR standards and Cambridge exam preparation.'
+            : 'ฝึกทักษะการอ่านบทความเชิงวิเคราะห์ตามกรอบ CEFR และเตรียมความพร้อมสำหรับข้อสอบ Cambridge'}
+        </p>
       </div>
 
       {/* Passage Selector Tabs */}
@@ -178,10 +209,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                 setActiveQuestionIdx(0);
                 setActiveTab('passage');
               }}
-              className={`touch-target px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition-all flex items-center gap-2 border ${
+              className={`touch-target px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all flex items-center gap-2 ${
                 isSelected
-                  ? 'bg-[#F59E0B] text-slate-950 border-[#F59E0B] shadow-md shadow-[#F59E0B]/25 font-black'
-                  : 'bg-[#070B16]/90 text-slate-400 hover:text-white border-white/10 hover:border-[#F59E0B]/40'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm font-black'
+                  : 'bg-white dark:bg-[#070B16]/90 text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10'
               }`}
             >
               <GlovaLevelBadge level={p.cefrLevel} size="sm" />
@@ -192,14 +223,14 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
       </div>
 
       {/* Mobile/Tablet View Toggle (Passage vs Questions) */}
-      <div className="lg:hidden flex items-center p-1 rounded-xl bg-[#0B1224] border border-white/10">
+      <div className="lg:hidden flex items-center p-1 rounded-full bg-[#FAF8F3] dark:bg-[#070B16] border border-[#EAE4D5] dark:border-white/10">
         <button
           type="button"
           onClick={() => setActiveTab('passage')}
-          className={`flex-1 touch-target py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 touch-target py-2 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
             activeTab === 'passage'
-              ? 'bg-[#F59E0B] text-slate-950 shadow-sm'
-              : 'text-slate-400 hover:text-white'
+              ? 'bg-[#FA5D5D] text-white shadow-sm'
+              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
           <FileText className="w-4 h-4" aria-hidden="true" />
@@ -208,10 +239,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
         <button
           type="button"
           onClick={() => setActiveTab('questions')}
-          className={`flex-1 touch-target py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
+          className={`flex-1 touch-target py-2 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
             activeTab === 'questions'
-              ? 'bg-[#F59E0B] text-slate-950 shadow-sm'
-              : 'text-slate-400 hover:text-white'
+              ? 'bg-[#FA5D5D] text-white shadow-sm'
+              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
           <BookOpen className="w-4 h-4" aria-hidden="true" />
@@ -240,35 +271,25 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (6 cols): Reading Passage Canvas */}
           <div className={`lg:col-span-6 space-y-4 ${activeTab === 'questions' ? 'hidden lg:block' : 'block'}`}>
-            <SpotlightCard
-              spotlightColor="rgba(245, 158, 11, 0.15)"
-              showBorderBeam={true}
-              borderBeamProps={{
-                colorFrom: '#F59E0B',
-                colorTo: '#FDE68A',
-                duration: 14,
-                size: 200,
-              }}
-              className="p-6 sm:p-8 space-y-5 rounded-2xl bg-[#070B16]/90 backdrop-blur-md border border-[#F59E0B]/30 shadow-2xl"
-            >
+            <div className="w-full p-6 sm:p-8 space-y-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               {/* Passage Metadata Bar */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-200/80 dark:border-white/10">
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
                 <div className="flex items-center gap-2">
                   <GlovaLevelBadge level={currentPassage.cefrLevel} size="sm" />
-                  <span className="text-xs text-muted-foreground font-mono font-medium">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-mono font-medium">
                     {currentPassage.topic}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                  <span className="flex items-center gap-1 bg-slate-100 dark:bg-[#101A30] px-2.5 py-1 rounded-full border border-slate-200/80 dark:border-white/10">
-                    <FileText className="w-3.5 h-3.5 text-[#2155E6] dark:text-[#6893FF]" aria-hidden="true" />
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                  <span className="flex items-center gap-1 bg-white dark:bg-[#101A30] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                    <FileText className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
                     <span>
                       {currentPassage.wordCount} {isEn ? 'words' : 'คำ'}
                     </span>
                   </span>
-                  <span className="flex items-center gap-1 bg-slate-100 dark:bg-[#101A30] px-2.5 py-1 rounded-full border border-slate-200/80 dark:border-white/10">
-                    <Clock className="w-3.5 h-3.5 text-[#FFE600]" aria-hidden="true" />
+                  <span className="flex items-center gap-1 bg-white dark:bg-[#101A30] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                    <Clock className="w-3.5 h-3.5 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
                     <span>
                       ~{estimatedReadingMinutes} {isEn ? 'min' : 'นาที'}
                     </span>
@@ -277,7 +298,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               </div>
 
               {/* Contextual Editorial Reading Photography */}
-              <div className="overflow-hidden rounded-[22px] border border-slate-200/80 dark:border-white/10 shadow-xs">
+              <div className="overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                 <GlovaImage
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
                   alt="Agile engineering team collaborating around workspace laptops"
@@ -287,22 +308,22 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
                 {currentPassage.title}
               </h3>
 
               {/* Passage Content with Optimal Typography */}
-              <div className="text-sm sm:text-base leading-relaxed text-foreground/90 space-y-3 font-normal whitespace-pre-line selection:bg-primary/20">
+              <div className="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200 space-y-3 font-normal whitespace-pre-line selection:bg-[#FA5D5D]/20">
                 {currentPassage.content}
               </div>
 
               {/* Vocabulary Glossary Drawer */}
               {currentPassage.vocabularyGlossary && currentPassage.vocabularyGlossary.length > 0 && (
-                <div className="pt-4 border-t border-border/40 space-y-2">
+                <div className="pt-4 border-t border-[#EAE4D5] dark:border-white/10 space-y-2">
                   <button
                     type="button"
                     onClick={() => setIsGlossaryOpen(!isGlossaryOpen)}
-                    className="touch-target text-xs font-semibold text-primary hover:underline flex items-center gap-1.5"
+                    className="touch-target text-xs font-bold text-[#FA5D5D] hover:underline flex items-center gap-1.5 cursor-pointer"
                   >
                     <BookMarked className="w-4 h-4" aria-hidden="true" />
                     <span>
@@ -321,110 +342,104 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted })
                       {currentPassage.vocabularyGlossary.map((item, idx) => (
                         <div
                           key={idx}
-                          className="p-2.5 rounded-lg bg-muted/30 border border-border/40 text-xs flex items-baseline justify-between gap-2"
+                          className="p-3 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs flex items-baseline justify-between gap-2 shadow-xs"
                         >
-                          <span className="font-mono font-bold text-foreground">{item.word}</span>
-                          <span className="text-muted-foreground text-right">{item.meaningTh}</span>
+                          <span className="font-mono font-bold text-slate-900 dark:text-white">{item.word}</span>
+                          <span className="text-slate-500 dark:text-slate-400 text-right">{item.meaningTh}</span>
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
               )}
-            </SpotlightCard>
+            </div>
           </div>
 
           {/* Right Column (6 cols): Comprehension Questions */}
           <div className={`lg:col-span-6 space-y-4 ${activeTab === 'passage' ? 'hidden lg:block' : 'block'}`}>
-            <TacticalHudFrame
-              agentName="STUDIO // READING DRILL"
-              statusText={displayedQuestions.length > 0 ? `Q ${activeQuestionIdx + 1}/${displayedQuestions.length}` : 'ONLINE'}
-              accentColor="indigo"
-            >
-            <div className="flex items-center justify-between pb-2 border-b border-border/40">
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
-                <h4 className="font-semibold text-sm sm:text-base text-foreground">
-                  {isEn ? 'Comprehension Questions' : 'คำถามวัดความเข้าใจ'}
-                </h4>
+            <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+              <div className="flex items-center justify-between pb-3 border-b border-[#EAE4D5] dark:border-white/10">
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
+                  <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
+                    {isEn ? 'Comprehension Questions' : 'คำถามวัดความเข้าใจ'}
+                  </h4>
+                </div>
+
+                {displayedQuestions.length > 0 && (
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-mono font-bold bg-white dark:bg-[#0B1224] px-3 py-1 rounded-full border border-[#EAE4D5] dark:border-white/10">
+                    {isEn
+                      ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
+                      : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
+                  </span>
+                )}
               </div>
 
-              {displayedQuestions.length > 0 && (
-                <span className="text-xs text-muted-foreground font-mono">
-                  {isEn
-                    ? `Question ${activeQuestionIdx + 1} of ${displayedQuestions.length}`
-                    : `ข้อที่ ${activeQuestionIdx + 1} จาก ${displayedQuestions.length}`}
-                </span>
+              {loadingQuestions && displayedQuestions.length === 0 && (
+                <div className="min-h-[260px] flex items-center justify-center p-8">
+                  <LoadingSpinner
+                    size="md"
+                    text={isEn ? 'Loading questions...' : 'กำลังโหลดคำถาม...'}
+                  />
+                </div>
+              )}
+
+              {!loadingQuestions && displayedQuestions.length === 0 && (
+                <EmptyState
+                  title={isEn ? 'No questions available for this passage yet' : 'ยังไม่มีคำถามสำหรับบทความนี้'}
+                  description={
+                    isEn
+                      ? 'Our academic team is currently preparing additional questions.'
+                      : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม'
+                  }
+                />
+              )}
+
+              {currentQuestion && (
+                <div className="space-y-4">
+                  <QuestionCard
+                    key={currentQuestion.id}
+                    question={currentQuestion}
+                    questionNumber={activeQuestionIdx + 1}
+                    totalQuestions={displayedQuestions.length}
+                    onAnswer={(selectedKey, isCorrect) => {
+                      onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
+                    }}
+                    showExplanationImmediately={true}
+                  />
+
+                  {/* Question Navigation Controls */}
+                  <div className="flex items-center justify-between pt-2">
+                    <button
+                      type="button"
+                      onClick={handlePrevQuestion}
+                      disabled={activeQuestionIdx === 0}
+                      className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                    >
+                      <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                      <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleNextQuestion}
+                      className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
+                    >
+                      <span>
+                        {activeQuestionIdx < displayedQuestions.length - 1
+                          ? isEn
+                            ? 'Next Question'
+                            : 'ข้อถัดไป'
+                          : isEn
+                          ? 'Next Passage'
+                          : 'บทความถัดไป'}
+                      </span>
+                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-
-            {loadingQuestions && displayedQuestions.length === 0 && (
-              <div className="min-h-[260px] flex items-center justify-center p-8">
-                <LoadingSpinner
-                  size="md"
-                  text={isEn ? 'Loading questions...' : 'กำลังโหลดคำถาม...'}
-                />
-              </div>
-            )}
-
-            {!loadingQuestions && displayedQuestions.length === 0 && (
-              <EmptyState
-                title={isEn ? 'No questions available for this passage yet' : 'ยังไม่มีคำถามสำหรับบทความนี้'}
-                description={
-                  isEn
-                    ? 'Our academic team is currently preparing additional questions.'
-                    : 'ทีมผู้เชี่ยวชาญกำลังจัดเตรียมคำถามเพิ่มเติม'
-                }
-              />
-            )}
-
-            {currentQuestion && (
-              <div className="space-y-4">
-                <QuestionCard
-                  key={currentQuestion.id}
-                  question={currentQuestion}
-                  questionNumber={activeQuestionIdx + 1}
-                  totalQuestions={displayedQuestions.length}
-                  onAnswer={(selectedKey, isCorrect) => {
-                    onQuestionCompleted?.(currentQuestion.id, isCorrect, currentQuestion.weaknessTag);
-                  }}
-                  showExplanationImmediately={true}
-                />
-
-                {/* Question Navigation Controls */}
-                <div className="flex items-center justify-between pt-2">
-                  <TactileButton
-                    variant="neutral"
-                    size="sm"
-                    onClick={handlePrevQuestion}
-                    disabled={activeQuestionIdx === 0}
-                    className="flex items-center gap-1.5"
-                  >
-                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                    <span>{isEn ? 'Previous' : 'ข้อก่อนหน้า'}</span>
-                  </TactileButton>
-
-                  <TactileButton
-                    variant="primary"
-                    size="sm"
-                    onClick={handleNextQuestion}
-                    className="flex items-center gap-1.5"
-                  >
-                    <span>
-                      {activeQuestionIdx < displayedQuestions.length - 1
-                        ? isEn
-                          ? 'Next Question'
-                          : 'ข้อถัดไป'
-                        : isEn
-                        ? 'Next Passage'
-                        : 'บทความถัดไป'}
-                    </span>
-                    <ChevronRight className="w-4 h-4" aria-hidden="true" />
-                  </TactileButton>
-                </div>
-              </div>
-            )}
-            </TacticalHudFrame>
           </div>
         </div>
       )}
