@@ -169,6 +169,49 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
   const [activeCefr, setActiveCefr] = useState<CefrLevelKey>('B1');
   const [heroLangIdx, setHeroLangIdx] = useState(0);
   const [selectedQuizAnswer, setSelectedQuizAnswer] = useState('different');
+  const [selectedHeroLevelKey, setSelectedHeroLevelKey] = useState<'A1' | 'B1' | 'C1' | 'C2'>('C1');
+  const [isLiveVideoPlaying, setIsLiveVideoPlaying] = useState(true);
+
+  const heroLevelCatalog = [
+    {
+      key: 'A1' as const,
+      label: isEn ? 'Beginner' : 'ระดับเริ่มต้น',
+      cefr: 'CEFR A1-A2',
+      score: '92%',
+      percent: 92,
+      tag: isEn ? 'Daily Basics & Travel' : 'การสื่อสารพื้นฐานและชีวิตประจำวัน',
+      color: '#10B981',
+    },
+    {
+      key: 'B1' as const,
+      label: isEn ? 'Intermediate' : 'ระดับกลาง',
+      cefr: 'CEFR B1-B2',
+      score: '88%',
+      percent: 88,
+      tag: isEn ? 'Workplace & Cambridge B2' : 'การทำงานและการสอบเคมบริดจ์ B2',
+      color: '#F59E0B',
+    },
+    {
+      key: 'C1' as const,
+      label: isEn ? 'Advanced' : 'ระดับสูง',
+      cefr: 'CEFR C1 Advanced',
+      score: '94%',
+      percent: 94,
+      tag: isEn ? 'Spontaneous Speech & Fluid Cadence' : 'การสนทนาโต้ตอบคล่องแคล่วและเป็นธรรมชาติ',
+      color: '#FA5D5D',
+    },
+    {
+      key: 'C2' as const,
+      label: isEn ? 'Mastery' : 'ระดับเชี่ยวชาญ',
+      cefr: 'CEFR C2 Proficiency',
+      score: '98%',
+      percent: 98,
+      tag: isEn ? 'Near-Native Precision & Rhetoric' : 'ความสละสลวยเทียบเคียงเจ้าของภาษา',
+      color: '#8B5CF6',
+    },
+  ];
+
+  const currentHeroLevel = heroLevelCatalog.find((l) => l.key === selectedHeroLevelKey) || heroLevelCatalog[2];
 
   const heroLanguages = [
     { name: isEn ? 'English' : 'อังกฤษ', flag: UkFlagSvg, tag: 'CEFR C1' },
@@ -299,7 +342,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
     {
       id: 'maxwell',
       name: 'Maxwell Tan',
-      photo: '/images/landing/mondly_tutor_jordan.jpg',
+      photo: '/images/landing/mondly_tutor_maxwell.jpg',
       bgClass: 'bg-[#EAE4FF] dark:bg-[#231E33]',
       tagBg: 'bg-[#7C3AED]/15 text-[#7C3AED] dark:text-[#A78BFA]',
       specialty: isEn ? 'Academic Writing & CAE' : 'การเขียนวิชาการและข้อสอบ CAE',
@@ -711,7 +754,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         {/* ========================================================================= */}
         {/* GIANT HERO BACKGROUND PHOTO CANVAS (Outcrowd Mondly Signature Container)   */}
         {/* ========================================================================= */}
-        <div className="w-full relative rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] flex items-end p-6 sm:p-10">
+        <div className="w-full relative rounded-[36px] sm:rounded-[48px] overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 aspect-[16/10] sm:aspect-[16/9] min-h-[540px] sm:min-h-[640px] lg:min-h-[720px] flex flex-col justify-between p-6 sm:p-10 lg:p-12">
           {/* Authentic High-Res Teacher Photo Background */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -723,90 +766,164 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             loading="eager"
           />
 
-          {/* Soft Gradient Overlay to ensure floating cards stand out */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+          {/* Soft Atmospheric Gradient Overlay for Floating Glass Cards */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/30 pointer-events-none" />
 
-          {/* Floating Card 1: Top-Left CEFR Level Mastery Badge */}
-          <div className="absolute top-6 left-6 sm:top-10 sm:left-10 z-20 p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-xl max-w-xs space-y-2">
-            <div className="flex items-center justify-between gap-3">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-[#FA5D5D]/15 text-[#FA5D5D] uppercase tracking-wider">
-                CEFR C1 Advanced
-              </span>
-              <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>94% Score</span>
-              </span>
-            </div>
-            <p className="text-xs font-bold text-slate-900 dark:text-white leading-snug">
-              {isEn ? 'Spontaneous Speech & Fluid Cadence' : 'การสนทนาโต้ตอบคล่องแคล่วและเป็นธรรมชาติ'}
-            </p>
-            <div className="w-full h-1.5 rounded-full bg-slate-100 dark:bg-white/10 overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-[#FA5D5D] to-amber-500 rounded-full" style={{ width: '94%' }} />
-            </div>
-          </div>
-
-          {/* Floating Card 2: Top-Right Weekly Study Activity Chart (24.9 hrs) */}
-          <div className="hidden sm:block absolute top-6 right-6 sm:top-10 sm:right-10 z-20 p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-xl max-w-xs space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
-                  {isEn ? 'Weekly Progress' : 'ความก้าวหน้ารายสัปดาห์'}
+          {/* Top Floating Row: Interactive Level Switcher (Left) & Activity Gauge (Right) */}
+          <div className="relative z-20 flex flex-col sm:flex-row items-start justify-between gap-4 w-full">
+            {/* Floating Card 1: Interactive CEFR Level Selector (Outcrowd Mondly Signature) */}
+            <div className="p-4 sm:p-5 rounded-3xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-2xl max-w-sm w-full space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  {isEn ? 'CEFR Level Placement' : 'การจัดระดับตามเกณฑ์ CEFR'}
                 </span>
-                <span className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">24.9 hrs</span>
+                <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>{currentHeroLevel.score} Score</span>
+                </span>
               </div>
-              <span className="px-2 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/10 text-emerald-600 flex items-center gap-1">
-                <TrendingUp className="w-3 h-3" />
-                <span>+18.4%</span>
-              </span>
+
+              {/* 4 Interactive Level Selector Pills */}
+              <div className="grid grid-cols-4 gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-white/5 border border-border/60">
+                {heroLevelCatalog.map((lvl) => {
+                  const isActive = selectedHeroLevelKey === lvl.key;
+                  return (
+                    <button
+                      key={lvl.key}
+                      type="button"
+                      onClick={() => setSelectedHeroLevelKey(lvl.key)}
+                      className={`py-1.5 px-1 rounded-xl text-[11px] font-extrabold transition-all cursor-pointer text-center ${
+                        isActive
+                          ? 'bg-[#FA5D5D] text-white shadow-xs scale-102'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {lvl.key}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-bold text-slate-900 dark:text-white">
+                  <span>{currentHeroLevel.cefr}</span>
+                  <span className="text-[11px] text-slate-500 font-medium">{currentHeroLevel.label}</span>
+                </div>
+                <p className="text-[11px] font-medium text-slate-600 dark:text-slate-300 leading-snug truncate">
+                  {currentHeroLevel.tag}
+                </p>
+                <div className="w-full h-1.5 rounded-full bg-slate-100 dark:bg-white/10 overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-[#FA5D5D] to-amber-500 rounded-full transition-all duration-300"
+                    style={{ width: `${currentHeroLevel.percent}%` }}
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* 7 Daily Mini Bars (Mon - Sun) */}
-            <div className="flex items-end justify-between gap-1.5 pt-1 h-12">
-              {[
-                { day: 'M', h: '50%', active: false },
-                { day: 'T', h: '65%', active: false },
-                { day: 'W', h: '95%', active: true },
-                { day: 'T', h: '80%', active: true },
-                { day: 'F', h: '60%', active: false },
-                { day: 'S', h: '40%', active: false },
-                { day: 'S', h: '75%', active: false },
-              ].map((b, i) => (
-                <div key={i} className="flex flex-col items-center gap-1 w-full">
-                  <div className="w-full rounded-md bg-slate-100 dark:bg-white/10 h-10 flex items-end overflow-hidden">
-                    <div
-                      className={`w-full rounded-md transition-all ${
-                        b.active ? 'bg-[#FA5D5D]' : 'bg-slate-300 dark:bg-slate-600'
-                      }`}
-                      style={{ height: b.h }}
-                    />
-                  </div>
-                  <span className="text-[9px] font-bold text-slate-400">{b.day}</span>
+            {/* Floating Card 2: Weekly Study Activity Chart (24.9 hrs) */}
+            <div className="hidden sm:block p-4 sm:p-5 rounded-3xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-2xl max-w-xs w-full space-y-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                    {isEn ? 'Weekly Progress' : 'ความก้าวหน้ารายสัปดาห์'}
+                  </span>
+                  <span className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">24.9 hrs</span>
                 </div>
-              ))}
+                <span className="px-2 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/10 text-emerald-600 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" />
+                  <span>+18.4%</span>
+                </span>
+              </div>
+
+              {/* 7 Daily Mini Bars (Mon - Sun) */}
+              <div className="flex items-end justify-between gap-1.5 pt-1 h-12">
+                {[
+                  { day: 'M', h: '50%', active: false },
+                  { day: 'T', h: '65%', active: false },
+                  { day: 'W', h: '95%', active: true },
+                  { day: 'T', h: '80%', active: true },
+                  { day: 'F', h: '60%', active: false },
+                  { day: 'S', h: '40%', active: false },
+                  { day: 'S', h: '75%', active: false },
+                ].map((b, i) => (
+                  <div key={i} className="flex flex-col items-center gap-1 w-full">
+                    <div className="w-full rounded-md bg-slate-100 dark:bg-white/10 h-10 flex items-end overflow-hidden">
+                      <div
+                        className={`w-full rounded-md transition-all ${
+                          b.active ? 'bg-[#FA5D5D]' : 'bg-slate-300 dark:bg-slate-600'
+                        }`}
+                        style={{ height: b.h }}
+                      />
+                    </div>
+                    <span className="text-[9px] font-bold text-slate-400">{b.day}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Floating Card 3: Bottom Left Live Coaching Room Status */}
-          <div className="relative z-20 w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-2.5 sm:gap-3 px-3.5 py-2.5 sm:px-4 sm:py-2.5 rounded-2xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-xl">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
-            </span>
-            <div className="text-left">
-              <span className="text-xs font-bold text-slate-900 dark:text-white block">
-                {isEn ? 'Live Speaking Room • Active Now' : 'ห้องสนทนาสด • พร้อมฝึกทันที'}
+          {/* Bottom Floating Row: Live Coaching Room Status & Interactive Video Bar */}
+          <div className="relative z-20 flex flex-col md:flex-row items-stretch md:items-end justify-between gap-4 w-full pt-6">
+            {/* Floating Card 3: Live Coaching Room Status */}
+            <div className="inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-3 rounded-2xl bg-white/95 dark:bg-[#1E1B28]/95 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-2xl">
+              <span className="relative flex h-3 w-3 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
               </span>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400">
-                {isEn ? 'Join 24 learners in Oxford Accent Clinic' : 'มีผู้เรียน 24 คนกำลังฝึกสำเนียงบริติช'}
+              <div className="text-left min-w-0">
+                <span className="text-xs font-bold text-slate-900 dark:text-white block truncate">
+                  {isEn ? 'Live Speaking Room • Active Now' : 'ห้องสนทนาสด • พร้อมฝึกทันที'}
+                </span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 block truncate">
+                  {isEn ? 'Join 24 learners in Oxford Accent Clinic' : 'มีผู้เรียน 24 คนกำลังฝึกสำเนียงบริติช'}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => router.push('/speaking')}
+                className="ml-2 px-3 py-1.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-[11px] font-bold shadow-xs cursor-pointer transition-colors shrink-0"
+              >
+                {isEn ? 'Join' : 'เข้าร่วม'}
+              </button>
+            </div>
+
+            {/* Floating Interactive Video Player Bar (Outcrowd Mondly Live Video Simulation) */}
+            <div className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-black/75 backdrop-blur-md text-white border border-white/15 shadow-2xl text-xs">
+              <button
+                type="button"
+                onClick={() => setIsLiveVideoPlaying(!isLiveVideoPlaying)}
+                className="w-8 h-8 rounded-full bg-white/20 hover:bg-[#FA5D5D] text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
+                aria-label={isLiveVideoPlaying ? 'Pause video' : 'Play video'}
+              >
+                {isLiveVideoPlaying ? <Square className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
+              </button>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                <span className="font-semibold text-white/90 truncate max-w-[180px] sm:max-w-[220px]">
+                  {isEn ? 'Sarah Mitchell • Oxford Tutor' : 'ซาร่าห์ มิทเชลล์ • ติวเตอร์อ็อกซ์ฟอร์ด'}
+                </span>
+              </div>
+
+              {/* Live Soundwave Bars */}
+              <div className="hidden sm:flex items-center gap-1 h-4 px-1">
+                {[0.4, 0.8, 0.5, 0.9, 0.6, 0.3].map((h, idx) => (
+                  <span
+                    key={idx}
+                    className="w-0.5 bg-[#FA5D5D] rounded-full transition-all duration-300"
+                    style={{
+                      height: isLiveVideoPlaying ? `${h * 16}px` : '4px',
+                      opacity: isLiveVideoPlaying ? 1 : 0.4,
+                    }}
+                  />
+                ))}
+              </div>
+
+              <span className="text-[10px] font-mono text-white/70 px-2 py-0.5 rounded-md bg-white/10 shrink-0">
+                14:20 / 45:00
               </span>
             </div>
-            <button
-              type="button"
-              onClick={() => router.push('/speaking')}
-              className="ml-2 px-3 py-1.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-[11px] font-bold shadow-xs cursor-pointer transition-colors"
-            >
-              {isEn ? 'Join' : 'เข้าร่วม'}
-            </button>
           </div>
         </div>
       </section>
@@ -842,14 +959,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         {/* Grid of Rounded Country Language Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3.5">
           {[
-            { name: isEn ? 'English (UK)' : 'อังกฤษ (บริติช)', flag: UkFlagSvg, count: '3,860 Words' },
-            { name: isEn ? 'English (US)' : 'อังกฤษ (อเมริกัน)', flag: UsFlagSvg, count: '3,450 Words' },
-            { name: isEn ? 'Spanish' : 'สเปน', flag: SpanishFlagSvg, count: '2,900 Words' },
-            { name: isEn ? 'French' : 'ฝรั่งเศส', flag: FrenchFlagSvg, count: '2,640 Words' },
-            { name: isEn ? 'German' : 'เยอรมัน', flag: GermanFlagSvg, count: '2,400 Words' },
-            { name: isEn ? 'Italian' : 'อิตาลี', flag: ItalianFlagSvg, count: '2,150 Words' },
-            { name: isEn ? 'Japanese' : 'ญี่ปุ่น', flag: JapaneseFlagSvg, count: '2,800 Words' },
-            { name: isEn ? 'Thai' : 'ไทย', flag: ThaiFlagSvg, count: 'Native Engine' },
+            { name: isEn ? 'British English' : 'ภาษาอังกฤษ สำเนียงบริติช', flag: UkFlagSvg, count: '3,860 Words' },
+            { name: isEn ? 'American English' : 'ภาษาอังกฤษ สำเนียงอเมริกัน', flag: UsFlagSvg, count: '3,450 Words' },
+            { name: isEn ? 'Spanish' : 'ภาษาสเปน', flag: SpanishFlagSvg, count: '2,900 Words' },
+            { name: isEn ? 'French' : 'ภาษาฝรั่งเศส', flag: FrenchFlagSvg, count: '2,640 Words' },
+            { name: isEn ? 'German' : 'ภาษาเยอรมัน', flag: GermanFlagSvg, count: '2,400 Words' },
+            { name: isEn ? 'Italian' : 'ภาษาอิตาลี', flag: ItalianFlagSvg, count: '2,150 Words' },
+            { name: isEn ? 'Japanese' : 'ภาษาญี่ปุ่น', flag: JapaneseFlagSvg, count: '2,800 Words' },
+            { name: isEn ? 'Thai' : 'ภาษาไทย', flag: ThaiFlagSvg, count: 'Native Engine' },
           ].map((lang, idx) => {
             const Flag = lang.flag;
             return (
@@ -1110,185 +1227,525 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. SECTION 5: DUAL PATHWAYS (Outcrowd Mondly Keyframe 30s)                 */}
+      {/* 5. SECTION 5: LEARN OR TEACH ONLINE (Outcrowd Mondly Keyframe 30s)        */}
       {/* ========================================================================= */}
-      <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-border/80">
+      <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10B981]/10 text-emerald-600 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Structured Roadmaps' : 'เส้นทางการเรียนรู้ที่ชัดเจน'}
+            {isEn ? 'Two Paths • One Platform' : 'สองเส้นทาง • บนแพลตฟอร์มเดียว'}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Choose your personalized learning pathway' : 'เลือกเส้นทางการเรียนที่เหมาะกับคุณ'}
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            {isEn ? 'Learn or teach online' : 'เรียนรู้หรือสอนออนไลน์ตามเวลาที่คุณเลือก'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Whether mastering everyday conversation or aiming for Cambridge certification, we provide tailored modules for your milestones.'
-              : 'ไม่ว่าคุณจะต้องการพูดสื่อสารในชีวิตประจำวันอย่างคล่องแคล่ว หรือเตรียมสอบเคมบริดจ์ เรามีบทเรียนที่ตอบโจทย์'}
+              ? 'Whether you want to learn a new language or share your expert knowledge with students, our platform provides all the tools to succeed.'
+              : 'ไม่ว่าคุณจะต้องการเรียนรู้เพื่อความคล่องแคล่ว หรือร่วมเป็นผู้สอนเพื่อแบ่งปันความรู้ เรามีเครื่องมือครบครันรองรับทุกการเติบโต'}
           </p>
         </div>
 
-        {/* 2 Wide Pathway Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 1: Everyday Communication (Sunny Warm Amber) */}
-          <div className="rounded-[36px] bg-[#FEF3C7] dark:bg-[#2A2616] border border-amber-200 dark:border-amber-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-lg relative overflow-hidden">
-            <div className="space-y-5">
-              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-800 dark:text-amber-300 uppercase tracking-wider inline-block">
-                {isEn ? 'Pathway 01 • Everyday Fluency' : 'เส้นทางที่ 1 • การสื่อสารในชีวิตจริง'}
+        {/* 2 Wide Feature Stage Containers from Outcrowd Dribbble Shot 30s */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          {/* Card 1: Begin your learning journey (Sunny Golden Amber Container) */}
+          <div className="rounded-[36px] sm:rounded-[44px] bg-[#FEF3C7] dark:bg-[#2A2312] border border-amber-300/80 dark:border-amber-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+            <div className="space-y-6">
+              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/20 text-amber-900 dark:text-amber-300 uppercase tracking-wider inline-block">
+                {isEn ? 'For Students & Professionals' : 'สำหรับผู้เรียนและคนทำงาน'}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-                {isEn ? 'Conversational Mastery from Scratch' : 'ฝึกสนทนาโต้ตอบคล่องแคล่วตั้งแต่เริ่มต้น'}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                {isEn
-                  ? 'Learn practical dialogues for travel, social networking, and career without memorizing abstract grammar rules.'
-                  : 'ฝึกพูดบทสนทนาที่ใช้ได้จริงในการทำงาน ท่องเที่ยว และเข้าสังคม โดยไม่ต้องท่องจำกฎไวยากรณ์น่าเบื่อ'}
-              </p>
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                  {isEn ? 'Begin your learning journey' : 'เริ่มต้นการเดินทางสู่ความคล่องแคล่ว'}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                  {isEn
+                    ? 'Learning a new language has never been easier. With our platform, you can start speaking a new language from day one.'
+                    : 'การเรียนภาษาใหม่ง่ายกว่าที่เคย เริ่มต้นฝึกสนทนาและโต้ตอบได้จริงตั้งแต่วันแรกที่เข้าเรียน'}
+                </p>
+              </div>
 
-              {/* Checklist */}
-              <div className="space-y-2.5 pt-2">
+              {/* Checklist from Dribbble shot */}
+              <div className="space-y-3 pt-1">
                 {[
-                  isEn ? 'Real-world dialogue simulator (Café, Hotel, Airport, Career)' : 'จำลองสถานการณ์จริง (ร้านกาแฟ โรงแรม สนามบิน สัมภาษณ์งาน)',
-                  isEn ? '3,860 Oxford-calibrated vocabulary flashcards with audio' : 'คลังคำศัพท์ Oxford 3,860 คำ พร้อมเสียงอ่านเจ้าของภาษา',
-                  isEn ? 'Phoneme-level AI pronunciation scoring and feedback' : 'ระบบวิเคราะห์การออกเสียงและวรรณยุกต์คำด้วย AI',
+                  isEn ? 'Choose a tutor - for free!' : 'เลือกติวเตอร์ที่ถูกใจ - ทดลองฟรี!',
+                  isEn ? 'Quick response and start of classes' : 'เริ่มเรียนได้ทันทีและตอบรับรวดเร็ว',
+                  isEn ? 'Live classes online 24/7' : 'คลาสเรียนสดออนไลน์ตลอด 24 ชั่วโมง',
+                  isEn ? 'Learn in small groups or 1-on-1' : 'เลือกเรียนได้ทั้งกลุ่มย่อยและแบบตัวต่อตัว',
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                  <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    <span className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
+
+              {/* Button from Dribbble Shot */}
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={handleStart}
+                  className="px-8 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <span>{isEn ? 'Start learning' : 'เริ่มต้นเรียนรู้'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
-            <div className="pt-8">
-              <button
-                type="button"
-                onClick={handleStart}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-[#FA5D5D] dark:hover:bg-[#FA5D5D] dark:hover:text-white font-bold text-xs transition-colors cursor-pointer shadow-md"
-              >
-                <span>{isEn ? 'Start everyday pathway' : 'เริ่มเรียนรู้การสื่อสาร'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+            {/* Embedded In-App Activity Mockup (Dribbble 30s Screenshot Replica) */}
+            <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-black/5 dark:border-white/10 shadow-lg space-y-4">
+              <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#FA5D5D]" />
+                  <span>Glova Study Sync</span>
+                </span>
+                <span className="text-[10px] font-mono text-slate-500 px-2 py-0.5 rounded-md bg-slate-100 dark:bg-white/5">
+                  Last 7 days
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">Activity</span>
+                  <span className="text-xl font-extrabold text-slate-900 dark:text-white font-mono">17.7 hrs</span>
+                </div>
+                <div className="flex items-end gap-1.5 h-8">
+                  {[40, 60, 90, 75, 55, 30, 85].map((val, vi) => (
+                    <div
+                      key={vi}
+                      className="w-2 rounded-t-sm bg-[#8B5CF6]"
+                      style={{ height: `${val}%`, opacity: vi === 2 || vi === 6 ? 1 : 0.4 }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* By platform list */}
+              <div className="space-y-1.5 pt-1 text-[11px]">
+                <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
+                  <span>8 lessons Glova Platform</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">12.5 h</span>
+                </div>
+                <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
+                  <span>5 lessons Zoom Audio</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">6.8 h</span>
+                </div>
+                <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
+                  <span>3 lessons Google Meet</span>
+                  <span className="font-mono font-bold text-slate-900 dark:text-white">4.2 h</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Card 2: Cambridge Exam Preparation (Soft Lavender) */}
-          <div className="rounded-[36px] bg-[#EDE9FE] dark:bg-[#231E33] border border-purple-200 dark:border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-lg relative overflow-hidden">
-            <div className="space-y-5">
-              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500/20 text-purple-800 dark:text-purple-300 uppercase tracking-wider inline-block">
-                {isEn ? 'Pathway 02 • Cambridge Vault' : 'เส้นทางที่ 2 • คลังข้อสอบเคมบริดจ์'}
+          {/* Card 2: Teach online on your schedule (Soft Lavender Lilac Container) */}
+          <div className="rounded-[36px] sm:rounded-[44px] bg-[#EDE9FE] dark:bg-[#221B32] border border-purple-300/80 dark:border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+            <div className="space-y-6">
+              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-500/20 text-purple-900 dark:text-purple-300 uppercase tracking-wider inline-block">
+                {isEn ? 'For Educators & Tutors' : 'สำหรับครูและติวเตอร์'}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-                {isEn ? 'Official Timed Exam Simulations' : 'จำลองข้อสอบจริงตามเกณฑ์มาตรฐานสากล'}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                {isEn
-                  ? 'Complete full-length simulations for KET, PET, FCE, and CAE with automated scoring mapped to the Cambridge English Scale.'
-                  : 'ฝึกทำข้อสอบเต็มรูปแบบของ KET, PET, FCE และ CAE พร้อมระบบจับเวลาและแปลงคะแนนตามเกณฑ์เคมบริดจ์'}
-              </p>
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                  {isEn ? 'Teach online on your schedule' : 'สอนออนไลน์ตามตารางเวลาที่คุณเลือก'}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                  {isEn
+                    ? 'Earn money sharing your expert knowledge with students. Sign up to start tutoring online with our global platform.'
+                    : 'สร้างรายได้ด้วยการแบ่งปันความเชี่ยวชาญด้านภาษาแก่นักเรียนทั่วโลก จัดตารางและกำหนดอัตราค่าสอนได้อย่างอิสระ'}
+                </p>
+              </div>
 
-              {/* Checklist */}
-              <div className="space-y-2.5 pt-2">
+              {/* Checklist from Dribbble shot */}
+              <div className="space-y-3 pt-1">
                 {[
-                  isEn ? 'Complete Reading, Writing, Listening & Speaking papers' : 'ครอบคลุมครบทุกพาร์ท ทั้งการอ่าน การเขียน การฟัง และการพูด',
-                  isEn ? 'Automated scoring calibrated against Cambridge grade boundaries' : 'ระบบคำนวณคะแนนและเกรดเฉลี่ยตรงตามเกณฑ์ทางการ',
-                  isEn ? 'Detailed weakness diagnostics and targeted practice queues' : 'รายงานจุดอ่อนรายบุคคลพร้อมแบบฝึกหัดแก้ไขตรงจุด',
+                  isEn ? 'Find new students worldwide' : 'เข้าถึงผู้เรียนใหม่ๆ จากทั่วทุกมุมโลก',
+                  isEn ? 'Set the price for classes' : 'กำหนดอัตราค่าเรียนได้ด้วยตัวเอง',
+                  isEn ? 'Grow your tutoring business' : 'สร้างฐานนักเรียนประจำและเติบโตอย่างมั่นคง',
+                  isEn ? 'Get paid securely and on time' : 'ระบบรับชำระเงินที่ปลอดภัยและตรงเวลา',
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                  <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
+
+              {/* Button from Dribbble Shot */}
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={handleStart}
+                  className="px-8 py-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <span>{isEn ? 'Become a tutor' : 'สมัครเป็นผู้สอน'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
-            <div className="pt-8">
-              <button
-                type="button"
-                onClick={() => router.push('/mock-exams')}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-[#FA5D5D] dark:hover:bg-[#FA5D5D] dark:hover:text-white font-bold text-xs transition-colors cursor-pointer shadow-md"
-              >
-                <span>{isEn ? 'Explore Cambridge Vault' : 'เข้าสู่คลังข้อสอบเคมบริดจ์'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+            {/* Embedded In-App Schedule Mockup (Dribbble 30s Screenshot Replica) */}
+            <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-black/5 dark:border-white/10 shadow-lg space-y-3">
+              <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-purple-600" />
+                  <span>My schedule: Today</span>
+                </span>
+                <span className="text-[10px] text-emerald-600 font-bold px-2 py-0.5 rounded-md bg-emerald-500/10">
+                  3 Classes Booked
+                </span>
+              </div>
+
+              <div className="space-y-2 pt-1 text-[11px]">
+                <div className="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-500/20 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-900 dark:text-white block">Technical English for Beginners</span>
+                    <span className="text-[10px] text-slate-500">10:30 – 12:00 • CEFR A2</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded-md bg-white dark:bg-black/30">
+                    Live Now
+                  </span>
+                </div>
+
+                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-border/60 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-900 dark:text-white block">English Punctuation Made Easy</span>
+                    <span className="text-[10px] text-slate-500">13:00 – 14:00 • CEFR B2</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-500 px-2 py-0.5 rounded-md bg-slate-200/60 dark:bg-white/10">
+                    Upcoming
+                  </span>
+                </div>
+
+                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-border/60 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-900 dark:text-white block">Cambridge CAE Writing Intensive</span>
+                    <span className="text-[10px] text-slate-500">16:00 – 17:30 • CEFR C1</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-500 px-2 py-0.5 rounded-md bg-slate-200/60 dark:bg-white/10">
+                    Confirmed
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. SECTION 6: FOUR ESSENTIAL FEATURES GRID                                */}
+      {/* 6. SECTION 6: FOUR ESSENTIAL CAPABILITIES (Outcrowd Mondly Video Frame)   */}
       {/* ========================================================================= */}
-      <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-border/80">
-        <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
+      <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
+        <div className="text-center max-w-2xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-wider">
             {isEn ? 'Core Platform Capabilities' : 'ฟังก์ชันหลักเพื่อการเรียนรู้อย่างมีประสิทธิภาพ'}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Engineered for Real-World Language Mastery' : 'ออกแบบมาเพื่อพัฒนาทักษะภาษาอังกฤษอย่างแท้จริง'}
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            {isEn ? 'Learn a new language and unlock new possibilities' : 'ปลดล็อกทุกโอกาสแห่งอนาคตด้วยภาษาอังกฤษ'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Our four pillars eliminate learning friction, reinforce retention, and ensure consistent daily study habits.'
+              ? 'Our four core pillars eliminate learning friction, reinforce retention, and ensure consistent daily study habits.'
               : 'ขจัดอุปสรรคในการเรียน เสริมสร้างความจำระยะยาว และสร้างวินัยการเรียนรู้อย่างสม่ำเสมอทุกวัน'}
           </p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-border shadow-xs space-y-4 hover:border-[#FA5D5D]/50 transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center font-bold">
-              <Calendar className="w-6 h-6" />
+        {/* 4 Asymmetric Cards Grid matching Outcrowd Dribbble Video Frame */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          {/* Card 1: Effortless scheduling (7 Cols) */}
+          <div className="lg:col-span-7 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+            <div className="flex items-start justify-between gap-4 mb-6">
+              <div className="space-y-2 max-w-md">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                  {isEn ? 'Effortless scheduling for seamless learning' : 'จัดตารางเรียนง่ายตามจังหวะชีวิตคุณ'}
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {isEn
+                    ? 'Seamlessly integrate 15-minute lessons into your calendar with automated reminders and streak tracking.'
+                    : 'จัดเวลาเรียนวันละ 15 นาทีตามความสะดวก พร้อมระบบแจ้งเตือนและบันทึกสถิติความต่อเนื่อง'}
+                </p>
+              </div>
+              <div className="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center shrink-0 shadow-md">
+                <Calendar className="w-6 h-6 stroke-[2.2]" />
+              </div>
             </div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              {isEn ? 'Effortless Scheduling' : 'จัดเวลาเรียนได้อย่างอิสระ'}
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              {isEn
-                ? 'Fit 15-minute lessons into your busy routine with calendar integration and streak tracking.'
-                : 'จัดเวลาเรียนวันละ 15 นาทีตามความสะดวก พร้อมระบบแจ้งเตือนและบันทึกสถิติความต่อเนื่อง'}
-            </p>
+
+            {/* Embedded Schedule Timeline Mockup from Dribbble shot */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-border/60 space-y-2.5">
+              <div className="flex items-center justify-between text-xs pb-2 border-b border-border/60">
+                <span className="font-bold text-slate-900 dark:text-white">My schedule: Today</span>
+                <span className="text-[10px] text-slate-400 font-mono">3 classes planned</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px]">
+                <div className="p-3 rounded-xl bg-purple-600 text-white space-y-1 shadow-xs">
+                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-white/20 inline-block">10:30 – 12:00</span>
+                  <p className="font-bold leading-tight">Technical English</p>
+                  <span className="text-[10px] text-purple-200 block">Beginner A2</span>
+                </div>
+                <div className="p-3 rounded-xl bg-white dark:bg-[#1E1B28] border border-border text-slate-800 dark:text-slate-200 space-y-1">
+                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-400 inline-block">13:00 – 14:00</span>
+                  <p className="font-bold leading-tight">Punctuation Mastery</p>
+                  <span className="text-[10px] text-slate-500 block">Intermediate B1</span>
+                </div>
+                <div className="p-3 rounded-xl bg-white dark:bg-[#1E1B28] border border-border text-slate-800 dark:text-slate-200 space-y-1">
+                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-400 inline-block">16:00 – 17:00</span>
+                  <p className="font-bold leading-tight">Cambridge FCE Speaking</p>
+                  <span className="text-[10px] text-slate-500 block">Advanced C1</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-border shadow-xs space-y-4 hover:border-[#38BDF8]/50 transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-[#38BDF8]/10 text-[#38BDF8] flex items-center justify-center font-bold">
-              <Award className="w-6 h-6" />
+          {/* Card 2: Knowledge Tests with B2 Radial Score (5 Cols) */}
+          <div className="lg:col-span-5 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+            <div className="space-y-2 mb-6">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                {isEn ? 'Challenge yourself with knowledge tests' : 'ท้าทายตนเองด้วยแบบทดสอบวัดระดับ'}
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                {isEn
+                  ? 'Accurately benchmark your proficiency with adaptive Cambridge-calibrated diagnostics.'
+                  : 'ประเมินระดับความสามารถด้วยข้อสอบมาตรฐานที่เทียบเคียง Cambridge English Scale'}
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              {isEn ? 'Knowledge Tests' : 'แบบทดสอบวัดผลแม่นยำ'}
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              {isEn
-                ? 'Benchmark your level with adaptive diagnostics and instant CEFR score reporting.'
-                : 'ประเมินระดับความสามารถด้วยข้อสอบแบบปรับตามระดับ พร้อมรายงานผลคะแนน CEFR ทันที'}
-            </p>
+
+            {/* B2 Knowledge Test Radial Gauge Card from Dribbble shot */}
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-500 to-[#FA5D5D] text-white flex items-center justify-between shadow-lg">
+              <div className="space-y-1">
+                <span className="px-2 py-0.5 rounded-md bg-white/20 text-[10px] font-extrabold uppercase tracking-wider inline-block">
+                  CEFR Diagnostic
+                </span>
+                <p className="text-xl font-black">B2 Upper-Intermediate</p>
+                <span className="text-xs text-white/80 block">Cambridge Scale: 160 – 179</span>
+              </div>
+
+              {/* Radial Circle Progress Indicator */}
+              <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
+                <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                  <path
+                    className="text-white/20"
+                    strokeWidth="3.5"
+                    stroke="currentColor"
+                    fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    className="text-white"
+                    strokeDasharray="87, 100"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    stroke="currentColor"
+                    fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                </svg>
+                <div className="absolute flex flex-col items-center">
+                  <span className="text-sm font-extrabold font-mono">87%</span>
+                  <span className="text-[8px] font-bold opacity-80">Score</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-border shadow-xs space-y-4 hover:border-emerald-500/50 transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold">
-              <Zap className="w-6 h-6" />
+          {/* Card 3: Enhance learning with interactive tasks (6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+            <div className="space-y-2 mb-6">
+              <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 uppercase tracking-wider inline-block">
+                Interactive Practice
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                {isEn ? 'Enhance learning with interactive tasks' : 'เสริมทักษะด้วยโจทย์โต้ตอบหลากหลายรูปแบบ'}
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                {isEn
+                  ? 'Sentence surgery, listening cloze, and voice simulations keep your focus sharp without fatigue.'
+                  : 'แบบฝึกหัดเรียบเรียงประโยค ฟังจับใจความ และฝึกสนทนาโต้ตอบที่ทำให้การเรียนเพลิดเพลิน'}
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              {isEn ? 'Interactive Tasks' : 'โจทย์โต้ตอบหลากหลาย'}
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              {isEn
-                ? 'Sentence surgery, listening cloze, and speaking simulations that keep you engaged.'
-                : 'แบบฝึกหัดเรียบเรียงประโยค ฟังจับใจความ และฝึกสนทนาโต้ตอบที่ทำให้การเรียนสนุกไม่น่าเบื่อ'}
-            </p>
+
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-border/60 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-slate-900 dark:text-white block">Speed Syntax Challenge</span>
+                  <span className="text-[10px] text-slate-500">60-second clause restructuring</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => router.push('/compete')}
+                className="px-3.5 py-1.5 rounded-xl bg-slate-950 text-white dark:bg-white dark:text-slate-950 font-bold text-xs hover:bg-[#FA5D5D] transition-colors"
+              >
+                Try Arena
+              </button>
+            </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#1E1B28] border border-border shadow-xs space-y-4 hover:border-purple-500/50 transition-colors">
-            <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center font-bold">
-              <Sliders className="w-6 h-6" />
+          {/* Card 4: Personalized Learning: Your Time, Your Way (6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+            <div className="space-y-2 mb-6">
+              <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 uppercase tracking-wider inline-block">
+                Adaptive Rhythm
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                {isEn ? 'Personalized Learning: Your Time, Your Way' : 'การเรียนรู้เฉพาะบุคคล: ตามเวลาและสไตล์ของคุณ'}
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                {isEn
+                  ? 'AI algorithms queue up your personal errors and vocabulary gaps for targeted spaced repetition.'
+                  : 'ระบบจะคัดเลือกคำศัพท์และไวยากรณ์ที่คุณมักตอบผิดมาให้ทบทวนซ้ำจนกว่าจะเชี่ยวชาญ'}
+              </p>
             </div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
-              {isEn ? 'Personalized Learning' : 'แผนการเรียนเฉพาะบุคคล'}
-            </h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              {isEn
-                ? 'Algorithms automatically queue up your personal errors and vocabulary gaps for review.'
-                : 'ระบบจะคัดเลือกคำศัพท์และไวยากรณ์ที่คุณมักตอบผิดมาให้ทบทวนซ้ำจนกว่าจะเชี่ยวชาญ'}
-            </p>
+
+            {/* Weekly Days Bar Selector Mockup */}
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-border/60 space-y-2">
+              <div className="flex items-center justify-between text-[11px] font-bold text-slate-500">
+                <span>Study Schedule</span>
+                <span className="text-purple-600">Daily 15 Mins</span>
+              </div>
+              <div className="grid grid-cols-7 gap-1.5 text-center">
+                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, idx) => (
+                  <div
+                    key={idx}
+                    className={`py-2 rounded-xl text-xs font-bold ${
+                      idx < 5 ? 'bg-purple-600 text-white shadow-2xs' : 'bg-slate-200/70 dark:bg-white/10 text-slate-500'
+                    }`}
+                  >
+                    {day}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6.5 SECTION 6.5: SOCIAL PROOF & TESTIMONIALS MASONRY (Outcrowd Mondly)    */}
+      {/* ========================================================================= */}
+      <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
+        <div className="text-center max-w-2xl mx-auto space-y-4 mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-bold uppercase tracking-wider">
+            {isEn ? 'Proven Results' : 'ผลลัพธ์ที่พิสูจน์ได้จริง'}
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            {isEn ? 'Loved by learners and educators worldwide' : 'เสียงตอบรับจากผู้เรียนและคุณครูทั่วโลก'}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            {isEn
+              ? 'Read how thousands of students have transformed their fluency and passed their Cambridge exams.'
+              : 'อ่านเรื่องราวความสำเร็จจากผู้เรียนจริงที่ยกระดับภาษาอังกฤษและสอบผ่านข้อสอบเคมบริดจ์ได้สำเร็จ'}
+          </p>
+        </div>
+
+        {/* Asymmetric Masonry Grid matching Outcrowd Mondly shot */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
+          {/* Card 1: Hanna Jane Quote (Soft Lavender 6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] bg-[#EDE9FE] dark:bg-[#221B32] border border-purple-200/60 dark:border-purple-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+            <div className="space-y-4">
+              <div className="flex text-amber-500 gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-500" />
+                ))}
+              </div>
+              <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
+                "{isEn
+                  ? 'The flexibility was amazing! I could choose when and what I would study without feeling overwhelmed.'
+                  : 'ความยืดหยุ่นยอดเยี่ยมมาก! ฉันสามารถเลือกเวลาและหัวข้อที่ต้องการเรียนได้เองโดยไม่รู้สึกเครียด'}"
+              </p>
+            </div>
+            <div className="pt-6 mt-6 border-t border-purple-200 dark:border-white/10 flex items-center justify-between">
+              <div>
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Hanna Jane</span>
+                <span className="text-[11px] text-purple-700 dark:text-purple-300">CEFR B2 Graduate • London</span>
+              </div>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/80 dark:bg-black/30 text-purple-800 dark:text-purple-200">
+                Verified Student
+              </span>
+            </div>
+          </div>
+
+          {/* Card 2: 91% Stat Card with Authentic Photo (6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] overflow-hidden shadow-lg border border-border/80 relative min-h-[300px] flex items-end p-8 sm:p-10 group">
+            {/* Authentic Photographic Background */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/landing/mondly_stat_student.jpg"
+              alt="Students smiling during study session"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              width={800}
+              height={600}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
+
+            <div className="relative z-10 space-y-2 text-white">
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl sm:text-5xl font-black font-mono">91%</span>
+                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Verified Metric</span>
+              </div>
+              <p className="text-sm sm:text-base font-bold text-white/95 leading-snug max-w-md">
+                {isEn
+                  ? 'Students reported improved conversational confidence and vocabulary recall within 30 days.'
+                  : 'ผู้เรียนกว่า 91% ยืนยันว่ามีความมั่นใจในการสนทนาและจำคำศัพท์ได้แม่นยำขึ้นภายใน 30 วันแรก'}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Kristin Watson Quote (6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] bg-white dark:bg-[#1E1B28] border border-border/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+            <div className="space-y-4">
+              <div className="flex text-amber-500 gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-500" />
+                ))}
+              </div>
+              <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
+                "{isEn
+                  ? 'Each lesson is slightly more challenging than the previous lesson, keeping me motivated and consistently progressing.'
+                  : 'ทุกบทเรียนมีความท้าทายเพิ่มขึ้นทีละขั้นอย่างพอเหมาะ ทำให้ฉันมีแรงจูงใจในการเรียนรู้อย่างต่อเนื่องทุกวัน'}"
+              </p>
+            </div>
+            <div className="pt-6 mt-6 border-t border-border/60 flex items-center justify-between">
+              <div>
+                <span className="font-extrabold text-xs text-slate-900 dark:text-white block">Kristin Watson</span>
+                <span className="text-[11px] text-slate-500">Cambridge CAE Candidate</span>
+              </div>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">
+                CAE Score: 194
+              </span>
+            </div>
+          </div>
+
+          {/* Card 4: Golden Sunny Amber CTA Card (6 Cols) */}
+          <div className="lg:col-span-6 rounded-[36px] bg-[#FEF3C7] dark:bg-[#2A2312] border border-amber-300/80 dark:border-amber-500/20 p-8 sm:p-10 flex flex-col justify-between shadow-sm">
+            <div className="space-y-3">
+              <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-500/20 text-amber-900 dark:text-amber-300 uppercase tracking-wider inline-block">
+                Start Today
+              </span>
+              <h3 className="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                {isEn ? 'Learn a new language and unlock new possibilities' : 'เรียนรู้ภาษาใหม่และเปิดรับทุกความเป็นไปได้'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                {isEn
+                  ? 'Take the first step towards fluency with certified native tutors and Cambridge simulations.'
+                  : 'เริ่มต้นก้าวแรกสู่อนาคตที่เปิดกว้างด้วยหลักสูตรมาตรฐานสากลและระบบฝึกฝนอัจฉริยะ'}
+              </p>
+            </div>
+            <div className="pt-6">
+              <button
+                type="button"
+                onClick={handleStart}
+                className="px-7 py-3 rounded-full bg-slate-950 text-white hover:bg-slate-800 font-bold text-xs shadow-md transition-all cursor-pointer inline-flex items-center gap-2"
+              >
+                <span>{isEn ? 'Start free trial' : 'เริ่มทดลองเรียนฟรี'}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
