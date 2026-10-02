@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className="dark" suppressHydrationWarning>
+    <html lang="th" suppressHydrationWarning>
       <body className="min-h-screen bg-game-canvas text-slate-900 dark:text-slate-100 antialiased selection:bg-[#FA5D5D]/25 selection:text-white relative font-sans">
         <Providers>{children}</Providers>
       </body>

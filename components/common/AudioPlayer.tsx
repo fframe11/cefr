@@ -47,7 +47,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     setHasPlayed(true);
 
     AudioService.speak(script, {
-      rate: speed * 0.95,
+      rate: speed,
       lang: 'en-GB',
       onStart: () => setIsPlaying(true),
       onEnd: () => {

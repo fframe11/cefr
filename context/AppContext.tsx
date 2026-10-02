@@ -48,7 +48,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       const stored = localStorage.getItem('glova_theme');
       if (stored) return stored === 'dark';
     }
-    return true; // Default to dark obsidian theme matching BorisWick & Knightopia
+    return false; // Default to clean white/light theme on first visit
   });
   const [remediationTopic, setRemediationTopic] = useState<string | undefined>(undefined);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);

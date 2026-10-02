@@ -47,7 +47,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   // Map pathname to NavView
   const currentView: NavView = React.useMemo(() => {
-    if (!pathname || pathname === '/') return 'dashboard';
+    if (!pathname || pathname.startsWith('/dashboard')) return 'dashboard';
     if (pathname.startsWith('/assessment')) return 'assessment';
     if (pathname.startsWith('/vocabulary')) return 'vocabulary';
     if (pathname.startsWith('/grammar')) return 'grammar';
@@ -66,14 +66,14 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   }, [pathname]);
 
   const handleSelectView = (view: NavView) => {
-    const route = view === 'dashboard' ? '/' : view === 'mockExam' ? '/mock-exams' : `/${view}`;
+    const route = view === 'dashboard' ? '/dashboard' : view === 'mockExam' ? '/mock-exams' : `/${view}`;
     router.push(route);
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
-  const isLandingRoute = pathname === '/landing';
+  const isLandingRoute = !pathname || pathname === '/' || pathname === '/landing';
   const isAuthRoute = pathname === '/login' || pathname === '/signup';
 
   if (isAuthRoute) {

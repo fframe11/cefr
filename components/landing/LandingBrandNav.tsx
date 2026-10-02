@@ -138,7 +138,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
             <button
               type="button"
               onClick={() => router.push('/profile')}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/20 text-[#FA5D5D] text-xs font-bold border border-[#FA5D5D]/30 hover:bg-[#FA5D5D]/20 transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/20 text-[#FA5D5D] text-xs font-bold border border-[#FA5D5D]/30 hover:bg-[#FA5D5D]/20 transition-all cursor-pointer"
             >
               <User className="w-3.5 h-3.5" />
               <span className="max-w-[100px] truncate">{userEmail?.split('@')[0] || (isEn ? 'Account' : 'บัญชีผู้ใช้')}</span>
@@ -153,6 +153,15 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               <span>{isEn ? 'Sign In' : 'เข้าสู่ระบบ'}</span>
             </button>
           )}
+
+          {/* Direct Link to Studio Dashboard */}
+          <button
+            type="button"
+            onClick={() => router.push('/dashboard')}
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-[#FA5D5D] dark:hover:text-[#FF7A7A] transition-colors cursor-pointer"
+          >
+            <span>{isEn ? 'Dashboard' : 'หน้าหลักการเรียน'}</span>
+          </button>
 
           {/* Outcrowd Mondly Coral Primary CTA Button */}
           <button
@@ -199,6 +208,17 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           </div>
 
           <div className="pt-2 border-t border-border/80 space-y-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                router.push('/dashboard');
+              }}
+              className="w-full py-2.5 rounded-xl text-center text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-white/5 border border-border"
+            >
+              {isEn ? 'Go to Dashboard' : 'ไปยังหน้าหลักการเรียน (Dashboard)'}
+            </button>
+
             {!isAuthenticated && (
               <button
                 type="button"

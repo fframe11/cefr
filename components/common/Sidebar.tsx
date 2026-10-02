@@ -138,9 +138,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
             let badgeClasses = 'bg-amber-500/15 text-amber-700 dark:bg-[#F59E0B]/15 dark:text-[#FDE68A] border border-amber-500/30 dark:border-[#F59E0B]/30';
             if (item.badgeStyle === 'gold') {
-              badgeClasses = 'bg-[#3B82F6] text-white dark:bg-[#F59E0B] dark:text-slate-950 font-black shadow-xs';
+              badgeClasses = 'bg-[#FA5D5D] text-white dark:bg-[#FA5D5D] dark:text-white font-black shadow-xs';
             } else if (item.badgeStyle === 'coral') {
-              badgeClasses = 'bg-[#FF4655]/15 text-[#E11D48] dark:bg-[#FF4655]/20 dark:text-[#FF4655] border border-rose-400/30 dark:border-[#FF4655]/40';
+              badgeClasses = 'bg-[#FA5D5D]/15 text-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#FF7A7A] border border-[#FA5D5D]/30 dark:border-[#FA5D5D]/40';
             } else if (item.badgeStyle === 'mint') {
               badgeClasses = 'bg-emerald-500/15 text-emerald-700 dark:bg-[#10B981]/20 dark:text-[#10B981] border border-emerald-500/30 dark:border-[#10B981]/40';
             }
@@ -156,23 +156,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? itemLabel : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] dark:focus-visible:ring-[#F59E0B] active:translate-y-0.5 ${
+                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
                 } ${
                   isActive
-                    ? 'bg-blue-500/10 dark:bg-[#F59E0B]/15 border-l-2 border-[#3B82F6] dark:border-[#F59E0B] text-[#2563EB] dark:text-[#FDE68A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
+                    ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-white/5 font-medium'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-[#2563EB] dark:text-[#F59E0B]' : 'text-slate-400 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white'
+                    isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-400 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white'
                   }`}
                 />
                 {!collapsedMode && (
-                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#2563EB] dark:text-[#FDE68A]' : 'text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white'}`}>
+                  <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white'}`}>
                     {itemLabel}
                   </span>
                 )}
@@ -180,7 +180,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {!collapsedMode && item.badge && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
-                      isActive ? 'bg-[#3B82F6] text-white dark:bg-[#F59E0B] dark:text-slate-950 font-black shadow-xs' : badgeClasses
+                      isActive ? 'bg-[#FA5D5D] text-white dark:bg-[#FA5D5D] dark:text-white font-black shadow-xs' : badgeClasses
                     }`}
                   >
                     {item.badge}
@@ -207,7 +207,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className={`flex items-center pb-2.5 mb-1.5 border-b border-slate-200/80 dark:border-white/10 ${isCollapsed ? 'justify-center' : 'justify-between px-2'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#3B82F6] dark:bg-[#F59E0B] shadow-[0_0_8px_rgba(59,130,246,0.5)] dark:shadow-[0_0_8px_#F59E0B]" />
+              <span className="w-2 h-2 rounded-full bg-[#FA5D5D] shadow-[0_0_8px_#FA5D5D]" />
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono select-none">
                 {isEn ? 'Studio Suite' : 'สตูดิโอการเรียนรู้'}
               </span>
@@ -218,7 +218,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1.5 rounded-lg text-slate-400 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] dark:focus-visible:ring-[#F59E0B] active:scale-95 cursor-pointer"
+              className="p-1.5 rounded-lg text-slate-400 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:scale-95 cursor-pointer"
               title={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
               aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
             >
@@ -242,12 +242,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#0B1224]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
               <div className="flex items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#3B82F6] dark:text-[#F59E0B]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#FA5D5D]" />
                   <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">
                     CEFR & Cambridge
                   </span>
                 </div>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#3B82F6] dark:bg-[#F59E0B] text-white dark:text-slate-950">
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#FA5D5D] text-white">
                   VERIFIED
                 </span>
               </div>

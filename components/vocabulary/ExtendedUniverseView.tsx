@@ -144,7 +144,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
   const handleSpeak = (word: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
-    AudioService.speak(word, { lang: 'en-GB', rate: 0.9 });
+    AudioService.speak(word, { lang: 'en-GB', rate: 1.0 });
   };
 
   return (

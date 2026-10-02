@@ -250,7 +250,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   const handleSpeak = (word: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
-    AudioService.speak(word, { lang: 'en-GB', rate: 0.9 });
+    AudioService.speak(word, { lang: 'en-GB', rate: 1.0 });
   };
 
   const handleNext = () => {

@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   productionBrowserSourceMaps: false,
+  devIndicators: false,
   async headers() {
     return [
       {

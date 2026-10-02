@@ -24,14 +24,8 @@ import {
   Check,
   Star,
   ChevronRight,
-  Shield,
-  Compass,
   Mic,
   ExternalLink,
-  Search,
-  Bell,
-  Calendar,
-  Bookmark,
   GraduationCap,
   Send,
   MessageSquare,
@@ -55,9 +49,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
-
-  const [activeSubTab, setActiveSubTab] = useState<'home' | 'courses' | 'schedule' | 'archive' | 'books'>('home');
-  const [searchQuery, setSearchQuery] = useState('');
 
   const currentLevelInfo =
     CEFR_LEVELS.find((l) => l.level === progress.currentLevel) || CEFR_LEVELS[0];
@@ -159,142 +150,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-20 font-sans text-slate-800 dark:text-slate-100">
-      {/* ========================================================================= */}
-      {/* 1. TOP SUB-NAV BAR (EduMaster Header Style from Dribbble Reference)       */}
-      {/* ========================================================================= */}
-      <nav
-        aria-label="Dashboard sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Pill Nav Links */}
-        <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
-          {/* Circular Brand Icon */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                EduMaster
-              </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                Glova CEFR
-              </span>
-            </div>
-          </div>
 
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {/* Navigation Pill Tabs */}
-          <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-            <button
-              type="button"
-              onClick={() => setActiveSubTab('home')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeSubTab === 'home'
-                  ? 'bg-[#FA5D5D] text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'
-              }`}
-            >
-              <Compass className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActiveSubTab('courses');
-                onNavigate('vocabulary');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-1.5"
-            >
-              <BookMarked className="w-3.5 h-3.5" />
-              <span>Courses</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActiveSubTab('schedule');
-                onNavigate('grammar');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-1.5"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Schedule</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActiveSubTab('archive');
-                onNavigate('analytics');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-1.5"
-            >
-              <Bookmark className="w-3.5 h-3.5" />
-              <span>Archive</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActiveSubTab('books');
-                onNavigate('mock-exam');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-1.5"
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Books</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Search, Notifications & CTA Action */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full xl:w-auto justify-between sm:justify-end">
-          {/* Search Pill */}
-          <div className="relative w-full sm:w-48 md:w-56">
-            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search here..."
-              className="w-full pl-9 pr-3.5 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/30"
-            />
-          </div>
-
-          <div className="flex items-center justify-between sm:justify-end gap-2 shrink-0">
-            {/* Bell Icon */}
-            <button
-              type="button"
-              aria-label="Notifications"
-              className="w-8 h-8 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-700 dark:text-slate-300 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-white/10 transition-colors shrink-0"
-            >
-              <Bell className="w-3.5 h-3.5" />
-            </button>
-
-            {/* User Profile Avatar with Ring */}
-            <div className="relative shrink-0">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400/20 border-2 border-[#FFBA38] p-0.5 overflow-hidden flex items-center justify-center">
-                <span className="font-extrabold text-[11px] sm:text-xs text-[#D98200] dark:text-[#FFBA38]">
-                  {progress.currentLevel}
-                </span>
-              </div>
-            </div>
-
-            {/* Dark Pill CTA Button */}
-            <button
-              type="button"
-              onClick={() => onNavigate('assessment')}
-              className="px-3.5 sm:px-4 py-2 rounded-full text-xs font-black bg-[#18191B] dark:bg-white text-white dark:text-slate-950 shadow-sm hover:scale-105 active:scale-95 transition-all shrink-0 flex items-center gap-1.5"
-            >
-              <Shield className="w-3.5 h-3.5 text-[#FA5D5D]" />
-              <span>Request Demo</span>
-            </button>
-          </div>
-        </div>
-      </nav>
 
       {/* ========================================================================= */}
       {/* 2. HERO HEADLINE & FLOATING TAG CLOUD                                    */}
@@ -663,55 +519,55 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
               {/* #1 Trophy Card (Coral Pink) */}
-              <div className="bg-[#FA5D5D] text-white rounded-[22px] p-4.5 shadow-sm flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-black text-sm">
+              <div className="bg-[#FA5D5D] text-white rounded-[22px] px-5 py-4 shadow-sm flex items-center justify-between gap-3 overflow-hidden">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-black text-sm shrink-0">
                     <Trophy className="w-4 h-4 text-white" aria-hidden="true" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-black text-base leading-tight">#1</div>
-                    <div className="text-[10px] font-mono opacity-85">Season Champ</div>
+                    <div className="text-[10px] font-mono opacity-85 truncate">Season Champ</div>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl font-black font-mono">35%</div>
-                  <div className="text-[10px] opacity-75">Score Delta</div>
+                <div className="text-right shrink-0">
+                  <div className="text-xl font-black font-mono leading-none">35%</div>
+                  <div className="text-[10px] opacity-80 mt-1 whitespace-nowrap">Score Delta</div>
                 </div>
               </div>
 
               {/* #2 Trophy Card (Soft Mint / Light Cream) */}
-              <div className="bg-[#EAECE6] dark:bg-[#1E2E28] text-slate-900 dark:text-slate-100 rounded-[22px] p-4.5 shadow-sm flex items-center justify-between border border-slate-300/40 dark:border-white/10">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-slate-300 dark:bg-white/10 flex items-center justify-center font-black text-sm text-slate-700 dark:text-slate-200">
+              <div className="bg-[#EAECE6] dark:bg-[#1E2E28] text-slate-900 dark:text-slate-100 rounded-[22px] px-5 py-4 shadow-sm flex items-center justify-between gap-3 border border-slate-300/40 dark:border-white/10 overflow-hidden">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-8 h-8 rounded-full bg-slate-300 dark:bg-white/10 flex items-center justify-center font-black text-sm text-slate-700 dark:text-slate-200 shrink-0">
                     <Award className="w-4 h-4 text-slate-700 dark:text-slate-200" aria-hidden="true" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-black text-base leading-tight">#2</div>
-                    <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400">Frame_CU</div>
+                    <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate">Frame_CU</div>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl font-black font-mono text-slate-800 dark:text-emerald-300">61%</div>
-                  <div className="text-[10px] text-slate-500">Reflex Acc</div>
+                <div className="text-right shrink-0">
+                  <div className="text-xl font-black font-mono text-slate-800 dark:text-emerald-300 leading-none">61%</div>
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 whitespace-nowrap">Reflex Acc</div>
                 </div>
               </div>
 
               {/* #3 Trophy Card (Warm Sunflower Amber) */}
-              <div className="bg-[#FFBA38] text-slate-950 rounded-[22px] p-4.5 shadow-sm flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center font-black text-sm">
+              <div className="bg-[#FFBA38] text-slate-950 rounded-[22px] px-5 py-4 shadow-sm flex items-center justify-between gap-3 overflow-hidden">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center font-black text-sm shrink-0">
                     <Award className="w-4 h-4 text-slate-950" aria-hidden="true" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-black text-base leading-tight">#3</div>
-                    <div className="text-[10px] font-mono opacity-80">Apex Learner</div>
+                    <div className="text-[10px] font-mono opacity-80 truncate">Apex Learner</div>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl font-black font-mono">28%</div>
-                  <div className="text-[10px] opacity-80">Weekly Gain</div>
+                <div className="text-right shrink-0">
+                  <div className="text-xl font-black font-mono leading-none">28%</div>
+                  <div className="text-[10px] opacity-80 mt-1 whitespace-nowrap">Weekly Gain</div>
                 </div>
               </div>
             </div>
