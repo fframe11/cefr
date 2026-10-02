@@ -1,0 +1,105 @@
+{
+  "total_words": 3860,
+  "ok": 3845,
+  "placeholder_english": [],
+  "wrong_pos_adverb": [
+    {
+      "word": "much",
+      "pos": "verb",
+      "current_th": "อย่างมาก",
+      "lexitron_th": null
+    },
+    {
+      "word": "very",
+      "pos": "verb",
+      "current_th": "อย่างมากมาย",
+      "lexitron_th": null
+    },
+    {
+      "word": "especially",
+      "pos": "verb",
+      "current_th": "โดยเฉพาะอย่างยิ่ง",
+      "lexitron_th": null
+    },
+    {
+      "word": "apart",
+      "pos": "verb",
+      "current_th": "โดยไม่พิจารณา",
+      "lexitron_th": null
+    },
+    {
+      "word": "extremely",
+      "pos": "verb",
+      "current_th": "อย่างสุดขีด",
+      "lexitron_th": null
+    },
+    {
+      "word": "perfectly",
+      "pos": "verb",
+      "current_th": "อย่างยอดเยี่ยม",
+      "lexitron_th": null
+    },
+    {
+      "word": "ship",
+      "pos": "verb",
+      "current_th": "โดยสารทางน้ำ",
+      "lexitron_th": "โดยสารทางน้ำ"
+    },
+    {
+      "word": "loudly",
+      "pos": "verb",
+      "current_th": "อย่างเสียงดัง",
+      "lexitron_th": null
+    },
+    {
+      "word": "else",
+      "pos": "verb",
+      "current_th": "อย่างแตกต่าง",
+      "lexitron_th": null
+    }
+  ],
+  "lexitron_mismatch": [
+    {
+      "word": "fast",
+      "pos": "verb",
+      "current": "อดอาหาร",
+      "lexitron": "จำกัดอาหาร",
+      "kaikki": null
+    },
+    {
+      "word": "slow",
+      "pos": "verb",
+      "current": "ทำให้ช้าลง",
+      "lexitron": "ฝืดเคือง",
+      "kaikki": "ลีลา"
+    },
+    {
+      "word": "slow",
+      "pos": "verb",
+      "current": "ทำให้ช้าลง",
+      "lexitron": "ฝืดเคือง",
+      "kaikki": "ลีลา"
+    },
+    {
+      "word": "wasp",
+      "pos": "noun",
+      "current": "ตัวต่อ",
+      "lexitron": "ตัวต่อตระกูล Vespidae Sphecidae",
+      "kaikki": "ต่อ"
+    },
+    {
+      "word": "four",
+      "pos": "noun",
+      "current": "สี่",
+      "lexitron": "จำนวนสี่",
+      "kaikki": "สี่"
+    },
+    {
+      "word": "ten",
+      "pos": "noun",
+      "current": "สิบ",
+      "lexitron": "จำนวนสิบ",
+      "kaikki": "สิบ"
+    }
+  ]
+}

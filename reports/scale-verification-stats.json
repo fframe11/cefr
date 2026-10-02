@@ -1,0 +1,42 @@
+{
+  "total": 121253,
+  "verified_lexitron": 65874,
+  "verified_kaikki": 156,
+  "verified_existing": 8,
+  "pending_thai": 55215,
+  "cefr_breakdown": {
+    "A2": {
+      "total": 18630,
+      "verified": 11510,
+      "pending": 7120
+    },
+    "A1": {
+      "total": 8021,
+      "verified": 5800,
+      "pending": 2221
+    },
+    "B2": {
+      "total": 32378,
+      "verified": 17081,
+      "pending": 15297
+    },
+    "B1": {
+      "total": 31371,
+      "verified": 16888,
+      "pending": 14483
+    },
+    "C2": {
+      "total": 11181,
+      "verified": 5791,
+      "pending": 5390
+    },
+    "C1": {
+      "total": 19672,
+      "verified": 8968,
+      "pending": 10704
+    }
+  },
+  "processed_at": "2026-10-03T02:24:12.592637",
+  "total_verified": 66038,
+  "verification_rate_pct": 54.46
+}

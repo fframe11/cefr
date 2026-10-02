@@ -1,0 +1,321 @@
+{
+  "total_fixed": 63,
+  "total_words": 3860,
+  "changes": [
+    {
+      "word": "please",
+      "pos": "verb",
+      "change": "manual_override: ได้โปรด -> ทำให้พอใจ"
+    },
+    {
+      "word": "wrong",
+      "pos": "verb",
+      "change": "manual_override: อย่างผิดพลาด -> ทำผิด, ปฏิบัติไม่ยุติธรรม"
+    },
+    {
+      "word": "least",
+      "pos": "verb",
+      "change": "manual_override: อย่างน้อยที่สุด -> น้อยที่สุด"
+    },
+    {
+      "word": "differently",
+      "pos": "verb",
+      "change": "manual_override: อย่างแตกต่าง -> ทำให้แตกต่าง"
+    },
+    {
+      "word": "free",
+      "pos": "verb",
+      "change": "manual_override: อย่างให้เปล่า -> ปลดปล่อย"
+    },
+    {
+      "word": "rapidly",
+      "pos": "verb",
+      "change": "manual_override: อย่างรวดเร็ว -> เคลื่อนที่อย่างรวดเร็ว"
+    },
+    {
+      "word": "paradoxical",
+      "pos": "adjective",
+      "change": "manual_override: paradoxical (ความหมายภาษาไทย) -> ซึ่งขัดแย้งในตัวเอง"
+    },
+    {
+      "word": "boiled",
+      "pos": "adjective",
+      "change": "manual_override: boiled (ความหมายภาษาไทย) -> ซึ่งต้มแล้ว"
+    },
+    {
+      "word": "camping",
+      "pos": "noun",
+      "change": "manual_override: camping (ความหมายภาษาไทย) -> การตั้งแคมป์"
+    },
+    {
+      "word": "climbing",
+      "pos": "noun",
+      "change": "manual_override: climbing (ความหมายภาษาไทย) -> การปีนป่าย"
+    },
+    {
+      "word": "guidebook",
+      "pos": "noun",
+      "change": "manual_override: guidebook (ความหมายภาษาไทย) -> หนังสือนำเที่ยว"
+    },
+    {
+      "word": "skating",
+      "pos": "noun",
+      "change": "manual_override: skating (ความหมายภาษาไทย) -> การเล่นสเก็ต"
+    },
+    {
+      "word": "divorced",
+      "pos": "adjective",
+      "change": "manual_override: divorced (ความหมายภาษาไทย) -> ซึ่งหย่าร้างแล้ว"
+    },
+    {
+      "word": "golfer",
+      "pos": "noun",
+      "change": "manual_override: golfer (ความหมายภาษาไทย) -> นักกอล์ฟ"
+    },
+    {
+      "word": "counseling",
+      "pos": "noun",
+      "change": "manual_override: counseling (ความหมายภาษาไทย) -> การให้คำปรึกษา"
+    },
+    {
+      "word": "profoundly",
+      "pos": "verb",
+      "change": "manual_override: อย่างสุดซึ้ง -> กระทำอย่างสุดซึ้ง"
+    },
+    {
+      "word": "alone",
+      "pos": "verb",
+      "change": "manual_override: โดยลำพัง -> อยู่โดยลำพัง"
+    },
+    {
+      "word": "away",
+      "pos": "verb",
+      "change": "manual_override: โดยไม่หยุด -> จากไป"
+    },
+    {
+      "word": "back",
+      "pos": "verb",
+      "change": "manual_override: กลับคืนไปที่เดิม -> ถอยหลัง"
+    },
+    {
+      "word": "fast",
+      "pos": "verb",
+      "change": "manual_override: อย่างรวดเร็ว -> อดอาหาร"
+    },
+    {
+      "word": "first",
+      "pos": "verb",
+      "change": "manual_override: อย่างแรก -> ทำก่อน"
+    },
+    {
+      "word": "right",
+      "pos": "verb",
+      "change": "manual_override: อย่างเหมาะสม -> ทำให้ถูกต้อง"
+    },
+    {
+      "word": "well",
+      "pos": "verb",
+      "change": "manual_override: ดี -> ท่วมท้น"
+    },
+    {
+      "word": "even",
+      "pos": "verb",
+      "change": "manual_override: แม้กระทั่ง -> ทำให้เท่ากัน"
+    },
+    {
+      "word": "forward",
+      "pos": "verb",
+      "change": "manual_override: โดยไปข้างหน้า -> ส่งต่อ"
+    },
+    {
+      "word": "still",
+      "pos": "verb",
+      "change": "manual_override: ยังคง -> ทำให้นิ่ง"
+    },
+    {
+      "word": "back",
+      "pos": "verb",
+      "change": "manual_override: ถอยหลัง -> ถอยหลัง"
+    },
+    {
+      "word": "near",
+      "pos": "verb",
+      "change": "manual_override: ในระยะเวลาอันใกล้ -> ใกล้เข้ามา"
+    },
+    {
+      "word": "please",
+      "pos": "verb",
+      "change": "manual_override: ทำให้พอใจ -> ทำให้พอใจ"
+    },
+    {
+      "word": "free",
+      "pos": "verb",
+      "change": "manual_override: ปลดปล่อย -> ปลดปล่อย"
+    },
+    {
+      "word": "last",
+      "pos": "verb",
+      "change": "manual_override: ครั้งล่าสุด -> คงอยู่"
+    },
+    {
+      "word": "last",
+      "pos": "verb",
+      "change": "manual_override: คงอยู่ -> คงอยู่"
+    },
+    {
+      "word": "slow",
+      "pos": "verb",
+      "change": "manual_override: ช้ากว่าเวลาจริง -> ทำให้ช้าลง"
+    },
+    {
+      "word": "slow",
+      "pos": "verb",
+      "change": "manual_override: ฝืดเคือง -> ทำให้ช้าลง"
+    },
+    {
+      "word": "environmental",
+      "pos": "adjective",
+      "change": "manual_override: environmental (ความหมายภาษาไทย) -> เกี่ยวกับสิ่งแวดล้อม"
+    },
+    {
+      "word": "evaluation",
+      "pos": "noun",
+      "change": "manual_override: evaluation (ความหมายภาษาไทย) -> การประเมินผล"
+    },
+    {
+      "word": "recognition",
+      "pos": "noun",
+      "change": "manual_override: recognition (ความหมายภาษาไทย) -> การยอมรับ, การรู้จัก"
+    },
+    {
+      "word": "ecological",
+      "pos": "adjective",
+      "change": "manual_override: ecological (ความหมายภาษาไทย) -> เกี่ยวกับนิเวศวิทยา"
+    },
+    {
+      "word": "specialty",
+      "pos": "noun",
+      "change": "manual_override: specialty (ความหมายภาษาไทย) -> ความชำนาญพิเศษ"
+    },
+    {
+      "word": "transmission",
+      "pos": "noun",
+      "change": "manual_override: transmission (ความหมายภาษาไทย) -> การส่งผ่าน, การถ่ายทอด"
+    },
+    {
+      "word": "smoking",
+      "pos": "noun",
+      "change": "manual_override: smoking (ความหมายภาษาไทย) -> การสูบบุหรี่"
+    },
+    {
+      "word": "better",
+      "pos": "verb",
+      "change": "manual_override: มาตรฐานหรือคุณภาพที่ดีกว่า -> ปรับปรุง"
+    },
+    {
+      "word": "disco",
+      "pos": "noun",
+      "change": "manual_override: disco (ความหมายภาษาไทย) -> ดิสโก้ (สถานที่เต้นรำ)"
+    },
+    {
+      "word": "dressed",
+      "pos": "adjective",
+      "change": "manual_override: dressed (ความหมายภาษาไทย) -> ซึ่งแต่งตัวแล้ว"
+    },
+    {
+      "word": "grilled",
+      "pos": "adjective",
+      "change": "manual_override: grilled (ความหมายภาษาไทย) -> ซึ่งย่างแล้ว"
+    },
+    {
+      "word": "singing",
+      "pos": "noun",
+      "change": "manual_override: singing (ความหมายภาษาไทย) -> การร้องเพลง"
+    },
+    {
+      "word": "stuck",
+      "pos": "adjective",
+      "change": "manual_override: กริยาช่องที่ 2 และ 3 ของ stick -> ซึ่งติดอยู่"
+    },
+    {
+      "word": "addiction",
+      "pos": "noun",
+      "change": "manual_override: addiction (ความหมายภาษาไทย) -> การติดยาเสพติด, ความติดใจ"
+    },
+    {
+      "word": "expressive",
+      "pos": "adjective",
+      "change": "manual_override: expressive (ความหมายภาษาไทย) -> ซึ่งแสดงออก, ซึ่งบ่งบอก"
+    },
+    {
+      "word": "fictional",
+      "pos": "adjective",
+      "change": "manual_override: fictional (ความหมายภาษาไทย) -> ซึ่งเป็นเรื่องสมมติ"
+    },
+    {
+      "word": "funk",
+      "pos": "noun",
+      "change": "manual_override: funk (ความหมายภาษาไทย) -> ดนตรีฟังก์"
+    },
+    {
+      "word": "legendary",
+      "pos": "adjective",
+      "change": "manual_override: legendary (ความหมายภาษาไทย) -> ซึ่งเป็นตำนาน, ขึ้นชื่อ"
+    },
+    {
+      "word": "planning",
+      "pos": "noun",
+      "change": "manual_override: planning (ความหมายภาษาไทย) -> การวางแผน"
+    },
+    {
+      "word": "recycling",
+      "pos": "noun",
+      "change": "manual_override: recycling (ความหมายภาษาไทย) -> การรีไซเคิล"
+    },
+    {
+      "word": "shooting",
+      "pos": "noun",
+      "change": "manual_override: shooting (ความหมายภาษาไทย) -> การยิง, การถ่ายภาพยนตร์"
+    },
+    {
+      "word": "tenderness",
+      "pos": "noun",
+      "change": "manual_override: ความtender -> ความอ่อนโยน"
+    },
+    {
+      "word": "unsuccessful",
+      "pos": "adjective",
+      "change": "manual_override: unsuccessful (ความหมายภาษาไทย) -> ซึ่งไม่ประสบความสำเร็จ"
+    },
+    {
+      "word": "wasp",
+      "pos": "noun",
+      "change": "manual_override: ตัวต่อตระกูล Vespidae Sphecidae -> ตัวต่อ"
+    },
+    {
+      "word": "criteria",
+      "pos": "noun",
+      "change": "manual_override: criteria (ความหมายภาษาไทย) -> เกณฑ์, มาตรฐาน"
+    },
+    {
+      "word": "four",
+      "pos": "noun",
+      "change": "manual_override: สี่ -> สี่"
+    },
+    {
+      "word": "ten",
+      "pos": "noun",
+      "change": "manual_override: เป็นจำนวนสิบ -> สิบ"
+    },
+    {
+      "word": "freezing",
+      "pos": "adjective",
+      "change": "manual_override: freezing (ความหมายภาษาไทย) -> ซึ่งแข็งตัวหรือเย็นมาก"
+    },
+    {
+      "word": "ecstatic",
+      "pos": "adjective",
+      "change": "manual_override: ecstatic (ความหมายภาษาไทย) -> ซึ่งปลาบปลื้มมาก"
+    }
+  ]
+}
