@@ -161,17 +161,12 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       )}
 
-      {/* Question Title with Numbering */}
+      {/* Question Title with Numbering (English only) */}
       <div className="mb-4 pr-16 sm:pr-24 space-y-1">
         <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-normal break-word-safe">
           {questionNumber ? `${questionNumber}. ` : ''}
           {question.promptEn || question.promptTh}
         </h3>
-        {question.promptEn && question.promptTh && question.promptEn !== question.promptTh && (
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium break-word-safe">
-            {question.promptTh}
-          </p>
-        )}
       </div>
 
       {isSubmitting && (
@@ -316,17 +311,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             </p>
           )}
 
-          {/* Core Grammar/Vocabulary Explanation in Thai */}
-          {(explanationTh || explanationEn) && (
-            <div className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-2.5 border-t border-border/50 space-y-1">
+          {/* Core Grammar/Vocabulary Explanation: English first, then Thai translation */}
+          {(explanationEn || explanationTh) && (
+            <div className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-2.5 border-t border-border/50 space-y-1.5">
               <p className="font-bold text-slate-900 dark:text-white flex items-center gap-1">
                 <HelpCircle className="w-3.5 h-3.5 text-[#FA5D5D] shrink-0" />
-                {t('common.explanation')}:
+                Explanation / คำอธิบายเฉลย:
               </p>
-              {explanationTh && <p className="text-slate-800 dark:text-slate-200 pl-4 break-word-safe font-medium">{explanationTh}</p>}
               {explanationEn && (
-                <p className="text-slate-500 dark:text-slate-400 pl-4 text-[11px] italic break-word-safe">
-                  English Note: {explanationEn}
+                <p className="text-slate-900 dark:text-slate-100 pl-4 font-semibold break-word-safe text-xs sm:text-sm">
+                  {explanationEn}
+                </p>
+              )}
+              {explanationTh && (
+                <p className="text-slate-600 dark:text-slate-300 pl-4 break-word-safe font-medium text-xs leading-relaxed">
+                  <span className="font-bold text-slate-500 dark:text-slate-400 mr-1.5">แปลไทย:</span>
+                  {explanationTh}
                 </p>
               )}
             </div>

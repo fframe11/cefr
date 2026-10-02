@@ -890,16 +890,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               </button>
             </div>
 
-            {/* Current Question View */}
+            {/* Current Question View (English only) */}
             <div className="p-6 sm:p-7 space-y-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm">
               <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white break-word-safe leading-snug">
-                {currentQuestion.promptTh}
+                {currentQuestion.promptEn || currentQuestion.promptTh}
               </h3>
-              {currentQuestion.promptEn && (
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 break-word-safe font-sans">
-                  {currentQuestion.promptEn}
-                </p>
-              )}
 
               {/* Multiple Choice Options or Subjective Text Input */}
               {currentQuestion.options && currentQuestion.options.length > 0 ? (

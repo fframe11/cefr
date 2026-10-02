@@ -147,8 +147,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       const questions: ClientVocabularyQuestionDTO[] = [];
 
       // Primary target word question
-      const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningTh);
-      const allChoices = [target.meaningTh, ...distractors].sort(() => 0.5 - Math.random());
+      const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
+      const allChoices = [target.meaningEn || target.meaningTh, ...distractors].sort(() => 0.5 - Math.random());
       questions.push({
         id: `vq_local_${target.id}_${Date.now()}`,
         skill: 'vocabulary',
@@ -156,7 +156,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         type: 'multiple_choice',
         interactionType: 'meaning_recognition',
         promptEn: `What is the meaning of "${target.word}"?`,
-        promptTh: `คำว่า "${target.word}" มีความหมายตรงกับข้อใด?`,
+        promptTh: `What is the meaning of "${target.word}"?`,
         contextPassage: target.exampleSentenceEn ? `"${target.exampleSentenceEn}"` : undefined,
         targetWord: target.word,
         options: allChoices.map((text, idx) => ({
@@ -170,8 +170,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       for (let i = 0; i < Math.min(4, shuffledOthers.length); i++) {
         const cur = shuffledOthers[i];
         const rest = pool.filter((w) => w.id !== cur.id);
-        const d = rest.slice(0, 3).map((w) => w.meaningTh);
-        const c = [cur.meaningTh, ...d].sort(() => 0.5 - Math.random());
+        const d = rest.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
+        const c = [cur.meaningEn || cur.meaningTh, ...d].sort(() => 0.5 - Math.random());
         questions.push({
           id: `vq_local_${cur.id}_${Date.now()}_${i + 1}`,
           skill: 'vocabulary',
@@ -179,7 +179,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           type: 'multiple_choice',
           interactionType: 'meaning_recognition',
           promptEn: `What is the meaning of "${cur.word}"?`,
-          promptTh: `คำว่า "${cur.word}" มีความหมายตรงกับข้อใด?`,
+          promptTh: `What is the meaning of "${cur.word}"?`,
           contextPassage: cur.exampleSentenceEn ? `"${cur.exampleSentenceEn}"` : undefined,
           targetWord: cur.word,
           options: c.map((text, idx) => ({
@@ -316,7 +316,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       // High-fidelity fallback evaluation based on word bank dictionary
       const pool = words.length > 0 ? words : VOCABULARY_BANK;
       const targetObj = pool.find((w) => w.word.toLowerCase() === currentQ.targetWord?.toLowerCase());
-      const correctOpt = currentQ.options.find((opt) => opt.text === targetObj?.meaningTh) || currentQ.options[0];
+      const correctOpt = currentQ.options.find((opt) => opt.text === targetObj?.meaningEn || opt.text === targetObj?.meaningTh) || currentQ.options[0];
       const isCorrect = optionKey === correctOpt.key;
 
       setAnswerResult({
@@ -325,8 +325,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         selected_key: optionKey,
         correct_key: correctOpt.key,
         is_correct: isCorrect,
-        explanation_th: `ความหมายของ "${currentQ.targetWord || currentWord?.word}" คือ "${targetObj?.meaningTh || correctOpt.text}"`,
-        explanation_en: `"${currentQ.targetWord || currentWord?.word}" means "${targetObj?.meaningEn || 'correct option'}"`,
+        explanation_th: `ความหมายของ "${currentQ.targetWord || currentWord?.word}" คือ "${targetObj?.meaningTh || ''}"`,
+        explanation_en: `"${currentQ.targetWord || currentWord?.word}" means "${targetObj?.meaningEn || correctOpt.text}"`,
       });
 
       if (isCorrect) {
@@ -615,7 +615,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {/* Question Prompt */}
               <div className="space-y-2 text-center sm:text-left">
                 <h3 className="text-lg sm:text-xl font-bold text-foreground leading-snug">
-                  {isEn ? currentPracticeQ.promptEn : currentPracticeQ.promptTh}
+                  {currentPracticeQ.promptEn || currentPracticeQ.promptTh}
                 </h3>
                 {currentPracticeQ.contextPassage && (
                   <div className="p-4 rounded-xl bg-muted/40 border border-border/40 text-sm font-medium text-foreground italic">
@@ -680,7 +680,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               <LessonFeedbackDrawer
                 isOpen={Boolean(answerResult)}
                 isCorrect={Boolean(answerResult?.is_correct)}
-                explanation={answerResult?.explanation_th || answerResult?.explanation_en}
+                explanation={
+                  answerResult?.explanation_en
+                    ? `${answerResult.explanation_en} (แปลไทย: ${answerResult.explanation_th})`
+                    : answerResult?.explanation_th
+                }
                 correctAnswerText={
                   answerResult && !answerResult.is_correct
                     ? currentPracticeQ.options.find((o) => o.key === answerResult.correct_key)?.text

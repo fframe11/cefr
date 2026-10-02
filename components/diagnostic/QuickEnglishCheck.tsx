@@ -332,7 +332,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
             {currentQ.prompt}
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-sans">
-            แตะเลือกคำตอบที่คุณคิดว่าเป็นธรรมชาติหรือถูกต้องที่สุด:
+            Choose the most natural or accurate response:
           </p>
         </div>
 

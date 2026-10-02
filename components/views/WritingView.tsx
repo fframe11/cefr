@@ -254,11 +254,6 @@ export const WritingView: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-medium leading-relaxed whitespace-pre-line font-sans">
                 {currentPrompt.promptEn}
               </p>
-              {currentPrompt.promptTh && (
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-[#EAE4D5] dark:border-white/10">
-                  {currentPrompt.promptTh}
-                </p>
-              )}
             </div>
 
             {/* Guidelines Checklist */}

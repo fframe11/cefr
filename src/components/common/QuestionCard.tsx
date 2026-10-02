@@ -114,14 +114,12 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         )}
       </div>
 
-      {/* Prompts in Thai & English */}
+      {/* Prompt in English */}
       <div className="mb-4">
         <h3 className="text-sm sm:text-base font-semibold text-foreground break-word-safe">
-          {question.promptTh}
+          {questionNumber ? `${questionNumber}. ` : ''}
+          {question.promptEn || question.promptTh}
         </h3>
-        <p className="text-xs sm:text-sm text-muted-foreground mt-1 break-word-safe">
-          {question.promptEn}
-        </p>
       </div>
 
       {/* Audio Player if Listening */}
@@ -276,17 +274,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             </p>
           )}
 
-          {/* Core Grammar/Vocabulary Explanation in Thai */}
-          {(explanationTh || explanationEn) && (
+          {/* Core Grammar/Vocabulary Explanation: English first, then Thai translation */}
+          {(explanationEn || explanationTh) && (
             <div className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/40 space-y-1">
               <p className="font-medium text-foreground flex items-center gap-1">
                 <HelpCircle className="w-3.5 h-3.5 text-primary shrink-0" />
-                {t('common.explanation')}:
+                Explanation / คำอธิบายเฉลย:
               </p>
-              {explanationTh && <p className="text-foreground/90 pl-4 break-word-safe">{explanationTh}</p>}
               {explanationEn && (
-                <p className="text-muted-foreground pl-4 text-[11px] italic break-word-safe">
-                  English Note: {explanationEn}
+                <p className="text-foreground pl-4 font-semibold break-word-safe">
+                  {explanationEn}
+                </p>
+              )}
+              {explanationTh && (
+                <p className="text-muted-foreground pl-4 break-word-safe text-xs">
+                  <span className="font-bold mr-1">แปลไทย:</span>
+                  {explanationTh}
                 </p>
               )}
             </div>

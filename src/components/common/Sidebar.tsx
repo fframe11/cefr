@@ -62,7 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onSelectView }) =
 
   return (
     <aside
-      className="hidden md:flex flex-col w-56 lg:w-64 border-r border-border/40 bg-card/40 shrink-0 select-none py-4 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto"
+      className="hidden md:flex flex-col w-56 lg:w-64 border-r border-slate-200/70 dark:border-white/10 bg-white/75 dark:bg-[#070B16]/85 backdrop-blur-2xl shrink-0 select-none py-4 px-3 sticky top-16 left-0 h-[calc(100vh-4rem)] overflow-y-auto transition-all shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)]"
       aria-label="Desktop Navigation"
     >
       <div className="px-3 pb-3 mb-2 border-b border-border/40">

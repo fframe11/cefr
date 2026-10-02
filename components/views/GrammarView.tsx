@@ -422,14 +422,12 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 1
               </span>
               <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
-                {isEn ? 'Grammar Application' : 'ไวยากรณ์และการประยุกต์ใช้'}
+                Grammar Application
               </h4>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium pl-8.5">
               <span className="font-extrabold text-slate-900 dark:text-white mr-2">A</span>
-              {isEn
-                ? 'Choose the correct form to complete each sentence according to grammar rules.'
-                : 'เลือกรูปคำและโครงสร้างประโยคที่ถูกต้องตามหลักไวยากรณ์'}
+              Choose the correct form to complete each sentence according to grammar rules.
             </p>
           </div>
 

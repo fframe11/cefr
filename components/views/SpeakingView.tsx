@@ -338,11 +338,6 @@ export const SpeakingView: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-900 dark:text-white font-semibold leading-relaxed whitespace-pre-line font-sans">
                 {currentPrompt.promptEn}
               </p>
-              {currentPrompt.promptTh && (
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-[#EAE4D5] dark:border-white/10">
-                  {currentPrompt.promptTh}
-                </p>
-              )}
             </div>
 
             {/* Guiding Questions & Target Phrases */}

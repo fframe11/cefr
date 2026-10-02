@@ -162,8 +162,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     : 'justify-start px-3 py-2 gap-2.5'
                 } ${
                   isActive
-                    ? 'bg-blue-500/10 dark:bg-[#F59E0B]/15 border-l-2 border-[#3B82F6] dark:border-[#F59E0B] text-[#2563EB] dark:text-[#FDE68A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-white/5 font-medium'
+                    ? 'bg-blue-500/10 dark:bg-[#F59E0B]/15 border-l-2 border-[#3B82F6] dark:border-[#F59E0B] text-[#2563EB] dark:text-[#FDE68A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-white/5 font-medium'
                 }`}
               >
                 <Icon
@@ -198,7 +198,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <>
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#070B16]/95 backdrop-blur-xl shrink-0 select-none py-3.5 px-3 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_20px_rgba(0,0,0,0.03)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
+        className={`hidden md:flex flex-col border-r border-slate-200/70 dark:border-white/10 bg-white/75 dark:bg-[#070B16]/85 backdrop-blur-2xl shrink-0 select-none py-3.5 px-3 sticky top-16 left-0 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
@@ -238,8 +238,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
-          <div className="pt-3.5 border-t border-slate-200/80 dark:border-white/10 mt-auto">
-            <div className="p-3 rounded-xl bg-slate-50/80 dark:bg-[#0B1224]/80 border border-slate-200/80 dark:border-white/10 shadow-xs space-y-1">
+          <div className="pt-3.5 border-t border-slate-200/70 dark:border-white/10 mt-auto">
+            <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#0B1224]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
               <div className="flex items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#3B82F6] dark:text-[#F59E0B]" />
