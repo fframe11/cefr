@@ -1,0 +1,1130 @@
+[
+  {
+    "word": "ada-scid",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "แบบ dada",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "afspc",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ afspc",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "alpha-naphthol",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "อัลฟา Naphol",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "alpha-terpinene",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "อัลฟา Terpine",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "anemoclinometer",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ตัววัด emoclin",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "apios",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ขนาด Apios",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ascoma",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ Ascoma",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "asmr",
+    "pos": "noun",
+    "cefr": "A1",
+    "th": "แบบ Asmr",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "atromid-s",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ขนาด Atromid s",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "aztec",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ Aztec",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "beta-lactamase",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "เบต้าLactamase",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "caddisworm",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "หนอน caddis",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "calligrapher",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ตัวพิมพ์ Calligrapher",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "carrefour",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ค่า Carre 4",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ceding",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "การ ceding",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "cefoperazone",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "เขตเวลา Cufopera",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "chiliasm",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "พริกcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "chiliast",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "พริกcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "click-clack",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "คลิก scack",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "cytochrome",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "สีCyto",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "exteroceptor",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ตัวรับแสง (exterographor)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "falconiformes",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "firelighter",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ไฟฉายComment",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "gamma-interferon",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "interferon ของแกมม่า",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "gladstone",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "Name=หินอ่อนName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "gspc",
+    "pos": "noun",
+    "cefr": "A1",
+    "th": "แบบ gspc",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "gypsywort",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ยิปซีComment",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "hermissenda",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "Missenda ของเธอ",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "holotype",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ชนิด hollow",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "hydronephrosis",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ไฮโดรphrosis",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "hydroxymethyl",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ไฮโดรxymethyil",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "iambic",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ Iambic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "iconography",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "iconoscope",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ไอคอนComment",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ilmenite",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ภาษา Ilmeite",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "jack-by-the-hedge",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "♪ Jock by the bredge ต่อสู้กับรั้ว",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "jejunitis",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "โรค jjunis",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "johnnycake",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "เค้ก Johnny",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "keister",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "Name=คริสตัลName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "kuki-chin",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "คาง Kuku",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "lgbtq",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ Igtq",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "limning",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "การ liming",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "livermore",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ตับmore",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "marquette",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "mcmansion",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "รูปแบบ mcmansion",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "mdma",
+    "pos": "noun",
+    "cefr": "A1",
+    "th": "แบบ mdma",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "megatheriid",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ฉัน gridiid",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "menuridae",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "เมนูRidae",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "microchiroptera",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ไมโครchroptra",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "microsporangium",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ไมโคร porangium",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "nanophthalmos",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "นาโนphthalmos",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "nardil",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "neo-kantianism",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ลัทธิ Kantianism",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "one-sixteenth",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "1 ใน 16",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "picariae",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ภาพName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "picea",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ภาพName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "picidae",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ภาพName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "plastique",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "แบบ pastic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "post-impressionist",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "โพสต์ Actionist",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "psoas",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ขนาด psoas",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ptyas",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ค่า ptyas",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "pyroxylin",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ไฟร์xylin",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "quasi-ngo",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ขนาด Quasi ngo",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ricrac",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ RigR",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "rig-veda",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "มุม (veda)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "sauterne",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "Name=ดอกไม้ไฟName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "shakespearian",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "Name=ลื่นไหลName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "shinplaster",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "Name=ดอกไม้ไฟName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "skep",
+    "pos": "noun",
+    "cefr": "A1",
+    "th": "แบบ skep",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "slop-seller",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ขายslop",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "snowplow",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "Name=หิมะName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "spoof",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "แบบ spoof",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "strategian",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ภาษา Stregian",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "struthioniformes",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "stylomecon",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "Name=อุปกรณ์Name",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "tiepolo",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "wahabism",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ลัทธิ wahabism",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "wake-robin",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ปลุก Robin",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "witwatersrand",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "Name=หนอนผึ้งName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "aggrade",
+    "pos": "verb",
+    "cefr": "B1",
+    "th": "แบบ Aggrade",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "alkalinise",
+    "pos": "verb",
+    "cefr": "B2",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "archaize",
+    "pos": "verb",
+    "cefr": "B1",
+    "th": "ขนาด Archaize",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "besmear",
+    "pos": "verb",
+    "cefr": "B1",
+    "th": "♪ Betsmar ♪ Besmear เพดานปาก",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "spoof",
+    "pos": "verb",
+    "cefr": "A2",
+    "th": "แบบ spoof",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "acid-loving",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "♪ Toint Love รักกรด",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "almond-scented",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "หอมcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "aslope",
+    "pos": "adjective",
+    "cefr": "A2",
+    "th": "แบบ Aslope",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "bicolor",
+    "pos": "adjective",
+    "cefr": "B1",
+    "th": "ไบต์color",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "bluish-gray",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "เทา bluish",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "bluish-grey",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "เทา bluish",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "brown-gray",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "เทาcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "cxxv",
+    "pos": "adjective",
+    "cefr": "A1",
+    "th": "ค่า cxxv",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "dominical",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "แบบ dominic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "fawn-colored",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "สี fawn",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "fernlike",
+    "pos": "adjective",
+    "cefr": "B1",
+    "th": "แบบ fern",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "five-petalled",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "ห้า tsualed",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "garnet-coloured",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "สีของ garnet",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "gray-white",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "ขาวcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "greyish-white",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "ขาวcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "iambic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "th": "แบบ Iambic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ilxxx",
+    "pos": "adjective",
+    "cefr": "A2",
+    "th": "แบบ IILX",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "ischemic",
+    "pos": "adjective",
+    "cefr": "B1",
+    "th": "ภาษา Ichemic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "lithographic",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "พิมพ์แบบ lithgraphic",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "mint-scented",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "หอมcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "nonpasserine",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "ไม่ใช้ Passerine",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "open-hearth",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "เปิด Harpath",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "pearly-white",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "ขาวcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "prickly-leaved",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "♪ Pickyle fromd ทิ่มแทง",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "shakespearian",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "Name=ลื่นไหลName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "stochastic",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "ลวดลายStencils",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "umbel-like",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "Umbel เช่น",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "xxxv",
+    "pos": "adjective",
+    "cefr": "A1",
+    "th": "แบบ EXIV",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "yellowish-white",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "ขาวcolor",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "breast-high",
+    "pos": "adverb",
+    "cefr": "C1",
+    "th": "สูง (% 1)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "jauntily",
+    "pos": "adverb",
+    "cefr": "B1",
+    "th": "จา Sumy",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "damnation",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ม.]",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "dustpanful",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "hagionym",
+    "pos": "noun",
+    "cefr": "B1",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "mid-twenties",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "20.00 น",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "mnemosyne",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "moire",
+    "pos": "noun",
+    "cefr": "A2",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "dust-covered",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "moire",
+    "pos": "adjective",
+    "cefr": "A2",
+    "th": "ม.)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "twenty-fifth",
+    "pos": "adjective",
+    "cefr": "C1",
+    "th": "25 น",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "cardiospermum",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "หัวใจ (Partspermum)",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "clover-root",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "root ของ root",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "eq",
+    "pos": "noun",
+    "cefr": "A1",
+    "th": "แบบ escription",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "fathometer",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "Name=ภาพName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "games-mistress",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "Name=เกมName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "he-huckleberry",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "เขา Huckleberry",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "megatheriidae",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ฉัน grididae",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "pithecolobium",
+    "pos": "noun",
+    "cefr": "C2",
+    "th": "ไพthecloum",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "plectognath",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "แบบ plectognath",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "preeclampsia",
+    "pos": "noun",
+    "cefr": "C1",
+    "th": "ภาวะ preclampsia",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "psilopsida",
+    "pos": "noun",
+    "cefr": "B2",
+    "th": "ภาษา plopsidaName",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "contradistinguish",
+    "pos": "verb",
+    "cefr": "C2",
+    "th": "คอนtrittitus",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "amphiprostyle",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "แบบ Amphrography",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "apoplectiform",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "แบบ popletiphy",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "kannada-speaking",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "Kananada พูด",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "macrencephalic",
+    "pos": "adjective",
+    "cefr": "C2",
+    "th": "ขนาด Magrancefact",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  },
+  {
+    "word": "surpliced",
+    "pos": "adjective",
+    "cefr": "B2",
+    "th": "ถูก surpliced",
+    "source": "argos_mt_word_direct",
+    "issue": "check"
+  }
+]
