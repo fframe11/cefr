@@ -232,7 +232,7 @@ export const CollocationsView: React.FC = () => {
                       <span className="text-[10px] px-2 py-0.5 rounded-md font-semibold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/50 dark:border-white/5">
                         {item.category.replace('_', ' + ')}
                       </span>
-                      <GlovaLevelBadge level={item.cefrLevel} size="xs" />
+                      <GlovaLevelBadge level={item.cefrLevel} size="sm" />
                     </div>
                   </div>
 

@@ -248,8 +248,8 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
         />
         <p className="text-xs text-muted-foreground">
           {isEn
-            ? "Analyzing multi-skill proficiency and learning gaps against CEFR standards."
-            : "ระบบกำลังวิเคราะห์ความเชี่ยวชาญทั้ง 6 ทักษะ และจุดอ่อนสะสมตามมาตรฐาน CEFR"}
+            ? "Analyzing multi-skill proficiency and learning gaps aligned with the CEFR framework."
+            : "ระบบกำลังวิเคราะห์ทักษะและจุดอ่อนสะสมเทียบเคียงตามกรอบ CEFR"}
         </p>
       </div>
     );

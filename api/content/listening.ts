@@ -18,26 +18,26 @@ export default createApiHandler(
     const query = validateQuery(listeningQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    let dbQuery = supabase
-      .from('listening_exercises')
-      .select('id, title, cefr_level, target_exam, speaker_accents, audio_storage_path, speed_options, audio_script', {
-        count: 'exact',
-      })
-      .eq('is_active', true);
-
-    if (query.cefr_level) {
-      dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
-    }
-    if (query.target_exam) {
-      dbQuery = dbQuery.eq('target_exam', query.target_exam);
-    }
-
-    const offset = (query.page - 1) * query.limit;
-    dbQuery = dbQuery
-      .order('title', { ascending: true })
-      .range(offset, offset + query.limit - 1);
-
     try {
+      let dbQuery = supabase
+        .from('listening_exercises')
+        .select('id, title, cefr_level, target_exam, speaker_accents, audio_storage_path, speed_options, audio_script', {
+          count: 'exact',
+        })
+        .eq('is_active', true);
+
+      if (query.cefr_level) {
+        dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+      }
+      if (query.target_exam) {
+        dbQuery = dbQuery.eq('target_exam', query.target_exam);
+      }
+
+      const offset = (query.page - 1) * query.limit;
+      dbQuery = dbQuery
+        .order('title', { ascending: true })
+        .range(offset, offset + query.limit - 1);
+
       const { data: exercises, count, error } = await dbQuery;
 
       if (!error && exercises && exercises.length > 0) {
@@ -70,7 +70,7 @@ export default createApiHandler(
       cefr_level: ex.cefrLevel,
       target_exam: ex.targetExam,
       speaker_accents: ex.speakerAccents,
-      audio_storage_path: ex.audioStoragePath || null,
+      audio_storage_path: ex.audioUrl || null,
       speed_options: ex.audioSpeedOptions,
       audio_script: ex.audioScript,
     }));

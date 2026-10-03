@@ -94,7 +94,7 @@ export function sanitizeListeningQuestionForClient(
     type: question.type,
     promptEn: question.promptEn,
     promptTh: question.promptTh,
-    options: question.options.map((opt) => ({
+    options: (question.options || []).map((opt) => ({
       key: opt.key,
       text: opt.text,
     })),
@@ -112,7 +112,7 @@ export function evaluateListeningAnswer(
   const target = all.find((q) => q.id === questionId);
   if (!target) return null;
 
-  const correctOption = target.options.find((opt) => opt.isCorrect);
+  const correctOption = (target.options || []).find((opt) => opt.isCorrect);
   const correctKey = correctOption ? correctOption.key : 'A';
   const isCorrect = selectedKey.toUpperCase().trim() === correctKey.toUpperCase().trim();
 

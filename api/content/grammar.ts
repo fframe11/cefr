@@ -89,14 +89,16 @@ export default createApiHandler(
       title_en: topic.titleEn,
       title_th: topic.titleTh,
       cefr_level: topic.cefrLevel,
-      summary_th: topic.explanationTh,
-      concept_th: topic.explanationTh,
+      summary_th: topic.summaryTh,
+      concept_th: topic.conceptTh,
       concept_en: topic.conceptEn,
-      rules: topic.rules.map((r) => ({
-        rule_number: r.ruleNumber,
+      rules: topic.rules.map((r, idx) => ({
+        rule_number: idx + 1,
+        formula: r.formula,
         explanation_th: r.explanationTh,
-        explanation_en: r.explanationEn,
-        example_sentences: r.exampleSentences,
+        explanation_en: r.explanationEn || null,
+        example_en: r.exampleEn,
+        example_th: r.exampleTh,
       })),
       common_mistakes: topic.commonMistakes.map((m) => ({
         incorrect: m.incorrect,

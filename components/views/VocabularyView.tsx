@@ -468,7 +468,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl font-sans">
           {isEn
             ? 'Study 3,860 verified vocabulary units with native phonetic stress, contextual examples, collocations, and server-graded practice.'
-            : 'เรียนรู้คำศัพท์มาตรฐาน 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
+            : 'เรียนรู้คำศัพท์คัดสรร 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
         </p>
       </div>
 

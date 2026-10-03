@@ -310,7 +310,7 @@ const MainAppContent: React.FC = () => {
           {currentView === 'analytics' && (
             <AnalyticsView
               progress={progress}
-              onNavigate={setCurrentView}
+              onNavigate={(view) => setCurrentView(view as NavView)}
               onStartRemediation={handleStartRemediation}
             />
           )}

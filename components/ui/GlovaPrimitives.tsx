@@ -778,7 +778,7 @@ export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string 
           <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
             {isEn
               ? 'Engineered with 5 Premier Frontend Component Registries'
-              : 'สถาปัตยกรรม UI คุณภาพสูงจากคลังคอมโพเนนต์ระดับสากลทั้ง 5 แหล่ง'}
+              : 'สถาปัตยกรรม UI คุณภาพสูงจากคลังคอมโพเนนต์ชั้นนำทั้ง 5 แหล่ง'}
           </h3>
         </div>
         <span className="text-[11px] font-mono font-bold text-[#4F46E5] dark:text-[#A5A6F6]">

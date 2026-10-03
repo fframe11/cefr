@@ -126,7 +126,7 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
           <p className="text-slate-300 text-sm md:text-base leading-relaxed">
             {isEn
               ? 'Master the high-frequency distinction matrices that test takers struggle with most: In/On/At hierarchy, Play/Do/Go sport classification, Do vs Make action outcomes, and Oxford Online Placement Test scoring calibration.'
-              : 'สรุป 4 จุดตัดคะแนนสำคัญที่ผู้เข้าสอบผิดบ่อยที่สุด: พีระมิด In/On/At, การจำแนก Play/Do/Go, จุดต่าง Do vs Make และตารางคะแนน OOPT 0–120 เทียบระดับ CEFR สากล พร้อมมินิควิซทดสอบทันที'}
+              : 'สรุป 4 จุดตัดคะแนนสำคัญที่ผู้เข้าสอบผิดบ่อยที่สุด: พีระมิด In/On/At, การจำแนก Play/Do/Go, จุดต่าง Do vs Make และตารางคะแนน OOPT 0–120 เทียบระดับตามกรอบ CEFR พร้อมมินิควิซทดสอบทันที'}
           </p>
         </div>
       </div>

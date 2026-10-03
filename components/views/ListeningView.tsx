@@ -799,7 +799,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                   <div className="flex items-center gap-2">
                     <HelpCircle className="w-4 h-4 text-[#FA5D5D]" />
                     <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
-                      {isEn ? 'Comprehension Test Assessment' : 'แบบทดสอบวัดความเข้าใจตามมาตรฐานเคมบริดจ์'}
+                      {isEn ? 'Comprehension Practice Assessment' : 'แบบทดสอบวัดความเข้าใจตามแนวทางข้อสอบเคมบริดจ์'}
                     </h3>
                   </div>
 

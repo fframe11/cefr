@@ -199,7 +199,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     if (authStatus !== 'authenticated') {
       showToast(
         'กรุณาเข้าสู่ระบบเพื่อทำ Mock Exam',
-        'การสอบจำลองมาตรฐานจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ',
+        'การสอบจำลองเต็มรูปแบบจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ',
         'info'
       );
       if (onOpenProfile) onOpenProfile();
@@ -262,7 +262,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
       showToast(
         'เริ่มการสอบจำลองแล้ว',
-        `เวลาสอบทั้งหมด ${sessionRes.mock_exam.total_duration_minutes} นาที ระบบกำลังจับเวลาอย่างเป็นทางการ`,
+        `เวลาสอบทั้งหมด ${sessionRes.mock_exam.total_duration_minutes} นาที ระบบกำลังจับเวลาจำลองการสอบ`,
         'info'
       );
     } catch (err: any) {
@@ -439,7 +439,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
           {/* Catalog counter chip */}
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#13111C]/60 border border-border/80 shadow-xs">
             <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-              {isEn ? `${catalogExams.length} Official Sets` : `${catalogExams.length} ชุดข้อสอบมาตรฐาน`}
+              {isEn ? `${catalogExams.length} Full Sets` : `${catalogExams.length} ชุดข้อสอบจำลอง`}
             </span>
           </div>
 
@@ -469,8 +469,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-lg mx-auto font-sans">
                 {isEn
-                  ? 'Simulate authentic exam conditions according to CEFR standards with automated timing and Cambridge English Scale calculations.'
-                  : 'จำลองสนามสอบเสมือนจริงตามมาตรฐานการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนน Cambridge English Scale'}
+                  ? 'Simulate realistic exam conditions aligned with the CEFR framework with automated timing and Cambridge English Scale score estimation.'
+                  : 'จำลองสนามสอบเสมือนจริงอิงตามกรอบการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนนเทียบเคียง Cambridge English Scale'}
               </p>
             </div>
 
@@ -506,8 +506,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 </p>
                 <p className="text-slate-600 dark:text-slate-400 mt-0.5 font-sans">
                   {isEn
-                    ? 'Standard mock exams require session generation and permanent progress tracking on your account.'
-                    : 'การสอบจำลองมาตรฐานจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ'}
+                    ? 'Full mock exams require session generation and permanent progress tracking on your account.'
+                    : 'การสอบจำลองเต็มรูปแบบจำเป็นต้องสร้างเซสชันการสอบและบันทึกคะแนนลงในบัญชีผู้ใช้ของคุณ'}
                 </p>
               </div>
             </div>
@@ -596,7 +596,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
                     <div className="mt-4 pt-3 border-t border-border/80 space-y-1 text-xs text-slate-500 dark:text-slate-400 font-sans">
                       <p>{isEn ? `• Passing mark: ${exam.passing_score}%+` : `• เกณฑ์ผ่าน: ${exam.passing_score}% ขึ้นไป`}</p>
-                      <p>{isEn ? `• Target Level: CEFR ${exam.target_cefr}` : `• มาตรฐานเป้าหมาย: CEFR ${exam.target_cefr}`}</p>
+                      <p>{isEn ? `• Target Level: CEFR ${exam.target_cefr}` : `• ระดับเป้าหมาย: CEFR ${exam.target_cefr}`}</p>
                     </div>
                   </div>
 

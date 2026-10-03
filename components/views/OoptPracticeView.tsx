@@ -68,12 +68,49 @@ export const OoptPracticeView: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'meaning' | 'cloze'>('meaning');
 
   // Part 2 Meaning State
-  const meaningItems = part2Data as MeaningItem[];
+  const meaningItems: MeaningItem[] = (part2Data as any[]).map((raw) => ({
+    id: raw.id,
+    part: 'Part 2',
+    titleTh: raw.question_prompt || 'ความหมายที่แท้จริงของผู้พูด',
+    cefrLevel: raw.cefr_level,
+    dialogue: [
+      { speaker: raw.speaker_1, text: raw.dialogue_1 },
+      { speaker: raw.speaker_2, text: raw.dialogue_2 },
+    ],
+    options: (raw.options || []).map((o: any) => ({
+      key: o.key,
+      text: o.text,
+      isCorrect: o.key === raw.correct_answer,
+      feedbackTh: raw.explanation_th,
+    })),
+    explanationTh: raw.explanation_th,
+    explanationEn: raw.explanation_en,
+    pragmaticFocus: raw.idiom_tag || 'conversational_pragmatics',
+  }));
   const [currentMeaningIdx, setCurrentMeaningIdx] = useState(0);
   const [selectedMeaningAnswers, setSelectedMeaningAnswers] = useState<Record<string, string>>({});
 
   // Part 3 Cloze State
-  const clozePassages = part3Data as ClozePassage[];
+  const clozePassages: ClozePassage[] = (part3Data as any[]).map((raw) => {
+    let template = raw.passage_template;
+    (raw.gaps || []).forEach((g: any) => {
+      template = template.replace(new RegExp(`\\(${g.gap_number}\\)_{3,}`, 'g'), `[gap_${g.gap_number}]`);
+    });
+    return {
+      id: raw.id,
+      title: raw.title,
+      genre: raw.genre,
+      cefrLevel: raw.cefr_level,
+      passageWithGaps: template,
+      items: (raw.gaps || []).map((g: any) => ({
+        gapNumber: g.gap_number,
+        targetWord: g.target_word,
+        acceptableAlternatives: g.acceptable_answers || [g.target_word],
+        pos: g.word_type || 'grammar',
+        explanationTh: g.explanation_th,
+      })),
+    };
+  });
   const [currentClozeIdx, setCurrentClozeIdx] = useState(0);
   const [clozeInputs, setClozeInputs] = useState<Record<string, Record<number, string>>>({});
   const [clozeSubmitted, setClozeSubmitted] = useState<Record<string, boolean>>({});

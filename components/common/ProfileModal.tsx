@@ -366,8 +366,8 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               </h1>
               <p className="text-xs text-muted-foreground leading-relaxed max-w-sm">
                 {language === 'th'
-                  ? 'ฝึกฝนตามกรอบมาตรฐาน CEFR ครบ 4 ทักษะ พร้อมระบบตรวจจับเสียงและการจำลองข้อสอบ Cambridge เสมือนจริง'
-                  : 'Progress through authentic CEFR milestones with AI pronunciation scoring and official Cambridge exam formats.'}
+                  ? 'ฝึกฝนตามกรอบ CEFR ครบ 4 ทักษะ พร้อมระบบตรวจจับเสียงและการจำลองข้อสอบ Cambridge เสมือนจริง'
+                  : 'Progress through CEFR-aligned milestones with AI pronunciation scoring and Cambridge-style exam simulations.'}
               </p>
             </div>
           </div>

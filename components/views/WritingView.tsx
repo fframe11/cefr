@@ -172,7 +172,7 @@ export const WritingView: React.FC = () => {
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
           {isEn
             ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
-            : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมินสากล พร้อมเกณฑ์ Self-Assessment'}
+            : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมิน CEFR พร้อมเกณฑ์ Self-Assessment'}
         </p>
       </div>
 
@@ -367,7 +367,7 @@ export const WritingView: React.FC = () => {
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                 {isEn
                   ? 'Because writing is an open-ended CEFR assessment, your response has been saved. You can compare your work with the model answer and scoring rubric below.'
-                  : 'เนื่องจากงานเขียนเป็นข้อสอบอัตนัยตามมาตรฐาน CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง'}
+                  : 'เนื่องจากงานเขียนเป็นแบบฝึกหัดอัตนัยอิงตามแนวทาง CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง'}
               </p>
             </div>
           )}

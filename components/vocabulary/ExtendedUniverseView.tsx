@@ -193,7 +193,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
           <p>
             {isEn
               ? 'Tier 1 units (3,860) are verified Cambridge-curated seed items used for authoritative test generation. Tier 2 items (117,440) are candidate universe entries cross-referenced against Open English WordNet 2024, Lexitron 2.0, Kaikki Wiktionary, and Glova Collocations with algorithmic CEFR profile estimates.'
-              : 'คำศัพท์ระดับที่ 1 (3,860 คำ) เป็นคลังคำที่ผ่านการตรวจสอบสมบูรณ์ตามมาตรฐาน Cambridge สำหรับแบบทดสอบ ส่วนระดับที่ 2 (117,440 คำ) เป็นคลังคำศัพท์ขยายจาก OEWN 2024, Lexitron 2.0 และ Kaikki เพื่อรองรับการค้นหาที่ครอบคลุม พร้อมการประมาณการระดับ CEFR ตามความถี่การใช้งาน'}
+              : 'คำศัพท์ระดับที่ 1 (3,860 คำ) เป็นคลังคำที่ผ่านการตรวจสอบสมบูรณ์ตามแนวทางคำศัพท์ Cambridge สำหรับแบบทดสอบ ส่วนระดับที่ 2 (117,440 คำ) เป็นคลังคำศัพท์ขยายจาก OEWN 2024, Lexitron 2.0 และ Kaikki เพื่อรองรับการค้นหาที่ครอบคลุม พร้อมการประมาณการระดับ CEFR ตามความถี่การใช้งาน'}
           </p>
         </div>
       </div>

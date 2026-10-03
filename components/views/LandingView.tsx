@@ -313,7 +313,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       category: 'skills',
       desc: isEn
         ? '3,860 Oxford-grounded lexical items scheduled with memory decay curves and native audio.'
-        : 'คลังคำศัพท์ 3,860 คำตามมาตรฐาน Oxford พร้อมเสียงอ่านและระบบทบทวนก่อนสมองจะลืม',
+        : 'คลังคำศัพท์ 3,860 คำอิงตาม Oxford 3000/5000 พร้อมเสียงอ่านและระบบทบทวนก่อนสมองจะลืม',
       icon: BookOpen,
       color: '#FA5D5D',
       route: '/vocabulary',
@@ -558,7 +558,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       ],
       description: isEn
         ? 'Proves you have the language skills to live and work independently in an English-speaking country.'
-        : 'มาตรฐานระดับโลกสำหรับยื่นเข้ามหาวิทยาลัยชั้นนำและสมัครงานในองค์กรข้ามชาติ',
+        : 'วุฒิบัตรรับรองระดับสากลสำหรับยื่นเข้ามหาวิทยาลัยชั้นนำและสมัครงานในองค์กรข้ามชาติ',
     },
     {
       id: 'cae',
@@ -596,7 +596,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 dark:bg-white/10 border border-[#FA5D5D]/25 shadow-2xs backdrop-blur-xs">
             <span className="w-2 h-2 rounded-full bg-[#FA5D5D] animate-pulse" />
             <span className="text-xs font-bold text-[#FA5D5D] uppercase tracking-wider">
-              {isEn ? 'English Learning Reimagined • CEFR A1-C2' : 'การเรียนรู้ภาษาอังกฤษด้วยตนเองตามมาตรฐานสากล CEFR'}
+              {isEn ? 'English Learning Reimagined • CEFR A1-C2' : 'การเรียนรู้ภาษาอังกฤษด้วยตนเอง อิงตามกรอบ CEFR A1-C2'}
             </span>
           </div>
 
@@ -604,16 +604,16 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <h1 className="text-3xl sm:text-5xl lg:text-[3.75rem] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.2] max-w-4xl mx-auto">
             {isEn ? (
               <>
-                Master English with Confidence Through{' '}
+                Master English with Confidence Aligned with{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA5D5D] via-amber-500 to-[#FA5D5D]">
-                  Cambridge CEFR Standards
+                  the CEFR Framework
                 </span>
               </>
             ) : (
               <>
-                เก่งภาษาอังกฤษอย่างมั่นใจ ด้วยหลักสูตรและแบบฝึกหัด{' '}
+                เก่งภาษาอังกฤษอย่างมั่นใจ ด้วยแบบฝึกหัดที่เทียบเคียง{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FA5D5D] via-amber-500 to-[#FA5D5D]">
-                  มาตรฐาน CEFR สากล
+                  กรอบแนวทาง CEFR
                 </span>
               </>
             )}
@@ -652,7 +652,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <div className="flex items-center justify-center gap-2 pt-2 text-xs text-slate-600 dark:text-slate-400 flex-wrap">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 font-bold font-mono">
               <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>{isEn ? 'Cambridge English Scale Aligned' : 'มาตรฐานเคมบริดจ์สากล'}</span>
+              <span>{isEn ? 'Cambridge English Scale Aligned' : 'เทียบเคียง Cambridge English Scale'}</span>
             </div>
             <span className="hidden sm:inline text-slate-400">•</span>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/25 font-bold font-mono">
@@ -818,7 +818,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
                 <span className="font-semibold text-white/90 truncate max-w-[180px] sm:max-w-[220px]">
-                  {isEn ? 'Oxford English Listening Lab' : 'สตูดิโอการฟัง • เสียงบรรยายมาตรฐานอ็อกซ์ฟอร์ด'}
+                  {isEn ? 'Oxford English Listening Lab' : 'สตูดิโอการฟัง • เสียงบรรยายสำเนียงอังกฤษ (RP)'}
                 </span>
               </div>
 
@@ -850,15 +850,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10B981]/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'CEFR & Cambridge Benchmark' : 'มาตรฐานสากล CEFR และเคมบริดจ์'}
+            {isEn ? 'CEFR & Cambridge Aligned' : 'อิงตามกรอบ CEFR และแนวทางเคมบริดจ์'}
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {isEn ? 'Comprehensive English Curriculum Across All CEFR Bands' : 'หลักสูตรภาษาอังกฤษครบวงจร ครอบคลุมทุกระดับ CEFR'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'From foundational A1 to master C2 proficiency, master English systematically through self-paced standardized drills.'
-              : 'ตั้งแต่ระดับเริ่มต้น A1 ไปจนถึงระดับเชี่ยวชาญ C2 เรียนรู้ด้วยตนเองอย่างเป็นระบบผ่านแบบฝึกหัดมาตรฐานสากล'}
+              ? 'From foundational A1 to master C2 proficiency, develop English systematically through self-paced CEFR-aligned practice.'
+              : 'ตั้งแต่ระดับเริ่มต้น A1 ไปจนถึงระดับเชี่ยวชาญ C2 เรียนรู้ด้วยตนเองอย่างเป็นระบบผ่านแบบฝึกหัดเทียบเคียงตามกรอบ CEFR'}
           </p>
           <div className="pt-2">
             <button
@@ -1081,7 +1081,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
               ? 'Focus on your specific language goals with structured drills, automated diagnostics, and instant feedback.'
-              : 'เลือกพัฒนาทักษะเฉพาะด้านที่ต้องการด้วยแบบฝึกหัดมาตรฐาน ระบบตรวจคำตอบอัตโนมัติ และคำอธิบายเชิงลึก'}
+              : 'เลือกพัฒนาทักษะเฉพาะด้านที่ต้องการด้วยแบบฝึกหัดตรงจุด ระบบตรวจคำตอบอัตโนมัติ และคำอธิบายเชิงลึก'}
           </p>
         </div>
 
@@ -1220,7 +1220,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {isEn
                     ? 'Strengthen weak areas across listening, reading, writing, speaking, grammar, and Oxford vocabulary with immediate diagnostic feedback.'
-                    : 'เสริมจุดแข็งและแก้ไขจุดอ่อนได้อย่างตรงจุด ทั้งการฟัง การอ่าน การเขียน การพูด ไวยากรณ์ และคำศัพท์มาตรฐาน Oxford'}
+                    : 'เสริมจุดแข็งและแก้ไขจุดอ่อนได้อย่างตรงจุด ทั้งการฟัง การอ่าน การเขียน การพูด ไวยากรณ์ และคำศัพท์อิงตาม Oxford Corpus'}
                 </p>
               </div>
 
@@ -1320,9 +1320,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               {/* Checklist */}
               <div className="space-y-3 pt-1">
                 {[
-                  isEn ? 'Authentic exam sections with calibrated papers' : 'โครงสร้างข้อสอบเทียบเคียงมาตรฐานสนามสอบเคมบริดจ์จริง',
+                  isEn ? 'Practice exam sections with calibrated papers' : 'โครงสร้างข้อสอบเทียบเคียงรูปแบบแนวข้อสอบเคมบริดจ์',
                   isEn ? 'Real-time countdown timer matching official papers' : 'ระบบจับเวลาถอยหลังเสมือนอยู่ในห้องสอบจริง',
-                  isEn ? 'Official Cambridge English Scale scoring (100-230)' : 'แปลงคะแนนเทียบเคียง Cambridge English Scale (100 - 230)',
+                  isEn ? 'Estimated Cambridge English Scale scoring (100-230)' : 'แปลงคะแนนเทียบเคียงแนวทาง Cambridge English Scale (100 - 230)',
                   isEn ? 'Actionable readiness report before test day' : 'วิเคราะห์ความพร้อมก่อนสอบจริงและชี้เป้าจุดที่ต้องทบทวน',
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-800 dark:text-slate-200">
@@ -1468,7 +1468,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 {isEn
                   ? 'Accurately benchmark your proficiency with adaptive Cambridge-calibrated diagnostics.'
-                  : 'ประเมินระดับความสามารถด้วยข้อสอบมาตรฐานที่เทียบเคียง Cambridge English Scale'}
+                  : 'ประเมินระดับความสามารถด้วยแบบทดสอบที่เทียบเคียงแนวทาง Cambridge English Scale'}
               </p>
             </div>
 
@@ -1591,10 +1591,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Pedagogical Standards' : 'มาตรฐานและระเบียบวิธีเรียนรู้'}
+            {isEn ? 'Pedagogical Methodology' : 'แนวทางและระเบียบวิธีเรียนรู้'}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Engineered for Independent Self-Study Success' : 'ออกแบบตามหลักภาษาศาสตร์สากลเพื่อการเรียนรู้ด้วยตนเอง'}
+            {isEn ? 'Engineered for Independent Self-Study Success' : 'ออกแบบตามหลักภาษาศาสตร์เพื่อการเรียนรู้ด้วยตนเอง'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
@@ -1610,15 +1610,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-900 dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5 text-purple-700 dark:text-purple-400" />
-                <span>Cambridge Official Framework</span>
+                <span>Cambridge-Aligned Practice</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-                {isEn ? 'Direct Cambridge Scale Alignment' : 'เทียบเคียง Cambridge English Scale สากล'}
+                {isEn ? 'Cambridge Scale Score Alignment' : 'เทียบเคียงแนวทางคะแนน Cambridge English Scale'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
                 {isEn
-                  ? 'Every practice question, diagnostic rubric, and mock exam score is calibrated against the official Cambridge English Scale (100 - 230), guaranteeing real-world exam readiness.'
-                  : 'ทุกข้อสอบ เกณฑ์การประเมิน และการแปลงผลคะแนน ได้รับการเทียบเคียงตามมาตรฐานทางการของ Cambridge English Scale (100 - 230) เพื่อความแม่นยำในการวัดผลเสมือนสนามสอบจริง'}
+                  ? 'Every practice question, diagnostic rubric, and mock exam score is calibrated to reflect the Cambridge English Scale (100 - 230) score distribution for realistic practice.'
+                  : 'ทุกแบบฝึกหัด เกณฑ์การประเมิน และการแปลงผลคะแนน ได้รับการออกแบบให้เทียบเคียงช่วงคะแนน Cambridge English Scale (100 - 230) เพื่อใช้เป็นแนวทางเตรียมตัวสอบ'}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-purple-200 dark:border-white/10 flex items-center justify-between">
@@ -1654,7 +1654,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               <p className="text-sm sm:text-base font-bold text-white/95 leading-snug max-w-md">
                 {isEn
                   ? 'Core vocabulary catalog curated according to Oxford 3000 and 5000 frequency bands with authentic audio pronunciation.'
-                  : 'คลังคำศัพท์มาตรฐานคัดสรรตามมาตรฐาน Oxford 3000 และ 5000 ครอบคลุมตั้งแต่ A1 ถึง C2 พร้อมไฟล์เสียงเจ้าของภาษา'}
+                  : 'คลังคำศัพท์คัดสรรอิงตามรายการคำศัพท์ Oxford 3000 และ 5000 ครอบคลุมตั้งแต่ A1 ถึง C2 พร้อมไฟล์เสียงเจ้าของภาษา'}
               </p>
             </div>
           </div>
@@ -1815,15 +1815,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section id="framework" className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-border/80">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#38BDF8]/10 text-[#38BDF8] border border-[#38BDF8]/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Standardized Milestone Roadmap' : 'เกณฑ์ชี้วัดตามมาตรฐานเคมบริดจ์'}
+            {isEn ? 'Milestone Learning Roadmap' : 'แนวทางพัฒนาตามเกณฑ์ข้อสอบเคมบริดจ์'}
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Your CEFR Progression Journey (A1 - C2)' : 'เส้นทางการพัฒนาตามกรอบมาตรฐานสากล CEFR'}
+            {isEn ? 'Your CEFR Progression Journey (A1 - C2)' : 'เส้นทางการพัฒนาตามกรอบ CEFR (A1 - C2)'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'The Common European Framework of Reference (CEFR) is the global benchmark for language proficiency. Click any tier below to explore can-do competencies.'
-              : 'มาตรฐานสากลในการประเมินระดับความสามารถทางภาษาอังกฤษ คลิกเลือกระดับเพื่อดูเกณฑ์ชี้วัดและคำศัพท์ที่จำเป็น'}
+              ? 'The Common European Framework of Reference (CEFR) maps language proficiency across progressive stages. Click any tier below to explore can-do competencies.'
+              : 'กรอบอ้างอิงความสามารถทางภาษาของสหภาพยุโรป (CEFR) คลิกเลือกระดับเพื่อดูคำอธิบายทักษะ Can-do และคำศัพท์ที่แนะนำ'}
           </p>
         </div>
 
@@ -1946,15 +1946,15 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section id="exams" className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-border/80 bg-white/40 dark:bg-white/[0.02]">
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider">
-            {isEn ? 'Cambridge Official Calibrated' : 'เทียบมาตรฐานเคมบริดจ์'}
+            {isEn ? 'Cambridge Exam Preparation' : 'จำลองแนวข้อสอบเคมบริดจ์'}
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {isEn ? 'Cambridge Vault: Official Timed Simulations' : 'คลังข้อสอบเคมบริดจ์จำลองจับเวลาจริง'}
+            {isEn ? 'Cambridge Vault: Timed Exam Simulations' : 'คลังข้อสอบจำลองจับเวลาจริงตามแนวเคมบริดจ์'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             {isEn
-              ? 'Prepare under authentic exam conditions. Experience full-length test sections with automated scoring calibrated against official Cambridge grade boundaries.'
-              : 'ฝึกทำข้อสอบเสมือนจริงในสนามสอบ มีตัวจับเวลาตามเกณฑ์ทางการ พร้อมระบบตรวจและแปลงผลคะแนนตาม Cambridge English Scale'}
+              ? 'Prepare under realistic exam conditions. Experience full-length test sections with automated scoring calibrated to reflect Cambridge grade boundaries for practice.'
+              : 'ฝึกทำข้อสอบเสมือนจริงเพื่อเตรียมความพร้อม มีตัวจับเวลา พร้อมระบบตรวจและเทียบเคียงคะแนนตามแนวทาง Cambridge English Scale'}
           </p>
         </div>
 
@@ -2050,8 +2050,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </h2>
             <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
               {isEn
-                ? 'Master Cambridge CEFR standards through self-paced precision practice. Take our free 15-minute diagnostic test and get your personalized learning path.'
-                : 'ยกระดับภาษาอังกฤษสู่มาตรฐานเคมบริดจ์สากลด้วยการเรียนรู้ด้วยตนเองอย่างเป็นระบบ เริ่มต้นด้วยแบบทดสอบวัดระดับ 15 นาทีฟรีเพื่อรับแผนการเรียนเฉพาะบุคคล'}
+                ? 'Develop your English skills aligned with the CEFR framework through self-paced precision practice. Take our free diagnostic test and get your personalized learning path.'
+                : 'พัฒนาทักษะภาษาอังกฤษอย่างเป็นระบบ อิงตามแนวทางกรอบ CEFR และการเตรียมสอบเคมบริดจ์ เริ่มต้นด้วยแบบทดสอบวัดระดับด่วนเพื่อรับแผนการเรียนเฉพาะบุคคล'}
             </p>
           </div>
 

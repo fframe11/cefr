@@ -34,7 +34,29 @@ export interface CheatSheetQuizQuestion {
   explanationTh: string;
 }
 
-export interface CheatSheetModule {
+export interface QuickQuizOption {
+  key: string;
+  text: string;
+}
+
+export interface QuickQuizItem {
+  id: string;
+  stemTh: string;
+  stemEn: string;
+  options: QuickQuizOption[];
+  correctAnswer: string;
+  explanationTh: string;
+}
+
+export interface MatrixRule {
+  category: string;
+  ruleTh: string;
+  ruleEn: string;
+  examples: string[];
+  exceptions?: string;
+}
+
+export interface LegacyCheatSheetModule {
   id: string;
   titleEn: string;
   titleTh: string;
@@ -44,8 +66,22 @@ export interface CheatSheetModule {
   quiz: CheatSheetQuizQuestion[];
 }
 
+export interface CheatSheetModule {
+  id: string;
+  targetCefr: string;
+  titleEn: string;
+  titleTh: string;
+  summaryTh: string;
+  keyTakeawaysTh: string[];
+  matrixRules: MatrixRule[];
+  quickQuizzes: QuickQuizItem[];
+  cheatCodeTipTh?: string;
+  entries?: CheatSheetEntry[];
+  quiz?: CheatSheetQuizQuestion[];
+}
+
 // 1. IN / ON / AT MASTER MATRIX
-export const IN_ON_AT_CHEAT_SHEET: CheatSheetModule = {
+export const IN_ON_AT_CHEAT_SHEET: LegacyCheatSheetModule = {
   id: 'in-on-at',
   titleEn: 'Prepositions Matrix: In, On, At',
   titleTh: 'สรุปคัมภีร์บุพบท: In, On, At (เวลาและสถานที่)',
@@ -162,7 +198,7 @@ export const IN_ON_AT_CHEAT_SHEET: CheatSheetModule = {
 };
 
 // 2. PLAY / DO / GO MATRIX
-export const SPORTS_VERBS_CHEAT_SHEET: CheatSheetModule = {
+export const SPORTS_VERBS_CHEAT_SHEET: LegacyCheatSheetModule = {
   id: 'play-do-go',
   titleEn: 'Sports & Activities Matrix: Play, Do, Go',
   titleTh: 'สูตรพิชิตกริยากีฬา: Play vs. Do vs. Go',
@@ -227,7 +263,7 @@ export const SPORTS_VERBS_CHEAT_SHEET: CheatSheetModule = {
 };
 
 // 3. DO VS. MAKE MATRIX
-export const DO_MAKE_CHEAT_SHEET: CheatSheetModule = {
+export const DO_MAKE_CHEAT_SHEET: LegacyCheatSheetModule = {
   id: 'do-vs-make',
   titleEn: 'Action & Creation Matrix: Do vs. Make',
   titleTh: 'คัมภีร์ตัดคะแนน: Do vs. Make',
@@ -331,3 +367,267 @@ export const OOPT_ARCHITECTURE_GUIDE = {
   catExplanationTh: `ระบบ Computer-Adaptive Testing (CAT) ทำงานอย่างไร?
 ระบบจะเริ่มจากข้อสอบระดับกลาง (B1) หากผู้สอบตอบถูก ข้อสอบข้อถัดไปจะปรับความยากขึ้นทันทีตามทฤษฎี Item Response Theory (IRT) หากตอบผิด ระบบจะปรับลดระดับความยากลงมา เพื่อค้นหา "จุดความสามารถที่แท้จริง" (Theta) ของผู้สอบอย่างแม่นยำที่สุดโดยไม่ต้องทำข้อสอบเป็นร้อยๆ ข้อ`,
 };
+
+export const CHEAT_SHEET_MODULES: CheatSheetModule[] = [
+  {
+    id: 'in-on-at-time-place',
+    targetCefr: 'A1–B1',
+    titleTh: 'สรุปคัมภีร์บุพบท: In, On, At (เวลาและสถานที่)',
+    titleEn: 'Prepositions Matrix: In, On, At',
+    summaryTh: 'หลักการจำพีระมิดคว่ำ: จากกว้างใหญ่ (IN) สู่พื้นผิว/วัน (ON) สู่จุดเจาะจง/เวลาเป๊ะ (AT)',
+    keyTakeawaysTh: [
+      'IN: เวลาขอบเขตกว้าง (ปี, เดือน, ฤดูกาล) และสถานที่ในพื้นที่ปิด/เมือง/ประเทศ',
+      'ON: วันในสัปดาห์, วันที่, วันสำคัญที่มี "Day" และพื้นผิว/ชื่อถนน',
+      'AT: จุดเวลาแน่นอนบนหน้าปัดนาฬิกา และพิกัดเจาะจงที่มีบ้านเลขที่',
+    ],
+    matrixRules: [
+      {
+        category: 'IN (กว้างใหญ่)',
+        ruleTh: 'ใช้กับศตวรรษ, ทศวรรษ, ปี, ฤดูกาล, เดือนเดี่ยวๆ และช่วงเวลาของวัน',
+        ruleEn: 'Centuries, decades, years, seasons, months, and general parts of the day.',
+        examples: ['in 2026', 'in July', 'in summer', 'in the morning', 'in the 21st century'],
+      },
+      {
+        category: 'ON (แบน/วัน)',
+        ruleTh: 'ใช้กับวันในสัปดาห์, วันที่ที่มีตัวเลข, วันหยุดที่มีคำว่า Day, และช่วงเวลาที่มีชื่อวันนำหน้า',
+        ruleEn: 'Days of the week, specific calendar dates, holidays with "day", and named day parts.',
+        examples: ['on Friday', 'on 12th August', "on New Year's Day", 'on Monday afternoon', 'on my birthday'],
+      },
+      {
+        category: 'AT (เล็ก/เป๊ะ)',
+        ruleTh: 'ใช้กับเวลาตามเข็มนาฬิกา, เวลาเฉพาะเจาะจง, จุดเทศกาลที่ไม่มีคำว่า day',
+        ruleEn: 'Clock times, precise moments, holiday seasons without "day", and exact street numbers.',
+        examples: ['at 9:00 AM', 'at noon', 'at night', 'at Christmas', 'at 102 Wireless Road'],
+        exceptions: 'at night (แต่ in the morning/afternoon/evening)',
+      },
+    ],
+    quickQuizzes: [
+      {
+        id: 'quiz-inon-1',
+        stemTh: 'การประชุมสุดยอดสภาพภูมิอากาศเริ่มเวลา 9 โมงเช้าตรงในวันพรุ่งนี้',
+        stemEn: 'The international climate summit starts _____ 9:00 AM sharp tomorrow.',
+        options: [
+          { key: 'A', text: 'at' },
+          { key: 'B', text: 'in' },
+          { key: 'C', text: 'on' },
+          { key: 'D', text: 'to' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'เวลาบนหน้าปัดนาฬิกา (9:00 AM) ต้องใช้ preposition "at"',
+      },
+      {
+        id: 'quiz-inon-2',
+        stemTh: 'เธอเกิดบนเกาะทางตอนใต้ของประเทศไทยในปี 2004',
+        stemEn: 'She was born _____ an island in southern Thailand _____ 2004.',
+        options: [
+          { key: 'A', text: 'on / in' },
+          { key: 'B', text: 'in / on' },
+          { key: 'C', text: 'at / in' },
+          { key: 'D', text: 'on / at' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'เกาะ (พื้นผิว) ใช้ "on an island" และปี (ช่วงเวลากว้าง) ใช้ "in 2004"',
+      },
+      {
+        id: 'quiz-inon-3',
+        stemTh: 'การสอบปลายภาคกำหนดไว้ในเช้าวันอังคาร',
+        stemEn: 'Our final exam is scheduled _____ Tuesday morning.',
+        options: [
+          { key: 'A', text: 'on' },
+          { key: 'B', text: 'in' },
+          { key: 'C', text: 'at' },
+          { key: 'D', text: 'by' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'เมื่อมีชื่อวัน (Tuesday) นำหน้าช่วงเวลา กฎของ "วัน" (on) มีลำดับความสำคัญสูงสุด',
+      },
+      {
+        id: 'quiz-inon-4',
+        stemTh: 'บริษัทสตาร์ทอัพตั้งอยู่ที่เลขที่ 102 ถนนวิทยุ กรุงเทพฯ',
+        stemEn: 'The new tech startup is located _____ 102 Wireless Road in Bangkok.',
+        options: [
+          { key: 'A', text: 'at' },
+          { key: 'B', text: 'on' },
+          { key: 'C', text: 'in' },
+          { key: 'D', text: 'to' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'มีเลขที่อาคารระบุอยู่หน้าชื่อถนน (102 Wireless Road) ถือเป็นพิกัดเฉพาะ ต้องใช้ "at"',
+      },
+    ],
+  },
+  {
+    id: 'play-do-go-sports',
+    targetCefr: 'A1–B1',
+    titleTh: 'สูตรพิชิตกริยากีฬา: Play vs. Do vs. Go',
+    titleEn: 'Sports & Activities Matrix: Play, Do, Go',
+    summaryTh: 'จัดกลุ่มแม่นยำ: กีฬาลูกบอล/ทีม = PLAY | ศิลปะการต่อสู้/เดี่ยว = DO | กิจกรรมลงท้าย -ing = GO',
+    keyTakeawaysTh: [
+      'PLAY: กีฬาที่มีลูกบอล, กีฬาประเภททีม, การแข่งขันที่มีกติกาแพ้ชนะ และบอร์ดเกม',
+      'DO: ศิลปะการต่อสู้, การออกกำลังกายเดี่ยว/ไม่ใช้อุปกรณ์ลูกบอล',
+      'GO: กิจกรรมกีฬาหรือนันทนาการที่คำศัพท์ลงท้ายด้วย -ing และต้องมีการเคลื่อนที่',
+    ],
+    matrixRules: [
+      {
+        category: 'PLAY (ลูกบอล / แข่งขัน)',
+        ruleTh: 'ใช้กับกีฬาที่มีลูกบอล กีฬาประเภททีม และเกมที่มีกติกาการแข่งขันแพ้ชนะ',
+        ruleEn: 'Team sports, ball games, and competitive board games.',
+        examples: ['play football', 'play tennis', 'play badminton', 'play basketball', 'play chess'],
+      },
+      {
+        category: 'DO (ต่อสู้ / เดี่ยว)',
+        ruleTh: 'ใช้กับศิลปะการต่อสู้ การออกกำลังกายที่ไม่ใช้อุปกรณ์บอล และกิจกรรมเพื่อสุขภาพส่วนบุคคล',
+        ruleEn: 'Martial arts, individual exercise, and non-ball recreational training.',
+        examples: ['do karate', 'do taekwondo', 'do judo', 'do gymnastics', 'do aerobics'],
+      },
+      {
+        category: 'GO (-ING / เคลื่อนที่)',
+        ruleTh: 'ใช้กับกิจกรรมกีฬาหรือการพักผ่อนกลางแจ้งที่รูปคำลงท้ายด้วย -ing',
+        ruleEn: 'Sports, outdoor recreation, and movement activities ending in -ing.',
+        examples: ['go swimming', 'go running', 'go cycling', 'go hiking', 'go skiing'],
+      },
+    ],
+    quickQuizzes: [
+      {
+        id: 'quiz-pdg-1',
+        stemTh: 'ธนากรชอบเล่นยูโดในวันอังคาร และไปว่ายน้ำในวันศุกร์',
+        stemEn: 'Tanakorn loves to _____ judo on Tuesday and _____ swimming on Friday.',
+        options: [
+          { key: 'A', text: 'do / go' },
+          { key: 'B', text: 'play / go' },
+          { key: 'C', text: 'do / play' },
+          { key: 'D', text: 'play / do' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'judo เป็นศิลปะการต่อสู้ ใช้ "do" | swimming ลงท้ายด้วย -ing ใช้ "go"',
+      },
+      {
+        id: 'quiz-pdg-2',
+        stemTh: 'ครอบครัวของเรามักเล่นแบดมินตันในสวนหลังบ้านหลังเลิกงาน',
+        stemEn: 'Our family often _____ badminton in the backyard after work.',
+        options: [
+          { key: 'A', text: 'plays' },
+          { key: 'B', text: 'does' },
+          { key: 'C', text: 'goes' },
+          { key: 'D', text: 'makes' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'badminton เป็นกีฬาแข่งขันตีลูกขนไก่ ใช้กริยา "play"',
+      },
+    ],
+  },
+  {
+    id: 'do-vs-make',
+    targetCefr: 'A2–B2',
+    titleTh: 'คัมภีร์ตัดคะแนน: Do vs. Make',
+    titleEn: 'Action & Creation Matrix: Do vs. Make',
+    summaryTh: 'DO ใช้กับหน้าที่ ภาระงาน และการกระทำทั่วไป | MAKE ใช้กับการสร้าง ผลิตผลลัพธ์ การตัดสินใจ และการสื่อสาร',
+    keyTakeawaysTh: [
+      'DO: งานบ้าน หน้าที่ประจำ งานอาชีพ และการค้นคว้าที่ไม่ก่อให้เกิดวัตถุชิ้นใหม่ทางกายภาพ',
+      'MAKE: การประดิษฐ์ ผลิตอาหาร การตัดสินใจ การตกลงนัดหมาย และการส่งเสียง/การสื่อสาร',
+      'สูตรลัด: DO the job, MAKE a change!',
+    ],
+    matrixRules: [
+      {
+        category: 'DO (หน้าที่ / งาน)',
+        ruleTh: 'ใช้กับหน้าที่ประจำ งานบ้าน งานอาชีพ และการค้นคว้า',
+        ruleEn: 'Obligations, household chores, general work, and academic research.',
+        examples: ['do homework', 'do research', 'do business', 'do the dishes', "do one's best"],
+      },
+      {
+        category: 'MAKE (สร้างใหม่ / ตัดสินใจ)',
+        ruleTh: 'ใช้กับการประดิษฐ์ ผลิตอาหาร การตัดสินใจ การตกลงนัดหมาย และการส่งเสียง',
+        ruleEn: 'Creating tangible objects, formulating plans, speech acts, and critical decisions.',
+        examples: ['make a decision', 'make a mistake', 'make an appointment', 'make a phone call', 'make money'],
+      },
+    ],
+    quickQuizzes: [
+      {
+        id: 'quiz-domake-1',
+        stemTh: 'ก่อนที่คุณจะตัดสินใจขั้นสุดท้าย คุณควรจะค้นคว้าข้อมูลเพิ่มเติม',
+        stemEn: 'Before you _____ a final decision, you should _____ more research.',
+        options: [
+          { key: 'A', text: 'make / do' },
+          { key: 'B', text: 'do / make' },
+          { key: 'C', text: 'make / make' },
+          { key: 'D', text: 'do / do' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'decision ใช้คู่กับ "make a decision" | research ใช้คู่กับ "do research"',
+      },
+      {
+        id: 'quiz-domake-2',
+        stemTh: 'คุณช่วยอะไรฉันสักอย่าง และช่วยฉันต่อสายโทรศัพท์นี้ได้ไหม?',
+        stemEn: 'Can you please _____ me a favor and help me _____ this phone call?',
+        options: [
+          { key: 'A', text: 'do / make' },
+          { key: 'B', text: 'make / do' },
+          { key: 'C', text: 'do / do' },
+          { key: 'D', text: 'make / make' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'favor ใช้คู่กับ "do someone a favor" | phone call ใช้คู่กับ "make a phone call"',
+      },
+    ],
+  },
+  {
+    id: 'oopt-cefr-score-architecture',
+    targetCefr: 'A1–C2',
+    titleTh: 'โครงสร้างข้อสอบ OOPT & ตารางคะแนน CEFR 0–120',
+    titleEn: 'Oxford Online Placement Test (OOPT) Complete Architecture Guide',
+    summaryTh: 'คู่มือโครงสร้างข้อสอบ Computer-Adaptive Test (CAT) และสเกลคะแนนเทียบเคียงระดับ CEFR',
+    keyTakeawaysTh: [
+      'Use of English (30 ข้อ): วัด Part 1 Form, Part 2 Meaning in Conversation, Part 3 Open Cloze',
+      'Listening (15 ข้อ): วัดความเข้าใจบทสนทนาและประกาศในชีวิตประจำวัน',
+      'คะแนน 0–120: 1–20 (A1), 21–40 (A2), 41–60 (B1), 61–80 (B2), 81–100 (C1), >100 (C2)',
+    ],
+    matrixRules: [
+      {
+        category: 'Part 1: Use of English',
+        ruleTh: 'สั้น 2 บรรทัด วัดไวยากรณ์, กาล, บุพบท, Collocations และ Phrasal Verbs',
+        ruleEn: 'Short Dialogues focusing on grammatical form and collocations.',
+        examples: ['Tense agreement', 'Prepositions', 'Conditionals', 'Passive forms'],
+      },
+      {
+        category: 'Part 2: Meaning in Context',
+        ruleTh: 'วัดการตีความหมายแฝง เจตนาที่แท้จริงของผู้พูด และสำนวนในบทสนทนา',
+        ruleEn: 'Focus on pragmatic meaning and conversational nuance.',
+        examples: ['What does she mean?', 'Idiomatic nuance', 'Indirect requests'],
+      },
+      {
+        category: 'Part 3: Open Cloze',
+        ruleTh: 'บทอ่านสั้น 1–2 ย่อหน้า เติมคำศัพท์ทางไวยากรณ์ 1 คำในแต่ละช่องว่าง',
+        ruleEn: 'Gap-fill in connected text focusing on function words.',
+        examples: ['Articles (a, an, the)', 'Prepositions (in, on, at)', 'Relative pronouns (which, that)'],
+      },
+    ],
+    quickQuizzes: [
+      {
+        id: 'quiz-oopt-1',
+        stemTh: 'ข้อใดคือช่วงคะแนน OOPT ที่เทียบเท่าระดับ B2 (Vantage)?',
+        stemEn: 'Which score range on the Oxford Online Placement Test corresponds to CEFR B2?',
+        options: [
+          { key: 'A', text: '61–80 คะแนน' },
+          { key: 'B', text: '41–60 คะแนน' },
+          { key: 'C', text: '81–100 คะแนน' },
+          { key: 'D', text: '21–40 คะแนน' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'ระดับ B2 (Vantage) บน Oxford Scale มีช่วงคะแนนอยู่ที่ 61–80 คะแนน',
+      },
+      {
+        id: 'quiz-oopt-2',
+        stemTh: 'ข้อใดถูกต้องเกี่ยวกับระบบ Computer-Adaptive Testing (CAT) ใน OOPT?',
+        stemEn: 'Which statement accurately describes the Computer-Adaptive Testing (CAT) algorithm in OOPT?',
+        options: [
+          { key: 'A', text: 'ปรับความยากตามคำตอบของผู้สอบทันทีเพื่อหาจุดความสามารถที่แท้จริง' },
+          { key: 'B', text: 'สุ่มข้อสอบ 100 ข้อแบบคงที่ไม่เปลี่ยนแปลง' },
+          { key: 'C', text: 'ให้เวลาเท่ากันทุกข้อโดยไม่มีการปรับความยาก' },
+          { key: 'D', text: 'ตรวจเฉพาะข้อที่ตอบถูกโดยไม่หักคะแนนข้อที่ตอบผิด' },
+        ],
+        correctAnswer: 'A',
+        explanationTh: 'CAT จะปรับระดับความยากตามการตอบถูก/ผิดของผู้สอบแบบเรียลไทม์เพื่อระบุระดับความสามารถ (Theta) อย่างแม่นยำ',
+      },
+    ],
+  },
+];
