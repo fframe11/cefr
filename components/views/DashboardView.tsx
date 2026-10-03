@@ -438,10 +438,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
 
             {/* Step 3: Mock Exam / Quiz */}
-            <div className="rounded-[20px] bg-[#FAF8F3] dark:bg-white/5 p-5 border border-border/80 flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition-colors">
+            <div className="rounded-[20px] bg-[#FAF8F3] dark:bg-white/5 p-5 border border-border/80 flex flex-col justify-between space-y-4 hover:border-amber-500/50 transition-colors">
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-xl bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-500 dark:text-amber-500 flex items-center justify-center font-bold text-xs">
                     3
                   </div>
                   <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">5 MINS</span>
@@ -1134,7 +1134,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <button
                 type="button"
                 onClick={() => handleAskMentor(isEn ? 'Vocabulary study tips' : 'แนะนำเทคนิคจำคำศัพท์ CEFR')}
-                className="px-3 py-1 rounded-full text-[11px] font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 hover:bg-blue-500/20 transition-all shrink-0 active:scale-95"
+                className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] border border-[#FA5D5D]/20 hover:bg-[#FA5D5D]/20 transition-all shrink-0 active:scale-95"
               >
                 {isEn ? 'Vocab Strategy' : 'เทคนิคจำศัพท์'}
               </button>

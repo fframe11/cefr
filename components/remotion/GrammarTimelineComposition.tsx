@@ -74,7 +74,7 @@ export const GrammarTimelineComposition: React.FC<GrammarTimelineProps> = ({
               fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#38bdf8',
+              color: '#FFBA38',
               fontWeight: 600,
             }}
           >
@@ -88,7 +88,7 @@ export const GrammarTimelineComposition: React.FC<GrammarTimelineProps> = ({
           style={{
             fontSize: '11px',
             backgroundColor: 'rgba(56, 189, 248, 0.15)',
-            color: '#38bdf8',
+            color: '#FFBA38',
             padding: '3px 8px',
             borderRadius: '6px',
             fontWeight: 500,
@@ -131,7 +131,7 @@ export const GrammarTimelineComposition: React.FC<GrammarTimelineProps> = ({
             y1="55"
             x2={120 + ((480 - 120) * lineProgress) / 100}
             y2="55"
-            stroke="#38bdf8"
+            stroke="#FFBA38"
             strokeWidth="4"
             strokeLinecap="round"
           />
@@ -144,11 +144,11 @@ export const GrammarTimelineComposition: React.FC<GrammarTimelineProps> = ({
             fill="rgba(56, 189, 248, 0.25)"
             opacity={nowGlowOpacity}
           />
-          <circle cx="480" cy="55" r="8" fill="#38bdf8" />
+          <circle cx="480" cy="55" r="8" fill="#FFBA38" />
           <text
             x="480"
             y="85"
-            fill="#38bdf8"
+            fill="#FFBA38"
             fontSize="12"
             fontWeight="700"
             textAnchor="middle"
@@ -165,7 +165,7 @@ export const GrammarTimelineComposition: React.FC<GrammarTimelineProps> = ({
           backgroundColor: 'rgba(255, 255, 255, 0.05)',
           padding: '10px 14px',
           borderRadius: '8px',
-          borderLeft: '3px solid #38bdf8',
+          borderLeft: '3px solid #FFBA38',
           fontSize: '13px',
           color: '#e2e8f0',
         }}

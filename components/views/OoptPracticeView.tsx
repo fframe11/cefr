@@ -203,7 +203,7 @@ export const OoptPracticeView: React.FC = () => {
                         handleClozeInputChange(passage.id, gapNum, e.target.value)
                       }
                       placeholder={showClozeHints ? gapDef?.pos : '...'}
-                      className={`w-28 sm:w-32 px-2.5 py-1 text-xs md:text-sm text-center rounded-md border font-mono shadow-xs focus:ring-2 focus:ring-indigo-500 focus:outline-hidden transition-all ${inputBorder}`}
+                      className={`w-28 sm:w-32 px-2.5 py-1 text-xs md:text-sm text-center rounded-md border font-mono shadow-xs focus:ring-2 focus:ring-[#FA5D5D] focus:outline-hidden transition-all ${inputBorder}`}
                     />
                     {isChecked && !isCorrect && (
                       <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono ml-1">
@@ -224,10 +224,10 @@ export const OoptPracticeView: React.FC = () => {
   return (
     <div className="w-full space-y-8 pb-16">
       {/* Top Banner - Unified Studio DNA */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-black uppercase tracking-wider">
               {isEn ? 'Oxford OOPT Practice Studio' : 'แบบฝึกหัดเสมือนจริง Oxford OOPT'}
             </span>
             <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold">
@@ -253,7 +253,7 @@ export const OoptPracticeView: React.FC = () => {
           onClick={() => setActiveTab('meaning')}
           className={`flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'meaning'
-              ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+              ? 'bg-[#FA5D5D] text-white shadow-xs font-black'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -264,7 +264,7 @@ export const OoptPracticeView: React.FC = () => {
           onClick={() => setActiveTab('cloze')}
           className={`flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'cloze'
-              ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+              ? 'bg-[#FA5D5D] text-white shadow-xs font-black'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -291,7 +291,7 @@ export const OoptPracticeView: React.FC = () => {
               <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
                 Item {currentMeaningIdx + 1} of {meaningItems.length}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20">
                 {currentMeaning.cefrLevel}
               </span>
             </div>
@@ -313,7 +313,7 @@ export const OoptPracticeView: React.FC = () => {
           {/* Dialogue & Question Card */}
           <div className="p-6 md:p-8 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
-              <span className="text-xs font-black text-[#3B82F6] uppercase tracking-wider">
+              <span className="text-xs font-black text-[#FA5D5D] uppercase tracking-wider">
                 Pragmatic Focus: {currentMeaning.pragmaticFocus.replace(/_/g, ' ')}
               </span>
               <span className="text-xs text-slate-400 font-mono">
@@ -339,7 +339,7 @@ export const OoptPracticeView: React.FC = () => {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${
                         isFirst
-                          ? 'bg-[#3B82F6] text-white shadow-xs'
+                          ? 'bg-[#FA5D5D] text-white shadow-xs'
                           : 'bg-emerald-600 text-white shadow-xs'
                       }`}
                     >
@@ -349,7 +349,7 @@ export const OoptPracticeView: React.FC = () => {
                       className={`p-3.5 rounded-[18px] text-sm max-w-xl shadow-xs ${
                         isFirst
                           ? 'bg-white dark:bg-[#1E1B28] text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-white/10'
-                          : 'bg-blue-50/70 dark:bg-blue-950/30 text-slate-900 dark:text-blue-100 border border-blue-200/60 dark:border-blue-900/60'
+                          : 'bg-[#FA5D5D]/70 dark:bg-[#FA5D5D]/30 text-slate-900 dark:text-[#FA5D5D] border border-[#FA5D5D]/60 dark:border-[#FA5D5D]/60'
                       }`}
                     >
                       <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
@@ -375,7 +375,7 @@ export const OoptPracticeView: React.FC = () => {
                   const isAnswered = !!selectedKey;
 
                   let optionStyle =
-                    'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-[#3B82F6] shadow-2xs';
+                    'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] shadow-2xs';
 
                   if (isAnswered) {
                     if (opt.isCorrect) {
@@ -448,7 +448,7 @@ export const OoptPracticeView: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="flex items-center gap-1.5 font-bold text-[#3B82F6]">
+                  <div className="flex items-center gap-1.5 font-bold text-[#FA5D5D]">
                     <HelpCircle className="w-4 h-4" />
                     <span>{isEn ? 'Pragmatic Analysis & Explanation' : 'การวิเคราะห์เจตนาและความหมายแฝง'}</span>
                   </div>
@@ -477,7 +477,7 @@ export const OoptPracticeView: React.FC = () => {
                   onClick={() => setCurrentClozeIdx(pIdx)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border cursor-pointer ${
                     isSelected
-                      ? 'bg-[#3B82F6] text-white border-[#3B82F6] shadow-xs font-black'
+                      ? 'bg-[#FA5D5D] text-white border-[#FA5D5D] shadow-xs font-black'
                       : 'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'
                   }`}
                 >
@@ -494,7 +494,7 @@ export const OoptPracticeView: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-white/10">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20">
                     {currentCloze.cefrLevel} Standard
                   </span>
                   <span className="text-xs text-slate-400 font-mono">
@@ -544,7 +544,7 @@ export const OoptPracticeView: React.FC = () => {
 
               <button
                 onClick={() => handleCheckCloze(currentCloze.id)}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] text-white text-xs md:text-sm font-bold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs md:text-sm font-bold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 <span>{isEn ? 'Check Answers' : 'ตรวจคำตอบทั้งหมด'}</span>
@@ -555,7 +555,7 @@ export const OoptPracticeView: React.FC = () => {
             {clozeSubmitted[currentCloze.id] && (
               <div className="space-y-3 pt-4 border-t border-slate-100 dark:border-white/10">
                 <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#FA5D5D]" />
                   {isEn ? 'Detailed Gap-by-Gap Solutions' : 'เฉลยและคำอธิบายไวยากรณ์ทีละช่อง'}
                 </h4>
 

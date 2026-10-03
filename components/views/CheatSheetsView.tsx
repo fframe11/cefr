@@ -93,7 +93,7 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
   const getModuleBadgeColor = (id: string) => {
     switch (id) {
       case 'in-on-at-time-place':
-        return 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20';
+        return 'bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] border-[#FA5D5D]/20';
       case 'play-do-go-sports':
         return 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20';
       case 'do-vs-make':
@@ -108,10 +108,10 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
   return (
     <div className="w-full space-y-8 pb-16">
       {/* Header Banner */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-black uppercase tracking-wider">
               {isEn ? 'High-Yield Matrix' : 'สรุปสูตรลัด High-Yield'}
             </span>
             <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold">
@@ -142,14 +142,14 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
               onClick={() => setActiveSheetId(sheet.id)}
               className={`flex items-start gap-3 p-4 rounded-[22px] text-left transition-all border cursor-pointer ${
                 isSelected
-                  ? 'bg-white dark:bg-[#1E1B28] border-[#3B82F6] shadow-sm ring-2 ring-[#3B82F6]/20'
+                  ? 'bg-white dark:bg-[#1E1B28] border-[#FA5D5D] shadow-sm ring-2 ring-[#FA5D5D]/20'
                   : 'bg-white/70 dark:bg-[#1E1B28]/60 border-slate-200/80 dark:border-white/10 hover:bg-white dark:hover:bg-[#1E1B28]'
               }`}
             >
               <div
                 className={`p-2.5 rounded-[14px] shrink-0 transition-colors ${
                   isSelected
-                    ? 'bg-[#3B82F6] text-white shadow-xs'
+                    ? 'bg-[#FA5D5D] text-white shadow-xs'
                     : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                 }`}
               >
@@ -210,7 +210,7 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
             <ul className="space-y-1.5 text-xs md:text-sm text-slate-600 dark:text-slate-300">
               {currentModule.keyTakeawaysTh.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FA5D5D] mt-2 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -227,7 +227,7 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-[#3B82F6] text-white font-mono font-black text-xs shadow-xs">
+                  <span className="px-3 py-1 rounded-full bg-[#FA5D5D] text-white font-mono font-black text-xs shadow-xs">
                     {rule.category}
                   </span>
                   <span className="text-[11px] font-mono text-slate-400 font-bold">

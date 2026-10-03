@@ -116,13 +116,13 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
   const getContextIcon = (type: string) => {
     switch (type) {
       case 'chat':
-        return <MessageSquare className="w-4 h-4 text-indigo-500" aria-hidden="true" />;
+        return <MessageSquare className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />;
       case 'cafe':
         return <Coffee className="w-4 h-4 text-amber-500" aria-hidden="true" />;
       case 'email':
-        return <Mail className="w-4 h-4 text-blue-500" aria-hidden="true" />;
+        return <Mail className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />;
       case 'travel':
-        return <Plane className="w-4 h-4 text-sky-500" aria-hidden="true" />;
+        return <Plane className="w-4 h-4 text-amber-500" aria-hidden="true" />;
       case 'work':
         return <Briefcase className="w-4 h-4 text-purple-500" aria-hidden="true" />;
       case 'social':

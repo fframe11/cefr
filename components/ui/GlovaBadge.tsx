@@ -81,12 +81,12 @@ export const GlovaSkillBadge: React.FC<GlovaSkillBadgeProps> = ({
   className = '',
 }) => {
   const skillConfig = {
-    listening: { label: 'Listening', icon: Headphones, color: 'text-sky-400 bg-sky-500/10 border-sky-500/20' },
-    reading: { label: 'Reading', icon: BookOpen, color: 'text-blue-400 bg-blue-500/10 border-blue-500/20' },
+    listening: { label: 'Listening', icon: Headphones, color: 'text-amber-500 bg-amber-500/10 border-amber-500/20' },
+    reading: { label: 'Reading', icon: BookOpen, color: 'text-[#FA5D5D] bg-[#FA5D5D]/10 border-[#FA5D5D]/20' },
     speaking: { label: 'Speaking', icon: Mic, color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' },
     writing: { label: 'Writing', icon: PenTool, color: 'text-purple-400 bg-purple-500/10 border-purple-500/20' },
     grammar: { label: 'Grammar', icon: CheckCircle2, color: 'text-amber-400 bg-amber-500/10 border-amber-500/20' },
-    vocabulary: { label: 'Vocabulary', icon: Bookmark, color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20' },
+    vocabulary: { label: 'Vocabulary', icon: Bookmark, color: 'text-[#FA5D5D] bg-[#FA5D5D]/10 border-[#FA5D5D]/20' },
     mockExam: { label: 'Mock Exam', icon: Award, color: 'text-rose-400 bg-rose-500/10 border-rose-500/20' },
   }[skill];
 
@@ -130,7 +130,7 @@ export const GlovaBadge: React.FC<GlovaBadgeProps> = ({
     warning: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
     error: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20',
     danger: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20',
-    accent: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
+    accent: 'bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] border-[#FA5D5D]/20',
   }[variant];
 
   const sizeStyles = size === 'sm' ? 'text-[11px] px-2 py-0.5' : 'text-xs px-2.5 py-1';

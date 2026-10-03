@@ -83,10 +83,10 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
   // Physical tactile 3D extrusion (Dribbble Electric Cobalt + Tactile 3D ledge)
   const variantDepthStyles: Record<string, Record<string, string>> = {
     primary: {
-      sm: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_2.5px_0_0_#143DB8] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
-      md: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_4px_0_0_#143DB8] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
-      lg: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_5px_0_0_#143DB8] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
-      xl: 'bg-[#2155E6] hover:bg-[#1C4AC9] text-white shadow-[0_6px_0_0_#143DB8] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
+      sm: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_2.5px_0_0_#143DB8] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
+      md: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_4px_0_0_#143DB8] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
+      lg: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_5px_0_0_#143DB8] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
+      xl: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_6px_0_0_#143DB8] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
     },
     valorant: {
       sm: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_2.5px_0_0_#9E1B26] active:shadow-none active:translate-y-[2.5px] border-t border-white/30 font-black tracking-wide',
@@ -154,7 +154,7 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       disabled={disabled || isLoading}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#2155E6] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${styleClasses} ${
+      className={`relative inline-flex items-center justify-center font-bold tracking-tight select-none transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] disabled:opacity-50 disabled:pointer-events-none ${sizeStyles} ${styleClasses} ${
         fullWidth ? 'w-full' : ''
       } ${className}`}
       {...(props as any)}
@@ -389,7 +389,7 @@ export const BorderBeam: React.FC<BorderBeamProps> = ({
   size = 200,
   delay = 0,
   duration = 12,
-  colorFrom = '#2155E6', // Dribbble Electric Cobalt
+  colorFrom = '#FA5D5D', // Dribbble Electric Cobalt
   colorTo = '#FFE600',   // Dribbble Electric Yellow
   reverse = false,
   initialOffset = 0,
@@ -401,7 +401,7 @@ export const BorderBeam: React.FC<BorderBeamProps> = ({
   if (shouldReduceMotion) {
     return (
       <div
-        className={`pointer-events-none absolute inset-0 rounded-[inherit] border border-[#2155E6]/30 ${className}`}
+        className={`pointer-events-none absolute inset-0 rounded-[inherit] border border-[#FA5D5D]/30 ${className}`}
         style={style}
       />
     );
@@ -498,7 +498,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         <BorderBeam
           size={borderBeamProps?.size ?? 250}
           duration={borderBeamProps?.duration ?? 10}
-          colorFrom={borderBeamProps?.colorFrom ?? '#2155E6'}
+          colorFrom={borderBeamProps?.colorFrom ?? '#FA5D5D'}
           colorTo={borderBeamProps?.colorTo ?? '#FFE600'}
           borderWidth={borderBeamProps?.borderWidth ?? 2}
           {...borderBeamProps}
@@ -537,7 +537,7 @@ export const TacticalHudFrame: React.FC<TacticalHudFrameProps> = ({
 
   const cornerColor: Record<string, string> = {
     crimson: 'border-[#FF4655]',
-    indigo: 'border-[#2155E6] dark:border-[#2155E6]',
+    indigo: 'border-[#FA5D5D] dark:border-[#FA5D5D]',
     emerald: 'border-[#10B981]',
     gold: 'border-[#F59E0B]',
     purple: 'border-[#8B5CF6]',
@@ -611,10 +611,10 @@ export const TerrariaHotbarBar: React.FC<{
       dot: 'bg-amber-400 shadow-[0_0_6px_#F59E0B]',
     },
     silver: {
-      border: 'border-sky-400/80 hover:border-sky-300',
+      border: 'border-amber-500/80 hover:border-amber-500',
       glow: 'hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]',
-      bg: 'bg-gradient-to-b from-sky-500/20 via-[#0F172A] to-black/90',
-      dot: 'bg-sky-400 shadow-[0_0_6px_#38BDF8]',
+      bg: 'bg-gradient-to-b from-amber-500/20 via-[#0F172A] to-black/90',
+      dot: 'bg-amber-500 shadow-[0_0_6px_#FFBA38]',
     },
     gold: {
       border: 'border-yellow-400/90 hover:border-yellow-300',
@@ -623,10 +623,10 @@ export const TerrariaHotbarBar: React.FC<{
       dot: 'bg-[#FFE600] shadow-[0_0_6px_#FFE600]',
     },
     hallowed: {
-      border: 'border-[#2155E6] hover:border-blue-400',
+      border: 'border-[#FA5D5D] hover:border-[#FA5D5D]',
       glow: 'hover:shadow-[0_0_20px_rgba(33,85,230,0.45)]',
-      bg: 'bg-gradient-to-b from-[#2155E6]/25 via-[#0F172A] to-black/90',
-      dot: 'bg-[#2155E6] shadow-[0_0_6px_#2155E6]',
+      bg: 'bg-gradient-to-b from-[#FA5D5D]/25 via-[#0F172A] to-black/90',
+      dot: 'bg-[#FA5D5D] shadow-[0_0_6px_#FA5D5D]',
     },
     crimson: {
       border: 'border-[#FF4655] hover:border-red-400',
@@ -718,7 +718,7 @@ export const VIBE_CODER_SOURCES = [
     roleTh: 'Hero Bento & คลัง Component ระดับโปรดักชัน',
     roleEn: 'Production Hero Bento & Modular Registry',
     fusionTag: 'PRODUCTION BENTO',
-    badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-[#2155E6]/20 dark:text-[#6893FF] dark:border-[#2155E6]/40',
+    badgeClass: 'bg-[#FA5D5D] text-[#FA5D5D] border-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#6893FF] dark:border-[#FA5D5D]/40',
   },
   {
     id: 'godly',
@@ -758,7 +758,7 @@ export const VIBE_CODER_SOURCES = [
     roleTh: 'Decrypted Text, Shiny Text & ตัวเลขวิ่ง CountUp',
     roleEn: 'Decrypted Cipher Text, ShinyText & CountUp',
     fusionTag: 'CIPHER TEXT REVEAL',
-    badgeClass: 'bg-sky-100 text-sky-800 border-sky-300 dark:bg-sky-500/20 dark:text-sky-300 dark:border-sky-500/40',
+    badgeClass: 'bg-amber-500 text-amber-500 border-amber-500 dark:bg-amber-500/20 dark:text-amber-500 dark:border-amber-500/40',
   },
 ] as const;
 
@@ -768,11 +768,11 @@ export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string 
 }) => {
   return (
     <div
-      className={`p-5 rounded-[24px] bg-gradient-to-r from-indigo-50/80 via-white to-rose-50/70 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      className={`p-5 rounded-[24px] bg-gradient-to-r from-[#FA5D5D]/80 via-white to-rose-50/70 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
     >
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#2155E6] text-white">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-[#FA5D5D] text-white">
             COMPONENT ARCHITECTURE // 5 SITES
           </span>
           <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-[#EDEBE8]">
@@ -858,7 +858,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
     vocabulary: 'text-[#4F46E5] dark:text-[#818CF8] bg-[#4F46E5]/10 border-[#4F46E5]/25',
     grammar: 'text-[#D97706] dark:text-[#FBBF24] bg-[#F59E0B]/10 border-[#F59E0B]/25',
     reading: 'text-[#059669] dark:text-[#34D399] bg-[#10B981]/10 border-[#10B981]/25',
-    listening: 'text-[#2563EB] dark:text-[#60A5FA] bg-[#3B82F6]/10 border-[#3B82F6]/25',
+    listening: 'text-[#E84C4C] dark:text-[#FFA0A0] bg-[#FA5D5D]/10 border-[#FA5D5D]/25',
     speaking: 'text-[#E11D48] dark:text-[#FB7185] bg-[#F43F5E]/10 border-[#F43F5E]/25',
     writing: 'text-[#7C3AED] dark:text-[#A78BFA] bg-[#8B5CF6]/10 border-[#8B5CF6]/25',
     ranked: 'text-white bg-[#FF4655] border-[#D93746] font-black',
@@ -878,11 +878,11 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
       whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
       className={`relative p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#101A30] border transition-all duration-200 group flex flex-col justify-between ${
         status === 'ready'
-          ? 'border-[#2155E6] shadow-[0_8px_24px_-4px_rgba(33,85,230,0.15)] ring-1 ring-[#2155E6]/30'
+          ? 'border-[#FA5D5D] shadow-[0_8px_24px_-4px_rgba(33,85,230,0.15)] ring-1 ring-[#FA5D5D]/30'
           : status === 'completed'
           ? 'border-[#10B981] shadow-[0_4px_16px_-4px_rgba(16,185,129,0.15)]'
           : status === 'in-progress'
-          ? 'border-[#2155E6]/40 shadow-[0_4px_16px_-4px_rgba(33,85,230,0.08)]'
+          ? 'border-[#FA5D5D]/40 shadow-[0_4px_16px_-4px_rgba(33,85,230,0.08)]'
           : 'border-slate-200 dark:border-[rgba(255,255,255,0.08)] opacity-60'
       } ${className}`}
     >
@@ -952,7 +952,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
             <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#131920] overflow-hidden">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${
-                  status === 'completed' ? 'bg-[#10B981]' : skill === 'ranked' ? 'bg-[#FF4655]' : 'bg-[#2155E6]'
+                  status === 'completed' ? 'bg-[#10B981]' : skill === 'ranked' ? 'bg-[#FF4655]' : 'bg-[#FA5D5D]'
                 }`}
                 style={{ width: `${progress}%` }}
               />
@@ -1023,10 +1023,10 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#2155E6]/30 shadow-[0_12px_36px_-6px_rgba(33,85,230,0.1)] space-y-5 ${className}`}
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#FA5D5D]/30 shadow-[0_12px_36px_-6px_rgba(33,85,230,0.1)] space-y-5 ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2155E6]/10 text-[#2155E6] dark:bg-[#2155E6]/20 dark:text-[#6893FF] text-xs font-bold tracking-wide border border-[#2155E6]/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#6893FF] text-xs font-bold tracking-wide border border-[#FA5D5D]/30">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{categoryBadge}</span>
         </span>
@@ -1114,10 +1114,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       badgeBg: 'bg-[#10B981] text-white',
     },
     active: {
-      bg: 'bg-[#2155E6] hover:bg-[#1C4AC9] shadow-[#143DB8]',
-      ring: 'ring-[#2155E6]/35',
+      bg: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] shadow-[#143DB8]',
+      ring: 'ring-[#FA5D5D]/35',
       icon: <Star className="w-8 h-8 text-white fill-white stroke-[1.5]" />,
-      badgeBg: 'bg-[#2155E6] text-white',
+      badgeBg: 'bg-[#FA5D5D] text-white',
     },
     review: {
       bg: 'bg-[#FF4655] hover:bg-[#E63946] shadow-[#9E1B26]',
@@ -1142,7 +1142,7 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
         <motion.div
           animate={{ scale: [1, 1.25, 1], opacity: [0.6, 0, 0.6] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute w-24 h-24 rounded-full bg-[#2155E6]/20 -top-2"
+          className="absolute w-24 h-24 rounded-full bg-[#FA5D5D]/20 -top-2"
           aria-hidden="true"
         />
       )}
@@ -1153,10 +1153,10 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
           animate={{ y: 0, opacity: 1 }}
           className="mb-2 z-20"
         >
-          <div className="relative px-3.5 py-1.5 rounded-full bg-[#2155E6] text-white text-xs font-black tracking-wider uppercase shadow-md flex items-center gap-1.5">
+          <div className="relative px-3.5 py-1.5 rounded-full bg-[#FA5D5D] text-white text-xs font-black tracking-wider uppercase shadow-md flex items-center gap-1.5">
             <Sparkles className="w-3 h-3 text-white" />
             <span>{ctaText}</span>
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#2155E6] rotate-45" />
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#FA5D5D] rotate-45" />
           </div>
         </motion.div>
       )}
@@ -1394,7 +1394,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
   colSpan = 3,
 }) => {
   const accentBorder = {
-    indigo: 'hover:border-[#2155E6]/60 hover:shadow-[0_8px_30px_rgba(33,85,230,0.12)]',
+    indigo: 'hover:border-[#FA5D5D]/60 hover:shadow-[0_8px_30px_rgba(33,85,230,0.12)]',
     crimson: 'hover:border-[#FF4655]/60 hover:shadow-[0_8px_30px_rgba(255,70,85,0.12)]',
     emerald: 'hover:border-[#10B981]/60 hover:shadow-[0_8px_30px_rgba(16,185,129,0.12)]',
     amber: 'hover:border-[#F59E0B]/60 hover:shadow-[0_8px_30px_rgba(245,158,11,0.12)]',

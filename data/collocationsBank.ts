@@ -2055,9 +2055,9 @@ export const COLLOCATION_PRACTICE_QUESTIONS: CollocationQuestion[] = [
     promptTh: 'ผู้จัดการกล่าวขอโทษ_____ความล่าช้ากะทันหันในการจัดส่งสินค้า',
     options: [
       { key: 'A', text: 'to', isCorrect: false },
-      { key: 'B', text: 'for', isCorrect: true },
+      { key: 'B', text: 'with', isCorrect: false },
       { key: 'C', text: 'about', isCorrect: false },
-      { key: 'D', text: 'with', isCorrect: false },
+      { key: 'D', text: 'for', isCorrect: true },
     ],
     explanationTh: 'โครงสร้างที่ถูกต้องคือ "apologize for + สิ่งที่ขอโทษ" แปลว่า ขอโทษเรื่อง...',
     explanationEn: 'Use "apologize for [something]".',
@@ -2153,9 +2153,9 @@ export const COLLOCATION_PRACTICE_QUESTIONS: CollocationQuestion[] = [
     promptTh: 'โปรดทำการบ้านของคุณให้เสร็จก่อนออกไปเที่ยวกับเพื่อน',
     options: [
       { key: 'A', text: 'make', isCorrect: false },
-      { key: 'B', text: 'do', isCorrect: true },
+      { key: 'B', text: 'produce', isCorrect: false },
       { key: 'C', text: 'act', isCorrect: false },
-      { key: 'D', text: 'produce', isCorrect: false },
+      { key: 'D', text: 'do', isCorrect: true },
     ],
     explanationTh: 'คำที่ใช้คู่กับ homework คืองานที่ได้รับมอบหมาย ใช้ "do homework" ห้ามใช้ "make homework"',
     explanationEn: 'Always use "do homework", not "make homework".',

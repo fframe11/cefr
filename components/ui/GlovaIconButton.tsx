@@ -40,7 +40,7 @@ export const GlovaIconButton = React.forwardRef<HTMLButtonElement, GlovaIconButt
 
     const variantStyles = {
       default: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border/40',
-      primary: 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm hover:from-indigo-500 hover:to-violet-500',
+      primary: 'bg-gradient-to-r from-[#FA5D5D] to-violet-600 text-white shadow-sm hover:from-[#FA5D5D] hover:to-violet-500',
       ghost: 'bg-transparent hover:bg-muted/50 text-foreground',
       outline: 'border border-border bg-transparent hover:bg-muted/40 text-foreground',
     }[variant];
@@ -55,7 +55,7 @@ export const GlovaIconButton = React.forwardRef<HTMLButtonElement, GlovaIconButt
         whileHover={shouldReduceMotion || disabled ? undefined : { scale: 1.08 }}
         whileTap={shouldReduceMotion || disabled ? undefined : { scale: 0.94 }}
         transition={GLOVA_MOTION.spring.snappy}
-        className={`inline-flex items-center justify-center transition-colors select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-40 shrink-0 ${sizeStyles} ${shapeStyles} ${variantStyles} ${className}`}
+        className={`inline-flex items-center justify-center transition-colors select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-40 shrink-0 ${sizeStyles} ${shapeStyles} ${variantStyles} ${className}`}
         {...(props as any)}
       >
         {icon}

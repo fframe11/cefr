@@ -118,14 +118,14 @@ export const WritingView: React.FC = () => {
   return (
     <div className="w-full space-y-6 pb-16">
       {/* 1. Unified Hero Header Banner - Studio DNA */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 flex-wrap">
               <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
                 <PenTool className="w-4 h-4 text-white" />
               </div>
-              <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-black uppercase tracking-wider">
                 WRITING LAB // CEFR
               </span>
               {currentPrompt && (
@@ -197,7 +197,7 @@ export const WritingView: React.FC = () => {
       )}
 
       {/* Error state */}
-      {error && (
+      {error && prompts.length === 0 && (
         <ErrorMessage message={error} onRetry={fetchPrompts} />
       )}
 
@@ -338,8 +338,8 @@ export const WritingView: React.FC = () => {
 
           {/* 3. Feedback State (Pending Evaluation & Model Answer) */}
           {isSubmitted && (
-            <div className="p-4 sm:p-5 rounded-[22px] bg-indigo-50 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-500/20 space-y-2 animate-in fade-in duration-200 shadow-xs">
-              <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-bold text-sm">
+            <div className="p-4 sm:p-5 rounded-[22px] bg-[#FA5D5D] dark:bg-[#FA5D5D]/20 border border-[#FA5D5D] dark:border-[#FA5D5D]/20 space-y-2 animate-in fade-in duration-200 shadow-xs">
+              <div className="flex items-center gap-2 text-[#FA5D5D] dark:text-[#FA5D5D] font-bold text-sm">
                 <Clock className="w-4 h-4" aria-hidden="true" />
                 <span>
                   {isEn

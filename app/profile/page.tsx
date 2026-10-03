@@ -530,14 +530,14 @@ export default function ProfilePage() {
 
               {/* Achievement 2: Sage */}
               <div className="flex items-center gap-4 p-5 hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FA5D5D]/15 text-[#FA5D5D] dark:text-[#FA5D5D]">
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-bold text-slate-900 dark:text-white">{isEn ? 'Scholar' : 'นักปราชญ์'}</span>
-                      <span className="rounded-full bg-indigo-500/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300">
+                      <span className="rounded-full bg-[#FA5D5D]/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-[#FA5D5D] dark:text-[#FA5D5D]">
                         ระดับ 1
                       </span>
                     </div>
@@ -545,7 +545,7 @@ export default function ProfilePage() {
                   </div>
                   <p className="text-xs text-slate-500 dark:text-slate-400">สะสมแต้มให้ครบ 100 XP</p>
                   <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-white/10">
-                    <div className="h-full rounded-full bg-indigo-500 w-4/5" />
+                    <div className="h-full rounded-full bg-[#FA5D5D] w-4/5" />
                   </div>
                 </div>
               </div>
@@ -753,7 +753,7 @@ export default function ProfilePage() {
                 className="flex items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors shadow-xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D]">
                     <Search className="h-4 w-4" />
                   </div>
                   <span>ค้นหาเพื่อน</span>

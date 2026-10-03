@@ -218,7 +218,7 @@ export const Header: React.FC<HeaderProps> = ({
             title={t('header.switch_theme')}
             aria-label={t('header.switch_theme')}
           >
-            {isDark ? <Sun className="w-4 h-4 text-[#F59E0B]" /> : <Moon className="w-4 h-4 text-[#38BDF8]" />}
+            {isDark ? <Sun className="w-4 h-4 text-[#F59E0B]" /> : <Moon className="w-4 h-4 text-[#FFBA38]" />}
           </button>
 
           {/* Account Profile Capsule */}

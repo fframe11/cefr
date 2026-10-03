@@ -100,10 +100,10 @@ export const CollocationsView: React.FC = () => {
   return (
     <div className="w-full space-y-6 pb-16">
       {/* Top Header Banner - Unified Studio DNA */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-3 max-w-2xl">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-black uppercase tracking-wider">
               CEFR A1–B2 High-Yield
             </span>
             <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold">
@@ -127,7 +127,7 @@ export const CollocationsView: React.FC = () => {
             onClick={() => setActiveTab('study')}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'study'
-                ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+                ? 'bg-[#FA5D5D] text-white shadow-xs font-black'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -139,7 +139,7 @@ export const CollocationsView: React.FC = () => {
             onClick={() => setActiveTab('quiz')}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'quiz'
-                ? 'bg-[#3B82F6] text-white shadow-xs font-black'
+                ? 'bg-[#FA5D5D] text-white shadow-xs font-black'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -171,7 +171,7 @@ export const CollocationsView: React.FC = () => {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer border ${
                       isSelected
-                        ? 'bg-[#3B82F6] text-white border-[#3B82F6] shadow-xs'
+                        ? 'bg-[#FA5D5D] text-white border-[#FA5D5D] shadow-xs'
                         : 'bg-white dark:bg-[#1E1B28] text-slate-600 dark:text-slate-400 border-slate-200/80 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5'
                     }`}
                   >
@@ -191,7 +191,7 @@ export const CollocationsView: React.FC = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder={isEn ? 'Search collocation or Thai...' : 'ค้นหาคำศัพท์หรือความหมาย...'}
-                  className="w-full pl-9 pr-3.5 py-2 rounded-full bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs focus:outline-hidden focus:ring-2 focus:ring-[#3B82F6]/20 shadow-2xs font-sans"
+                  className="w-full pl-9 pr-3.5 py-2 rounded-full bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs focus:outline-hidden focus:ring-2 focus:ring-[#FA5D5D]/20 shadow-2xs font-sans"
                 />
               </div>
 
@@ -221,7 +221,7 @@ export const CollocationsView: React.FC = () => {
             {filteredCollocations.map((item) => (
               <div
                 key={item.id}
-                className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs hover:border-[#3B82F6]/50 transition-colors flex flex-col justify-between"
+                className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs hover:border-[#FA5D5D]/50 transition-colors flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -239,7 +239,7 @@ export const CollocationsView: React.FC = () => {
                   <h3 className="text-base font-black text-slate-900 dark:text-white">
                     {item.collocation}
                   </h3>
-                  <p className="text-xs font-bold text-[#3B82F6] dark:text-[#60A5FA] mt-0.5">
+                  <p className="text-xs font-bold text-[#FA5D5D] dark:text-[#FFA0A0] mt-0.5">
                     {item.meaningTh}
                   </p>
 
@@ -300,10 +300,10 @@ export const CollocationsView: React.FC = () => {
                 {currentQuestion.options.map((opt) => {
                   const isSelected = currentAnswer === opt.key;
                   let optStyle =
-                    'border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#1E1B28] hover:border-[#3B82F6] shadow-2xs';
+                    'border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#1E1B28] hover:border-[#FA5D5D] shadow-2xs';
 
                   if (isSelected && !isCurrentSubmitted) {
-                    optStyle = 'border-[#3B82F6] bg-blue-50/40 dark:bg-blue-950/20 text-slate-900 dark:text-blue-100 ring-2 ring-[#3B82F6]/20';
+                    optStyle = 'border-[#FA5D5D] bg-[#FA5D5D]/40 dark:bg-[#FA5D5D]/20 text-slate-900 dark:text-[#FA5D5D] ring-2 ring-[#FA5D5D]/20';
                   }
 
                   if (isCurrentSubmitted) {
@@ -357,7 +357,7 @@ export const CollocationsView: React.FC = () => {
                     type="button"
                     disabled={!currentAnswer}
                     onClick={handleSubmitQuestion}
-                    className="px-5 py-2 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] disabled:opacity-40 text-white text-xs font-bold shadow-xs cursor-pointer active:scale-95"
+                    className="px-5 py-2 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] disabled:opacity-40 text-white text-xs font-bold shadow-xs cursor-pointer active:scale-95"
                   >
                     {isEn ? 'Check Answer' : 'ตรวจคำตอบ'}
                   </button>
@@ -366,7 +366,7 @@ export const CollocationsView: React.FC = () => {
                     type="button"
                     onClick={handleNextQuestion}
                     disabled={currentQuizIdx === COLLOCATION_PRACTICE_QUESTIONS.length - 1}
-                    className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] text-white text-xs font-bold shadow-xs disabled:opacity-40 cursor-pointer active:scale-95"
+                    className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs font-bold shadow-xs disabled:opacity-40 cursor-pointer active:scale-95"
                   >
                     <span>{isEn ? 'Next Question' : 'ข้อถัดไป'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -374,11 +374,23 @@ export const CollocationsView: React.FC = () => {
                 )}
               </div>
 
+              {/* Explicit Correct Answer Banner when Incorrect */}
+              {isCurrentSubmitted && !currentQuestion.options.find((o) => o.key === currentAnswer)?.isCorrect && (
+                <div className="flex items-center gap-2 p-3 rounded-[16px] bg-[#E3F6ED] dark:bg-[#102B22] border border-emerald-500/40 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-sans shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>
+                    {isEn
+                      ? `Correct Answer: Option ${currentQuestion.options.find((o) => o.isCorrect)?.key} (${currentQuestion.options.find((o) => o.isCorrect)?.text})`
+                      : `เฉลยคำตอบที่ถูกต้อง: ข้อ ${currentQuestion.options.find((o) => o.isCorrect)?.key} (${currentQuestion.options.find((o) => o.isCorrect)?.text})`}
+                  </span>
+                </div>
+              )}
+
               {/* Feedback Explanation */}
               {isCurrentSubmitted && (
                 <div className="p-4 rounded-[18px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/80 dark:border-white/10 text-xs space-y-1 shadow-2xs">
-                  <div className="flex items-center gap-1.5 font-bold text-[#3B82F6] mb-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
+                  <div className="flex items-center gap-1.5 font-bold text-[#FA5D5D] mb-1">
+                    <Sparkles className="w-3.5 h-3.5 text-[#FA5D5D]" />
                     <span>{isEn ? 'Pedagogical Explanation' : 'คำอธิบายเชิงไวยากรณ์'}</span>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-sans">

@@ -19,25 +19,39 @@
         "options": [
           {
             "key": "A",
-            "text": "At 6:30"
+            "text": "At 7:00",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุชัดเจนว่า 'Every morning, she wakes up at seven o'clock.')"
           },
           {
             "key": "B",
-            "text": "At 7:00"
+            "text": "At 6:30",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"At 7:00\""
           },
           {
             "key": "C",
-            "text": "At 8:00"
+            "text": "At 8:00",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"At 7:00\""
           },
           {
             "key": "D",
-            "text": "At 8:30"
+            "text": "At 8:30",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"At 7:00\""
           }
         ],
         "explanation_en": "The passage explicitly states: 'Every morning, she wakes up at seven o'clock.'",
         "explanation_th": "บทความระบุชัดเจนว่า 'Every morning, she wakes up at seven o'clock.'",
         "evidence_line": "Every morning, she wakes up at seven o'clock.",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a1_001_2",
@@ -50,25 +64,39 @@
         "options": [
           {
             "key": "A",
-            "text": "In a tea shop"
+            "text": "In a tea shop",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"At a city library\""
           },
           {
             "key": "B",
-            "text": "At a city library"
+            "text": "At a city library",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความกล่าวว่า 'she walks to the city library where she works as a book assistant.')"
           },
           {
             "key": "C",
-            "text": "In a music store"
+            "text": "In a music store",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"At a city library\""
           },
           {
             "key": "D",
-            "text": "At a local hospital"
+            "text": "At a local hospital",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"At a city library\""
           }
         ],
         "explanation_en": "The passage says: 'she walks to the city library where she works as a book assistant.'",
         "explanation_th": "บทความกล่าวว่า 'she walks to the city library where she works as a book assistant.'",
         "evidence_line": "she walks to the city library where she works as a book assistant.",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a1_001_3",
@@ -81,25 +109,39 @@
         "options": [
           {
             "key": "A",
-            "text": "By bus"
+            "text": "By bus",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"On foot\""
           },
           {
             "key": "B",
-            "text": "By train"
+            "text": "By train",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"On foot\""
           },
           {
             "key": "C",
-            "text": "On foot"
+            "text": "On foot",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ข้อความระบุ 'she walks to the city library' ซึ่งหมายถึงการเดินเท้า (on foot))"
           },
           {
             "key": "D",
-            "text": "By bicycle"
+            "text": "By bicycle",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"On foot\""
           }
         ],
         "explanation_en": "She 'walks to the city library', which means traveling on foot.",
         "explanation_th": "ข้อความระบุ 'she walks to the city library' ซึ่งหมายถึงการเดินเท้า (on foot)",
         "evidence_line": "she walks to the city library",
-        "weakness_tag": "reading_vocabulary_synonym_a1"
+        "weakness_tag": "reading_vocabulary_synonym_a1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a1_001_4",
@@ -112,25 +154,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Maria's vacation in Spain"
+            "text": "Maria's vacation in Spain",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Maria's daily habits and job\""
           },
           {
             "key": "B",
-            "text": "How to cook Italian pasta"
+            "text": "How to cook Italian pasta",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Maria's daily habits and job\""
           },
           {
             "key": "C",
-            "text": "Maria's daily habits and job"
+            "text": "The history of Madrid libraries",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Maria's daily habits and job\""
           },
           {
             "key": "D",
-            "text": "The history of Madrid libraries"
+            "text": "Maria's daily habits and job",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความบรรยายกิจวัตรประจำวันของมาเรียตั้งแต่ตื่นนอน การทำงาน จนถึงเวลาพักผ่อน)"
           }
         ],
         "explanation_en": "The passage describes Maria's routine, work duties, and evening relaxation.",
         "explanation_th": "บทความบรรยายกิจวัตรประจำวันของมาเรียตั้งแต่ตื่นนอน การทำงาน จนถึงเวลาพักผ่อน",
         "evidence_line": "Maria is twenty-two years old and lives in Madrid... In the evening...",
-        "weakness_tag": "reading_main_idea_a1"
+        "weakness_tag": "reading_main_idea_a1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -154,25 +210,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Ten"
+            "text": "Twenty",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุ 'Twenty families share this green space')"
           },
           {
             "key": "B",
-            "text": "Twelve"
+            "text": "Ten",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Twenty\""
           },
           {
             "key": "C",
-            "text": "Twenty"
+            "text": "Twelve",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Twenty\""
           },
           {
             "key": "D",
-            "text": "Thirty"
+            "text": "Thirty",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Twenty\""
           }
         ],
         "explanation_en": "The passage states: 'Twenty families share this green space...'",
         "explanation_th": "บทความระบุ 'Twenty families share this green space'",
         "evidence_line": "Twenty families share this green space",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a1_002_2",
@@ -185,25 +255,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Sunflowers and mint"
+            "text": "Sunflowers and mint",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Tomatoes and carrots\""
           },
           {
             "key": "B",
-            "text": "Tomatoes and carrots"
+            "text": "Tomatoes and carrots",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุ 'Mr. Lee plants sweet tomatoes and carrots.')"
           },
           {
             "key": "C",
-            "text": "Apples and oranges"
+            "text": "Apples and oranges",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Tomatoes and carrots\""
           },
           {
             "key": "D",
-            "text": "Potatoes and onions"
+            "text": "Potatoes and onions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Tomatoes and carrots\""
           }
         ],
         "explanation_en": "The text states: 'Mr. Lee plants sweet tomatoes and carrots.'",
         "explanation_th": "บทความระบุ 'Mr. Lee plants sweet tomatoes and carrots.'",
         "evidence_line": "Mr. Lee plants sweet tomatoes and carrots.",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a1_002_3",
@@ -216,25 +300,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Cook lunch"
+            "text": "Cook lunch",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water the plants\""
           },
           {
             "key": "B",
-            "text": "Water the plants"
+            "text": "Sell vegetables",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water the plants\""
           },
           {
             "key": "C",
-            "text": "Sell vegetables"
+            "text": "Water the plants",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุว่าเด็กๆ รดน้ำต้นไม้ด้วยถังน้ำสีฟ้าขนาดเล็ก)"
           },
           {
             "key": "D",
-            "text": "Paint the garden fence"
+            "text": "Paint the garden fence",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water the plants\""
           }
         ],
         "explanation_en": "The passage says: 'children water the plants with small blue buckets...'",
         "explanation_th": "บทความระบุว่าเด็กๆ รดน้ำต้นไม้ด้วยถังน้ำสีฟ้าขนาดเล็ก",
         "evidence_line": "children water the plants with small blue buckets",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a1_002_4",
@@ -247,25 +345,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They compete for prizes"
+            "text": "They compete for prizes",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They cooperate and share food\""
           },
           {
             "key": "B",
-            "text": "They rarely talk to one another"
+            "text": "They rarely talk to one another",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They cooperate and share food\""
           },
           {
             "key": "C",
-            "text": "They cooperate and share food"
+            "text": "They sell garden tickets to tourists",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They cooperate and share food\""
           },
           {
             "key": "D",
-            "text": "They sell garden tickets to tourists"
+            "text": "They cooperate and share food",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความบอกว่าทุกคนเป็นมิตร ช่วยกันดูแลสวน และแบ่งปันผลไม้ในมื้ออาหารชุมชน)"
           }
         ],
         "explanation_en": "The text states 'Everyone is very friendly' and 'share fresh fruit' at a community lunch.",
         "explanation_th": "บทความบอกว่าทุกคนเป็นมิตร ช่วยกันดูแลสวน และแบ่งปันผลไม้ในมื้ออาหารชุมชน",
         "evidence_line": "Everyone is very friendly... organize a community lunch and share fresh fruit.",
-        "weakness_tag": "reading_inference_a1"
+        "weakness_tag": "reading_inference_a1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -289,25 +401,39 @@
         "options": [
           {
             "key": "A",
-            "text": "His school friends"
+            "text": "His parents",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุ 'David traveled with his parents')"
           },
           {
             "key": "B",
-            "text": "His parents"
+            "text": "His school friends",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"His parents\""
           },
           {
             "key": "C",
-            "text": "His older brother"
+            "text": "His older brother",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"His parents\""
           },
           {
             "key": "D",
-            "text": "He traveled alone"
+            "text": "He traveled alone",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"His parents\""
           }
         ],
         "explanation_en": "The passage says: 'David traveled with his parents...'",
         "explanation_th": "บทความระบุ 'David traveled with his parents'",
         "evidence_line": "David traveled with his parents",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a1_003_2",
@@ -320,25 +446,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Rainy and windy"
+            "text": "Rainy and windy",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Sunny but cool\""
           },
           {
             "key": "B",
-            "text": "Hot and humid"
+            "text": "Sunny but cool",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุ 'The weather was sunny but cool.')"
           },
           {
             "key": "C",
-            "text": "Sunny but cool"
+            "text": "Hot and humid",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Sunny but cool\""
           },
           {
             "key": "D",
-            "text": "Snowy and foggy"
+            "text": "Snowy and foggy",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Sunny but cool\""
           }
         ],
         "explanation_en": "The text states: 'The weather was sunny but cool.'",
         "explanation_th": "บทความระบุ 'The weather was sunny but cool.'",
         "evidence_line": "The weather was sunny but cool.",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a1_003_3",
@@ -351,25 +491,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Grilled meat with potatoes"
+            "text": "Grilled meat with potatoes",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Pumpkin soup with bread\""
           },
           {
             "key": "B",
-            "text": "Pumpkin soup with bread"
+            "text": "Fried rice with eggs",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Pumpkin soup with bread\""
           },
           {
             "key": "C",
-            "text": "Fried rice with eggs"
+            "text": "Pumpkin soup with bread",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุ 'they ate warm pumpkin soup with fresh brown bread.')"
           },
           {
             "key": "D",
-            "text": "Tomato salad with cheese"
+            "text": "Tomato salad with cheese",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Pumpkin soup with bread\""
           }
         ],
         "explanation_en": "The text says: 'they ate warm pumpkin soup with fresh brown bread.'",
         "explanation_th": "บทความระบุ 'they ate warm pumpkin soup with fresh brown bread.'",
         "evidence_line": "they ate warm pumpkin soup with fresh brown bread.",
-        "weakness_tag": "reading_detail_retrieval_a1"
+        "weakness_tag": "reading_detail_retrieval_a1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a1_003_4",
@@ -382,25 +536,39 @@
         "options": [
           {
             "key": "A",
-            "text": "He used a powerful telescope"
+            "text": "He used a powerful telescope",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"There was no artificial city light\""
           },
           {
             "key": "B",
-            "text": "There was no artificial city light"
+            "text": "He climbed the highest pine tree",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"There was no artificial city light\""
           },
           {
             "key": "C",
-            "text": "He climbed the highest pine tree"
+            "text": "The moon was exceptionally bright",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"There was no artificial city light\""
           },
           {
             "key": "D",
-            "text": "The moon was exceptionally bright"
+            "text": "There was no artificial city light",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (เนื่องจากไม่มีอาคารสูงหรือแสงไฟนีออนของเมืองบดบังทัศนียภาพ)"
           }
         ],
         "explanation_en": "The text notes: 'because there were no tall city buildings or bright neon lamps.'",
         "explanation_th": "เนื่องจากไม่มีอาคารสูงหรือแสงไฟนีออนของเมืองบดบังทัศนียภาพ",
         "evidence_line": "because there were no tall city buildings or bright neon lamps.",
-        "weakness_tag": "reading_inference_a1"
+        "weakness_tag": "reading_inference_a1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -424,25 +592,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Because of rising pollution and traffic congestion"
+            "text": "Because of rising pollution and traffic congestion",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่ามลพิษทางอากาศเพิ่มขึ้น และถนนแคบๆ หนาแน่นไปด้วยการจราจร)"
           },
           {
             "key": "B",
-            "text": "To build an underground railway station"
+            "text": "To build an underground railway station",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Because of rising pollution and traffic congestion\""
           },
           {
             "key": "C",
-            "text": "To attract large automotive factories"
+            "text": "To attract large automotive factories",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Because of rising pollution and traffic congestion\""
           },
           {
             "key": "D",
-            "text": "Because the roads were severely flooded"
+            "text": "Because the roads were severely flooded",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Because of rising pollution and traffic congestion\""
           }
         ],
         "explanation_en": "Text states: 'Air pollution was rising, and the narrow cobblestone streets were crowded with traffic.'",
         "explanation_th": "ระบุว่ามลพิษทางอากาศเพิ่มขึ้น และถนนแคบๆ หนาแน่นไปด้วยการจราจร",
         "evidence_line": "Air pollution was rising, and the narrow cobblestone streets were crowded with traffic.",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a2_001_2",
@@ -455,25 +637,39 @@
         "options": [
           {
             "key": "A",
-            "text": "By buying paper tickets at the town hall"
+            "text": "By buying paper tickets at the town hall",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Through a mobile application\""
           },
           {
             "key": "B",
-            "text": "Through a mobile application"
+            "text": "Through a mobile application",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่าผู้พักอาศัยและนักท่องเที่ยวสามารถยืมจักรยานได้ผ่านแอปบนสมาร์ทโฟน)"
           },
           {
             "key": "C",
-            "text": "By paying cash to hotel receptionists"
+            "text": "By paying cash to hotel receptionists",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Through a mobile application\""
           },
           {
             "key": "D",
-            "text": "By showing a driver's license"
+            "text": "By showing a driver's license",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Through a mobile application\""
           }
         ],
         "explanation_en": "Text says: 'residents and tourists can borrow using a smartphone app.'",
         "explanation_th": "ระบุว่าผู้พักอาศัยและนักท่องเที่ยวสามารถยืมจักรยานได้ผ่านแอปบนสมาร์ทโฟน",
         "evidence_line": "borrow using a smartphone app",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a2_001_3",
@@ -486,25 +682,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Delivery trucks arrived earlier in the day"
+            "text": "Delivery trucks arrived earlier in the day",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"People spend more time browsing market stalls\""
           },
           {
             "key": "B",
-            "text": "Rents for commercial shops increased"
+            "text": "Rents for commercial shops increased",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"People spend more time browsing market stalls\""
           },
           {
             "key": "C",
-            "text": "People spend more time browsing market stalls"
+            "text": "People spend more time browsing market stalls",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ผู้คนที่เดินเท้าใช้เวลาเดินดูร้านค้ามากขึ้นเพราะอากาศสะอาดและถนนปลอดภัย)"
           },
           {
             "key": "D",
-            "text": "Shop owners opened branch stores"
+            "text": "Shop owners opened branch stores",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"People spend more time browsing market stalls\""
           }
         ],
         "explanation_en": "Text states: 'pedestrians now spend more time browsing market stalls because the air is clean...'",
         "explanation_th": "ผู้คนที่เดินเท้าใช้เวลาเดินดูร้านค้ามากขึ้นเพราะอากาศสะอาดและถนนปลอดภัย",
         "evidence_line": "pedestrians now spend more time browsing market stalls",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a2_001_4",
@@ -517,25 +727,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They consider it too costly to maintain"
+            "text": "They consider it too costly to maintain",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view it as an effective model to adopt\""
           },
           {
             "key": "B",
-            "text": "They view it as an effective model to adopt"
+            "text": "They fear it will discourage tourists from visiting",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view it as an effective model to adopt\""
           },
           {
             "key": "C",
-            "text": "They fear it will discourage tourists from visiting"
+            "text": "They rejected the proposal after public debate",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view it as an effective model to adopt\""
           },
           {
             "key": "D",
-            "text": "They rejected the proposal after public debate"
+            "text": "They view it as an effective model to adopt",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (เมืองชายฝั่งใกล้เคียงวางแผนจะนำโครงการนี้ไปใช้ตามในฤดูร้อนหน้า แสดงว่าเห็นว่าเป็นแบบอย่างที่ดี)"
           }
         ],
         "explanation_en": "Text states: 'neighboring coastal towns are now planning to copy the project next summer.'",
         "explanation_th": "เมืองชายฝั่งใกล้เคียงวางแผนจะนำโครงการนี้ไปใช้ตามในฤดูร้อนหน้า แสดงว่าเห็นว่าเป็นแบบอย่างที่ดี",
         "evidence_line": "neighboring coastal towns are now planning to copy the project next summer.",
-        "weakness_tag": "reading_inference_a2"
+        "weakness_tag": "reading_inference_a2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -559,25 +783,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The mineral and gemstone room"
+            "text": "The Cretaceous Hall with the dinosaur skeleton",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่าห้อง Cretaceous Hall ที่มีโครงกระดูกไดโนเสาร์ขนาดยาว 30 เมตรได้รับความนิยมมากที่สุด)"
           },
           {
             "key": "B",
-            "text": "The Cretaceous Hall with the dinosaur skeleton"
+            "text": "The mineral and gemstone room",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"The Cretaceous Hall with the dinosaur skeleton\""
           },
           {
             "key": "C",
-            "text": "The botanical glass greenhouse"
+            "text": "The botanical glass greenhouse",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"The Cretaceous Hall with the dinosaur skeleton\""
           },
           {
             "key": "D",
-            "text": "The planetarium show"
+            "text": "The planetarium show",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"The Cretaceous Hall with the dinosaur skeleton\""
           }
         ],
         "explanation_en": "Text says: 'The most popular attraction was the Cretaceous Hall, which features a thirty-meter-long cast skeleton...'",
         "explanation_th": "ระบุว่าห้อง Cretaceous Hall ที่มีโครงกระดูกไดโนเสาร์ขนาดยาว 30 เมตรได้รับความนิยมมากที่สุด",
         "evidence_line": "The most popular attraction was the Cretaceous Hall",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a2_002_2",
@@ -590,25 +828,39 @@
         "options": [
           {
             "key": "A",
-            "text": "How ancient fossils are cleaned and cataloged"
+            "text": "How ancient fossils are cleaned and cataloged",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"How volcanic rocks form from cooling lava\""
           },
           {
             "key": "B",
-            "text": "How volcanic rocks form from cooling lava"
+            "text": "How volcanic rocks form from cooling lava",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (นักธรณีวิทยาอธิบายการเกิดหินบะซอลต์และหินพัมมิซเมื่อลาวาหลอมเหลวเย็นตัวลงอย่างรวดเร็ว)"
           },
           {
             "key": "C",
-            "text": "Why dinosaurs became extinct millions of years ago"
+            "text": "Why dinosaurs became extinct millions of years ago",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"How volcanic rocks form from cooling lava\""
           },
           {
             "key": "D",
-            "text": "How earthquakes are measured using seismographs"
+            "text": "How earthquakes are measured using seismographs",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"How volcanic rocks form from cooling lava\""
           }
         ],
         "explanation_en": "Text states: 'A museum geologist demonstrated how basalt and pumice form when red-hot molten lava cools down rapidly.'",
         "explanation_th": "นักธรณีวิทยาอธิบายการเกิดหินบะซอลต์และหินพัมมิซเมื่อลาวาหลอมเหลวเย็นตัวลงอย่างรวดเร็ว",
         "evidence_line": "demonstrated how basalt and pumice form when red-hot molten lava cools down rapidly.",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a2_002_3",
@@ -621,25 +873,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Science textbooks and magnifying glasses"
+            "text": "Science textbooks and magnifying glasses",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Postcards and small dinosaur figures\""
           },
           {
             "key": "B",
-            "text": "Postcards and small dinosaur figures"
+            "text": "Sandwiches and apple juice",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Postcards and small dinosaur figures\""
           },
           {
             "key": "C",
-            "text": "Sandwiches and apple juice"
+            "text": "Postcards and small dinosaur figures",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (นักเรียนซื้อโปสการ์ดและโมเดลไดโนเสาร์จำลองขนาดเล็กที่ร้านขายของที่ระลึก)"
           },
           {
             "key": "D",
-            "text": "Volcanic stone pendants"
+            "text": "Volcanic stone pendants",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Postcards and small dinosaur figures\""
           }
         ],
         "explanation_en": "Text says: 'the students purchased postcards and miniature dinosaur models at the souvenir shop.'",
         "explanation_th": "นักเรียนซื้อโปสการ์ดและโมเดลไดโนเสาร์จำลองขนาดเล็กที่ร้านขายของที่ระลึก",
         "evidence_line": "purchased postcards and miniature dinosaur models",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a2_002_4",
@@ -652,25 +918,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It exempted them from their final science exam"
+            "text": "It exempted them from their final science exam",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It connected textbook theories with practical experience\""
           },
           {
             "key": "B",
-            "text": "It connected textbook theories with practical experience"
+            "text": "It allowed them to meet international scientists",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It connected textbook theories with practical experience\""
           },
           {
             "key": "C",
-            "text": "It allowed them to meet international scientists"
+            "text": "It taught them how to manage historical collections",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It connected textbook theories with practical experience\""
           },
           {
             "key": "D",
-            "text": "It taught them how to manage historical collections"
+            "text": "It connected textbook theories with practical experience",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ทัศนศึกษาช่วยให้นักเรียนเข้าใจแนวคิดในหนังสือเรียนชีววิทยาผ่านการสัมผัสและประสบการณ์ตรง)"
           }
         ],
         "explanation_en": "The final sentence states: 'The visit helped them understand their biology textbook concepts with hands-on enjoyment.'",
         "explanation_th": "ทัศนศึกษาช่วยให้นักเรียนเข้าใจแนวคิดในหนังสือเรียนชีววิทยาผ่านการสัมผัสและประสบการณ์ตรง",
         "evidence_line": "helped them understand their biology textbook concepts with hands-on enjoyment.",
-        "weakness_tag": "reading_inference_a2"
+        "weakness_tag": "reading_inference_a2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -694,25 +974,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Flour, milk, and butter"
+            "text": "Flour, water, and salt",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่าขนมปังซาวร์โดดั้งเดิมใช้วัตถุดิบเพียง 3 อย่าง คือ แป้ง น้ำ และเกลือ)"
           },
           {
             "key": "B",
-            "text": "Flour, water, and salt"
+            "text": "Flour, milk, and butter",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Flour, water, and salt\""
           },
           {
             "key": "C",
-            "text": "Yeast, sugar, and eggs"
+            "text": "Yeast, sugar, and eggs",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Flour, water, and salt\""
           },
           {
             "key": "D",
-            "text": "Wheat, honey, and olive oil"
+            "text": "Wheat, honey, and olive oil",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Flour, water, and salt\""
           }
         ],
         "explanation_en": "Text states: 'traditional sourdough requires only three simple ingredients: flour, water, and salt.'",
         "explanation_th": "ระบุว่าขนมปังซาวร์โดดั้งเดิมใช้วัตถุดิบเพียง 3 อย่าง คือ แป้ง น้ำ และเกลือ",
         "evidence_line": "requires only three simple ingredients: flour, water, and salt.",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_a2_003_2",
@@ -725,25 +1019,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Store it in an airtight freezer"
+            "text": "Store it in an airtight freezer",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Add fresh flour and warm water\""
           },
           {
             "key": "B",
-            "text": "Bake a small portion of it"
+            "text": "Add fresh flour and warm water",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (คนทำขนมปังต้องให้อาหารหัวเชื้อด้วยแป้งสดใหม่และน้ำอุ่นทุกวัน)"
           },
           {
             "key": "C",
-            "text": "Add fresh flour and warm water"
+            "text": "Bake a small portion of it",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Add fresh flour and warm water\""
           },
           {
             "key": "D",
-            "text": "Boil it over low heat"
+            "text": "Boil it over low heat",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Add fresh flour and warm water\""
           }
         ],
         "explanation_en": "Text says: 'Bakers must feed their starter with fresh flour and warm water every day...'",
         "explanation_th": "คนทำขนมปังต้องให้อาหารหัวเชื้อด้วยแป้งสดใหม่และน้ำอุ่นทุกวัน",
         "evidence_line": "feed their starter with fresh flour and warm water every day",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_a2_003_3",
@@ -756,25 +1064,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Lemon juice added before baking"
+            "text": "Lemon juice added before baking",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Organic acids from the slow fermentation\""
           },
           {
             "key": "B",
-            "text": "Organic acids from the slow fermentation"
+            "text": "Industrial vinegar sprayed on the crust",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Organic acids from the slow fermentation\""
           },
           {
             "key": "C",
-            "text": "Industrial vinegar sprayed on the crust"
+            "text": "Organic acids from the slow fermentation",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (กรดอินทรีย์ที่จุลินทรีย์สร้างขึ้นระหว่างการหมักอย่างช้าๆ ทำให้เกิดรสเปรี้ยวกลมกล่อม)"
           },
           {
             "key": "D",
-            "text": "Artificial flavoring from packaged yeast"
+            "text": "Artificial flavoring from packaged yeast",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Organic acids from the slow fermentation\""
           }
         ],
         "explanation_en": "Text says: 'produce organic acids that give sourdough its distinctive tangy flavor...'",
         "explanation_th": "กรดอินทรีย์ที่จุลินทรีย์สร้างขึ้นระหว่างการหมักอย่างช้าๆ ทำให้เกิดรสเปรี้ยวกลมกล่อม",
         "evidence_line": "produce organic acids that give sourdough its distinctive tangy flavor",
-        "weakness_tag": "reading_detail_retrieval_a2"
+        "weakness_tag": "reading_detail_retrieval_a2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_a2_003_4",
@@ -787,25 +1109,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It contains zero wheat ingredients"
+            "text": "It contains zero wheat ingredients",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prolonged fermentation breaks down gluten structures\""
           },
           {
             "key": "B",
-            "text": "It is baked at much higher temperatures"
+            "text": "It is baked at much higher temperatures",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prolonged fermentation breaks down gluten structures\""
           },
           {
             "key": "C",
-            "text": "The prolonged fermentation breaks down gluten structures"
+            "text": "It has added dietary fiber supplements",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prolonged fermentation breaks down gluten structures\""
           },
           {
             "key": "D",
-            "text": "It has added dietary fiber supplements"
+            "text": "The prolonged fermentation breaks down gluten structures",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การหมักที่ยาวนานทำให้แบคทีเรียย่อยสลายโครงสร้างกลูเตน จึงย่อยได้ง่ายขึ้น)"
           }
         ],
         "explanation_en": "Text states: 'During this slow rise, the bacteria break down gluten... much easier to digest.'",
         "explanation_th": "การหมักที่ยาวนานทำให้แบคทีเรียย่อยสลายโครงสร้างกลูเตน จึงย่อยได้ง่ายขึ้น",
         "evidence_line": "During this slow rise, the bacteria break down gluten... much easier to digest.",
-        "weakness_tag": "reading_inference_a2"
+        "weakness_tag": "reading_inference_a2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -829,25 +1165,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Growing ecological awareness and airport travel fatigue"
+            "text": "Growing ecological awareness and airport travel fatigue",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความระบุความกังวลเรื่องคาร์บอนฟุตพริ้นท์ของการบินร่วมกับปัญหาความล่าช้าในสนามบิน)"
           },
           {
             "key": "B",
-            "text": "The complete shutdown of budget airline routes"
+            "text": "The complete shutdown of budget airline routes",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Growing ecological awareness and airport travel fatigue\""
           },
           {
             "key": "C",
-            "text": "Government mandates banning all domestic flights"
+            "text": "Government mandates banning all domestic flights",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Growing ecological awareness and airport travel fatigue\""
           },
           {
             "key": "D",
-            "text": "Massive reductions in railway ticket costs"
+            "text": "Massive reductions in railway ticket costs",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Growing ecological awareness and airport travel fatigue\""
           }
         ],
         "explanation_en": "Text cites 'growing public concern over the aviation sector's carbon footprint, combined with worsening airport delays'.",
         "explanation_th": "บทความระบุความกังวลเรื่องคาร์บอนฟุตพริ้นท์ของการบินร่วมกับปัญหาความล่าช้าในสนามบิน",
         "evidence_line": "growing public concern over the aviation sector's carbon footprint, combined with worsening airport delays",
-        "weakness_tag": "reading_main_idea_b1"
+        "weakness_tag": "reading_main_idea_b1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b1_001_2",
@@ -860,25 +1210,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Full-size swimming pools and gaming arcades"
+            "text": "Full-size swimming pools and gaming arcades",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Private bathrooms, sound insulation, and internet connectivity\""
           },
           {
             "key": "B",
-            "text": "Private bathrooms, sound insulation, and internet connectivity"
+            "text": "Private bathrooms, sound insulation, and internet connectivity",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุสิ่งอำนวยความสะดวก: ห้องน้ำส่วนตัว, Wi-Fi ความเร็วสูง, ฉนวนกันเสียง และที่เก็บจักรยาน)"
           },
           {
             "key": "C",
-            "text": "Self-driving automated lounge cars"
+            "text": "Self-driving automated lounge cars",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Private bathrooms, sound insulation, and internet connectivity\""
           },
           {
             "key": "D",
-            "text": "Complimentary car rental vouchers upon arrival"
+            "text": "Complimentary car rental vouchers upon arrival",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Private bathrooms, sound insulation, and internet connectivity\""
           }
         ],
         "explanation_en": "Text lists: 'private en-suite compartments, high-speed Wi-Fi, noise-dampening insulation, and bicycle storage'.",
         "explanation_th": "ระบุสิ่งอำนวยความสะดวก: ห้องน้ำส่วนตัว, Wi-Fi ความเร็วสูง, ฉนวนกันเสียง และที่เก็บจักรยาน",
         "evidence_line": "private en-suite compartments, high-speed Wi-Fi, noise-dampening insulation",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b1_001_3",
@@ -891,25 +1255,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Approximately 35% less"
+            "text": "Approximately 35% less",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Approximately 85% less\""
           },
           {
             "key": "B",
-            "text": "Approximately 50% less"
+            "text": "Approximately 50% less",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Approximately 85% less\""
           },
           {
             "key": "C",
-            "text": "Approximately 85% less"
+            "text": "Approximately 85% less",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ข้อความระบุชัดเจนว่า 'emits roughly eighty-five percent less greenhouse gas')"
           },
           {
             "key": "D",
-            "text": "Approximately 99% less"
+            "text": "Approximately 99% less",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Approximately 85% less\""
           }
         ],
         "explanation_en": "The passage clearly states: 'emits roughly eighty-five percent less greenhouse gas per passenger...'",
         "explanation_th": "ข้อความระบุชัดเจนว่า 'emits roughly eighty-five percent less greenhouse gas'",
         "evidence_line": "emits roughly eighty-five percent less greenhouse gas per passenger",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b1_001_4",
@@ -922,25 +1300,39 @@
         "options": [
           {
             "key": "A",
-            "text": "A sudden financial collapse"
+            "text": "A sudden financial collapse",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A renewal or return of popularity\""
           },
           {
             "key": "B",
-            "text": "A renewal or return of popularity"
+            "text": "An unpredictable technical failure",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A renewal or return of popularity\""
           },
           {
             "key": "C",
-            "text": "An unpredictable technical failure"
+            "text": "A strict government inspection",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A renewal or return of popularity\""
           },
           {
             "key": "D",
-            "text": "A strict government inspection"
+            "text": "A renewal or return of popularity",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('resurgence' หมายถึง การฟื้นคืนกลับมาได้รับความนิยมหรือกลับมามีบทบาทใหม่อีกครั้ง)"
           }
         ],
         "explanation_en": "'Resurgence' means a rising again into life, activity, or prominence after a period of decline.",
         "explanation_th": "'resurgence' หมายถึง การฟื้นคืนกลับมาได้รับความนิยมหรือกลับมามีบทบาทใหม่อีกครั้ง",
         "evidence_line": "has sparked a major resurgence in rail travel",
-        "weakness_tag": "reading_vocabulary_context_b1"
+        "weakness_tag": "reading_vocabulary_context_b1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b1_001_5",
@@ -953,25 +1345,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They receive guaranteed free flight tickets for future travel"
+            "text": "They save hotel costs and arrive right in city centers",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การเดินทางข้ามคืนช่วยประหยัดเวลาและเดินทางถึงใจกลางเมืองโดยตรงพร้อมเริ่มกิจกรรมได้ทันที)"
           },
           {
             "key": "B",
-            "text": "They save hotel costs and arrive right in city centers"
+            "text": "They receive guaranteed free flight tickets for future travel",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"They save hotel costs and arrive right in city centers\""
           },
           {
             "key": "C",
-            "text": "Trains travel twice as fast as modern airplanes"
+            "text": "Trains travel twice as fast as modern airplanes",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"They save hotel costs and arrive right in city centers\""
           },
           {
             "key": "D",
-            "text": "Train stations have no customs inspections whatsoever"
+            "text": "Train stations have no customs inspections whatsoever",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"They save hotel costs and arrive right in city centers\""
           }
         ],
         "explanation_en": "Traveling overnight acts as accommodation while transporting passengers directly from downtown to downtown rested.",
         "explanation_th": "การเดินทางข้ามคืนช่วยประหยัดเวลาและเดินทางถึงใจกลางเมืองโดยตรงพร้อมเริ่มกิจกรรมได้ทันที",
         "evidence_line": "arrive in the heart of Rome or Berlin early the next morning without the stress",
-        "weakness_tag": "reading_inference_b1"
+        "weakness_tag": "reading_inference_b1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       }
     ]
   },
@@ -995,25 +1401,39 @@
         "options": [
           {
             "key": "A",
-            "text": "To criticize traditional farming methods in rural regions"
+            "text": "To criticize traditional farming methods in rural regions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"To explain the environmental and economic advantages of rooftop farming\""
           },
           {
             "key": "B",
-            "text": "To explain the environmental and economic advantages of rooftop farming"
+            "text": "To explain the environmental and economic advantages of rooftop farming",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความอธิบายประโยชน์รอบด้าน ทั้งด้านอาหาร การลดการใช้พลังงาน และการจัดการน้ำของฟาร์มดาดฟ้า)"
           },
           {
             "key": "C",
-            "text": "To advertise commercial real estate in Singapore"
+            "text": "To advertise commercial real estate in Singapore",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"To explain the environmental and economic advantages of rooftop farming\""
           },
           {
             "key": "D",
-            "text": "To document the history of ancient hanging gardens"
+            "text": "To document the history of ancient hanging gardens",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"To explain the environmental and economic advantages of rooftop farming\""
           }
         ],
         "explanation_en": "The passage outlines the food production efficiency, cooling benefits, and stormwater management of rooftop farming.",
         "explanation_th": "บทความอธิบายประโยชน์รอบด้าน ทั้งด้านอาหาร การลดการใช้พลังงาน และการจัดการน้ำของฟาร์มดาดฟ้า",
         "evidence_line": "transforming bare concrete rooftops into thriving hydroponic farms... thermodynamic benefits",
-        "weakness_tag": "reading_main_idea_b1"
+        "weakness_tag": "reading_main_idea_b1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b1_002_2",
@@ -1026,25 +1446,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It uses twice as much water"
+            "text": "It uses twice as much water",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It uses up to 90% less freshwater\""
           },
           {
             "key": "B",
-            "text": "It consumes roughly the same volume"
+            "text": "It consumes roughly the same volume",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It uses up to 90% less freshwater\""
           },
           {
             "key": "C",
-            "text": "It uses up to 90% less freshwater"
+            "text": "It uses up to 90% less freshwater",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่าใช้น้ำจืดน้อยกว่าฟาร์มแบบดั้งเดิมถึงร้อยละ 90 ด้วยระบบน้ำหมุนเวียน)"
           },
           {
             "key": "D",
-            "text": "It depends completely on untreated rainwater"
+            "text": "It depends completely on untreated rainwater",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It uses up to 90% less freshwater\""
           }
         ],
         "explanation_en": "Text says: 'consume up to ninety percent less freshwater than traditional farms'.",
         "explanation_th": "ระบุว่าใช้น้ำจืดน้อยกว่าฟาร์มแบบดั้งเดิมถึงร้อยละ 90 ด้วยระบบน้ำหมุนเวียน",
         "evidence_line": "consume up to ninety percent less freshwater than traditional farms",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b1_002_3",
@@ -1057,25 +1491,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They generate solar electricity directly into the grid"
+            "text": "They generate solar electricity directly into the grid",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Vegetation absorbs sun rays, reducing indoor cooling needs\""
           },
           {
             "key": "B",
-            "text": "Vegetation absorbs sun rays, reducing indoor cooling needs"
+            "text": "They block natural ventilation across top floors",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Vegetation absorbs sun rays, reducing indoor cooling needs\""
           },
           {
             "key": "C",
-            "text": "They block natural ventilation across top floors"
+            "text": "They require continuous heating lamps overnight",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Vegetation absorbs sun rays, reducing indoor cooling needs\""
           },
           {
             "key": "D",
-            "text": "They require continuous heating lamps overnight"
+            "text": "Vegetation absorbs sun rays, reducing indoor cooling needs",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (พืชผักช่วยดูดซับรังสีความร้อน ลดอุณหภูมิดาดฟ้า และช่วยประหยัดค่าไฟแอร์ลงได้อย่างมาก)"
           }
         ],
         "explanation_en": "Text states: 'absorbs solar radiation, reducing interior rooftop temperatures... drastically lowering air-conditioning electricity bills.'",
         "explanation_th": "พืชผักช่วยดูดซับรังสีความร้อน ลดอุณหภูมิดาดฟ้า และช่วยประหยัดค่าไฟแอร์ลงได้อย่างมาก",
         "evidence_line": "absorbs solar radiation, reducing interior rooftop temperatures... drastically lowering air-conditioning electricity bills.",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b1_002_4",
@@ -1088,25 +1536,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It diverts water directly into domestic drinking supplies"
+            "text": "It retains water to ease pressure on city drainage systems",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ดินปลูกทำหน้าที่เสมือนฟองน้ำช่วยซับน้ำฝน ไม่ให้ไหลล้นลงท่อระบายน้ำจนเกิดน้ำท่วมขังตามถนน)"
           },
           {
             "key": "B",
-            "text": "It retains water to ease pressure on city drainage systems"
+            "text": "It diverts water directly into domestic drinking supplies",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It retains water to ease pressure on city drainage systems\""
           },
           {
             "key": "C",
-            "text": "It causes structural leaks across top floor ceilings"
+            "text": "It causes structural leaks across top floor ceilings",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It retains water to ease pressure on city drainage systems\""
           },
           {
             "key": "D",
-            "text": "It washes away soil particles into sewer mains"
+            "text": "It washes away soil particles into sewer mains",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It retains water to ease pressure on city drainage systems\""
           }
         ],
         "explanation_en": "Text says: 'acts as a natural retention sponge, absorbing stormwater runoff that would otherwise overwhelm municipal storm drains'.",
         "explanation_th": "ดินปลูกทำหน้าที่เสมือนฟองน้ำช่วยซับน้ำฝน ไม่ให้ไหลล้นลงท่อระบายน้ำจนเกิดน้ำท่วมขังตามถนน",
         "evidence_line": "acts as a natural retention sponge, absorbing stormwater runoff",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b1_002_5",
@@ -1119,25 +1581,39 @@
         "options": [
           {
             "key": "A",
-            "text": "A severe shortage of agricultural plant seeds"
+            "text": "A severe shortage of agricultural plant seeds",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"High upfront costs for building reinforcement and plumbing\""
           },
           {
             "key": "B",
-            "text": "Strict health laws banning vegetable sales in cities"
+            "text": "High upfront costs for building reinforcement and plumbing",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่าเงินลงทุนเริ่มต้นด้านการเสริมโครงสร้างอาคารและระบบประปายังเป็นอุปสรรคสำคัญ)"
           },
           {
             "key": "C",
-            "text": "High upfront costs for building reinforcement and plumbing"
+            "text": "Strict health laws banning vegetable sales in cities",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"High upfront costs for building reinforcement and plumbing\""
           },
           {
             "key": "D",
-            "text": "Consumer resistance to eating hydroponic vegetables"
+            "text": "Consumer resistance to eating hydroponic vegetables",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"High upfront costs for building reinforcement and plumbing\""
           }
         ],
         "explanation_en": "Text states: 'While initial capital investment for structural reinforcement and plumbing remains a hurdle...'",
         "explanation_th": "ระบุว่าเงินลงทุนเริ่มต้นด้านการเสริมโครงสร้างอาคารและระบบประปายังเป็นอุปสรรคสำคัญ",
         "evidence_line": "While initial capital investment for structural reinforcement and plumbing remains a hurdle",
-        "weakness_tag": "reading_inference_b1"
+        "weakness_tag": "reading_inference_b1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       }
     ]
   },
@@ -1161,25 +1637,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They were too loud for quiet libraries"
+            "text": "They were too loud for quiet libraries",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water frequently froze or became clogged with sediment\""
           },
           {
             "key": "B",
-            "text": "Water frequently froze or became clogged with sediment"
+            "text": "They required costly imported glass components",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water frequently froze or became clogged with sediment\""
           },
           {
             "key": "C",
-            "text": "They required costly imported glass components"
+            "text": "Water frequently froze or became clogged with sediment",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่านาฬิกาน้ำมักกลายเป็นน้ำแข็งในฤดูหนาวอันรุนแรงของยุโรป หรือเกิดการอุดตันจากตะกอน)"
           },
           {
             "key": "D",
-            "text": "They were prohibited by religious authorities"
+            "text": "They were prohibited by religious authorities",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Water frequently froze or became clogged with sediment\""
           }
         ],
         "explanation_en": "Text states: 'water clocks often froze in harsh European winters or clogged with sediment.'",
         "explanation_th": "ระบุว่านาฬิกาน้ำมักกลายเป็นน้ำแข็งในฤดูหนาวอันรุนแรงของยุโรป หรือเกิดการอุดตันจากตะกอน",
         "evidence_line": "water clocks often froze in harsh European winters or clogged with sediment.",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b1_003_2",
@@ -1192,25 +1682,39 @@
         "options": [
           {
             "key": "A",
-            "text": "To sell timepieces to wealthy trading merchants"
+            "text": "To sell timepieces to wealthy trading merchants",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"To follow precise prayer schedules throughout the night\""
           },
           {
             "key": "B",
-            "text": "To calculate astrological horoscopes for kings"
+            "text": "To calculate astrological horoscopes for kings",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"To follow precise prayer schedules throughout the night\""
           },
           {
             "key": "C",
-            "text": "To follow precise prayer schedules throughout the night"
+            "text": "To measure the harvest cycles of abbey farmlands",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"To follow precise prayer schedules throughout the night\""
           },
           {
             "key": "D",
-            "text": "To measure the harvest cycles of abbey farmlands"
+            "text": "To follow precise prayer schedules throughout the night",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (พระในอารามจำเป็นต้องสวดมนต์ตามกำหนดเวลาที่เคร่งครัดตลอดทั้งคืน)"
           }
         ],
         "explanation_en": "Text says: 'Monks needed to observe strict prayer schedules throughout the night, which motivated them...'",
         "explanation_th": "พระในอารามจำเป็นต้องสวดมนต์ตามกำหนดเวลาที่เคร่งครัดตลอดทั้งคืน",
         "evidence_line": "Monks needed to observe strict prayer schedules throughout the night",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b1_003_3",
@@ -1223,25 +1727,39 @@
         "options": [
           {
             "key": "A",
-            "text": "With rotating hour and minute hands"
+            "text": "By striking an audible bronze bell",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (นาฬิกายุคแรกไม่มีหน้าปัดหรือเข็มชี้บอกเวลา แต่จะตีระฆังสำริดส่งเสียงเตือน)"
           },
           {
             "key": "B",
-            "text": "By striking an audible bronze bell"
+            "text": "With rotating hour and minute hands",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By striking an audible bronze bell\""
           },
           {
             "key": "C",
-            "text": "With painted dials indicating cardinal directions"
+            "text": "With painted dials indicating cardinal directions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By striking an audible bronze bell\""
           },
           {
             "key": "D",
-            "text": "Through digital shadow projections"
+            "text": "Through digital shadow projections",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By striking an audible bronze bell\""
           }
         ],
         "explanation_en": "Text states: 'These earliest mechanical clocks had no dials or hands; they simply rang a heavy bronze bell...'",
         "explanation_th": "นาฬิกายุคแรกไม่มีหน้าปัดหรือเข็มชี้บอกเวลา แต่จะตีระฆังสำริดส่งเสียงเตือน",
         "evidence_line": "had no dials or hands; they simply rang a heavy bronze bell",
-        "weakness_tag": "reading_detail_retrieval_b1"
+        "weakness_tag": "reading_detail_retrieval_b1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b1_003_4",
@@ -1254,25 +1772,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They caused the collapse of overland trading routes"
+            "text": "They caused the collapse of overland trading routes",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"They enabled sailors to accurately establish longitude at sea\""
           },
           {
             "key": "B",
-            "text": "They enabled sailors to accurately establish longitude at sea"
+            "text": "They enabled sailors to accurately establish longitude at sea",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (นาฬิกาโครโนมิเตอร์ช่วยให้กัปตันเดินเรือคำนวณลองจิจูดในทะเลได้อย่างแม่นยำ ปฏิวัติการเดินเรือข้ามทวีป)"
           },
           {
             "key": "C",
-            "text": "They reduced international trade to local exchanges"
+            "text": "They reduced international trade to local exchanges",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"They enabled sailors to accurately establish longitude at sea\""
           },
           {
             "key": "D",
-            "text": "They made astronomical charts completely obsolete"
+            "text": "They made astronomical charts completely obsolete",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"They enabled sailors to accurately establish longitude at sea\""
           }
         ],
         "explanation_en": "The final sentence explains: 'By allowing navigator captains to determine precise longitude at sea... redefined global maritime navigation'.",
         "explanation_th": "นาฬิกาโครโนมิเตอร์ช่วยให้กัปตันเดินเรือคำนวณลองจิจูดในทะเลได้อย่างแม่นยำ ปฏิวัติการเดินเรือข้ามทวีป",
         "evidence_line": "allowing navigator captains to determine precise longitude at sea",
-        "weakness_tag": "reading_inference_b1"
+        "weakness_tag": "reading_inference_b1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b1_003_5",
@@ -1285,25 +1817,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The study of deep ocean currents"
+            "text": "The study of deep ocean currents",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"The science and art of measuring time\""
           },
           {
             "key": "B",
-            "text": "The architecture of medieval monasteries"
+            "text": "The architecture of medieval monasteries",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"The science and art of measuring time\""
           },
           {
             "key": "C",
-            "text": "The science and art of measuring time"
+            "text": "The science and art of measuring time",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('horology' หมายถึง วิทยาศาสตร์และศิลปะในการประดิษฐ์เครื่องมือวัดเวลา (นาฬิกา))"
           },
           {
             "key": "D",
-            "text": "The metallurgy of casting bronze bells"
+            "text": "The metallurgy of casting bronze bells",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"The science and art of measuring time\""
           }
         ],
         "explanation_en": "'Horology' is the scientific study and technology of measuring time and making clocks.",
         "explanation_th": "'horology' หมายถึง วิทยาศาสตร์และศิลปะในการประดิษฐ์เครื่องมือวัดเวลา (นาฬิกา)",
         "evidence_line": "mechanical horology did not merely organize daily monastic rituals",
-        "weakness_tag": "reading_vocabulary_context_b1"
+        "weakness_tag": "reading_vocabulary_context_b1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       }
     ]
   },
@@ -1327,25 +1873,39 @@
         "options": [
           {
             "key": "A",
-            "text": "AI has entirely superseded human radiologists across all diagnostic specialties"
+            "text": "AI has entirely superseded human radiologists across all diagnostic specialties",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues\""
           },
           {
             "key": "B",
-            "text": "AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues"
+            "text": "The black box problem renders deep learning completely unsafe for healthcare deployment",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues\""
           },
           {
             "key": "C",
-            "text": "The black box problem renders deep learning completely unsafe for healthcare deployment"
+            "text": "Medical regulatory agencies are banning automated screening software in oncology",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues\""
           },
           {
             "key": "D",
-            "text": "Medical regulatory agencies are banning automated screening software in oncology"
+            "text": "AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ผู้เขียนชี้ให้เห็นประโยชน์มหาศาลด้านความแม่นยำและความเร็ว แต่ย้ำว่าต้องมีแพทย์ควบคุมเนื่องจากปัญหาความโปร่งใสและอคติทางข้อมูล)"
           }
         ],
         "explanation_en": "The passage balances the immense triage speed and precision of AI with the ethical hurdles of black-box reasoning and dataset bias.",
         "explanation_th": "ผู้เขียนชี้ให้เห็นประโยชน์มหาศาลด้านความแม่นยำและความเร็ว แต่ย้ำว่าต้องมีแพทย์ควบคุมเนื่องจากปัญหาความโปร่งใสและอคติทางข้อมูล",
         "evidence_line": "must remain strictly assistive—an augmented intelligence framework where ultimate diagnostic culpability... remain firmly anchored in human clinical judgment.",
-        "weakness_tag": "reading_main_idea_b2"
+        "weakness_tag": "reading_main_idea_b2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b2_001_2",
@@ -1358,25 +1918,39 @@
         "options": [
           {
             "key": "A",
-            "text": "By performing surgical operations autonomously without human assistance"
+            "text": "By filtering out normal scans and prioritizing suspicious cases for urgent specialist review",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบบช่วยคัดกรองภาพสแกนปกติออกอย่างรวดเร็ว และส่งต่อเคสที่มีรอยโรคต้องสงสัยให้แพทย์ผู้เชี่ยวชาญวินิจฉัยทันที)"
           },
           {
             "key": "B",
-            "text": "By filtering out normal scans and prioritizing suspicious cases for urgent specialist review"
+            "text": "By performing surgical operations autonomously without human assistance",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By filtering out normal scans and prioritizing suspicious cases for urgent specialist review\""
           },
           {
             "key": "C",
-            "text": "By dispensing medication prescriptions directly to outpatients"
+            "text": "By dispensing medication prescriptions directly to outpatients",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By filtering out normal scans and prioritizing suspicious cases for urgent specialist review\""
           },
           {
             "key": "D",
-            "text": "By replacing radiologic equipment with low-cost digital cameras"
+            "text": "By replacing radiologic equipment with low-cost digital cameras",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"By filtering out normal scans and prioritizing suspicious cases for urgent specialist review\""
           }
         ],
         "explanation_en": "Text says: 'By rapidly filtering through normal baseline scans and prioritizing suspicious scans for immediate senior review...'",
         "explanation_th": "ระบบช่วยคัดกรองภาพสแกนปกติออกอย่างรวดเร็ว และส่งต่อเคสที่มีรอยโรคต้องสงสัยให้แพทย์ผู้เชี่ยวชาญวินิจฉัยทันที",
         "evidence_line": "filtering through normal baseline scans and prioritizing suspicious scans for immediate senior review",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b2_001_3",
@@ -1389,25 +1963,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The physical vulnerability of computer server enclosures to fire"
+            "text": "The physical vulnerability of computer server enclosures to fire",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The inability of clinicians to trace the exact causal logic of algorithmic predictions\""
           },
           {
             "key": "B",
-            "text": "The inability of clinicians to trace the exact causal logic of algorithmic predictions"
+            "text": "The inability of clinicians to trace the exact causal logic of algorithmic predictions",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ปัญหา 'black box' คือความยากลำบากที่แพทย์ไม่สามารถทราบหรือตรวจสอบตรรกะเชิงเหตุผลที่ซ่อนอยู่ในการตัดสินใจของโมเดลได้)"
           },
           {
             "key": "C",
-            "text": "The high cost of purchasing proprietary software licenses"
+            "text": "The high cost of purchasing proprietary software licenses",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The inability of clinicians to trace the exact causal logic of algorithmic predictions\""
           },
           {
             "key": "D",
-            "text": "The complete absence of patient confidentiality protocols"
+            "text": "The complete absence of patient confidentiality protocols",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The inability of clinicians to trace the exact causal logic of algorithmic predictions\""
           }
         ],
         "explanation_en": "The text explains: 'making it exceedingly difficult for clinicians to interpret the explicit causal rationale underlying a specific algorithmic output.'",
         "explanation_th": "ปัญหา 'black box' คือความยากลำบากที่แพทย์ไม่สามารถทราบหรือตรวจสอบตรรกะเชิงเหตุผลที่ซ่อนอยู่ในการตัดสินใจของโมเดลได้",
         "evidence_line": "exceedingly difficult for clinicians to interpret the explicit causal rationale",
-        "weakness_tag": "reading_vocabulary_context_b2"
+        "weakness_tag": "reading_vocabulary_context_b2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b2_001_4",
@@ -1420,25 +2008,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Hospitals outside the West lack high-speed internet infrastructure"
+            "text": "Hospitals outside the West lack high-speed internet infrastructure",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Different populations have distinct baseline genetics and disease prevalence profiles\""
           },
           {
             "key": "B",
-            "text": "Medical terminology cannot be translated accurately into non-English languages"
+            "text": "Medical terminology cannot be translated accurately into non-English languages",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Different populations have distinct baseline genetics and disease prevalence profiles\""
           },
           {
             "key": "C",
-            "text": "Different populations have distinct baseline genetics and disease prevalence profiles"
+            "text": "Different populations have distinct baseline genetics and disease prevalence profiles",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ประชากรในแต่ละภูมิภาคมีพันธุกรรม ลักษณะทางระบาดวิทยา และรูปแบบการเกิดโรคที่แตกต่างจากกลุ่มข้อมูลที่โมเดลใช้เรียนรู้)"
           },
           {
             "key": "D",
-            "text": "Foreign radiologists refuse to accept software manufactured in the West"
+            "text": "Foreign radiologists refuse to accept software manufactured in the West",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Different populations have distinct baseline genetics and disease prevalence profiles\""
           }
         ],
         "explanation_en": "Text notes they exhibit accuracy degradation when deployed across populations 'with different baseline epidemiological profiles'.",
         "explanation_th": "ประชากรในแต่ละภูมิภาคมีพันธุกรรม ลักษณะทางระบาดวิทยา และรูปแบบการเกิดโรคที่แตกต่างจากกลุ่มข้อมูลที่โมเดลใช้เรียนรู้",
         "evidence_line": "populations with different baseline epidemiological profiles",
-        "weakness_tag": "reading_inference_b2"
+        "weakness_tag": "reading_inference_b2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b2_001_5",
@@ -1451,25 +2053,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Software developers are held fully liable for diagnostic errors"
+            "text": "Software developers are held fully liable for diagnostic errors",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Final legal and therapeutic responsibility must remain with human clinicians\""
           },
           {
             "key": "B",
-            "text": "Hospitals are immune from malpractice lawsuits when using approved AI"
+            "text": "Hospitals are immune from malpractice lawsuits when using approved AI",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Final legal and therapeutic responsibility must remain with human clinicians\""
           },
           {
             "key": "C",
-            "text": "Final legal and therapeutic responsibility must remain with human clinicians"
+            "text": "Patients must sign waivers releasing doctors from all diagnostic duties",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Final legal and therapeutic responsibility must remain with human clinicians\""
           },
           {
             "key": "D",
-            "text": "Patients must sign waivers releasing doctors from all diagnostic duties"
+            "text": "Final legal and therapeutic responsibility must remain with human clinicians",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (หน่วยงานกำกับดูแลระบุว่า ความรับผิดชอบทางกฎหมายและการรักษาขั้นสุดท้ายต้องผูกอยู่กับการตัดสินใจของแพทย์ที่เป็นมนุษย์เท่านั้น)"
           }
         ],
         "explanation_en": "Text concludes: 'ultimate diagnostic culpability and therapeutic decisions remain firmly anchored in human clinical judgment.'",
         "explanation_th": "หน่วยงานกำกับดูแลระบุว่า ความรับผิดชอบทางกฎหมายและการรักษาขั้นสุดท้ายต้องผูกอยู่กับการตัดสินใจของแพทย์ที่เป็นมนุษย์เท่านั้น",
         "evidence_line": "ultimate diagnostic culpability and therapeutic decisions remain firmly anchored in human clinical judgment.",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -1493,25 +2109,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The complete failure of wind energy projects across Scandinavian coastlines"
+            "text": "How Nordic countries cooperate on green power while facing environmental and cultural tensions",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความอธิบายความร่วมมือของกลุ่มประเทศนอร์ดิกผ่านระบบโครงข่ายเชื่อมโยง ควบคู่ไปกับความขัดแย้งกับสิทธิชนพื้นเมืองซามิ)"
           },
           {
             "key": "B",
-            "text": "How Nordic countries cooperate on green power while facing environmental and cultural tensions"
+            "text": "The complete failure of wind energy projects across Scandinavian coastlines",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"How Nordic countries cooperate on green power while facing environmental and cultural tensions\""
           },
           {
             "key": "C",
-            "text": "The economic rivalry between Norwegian oil exporters and Danish wind turbine makers"
+            "text": "The economic rivalry between Norwegian oil exporters and Danish wind turbine makers",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"How Nordic countries cooperate on green power while facing environmental and cultural tensions\""
           },
           {
             "key": "D",
-            "text": "The technical history of high-voltage subsea cables in the Baltic Sea"
+            "text": "The technical history of high-voltage subsea cables in the Baltic Sea",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"How Nordic countries cooperate on green power while facing environmental and cultural tensions\""
           }
         ],
         "explanation_en": "The passage discusses the complementary energy strategies, the Nord Pool grid, and indigenous Sámi land conflicts.",
         "explanation_th": "บทความอธิบายความร่วมมือของกลุ่มประเทศนอร์ดิกผ่านระบบโครงข่ายเชื่อมโยง ควบคู่ไปกับความขัดแย้งกับสิทธิชนพื้นเมืองซามิ",
         "evidence_line": "emerged as global pioneers in decarbonizing... Balancing international climate commitments with indigenous land sovereignty",
-        "weakness_tag": "reading_main_idea_b2"
+        "weakness_tag": "reading_main_idea_b2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b2_002_2",
@@ -1524,25 +2154,39 @@
         "options": [
           {
             "key": "A",
-            "text": "From imported coal and natural gas"
+            "text": "From imported coal and natural gas",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"From cascading hydroelectric river installations\""
           },
           {
             "key": "B",
-            "text": "From cascading hydroelectric river installations"
+            "text": "From cascading hydroelectric river installations",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุว่านอร์เวย์ผลิตกระแสไฟฟ้าภายในประเทศกว่าร้อยละ 95 จากโรงไฟฟ้าพลังน้ำ)"
           },
           {
             "key": "C",
-            "text": "From deep geothermal steam extraction"
+            "text": "From deep geothermal steam extraction",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"From cascading hydroelectric river installations\""
           },
           {
             "key": "D",
-            "text": "From commercial solar photovoltaic farms"
+            "text": "From commercial solar photovoltaic farms",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"From cascading hydroelectric river installations\""
           }
         ],
         "explanation_en": "Text says: 'Norway generates over ninety-five percent of its domestic electricity from cascading hydroelectric installations.'",
         "explanation_th": "ระบุว่านอร์เวย์ผลิตกระแสไฟฟ้าภายในประเทศกว่าร้อยละ 95 จากโรงไฟฟ้าพลังน้ำ",
         "evidence_line": "Norway generates over ninety-five percent of its domestic electricity from cascading hydroelectric installations.",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b2_002_3",
@@ -1555,25 +2199,39 @@
         "options": [
           {
             "key": "A",
-            "text": "By burning backup diesel generators during cloudy periods"
+            "text": "By burning backup diesel generators during cloudy periods",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Excess Danish wind energy pumps water back into Norwegian hydro reservoirs\""
           },
           {
             "key": "B",
-            "text": "Excess Danish wind energy pumps water back into Norwegian hydro reservoirs"
+            "text": "By mandating scheduled power cuts across major cities",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Excess Danish wind energy pumps water back into Norwegian hydro reservoirs\""
           },
           {
             "key": "C",
-            "text": "By mandating scheduled power cuts across major cities"
+            "text": "Excess Danish wind energy pumps water back into Norwegian hydro reservoirs",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (เมื่อเดนมาร์กผลิตไฟจากกังหันลมได้เกินความต้องการ พลังงานส่วนเกินจะถูกส่งไปสูบน้ำกลับเข้าเขื่อนกักเก็บของนอร์เวย์)"
           },
           {
             "key": "D",
-            "text": "By purchasing nuclear power credits from southern European states"
+            "text": "By purchasing nuclear power credits from southern European states",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Excess Danish wind energy pumps water back into Norwegian hydro reservoirs\""
           }
         ],
         "explanation_en": "Text states: 'when storm fronts produce massive Danish wind surpluses, excess power is exported north to pump water back into Norwegian reservoir dams.'",
         "explanation_th": "เมื่อเดนมาร์กผลิตไฟจากกังหันลมได้เกินความต้องการ พลังงานส่วนเกินจะถูกส่งไปสูบน้ำกลับเข้าเขื่อนกักเก็บของนอร์เวย์",
         "evidence_line": "excess power is exported north to pump water back into Norwegian reservoir dams.",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b2_002_4",
@@ -1586,25 +2244,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They want exclusive commercial ownership of the energy companies"
+            "text": "They want exclusive commercial ownership of the energy companies",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Turbines and roads disrupt centuries-old reindeer herding corridors\""
           },
           {
             "key": "B",
-            "text": "Turbines and roads disrupt centuries-old reindeer herding corridors"
+            "text": "Wind power installations cause severe regional air pollution",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Turbines and roads disrupt centuries-old reindeer herding corridors\""
           },
           {
             "key": "C",
-            "text": "Wind power installations cause severe regional air pollution"
+            "text": "The government refused to connect indigenous villages to the electric grid",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Turbines and roads disrupt centuries-old reindeer herding corridors\""
           },
           {
             "key": "D",
-            "text": "The government refused to connect indigenous villages to the electric grid"
+            "text": "Turbines and roads disrupt centuries-old reindeer herding corridors",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (เสากังหันลมและถนนตัดผ่านแบ่งแยกเส้นทางอพยพเลี้ยงกวางเรนเดียร์ของชาวซามิที่มีมาหลายร้อยปี)"
           }
         ],
         "explanation_en": "Text says: 'whose centuries-old reindeer herding migration routes are fragmented by turbine towers, access roads, and roaring power lines.'",
         "explanation_th": "เสากังหันลมและถนนตัดผ่านแบ่งแยกเส้นทางอพยพเลี้ยงกวางเรนเดียร์ของชาวซามิที่มีมาหลายร้อยปี",
         "evidence_line": "centuries-old reindeer herding migration routes are fragmented",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b2_002_5",
@@ -1617,25 +2289,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Individual nations must rely exclusively on a single green technology"
+            "text": "Regional grid integration solves intermittency, but local social costs must be navigated",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การเชื่อมโยงโครงข่ายช่วยแก้ปัญหาความไม่สม่ำเสมอของพลังงานหมุนเวียน แต่ต้องให้ความสำคัญกับผลกระทบทางสังคมของชุมชนท้องถิ่น)"
           },
           {
             "key": "B",
-            "text": "Hydroelectric power is universally viable in every geographical terrain"
+            "text": "Individual nations must rely exclusively on a single green technology",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Regional grid integration solves intermittency, but local social costs must be navigated\""
           },
           {
             "key": "C",
-            "text": "Regional grid integration solves intermittency, but local social costs must be navigated"
+            "text": "Hydroelectric power is universally viable in every geographical terrain",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Regional grid integration solves intermittency, but local social costs must be navigated\""
           },
           {
             "key": "D",
-            "text": "Offshore wind installations are completely free of community opposition"
+            "text": "Offshore wind installations are completely free of community opposition",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Regional grid integration solves intermittency, but local social costs must be navigated\""
           }
         ],
         "explanation_en": "The article illustrates the power of interconnected grids while warning against overlooking indigenous land rights.",
         "explanation_th": "การเชื่อมโยงโครงข่ายช่วยแก้ปัญหาความไม่สม่ำเสมอของพลังงานหมุนเวียน แต่ต้องให้ความสำคัญกับผลกระทบทางสังคมของชุมชนท้องถิ่น",
         "evidence_line": "Balancing international climate commitments with indigenous land sovereignty represents a profound test",
-        "weakness_tag": "reading_inference_b2"
+        "weakness_tag": "reading_inference_b2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       }
     ]
   },
@@ -1659,25 +2345,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Sheer willpower is the most reliable strategy for eliminating bad habits"
+            "text": "Sheer willpower is the most reliable strategy for eliminating bad habits",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Changing habits requires replacing the routine while retaining the cue and reward\""
           },
           {
             "key": "B",
-            "text": "Changing habits requires replacing the routine while retaining the cue and reward"
+            "text": "Changing habits requires replacing the routine while retaining the cue and reward",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความอธิบายว่าการใช้พลังใจหักดิบมักล้มเหลว วิธีที่ได้ผลคือคงสิ่งเร้าและรางวัลเดิมไว้ แต่เปลี่ยนพฤติกรรมคั่นกลาง)"
           },
           {
             "key": "C",
-            "text": "Habits can only be formed before human beings reach cognitive adulthood"
+            "text": "Habits can only be formed before human beings reach cognitive adulthood",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Changing habits requires replacing the routine while retaining the cue and reward\""
           },
           {
             "key": "D",
-            "text": "The basal ganglia must be suppressed using prescription pharmaceuticals"
+            "text": "The basal ganglia must be suppressed using prescription pharmaceuticals",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Changing habits requires replacing the routine while retaining the cue and reward\""
           }
         ],
         "explanation_en": "The passage argues that willpower fails, and success comes from replacing the routine between the cue and reward.",
         "explanation_th": "บทความอธิบายว่าการใช้พลังใจหักดิบมักล้มเหลว วิธีที่ได้ผลคือคงสิ่งเร้าและรางวัลเดิมไว้ แต่เปลี่ยนพฤติกรรมคั่นกลาง",
         "evidence_line": "keep the established cue and the ultimate reward identical while systematically substituting the intermediate routine.",
-        "weakness_tag": "reading_main_idea_b2"
+        "weakness_tag": "reading_main_idea_b2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_b2_003_2",
@@ -1690,25 +2390,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The prefrontal cortex expands significantly in physical volume"
+            "text": "The prefrontal cortex expands significantly in physical volume",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Dopamine releases when encountering the cue rather than receiving the reward\""
           },
           {
             "key": "B",
-            "text": "The basal ganglia stops communicating with the spinal cord"
+            "text": "The basal ganglia stops communicating with the spinal cord",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Dopamine releases when encountering the cue rather than receiving the reward\""
           },
           {
             "key": "C",
-            "text": "Dopamine releases when encountering the cue rather than receiving the reward"
+            "text": "Dopamine releases when encountering the cue rather than receiving the reward",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (เมื่ออุปนิสัยหยั่งรากลึก สารโดปามีนจะหลั่งออกมาทันทีที่เห็น 'สิ่งเร้า' ก่อนที่จะได้รับรางวัลจริงด้วยซ้ำ)"
           },
           {
             "key": "D",
-            "text": "Electrical activity across the cerebral hemispheres ceases completely"
+            "text": "Electrical activity across the cerebral hemispheres ceases completely",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Dopamine releases when encountering the cue rather than receiving the reward\""
           }
         ],
         "explanation_en": "Text says: 'dopamine surges shift from the receipt of the reward to the perception of the preceding cue.'",
         "explanation_th": "เมื่ออุปนิสัยหยั่งรากลึก สารโดปามีนจะหลั่งออกมาทันทีที่เห็น 'สิ่งเร้า' ก่อนที่จะได้รับรางวัลจริงด้วยซ้ำ",
         "evidence_line": "dopamine surges shift from the receipt of the reward to the perception of the preceding cue.",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_b2_003_3",
@@ -1721,25 +2435,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Conscious thoughts have no physical connection to muscle movement"
+            "text": "Conscious thoughts have no physical connection to muscle movement",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prefrontal cortex depletes its energy quickly when tired or stressed\""
           },
           {
             "key": "B",
-            "text": "The prefrontal cortex depletes its energy quickly when tired or stressed"
+            "text": "Willpower causes severe long-term cardiovascular damage",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prefrontal cortex depletes its energy quickly when tired or stressed\""
           },
           {
             "key": "C",
-            "text": "Willpower causes severe long-term cardiovascular damage"
+            "text": "Habits operate outside the human central nervous system",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"The prefrontal cortex depletes its energy quickly when tired or stressed\""
           },
           {
             "key": "D",
-            "text": "Habits operate outside the human central nervous system"
+            "text": "The prefrontal cortex depletes its energy quickly when tired or stressed",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (สมองส่วนหน้า (prefrontal cortex) ที่ควบคุมความยับยั้งชั่งใจจะเกิดภาวะล้าหมดพลังงานอย่างรวดเร็วเมื่อมีความเครียด)"
           }
         ],
         "explanation_en": "Text states: 'the prefrontal cortex, which governs self-control... rapidly suffers from metabolic exhaustion under stress or fatigue.'",
         "explanation_th": "สมองส่วนหน้า (prefrontal cortex) ที่ควบคุมความยับยั้งชั่งใจจะเกิดภาวะล้าหมดพลังงานอย่างรวดเร็วเมื่อมีความเครียด",
         "evidence_line": "prefrontal cortex... rapidly suffers from metabolic exhaustion under stress or fatigue.",
-        "weakness_tag": "reading_inference_b2"
+        "weakness_tag": "reading_inference_b2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_b2_003_4",
@@ -1752,25 +2480,39 @@
         "options": [
           {
             "key": "A",
-            "text": "To celebrate or openly admire"
+            "text": "To break down or disassemble an established structure",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('dismantle' หมายถึง การรื้อ ถอดแยก หรือสลายโครงสร้างที่มีอยู่ออกเป็นส่วนๆ)"
           },
           {
             "key": "B",
-            "text": "To break down or disassemble an established structure"
+            "text": "To celebrate or openly admire",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To break down or disassemble an established structure\""
           },
           {
             "key": "C",
-            "text": "To conceal from public observation"
+            "text": "To conceal from public observation",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To break down or disassemble an established structure\""
           },
           {
             "key": "D",
-            "text": "To speed up the progress of an action"
+            "text": "To speed up the progress of an action",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To break down or disassemble an established structure\""
           }
         ],
         "explanation_en": "'Dismantle' means to take something to pieces or systematically deconstruct an existing structure.",
         "explanation_th": "'dismantle' หมายถึง การรื้อ ถอดแยก หรือสลายโครงสร้างที่มีอยู่ออกเป็นส่วนๆ",
         "evidence_line": "Attempting to dismantle an undesirable habit through sheer willpower",
-        "weakness_tag": "reading_vocabulary_context_b2"
+        "weakness_tag": "reading_vocabulary_context_b2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_b2_003_5",
@@ -1783,25 +2525,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Desire, struggle, and victory"
+            "text": "Desire, struggle, and victory",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Cue, routine, and reward\""
           },
           {
             "key": "B",
-            "text": "Cue, routine, and reward"
+            "text": "Cue, routine, and reward",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ระบุชัดเจนว่าประกอบด้วย 3 ส่วนคือ สิ่งเร้า (cue), กิจวัตร (routine), และรางวัล (reward))"
           },
           {
             "key": "C",
-            "text": "Stimulus, punishment, and memory"
+            "text": "Stimulus, punishment, and memory",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Cue, routine, and reward\""
           },
           {
             "key": "D",
-            "text": "Intention, practice, and mastery"
+            "text": "Intention, practice, and mastery",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Cue, routine, and reward\""
           }
         ],
         "explanation_en": "Text explicitly lists: 'an environmental cue, a behavioral routine, and a neurological reward.'",
         "explanation_th": "ระบุชัดเจนว่าประกอบด้วย 3 ส่วนคือ สิ่งเร้า (cue), กิจวัตร (routine), และรางวัล (reward)",
         "evidence_line": "an environmental cue, a behavioral routine, and a neurological reward.",
-        "weakness_tag": "reading_detail_retrieval_b2"
+        "weakness_tag": "reading_detail_retrieval_b2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       }
     ]
   },
@@ -1825,25 +2581,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Metaphor remains primarily an ornamental embellishment for imaginative poets"
+            "text": "Metaphor remains primarily an ornamental embellishment for imaginative poets",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Metaphor is a fundamental cognitive framework that structures thought and ideological perception\""
           },
           {
             "key": "B",
-            "text": "Metaphor is a fundamental cognitive framework that structures thought and ideological perception"
+            "text": "Conceptual blending theory has invalidated all cognitive linguistics findings",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Metaphor is a fundamental cognitive framework that structures thought and ideological perception\""
           },
           {
             "key": "C",
-            "text": "Conceptual blending theory has invalidated all cognitive linguistics findings"
+            "text": "Metaphor is a fundamental cognitive framework that structures thought and ideological perception",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ผู้เขียนยืนยันว่าอุปมาไม่ใช่วาทศิลป์ประดับประดา แต่เป็นกลไกการรู้คิดพื้นฐานที่สร้างกรอบความคิดและชี้นำมุมมองทางอุดมการณ์ของมนุษย์)"
           },
           {
             "key": "D",
-            "text": "Military metaphors are scientifically proven to be the most effective communication tools"
+            "text": "Military metaphors are scientifically proven to be the most effective communication tools",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Metaphor is a fundamental cognitive framework that structures thought and ideological perception\""
           }
         ],
         "explanation_en": "The passage argues that metaphor is not decorative, but a foundational cognitive mechanism that organizes abstract thought and public discourse.",
         "explanation_th": "ผู้เขียนยืนยันว่าอุปมาไม่ใช่วาทศิลป์ประดับประดา แต่เป็นกลไกการรู้คิดพื้นฐานที่สร้างกรอบความคิดและชี้นำมุมมองทางอุดมการณ์ของมนุษย์",
         "evidence_line": "metaphor constitutes the primary cognitive mechanism whereby abstract, intangible domains are structured",
-        "weakness_tag": "reading_main_idea_c1"
+        "weakness_tag": "reading_main_idea_c1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_c1_001_2",
@@ -1856,25 +2626,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It rejects all references to human bodily sensorimotor experiences"
+            "text": "It rejects all references to human bodily sensorimotor experiences",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It generates an autonomous blended space with unique emergent structures\""
           },
           {
             "key": "B",
-            "text": "It limits linguistic mapping exclusively to mathematical formulas"
+            "text": "It limits linguistic mapping exclusively to mathematical formulas",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It generates an autonomous blended space with unique emergent structures\""
           },
           {
             "key": "C",
-            "text": "It generates an autonomous blended space with unique emergent structures"
+            "text": "It assumes human thought is entirely literal without any abstract domains",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"It generates an autonomous blended space with unique emergent structures\""
           },
           {
             "key": "D",
-            "text": "It assumes human thought is entirely literal without any abstract domains"
+            "text": "It generates an autonomous blended space with unique emergent structures",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ทฤษฎีการผสมผสานมโนทัศน์สร้างพื้นที่ทางความคิดที่สาม (blend) ที่สังเคราะห์โครงสร้างใหม่ที่ไม่มีในสองพื้นที่ตั้งต้น)"
           }
         ],
         "explanation_en": "Text says: 'mental blending constructs an autonomous third space—a \"blend\"—which inherits selective elements... synthesizing an emergent structure'.",
         "explanation_th": "ทฤษฎีการผสมผสานมโนทัศน์สร้างพื้นที่ทางความคิดที่สาม (blend) ที่สังเคราะห์โครงสร้างใหม่ที่ไม่มีในสองพื้นที่ตั้งต้น",
         "evidence_line": "mental blending constructs an autonomous third space—a 'blend'—which inherits selective elements... synthesizing an emergent structure",
-        "weakness_tag": "reading_detail_retrieval_c1"
+        "weakness_tag": "reading_detail_retrieval_c1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_c1_001_3",
@@ -1887,25 +2671,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It fails to allocate sufficient funding to vaccine research laboratories"
+            "text": "It privileges coercive militarized responses over holistic, palliative social care",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การเปรียบเทียบกับสงครามส่งเสริมการใช้อำนาจเด็ดขาดและการบังคับ แต่กลับบดบังการดูแลแบบประคับประคองและปัจจัยทางสังคมด้านสุขภาพ)"
           },
           {
             "key": "B",
-            "text": "It causes medical doctors to resign from hospital emergency rooms"
+            "text": "It fails to allocate sufficient funding to vaccine research laboratories",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It privileges coercive militarized responses over holistic, palliative social care\""
           },
           {
             "key": "C",
-            "text": "It privileges coercive militarized responses over holistic, palliative social care"
+            "text": "It causes medical doctors to resign from hospital emergency rooms",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It privileges coercive militarized responses over holistic, palliative social care\""
           },
           {
             "key": "D",
-            "text": "It is grammatically confusing to the general public"
+            "text": "It is grammatically confusing to the general public",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"It privileges coercive militarized responses over holistic, palliative social care\""
           }
         ],
         "explanation_en": "The passage states that war framing 'valorizes aggressive interventions... while simultaneously marginalizing palliative care, systemic social determinants of health'.",
         "explanation_th": "การเปรียบเทียบกับสงครามส่งเสริมการใช้อำนาจเด็ดขาดและการบังคับ แต่กลับบดบังการดูแลแบบประคับประคองและปัจจัยทางสังคมด้านสุขภาพ",
         "evidence_line": "valorizes aggressive interventions, military mobilization... while simultaneously marginalizing palliative care",
-        "weakness_tag": "reading_inference_c1"
+        "weakness_tag": "reading_inference_c1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_c1_001_4",
@@ -1918,25 +2716,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Elevated to universal acclaim"
+            "text": "Elevated to universal acclaim",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Assigned to an inferior or dismissed rank\""
           },
           {
             "key": "B",
-            "text": "Assigned to an inferior or dismissed rank"
+            "text": "Assigned to an inferior or dismissed rank",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('relegate' หมายถึง การผลักไสหรือลดทอนบทบาทให้อยู่ในสถานะที่ต่ำต้อยหรือไร้ความสำคัญ)"
           },
           {
             "key": "C",
-            "text": "Translated into foreign languages"
+            "text": "Translated into foreign languages",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Assigned to an inferior or dismissed rank\""
           },
           {
             "key": "D",
-            "text": "Subjected to chemical analysis"
+            "text": "Subjected to chemical analysis",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Assigned to an inferior or dismissed rank\""
           }
         ],
         "explanation_en": "'Relegate' means to consign or dismiss to an inferior rank, status, or condition.",
         "explanation_th": "'relegate' หมายถึง การผลักไสหรือลดทอนบทบาทให้อยู่ในสถานะที่ต่ำต้อยหรือไร้ความสำคัญ",
         "evidence_line": "was long relegated to the periphery of rhetoric",
-        "weakness_tag": "reading_vocabulary_context_c1"
+        "weakness_tag": "reading_vocabulary_context_c1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_c1_001_5",
@@ -1949,25 +2761,39 @@
         "options": [
           {
             "key": "A",
-            "text": "It ensures that politicians speak only in grammatically verified Latin"
+            "text": "It ensures that politicians speak only in grammatically verified Latin",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It exposes covert linguistic framing that coerces uncritical public consensus\""
           },
           {
             "key": "B",
-            "text": "It exposes covert linguistic framing that coerces uncritical public consensus"
+            "text": "It enables computer programmers to design better operating systems",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It exposes covert linguistic framing that coerces uncritical public consensus\""
           },
           {
             "key": "C",
-            "text": "It enables computer programmers to design better operating systems"
+            "text": "It exposes covert linguistic framing that coerces uncritical public consensus",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การตีแผ่กรอบอุปมาช่วยปกป้องสังคมประชาธิปไตยจากการถูกชักจูงทางอุดมการณ์โดยไม่รู้ตัวผ่านภาษาที่ซ่อนเร้น)"
           },
           {
             "key": "D",
-            "text": "It reduces the financial costs of conducting election campaigns"
+            "text": "It reduces the financial costs of conducting election campaigns",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"It exposes covert linguistic framing that coerces uncritical public consensus\""
           }
         ],
         "explanation_en": "The conclusion explicitly states that unmasking conceptual mappings is a 'vital democratic safeguard against manipulative ideological persuasion.'",
         "explanation_th": "การตีแผ่กรอบอุปมาช่วยปกป้องสังคมประชาธิปไตยจากการถูกชักจูงทางอุดมการณ์โดยไม่รู้ตัวผ่านภาษาที่ซ่อนเร้น",
         "evidence_line": "vital democratic safeguard against manipulative ideological persuasion.",
-        "weakness_tag": "reading_inference_c1"
+        "weakness_tag": "reading_inference_c1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       }
     ]
   },
@@ -1991,25 +2817,39 @@
         "options": [
           {
             "key": "A",
-            "text": "A complete abandonment of electronic consumer technology manufacturing"
+            "text": "A complete abandonment of electronic consumer technology manufacturing",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification\""
           },
           {
             "key": "B",
-            "text": "A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification"
+            "text": "The total replacement of human factory laborers with humanoid robotics",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification\""
           },
           {
             "key": "C",
-            "text": "The total replacement of human factory laborers with humanoid robotics"
+            "text": "A return to nineteenth-century domestic agrarian self-sufficiency",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification\""
           },
           {
             "key": "D",
-            "text": "A return to nineteenth-century domestic agrarian self-sufficiency"
+            "text": "A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (บทความบรรยายการเปลี่ยนแปลงเชิงโครงสร้างจากการผลิตแบบลดต้นทุนสูงสุด (just-in-time) สู่การกระจายความเสี่ยงและสร้างความมั่นคง (just-in-case))"
           }
         ],
         "explanation_en": "The passage details the structural migration from hyper-efficient, fragile just-in-time supply chains toward resilient, subsidized just-in-case near-shoring.",
         "explanation_th": "บทความบรรยายการเปลี่ยนแปลงเชิงโครงสร้างจากการผลิตแบบลดต้นทุนสูงสุด (just-in-time) สู่การกระจายความเสี่ยงและสร้างความมั่นคง (just-in-case)",
         "evidence_line": "undergoing a historic realignment from 'just-in-time' to 'just-in-case.'",
-        "weakness_tag": "reading_main_idea_c1"
+        "weakness_tag": "reading_main_idea_c1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_c1_002_2",
@@ -2022,25 +2862,39 @@
         "options": [
           {
             "key": "A",
-            "text": "To comply with international maritime safety treaties"
+            "text": "To maximize short-term return on equity by reducing working capital costs",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (องค์กรกำจัดสินค้าคงคลังสำรองเพื่อลดต้นทุนเงินทุนหมุนเวียนและสร้างผลตอบแทนต่อผู้ถือหุ้น (ROE) สูงสุดในระยะสั้น)"
           },
           {
             "key": "B",
-            "text": "To prevent corporate espionage by overseas competitors"
+            "text": "To comply with international maritime safety treaties",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To maximize short-term return on equity by reducing working capital costs\""
           },
           {
             "key": "C",
-            "text": "To maximize short-term return on equity by reducing working capital costs"
+            "text": "To prevent corporate espionage by overseas competitors",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To maximize short-term return on equity by reducing working capital costs\""
           },
           {
             "key": "D",
-            "text": "To prevent raw materials from degrading under tropical humidity"
+            "text": "To prevent raw materials from degrading under tropical humidity",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To maximize short-term return on equity by reducing working capital costs\""
           }
         ],
         "explanation_en": "Text states: 'By ruthlessly eliminating inventory redundancy and working-capital buffers in pursuit of quarterly return on equity...'",
         "explanation_th": "องค์กรกำจัดสินค้าคงคลังสำรองเพื่อลดต้นทุนเงินทุนหมุนเวียนและสร้างผลตอบแทนต่อผู้ถือหุ้น (ROE) สูงสุดในระยะสั้น",
         "evidence_line": "eliminating inventory redundancy and working-capital buffers in pursuit of quarterly return on equity",
-        "weakness_tag": "reading_detail_retrieval_c1"
+        "weakness_tag": "reading_detail_retrieval_c1",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_c1_002_3",
@@ -2053,25 +2907,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Employing personal acquaintances in senior executive positions"
+            "text": "Employing personal acquaintances in senior executive positions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Restricting sourcing and manufacturing to nations with aligned geopolitical values\""
           },
           {
             "key": "B",
-            "text": "Restricting sourcing and manufacturing to nations with aligned geopolitical values"
+            "text": "Restricting sourcing and manufacturing to nations with aligned geopolitical values",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('friend-shoring' คือการย้ายฐานการผลิตไปยังประเทศพันธมิตรที่มีจุดยืนทางภูมิรัฐศาสตร์สอดคล้องกันเพื่อป้องกันความเสี่ยง)"
           },
           {
             "key": "C",
-            "text": "Establishing voluntary community cooperative societies"
+            "text": "Establishing voluntary community cooperative societies",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Restricting sourcing and manufacturing to nations with aligned geopolitical values\""
           },
           {
             "key": "D",
-            "text": "Encouraging employees to form cross-border labor unions"
+            "text": "Encouraging employees to form cross-border labor unions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Restricting sourcing and manufacturing to nations with aligned geopolitical values\""
           }
         ],
         "explanation_en": "'Friend-shoring' is the trade practice of relocating supply chains to countries with shared geopolitical values to minimize political disruption.",
         "explanation_th": "'friend-shoring' คือการย้ายฐานการผลิตไปยังประเทศพันธมิตรที่มีจุดยืนทางภูมิรัฐศาสตร์สอดคล้องกันเพื่อป้องกันความเสี่ยง",
         "evidence_line": "This doctrinal shift manifests in aggressive near-shoring, friend-shoring, and dual-sourcing",
-        "weakness_tag": "reading_vocabulary_context_c1"
+        "weakness_tag": "reading_vocabulary_context_c1",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_c1_002_4",
@@ -2084,25 +2952,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Immediate deflation across all consumer electronics categories"
+            "text": "Immediate deflation across all consumer electronics categories",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Reduced economies of scale and heightened structural inflation\""
           },
           {
             "key": "B",
-            "text": "The complete obsolescence of personal mobile computing"
+            "text": "The complete obsolescence of personal mobile computing",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Reduced economies of scale and heightened structural inflation\""
           },
           {
             "key": "C",
-            "text": "Reduced economies of scale and heightened structural inflation"
+            "text": "Reduced economies of scale and heightened structural inflation",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การสร้างโรงงานเซมิคอนดักเตอร์ซ้ำซ้อนในหลายภูมิภาคจะทำให้สูญเสียการประหยัดจากขนาด (economies of scale) และกระตุ้นเงินเฟ้อ)"
           },
           {
             "key": "D",
-            "text": "A severe collapse in the profitability of energy utilities"
+            "text": "A severe collapse in the profitability of energy utilities",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"Reduced economies of scale and heightened structural inflation\""
           }
         ],
         "explanation_en": "The final sentence warns: 'duplicating capital-intensive fabrication foundries... inevitably depresses economies of scale, exacerbates structural inflationary pressures'.",
         "explanation_th": "การสร้างโรงงานเซมิคอนดักเตอร์ซ้ำซ้อนในหลายภูมิภาคจะทำให้สูญเสียการประหยัดจากขนาด (economies of scale) และกระตุ้นเงินเฟ้อ",
         "evidence_line": "depresses economies of scale, exacerbates structural inflationary pressures",
-        "weakness_tag": "reading_inference_c1"
+        "weakness_tag": "reading_inference_c1",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_c1_002_5",
@@ -2115,25 +2997,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They want to nationalize all technology corporations under military control"
+            "text": "They want to nationalize all technology corporations under military control",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view advanced microchips as foundational to national security and sovereignty\""
           },
           {
             "key": "B",
-            "text": "They view advanced microchips as foundational to national security and sovereignty"
+            "text": "They plan to eliminate intellectual property protections on semiconductors",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view advanced microchips as foundational to national security and sovereignty\""
           },
           {
             "key": "C",
-            "text": "They plan to eliminate intellectual property protections on semiconductors"
+            "text": "They intend to ban imports of all Asian-manufactured components",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They view advanced microchips as foundational to national security and sovereignty\""
           },
           {
             "key": "D",
-            "text": "They intend to ban imports of all Asian-manufactured components"
+            "text": "They view advanced microchips as foundational to national security and sovereignty",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (รัฐบาลมองว่าชิปขั้นสูงเป็นรากฐานความมั่นคงของชาติ จึงต้องดึงฐานการผลิตที่มีความสำคัญเชิงยุทธศาสตร์กลับมาไว้ในประเทศ)"
           }
         ],
         "explanation_en": "Text connects state subsidies to treating 'supply chain resilience as an imperative of national security... repatriate strategically foundational capabilities'.",
         "explanation_th": "รัฐบาลมองว่าชิปขั้นสูงเป็นรากฐานความมั่นคงของชาติ จึงต้องดึงฐานการผลิตที่มีความสำคัญเชิงยุทธศาสตร์กลับมาไว้ในประเทศ",
         "evidence_line": "imperative of national security and corporate survival... repatriate strategically foundational capabilities",
-        "weakness_tag": "reading_inference_c1"
+        "weakness_tag": "reading_inference_c1",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       }
     ]
   },
@@ -2157,25 +3053,39 @@
         "options": [
           {
             "key": "A",
-            "text": "That mathematical calculations have any utility in astrophysical observations"
+            "text": "That scientific knowledge advances as a cumulative, objective linear progression toward truth",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (คูห์นปฏิเสธความเชื่อดั้งเดิมที่ว่าวิทยาศาสตร์คือการสั่งสมความรู้แบบเส้นตรงอย่างเป็นภววิสัยเพื่อเข้าหาความจริงสัมบูรณ์)"
           },
           {
             "key": "B",
-            "text": "That scientific knowledge advances as a cumulative, objective linear progression toward truth"
+            "text": "That mathematical calculations have any utility in astrophysical observations",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"That scientific knowledge advances as a cumulative, objective linear progression toward truth\""
           },
           {
             "key": "C",
-            "text": "That laboratory experiments can be replicated across different research institutions"
+            "text": "That laboratory experiments can be replicated across different research institutions",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"That scientific knowledge advances as a cumulative, objective linear progression toward truth\""
           },
           {
             "key": "D",
-            "text": "That religious institutions should maintain control over academic funding"
+            "text": "That religious institutions should maintain control over academic funding",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"That scientific knowledge advances as a cumulative, objective linear progression toward truth\""
           }
         ],
         "explanation_en": "The opening sentence explicitly notes that Kuhn exploded 'the teleological myth of science as a cumulative, linear progression toward an objective ontological truth.'",
         "explanation_th": "คูห์นปฏิเสธความเชื่อดั้งเดิมที่ว่าวิทยาศาสตร์คือการสั่งสมความรู้แบบเส้นตรงอย่างเป็นภววิสัยเพื่อเข้าหาความจริงสัมบูรณ์",
         "evidence_line": "exploded the teleological myth of science as a cumulative, linear progression toward an objective ontological truth.",
-        "weakness_tag": "reading_main_idea_c2"
+        "weakness_tag": "reading_main_idea_c2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_c2_001_2",
@@ -2188,25 +3098,39 @@
         "options": [
           {
             "key": "A",
-            "text": "The impossibility of measuring atomic particles using mechanical calipers"
+            "text": "The impossibility of measuring atomic particles using mechanical calipers",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The absence of a common neutral standard to objectively compare competing paradigms\""
           },
           {
             "key": "B",
-            "text": "The inability of scientists to communicate across different spoken vernaculars"
+            "text": "The absence of a common neutral standard to objectively compare competing paradigms",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('incommensurability' (ความไม่อาจเทียบเคียงกันได้) หมายถึง การไม่มีเกณฑ์วัดหรือภาษาที่เป็นกลางที่สามารถนำมาเปรียบเทียบกระบวนทัศน์ที่ต่างกันได้อย่างเป็นกลางแท้จริง)"
           },
           {
             "key": "C",
-            "text": "The absence of a common neutral standard to objectively compare competing paradigms"
+            "text": "The inability of scientists to communicate across different spoken vernaculars",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The absence of a common neutral standard to objectively compare competing paradigms\""
           },
           {
             "key": "D",
-            "text": "The mathematical equality between classical and quantum mechanics equations"
+            "text": "The mathematical equality between classical and quantum mechanics equations",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"The absence of a common neutral standard to objectively compare competing paradigms\""
           }
         ],
         "explanation_en": "Kuhn's incommensurability implies that rival paradigms cannot be measured against a single neutral benchmark because their terms and observations are mutually incompatible.",
         "explanation_th": "'incommensurability' (ความไม่อาจเทียบเคียงกันได้) หมายถึง การไม่มีเกณฑ์วัดหรือภาษาที่เป็นกลางที่สามารถนำมาเปรียบเทียบกระบวนทัศน์ที่ต่างกันได้อย่างเป็นกลางแท้จริง",
         "evidence_line": "there exists no neutral, theory-independent observational language capable of adjudicating between competing paradigms",
-        "weakness_tag": "reading_vocabulary_context_c2"
+        "weakness_tag": "reading_vocabulary_context_c2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_c2_001_3",
@@ -2219,25 +3143,39 @@
         "options": [
           {
             "key": "A",
-            "text": "From a purely metaphysical concept into a measurable biological hormone"
+            "text": "From a purely metaphysical concept into a measurable biological hormone",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime\""
           },
           {
             "key": "B",
-            "text": "From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime"
+            "text": "From an acoustic frequency measurement into a thermodynamic heat index",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime\""
           },
           {
             "key": "C",
-            "text": "From an acoustic frequency measurement into a thermodynamic heat index"
+            "text": "From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ความหมายของ 'มวล' เปลี่ยนจากคุณสมบัติคงที่ที่รักษาไว้ได้ของสสาร ไปสู่สภาวะพลังงานที่แปรผันตามความเร็วในกาล-อวกาศ)"
           },
           {
             "key": "D",
-            "text": "It was completely discarded as an unscientific pseudoscientific artifact"
+            "text": "It was completely discarded as an unscientific pseudoscientific artifact",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime\""
           }
         ],
         "explanation_en": "Text states: 'transformed from an invariant, conserved property of matter into a velocity-dependent manifestation of unified spacetime energy.'",
         "explanation_th": "ความหมายของ 'มวล' เปลี่ยนจากคุณสมบัติคงที่ที่รักษาไว้ได้ของสสาร ไปสู่สภาวะพลังงานที่แปรผันตามความเร็วในกาล-อวกาศ",
         "evidence_line": "transformed from an invariant, conserved property of matter into a velocity-dependent manifestation",
-        "weakness_tag": "reading_detail_retrieval_c2"
+        "weakness_tag": "reading_detail_retrieval_c2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_c2_001_4",
@@ -2250,25 +3188,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Scientists deliberately manipulate visual findings to please grant committees"
+            "text": "Scientists deliberately manipulate visual findings to please grant committees",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Raw perceptual sensory inputs are always filtered through learned theoretical assumptions\""
           },
           {
             "key": "B",
-            "text": "Optical lenses in microscopes distort physical reality due to chromatic aberration"
+            "text": "Optical lenses in microscopes distort physical reality due to chromatic aberration",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Raw perceptual sensory inputs are always filtered through learned theoretical assumptions\""
           },
           {
             "key": "C",
-            "text": "Raw perceptual sensory inputs are always filtered through learned theoretical assumptions"
+            "text": "Scientific observations can only be verified using theoretical computer algorithms",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"Raw perceptual sensory inputs are always filtered through learned theoretical assumptions\""
           },
           {
             "key": "D",
-            "text": "Scientific observations can only be verified using theoretical computer algorithms"
+            "text": "Raw perceptual sensory inputs are always filtered through learned theoretical assumptions",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การสังเกตมี 'ทฤษฎีแฝงอยู่เสมอ' (theory-laden) หมายถึงสิ่งที่นักวิทยาศาสตร์มองเห็นจะถูกกรองและประกอบสร้างผ่านสมมติฐานทางทฤษฎีที่ตนเองยึดถืออยู่)"
           }
         ],
         "explanation_en": "Theory-ladenness means that human observation is never entirely pure; what is seen is structured by the theoretical framework internalized by the observer.",
         "explanation_th": "การสังเกตมี 'ทฤษฎีแฝงอยู่เสมอ' (theory-laden) หมายถึงสิ่งที่นักวิทยาศาสตร์มองเห็นจะถูกกรองและประกอบสร้างผ่านสมมติฐานทางทฤษฎีที่ตนเองยึดถืออยู่",
         "evidence_line": "what a scientist perceives through an instrument is pre-structured by the theoretical presuppositions",
-        "weakness_tag": "reading_inference_c2"
+        "weakness_tag": "reading_inference_c2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_c2_001_5",
@@ -2281,25 +3233,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Through the gradual accumulation of irrefutable empirical laboratory facts"
+            "text": "Through successive reconfigurations of the conceptual paradigms through which nature is experienced",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ความก้าวหน้าทางวิทยาศาสตร์ไม่ได้เกิดจากการสะสมข้อเท็จจริงเข้าใกล้ความจริงสัมบูรณ์ แต่เกิดจากการปฏิวัติเปลี่ยนเลนส์มโนทัศน์ที่ใช้ทำความเข้าใจธรรมชาติ)"
           },
           {
             "key": "B",
-            "text": "By eliminating all human subjectivity and delegating research entirely to computers"
+            "text": "Through the gradual accumulation of irrefutable empirical laboratory facts",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Through successive reconfigurations of the conceptual paradigms through which nature is experienced\""
           },
           {
             "key": "C",
-            "text": "Through successive reconfigurations of the conceptual paradigms through which nature is experienced"
+            "text": "By eliminating all human subjectivity and delegating research entirely to computers",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Through successive reconfigurations of the conceptual paradigms through which nature is experienced\""
           },
           {
             "key": "D",
-            "text": "By demonstrating that earlier scientific civilizations were intellectually inferior"
+            "text": "By demonstrating that earlier scientific civilizations were intellectually inferior",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"Through successive reconfigurations of the conceptual paradigms through which nature is experienced\""
           }
         ],
         "explanation_en": "The final sentence concludes: 'progresses not through cumulative asymptotic approximation... but through successive historical transformations of the conceptual lenses'.",
         "explanation_th": "ความก้าวหน้าทางวิทยาศาสตร์ไม่ได้เกิดจากการสะสมข้อเท็จจริงเข้าใกล้ความจริงสัมบูรณ์ แต่เกิดจากการปฏิวัติเปลี่ยนเลนส์มโนทัศน์ที่ใช้ทำความเข้าใจธรรมชาติ",
         "evidence_line": "successive historical transformations of the conceptual lenses through which human consciousness interrogates nature.",
-        "weakness_tag": "reading_inference_c2"
+        "weakness_tag": "reading_inference_c2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       }
     ]
   },
@@ -2323,25 +3289,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Adaptive reuse is an unmitigated environmental and architectural triumph"
+            "text": "Adaptive reuse is an unmitigated environmental and architectural triumph",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts\""
           },
           {
             "key": "B",
-            "text": "Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts"
+            "text": "Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (ผู้เขียนวิพากษ์ว่ามรดกทางอุตสาหกรรมถูกทำให้กลายเป็นสินค้าเพื่อชนชั้นใหม่ ในขณะที่คนงานตัวจริงผู้สร้างประวัติศาสตร์กลับถูกขับไล่ออกไปจากพื้นที่)"
           },
           {
             "key": "C",
-            "text": "Decommissioned factory sites should be demolished rather than restored"
+            "text": "Decommissioned factory sites should be demolished rather than restored",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts\""
           },
           {
             "key": "D",
-            "text": "Urban gentrification has successfully eliminated economic inequality in metropolitan areas"
+            "text": "Urban gentrification has successfully eliminated economic inequality in metropolitan areas",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts\""
           }
         ],
         "explanation_en": "The passage argues that gentrification sanitizes and commodifies industrial history for the elite while economically expelling real working-class communities.",
         "explanation_th": "ผู้เขียนวิพากษ์ว่ามรดกทางอุตสาหกรรมถูกทำให้กลายเป็นสินค้าเพื่อชนชั้นใหม่ ในขณะที่คนงานตัวจริงผู้สร้างประวัติศาสตร์กลับถูกขับไล่ออกไปจากพื้นที่",
         "evidence_line": "museumified facsimile of working-class heritage from which real, embodied working-class humans have been surgically eradicated.",
-        "weakness_tag": "reading_main_idea_c2"
+        "weakness_tag": "reading_main_idea_c2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       },
       {
         "id": "rq_c2_002_2",
@@ -2354,25 +3334,39 @@
         "options": [
           {
             "key": "A",
-            "text": "A completely cleared terrain intended for suburban housing developments"
+            "text": "A completely cleared terrain intended for suburban housing developments",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"A site where historical architectural layers are repeatedly overwritten yet remain partially visible\""
           },
           {
             "key": "B",
-            "text": "A site where historical architectural layers are repeatedly overwritten yet remain partially visible"
+            "text": "A geometric map projection designed for satellite navigation systems",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"A site where historical architectural layers are repeatedly overwritten yet remain partially visible\""
           },
           {
             "key": "C",
-            "text": "A geometric map projection designed for satellite navigation systems"
+            "text": "A site where historical architectural layers are repeatedly overwritten yet remain partially visible",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! ('palimpsest' ในทางภูมิศาสตร์เมืองหมายถึง พื้นที่ทางสถาปัตยกรรมที่มีการเขียนทับ รื้อสร้างใหม่หลายยุคสมัย แต่ร่องรอยในอดีตยังคงปรากฏให้เห็นซ้อนทับกันอยู่)"
           },
           {
             "key": "D",
-            "text": "An earthquake-resistant foundation engineered for coastal skyscrapers"
+            "text": "An earthquake-resistant foundation engineered for coastal skyscrapers",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ C: \"A site where historical architectural layers are repeatedly overwritten yet remain partially visible\""
           }
         ],
         "explanation_en": "A palimpsest is a manuscript page rewritten over earlier scraped-off writing; urbanly, it signifies layers of historical city development overlapping.",
         "explanation_th": "'palimpsest' ในทางภูมิศาสตร์เมืองหมายถึง พื้นที่ทางสถาปัตยกรรมที่มีการเขียนทับ รื้อสร้างใหม่หลายยุคสมัย แต่ร่องรอยในอดีตยังคงปรากฏให้เห็นซ้อนทับกันอยู่",
         "evidence_line": "an architectural palimpsest—a multi-layered spatial text wherein historical inscriptions of labor... are perpetually overwritten",
-        "weakness_tag": "reading_vocabulary_context_c2"
+        "weakness_tag": "reading_vocabulary_context_c2",
+        "correctAnswer": "C",
+        "correct_option_key": "C"
       },
       {
         "id": "rq_c2_002_3",
@@ -2385,25 +3379,39 @@
         "options": [
           {
             "key": "A",
-            "text": "They are recycled into industrial scrap metal for automotive export"
+            "text": "They are recycled into industrial scrap metal for automotive export",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They are stripped of class trauma and commodified as desirable authenticity\""
           },
           {
             "key": "B",
-            "text": "They are covered behind sound-proof drywall to meet modern fire regulations"
+            "text": "They are covered behind sound-proof drywall to meet modern fire regulations",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They are stripped of class trauma and commodified as desirable authenticity\""
           },
           {
             "key": "C",
-            "text": "They are stripped of class trauma and commodified as desirable authenticity"
+            "text": "They are donated to municipal schools as educational structural models",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ D: \"They are stripped of class trauma and commodified as desirable authenticity\""
           },
           {
             "key": "D",
-            "text": "They are donated to municipal schools as educational structural models"
+            "text": "They are stripped of class trauma and commodified as desirable authenticity",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (สิ่งก่อสร้างในโรงงานเดิมถูกฟอกขาวตัดขาดจากประวัติศาสตร์การกดขี่แรงงาน แล้วแปลงสภาพเป็น 'ความแท้ทางสถาปัตยกรรม' เพื่อขายในราคาสูง)"
           }
         ],
         "explanation_en": "Text says: 'stripped of its historic association with proletarian subjugation... Recast as desirable architectural authenticity, these remnants... are commodified'.",
         "explanation_th": "สิ่งก่อสร้างในโรงงานเดิมถูกฟอกขาวตัดขาดจากประวัติศาสตร์การกดขี่แรงงาน แล้วแปลงสภาพเป็น 'ความแท้ทางสถาปัตยกรรม' เพื่อขายในราคาสูง",
         "evidence_line": "stripped of its historic association with proletarian subjugation and class exploitation. Recast as desirable architectural authenticity",
-        "weakness_tag": "reading_detail_retrieval_c2"
+        "weakness_tag": "reading_detail_retrieval_c2",
+        "correctAnswer": "D",
+        "correct_option_key": "D"
       },
       {
         "id": "rq_c2_002_4",
@@ -2416,25 +3424,39 @@
         "options": [
           {
             "key": "A",
-            "text": "To celebrate the economic efficiency of modern property development firms"
+            "text": "To characterize these redeveloped spaces as artificial copies disconnected from living social reality",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การยกแนวคิด 'simulacrum' มาอธิบายเพื่อสะท้อนภาพจำลองที่ถูกประดิษฐ์ขึ้นมาอย่างสวยหรู แต่ไร้ชีวิตและตัดขาดจากความเป็นจริงของผู้ใช้แรงงาน)"
           },
           {
             "key": "B",
-            "text": "To suggest that modern architecture should utilize augmented reality headsets"
+            "text": "To celebrate the economic efficiency of modern property development firms",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To characterize these redeveloped spaces as artificial copies disconnected from living social reality\""
           },
           {
             "key": "C",
-            "text": "To characterize these redeveloped spaces as artificial copies disconnected from living social reality"
+            "text": "To suggest that modern architecture should utilize augmented reality headsets",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To characterize these redeveloped spaces as artificial copies disconnected from living social reality\""
           },
           {
             "key": "D",
-            "text": "To argue that historical archives should be moved to digital cloud databases"
+            "text": "To argue that historical archives should be moved to digital cloud databases",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ A: \"To characterize these redeveloped spaces as artificial copies disconnected from living social reality\""
           }
         ],
         "explanation_en": "The author uses 'simulacrum' to describe how historic waterfronts become staged, hollow representations devoid of genuine working-class life.",
         "explanation_th": "การยกแนวคิด 'simulacrum' มาอธิบายเพื่อสะท้อนภาพจำลองที่ถูกประดิษฐ์ขึ้นมาอย่างสวยหรู แต่ไร้ชีวิตและตัดขาดจากความเป็นจริงของผู้ใช้แรงงาน",
         "evidence_line": "simulacrum: an idealized, museumified facsimile of working-class heritage from which real, embodied working-class humans have been surgically eradicated.",
-        "weakness_tag": "reading_inference_c2"
+        "weakness_tag": "reading_inference_c2",
+        "correctAnswer": "A",
+        "correct_option_key": "A"
       },
       {
         "id": "rq_c2_002_5",
@@ -2447,25 +3469,39 @@
         "options": [
           {
             "key": "A",
-            "text": "Supporting corporate tax incentives to accelerate waterfront demolition"
+            "text": "Supporting corporate tax incentives to accelerate waterfront demolition",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment\""
           },
           {
             "key": "B",
-            "text": "Restricting public access to historical monument sites across the city"
+            "text": "Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment",
+            "isCorrect": true,
+            "is_correct": true,
+            "feedbackTh": "ถูกต้อง! (การมองเมืองอย่างวิพากษ์ต้องก้าวข้ามความประทับใจเปลือกนอกเพื่อขุดค้นความจริงเรื่องการถูกเบียดขับของคนจน และมองเห็นการต่อสู้แย่งชิงพื้นที่ความทรงจำ)"
           },
           {
             "key": "C",
-            "text": "Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment"
+            "text": "Restricting public access to historical monument sites across the city",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment\""
           },
           {
             "key": "D",
-            "text": "Encouraging higher luxury condominium density to boost municipal tax collections"
+            "text": "Encouraging higher luxury condominium density to boost municipal tax collections",
+            "isCorrect": false,
+            "is_correct": false,
+            "feedbackTh": "ยังไม่ถูกต้อง ตัวเลือกที่ถูกต้องคือ B: \"Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment\""
           }
         ],
         "explanation_en": "The final sentence urges the observer to 'excavate the obscured sediment of displacement, decoding the built environment as a contested arena where memory and amnesia continually vie for spatial hegemony.'",
         "explanation_th": "การมองเมืองอย่างวิพากษ์ต้องก้าวข้ามความประทับใจเปลือกนอกเพื่อขุดค้นความจริงเรื่องการถูกเบียดขับของคนจน และมองเห็นการต่อสู้แย่งชิงพื้นที่ความทรงจำ",
         "evidence_line": "excavate the obscured sediment of displacement, decoding the built environment as a contested arena",
-        "weakness_tag": "reading_inference_c2"
+        "weakness_tag": "reading_inference_c2",
+        "correctAnswer": "B",
+        "correct_option_key": "B"
       }
     ]
   }

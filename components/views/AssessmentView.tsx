@@ -93,6 +93,27 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
     const localEval = evaluateDiagnosticAssessment(finalAnswers);
     const userTargetExam = profile?.target_exam || 'PET';
 
+    const formattedLocal: FormattedAssessmentResult = {
+      totalQuestions: localEval.totalQuestions,
+      correctCount: localEval.correctCount,
+      percentage: localEval.percentage,
+      estimatedLevel: localEval.estimatedLevel,
+      cambridgeScore: localEval.cambridgeScore,
+      recommendedExam: localEval.targetExam,
+      targetExam: userTargetExam,
+      skillStats: toUserSkillStats(localEval.skillStats),
+      identifiedWeaknesses: localEval.identifiedWeaknesses.map((w) => ({
+        tag: w.tag,
+        labelTh: w.labelTh,
+        errorCount: w.errorCount,
+      })),
+      learningPathRecommendations: localEval.learningPathRecommendations,
+      isOfficial: false,
+      disclaimer:
+        'คะแนนประเมินของแพลตฟอร์มตามเกณฑ์จำลองความสามารถทางภาษา (ไม่ใช่ผลสอบรับรองทางการจาก Cambridge English หรือใบรับรอง CEFR)',
+      estimationMethod: 'platform_diagnostic_heuristic',
+    };
+
     // If guest, record attempts for subsequent sync and use local evaluation
     if (status !== 'authenticated') {
       // Record guest attempts
@@ -106,27 +127,6 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
           attempted_at: new Date().toISOString(),
         });
       });
-
-      const formattedLocal: FormattedAssessmentResult = {
-        totalQuestions: localEval.totalQuestions,
-        correctCount: localEval.correctCount,
-        percentage: localEval.percentage,
-        estimatedLevel: localEval.estimatedLevel,
-        cambridgeScore: localEval.cambridgeScore,
-        recommendedExam: localEval.targetExam,
-        targetExam: userTargetExam,
-        skillStats: toUserSkillStats(localEval.skillStats),
-        identifiedWeaknesses: localEval.identifiedWeaknesses.map((w) => ({
-          tag: w.tag,
-          labelTh: w.labelTh,
-          errorCount: w.errorCount,
-        })),
-        learningPathRecommendations: localEval.learningPathRecommendations,
-        isOfficial: false,
-        disclaimer:
-          'คะแนนประเมินของแพลตฟอร์มตามเกณฑ์จำลองความสามารถทางภาษา (ไม่ใช่ผลสอบรับรองทางการจาก Cambridge English หรือใบรับรอง CEFR)',
-        estimationMethod: 'platform_diagnostic_heuristic',
-      };
 
       setResult(formattedLocal);
       setIsCompleted(true);
@@ -209,8 +209,28 @@ export const AssessmentView: React.FC<AssessmentViewProps> = ({
         assessmentCompleted: true,
       });
     } catch (err: any) {
-      console.error('Failed to submit assessment to server:', err);
-      setSubmitError(err?.message || 'ไม่สามารถส่งผลการประเมินไปยังเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง');
+      console.warn('Failed to submit assessment to server, using local evaluation:', err);
+      setResult(formattedLocal);
+      setIsCompleted(true);
+
+      try {
+        confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+      } catch {
+        // Safe fallback
+      }
+
+      onComplete({
+        currentLevel: formattedLocal.estimatedLevel,
+        estimatedCambridgeScore: formattedLocal.cambridgeScore,
+        skillStats: formattedLocal.skillStats,
+        weakTopics: formattedLocal.identifiedWeaknesses.map((w) => ({
+          tag: w.tag,
+          labelTh: w.labelTh,
+          errorCount: w.errorCount,
+          lastFailedAt: new Date().toISOString(),
+        })),
+        assessmentCompleted: true,
+      });
     } finally {
       setIsSubmitting(false);
     }

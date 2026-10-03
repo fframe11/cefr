@@ -62,18 +62,52 @@ export interface UniverseQueryResult {
 let universeCache: ExtendedVocabularyCandidate[] | null = null;
 let prefixIndex: Map<string, number[]> | null = null;
 let tier1Count = 0;
+import { VOCABULARY_BANK } from '@/data/vocabularyBank';
+
 let tier2Count = 0;
+
+function getFallbackCandidates(): ExtendedVocabularyCandidate[] {
+  return VOCABULARY_BANK.map((w, idx) => ({
+    id: w.id || `candidate-${idx}`,
+    glova_id: w.id,
+    word: w.word,
+    lemma: w.lemma,
+    part_of_speech: w.partOfSpeech,
+    cefr_level: w.cefrLevel as any,
+    cefr_source: 'Glova Verified Seed Catalog',
+    cefr_disclaimer: 'Verified standard CEFR vocabulary item.',
+    meaning_th: w.meaningTh,
+    meaning_en: w.meaningEn,
+    ipa: w.ipa,
+    example_sentence_en: w.exampleSentenceEn,
+    example_sentence_th: w.exampleSentenceTh,
+    collocations: w.collocations,
+    synonyms: w.synonyms,
+    antonyms: w.antonyms,
+    topic: w.topic,
+    tier: 'TIER_1_VERIFIED',
+    production_status: 'VERIFIED_PRODUCTION',
+    validation_status: 'VALIDATED_READY',
+    domain: w.topic || 'General English',
+    source: 'Glova Verified Standard',
+  }));
+}
 
 function loadUniverse(): ExtendedVocabularyCandidate[] {
   if (universeCache) return universeCache;
 
-  const dataPath = path.join(process.cwd(), 'data/vocabulary-extended-universe.json');
-  if (!fs.existsSync(dataPath)) {
-    return [];
+  try {
+    const dataPath = path.join(process.cwd(), 'data/vocabulary-extended-universe.json');
+    if (fs.existsSync(dataPath)) {
+      const raw = fs.readFileSync(dataPath, 'utf8');
+      universeCache = JSON.parse(raw) as ExtendedVocabularyCandidate[];
+    } else {
+      universeCache = getFallbackCandidates();
+    }
+  } catch (err) {
+    console.warn('[ExtendedUniverse] Falling back to verified core vocabulary candidates:', err);
+    universeCache = getFallbackCandidates();
   }
-
-  const raw = fs.readFileSync(dataPath, 'utf8');
-  universeCache = JSON.parse(raw) as ExtendedVocabularyCandidate[];
 
   // Build lightweight prefix index for sub-millisecond autocomplete
   prefixIndex = new Map();

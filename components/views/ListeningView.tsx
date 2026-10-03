@@ -350,7 +350,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
           {/* Right Badges & User Status */}
           <div className="flex items-center gap-3 self-end md:self-center">
-            <span className="px-3.5 py-1.5 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 text-xs font-mono font-black uppercase tracking-wider">
+            <span className="px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-500 dark:text-amber-500 border border-amber-500/20 text-xs font-mono font-black uppercase tracking-wider">
               {isEn ? 'Free User' : 'สมาชิกทั่วไป'}
             </span>
 
@@ -382,7 +382,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
       )}
 
       {/* Error state */}
-      {error && (
+      {error && exercises.length === 0 && (
         <ErrorMessage message={error} onRetry={fetchExercises} />
       )}
 
@@ -496,7 +496,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
 
                     {/* Bookmark Pins along Timeline (Piotr Kosmala colored checkpoints) */}
                     <div
-                      className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-sky-400 border border-black cursor-pointer shadow-xs"
+                      className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-amber-500 border border-black cursor-pointer shadow-xs"
                       style={{ left: '15%' }}
                       title="Vocabulary Landmark: Heathrow & Delay"
                       onClick={(e) => {
@@ -701,7 +701,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 <button
                   type="button"
                   onClick={handleNextChapter}
-                  className="touch-target px-5 py-2.5 rounded-full border border-sky-500/30 text-sky-700 dark:text-sky-300 bg-sky-500/10 hover:bg-sky-500/20 text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  className="touch-target px-5 py-2.5 rounded-full border border-amber-500/30 text-amber-500 dark:text-amber-500 bg-amber-500/10 hover:bg-amber-500/20 text-xs font-black uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
                   <span>{isEn ? 'NEXT CHAPTER' : 'บทเรียนถัดไป'}</span>
                   <ChevronRight className="w-4 h-4" />
@@ -743,13 +743,13 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                 onClick={() => setActiveTab('files')}
                 className={`touch-target px-4 sm:px-6 py-3 font-extrabold text-xs sm:text-sm border-b-2 transition-all flex items-center gap-2 cursor-pointer shrink-0 ${
                   activeTab === 'files'
-                    ? 'border-sky-500 text-sky-600 dark:text-sky-400'
+                    ? 'border-amber-500 text-amber-500 dark:text-amber-500'
                     : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 <Download className="w-4 h-4" />
                 <span>{isEn ? 'Attached Files' : 'เอกสารประกอบการเรียน'}</span>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-sky-500/15 text-sky-700 dark:text-sky-300">
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/15 text-amber-500 dark:text-amber-500">
                   4
                 </span>
               </button>
@@ -895,9 +895,9 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {/* File 1: PDF Handout */}
-                    <div className="p-4 rounded-2xl bg-white dark:bg-[#1E1B28] border border-border/80 flex items-center justify-between gap-3 shadow-xs hover:border-sky-500/50 transition-colors">
+                    <div className="p-4 rounded-2xl bg-white dark:bg-[#1E1B28] border border-border/80 flex items-center justify-between gap-3 shadow-xs hover:border-amber-500/50 transition-colors">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-600 flex items-center justify-center shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0">
                           <FileText className="w-5 h-5" />
                         </div>
                         <div>
@@ -910,7 +910,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                       <button
                         type="button"
                         onClick={() => handleDownloadFile('Airport-Flight-Vocabulary.pdf')}
-                        className="p-2 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-sky-500/20 text-sky-700 dark:text-sky-300 transition-colors cursor-pointer"
+                        className="p-2 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-amber-500/20 text-amber-500 dark:text-amber-500 transition-colors cursor-pointer"
                         title="Download file"
                       >
                         <Download className="w-4 h-4" />
@@ -1108,7 +1108,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
             <button
               type="button"
               onClick={() => router.push('/dashboard')}
-              className="touch-target px-5 py-2.5 rounded-full border border-sky-500/40 text-sky-700 dark:text-sky-300 bg-sky-500/10 hover:bg-sky-500/20 text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all shadow-xs cursor-pointer w-fit"
+              className="touch-target px-5 py-2.5 rounded-full border border-amber-500/40 text-amber-500 dark:text-amber-500 bg-amber-500/10 hover:bg-amber-500/20 text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all shadow-xs cursor-pointer w-fit"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{isEn ? 'BACK' : 'ย้อนกลับ'}</span>
@@ -1155,7 +1155,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                           className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider ${
                             mod.badgeType === 'free'
                               ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
-                              : 'bg-sky-500/15 text-sky-700 dark:text-sky-300'
+                              : 'bg-amber-500/15 text-amber-500 dark:text-amber-500'
                           }`}
                         >
                           {mod.badgeType === 'free' ? 'FREE' : 'PREMIUM'}
@@ -1188,7 +1188,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                           }}
                           className={`w-full text-left p-3 rounded-2xl flex items-center justify-between gap-3 transition-all cursor-pointer ${
                             isActive
-                              ? 'bg-sky-500/10 text-sky-700 dark:text-sky-300 font-extrabold shadow-2xs border border-sky-500/25'
+                              ? 'bg-amber-500/10 text-amber-500 dark:text-amber-500 font-extrabold shadow-2xs border border-amber-500/25'
                               : 'hover:bg-slate-50 dark:hover:bg-white/5 text-slate-700 dark:text-slate-300'
                           }`}
                         >
@@ -1199,7 +1199,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
                                 <Check className="w-3.5 h-3.5 stroke-[3]" />
                               </div>
                             ) : isActive ? (
-                              <div className="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center shrink-0">
+                              <div className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0">
                                 {isPlaying ? (
                                   <Pause className="w-3 h-3 fill-white" />
                                 ) : (

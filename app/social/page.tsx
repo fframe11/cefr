@@ -357,7 +357,7 @@ export default function SocialPage() {
           onClick={() => setActiveTab('study_together')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition-all text-center flex items-center gap-1.5 ${
             activeTab === 'study_together'
-              ? 'bg-indigo-600 text-white shadow-xs'
+              ? 'bg-[#FA5D5D] text-white shadow-xs'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -398,7 +398,7 @@ export default function SocialPage() {
                         setSelectedPartnerId(peer.userId);
                         setActiveTab('study_together');
                       }}
-                      className="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 text-xs font-bold transition-all flex items-center gap-1"
+                      className="px-3 py-1.5 rounded-xl bg-[#FA5D5D] dark:bg-[#FA5D5D]/30 text-[#FA5D5D] dark:text-[#FA5D5D] hover:bg-[#FA5D5D] text-xs font-bold transition-all flex items-center gap-1"
                     >
                       <BookOpen className="w-3 h-3" />
                       <span>{isEn ? 'Study Duo' : 'ชวนเรียนคู่'}</span>
@@ -510,12 +510,12 @@ export default function SocialPage() {
           <div className="p-6 space-y-6">
             {!activeDuoSession || activeDuoSession.status === 'COMPLETED' ? (
               <div className="space-y-6">
-                <div className="p-5 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/20 border border-indigo-200/50 dark:border-indigo-800/40">
-                  <h3 className="text-sm font-black text-indigo-900 dark:text-indigo-200 flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-indigo-600" />
+                <div className="p-5 rounded-2xl bg-[#FA5D5D]/70 dark:bg-[#FA5D5D]/20 border border-[#FA5D5D]/50 dark:border-[#FA5D5D]/40">
+                  <h3 className="text-sm font-black text-[#FA5D5D] dark:text-[#FA5D5D] flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[#FA5D5D]" />
                     {isEn ? 'Duo Social Learning Room' : 'ห้องเรียนคู่ภาษาอังกฤษ'}
                   </h3>
-                  <p className="text-xs text-indigo-700/80 dark:text-indigo-300/80 mt-1">
+                  <p className="text-xs text-[#FA5D5D]/80 dark:text-[#FA5D5D]/80 mt-1">
                     {isEn
                       ? 'Pair up with a friend to tackle 5 vocabulary questions together. Compare speeds, review mistakes, and earn bonus XP!'
                       : 'จับคู่กับเพื่อนนักศึกษาทำโจทย์คำศัพท์ 5 ข้อพร้อมกัน เปรียบเทียบความเร็ว และทบทวนข้อผิดพลาดร่วมกัน'}
@@ -570,7 +570,7 @@ export default function SocialPage() {
                 <button
                   type="button"
                   onClick={startDuoSession}
-                  className="w-full py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
+                  className="w-full py-3.5 rounded-2xl bg-[#FA5D5D] hover:bg-[#FA5D5D] text-white font-black text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
                 >
                   <Play className="w-4 h-4 fill-white" />
                   <span>{isEn ? 'Start Duo Study Session (5 Questions)' : 'เริ่มเซสชันเรียนคู่ (5 คำศัพท์)'}</span>
@@ -603,7 +603,7 @@ export default function SocialPage() {
                 {/* Header info */}
                 <div className="flex items-center justify-between pb-3 border-b border-border/60">
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-lg bg-indigo-500/15 text-indigo-600 font-bold text-xs">
+                    <span className="px-2.5 py-1 rounded-lg bg-[#FA5D5D]/15 text-[#FA5D5D] font-bold text-xs">
                       {isEn ? `Question ${currentDuoIndex + 1} of ${activeDuoSession.questions.length}` : `คำถามที่ ${currentDuoIndex + 1} / ${activeDuoSession.questions.length}`}
                     </span>
                     <span className="text-xs text-muted-foreground font-mono">CEFR {activeDuoSession.cefrLevel}</span>
@@ -615,7 +615,7 @@ export default function SocialPage() {
                     <div className="w-24 h-2 rounded-full bg-muted overflow-hidden">
                       <div
                         className={`h-full transition-all duration-75 ${
-                          duoTimeLeftMs < 1500 ? 'bg-rose-500' : 'bg-indigo-600'
+                          duoTimeLeftMs < 1500 ? 'bg-rose-500' : 'bg-[#FA5D5D]'
                         }`}
                         style={{ width: `${(duoTimeLeftMs / 4000) * 100}%` }}
                       />

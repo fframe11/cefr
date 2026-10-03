@@ -351,7 +351,7 @@ const SceneSkillHarmony: React.FC<{ frame: number }> = ({ frame }) => {
     { name: 'Vocabulary', color: '#E9E5FF', text: '#5B5CE2' },
     { name: 'Grammar', color: '#FAF7F2', text: '#5B5CE2' },
     { name: 'Reading', color: '#B9E8D3', text: '#059669' },
-    { name: 'Listening', color: '#E0F2FE', text: '#0284C7' },
+    { name: 'Listening', color: '#E0F2FE', text: '#FA5D5D' },
     { name: 'Writing', color: '#FFE4E6', text: '#E11D48' },
     { name: 'Speaking', color: '#FFEDD5', text: '#EA580C' },
   ];

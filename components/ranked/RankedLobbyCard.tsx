@@ -102,7 +102,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
             </div>
             <div className="h-2 w-full overflow-hidden rounded-full bg-muted/60">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#2155E6] via-[#3B82F6] to-[#FFE600] transition-all duration-500"
+                className="h-full rounded-full bg-gradient-to-r from-[#FA5D5D] via-[#FA5D5D] to-[#FFE600] transition-all duration-500"
                 style={{ width: `${progress.percent}%` }}
               />
             </div>
@@ -133,7 +133,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
             <span className="text-[11px] text-slate-500 dark:text-muted-foreground font-medium">การคุ้มกันยศ</span>
             <div className="mt-1 text-sm font-bold text-slate-900 dark:text-foreground">
               {profile.demotionProtectedMatches > 0 ? (
-                <span className="text-[#2155E6] dark:text-[#60A5FA]">คุ้มกัน {profile.demotionProtectedMatches} ตา</span>
+                <span className="text-[#FA5D5D] dark:text-[#FFA0A0]">คุ้มกัน {profile.demotionProtectedMatches} ตา</span>
               ) : (
                 <span className="text-slate-500 dark:text-muted-foreground">มาตรฐาน</span>
               )}
@@ -154,7 +154,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
             onClick={() => setSelectedMode('vocabulary')}
             className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
               selectedMode === 'vocabulary'
-                ? 'bg-[#2155E6] text-white shadow-sm font-bold'
+                ? 'bg-[#FA5D5D] text-white shadow-sm font-bold'
                 : 'bg-slate-100 dark:bg-muted/60 text-slate-600 dark:text-muted-foreground hover:bg-slate-200'
             }`}
           >
@@ -187,8 +187,8 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
         <div>
           {isSearching ? (
             <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 text-xs font-medium text-[#2155E6] dark:text-[#60A5FA]">
-                <Loader2 className="h-4 w-4 animate-spin text-[#2155E6]" />
+              <div className="flex items-center gap-2 text-xs font-medium text-[#FA5D5D] dark:text-[#FFA0A0]">
+                <Loader2 className="h-4 w-4 animate-spin text-[#FA5D5D]" />
                 <span>กำลังค้นหาคู่ต่อสู้ ({searchDurationSec}s • {searchRangeText})</span>
               </div>
               <button

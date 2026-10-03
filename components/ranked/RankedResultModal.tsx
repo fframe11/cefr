@@ -33,8 +33,8 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
     titleText = 'พ่ายแพ้';
     outcomeDesc = 'แมตช์นี้สูสีมาก ทบทวนข้อผิดพลาดเพื่อกลับมาชนะในตาต่อไป!';
   } else if (isDraw) {
-    bannerBg = 'from-indigo-500/20 via-background to-indigo-500/5 border-indigo-500/40';
-    titleColor = 'text-indigo-500';
+    bannerBg = 'from-[#FA5D5D]/20 via-background to-purple-500/5 border-[#FA5D5D]/40';
+    titleColor = 'text-[#FA5D5D]';
     titleText = 'เสมอ';
     outcomeDesc = 'ทั้งสองฝ่ายทำผลงานได้ทัดเทียมกันอย่างน่าทึ่ง';
   }
@@ -49,7 +49,7 @@ export const RankedResultModal: React.FC<RankedResultModalProps> = ({
         {/* Promotion Celebration Banner & Remotion Video Reveal */}
         {p1.isPromotion && (
           <div className="mb-4 space-y-3">
-            <div className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-indigo-500 p-2 text-center text-xs font-black text-white shadow-sm">
+            <div className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-purple-500 p-2 text-center text-xs font-black text-white shadow-sm">
               <Sparkles className="h-4 w-4" />
               <span>เลื่อนขั้นสู่แรงก์ {p1.tierAfter.tier.toUpperCase()}!</span>
             </div>

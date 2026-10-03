@@ -347,7 +347,7 @@ export const GlovaHeroCinematicVideo: React.FC<GlovaHeroCinematicVideoProps> = (
                 <span style={{ fontSize: '10px', color: '#10B981', fontWeight: 800, fontFamily: 'monospace', textTransform: 'uppercase' }}>
                   STUDIO 02 // AI SPEAKING & ACOUSTIC LAB
                 </span>
-                <span style={{ fontSize: '10px', color: '#38BDF8', fontFamily: 'monospace' }}>
+                <span style={{ fontSize: '10px', color: '#FFBA38', fontFamily: 'monospace' }}>
                   • LIVE SPEECH RECOGNITION
                 </span>
               </div>
@@ -383,7 +383,7 @@ export const GlovaHeroCinematicVideo: React.FC<GlovaHeroCinematicVideoProps> = (
                       width: '3.5px',
                       height: `${dynamicHeight}px`,
                       borderRadius: '2px',
-                      backgroundColor: i % 2 === 0 ? '#10B981' : '#38BDF8',
+                      backgroundColor: i % 2 === 0 ? '#10B981' : '#FFBA38',
                       transition: 'height 0.05s ease',
                     }}
                   />

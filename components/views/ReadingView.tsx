@@ -257,7 +257,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted, e
       )}
 
       {/* Error state */}
-      {error && (
+      {error && passages.length === 0 && (
         <ErrorMessage message={error} onRetry={fetchPassages} />
       )}
 

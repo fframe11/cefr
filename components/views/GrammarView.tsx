@@ -482,7 +482,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                       >
                         <ellipse cx="120" cy="64" rx="105" ry="46" stroke="#FA5D5D" strokeWidth="1.2" strokeOpacity="0.4" strokeDasharray="3 3" transform="rotate(-7 120 64)" />
                         <ellipse cx="120" cy="64" rx="114" ry="40" stroke="#FFBA38" strokeWidth="1" strokeOpacity="0.4" transform="rotate(12 120 64)" />
-                        <circle cx="230" cy="54" r="5" fill="#38BDF8" />
+                        <circle cx="230" cy="54" r="5" fill="#FFBA38" />
                         <circle cx="16" cy="88" r="4.5" fill="#FA5D5D" />
                         <circle cx="196" cy="106" r="3.5" fill="#FA5D5D" />
                         <circle cx="100" cy="18" r="3" fill="#FFBA38" />
@@ -532,7 +532,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                       <ellipse cx="45" cy="50" rx="20" ry="7.5" stroke="#FFA2A2" strokeWidth="1.2" transform="rotate(-25 45 50)" />
                       <circle cx="210" cy="40" r="3" fill="#FA5D5D" />
                       <circle cx="225" cy="72" r="2" fill="#FFFFFF" />
-                      <circle cx="175" cy="105" r="2.5" fill="#38BDF8" />
+                      <circle cx="175" cy="105" r="2.5" fill="#FFBA38" />
                       <circle cx="85" cy="125" r="2" fill="#FFFFFF" />
                       <rect x="120" y="65" width="28" height="42" rx="9" fill="#FA5D5D" />
                       <rect x="122" y="105" width="11" height="38" rx="3.5" fill="#1E293B" />

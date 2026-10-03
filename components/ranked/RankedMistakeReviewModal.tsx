@@ -78,7 +78,7 @@ export const RankedMistakeReviewModal: React.FC<RankedMistakeReviewModalProps> =
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                       <span className="text-base font-bold text-foreground">{item.word}</span>
-                      <span className="rounded-md bg-indigo-500/10 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-500/20">
+                      <span className="rounded-md bg-[#FA5D5D]/10 px-2 py-0.5 text-[10px] font-bold text-[#FA5D5D] dark:text-[#FA5D5D] border border-[#FA5D5D]/20">
                         CEFR {item.cefrLevel}
                       </span>
                     </div>

@@ -161,7 +161,7 @@ export const RankedMatchScreen: React.FC<RankedMatchScreenProps> = ({
               <span className="text-xs font-semibold text-muted-foreground">{player2.rating} MMR</span>
               <RankedTierBadge tier={player2.tier} division={player2.division} size="xs" />
             </div>
-            <div className="mt-1 text-sm font-black text-indigo-500">{liveP2Score.toLocaleString()} PTS</div>
+            <div className="mt-1 text-sm font-black text-[#FA5D5D]">{liveP2Score.toLocaleString()} PTS</div>
           </div>
           <GlovaAvatarWithFrame
             avatarUrl={player2.avatar}
@@ -191,7 +191,7 @@ export const RankedMatchScreen: React.FC<RankedMatchScreenProps> = ({
 
       {/* Question Container */}
       <div className="mt-8 text-center">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-700 dark:text-indigo-300">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FA5D5D]/10 px-3 py-1 text-xs font-bold text-[#FA5D5D] dark:text-[#FA5D5D]">
           <Zap className="h-3 w-3" />
           ระดับ CEFR {currentQuestion.cefrLevel}
         </div>

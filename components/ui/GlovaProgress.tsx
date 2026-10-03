@@ -36,10 +36,10 @@ export const GlovaProgressBar: React.FC<GlovaProgressBarProps> = ({
   }[size];
 
   const fillStyles = {
-    primary: 'bg-gradient-to-r from-indigo-500 to-violet-500',
+    primary: 'bg-gradient-to-r from-[#FA5D5D] to-violet-500',
     success: 'bg-gradient-to-r from-emerald-500 to-teal-500',
     amber: 'bg-gradient-to-r from-amber-500 to-orange-500',
-    sky: 'bg-gradient-to-r from-sky-500 to-indigo-500',
+    sky: 'bg-gradient-to-r from-amber-500 to-purple-500',
   }[variant];
 
   return (

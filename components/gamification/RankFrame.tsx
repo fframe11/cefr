@@ -119,7 +119,7 @@ export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
         className="w-full h-full rounded-full object-cover aspect-square"
       />
     ) : (
-      <div className="w-full h-full rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center text-xs uppercase">
+      <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#FA5D5D] to-purple-600 text-white font-bold flex items-center justify-center text-xs uppercase">
         {(username || 'GL').slice(0, 2)}
       </div>
     )
@@ -211,7 +211,7 @@ export const GlovaAvatarWithFrame: React.FC<RankFrameProps> = ({
             <linearGradient id="cobaltHexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#A5F3FC" />
               <stop offset="50%" stopColor="#06B6D4" />
-              <stop offset="100%" stopColor="#2563EB" />
+              <stop offset="100%" stopColor="#E84C4C" />
             </linearGradient>
 
             <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">

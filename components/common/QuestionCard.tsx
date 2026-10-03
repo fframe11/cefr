@@ -186,13 +186,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="absolute right-4 top-4 sm:right-6 sm:top-5 pointer-events-none select-none hidden sm:block">
           <div className="relative w-20 h-20 flex items-center justify-end">
             {/* Floating outer dots */}
-            <span className="absolute -left-2 top-8 w-3 h-3 rounded-full bg-[#38BDF8]" />
+            <span className="absolute -left-2 top-8 w-3 h-3 rounded-full bg-[#FFBA38]" />
             <span className="absolute right-12 -top-1 w-2 h-2 rounded-full bg-[#FA5D5D]" />
             <span className="absolute right-1 top-14 w-2 h-2 rounded-full bg-[#FA5D5D]" />
-            <span className="absolute right-14 top-16 w-1.5 h-1.5 rounded-full bg-[#93C5FD]" />
+            <span className="absolute right-14 top-16 w-1.5 h-1.5 rounded-full bg-[#FFBA38]" />
 
             {/* Blue Rounded Square with Planet & Orbit */}
-            <div className="w-14 h-14 rounded-2xl bg-[#3B82F6] relative overflow-hidden flex items-center justify-center shadow-xs">
+            <div className="w-14 h-14 rounded-2xl bg-[#FA5D5D] relative overflow-hidden flex items-center justify-center shadow-xs">
               <span className="w-6 h-6 rounded-full bg-white relative z-10 shadow-xs" />
               {/* Elliptical orbit line */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -205,14 +205,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="absolute right-4 top-4 sm:right-6 sm:top-5 pointer-events-none select-none hidden sm:block">
           <div className="relative w-20 h-20 flex items-center justify-end">
             {/* Floating outer dots */}
-            <span className="absolute -left-1 top-4 w-2.5 h-2.5 rounded-full bg-[#38BDF8]" />
+            <span className="absolute -left-1 top-4 w-2.5 h-2.5 rounded-full bg-[#FFBA38]" />
             <span className="absolute right-14 top-12 w-2 h-2 rounded-full bg-[#FA5D5D]" />
-            <span className="absolute -left-2 top-14 w-2 h-2 rounded-full bg-[#93C5FD]" />
+            <span className="absolute -left-2 top-14 w-2 h-2 rounded-full bg-[#FFBA38]" />
 
             {/* Astronaut Helmet Graphic */}
             <div className="w-14 h-14 rounded-full border-2 border-slate-700/80 dark:border-slate-300/80 relative flex items-center justify-center bg-white/40 dark:bg-white/5">
               {/* Stylized blue visor/face */}
-              <div className="w-8 h-8 rounded-full bg-[#3B82F6] relative flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#FA5D5D] relative flex items-center justify-center">
                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-white">
                   <path d="M2 3C4 6 10 6 12 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                 </svg>
@@ -233,7 +233,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       {isSubmitting && (
-        <div className="mb-3 flex items-center gap-1.5 text-xs text-[#3B82F6] font-bold animate-pulse">
+        <div className="mb-3 flex items-center gap-1.5 text-xs text-[#FA5D5D] font-bold animate-pulse">
           <Loader2 className="w-3.5 h-3.5 animate-spin" />
           <span>กำลังตรวจคำตอบ...</span>
         </div>
@@ -260,7 +260,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           const isThisCorrect = isOptionCorrect(option.key, option.isCorrect);
 
           let rowStyle = 'hover:bg-slate-50/70 dark:hover:bg-white/[0.03] text-slate-700 dark:text-slate-200';
-          let radioCircleStyle = 'border-2 border-[#93C5FD] dark:border-slate-500 bg-white dark:bg-slate-900 group-hover:border-[#3B82F6]';
+          let radioCircleStyle = 'border-2 border-[#FFBA38] dark:border-slate-500 bg-white dark:bg-slate-900 group-hover:border-[#FA5D5D]';
 
           if (submitted) {
             if (isPending && isSelected) {
@@ -277,8 +277,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               radioCircleStyle = 'border-2 border-slate-200 dark:border-white/10 bg-slate-100/50 dark:bg-white/5';
             }
           } else if (isSelected) {
-            rowStyle = 'bg-blue-50/70 dark:bg-blue-950/30 text-blue-950 dark:text-blue-100 font-semibold';
-            radioCircleStyle = 'border-2 border-[#3B82F6] dark:border-blue-400 bg-white dark:bg-slate-900';
+            rowStyle = 'bg-[#FA5D5D]/70 dark:bg-[#FA5D5D]/30 text-[#FA5D5D] dark:text-[#FA5D5D] font-semibold';
+            radioCircleStyle = 'border-2 border-[#FA5D5D] dark:border-[#FA5D5D] bg-white dark:bg-slate-900';
           }
 
           return (
@@ -301,7 +301,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                   ) : submitted && isSelected && !isThisCorrect ? (
                     <X className="w-3 h-3 stroke-[3]" />
                   ) : isSelected ? (
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#3B82F6] dark:bg-blue-400 animate-in zoom-in-75 duration-150" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FA5D5D] dark:bg-[#FA5D5D] animate-in zoom-in-75 duration-150" />
                   ) : null}
                 </span>
               </div>

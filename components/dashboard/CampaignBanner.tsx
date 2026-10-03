@@ -148,9 +148,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
 
   const CAMPAIGN_STYLES: Record<string, { bgGradient: string; borderAccent: string; badgeBg: string }> = {
     camp_ranked_season_01: {
-      bgGradient: 'from-indigo-500/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/25 dark:via-[#141A22] dark:to-[#1C2430]',
-      borderAccent: 'border-indigo-300/90 dark:border-[#5B5CE2]/35',
-      badgeBg: 'bg-indigo-600 dark:bg-[#5B5CE2]',
+      bgGradient: 'from-[#FA5D5D]/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/25 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-[#FA5D5D]/90 dark:border-[#5B5CE2]/35',
+      badgeBg: 'bg-[#FA5D5D] dark:bg-[#5B5CE2]',
     },
     camp_vocab_sprint_300: {
       bgGradient: 'from-rose-500/15 via-amber-50/70 to-white dark:from-rose-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
@@ -163,21 +163,21 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
       badgeBg: 'bg-emerald-600 dark:bg-emerald-500',
     },
     camp_speed_battle_feature: {
-      bgGradient: 'from-violet-500/15 via-indigo-50/70 to-white dark:from-violet-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      bgGradient: 'from-violet-500/15 via-purple-500/70 to-white dark:from-violet-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
       borderAccent: 'border-violet-300/90 dark:border-violet-500/35',
       badgeBg: 'bg-violet-600 dark:bg-violet-500',
     },
     camp_winter_championship_upcoming: {
-      bgGradient: 'from-sky-500/15 via-indigo-50/70 to-white dark:from-sky-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
-      borderAccent: 'border-sky-300/90 dark:border-sky-500/35',
-      badgeBg: 'bg-sky-600 dark:bg-sky-500',
+      bgGradient: 'from-amber-500/15 via-purple-500/70 to-white dark:from-amber-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-amber-500/90 dark:border-amber-500/35',
+      badgeBg: 'bg-amber-500 dark:bg-amber-500',
     },
   };
 
   const resolvedStyle = CAMPAIGN_STYLES[current.id] || {
-    bgGradient: current.theme?.backgroundGradient || 'from-indigo-500/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/20 dark:via-[#141A22] dark:to-[#1C2430]',
-    borderAccent: current.theme?.borderAccent || 'border-indigo-300/90 dark:border-border/60',
-    badgeBg: 'bg-indigo-600 dark:bg-[#5B5CE2]',
+    bgGradient: current.theme?.backgroundGradient || 'from-[#FA5D5D]/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/20 dark:via-[#141A22] dark:to-[#1C2430]',
+    borderAccent: current.theme?.borderAccent || 'border-[#FA5D5D]/90 dark:border-border/60',
+    badgeBg: 'bg-[#FA5D5D] dark:bg-[#5B5CE2]',
   };
 
   const bgGradient = resolvedStyle.bgGradient;
@@ -241,7 +241,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
             {/* Campaign Title & Subtitle */}
             <div>
               {subtitle && (
-                <p className="text-xs font-bold text-[#5B5CE2] dark:text-indigo-400 uppercase tracking-wider font-tech mb-0.5">
+                <p className="text-xs font-bold text-[#5B5CE2] dark:text-[#FA5D5D] uppercase tracking-wider font-tech mb-0.5">
                   {subtitle}
                 </p>
               )}

@@ -52,7 +52,7 @@ export const GlovaLearningCard: React.FC<GlovaLearningCardProps> = ({
       <GlovaCardContent className="p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="flex-1 min-w-0 flex items-start gap-4 sm:gap-5">
           {icon && (
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] border border-[#FA5D5D]/20 flex items-center justify-center shrink-0">
               {icon}
             </div>
           )}

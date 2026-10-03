@@ -31,7 +31,7 @@ export const DailyQuestsAndPersonalBest: React.FC<DailyQuestsAndPersonalBestProp
       <div className="lg:col-span-2 rounded-[28px] bg-[#FFFDF8] dark:bg-card border border-[#EDE8DF] dark:border-border/60 p-6 sm:p-7 shadow-xs space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+            <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[#FA5D5D]/15 text-[#FA5D5D] dark:text-[#FA5D5D]">
               <Target className="h-5 w-5" />
             </span>
             <div>
@@ -56,7 +56,7 @@ export const DailyQuestsAndPersonalBest: React.FC<DailyQuestsAndPersonalBestProp
                 <div className="space-y-1.5 flex-1">
                   <div className="flex items-center justify-between sm:justify-start gap-2">
                     <span className="text-xs font-bold text-foreground">{q.titleTh}</span>
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-black bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 tabular-nums">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-black bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] border border-[#FA5D5D]/20 tabular-nums">
                       +{q.xpReward} XP
                     </span>
                   </div>
@@ -66,7 +66,7 @@ export const DailyQuestsAndPersonalBest: React.FC<DailyQuestsAndPersonalBestProp
                   <div className="flex items-center gap-3 pt-1">
                     <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted/60">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-primary transition-all duration-500"
+                        className="h-full rounded-full bg-gradient-to-r from-[#FA5D5D] to-primary transition-all duration-500"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
@@ -153,7 +153,7 @@ export const DailyQuestsAndPersonalBest: React.FC<DailyQuestsAndPersonalBestProp
 
             <div className="rounded-2xl border border-border/50 bg-background/80 p-3.5 space-y-1">
               <span className="text-[11px] text-muted-foreground flex items-center gap-1">
-                <Trophy className="w-3 h-3 text-indigo-500" />
+                <Trophy className="w-3 h-3 text-[#FA5D5D]" />
                 <span>แรงก์สูงสุดที่เคยแตะ</span>
               </span>
               <p className="text-sm font-black text-foreground tabular-nums pt-0.5">

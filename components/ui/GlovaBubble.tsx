@@ -209,7 +209,7 @@ export const GlovaBubble: React.FC<GlovaBubbleProps> = ({
           boxShadow:
             '0 8px 30px -4px rgba(36, 35, 58, 0.06), 0 2px 10px -2px rgba(36, 35, 58, 0.04)',
         }}
-        className={`${containerClasses} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50`}
+        className={`${containerClasses} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D]/50`}
         {...(props as any)}
       >
         {content}

@@ -74,8 +74,8 @@ export const RankEmblem: React.FC<RankEmblemProps> = ({
                 <stop offset="1" stopColor="#475569" />
               </linearGradient>
               <linearGradient id="silver_sapphire" x1="50" y1="30" x2="50" y2="70" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#38BDF8" />
-                <stop offset="1" stopColor="#0284C7" />
+                <stop stopColor="#FFBA38" />
+                <stop offset="1" stopColor="#FA5D5D" />
               </linearGradient>
             </defs>
             {/* Winged Aegis */}

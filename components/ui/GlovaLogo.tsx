@@ -139,7 +139,7 @@ export const GlovaWordmark: React.FC<GlovaWordmarkProps> = ({
 
   return (
     <div className={`flex flex-col leading-none ${className}`}>
-      <span className={`${sizeClasses} bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 bg-clip-text text-transparent select-none`}>
+      <span className={`${sizeClasses} bg-gradient-to-r from-[#FA5D5D] via-purple-500 to-amber-500 bg-clip-text text-transparent select-none`}>
         Glova
       </span>
       {showSubtitle && (

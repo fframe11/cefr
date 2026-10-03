@@ -40,7 +40,7 @@ export const GlovaAvatar: React.FC<GlovaAvatarProps> = ({
   return (
     <div className={`relative inline-block shrink-0 ${className}`}>
       <div
-        className={`rounded-full overflow-hidden flex items-center justify-center font-bold tracking-tight bg-gradient-to-br from-indigo-500/20 to-purple-500/20 text-indigo-400 border border-indigo-500/30 select-none ${sizeStyles}`}
+        className={`rounded-full overflow-hidden flex items-center justify-center font-bold tracking-tight bg-gradient-to-br from-[#FA5D5D]/20 to-purple-500/20 text-[#FA5D5D] border border-[#FA5D5D]/30 select-none ${sizeStyles}`}
         aria-label={name}
       >
         {src ? (

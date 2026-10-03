@@ -141,7 +141,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   onProfileUpdated,
 }) => {
   const router = useRouter();
-  const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signInAsDemoStudent, signOut, updateProfile } = useAuth();
+  const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signInAsDemoStudent, signInAsGuest, signOut, updateProfile } = useAuth();
   const { t, language } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'guest'>('signin');
@@ -211,6 +211,20 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
       router.push('/dashboard');
     } catch (err: any) {
       setAuthError(err?.message || 'เข้าสู่ระบบบัญชีทดลองไม่สำเร็จ');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleGuestSignIn = async () => {
+    setAuthError(null);
+    setIsSubmitting(true);
+    try {
+      await signInAsGuest();
+      onClose();
+      router.push('/dashboard');
+    } catch (err: any) {
+      setAuthError(err?.message || 'เข้าสู่ระบบแบบผู้เยี่ยมชมไม่สำเร็จ');
     } finally {
       setIsSubmitting(false);
     }
@@ -359,7 +373,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         <div className="relative w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#FFF5EE] via-[#FFF9F5] to-[#FEECE0] dark:from-[#18141F] dark:via-[#1D1926] dark:to-[#14121B] border-b lg:border-b-0 lg:border-r border-border/60">
           {/* Subtle Ambient Glow */}
           <div className="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-[#FA5D5D]/15 dark:bg-[#FA5D5D]/10 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#38BDF8]/15 dark:bg-[#38BDF8]/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#FFBA38]/15 dark:bg-[#FFBA38]/10 blur-3xl pointer-events-none" />
 
           {/* Top Brand Identity */}
           <div className="relative z-10 space-y-4">
@@ -438,7 +452,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               <div className="flex items-center gap-1 text-[10px] font-mono">
                 <span className="px-1.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-bold">A1</span>
                 <span className="text-muted-foreground">→</span>
-                <span className="px-1.5 py-0.5 rounded-md bg-sky-500/10 text-sky-700 dark:text-sky-300 font-bold">B1</span>
+                <span className="px-1.5 py-0.5 rounded-md bg-amber-500/10 text-amber-500 dark:text-amber-500 font-bold">B1</span>
                 <span className="text-muted-foreground">→</span>
                 <span className="px-1.5 py-0.5 rounded-md bg-[#FA5D5D]/15 text-[#FA5D5D] font-bold">B2</span>
                 <span className="text-muted-foreground">→</span>
@@ -686,16 +700,28 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                     </button>
                   </div>
 
-                  {/* Demo Student Fast Access */}
-                  <button
-                    type="button"
-                    onClick={handleDemoSignIn}
-                    disabled={isSubmitting}
-                    className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50"
-                  >
-                    <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
-                    <span>{language === 'th' ? 'เข้าสู่ระบบด่วน (Demo Student)' : 'Quick Demo Student Access'}</span>
-                  </button>
+                  {/* Fast Access: Guest Mode & Demo Student */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button
+                      type="button"
+                      onClick={handleGuestSignIn}
+                      disabled={isSubmitting}
+                      className="touch-target w-full py-2.5 px-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50 cursor-pointer"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>{language === 'th' ? 'เข้าใช้งานแบบผู้เยี่ยมชม (Guest)' : 'Instant Guest Access'}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleDemoSignIn}
+                      disabled={isSubmitting}
+                      className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50 cursor-pointer"
+                    >
+                      <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                      <span>{language === 'th' ? 'บัญชีทดลอง (Demo Student)' : 'Demo Student (B1)'}</span>
+                    </button>
+                  </div>
 
                   {/* Divider */}
                   <div className="relative my-2 flex items-center justify-center">

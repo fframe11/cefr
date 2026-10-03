@@ -46,7 +46,7 @@ interface AnalyticsViewProps {
 }
 
 const SKILL_COLOR_MAP: Record<string, string> = {
-  vocabulary: 'bg-blue-500',
+  vocabulary: 'bg-[#FA5D5D]',
   grammar: 'bg-emerald-500',
   reading: 'bg-purple-500',
   listening: 'bg-amber-500',
@@ -142,7 +142,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         color: SKILL_COLOR_MAP[s.skill] || 'bg-primary',
       }))
     : [
-        { name: t('skills.vocabulary'), score: progress.skillStats.vocabulary, accuracy: null, attempted: 0, pending: 0, color: 'bg-blue-500' },
+        { name: t('skills.vocabulary'), score: progress.skillStats.vocabulary, accuracy: null, attempted: 0, pending: 0, color: 'bg-[#FA5D5D]' },
         { name: t('skills.grammar'), score: progress.skillStats.grammar, accuracy: null, attempted: 0, pending: 0, color: 'bg-emerald-500' },
         { name: t('skills.reading'), score: progress.skillStats.reading, accuracy: null, attempted: 0, pending: 0, color: 'bg-purple-500' },
         { name: t('skills.listening'), score: progress.skillStats.listening, accuracy: null, attempted: 0, pending: 0, color: 'bg-amber-500' },
@@ -166,14 +166,14 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   return (
     <div className="w-full space-y-6 pb-12">
       {/* 1. Unified Studio Hero Diagnostic Banner */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs space-y-6">
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs space-y-6">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100 dark:border-white/10">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 flex-wrap">
               <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
                 <TrendingUp className="w-4 h-4 text-white" />
               </div>
-              <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/20 text-xs font-black uppercase tracking-wider">
                 CEFR {currentLevel} Diagnostic Telemetry
               </span>
               <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-700 dark:text-slate-300 font-mono">

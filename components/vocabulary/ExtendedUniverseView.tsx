@@ -25,6 +25,32 @@ import { AudioService } from '@/services/audioService';
 import { CEFRLevel } from '@/types';
 import { GlovaLevelBadge, GlovaBadge, GlovaButton } from '@/components/ui';
 import { StudioMetric } from '@/components/ui/GlovaPrimitives';
+import { VOCABULARY_BANK } from '@/data/vocabularyBank';
+
+const fallbackUniverseItems: ExtendedCandidate[] = VOCABULARY_BANK.map((w, idx) => ({
+  id: w.id || `candidate-${idx}`,
+  glova_id: w.id,
+  word: w.word,
+  lemma: w.lemma,
+  part_of_speech: w.partOfSpeech,
+  cefr_level: w.cefrLevel as any,
+  cefr_source: 'Glova Verified Seed Catalog',
+  cefr_disclaimer: 'Verified standard CEFR vocabulary item.',
+  meaning_th: w.meaningTh,
+  meaning_en: w.meaningEn,
+  ipa: w.ipa,
+  example_sentence_en: w.exampleSentenceEn,
+  example_sentence_th: w.exampleSentenceTh,
+  collocations: w.collocations,
+  synonyms: w.synonyms,
+  antonyms: w.antonyms,
+  topic: w.topic,
+  tier: 'TIER_1_VERIFIED',
+  production_status: 'VERIFIED_PRODUCTION',
+  validation_status: 'VALIDATED_READY',
+  domain: w.topic || 'General English',
+  source: 'Glova Verified Standard',
+}));
 
 export interface ExtendedCandidate {
   id: string;
@@ -77,10 +103,10 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
   onSelectWord,
   isEn = false,
 }) => {
-  const [items, setItems] = useState<ExtendedCandidate[]>([]);
+  const [items, setItems] = useState<ExtendedCandidate[]>(() => fallbackUniverseItems.slice(0, 24));
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [totalCount, setTotalCount] = useState(121253);
+  const [totalPages, setTotalPages] = useState(() => Math.ceil(fallbackUniverseItems.length / 24));
+  const [totalCount, setTotalCount] = useState(() => fallbackUniverseItems.length);
   const [stats, setStats] = useState({
     tier1VerifiedCount: 3813,
     tier2CandidateCount: 117440,
@@ -92,7 +118,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
   const [level, setLevel] = useState<string>('ALL');
   const [pos, setPos] = useState<string>('ALL');
   const [tier, setTier] = useState<string>('ALL');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [queryTime, setQueryTime] = useState<number | null>(null);
   const [selectedCandidate, setSelectedCandidate] = useState<ExtendedCandidate | null>(null);
 
@@ -130,7 +156,27 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
         }
       }
     } catch (err) {
-      console.error('[ExtendedUniverseView] fetch failed:', err);
+      console.warn('[ExtendedUniverseView] fetch failed, using instant local verified catalog:', err);
+      let filtered = [...fallbackUniverseItems];
+      if (debouncedSearch.trim()) {
+        const q = debouncedSearch.trim().toLowerCase();
+        filtered = filtered.filter(
+          (item) =>
+            item.word.toLowerCase().includes(q) ||
+            item.meaning_th.includes(q) ||
+            item.meaning_en.toLowerCase().includes(q)
+        );
+      }
+      if (level !== 'ALL') {
+        filtered = filtered.filter((item) => item.cefr_level === level);
+      }
+      if (pos !== 'ALL') {
+        filtered = filtered.filter((item) => item.part_of_speech.toLowerCase() === pos.toLowerCase());
+      }
+      const offset = (page - 1) * 24;
+      setItems(filtered.slice(offset, offset + 24));
+      setTotalPages(Math.max(1, Math.ceil(filtered.length / 24)));
+      setTotalCount(filtered.length);
     } finally {
       const elapsed = Math.round(performance.now() - startTime);
       setQueryTime(elapsed);
@@ -213,7 +259,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                   ? 'Search across 121,253 words, Thai meanings, collocations...'
                   : 'ค้นหาคำศัพท์จาก 121,253 คำ ความหมายภาษาไทย หรือวลีสัมพันธ์...'
               }
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] placeholder:text-slate-400 dark:placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] placeholder:text-slate-400 dark:placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40"
             />
           </div>
 
@@ -227,7 +273,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 setPage(1);
               }}
               aria-label={isEn ? 'Filter by part of speech' : 'กรองชนิดคำ'}
-              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40"
             >
               <option value="ALL">{isEn ? 'All Parts of Speech' : 'ทุกชนิดคำ'}</option>
               <option value="noun">{isEn ? 'Noun' : 'คำนาม'}</option>
@@ -244,7 +290,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 setPage(1);
               }}
               aria-label={isEn ? 'Filter by tier' : 'กรองตามระดับคลัง'}
-              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40"
             >
               <option value="ALL">{isEn ? 'All Tiers (121k)' : 'ทุกระดับ (121k)'}</option>
               <option value="TIER_1_VERIFIED">{isEn ? 'Tier 1: Verified (3.8k)' : 'ระดับ 1: ผ่านการตรวจสอบ (3.8k)'}</option>
@@ -269,7 +315,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               }}
               className={`touch-target px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 level === lvl
-                  ? 'bg-[#2155E6] text-white shadow-[0_2px_0_0_#143DB8] border-t border-white/20'
+                  ? 'bg-[#FA5D5D] text-white shadow-[0_2px_0_0_#143DB8] border-t border-white/20'
                   : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10 shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318]'
               }`}
             >
@@ -289,7 +335,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
         <button
           type="button"
           onClick={() => fetchUniverse()}
-          className="flex items-center gap-1 text-[#2155E6] dark:text-[#6893FF] hover:text-[#1C4AC9] font-medium"
+          className="flex items-center gap-1 text-[#FA5D5D] dark:text-[#6893FF] hover:text-[#1C4AC9] font-medium"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
           <span>{isEn ? 'Refresh' : 'รีเฟรช'}</span>
@@ -346,7 +392,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               <div
                 key={candidate.id}
                 onClick={() => setSelectedCandidate(candidate)}
-                className="group relative p-4 rounded-2xl bg-white hover:bg-indigo-50/40 dark:bg-[#141A22] dark:hover:bg-[#18202A] border border-slate-200/90 hover:border-indigo-300 dark:border-white/10 dark:hover:border-white/20 shadow-[0_2px_0_0_#E2E8F0] dark:shadow-[0_2px_0_0_#0D1318] transition-all cursor-pointer flex flex-col justify-between space-y-3"
+                className="group relative p-4 rounded-2xl bg-white hover:bg-[#FA5D5D]/40 dark:bg-[#141A22] dark:hover:bg-[#18202A] border border-slate-200/90 hover:border-[#FA5D5D] dark:border-white/10 dark:hover:border-white/20 shadow-[0_2px_0_0_#E2E8F0] dark:shadow-[0_2px_0_0_#0D1318] transition-all cursor-pointer flex flex-col justify-between space-y-3"
               >
                 {/* Card Top: Badges & Tier */}
                 <div className="flex items-center justify-between gap-2">
@@ -361,7 +407,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                     className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border ${
                       isTier1
                         ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20'
-                        : 'bg-indigo-500/10 text-indigo-700 dark:text-[#A5A6F6] border-indigo-500/25'
+                        : 'bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#A5A6F6] border-[#FA5D5D]/25'
                     }`}
                   >
                     {isTier1 ? 'TIER 1 • VERIFIED' : 'TIER 2 • CANDIDATE'}
@@ -371,16 +417,16 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 {/* Word & Pronunciation */}
                 <div className="space-y-1">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-xl font-black font-sans text-slate-900 dark:text-[#EDEBE8] tracking-tight group-hover:text-indigo-600 dark:group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-black font-sans text-slate-900 dark:text-[#EDEBE8] tracking-tight group-hover:text-[#FA5D5D] dark:group-hover:text-white transition-colors">
                       {candidate.word}
                     </h3>
                     <button
                       type="button"
                       onClick={(e) => handleSpeak(candidate.word, e)}
                       aria-label={`Pronounce ${candidate.word}`}
-                      className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-indigo-100 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] flex items-center justify-center transition-all shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none border border-slate-200 dark:border-white/10 shrink-0"
+                      className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-[#FA5D5D] dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-800 dark:text-[#EDEBE8] flex items-center justify-center transition-all shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:translate-y-[2px] active:shadow-none border border-slate-200 dark:border-white/10 shrink-0"
                     >
-                      <Volume2 className="w-4 h-4 text-[#2155E6] dark:text-[#6893FF]" />
+                      <Volume2 className="w-4 h-4 text-[#FA5D5D] dark:text-[#6893FF]" />
                     </button>
                   </div>
                   {candidate.ipa && (
@@ -392,7 +438,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
 
                 {/* Bilingual Meanings */}
                 <div className="space-y-1 pt-1">
-                  <p className="text-sm font-bold text-[#2155E6] dark:text-[#6893FF]">
+                  <p className="text-sm font-bold text-[#FA5D5D] dark:text-[#6893FF]">
                     {candidate.meaning_th}
                   </p>
                   <p className="text-xs text-slate-600 dark:text-[#94A3B8] line-clamp-2 leading-relaxed">
@@ -493,7 +539,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                   className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md border ${
                     selectedCandidate.tier === 'TIER_1_VERIFIED'
                       ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20'
-                      : 'bg-indigo-500/10 text-indigo-700 dark:text-[#A5A6F6] border-indigo-500/25'
+                      : 'bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#A5A6F6] border-[#FA5D5D]/25'
                   }`}
                 >
                   {selectedCandidate.tier === 'TIER_1_VERIFIED'
@@ -520,7 +566,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 <button
                   type="button"
                   onClick={() => handleSpeak(selectedCandidate.word)}
-                  className="px-4 py-2 rounded-xl bg-[#2155E6] hover:bg-[#1C4AC9] dark:bg-[#2155E6] dark:hover:bg-[#1C4AC9] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#143DB8] dark:shadow-[0_2.5px_0_0_#143DB8] border-t border-white/20"
+                  className="px-4 py-2 rounded-xl bg-[#FA5D5D] hover:bg-[#1C4AC9] dark:bg-[#FA5D5D] dark:hover:bg-[#1C4AC9] text-white font-bold flex items-center gap-2 shadow-[0_2.5px_0_0_#143DB8] dark:shadow-[0_2.5px_0_0_#143DB8] border-t border-white/20"
                 >
                   <Volume2 className="w-4 h-4" />
                   <span>{isEn ? 'Listen' : 'ฟังเสียง'}</span>
@@ -535,8 +581,8 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             </div>
 
             {/* Meanings */}
-            <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-[#0B1224] border border-indigo-200/80 dark:border-white/10 space-y-2">
-              <div className="text-xs uppercase font-mono font-bold text-[#2155E6] dark:text-[#6893FF]">
+            <div className="p-4 rounded-xl bg-[#FA5D5D]/60 dark:bg-[#0B1224] border border-[#FA5D5D]/80 dark:border-white/10 space-y-2">
+              <div className="text-xs uppercase font-mono font-bold text-[#FA5D5D] dark:text-[#6893FF]">
                 {isEn ? 'Thai Meaning' : 'ความหมายภาษาไทย'}
               </div>
               <p className="text-2xl font-bold text-slate-900 dark:text-[#EDEBE8]">

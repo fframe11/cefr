@@ -71,7 +71,7 @@ describe('Glova Core Components & Primitives Suite', () => {
         </GlovaButton>
       );
       expect(html).toContain('Start Practice');
-      expect(html).toMatch(/bg-\[#2155E6\]|bg-\[#5B5CE2\]/);
+      expect(html).toMatch(/bg-\[#FA5D5D\]|bg-\[#5B5CE2\]/);
       expect(html).toMatch(/shadow-\[0_4px_0_0_#143DB8\]|shadow-\[0_4px_0_0_#38399E\]/);
       expect(html).toContain('min-h-[44px]');
     });

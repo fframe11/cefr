@@ -56,7 +56,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       descTh: '3,860+ คำศัพท์คัดสรรตาม CEFR A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations',
       descEn: '3,860+ CEFR-curated words with spaced repetition and high-frequency collocations',
       icon: BookOpen,
-      color: 'from-blue-500/10 to-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
+      color: 'from-[#FA5D5D]/10 to-purple-500/10 text-[#FA5D5D] dark:text-[#FA5D5D] border-[#FA5D5D]/20',
       badge: 'A1 – C2',
       href: '/vocabulary',
     },
@@ -111,7 +111,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       descTh: 'ฝึกตอบคำถามตามสถานการณ์จำลอง บันทึกเสียงและฟังเพื่อเทียบเคียงสำเนียงที่ถูกต้อง',
       descEn: 'Situational speaking tasks with audio playback to refine pronunciation and fluency',
       icon: Mic,
-      color: 'from-cyan-500/10 to-sky-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+      color: 'from-cyan-500/10 to-amber-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
       badge: 'A1 – B2',
       href: '/speaking',
     },
@@ -125,7 +125,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16 sm:pb-20 text-center">
         {/* Soft Ambient Background Glows */}
         <div className="absolute top-8 left-1/4 w-80 h-80 rounded-full bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/5 blur-3xl pointer-events-none" />
-        <div className="absolute top-16 right-1/4 w-80 h-80 rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-3xl pointer-events-none" />
+        <div className="absolute top-16 right-1/4 w-80 h-80 rounded-full bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/5 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
           {/* Framework Badge */}
@@ -192,7 +192,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
             <span>•</span>
             <div className="inline-flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <Layers className="w-4 h-4 text-[#FA5D5D] dark:text-[#FA5D5D]" />
               <span>{isEn ? '6 Core Skill Studios' : 'ครบ 6 ทักษะหลัก'}</span>
             </div>
             <span>•</span>
@@ -251,7 +251,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
           {/* Step 2 */}
           <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold font-mono text-base">
+              <div className="w-10 h-10 rounded-xl bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D] flex items-center justify-center font-bold font-mono text-base">
                 02
               </div>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
@@ -265,7 +265,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
             </div>
             <a
               href="#studios"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline cursor-pointer pt-2"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FA5D5D] dark:text-[#FA5D5D] hover:underline cursor-pointer pt-2"
             >
               <span>{isEn ? 'Explore All Studios' : 'ดูห้องเรียนทั้งหมด'}</span>
               <ChevronRight className="w-4 h-4" />
@@ -305,7 +305,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section id="studios" className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200/60 dark:border-slate-800/60">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div className="space-y-1">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#FA5D5D] dark:text-[#FA5D5D]">
               {isEn ? 'Interactive Modules' : '6 ห้องฝึกฝนทักษะเฉพาะด้าน'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
@@ -329,7 +329,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               <div
                 key={studio.id}
                 onClick={() => router.push(studio.href)}
-                className="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-indigo-500/50 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between space-y-4"
+                className="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-[#FA5D5D]/50 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -342,7 +342,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#FA5D5D] dark:group-hover:text-[#FA5D5D] transition-colors">
                       {isEn ? studio.titleEn : studio.titleTh}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mt-1">
@@ -351,7 +351,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500 group-hover:text-[#FA5D5D] dark:group-hover:text-[#FA5D5D]">
                   <span>{isEn ? 'Start Learning' : 'เข้าห้องเรียน'}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -367,9 +367,9 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200/60 dark:border-slate-800/60">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1: Exam Simulations */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-900/90 to-slate-900 text-white border border-indigo-800/50 shadow-lg flex flex-col justify-between space-y-6">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#FA5D5D]/90 to-slate-900 text-white border border-[#FA5D5D]/50 shadow-lg flex flex-col justify-between space-y-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-bold font-mono">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA5D5D]/20 text-[#FA5D5D] border border-[#FA5D5D]/30 text-xs font-bold font-mono">
                 <GraduationCap className="w-4 h-4" />
                 <span>Oxford OOPT & Cambridge Simulation</span>
               </div>

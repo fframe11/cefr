@@ -57,7 +57,7 @@ describe('Glova Design System & Token Foundation', () => {
       expect(GLOVA_PALETTE.semantic.success).toBe('#10B981');
       expect(GLOVA_PALETTE.semantic.warning).toBe('#F59E0B');
       expect(GLOVA_PALETTE.semantic.danger).toBe('#F43F5E');
-      expect(GLOVA_PALETTE.semantic.info).toBe('#0EA5E9');
+      expect(GLOVA_PALETTE.semantic.info).toBe('#FA5D5D');
     });
   });
 

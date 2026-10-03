@@ -136,7 +136,7 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
           {/* 2. AVATAR STYLE SELECTOR */}
           <div className="space-y-2.5">
             <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-              <User className="h-3.5 w-3.5 text-indigo-500" />
+              <User className="h-3.5 w-3.5 text-[#FA5D5D]" />
               <span>1. เลือกสไตล์อวาตาร์ (DiceBear Modular Engine)</span>
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -150,7 +150,7 @@ export const AvatarEditorModal: React.FC<AvatarEditorModalProps> = ({
                     onClick={() => setSelectedStyle(style.id)}
                     className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-left transition-all ${
                       isSelected
-                        ? 'border-indigo-500 bg-indigo-500/10 font-bold text-indigo-600 dark:text-indigo-400 ring-1 ring-indigo-500/30'
+                        ? 'border-[#FA5D5D] bg-[#FA5D5D]/10 font-bold text-[#FA5D5D] dark:text-[#FA5D5D] ring-1 ring-[#FA5D5D]/30'
                         : 'border-border/60 hover:bg-muted/40 text-muted-foreground'
                     }`}
                   >

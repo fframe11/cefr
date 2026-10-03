@@ -37,9 +37,9 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
   return (
     <div className="space-y-6">
       {/* Distinction Header Banner */}
-      <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-[#2155E6]/30 bg-gradient-to-r from-[#2155E6]/10 via-background to-blue-950/15 p-5">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-[#FA5D5D]/30 bg-gradient-to-r from-[#FA5D5D]/10 via-background to-amber-500/15 p-5">
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#2155E6] text-white shadow-sm">
+          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FA5D5D] text-white shadow-sm">
             <Trophy className="h-5 w-5 text-[#FFE600]" />
           </span>
           <div>
@@ -56,7 +56,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
             type="button"
             onClick={() => setFilter('global')}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-              filter === 'global' ? 'bg-[#2155E6] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
+              filter === 'global' ? 'bg-[#FA5D5D] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
             }`}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -66,7 +66,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
             type="button"
             onClick={() => setFilter('friends')}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-              filter === 'friends' ? 'bg-[#2155E6] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
+              filter === 'friends' ? 'bg-[#FA5D5D] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
             }`}
           >
             <Users className="h-3.5 w-3.5" />
@@ -76,7 +76,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
             type="button"
             onClick={() => setFilter('university')}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-              filter === 'university' ? 'bg-[#2155E6] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
+              filter === 'university' ? 'bg-[#FA5D5D] text-white shadow-sm font-bold' : 'text-muted-foreground hover:bg-muted'
             }`}
           >
             <Building2 className="h-3.5 w-3.5" />
@@ -87,7 +87,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
 
       {loading ? (
         <div className="flex h-64 items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-[#2155E6]" />
+          <Loader2 className="h-8 w-8 animate-spin text-[#FA5D5D]" />
         </div>
       ) : leaderboardData ? (
         <>
@@ -111,7 +111,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
                 <div className="mt-1 flex justify-center">
                   <RankedTierBadge tier={leaderboardData.top3[1].tier} division={leaderboardData.top3[1].division} size="xs" />
                 </div>
-                <div className="mt-1 text-base font-black text-[#2155E6] dark:text-[#60A5FA]">
+                <div className="mt-1 text-base font-black text-[#FA5D5D] dark:text-[#FFA0A0]">
                   {leaderboardData.top3[1].rating.toLocaleString()} MMR
                 </div>
                 <span className="text-[11px] text-muted-foreground">ชนะ {leaderboardData.top3[1].winRate}%</span>
@@ -136,7 +136,7 @@ export const RankedLeaderboardView: React.FC<RankedLeaderboardViewProps> = ({ cu
                 <div className="mt-1 flex justify-center">
                   <RankedTierBadge tier={leaderboardData.top3[0].tier} division={leaderboardData.top3[0].division} size="sm" />
                 </div>
-                <div className="mt-1 text-xl font-black text-[#2155E6] dark:text-[#60A5FA]">
+                <div className="mt-1 text-xl font-black text-[#FA5D5D] dark:text-[#FFA0A0]">
                   {leaderboardData.top3[0].rating.toLocaleString()} MMR
                 </div>
                 <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">

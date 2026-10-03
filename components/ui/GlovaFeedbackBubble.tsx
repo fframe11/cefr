@@ -201,7 +201,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
         whileHover={shouldReduceMotion ? undefined : GLOVA_MOTION.microInteractions.floatingBubbleHover}
         whileTap={shouldReduceMotion ? undefined : { scale: 0.94 }}
         transition={GLOVA_MOTION.spring.snappy}
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-slate-900/95 dark:bg-slate-900 text-white shadow-xl ring-1 ring-primary/40 border border-white/10 hover:ring-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/80 focus-visible:ring-offset-2 touch-target"
+        className="w-12 h-12 rounded-full flex items-center justify-center bg-slate-900/95 dark:bg-slate-900 text-white shadow-xl ring-1 ring-primary/40 border border-white/10 hover:ring-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D]/80 focus-visible:ring-offset-2 touch-target"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -223,7 +223,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
               transition={{ duration: 0.15 }}
               className="relative"
             >
-              <MessageSquareHeart className="w-5 h-5 text-indigo-400" aria-hidden="true" />
+              <MessageSquareHeart className="w-5 h-5 text-[#FA5D5D]" aria-hidden="true" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500 ring-2 ring-slate-900" />
             </motion.div>
           )}
@@ -248,7 +248,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
             {/* Header */}
             <div className="flex items-center justify-between pb-3 border-b border-border/30">
               <div className="flex items-center gap-2">
-                <MessageSquareHeart className="w-4 h-4 text-indigo-400 shrink-0" aria-hidden="true" />
+                <MessageSquareHeart className="w-4 h-4 text-[#FA5D5D] shrink-0" aria-hidden="true" />
                 <h3 id="feedback-dialog-title" className="text-sm font-bold tracking-tight text-foreground">
                   {t('feedback.title')}
                 </h3>
@@ -291,7 +291,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                           onClick={() => setCategory(cat.id as FeedbackCategory)}
                           className={`flex items-center gap-1.5 px-2.5 py-2 text-xs rounded-lg font-medium border text-left transition-all ${
                             isSelected
-                              ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/40 ring-1 ring-indigo-500/20'
+                              ? 'bg-[#FA5D5D]/10 text-[#FA5D5D] border-[#FA5D5D]/40 ring-1 ring-[#FA5D5D]/20'
                               : 'bg-secondary/50 text-muted-foreground border-border/40 hover:bg-secondary'
                           }`}
                         >
@@ -348,7 +348,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     disabled={isSubmitting}
-                    className="w-full text-xs rounded-lg p-2.5 bg-background border border-border/60 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 resize-none leading-relaxed"
+                    className="w-full text-xs rounded-lg p-2.5 bg-background border border-border/60 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40 resize-none leading-relaxed"
                   />
                   {errorMessage && (
                     <span className="text-[11px] text-rose-400 font-medium">
@@ -363,7 +363,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                     type="checkbox"
                     checked={includeMetadata}
                     onChange={(e) => setIncludeMetadata(e.target.checked)}
-                    className="rounded border-border text-indigo-600 focus:ring-indigo-500 h-3.5 w-3.5"
+                    className="rounded border-border text-[#FA5D5D] focus:ring-[#FA5D5D] h-3.5 w-3.5"
                   />
                   <span>
                     {t('feedback.attach_metadata', { level: cefrLevel || 'B1' })}
@@ -383,7 +383,7 @@ export const GlovaFeedbackBubble: React.FC<GlovaFeedbackBubbleProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting || message.trim().length < FEEDBACK_BUBBLE_CONFIG.minMessageLength}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm hover:from-indigo-500 hover:to-violet-500 disabled:opacity-50 disabled:pointer-events-none transition-all"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-[#FA5D5D] to-violet-600 text-white shadow-sm hover:from-[#FA5D5D] hover:to-violet-500 disabled:opacity-50 disabled:pointer-events-none transition-all"
                   >
                     {isSubmitting ? (
                       <>

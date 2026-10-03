@@ -22,7 +22,7 @@ export const GlovaSectionHeader: React.FC<GlovaSectionHeaderProps> = ({
     <div className={`flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 ${className}`}>
       <div className="flex flex-col gap-1">
         {eyebrow && (
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 select-none">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#FA5D5D] select-none">
             {eyebrow}
           </span>
         )}

@@ -105,7 +105,7 @@ function RankingContent() {
             onClick={() => setBoardType('xp')}
             className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold font-display transition-all ${
               boardType === 'xp'
-                ? 'bg-indigo-600 text-white shadow-sm'
+                ? 'bg-[#FA5D5D] text-white shadow-sm'
                 : 'text-muted-foreground hover:bg-muted/80'
             }`}
           >
@@ -149,7 +149,7 @@ function RankingContent() {
           <div className="rounded-3xl bg-white dark:bg-[#141A22] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 shadow-xs relative overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 text-white flex items-center justify-center shadow-sm shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#FA5D5D] to-purple-600 text-white flex items-center justify-center shadow-sm shrink-0">
                   {boardType === 'friends' ? <Users className="w-6 h-6" /> : <Zap className="w-6 h-6" />}
                 </div>
                 <div>
@@ -159,7 +159,7 @@ function RankingContent() {
                         ? (isEn ? 'Friends Learning Standing' : 'ตารางคะแนนกลุ่มเพื่อนนักเรียน')
                         : (isEn ? 'Weekly XP League' : 'ลีกความขยันประจำสัปดาห์')}
                     </h2>
-                    <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-[10px] font-black uppercase">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#FA5D5D]/15 text-[#FA5D5D] dark:text-[#FA5D5D] text-[10px] font-black uppercase">
                       {data?.userTier || 'Silver'} League
                     </span>
                   </div>
@@ -171,7 +171,7 @@ function RankingContent() {
 
               <Link
                 href="/compete"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-indigo-600 text-white font-black text-xs hover:bg-indigo-700 transition-all shadow-xs shrink-0"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-[#FA5D5D] text-white font-black text-xs hover:bg-[#FA5D5D] transition-all shadow-xs shrink-0"
               >
                 <Swords className="w-4 h-4" />
                 <span>{isEn ? 'Earn XP in Battle' : 'แข่งเก็บแต้ม XP'}</span>
@@ -182,7 +182,7 @@ function RankingContent() {
             {data && (
               <div className="mt-6 p-4 rounded-2xl bg-background border border-border/70 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-indigo-600 text-white font-black text-sm flex items-center justify-center shadow-2xs">
+                  <div className="w-9 h-9 rounded-xl bg-[#FA5D5D] text-white font-black text-sm flex items-center justify-center shadow-2xs">
                     #{data.userRank}
                   </div>
                   <div>
@@ -198,7 +198,7 @@ function RankingContent() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-black text-indigo-600 dark:text-indigo-400 tabular-nums">
+                  <span className="text-xs font-black text-[#FA5D5D] dark:text-[#FA5D5D] tabular-nums">
                     {data.userWeeklyXp.toLocaleString()} XP
                   </span>
                   <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-md">
@@ -215,7 +215,7 @@ function RankingContent() {
               onClick={() => setActiveTab('weekly')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
                 activeTab === 'weekly'
-                  ? 'bg-indigo-600 text-white shadow-2xs'
+                  ? 'bg-[#FA5D5D] text-white shadow-2xs'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted'
               }`}
             >
@@ -225,7 +225,7 @@ function RankingContent() {
               onClick={() => setActiveTab('monthly')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
                 activeTab === 'monthly'
-                  ? 'bg-indigo-600 text-white shadow-2xs'
+                  ? 'bg-[#FA5D5D] text-white shadow-2xs'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted'
               }`}
             >
@@ -235,7 +235,7 @@ function RankingContent() {
               onClick={() => setActiveTab('friends')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
                 activeTab === 'friends'
-                  ? 'bg-indigo-600 text-white shadow-2xs'
+                  ? 'bg-[#FA5D5D] text-white shadow-2xs'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted'
               }`}
             >
@@ -264,15 +264,15 @@ function RankingContent() {
                       />
                     </div>
                     <p className="mt-2 text-sm font-bold text-foreground truncate">{data.topUsers[1].displayName}</p>
-                    <p className="text-xs font-black text-indigo-600 dark:text-indigo-400 mt-1">
+                    <p className="text-xs font-black text-[#FA5D5D] dark:text-[#FA5D5D] mt-1">
                       {data.topUsers[1].weeklyXp.toLocaleString()} XP
                     </p>
                   </div>
                 )}
 
                 {data.topUsers[0] && (
-                  <div className="order-1 sm:order-2 p-6 rounded-3xl bg-gradient-to-b from-indigo-500/10 via-card to-card border-2 border-indigo-500/30 text-center shadow-sm">
-                    <span className="px-3 py-1 rounded-full bg-indigo-600 text-white text-[11px] font-black">
+                  <div className="order-1 sm:order-2 p-6 rounded-3xl bg-gradient-to-b from-[#FA5D5D]/10 via-card to-card border-2 border-[#FA5D5D]/30 text-center shadow-sm">
+                    <span className="px-3 py-1 rounded-full bg-[#FA5D5D] text-white text-[11px] font-black">
                       #1 CHAMPION
                     </span>
                     <div className="mt-3 flex justify-center">
@@ -284,7 +284,7 @@ function RankingContent() {
                       />
                     </div>
                     <p className="mt-2 text-base font-black text-foreground truncate">{data.topUsers[0].displayName}</p>
-                    <p className="text-sm font-black text-indigo-600 dark:text-indigo-400 mt-1">
+                    <p className="text-sm font-black text-[#FA5D5D] dark:text-[#FA5D5D] mt-1">
                       {data.topUsers[0].weeklyXp.toLocaleString()} XP
                     </p>
                   </div>
@@ -302,7 +302,7 @@ function RankingContent() {
                       />
                     </div>
                     <p className="mt-2 text-sm font-bold text-foreground truncate">{data.topUsers[2].displayName}</p>
-                    <p className="text-xs font-black text-indigo-600 dark:text-indigo-400 mt-1">
+                    <p className="text-xs font-black text-[#FA5D5D] dark:text-[#FA5D5D] mt-1">
                       {data.topUsers[2].weeklyXp.toLocaleString()} XP
                     </p>
                   </div>
@@ -317,7 +317,7 @@ function RankingContent() {
                     <div
                       key={`xp_user_${entry.userId}`}
                       className={`flex items-center justify-between p-4 transition-colors ${
-                        isUser ? 'bg-indigo-500/10 border-l-4 border-l-indigo-600' : 'hover:bg-muted/30'
+                        isUser ? 'bg-[#FA5D5D]/10 border-l-4 border-l-indigo-600' : 'hover:bg-muted/30'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -334,7 +334,7 @@ function RankingContent() {
                           <p className="text-xs sm:text-sm font-bold text-foreground flex items-center gap-1.5">
                             {entry.displayName}
                             {isUser && (
-                              <span className="px-1.5 py-0.2 rounded bg-indigo-600 text-white text-[9px] font-black">
+                              <span className="px-1.5 py-0.2 rounded bg-[#FA5D5D] text-white text-[9px] font-black">
                                 YOU
                               </span>
                             )}
@@ -345,7 +345,7 @@ function RankingContent() {
                         </div>
                       </div>
 
-                      <span className="text-xs sm:text-sm font-black text-indigo-600 dark:text-indigo-400">
+                      <span className="text-xs sm:text-sm font-black text-[#FA5D5D] dark:text-[#FA5D5D]">
                         {entry.weeklyXp.toLocaleString()} XP
                       </span>
                     </div>

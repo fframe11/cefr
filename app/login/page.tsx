@@ -94,7 +94,7 @@ const SpanishFlagSvg: React.FC<{ className?: string }> = ({ className = 'w-4 h-4
 
 export default function LoginPage() {
   const router = useRouter();
-  const { status, signInWithPassword, signInWithOAuth, signInAsDemoStudent } = useAuth();
+  const { status, signInWithPassword, signInWithOAuth, signInAsDemoStudent, signInAsGuest } = useAuth();
   const { t, language } = useTranslation();
 
   const [email, setEmail] = useState('');
@@ -117,6 +117,19 @@ export default function LoginPage() {
       router.push('/dashboard');
     } catch (err: any) {
       setAuthError(err?.message || 'เข้าสู่ระบบบัญชีทดลองไม่สำเร็จ');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleGuestSignIn = async () => {
+    setAuthError(null);
+    setIsSubmitting(true);
+    try {
+      await signInAsGuest();
+      router.push('/dashboard');
+    } catch (err: any) {
+      setAuthError(err?.message || 'เข้าสู่ระบบแบบผู้เยี่ยมชมไม่สำเร็จ');
     } finally {
       setIsSubmitting(false);
     }
@@ -150,9 +163,11 @@ export default function LoginPage() {
     setAuthError(null);
     setIsSubmitting(true);
     try {
-      const { error } = await signInWithOAuth(provider);
+      const { error, url } = await signInWithOAuth(provider);
       if (error) {
         setAuthError(t('auth.oauth_unconfigured_msg'));
+      } else if (!url) {
+        router.push('/dashboard');
       }
     } finally {
       setIsSubmitting(false);
@@ -177,7 +192,7 @@ export default function LoginPage() {
         {/* Left Column: Visual Brand Showcase */}
         <div className="relative w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#FFF5EE] via-[#FFF9F5] to-[#FEECE0] dark:from-[#18141F] dark:via-[#1D1926] dark:to-[#14121B] border-b lg:border-b-0 lg:border-r border-border/60">
           <div className="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-[#FA5D5D]/15 dark:bg-[#FA5D5D]/10 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#38BDF8]/15 dark:bg-[#38BDF8]/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#FFBA38]/15 dark:bg-[#FFBA38]/10 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 border border-[#FA5D5D]/20 shadow-2xs backdrop-blur-xs">
@@ -288,16 +303,28 @@ export default function LoginPage() {
             </button>
           </div>
 
-          {/* Demo Student Fast Access */}
-          <button
-            type="button"
-            onClick={handleDemoSignIn}
-            disabled={isSubmitting}
-            className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50"
-          >
-            <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
-            <span>{language === 'th' ? 'เข้าสู่ระบบด่วน (Demo Student)' : 'Quick Demo Student Access'}</span>
-          </button>
+          {/* Fast Access: Guest Mode & Demo Student */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <button
+              type="button"
+              onClick={handleGuestSignIn}
+              disabled={isSubmitting}
+              className="touch-target w-full py-2.5 px-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50 cursor-pointer"
+            >
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+              <span>{language === 'th' ? 'เข้าใช้งานแบบผู้เยี่ยมชม (Guest)' : 'Instant Guest Access'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleDemoSignIn}
+              disabled={isSubmitting}
+              className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+              <span>{language === 'th' ? 'บัญชีทดลอง (Demo Student)' : 'Demo Student (B1)'}</span>
+            </button>
+          </div>
 
           {/* Divider */}
           <div className="relative my-1 flex items-center justify-center">

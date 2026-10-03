@@ -181,7 +181,7 @@ export const LottieProfileFrame: React.FC<LottieProfileFrameProps> = ({
         loading="lazy"
       />
     ) : (
-      <div className="w-full h-full rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-bold flex items-center justify-center text-xs uppercase select-none">
+      <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#FA5D5D] to-purple-600 text-white font-bold flex items-center justify-center text-xs uppercase select-none">
         {(username || 'GL').slice(0, 2).toUpperCase()}
       </div>
     )
