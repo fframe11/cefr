@@ -29,10 +29,10 @@ In the afternoon, we helped feed the chickens and picked organic strawberries in
         promptTh: 'ผู้เขียนและพี่ชายเดินทางไปยังฟาร์มด้วยยานพาหนะใด?',
         promptEn: 'How did the writer and their brother travel to the farm?',
         options: [
-          { key: 'A', text: 'By private car', isCorrect: false, feedbackTh: 'ในบทความระบุว่า traveled by bus' },
-          { key: 'B', text: 'By public bus', isCorrect: true, feedbackTh: 'ถูกต้อง! ในย่อหน้าที่ 2 ระบุว่า "We traveled by bus early on Saturday morning."' },
+          { key: 'A', text: 'By public bus', isCorrect: true, feedbackTh: 'ถูกต้อง! ในย่อหน้าที่ 2 ระบุว่า "We traveled by bus early on Saturday morning."' },
+          { key: 'B', text: 'By private car', isCorrect: false, feedbackTh: 'ในบทความระบุว่า traveled by bus' },
           { key: 'C', text: 'By train', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยรถไฟ' },
-          { key: 'D', text: 'By airplane', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยเครื่องบิน' },
+          { key: 'D', text: 'By airplane', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยเครื่องบิน' }
         ],
         explanationTh: 'บทความระบุชัดเจนในบรรทัดแรกของย่อหน้าที่สอง: "We traveled by bus early on Saturday morning."',
         explanationEn: 'Paragraph 2 explicitly states: "We traveled by bus early on Saturday morning."',
@@ -50,7 +50,7 @@ In the afternoon, we helped feed the chickens and picked organic strawberries in
           { key: 'A', text: 'They watched a film about farming.', isCorrect: false, feedbackTh: 'ในฟาร์มไม่มีโทรทัศน์' },
           { key: 'B', text: 'They fed animals and gathered strawberries.', isCorrect: true, feedbackTh: 'ถูกต้อง! "helped feed the chickens and picked organic strawberries"' },
           { key: 'C', text: 'They repaired the farm fence.', isCorrect: false, feedbackTh: 'ไม่ได้ซ่อมรั้ว' },
-          { key: 'D', text: 'They baked bread with the owners.', isCorrect: false, feedbackTh: 'เจ้าของบ้านเสิร์ฟขนมปังที่ทำไว้แล้ว' },
+          { key: 'D', text: 'They baked bread with the owners.', isCorrect: false, feedbackTh: 'เจ้าของบ้านเสิร์ฟขนมปังที่ทำไว้แล้ว' }
         ],
         explanationTh: 'ในย่อหน้าที่ 3 ระบุว่า "In the afternoon, we helped feed the chickens and picked organic strawberries in the garden."',
         explanationEn: 'The text mentions feeding chickens and picking strawberries in the afternoon.',
@@ -92,9 +92,9 @@ In spite of these economic barriers, city planners view micro-farming as an inva
         promptEn: 'What is highlighted as a primary operational benefit of hydroponic farming?',
         options: [
           { key: 'A', text: 'It completely eliminates the need for electricity.', isCorrect: false, feedbackTh: 'บทความระบุว่าต้องใช้ไฟฟ้าและไฟ LED' },
-          { key: 'B', text: 'It accelerates crop growth while conserving substantial amounts of water.', isCorrect: true, feedbackTh: 'ถูกต้อง! โตเร็วขึ้น 30% และใช้น้ำน้อยลงถึง 90%' },
-          { key: 'C', text: 'It works best in open countryside soil.', isCorrect: false, feedbackTh: 'นี่คือระบบไร้ดินในเมือง' },
-          { key: 'D', text: 'It requires zero initial capital investment.', isCorrect: false, feedbackTh: 'ต้นทุนเริ่มต้นยังสูง (Initial setup expenses remain high)' },
+          { key: 'B', text: 'It works best in open countryside soil.', isCorrect: false, feedbackTh: 'นี่คือระบบไร้ดินในเมือง' },
+          { key: 'C', text: 'It accelerates crop growth while conserving substantial amounts of water.', isCorrect: true, feedbackTh: 'ถูกต้อง! โตเร็วขึ้น 30% และใช้น้ำน้อยลงถึง 90%' },
+          { key: 'D', text: 'It requires zero initial capital investment.', isCorrect: false, feedbackTh: 'ต้นทุนเริ่มต้นยังสูง (Initial setup expenses remain high)' }
         ],
         explanationTh: 'ย่อหน้าที่ 2 ระบุว่า: "crops can grow up to thirty percent faster while utilizing ninety percent less water than conventional outdoor fields."',
         explanationEn: 'Paragraph 2 highlights 30% faster growth and 90% water reduction.',
@@ -110,9 +110,9 @@ In spite of these economic barriers, city planners view micro-farming as an inva
         promptEn: 'What challenge is mentioned that might discourage beginner urban farmers?',
         options: [
           { key: 'A', text: 'The complete absence of community interest.', isCorrect: false, feedbackTh: 'ชุมชนให้ความสนใจดี' },
-          { key: 'B', text: 'High upfront costs for equipment and elevated electricity tariffs.', isCorrect: true, feedbackTh: 'ถูกต้อง! ค่าอุปกรณ์เริ่มต้นและค่าไฟทำให้ผู้เริ่มต้นลังเล' },
+          { key: 'B', text: 'The inferior taste of hydroponically grown greens.', isCorrect: false, feedbackTh: 'ไม่มีการกล่าวว่ารสชาติด้อยกว่า' },
           { key: 'C', text: 'Stringent government bans on rooftop greenery.', isCorrect: false, feedbackTh: 'ไม่ได้ถูกรัฐบาลสั่งห้าม' },
-          { key: 'D', text: 'The inferior taste of hydroponically grown greens.', isCorrect: false, feedbackTh: 'ไม่มีการกล่าวว่ารสชาติด้อยกว่า' },
+          { key: 'D', text: 'High upfront costs for equipment and elevated electricity tariffs.', isCorrect: true, feedbackTh: 'ถูกต้อง! ค่าอุปกรณ์เริ่มต้นและค่าไฟทำให้ผู้เริ่มต้นลังเล' }
         ],
         explanationTh: 'ย่อหน้าที่ 3 ระบุถึง "Initial setup expenses for LED lighting arrays and automated sensors remain high" และ "high electricity tariffs".',
         explanationEn: 'Paragraph 3 details high upfront costs and energy bills as discouraging factors.',
@@ -153,10 +153,10 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
         promptTh: 'แก่นแท้ของแนวคิด "Digital Minimalism" ตามที่บทความอธิบายคืออะไร?',
         promptEn: 'According to the passage, what is the core philosophy of Digital Minimalism?',
         options: [
-          { key: 'A', text: 'Completely rejecting all digital devices and returning to analog lifestyles.', isCorrect: false, feedbackTh: 'บทความระบุว่าไม่ใช่การปฏิเสธเทคโนโลยี' },
-          { key: 'B', text: 'Selectively using only digital tools that actively support core values while consciously ignoring the rest.', isCorrect: true, feedbackTh: 'ถูกต้อง! เลือกใช้เฉพาะเครื่องมือที่สนับสนุนคุณค่าสำคัญอย่างแท้จริง และยินดีปล่อยผ่านสิ่งอื่น' },
+          { key: 'A', text: 'Selectively using only digital tools that actively support core values while consciously ignoring the rest.', isCorrect: true, feedbackTh: 'ถูกต้อง! เลือกใช้เฉพาะเครื่องมือที่สนับสนุนคุณค่าสำคัญอย่างแท้จริง และยินดีปล่อยผ่านสิ่งอื่น' },
+          { key: 'B', text: 'Completely rejecting all digital devices and returning to analog lifestyles.', isCorrect: false, feedbackTh: 'บทความระบุว่าไม่ใช่การปฏิเสธเทคโนโลยี' },
           { key: 'C', text: 'Checking notifications only during scheduled weekend intervals.', isCorrect: false, feedbackTh: 'นี่เป็นเพียงรายละเอียดปลีกย่อย ไม่ใช่แก่นปรัชญา' },
-          { key: 'D', text: 'Switching exclusively to open-source software platforms.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงประเภทของซอฟต์แวร์' },
+          { key: 'D', text: 'Switching exclusively to open-source software platforms.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงประเภทของซอฟต์แวร์' }
         ],
         explanationTh: 'ย่อหน้าที่ 2 นิยามชัดเจน: "focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and then happily miss out on everything else."',
         explanationEn: 'Digital minimalism prioritizes high-value, carefully chosen activities over constant connectivity.',

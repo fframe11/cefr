@@ -27,10 +27,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'Read the bookstore notice:',
             contextPassage: '[CITY BOOKSTORE]\nBuy any two paperback novels this weekend and get a third book of equal or lesser value completely FREE! Offer valid until Sunday 6 PM.',
             options: [
-              { key: 'A', text: 'All books are sold at half price.', isCorrect: false, feedbackTh: 'ไม่ได้ลดครึ่งราคาทุกเล่ม' },
-              { key: 'B', text: 'Buy two paperbacks and receive one free book.', isCorrect: true, feedbackTh: 'ถูกต้อง! ซื้อ 2 เล่มแถมฟรี 1 เล่ม' },
+              { key: 'A', text: 'Buy two paperbacks and receive one free book.', isCorrect: true, feedbackTh: 'ถูกต้อง! ซื้อ 2 เล่มแถมฟรี 1 เล่ม' },
+              { key: 'B', text: 'All books are sold at half price.', isCorrect: false, feedbackTh: 'ไม่ได้ลดครึ่งราคาทุกเล่ม' },
               { key: 'C', text: 'Free books are offered only on Monday.', isCorrect: false, feedbackTh: 'หมดเขตวันอาทิตย์ 6 โมงเย็น' },
-              { key: 'D', text: 'The bookstore closes at 6 PM every weekday.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงวันธรรมดา' },
+              { key: 'D', text: 'The bookstore closes at 6 PM every weekday.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงวันธรรมดา' }
             ],
             explanationTh: 'ป้ายประกาศระบุชัดเจน: "Buy any two paperback novels... get a third book... completely FREE!"',
             explanationEn: 'The notice indicates a "buy two, get one free" weekend promotion.',
@@ -49,7 +49,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
               { key: 'A', text: 'because', isCorrect: false, feedbackTh: 'because แสดงเหตุผล ไม่ได้แสดงความขัดแย้ง' },
               { key: 'B', text: 'but', isCorrect: true, feedbackTh: 'ถูกต้อง! "but" ใช้เชื่อมความขัดแย้งระหว่าง "เหนื่อย" กับ "ยังคงทำการบ้านเสร็จ"' },
               { key: 'C', text: 'so', isCorrect: false, feedbackTh: 'so แสดงผลลัพธ์' },
-              { key: 'D', text: 'or', isCorrect: false, feedbackTh: 'or แสดงตัวเลือก' },
+              { key: 'D', text: 'or', isCorrect: false, feedbackTh: 'or แสดงตัวเลือก' }
             ],
             explanationTh: 'ประโยคสองส่วนมีความขัดแย้งกัน (เหนื่อยมาก แต่ยังทำการบ้านจนเสร็จ) จึงต้องใช้คำเชื่อม "but".',
             explanationEn: '"but" links two contrasting independent clauses.',
@@ -66,9 +66,9 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             contextPassage: 'Remember to take your _____ because the weather forecast predicted thunderstorm.',
             options: [
               { key: 'A', text: 'sunglasses', isCorrect: false, feedbackTh: 'แว่นกันแดดใช้เมื่อแดดออก' },
-              { key: 'B', text: 'raincoat', isCorrect: true, feedbackTh: 'ถูกต้อง! raincoat คือเสื้อกันฝน' },
-              { key: 'C', text: 'swimsuit', isCorrect: false, feedbackTh: 'ชุดว่ายน้ำ' },
-              { key: 'D', text: 'scarf', isCorrect: false, feedbackTh: 'ผ้าพันคอ' },
+              { key: 'B', text: 'swimsuit', isCorrect: false, feedbackTh: 'ชุดว่ายน้ำ' },
+              { key: 'C', text: 'raincoat', isCorrect: true, feedbackTh: 'ถูกต้อง! raincoat คือเสื้อกันฝน' },
+              { key: 'D', text: 'scarf', isCorrect: false, feedbackTh: 'ผ้าพันคอ' }
             ],
             explanationTh: 'Raincoat หมายถึง เสื้อกันฝน สอดคล้องกับพยากรณ์อากาศที่บอกว่าจะมีพายุฝนฟ้าคะนอง.',
             explanationEn: 'A raincoat protects against precipitation.',
@@ -85,9 +85,9 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             contextPassage: 'Why did Emma write this message?',
             options: [
               { key: 'A', text: 'To ask her father to pick her up by car', isCorrect: false, feedbackTh: 'เอ็มม่าบอกว่าจะเดินกลับบ้านกับเลียม ไม่ได้ขอให้พ่อมารับ' },
-              { key: 'B', text: 'To inform her father why she will be slightly late', isCorrect: true, feedbackTh: 'ถูกต้อง! แจ้งคุณพ่อว่าตกรถบัสจึงเดินกลับบ้าน และจะถึง 5:30' },
+              { key: 'B', text: 'To complain about her school teachers', isCorrect: false, feedbackTh: 'ไม่มีการบ่นเกี่ยวกับคุณครู' },
               { key: 'C', text: 'To invite Liam over for dinner tonight', isCorrect: false, feedbackTh: 'ไม่ได้ชวนเลียมทานข้าวเย็น' },
-              { key: 'D', text: 'To complain about her school teachers', isCorrect: false, feedbackTh: 'ไม่มีการบ่นเกี่ยวกับคุณครู' },
+              { key: 'D', text: 'To inform her father why she will be slightly late', isCorrect: true, feedbackTh: 'ถูกต้อง! แจ้งคุณพ่อว่าตกรถบัสจึงเดินกลับบ้าน และจะถึง 5:30' }
             ],
             explanationTh: 'เอ็มม่าส่งข้อความบอกคุณพ่อว่าตกรถบัสและกำลังเดินกลับกับเพื่อน โดยจะถึงบ้านเวลาประมาณ 5:30 น.',
             explanationEn: 'The purpose is to inform her parent about the delay and arrival time.',
@@ -112,10 +112,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'How much does the customer pay for the iced latte?',
             audioScript: 'Customer: Hello, could I get one large iced latte with oat milk, please? Barista: Certainly! That will be three pounds eighty, please.',
             options: [
-              { key: 'A', text: '£3.18', isCorrect: false, feedbackTh: '£3.18 คือ three pounds eighteen' },
-              { key: 'B', text: '£3.80', isCorrect: true, feedbackTh: 'ถูกต้อง! "three pounds eighty" คือ 3 ปอนด์ 80 เพนนี' },
+              { key: 'A', text: '£3.80', isCorrect: true, feedbackTh: 'ถูกต้อง! "three pounds eighty" คือ 3 ปอนด์ 80 เพนนี' },
+              { key: 'B', text: '£3.18', isCorrect: false, feedbackTh: '£3.18 คือ three pounds eighteen' },
               { key: 'C', text: '£4.80', isCorrect: false, feedbackTh: '£4.80 คือ four pounds eighty' },
-              { key: 'D', text: '£8.30', isCorrect: false, feedbackTh: 'ตัวเลขสลับตำแหน่ง' },
+              { key: 'D', text: '£8.30', isCorrect: false, feedbackTh: 'ตัวเลขสลับตำแหน่ง' }
             ],
             explanationTh: 'พนักงานแจ้งราคาว่า: "three pounds eighty" ซึ่งเท่ากับ £3.80.',
             explanationEn: '"Three pounds eighty" equals £3.80.',
@@ -131,10 +131,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'What weekend activity is proposed in the voice message?',
             audioScript: 'Hey Tom, a few of us are planning a cycling trip along the riverside park this Sunday morning if the weather stays sunny. Let me know if you can bring your bike!',
             options: [
-              { key: 'A', text: 'A riverside cycling trip', isCorrect: true, feedbackTh: 'ถูกต้อง! "planning a cycling trip along the riverside park"' },
-              { key: 'B', text: 'A boat tour down the river', isCorrect: false, feedbackTh: 'ไม่ได้ชวนนั่งเรือ' },
+              { key: 'A', text: 'A boat tour down the river', isCorrect: false, feedbackTh: 'ไม่ได้ชวนนั่งเรือ' },
+              { key: 'B', text: 'A riverside cycling trip', isCorrect: true, feedbackTh: 'ถูกต้อง! "planning a cycling trip along the riverside park"' },
               { key: 'C', text: 'A mountain hiking expedition', isCorrect: false, feedbackTh: 'ไม่ได้ชวนไปปีนเขา' },
-              { key: 'D', text: 'A picnic at the city museum', isCorrect: false, feedbackTh: 'ไม่ได้ชวนไปพิพิธภัณฑ์' },
+              { key: 'D', text: 'A picnic at the city museum', isCorrect: false, feedbackTh: 'ไม่ได้ชวนไปพิพิธภัณฑ์' }
             ],
             explanationTh: 'ข้อความชวนไป: "cycling trip along the riverside park" (ปั่นจักรยานเลียบสวนสาธารณะริมแม่น้ำ).',
             explanationEn: 'The message invites Tom to a cycling trip along the river.',
@@ -172,10 +172,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'Choose the correct linking word of concession:',
             contextPassage: '_____ it was freezing outside, the brave marathon runners completed all forty-two kilometers with great determination.',
             options: [
-              { key: 'A', text: 'Although', isCorrect: true, feedbackTh: 'ถูกต้อง! Although + clause (ประธาน + กริยา) แสดงความขัดแย้งว่า แม้ว่าอากาศจะหนาวจัด...' },
+              { key: 'A', text: 'In spite of', isCorrect: false, feedbackTh: 'In spite of ต้องตามด้วย Noun phrase' },
               { key: 'B', text: 'Despite', isCorrect: false, feedbackTh: 'Despite ต้องตามด้วย Noun หรือ V.ing ไม่ตามด้วย clause' },
-              { key: 'C', text: 'In spite of', isCorrect: false, feedbackTh: 'In spite of ต้องตามด้วย Noun phrase' },
-              { key: 'D', text: 'However', isCorrect: false, feedbackTh: 'However ต้องมีเครื่องหมายคั่นหรือขึ้นประโยคใหม่' },
+              { key: 'C', text: 'Although', isCorrect: true, feedbackTh: 'ถูกต้อง! Although + clause (ประธาน + กริยา) แสดงความขัดแย้งว่า แม้ว่าอากาศจะหนาวจัด...' },
+              { key: 'D', text: 'However', isCorrect: false, feedbackTh: 'However ต้องมีเครื่องหมายคั่นหรือขึ้นประโยคใหม่' }
             ],
             explanationTh: '"Although" ตามด้วยอนุประโยค (Subject + Verb: it was freezing) ใช้แสดงความขัดแย้ง ส่วน Despite/In spite of ต้องตามด้วยคำนาม.',
             explanationEn: '"Although" is a subordinating conjunction followed by a subject and finite verb clause.',
@@ -191,10 +191,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'Select the phrasal verb meaning to cancel an event:',
             contextPassage: 'Owing to torrential downpours, the organizers were compelled to _____ the outdoor music festival.',
             options: [
-              { key: 'A', text: 'call off', isCorrect: true, feedbackTh: 'ถูกต้อง! "call off" มีความหมายว่า ยกเลิก (cancel)' },
+              { key: 'A', text: 'look after', isCorrect: false, feedbackTh: 'look after แปลว่า ดูแลเอาใจใส่' },
               { key: 'B', text: 'put on', isCorrect: false, feedbackTh: 'put on แปลว่า สวมใส่ หรือจัดแสดง' },
               { key: 'C', text: 'turn down', isCorrect: false, feedbackTh: 'turn down แปลว่า ปฏิเสธ หรือหรี่เสียง' },
-              { key: 'D', text: 'look after', isCorrect: false, feedbackTh: 'look after แปลว่า ดูแลเอาใจใส่' },
+              { key: 'D', text: 'call off', isCorrect: true, feedbackTh: 'ถูกต้อง! "call off" มีความหมายว่า ยกเลิก (cancel)' }
             ],
             explanationTh: 'Phrasal Verb "call off" หมายถึง ยกเลิก (to cancel an event that was previously scheduled).',
             explanationEn: '"Call off" means to cancel an event.',
@@ -210,10 +210,10 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             promptEn: 'Read the short excerpt: "Immersing oneself in fiction does not merely provide escapism; research demonstrates that following character arcs stimulates brain regions associated with empathy and emotional intelligence."',
             contextPassage: 'What is the author\'s main assertion?',
             options: [
-              { key: 'A', text: 'Fiction is inferior to scientific textbooks for mental growth.', isCorrect: false, feedbackTh: 'ตรงข้ามกับบทความ' },
-              { key: 'B', text: 'Reading novels actively develops our capacity to understand others\' feelings.', isCorrect: true, feedbackTh: 'ถูกต้อง! การอ่านวรรณกรรมช่วยกระตุ้นสมองส่วนที่เกี่ยวข้องกับ Empathy (ความเข้าอกเข้าใจผู้อื่น)' },
+              { key: 'A', text: 'Reading novels actively develops our capacity to understand others\' feelings.', isCorrect: true, feedbackTh: 'ถูกต้อง! การอ่านวรรณกรรมช่วยกระตุ้นสมองส่วนที่เกี่ยวข้องกับ Empathy (ความเข้าอกเข้าใจผู้อื่น)' },
+              { key: 'B', text: 'Fiction is inferior to scientific textbooks for mental growth.', isCorrect: false, feedbackTh: 'ตรงข้ามกับบทความ' },
               { key: 'C', text: 'Escapism is harmful to young readers.', isCorrect: false, feedbackTh: 'บทความไม่ได้บอกว่าอันตราย' },
-              { key: 'D', text: 'Brain stimulation only occurs during fast reading.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงความเร็วในการอ่าน' },
+              { key: 'D', text: 'Brain stimulation only occurs during fast reading.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงความเร็วในการอ่าน' }
             ],
             explanationTh: 'ผู้เขียนชี้ให้เห็นว่าการอ่านนิยายช่วยพัฒนา "empathy and emotional intelligence" (ความเข้าอกเข้าใจผู้อื่นและความฉลาดทางอารมณ์).',
             explanationEn: 'The passage asserts that fiction stimulates empathy and emotional understanding.',
@@ -241,7 +241,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
               { key: 'A', text: 'Review their training schedule on their phone', isCorrect: false, feedbackTh: 'โค้ชเตือนว่าก่อนตรวจดูโทรศัพท์' },
               { key: 'B', text: 'Drink warm water with electrolytes to rehydrate muscles', isCorrect: true, feedbackTh: 'ถูกต้อง! ดื่มน้ำอุณหภูมิห้องผสมเกลือแร่ครึ่งลิตรก่อนทำสิ่งอื่น' },
               { key: 'C', text: 'Immediately consume a double espresso', isCorrect: false, feedbackTh: 'เตือนว่าให้ดื่มน้ำก่อนดื่มกาแฟ' },
-              { key: 'D', text: 'Perform fifty vigorous push-ups', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงการวิดพื้น' },
+              { key: 'D', text: 'Perform fifty vigorous push-ups', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงการวิดพื้น' }
             ],
             explanationTh: 'โค้ชแนะนำว่า: "Before checking your smartphone or drinking coffee, drink half a liter of lukewarm water with a pinch of electrolytes".',
             explanationEn: 'The trainer advises drinking water with electrolytes before phone checks or coffee.',
@@ -258,9 +258,9 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             audioScript: 'Liam: We could do our environmental science project on solar energy, or maybe electric vehicles. Olivia: Everyone in class is already doing electric cars, Liam. Why don\'t we investigate vertical urban farming instead? It\'s novel and fascinating. Liam: Good thinking, Olivia! Let\'s go with urban farming then.',
             options: [
               { key: 'A', text: 'Electric vehicles in modern cities', isCorrect: false, feedbackTh: 'โอลิเวียแย้งว่าทุกคนในห้องเลือกทำหัวข้อนี้ไปแล้ว' },
-              { key: 'B', text: 'Vertical urban farming initiatives', isCorrect: true, feedbackTh: 'ถูกต้อง! ทั้งสองคนตกลงเลือกทำเรื่อง vertical urban farming' },
-              { key: 'C', text: 'Solar panel efficiency benchmarks', isCorrect: false, feedbackTh: 'เลียมแค่เสนอแต่ไม่ได้เลือก' },
-              { key: 'D', text: 'Plastic waste recycling in schools', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงหัวข้อนี้' },
+              { key: 'B', text: 'Solar panel efficiency benchmarks', isCorrect: false, feedbackTh: 'เลียมแค่เสนอแต่ไม่ได้เลือก' },
+              { key: 'C', text: 'Vertical urban farming initiatives', isCorrect: true, feedbackTh: 'ถูกต้อง! ทั้งสองคนตกลงเลือกทำเรื่อง vertical urban farming' },
+              { key: 'D', text: 'Plastic waste recycling in schools', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงหัวข้อนี้' }
             ],
             explanationTh: 'โอลิเวียเสนอว่าให้ทำ "vertical urban farming" เพราะไม่ซ้ำใคร และเลียมก็เห็นพ้องด้วยในตอนท้าย.',
             explanationEn: 'Both students agree on vertical urban farming after rejecting the overused topic of electric cars.',
@@ -299,9 +299,9 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             contextPassage: 'I didn\'t save my project draft on the cloud, and my hard drive crashed.',
             options: [
               { key: 'A', text: 'I wish I saved my project on the cloud.', isCorrect: false, feedbackTh: 'saved เป็นรูป Past Simple ใช้กับความต้องการในปัจจุบัน' },
-              { key: 'B', text: 'I wish I had saved my project on the cloud.', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้างเสียใจในอดีต (Past Regret) คือ wish + Past Perfect (had saved)' },
+              { key: 'B', text: 'I wish I have saved my project on the cloud.', isCorrect: false, feedbackTh: 'หลัง wish ไม่ใช้ Present Perfect' },
               { key: 'C', text: 'I wish I would save my project on the cloud.', isCorrect: false, feedbackTh: 'would + V.inf ใช้บ่นหรือขอร้องการกระทำของผู้อื่นในอนาคต' },
-              { key: 'D', text: 'I wish I have saved my project on the cloud.', isCorrect: false, feedbackTh: 'หลัง wish ไม่ใช้ Present Perfect' },
+              { key: 'D', text: 'I wish I had saved my project on the cloud.', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้างเสียใจในอดีต (Past Regret) คือ wish + Past Perfect (had saved)' }
             ],
             explanationTh: 'เมื่อต้องการแสดงความเสียใจกับเหตุการณ์ในอดีตที่ผ่านไปแล้ว (Regret about the past) กฎไวยากรณ์ต้องใช้ wish + Past Perfect (had + V.3).',
             explanationEn: 'To express regret about an unchangeable past situation, we use "wish + past perfect".',
@@ -320,7 +320,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
               { key: 'A', text: 'mitigate', isCorrect: true, feedbackTh: 'ถูกต้อง! mitigate แปลว่า บรรเทาหรือผ่อนคลายความรุนแรงของปัญหา' },
               { key: 'B', text: 'provoke', isCorrect: false, feedbackTh: 'provoke แปลว่า ยั่วยุหรือกระตุ้นให้เกิดผลเสีย' },
               { key: 'C', text: 'escalate', isCorrect: false, feedbackTh: 'escalate แปลว่า ทวีความรุนแรงขึ้น' },
-              { key: 'D', text: 'jeopardize', isCorrect: false, feedbackTh: 'jeopardize แปลว่า ทำให้ตกอยู่ในอันตราย' },
+              { key: 'D', text: 'jeopardize', isCorrect: false, feedbackTh: 'jeopardize แปลว่า ทำให้ตกอยู่ในอันตราย' }
             ],
             explanationTh: '"Mitigate" หมายถึง ทำให้อันตรายหรือความรุนแรงลดน้อยลง (to make something less harmful, unpleasant, or bad).',
             explanationEn: '"Mitigate" means to make something less severe or damaging.',
@@ -339,7 +339,7 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
               { key: 'A', text: 'AI models possess genuine human emotions and thoughts.', isCorrect: false, feedbackTh: 'ผู้เขียนปฏิเสธอย่างชัดเจน' },
               { key: 'B', text: 'Fluency in token prediction should not be mistaken for authentic understanding.', isCorrect: true, feedbackTh: 'ถูกต้อง! ความคล่องแคล่วในการทำนายคำศัพท์ทางสถิติไม่ควรถูกเข้าใจผิดว่าเป็นการเข้าใจความหมายที่แท้จริง' },
               { key: 'C', text: 'Biological cognition can be easily programmed using simple loops.', isCorrect: false, feedbackTh: 'ตรงข้ามกับที่ผู้เขียนสื่อ' },
-              { key: 'D', text: 'AI development should be permanently halted.', isCorrect: false, feedbackTh: 'ผู้เขียนวิจารณ์เชิงปรัชญา ไม่ได้สั่งให้ยุติการพัฒนา' },
+              { key: 'D', text: 'AI development should be permanently halted.', isCorrect: false, feedbackTh: 'ผู้เขียนวิจารณ์เชิงปรัชญา ไม่ได้สั่งให้ยุติการพัฒนา' }
             ],
             explanationTh: 'ผู้เขียนเตือนว่าอย่าสับสนระหว่างการทำนายคำศัพท์ (statistical token prediction) กับการเข้าใจความหมายอย่างแท้จริง (genuine semantic comprehension).',
             explanationEn: 'The writer distinguishes between statistical text fluency and authentic cognitive comprehension.',
@@ -365,9 +365,9 @@ export const CAMBRIDGE_MOCK_EXAMS: MockExam[] = [
             audioScript: 'Narrator: Oceanic phytoplankton generates over fifty percent of the planet\'s oxygen while sequestering billions of metric tons of dissolved carbon annually. Far from being an inert reservoir, the ocean serves as the dynamic circulatory system of our biosphere. Should ocean acidification disrupt these microscopic organisms, the terrestrial equilibrium we take for granted could destabilize irreversibly.',
             options: [
               { key: 'A', text: 'The ocean is merely an inert water basin with negligible impact on oxygen.', isCorrect: false, feedbackTh: 'ผู้บรรยายบอกว่าผลิตออกซิเจนมากกว่า 50%' },
-              { key: 'B', text: 'Microscopic marine life plays a pivotal, indispensable role in maintaining global atmospheric stability.', isCorrect: true, feedbackTh: 'ถูกต้อง! แพลงก์ตอนพืชในทะเลมีบทบาทสำคัญยิ่งต่อเสถียรภาพของบรรยากาศโลก' },
-              { key: 'C', text: 'Acidification poses no tangible threat to phytoplankton species.', isCorrect: false, feedbackTh: 'ภาวะน้ำทะเลเป็นกรดเป็นภัยคุกคามร้ายแรง' },
-              { key: 'D', text: 'Terrestrial forests absorb far more carbon than all global oceans combined.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวเปรียบเทียบในแง่นั้น' },
+              { key: 'B', text: 'Acidification poses no tangible threat to phytoplankton species.', isCorrect: false, feedbackTh: 'ภาวะน้ำทะเลเป็นกรดเป็นภัยคุกคามร้ายแรง' },
+              { key: 'C', text: 'Microscopic marine life plays a pivotal, indispensable role in maintaining global atmospheric stability.', isCorrect: true, feedbackTh: 'ถูกต้อง! แพลงก์ตอนพืชในทะเลมีบทบาทสำคัญยิ่งต่อเสถียรภาพของบรรยากาศโลก' },
+              { key: 'D', text: 'Terrestrial forests absorb far more carbon than all global oceans combined.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวเปรียบเทียบในแง่นั้น' }
             ],
             explanationTh: 'ผู้บรรยายเน้นย้ำว่า phytoplankton ในทะเลผลิตออกซิเจนกว่าครึ่งหนึ่งของโลกและกักเก็บคาร์บอนมหาศาล หากสิ่งมีชีวิตจิ๋วเหล่านี้ถูกกระทบ สมดุลของโลกจะพังทลาย.',
             explanationEn: 'Phytoplankton is identified as indispensable for global oxygen production and carbon sequestration.',

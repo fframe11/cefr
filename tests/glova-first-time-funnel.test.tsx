@@ -41,9 +41,9 @@ describe('Glova First-Time Funnel & Mass Adoption Suite', () => {
       // 5 correct answers
       const answers = {
         'qc-1': 'A',
-        'qc-2': 'A',
-        'qc-3': 'A',
-        'qc-4': 'A',
+        'qc-2': 'B',
+        'qc-3': 'C',
+        'qc-4': 'D',
         'qc-5': 'A',
       };
       const snapshot = evaluateQuickCheckAssessment(answers);
@@ -58,12 +58,12 @@ describe('Glova First-Time Funnel & Mass Adoption Suite', () => {
       // 7 correct answers
       const answers = {
         'qc-1': 'A',
-        'qc-2': 'A',
-        'qc-3': 'A',
-        'qc-4': 'A',
+        'qc-2': 'B',
+        'qc-3': 'C',
+        'qc-4': 'D',
         'qc-5': 'A',
-        'qc-6': 'A',
-        'qc-7': 'A',
+        'qc-6': 'B',
+        'qc-7': 'C',
       };
       const snapshot = evaluateQuickCheckAssessment(answers);
 

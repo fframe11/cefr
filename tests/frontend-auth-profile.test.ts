@@ -189,7 +189,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect(err.code).toBe('VALIDATION_ERROR');
         expect(err.message).toBe('Invalid daily_goal_minutes');
         expect(err.details).toBeDefined();
-        expect(err.friendlyMessage).toBe('ข้อมูลที่ส่งไม่ถูกต้อง กรุณาตรวจสอบแล้วลองใหม่อีกครั้ง');
+        expect(err.friendlyMessage).toBe('ข้อมูลที่ส่งไม่ถูกต้อง กรุณาตรวจสอบข้อมูลที่กรอกแล้วลองอีกครั้ง');
       }
     });
 
@@ -213,7 +213,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(401);
-        expect(err.friendlyMessage).toBe('กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ');
+        expect(err.friendlyMessage).toBe('เซสชันหมดอายุหรือไม่ได้รับอนุญาต กรุณาเข้าสู่ระบบใหม่อีกครั้งเพื่อดำเนินการต่อ');
       }
     });
 
@@ -237,7 +237,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(403);
-        expect(err.friendlyMessage).toBe('คุณไม่มีสิทธิ์ในการเข้าถึงข้อมูลนี้');
+        expect(err.friendlyMessage).toBe('คุณไม่มีสิทธิ์ในการเข้าถึงข้อมูลนี้ กรุณาติดต่อผู้ดูแลระบบหากต้องการสิทธิ์ใช้งาน');
       }
     });
 
@@ -261,7 +261,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(404);
-        expect(err.friendlyMessage).toBe('ไม่พบข้อมูลที่ร้องขอ');
+        expect(err.friendlyMessage).toBe('ไม่พบข้อมูลที่ต้องการ กรุณาตรวจสอบเงื่อนไขการค้นหาแล้วลองอีกครั้ง');
       }
     });
 
@@ -285,7 +285,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(409);
-        expect(err.friendlyMessage).toBe('เกิดข้อขัดแย้งของข้อมูล กรุณาลองใหม่อีกครั้ง');
+        expect(err.friendlyMessage).toBe('ไม่สามารถบันทึกข้อมูลได้เนื่องจากข้อมูลซ้ำซ้อน กรุณาตรวจสอบแล้วลองอีกครั้ง');
       }
     });
 
@@ -309,7 +309,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(429);
-        expect(err.friendlyMessage).toBe('คำขอมากเกินไป กรุณารอสักครู่แล้วลองใหม่');
+        expect(err.friendlyMessage).toBe('มีการส่งคำขอถี่เกินไป กรุณารอสักครู่แล้วกดลองใหม่อีกครั้ง');
       }
     });
 
@@ -333,7 +333,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
         expect.fail('Expected ApiError to be thrown');
       } catch (err: any) {
         expect(err.status).toBe(500);
-        expect(err.friendlyMessage).toBe('ระบบเซิร์ฟเวอร์เกิดข้อผิดพลาดชั่วคราว กรุณาลองใหม่ในภายหลัง');
+        expect(err.friendlyMessage).toBe('ระบบเซิร์ฟเวอร์เกิดข้อขัดข้องชั่วคราว กรุณารอสักครู่แล้วลองใหม่อีกครั้ง');
       }
     });
 
@@ -350,7 +350,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
       } catch (err: any) {
         expect(err.status).toBe(408);
         expect(err.code).toBe('TIMEOUT');
-        expect(err.friendlyMessage).toBe('การเชื่อมต่อหมดเวลา');
+        expect(err.friendlyMessage).toBe('การเชื่อมต่อหมดเวลา กรุณาตรวจสอบสัญญาณอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง');
       }
     });
 
@@ -364,7 +364,7 @@ describe('Phase 4.8A: Frontend API Client + Auth + Profile Foundation', () => {
       } catch (err: any) {
         expect(err.status).toBe(0);
         expect(err.code).toBe('NETWORK_ERROR');
-        expect(err.friendlyMessage).toBe('ไม่สามารถเชื่อมต่อเครือข่ายได้ กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ต');
+        expect(err.friendlyMessage).toBe('ไม่สามารถเชื่อมต่อเครือข่ายได้ กรุณาตรวจสอบสัญญาณอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง');
       }
     });
   });

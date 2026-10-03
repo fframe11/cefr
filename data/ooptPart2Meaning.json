@@ -9,22 +9,26 @@
     "options": [
       {
         "key": "A",
-        "text": "The upstairs music irritates and bothers him."
+        "text": "The upstairs music irritates and bothers him.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "The music makes him feel anxious about safety."
+        "text": "The music makes him feel anxious about safety.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He wants to learn to play that style of music."
+        "text": "He wants to learn to play that style of music.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "สำนวน 'gets on my nerves' แปลว่า ทำให้รำคาญใจหรือหงุดหงิด (irritates/annoys him) ไม่ได้แปลว่ากลัวหรืออยากเล่นดนตรี",
     "explanation_en": "The idiom 'get on someone's nerves' means to annoy or irritate someone intensely.",
     "idiom_tag": "get on one's nerves",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_002",
@@ -36,22 +40,26 @@
     "options": [
       {
         "key": "A",
-        "text": "He agrees enthusiastically to join the bike ride."
+        "text": "He does not understand why Lisa is asking him.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "He does not understand why Lisa is asking him."
+        "text": "He agrees enthusiastically to join the bike ride.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "He wants Lisa to explain the reasons for going."
+        "text": "He wants Lisa to explain the reasons for going.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'Why not?' ในบทสนทนาตอบรับคำเชิญ ไม่ใช่การถามหาเหตุผล แต่เป็นการตอบรับตกลงอย่างกระตือรือร้น (เห็นด้วย/ไปสิ)",
     "explanation_en": "'Why not?' is an idiomatic conversational device used to express cheerful agreement or acceptance of a suggestion.",
     "idiom_tag": "why not",
-    "cefr_level": "A2"
+    "cefr_level": "A2",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_003",
@@ -63,22 +71,26 @@
     "options": [
       {
         "key": "A",
-        "text": "He is not skilled at remembering scientific words."
+        "text": "He finds medical vocabulary simple and straightforward.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "He has completely lost hope in his studies."
+        "text": "He has completely lost hope in his studies.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He finds medical vocabulary simple and straightforward."
+        "text": "He is not skilled at remembering scientific words.",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'hopeless at...' แปลว่า ไม่เก่งเอาเสียเลย หรือ ไร้ความสามารถในด้านนั้น (not good/skilled at)",
     "explanation_en": "Being 'hopeless at' something is an understated informal way of saying one lacks talent or skill in that area.",
     "idiom_tag": "hopeless at",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_004",
@@ -90,22 +102,26 @@
     "options": [
       {
         "key": "A",
-        "text": "He only has a very brief time before he must leave."
+        "text": "He only has a very brief time before he must leave.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "He dislikes reviewing financial documents with Sophie."
+        "text": "He dislikes reviewing financial documents with Sophie.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He will return to the office in three minutes."
+        "text": "He will return to the office in three minutes.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "Brian บอกว่ากำลังจะก้าวออกจากประตูใน 3 นาที หมายถึงเขามีเวลาคุยได้แค่แป๊บเดียวเท่านั้นก่อนต้องรีบไป",
     "explanation_en": "Brian's utterance serves as a polite temporal boundary indicating he has almost no time to talk right now.",
     "idiom_tag": "time constraint implicature",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_005",
@@ -117,22 +133,26 @@
     "options": [
       {
         "key": "A",
-        "text": "She feels she does not yet have enough tenure or readiness."
+        "text": "She thinks the application deadline has already expired.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "She thinks the application deadline has already expired."
+        "text": "She feels she does not yet have enough tenure or readiness.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "She plans to arrive early for the job interview."
+        "text": "She plans to arrive early for the job interview.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "'too soon for me' หมายถึง เธอยังเพิ่งเริ่มงานได้ไม่นาน หรือยังไม่พร้อมสำหรับตำแหน่งที่สูงขึ้นในตอนนี้",
     "explanation_en": "'Too soon for me' implies premature timing relative to her career progression or current experience level.",
     "idiom_tag": "too soon",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_006",
@@ -144,22 +164,26 @@
     "options": [
       {
         "key": "A",
-        "text": "Was the restaurant as great as people claimed in reviews?"
+        "text": "Did the restaurant suffer any physical structural damage?",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Was the food at the restaurant overpriced and poorly cooked?"
+        "text": "Was the food at the restaurant overpriced and poorly cooked?",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Did the restaurant suffer any physical structural damage?"
+        "text": "Was the restaurant as great as people claimed in reviews?",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'everything it was cracked up to be' หมายถึง ดีสมคำร่ำลือ หรือยอดเยี่ยมอย่างที่คนชื่นชมกันไว้หรือไม่",
     "explanation_en": "'Everything it's cracked up to be' refers to whether something matches its high public reputation or hype.",
     "idiom_tag": "cracked up to be",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_007",
@@ -171,22 +195,26 @@
     "options": [
       {
         "key": "A",
-        "text": "He is feeling slightly ill or unwell."
+        "text": "He is feeling slightly ill or unwell.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "He is disappointed by the rainy climate."
+        "text": "He is disappointed by the rainy climate.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He forgot to bring his umbrella to work."
+        "text": "He forgot to bring his umbrella to work.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "สำนวน 'under the weather' เป็นสำนวนยอดนิยม แปลว่า รู้สึกครั่นเนื้อครั่นตัว หรือป่วยเล็กน้อย (unwell/mildly sick)",
     "explanation_en": "'Under the weather' is an idiom indicating slight indisposition or mild illness.",
     "idiom_tag": "under the weather",
-    "cefr_level": "A2"
+    "cefr_level": "A2",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_008",
@@ -198,22 +226,26 @@
     "options": [
       {
         "key": "A",
-        "text": "Stopping their work for the rest of today."
+        "text": "Naming today as their official launch day.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Naming today as their official launch day."
+        "text": "Stopping their work for the rest of today.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Working through the entire night without stopping."
+        "text": "Working through the entire night without stopping.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'call it a day' แปลว่า พอแค่นี้ก่อนสำหรับวันนี้ หรือหยุดพักการทำงานของวันนั้น",
     "explanation_en": "To 'call it a day' means to conclude one's work activities for the remainder of the day.",
     "idiom_tag": "call it a day",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_009",
@@ -225,22 +257,26 @@
     "options": [
       {
         "key": "A",
-        "text": "She wants to delay deciding until tomorrow after resting."
+        "text": "She intends to reject the lease offer outright.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "She wants to sleep overnight in the new building."
+        "text": "She wants to sleep overnight in the new building.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "She intends to reject the lease offer outright."
+        "text": "She wants to delay deciding until tomorrow after resting.",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'sleep on it' แปลว่า ขอเวลาคิดทบทวนคืนหนึ่งก่อนตัดสินใจในวันรุ่งขึ้น ไม่ได้แปลว่าไปนอนที่ห้องนั้น",
     "explanation_en": "To 'sleep on it' means to delay making an important decision until the following morning to consider it calmly.",
     "idiom_tag": "sleep on it",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_010",
@@ -252,22 +288,26 @@
     "options": [
       {
         "key": "A",
-        "text": "She is offering to lend her laptop to Marcus."
+        "text": "She is offering to lend her laptop to Marcus.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "She is asking Marcus to repair her charger."
+        "text": "She is asking Marcus to repair her charger.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "She wants Marcus to leave the library locker room."
+        "text": "She wants Marcus to leave the library locker room.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "Chloe เสนอความช่วยเหลือโดยถามว่า 'จะใช้ของฉันไหม' เพื่อให้ Marcus ยืมแล็ปท็อปของเธอทำงาน",
     "explanation_en": "Chloe's question functions pragmatically as an offer to share her personal computer.",
     "idiom_tag": "offering assistance",
-    "cefr_level": "A2"
+    "cefr_level": "A2",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_011",
@@ -279,22 +319,26 @@
     "options": [
       {
         "key": "A",
-        "text": "They failed to reach an agreement on pricing."
+        "text": "They avoided looking at each other during talks.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "They avoided looking at each other during talks."
+        "text": "They failed to reach an agreement on pricing.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "They both agreed that the wholesale price was fair."
+        "text": "They both agreed that the wholesale price was fair.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'see eye to eye' แปลว่า มีความคิดเห็นตรงกัน/เห็นพ้องต้องกัน เมื่อใส่รูปปฏิเสธ (didn't see eye to eye) จึงแปลว่า ตกลงกันไม่ได้/เห็นไม่ตรงกัน",
     "explanation_en": "'See eye to eye' signifies mutual agreement; its negative form means encountering fundamental disagreement.",
     "idiom_tag": "see eye to eye",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_012",
@@ -306,22 +350,26 @@
     "options": [
       {
         "key": "A",
-        "text": "He remains undecided and has not made a final choice."
+        "text": "He has decided to turn down both university offers.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "He is waiting near the boundary wall of the campus."
+        "text": "He is waiting near the boundary wall of the campus.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He has decided to turn down both university offers."
+        "text": "He remains undecided and has not made a final choice.",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'on the fence' หมายถึง ยังลังเลใจ หรือยังตัดสินใจไม่ได้ว่าจะเลือกฝั่งไหน",
     "explanation_en": "Being 'on the fence' is a metaphorical expression for remaining uncommitted or undecided between two options.",
     "idiom_tag": "on the fence",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_013",
@@ -333,22 +381,26 @@
     "options": [
       {
         "key": "A",
-        "text": "Keep the secret and not reveal the dinner plan."
+        "text": "Keep the secret and not reveal the dinner plan.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Avoid dropping any food on the kitchen floor."
+        "text": "Avoid dropping any food on the kitchen floor.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Cook a vegetable dish for the anniversary dinner."
+        "text": "Cook a vegetable dish for the anniversary dinner.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "สำนวน 'spill the beans' แปลว่า เผยความลับ หรือบอกสิ่งที่ซ่อนไว้ให้คนอื่นรู้",
     "explanation_en": "To 'spill the beans' means to prematurely disclose confidential or secret information.",
     "idiom_tag": "spill the beans",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_014",
@@ -360,22 +412,26 @@
     "options": [
       {
         "key": "A",
-        "text": "The student's analytical conclusion was precisely accurate."
+        "text": "The student should use physical construction tools for models.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "The student should use physical construction tools for models."
+        "text": "The student's analytical conclusion was precisely accurate.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "The student made a painful factual mistake in the paper."
+        "text": "The student made a painful factual mistake in the paper.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'hit the nail on the head' แปลว่า พูดหรือวิเคราะห์ได้ตรงจุดเผง แม่นยำ และถูกต้องอย่างสมบูรณ์",
     "explanation_en": "To 'hit the nail on the head' means to describe an issue or arrive at an assessment with precise accuracy.",
     "idiom_tag": "hit the nail on the head",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_015",
@@ -387,22 +443,26 @@
     "options": [
       {
         "key": "A",
-        "text": "The flight tickets are excessively expensive."
+        "text": "The airline requires mandatory health check certificates.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "He injured his limbs while walking to the terminal."
+        "text": "He injured his limbs while walking to the terminal.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "The airline requires mandatory health check certificates."
+        "text": "The flight tickets are excessively expensive.",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'cost an arm and a leg' แปลว่า แพงหูฉี่ หรือราคาแพงมากเกินไป ไม่ได้เกี่ยวกับการบาดเจ็บ",
     "explanation_en": "To 'cost an arm and a leg' is an idiom describing something extraordinarily or prohibitively expensive.",
     "idiom_tag": "cost an arm and a leg",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_016",
@@ -414,22 +474,26 @@
     "options": [
       {
         "key": "A",
-        "text": "She stayed awake and worked until very late at night."
+        "text": "She stayed awake and worked until very late at night.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "She accidentally caused a small fire in her kitchen stove."
+        "text": "She accidentally caused a small fire in her kitchen stove.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "She ran out of motor fuel during her commute home."
+        "text": "She ran out of motor fuel during her commute home.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "สำนวน 'burn the midnight oil' แปลว่า ทำงานหรืออ่านหนังสือจนดึกดื่นข้ามคืน",
     "explanation_en": "To 'burn the midnight oil' means to work, write, or study late into the night.",
     "idiom_tag": "burn the midnight oil",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_017",
@@ -441,22 +505,26 @@
     "options": [
       {
         "key": "A",
-        "text": "Be skeptical and not believe the rumor unconditionally."
+        "text": "Add more seasoning when preparing his dinner meals.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Add more seasoning when preparing his dinner meals."
+        "text": "Be skeptical and not believe the rumor unconditionally.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Contact the university president immediately by phone."
+        "text": "Contact the university president immediately by phone.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'take something with a grain of salt' แปลว่า ฟังหูไว้หู หรืออย่าเพิ่งปักใจเชื่อร้อยเปอร์เซ็นต์ เพราะอาจไม่เป็นความจริง",
     "explanation_en": "To 'take something with a grain of salt' means to maintain healthy skepticism rather than accepting a claim as truth.",
     "idiom_tag": "with a grain of salt",
-    "cefr_level": "B2"
+    "cefr_level": "B2",
+    "correct_option_key": "B"
   },
   {
     "id": "oopt_p2_018",
@@ -468,22 +536,26 @@
     "options": [
       {
         "key": "A",
-        "text": "To help people relax, overcome awkwardness, and socialize."
+        "text": "To test the students' knowledge of polar climatology.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "To clear frozen ice away from the university entrance stairs."
+        "text": "To clear frozen ice away from the university entrance stairs.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "To test the students' knowledge of polar climatology."
+        "text": "To help people relax, overcome awkwardness, and socialize.",
+        "isCorrect": true
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation_th": "สำนวน 'break the ice' แปลว่า ละลายพฤติกรรม สร้างความเป็นกันเอง และขจัดความเคอะเขินในการพบกันครั้งแรก",
     "explanation_en": "To 'break the ice' means to relieve social tension and encourage people to talk and feel comfortable.",
     "idiom_tag": "break the ice",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "C"
   },
   {
     "id": "oopt_p2_019",
@@ -495,22 +567,26 @@
     "options": [
       {
         "key": "A",
-        "text": "The schedule announcement was totally unexpected."
+        "text": "The schedule announcement was totally unexpected.",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "The schedule was printed on bright blue paper."
+        "text": "The schedule was printed on bright blue paper.",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "He was staring at the clear blue sky when it happened."
+        "text": "He was staring at the clear blue sky when it happened.",
+        "isCorrect": false
       }
     ],
     "correct_answer": "A",
     "explanation_th": "สำนวน 'out of the blue' แปลว่า เกิดขึ้นอย่างไม่คาดคิด หรือจู่ๆ ก็โผล่มาโดยไม่มีสัญญาณเตือนล่วงหน้า",
     "explanation_en": "'Out of the blue' is an idiom describing an event that occurs entirely unexpectedly and without warning.",
     "idiom_tag": "out of the blue",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "A"
   },
   {
     "id": "oopt_p2_020",
@@ -522,21 +598,25 @@
     "options": [
       {
         "key": "A",
-        "text": "The other students share the exact same difficult challenge."
+        "text": "All the students are planning an excursion on a river boat.",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "All the students are planning an excursion on a river boat."
+        "text": "The other students share the exact same difficult challenge.",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Only Diana understands how to finish the regression homework."
+        "text": "Only Diana understands how to finish the regression homework.",
+        "isCorrect": false
       }
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation_th": "สำนวน 'in the same boat' แปลว่า อยู่ในสถานการณ์ที่ยากลำบากเหมือนๆ กัน เผชิญชะตากรรมเดียวกัน",
     "explanation_en": "To be 'in the same boat' means being in the same unpleasant or difficult predicament as others.",
     "idiom_tag": "in the same boat",
-    "cefr_level": "B1"
+    "cefr_level": "B1",
+    "correct_option_key": "B"
   }
 ]

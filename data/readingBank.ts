@@ -29,10 +29,10 @@ In the afternoon, we helped feed the chickens and picked organic strawberries in
         promptTh: 'ผู้เขียนและพี่ชายเดินทางไปยังฟาร์มด้วยยานพาหนะใด?',
         promptEn: 'How did the writer and their brother travel to the farm?',
         options: [
-          { key: 'A', text: 'By private car', isCorrect: false, feedbackTh: 'ในบทความระบุว่า traveled by bus' },
-          { key: 'B', text: 'By public bus', isCorrect: true, feedbackTh: 'ถูกต้อง! ในย่อหน้าที่ 2 ระบุว่า "We traveled by bus early on Saturday morning."' },
+          { key: 'A', text: 'By public bus', isCorrect: true, feedbackTh: 'ถูกต้อง! ในย่อหน้าที่ 2 ระบุว่า "We traveled by bus early on Saturday morning."' },
+          { key: 'B', text: 'By private car', isCorrect: false, feedbackTh: 'ในบทความระบุว่า traveled by bus' },
           { key: 'C', text: 'By train', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยรถไฟ' },
-          { key: 'D', text: 'By airplane', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยเครื่องบิน' },
+          { key: 'D', text: 'By airplane', isCorrect: false, feedbackTh: 'ไม่ได้เดินทางด้วยเครื่องบิน' }
         ],
         explanationTh: 'บทความระบุชัดเจนในบรรทัดแรกของย่อหน้าที่สอง: "We traveled by bus early on Saturday morning."',
         explanationEn: 'Paragraph 2 explicitly states: "We traveled by bus early on Saturday morning."',
@@ -50,7 +50,7 @@ In the afternoon, we helped feed the chickens and picked organic strawberries in
           { key: 'A', text: 'They watched a film about farming.', isCorrect: false, feedbackTh: 'ในฟาร์มไม่มีโทรทัศน์' },
           { key: 'B', text: 'They fed animals and gathered strawberries.', isCorrect: true, feedbackTh: 'ถูกต้อง! "helped feed the chickens and picked organic strawberries"' },
           { key: 'C', text: 'They repaired the farm fence.', isCorrect: false, feedbackTh: 'ไม่ได้ซ่อมรั้ว' },
-          { key: 'D', text: 'They baked bread with the owners.', isCorrect: false, feedbackTh: 'เจ้าของบ้านเสิร์ฟขนมปังที่ทำไว้แล้ว' },
+          { key: 'D', text: 'They baked bread with the owners.', isCorrect: false, feedbackTh: 'เจ้าของบ้านเสิร์ฟขนมปังที่ทำไว้แล้ว' }
         ],
         explanationTh: 'ในย่อหน้าที่ 3 ระบุว่า "In the afternoon, we helped feed the chickens and picked organic strawberries in the garden."',
         explanationEn: 'The text mentions feeding chickens and picking strawberries in the afternoon.',
@@ -92,9 +92,9 @@ In spite of these economic barriers, city planners view micro-farming as an inva
         promptEn: 'What is highlighted as a primary operational benefit of hydroponic farming?',
         options: [
           { key: 'A', text: 'It completely eliminates the need for electricity.', isCorrect: false, feedbackTh: 'บทความระบุว่าต้องใช้ไฟฟ้าและไฟ LED' },
-          { key: 'B', text: 'It accelerates crop growth while conserving substantial amounts of water.', isCorrect: true, feedbackTh: 'ถูกต้อง! โตเร็วขึ้น 30% และใช้น้ำน้อยลงถึง 90%' },
-          { key: 'C', text: 'It works best in open countryside soil.', isCorrect: false, feedbackTh: 'นี่คือระบบไร้ดินในเมือง' },
-          { key: 'D', text: 'It requires zero initial capital investment.', isCorrect: false, feedbackTh: 'ต้นทุนเริ่มต้นยังสูง (Initial setup expenses remain high)' },
+          { key: 'B', text: 'It works best in open countryside soil.', isCorrect: false, feedbackTh: 'นี่คือระบบไร้ดินในเมือง' },
+          { key: 'C', text: 'It accelerates crop growth while conserving substantial amounts of water.', isCorrect: true, feedbackTh: 'ถูกต้อง! โตเร็วขึ้น 30% และใช้น้ำน้อยลงถึง 90%' },
+          { key: 'D', text: 'It requires zero initial capital investment.', isCorrect: false, feedbackTh: 'ต้นทุนเริ่มต้นยังสูง (Initial setup expenses remain high)' }
         ],
         explanationTh: 'ย่อหน้าที่ 2 ระบุว่า: "crops can grow up to thirty percent faster while utilizing ninety percent less water than conventional outdoor fields."',
         explanationEn: 'Paragraph 2 highlights 30% faster growth and 90% water reduction.',
@@ -110,9 +110,9 @@ In spite of these economic barriers, city planners view micro-farming as an inva
         promptEn: 'What challenge is mentioned that might discourage beginner urban farmers?',
         options: [
           { key: 'A', text: 'The complete absence of community interest.', isCorrect: false, feedbackTh: 'ชุมชนให้ความสนใจดี' },
-          { key: 'B', text: 'High upfront costs for equipment and elevated electricity tariffs.', isCorrect: true, feedbackTh: 'ถูกต้อง! ค่าอุปกรณ์เริ่มต้นและค่าไฟทำให้ผู้เริ่มต้นลังเล' },
+          { key: 'B', text: 'The inferior taste of hydroponically grown greens.', isCorrect: false, feedbackTh: 'ไม่มีการกล่าวว่ารสชาติด้อยกว่า' },
           { key: 'C', text: 'Stringent government bans on rooftop greenery.', isCorrect: false, feedbackTh: 'ไม่ได้ถูกรัฐบาลสั่งห้าม' },
-          { key: 'D', text: 'The inferior taste of hydroponically grown greens.', isCorrect: false, feedbackTh: 'ไม่มีการกล่าวว่ารสชาติด้อยกว่า' },
+          { key: 'D', text: 'High upfront costs for equipment and elevated electricity tariffs.', isCorrect: true, feedbackTh: 'ถูกต้อง! ค่าอุปกรณ์เริ่มต้นและค่าไฟทำให้ผู้เริ่มต้นลังเล' }
         ],
         explanationTh: 'ย่อหน้าที่ 3 ระบุถึง "Initial setup expenses for LED lighting arrays and automated sensors remain high" และ "high electricity tariffs".',
         explanationEn: 'Paragraph 3 details high upfront costs and energy bills as discouraging factors.',
@@ -153,10 +153,10 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
         promptTh: 'แก่นแท้ของแนวคิด "Digital Minimalism" ตามที่บทความอธิบายคืออะไร?',
         promptEn: 'According to the passage, what is the core philosophy of Digital Minimalism?',
         options: [
-          { key: 'A', text: 'Completely rejecting all digital devices and returning to analog lifestyles.', isCorrect: false, feedbackTh: 'บทความระบุว่าไม่ใช่การปฏิเสธเทคโนโลยี' },
-          { key: 'B', text: 'Selectively using only digital tools that actively support core values while consciously ignoring the rest.', isCorrect: true, feedbackTh: 'ถูกต้อง! เลือกใช้เฉพาะเครื่องมือที่สนับสนุนคุณค่าสำคัญอย่างแท้จริง และยินดีปล่อยผ่านสิ่งอื่น' },
+          { key: 'A', text: 'Selectively using only digital tools that actively support core values while consciously ignoring the rest.', isCorrect: true, feedbackTh: 'ถูกต้อง! เลือกใช้เฉพาะเครื่องมือที่สนับสนุนคุณค่าสำคัญอย่างแท้จริง และยินดีปล่อยผ่านสิ่งอื่น' },
+          { key: 'B', text: 'Completely rejecting all digital devices and returning to analog lifestyles.', isCorrect: false, feedbackTh: 'บทความระบุว่าไม่ใช่การปฏิเสธเทคโนโลยี' },
           { key: 'C', text: 'Checking notifications only during scheduled weekend intervals.', isCorrect: false, feedbackTh: 'นี่เป็นเพียงรายละเอียดปลีกย่อย ไม่ใช่แก่นปรัชญา' },
-          { key: 'D', text: 'Switching exclusively to open-source software platforms.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงประเภทของซอฟต์แวร์' },
+          { key: 'D', text: 'Switching exclusively to open-source software platforms.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงประเภทของซอฟต์แวร์' }
         ],
         explanationTh: 'ย่อหน้าที่ 2 นิยามชัดเจน: "focus your online time on a small number of carefully selected and optimized activities that strongly support things you value, and then happily miss out on everything else."',
         explanationEn: 'Digital minimalism prioritizes high-value, carefully chosen activities over constant connectivity.',
@@ -174,7 +174,7 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           { key: 'A', text: 'Deleting all online profiles and social network accounts permanently.', isCorrect: false, feedbackTh: 'บทความไม่ได้บอกให้ลบบัญชีถาวร' },
           { key: 'B', text: 'A thirty-day digital declutter where non-essential technologies are temporarily suspended.', isCorrect: true, feedbackTh: 'ถูกต้อง! ในย่อหน้าที่ 4 ระบุว่าเริ่มด้วยช่วง 30-day digital declutter โดยระงับเทคโนโลยีที่ไม่จำเป็นชั่วคราว' },
           { key: 'C', text: 'Replacing all digital devices with paper notebooks and pen.', isCorrect: false, feedbackTh: 'ไม่ใช่การเลิกใช้เทคโนโลยีทั้งหมด' },
-          { key: 'D', text: 'Restricting internet browsing strictly to morning hours.', isCorrect: false, feedbackTh: 'ไม่ได้ระบุให้จำกัดเวลาแค่ช่วงเช้า' },
+          { key: 'D', text: 'Restricting internet browsing strictly to morning hours.', isCorrect: false, feedbackTh: 'ไม่ได้ระบุให้จำกัดเวลาแค่ช่วงเช้า' }
         ],
         explanationTh: 'ย่อหน้าที่ 4 ระบุชัดเจน: "It begins with a thirty-day digital declutter period, during which non-essential technologies are temporarily suspended."',
         explanationEn: 'Paragraph 4 states: "It begins with a thirty-day digital declutter period, during which non-essential technologies are temporarily suspended."',
@@ -226,15 +226,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "B",
-            "text": "Four books",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ในประกาศระบุว่า: 'borrow up to four books'"
-          },
-          {
-            "key": "C",
             "text": "Six books",
             "isCorrect": false,
             "feedbackTh": "ไม่ใช่ 6 เล่ม"
+          },
+          {
+            "key": "C",
+            "text": "Four books",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ในประกาศระบุว่า: 'borrow up to four books'"
           },
           {
             "key": "D",
@@ -270,15 +270,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "C",
-            "text": "Every Sunday",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ในตารางระบุ: 'Sunday: Closed for cleaning'"
-          },
-          {
-            "key": "D",
             "text": "Every Friday evening",
             "isCorrect": false,
             "feedbackTh": "วันศุกร์เปิดถึง 19:30"
+          },
+          {
+            "key": "D",
+            "text": "Every Sunday",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ในตารางระบุ: 'Sunday: Closed for cleaning'"
           }
         ],
         "explanationTh": "ในตารางเวลาทำการระบุว่า: 'Sunday: Closed for cleaning'",
@@ -325,15 +325,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
         "options": [
           {
             "key": "A",
-            "text": "It teaches them how to operate complex electrical appliances.",
-            "isCorrect": false,
-            "feedbackTh": "บทความเน้นกิจกรรมง่ายๆ ที่ปลอดภัย"
-          },
-          {
-            "key": "B",
             "text": "It strengthens fine motor coordination and basic mathematical measurements.",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! พัฒนากล้ามเนื้อมือและเข้าใจคณิตศาสตร์จากการตวงวัด"
+          },
+          {
+            "key": "B",
+            "text": "It teaches them how to operate complex electrical appliances.",
+            "isCorrect": false,
+            "feedbackTh": "บทความเน้นกิจกรรมง่ายๆ ที่ปลอดภัย"
           },
           {
             "key": "C",
@@ -363,15 +363,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
         "options": [
           {
             "key": "A",
-            "text": "Because they feel proud of dishes they actively helped create.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! พวกเขารู้สึกภูมิใจในอาหารที่ตนเองมีส่วนร่วมสร้างสรรค์"
-          },
-          {
-            "key": "B",
             "text": "Because raw vegetables are sweeter than cooked desserts.",
             "isCorrect": false,
             "feedbackTh": "บทความไม่ได้กล่าวเปรียบเทียบความหวาน"
+          },
+          {
+            "key": "B",
+            "text": "Because they feel proud of dishes they actively helped create.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! พวกเขารู้สึกภูมิใจในอาหารที่ตนเองมีส่วนร่วมสร้างสรรค์"
           },
           {
             "key": "C",
@@ -440,15 +440,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "B",
-            "text": "It enables recruitment of specialized talent without requiring relocation.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! สามารถจ้างงานคนเก่งจากต่างจังหวัดได้โดยไม่ต้องย้ายที่อยู่"
-          },
-          {
-            "key": "C",
             "text": "It reduces employee salaries by thirty percent.",
             "isCorrect": false,
             "feedbackTh": "ไม่มีการระบุเรื่องการลดเงินเดือน"
+          },
+          {
+            "key": "C",
+            "text": "It enables recruitment of specialized talent without requiring relocation.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! สามารถจ้างงานคนเก่งจากต่างจังหวัดได้โดยไม่ต้องย้ายที่อยู่"
           },
           {
             "key": "D",
@@ -478,9 +478,9 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "B",
-            "text": "Blurring boundaries between work and rest leading to digital burnout.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! เส้นแบ่งเวลาทำงานกับเวลาพักผ่อนเลือนรางจนเกิดภาวะหมดไฟ"
+            "text": "A total lack of job openings in the technology sector.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้พูดถึงตำแหน่งงานว่าง"
           },
           {
             "key": "C",
@@ -490,9 +490,9 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "D",
-            "text": "A total lack of job openings in the technology sector.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้พูดถึงตำแหน่งงานว่าง"
+            "text": "Blurring boundaries between work and rest leading to digital burnout.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เส้นแบ่งเวลาทำงานกับเวลาพักผ่อนเลือนรางจนเกิดภาวะหมดไฟ"
           }
         ],
         "explanationTh": "ย่อหน้าที่ 3 ระบุถึง 'the boundary between professional obligations and personal leisure frequently blurs, culminating in chronic digital burnout'.",
@@ -543,15 +543,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
         "options": [
           {
             "key": "A",
-            "text": "It entirely eliminates the need for mathematical calibration.",
-            "isCorrect": false,
-            "feedbackTh": "บทความระบุว่าใช้โมเดล Item Response Theory ที่แม่นยำ"
-          },
-          {
-            "key": "B",
             "text": "It continuously tracks proficiency in real time within learning workflows rather than taking static snapshots.",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! ประเมินพัฒนาการอย่างต่อเนื่องในระหว่างการเรียนรู้ แทนที่จะถ่ายภาพความรู้แบบนิ่งๆ"
+          },
+          {
+            "key": "B",
+            "text": "It entirely eliminates the need for mathematical calibration.",
+            "isCorrect": false,
+            "feedbackTh": "บทความระบุว่าใช้โมเดล Item Response Theory ที่แม่นยำ"
           },
           {
             "key": "C",
@@ -658,15 +658,15 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "B",
-            "text": "Evapotranspiration releasing cooling moisture into the ambient microclimate.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! การคายระเหยน้ำ (evapotranspiration) ช่วยลดอุณหภูมิพื้นผิวได้ถึง 4 องศาเซลเซียส"
-          },
-          {
-            "key": "C",
             "text": "Diurnal absorption of solar radiation into concrete thermal batteries.",
             "isCorrect": false,
             "feedbackTh": "นี่คือการกักเก็บความร้อนของคอนกรีต"
+          },
+          {
+            "key": "C",
+            "text": "Evapotranspiration releasing cooling moisture into the ambient microclimate.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! การคายระเหยน้ำ (evapotranspiration) ช่วยลดอุณหภูมิพื้นผิวได้ถึง 4 องศาเซลเซียส"
           },
           {
             "key": "D",
@@ -696,9 +696,9 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "B",
-            "text": "The cost of inaction and climate vulnerability far outweighs the initial investment required.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ต้นทุนของการนิ่งเฉยต่อภัยพิบัติและความร้อนสูงกว่าเงินลงทุนเริ่มต้นอย่างมาก"
+            "text": "All maintenance should be eliminated through genetic plant modification.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เสนอเรื่องการตัดต่อพันธุกรรม"
           },
           {
             "key": "C",
@@ -708,9 +708,9 @@ Implementing this philosophy demands rigorous intentionality. It begins with a t
           },
           {
             "key": "D",
-            "text": "All maintenance should be eliminated through genetic plant modification.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้เสนอเรื่องการตัดต่อพันธุกรรม"
+            "text": "The cost of inaction and climate vulnerability far outweighs the initial investment required.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ต้นทุนของการนิ่งเฉยต่อภัยพิบัติและความร้อนสูงกว่าเงินลงทุนเริ่มต้นอย่างมาก"
           }
         ],
         "explanationTh": "ประโยคสุดท้ายของบทความสรุปว่า: 'the cost of inaction—manifest in catastrophic heat fatalities and deteriorating urban habitability—dwarfs the upfront capital investment required'.",

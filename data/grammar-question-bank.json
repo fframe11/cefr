@@ -12,25 +12,30 @@
     "options": [
       {
         "key": "A",
-        "text": "study"
+        "text": "studies",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "studies"
+        "text": "study",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "studying"
+        "text": "studying",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "is study"
+        "text": "is study",
+        "isCorrect": false
       }
     ],
     "explanation_en": "With third-person singular (she) in Present Simple, verbs ending in consonant + y change to -ies.",
     "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 (She) ใน Present Simple คำกริยาที่ลงท้ายด้วย consonant + y เปลี่ยนเป็น -ies",
     "weakness_tag": "grammar_present_simple_3rd_person",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_002",
@@ -45,25 +50,30 @@
     "options": [
       {
         "key": "A",
-        "text": "am"
+        "text": "am",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "is"
+        "text": "are",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "are"
+        "text": "is",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "be"
+        "text": "be",
+        "isCorrect": false
       }
     ],
     "explanation_en": "The compound subject 'My brother and I' is plural (we), requiring 'are'.",
     "explanation_th": "ประธานพหูพจน์ 'My brother and I' (พวกเรา) ต้องใช้กับ verb to be คือ 'are'",
     "weakness_tag": "grammar_be_verb_agreement",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_003",
@@ -78,25 +88,30 @@
     "options": [
       {
         "key": "A",
-        "text": "a"
+        "text": "a",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "an"
+        "text": "the",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "the"
+        "text": "an",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "some"
+        "text": "some",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'An' is used before singular countable nouns beginning with a vowel sound.",
     "explanation_th": "'apple' ขึ้นต้นด้วยเสียงสระ จึงใช้คำนำหน้านามไม่ชี้เฉพาะ 'an'",
     "weakness_tag": "grammar_articles_indefinite",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_004",
@@ -111,25 +126,30 @@
     "options": [
       {
         "key": "A",
-        "text": "he"
+        "text": "he",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "his"
+        "text": "his",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "him"
+        "text": "himself",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "himself"
+        "text": "him",
+        "isCorrect": true
       }
     ],
     "explanation_en": "The object pronoun 'him' is needed after the transitive verb 'know'.",
     "explanation_th": "ตามหลังคำกริยา 'know' ต้องใช้รูปสรรพนามกรรมคือ 'him'",
     "weakness_tag": "grammar_object_pronouns",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_005",
@@ -144,32 +164,37 @@
     "options": [
       {
         "key": "A",
-        "text": "in"
+        "text": "at",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "on"
+        "text": "on",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "at"
+        "text": "in",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to"
+        "text": "to",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'At' is used for clock times.",
     "explanation_th": "เวลาที่ระบุเวลาเป็นนาฬิกาแน่นอน ใช้ 'at'",
     "weakness_tag": "grammar_prepositions_time",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_006",
     "cefr_level": "A1",
     "grammar_topic": "present_simple_negative",
     "question_type": "gap_fill",
-    "difficulty_b": -2.0,
+    "difficulty_b": -2,
     "discrimination_a": 1.3,
     "guessing_c": 0.25,
     "stem_en": "Tom _____ like coffee; he prefers tea.",
@@ -177,25 +202,30 @@
     "options": [
       {
         "key": "A",
-        "text": "don't"
+        "text": "don't",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "doesn't"
+        "text": "doesn't",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "isn't"
+        "text": "isn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "not"
+        "text": "not",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Third-person singular negative in Present Simple uses 'doesn't' + base verb.",
     "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 (Tom) ในประโยคปฏิเสธใช้ 'doesn't' + กริยาช่อง 1",
     "weakness_tag": "grammar_present_simple_negative",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_007",
@@ -210,25 +240,30 @@
     "options": [
       {
         "key": "A",
-        "text": "child"
+        "text": "child",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "childs"
+        "text": "childs",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "children"
+        "text": "children",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "childrens"
+        "text": "childrens",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Children' is the irregular plural form of 'child'.",
     "explanation_th": "พหูพจน์ของ 'child' คือรูปเปลี่ยนเสียง 'children'",
     "weakness_tag": "grammar_irregular_plurals",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_008",
@@ -243,25 +278,30 @@
     "options": [
       {
         "key": "A",
-        "text": "This"
+        "text": "This",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "That"
+        "text": "That",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "These"
+        "text": "These",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Those"
+        "text": "Those",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Those' refers to plural items located at a distance ('over there').",
     "explanation_th": "'Those' ใช้ชี้คำนามพหูพจน์ (shoes) ที่อยู่ไกลตัว ('over there')",
     "weakness_tag": "grammar_demonstratives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_009",
@@ -276,25 +316,30 @@
     "options": [
       {
         "key": "A",
-        "text": "speaks"
+        "text": "speak",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "speak"
+        "text": "speaks",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "speaking"
+        "text": "speaking",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to speak"
+        "text": "to speak",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Modal verbs like 'can' are followed by the bare infinitive.",
     "explanation_th": "หลัง modal verb 'can' ต้องตามด้วยกริยาฐาน (bare infinitive)",
     "weakness_tag": "grammar_modal_bare_infinitive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_010",
@@ -309,25 +354,30 @@
     "options": [
       {
         "key": "A",
-        "text": "His"
+        "text": "His",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Her"
+        "text": "Her",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Its"
+        "text": "Its",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Their"
+        "text": "Their",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Her' refers back to a female possessor (Anna).",
     "explanation_th": "สรรพนามแสดงความเป็นเจ้าของสำหรับผู้หญิงเอกพจน์คือ 'Her'",
     "weakness_tag": "grammar_possessive_adjectives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_011",
@@ -342,25 +392,30 @@
     "options": [
       {
         "key": "A",
-        "text": "There is"
+        "text": "It have",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "There are"
+        "text": "There are",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "It have"
+        "text": "There is",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "They are"
+        "text": "They are",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'There is' introduces a singular countable noun.",
     "explanation_th": "บอกการมีอยู่ของคำนามเอกพจน์ ใช้ 'There is'",
     "weakness_tag": "grammar_there_be",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_012",
@@ -375,32 +430,37 @@
     "options": [
       {
         "key": "A",
-        "text": "in"
+        "text": "in",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "on"
+        "text": "to",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "at"
+        "text": "at",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to"
+        "text": "on",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'On' indicates placement on a horizontal surface.",
     "explanation_th": "อยู่บนพื้นผิวโต๊ะ ใช้บุพบท 'on'",
     "weakness_tag": "grammar_prepositions_place",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_013",
     "cefr_level": "A1",
     "grammar_topic": "wh_questions",
     "question_type": "gap_fill",
-    "difficulty_b": -2.0,
+    "difficulty_b": -2,
     "discrimination_a": 1.3,
     "guessing_c": 0.25,
     "stem_en": "_____ is your favorite singer? - Ed Sheeran.",
@@ -408,25 +468,30 @@
     "options": [
       {
         "key": "A",
-        "text": "What"
+        "text": "Who",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Where"
+        "text": "Where",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Who"
+        "text": "What",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "When"
+        "text": "When",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Who' asks about identity of a person.",
     "explanation_th": "คำถามเกี่ยวกับบุคคลใช้ 'Who'",
     "weakness_tag": "grammar_wh_question_words",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_014",
@@ -441,25 +506,30 @@
     "options": [
       {
         "key": "A",
-        "text": "never is"
+        "text": "never is",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "is never"
+        "text": "is never",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "never"
+        "text": "never",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "isn't never"
+        "text": "isn't never",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Adverbs of frequency follow the verb 'to be'.",
     "explanation_th": "กริยาวิเศษณ์บอกความถี่ (never) อยู่หลัง verb to be เสมอ",
     "weakness_tag": "grammar_adverb_position_frequency",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_015",
@@ -474,25 +544,30 @@
     "options": [
       {
         "key": "A",
-        "text": "play"
+        "text": "play",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "are playing"
+        "text": "is playing",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "is playing"
+        "text": "are playing",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "played"
+        "text": "played",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Action happening right now with plural subject uses are + verb-ing.",
     "explanation_th": "เหตุการณ์ที่กำลังดำเนินอยู่ขณะนี้ (right now) ใช้ are + V-ing",
     "weakness_tag": "grammar_present_continuous_form",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_016",
@@ -507,32 +582,37 @@
     "options": [
       {
         "key": "A",
-        "text": "at"
+        "text": "at",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "in"
+        "text": "in",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "on"
+        "text": "by",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "by"
+        "text": "on",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'On' is used before days and specific day parts.",
     "explanation_th": "วันในสัปดาห์ใช้บุพบท 'on'",
     "weakness_tag": "grammar_prepositions_days",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_017",
     "cefr_level": "A1",
     "grammar_topic": "have_has_got",
     "question_type": "gap_fill",
-    "difficulty_b": -2.0,
+    "difficulty_b": -2,
     "discrimination_a": 1.15,
     "guessing_c": 0.25,
     "stem_en": "David _____ got two brothers and one sister.",
@@ -540,25 +620,30 @@
     "options": [
       {
         "key": "A",
-        "text": "have"
+        "text": "has",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "has"
+        "text": "have",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "is"
+        "text": "is",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "having"
+        "text": "having",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Singular subject David takes 'has got'.",
     "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 ใช้ 'has got'",
     "weakness_tag": "grammar_have_has_got",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_018",
@@ -573,25 +658,30 @@
     "options": [
       {
         "key": "A",
-        "text": "and"
+        "text": "and",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "or"
+        "text": "but",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "but"
+        "text": "or",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "so"
+        "text": "so",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'But' expresses contrast between two ideas.",
     "explanation_th": "เชื่อมข้อความที่ขัดแย้งกันใช้ 'but'",
     "weakness_tag": "grammar_coordinating_conjunctions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_019",
@@ -606,25 +696,30 @@
     "options": [
       {
         "key": "A",
-        "text": "many"
+        "text": "many",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "much"
+        "text": "lot",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "lot"
+        "text": "much",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "few"
+        "text": "few",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'How much' is used with uncountable nouns like water.",
     "explanation_th": "คำนามนับไม่ได้ (water) ถามปริมาณด้วย 'How much'",
     "weakness_tag": "grammar_quantifiers_uncountable",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_020",
@@ -639,25 +734,30 @@
     "options": [
       {
         "key": "A",
-        "text": "not"
+        "text": "not",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "no"
+        "text": "no",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "don't"
+        "text": "doesn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "doesn't"
+        "text": "don't",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Negative imperatives begin with 'don't' + base verb.",
     "explanation_th": "ประโยคคำสั่งห้ามขึ้นต้นด้วย 'don't' + V.1",
     "weakness_tag": "grammar_negative_imperative",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_021",
@@ -672,25 +772,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Do"
+        "text": "Do",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Does"
+        "text": "Does",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Are"
+        "text": "Are",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Is"
+        "text": "Is",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Plural subject 'your parents' takes auxiliary 'Do' in Present Simple questions.",
     "explanation_th": "ประธานพหูพจน์ (your parents) ใช้กริยาช่วย 'Do' ในคำถาม",
     "weakness_tag": "grammar_present_simple_questions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_022",
@@ -705,25 +810,30 @@
     "options": [
       {
         "key": "A",
-        "text": "read"
+        "text": "read",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "reads"
+        "text": "reading",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "reading"
+        "text": "reads",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to read"
+        "text": "to read",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Enjoy' is followed by a gerund (-ing form).",
     "explanation_th": "กริยา 'enjoy' ตามด้วย V-ing (gerund) เสมอ",
     "weakness_tag": "grammar_verb_plus_gerund_basic",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_023",
@@ -738,25 +848,30 @@
     "options": [
       {
         "key": "A",
-        "text": "nice round"
+        "text": "nicely round",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "round nice"
+        "text": "round nice",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "nicely round"
+        "text": "nice round",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "table round"
+        "text": "table round",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Opinion adjectives (nice) precede shape/size adjectives (round).",
     "explanation_th": "คุณศัพท์บอกความเห็น (nice) มาก่อนคุณศัพท์บอกรูปร่าง (round)",
     "weakness_tag": "grammar_adjective_order_basic",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_024",
@@ -771,25 +886,30 @@
     "options": [
       {
         "key": "A",
-        "text": "her"
+        "text": "her",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "hers"
+        "text": "herself",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "she"
+        "text": "she",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "herself"
+        "text": "hers",
+        "isCorrect": true
       }
     ],
     "explanation_en": "The independent possessive pronoun 'hers' stands alone.",
     "explanation_th": "สรรพนามแสดงความเป็นเจ้าของที่วางเดี่ยวๆ ไม่ต้องมีนามตามหลังใช้ 'hers'",
     "weakness_tag": "grammar_possessive_pronouns",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_025",
@@ -804,32 +924,37 @@
     "options": [
       {
         "key": "A",
-        "text": "a"
+        "text": "the",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "an"
+        "text": "an",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "the"
+        "text": "a",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "any"
+        "text": "any",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'The' is used when the specific object is clear in the immediate setting.",
     "explanation_th": "เจาะจงหน้าต่างในห้องที่ผู้ฟังและผู้พูดอยู่ด้วยกัน ใช้ 'the'",
     "weakness_tag": "grammar_definite_article_context",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_026",
     "cefr_level": "A1",
     "grammar_topic": "prepositions_transport",
     "question_type": "gap_fill",
-    "difficulty_b": -2.0,
+    "difficulty_b": -2,
     "discrimination_a": 1.25,
     "guessing_c": 0.25,
     "stem_en": "He travels to school _____ train every morning.",
@@ -837,25 +962,30 @@
     "options": [
       {
         "key": "A",
-        "text": "in"
+        "text": "in",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "on"
+        "text": "by",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "by"
+        "text": "on",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "with"
+        "text": "with",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'By' is used directly with transport modes (by train, by car).",
     "explanation_th": "บอกวิธีการเดินทางโดยตรงไม่ใส่ article ใช้ 'by train'",
     "weakness_tag": "grammar_prepositions_transport",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a1_027",
@@ -870,25 +1000,30 @@
     "options": [
       {
         "key": "A",
-        "text": "box"
+        "text": "box",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "boxs"
+        "text": "boxs",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "boxes"
+        "text": "boxes",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "boxies"
+        "text": "boxies",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Nouns ending in -x add -es in the plural form.",
     "explanation_th": "คำนามลงท้ายด้วย x เติม -es เมื่อเป็นพหูพจน์",
     "weakness_tag": "grammar_regular_plurals_es",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a1_028",
@@ -903,25 +1038,30 @@
     "options": [
       {
         "key": "A",
-        "text": "isn't"
+        "text": "isn't",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "aren't"
+        "text": "not are",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "don't"
+        "text": "don't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "not are"
+        "text": "aren't",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Plural subject 'The students' requires negative be-verb 'aren't'.",
     "explanation_th": "ประธานพหูพจน์ (The students) ใช้ 'aren't'",
     "weakness_tag": "grammar_be_negative_agreement",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a1_029",
@@ -936,32 +1076,37 @@
     "options": [
       {
         "key": "A",
-        "text": "some"
+        "text": "any",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "any"
+        "text": "some",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "many"
+        "text": "many",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "no"
+        "text": "no",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Any' is used in negative sentences with uncountable nouns.",
     "explanation_th": "ประโยคปฏิเสธใช้ 'any' กับคำนามนับไม่ได้",
     "weakness_tag": "grammar_some_any_negative",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a1_030",
     "cefr_level": "A1",
     "grammar_topic": "prepositions_months",
     "question_type": "gap_fill",
-    "difficulty_b": -2.0,
+    "difficulty_b": -2,
     "discrimination_a": 1.2,
     "guessing_c": 0.25,
     "stem_en": "My birthday is _____ September.",
@@ -969,25 +1114,30 @@
     "options": [
       {
         "key": "A",
-        "text": "on"
+        "text": "on",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "at"
+        "text": "in",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "in"
+        "text": "at",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "by"
+        "text": "by",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'In' is used with months of the year.",
     "explanation_th": "ใช้นำหน้าชื่อเดือน (September) ใช้บุพบท 'in'",
     "weakness_tag": "grammar_prepositions_months",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_001",
@@ -1002,25 +1152,30 @@
     "options": [
       {
         "key": "A",
-        "text": "walk"
+        "text": "walk",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "walked"
+        "text": "walking",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "walking"
+        "text": "walked",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "have walked"
+        "text": "have walked",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Completed past action with explicit time marker 'yesterday' requires Past Simple.",
     "explanation_th": "การกระทำที่จบลงแล้วในอดีตและมีคำบอกเวลา 'yesterday' ใช้ Past Simple (walked)",
     "weakness_tag": "grammar_past_simple_regular",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_002",
@@ -1035,25 +1190,30 @@
     "options": [
       {
         "key": "A",
-        "text": "buyed"
+        "text": "buyed",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "bought"
+        "text": "buys",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "boughted"
+        "text": "boughted",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "buys"
+        "text": "bought",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Bought' is the irregular past tense of 'buy'.",
     "explanation_th": "กริยาช่อง 2 ของ 'buy' คือรูปอปกติ 'bought'",
     "weakness_tag": "grammar_past_simple_irregular",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_003",
@@ -1068,25 +1228,30 @@
     "options": [
       {
         "key": "A",
-        "text": "expensive"
+        "text": "more expensive",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "more expensive"
+        "text": "expensive",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "expensiver"
+        "text": "expensiver",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "most expensive"
+        "text": "most expensive",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Three-syllable adjectives form the comparative with 'more' + adjective + 'than'.",
     "explanation_th": "คุณศัพท์ตั้งแต่ 3 พยางค์ขึ้นไป (expensive) ทำขั้นกว่าด้วย 'more' + adj + than",
     "weakness_tag": "grammar_comparatives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_004",
@@ -1101,25 +1266,30 @@
     "options": [
       {
         "key": "A",
-        "text": "higher"
+        "text": "higher",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "highest"
+        "text": "the highest",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "the highest"
+        "text": "highest",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "the most high"
+        "text": "the most high",
+        "isCorrect": false
       }
     ],
     "explanation_en": "One-syllable adjectives take 'the' + -est in the superlative.",
     "explanation_th": "คุณศัพท์พยางค์เดียวขั้นสูงสุดต้องมี 'the' นำหน้าแล้วเติม -est (the highest)",
     "weakness_tag": "grammar_superlatives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_005",
@@ -1134,25 +1304,30 @@
     "options": [
       {
         "key": "A",
-        "text": "will be"
+        "text": "will be",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "is going to"
+        "text": "goes to",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "goes to"
+        "text": "is going to",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "is raining to"
+        "text": "is raining to",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Be going to' expresses predictions based on current visual evidence.",
     "explanation_th": "การคาดคะเนเหตุการณ์ที่มีหลักฐานปรากฏให้เห็นในปัจจุบัน (dark clouds) ใช้ 'is going to'",
     "weakness_tag": "grammar_going_to_prediction",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_006",
@@ -1167,25 +1342,30 @@
     "options": [
       {
         "key": "A",
-        "text": "am going to"
+        "text": "am going to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "will"
+        "text": "would",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "do"
+        "text": "do",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would"
+        "text": "will",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Will' is used for spontaneous offers and decisions made at the moment of speaking.",
     "explanation_th": "การตัดสินใจช่วยเหลือทันทีขณะที่กำลังพูด (spontaneous decision/offer) ใช้ 'will'",
     "weakness_tag": "grammar_will_spontaneous",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_007",
@@ -1200,25 +1380,30 @@
     "options": [
       {
         "key": "A",
-        "text": "have to"
+        "text": "have to",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "must to"
+        "text": "must to",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "can to"
+        "text": "can to",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "ought"
+        "text": "ought",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Have to' expresses external obligation/rules.",
     "explanation_th": "การบอกกฎเกณฑ์หรือข้อบังคับภายนอก ใช้ 'have to'",
     "weakness_tag": "grammar_have_to_obligation",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_008",
@@ -1233,25 +1418,30 @@
     "options": [
       {
         "key": "A",
-        "text": "should"
+        "text": "should to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "should to"
+        "text": "should",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "ought"
+        "text": "ought",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "must to"
+        "text": "must to",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Should' + bare infinitive gives friendly advice.",
     "explanation_th": "การให้คำแนะนำทั่วไป ใช้ modal verb 'should' + กริยาช่อง 1",
     "weakness_tag": "grammar_should_advice",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_009",
@@ -1266,25 +1456,30 @@
     "options": [
       {
         "key": "A",
-        "text": "didn't"
+        "text": "weren't",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "don't"
+        "text": "don't",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "weren't"
+        "text": "didn't",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "hadn't"
+        "text": "hadn't",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Past Simple negative uses 'didn't' + base form for all subjects.",
     "explanation_th": "ประโยคปฏิเสธใน Past Simple ใช้ 'didn't' + กริยาฐาน (base form)",
     "weakness_tag": "grammar_past_simple_negative",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_010",
@@ -1299,25 +1494,30 @@
     "options": [
       {
         "key": "A",
-        "text": "do"
+        "text": "do",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "did"
+        "text": "have",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "were"
+        "text": "were",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "have"
+        "text": "did",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Past Simple questions require the auxiliary 'did' + base verb.",
     "explanation_th": "คำถามถามถึงเหตุการณ์ในอดีต (last year) ใช้กริยาช่วย 'did'",
     "weakness_tag": "grammar_past_simple_questions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_011",
@@ -1332,25 +1532,30 @@
     "options": [
       {
         "key": "A",
-        "text": "did"
+        "text": "was doing",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "was doing"
+        "text": "did",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "am doing"
+        "text": "am doing",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "have done"
+        "text": "have done",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Action in progress at a specific past moment uses was/were + verb-ing.",
     "explanation_th": "การกระทำที่กำลังดำเนินอยู่ในเวลาเฉพาะเจาะจงในอดีต ใช้ Past Continuous (was doing)",
     "weakness_tag": "grammar_past_continuous_basic",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_012",
@@ -1365,25 +1570,30 @@
     "options": [
       {
         "key": "A",
-        "text": "rings"
+        "text": "rings",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "rang"
+        "text": "rang",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "was ringing"
+        "text": "was ringing",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "had rung"
+        "text": "had rung",
+        "isCorrect": false
       }
     ],
     "explanation_en": "A short past action interrupting a continuous past action uses Past Simple.",
     "explanation_th": "เหตุการณ์สั้นที่เข้ามาแทรกขณะที่อีกเหตุการณ์กำลังดำเนินอยู่ ใช้ Past Simple (rang)",
     "weakness_tag": "grammar_past_interrupted_action",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_013",
@@ -1398,25 +1608,30 @@
     "options": [
       {
         "key": "A",
-        "text": "because"
+        "text": "because",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "so"
+        "text": "although",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "although"
+        "text": "so",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "since"
+        "text": "since",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'So' introduces the result of an action.",
     "explanation_th": "เชื่อมประโยคเพื่อบอกผลลัพธ์ที่ตามมา ใช้ 'so' (ดังนั้น)",
     "weakness_tag": "grammar_conjunctions_result",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_014",
@@ -1431,25 +1646,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Because"
+        "text": "Because",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Although"
+        "text": "However",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "So"
+        "text": "So",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "However"
+        "text": "Although",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Although' introduces a subordinate clause showing surprising contrast.",
     "explanation_th": "เชื่อมประโยครองที่แสดงความขัดแย้งที่ไม่คาดคิด ใช้ 'Although' (แม้ว่า)",
     "weakness_tag": "grammar_conjunctions_contrast",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_015",
@@ -1464,32 +1684,37 @@
     "options": [
       {
         "key": "A",
-        "text": "for get"
+        "text": "to get",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "to get"
+        "text": "for get",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "getting"
+        "text": "getting",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "for getting"
+        "text": "for getting",
+        "isCorrect": false
       }
     ],
     "explanation_en": "An infinitive with 'to' expresses purpose (why someone did something).",
     "explanation_th": "การบอกวัตถุประสงค์ของการกระทำ (ไปเพื่ออะไร) ใช้ to-infinitive ('to get')",
     "weakness_tag": "grammar_infinitive_of_purpose",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_016",
     "cefr_level": "A2",
     "grammar_topic": "gerund_after_preposition",
     "question_type": "gap_fill",
-    "difficulty_b": -1.0,
+    "difficulty_b": -1,
     "discrimination_a": 1.3,
     "guessing_c": 0.25,
     "stem_en": "She is really good at _____ traditional Thai food.",
@@ -1497,25 +1722,30 @@
     "options": [
       {
         "key": "A",
-        "text": "cook"
+        "text": "cook",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "cooks"
+        "text": "cooking",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "cooking"
+        "text": "cooks",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to cook"
+        "text": "to cook",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Prepositions (like 'at') must be followed by a gerund (-ing).",
     "explanation_th": "คำที่ตามหลังคำบุพบท (at) ต้องอยู่ในรูป gerund (V-ing) เสมอ",
     "weakness_tag": "grammar_gerund_after_prepositions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_017",
@@ -1530,25 +1760,30 @@
     "options": [
       {
         "key": "A",
-        "text": "taller"
+        "text": "taller",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "tall"
+        "text": "tallest",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "tallest"
+        "text": "tall",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "more tall"
+        "text": "more tall",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Equality comparison 'as... as' uses the base adjective.",
     "explanation_th": "โครงสร้างการเปรียบเทียบเท่าเทียม 'as ... as' ใช้คำคุณศัพท์รูปปกติ (tall)",
     "weakness_tag": "grammar_as_as_comparison",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_018",
@@ -1563,25 +1798,30 @@
     "options": [
       {
         "key": "A",
-        "text": "too"
+        "text": "too",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "enough"
+        "text": "very",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "so"
+        "text": "so",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "very"
+        "text": "enough",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Enough' follows adjectives and precedes to-infinitive.",
     "explanation_th": "'enough' วางไว้ 'หลัง' คำคุณศัพท์ (old enough) เพื่อบอกความพอเพียง",
     "weakness_tag": "grammar_too_enough",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_019",
@@ -1596,25 +1836,30 @@
     "options": [
       {
         "key": "A",
-        "text": "few"
+        "text": "little",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "a few"
+        "text": "a few",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "little"
+        "text": "few",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "many"
+        "text": "many",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Little' means not much and is used with uncountable nouns like 'time'.",
     "explanation_th": "'time' เป็นนามนับไม่ได้และมีความหมายเชิงลบ (เหลือน้อยแทบไม่มี) ใช้ 'little'",
     "weakness_tag": "grammar_few_little",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_020",
@@ -1629,25 +1874,30 @@
     "options": [
       {
         "key": "A",
-        "text": "through"
+        "text": "through",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "across"
+        "text": "across",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "along"
+        "text": "along",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "onto"
+        "text": "onto",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Across' means from one side of a surface or road to the other.",
     "explanation_th": "การเคลื่อนที่จากฝั่งหนึ่งข้ามไปยังอีกฝั่งหนึ่งของถนน ใช้ 'across'",
     "weakness_tag": "grammar_prepositions_movement",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_021",
@@ -1662,25 +1912,30 @@
     "options": [
       {
         "key": "A",
-        "text": "him"
+        "text": "him",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "his"
+        "text": "his",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "himself"
+        "text": "himself",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "he"
+        "text": "he",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Reflexive pronoun 'himself' is used when the subject and object are the same person.",
     "explanation_th": "ประธานและกรรมเป็นบุคคลเดียวกัน ใช้สรรพนามสะท้อน 'himself'",
     "weakness_tag": "grammar_reflexive_pronouns",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_022",
@@ -1695,32 +1950,37 @@
     "options": [
       {
         "key": "A",
-        "text": "quiet"
+        "text": "quiet",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "quietly"
+        "text": "quietness",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "more quiet"
+        "text": "more quiet",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "quietness"
+        "text": "quietly",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Adverbs of manner ending in -ly describe how the action was performed.",
     "explanation_th": "ขยายคำกริยา 'closed' เพื่อบอกลักษณะการกระทำ ใช้ adverb 'quietly'",
     "weakness_tag": "grammar_adverbs_manner",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_023",
     "cefr_level": "A2",
     "grammar_topic": "indefinite_pronouns",
     "question_type": "gap_fill",
-    "difficulty_b": -1.0,
+    "difficulty_b": -1,
     "discrimination_a": 1.3,
     "guessing_c": 0.25,
     "stem_en": "There is _____ at the front door waiting to see you.",
@@ -1728,25 +1988,30 @@
     "options": [
       {
         "key": "A",
-        "text": "anyone"
+        "text": "someone",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "someone"
+        "text": "anyone",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "no one"
+        "text": "no one",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "anything"
+        "text": "anything",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Someone' is used in affirmative statements referring to an unidentified person.",
     "explanation_th": "ประโยคบอกเล่ากล่าวถึงบุคคลที่ไม่ระบุเจาะจง ใช้ 'someone'",
     "weakness_tag": "grammar_indefinite_pronouns",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_024",
@@ -1761,25 +2026,30 @@
     "options": [
       {
         "key": "A",
-        "text": "don't have to"
+        "text": "don't have to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "mustn't"
+        "text": "mustn't",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "shouldn't"
+        "text": "shouldn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "needn't"
+        "text": "needn't",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Mustn't' expresses strict prohibition.",
     "explanation_th": "ข้อห้ามที่เคร่งครัดตามกฎระเบียบ (strictly forbidden) ใช้ 'mustn't'",
     "weakness_tag": "grammar_must_prohibition",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_025",
@@ -1794,25 +2064,30 @@
     "options": [
       {
         "key": "A",
-        "text": "aren't"
+        "text": "aren't",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "don't"
+        "text": "didn't",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "didn't"
+        "text": "don't",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "do"
+        "text": "do",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Positive Present Simple statement with main verb 'live' takes negative tag 'don't you?'.",
     "explanation_th": "ประโยคบอกเล่า Present Simple กริยาแท้ live ใช้ question tag ปฏิเสธ 'don't you?'",
     "weakness_tag": "grammar_question_tags_basic",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_026",
@@ -1827,25 +2102,30 @@
     "options": [
       {
         "key": "A",
-        "text": "during"
+        "text": "during",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "for"
+        "text": "while",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "since"
+        "text": "since",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "while"
+        "text": "for",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'For' expresses a duration of time (two years).",
     "explanation_th": "บอกระยะเวลาความยาวนานของการกระทำ (two years) ใช้ 'for'",
     "weakness_tag": "grammar_for_during_duration",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_a2_027",
@@ -1860,25 +2140,30 @@
     "options": [
       {
         "key": "A",
-        "text": "went"
+        "text": "been",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "be"
+        "text": "be",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "been"
+        "text": "went",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "gone"
+        "text": "gone",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Have you ever been to' is the standard inquiry about life experience of visiting a place.",
     "explanation_th": "ถามถึงประสบการณ์ชีวิตว่าเคยไปเยือนสถานที่นั้นแล้วกลับมาหรือยัง ใช้ 'been to'",
     "weakness_tag": "grammar_present_perfect_experience",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_a2_028",
@@ -1893,25 +2178,30 @@
     "options": [
       {
         "key": "A",
-        "text": "used to"
+        "text": "was used to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "was used to"
+        "text": "used to",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "use to"
+        "text": "use to",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "am used to"
+        "text": "am used to",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Used to' + base verb expresses a past state or habit that is no longer true.",
     "explanation_th": "บอกถึงสภาพหรือนิสัยในอดีตที่ปัจจุบันไม่ได้ทำแล้ว ใช้ 'used to' + V.1",
     "weakness_tag": "grammar_used_to_past_habit",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_a2_029",
@@ -1926,25 +2216,30 @@
     "options": [
       {
         "key": "A",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "who"
+        "text": "where",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "where"
+        "text": "who",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "whose"
+        "text": "whose",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Who' is the subject relative pronoun referring to people.",
     "explanation_th": "ประภัสสรรพนาม (relative pronoun) แทนคำนามบุคคล (The woman) ใช้ 'who'",
     "weakness_tag": "grammar_relative_pronouns_who",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_a2_030",
@@ -1959,25 +2254,30 @@
     "options": [
       {
         "key": "A",
-        "text": "may"
+        "text": "would",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "should"
+        "text": "should",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "must"
+        "text": "must",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would"
+        "text": "may",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'May' is a polite modal used to ask for permission.",
     "explanation_th": "การขออนุญาตอย่างสุภาพตามมารยาท ใช้ modal verb 'may'",
     "weakness_tag": "grammar_modals_permission",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_001",
@@ -1992,25 +2292,30 @@
     "options": [
       {
         "key": "A",
-        "text": "have lost"
+        "text": "lost",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "lost"
+        "text": "have lost",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had lost"
+        "text": "had lost",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was losing"
+        "text": "was losing",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Specific past time adverbials (yesterday) strictly require Past Simple, not Present Perfect.",
     "explanation_th": "เมื่อมีคำระบุเวลาอดีตเจาะจงชัดเจน (yesterday) ต้องใช้ Past Simple (lost) ไม่ใช้ Present Perfect",
     "weakness_tag": "grammar_present_perfect_vs_past_simple",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_002",
@@ -2025,25 +2330,30 @@
     "options": [
       {
         "key": "A",
-        "text": "plays"
+        "text": "plays",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "has played"
+        "text": "has been playing",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "has been playing"
+        "text": "has played",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was playing"
+        "text": "was playing",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Action continuing from the past to the present with continuous focus uses Present Perfect Continuous.",
     "explanation_th": "การกระทำที่เริ่มในอดีตและดำเนินต่อเนื่องมาถึงปัจจุบันโดยเน้นความต่อเนื่อง ใช้ Present Perfect Continuous",
     "weakness_tag": "grammar_present_perfect_continuous",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_003",
@@ -2058,25 +2368,30 @@
     "options": [
       {
         "key": "A",
-        "text": "will work"
+        "text": "will work",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "work"
+        "text": "worked",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "worked"
+        "text": "work",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "are working"
+        "text": "are working",
+        "isCorrect": false
       }
     ],
     "explanation_en": "The 'if' clause of the First Conditional uses Present Simple, not 'will'.",
     "explanation_th": "ในประโยคเงื่อนไขแบบที่ 1 (First Conditional) ส่วนของ if-clause ต้องใช้ Present Simple",
     "weakness_tag": "grammar_first_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_004",
@@ -2091,25 +2406,30 @@
     "options": [
       {
         "key": "A",
-        "text": "win"
+        "text": "win",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "won"
+        "text": "had won",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "have won"
+        "text": "have won",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "had won"
+        "text": "won",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Second Conditional (hypothetical present/future) uses Past Simple in the if-clause.",
     "explanation_th": "ประโยคเงื่อนไขสมมติในปัจจุบัน (Second Conditional) ใน if-clause ใช้ Past Simple (won)",
     "weakness_tag": "grammar_second_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_005",
@@ -2124,25 +2444,30 @@
     "options": [
       {
         "key": "A",
-        "text": "manufacture"
+        "text": "are manufactured",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "are manufactured"
+        "text": "manufacture",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "were manufactured"
+        "text": "were manufactured",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "are manufacturing"
+        "text": "are manufacturing",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Present Simple passive uses is/are + past participle (are manufactured).",
     "explanation_th": "ประธานเป็นผู้ถูกกระทำในเหตุการณ์ปกติ (passive voice) ใช้ are + V.3 (are manufactured)",
     "weakness_tag": "grammar_passive_voice_present",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_006",
@@ -2157,25 +2482,30 @@
     "options": [
       {
         "key": "A",
-        "text": "painted"
+        "text": "painted",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "was painted"
+        "text": "was painted",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "has been painted"
+        "text": "has been painted",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "is painted"
+        "text": "is painted",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Past Simple passive uses was/were + past participle (was painted).",
     "explanation_th": "ประธานถูกกระทำในอดีต (16th century) ใช้รูป Past Simple Passive (was painted)",
     "weakness_tag": "grammar_passive_voice_past",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_007",
@@ -2190,25 +2520,30 @@
     "options": [
       {
         "key": "A",
-        "text": "must be"
+        "text": "must be",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "can't be"
+        "text": "shouldn't be",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "shouldn't be"
+        "text": "can't be",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "might be"
+        "text": "might be",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Can't be' expresses strong negative deduction based on evidence.",
     "explanation_th": "การคาดคะเนเชิงปฏิเสธอย่างมั่นใจจากหลักฐานแวดล้อม ใช้ 'can't be' (เป็นไปไม่ได้ที่จะอยู่)",
     "weakness_tag": "grammar_modals_deduction_present",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_008",
@@ -2223,32 +2558,37 @@
     "options": [
       {
         "key": "A",
-        "text": "can"
+        "text": "can",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "must"
+        "text": "would",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "should"
+        "text": "should",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would"
+        "text": "must",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Must' expresses logical certainty / strong affirmative deduction.",
     "explanation_th": "การคาดคะเนข้อเท็จจริงอย่างมั่นใจจากหลักฐานเชิงบวก ใช้ 'must be'",
     "weakness_tag": "grammar_modals_deduction_must",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_009",
     "cefr_level": "B1",
     "grammar_topic": "gerund_vs_infinitive_stop",
     "question_type": "gap_fill",
-    "difficulty_b": 0.0,
+    "difficulty_b": 0,
     "discrimination_a": 1.5,
     "guessing_c": 0.25,
     "stem_en": "He was feeling very tired, so he stopped _____ a quick coffee.",
@@ -2256,25 +2596,30 @@
     "options": [
       {
         "key": "A",
-        "text": "having"
+        "text": "to have",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "to have"
+        "text": "having",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "have"
+        "text": "have",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "for have"
+        "text": "for have",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Stop + to-infinitive' means pausing an activity in order to do something else.",
     "explanation_th": "'stop + to-infinitive' หมายถึงหยุดสิ่งที่ทำอยู่เพื่อไปทำสิ่งใหม่ (แวะดื่มกาแฟ)",
     "weakness_tag": "grammar_verb_patterns_stop",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_010",
@@ -2289,25 +2634,30 @@
     "options": [
       {
         "key": "A",
-        "text": "locking"
+        "text": "locking",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "to lock"
+        "text": "to lock",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "lock"
+        "text": "lock",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "locked"
+        "text": "locked",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Remember + to-infinitive' refers to remembering a duty before performing it.",
     "explanation_th": "'remember + to-infinitive' หมายถึงจำสิ่งที่ต้องทำและทำตามหน้าที่ในอนาคต",
     "weakness_tag": "grammar_verb_patterns_remember",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_011",
@@ -2322,25 +2672,30 @@
     "options": [
       {
         "key": "A",
-        "text": "who"
+        "text": "who",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "whom"
+        "text": "whom",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "whose"
+        "text": "whose",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Whose' is the relative pronoun expressing possession.",
     "explanation_th": "สรรพนามเชื่อมแสดงความเป็นเจ้าของความสัมพันธ์ทางเครือญาติ ใช้ 'whose'",
     "weakness_tag": "grammar_relative_clauses_whose",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_012",
@@ -2355,25 +2710,30 @@
     "options": [
       {
         "key": "A",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "where"
+        "text": "what",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "that"
+        "text": "that",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "what"
+        "text": "where",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Where' is the relative adverb referring to a location of an action.",
     "explanation_th": "คำเชื่อมแสดงสถานที่ที่เหตุการณ์เกิดขึ้น ใช้ 'where'",
     "weakness_tag": "grammar_relative_clauses_where",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_013",
@@ -2388,25 +2748,30 @@
     "options": [
       {
         "key": "A",
-        "text": "is moving"
+        "text": "was moving",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "was moving"
+        "text": "is moving",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "has moved"
+        "text": "has moved",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "will move"
+        "text": "will move",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Direct speech in Present Continuous shifts back to Past Continuous in indirect speech.",
     "explanation_th": "การเปลี่ยนคำพูดเป็น Reported Speech กริยา Present Continuous เลื่อนถอยเป็น Past Continuous",
     "weakness_tag": "grammar_reported_speech_tense_shift",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_014",
@@ -2421,25 +2786,30 @@
     "options": [
       {
         "key": "A",
-        "text": "had I parked"
+        "text": "had I parked",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "I had parked"
+        "text": "I had parked",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "did I park"
+        "text": "did I park",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "I parked had"
+        "text": "I parked had",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Reported questions use normal statement word order (Subject + Verb), not inverted question order.",
     "explanation_th": "ใน Reported Questions ลำดับคำต้องเรียงแบบประโยคบอกเล่า (ประธาน + กริยา) ห้ามกลับกริยาช่วย",
     "weakness_tag": "grammar_reported_questions_order",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_015",
@@ -2454,25 +2824,30 @@
     "options": [
       {
         "key": "A",
-        "text": "for"
+        "text": "for",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "since"
+        "text": "during",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "during"
+        "text": "since",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "from"
+        "text": "from",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Since' is used with a specific starting point in time.",
     "explanation_th": "บอกจุดเริ่มต้นของเวลาในอดีต (she graduated) ใช้ 'since'",
     "weakness_tag": "grammar_since_starting_point",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_016",
@@ -2487,25 +2862,30 @@
     "options": [
       {
         "key": "A",
-        "text": "went"
+        "text": "went",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "has gone"
+        "text": "has gone",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had gone"
+        "text": "was going",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was going"
+        "text": "had gone",
+        "isCorrect": true
       }
     ],
     "explanation_en": "An action completed before another past event uses Past Perfect (had + past participle).",
     "explanation_th": "เหตุการณ์ที่เสร็จสิ้นลงก่อนอีกเหตุการณ์หนึ่งในอดีต ใช้ Past Perfect (had gone)",
     "weakness_tag": "grammar_past_perfect_precedence",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_017",
@@ -2520,25 +2900,30 @@
     "options": [
       {
         "key": "A",
-        "text": "so"
+        "text": "such",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "such"
+        "text": "so",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "too"
+        "text": "too",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "very"
+        "text": "very",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Such + a/an + adjective + singular noun' expresses degree leading to a result.",
     "explanation_th": "โครงสร้างบอกผลลัพธ์ 'such + a/an + adj + noun + that' ใช้ 'such'",
     "weakness_tag": "grammar_so_such_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_018",
@@ -2553,25 +2938,30 @@
     "options": [
       {
         "key": "A",
-        "text": "used"
+        "text": "used",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "am used"
+        "text": "am used",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "use"
+        "text": "use",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was used"
+        "text": "was used",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Be used to + noun/gerund' means being accustomed to something.",
     "explanation_th": "โครงสร้าง 'be used to + noun' หมายถึงเคยชินแล้วกับสิ่งนั้นในปัจจุบัน",
     "weakness_tag": "grammar_be_used_to_accustomed",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_019",
@@ -2586,25 +2976,30 @@
     "options": [
       {
         "key": "A",
-        "text": "submit"
+        "text": "submit",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "be submitted"
+        "text": "been submitted",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "been submitted"
+        "text": "be submitted",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "submitting"
+        "text": "submitting",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Modal passive requires modal + be + past participle.",
     "explanation_th": "Passive voice กับกริยาช่วย modal ใช้โครงสร้าง must + be + V.3",
     "weakness_tag": "grammar_passive_with_modals",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_020",
@@ -2619,25 +3014,30 @@
     "options": [
       {
         "key": "A",
-        "text": "fly"
+        "text": "fly",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "will fly"
+        "text": "will fly",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "will be flying"
+        "text": "will have flown",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "will have flown"
+        "text": "will be flying",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Future Continuous describes an action that will be in progress at a specific future moment.",
     "explanation_th": "บอกการกระทำที่จะกำลังดำเนินอยู่ในจุดเวลาใดเวลาหนึ่งในอนาคต ใช้ Future Continuous",
     "weakness_tag": "grammar_future_continuous",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_021",
@@ -2652,25 +3052,30 @@
     "options": [
       {
         "key": "A",
-        "text": "what"
+        "text": "which",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "which"
+        "text": "what",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "where"
+        "text": "where",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "whose"
+        "text": "whose",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Object relative pronoun referring to things is 'which' or 'that'.",
     "explanation_th": "ประภัสสรรพนามทำหน้าที่กรรมแทนสิ่งของ (documentary) ใช้ 'which'",
     "weakness_tag": "grammar_relative_pronouns_things",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_022",
@@ -2685,25 +3090,30 @@
     "options": [
       {
         "key": "A",
-        "text": "if"
+        "text": "if",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "unless"
+        "text": "unless",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "provided"
+        "text": "provided",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "in case"
+        "text": "in case",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Unless' means 'if not' and introduces a condition.",
     "explanation_th": "'unless' มีความหมายเท่ากับ 'if not' (เว้นแต่ว่า / ถ้า...ไม่)",
     "weakness_tag": "grammar_unless_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_023",
@@ -2718,25 +3128,30 @@
     "options": [
       {
         "key": "A",
-        "text": "in case"
+        "text": "unless",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "if"
+        "text": "if",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "unless"
+        "text": "in case",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "provided"
+        "text": "provided",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'In case' expresses doing something as a precaution for a possible future event.",
     "explanation_th": "'in case' ใช้บอกการเตรียมพร้อมป้องกันไว้เผื่อกรณีที่เหตุการณ์อาจเกิดขึ้น",
     "weakness_tag": "grammar_in_case_precaution",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_024",
@@ -2751,25 +3166,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Either"
+        "text": "Either",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Neither"
+        "text": "Not",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Both"
+        "text": "Both",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Not"
+        "text": "Neither",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Neither... nor' pairs to connect two negative alternatives.",
     "explanation_th": "คำเชื่อมคู่ปฏิเสธที่เข้าคู่กับ 'nor' คือ 'Neither'",
     "weakness_tag": "grammar_neither_nor",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_025",
@@ -2784,25 +3204,30 @@
     "options": [
       {
         "key": "A",
-        "text": "make"
+        "text": "have",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "have"
+        "text": "make",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "do"
+        "text": "do",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "let"
+        "text": "let",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Causative 'have something done' means arranging for someone else to do a service.",
     "explanation_th": "โครงสร้าง causative 'have + something + V.3' หมายถึงจ้างวานหรือนำไปให้ผู้อื่นทำบริการให้",
     "weakness_tag": "grammar_causative_have_done",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_026",
@@ -2817,25 +3242,30 @@
     "options": [
       {
         "key": "A",
-        "text": "can"
+        "text": "can",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "can't"
+        "text": "can't",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "doesn't"
+        "text": "doesn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "is she"
+        "text": "is she",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Affirmative sentence with modal 'can' takes negative tag 'can't'.",
     "explanation_th": "ประโยคบอกเล่าที่มี modal 'can' ใช้ question tag ปฏิเสธ 'can't she?'",
     "weakness_tag": "grammar_question_tags_modals",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b1_027",
@@ -2850,25 +3280,30 @@
     "options": [
       {
         "key": "A",
-        "text": "pay"
+        "text": "pay",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "to pay"
+        "text": "paying",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "paying"
+        "text": "to pay",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "paid"
+        "text": "paid",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Advise + object + to-infinitive' is the required verb pattern.",
     "explanation_th": "กริยา advise ตามด้วยกรรมและ to-infinitive (advise someone to do something)",
     "weakness_tag": "grammar_verb_object_infinitive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b1_028",
@@ -2883,25 +3318,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Although"
+        "text": "Although",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Despite"
+        "text": "However",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Even though"
+        "text": "Even though",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "However"
+        "text": "Despite",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Despite' is a preposition followed by a noun phrase, whereas 'although' takes a clause.",
     "explanation_th": "'Despite' เป็นบุพบทตามด้วยนามวลี (the heavy traffic) ส่วน although ต้องตามด้วยประโยค",
     "weakness_tag": "grammar_despite_in_spite_of",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b1_029",
@@ -2916,25 +3356,30 @@
     "options": [
       {
         "key": "A",
-        "text": "already"
+        "text": "yet",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "still"
+        "text": "still",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "yet"
+        "text": "already",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "just"
+        "text": "just",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Yet' is standard at the end of questions asking if an expected event has occurred.",
     "explanation_th": "วางท้ายประโยคคำถามเพื่อถามว่าการกระทำที่รอคอยเกิดขึ้นหรือยัง ใช้ 'yet'",
     "weakness_tag": "grammar_yet_questions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b1_030",
@@ -2949,25 +3394,30 @@
     "options": [
       {
         "key": "A",
-        "text": "at"
+        "text": "at",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "on"
+        "text": "in",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "in"
+        "text": "on",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "with"
+        "text": "with",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Interested' takes the dependent preposition 'in'.",
     "explanation_th": "คุณศัพท์ 'interested' ใช้คู่กับบุพบท 'in' เสมอ",
     "weakness_tag": "grammar_dependent_prepositions_adjectives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_001",
@@ -2982,25 +3432,30 @@
     "options": [
       {
         "key": "A",
-        "text": "caught"
+        "text": "caught",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "had caught"
+        "text": "would have caught",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "would have caught"
+        "text": "had caught",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "catch"
+        "text": "catch",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Third Conditional (unreal past) uses Past Perfect in the if-clause.",
     "explanation_th": "ประโยคเงื่อนไขสมมติขัดแย้งกับอดีต (Third Conditional) ส่วน if-clause ใช้ Past Perfect",
     "weakness_tag": "grammar_third_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_002",
@@ -3015,25 +3470,30 @@
     "options": [
       {
         "key": "A",
-        "text": "wouldn't have been"
+        "text": "wouldn't have been",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "wouldn't be"
+        "text": "won't be",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "isn't"
+        "text": "isn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "won't be"
+        "text": "wouldn't be",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Mixed conditional: past condition (had taken) having a present result (wouldn't be now).",
     "explanation_th": "เงื่อนไขผสม (Mixed Conditional): เหตุเกิดในอดีตส่งผลต่อสภาวะปัจจุบัน (wouldn't be now)",
     "weakness_tag": "grammar_mixed_conditionals_past_present",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_003",
@@ -3048,25 +3508,30 @@
     "options": [
       {
         "key": "A",
-        "text": "must rain"
+        "text": "must have rained",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "must have rained"
+        "text": "must rain",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "should have rained"
+        "text": "should have rained",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "can have rained"
+        "text": "can have rained",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Must have + past participle' makes a logical deduction about a past occurrence.",
     "explanation_th": "การคาดคะเนอดีตอย่างมั่นใจจากหลักฐานปัจจุบัน ใช้โครงสร้าง 'must have + V.3'",
     "weakness_tag": "grammar_modals_past_deduction",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_004",
@@ -3081,25 +3546,30 @@
     "options": [
       {
         "key": "A",
-        "text": "should practice"
+        "text": "should practice",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "should have practiced"
+        "text": "should have practiced",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "must have practiced"
+        "text": "must have practiced",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "could practice"
+        "text": "could practice",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Should have + past participle' expresses past regret or criticism of an unperformed action.",
     "explanation_th": "การแสดงความเสียดายหรือตำหนิสิ่งที่ควรทำในอดีตแต่ไม่ได้ทำ ใช้ 'should have + V.3'",
     "weakness_tag": "grammar_should_have_past_regret",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_005",
@@ -3114,25 +3584,30 @@
     "options": [
       {
         "key": "A",
-        "text": "didn't speak"
+        "text": "didn't speak",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "hadn't spoken"
+        "text": "wouldn't speak",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "wouldn't speak"
+        "text": "hadn't spoken",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "haven't spoken"
+        "text": "haven't spoken",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Wish + Past Perfect' expresses regret about a past situation.",
     "explanation_th": "การแสดงความเสียดายเกี่ยวกับเหตุการณ์ในอดีตหลัง wish ใช้รูป Past Perfect (hadn't spoken)",
     "weakness_tag": "grammar_wish_past_regret",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_006",
@@ -3147,25 +3622,30 @@
     "options": [
       {
         "key": "A",
-        "text": "have"
+        "text": "have",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "had"
+        "text": "had had",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "would have"
+        "text": "would have",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "had had"
+        "text": "had",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Wish + Past Simple' expresses a desire for a different present situation.",
     "explanation_th": "ความปรารถนาที่ตรงข้ามกับความจริงในปัจจุบันหลัง wish ใช้ Past Simple (had)",
     "weakness_tag": "grammar_wish_present_unreal",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_007",
@@ -3180,25 +3660,30 @@
     "options": [
       {
         "key": "A",
-        "text": "who"
+        "text": "whose",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "whom"
+        "text": "whom",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "whose"
+        "text": "who",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Non-defining relative clause expressing possession uses 'whose'.",
     "explanation_th": "อนุประโยคแทรกไม่อธิบายจำกัดความ (มีเครื่องหมายจุลภาค) แสดงความเป็นเจ้าของ ใช้ 'whose'",
     "weakness_tag": "grammar_non_defining_relative_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_008",
@@ -3213,25 +3698,30 @@
     "options": [
       {
         "key": "A",
-        "text": "who"
+        "text": "who",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "whom"
+        "text": "whom",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "whose"
+        "text": "whose",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Formal English requires 'whom' directly following a preposition when referring to a person.",
     "explanation_th": "ในภาษาทางการ เมื่อสรรพนามบุคคลอยู่ 'หลังคำบุพบท' โดยตรง ต้องใช้รูปกรรม 'whom'",
     "weakness_tag": "grammar_whom_after_prepositions",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_009",
@@ -3246,25 +3736,30 @@
     "options": [
       {
         "key": "A",
-        "text": "to be built"
+        "text": "to be built",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "to have been built"
+        "text": "being built",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "being built"
+        "text": "to have been built",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "having built"
+        "text": "having built",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Impersonal passive reporting with past time reference uses 'to have been + past participle'.",
     "explanation_th": "การรายงานความเชื่อทางประวัติศาสตร์ที่มีผลเกิดก่อน ใช้รูป 'to have been built'",
     "weakness_tag": "grammar_passive_reporting_verbs",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_010",
@@ -3279,25 +3774,30 @@
     "options": [
       {
         "key": "A",
-        "text": "will complete"
+        "text": "will complete",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "will be completing"
+        "text": "will be completing",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "will have completed"
+        "text": "completed",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "completed"
+        "text": "will have completed",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'By' + future time expression requires the Future Perfect (will have completed).",
     "explanation_th": "เมื่อมี 'By + เวลาในอนาคต' ใช้ Future Perfect (will have + V.3) เพื่อบอกความสำเร็จก่อนเวลานั้น",
     "weakness_tag": "grammar_future_perfect",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_011",
@@ -3312,25 +3812,30 @@
     "options": [
       {
         "key": "A",
-        "text": "will teach"
+        "text": "will have been teaching",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "will be teaching"
+        "text": "will be teaching",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "will have been teaching"
+        "text": "will teach",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "is teaching"
+        "text": "is teaching",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Expresses duration up to a specific future point using Future Perfect Continuous.",
     "explanation_th": "บอกความต่อเนื่องของระยะเวลาที่จะดำเนินมาครบกำหนดในอนาคต ใช้ Future Perfect Continuous",
     "weakness_tag": "grammar_future_perfect_continuous",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_012",
@@ -3345,32 +3850,37 @@
     "options": [
       {
         "key": "A",
-        "text": "to put on"
+        "text": "to put on",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "put on"
+        "text": "put on",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "putting on"
+        "text": "putting on",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "have put on"
+        "text": "have put on",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Had better' is followed by a bare infinitive without 'to'.",
     "explanation_th": "'had better' (ควรจะ...ดีกว่า) ต้องตามด้วยกริยาฐานรูป bare infinitive (ไม่มี to)",
     "weakness_tag": "grammar_had_better_bare_infinitive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_013",
     "cefr_level": "B2",
     "grammar_topic": "would_rather_past",
     "question_type": "gap_fill",
-    "difficulty_b": 1.0,
+    "difficulty_b": 1,
     "discrimination_a": 1.6,
     "guessing_c": 0.25,
     "stem_en": "I would rather you _____ anyone about what happened this morning.",
@@ -3378,25 +3888,30 @@
     "options": [
       {
         "key": "A",
-        "text": "don't tell"
+        "text": "don't tell",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "didn't tell"
+        "text": "not to tell",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "not to tell"
+        "text": "didn't tell",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "won't tell"
+        "text": "won't tell",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Would rather + subject + Past Simple' expresses preference for someone else's action.",
     "explanation_th": "'would rather + ประธานคนอื่น' กริยาต้องถอยรูปเป็น Past Simple (didn't tell)",
     "weakness_tag": "grammar_would_rather_different_subject",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_014",
@@ -3411,25 +3926,30 @@
     "options": [
       {
         "key": "A",
-        "text": "takes"
+        "text": "takes",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "took"
+        "text": "has taken",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "take"
+        "text": "take",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "has taken"
+        "text": "took",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'It is high time + subject + Past Simple' indicates that an action is already overdue.",
     "explanation_th": "สำนวน 'It is high time + ประธาน' กริยาต้องใช้ Past Simple เพื่อสื่อว่าถึงเวลาที่ควรทำตั้งนานแล้ว",
     "weakness_tag": "grammar_it_is_high_time",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_015",
@@ -3444,25 +3964,30 @@
     "options": [
       {
         "key": "A",
-        "text": "fascinated"
+        "text": "fascinating",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "fascinating"
+        "text": "fascinated",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "fascination"
+        "text": "fascination",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "fascinate"
+        "text": "fascinate",
+        "isCorrect": false
       }
     ],
     "explanation_en": "-ing adjectives describe the characteristic/source of the feeling (the documentary).",
     "explanation_th": "คุณศัพท์ลงท้าย -ing ใช้บรรยายลักษณะของสิ่งของหรือเหตุการณ์ที่ก่อให้เกิดความรู้สึก",
     "weakness_tag": "grammar_participial_adjectives_ed_ing",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_020",
@@ -3477,25 +4002,30 @@
     "options": [
       {
         "key": "A",
-        "text": "we had left"
+        "text": "we had left",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "had we left"
+        "text": "had we left",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "did we leave"
+        "text": "did we leave",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "we left"
+        "text": "we left",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Negative adverb 'Hardly' at sentence start triggers subject-auxiliary inversion with 'had'.",
     "explanation_th": "คำปฏิเสธ 'Hardly' ขึ้นต้นประโยค บังคับเกิด Inversion กริยาช่วย had มาหน้าประธาน",
     "weakness_tag": "grammar_inversion_hardly_when",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_017",
@@ -3510,25 +4040,30 @@
     "options": [
       {
         "key": "A",
-        "text": "when"
+        "text": "when",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "than"
+        "text": "then",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "then"
+        "text": "than",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "that"
+        "text": "that",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'No sooner... than' is the mandatory correlative conjunction pair.",
     "explanation_th": "คู่คำเชื่อม Inversion 'No sooner had ...' ต้องเข้าคู่กับ 'than' เสมอ",
     "weakness_tag": "grammar_inversion_no_sooner_than",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_018",
@@ -3543,25 +4078,30 @@
     "options": [
       {
         "key": "A",
-        "text": "despite"
+        "text": "despite",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "whereas"
+        "text": "unless",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "in spite of"
+        "text": "in spite of",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "unless"
+        "text": "whereas",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Whereas' connects two contrasting facts in parallel clauses.",
     "explanation_th": "'whereas' ใช้เชื่อมสองอนุประโยคเพื่อเปรียบเทียบความแตกต่างที่เห็นได้ชัด",
     "weakness_tag": "grammar_concession_whereas",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_019",
@@ -3576,32 +4116,37 @@
     "options": [
       {
         "key": "A",
-        "text": "That"
+        "text": "What",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Which"
+        "text": "Which",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "What"
+        "text": "That",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "It"
+        "text": "It",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Wh-cleft sentence beginning with 'What' focuses on the subject action/clause.",
     "explanation_th": "Cleft sentence แบบขึ้นต้นด้วย 'What' ใช้เน้นสิ่งที่เกิดขึ้น (สิ่งที่ทำให้ฉันประหลาดใจที่สุดคือ...)",
     "weakness_tag": "grammar_wh_cleft_sentences",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_016",
     "cefr_level": "B2",
     "grammar_topic": "cleft_sentences_it_is",
     "question_type": "gap_fill",
-    "difficulty_b": 1.0,
+    "difficulty_b": 1,
     "discrimination_a": 1.55,
     "guessing_c": 0.25,
     "stem_en": "It was my uncle _____ encouraged me to pursue a career in aerospace engineering.",
@@ -3609,25 +4154,30 @@
     "options": [
       {
         "key": "A",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "who"
+        "text": "who",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "whom"
+        "text": "whom",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "whose"
+        "text": "whose",
+        "isCorrect": false
       }
     ],
     "explanation_en": "It-cleft focusing on a person uses 'who' or 'that'.",
     "explanation_th": "It-cleft sentence ที่เน้นตัวบุคคล (my uncle) ใช้คำเชื่อม 'who'",
     "weakness_tag": "grammar_it_cleft_sentences",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_021",
@@ -3642,25 +4192,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Walked"
+        "text": "Walked",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Walking"
+        "text": "Having walked",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Having walked"
+        "text": "Walking",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "To walk"
+        "text": "To walk",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Present participle clause expresses an action happening at the same time as the main clause.",
     "explanation_th": "Participle clause รูป V-ing (Walking) ใช้บอกการกระทำที่เกิดขึ้นพร้อมกับกริยาหลักในประโยค",
     "weakness_tag": "grammar_participle_clauses_time",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_022",
@@ -3675,25 +4230,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Passing"
+        "text": "Passing",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Having passed"
+        "text": "To pass",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Passed"
+        "text": "Passed",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "To pass"
+        "text": "Having passed",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Perfect participle clause (Having + past participle) emphasizes that one action finished before another.",
     "explanation_th": "Perfect participle (Having passed) ใช้เน้นย้ำว่าการกระทำนี้เสร็จสิ้นอย่างสมบูรณ์ก่อนกริยาหลัก",
     "weakness_tag": "grammar_perfect_participle_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_023",
@@ -3708,25 +4268,30 @@
     "options": [
       {
         "key": "A",
-        "text": "telling"
+        "text": "being told",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "to tell"
+        "text": "to tell",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "being told"
+        "text": "telling",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to be told"
+        "text": "to be told",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Passive gerund after 'dislike' uses being + past participle.",
     "explanation_th": "กริยา dislike ตามด้วย gerund และเมื่ออยู่ในความหมายเชิงถูกกระทำ ต้องใช้ 'being + V.3'",
     "weakness_tag": "grammar_passive_gerunds",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_024",
@@ -3741,25 +4306,30 @@
     "options": [
       {
         "key": "A",
-        "text": "didn't need to"
+        "text": "didn't need to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "needn't have"
+        "text": "needn't have",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "mustn't have"
+        "text": "mustn't have",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "couldn't have"
+        "text": "couldn't have",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Needn't have + V3' means an action was done unnecessarily; 'didn't need to' means it wasn't necessary and wasn't necessarily done.",
     "explanation_th": "'needn't have + V.3' หมายถึงได้ทำสิ่งนั้นไปแล้ว แต่จริง ๆ ไม่มีความจำเป็นต้องทำ",
     "weakness_tag": "grammar_neednt_have_unnecessary_action",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_025",
@@ -3774,25 +4344,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Had"
+        "text": "Had",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Were"
+        "text": "Were",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "If"
+        "text": "If",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Inversion of First Conditional replaces 'If you should require' with 'Should you require'.",
     "explanation_th": "การกลับประโยคเงื่อนไขแบบสุภาพทางการ (Inversion of 1st conditional) ใช้ 'Should you require'",
     "weakness_tag": "grammar_inversion_first_conditional_should",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_026",
@@ -3807,25 +4382,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Had"
+        "text": "Had",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Were"
+        "text": "Am",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Am"
+        "text": "Were",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Inversion of Second Conditional with verb to be uses 'Were I...'.",
     "explanation_th": "Inversion ของ Second Conditional กับ verb to be ใช้โครงสร้าง 'Were I in your position'",
     "weakness_tag": "grammar_inversion_second_conditional_were",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_b2_027",
@@ -3840,25 +4420,30 @@
     "options": [
       {
         "key": "A",
-        "text": "If"
+        "text": "Had",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Had"
+        "text": "If",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Were"
+        "text": "Were",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Inversion of Third Conditional replaces 'If we had known' with 'Had we known'.",
     "explanation_th": "Inversion ของ Third Conditional ละ if แล้วนำกริยาช่วย had ขึ้นหน้าประธาน ('Had we known')",
     "weakness_tag": "grammar_inversion_third_conditional_had",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_b2_028",
@@ -3873,25 +4458,30 @@
     "options": [
       {
         "key": "A",
-        "text": "suspended"
+        "text": "suspended",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "suspends"
+        "text": "suspend",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "suspend"
+        "text": "suspends",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would suspend"
+        "text": "would suspend",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Mandative subjunctive requires the bare base form after demand/insist/recommend that.",
     "explanation_th": "โครงสร้าง Subjunctive หลังคำกริยาแสดงคำสั่ง/เรียกร้อง (demanded that) ใช้กริยาฐานรูปเดิม (suspend)",
     "weakness_tag": "grammar_mandative_subjunctive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_b2_029",
@@ -3906,25 +4496,30 @@
     "options": [
       {
         "key": "A",
-        "text": "more reliable"
+        "text": "more reliable",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "the more reliable"
+        "text": "the most reliable",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "the most reliable"
+        "text": "the more reliable",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "reliabler"
+        "text": "reliabler",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Parallel proportional change uses 'The + comparative, the + comparative'.",
     "explanation_th": "โครงสร้างการเปลี่ยนแปลงแปรผันตามกัน ใช้ 'The + comparative ..., the + comparative ...'",
     "weakness_tag": "grammar_double_comparatives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_b2_030",
@@ -3939,25 +4534,30 @@
     "options": [
       {
         "key": "A",
-        "text": "must have"
+        "text": "must have",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "could have"
+        "text": "would have",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "should have"
+        "text": "should have",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would have"
+        "text": "could have",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Could have + V3' expresses an unfulfilled past possibility (it was possible, but didn't happen).",
     "explanation_th": "'could have + V.3' ใช้บอกความเป็นไปได้ในอดีตที่เกือบจะเกิดขึ้นจริงแต่ไม่ได้เกิดขึ้น",
     "weakness_tag": "grammar_could_have_past_possibility",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c1_001",
@@ -3972,25 +4572,30 @@
     "options": [
       {
         "key": "A",
-        "text": "we have witnessed"
+        "text": "have we witnessed",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "have we witnessed"
+        "text": "we have witnessed",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "did we witness"
+        "text": "did we witness",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "we witnessed"
+        "text": "we witnessed",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Negative frequency adverb 'Seldom' fronted triggers subject-auxiliary inversion.",
     "explanation_th": "คำกริยาวิเศษณ์เชิงปฏิเสธ 'Seldom' เมื่อวางต้นประโยค บังคับเกิด Inversion สลับกริยาช่วยไว้หน้าประธาน",
     "weakness_tag": "grammar_inversion_negative_adverbials",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c1_002",
@@ -4005,25 +4610,30 @@
     "options": [
       {
         "key": "A",
-        "text": "confidential records should"
+        "text": "confidential records should",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "should"
+        "text": "should",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "ought"
+        "text": "ought",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "must records"
+        "text": "must records",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Under no circumstances' fronted requires immediate inversion (should + subject + be).",
     "explanation_th": "สำนวนปฏิเสธเด็ดขาด 'Under no circumstances' วางต้นประโยค ต้องตามด้วยกริยาช่วยทันทีก่อนประธาน",
     "weakness_tag": "grammar_inversion_prepositional_phrases",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c1_003",
@@ -4038,25 +4648,30 @@
     "options": [
       {
         "key": "A",
-        "text": "they signed"
+        "text": "they signed",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "did they sign"
+        "text": "they did sign",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "they did sign"
+        "text": "did they sign",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "had they signed"
+        "text": "had they signed",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Not only' fronted in a past simple clause requires auxiliary inversion with 'did'.",
     "explanation_th": "โครงสร้าง 'Not only' ต้นประโยค ใน Past Simple ต้องใช้กริยาช่วย did สลับหน้าประธาน",
     "weakness_tag": "grammar_inversion_not_only_but_also",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c1_004",
@@ -4071,25 +4686,30 @@
     "options": [
       {
         "key": "A",
-        "text": "is"
+        "text": "is",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "was"
+        "text": "was",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "be"
+        "text": "should to be",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "should to be"
+        "text": "be",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Formulaic/mandative subjunctive following 'It is imperative that' uses the base form 'be'.",
     "explanation_th": "โครงสร้างทางการ 'It is imperative that...' ใช้กริยาฐานรูป Subjunctive เสมอ (be)",
     "weakness_tag": "grammar_formulaic_subjunctive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c1_005",
@@ -4104,25 +4724,30 @@
     "options": [
       {
         "key": "A",
-        "text": "that I asked"
+        "text": "I asked for",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "what I asked"
+        "text": "what I asked",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "I asked for"
+        "text": "that I asked",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "which I asked"
+        "text": "which I asked",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'All (that) + subject + verb' acts as an exclusive focus cleft construction.",
     "explanation_th": "Cleft sentence แบบขึ้นต้นด้วย 'All...' ที่เน้นความต้องการเพียงสิ่งเดียว",
     "weakness_tag": "grammar_all_cleft_sentences",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c1_006",
@@ -4137,25 +4762,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Seeing"
+        "text": "Seeing",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Seen"
+        "text": "Seen",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Having seen"
+        "text": "Having seen",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "To see"
+        "text": "To see",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Past participle clause implies a passive meaning ('When it is seen from afar').",
     "explanation_th": "Participle clause ที่มีความหมายเป็นผู้ถูกกระทำ (เมื่อถูกมองจากที่ไกล) ใช้ Past Participle (Seen)",
     "weakness_tag": "grammar_passive_participle_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c1_007",
@@ -4170,25 +4800,30 @@
     "options": [
       {
         "key": "A",
-        "text": "were"
+        "text": "were",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "had been"
+        "text": "would be",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "would be"
+        "text": "had been",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "has been"
+        "text": "has been",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Mixed conditional: past passive condition (had been verified) with present result (would currently be).",
     "explanation_th": "เงื่อนไขผสม: เหตุการณ์ในอดีตแบบ passive (had been verified) ส่งผลต่อการดำเนินงานในปัจจุบัน",
     "weakness_tag": "grammar_mixed_conditionals_complex",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c1_008",
@@ -4203,25 +4838,30 @@
     "options": [
       {
         "key": "A",
-        "text": "was"
+        "text": "was",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "has been"
+        "text": "has been",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had been"
+        "text": "would be",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would be"
+        "text": "had been",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'As if / As though' with past unreal reference requires the Past Perfect.",
     "explanation_th": "การเปรียบเทียบเสมือนว่า (as if) ที่ขัดแย้งกับความเป็นจริงในอดีต ใช้ Past Perfect (had been)",
     "weakness_tag": "grammar_as_if_as_though_past",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c1_009",
@@ -4236,25 +4876,30 @@
     "options": [
       {
         "key": "A",
-        "text": "the scientific community realized"
+        "text": "did the scientific community realize",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "did the scientific community realize"
+        "text": "the scientific community realized",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had the scientific community realized"
+        "text": "had the scientific community realized",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was the scientific community realizing"
+        "text": "was the scientific community realizing",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Inversion occurs in the MAIN clause following an initial 'Only after...' adverbial clause.",
     "explanation_th": "โครงสร้าง 'Only after + อนุประโยค' การกลับประโยค (Inversion) จะเกิดขึ้นใน 'ประโยคหลัก'",
     "weakness_tag": "grammar_inversion_only_after",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c1_010",
@@ -4269,25 +4914,30 @@
     "options": [
       {
         "key": "A",
-        "text": "the diplomat suspected"
+        "text": "the diplomat suspected",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "did the diplomat suspect"
+        "text": "did the diplomat suspect",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "had the diplomat suspected"
+        "text": "had the diplomat suspected",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "was the diplomat suspecting"
+        "text": "was the diplomat suspecting",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Little' with negative meaning fronted requires auxiliary inversion (Little did he suspect).",
     "explanation_th": "'Little' (แทบจะไม่เลย) นำหน้าประโยค บังคับ Inversion ใน Past Simple ใช้ 'did + ประธาน + V.1'",
     "weakness_tag": "grammar_inversion_little_did",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c1_011",
@@ -4302,25 +4952,30 @@
     "options": [
       {
         "key": "A",
-        "text": "did lie"
+        "text": "did lie",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "lay"
+        "text": "lied",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "lied"
+        "text": "lay",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "lying"
+        "text": "lying",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Locative inversion: prepositional phrase of location fronted with intransitive verb (lay) directly preceding the subject.",
     "explanation_th": "Locative Inversion: บุพบทวลีบอกสถานที่ขึ้นต้น กริยาอกรรมกริยา (lay) วางหน้าประธานได้ทันทีโดยไม่ต้องใช้กริยาช่วย",
     "weakness_tag": "grammar_locative_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c1_012",
@@ -4335,25 +4990,30 @@
     "options": [
       {
         "key": "A",
-        "text": "that"
+        "text": "that",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "which"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "what"
+        "text": "whatever that",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "whatever that"
+        "text": "what",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'What' acts as a fused relative meaning 'the thing which'.",
     "explanation_th": "Fused relative pronoun 'what' ทำหน้าที่แทนนามวลีทั้งหมด ('the thing that was proposed')",
     "weakness_tag": "grammar_nominal_relative_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c1_013",
@@ -4368,25 +5028,30 @@
     "options": [
       {
         "key": "A",
-        "text": "however"
+        "text": "whatever",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "whatever"
+        "text": "however",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "whichever"
+        "text": "whichever",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "wherever"
+        "text": "wherever",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Whatever' functions as a determiner before the noun phrase 'the short-term financial repercussions'.",
     "explanation_th": "'Whatever' ทำหน้าที่เป็น determiner นำหน้านามวลีใน concession clause",
     "weakness_tag": "grammar_compound_relatives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c1_014",
@@ -4401,25 +5066,30 @@
     "options": [
       {
         "key": "A",
-        "text": "as"
+        "text": "though that",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "though that"
+        "text": "as",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "since"
+        "text": "since",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "however"
+        "text": "however",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Much as + subject + verb' is an advanced concessive structure meaning 'Although I admire... very much'.",
     "explanation_th": "สำนวนสัมปทานขั้นสูง 'Much as + ประธาน + กริยา' มีความหมายว่า 'แม้ว่าฉันจะชื่นชม...มากเพียงใดก็ตาม'",
     "weakness_tag": "grammar_much_as_concession",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c1_015",
@@ -4434,25 +5104,30 @@
     "options": [
       {
         "key": "A",
-        "text": "as"
+        "text": "although",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "like"
+        "text": "like",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "although"
+        "text": "as",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "since"
+        "text": "since",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Adjective + as/though + subject + verb' expresses concession (Although it may seem strange).",
     "explanation_th": "โครงสร้างสัมปทาน 'คุณศัพท์ + as/though + ประธาน + กริยา' (แม้ว่าจะดูแปลกก็ตาม)",
     "weakness_tag": "grammar_adjective_as_concession",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c1_016",
@@ -4467,25 +5142,30 @@
     "options": [
       {
         "key": "A",
-        "text": "reject"
+        "text": "reject",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "rejected"
+        "text": "would reject",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had rejected"
+        "text": "had rejected",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would reject"
+        "text": "rejected",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'Supposing' introduces a hypothetical present/future condition paired with 'would' in the main clause.",
     "explanation_th": "'Supposing' นำหน้าเงื่อนไขสมมติในปัจจุบัน/อนาคต ใช้กับ Past Simple (rejected)",
     "weakness_tag": "grammar_supposing_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c1_017",
@@ -4500,25 +5180,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Only"
+        "text": "But",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Except"
+        "text": "Except",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "But"
+        "text": "Only",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "If"
+        "text": "If",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'But for + noun phrase' means 'Were it not for / Had it not been for'.",
     "explanation_th": "สำนวน 'But for + นามวลี' มีความหมายเท่ากับ 'หากมิใช่เพราะ...' ใช้กับสมมติอดีต",
     "weakness_tag": "grammar_but_for_conditional",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c1_018",
@@ -4533,25 +5218,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Reprimanding"
+        "text": "Reprimanding",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Having reprimanded"
+        "text": "Having been reprimanded",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Having been reprimanded"
+        "text": "Having reprimanded",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Being reprimanded"
+        "text": "Being reprimanded",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Perfect passive participle clause (Having been + V3) denotes a prior completed passive experience.",
     "explanation_th": "Perfect passive participle (Having been reprimanded) แสดงการถูกกระทำที่เสร็จสิ้นก่อนกริยาหลัก",
     "weakness_tag": "grammar_perfect_passive_participle",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c1_019",
@@ -4566,25 +5256,30 @@
     "options": [
       {
         "key": "A",
-        "text": "substantial"
+        "text": "substantial",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "substantially"
+        "text": "substantiate",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "substantiate"
+        "text": "substantially",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "substantive"
+        "text": "substantive",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Adverb placement modifying the infinitive verb 'improve'.",
     "explanation_th": "การวางกริยาวิเศษณ์ขยายกริยาในโครงสร้าง infinitive (to substantially improve)",
     "weakness_tag": "grammar_adverb_infinitive_modification",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c1_020",
@@ -4599,25 +5294,30 @@
     "options": [
       {
         "key": "A",
-        "text": "were swung shut"
+        "text": "were swung shut",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "swung shut"
+        "text": "swung shutting",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "had been swung shut"
+        "text": "had been swung shut",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "swung shutting"
+        "text": "swung shut",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Ergative use of verbs like 'swing/shut' where the patient subject undergoes the action without passive voice.",
     "explanation_th": "การใช้กริยา Ergative (swung shut) ในรูป active แต่มีความหมายในตัวเองโดยไม่ต้องใช้ passive",
     "weakness_tag": "grammar_ergative_verbs",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c2_001",
@@ -4632,25 +5332,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Were"
+        "text": "Had",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Had"
+        "text": "Were",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Could"
+        "text": "Could",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Hypothetical negative past inversion: 'Had it not been for...' replaces 'If it had not been for...'.",
     "explanation_th": "Inversion ปฏิเสธสมมติอดีตขั้นสูง 'Had it not been for...' (หากมิใช่เพราะว่า...)",
     "weakness_tag": "grammar_inversion_had_it_not_been_for",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c2_002",
@@ -4665,25 +5370,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Had"
+        "text": "Had",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Were"
+        "text": "Were",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "If"
+        "text": "If",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Hypothetical present inversion: 'Were it not for...' expresses a condition currently counter to fact.",
     "explanation_th": "Inversion สมมติขัดแย้งกับปัจจุบัน 'Were it not for...' (หากมิใช่เพราะการสนับสนุนของคุณในตอนนี้)",
     "weakness_tag": "grammar_inversion_were_it_not_for",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c2_003",
@@ -4698,25 +5408,30 @@
     "options": [
       {
         "key": "A",
-        "text": "so"
+        "text": "it",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "such"
+        "text": "such",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "it"
+        "text": "so",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "too"
+        "text": "too",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Code ellipsis and prop-word substitution after negative auxiliary.",
     "explanation_th": "ไวยากรณ์ขั้นสูงด้าน Ellipsis & Substitution การละข้อความหลัง auxiliary verb โดยใช้รูปละ",
     "weakness_tag": "grammar_ellipsis_substitution",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c2_004",
@@ -4731,25 +5446,30 @@
     "options": [
       {
         "key": "A",
-        "text": "was"
+        "text": "was",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "were"
+        "text": "had",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "did"
+        "text": "did",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "had"
+        "text": "were",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Comparative adjective fronted with delayed plural subject ('the archaeological relics') requires plural verb 'were'.",
     "explanation_th": "Inversion จากการนำ comparative adjective ขึ้นต้นประโยค ประธานพหูพจน์ (relics) บังคับใช้กริยา 'were'",
     "weakness_tag": "grammar_comparative_fronting_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c2_005",
@@ -4764,25 +5484,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Being"
+        "text": "Be",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Be"
+        "text": "Being",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Is"
+        "text": "Is",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Were"
+        "text": "Were",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Fixed formulaic subjunctive idiom: 'Be that as it may' (Nevertheless / Even if that is true).",
     "explanation_th": "สำนวน Subjunctive โบราณที่ยังใช้อยู่ในภาษาทางการชั้นสูง 'Be that as it may' (อย่างไรก็ตาม/แม้จะเป็นเช่นนั้นก็ตาม)",
     "weakness_tag": "grammar_formulaic_subjunctive_idioms",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c2_006",
@@ -4797,25 +5522,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Coming"
+        "text": "Coming",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "Come"
+        "text": "Come",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "May"
+        "text": "May",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Should"
+        "text": "Should",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Formulaic subjunctive expression: 'Come what may' expresses unyielding resolve.",
     "explanation_th": "สำนวน Subjunctive 'Come what may' (ไม่ว่าจะเกิดอะไรขึ้นก็ตาม)",
     "weakness_tag": "grammar_formulaic_subjunctive_come_what_may",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c2_007",
@@ -4830,25 +5560,30 @@
     "options": [
       {
         "key": "A",
-        "text": "expand"
+        "text": "expand",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "expansion"
+        "text": "expanding",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "expanding"
+        "text": "expansion",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "expansiveness"
+        "text": "expansiveness",
+        "isCorrect": false
       }
     ],
     "explanation_en": "High academic register nominalization functioning as the dense syntactic head of the subject clause.",
     "explanation_th": "การเปลี่ยนรูปเป็นคำนามระดับวิชาการชั้นสูง (Nominalization: expansion) ทำหน้าที่เป็นแกนประธาน",
     "weakness_tag": "grammar_advanced_nominalization",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c2_008",
@@ -4863,25 +5598,30 @@
     "options": [
       {
         "key": "A",
-        "text": "was"
+        "text": "was",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "were"
+        "text": "had",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "did"
+        "text": "did",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "had"
+        "text": "were",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'So + adjective' fronted for emphatic topicalization requires inversion matching plural subject (mechanisms).",
     "explanation_th": "การเน้นย้ำด้วย 'So + adj' ต้นประโยค บังคับเกิด Inversion สอดคล้องกับประธานพหูพจน์ (mechanisms) ใช้ 'were'",
     "weakness_tag": "grammar_so_adjective_that_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c2_009",
@@ -4896,25 +5636,30 @@
     "options": [
       {
         "key": "A",
-        "text": "was"
+        "text": "was",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "were"
+        "text": "were",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "did"
+        "text": "did",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "is"
+        "text": "is",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Such + be + singular subject' creates an emphatic literary result construction.",
     "explanation_th": "สำนวนวรรณกรรมชั้นสูง 'Such was + นามเอกพจน์ + that' เพื่อเน้นย้ำความรุนแรงของผลลัพธ์",
     "weakness_tag": "grammar_such_be_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c2_010",
@@ -4929,25 +5674,30 @@
     "options": [
       {
         "key": "A",
-        "text": "is"
+        "text": "isn't",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "isn't"
+        "text": "is",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "shouldn't"
+        "text": "shouldn't",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "wouldn't"
+        "text": "wouldn't",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Negative raising: the matrix clause carries the negation (I don't think), keeping the complement clause affirmative.",
     "explanation_th": "ปรากฏการณ์ Negative Raising: ย้ายการปฏิเสธไปไว้ที่กริยาหลัก (I don't think) อนุประโยคตามหลังจึงเป็นรูปบอกเล่า (is)",
     "weakness_tag": "grammar_negative_raising",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c2_011",
@@ -4962,25 +5712,30 @@
     "options": [
       {
         "key": "A",
-        "text": "being"
+        "text": "being",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "having been"
+        "text": "were",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "were"
+        "text": "having been",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "have been"
+        "text": "have been",
+        "isCorrect": false
       }
     ],
     "explanation_en": "An absolute clause with an overt subject ('All necessary formalities') functioning independently as a non-finite adjunct.",
     "explanation_th": "Absolute Clause ชั้นสูง: มีประธานอิสระของตัวเองและใช้ non-finite participle 'having been completed'",
     "weakness_tag": "grammar_absolute_participial_clauses",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c2_012",
@@ -4995,25 +5750,30 @@
     "options": [
       {
         "key": "A",
-        "text": "to be destroyed"
+        "text": "to be destroyed",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "to have been destroyed"
+        "text": "to destroy",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "having been destroyed"
+        "text": "having been destroyed",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "to destroy"
+        "text": "to have been destroyed",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Perfect passive infinitive following a present reporting verb (is alleged) denoting anterior historical action.",
     "explanation_th": "โครงสร้างรายงานปัจจุบันกับเหตุการณ์ประวัติศาสตร์ที่จบไปแล้ว ใช้ perfect passive infinitive 'to have been destroyed'",
     "weakness_tag": "grammar_perfect_passive_infinitive_reporting",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c2_013",
@@ -5028,25 +5788,30 @@
     "options": [
       {
         "key": "A",
-        "text": "they offered"
+        "text": "did they offer",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "did they offer"
+        "text": "they offered",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "offered they"
+        "text": "offered they",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "they did offer"
+        "text": "they did offer",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Coordination with 'nor' strictly triggers auxiliary-subject inversion.",
     "explanation_th": "การเชื่อมประโยคปฏิเสธด้วย 'nor' บังคับกลับกริยาช่วยและประธาน (did they offer)",
     "weakness_tag": "grammar_nor_coordination_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c2_014",
@@ -5061,32 +5826,37 @@
     "options": [
       {
         "key": "A",
-        "text": "that"
+        "text": "that",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "which"
+        "text": "what",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "what"
+        "text": "which",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "where"
+        "text": "where",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Reversed pseudo-cleft construction: focal noun phrase + be + nominal relative clause introduced by 'what'.",
     "explanation_th": "โครงสร้าง Reversed Pseudo-cleft ขั้นสูง: นามวลีเน้น + be + nominal clause 'what'",
     "weakness_tag": "grammar_reversed_pseudo_cleft",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c2_015",
     "cefr_level": "C2",
     "grammar_topic": "double_passive_constructions",
     "question_type": "gap_fill",
-    "difficulty_b": 3.0,
+    "difficulty_b": 3,
     "discrimination_a": 1.95,
     "guessing_c": 0.25,
     "stem_en": "The diplomatic dispute is expected to _____ amicably before the regional summit convenes.",
@@ -5094,25 +5864,30 @@
     "options": [
       {
         "key": "A",
-        "text": "resolve"
+        "text": "resolve",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "be resolved"
+        "text": "have resolved",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "have resolved"
+        "text": "be resolved",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "being resolved"
+        "text": "being resolved",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Passive infinitive embedded under a passive matrix verb.",
     "explanation_th": "โครงสร้าง Passive ซ้อน (is expected to be resolved)",
     "weakness_tag": "grammar_embedded_passive_infinitives",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c2_016",
@@ -5127,25 +5902,30 @@
     "options": [
       {
         "key": "A",
-        "text": "may"
+        "text": "should to",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "personnel may"
+        "text": "personnel may",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "ought"
+        "text": "ought",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "should to"
+        "text": "may",
+        "isCorrect": true
       }
     ],
     "explanation_en": "'On no account' demands immediate modal auxiliary inversion before the subject.",
     "explanation_th": "ข้อห้ามเด็ดขาด 'On no account' ต้นประโยค บังคับสลับ modal auxiliary 'may' ไว้หน้าประธาน",
     "weakness_tag": "grammar_on_no_account_inversion",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   },
   {
     "id": "gq_c2_017",
@@ -5160,25 +5940,30 @@
     "options": [
       {
         "key": "A",
-        "text": "Sufficing"
+        "text": "Suffice",
+        "isCorrect": true
       },
       {
         "key": "B",
-        "text": "Suffice"
+        "text": "Sufficing",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "Sufficient"
+        "text": "Sufficient",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "Sufficed"
+        "text": "Sufficed",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Archaic subjunctive formula: 'Suffice it to say' (It is enough to say).",
     "explanation_th": "สำนวนวรรณกรรมโบราณรูป Subjunctive: 'Suffice it to say' (ขอกล่าวเพียงเท่านี้ว่า...)",
     "weakness_tag": "grammar_formulaic_suffice_it_to_say",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "A"
   },
   {
     "id": "gq_c2_018",
@@ -5193,25 +5978,30 @@
     "options": [
       {
         "key": "A",
-        "text": "gives"
+        "text": "gives",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "gave"
+        "text": "give",
+        "isCorrect": true
       },
       {
         "key": "C",
-        "text": "give"
+        "text": "gave",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "would give"
+        "text": "would give",
+        "isCorrect": false
       }
     ],
     "explanation_en": "'Lest' requires the present subjunctive bare base form (give) or 'should give' in formal registers.",
     "explanation_th": "คำเชื่อมทางการขั้นสูง 'lest' (เกรงว่า/เพื่อมิให้) บังคับใช้กริยารูป Subjunctive ฐานเดิม (give)",
     "weakness_tag": "grammar_lest_subjunctive",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "B"
   },
   {
     "id": "gq_c2_019",
@@ -5226,25 +6016,30 @@
     "options": [
       {
         "key": "A",
-        "text": "reasoned"
+        "text": "reasoned",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "reasoning"
+        "text": "having reasoned",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "having reasoned"
+        "text": "reasoning",
+        "isCorrect": true
       },
       {
         "key": "D",
-        "text": "to reason"
+        "text": "to reason",
+        "isCorrect": false
       }
     ],
     "explanation_en": "Present participial adjunct expressing an accompanying cognitive rationale.",
     "explanation_th": "Participial adjunct แสดงเหตุผลการตัดสินใจของประธานในประโยค (reasoning that...)",
     "weakness_tag": "grammar_participial_rationale_adjuncts",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "C"
   },
   {
     "id": "gq_c2_020",
@@ -5252,31 +6047,36 @@
     "grammar_topic": "fronted_non_finite_verb",
     "question_type": "gap_fill",
     "difficulty_b": 3.15,
-    "discrimination_a": 2.0,
+    "discrimination_a": 2,
     "guessing_c": 0.25,
     "stem_en": "Try _____ he might, the defense counsel could not undermine the veracity of the biometric evidence.",
     "correct_answer": "as",
     "options": [
       {
         "key": "A",
-        "text": "as"
+        "text": "while",
+        "isCorrect": false
       },
       {
         "key": "B",
-        "text": "though that"
+        "text": "though that",
+        "isCorrect": false
       },
       {
         "key": "C",
-        "text": "since"
+        "text": "since",
+        "isCorrect": false
       },
       {
         "key": "D",
-        "text": "while"
+        "text": "as",
+        "isCorrect": true
       }
     ],
     "explanation_en": "Fronted bare infinitive concessive structure: 'Try as he might' (However hard he tried).",
     "explanation_th": "โครงสร้างสัมปทานชั้นสูง 'Bare infinitive + as + ประธาน + might' (แม้เขาจะพยายามมากเพียงใดก็ตาม)",
     "weakness_tag": "grammar_bare_infinitive_fronting_concession",
-    "source": "curated_pedagogical"
+    "source": "curated_pedagogical",
+    "correct_option_key": "D"
   }
 ]

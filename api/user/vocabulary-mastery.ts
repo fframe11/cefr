@@ -274,6 +274,7 @@ export default createApiHandler(
         incorrect_count: incorrectCount,
         xp_earned: totalXpEarned,
         mastery_records: results,
+        mastery_record: results[0],
       };
     }
   },

@@ -149,8 +149,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       const questions: ClientVocabularyQuestionDTO[] = [];
 
       // Primary target word question
+      const targetMeaning = target.meaningEn || target.meaningTh;
       const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
-      const allChoices = [target.meaningEn || target.meaningTh, ...distractors].sort(() => 0.5 - Math.random());
+      const allChoices = [targetMeaning, ...distractors].sort(() => 0.5 - Math.random());
       questions.push({
         id: `vq_local_${target.id}_${Date.now()}`,
         skill: 'vocabulary',
@@ -164,6 +165,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         options: allChoices.map((text, idx) => ({
           key: (['A', 'B', 'C', 'D'][idx] || 'A') as 'A' | 'B' | 'C' | 'D',
           text,
+          isCorrect: text === targetMeaning,
         })),
         difficultyWeight: 2,
       });
@@ -172,8 +174,9 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       for (let i = 0; i < Math.min(4, shuffledOthers.length); i++) {
         const cur = shuffledOthers[i];
         const rest = pool.filter((w) => w.id !== cur.id);
+        const curMeaning = cur.meaningEn || cur.meaningTh;
         const d = rest.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
-        const c = [cur.meaningEn || cur.meaningTh, ...d].sort(() => 0.5 - Math.random());
+        const c = [curMeaning, ...d].sort(() => 0.5 - Math.random());
         questions.push({
           id: `vq_local_${cur.id}_${Date.now()}_${i + 1}`,
           skill: 'vocabulary',
@@ -187,6 +190,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           options: c.map((text, idx) => ({
             key: (['A', 'B', 'C', 'D'][idx] || 'A') as 'A' | 'B' | 'C' | 'D',
             text,
+            isCorrect: text === curMeaning,
           })),
           difficultyWeight: 2,
         });
@@ -318,7 +322,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       // High-fidelity fallback evaluation based on word bank dictionary
       const pool = words.length > 0 ? words : VOCABULARY_BANK;
       const targetObj = pool.find((w) => w.word.toLowerCase() === currentQ.targetWord?.toLowerCase());
-      const correctOpt = currentQ.options.find((opt) => opt.text === targetObj?.meaningEn || opt.text === targetObj?.meaningTh) || currentQ.options[0];
+      const correctOpt = currentQ.options.find((opt: any) => opt.isCorrect || opt.text === targetObj?.meaningEn || opt.text === targetObj?.meaningTh) || currentQ.options[0];
       const isCorrect = optionKey === correctOpt.key;
 
       setAnswerResult({

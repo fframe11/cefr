@@ -126,7 +126,7 @@ export const WritingView: React.FC = () => {
                 <PenTool className="w-4 h-4 text-white" />
               </div>
               <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
-                Writing Lab // CEFR
+                WRITING LAB // CEFR
               </span>
               {currentPrompt && (
                 <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-700 dark:text-slate-300">

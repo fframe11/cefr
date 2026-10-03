@@ -376,24 +376,45 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
         </div>
 
         {/* Instant Feedback & Next Action */}
-        {showFeedback && (
-          <div className="pt-2 space-y-4">
-            <div className="p-4 rounded-[20px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-sans shadow-xs">
-              {currentQ.options.find((o) => o.key === selectedOption)?.feedback}
-            </div>
+        {showFeedback && (() => {
+          const isUserCorrect = currentQ.options.find((o) => o.key === selectedOption)?.isCorrect;
+          const correctOpt = currentQ.options.find((o) => o.isCorrect);
 
-            <div className="flex justify-end">
-              <button
-                type="button"
-                onClick={handleNextQuestion}
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-sm active:scale-95 transition-all cursor-pointer"
-              >
-                <span>{currentIdx + 1 < QUICK_CHECK_QUESTIONS.length ? 'ข้อถัดไป' : 'ดูผลวิเคราะห์ของคุณ'}</span>
-                <ChevronRight className="w-4 h-4 ml-1" aria-hidden="true" />
-              </button>
+          return (
+            <div className="pt-2 space-y-3">
+              {!isUserCorrect && correctOpt && (
+                <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm text-emerald-950 dark:text-emerald-100 flex items-start gap-2.5 shadow-2xs">
+                  <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">
+                    {correctOpt.key}
+                  </div>
+                  <div className="flex-1">
+                    <span className="font-bold text-emerald-700 dark:text-emerald-300">
+                      คำตอบที่ถูกต้องคือ ข้อ {correctOpt.key}:
+                    </span>{' '}
+                    <span className="font-semibold text-slate-900 dark:text-white">
+                      "{correctOpt.text}"
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              <div className="p-4 rounded-[20px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-sans shadow-xs">
+                {currentQ.options.find((o) => o.key === selectedOption)?.feedback}
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={handleNextQuestion}
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-sm active:scale-95 transition-all cursor-pointer"
+                >
+                  <span>{currentIdx + 1 < QUICK_CHECK_QUESTIONS.length ? 'ข้อถัดไป' : 'ดูผลวิเคราะห์ของคุณ'}</span>
+                  <ChevronRight className="w-4 h-4 ml-1" aria-hidden="true" />
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
       </div>
     );
   }

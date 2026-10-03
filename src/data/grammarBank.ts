@@ -49,10 +49,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกรูปกริยาที่ถูกต้องสำหรับเหตุการณ์ที่กำลังเกิดขึ้นขณะพูด (Listen!)',
         promptEn: 'Listen! Someone _____ the guitar in the next room.',
         options: [
-          { key: 'A', text: 'plays', isCorrect: false, feedbackTh: 'plays แสดงถึงการเล่นเป็นประจำ แต่มีคำว่า Listen! กำลังเกิดขึ้นตอนนี้' },
-          { key: 'B', text: 'is playing', isCorrect: true, feedbackTh: 'ถูกต้อง! มีคำเตือน "Listen!" แปลว่ากำลังเกิดขึ้นตรงหน้า จึงใช้ is/am/are + V.ing' },
+          { key: 'A', text: 'is playing', isCorrect: true, feedbackTh: 'ถูกต้อง! มีคำเตือน "Listen!" แปลว่ากำลังเกิดขึ้นตรงหน้า จึงใช้ is/am/are + V.ing' },
+          { key: 'B', text: 'plays', isCorrect: false, feedbackTh: 'plays แสดงถึงการเล่นเป็นประจำ แต่มีคำว่า Listen! กำลังเกิดขึ้นตอนนี้' },
           { key: 'C', text: 'played', isCorrect: false, feedbackTh: 'played เป็นอดีต' },
-          { key: 'D', text: 'play', isCorrect: false, feedbackTh: 'play ผิดทั้ง Tense และ Subject-Verb Agreement' },
+          { key: 'D', text: 'play', isCorrect: false, feedbackTh: 'play ผิดทั้ง Tense และ Subject-Verb Agreement' }
         ],
         explanationTh: 'คำว่า "Listen!" (ฟังดูสิ!) เป็นสัญญาณเตือนว่าเหตุการณ์กำลังเกิดขึ้นในขณะนั้น จึงต้องใช้ Present Continuous (is playing).',
         explanationEn: 'Imperatives like "Listen!" signal an action occurring at the present moment, requiring the Present Continuous.',
@@ -67,10 +67,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำที่ถูกต้อง: กิจวัตรของดวงอาทิตย์ (ความจริงทางวิทยาศาสตร์)',
         promptEn: 'The sun _____ in the east and sets in the west.',
         options: [
-          { key: 'A', text: 'rises', isCorrect: true, feedbackTh: 'ถูกต้อง! ความจริงตามธรรมชาติ (Scientific Fact) ต้องใช้ Present Simple ประธาน The sun เอกพจน์เติม -s' },
-          { key: 'B', text: 'is rising', isCorrect: false, feedbackTh: 'is rising หมายถึงกำลังขึ้น ณ ตอนนี้เท่านั้น แต่พระอาทิตย์ขึ้นทิศตะวันออกเป็นความจริงถาวร' },
+          { key: 'A', text: 'is rising', isCorrect: false, feedbackTh: 'is rising หมายถึงกำลังขึ้น ณ ตอนนี้เท่านั้น แต่พระอาทิตย์ขึ้นทิศตะวันออกเป็นความจริงถาวร' },
+          { key: 'B', text: 'rises', isCorrect: true, feedbackTh: 'ถูกต้อง! ความจริงตามธรรมชาติ (Scientific Fact) ต้องใช้ Present Simple ประธาน The sun เอกพจน์เติม -s' },
           { key: 'C', text: 'rose', isCorrect: false, feedbackTh: 'rose เป็นอดีต' },
-          { key: 'D', text: 'risen', isCorrect: false, feedbackTh: 'risen เป็นกริยาช่อง 3 ไม่สามารถอยู่เดี่ยวๆ เป็นกริยาแท้ได้' },
+          { key: 'D', text: 'risen', isCorrect: false, feedbackTh: 'risen เป็นกริยาช่อง 3 ไม่สามารถอยู่เดี่ยวๆ เป็นกริยาแท้ได้' }
         ],
         explanationTh: 'ปรากฏการณ์ธรรมชาติหรือข้อเท็จจริงสากล ถือเป็น Universal Truth ต้องใช้ Present Simple กริยาเอกพจน์เติม s (rises).',
         explanationEn: 'Universal scientific facts take the Present Simple (rises).',
@@ -133,9 +133,9 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptEn: '_____ you ever _____ to Japan?',
         options: [
           { key: 'A', text: 'Did / go', isCorrect: false, feedbackTh: 'Did you go ถามถึงช่วงเวลาเฉพาะเจาะจงในอดีต ไม่ได้ถามประสบการณ์ตลอดชีวิต' },
-          { key: 'B', text: 'Have / been', isCorrect: true, feedbackTh: 'ถูกต้อง! Have you ever been to... เป็นรูปมาตรฐานในการถามว่าเคยไปที่ไหนหรือไม่' },
-          { key: 'C', text: 'Do / go', isCorrect: false, feedbackTh: 'Do you go ถามถึงกิจวัตร' },
-          { key: 'D', text: 'Were / being', isCorrect: false, feedbackTh: 'ผิดโครงสร้างไวยากรณ์' },
+          { key: 'B', text: 'Do / go', isCorrect: false, feedbackTh: 'Do you go ถามถึงกิจวัตร' },
+          { key: 'C', text: 'Have / been', isCorrect: true, feedbackTh: 'ถูกต้อง! Have you ever been to... เป็นรูปมาตรฐานในการถามว่าเคยไปที่ไหนหรือไม่' },
+          { key: 'D', text: 'Were / being', isCorrect: false, feedbackTh: 'ผิดโครงสร้างไวยากรณ์' }
         ],
         explanationTh: 'เมื่อถามถึงประสบการณ์ตลอดชีวิตว่า "เคย...หรือไม่" จะใช้ Present Perfect: "Have you ever been to...?"',
         explanationEn: 'Present Perfect with "ever" is used to inquire about life experiences without referencing a specific time.',
@@ -196,9 +196,9 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptEn: 'If the client _____ the contract today, we _____ work immediately.',
         options: [
           { key: 'A', text: 'will sign / start', isCorrect: false, feedbackTh: 'หลัง If ห้ามใช้ will' },
-          { key: 'B', text: 'signs / will start', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้าง If + Present Simple (signs), will + V.inf (will start)' },
+          { key: 'B', text: 'signs / would start', isCorrect: false, feedbackTh: 'Present Simple ต้องคู่กับ will ไม่ใช่ would' },
           { key: 'C', text: 'signed / will start', isCorrect: false, feedbackTh: 'Tense ไม่สอดคล้องกัน (signed เป็นอดีตแต่ใช้ will)' },
-          { key: 'D', text: 'signs / would start', isCorrect: false, feedbackTh: 'Present Simple ต้องคู่กับ will ไม่ใช่ would' },
+          { key: 'D', text: 'signs / will start', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้าง If + Present Simple (signs), will + V.inf (will start)' }
         ],
         explanationTh: 'First Conditional: ประโยคหลัง If ต้องใช้ Present Simple (The client signs) และประโยคผลลัพธ์ใช้ will + base verb (will start).',
         explanationEn: 'First conditional formula: If + present simple, will + bare infinitive.',
@@ -258,10 +258,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกประโยค Relative Clause ที่ถูกต้องตามหลักไวยากรณ์ (สังเกต comma)',
         promptEn: 'Professor Davies, _____ lectures on neurobiology are acclaimed worldwide, will retire this semester.',
         options: [
-          { key: 'A', text: 'who', isCorrect: false, feedbackTh: 'who ใช้แทนประธาน แต่ในที่นี้ต้องการแสดงความเป็นเจ้าของ lectures' },
-          { key: 'B', text: 'whose', isCorrect: true, feedbackTh: 'ถูกต้อง! whose แสดงความเป็นเจ้าของ (การบรรยายของศาสตราจารย์เดวิส)' },
+          { key: 'A', text: 'whose', isCorrect: true, feedbackTh: 'ถูกต้อง! whose แสดงความเป็นเจ้าของ (การบรรยายของศาสตราจารย์เดวิส)' },
+          { key: 'B', text: 'who', isCorrect: false, feedbackTh: 'who ใช้แทนประธาน แต่ในที่นี้ต้องการแสดงความเป็นเจ้าของ lectures' },
           { key: 'C', text: 'that', isCorrect: false, feedbackTh: 'ห้ามใช้ that ใน non-defining clause ที่มี comma' },
-          { key: 'D', text: 'whom', isCorrect: false, feedbackTh: 'whom ทำหน้าที่เป็นกรรมของบุคคล' },
+          { key: 'D', text: 'whom', isCorrect: false, feedbackTh: 'whom ทำหน้าที่เป็นกรรมของบุคคล' }
         ],
         explanationTh: '"whose" เป็น relative pronoun ที่ทำหน้าที่แสดงความเป็นเจ้าของคำนามที่ตามหลัง (whose lectures = การบรรยายของเขา).',
         explanationEn: '"whose" indicates possession relating back to the antecedent noun (Professor Davies).',
@@ -319,7 +319,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'visitors are', isCorrect: false, feedbackTh: 'ขาดการสลับประธานกริยาช่วย' },
           { key: 'B', text: 'are visitors', isCorrect: true, feedbackTh: 'ถูกต้อง! Inversion: Under no circumstances + are (auxiliary) + visitors (subject)' },
           { key: 'C', text: 'visitors were being', isCorrect: false, feedbackTh: 'ไม่ได้ทำ Inversion' },
-          { key: 'D', text: 'have visitors', isCorrect: false, feedbackTh: 'have visitors allowed กลายเป็นรูป Active ที่ผิดความหมาย' },
+          { key: 'D', text: 'have visitors', isCorrect: false, feedbackTh: 'have visitors allowed กลายเป็นรูป Active ที่ผิดความหมาย' }
         ],
         explanationTh: 'วลีปฏิเสธอย่างเข้มงวด "Under no circumstances" บังคับให้เกิด Inversion คือ สลับ verb to be หรือ auxiliary verb มาไว้หน้าประธาน.',
         explanationEn: 'Restricting phrases like "Under no circumstances" trigger subject-auxiliary inversion.',

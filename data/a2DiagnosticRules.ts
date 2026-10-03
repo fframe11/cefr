@@ -125,7 +125,7 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { key: 'A', text: 'lets', isCorrect: true },
       { key: 'B', text: 'allows to', isCorrect: false },
       { key: 'C', text: 'permits to', isCorrect: false },
-      { key: 'D', text: 'let to', isCorrect: false },
+      { key: 'D', text: 'let to', isCorrect: false }
     ],
     explanationTh: 'หลังช่องว่างมีกริยาช่อง 1 ที่ไม่มี to ("use") ดังนั้นต้องเลือก "lets" (let + someone + V.inf)',
     explanationEn: 'The base verb "use" follows without "to", so "lets" is grammatically required.',
@@ -141,7 +141,7 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { key: 'A', text: 'park', isCorrect: false },
       { key: 'B', text: 'to park', isCorrect: true },
       { key: 'C', text: 'parking', isCorrect: false },
-      { key: 'D', text: 'parked', isCorrect: false },
+      { key: 'D', text: 'parked', isCorrect: false }
     ],
     explanationTh: 'เมื่อประโยคใช้กริยา "allow" กริยาที่ตามหลังกรรมต้องอยู่ในรูป "to + V.inf" เสมอ คือ "to park"',
     explanationEn: 'The verb "allow" requires an object followed by a to-infinitive ("to park").',
@@ -155,9 +155,9 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     promptTh: 'คุณอยากรับคุกกี้โฮมเมดสักหน่อยทานคู่กับชาเขียวร้อนไหม?',
     options: [
       { key: 'A', text: 'any', isCorrect: false },
-      { key: 'B', text: 'some', isCorrect: true },
-      { key: 'C', text: 'much', isCorrect: false },
-      { key: 'D', text: 'little', isCorrect: false },
+      { key: 'B', text: 'much', isCorrect: false },
+      { key: 'C', text: 'some', isCorrect: true },
+      { key: 'D', text: 'little', isCorrect: false }
     ],
     explanationTh: 'แม้จะเป็นประโยคคำถาม แต่เป็นการยื่นข้อเสนอ (Offering) อย่างสุภาพ จึงต้องใช้ "some" เสมอ',
     explanationEn: 'In polite offers beginning with "Would you like...?", "some" is used instead of "any".',
@@ -171,9 +171,9 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     promptTh: 'ฉันค้นตู้ในครัวดูแล้ว แต่ไม่มีน้ำผึ้งเหลือสำหรับชาของเราเลย',
     options: [
       { key: 'A', text: 'some', isCorrect: false },
-      { key: 'B', text: 'any', isCorrect: true },
+      { key: 'B', text: 'many', isCorrect: false },
       { key: 'C', text: 'a few', isCorrect: false },
-      { key: 'D', text: 'many', isCorrect: false },
+      { key: 'D', text: 'any', isCorrect: true }
     ],
     explanationTh: 'ประโยคนี้เป็นประโยคปฏิเสธ ("wasn’t") คำนามนับไม่ได้ ("honey") ต้องใช้คู่กับ "any"',
     explanationEn: 'Negative clauses ("wasn’t") take "any" for uncountable quantities.',
@@ -186,10 +186,10 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     promptEn: 'Since her roommate was visiting family, Sunee studied in the quiet library by _____.',
     promptTh: 'เนื่องจากรูมเมทของเธอไปเยี่ยมครอบครัว สุนีย์จึงอ่านหนังสือในห้องสมุดอันเงียบสงบด้วยตัวเธอเอง',
     options: [
-      { key: 'A', text: 'her own', isCorrect: false },
-      { key: 'B', text: 'herself', isCorrect: true },
+      { key: 'A', text: 'herself', isCorrect: true },
+      { key: 'B', text: 'her own', isCorrect: false },
       { key: 'C', text: 'on herself', isCorrect: false },
-      { key: 'D', text: 'her', isCorrect: false },
+      { key: 'D', text: 'her', isCorrect: false }
     ],
     explanationTh: 'มีคำว่า "by" อยู่หน้าช่องว่างแล้ว ต้องตามด้วย reflexive pronoun คือ "herself" (หากตอบ her own จะกลายเป็น by her own ซึ่งผิด)',
     explanationEn: 'The preposition "by" precedes the blank, requiring the reflexive pronoun "herself".',
@@ -202,10 +202,10 @@ export const A2_DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
     promptEn: 'We should hurry; do you think we have _____ time to catch the express train?',
     promptTh: 'พวกเราควรรีบหน่อย คุณคิดว่าพวกเรามีเวลาเพียงพอที่จะขึ้นรถไฟด่วนทันไหม?',
     options: [
-      { key: 'A', text: 'enough', isCorrect: true },
-      { key: 'B', text: 'too enough', isCorrect: false },
+      { key: 'A', text: 'too enough', isCorrect: false },
+      { key: 'B', text: 'enough', isCorrect: true },
       { key: 'C', text: 'enough of', isCorrect: false },
-      { key: 'D', text: 'sufficiently', isCorrect: false },
+      { key: 'D', text: 'sufficiently', isCorrect: false }
     ],
     explanationTh: 'คำว่า "time" เป็นคำนาม ตำแหน่งของ enough เมื่อใช้กับคำนามจะวางไว้หน้าคำนาม ("enough time")',
     explanationEn: '"enough" precedes nouns directly ("enough time").',

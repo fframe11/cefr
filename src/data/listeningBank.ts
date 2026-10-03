@@ -23,10 +23,10 @@ We sincerely apologize for any inconvenience caused to your journey today. Thank
         promptTh: 'สาเหตุที่เที่ยวบินล่าช้าคืออะไร?',
         promptEn: 'What is the reason for the flight delay?',
         options: [
-          { key: 'A', text: 'Mechanical difficulties on the aircraft', isCorrect: false, feedbackTh: 'ไม่ได้เกิดจากปัญหาเครื่องยนต์' },
-          { key: 'B', text: 'Adverse weather conditions (heavy fog)', isCorrect: true, feedbackTh: 'ถูกต้อง! ในประกาศระบุว่า "due to heavy fog over Europe"' },
+          { key: 'A', text: 'Adverse weather conditions (heavy fog)', isCorrect: true, feedbackTh: 'ถูกต้อง! ในประกาศระบุว่า "due to heavy fog over Europe"' },
+          { key: 'B', text: 'Mechanical difficulties on the aircraft', isCorrect: false, feedbackTh: 'ไม่ได้เกิดจากปัญหาเครื่องยนต์' },
           { key: 'C', text: 'A missing cabin crew member', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงลูกเรือ' },
-          { key: 'D', text: 'Airport terminal maintenance', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงการซ่อมบำรุงอาคาร' },
+          { key: 'D', text: 'Airport terminal maintenance', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงการซ่อมบำรุงอาคาร' }
         ],
         explanationTh: 'ผู้ประกาศแจ้งชัดเจนว่า: "due to heavy fog over Europe" (เนื่องจากหมอกหนาจัดทั่วยุโรป).',
         explanationEn: 'The announcement states the delay is "due to heavy fog over Europe".',
@@ -44,7 +44,7 @@ We sincerely apologize for any inconvenience caused to your journey today. Thank
           { key: 'A', text: '09:30 at Gate B4', isCorrect: false, feedbackTh: 'ไม่ใช่ 9:30' },
           { key: 'B', text: '10:15 at Gate B4', isCorrect: true, feedbackTh: 'ถูกต้อง! ประกาศระบุว่า "ten fifteen at Gate B4"' },
           { key: 'C', text: '10:45 at Gate B2', isCorrect: false, feedbackTh: 'Gate B2 เป็นโต๊ะให้ความช่วยเหลือพิเศษ' },
-          { key: 'D', text: '11:15 at Gate A1', isCorrect: false, feedbackTh: 'ข้อมูลเวลาและประตูไม่ถูกต้อง' },
+          { key: 'D', text: '11:15 at Gate A1', isCorrect: false, feedbackTh: 'ข้อมูลเวลาและประตูไม่ถูกต้อง' }
         ],
         explanationTh: 'ข้อความในประกาศระบุว่า: "The revised boarding time is now ten fifteen at Gate B4."',
         explanationEn: 'The revised boarding time is ten fifteen (10:15) at Gate B4.',
@@ -79,9 +79,9 @@ Mark: Absolutely! A house that is thoroughly insulated retains up to forty perce
         promptEn: 'According to Mark, what is the primary misconception homeowners have?',
         options: [
           { key: 'A', text: 'That green buildings cannot withstand harsh winter storms.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงความทนทานต่อพายุ' },
-          { key: 'B', text: 'That going green immediately requires expensive high-tech gear like solar panels.', isCorrect: true, feedbackTh: 'ถูกต้อง! คนส่วนใหญ่เข้าใจผิดว่าต้องเริ่มจากการติดโซลาร์เซลล์ราคาแพงทันที' },
-          { key: 'C', text: 'That insulation has no effect on room temperature.', isCorrect: false, feedbackTh: 'มาร์กชี้ว่าฉนวนกันความร้อนมีผลสำคัญมาก' },
-          { key: 'D', text: 'That architects charge too much for thermal audits.', isCorrect: false, feedbackTh: 'ไม่ได้พูดถึงค่าบริการของสถาปนิก' },
+          { key: 'B', text: 'That insulation has no effect on room temperature.', isCorrect: false, feedbackTh: 'มาร์กชี้ว่าฉนวนกันความร้อนมีผลสำคัญมาก' },
+          { key: 'C', text: 'That going green immediately requires expensive high-tech gear like solar panels.', isCorrect: true, feedbackTh: 'ถูกต้อง! คนส่วนใหญ่เข้าใจผิดว่าต้องเริ่มจากการติดโซลาร์เซลล์ราคาแพงทันที' },
+          { key: 'D', text: 'That architects charge too much for thermal audits.', isCorrect: false, feedbackTh: 'ไม่ได้พูดถึงค่าบริการของสถาปนิก' }
         ],
         explanationTh: 'มาร์กอธิบายว่า: "most people mistakenly believe that sustainability requires installing costly solar panels or high-tech underground heat pumps right on day one."',
         explanationEn: 'Mark explains the misconception that green homes immediately require expensive renewable hardware.',
@@ -117,9 +117,9 @@ In essence, human morality evolved as an ingenious reputation-management mechani
         promptEn: 'According to the lecturer, how did indirect reciprocity make cooperation biologically advantageous?',
         options: [
           { key: 'A', text: 'By genetically eliminating selfish individuals from early tribal populations.', isCorrect: false, feedbackTh: 'ไม่ได้กำจัดทางพันธุกรรมโดยตรง' },
-          { key: 'B', text: 'By allowing generosity to build public reputation and social trust that yields future communal support.', isCorrect: true, feedbackTh: 'ถูกต้อง! การช่วยเหลือสร้างชื่อเสียง (Reputation) และความไว้ใจ ทำให้ได้รับการช่วยเหลือกลับคืนในยามขาดแคลน' },
+          { key: 'B', text: 'By forcing all individuals to live in isolated family clusters.', isCorrect: false, feedbackTh: 'ขัดแย้งกับการอยู่ร่วมกันเป็นเผ่า' },
           { key: 'C', text: 'By requiring monetary deposits before tribe members engaged in trade.', isCorrect: false, feedbackTh: 'ยุคดึกดำบรรพ์ยังไม่มีระบบเงินตรา' },
-          { key: 'D', text: 'By forcing all individuals to live in isolated family clusters.', isCorrect: false, feedbackTh: 'ขัดแย้งกับการอยู่ร่วมกันเป็นเผ่า' },
+          { key: 'D', text: 'By allowing generosity to build public reputation and social trust that yields future communal support.', isCorrect: true, feedbackTh: 'ถูกต้อง! การช่วยเหลือสร้างชื่อเสียง (Reputation) และความไว้ใจ ทำให้ได้รับการช่วยเหลือกลับคืนในยามขาดแคลน' }
         ],
         explanationTh: 'ผู้บรรยายอธิบายว่า "Indirect Reciprocity" ทำให้การช่วยเหลือผู้อื่นสร้างชื่อเสียง (social currency) ซึ่งทำให้ผู้สังเกตการณ์มอบความไว้วางใจและการปกป้องช่วยเหลือในอนาคต.',
         explanationEn: 'Indirect reciprocity enables cooperative acts to build social reputation, conferring survival advantages during scarcity.',

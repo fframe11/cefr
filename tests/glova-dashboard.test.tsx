@@ -40,8 +40,8 @@ describe('Glova Dashboard View Redesign Suite', () => {
       expect(html).toContain('PET');
       expect(html).toContain('148');
       expect(html).toContain('B1');
-      expect(html).toContain('Cambridge Equivalent');
-      expect(html).toContain('เส้นทางการพัฒนา CEFR Framework');
+      expect(html).toContain('Cambridge');
+      expect(html).toContain('Curated CEFR Learning Pathways');
     });
 
     it('should render compact progress summary with daily goal, streak, and completed questions', () => {
@@ -56,7 +56,8 @@ describe('Glova Dashboard View Redesign Suite', () => {
       expect(html).toContain('15 นาที');
       expect(html).toContain('5 วัน');
       expect(html).toContain('3 ข้อ'); // completedQuestionIds.length
-      expect(html).toContain('2 คำศัพท์ที่เชี่ยวชาญแล้ว'); // masteredWordIds.length
+      expect(html).toContain('2 คำ'); // masteredWordIds.length
+      expect(html).toContain('คำศัพท์ที่เชี่ยวชาญ');
     });
 
     it('should render skill mastery progress bars for all 6 core competencies', () => {

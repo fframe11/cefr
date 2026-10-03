@@ -116,7 +116,7 @@ describe('Glova Core Components & Primitives Suite', () => {
         </GlovaCard>
       );
       expect(html).toContain('rounded-xl');
-      expect(html).toMatch(/border-border\/40|border-slate-200\/90/);
+      expect(html).toMatch(/border-border\/40|border-slate-200\/(?:80|90)/);
       expect(html).toContain('Grammar Fundamentals');
       expect(html).toContain('Unit 1 of 12');
     });

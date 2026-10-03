@@ -49,10 +49,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกรูปกริยาที่ถูกต้องสำหรับเหตุการณ์ที่กำลังเกิดขึ้นขณะพูด (Listen!)',
         promptEn: 'Listen! Someone _____ the guitar in the next room.',
         options: [
-          { key: 'A', text: 'plays', isCorrect: false, feedbackTh: 'plays แสดงถึงการเล่นเป็นประจำ แต่มีคำว่า Listen! กำลังเกิดขึ้นตอนนี้' },
-          { key: 'B', text: 'is playing', isCorrect: true, feedbackTh: 'ถูกต้อง! มีคำเตือน "Listen!" แปลว่ากำลังเกิดขึ้นตรงหน้า จึงใช้ is/am/are + V.ing' },
+          { key: 'A', text: 'is playing', isCorrect: true, feedbackTh: 'ถูกต้อง! มีคำเตือน "Listen!" แปลว่ากำลังเกิดขึ้นตรงหน้า จึงใช้ is/am/are + V.ing' },
+          { key: 'B', text: 'plays', isCorrect: false, feedbackTh: 'plays แสดงถึงการเล่นเป็นประจำ แต่มีคำว่า Listen! กำลังเกิดขึ้นตอนนี้' },
           { key: 'C', text: 'played', isCorrect: false, feedbackTh: 'played เป็นอดีต' },
-          { key: 'D', text: 'play', isCorrect: false, feedbackTh: 'play ผิดทั้ง Tense และ Subject-Verb Agreement' },
+          { key: 'D', text: 'play', isCorrect: false, feedbackTh: 'play ผิดทั้ง Tense และ Subject-Verb Agreement' }
         ],
         explanationTh: 'คำว่า "Listen!" (ฟังดูสิ!) เป็นสัญญาณเตือนว่าเหตุการณ์กำลังเกิดขึ้นในขณะนั้น จึงต้องใช้ Present Continuous (is playing).',
         explanationEn: 'Imperatives like "Listen!" signal an action occurring at the present moment, requiring the Present Continuous.',
@@ -67,10 +67,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำที่ถูกต้อง: กิจวัตรของดวงอาทิตย์ (ความจริงทางวิทยาศาสตร์)',
         promptEn: 'The sun _____ in the east and sets in the west.',
         options: [
-          { key: 'A', text: 'rises', isCorrect: true, feedbackTh: 'ถูกต้อง! ความจริงตามธรรมชาติ (Scientific Fact) ต้องใช้ Present Simple ประธาน The sun เอกพจน์เติม -s' },
-          { key: 'B', text: 'is rising', isCorrect: false, feedbackTh: 'is rising หมายถึงกำลังขึ้น ณ ตอนนี้เท่านั้น แต่พระอาทิตย์ขึ้นทิศตะวันออกเป็นความจริงถาวร' },
+          { key: 'A', text: 'is rising', isCorrect: false, feedbackTh: 'is rising หมายถึงกำลังขึ้น ณ ตอนนี้เท่านั้น แต่พระอาทิตย์ขึ้นทิศตะวันออกเป็นความจริงถาวร' },
+          { key: 'B', text: 'rises', isCorrect: true, feedbackTh: 'ถูกต้อง! ความจริงตามธรรมชาติ (Scientific Fact) ต้องใช้ Present Simple ประธาน The sun เอกพจน์เติม -s' },
           { key: 'C', text: 'rose', isCorrect: false, feedbackTh: 'rose เป็นอดีต' },
-          { key: 'D', text: 'risen', isCorrect: false, feedbackTh: 'risen เป็นกริยาช่อง 3 ไม่สามารถอยู่เดี่ยวๆ เป็นกริยาแท้ได้' },
+          { key: 'D', text: 'risen', isCorrect: false, feedbackTh: 'risen เป็นกริยาช่อง 3 ไม่สามารถอยู่เดี่ยวๆ เป็นกริยาแท้ได้' }
         ],
         explanationTh: 'ปรากฏการณ์ธรรมชาติหรือข้อเท็จจริงสากล ถือเป็น Universal Truth ต้องใช้ Present Simple กริยาเอกพจน์เติม s (rises).',
         explanationEn: 'Universal scientific facts take the Present Simple (rises).',
@@ -134,10 +134,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกบุพบทที่ถูกต้องสำหรับวันที่ระบุชัดเจน',
         promptEn: 'Our final English examination will take place _____ 14th November.',
         options: [
-          { key: 'A', text: 'on', isCorrect: true, feedbackTh: 'ถูกต้อง! มีวันที่ระบุ (14th November) ต้องใช้ on' },
+          { key: 'A', text: 'at', isCorrect: false, feedbackTh: 'at ใช้กับเวลาบนหน้าปัดนาฬิกา' },
           { key: 'B', text: 'in', isCorrect: false, feedbackTh: 'in ใช้กับชื่อเดือนลอยๆ ที่ไม่มีวันที่' },
-          { key: 'C', text: 'at', isCorrect: false, feedbackTh: 'at ใช้กับเวลาบนหน้าปัดนาฬิกา' },
-          { key: 'D', text: 'to', isCorrect: false, feedbackTh: 'to ไม่ใช่บุพบทบอกวัน' },
+          { key: 'C', text: 'on', isCorrect: true, feedbackTh: 'ถูกต้อง! มีวันที่ระบุ (14th November) ต้องใช้ on' },
+          { key: 'D', text: 'to', isCorrect: false, feedbackTh: 'to ไม่ใช่บุพบทบอกวัน' }
         ],
         explanationTh: 'เมื่อระบุวันที่มีตัวเลข (Date) ต้องใช้ preposition "on" เสมอ.',
         explanationEn: 'Specific calendar dates take the preposition "on".',
@@ -152,10 +152,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกบุพบทที่ถูกต้องสำหรับจุดพิกัดสถานที่เฉพาะ',
         promptEn: 'Let us meet _____ the entrance of the public library tomorrow.',
         options: [
-          { key: 'A', text: 'at', isCorrect: true, feedbackTh: 'ถูกต้อง! the entrance เป็นจุดนัดพบพิกัดเจาะจง ใช้ at' },
+          { key: 'A', text: 'under', isCorrect: false, feedbackTh: 'under แปลว่าข้างใต้ ไม่เข้ากับบริบท' },
           { key: 'B', text: 'on', isCorrect: false, feedbackTh: 'on ใช้กับพื้นผิวหรือถนน' },
           { key: 'C', text: 'in', isCorrect: false, feedbackTh: 'in ใช้กับภายในตัวอาคารหรือห้องปิด' },
-          { key: 'D', text: 'under', isCorrect: false, feedbackTh: 'under แปลว่าข้างใต้ ไม่เข้ากับบริบท' },
+          { key: 'D', text: 'at', isCorrect: true, feedbackTh: 'ถูกต้อง! the entrance เป็นจุดนัดพบพิกัดเจาะจง ใช้ at' }
         ],
         explanationTh: 'จุดนัดพบที่เจาะจงตำแหน่ง (point in space) เช่น the entrance, the bus stop ต้องใช้ "at".',
         explanationEn: 'Specific target points and entrances take the preposition "at".',
@@ -173,7 +173,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'in', isCorrect: true, feedbackTh: 'ถูกต้อง! ช่วงเวลาของวัน (the morning, the afternoon, the evening) ใช้ in เสมอ' },
           { key: 'B', text: 'on', isCorrect: false, feedbackTh: 'on ใช้กับวันในสัปดาห์หรือวันที่ เช่น on Monday' },
           { key: 'C', text: 'at', isCorrect: false, feedbackTh: 'at ใช้กับเวลาบนหน้าปัดนาฬิกา หรือ at night' },
-          { key: 'D', text: 'to', isCorrect: false, feedbackTh: 'to ไม่ใช่บุพบทบอกเวลา' },
+          { key: 'D', text: 'to', isCorrect: false, feedbackTh: 'to ไม่ใช่บุพบทบอกเวลา' }
         ],
         explanationTh: 'ช่วงเวลาของวัน เช่น in the morning, in the afternoon, in the evening ใช้ preposition "in" เสมอ.',
         explanationEn: 'Periods of the day take the preposition "in".',
@@ -231,10 +231,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกโครงสร้างกริยาที่ถูกต้องเมื่อมีคำระบุเวลาอดีตชัดเจน (two days ago)',
         promptEn: 'Tanakorn _____ his mobile phone two days ago while walking in the park.',
         options: [
-          { key: 'A', text: 'lost', isCorrect: true, feedbackTh: 'ถูกต้อง! มีเวลาชัดเจน two days ago จึงใช้ Past Simple (lost)' },
-          { key: 'B', text: 'has lost', isCorrect: false, feedbackTh: 'ห้ามใช้ has lost กับเวลาอดีตที่ระบุแน่นอนเช่น two days ago' },
+          { key: 'A', text: 'has lost', isCorrect: false, feedbackTh: 'ห้ามใช้ has lost กับเวลาอดีตที่ระบุแน่นอนเช่น two days ago' },
+          { key: 'B', text: 'lost', isCorrect: true, feedbackTh: 'ถูกต้อง! มีเวลาชัดเจน two days ago จึงใช้ Past Simple (lost)' },
           { key: 'C', text: 'loses', isCorrect: false, feedbackTh: 'loses เป็นกาลปัจจุบัน' },
-          { key: 'D', text: 'is losing', isCorrect: false, feedbackTh: 'is losing เป็นเหตุการณ์กำลังทำในปัจจุบัน' },
+          { key: 'D', text: 'is losing', isCorrect: false, feedbackTh: 'is losing เป็นเหตุการณ์กำลังทำในปัจจุบัน' }
         ],
         explanationTh: 'คำบอกเวลา "two days ago" เป็นอดีตสมบูรณ์ จึงต้องใช้ Past Simple (lost).',
         explanationEn: 'Specific past time indicators like "two days ago" mandate the simple past tense.',
@@ -250,9 +250,9 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptEn: '_____ you ever _____ to Japan?',
         options: [
           { key: 'A', text: 'Did / go', isCorrect: false, feedbackTh: 'Did you go ถามถึงช่วงเวลาเฉพาะในอดีต ไม่ได้ถามถึงประสบการณ์ชีวิต' },
-          { key: 'B', text: 'Have / been', isCorrect: true, feedbackTh: 'ถูกต้อง! Have you ever been to... เป็นสำนวนถามประสบการณ์ชีวิตใน Present Perfect' },
-          { key: 'C', text: 'Do / go', isCorrect: false, feedbackTh: 'Do you go ถามถึงกิจวัตรทั่วไป' },
-          { key: 'D', text: 'Were / being', isCorrect: false, feedbackTh: 'ผิดโครงสร้างไวยากรณ์' },
+          { key: 'B', text: 'Do / go', isCorrect: false, feedbackTh: 'Do you go ถามถึงกิจวัตรทั่วไป' },
+          { key: 'C', text: 'Have / been', isCorrect: true, feedbackTh: 'ถูกต้อง! Have you ever been to... เป็นสำนวนถามประสบการณ์ชีวิตใน Present Perfect' },
+          { key: 'D', text: 'Were / being', isCorrect: false, feedbackTh: 'ผิดโครงสร้างไวยากรณ์' }
         ],
         explanationTh: 'เมื่อถามถึงประสบการณ์ตลอดชีวิตว่าเคยไปหรือไม่ ต้องใช้ Present Perfect โครงสร้าง Have you ever been to...?',
         explanationEn: 'Inquiring about life experience without a specific time requires the Present Perfect: "Have you ever been to...?"',
@@ -321,10 +321,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำกริยาที่ใช้คู่กับศิลปะการต่อสู้ (taekwondo)',
         promptEn: 'My younger sister started to _____ taekwondo when she was eight years old.',
         options: [
-          { key: 'A', text: 'do', isCorrect: true, feedbackTh: 'ถูกต้อง! ศิลปะการต่อสู้ (Martial arts) ใช้กริยา do' },
+          { key: 'A', text: 'make', isCorrect: false, feedbackTh: 'make ไม่ใช้กับกีฬา' },
           { key: 'B', text: 'play', isCorrect: false, feedbackTh: 'play ใช้กับกีฬาที่มีลูกบอลหรือการแข่งขันทีม' },
           { key: 'C', text: 'go', isCorrect: false, feedbackTh: 'go ใช้กับกิจกรรมที่ลงท้ายด้วย -ing' },
-          { key: 'D', text: 'make', isCorrect: false, feedbackTh: 'make ไม่ใช้กับกีฬา' },
+          { key: 'D', text: 'do', isCorrect: true, feedbackTh: 'ถูกต้อง! ศิลปะการต่อสู้ (Martial arts) ใช้กริยา do' }
         ],
         explanationTh: 'กีฬาประเภทศิลปะการต่อสู้ เช่น karate, judo, taekwondo ต้องใช้กริยา "do".',
         explanationEn: 'Martial arts activities take the verb "do".',
@@ -342,7 +342,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'go', isCorrect: true, feedbackTh: 'ถูกต้อง! กิจกรรมกีฬาที่ลงท้ายด้วย -ing ใช้กริยา go' },
           { key: 'B', text: 'play', isCorrect: false, feedbackTh: 'play cycling ผิดหลักไวยากรณ์' },
           { key: 'C', text: 'do', isCorrect: false, feedbackTh: 'do ไม่ใช้กับกีฬาที่ลงท้ายด้วย -ing' },
-          { key: 'D', text: 'have', isCorrect: false, feedbackTh: 'have cycling ไม่มีความหมายในภาษาอังกฤษ' },
+          { key: 'D', text: 'have', isCorrect: false, feedbackTh: 'have cycling ไม่มีความหมายในภาษาอังกฤษ' }
         ],
         explanationTh: 'กีฬาหรือกิจกรรมการเคลื่อนไหวที่ลงท้ายด้วย -ing เช่น cycling, running, swimming ใช้คู่กับ "go".',
         explanationEn: 'Recreational activities ending in "-ing" pair with "go".',
@@ -406,10 +406,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกกริยาที่ใช้คู่กับคำว่า decision (การตัดสินใจ)',
         promptEn: 'After thinking carefully, the committee decided to _____ a final decision today.',
         options: [
-          { key: 'A', text: 'make', isCorrect: true, feedbackTh: 'ถูกต้อง! การตัดสินใจใช้ make a decision' },
-          { key: 'B', text: 'do', isCorrect: false, feedbackTh: 'do a decision ผิด collocation' },
+          { key: 'A', text: 'do', isCorrect: false, feedbackTh: 'do a decision ผิด collocation' },
+          { key: 'B', text: 'make', isCorrect: true, feedbackTh: 'ถูกต้อง! การตัดสินใจใช้ make a decision' },
           { key: 'C', text: 'take', isCorrect: false, feedbackTh: 'ในภาษาอังกฤษมาตรฐานใช้ make a decision' },
-          { key: 'D', text: 'have', isCorrect: false, feedbackTh: 'have a decision ไม่เป็นที่นิยม' },
+          { key: 'D', text: 'have', isCorrect: false, feedbackTh: 'have a decision ไม่เป็นที่นิยม' }
         ],
         explanationTh: 'คำว่า decision เป็นผลจากการเลือก ต้องใช้คู่กับกริยา "make" (make a decision).',
         explanationEn: 'The noun "decision" collocates with "make".',
@@ -424,10 +424,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกกริยาที่ใช้คู่กับการวิจัยทางวิทยาศาสตร์ (research)',
         promptEn: 'University professors must _____ extensive research before publishing their papers.',
         options: [
-          { key: 'A', text: 'do', isCorrect: true, feedbackTh: 'ถูกต้อง! การทำวิจัยเป็นกระบวนการค้นคว้า ใช้ do research' },
+          { key: 'A', text: 'create', isCorrect: false, feedbackTh: 'create research ไม่ใช้ในภาษาทางการ' },
           { key: 'B', text: 'make', isCorrect: false, feedbackTh: 'make research เป็นข้อผิดพลาดที่พบบ่อยมาก ต้องใช้ do research' },
-          { key: 'C', text: 'create', isCorrect: false, feedbackTh: 'create research ไม่ใช้ในภาษาทางการ' },
-          { key: 'D', text: 'build', isCorrect: false, feedbackTh: 'build research ผิดความหมาย' },
+          { key: 'C', text: 'do', isCorrect: true, feedbackTh: 'ถูกต้อง! การทำวิจัยเป็นกระบวนการค้นคว้า ใช้ do research' },
+          { key: 'D', text: 'build', isCorrect: false, feedbackTh: 'build research ผิดความหมาย' }
         ],
         explanationTh: 'คำว่า research (การวิจัย) เป็นคำนามนับไม่ได้ และต้องใช้คู่กับกริยา "do" (do research).',
         explanationEn: 'The academic noun "research" pairs with "do" (do research).',
@@ -500,10 +500,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำตอบที่ถูกต้องสำหรับการยื่นข้อเสนอของหวานในร้านอาหาร',
         promptEn: 'Waiter: "Would you like _____ dessert before we bring the bill?"',
         options: [
-          { key: 'A', text: 'some', isCorrect: true, feedbackTh: 'ถูกต้อง! เป็นประโยคเสนอของให้ (Offering) ต้องใช้ some' },
+          { key: 'A', text: 'few', isCorrect: false, feedbackTh: 'few แปลว่าแทบไม่มี และใช้กับนามนับได้' },
           { key: 'B', text: 'any', isCorrect: false, feedbackTh: 'any ใช้ในคำถามถามหาทั่วไป ไม่ใช้ในการเสนอของเลี้ยง/เชิญชวน' },
           { key: 'C', text: 'many', isCorrect: false, feedbackTh: 'dessert เป็นนามนับไม่ได้ในบริบทนี้' },
-          { key: 'D', text: 'few', isCorrect: false, feedbackTh: 'few แปลว่าแทบไม่มี และใช้กับนามนับได้' },
+          { key: 'D', text: 'some', isCorrect: true, feedbackTh: 'ถูกต้อง! เป็นประโยคเสนอของให้ (Offering) ต้องใช้ some' }
         ],
         explanationTh: 'แม้จะเป็นประโยคคำถาม แต่เมื่อจุดประสงค์คือการยื่นข้อเสนอ (Offering) ต้องใช้ "some".',
         explanationEn: 'Offers and invitations in question format take "some" rather than "any".',
@@ -521,7 +521,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'luggage', isCorrect: true, feedbackTh: 'ถูกต้อง! luggage เป็นนามนับไม่ได้ ไม่เติม -s และใช้คู่กับ too much' },
           { key: 'B', text: 'luggages', isCorrect: false, feedbackTh: 'luggage ห้ามเติม -s' },
           { key: 'C', text: 'bag', isCorrect: false, feedbackTh: 'much ใช้กับนามนับไม่ได้ ถ้าใช้ bag ต้องเป็น too many bags' },
-          { key: 'D', text: 'suitcases', isCorrect: false, feedbackTh: 'suitcases เป็นนามนับได้พหูพจน์ ต้องใช้ too many' },
+          { key: 'D', text: 'suitcases', isCorrect: false, feedbackTh: 'suitcases เป็นนามนับได้พหูพจน์ ต้องใช้ too many' }
         ],
         explanationTh: 'คำว่า "much" ต้องนำหน้านามนับไม่ได้ และ "luggage" เป็นนามนับไม่ได้เสมอ.',
         explanationEn: 'Uncountable nouns like "luggage" pair with "much" and take no plural suffix.',
@@ -586,10 +586,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำตอบที่ถูกต้องเมื่อมีคำว่า by อยู่หน้าช่องว่าง',
         promptEn: 'Although the assignment was challenging, Narong managed to finish it by _____.',
         options: [
-          { key: 'A', text: 'himself', isCorrect: true, feedbackTh: 'ถูกต้อง! มี by อยู่แล้ว ต้องตามด้วย reflexive pronoun: by himself' },
-          { key: 'B', text: 'on his own', isCorrect: false, feedbackTh: 'ถ้าตอบ on his own จะกลายเป็น by on his own ซึ่งผิดไวยากรณ์' },
+          { key: 'A', text: 'on his own', isCorrect: false, feedbackTh: 'ถ้าตอบ on his own จะกลายเป็น by on his own ซึ่งผิดไวยากรณ์' },
+          { key: 'B', text: 'himself', isCorrect: true, feedbackTh: 'ถูกต้อง! มี by อยู่แล้ว ต้องตามด้วย reflexive pronoun: by himself' },
           { key: 'C', text: 'his own', isCorrect: false, feedbackTh: 'by his own ผิดหลักภาษา' },
-          { key: 'D', text: 'him', isCorrect: false, feedbackTh: 'by him หมายถึงโดยเขา ไม่ได้แปลว่าด้วยตนเอง' },
+          { key: 'D', text: 'him', isCorrect: false, feedbackTh: 'by him หมายถึงโดยเขา ไม่ได้แปลว่าด้วยตนเอง' }
         ],
         explanationTh: 'เมื่อโจทย์มีคำว่า "by" กำกับอยู่ข้างหน้าแล้ว คำที่ถูกต้องคือ "himself" (by himself).',
         explanationEn: 'Following the preposition "by", the reflexive pronoun "himself" expresses independent action.',
@@ -659,10 +659,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกโครงสร้างกริยาที่ถูกต้องตามหลังกริยา let',
         promptEn: 'The hotel management does not let guests _____ pets into the guest rooms.',
         options: [
-          { key: 'A', text: 'bring', isCorrect: true, feedbackTh: 'ถูกต้อง! let + someone + V.inf (bring ไม่ต้องมี to)' },
+          { key: 'A', text: 'bringing', isCorrect: false, feedbackTh: 'let ไม่ตามด้วย V-ing' },
           { key: 'B', text: 'to bring', isCorrect: false, feedbackTh: 'let ห้ามตามด้วย to + V' },
-          { key: 'C', text: 'bringing', isCorrect: false, feedbackTh: 'let ไม่ตามด้วย V-ing' },
-          { key: 'D', text: 'brought', isCorrect: false, feedbackTh: 'brought เป็นอดีต' },
+          { key: 'C', text: 'bring', isCorrect: true, feedbackTh: 'ถูกต้อง! let + someone + V.inf (bring ไม่ต้องมี to)' },
+          { key: 'D', text: 'brought', isCorrect: false, feedbackTh: 'brought เป็นอดีต' }
         ],
         explanationTh: 'กริยา "let" บังคับโครงสร้าง: let + object + bare infinitive (bring).',
         explanationEn: 'The causative/permission verb "let" requires a bare infinitive without "to".',
@@ -677,10 +677,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกกริยาที่ถูกต้องเมื่อโครงสร้างมีคำว่า "to submit"',
         promptEn: 'The professor _____ the students to submit their research proposals by Friday.',
         options: [
-          { key: 'A', text: 'allowed', isCorrect: true, feedbackTh: 'ถูกต้อง! allowed + person + TO submit เข้ากับโครงสร้าง' },
+          { key: 'A', text: 'had', isCorrect: false, feedbackTh: 'had someone do something ไม่มี to' },
           { key: 'B', text: 'made', isCorrect: false, feedbackTh: 'made ต้องตามด้วย bare infinitive ไม่มี to' },
           { key: 'C', text: 'let', isCorrect: false, feedbackTh: 'let ต้องตามด้วย bare infinitive ไม่มี to' },
-          { key: 'D', text: 'had', isCorrect: false, feedbackTh: 'had someone do something ไม่มี to' },
+          { key: 'D', text: 'allowed', isCorrect: true, feedbackTh: 'ถูกต้อง! allowed + person + TO submit เข้ากับโครงสร้าง' }
         ],
         explanationTh: 'เพราะข้างหลังมีคำว่า "to submit" จึงต้องใช้กริยา "allowed" (allowed someone to do).',
         explanationEn: 'Only "allow" among the choices takes an object followed by a to-infinitive.',
@@ -754,7 +754,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'welcoming', isCorrect: true, feedbackTh: 'ถูกต้อง! look forward to ต้องตามด้วย V-ing (welcoming)' },
           { key: 'B', text: 'welcome', isCorrect: false, feedbackTh: 'ข้อผิดพลาดยอดฮิต! to ตัวนี้เป็น preposition ต้องตามด้วย V-ing' },
           { key: 'C', text: 'welcomed', isCorrect: false, feedbackTh: 'welcomed เป็นรูปอดีต' },
-          { key: 'D', text: 'have welcomed', isCorrect: false, feedbackTh: 'have welcomed ผิดรูปไวยากรณ์' },
+          { key: 'D', text: 'have welcomed', isCorrect: false, feedbackTh: 'have welcomed ผิดรูปไวยากรณ์' }
         ],
         explanationTh: 'สำนวน "look forward to" ต้องตามหลังด้วยคำนามหรือ Gerund (V-ing) เสมอ.',
         explanationEn: 'The phrase "look forward to" takes a gerund (-ing form), not a bare infinitive.',
@@ -769,10 +769,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกคำที่ถูกต้องในสำนวนที่แปลว่า "จัดขึ้น/เกิดขึ้น"',
         promptEn: 'The annual science exhibition will _____ place in the university auditorium.',
         options: [
-          { key: 'A', text: 'take', isCorrect: true, feedbackTh: 'ถูกต้อง! take place แปลว่าจัดขึ้น/เกิดขึ้น' },
-          { key: 'B', text: 'make', isCorrect: false, feedbackTh: 'make place ผิดสำนวน' },
+          { key: 'A', text: 'make', isCorrect: false, feedbackTh: 'make place ผิดสำนวน' },
+          { key: 'B', text: 'take', isCorrect: true, feedbackTh: 'ถูกต้อง! take place แปลว่าจัดขึ้น/เกิดขึ้น' },
           { key: 'C', text: 'have', isCorrect: false, feedbackTh: 'have place ผิดสำนวน' },
-          { key: 'D', text: 'do', isCorrect: false, feedbackTh: 'do place ผิดสำนวน' },
+          { key: 'D', text: 'do', isCorrect: false, feedbackTh: 'do place ผิดสำนวน' }
         ],
         explanationTh: 'กลุ่มคำคู่คงที่ (Fixed Collocation) ที่แปลว่าจัดขึ้น คือ "take place".',
         explanationEn: 'The idiom meaning to happen or be held is "take place".',
@@ -835,10 +835,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกโครงสร้างที่ถูกต้องสำหรับประโยคสมมุติตรงข้ามความจริงปัจจุบัน (Type 2)',
         promptEn: 'If Tanakorn _____ the director of this academy, he would upgrade all computer labs.',
         options: [
-          { key: 'A', text: 'were', isCorrect: true, feedbackTh: 'ถูกต้อง! Second conditional ใช้ were กับประธานทุกตัวใน if-clause' },
+          { key: 'A', text: 'will be', isCorrect: false, feedbackTh: 'ห้ามใช้ will ใน if-clause' },
           { key: 'B', text: 'is', isCorrect: false, feedbackTh: 'is เป็น Type 1 แต่ main clause ใช้ would upgrade' },
-          { key: 'C', text: 'will be', isCorrect: false, feedbackTh: 'ห้ามใช้ will ใน if-clause' },
-          { key: 'D', text: 'has been', isCorrect: false, feedbackTh: 'has been เป็น Present Perfect' },
+          { key: 'C', text: 'were', isCorrect: true, feedbackTh: 'ถูกต้อง! Second conditional ใช้ were กับประธานทุกตัวใน if-clause' },
+          { key: 'D', text: 'has been', isCorrect: false, feedbackTh: 'has been เป็น Present Perfect' }
         ],
         explanationTh: 'Main clause ใช้ "would upgrade" แสดงว่าเป็น Second Conditional ประธานเอกพจน์ใน If-clause ใช้ "were".',
         explanationEn: 'The modal "would upgrade" signals a second conditional, requiring the past subjunctive "were".',
@@ -902,10 +902,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'อ่านบทสนทนาแล้วตอบว่าผู้พูดหมายความว่าอย่างไร',
         promptEn: 'Man: "The continuous barking from next door really gets on my nerves." \\nWoman: "I know, it has been going on for hours." \\n\\nWhat does the man mean?',
         options: [
-          { key: 'A', text: 'The barking annoys and frustrates him.', isCorrect: true, feedbackTh: 'ถูกต้อง! gets on my nerves แปลว่า ทำให้รำคาญ/หงุดหงิด (annoys him)' },
+          { key: 'A', text: 'He wants to buy a guard dog himself.', isCorrect: false, feedbackTh: 'นอกเรื่องบริบท' },
           { key: 'B', text: 'The barking makes him feel terrified.', isCorrect: false, feedbackTh: 'สำนวนนี้ไม่ได้แปลว่ากลัว' },
           { key: 'C', text: 'He is worried about the dog health.', isCorrect: false, feedbackTh: 'ไม่ได้แสดงความเป็นห่วงสุขภาพสุนัข' },
-          { key: 'D', text: 'He wants to buy a guard dog himself.', isCorrect: false, feedbackTh: 'นอกเรื่องบริบท' },
+          { key: 'D', text: 'The barking annoys and frustrates him.', isCorrect: true, feedbackTh: 'ถูกต้อง! gets on my nerves แปลว่า ทำให้รำคาญ/หงุดหงิด (annoys him)' }
         ],
         explanationTh: 'สำนวน "gets on my nerves" หมายถึง ทำให้รำคาญหรือหงุดหงิดใจ (annoys me).',
         explanationEn: `The idiom "gets on one's nerves" means to irritate or annoy someone.`,
@@ -971,7 +971,7 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
           { key: 'A', text: 'which', isCorrect: true, feedbackTh: 'ถูกต้อง! Non-defining relative clause มีจุลภาคคั่น ใช้ which ขยายสถานที่ในฐานะประธาน' },
           { key: 'B', text: 'that', isCorrect: false, feedbackTh: 'ห้ามใช้ that หลังเครื่องหมาย comma เด็ดขาด' },
           { key: 'C', text: 'where', isCorrect: false, feedbackTh: 'where ต้องตามด้วย Subject + Verb ไม่ใช่ was founded' },
-          { key: 'D', text: 'whose', isCorrect: false, feedbackTh: 'whose ใช้แสดงความเป็นเจ้าของ' },
+          { key: 'D', text: 'whose', isCorrect: false, feedbackTh: 'whose ใช้แสดงความเป็นเจ้าของ' }
         ],
         explanationTh: 'ใน Non-defining relative clause ที่มีเครื่องหมายจุลภาค ห้ามใช้ "that" และเมื่อทำหน้าที่เป็นประธานของกริยา was founded ต้องใช้ "which".',
         explanationEn: 'In non-restrictive relative clauses set off by commas, "which" is required; "that" is ungrammatical.',
@@ -1036,10 +1036,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกรูปกริยาที่แสดงหน้าที่หรือภารกิจที่ต้องทำ (duty)',
         promptEn: 'Before submitting the online visa application, make sure you remember _____ all passport details.',
         options: [
-          { key: 'A', text: 'to double-check', isCorrect: true, feedbackTh: 'ถูกต้อง! เป็นภารกิจที่ต้องทำในอนาคต ใช้ remember + to V.1' },
-          { key: 'B', text: 'double-checking', isCorrect: false, feedbackTh: 'double-checking แปลว่าระลึกภาพความหลังในอดีต' },
+          { key: 'A', text: 'double-checking', isCorrect: false, feedbackTh: 'double-checking แปลว่าระลึกภาพความหลังในอดีต' },
+          { key: 'B', text: 'to double-check', isCorrect: true, feedbackTh: 'ถูกต้อง! เป็นภารกิจที่ต้องทำในอนาคต ใช้ remember + to V.1' },
           { key: 'C', text: 'double-checked', isCorrect: false, feedbackTh: 'remember ไม่ตามด้วย V.2' },
-          { key: 'D', text: 'to have checked', isCorrect: false, feedbackTh: 'โครงสร้างเยิ่นเย้อเกินจำเป็น' },
+          { key: 'D', text: 'to have checked', isCorrect: false, feedbackTh: 'โครงสร้างเยิ่นเย้อเกินจำเป็น' }
         ],
         explanationTh: 'การเตือนให้จำได้ว่าต้องทำหน้าที่ในอนาคต ใช้โครงสร้าง "remember + to V.1" (to double-check).',
         explanationEn: 'Remembering a task or obligation requires "remember + to-infinitive".',
@@ -1103,10 +1103,10 @@ export const GRAMMAR_BANK: GrammarTopic[] = [
         promptTh: 'เลือกโครงสร้าง Inversion ที่ถูกต้องเมื่อขึ้นต้นประโยคด้วยคำปฏิเสธ (Not only)',
         promptEn: 'Not only _____ to meet the project deadline, but they also exceeded revenue forecasts.',
         options: [
-          { key: 'A', text: 'did the team manage', isCorrect: true, feedbackTh: 'ถูกต้อง! Inversion ในอดีต: did + Subject + V.inf' },
+          { key: 'A', text: 'managed the team', isCorrect: false, feedbackTh: 'ห้ามนำกริยาแท้มาวางหน้าประธาน ต้องใช้กริยาช่วย did' },
           { key: 'B', text: 'the team managed', isCorrect: false, feedbackTh: 'ลืมสลับกริยาช่วยมาหน้าประธาน' },
-          { key: 'C', text: 'managed the team', isCorrect: false, feedbackTh: 'ห้ามนำกริยาแท้มาวางหน้าประธาน ต้องใช้กริยาช่วย did' },
-          { key: 'D', text: 'was the team managed', isCorrect: false, feedbackTh: 'กลายเป็น Passive Voice ความหมายเปลี่ยน' },
+          { key: 'C', text: 'did the team manage', isCorrect: true, feedbackTh: 'ถูกต้อง! Inversion ในอดีต: did + Subject + V.inf' },
+          { key: 'D', text: 'was the team managed', isCorrect: false, feedbackTh: 'กลายเป็น Passive Voice ความหมายเปลี่ยน' }
         ],
         explanationTh: 'เมื่อขึ้นต้นด้วย "Not only" ในรูปอดีต ต้องใช้ Inversion ด้วยกริยาช่วย: "did the team manage".',
         explanationEn: 'Fronting the negative correlative "Not only" triggers auxiliary inversion with "did".',

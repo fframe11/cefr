@@ -7,6 +7,10 @@ import { submitPracticeAnswer, PracticeGradingResultDTO } from '../../lib/api/pr
 import { useTranslation } from '../../i18n';
 import { GRAMMAR_BANK } from '../../data/grammarBank';
 import { READING_BANK } from '../../data/readingBank';
+import { LISTENING_BANK } from '../../data/listeningBank';
+import { CAMBRIDGE_MOCK_EXAMS } from '../../data/mockExams';
+import { DIAGNOSTIC_QUESTIONS } from '../../data/diagnosticAssessment';
+import { QUICK_CHECK_QUESTIONS } from '../../data/quickCheckQuestions';
 
 interface QuestionCardProps {
   question: Question;
@@ -29,21 +33,77 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverGrading, setServerGrading] = useState<PracticeGradingResultDTO | null>(null);
 
-  // Resolve static question data if options from API stripped isCorrect
+  // Resolve static question data across all banks if API options stripped isCorrect
   const matchedStaticQ = React.useMemo(() => {
     if (!question) return null;
     const gq = GRAMMAR_BANK.flatMap((t) => t?.practiceQuestions || []).filter(Boolean);
     const rq = READING_BANK.flatMap((p) => p?.questions || []).filter(Boolean);
+    const lq = LISTENING_BANK.flatMap((t) => t?.questions || []).filter(Boolean);
+    const mq = CAMBRIDGE_MOCK_EXAMS.flatMap((e) => e?.sections?.flatMap((s) => s?.questions || []) || []).filter(Boolean);
+    const dq = DIAGNOSTIC_QUESTIONS || [];
+    const qq = QUICK_CHECK_QUESTIONS || [];
+
+    const all = [...gq, ...rq, ...lq, ...mq, ...dq, ...qq];
+    const questionPrompt = question.promptEn || (question as any).prompt;
     return (
-      gq.find((q) => (q?.id && q.id === question.id) || (q?.promptEn && q.promptEn === question.promptEn)) ||
-      rq.find((q) => (q?.id && q.id === question.id) || (q?.promptEn && q.promptEn === question.promptEn)) ||
+      all.find(
+        (q: any) =>
+          (q?.id && q.id === question.id) ||
+          (questionPrompt && (q?.promptEn === questionPrompt || q?.prompt === questionPrompt))
+      ) || null
+    );
+  }, [question?.id, question?.promptEn, (question as any)?.prompt]);
+
+  // Robustly determine the correct option key across all possible schemas
+  const resolvedCorrectKey = React.useMemo(() => {
+    // 1. Server graded authoritative result
+    if (serverGrading?.correct_option_key) {
+      return serverGrading.correct_option_key;
+    }
+
+    // 2. Direct option explicit isCorrect
+    const directOpt = question.options?.find((o) => o.isCorrect === true || (o as any).is_correct === true);
+    if (directOpt) {
+      return directOpt.key;
+    }
+
+    // 3. Question root level correct key or answer text
+    const rootKey = (question as any).correctAnswer || (question as any).correct_answer || (question as any).correctOptionKey || (question as any).correctKey;
+    if (rootKey) {
+      const byKey = question.options?.find((o) => o.key.toUpperCase() === String(rootKey).trim().toUpperCase());
+      if (byKey) return byKey.key;
+      const byText = question.options?.find((o) => o.text.trim().toLowerCase() === String(rootKey).trim().toLowerCase());
+      if (byText) return byText.key;
+    }
+
+    // 4. Matched static question from curated banks
+    if (matchedStaticQ) {
+      const staticOpt = matchedStaticQ.options?.find((o: any) => o.isCorrect === true || o.is_correct === true);
+      if (staticOpt) return staticOpt.key;
+      const staticRootKey = (matchedStaticQ as any).correctAnswer || (matchedStaticQ as any).correct_answer;
+      if (staticRootKey) {
+        const byKey = question.options?.find((o) => o.key.toUpperCase() === String(staticRootKey).trim().toUpperCase());
+        if (byKey) return byKey.key;
+        const byText = question.options?.find((o) => o.text.trim().toLowerCase() === String(staticRootKey).trim().toLowerCase());
+        if (byText) return byText.key;
+      }
+    }
+
+    return null;
+  }, [serverGrading?.correct_option_key, question, matchedStaticQ]);
+
+  const resolvedCorrectOption = React.useMemo(() => {
+    if (!resolvedCorrectKey) return null;
+    return (
+      question.options?.find((o) => o.key.toUpperCase() === resolvedCorrectKey.toUpperCase()) ||
+      matchedStaticQ?.options?.find((o: any) => o.key.toUpperCase() === resolvedCorrectKey.toUpperCase()) ||
       null
     );
-  }, [question?.id, question?.promptEn]);
+  }, [resolvedCorrectKey, question.options, matchedStaticQ]);
 
   const getOptionCorrectness = (key: string): boolean => {
-    if (isServerGraded && serverGrading?.correct_option_key) {
-      return serverGrading.correct_option_key === key;
+    if (resolvedCorrectKey) {
+      return resolvedCorrectKey.toUpperCase() === key.toUpperCase();
     }
     const directOption = question.options?.find((o) => o.key === key);
     if (directOption && typeof directOption.isCorrect === 'boolean') {
@@ -99,18 +159,21 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     ? Boolean(serverGrading.is_correct)
     : selectedOption ? getOptionCorrectness(selectedOption) : false;
 
+  const matchedOpt: any = matchedStaticQ?.options?.find((o: any) => o.key === selectedOption);
   const feedbackText = isServerGraded
     ? (serverGrading.feedback_th || '')
     : (question.options?.find((o) => o.key === selectedOption)?.feedbackTh ||
-       matchedStaticQ?.options?.find((o) => o.key === selectedOption)?.feedbackTh || '');
+       matchedOpt?.feedbackTh ||
+       matchedOpt?.feedback ||
+       '');
 
   const explanationTh = isServerGraded
     ? (serverGrading.explanation_th || question.explanationTh)
-    : (question.explanationTh || matchedStaticQ?.explanationTh || '');
+    : (question.explanationTh || (matchedStaticQ as any)?.explanationTh || (matchedStaticQ as any)?.explanation || '');
 
   const explanationEn = isServerGraded
     ? (serverGrading.explanation_en || question.explanationEn)
-    : (question.explanationEn || matchedStaticQ?.explanationEn || '');
+    : (question.explanationEn || (matchedStaticQ as any)?.explanationEn || (matchedStaticQ as any)?.explanation || '');
 
   const isOptionCorrect = (optKey: string, optIsCorrectFallback?: boolean) => {
     return getOptionCorrectness(optKey);
@@ -204,10 +267,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               rowStyle = 'bg-amber-500/10 text-amber-900 dark:text-amber-200 font-medium';
               radioCircleStyle = 'border-2 border-amber-500 bg-amber-500 text-white';
             } else if (isThisCorrect) {
-              rowStyle = 'bg-emerald-500/10 text-emerald-950 dark:text-emerald-100 font-semibold';
+              rowStyle = 'bg-emerald-500/10 text-emerald-950 dark:text-emerald-100 font-semibold border border-emerald-500/50 shadow-2xs';
               radioCircleStyle = 'border-2 border-emerald-500 bg-emerald-500 text-white';
             } else if (isSelected && !isThisCorrect) {
-              rowStyle = 'bg-rose-500/10 text-rose-950 dark:text-rose-100 font-semibold';
+              rowStyle = 'bg-rose-500/10 text-rose-950 dark:text-rose-100 font-semibold border border-rose-500/50 shadow-2xs';
               radioCircleStyle = 'border-2 border-rose-500 bg-rose-500 text-white';
             } else {
               rowStyle = 'opacity-40 text-slate-400';
@@ -288,21 +351,46 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               : 'bg-rose-500/10 border-rose-500/20'
           }`}
         >
-          <div className="flex items-center gap-2 mb-2 font-bold text-sm">
+          <div className="flex items-center justify-between gap-2 mb-2 font-bold text-sm flex-wrap">
             {isPending ? (
               <span className="text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
                 <Clock className="w-4 h-4" /> บันทึกคำตอบแล้ว (รอผลการประเมินจากผู้ตรวจ/ระบบ)
               </span>
             ) : isCorrect ? (
               <span className="text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5">
-                <Check className="w-4 h-4" /> ยอดเยี่ยม! ตอบถูกต้อง
+                <Check className="w-4 h-4 stroke-[3]" /> ยอดเยี่ยม! ตอบถูกต้อง
               </span>
             ) : (
-              <span className="text-rose-700 dark:text-rose-300 flex items-center gap-1.5">
-                <X className="w-4 h-4" /> ยังไม่ถูกต้อง
-              </span>
+              <>
+                <span className="text-rose-700 dark:text-rose-300 flex items-center gap-1.5 font-extrabold">
+                  <X className="w-4 h-4 stroke-[3]" /> ยังไม่ถูกต้อง
+                </span>
+                {resolvedCorrectOption && (
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-800 dark:text-emerald-200 border border-emerald-500/40 text-xs font-black flex items-center gap-1.5 shadow-2xs">
+                    <Check className="w-3.5 h-3.5 stroke-[3] text-emerald-600 dark:text-emerald-400" />
+                    ข้อที่ถูกต้องคือ: {resolvedCorrectOption.key}
+                  </span>
+                )}
+              </>
             )}
           </div>
+
+          {/* Prominent Correct Answer Callout when answer is incorrect */}
+          {!isCorrect && !isPending && resolvedCorrectOption && (
+            <div className="my-3 p-3.5 rounded-xl bg-white/90 dark:bg-[#1E1B28] border border-emerald-500/30 text-xs sm:text-sm text-emerald-950 dark:text-emerald-100 flex items-start gap-3 shadow-2xs">
+              <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">
+                {resolvedCorrectOption.key}
+              </div>
+              <div className="flex-1 space-y-0.5">
+                <p className="text-[11px] font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">
+                  คำตอบที่ถูกต้อง (Correct Answer)
+                </p>
+                <p className="font-semibold text-slate-900 dark:text-slate-100 leading-normal">
+                  {resolvedCorrectOption.text}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Option Specific Feedback */}
           {feedbackText && (

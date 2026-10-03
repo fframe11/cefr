@@ -41,15 +41,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "Room 104 in building three",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ใช่ห้อง 104"
-          },
-          {
-            "key": "B",
             "text": "Room 204 in building four",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! เจ้าหน้าที่บอกว่า 'building number four... room two hundred and four'"
+          },
+          {
+            "key": "B",
+            "text": "Room 104 in building three",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่ห้อง 104"
           },
           {
             "key": "C",
@@ -85,15 +85,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "6:00 PM",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้กล่าวถึงเวลา 6 โมง"
-          },
-          {
-            "key": "C",
             "text": "8:00 PM",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! เจ้าหน้าที่ระบุ 'until eight o'clock in the evening'"
+          },
+          {
+            "key": "C",
+            "text": "6:00 PM",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้กล่าวถึงเวลา 6 โมง"
           },
           {
             "key": "D",
@@ -138,15 +138,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "£14.50",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! พนักงานขายตั๋วระบุว่า 'fourteen pounds and fifty pence'"
-          },
-          {
-            "key": "C",
             "text": "£15.00",
             "isCorrect": false,
             "feedbackTh": "ไม่ใช่ 15 ปอนด์"
+          },
+          {
+            "key": "C",
+            "text": "£14.50",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! พนักงานขายตั๋วระบุว่า 'fourteen pounds and fifty pence'"
           },
           {
             "key": "D",
@@ -182,15 +182,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "C",
-            "text": "Platform 3",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! พนักงานระบุ 'from platform number three'"
-          },
-          {
-            "key": "D",
             "text": "Platform 5",
             "isCorrect": false,
             "feedbackTh": "ไม่ใช่ชานชาลา 5"
+          },
+          {
+            "key": "D",
+            "text": "Platform 3",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! พนักงานระบุ 'from platform number three'"
           }
         ],
         "explanationTh": "พนักงานกล่าวว่า: 'The next train departs at nine thirty-five from platform number three.' (ชานชาลาที่ 3)",
@@ -223,15 +223,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "Mechanical difficulties on the aircraft",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้เกิดจากปัญหาเครื่องยนต์"
-          },
-          {
-            "key": "B",
             "text": "Adverse weather conditions (heavy fog)",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! ในประกาศระบุว่า 'due to heavy fog over Europe'"
+          },
+          {
+            "key": "B",
+            "text": "Mechanical difficulties on the aircraft",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เกิดจากปัญหาเครื่องยนต์"
           },
           {
             "key": "C",
@@ -320,15 +320,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "An economics textbook and a silver laptop charger",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! นักศึกษาระบุ 'an economics textbook, a silver laptop charger'"
-          },
-          {
-            "key": "C",
             "text": "A tablet computer and leather wallet",
             "isCorrect": false,
             "feedbackTh": "ไม่ได้กล่าวถึงแท็บเล็ต"
+          },
+          {
+            "key": "C",
+            "text": "An economics textbook and a silver laptop charger",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! นักศึกษาระบุ 'an economics textbook, a silver laptop charger'"
           },
           {
             "key": "D",
@@ -364,15 +364,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "C",
-            "text": "A valid photo ID",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! เจ้าหน้าที่ระบุ 'Please remember to bring a photo ID'"
-          },
-          {
-            "key": "D",
             "text": "A ten-pound cash deposit",
             "isCorrect": false,
             "feedbackTh": "ไม่มีค่ามัดจำ"
+          },
+          {
+            "key": "D",
+            "text": "A valid photo ID",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เจ้าหน้าที่ระบุ 'Please remember to bring a photo ID'"
           }
         ],
         "explanationTh": "เจ้าหน้าที่กำชับว่า: 'Please remember to bring a photo ID.' (กรุณานำบัตรประจำตัวที่มีรูปถ่ายมาด้วย)",
@@ -405,15 +405,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "That green buildings cannot withstand harsh winter storms.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้กล่าวถึงความทนทานต่อพายุ"
-          },
-          {
-            "key": "B",
             "text": "That going green immediately requires expensive high-tech gear like solar panels.",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! คนส่วนใหญ่เข้าใจผิดว่าต้องเริ่มจากการติดโซลาร์เซลล์ราคาแพงทันที"
+          },
+          {
+            "key": "B",
+            "text": "That green buildings cannot withstand harsh winter storms.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้กล่าวถึงความทนทานต่อพายุ"
           },
           {
             "key": "C",
@@ -502,15 +502,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "Sign up online at least one week in advance",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! คัลลัมระบุ 'register online at least one week ahead'"
-          },
-          {
-            "key": "C",
             "text": "Pay a twenty-pound administrative registration fee",
             "isCorrect": false,
             "feedbackTh": "ไม่มีค่าธรรมเนียม"
+          },
+          {
+            "key": "C",
+            "text": "Sign up online at least one week in advance",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! คัลลัมระบุ 'register online at least one week ahead'"
           },
           {
             "key": "D",
@@ -555,9 +555,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "Intrusive newsletter pop-ups and poor placement of the search function.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! มีป๊อปอัปสมัครจดหมายข่าวคอยกวนใจ และช่องค้นหาถูกซ่อนไว้ด้านล่างอย่างไม่คุ้นเคย"
+            "text": "The website takes over two minutes to load each page.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้กล่าวถึงความเร็วในการโหลด"
           },
           {
             "key": "C",
@@ -567,9 +567,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "D",
-            "text": "The website takes over two minutes to load each page.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้กล่าวถึงความเร็วในการโหลด"
+            "text": "Intrusive newsletter pop-ups and poor placement of the search function.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! มีป๊อปอัปสมัครจดหมายข่าวคอยกวนใจ และช่องค้นหาถูกซ่อนไว้ด้านล่างอย่างไม่คุ้นเคย"
           }
         ],
         "explanationTh": "เอ็มม่าระบุว่ามีแบนเนอร์ป๊อปอัปสมัครสมาชิกเด้งขึ้นมาตลอด และแถบค้นหากลับไปอยู่ด้านล่างแทนที่จะอยู่ด้านบน",
@@ -587,9 +587,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "It is funded by university scholarships.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้กล่าวถึงทุนการศึกษา"
+            "text": "The content is freely accessible without a paywall.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เลียมกล่าวว่า 'their articles are completely free of paywalls'"
           },
           {
             "key": "B",
@@ -599,9 +599,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "C",
-            "text": "The content is freely accessible without a paywall.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! เลียมกล่าวว่า 'their articles are completely free of paywalls'"
+            "text": "It is funded by university scholarships.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้กล่าวถึงทุนการศึกษา"
           },
           {
             "key": "D",
@@ -699,15 +699,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "It reveals chemical pigments and hidden sketches without physically sampling or damaging the canvas.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! วิเคราะห์ธาตุและภาพร่างที่ซ่อนอยู่ได้โดยไม่ต้องขูดหรือทำลายผิวภาพวาด"
-          },
-          {
-            "key": "C",
             "text": "It instantly restores faded varnish to its original sixteenth-century luster.",
             "isCorrect": false,
             "feedbackTh": "เป็นเทคนิคการวิเคราะห์ ไม่ใช่การฟอกสีวานิช"
+          },
+          {
+            "key": "C",
+            "text": "It reveals chemical pigments and hidden sketches without physically sampling or damaging the canvas.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! วิเคราะห์ธาตุและภาพร่างที่ซ่อนอยู่ได้โดยไม่ต้องขูดหรือทำลายผิวภาพวาด"
           },
           {
             "key": "D",
@@ -731,9 +731,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "Genuine Renaissance brushstrokes from later nineteenth-century repainting",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ข้อความระบุ 'distinguish genuine Renaissance brushwork from nineteenth-century deceptive overpaints'"
+            "text": "How many museum visitors view the masterpiece each year",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้นับจำนวนผู้เข้าชม"
           },
           {
             "key": "B",
@@ -749,9 +749,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "D",
-            "text": "How many museum visitors view the masterpiece each year",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้นับจำนวนผู้เข้าชม"
+            "text": "Genuine Renaissance brushstrokes from later nineteenth-century repainting",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ข้อความระบุ 'distinguish genuine Renaissance brushwork from nineteenth-century deceptive overpaints'"
           }
         ],
         "explanationTh": "ดร. รอสซี่กล่าวสรุปว่าเทคโนโลยีนี้ช่วย: 'distinguish genuine Renaissance brushwork from nineteenth-century deceptive overpaints' (แยกฝีแปรงยุคเรเนซองส์ของแท้ออกจากรอยวาดทับในศตวรรษที่ 19)",
@@ -784,15 +784,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "It regards metaphors solely as stylistic embellishments reserved for formal poetry.",
-            "isCorrect": false,
-            "feedbackTh": "นี่คือมุมมองดั้งเดิม ไม่ใช่พุทธิปัญญา"
-          },
-          {
-            "key": "B",
             "text": "It proves that metaphors constitute the core architecture of human conceptual thought and daily behavior.",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! ชี้ว่าอุปลักษณ์คือโครงสร้างพื้นฐานของระบบความคิด ไม่ใช่แค่คำสละสลวย"
+          },
+          {
+            "key": "B",
+            "text": "It regards metaphors solely as stylistic embellishments reserved for formal poetry.",
+            "isCorrect": false,
+            "feedbackTh": "นี่คือมุมมองดั้งเดิม ไม่ใช่พุทธิปัญญา"
           },
           {
             "key": "C",
@@ -822,15 +822,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "It induces acute anxiety whenever time passes without measurable productive output.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ทำให้เกิดความวิตกกังวลเมื่อเวลาผ่านไปโดยไม่ได้ผลิตผลลัพธ์ที่เป็นรูปธรรม"
-          },
-          {
-            "key": "B",
             "text": "It inspires workers to negotiate higher hourly wages in financial corporations.",
             "isCorrect": false,
             "feedbackTh": "ไม่ได้เน้นเรื่องการต่อรองเงินเดือน"
+          },
+          {
+            "key": "B",
+            "text": "It induces acute anxiety whenever time passes without measurable productive output.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ทำให้เกิดความวิตกกังวลเมื่อเวลาผ่านไปโดยไม่ได้ผลิตผลลัพธ์ที่เป็นรูปธรรม"
           },
           {
             "key": "C",
@@ -881,15 +881,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "At five o'clock on Friday afternoon after work",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! สตีฟแจ้งว่า: 'The professional moving crew arrives at five o'clock on Friday afternoon'"
-          },
-          {
-            "key": "C",
             "text": "Early on Saturday morning before sunrise",
             "isCorrect": false,
             "feedbackTh": "วันเสาร์เป็นรอบรถบรรทุกคันที่สอง"
+          },
+          {
+            "key": "C",
+            "text": "At five o'clock on Friday afternoon after work",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! สตีฟแจ้งว่า: 'The professional moving crew arrives at five o'clock on Friday afternoon'"
           },
           {
             "key": "D",
@@ -919,9 +919,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "To enable normal operations on Monday without customer disruptions",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! เพื่อให้เปิดทำการวันจันทร์ได้ตามปกติโดยไม่กระทบลูกค้า"
+            "text": "To interview prospective junior candidates",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้สัมภาษณ์งาน"
           },
           {
             "key": "C",
@@ -931,9 +931,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "D",
-            "text": "To interview prospective junior candidates",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้สัมภาษณ์งาน"
+            "text": "To enable normal operations on Monday without customer disruptions",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เพื่อให้เปิดทำการวันจันทร์ได้ตามปกติโดยไม่กระทบลูกค้า"
           }
         ],
         "explanationTh": "ผู้ประสานงานสรุปว่า: 'our employees can resume normal operations on Monday morning without any client disruptions!'",
@@ -966,15 +966,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "options": [
           {
             "key": "A",
-            "text": "Severe electrical thunderstorms over the runway",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ได้เกิดจากพายุ"
-          },
-          {
-            "key": "B",
             "text": "Scheduled apron maintenance taking place on concourse B",
             "isCorrect": true,
             "feedbackTh": "ถูกต้อง! ประกาศระบุ: 'Due to scheduled apron maintenance on concourse B'"
+          },
+          {
+            "key": "B",
+            "text": "Severe electrical thunderstorms over the runway",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เกิดจากพายุ"
           },
           {
             "key": "C",
@@ -1063,15 +1063,15 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "He replaced a sick child actor at his sister's rehearsal at the last minute.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! เขาได้รับเลือกให้แสดงแทนนักแสดงเด็กที่ป่วยเป็นโรคหัดอย่างกะทันหัน"
-          },
-          {
-            "key": "C",
             "text": "His parents forced him to study classical opera singing.",
             "isCorrect": false,
             "feedbackTh": "พ่อแม่ไม่ได้บังคับ"
+          },
+          {
+            "key": "C",
+            "text": "He replaced a sick child actor at his sister's rehearsal at the last minute.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เขาได้รับเลือกให้แสดงแทนนักแสดงเด็กที่ป่วยเป็นโรคหัดอย่างกะทันหัน"
           },
           {
             "key": "D",
@@ -1101,9 +1101,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "B",
-            "text": "Uncovering genuine human vulnerability under imagined circumstances.",
-            "isCorrect": true,
-            "feedbackTh": "ถูกต้อง! ค้นพบความเปราะบางของมนุษย์อย่างแท้จริงภายใต้สถานการณ์ที่สมมติขึ้น"
+            "text": "Memorizing hundreds of historical script pages quickly.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่แค่การท่องจำบท"
           },
           {
             "key": "C",
@@ -1113,9 +1113,9 @@ export const LISTENING_BANK: ListeningExercise[] = [
           },
           {
             "key": "D",
-            "text": "Memorizing hundreds of historical script pages quickly.",
-            "isCorrect": false,
-            "feedbackTh": "ไม่ใช่แค่การท่องจำบท"
+            "text": "Uncovering genuine human vulnerability under imagined circumstances.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ค้นพบความเปราะบางของมนุษย์อย่างแท้จริงภายใต้สถานการณ์ที่สมมติขึ้น"
           }
         ],
         "explanationTh": "แอลันระบุ: 'acting is not about pretending to be someone else; it is about discovering genuine human vulnerability under extraordinary imagined circumstances.'",

@@ -78,7 +78,7 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
         text: 'Too busy to meet today',
         isCorrect: false,
         feedback: 'Almost. "Up for" is an invitation to join, not an excuse.',
-      },
+      }
     ],
     explanation: '"Up for [activity]" is an informal phrase used to ask if someone wants to join or participate in something.',
     cefrLevel: 'A2',
@@ -97,15 +97,15 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'To go, please.',
-        isCorrect: true,
-        feedback: 'Correct! "To go" (or "take away") means you want to take your order with you.',
-      },
-      {
-        key: 'B',
         text: 'Yes, I like here.',
         isCorrect: false,
         feedback: 'Almost. "For here" means drinking inside the cafe. To take it with you, say "to go".',
+      },
+      {
+        key: 'B',
+        text: 'To go, please.',
+        isCorrect: true,
+        feedback: 'Correct! "To go" (or "take away") means you want to take your order with you.',
       },
       {
         key: 'C',
@@ -118,7 +118,7 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
         text: 'Give me coffee.',
         isCorrect: false,
         feedback: 'Almost. This sounds a bit abrupt. "To go, please" is standard and polite.',
-      },
+      }
     ],
     explanation: '"For here" means dining inside the establishment; "to go" means takeaway packaging.',
     cefrLevel: 'A1',
@@ -137,9 +137,9 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'Quickly inspect and check the slides',
-        isCorrect: true,
-        feedback: 'Correct! "Look over" means to examine or review something quickly for feedback or errors.',
+        text: 'Present the slides instead of her',
+        isCorrect: false,
+        feedback: 'Almost. She wants team feedback before the meeting, not someone else to present.',
       },
       {
         key: 'B',
@@ -149,16 +149,16 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
       },
       {
         key: 'C',
-        text: 'Present the slides instead of her',
-        isCorrect: false,
-        feedback: 'Almost. She wants team feedback before the meeting, not someone else to present.',
+        text: 'Quickly inspect and check the slides',
+        isCorrect: true,
+        feedback: 'Correct! "Look over" means to examine or review something quickly for feedback or errors.',
       },
       {
         key: 'D',
         text: 'Delete slides 4 to 8 completely',
         isCorrect: false,
         feedback: 'Almost. "Look over" means reviewing content, not removing it.',
-      },
+      }
     ],
     explanation: 'The phrasal verb "look over" means to review or inspect documents or work briefly.',
     cefrLevel: 'B1',
@@ -177,9 +177,9 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'Stay near the gate and wait for the new departure time',
-        isCorrect: true,
-        feedback: 'Correct! The flight is delayed by 45 minutes, and passengers are asked to stay in the gate area.',
+        text: 'Leave the airport and come back tomorrow',
+        isCorrect: false,
+        feedback: 'Almost. 45 minutes is a short delay; passengers are asked to remain in the area.',
       },
       {
         key: 'B',
@@ -195,10 +195,10 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
       },
       {
         key: 'D',
-        text: 'Leave the airport and come back tomorrow',
-        isCorrect: false,
-        feedback: 'Almost. 45 minutes is a short delay; passengers are asked to remain in the area.',
-      },
+        text: 'Stay near the gate and wait for the new departure time',
+        isCorrect: true,
+        feedback: 'Correct! The flight is delayed by 45 minutes, and passengers are asked to stay in the gate area.',
+      }
     ],
     explanation: '"Delayed" means postponed to a later time; "remain" means stay in the current location.',
     cefrLevel: 'A2',
@@ -238,7 +238,7 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
         text: 'Redraw the financial charts into circles',
         isCorrect: false,
         feedback: 'Almost. "Circle back" refers to the conversation, not visual chart shapes.',
-      },
+      }
     ],
     explanation: '"Circle back" is an idiomatic business phrase meaning to re-open or follow up on a subject later.',
     cefrLevel: 'B1',
@@ -257,15 +257,15 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'She had an incredible experience and wishes her trip was longer',
-        isCorrect: true,
-        feedback: 'Correct! "Never want this week to end" shows she is thoroughly enjoying her trip.',
-      },
-      {
-        key: 'B',
         text: 'She is exhausted and ready to leave immediately',
         isCorrect: false,
         feedback: 'Almost. "Fallen in love with this place" means she has deep positive feelings for it.',
+      },
+      {
+        key: 'B',
+        text: 'She had an incredible experience and wishes her trip was longer',
+        isCorrect: true,
+        feedback: 'Correct! "Never want this week to end" shows she is thoroughly enjoying her trip.',
       },
       {
         key: 'C',
@@ -278,7 +278,7 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
         text: 'She forgot which day of the week it is',
         isCorrect: false,
         feedback: 'Almost. The expression is figurative, expressing delight in the current moment.',
-      },
+      }
     ],
     explanation: '"Never want [time] to end" is an emotional expression of high satisfaction with an ongoing event.',
     cefrLevel: 'B1',
@@ -297,9 +297,9 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'He agrees with her 100% and shares her view completely',
-        isCorrect: true,
-        feedback: 'Correct! "I couldn\'t agree more" is an emphatic idiom meaning complete and total agreement.',
+        text: 'He did not understand what she was explaining',
+        isCorrect: false,
+        feedback: 'Almost. He specifically noted she "explained ... so clearly".',
       },
       {
         key: 'B',
@@ -309,16 +309,16 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
       },
       {
         key: 'C',
-        text: 'He did not understand what she was explaining',
-        isCorrect: false,
-        feedback: 'Almost. He specifically noted she "explained ... so clearly".',
+        text: 'He agrees with her 100% and shares her view completely',
+        isCorrect: true,
+        feedback: 'Correct! "I couldn\'t agree more" is an emphatic idiom meaning complete and total agreement.',
       },
       {
         key: 'D',
         text: 'He wants to argue with her in the next class',
         isCorrect: false,
         feedback: 'Almost. "Couldn\'t agree more" expresses strong harmony, not debate.',
-      },
+      }
     ],
     explanation: '"I couldn\'t agree more" is an idiomatic way of expressing unanimous, unreserved agreement.',
     cefrLevel: 'B2',
@@ -337,9 +337,9 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
     options: [
       {
         key: 'A',
-        text: 'Keep the door open for the next student entering behind them',
-        isCorrect: true,
-        feedback: 'Correct! "Hold the door" is standard courtesy meaning keeping it open so it does not slam on the next person.',
+        text: 'Close the door as quickly as possible',
+        isCorrect: false,
+        feedback: 'Almost. The sign asks for the opposite: to hold it open for someone following.',
       },
       {
         key: 'B',
@@ -355,10 +355,10 @@ export const QUICK_CHECK_QUESTIONS: QuickCheckQuestion[] = [
       },
       {
         key: 'D',
-        text: 'Close the door as quickly as possible',
-        isCorrect: false,
-        feedback: 'Almost. The sign asks for the opposite: to hold it open for someone following.',
-      },
+        text: 'Keep the door open for the next student entering behind them',
+        isCorrect: true,
+        feedback: 'Correct! "Hold the door" is standard courtesy meaning keeping it open so it does not slam on the next person.',
+      }
     ],
     explanation: '"Hold the door for [someone]" means preventing it from closing so another person can comfortably enter.',
     cefrLevel: 'A2',
@@ -491,9 +491,9 @@ export const QUICK_WIN_CHALLENGE: QuickWinStep = {
   options: [
     {
       key: 'A',
-      text: 'Thanks, but I\'ve already eaten!',
-      isCorrect: true,
-      tip: 'Perfect! Use "I\'ve already eaten" (Present Perfect) because it affects right now (you are full).',
+      text: 'I am eating right now yesterday.',
+      isCorrect: false,
+      tip: 'Almost! "Am eating" is happening at this second, which contradicts "yesterday".',
     },
     {
       key: 'B',
@@ -503,10 +503,10 @@ export const QUICK_WIN_CHALLENGE: QuickWinStep = {
     },
     {
       key: 'C',
-      text: 'I am eating right now yesterday.',
-      isCorrect: false,
-      tip: 'Almost! "Am eating" is happening at this second, which contradicts "yesterday".',
-    },
+      text: 'Thanks, but I\'ve already eaten!',
+      isCorrect: true,
+      tip: 'Perfect! Use "I\'ve already eaten" (Present Perfect) because it affects right now (you are full).',
+    }
   ],
   takeaway: 'Quick Rule: When an action happened recently and the result matters right now (you are full!), use "have + verb 3" (I\'ve already eaten).',
 };

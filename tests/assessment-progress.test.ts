@@ -91,6 +91,7 @@ function createFluentPostgrestMock(dataGetter: () => any, count = 1) {
   builder.select = vi.fn(() => builder);
   builder.eq = vi.fn(() => builder);
   builder.gte = vi.fn(() => builder);
+  builder.lte = vi.fn(() => builder);
   builder.lt = vi.fn(() => builder);
   builder.order = vi.fn(() => builder);
   builder.limit = vi.fn(() => builder);
@@ -199,6 +200,12 @@ vi.mock('../api/_lib/supabase/client', () => {
             update: vi.fn((payload: any) => ({
               eq: vi.fn(() => Promise.resolve({ data: payload, error: null })),
             })),
+            upsert: vi.fn((record: any) => {
+              const existingIdx = inMemorySkills.findIndex((s) => s.skill === record.skill);
+              if (existingIdx >= 0) inMemorySkills[existingIdx] = { ...inMemorySkills[existingIdx], ...record };
+              else inMemorySkills.push(record);
+              return Promise.resolve({ data: record, error: null });
+            }),
           };
         }
 
@@ -212,6 +219,10 @@ vi.mock('../api/_lib/supabase/client', () => {
             update: vi.fn((payload: any) => ({
               eq: vi.fn(() => Promise.resolve({ data: payload, error: null })),
             })),
+            upsert: vi.fn((record: any) => {
+              inMemoryWeaknesses.push(record);
+              return Promise.resolve({ data: record, error: null });
+            }),
           };
         }
 

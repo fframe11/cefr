@@ -11,10 +11,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Choose the correct verb form for "She" (Present Simple):',
     contextPassage: 'Every morning, she _____ a cup of tea before work.',
     options: [
-      { key: 'A', text: 'drink', isCorrect: false, feedbackTh: 'drink ใช้กับ I, You, We, They' },
-      { key: 'B', text: 'drinks', isCorrect: true, feedbackTh: 'ถูกต้อง! ประธานเอกพจน์บุรุษที่ 3 (He, She, It) กริยาต้องเติม -s หรือ -es' },
+      { key: 'A', text: 'drinks', isCorrect: true, feedbackTh: 'ถูกต้อง! ประธานเอกพจน์บุรุษที่ 3 (He, She, It) กริยาต้องเติม -s หรือ -es' },
+      { key: 'B', text: 'drink', isCorrect: false, feedbackTh: 'drink ใช้กับ I, You, We, They' },
       { key: 'C', text: 'drinking', isCorrect: false, feedbackTh: 'drinking ต้องมี verb to be นำหน้า (is drinking)' },
-      { key: 'D', text: 'drank', isCorrect: false, feedbackTh: 'drank เป็นกริยาช่อง 2 (Past Simple) แต่อันนี้เป็นกิจวัตรประจำวัน' },
+      { key: 'D', text: 'drank', isCorrect: false, feedbackTh: 'drank เป็นกริยาช่อง 2 (Past Simple) แต่อันนี้เป็นกิจวัตรประจำวัน' }
     ],
     explanationTh: 'ใน Present Simple Tense เมื่อประธานเป็นเอกพจน์บุรุษที่ 3 (He, She, It หรือชื่อคนคนเดียว) กริยาจะต้องเติม -s หรือ -es เสมอ เช่น She drinks tea.',
     explanationEn: 'In Present Simple, when the subject is third-person singular (He/She/It), add -s or -es to the base verb.',
@@ -33,7 +33,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       { key: 'A', text: 'teacher', isCorrect: false, feedbackTh: 'teacher แปลว่า ครูอาจารย์' },
       { key: 'B', text: 'doctor', isCorrect: true, feedbackTh: 'ถูกต้อง! doctor หมายถึง แพทย์ หรือ หมอ' },
       { key: 'C', text: 'driver', isCorrect: false, feedbackTh: 'driver แปลว่า คนขับรถ' },
-      { key: 'D', text: 'cook', isCorrect: false, feedbackTh: 'cook แปลว่า พ่อครัว/คนทำอาหาร' },
+      { key: 'D', text: 'cook', isCorrect: false, feedbackTh: 'cook แปลว่า พ่อครัว/คนทำอาหาร' }
     ],
     explanationTh: 'Doctor แปลว่า แพทย์ ทำหน้าที่รักษาผู้ป่วย เป็นคำศัพท์พื้นฐานระดับ A1 ในหมวดอาชีพ (Professions).',
     explanationEn: 'A doctor is a qualified practitioner of medicine who treats illness.',
@@ -50,9 +50,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     audioScript: 'Passenger: Excuse me, what time is the next train to London? Staff: It leaves at quarter past eight, platform 3.',
     options: [
       { key: 'A', text: '7:45', isCorrect: false, feedbackTh: '7:45 คือ quarter to eight' },
-      { key: 'B', text: '8:15', isCorrect: true, feedbackTh: 'ถูกต้อง! "quarter past eight" หมายถึง 8 โมง 15 นาที' },
-      { key: 'C', text: '8:30', isCorrect: false, feedbackTh: '8:30 คือ half past eight' },
-      { key: 'D', text: '8:45', isCorrect: false, feedbackTh: '8:45 คือ quarter to nine' },
+      { key: 'B', text: '8:30', isCorrect: false, feedbackTh: '8:30 คือ half past eight' },
+      { key: 'C', text: '8:15', isCorrect: true, feedbackTh: 'ถูกต้อง! "quarter past eight" หมายถึง 8 โมง 15 นาที' },
+      { key: 'D', text: '8:45', isCorrect: false, feedbackTh: '8:45 คือ quarter to nine' }
     ],
     explanationTh: '"Quarter past" หมายถึง ผ่านมาแล้ว 15 นาที ดังนั้น "quarter past eight" จึงหมายถึง 8:15 น.',
     explanationEn: '"Quarter past eight" means 15 minutes after 8:00 (8:15).',
@@ -71,9 +71,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     contextPassage: 'We _____ to Chiang Mai last December and visited several ancient temples.',
     options: [
       { key: 'A', text: 'go', isCorrect: false, feedbackTh: 'go เป็นรูปปัจจุบัน (ช่อง 1)' },
-      { key: 'B', text: 'went', isCorrect: true, feedbackTh: 'ถูกต้อง! went เป็นกริยาช่อง 2 ของ go ใช้เล่าเรื่องที่จบแล้วในอดีต (last December)' },
+      { key: 'B', text: 'was going', isCorrect: false, feedbackTh: 'was going ใช้กับเหตุการณ์ที่กำลังดำเนินอยู่ในอดีต' },
       { key: 'C', text: 'have gone', isCorrect: false, feedbackTh: 'have gone เป็น Present Perfect ไม่นิยมใช้ระบุเวลาที่สิ้นสุดไปแล้วอย่างเจาะจง' },
-      { key: 'D', text: 'was going', isCorrect: false, feedbackTh: 'was going ใช้กับเหตุการณ์ที่กำลังดำเนินอยู่ในอดีต' },
+      { key: 'D', text: 'went', isCorrect: true, feedbackTh: 'ถูกต้อง! went เป็นกริยาช่อง 2 ของ go ใช้เล่าเรื่องที่จบแล้วในอดีต (last December)' }
     ],
     explanationTh: 'เมื่อมีคำบอกเวลาอดีตที่ชัดเจน เช่น "last December" ต้องใช้ Past Simple Tense (กริยาช่อง 2: went).',
     explanationEn: 'Specific past time expressions like "last December" require the Past Simple (went).',
@@ -89,10 +89,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Read the museum sign and answer what visitors must do:',
     contextPassage: '[MUSEUM NOTICE]\nPhotography is allowed in the sculpture gallery, but FLASH is strictly prohibited. Bags larger than 30cm must be left at the cloakroom.',
     options: [
-      { key: 'A', text: 'Visitors cannot take any photos at all.', isCorrect: false, feedbackTh: 'ถ่ายรูปได้ (Photography is allowed) แต่ห้ามเปิดแฟลช' },
-      { key: 'B', text: 'Visitors can take photos without flash and must store big bags.', isCorrect: true, feedbackTh: 'ถูกต้อง! ถ่ายรูปได้โดยไม่ใช้แฟลช และกระเป๋าใหญ่ต้องฝากไว้' },
+      { key: 'A', text: 'Visitors can take photos without flash and must store big bags.', isCorrect: true, feedbackTh: 'ถูกต้อง! ถ่ายรูปได้โดยไม่ใช้แฟลช และกระเป๋าใหญ่ต้องฝากไว้' },
+      { key: 'B', text: 'Visitors cannot take any photos at all.', isCorrect: false, feedbackTh: 'ถ่ายรูปได้ (Photography is allowed) แต่ห้ามเปิดแฟลช' },
       { key: 'C', text: 'Visitors must pay extra to bring small bags inside.', isCorrect: false, feedbackTh: 'ไม่ได้กล่าวถึงการเก็บเงินค่ากระเป๋าเล็ก' },
-      { key: 'D', text: 'The sculpture gallery is closed today.', isCorrect: false, feedbackTh: 'แกลเลอรีไม่ได้ปิด' },
+      { key: 'D', text: 'The sculpture gallery is closed today.', isCorrect: false, feedbackTh: 'แกลเลอรีไม่ได้ปิด' }
     ],
     explanationTh: 'ป้ายอนุญาตให้ถ่ายรูปได้ (Photography is allowed) แต่ห้ามใช้แฟลช (FLASH is strictly prohibited) และกระเป๋าขนาดใหญ่กว่า 30 ซม. ต้องฝากไว้ที่ห้องฝากของ.',
     explanationEn: 'Photos are permitted without flash, and large bags must be deposited in the cloakroom.',
@@ -111,7 +111,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       { key: 'A', text: 'in', isCorrect: false, feedbackTh: 'in ใช้กับเดือน ปี หรือฤดูกาล เช่น in July, in 2026' },
       { key: 'B', text: 'on', isCorrect: true, feedbackTh: 'ถูกต้อง! วันในสัปดาห์และวันที่เจาะจงต้องใช้ "on"' },
       { key: 'C', text: 'at', isCorrect: false, feedbackTh: 'at ใช้กับเวลาที่ระบุนาฬิกา เช่น at 3 PM' },
-      { key: 'D', text: 'by', isCorrect: false, feedbackTh: 'by หมายถึง ภายในเวลา...' },
+      { key: 'D', text: 'by', isCorrect: false, feedbackTh: 'by หมายถึง ภายในเวลา...' }
     ],
     explanationTh: 'กฎการใช้บุพบทบอกเวลา: วันในสัปดาห์ (Friday, Monday) หรือวันที่เจาะจง ใช้ "on" เสมอ.',
     explanationEn: 'We use the preposition "on" for days of the week and specific dates.',
@@ -130,9 +130,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     contextPassage: 'Sarah is an experienced engineer. She _____ at this technology firm for five years, and she still works here today.',
     options: [
       { key: 'A', text: 'worked', isCorrect: false, feedbackTh: 'worked เป็น Past Simple แปลว่าปัจจุบันไม่ได้ทำงานที่นี่แล้ว' },
-      { key: 'B', text: 'has worked', isCorrect: true, feedbackTh: 'ถูกต้อง! เหตุการณ์เริ่มต้นในอดีตและยังดำเนินต่อมาถึงปัจจุบัน (for five years + still works here)' },
-      { key: 'C', text: 'had worked', isCorrect: false, feedbackTh: 'had worked เป็น Past Perfect ต้องใช้คู่กับอีกเหตุการณ์หนึ่งในอดีต' },
-      { key: 'D', text: 'works', isCorrect: false, feedbackTh: 'ขาดมิติของการเชื่อมโยงระยะเวลา 5 ปีจากอดีตถึงปัจจุบัน' },
+      { key: 'B', text: 'had worked', isCorrect: false, feedbackTh: 'had worked เป็น Past Perfect ต้องใช้คู่กับอีกเหตุการณ์หนึ่งในอดีต' },
+      { key: 'C', text: 'has worked', isCorrect: true, feedbackTh: 'ถูกต้อง! เหตุการณ์เริ่มต้นในอดีตและยังดำเนินต่อมาถึงปัจจุบัน (for five years + still works here)' },
+      { key: 'D', text: 'works', isCorrect: false, feedbackTh: 'ขาดมิติของการเชื่อมโยงระยะเวลา 5 ปีจากอดีตถึงปัจจุบัน' }
     ],
     explanationTh: 'Present Perfect (has/have + V.3) ใช้กับเหตุการณ์ที่เริ่มต้นในอดีตและยังคงดำเนินอยู่จนถึงปัจจุบัน โดยมักใช้ร่วมกับ "for" หรือ "since".',
     explanationEn: 'Present Perfect is used for actions that began in the past and continue into the present.',
@@ -149,9 +149,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     contextPassage: 'If I _____ more free time, I _____ learn how to play the piano.',
     options: [
       { key: 'A', text: 'have / will', isCorrect: false, feedbackTh: 'นี่คือ First Conditional (เหตุการณ์ที่เป็นไปได้จริง)' },
-      { key: 'B', text: 'had / would', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้าง Second Conditional คือ If + Past Simple, would + V.inf' },
+      { key: 'B', text: 'would have / did', isCorrect: false, feedbackTh: 'โครงสร้างสลับตำแหน่งกริยาช่วย' },
       { key: 'C', text: 'had / will', isCorrect: false, feedbackTh: 'จับคู่ Tense ไม่ถูกต้อง (had ไม่คู่กับ will)' },
-      { key: 'D', text: 'would have / did', isCorrect: false, feedbackTh: 'โครงสร้างสลับตำแหน่งกริยาช่วย' },
+      { key: 'D', text: 'had / would', isCorrect: true, feedbackTh: 'ถูกต้อง! โครงสร้าง Second Conditional คือ If + Past Simple, would + V.inf' }
     ],
     explanationTh: 'Second Conditional ใช้สมมติสิ่งที่ไม่เป็นจริงในปัจจุบัน โครงสร้าง: If + Subject + V.2 (Past Simple), Subject + would + V.1 (Base Form).',
     explanationEn: 'The Second Conditional expresses hypothetical or unlikely situations: If + past simple, would + bare infinitive.',
@@ -167,10 +167,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Read the short excerpt on workplace adaptation and identify the main conclusion:',
     contextPassage: 'Many employees find remote work initially convenient because it eliminates the daily commute. However, over several months, the lack of boundary between personal living space and job duties frequently leads to subtle fatigue. Establishing a dedicated workspace and adhering strictly to set working hours is essential to prevent burnout.',
     options: [
-      { key: 'A', text: 'Remote work should be banned because everyone suffers from burnout.', isCorrect: false, feedbackTh: 'บทความไม่ได้บอกให้ยกเลิก แค่เตือนให้ระวังความเหนื่อยล้า' },
-      { key: 'B', text: 'Clear routines and designated physical zones help sustain long-term remote productivity.', isCorrect: true, feedbackTh: 'ถูกต้อง! การกำหนดเวลาทำงานที่ชัดเจนและแยกพื้นที่ทำงานช่วยป้องกันภาวะหมดไฟได้' },
+      { key: 'A', text: 'Clear routines and designated physical zones help sustain long-term remote productivity.', isCorrect: true, feedbackTh: 'ถูกต้อง! การกำหนดเวลาทำงานที่ชัดเจนและแยกพื้นที่ทำงานช่วยป้องกันภาวะหมดไฟได้' },
+      { key: 'B', text: 'Remote work should be banned because everyone suffers from burnout.', isCorrect: false, feedbackTh: 'บทความไม่ได้บอกให้ยกเลิก แค่เตือนให้ระวังความเหนื่อยล้า' },
       { key: 'C', text: 'Commuting to an office is proven to be healthier than staying at home.', isCorrect: false, feedbackTh: 'บทความไม่ได้เปรียบเทียบสุขภาพจากการเดินทาง' },
-      { key: 'D', text: 'Employees work faster when they do not take breaks.', isCorrect: false, feedbackTh: 'ตรงข้ามกับสาระสำคัญของบทความ' },
+      { key: 'D', text: 'Employees work faster when they do not take breaks.', isCorrect: false, feedbackTh: 'ตรงข้ามกับสาระสำคัญของบทความ' }
     ],
     explanationTh: 'ประเด็นหลักของข้อความคือการแนะนำให้พนักงานแยกพื้นที่ทำงาน (dedicated workspace) และรักษากรอบเวลา (set working hours) เพื่อไม่ให้เกิดภาวะหมดไฟในการทำงานระยะไกล.',
     explanationEn: 'The passage highlights the importance of setting boundaries and dedicated workspaces to avoid fatigue in remote work.',
@@ -188,10 +188,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Choose the most appropriate collocation for business and decision making:',
     contextPassage: 'After analyzing the quarterly financial records, the board decided to _____ the new product launch until market volatility subsided.',
     options: [
-      { key: 'A', text: 'postpone', isCorrect: true, feedbackTh: 'ถูกต้อง! postpone แปลว่า เลื่อนออกไปอย่างเป็นทางการ' },
-      { key: 'B', text: 'cancel out', isCorrect: false, feedbackTh: 'cancel out หมายถึง หักล้างผลกัน' },
+      { key: 'A', text: 'cancel out', isCorrect: false, feedbackTh: 'cancel out หมายถึง หักล้างผลกัน' },
+      { key: 'B', text: 'postpone', isCorrect: true, feedbackTh: 'ถูกต้อง! postpone แปลว่า เลื่อนออกไปอย่างเป็นทางการ' },
       { key: 'C', text: 'give up', isCorrect: false, feedbackTh: 'give up หมายถึง ยอมแพ้หรือล้มเลิกโดยสิ้นเชิง' },
-      { key: 'D', text: 'run down', isCorrect: false, feedbackTh: 'run down หมายถึง วิ่งชน หรือวิพากษ์วิจารณ์' },
+      { key: 'D', text: 'run down', isCorrect: false, feedbackTh: 'run down หมายถึง วิ่งชน หรือวิพากษ์วิจารณ์' }
     ],
     explanationTh: 'คำว่า "postpone" (เลื่อนออกไป) เข้ากับบริบทที่บอร์ดตัดสินใจเลื่อนการเปิดตัวสินค้าจนกว่าความผันผวนของตลาดจะลดลง (until market volatility subsided).',
     explanationEn: '"Postpone" means to delay an event or activity until a later time.',
@@ -207,10 +207,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Select the grammatically correct passive reporting structure:',
     contextPassage: 'The climate committee _____ that renewable energy costs will decline further over the next decade.',
     options: [
-      { key: 'A', text: 'is widely believed', isCorrect: true, feedbackTh: 'ถูกต้อง! "It is widely believed that..." หรือ Subject + is believed to...' },
+      { key: 'A', text: 'is been believed', isCorrect: false, feedbackTh: 'ไวยากรณ์ผิดรูป (is been ไม่มีในภาษาอังกฤษ)' },
       { key: 'B', text: 'widely believes', isCorrect: false, feedbackTh: ' committee ในที่นี้ต้องใช้รูป Passive หรือถ้า Active ต้องมีกรรมรองรับที่สมบูรณ์' },
-      { key: 'C', text: 'is been believed', isCorrect: false, feedbackTh: 'ไวยากรณ์ผิดรูป (is been ไม่มีในภาษาอังกฤษ)' },
-      { key: 'D', text: 'has widely believing', isCorrect: false, feedbackTh: 'has + V.ing เป็นรูปที่ผิดหลัก' },
+      { key: 'C', text: 'is widely believed', isCorrect: true, feedbackTh: 'ถูกต้อง! "It is widely believed that..." หรือ Subject + is believed to...' },
+      { key: 'D', text: 'has widely believing', isCorrect: false, feedbackTh: 'has + V.ing เป็นรูปที่ผิดหลัก' }
     ],
     explanationTh: 'Impersonal Passive เช่น "is widely believed / reported / estimated" นิยมใช้ในข้อสอบระดับ B2 เพื่อรายงานข้อเท็จจริงทางวิชาการโดยไม่เจาะจงตัวบุคคล.',
     explanationEn: 'Passive reporting verbs like "is widely believed that..." indicate shared opinions in formal contexts.',
@@ -227,9 +227,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     audioScript: 'Speaker: "Well, the architect\'s proposal is certainly bold and visually striking. Whether the city council actually has the fiscal reserves to sustain its maintenance over thirty years is another matter entirely."',
     options: [
       { key: 'A', text: 'The speaker wholeheartedly endorses the architect\'s plan without reservation.', isCorrect: false, feedbackTh: 'ผู้พูดไม่ได้เห็นชอบทั้งหมด' },
-      { key: 'B', text: 'The speaker admires the aesthetic design but harbors doubts regarding long-term financial viability.', isCorrect: true, feedbackTh: 'ถูกต้อง! ชมว่า bold and visually striking แต่ตั้งคำถามเรื่องงบประมาณระยะยาว (fiscal reserves)' },
+      { key: 'B', text: 'The speaker is indifferent to both aesthetics and financial concerns.', isCorrect: false, feedbackTh: 'ผู้พูดมีความเห็นชัดเจน ไม่ได้วางเฉย' },
       { key: 'C', text: 'The speaker believes the city council will reject the design immediately due to ugliness.', isCorrect: false, feedbackTh: 'ผู้พูดชมว่าสวยสะดุดตา ไม่ได้บอกว่าน่าเกลียด' },
-      { key: 'D', text: 'The speaker is indifferent to both aesthetics and financial concerns.', isCorrect: false, feedbackTh: 'ผู้พูดมีความเห็นชัดเจน ไม่ได้วางเฉย' },
+      { key: 'D', text: 'The speaker admires the aesthetic design but harbors doubts regarding long-term financial viability.', isCorrect: true, feedbackTh: 'ถูกต้อง! ชมว่า bold and visually striking แต่ตั้งคำถามเรื่องงบประมาณระยะยาว (fiscal reserves)' }
     ],
     explanationTh: 'ผู้พูดชื่นชมความกล้าหาญและความโดดเด่นทางสายตา (bold and visually striking) แต่แสดงความคลางแคลงใจเรื่องงบประมาณในการดูแลรักษาในระยะ 30 ปีข้างหน้า.',
     explanationEn: 'The speaker contrasts the visual strengths of the proposal with practical budgetary skepticism.',
@@ -247,10 +247,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Select the correct inversion structure following a negative adverbial:',
     contextPassage: 'Seldom _____ such an exquisite synthesis of empirical precision and artistic elegance.',
     options: [
-      { key: 'A', text: 'one witnesses', isCorrect: false, feedbackTh: 'เมื่อขึ้นต้นด้วย Seldom ต้องสลับกริยาช่วยมาหน้าประธาน' },
-      { key: 'B', text: 'does one witness', isCorrect: true, feedbackTh: 'ถูกต้อง! Inversion: Seldom + auxiliary (does) + subject (one) + base verb (witness)' },
+      { key: 'A', text: 'does one witness', isCorrect: true, feedbackTh: 'ถูกต้อง! Inversion: Seldom + auxiliary (does) + subject (one) + base verb (witness)' },
+      { key: 'B', text: 'one witnesses', isCorrect: false, feedbackTh: 'เมื่อขึ้นต้นด้วย Seldom ต้องสลับกริยาช่วยมาหน้าประธาน' },
       { key: 'C', text: 'witnessed one', isCorrect: false, feedbackTh: 'ในภาษาอังกฤษปัจจุบันต้องใช้กริยาช่วย do/does/did ไม่ย้าย main verb มาหน้าประธานโดยตรง' },
-      { key: 'D', text: 'one has witnessed', isCorrect: false, feedbackTh: 'ขาดโครงสร้าง Inversion' },
+      { key: 'D', text: 'one has witnessed', isCorrect: false, feedbackTh: 'ขาดโครงสร้าง Inversion' }
     ],
     explanationTh: 'กฎ Negative Inversion: เมื่อประโยคขึ้นต้นด้วยคำปฏิเสธหรือจำกัดความ เช่น Seldom, Rarely, Never, Scarcely จะต้องสลับกริยาช่วย (Auxiliary Verb) มาไว้หน้าประธานเสมอ เช่น Seldom does one witness...',
     explanationEn: 'Negative adverbs at the beginning of a sentence require inversion (auxiliary + subject + main verb).',
@@ -266,10 +266,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Identify the word synonymous with thorough, deep, and intellectually rigorous:',
     contextPassage: 'Far from providing a merely cursory overview, the scholar conducted a _____ investigation into the socio-economic causes of the reform.',
     options: [
-      { key: 'A', text: 'exhaustive', isCorrect: true, feedbackTh: 'ถูกต้อง! exhaustive แปลว่า ละเอียดถี่ถ้วน ครบถ้วนทุกแง่มุม' },
-      { key: 'B', text: 'fleeting', isCorrect: false, feedbackTh: 'fleeting แปลว่า ชั่วคราว หรือผ่านไปอย่างรวดเร็ว' },
+      { key: 'A', text: 'fleeting', isCorrect: false, feedbackTh: 'fleeting แปลว่า ชั่วคราว หรือผ่านไปอย่างรวดเร็ว' },
+      { key: 'B', text: 'exhaustive', isCorrect: true, feedbackTh: 'ถูกต้อง! exhaustive แปลว่า ละเอียดถี่ถ้วน ครบถ้วนทุกแง่มุม' },
       { key: 'C', text: 'monotonous', isCorrect: false, feedbackTh: 'monotonous แปลว่า ซ้ำซากจำเจ น่าเบื่อ' },
-      { key: 'D', text: 'provisional', isCorrect: false, feedbackTh: 'provisional แปลว่า ชั่วคราว หรือมีเงื่อนไข' },
+      { key: 'D', text: 'provisional', isCorrect: false, feedbackTh: 'provisional แปลว่า ชั่วคราว หรือมีเงื่อนไข' }
     ],
     explanationTh: '"Exhaustive" หมายถึง อย่างละเอียดครอบคลุมทุกแง่มุม (thorough and comprehensive) ซึ่งตรงข้ามกับ "cursory" (ผิวเผิน/ลวกๆ) ในโจทย์.',
     explanationEn: '"Exhaustive" means examining, including, or considering all elements or aspects fully.',
@@ -286,9 +286,9 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     contextPassage: 'Technological determinism posits that media infrastructure unilaterally sculpts human cognitive patterns. _____, recent ethnographic studies suggest that local communities routinely repurpose digital tools in ways completely unanticipated by their silicon architects, demonstrating active human agency.',
     options: [
       { key: 'A', text: 'Besides this', isCorrect: false, feedbackTh: 'Besides this ใช้เสริมความคล้อยตาม ไม่ได้ใช้ขัดแย้ง' },
-      { key: 'B', text: 'Notwithstanding this premise', isCorrect: true, feedbackTh: 'ถูกต้อง! "Notwithstanding this premise" (แม้จะมีสมมติฐานดังกล่าวก็ตาม) เชื่อมโยงความขัดแย้งระหว่างทฤษฎีกับผลการศึกษาจริงได้อย่างสละสลวย' },
-      { key: 'C', text: 'In a similar vein', isCorrect: false, feedbackTh: 'In a similar vein หมายถึง ในทำนองเดียวกัน (แสดงความคล้อยตาม)' },
-      { key: 'D', text: 'Consequently', isCorrect: false, feedbackTh: 'Consequently แสดงผลลัพธ์ แต่ประโยคหลังเป็นข้อโต้แย้ง' },
+      { key: 'B', text: 'In a similar vein', isCorrect: false, feedbackTh: 'In a similar vein หมายถึง ในทำนองเดียวกัน (แสดงความคล้อยตาม)' },
+      { key: 'C', text: 'Notwithstanding this premise', isCorrect: true, feedbackTh: 'ถูกต้อง! "Notwithstanding this premise" (แม้จะมีสมมติฐานดังกล่าวก็ตาม) เชื่อมโยงความขัดแย้งระหว่างทฤษฎีกับผลการศึกษาจริงได้อย่างสละสลวย' },
+      { key: 'D', text: 'Consequently', isCorrect: false, feedbackTh: 'Consequently แสดงผลลัพธ์ แต่ประโยคหลังเป็นข้อโต้แย้ง' }
     ],
     explanationTh: '"Notwithstanding this premise" ทำหน้าที่เป็นคำเชื่อมระดับสูงที่แสดงการโต้แย้งอย่างเป็นทางการ (qualifying concession) เหมาะสมกับการหักล้างทฤษฎี Technological determinism.',
     explanationEn: '"Notwithstanding this premise" acts as a formal concessive marker contrasting theoretical claims with empirical counter-evidence.',
@@ -306,10 +306,10 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     promptEn: 'Choose the sophisticated idiom meaning to catch someone completely unprepared:',
     contextPassage: 'The aggressive regulatory audit caught the compliance department completely _____, exposing vulnerabilities that had lain dormant for decades.',
     options: [
-      { key: 'A', text: 'on the hop', isCorrect: true, feedbackTh: 'ถูกต้อง! "catch someone on the hop" เป็นสำนวนระดับ C2 แปลว่า ทำให้ประหลาดใจหรือไม่ทันตั้งตัว' },
+      { key: 'A', text: 'under the weather', isCorrect: false, feedbackTh: 'under the weather เป็นสำนวนระดับพื้นฐานแปลว่า รู้สึกไม่สบาย' },
       { key: 'B', text: 'in the clear', isCorrect: false, feedbackTh: 'in the clear แปลว่า พ้นข้อกล่าวหา/พ้นอันตราย' },
       { key: 'C', text: 'at a premium', isCorrect: false, feedbackTh: 'at a premium แปลว่า หายากและมีมูลค่าสูง' },
-      { key: 'D', text: 'under the weather', isCorrect: false, feedbackTh: 'under the weather เป็นสำนวนระดับพื้นฐานแปลว่า รู้สึกไม่สบาย' },
+      { key: 'D', text: 'on the hop', isCorrect: true, feedbackTh: 'ถูกต้อง! "catch someone on the hop" เป็นสำนวนระดับ C2 แปลว่า ทำให้ประหลาดใจหรือไม่ทันตั้งตัว' }
     ],
     explanationTh: 'สำนวน "catch someone on the hop" (ระดับ C2) หมายถึง เล่นงานหรือตรวจพบในจังหวะที่อีกฝ่ายไม่ทันตั้งตัวหรือไม่พร้อม.',
     explanationEn: '"To catch someone on the hop" is a British idiom meaning to surprise someone because they are not prepared.',
@@ -328,7 +328,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       { key: 'A', text: 'Had it not been', isCorrect: true, feedbackTh: 'ถูกต้อง! Had it not been for... เป็นรูปละ If ของ If it had not been for... (Third Conditional Inversion)' },
       { key: 'B', text: 'Were it not', isCorrect: false, feedbackTh: 'Were it not for... ใช้กับปัจจุบัน (Second Conditional) แต่เหตุการณ์นี้เป็นอดีต (would have foundered)' },
       { key: 'C', text: 'Should it be', isCorrect: false, feedbackTh: 'Should it be ใช้กับอนาคตหรือความเป็นไปได้ในปัจจุบัน' },
-      { key: 'D', text: 'If had it not been', isCorrect: false, feedbackTh: 'ห้ามใส่ If ซ้ำซ้อนกับ Had ที่สลับตำแหน่งมาแล้ว' },
+      { key: 'D', text: 'If had it not been', isCorrect: false, feedbackTh: 'ห้ามใส่ If ซ้ำซ้อนกับ Had ที่สลับตำแหน่งมาแล้ว' }
     ],
     explanationTh: '"Had it not been for..." เป็นโครงสร้าง Inversion ของ Third Conditional ที่สละสลวย ใช้แทน "If it had not been for..." เมื่อพูดถึงเหตุการณ์ในอดีตที่ส่งผลกระทบต่อเนื่อง.',
     explanationEn: '"Had it not been for..." is an inverted third conditional construction indicating that without a past event, another consequence would have occurred.',
@@ -347,7 +347,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       { key: 'A', text: 'The organization is lauded for its democratic decision-making and comprehensive consultation.', isCorrect: false, feedbackTh: 'ผู้เขียนไม่ได้ชื่นชม แต่กำลังประชดประชันความล่าช้า' },
       { key: 'B', text: 'The author satirizes how institutional processes disguise systemic procrastination as productive deliberation.', isCorrect: true, feedbackTh: 'ถูกต้อง! ผู้เขียนเสียดสีว่ากระบวนการตั้งคณะทำงานย่อยเป็นเพียงเครื่องบังหน้าในการผัดวันประกันพรุ่ง (procedural inertia)' },
       { key: 'C', text: 'The author recommends dissolving all sub-committees immediately.', isCorrect: false, feedbackTh: 'บทความวิจารณ์เชิงปรัชญา ไม่ได้ระบุข้อเสนอแนะโดยตรง' },
-      { key: 'D', text: 'The system has proven highly effective at producing fast executive resolutions.', isCorrect: false, feedbackTh: 'ตรงข้ามกับความหมายโดยสิ้นเชิง' },
+      { key: 'D', text: 'The system has proven highly effective at producing fast executive resolutions.', isCorrect: false, feedbackTh: 'ตรงข้ามกับความหมายโดยสิ้นเชิง' }
     ],
     explanationTh: 'ผู้เขียนใช้โวหารประชดประชัน (satirical subtext) บรรยายถึง "procedural inertia" (ความเฉื่อยชาตามขั้นตอน) ที่แปลงการผัดผ่อนให้ดูมีแบบแผนโดยการตั้งคณะอนุกรรมการขึ้นมาพิจารณาความเป็นไปได้ในการร่างวาระการประชุม.',
     explanationEn: 'The passage satirizes institutional procrastination masked as methodical bureaucratic diligence.',

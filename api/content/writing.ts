@@ -8,7 +8,7 @@ import promptsData from '../../data/writing-prompts.json';
 const writingQuerySchema = paginationSchema.extend({
   cefr_level: cefrLevelSchema.optional(),
   target_exam: cambridgeExamCodeSchema.optional(),
-  task_type: z.string().optional(),
+  task_type: z.enum(['Email', 'Essay', 'Article', 'Story', 'Review', 'description', 'message', 'report', 'proposal', 'argumentative_essay', 'critical_review', 'philosophical_essay']).optional(),
 });
 
 interface LocalWritingPrompt {

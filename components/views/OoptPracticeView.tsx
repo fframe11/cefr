@@ -17,6 +17,7 @@ import {
   Award,
   Layers,
   Lightbulb,
+  X,
 } from 'lucide-react';
 import { useTranslation } from '../../i18n';
 
@@ -408,18 +409,56 @@ export const OoptPracticeView: React.FC = () => {
             </div>
 
             {/* Answer Explanation */}
-            {selectedMeaningAnswers[currentMeaning.id] && (
-              <div className="p-4 rounded-[20px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-2 shadow-2xs">
-                <div className="flex items-center gap-1.5 font-bold text-[#3B82F6]">
-                  <HelpCircle className="w-4 h-4" />
-                  <span>{isEn ? 'Pragmatic Analysis & Explanation' : 'การวิเคราะห์เจตนาและความหมายแฝง'}</span>
+            {selectedMeaningAnswers[currentMeaning.id] && (() => {
+              const selectedKey = selectedMeaningAnswers[currentMeaning.id];
+              const correctOpt = currentMeaning.options.find((o) => o.isCorrect);
+              const isMeaningCorrect = selectedKey === correctOpt?.key;
+
+              return (
+                <div className="p-4 sm:p-5 rounded-[20px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-3 shadow-2xs">
+                  <div className="flex items-center justify-between gap-2 flex-wrap pb-2 border-b border-slate-100 dark:border-white/10">
+                    {isMeaningCorrect ? (
+                      <span className="text-emerald-600 dark:text-emerald-400 font-extrabold flex items-center gap-1.5 text-sm">
+                        <CheckCircle2 className="w-4 h-4" />
+                        {isEn ? 'Correct!' : 'ยอดเยี่ยม! ตอบถูกต้อง'}
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-rose-600 dark:text-rose-400 font-extrabold flex items-center gap-1.5 text-sm">
+                          <X className="w-4 h-4 stroke-[3]" />
+                          {isEn ? 'Incorrect' : 'ยังไม่ถูกต้อง'}
+                        </span>
+                        {correctOpt && (
+                          <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 text-xs font-black">
+                            {isEn ? `Correct answer: Choice ${correctOpt.key}` : `คำตอบที่ถูกต้องคือ: ข้อ ${correctOpt.key}`}
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </div>
+
+                  {!isMeaningCorrect && correctOpt && (
+                    <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-950 dark:text-emerald-200 font-medium flex items-start gap-2.5">
+                      <span className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">
+                        {correctOpt.key}
+                      </span>
+                      <span>
+                        <strong className="text-emerald-700 dark:text-emerald-300">เฉลย:</strong> "{correctOpt.text}"
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="flex items-center gap-1.5 font-bold text-[#3B82F6]">
+                    <HelpCircle className="w-4 h-4" />
+                    <span>{isEn ? 'Pragmatic Analysis & Explanation' : 'การวิเคราะห์เจตนาและความหมายแฝง'}</span>
+                  </div>
+                  <p className="leading-relaxed">{currentMeaning.explanationTh}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 italic pt-1 border-t border-slate-100 dark:border-white/10">
+                    {currentMeaning.explanationEn}
+                  </p>
                 </div>
-                <p className="leading-relaxed">{currentMeaning.explanationTh}</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400 italic pt-1 border-t border-slate-100 dark:border-white/10">
-                  {currentMeaning.explanationEn}
-                </p>
-              </div>
-            )}
+              );
+            })()}
           </div>
         </div>
       )}

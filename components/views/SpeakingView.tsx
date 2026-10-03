@@ -255,12 +255,12 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
       <div className="space-y-1">
         <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
           {mode === 'pronunciation'
-            ? (isEn ? "Pronunciation & Sentence Stress Studio" : "การฝึกออกเสียงและเน้นเสียงในประโยค (Sentence Stress)")
+            ? (isEn ? "Pronunciation & Sentence Stress Studio" : "การฝึกออกเสียงและเน้นเสียงในประโยค")
             : (isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ")}
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
           {mode === 'pronunciation'
-            ? (isEn ? "Practice sentence rhythm, intonation, and phonetic precision with voice recording." : "ฝึกจังหวะการพูด การเน้นคำสำคัญ (Stress) และความแม่นยำทางสัทศาสตร์ พร้อมบันทึกเสียงและตรวจจับเสียงพูด")
+            ? (isEn ? "Practice sentence rhythm, intonation, and phonetic precision with voice recording." : "ฝึกจังหวะการพูด การเน้นคำสำคัญ และความแม่นยำทางสัทศาสตร์ พร้อมบันทึกเสียงและตรวจจับเสียงพูด")
             : (isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย")}
         </p>
       </div>

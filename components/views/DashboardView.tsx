@@ -355,7 +355,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <section aria-label="Today's learning mission" className="w-full rounded-[28px] bg-white dark:bg-[#1A1826] p-6 sm:p-7 border border-border/80 shadow-sm space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/80 pb-4">
             <div>
-              <div className="flex items-center gap-2 flex-wrap">
+              <div className="flex items-center gap-2 flex-wrap" role="status">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 text-xs font-mono font-bold">
                   {`ระดับปัจจุบัน: CEFR ${progress.currentLevel}`}
                 </span>
