@@ -1,0 +1,3512 @@
+{
+  "total_pending": 55215,
+  "mt_success": 1436,
+  "mt_failed": 0,
+  "mt_low_quality": 53779,
+  "quality_issues": [
+    {
+      "word": "climbing",
+      "pos": "noun",
+      "meaning_en": "an event that involves rising to a higher point (as in altit",
+      "mt_result": "เหตุการณ์ที่เกี่ยวข้องกับการเพิ่มขึ้นของจุดที่สูงกว่า (เช่นในระดับความสูงหรืออุณหภูมิหรือความรุนแรงอื่นๆ)",
+      "reason": "too_long"
+    },
+    {
+      "word": "addiction",
+      "pos": "noun",
+      "meaning_en": "(Roman law) a formal award by a magistrate of a thing or per",
+      "mt_result": "( พระราชบัญญัติโรมัน) รางวัลทางการโดยผู้พิพากษาเรื่องหรือบุคคลหนึ่งแก่อีกบุคคลหนึ่ง (เป็นรางวัลลูกหนี้แก่เจ้าหนี้ของเขา)",
+      "reason": "too_long"
+    },
+    {
+      "word": "expressive",
+      "pos": "adjective",
+      "meaning_en": "performing gestures or possessing qualities or features that",
+      "mt_result": "การทําท่าทางหรือการมีคุณลักษณะหรือลักษณะเฉพาะซึ่งบ่งชี้ถึงสภาพที่เป็นอยู่หรืออารมณ์อย่างหนึ่ง",
+      "reason": "too_long"
+    },
+    {
+      "word": "ecological",
+      "pos": "phrase",
+      "meaning_en": "violence carried out to further the political or social obje",
+      "mt_result": "ความรุนแรงดําเนินต่อไปเพื่อส่งเสริมเป้าหมายทางการเมืองหรือทางสังคมของนักอนุรักษ์สิ่งแวดล้อม",
+      "reason": "too_long"
+    },
+    {
+      "word": "planning",
+      "pos": "phrase",
+      "meaning_en": "any of several methods of family planning that do not involv",
+      "mt_result": "วิธีการวางแผนอย่างใดอย่างหนึ่งของครอบครัวที่ไม่เกี่ยวข้องกับการทําหมันหรือยาคุมกําเนิด",
+      "reason": "too_long"
+    },
+    {
+      "word": "bearded",
+      "pos": "phrase",
+      "meaning_en": "medium-sized greyish to yellow seal with bristles each side ",
+      "mt_result": "สีเทาปานกลางเป็นแมวน้ําสีเหลืองที่มี bristles แต่ละด้านของปากกระบอก",
+      "reason": "has_english"
+    },
+    {
+      "word": "heating",
+      "pos": "phrase",
+      "meaning_en": "a heating system in which air or water is heated at a centra",
+      "mt_result": "ระบบทําความร้อนซึ่งอากาศหรือน้ําได้รับการทําให้ร้อนณเตาหลอมชั้นกลางและส่งผ่านอาคารผ่านทางท่อน้ําและหม้อน้ํา",
+      "reason": "too_long"
+    },
+    {
+      "word": "fragmentation",
+      "pos": "phrase",
+      "meaning_en": "a bomb with only 10 to 20 per cent explosive and the remaind",
+      "mt_result": "ระเบิดที่มีระเบิดเพียง 10 ถึง 20 เปอร์เซ็นต์และเศษประกอบด้วยปลอกกระสุนออกแบบให้แตกเป็นเศษเล็กๆน้อยๆหลาย",
+      "reason": "too_long"
+    },
+    {
+      "word": "Internet",
+      "pos": "phrase",
+      "meaning_en": "a computer connected to the internet that maintains a series",
+      "mt_result": "คอมพิวเตอร์ที่เชื่อมต่อกับอินเทอร์เน็ตที่รักษาชุดของหน้าเว็บบนเว็บ World Found",
+      "reason": "has_english"
+    },
+    {
+      "word": "expressive",
+      "pos": "phrase",
+      "meaning_en": "a way of expressing something (in language or art or music e",
+      "mt_result": "วิธีแสดงบางอย่าง (ในภาษาหรือศิลปะหรือดนตรีฯลฯ) ที่มีลักษณะเฉพาะของบุคคลหรือกลุ่มบุคคลหรือช่วงเวลา",
+      "reason": "too_long"
+    },
+    {
+      "word": "subculture",
+      "pos": "phrase",
+      "meaning_en": "a minority youth culture whose distinctiveness depended larg",
+      "mt_result": "วัฒนธรรมส่วนน้อยของเยาวชนซึ่งลักษณะเฉพาะของชนชั้นทางสังคมและภูมิหลังทางชาติพันธุ์ของสมาชิกส่วนใหญ่",
+      "reason": "too_long"
+    },
+    {
+      "word": "doc",
+      "pos": "phrase",
+      "meaning_en": "a scholar or researcher who is involved in academic study be",
+      "mt_result": "ผู้คงแก่เรียนหรือนักวิจัยที่มีส่วนร่วมในการศึกษาด้านการศึกษาด้านการศึกษานอกระดับปริญญาเอก",
+      "reason": "too_long"
+    },
+    {
+      "word": "hysterical",
+      "pos": "phrase",
+      "meaning_en": "neurotic disorder characterized by violent emotional outbrea",
+      "mt_result": "ความผิดปกติทางประสาทมีลักษณะเด่นด้วยการระบาดทางอารมณ์อย่างรุนแรงและการรบกวนของประสาทสัมผัสและการใช้มอเตอร์",
+      "reason": "too_long"
+    },
+    {
+      "word": "email",
+      "pos": "phrase",
+      "meaning_en": "a message sent over the internet via the email system",
+      "mt_result": "Comment=รายการจดหมายName",
+      "reason": "has_english"
+    },
+    {
+      "word": "leavening",
+      "pos": "phrase",
+      "meaning_en": "A leavening agent (also known as raising agent or leaven age",
+      "mt_result": "ตัวแทนที่ออกจากบ้าน (เรียกอีกอย่างหนึ่งว่าตัวแทนที่เลี้ยงลูกด้วยเชื้อหรือเชื้อ) เป็นสารที่เพิ่มเข้าไปในแป้งหรือแป้งเพื่อให้มันเบาขึ้นและอ่อนลง",
+      "reason": "too_long"
+    },
+    {
+      "word": "axiomatic",
+      "pos": "phrase",
+      "meaning_en": "any set of axioms from which some or all axioms can be used ",
+      "mt_result": "ชุดของ acsioms ใดๆที่บางครั้งหรือ exexoms ทั้งหมดสามารถใช้ในการรวมกันเพื่อหาทฤษฎีบทอย่างมีเหตุผล",
+      "reason": "too_long"
+    },
+    {
+      "word": "'hood",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "a'man",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "a-horizon",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "a-line",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "a-list",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "a-team",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aaa",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aac",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aachen",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aalborg",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aalii",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aalst",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aalto",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aar",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aare",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aarhus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aaron",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aarp",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aas",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aave",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aba",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abaca",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abadan",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abalone",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abamp",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abampere",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abarticulation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abasement",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abasia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abattis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abaya",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abb",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abbe",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abbreviator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abc",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abc's",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abcoulomb",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abcs",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abdias",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abdicator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abdominocentesis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abdominoplasty",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abdominousness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abducens",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abductor",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abecedarian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abecedarius",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abel",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abelard",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abele",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abelia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abelmoschus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abelmosk",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abenaki",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aberdare",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aberrance",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aberrancy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abetalipoproteinemia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abettal",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abetter",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abettor",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abfarad",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abhenry",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abhorrer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abidjan",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abience",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abies",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abila",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abilene",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abiogenist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abiotrophy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abjection",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abjuration",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abjurer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abkhas",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abkhasian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abkhazia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abkhazian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ablactation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ablation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ablative",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "able-bodiedism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ablepharia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ablism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abls",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abm",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abnaki",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abnegator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abnormalcy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abo",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abocclusion",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abohm",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abomasum",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abominator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abor",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abortus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aboulia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "about-face",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrachia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abradant",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrader",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abraham",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abramis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrasiveness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abreaction",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abridger",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrocoma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrocome",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrogation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abrogator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abronia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abruption",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abruzzi",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abruzzo",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abs",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abscissa",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absconder",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abscondment",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abseil",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abseiler",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absenteeism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absentmindedness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absoluteness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absolutisation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absolutist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absolutization",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absolver",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorbance",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorbate",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorbency",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorber",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorptance",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absorptivity",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstainer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstemiousness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstention",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstinent",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstractedness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstracter",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstractionism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstractionist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstractness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstractor",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstruseness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abstrusity",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "absurdness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abudefduf",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abuja",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abukir",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abulia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abuser",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abutilon",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abutter",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abvolt",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abwatt",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abydos",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abyla",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abysm",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abyssinia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abyssinian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "abzu",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acacia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "academe",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "academia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "academicianship",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "academism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acadia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acadian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acalypha",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acantha",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthaceae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthion",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthisitta",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthisittidae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocephala",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocephalan",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocereus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocybium",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocyte",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthocytosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acantholysis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthoma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthophis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthopterygian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthopterygii",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthoscelides",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthuridae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acanthurus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acapnia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acapulco",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acaracide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acardia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acariasis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acaricide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acarid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acaridae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acaridiasis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acarina",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acarine",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acariosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acarophobia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acarus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acaryote",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acatalectic",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acataphasia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acathexia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acathexis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acc",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accelerometer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accenting",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accentor",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accentuation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acceptability",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acceptableness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accessary",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accessibility",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accho",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acciaccatura",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accipiter",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accipitridae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accipitriformes",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acclamation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acclimation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acclimatisation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acclimatization",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accommodator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accompanist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accompanyist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accordionist",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accoucheur",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accoucheuse",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accountability",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accountantship",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accouterment",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accoutrement",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accra",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accreditation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accroides",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accrual",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accruement",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accusal",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "accusative",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acebutolol",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acedia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acephalia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acephalism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acephaly",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aceraceae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acerola",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acervulus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetabulum",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetal",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetaldehyde",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetaldol",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetamide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetaminophen",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetanilid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetanilide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetate",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetone",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetonemia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetonuria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetophenetidin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetphenetidin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetum",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetyl",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetylation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetylcholine",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acetylene",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achaea",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achaean",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achaian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achene",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acheron",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acherontia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acheson",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acheta",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achievability",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achiever",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achillea",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achimenes",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aching",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achira",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achlorhydria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achoerodus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acholia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achondrite",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achondroplasia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achondroplasty",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achras",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromasia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromaticity",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromatin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromatism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achromycin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "achylia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acicula",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidemia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidification",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidimetry",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidophil",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidophile",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidophilus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acidulousness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acinonyx",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acinos",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acinus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acipenser",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acipenseridae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ack-ack",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ackee",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aclant",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acmeism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acnidosporidia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acocanthera",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acokanthera",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aconcagua",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aconitum",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acoraceae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acorea",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acores",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acorus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acousma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acoustician",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acousticophobia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acquaintanceship",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acquiring",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acquisitiveness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acquittal",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acquittance",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acragas",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrasiomycetes",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acre-foot",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acreage",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acres",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acridid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrididae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acridness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acridotheres",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrilan",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acris",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acroanaesthesia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acroanesthesia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrobates",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocarp",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocarpus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocephalus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocephaly",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acroclinium",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocomia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrocyanosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrodont",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrogen",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrolein",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromegalia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromegaly",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromicria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromikria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromion",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromphalus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acromyotonia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrophony",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acropora",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrosome",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrostichum",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrylamide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrylate",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrylonitrile",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acrylonitrile-butadiene-styrene",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actaea",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acth",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actias",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actifed",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinaria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actiniaria",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actiniarian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinidia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinidiaceae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actiniopteris",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinoid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinolite",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomeris",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinometer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinometry",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomyces",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomycetaceae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomycetales",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomycete",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomycin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomycosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomyxidia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinomyxidian",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinon",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinopod",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinopoda",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinotherapy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinozoa",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actinozoan",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actitis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actium",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "activase",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "activating",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "activator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "activeness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "activewear",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actomyosin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acts",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actualisation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actuality",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actualization",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actuation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "actuator",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acular",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aculea",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "aculeus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acupressure",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acyclovir",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acyl",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acylation",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "acylglycerol",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ada",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ada-scid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adactylia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adactylism",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adactyly",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adad",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adalia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (2 senses)",
+      "mt_result": "WordNet Synet in( ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adam-and-eve",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adamance",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adana",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adansonia",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adapa",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adapid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adapin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adaptability",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adaption",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adar",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "add-in",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "addax",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "addle-head",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "addlehead",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "addressograph",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adducer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adducing",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adduction",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "ade",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adelaide",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adelges",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adelgid",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adelgidae",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adelie",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenanthera",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenauer",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenine",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenitis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenium",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenocarcinoma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenohypophysis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenoidectomy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenoma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenomegaly",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenomyosarcoma",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenomyosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenopathy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenosine",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenosis",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenota",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adenovirus",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adeptness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adequateness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adermin",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adesite",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adh",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adhd",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adhesiveness",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adhocracy",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    },
+    {
+      "word": "adiabaticity",
+      "pos": "noun",
+      "meaning_en": "WordNet Synset Entry (1 senses)",
+      "mt_result": "WordNet Synet in (1 ประสาทสัมผัส)",
+      "reason": "has_english"
+    }
+  ],
+  "elapsed_seconds": 929.5,
+  "words_per_second": 59.4,
+  "started_at": "2026-10-03T08:57:17.311232",
+  "finished_at": "2026-10-03T09:12:57.674593"
+}
