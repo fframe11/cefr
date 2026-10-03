@@ -1,0 +1,296 @@
+[
+  {
+    "word": "case",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "กรณี, กล่องใส่",
+    "new": "กรณี, เรื่องราว"
+  },
+  {
+    "word": "party",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "งานปาร์ตี้",
+    "new": "งานปาร์ตี้, งานเลี้ยง"
+  },
+  {
+    "word": "picture",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ภาพ, รูปภาพ",
+    "new": "รูปภาพ, ภาพ"
+  },
+  {
+    "word": "drug",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ยา",
+    "new": "ยา, สารเสพติด"
+  },
+  {
+    "word": "cough",
+    "pos": "verb",
+    "cefr": "B1",
+    "old": "ไอ",
+    "new": "ไอ, ไอจาม"
+  },
+  {
+    "word": "supply",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การจัดหา, สิ่งของ",
+    "new": "การจัดหา, อุปทาน"
+  },
+  {
+    "word": "rain",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ฝน",
+    "new": "ฝน, น้ำฝน"
+  },
+  {
+    "word": "black",
+    "pos": "adjective",
+    "cefr": "A1",
+    "old": "ดำ",
+    "new": "สีดำ"
+  },
+  {
+    "word": "change",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การเปลี่ยนแปลง",
+    "new": "การเปลี่ยนแปลง, เงินทอน"
+  },
+  {
+    "word": "end",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ปลาย, จุดสิ้นสุด",
+    "new": "ตอนจบ, ส่วนปลาย"
+  },
+  {
+    "word": "field",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ทุ่ง, สนาม",
+    "new": "ทุ่งนา, สนาม"
+  },
+  {
+    "word": "find",
+    "pos": "verb",
+    "cefr": "A1",
+    "old": "พบ, ค้นพบ",
+    "new": "ค้นพบ, พบ"
+  },
+  {
+    "word": "ground",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "พื้นดิน",
+    "new": "พื้นดิน, พื้น"
+  },
+  {
+    "word": "light",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "แสง, ไฟ",
+    "new": "แสงสว่าง, ไฟ"
+  },
+  {
+    "word": "make",
+    "pos": "verb",
+    "cefr": "A1",
+    "old": "ทำ, สร้าง",
+    "new": "ทำ, สร้าง, ผลิต"
+  },
+  {
+    "word": "miss",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การพลาด",
+    "new": "นางสาว"
+  },
+  {
+    "word": "well",
+    "pos": "adjective",
+    "cefr": "A1",
+    "old": "ดี, สบายดี",
+    "new": "สบายดี, ดี"
+  },
+  {
+    "word": "bear",
+    "pos": "verb",
+    "cefr": "A2",
+    "old": "ทนทาน, อดทน",
+    "new": "อดทน, ทนทาน"
+  },
+  {
+    "word": "sense",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ความรู้สึก, ความหมาย",
+    "new": "ประสาทสัมผัส, ความรู้สึก"
+  },
+  {
+    "word": "state",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "รัฐ, สภาวะ",
+    "new": "รัฐ, สภาพ"
+  },
+  {
+    "word": "track",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ทางรถไฟ, เส้นทาง",
+    "new": "รางรถไฟ, เส้นทาง, เพลง"
+  },
+  {
+    "word": "view",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "มุมมอง, ทิวทัศน์",
+    "new": "ทิวทัศน์, มุมมอง"
+  },
+  {
+    "word": "close",
+    "pos": "verb",
+    "cefr": "A1",
+    "old": "ปิด, ปิดกั้น",
+    "new": "ปิด"
+  },
+  {
+    "word": "drop",
+    "pos": "verb",
+    "cefr": "A1",
+    "old": "ตก, หล่น, ทำตก",
+    "new": "ทำหล่น, ตก, ลดลง"
+  },
+  {
+    "word": "fine",
+    "pos": "adjective",
+    "cefr": "A1",
+    "old": "ดี, โอเค",
+    "new": "สบายดี, โอเค, ดี"
+  },
+  {
+    "word": "fire",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ไฟ",
+    "new": "ไฟ, เปลวไฟ"
+  },
+  {
+    "word": "watch",
+    "pos": "verb",
+    "cefr": "A1",
+    "old": "ดู, เฝ้าดู",
+    "new": "ดู, เฝ้าดู, สังเกต"
+  },
+  {
+    "word": "lead",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การนำ",
+    "new": "ตำแหน่งนำ, ผู้นำ"
+  },
+  {
+    "word": "press",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "สื่อมวลชน",
+    "new": "สื่อมวลชน, หนังสือพิมพ์"
+  },
+  {
+    "word": "push",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การดัน",
+    "new": "การผลัก, การกดดัน"
+  },
+  {
+    "word": "strike",
+    "pos": "verb",
+    "cefr": "B1",
+    "old": "ตี",
+    "new": "ตี, หยุดงานประท้วง"
+  },
+  {
+    "word": "hole",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "รู",
+    "new": "รู, ช่อง"
+  },
+  {
+    "word": "tip",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ปลาย, เคล็ดลับ",
+    "new": "เคล็ดลับ, ปลาย"
+  },
+  {
+    "word": "slow",
+    "pos": "verb",
+    "cefr": "B1",
+    "old": "ช้าลง, ทำให้ช้าลง",
+    "new": "ทำให้ช้าลง, ลดความเร็ว"
+  },
+  {
+    "word": "slow",
+    "pos": "verb",
+    "cefr": "B1",
+    "old": "ช้าลง, ทำให้ช้าลง",
+    "new": "ทำให้ช้าลง, ลดความเร็ว"
+  },
+  {
+    "word": "ghost",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ผี",
+    "new": "ผี, วิญญาณ"
+  },
+  {
+    "word": "stick",
+    "pos": "noun",
+    "cefr": "B2",
+    "old": "ไม้, แท่ง",
+    "new": "ไม้, ไม้เท้า"
+  },
+  {
+    "word": "trust",
+    "pos": "noun",
+    "cefr": "B2",
+    "old": "ความไว้วางใจ",
+    "new": "ความไว้วางใจ, ความเชื่อใจ"
+  },
+  {
+    "word": "punch",
+    "pos": "verb",
+    "cefr": "B2",
+    "old": "ชก",
+    "new": "ชก, ต่อย"
+  },
+  {
+    "word": "shrink",
+    "pos": "verb",
+    "cefr": "B2",
+    "old": "หด",
+    "new": "หดตัว, ย่อเล็กลง"
+  },
+  {
+    "word": "slap",
+    "pos": "verb",
+    "cefr": "B2",
+    "old": "ตบ",
+    "new": "ตบ, ตบหน้า"
+  },
+  {
+    "word": "stagger",
+    "pos": "verb",
+    "cefr": "C1",
+    "old": "เซ",
+    "new": "เดินโซเซ, โซเซ"
+  }
+]

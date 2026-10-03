@@ -11,28 +11,6 @@
     "src": "cefr_manual_override"
   },
   {
-    "word": "case",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "กรณี, กล่องใส่",
-    "en": "a comprehensive term for any proceeding in a court of law wh",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "party",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "งานปาร์ตี้",
-    "en": "an occasion on which people can assemble for social interact",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
     "word": "game",
     "pos": "noun",
     "cefr": "A1",
@@ -47,23 +25,12 @@
     "word": "picture",
     "pos": "noun",
     "cefr": "A1",
-    "th": "ภาพ, รูปภาพ",
+    "th": "รูปภาพ, ภาพ",
     "en": "a visual representation (of an object or scene or person or ",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "drug",
-    "pos": "noun",
-    "cefr": "A2",
-    "th": "ยา",
-    "en": "a substance that is used as a medicine or narcotic",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
+    "src": "verified_fix_v2"
   },
   {
     "word": "neck",
@@ -77,26 +44,15 @@
     "src": "cefr_manual_override"
   },
   {
-    "word": "cough",
-    "pos": "verb",
-    "cefr": "B1",
-    "th": "ไอ",
-    "en": "a sudden noisy expulsion of air from the lungs that clears t",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
     "word": "supply",
     "pos": "noun",
     "cefr": "B1",
-    "th": "การจัดหา, สิ่งของ",
+    "th": "การจัดหา, อุปทาน",
     "en": "the activity of supplying or providing something",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
+    "src": "verified_fix_v2"
   },
   {
     "word": "flat",
@@ -110,33 +66,11 @@
     "src": "cefr_manual_override"
   },
   {
-    "word": "rain",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "ฝน",
-    "en": "anything happening rapidly or in quick successive",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
     "word": "ant",
     "pos": "noun",
     "cefr": "B1",
     "th": "มด",
     "en": "social insect living in organized colonies; characteristical",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
-    "word": "black",
-    "pos": "adjective",
-    "cefr": "A1",
-    "th": "ดำ",
-    "en": "The quality, state, or action of black.",
     "issues": [
       "TOO_SHORT"
     ],
@@ -154,28 +88,6 @@
     "src": "cefr_manual_override"
   },
   {
-    "word": "change",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "การเปลี่ยนแปลง",
-    "en": "the action of changing something",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "end",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "ปลาย, จุดสิ้นสุด",
-    "en": "The quality, state, or action of end.",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
     "word": "fast",
     "pos": "verb",
     "cefr": "A1",
@@ -187,48 +99,15 @@
     "src": "manual_cefr_override"
   },
   {
-    "word": "field",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "ทุ่ง, สนาม",
-    "en": "a particular kind of commercial enterprise",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
     "word": "ground",
     "pos": "noun",
     "cefr": "A1",
-    "th": "พื้นดิน",
+    "th": "พื้นดิน, พื้น",
     "en": "the first or preliminary coat of paint or size applied to a ",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "light",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "แสง, ไฟ",
-    "en": "any device serving as a source of illumination",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "miss",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "การพลาด",
-    "en": "a form of address for an unmarried woman",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
+    "src": "verified_fix_v2"
   },
   {
     "word": "note",
@@ -330,103 +209,26 @@
     "src": "cefr_manual_override"
   },
   {
-    "word": "sense",
-    "pos": "noun",
-    "cefr": "A2",
-    "th": "ความรู้สึก, ความหมาย",
-    "en": "the faculty through which the external world is apprehended",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "state",
-    "pos": "noun",
-    "cefr": "A2",
-    "th": "รัฐ, สภาวะ",
-    "en": "the way something is with respect to its main attributes",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "track",
-    "pos": "noun",
-    "cefr": "A2",
-    "th": "ทางรถไฟ, เส้นทาง",
-    "en": "the act of participating in an athletic competition involvin",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
     "word": "view",
     "pos": "noun",
     "cefr": "A2",
-    "th": "มุมมอง, ทิวทัศน์",
+    "th": "ทิวทัศน์, มุมมอง",
     "en": "the act of looking or seeing or observing",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
+    "src": "verified_fix_v2"
   },
   {
     "word": "fire",
     "pos": "noun",
     "cefr": "A1",
-    "th": "ไฟ",
+    "th": "ไฟ, เปลวไฟ",
     "en": "the act of firing weapons or artillery at an enemy",
     "issues": [
-      "TOO_SHORT"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "lead",
-    "pos": "noun",
-    "cefr": "A2",
-    "th": "การนำ",
-    "en": "The quality, state, or action of lead.",
-    "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "press",
-    "pos": "noun",
-    "cefr": "B1",
-    "th": "สื่อมวลชน",
-    "en": "the act of pressing; the exertion of pressure",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "push",
-    "pos": "noun",
-    "cefr": "B1",
-    "th": "การดัน",
-    "en": "the act of applying force in order to move something away",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "strike",
-    "pos": "verb",
-    "cefr": "B1",
-    "th": "ตี",
-    "en": "a group's refusal to work in protest against low pay or bad ",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
+    "src": "verified_fix_v2"
   },
   {
     "word": "bird",
@@ -445,17 +247,6 @@
     "cefr": "A1",
     "th": "ธง",
     "en": "The quality, state, or action of flag.",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
-    "word": "hole",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "รู",
-    "en": "an opening deliberately made in or through something",
     "issues": [
       "TOO_SHORT"
     ],
@@ -487,12 +278,12 @@
     "word": "tip",
     "pos": "noun",
     "cefr": "A2",
-    "th": "ปลาย, เคล็ดลับ",
+    "th": "เคล็ดลับ, ปลาย",
     "en": "an indication of potential opportunity",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "cefr_manual_override"
+    "src": "verified_fix_v2"
   },
   {
     "word": "ear",
@@ -520,34 +311,23 @@
     "word": "slow",
     "pos": "verb",
     "cefr": "B1",
-    "th": "ช้าลง, ทำให้ช้าลง",
+    "th": "ทำให้ช้าลง, ลดความเร็ว",
     "en": "wearing or provided with clothing; sometimes used in combina",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "audit_fix_v1"
+    "src": "verified_fix_v2"
   },
   {
     "word": "slow",
     "pos": "verb",
     "cefr": "B1",
-    "th": "ช้าลง, ทำให้ช้าลง",
+    "th": "ทำให้ช้าลง, ลดความเร็ว",
     "en": "wearing or provided with clothing; sometimes used in combina",
     "issues": [
       "LEXITRON_MISMATCH"
     ],
-    "src": "audit_fix_v1"
-  },
-  {
-    "word": "ghost",
-    "pos": "noun",
-    "cefr": "A1",
-    "th": "ผี",
-    "en": "a mental representation of some haunting experience",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
+    "src": "verified_fix_v2"
   },
   {
     "word": "snake",
@@ -561,77 +341,11 @@
     "src": ""
   },
   {
-    "word": "stick",
-    "pos": "noun",
-    "cefr": "B2",
-    "th": "ไม้, แท่ง",
-    "en": "The quality, state, or action of stick.",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "trust",
-    "pos": "noun",
-    "cefr": "B2",
-    "th": "ความไว้วางใจ",
-    "en": "the trait of believing in the honesty and reliability of oth",
-    "issues": [
-      "LEXITRON_MISMATCH"
-    ],
-    "src": "cefr_manual_override"
-  },
-  {
-    "word": "punch",
-    "pos": "verb",
-    "cefr": "B2",
-    "th": "ชก",
-    "en": "(boxing) a blow with the fist",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
-    "word": "shrink",
-    "pos": "verb",
-    "cefr": "B2",
-    "th": "หด",
-    "en": "a physician who specializes in psychiatry",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
     "word": "frog",
     "pos": "noun",
     "cefr": "A1",
     "th": "กบ",
     "en": "any of various tailless stout-bodied amphibians with long hi",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
-    "word": "slap",
-    "pos": "verb",
-    "cefr": "B2",
-    "th": "ตบ",
-    "en": "the act of smacking something; a blow delivered with an open",
-    "issues": [
-      "TOO_SHORT"
-    ],
-    "src": ""
-  },
-  {
-    "word": "stagger",
-    "pos": "verb",
-    "cefr": "C1",
-    "th": "เซ",
-    "en": "an unsteady uneven gait",
     "issues": [
       "TOO_SHORT"
     ],

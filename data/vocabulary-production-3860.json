@@ -832,7 +832,7 @@
     "lemma": "case",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "กรณี, กล่องใส่",
+    "meaning_th": "กรณี, เรื่องราว",
     "meaning_en": "a comprehensive term for any proceeding in a court of law whereby an individual seeks a legal remedy",
     "ipa": "/keɪs/",
     "example_sentence_en": "You have to judge the case without bias.",
@@ -947,7 +947,7 @@
       "enriched_at": "2026-09-28T16:19:55.673Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "3f807712-29f4-4045-a3ed-6e8069e364be",
@@ -2665,7 +2665,7 @@
     "lemma": "party",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "งานปาร์ตี้",
+    "meaning_th": "งานปาร์ตี้, งานเลี้ยง",
     "meaning_en": "an occasion on which people can assemble for social interaction and entertainment",
     "ipa": "/ˈpɑːɹti/",
     "example_sentence_en": "The discrepancy between the stories of the two parties involved in the accident was so great that the authorities had a hard time deciding which side was telling the truth.",
@@ -2768,7 +2768,7 @@
       "enriched_at": "2026-09-28T16:19:55.674Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "2e4a1907-29c4-4663-a689-f2f32b4d2387",
@@ -13886,7 +13886,7 @@
     "lemma": "picture",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ภาพ, รูปภาพ",
+    "meaning_th": "รูปภาพ, ภาพ",
     "meaning_en": "a visual representation (of an object or scene or person or abstraction) produced on a surface",
     "ipa": "/ˈpɪktʃəɹ/",
     "example_sentence_en": "Is it a recent picture?",
@@ -14002,7 +14002,7 @@
       "enriched_at": "2026-09-28T16:19:55.679Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "12afd91b-4d21-43ea-a18a-b38d36a07b87",
@@ -15458,7 +15458,7 @@
     "lemma": "drug",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ยา",
+    "meaning_th": "ยา, สารเสพติด",
     "meaning_en": "a substance that is used as a medicine or narcotic",
     "ipa": "/dɹʌɡ/",
     "example_sentence_en": "The convicted drug dealer was willing to comply with the authorities to have his death sentence reduced to a life sentence.",
@@ -15525,7 +15525,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.679Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "b2c30b68-ee3a-49e9-a242-8e39a8a15f9f",
@@ -16539,7 +16540,7 @@
     "lemma": "cough",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ไอ",
+    "meaning_th": "ไอ, ไอจาม",
     "meaning_en": "a sudden noisy expulsion of air from the lungs that clears the air passages; a common symptom of upper respiratory infection or bronchitis or pneumonia or tuberculosis",
     "ipa": "/kɑːf/",
     "example_sentence_en": "Do you have any cough medicine?",
@@ -16625,7 +16626,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.680Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "08cf0f78-859b-417b-abb8-6e80c77c6f32",
@@ -19294,7 +19296,7 @@
     "lemma": "supply",
     "part_of_speech": "noun",
     "cefr_level": "B1",
-    "meaning_th": "การจัดหา, สิ่งของ",
+    "meaning_th": "การจัดหา, อุปทาน",
     "meaning_en": "the activity of supplying or providing something",
     "ipa": "/səpˈlaɪ/",
     "example_sentence_en": "Supply is relative to demand.",
@@ -19358,7 +19360,7 @@
       "enriched_at": "2026-09-28T16:19:55.681Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "52ea468f-457f-402f-a93d-4087f312e433",
@@ -24391,7 +24393,7 @@
     "lemma": "rain",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ฝน",
+    "meaning_th": "ฝน, น้ำฝน",
     "meaning_en": "anything happening rapidly or in quick successive",
     "ipa": "/ɹeɪn/",
     "example_sentence_en": "I was planning on going to the beach today, but then it started to rain.",
@@ -24466,7 +24468,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.683Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "b64ef710-3407-44a5-af36-ddfa621b1403",
@@ -65289,7 +65292,7 @@
     "lemma": "black",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดำ",
+    "meaning_th": "สีดำ",
     "meaning_en": "The quality, state, or action of black.",
     "ipa": "/blæk/",
     "example_sentence_en": "She was wearing a black hat.",
@@ -65352,7 +65355,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.706Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "4e567c3f-cd59-4573-af42-7d90c1254561",
@@ -67603,7 +67607,7 @@
     "lemma": "change",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "การเปลี่ยนแปลง",
+    "meaning_th": "การเปลี่ยนแปลง, เงินทอน",
     "meaning_en": "the action of changing something",
     "ipa": "/tʃeɪndʒ/",
     "example_sentence_en": "It would be fun to see how things change over the years.",
@@ -67763,7 +67767,7 @@
       "enriched_at": "2026-09-28T16:19:55.706Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "9efb0e9b-1dda-4dc2-a1a4-d6f0c138affa",
@@ -71110,7 +71114,7 @@
     "lemma": "end",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ปลาย, จุดสิ้นสุด",
+    "meaning_th": "ตอนจบ, ส่วนปลาย",
     "meaning_en": "The quality, state, or action of end.",
     "ipa": "/end/",
     "example_sentence_en": "This is never going to end.",
@@ -71214,7 +71218,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "6b07816b-6c9f-4fae-a246-b83b51dec145",
@@ -72112,7 +72116,7 @@
     "lemma": "field",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ทุ่ง, สนาม",
+    "meaning_th": "ทุ่งนา, สนาม",
     "meaning_en": "a particular kind of commercial enterprise",
     "ipa": "/fiːld/",
     "example_sentence_en": "An expert is someone who knows some of the worst mistakes that can be made in his field, and how to avoid them.",
@@ -72240,7 +72244,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "b41ba1ba-b683-49e9-a766-6ffb126705da",
@@ -72579,7 +72583,7 @@
     "lemma": "find",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "พบ, ค้นพบ",
+    "meaning_th": "ค้นพบ, พบ",
     "meaning_en": "the act of discovering something",
     "ipa": "/faɪnd/",
     "example_sentence_en": "It's a word I'd like to find a substitute for.",
@@ -72698,7 +72702,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "a9b1e9fd-4fdd-46bd-abd2-abe56c763e50",
@@ -74719,7 +74723,7 @@
     "lemma": "ground",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "พื้นดิน",
+    "meaning_th": "พื้นดิน, พื้น",
     "meaning_en": "the first or preliminary coat of paint or size applied to a surface",
     "ipa": "/ɡɹaʊnd/",
     "example_sentence_en": "I can't agree to your proposal on the ground that it is not fair and reasonable.",
@@ -74834,7 +74838,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "34eb0f83-527c-4990-acb7-4200ccc666ca",
@@ -78529,7 +78533,7 @@
     "lemma": "light",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "แสง, ไฟ",
+    "meaning_th": "แสงสว่าง, ไฟ",
     "meaning_en": "any device serving as a source of illumination",
     "ipa": "/laɪt/",
     "example_sentence_en": "It's just five in the morning, but nevertheless it is light out.",
@@ -78691,7 +78695,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "6818d69c-f9ab-4aad-a04e-7a8a56823664",
@@ -80078,7 +80082,7 @@
     "lemma": "make",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ทำ, สร้าง",
+    "meaning_th": "ทำ, สร้าง, ผลิต",
     "meaning_en": "the act of mixing cards haphazardly",
     "ipa": "/meɪk/",
     "example_sentence_en": "I make €100 a day.",
@@ -80194,7 +80198,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "e7fafa50-4ca5-4229-aac3-889143b94e0b",
@@ -80967,7 +80971,7 @@
     "lemma": "miss",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "การพลาด",
+    "meaning_th": "นางสาว",
     "meaning_en": "a form of address for an unmarried woman",
     "ipa": "/mɪs/",
     "example_sentence_en": "Did you miss me?",
@@ -81135,7 +81139,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "3226fbbe-0e5b-4be0-ad1c-84db561041c1",
@@ -97586,7 +97590,7 @@
     "lemma": "well",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดี, สบายดี",
+    "meaning_th": "สบายดี, ดี",
     "meaning_en": "a deep hole or shaft dug or drilled to obtain water or oil or gas or brine",
     "ipa": "/wel/",
     "example_sentence_en": "My mom doesn't speak English very well.",
@@ -97722,7 +97726,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "337745da-5782-44bc-a967-46b32d71190a",
@@ -101097,7 +101101,7 @@
     "lemma": "bear",
     "part_of_speech": "verb",
     "cefr_level": "A2",
-    "meaning_th": "ทนทาน, อดทน",
+    "meaning_th": "อดทน, ทนทาน",
     "meaning_en": "massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws",
     "ipa": "/beɹ/",
     "example_sentence_en": "What?! You ate my chocolate bear?!",
@@ -101223,7 +101227,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "28110117-308f-4c74-a696-c02214016385",
@@ -115976,7 +115980,7 @@
     "lemma": "sense",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ความรู้สึก, ความหมาย",
+    "meaning_th": "ประสาทสัมผัส, ความรู้สึก",
     "meaning_en": "the faculty through which the external world is apprehended",
     "ipa": "/sens/",
     "example_sentence_en": "Blind people sometimes develop a compensatory ability to sense the proximity of objects around them.",
@@ -116076,7 +116080,7 @@
       "enriched_at": "2026-09-28T16:19:55.711Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "f1584d23-3363-492c-a2fc-bbb213ff9f53",
@@ -117494,7 +117498,7 @@
     "lemma": "state",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "รัฐ, สภาวะ",
+    "meaning_th": "รัฐ, สภาพ",
     "meaning_en": "the way something is with respect to its main attributes",
     "ipa": "/steɪt/",
     "example_sentence_en": "This will be a good souvenir of my trip around the United States.",
@@ -117561,7 +117565,7 @@
       "enriched_at": "2026-09-28T16:19:55.711Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "766e52c0-7b89-4c1a-af4d-e8e634a5e55d",
@@ -118605,7 +118609,7 @@
     "lemma": "track",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ทางรถไฟ, เส้นทาง",
+    "meaning_th": "รางรถไฟ, เส้นทาง, เพลง",
     "meaning_en": "the act of participating in an athletic competition involving running on a track",
     "ipa": "/tɹæk/",
     "example_sentence_en": "You are way off track.",
@@ -118717,7 +118721,7 @@
       "enriched_at": "2026-09-28T16:19:55.711Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "fb831f9d-998e-4579-ad59-c4f37c4b5d62",
@@ -119382,7 +119386,7 @@
     "lemma": "view",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "มุมมอง, ทิวทัศน์",
+    "meaning_th": "ทิวทัศน์, มุมมอง",
     "meaning_en": "the act of looking or seeing or observing",
     "ipa": "/vjuː/",
     "example_sentence_en": "Sometimes he has difficulty being articulate about his views.",
@@ -119521,7 +119525,7 @@
       "enriched_at": "2026-09-28T16:19:55.711Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "0928246e-4278-491b-aba7-426d508aeb6a",
@@ -120739,7 +120743,7 @@
     "lemma": "close",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ปิด, ปิดกั้น",
+    "meaning_th": "ปิด",
     "meaning_en": "the concluding part of any performance",
     "ipa": "/kloʊs/",
     "example_sentence_en": "How many close friends do you have?",
@@ -120899,7 +120903,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "00bd2485-e281-4165-aa64-548b7845a9a2",
@@ -121333,7 +121337,7 @@
     "lemma": "drop",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ตก, หล่น, ทำตก",
+    "meaning_th": "ทำหล่น, ตก, ลดลง",
     "meaning_en": "The quality, state, or action of drop.",
     "ipa": "/dɹɑːp/",
     "example_sentence_en": "Since you like to write letters, why don't you drop her a line?",
@@ -121445,7 +121449,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "358928c5-271a-4136-a260-d530d0745466",
@@ -121742,7 +121746,7 @@
     "lemma": "fine",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดี, โอเค",
+    "meaning_th": "สบายดี, โอเค, ดี",
     "meaning_en": "money extracted as a penalty",
     "ipa": "/faɪn/",
     "example_sentence_en": "You're by my side; everything's fine now.",
@@ -121861,7 +121865,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "6e587fee-719d-46e2-ad1f-44102a5da5d1",
@@ -121870,7 +121874,7 @@
     "lemma": "fire",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ไฟ",
+    "meaning_th": "ไฟ, เปลวไฟ",
     "meaning_en": "the act of firing weapons or artillery at an enemy",
     "ipa": "/ˈfaɪəɹ/",
     "example_sentence_en": "A small forest fire can easily spread and quickly become a great conflagration.",
@@ -122010,7 +122014,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "ffe33b7e-1ae4-4aa8-ae02-ef56712fb4cf",
@@ -125710,7 +125714,7 @@
     "lemma": "watch",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ดู, เฝ้าดู",
+    "meaning_th": "ดู, เฝ้าดู, สังเกต",
     "meaning_en": "a purposeful surveillance to guard or observe",
     "ipa": "/wɑːtʃ/",
     "example_sentence_en": "There are 1000 movies that one must watch before dying.",
@@ -125822,7 +125826,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "audit_fix_v1"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "26b128e0-5b60-4f79-ace4-4291f204e13a",
@@ -134542,7 +134546,7 @@
     "lemma": "lead",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "การนำ",
+    "meaning_th": "ตำแหน่งนำ, ผู้นำ",
     "meaning_en": "The quality, state, or action of lead.",
     "ipa": "/led/",
     "example_sentence_en": "The answer leads us to a vicious circle.",
@@ -134630,7 +134634,7 @@
       "enriched_at": "2026-09-28T16:19:55.713Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "83df23e2-7875-4560-ae75-df9d0911535c",
@@ -138949,7 +138953,7 @@
     "lemma": "press",
     "part_of_speech": "noun",
     "cefr_level": "B1",
-    "meaning_th": "สื่อมวลชน",
+    "meaning_th": "สื่อมวลชน, หนังสือพิมพ์",
     "meaning_en": "the act of pressing; the exertion of pressure",
     "ipa": "/pɹes/",
     "example_sentence_en": "Don't press your opinions on me.",
@@ -139025,7 +139029,7 @@
       "enriched_at": "2026-09-28T16:19:55.713Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "902468c9-e32c-4fec-a680-782573eaa49e",
@@ -139767,7 +139771,7 @@
     "lemma": "push",
     "part_of_speech": "noun",
     "cefr_level": "B1",
-    "meaning_th": "การดัน",
+    "meaning_th": "การผลัก, การกดดัน",
     "meaning_en": "the act of applying force in order to move something away",
     "ipa": "/pʊʃ/",
     "example_sentence_en": "The politician pushed for reform by denouncing the corruption of the government officials.",
@@ -139879,7 +139883,7 @@
       "enriched_at": "2026-09-28T16:19:55.714Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "f8279155-cc83-4e95-aa6c-c2889c393c54",
@@ -143602,7 +143606,7 @@
     "lemma": "strike",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ตี",
+    "meaning_th": "ตี, หยุดงานประท้วง",
     "meaning_en": "a group's refusal to work in protest against low pay or bad work conditions",
     "ipa": "/stɹaɪk/",
     "example_sentence_en": "I have a good mind to strike you for being so rude.",
@@ -143681,7 +143685,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.714Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "50526621-b8fc-482e-a6cb-5433aa454e65",
@@ -155194,7 +155199,7 @@
     "lemma": "hole",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "รู",
+    "meaning_th": "รู, ช่อง",
     "meaning_en": "an opening deliberately made in or through something",
     "ipa": "/hoʊl/",
     "example_sentence_en": "There is a big hole in your stocking.",
@@ -155260,7 +155265,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.715Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "7ff0de34-38cd-46ac-ab20-81a4853203bf",
@@ -185814,7 +185820,7 @@
     "lemma": "tip",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ปลาย, เคล็ดลับ",
+    "meaning_th": "เคล็ดลับ, ปลาย",
     "meaning_en": "an indication of potential opportunity",
     "ipa": "/tɪp/",
     "example_sentence_en": "How much do you leave for a tip in Spain?",
@@ -185931,7 +185937,7 @@
       "enriched_at": "2026-09-28T16:19:55.719Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "4e5e2bf3-bb5c-4d57-ab1a-bdabfd012af5",
@@ -214421,7 +214427,7 @@
     "lemma": "slow",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ช้าลง, ทำให้ช้าลง",
+    "meaning_th": "ทำให้ช้าลง, ลดความเร็ว",
     "meaning_en": "wearing or provided with clothing; sometimes used in combination",
     "ipa": "/sloʊ/",
     "example_sentence_en": "The slowest one to make a promise is the most faithful one in keeping it.",
@@ -214556,7 +214562,7 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.723Z"
     },
-    "meaning_th_source": "audit_fix_v1",
+    "meaning_th_source": "verified_fix_v2",
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
   },
   {
@@ -214566,7 +214572,7 @@
     "lemma": "slow",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ช้าลง, ทำให้ช้าลง",
+    "meaning_th": "ทำให้ช้าลง, ลดความเร็ว",
     "meaning_en": "wearing or provided with clothing; sometimes used in combination",
     "ipa": "/sloʊ/",
     "example_sentence_en": "The slowest one to make a promise is the most faithful one in keeping it.",
@@ -214701,7 +214707,7 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.723Z"
     },
-    "meaning_th_source": "audit_fix_v1",
+    "meaning_th_source": "verified_fix_v2",
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
   },
   {
@@ -220380,7 +220386,7 @@
     "lemma": "ghost",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ผี",
+    "meaning_th": "ผี, วิญญาณ",
     "meaning_en": "a mental representation of some haunting experience",
     "ipa": "/ɡoʊst/",
     "example_sentence_en": "Strange to say, he saw the ghost of his father.",
@@ -220433,7 +220439,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.724Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "da70bb40-03e3-4ec0-af9b-1c96eab98b5d",
@@ -240433,7 +240440,7 @@
     "lemma": "stick",
     "part_of_speech": "noun",
     "cefr_level": "B2",
-    "meaning_th": "ไม้, แท่ง",
+    "meaning_th": "ไม้, ไม้เท้า",
     "meaning_en": "The quality, state, or action of stick.",
     "ipa": "/stɪk/",
     "example_sentence_en": "You must stick to your promise.",
@@ -240521,7 +240528,7 @@
       "enriched_at": "2026-09-28T16:19:55.731Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "da4f9c7e-71c2-452b-a962-968a5ec12c2a",
@@ -242471,7 +242478,7 @@
     "lemma": "trust",
     "part_of_speech": "noun",
     "cefr_level": "B2",
-    "meaning_th": "ความไว้วางใจ",
+    "meaning_th": "ความไว้วางใจ, ความเชื่อใจ",
     "meaning_en": "the trait of believing in the honesty and reliability of others",
     "ipa": "/tɹʌst/",
     "example_sentence_en": "If the world weren't in the shape it is now, I could trust anyone.",
@@ -242535,7 +242542,7 @@
       "enriched_at": "2026-09-28T16:19:55.731Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "ed220d2b-de92-46da-a30c-c740170d92da",
@@ -262711,7 +262718,7 @@
     "lemma": "punch",
     "part_of_speech": "verb",
     "cefr_level": "B2",
-    "meaning_th": "ชก",
+    "meaning_th": "ชก, ต่อย",
     "meaning_en": "(boxing) a blow with the fist",
     "ipa": "/pʌntʃ/",
     "example_sentence_en": "Do you want another glass of fruit punch?",
@@ -262777,7 +262784,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.741Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "c58a6abd-b8a7-4dc3-ac35-ff09e61b82ea",
@@ -263896,7 +263904,7 @@
     "lemma": "shrink",
     "part_of_speech": "verb",
     "cefr_level": "B2",
-    "meaning_th": "หด",
+    "meaning_th": "หดตัว, ย่อเล็กลง",
     "meaning_en": "a physician who specializes in psychiatry",
     "ipa": "/ʃɹɪŋk/",
     "example_sentence_en": "If you wish to get on in the world, you must not shrink from effort.",
@@ -263938,7 +263946,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.742Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "d5263ce9-8742-473f-a462-6c21bbfc1af8",
@@ -296079,7 +296088,7 @@
     "lemma": "slap",
     "part_of_speech": "verb",
     "cefr_level": "B2",
-    "meaning_th": "ตบ",
+    "meaning_th": "ตบ, ตบหน้า",
     "meaning_en": "the act of smacking something; a blow delivered with an open hand",
     "ipa": "/slæp/",
     "example_sentence_en": "That kid got a slap from his mother for being rude.",
@@ -296119,7 +296128,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.763Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "030fab0f-74ce-40f7-a445-719e79bd62e0",
@@ -299469,7 +299479,7 @@
     "lemma": "stagger",
     "part_of_speech": "verb",
     "cefr_level": "C1",
-    "meaning_th": "เซ",
+    "meaning_th": "เดินโซเซ, โซเซ",
     "meaning_en": "an unsteady uneven gait",
     "ipa": "/sˈtæɡəɹ/",
     "example_sentence_en": "The company is attempting to stagger work hours.",
@@ -299509,7 +299519,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.768Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "verified_fix_v2"
   },
   {
     "id": "e0665cf6-b3a1-4eab-acb8-b3a7e77e719e",
