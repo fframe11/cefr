@@ -1,0 +1,786 @@
+[
+  {
+    "word": "bar",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ลูกกรง",
+    "new": "บาร์, ร้านขายเครื่องดื่ม",
+    "method": "manual_override"
+  },
+  {
+    "word": "case",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "คดี",
+    "new": "กรณี, กล่องใส่",
+    "method": "manual_override"
+  },
+  {
+    "word": "class",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ชนชั้น",
+    "new": "ชั้นเรียน",
+    "method": "manual_override"
+  },
+  {
+    "word": "club",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ไพ่ดอกจิก",
+    "new": "สโมสร, ชมรม",
+    "method": "manual_override"
+  },
+  {
+    "word": "course",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ช่วงเวลา",
+    "new": "หลักสูตร, รายวิชา",
+    "method": "manual_override"
+  },
+  {
+    "word": "hair",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ผม",
+    "new": "ผม, เส้นผม",
+    "method": "manual_override"
+  },
+  {
+    "word": "kind",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ชนิด",
+    "new": "ชนิด, ประเภท",
+    "method": "manual_override"
+  },
+  {
+    "word": "party",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "งานเลี้ยง",
+    "new": "งานปาร์ตี้",
+    "method": "manual_override"
+  },
+  {
+    "word": "play",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การเล่น",
+    "new": "การเล่น, ละคร",
+    "method": "manual_override"
+  },
+  {
+    "word": "room",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ที่ว่าง",
+    "new": "ห้อง",
+    "method": "manual_override"
+  },
+  {
+    "word": "hand",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การควบคุม",
+    "new": "มือ",
+    "method": "manual_override"
+  },
+  {
+    "word": "head",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "จุดวิกฤต",
+    "new": "หัว, ศีรษะ",
+    "method": "manual_override"
+  },
+  {
+    "word": "heart",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความรัก",
+    "new": "หัวใจ",
+    "method": "manual_override"
+  },
+  {
+    "word": "stage",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "รถม้าโดยสาร",
+    "new": "เวที",
+    "method": "manual_override"
+  },
+  {
+    "word": "yard",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "สนาม",
+    "new": "สนามหญ้า, ลานบ้าน",
+    "method": "manual_override"
+  },
+  {
+    "word": "culture",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การเตรียมที่ดินเพื่อเพาะปลูก",
+    "new": "วัฒนธรรม",
+    "method": "manual_override"
+  },
+  {
+    "word": "eye",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การมองเห็น",
+    "new": "ดวงตา, ตา",
+    "method": "manual_override"
+  },
+  {
+    "word": "finger",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "นิ้วมือ",
+    "new": "นิ้ว",
+    "method": "manual_override"
+  },
+  {
+    "word": "floor",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ชั้นอาคาร",
+    "new": "พื้น",
+    "method": "manual_override"
+  },
+  {
+    "word": "game",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "กีฬา",
+    "new": "เกม, การแข่งขัน",
+    "method": "manual_override"
+  },
+  {
+    "word": "picture",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ภาพวาด",
+    "new": "ภาพ, รูปภาพ",
+    "method": "manual_override"
+  },
+  {
+    "word": "bag",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ย่าม",
+    "new": "กระเป๋า",
+    "method": "manual_override"
+  },
+  {
+    "word": "neck",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ลำคอ",
+    "new": "คอ",
+    "method": "manual_override"
+  },
+  {
+    "word": "supply",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "จัดหาให้",
+    "new": "การจัดหา, สิ่งของ",
+    "method": "manual_override"
+  },
+  {
+    "word": "flat",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ที่ราบ",
+    "new": "อพาร์ทเมนต์",
+    "method": "manual_override"
+  },
+  {
+    "word": "knee",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "หัวเข่า",
+    "new": "เข่า",
+    "method": "manual_override"
+  },
+  {
+    "word": "shoulder",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "บ่า",
+    "new": "ไหล่",
+    "method": "manual_override"
+  },
+  {
+    "word": "lip",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ขอบ",
+    "new": "ริมฝีปาก",
+    "method": "manual_override"
+  },
+  {
+    "word": "card",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "บัตรที่บรรจุข้อมูลทางตัวเลขหรือการเงิน",
+    "new": "บัตร, การ์ด",
+    "method": "manual_override"
+  },
+  {
+    "word": "change",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การต่อรถ",
+    "new": "การเปลี่ยนแปลง",
+    "method": "manual_override"
+  },
+  {
+    "word": "check",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การเข้ากีดขวาง",
+    "new": "การตรวจสอบ",
+    "method": "manual_override"
+  },
+  {
+    "word": "end",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ขอบเขต",
+    "new": "ปลาย, จุดสิ้นสุด",
+    "method": "manual_override"
+  },
+  {
+    "word": "field",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ทุ่งนา",
+    "new": "ทุ่ง, สนาม",
+    "method": "manual_override"
+  },
+  {
+    "word": "form",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "รูปทรง",
+    "new": "แบบฟอร์ม, รูปแบบ",
+    "method": "manual_override"
+  },
+  {
+    "word": "ground",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ผิวดิน",
+    "new": "พื้นดิน",
+    "method": "manual_override"
+  },
+  {
+    "word": "hold",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การควบคุม",
+    "new": "การจับ",
+    "method": "manual_override"
+  },
+  {
+    "word": "life",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความมีชีวิตชีวา",
+    "new": "ชีวิต",
+    "method": "manual_override"
+  },
+  {
+    "word": "light",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความสว่าง",
+    "new": "แสง, ไฟ",
+    "method": "manual_override"
+  },
+  {
+    "word": "line",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การผลิตทีละมากๆ ในโรงงานอุตสาหกรรม",
+    "new": "เส้น",
+    "method": "manual_override"
+  },
+  {
+    "word": "matter",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "สิ่งที่ต้องทำ",
+    "new": "เรื่องราว, สสาร",
+    "method": "manual_override"
+  },
+  {
+    "word": "miss",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "นางสาว",
+    "new": "การพลาด",
+    "method": "manual_override"
+  },
+  {
+    "word": "move",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การดำเนินการ",
+    "new": "การเคลื่อนไหว",
+    "method": "manual_override"
+  },
+  {
+    "word": "note",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ข้อความ",
+    "new": "บันทึก, โน้ต",
+    "method": "manual_override"
+  },
+  {
+    "word": "order",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "คำสั่ง",
+    "new": "คำสั่ง, ลำดับ",
+    "method": "manual_override"
+  },
+  {
+    "word": "people",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "คน",
+    "new": "คน, ผู้คน",
+    "method": "manual_override"
+  },
+  {
+    "word": "point",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความคิดเห็น",
+    "new": "จุด, ประเด็น",
+    "method": "manual_override"
+  },
+  {
+    "word": "post",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "เสา",
+    "new": "ไปรษณีย์, ตำแหน่ง",
+    "method": "manual_override"
+  },
+  {
+    "word": "quarter",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "หนึ่งในสี่ส่วน",
+    "new": "หนึ่งในสี่",
+    "method": "manual_override"
+  },
+  {
+    "word": "side",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ข้าง",
+    "new": "ด้าน",
+    "method": "manual_override"
+  },
+  {
+    "word": "stand",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การยืน",
+    "new": "แท่น, จุดยืน",
+    "method": "manual_override"
+  },
+  {
+    "word": "touch",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความรู้สึก",
+    "new": "การสัมผัส",
+    "method": "manual_override"
+  },
+  {
+    "word": "turn",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "การเปลี่ยน",
+    "new": "การเลี้ยว, คราว",
+    "method": "manual_override"
+  },
+  {
+    "word": "type",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "รูปแบบ",
+    "new": "ประเภท",
+    "method": "manual_override"
+  },
+  {
+    "word": "way",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "วิธีหรือแนวทาง",
+    "new": "ทาง, วิธีการ",
+    "method": "manual_override"
+  },
+  {
+    "word": "air",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การเดินทางโดยเครื่องบิน",
+    "new": "อากาศ",
+    "method": "manual_override"
+  },
+  {
+    "word": "base",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "พื้นฐาน",
+    "new": "ฐาน",
+    "method": "manual_override"
+  },
+  {
+    "word": "bill",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ใบแจ้งหนี้",
+    "new": "ใบเรียกเก็บเงิน",
+    "method": "manual_override"
+  },
+  {
+    "word": "bit",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ดอกสว่าน",
+    "new": "ชิ้นเล็ก",
+    "method": "manual_override"
+  },
+  {
+    "word": "company",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "กลุ่มคน",
+    "new": "บริษัท",
+    "method": "manual_override"
+  },
+  {
+    "word": "country",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ประชาชนในประเทศ",
+    "new": "ประเทศ",
+    "method": "manual_override"
+  },
+  {
+    "word": "court",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "คฤหาสน์",
+    "new": "สนามกีฬา",
+    "method": "manual_override"
+  },
+  {
+    "word": "deal",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การแจกจ่าย",
+    "new": "ข้อตกลง",
+    "method": "manual_override"
+  },
+  {
+    "word": "force",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "กำลัง",
+    "new": "แรง, กำลัง",
+    "method": "manual_override"
+  },
+  {
+    "word": "pass",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ใบอนุญาต",
+    "new": "การผ่าน",
+    "method": "manual_override"
+  },
+  {
+    "word": "power",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "พลังงาน",
+    "new": "อำนาจ, พลังงาน",
+    "method": "manual_override"
+  },
+  {
+    "word": "right",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ความถูกต้อง",
+    "new": "สิทธิ",
+    "method": "manual_override"
+  },
+  {
+    "word": "sense",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "อารมณ์",
+    "new": "ความรู้สึก, ความหมาย",
+    "method": "manual_override"
+  },
+  {
+    "word": "set",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การจัดตั้ง",
+    "new": "ชุด",
+    "method": "manual_override"
+  },
+  {
+    "word": "state",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "สภาพ",
+    "new": "รัฐ, สภาวะ",
+    "method": "manual_override"
+  },
+  {
+    "word": "step",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ก้าว",
+    "new": "ก้าว, ขั้นตอน",
+    "method": "manual_override"
+  },
+  {
+    "word": "study",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การศึกษา",
+    "new": "การศึกษา, ห้องทำงาน",
+    "method": "manual_override"
+  },
+  {
+    "word": "track",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "หนทาง",
+    "new": "ทางรถไฟ, เส้นทาง",
+    "method": "manual_override"
+  },
+  {
+    "word": "view",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การมอง",
+    "new": "มุมมอง, ทิวทัศน์",
+    "method": "manual_override"
+  },
+  {
+    "word": "fire",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "เพลิง",
+    "new": "ไฟ",
+    "method": "manual_override"
+  },
+  {
+    "word": "subject",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "หัวข้อ",
+    "new": "วิชา, หัวข้อ",
+    "method": "manual_override"
+  },
+  {
+    "word": "top",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "จุดสูงสุด",
+    "new": "ด้านบน, จุดสูงสุด",
+    "method": "manual_override"
+  },
+  {
+    "word": "center",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "คนหรือกลุ่มที่อยู่ในตำแหน่งตรงกลาง",
+    "new": "ศูนย์กลาง",
+    "method": "manual_override"
+  },
+  {
+    "word": "drop",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การทิ้ง",
+    "new": "หยด",
+    "method": "manual_override"
+  },
+  {
+    "word": "lead",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "การทิ้งไพ่นำ",
+    "new": "การนำ",
+    "method": "manual_override"
+  },
+  {
+    "word": "pick",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การเก็บ",
+    "new": "การเลือก",
+    "method": "manual_override"
+  },
+  {
+    "word": "press",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การกด",
+    "new": "สื่อมวลชน",
+    "method": "manual_override"
+  },
+  {
+    "word": "push",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การผลัก",
+    "new": "การดัน",
+    "method": "manual_override"
+  },
+  {
+    "word": "round",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "รูปทรงกลม",
+    "new": "รอบ",
+    "method": "manual_override"
+  },
+  {
+    "word": "use",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "วิธีการใช้",
+    "new": "การใช้",
+    "method": "manual_override"
+  },
+  {
+    "word": "fall",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "การตก",
+    "new": "การตก, ฤดูใบไม้ร่วง",
+    "method": "manual_override"
+  },
+  {
+    "word": "grade",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ชนชั้น",
+    "new": "เกรด, ระดับ",
+    "method": "manual_override"
+  },
+  {
+    "word": "spot",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "จุด",
+    "new": "จุด, สถานที่",
+    "method": "manual_override"
+  },
+  {
+    "word": "chest",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ชั้นที่มีลิ้นชักใส่เสื้อผ้า",
+    "new": "หน้าอก",
+    "method": "manual_override"
+  },
+  {
+    "word": "square",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "สี่เหลี่ยมจัตุรัส",
+    "new": "จัตุรัส",
+    "method": "manual_override"
+  },
+  {
+    "word": "suit",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "ชุดเสื้อผ้า",
+    "new": "ชุดสูท",
+    "method": "manual_override"
+  },
+  {
+    "word": "tip",
+    "pos": "noun",
+    "cefr": "A2",
+    "old": "จุดปลายสุด",
+    "new": "ปลาย, เคล็ดลับ",
+    "method": "manual_override"
+  },
+  {
+    "word": "ear",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "ความตั้งใจ",
+    "new": "หู",
+    "method": "manual_override"
+  },
+  {
+    "word": "spring",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "สปริง",
+    "new": "ฤดูใบไม้ผลิ",
+    "method": "manual_override"
+  },
+  {
+    "word": "iron",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "เข้มแข็งเหมือนเหล็ก",
+    "new": "เตารีด",
+    "method": "manual_override"
+  },
+  {
+    "word": "net",
+    "pos": "noun",
+    "cefr": "B1",
+    "old": "ตาข่ายดักสัตว์",
+    "new": "ตาข่าย",
+    "method": "manual_override"
+  },
+  {
+    "word": "bat",
+    "pos": "noun",
+    "cefr": "A1",
+    "old": "กระบอง",
+    "new": "ค้างคาว",
+    "method": "manual_override"
+  },
+  {
+    "word": "stick",
+    "pos": "noun",
+    "cefr": "B2",
+    "old": "ไม้เท้า",
+    "new": "ไม้, แท่ง",
+    "method": "manual_override"
+  },
+  {
+    "word": "trust",
+    "pos": "noun",
+    "cefr": "B2",
+    "old": "ความเชื่อใจ",
+    "new": "ความไว้วางใจ",
+    "method": "manual_override"
+  }
+]
