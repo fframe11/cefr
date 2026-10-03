@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   CheckCircle2,
   HelpCircle,
+  GraduationCap,
 } from 'lucide-react';
 import { getGrammarTopics, mapGrammarDtoToTopic } from '../../lib/api/content/grammar';
 import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions';
@@ -194,6 +195,34 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-16">
+      {/* Quick Action Navigation Bar for Cheat Sheets & OOPT Test Prep */}
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gradient-to-r from-indigo-900/10 via-purple-900/10 to-slate-900/10 dark:from-indigo-950/40 dark:via-purple-950/40 dark:to-slate-900/40 border border-indigo-200/50 dark:border-indigo-900/50 shadow-xs">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-indigo-500" />
+          <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+            {isEn ? 'High-Yield Cheat Sheets & OOPT Test Prep' : 'สูตรลัด High-Yield & แบบฝึกหัด OOPT จำลอง'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => router?.push('/cheat-sheets')}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-xs transition-colors cursor-pointer"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>{isEn ? 'Cheat Sheets' : 'สูตรลัด In/On/At, Play/Do/Go'}</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => router?.push('/oopt-practice')}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-xs transition-colors cursor-pointer"
+          >
+            <GraduationCap className="w-3.5 h-3.5" />
+            <span>{isEn ? 'OOPT Practice (Part 2 & 3)' : 'แบบฝึกหัด OOPT (Part 2 & 3)'}</span>
+          </button>
+        </div>
+      </div>
+
       {/* Top Header: Topic Selector Pills Carousel & Test/Study Tab Switcher */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-3 border-b border-slate-200/80 dark:border-white/10">
         {/* Topic Pills */}

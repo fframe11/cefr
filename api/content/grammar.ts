@@ -3,6 +3,7 @@ import { createApiHandler } from '../_lib/handler/api-handler';
 import { createPublicServerClient } from '../_lib/supabase/client';
 import { validateQuery } from '../_lib/validation/validator';
 import { cefrLevelSchema, paginationSchema } from '../_lib/validation/common-schemas';
+import { GRAMMAR_BANK } from '../../data/grammarBank';
 import grammarData from '../../data/grammar-question-bank.json';
 
 const grammarQuerySchema = paginationSchema.extend({
@@ -69,53 +70,51 @@ export default createApiHandler(
       // Fallback seamlessly to local bank below
     }
 
-    // Local curated pedagogical fallback
-    const rawItems = grammarData as LocalGrammarItem[];
-    let filtered = rawItems;
+    // Local curated pedagogical fallback using expanded 14-topic CEFR GRAMMAR_BANK
+    let filtered = GRAMMAR_BANK;
     if (query.cefr_level) {
-      filtered = filtered.filter((it) => it.cefr_level === query.cefr_level);
+      filtered = filtered.filter((it) => it.cefrLevel === query.cefr_level);
     }
     if (query.slug) {
-      filtered = filtered.filter((it) => it.grammar_topic.toLowerCase().includes(query.slug!.toLowerCase()));
+      filtered = filtered.filter(
+        (it) =>
+          it.id.toLowerCase().includes(query.slug!.toLowerCase()) ||
+          it.titleEn.toLowerCase().includes(query.slug!.toLowerCase())
+      );
     }
 
-    // Group items into distinct topic summaries
-    const topicMap = new Map<string, any>();
-    for (const item of filtered) {
-      if (!topicMap.has(item.grammar_topic)) {
-        topicMap.set(item.grammar_topic, {
-          id: item.id,
-          slug: item.grammar_topic,
-          title_en: item.grammar_topic.replace(/_/g, ' ').toUpperCase(),
-          title_th: item.explanation_th.slice(0, 60),
-          cefr_level: item.cefr_level,
-          summary_th: item.explanation_th,
-          concept_th: item.explanation_th,
-          concept_en: item.explanation_en,
-          rules: [
-            {
-              rule_number: 1,
-              explanation_th: item.explanation_th,
-              explanation_en: item.explanation_en,
-              example_sentences: [item.stem_en.replace('_____', item.correct_answer)],
-            },
-          ],
-          common_mistakes: [],
-        });
-      }
-    }
+    const mappedTopics = filtered.map((topic) => ({
+      id: topic.id,
+      slug: topic.id,
+      title_en: topic.titleEn,
+      title_th: topic.titleTh,
+      cefr_level: topic.cefrLevel,
+      summary_th: topic.explanationTh,
+      concept_th: topic.explanationTh,
+      concept_en: topic.conceptEn,
+      rules: topic.rules.map((r) => ({
+        rule_number: r.ruleNumber,
+        explanation_th: r.explanationTh,
+        explanation_en: r.explanationEn,
+        example_sentences: r.exampleSentences,
+      })),
+      common_mistakes: topic.commonMistakes.map((m) => ({
+        incorrect: m.incorrect,
+        correct: m.correct,
+        reason_th: m.reasonTh,
+      })),
+    }));
 
-    const allTopics = Array.from(topicMap.values());
     const offset = (query.page - 1) * query.limit;
-    const paginatedTopics = allTopics.slice(offset, offset + query.limit);
+    const paginatedTopics = mappedTopics.slice(offset, offset + query.limit);
 
     return {
       topics: paginatedTopics,
       pagination: {
         page: query.page,
         limit: query.limit,
-        total: allTopics.length,
-        total_pages: Math.ceil(allTopics.length / query.limit),
+        total: mappedTopics.length,
+        total_pages: Math.ceil(mappedTopics.length / query.limit),
       },
     };
   },

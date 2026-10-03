@@ -1,0 +1,413 @@
+import json
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+# 6 original authentic reading passages with 7 gaps each (total 42 items)
+# Tests structural grammar glue words: prepositions, articles, auxiliary verbs, relative pronouns, connectors.
+# Zero plagiarism, zero shrimp/crab/shellfish.
+cloze_passages = [
+    {
+        "id": "cloze_text_01",
+        "title": "Weekend Hiking Invitation",
+        "genre": "informal_email",
+        "cefr_level": "A2",
+        "introduction_th": "เติมคำศัพท์ทางไวยากรณ์ 1 คำในแต่ละช่องว่างให้อีเมลนี้สมบูรณ์ถูกต้องตามหลักภาษา",
+        "passage_template": "Hi Marcus,\n\nI hope you are having (1)_____ wonderful week! A group of us are planning a day trip to the national park (2)_____ Saturday morning. We intend to leave (3)_____ 7:30 AM from the station because traffic is lighter early in the day. There will be plenty (4)_____ fruit, sandwiches, and fresh juice for everyone. Would you like (5)_____ come along with us? We still have two spare seats (6)_____ my brother's car. Let me know by tomorrow so we can finalize (7)_____ arrangements.\n\nCheers,\nNate",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "a",
+                "acceptable_answers": ["a"],
+                "word_type": "article",
+                "hint_th": "นำหน้าคำคุณศัพท์และนามนับได้เอกพจน์ (wonderful week)",
+                "explanation_th": "วลี 'have a wonderful week' ต้องมี indefinite article 'a' นำหน้านามนับได้เอกพจน์"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "on",
+                "acceptable_answers": ["on"],
+                "word_type": "preposition_of_time",
+                "hint_th": "บุพบทนำหน้าวันในสัปดาห์ (Saturday morning)",
+                "explanation_th": "หน้าวันในสัปดาห์ (Saturday) ต้องใช้ preposition 'on' เสมอ"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "at",
+                "acceptable_answers": ["at"],
+                "word_type": "preposition_of_time",
+                "hint_th": "บุพบทนำหน้าเวลาบนหน้าปัดนาฬิกา (7:30 AM)",
+                "explanation_th": "เวลาที่ระบุแน่นอนบนหน้าปัดนาฬิกาต้องใช้ preposition 'at'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "of",
+                "acceptable_answers": ["of"],
+                "word_type": "preposition",
+                "hint_th": "ส่วนหนึ่งของสำนวน plenty _____",
+                "explanation_th": "สำนวนบอกปริมาณมากคือ 'plenty of'"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "to",
+                "acceptable_answers": ["to"],
+                "word_type": "infinitive_marker",
+                "hint_th": "ตามหลังโครงสร้าง Would you like _____",
+                "explanation_th": "โครงสร้างการเชิญชวนคือ 'Would you like to + V.1'"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "in",
+                "acceptable_answers": ["in"],
+                "word_type": "preposition_of_place",
+                "hint_th": "บุพบทระบุภายในรถยนต์ส่วนบุคคล (car)",
+                "explanation_th": "ยานพาหนะส่วนบุคคลขนาดเล็กเช่น car หรือ taxi ใช้ preposition 'in'"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "the",
+                "acceptable_answers": ["the", "our"],
+                "word_type": "determiner",
+                "hint_th": "คำนำหน้านามชี้เฉพาะการจัดการ (arrangements)",
+                "explanation_th": "ใช้ definite article 'the' หรือ possessive 'our' ชี้เฉพาะการเตรียมการเดินทาง"
+            }
+        ]
+    },
+    {
+        "id": "cloze_text_02",
+        "title": "A Passion for Botanical Photography",
+        "genre": "personal_narrative",
+        "cefr_level": "B1",
+        "introduction_th": "อ่านบันทึกประสบการณ์แล้วเติมคำไวยากรณ์ 1 คำในแต่ละช่องว่าง",
+        "passage_template": "My aunt is an avid nature photographer (1)_____ spends every weekend documenting rare orchids. She began taking pictures when she (2)_____ only twelve years old. Over the years, she (3)_____ photographed more than two hundred species of native plants across the country. She believes that (4)_____ is vital to protect fragile forest ecosystems. Whenever I join her expeditions, she teaches me how (5)_____ adjust the camera lenses to capture delicate textures. Yesterday, she showed me an extraordinary photo (6)_____ a golden blooming flower. It was one of the most stunning images that I have (7)_____ seen.",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "who",
+                "acceptable_answers": ["who", "that"],
+                "word_type": "relative_pronoun",
+                "hint_th": "สรรพนามเชื่อมขยายบุคคล (photographer)",
+                "explanation_th": "ขยายบุคคล 'photographer' ทำหน้าที่ประธานใน relative clause จึงใช้ 'who' หรือ 'that'"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "was",
+                "acceptable_answers": ["was"],
+                "word_type": "past_auxiliary",
+                "hint_th": "กริยา to be รูปอดีตของประธาน she",
+                "explanation_th": "บอกอายุในอดีต (when she was twelve years old) ประธาน she ใช้ 'was'"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "has",
+                "acceptable_answers": ["has"],
+                "word_type": "perfect_auxiliary",
+                "hint_th": "กริยาช่วยในรูป Present Perfect (She _____ photographed)",
+                "explanation_th": "ประธานเอกพจน์ She ร่วมกับ Past Participle photographed แสดงประสบการณ์ถึงปัจจุบัน ใช้ 'has'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "it",
+                "acceptable_answers": ["it"],
+                "word_type": "dummy_subject",
+                "hint_th": "ประธานสมมุติของโครงสร้าง it is vital to...",
+                "explanation_th": "โครงสร้าง Dummy Subject: 'It is + adjective + to V.1'"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "to",
+                "acceptable_answers": ["to"],
+                "word_type": "infinitive_marker",
+                "hint_th": "โครงสร้าง how _____ V.1",
+                "explanation_th": "โครงสร้าง Question Word + Infinitive: 'how to adjust'"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "of",
+                "acceptable_answers": ["of"],
+                "word_type": "preposition",
+                "hint_th": "บุพบทบอกว่าภาพนั้นเป็นภาพเกี่ยวกับอะไร (photo _____ a flower)",
+                "explanation_th": "วลีบอกรูปภาพของสิ่งใดใช้ 'a photo of something'"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "ever",
+                "acceptable_answers": ["ever"],
+                "word_type": "adverb",
+                "hint_th": "คำขยายในขั้นสูงสุด 'the most stunning images I have _____ seen'",
+                "explanation_th": "โครงสร้างขั้นสูงสุด (Superlative) มักตามด้วย Present Perfect + 'ever' (เท่าที่เคยเห็นมา)"
+            }
+        ]
+    },
+    {
+        "id": "cloze_text_03",
+        "title": "Settling into the Eco-Townhouse",
+        "genre": "personal_letter",
+        "cefr_level": "B1",
+        "introduction_th": "เติมคำเชื่อมหรือบุพบท 1 คำในแต่ละช่องว่างของจดหมายเล่าเรื่องบ้านใหม่",
+        "passage_template": "Dear Julian,\n\nWe have finally moved (1)_____ our new eco-friendly townhouse! The neighborhood is pleasantly peaceful, (2)_____ there are plenty of bicycle lanes connecting to the train station. The solar panels on the roof generate almost (3)_____ the electricity we consume daily. (4)_____ you visit us next month, you will certainly enjoy relaxing in the solar-heated conservatory. The local community center is only five minutes away (5)_____ foot. There (6)_____ several cozy bakeries and an organic vegetable market nearby. We cannot wait (7)_____ welcome you here.\n\nWarm regards,\nKrit",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "into",
+                "acceptable_answers": ["into", "to"],
+                "word_type": "preposition_of_movement",
+                "hint_th": "ย้ายเข้าไปอยู่ในบ้านใหม่ (moved _____ our new house)",
+                "explanation_th": "กริยา move เมื่อบอกการย้ายเข้าไปในที่พักอาศัยใหม่ใช้ 'move into'"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "and",
+                "acceptable_answers": ["and", "so"],
+                "word_type": "conjunction",
+                "hint_th": "คำเชื่อมประสานข้อความเชิงบวกเพิ่มเติม",
+                "explanation_th": "เชื่อมข้อความคล้อยตามกัน (เงียบสงบ 'และ' มีเลนจักรยาน) ใช้ 'and' หรือ 'so'"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "all",
+                "acceptable_answers": ["all"],
+                "word_type": "quantifier",
+                "hint_th": "คำบอกปริมาณไฟฟ้าทั้งหมด (almost _____ the electricity)",
+                "explanation_th": "วลีบอกปริมาณครอบคลุมทั้งหมดคือ 'almost all the electricity'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "When",
+                "acceptable_answers": ["When", "If"],
+                "word_type": "subordinating_conjunction",
+                "hint_th": "คำเชื่อมบอกเงื่อนไขหรือเวลา (เมื่อคุณมาเยี่ยมเรา)",
+                "explanation_th": "เชื่อมประโยคเวลาหรือเงื่อนไข: 'When/If you visit us'"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "on",
+                "acceptable_answers": ["on"],
+                "word_type": "fixed_preposition",
+                "hint_th": "สำนวนบอกการเดินเท้า (_____ foot)",
+                "explanation_th": "การเดินเท้าใช้สำนวนคงที่คือ 'on foot' เสมอ"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "are",
+                "acceptable_answers": ["are"],
+                "word_type": "existential_verb",
+                "hint_th": "โครงสร้าง There _____ + คำนามพหูพจน์ (several bakeries)",
+                "explanation_th": "ประธานแท้ข้างหลังเป็นพหูพจน์ (several bakeries) จึงใช้ 'There are'"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "to",
+                "acceptable_answers": ["to"],
+                "word_type": "infinitive_marker",
+                "hint_th": "โครงสร้าง cannot wait _____ V.1",
+                "explanation_th": "สำนวน 'cannot wait to do something' (แทบรอไม่ไหวที่จะ...)"
+            }
+        ]
+    },
+    {
+        "id": "cloze_text_04",
+        "title": "The Art of Artisan Coffee Roasting",
+        "genre": "expository_article",
+        "cefr_level": "B2",
+        "introduction_th": "เติมคำศัพท์ทางโครงสร้าง 1 คำในแต่ละช่องว่างของบทความวิชาการสั้น",
+        "passage_template": "Artisan coffee roasting has transformed from a humble trade into a refined scientific craft. Green coffee beans are sourced (1)_____ high-altitude farms where volcanic soil and cool mountain mist provide ideal growing conditions. Once the raw harvest arrives at the roastery, it (2)_____ inspected meticulously for moisture consistency. During the roasting process, heat causes complex sugars to caramelize, releasing hundreds of volatile aroma compounds (3)_____ give each batch its signature flavor profile. (4)_____ roaster must monitor the temperature curves continuously, as a variation of merely two degrees can alter the cup completely. If the airflow is not balanced properly, the beans may become scorched, resulting (5)_____ an unpleasant bitter aftertaste. Consequently, master roasters rely not only (6)_____ sophisticated sensors, but also on their senses of smell and hearing to determine the exact moment (7)_____ the roast reaches perfection.",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "from",
+                "acceptable_answers": ["from"],
+                "word_type": "preposition",
+                "hint_th": "กริยา sourced นำเข้า 'จาก' แหล่งเพาะปลูก",
+                "explanation_th": "โครงสร้าง Passive: 'are sourced from...' (จัดหามาจาก)"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "is",
+                "acceptable_answers": ["is"],
+                "word_type": "passive_auxiliary",
+                "hint_th": "กริยาช่วยใน Passive Voice ของประธานเอกพจน์ it (it _____ inspected)",
+                "explanation_th": "Passive voice ปัจจุบันของ it: 'it is inspected'"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "that",
+                "acceptable_answers": ["that", "which"],
+                "word_type": "relative_pronoun",
+                "hint_th": "สรรพนามเชื่อมขยายสารประกอบอโรมา (aroma compounds)",
+                "explanation_th": "Relative pronoun ขยายสิ่งของ (aroma compounds) ใช้ 'that' หรือ 'which'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "The",
+                "acceptable_answers": ["The", "Each", "Every"],
+                "word_type": "determiner",
+                "hint_th": "คำนำหน้านามชี้เฉพาะผู้คั่วกาแฟ (roaster)",
+                "explanation_th": "ใช้ 'The' เพื่อเจาะจง หรือ 'Each/Every' roaster"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "in",
+                "acceptable_answers": ["in"],
+                "word_type": "verb_preposition_collocation",
+                "hint_th": "สำนวน result _____ แปลว่า ส่งผลให้เกิด",
+                "explanation_th": "สำนวน 'result in' แปลว่า ส่งผลลัพธ์ให้เกิดสิ่งใด"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "on",
+                "acceptable_answers": ["on", "upon"],
+                "word_type": "verb_preposition_collocation",
+                "hint_th": "กริยา rely ต้องใช้คู่กับบุพบทตัวใด (rely _____)",
+                "explanation_th": "กริยา 'rely' ต้องตามด้วยบุพบท 'on' (หรือ 'upon') เสมอ"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "when",
+                "acceptable_answers": ["when"],
+                "word_type": "relative_adverb",
+                "hint_th": "คำเชื่อมระบุช่วงเวลา (the exact moment _____)",
+                "explanation_th": "ขยายคำนามบอกเวลา 'moment' ใช้ relative adverb 'when'"
+            }
+        ]
+    },
+    {
+        "id": "cloze_text_05",
+        "title": "Cycling Through the Highland Valleys",
+        "genre": "travel_journal",
+        "cefr_level": "B2",
+        "introduction_th": "เติมคำไวยากรณ์ 1 คำในแต่ละช่องว่างของบันทึกการเดินทาง",
+        "passage_template": "Cycling through the northern valleys turned out to be far more demanding (1)_____ we had initially anticipated. The steep mountain passes required intense physical endurance, yet every summit offered views that took (2)_____ breath away. We carried lightweight camping gear attached to our bicycles so that we (3)_____ pitch our tents whenever sunset approached. Although rain poured relentlessly during the second afternoon, our waterproof jackets kept us dry (4)_____ comfortable throughout the ride. At dusk, we stopped beside a crystalline river (5)_____ water was pure enough to drink directly. Meeting fellow cycle tourers along the path made us realize that no matter (6)_____ difficult the terrain became, mutual encouragement would always see us (7)_____ to the final destination.",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "than",
+                "acceptable_answers": ["than"],
+                "word_type": "comparative_marker",
+                "hint_th": "คำเชื่อมเปรียบเทียบขั้นกว่าตามหลัง more demanding",
+                "explanation_th": "ขั้นกว่า 'more demanding' ต้องตามด้วย 'than'"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "our",
+                "acceptable_answers": ["our"],
+                "word_type": "possessive_adjective",
+                "hint_th": "สำนวน take one's breath away (ประธานพวกเรา we -> take _____ breath away)",
+                "explanation_th": "สำนวน 'take our breath away' (ทำให้พวกเราตื่นตาตื่นใจจนแทบลืมหายใจ)"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "could",
+                "acceptable_answers": ["could", "might"],
+                "word_type": "modal_auxiliary",
+                "hint_th": "กริยาช่วยรูปอดีตบอกความสามารถในโครงสร้าง so that we _____ V.1",
+                "explanation_th": "ในประโยคเล่าอดีต 'so that we could pitch our tents'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "and",
+                "acceptable_answers": ["and"],
+                "word_type": "coordinating_conjunction",
+                "hint_th": "คำเชื่อมคำคุณศัพท์คู่กัน (dry _____ comfortable)",
+                "explanation_th": "เชื่อมคำคุณศัพท์เชิงบวก 'dry and comfortable'"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "whose",
+                "acceptable_answers": ["whose"],
+                "word_type": "possessive_relative_pronoun",
+                "hint_th": "สรรพนามแสดงความเป็นเจ้าของของแม่น้ำ (river _____ water)",
+                "explanation_th": "ขยายความเป็นเจ้าของ 'a river whose water was pure'"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "how",
+                "acceptable_answers": ["how"],
+                "word_type": "adverbial_connector",
+                "hint_th": "สำนวน no matter _____ + adjective (difficult)",
+                "explanation_th": "โครงสร้างบอกระดับ: 'no matter how difficult'"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "through",
+                "acceptable_answers": ["through"],
+                "word_type": "phrasal_verb_particle",
+                "hint_th": "สำนวน see someone _____ แปลว่า ช่วยประคับประคองให้ผ่านพ้นไปได้",
+                "explanation_th": "Phrasal verb: 'see someone through' (ช่วยให้ผ่านพ้นอุปสรรคไปถึงจุดหมาย)"
+            }
+        ]
+    },
+    {
+        "id": "cloze_text_06",
+        "title": "Understanding Sleep Hygiene and Circadian Rhythms",
+        "genre": "science_health",
+        "cefr_level": "B2",
+        "introduction_th": "เติมคำศัพท์ทางไวยากรณ์ 1 คำในแต่ละช่องว่างของบทความวิทยาศาสตร์สุขภาพ",
+        "passage_template": "Human physiological well-being relies heavily on biological circadian rhythms that repeat roughly every twenty-four hours. These internal clocks regulate hormone secretion, body temperature, (1)_____ sleep-wake cycles. When individuals expose themselves to intense artificial blue light late at night, the pineal gland delays the production (2)_____ melatonin, the hormone responsible for signaling bedtime to the brain. Over time, chronic sleep deprivation impairs concentration, weakens immune defense, and increases the likelihood (3)_____ developing cardiovascular complications. Neurologists emphasize that establishing a consistent sleep schedule is far more effective (4)_____ relying on pharmaceutical sleep aids. Experts advise that adults (5)_____ aim for seven to eight hours of uninterrupted rest per night. Furthermore, creating a dark, quiet, and cool bedroom environment assists the nervous system (6)_____ transitioning smoothly into restorative deep sleep. Prioritizing healthy rest is therefore not a luxury, (7)_____ a fundamental pillar of preventative medicine.",
+        "gaps": [
+            {
+                "gap_number": 1,
+                "target_word": "and",
+                "acceptable_answers": ["and"],
+                "word_type": "conjunction",
+                "hint_th": "คำเชื่อมรายการสุดท้ายในชุด (A, B, _____ C)",
+                "explanation_th": "เชื่อมรายการในอนุกรมสามสิ่ง: 'A, B, and C'"
+            },
+            {
+                "gap_number": 2,
+                "target_word": "of",
+                "acceptable_answers": ["of"],
+                "word_type": "preposition",
+                "hint_th": "บุพบทบอกการผลิตของสิ่งใด (production _____ melatonin)",
+                "explanation_th": "นามนามวลี: 'the production of melatonin'"
+            },
+            {
+                "gap_number": 3,
+                "target_word": "of",
+                "acceptable_answers": ["of"],
+                "word_type": "preposition",
+                "hint_th": "สำนวน the likelihood _____ V-ing",
+                "explanation_th": "วลี 'the likelihood of doing something'"
+            },
+            {
+                "gap_number": 4,
+                "target_word": "than",
+                "acceptable_answers": ["than"],
+                "word_type": "comparative_marker",
+                "hint_th": "คำเชื่อมเปรียบเทียบขั้นกว่าตามหลัง more effective",
+                "explanation_th": "เปรียบเทียบขั้นกว่า: 'more effective than...'"
+            },
+            {
+                "gap_number": 5,
+                "target_word": "should",
+                "acceptable_answers": ["should", "must"],
+                "word_type": "modal_verb",
+                "hint_th": "กริยาช่วยแสดงคำแนะนำ (ควรจะ)",
+                "explanation_th": "คำแนะนำทางการแพทย์: 'adults should aim for...'"
+            },
+            {
+                "gap_number": 6,
+                "target_word": "in",
+                "acceptable_answers": ["in"],
+                "word_type": "preposition",
+                "hint_th": "กริยา assist someone _____ V-ing",
+                "explanation_th": "โครงสร้าง 'assist someone in doing something' (ช่วยในการ...)"
+            },
+            {
+                "gap_number": 7,
+                "target_word": "but",
+                "acceptable_answers": ["but"],
+                "word_type": "correlative_conjunction",
+                "hint_th": "คู่คำเชื่อม not A, _____ B (ไม่เพียงแต่... แต่เป็น...)",
+                "explanation_th": "โครงสร้างขัดแย้ง: 'not A, but B' (ไม่ใช่ความฟุ่มเฟือย แต่เป็นเสาหลัก)"
+            }
+        ]
+    }
+]
+
+output_path = 'data/ooptPart3Cloze.json'
+with open(output_path, 'w', encoding='utf-8') as f:
+    json.dump(cloze_passages, f, ensure_ascii=False, indent=2)
+
+print(f"Generated {len(cloze_passages)} original OOPT Part 3 cloze texts (42 total gap items) in {output_path}")

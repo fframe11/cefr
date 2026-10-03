@@ -2,6 +2,7 @@ import { createApiHandler } from '../_lib/handler/api-handler';
 import { createPublicServerClient } from '../_lib/supabase/client';
 import { validateQuery } from '../_lib/validation/validator';
 import { cefrLevelSchema, cambridgeExamCodeSchema, paginationSchema } from '../_lib/validation/common-schemas';
+import { LISTENING_BANK } from '../../data/listeningBank';
 
 const listeningQuerySchema = paginationSchema.extend({
   cefr_level: cefrLevelSchema.optional(),
@@ -36,19 +37,54 @@ export default createApiHandler(
       .order('title', { ascending: true })
       .range(offset, offset + query.limit - 1);
 
-    const { data: exercises, count, error } = await dbQuery;
+    try {
+      const { data: exercises, count, error } = await dbQuery;
 
-    if (error) {
-      throw error;
+      if (!error && exercises && exercises.length > 0) {
+        return {
+          exercises,
+          pagination: {
+            page: query.page,
+            limit: query.limit,
+            total: count || exercises.length,
+            total_pages: Math.ceil((count || exercises.length) / query.limit),
+          },
+        };
+      }
+    } catch {
+      // Fallback gracefully below
     }
 
+    // Local fallback to comprehensive LISTENING_BANK
+    let filtered = LISTENING_BANK;
+    if (query.cefr_level) {
+      filtered = filtered.filter((ex) => ex.cefrLevel === query.cefr_level);
+    }
+    if (query.target_exam) {
+      filtered = filtered.filter((ex) => ex.targetExam === query.target_exam);
+    }
+
+    const mapped = filtered.map((ex) => ({
+      id: ex.id,
+      title: ex.title,
+      cefr_level: ex.cefrLevel,
+      target_exam: ex.targetExam,
+      speaker_accents: ex.speakerAccents,
+      audio_storage_path: ex.audioStoragePath || null,
+      speed_options: ex.audioSpeedOptions,
+      audio_script: ex.audioScript,
+    }));
+
+    const offset = (query.page - 1) * query.limit;
+    const paginated = mapped.slice(offset, offset + query.limit);
+
     return {
-      exercises: exercises || [],
+      exercises: paginated,
       pagination: {
         page: query.page,
         limit: query.limit,
-        total: count || 0,
-        total_pages: Math.ceil((count || 0) / query.limit),
+        total: mapped.length,
+        total_pages: Math.ceil(mapped.length / query.limit),
       },
     };
   },
