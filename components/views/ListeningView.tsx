@@ -48,11 +48,12 @@ import { useToast } from '../common/Toast';
 
 interface ListeningViewProps {
   onQuestionCompleted?: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
+  embedded?: boolean;
 }
 
 type TabType = 'test' | 'files' | 'transcript' | 'feedback' | 'more';
 
-export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionCompleted }) => {
+export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionCompleted, embedded = false }) => {
   let router: { push: (url: string) => void } | null = null;
   try {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -320,53 +321,55 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
   }, [isEn, completedLessonIds]);
 
   return (
-    <div className="w-full space-y-6 pb-20 max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className={`w-full space-y-6 ${embedded ? 'pb-8 max-w-full' : 'pb-20 max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8'}`}>
       {/* 1. TOP BAR / COURSE HEADER (Piotr Kosmala Clean Breadcrumb System) */}
-      <nav
-        aria-label="Course Navigation Bar"
-        className="w-full bg-white dark:bg-[#1E1B28] rounded-[24px] sm:rounded-[32px] p-3.5 sm:p-5 border border-border/80 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4"
-      >
-        {/* Brand & Breadcrumb Route */}
-        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
-          <div className="w-10 h-10 rounded-2xl bg-[#FA5D5D] text-white flex items-center justify-center font-black shadow-sm shrink-0">
-            <Headphones className="w-5 h-5 text-white" />
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2 text-xs text-slate-500 font-bold">
-              <span>{isEn ? 'Tutorials' : 'บทเรียน'}</span>
-              <span>/</span>
-              <span className="text-[#FA5D5D]">{isEn ? 'Courses' : 'คอร์สเรียน'}</span>
-              <span>/</span>
-              <span>{isEn ? 'Listening Lab' : 'สตูดิโอการฟัง'}</span>
+      {!embedded && (
+        <nav
+          aria-label="Course Navigation Bar"
+          className="w-full bg-white dark:bg-[#1E1B28] rounded-[24px] sm:rounded-[32px] p-3.5 sm:p-5 border border-border/80 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4"
+        >
+          {/* Brand & Breadcrumb Route */}
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+            <div className="w-10 h-10 rounded-2xl bg-[#FA5D5D] text-white flex items-center justify-center font-black shadow-sm shrink-0">
+              <Headphones className="w-5 h-5 text-white" />
             </div>
-            <span className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-tight">
-              {isEn ? 'Cambridge English Video Preparation Masterclass' : 'คอร์สเตรียมสอบวิดีโอมาสเตอร์คลาสเคมบริดจ์'}
-            </span>
-          </div>
-        </div>
 
-        {/* Right Badges & User Status */}
-        <div className="flex items-center gap-3 self-end md:self-center">
-          <span className="px-3.5 py-1.5 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 text-xs font-mono font-black uppercase tracking-wider">
-            {isEn ? 'Free User' : 'สมาชิกทั่วไป'}
-          </span>
-
-          <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-border/80">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/landing/mondly_tutor_jordan.jpg"
-              alt="Learner profile avatar"
-              width={26}
-              height={26}
-              className="w-6.5 h-6.5 rounded-full object-cover"
-            />
-            <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
-              {isEn ? 'Student Portal' : 'ผู้เรียน'}
-            </span>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-2 text-xs text-slate-500 font-bold">
+                <span>{isEn ? 'Tutorials' : 'บทเรียน'}</span>
+                <span>/</span>
+                <span className="text-[#FA5D5D]">{isEn ? 'Courses' : 'คอร์สเรียน'}</span>
+                <span>/</span>
+                <span>{isEn ? 'Listening Lab' : 'สตูดิโอการฟัง'}</span>
+              </div>
+              <span className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-tight">
+                {isEn ? 'Cambridge English Video Preparation Masterclass' : 'คอร์สเตรียมสอบวิดีโอมาสเตอร์คลาสเคมบริดจ์'}
+              </span>
+            </div>
           </div>
-        </div>
-      </nav>
+
+          {/* Right Badges & User Status */}
+          <div className="flex items-center gap-3 self-end md:self-center">
+            <span className="px-3.5 py-1.5 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 text-xs font-mono font-black uppercase tracking-wider">
+              {isEn ? 'Free User' : 'สมาชิกทั่วไป'}
+            </span>
+
+            <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-border/80">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/landing/mondly_tutor_jordan.jpg"
+                alt="Learner profile avatar"
+                width={26}
+                height={26}
+                className="w-6.5 h-6.5 rounded-full object-cover"
+              />
+              <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                {isEn ? 'Student Portal' : 'ผู้เรียน'}
+              </span>
+            </div>
+          </div>
+        </nav>
+      )}
 
       {/* Loading state indicator */}
       {loading && exercises.length === 0 && (

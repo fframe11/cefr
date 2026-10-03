@@ -1,7 +1,16 @@
 'use client';
 import React from 'react';
-import { SpeakingView } from '../../components/views/SpeakingView';
+import { GrammarView } from '../../components/views/GrammarView';
+import { useApp } from '../../context/AppContext';
 
 export default function SpeakingPage() {
-  return <SpeakingView />;
+  const { handleQuestionCompleted, remediationTopic } = useApp();
+
+  return (
+    <GrammarView
+      initialSkill="speaking"
+      onQuestionCompleted={handleQuestionCompleted}
+      activeTopicId={remediationTopic}
+    />
+  );
 }

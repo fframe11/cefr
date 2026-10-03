@@ -52,11 +52,13 @@ import { ExtendedUniverseView } from '../vocabulary/ExtendedUniverseView';
 interface VocabularyViewProps {
   masteredWordIds?: string[];
   onToggleMastery?: (wordId: string, isMastered: boolean) => void;
+  embedded?: boolean;
 }
 
 export const VocabularyView: React.FC<VocabularyViewProps> = ({
   masteredWordIds = [],
   onToggleMastery,
+  embedded = false,
 }) => {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
@@ -356,30 +358,112 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const currentPracticeQ = practiceQuestions[practiceIndex];
 
   return (
-    <div className="w-full space-y-6 pb-16">
+    <div className={`w-full space-y-6 ${embedded ? 'pb-8' : 'pb-16'}`}>
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
-      <nav
-        aria-label="Vocabulary sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Studio Identity */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <BookOpen className="w-5 h-5 text-white" />
+      {!embedded ? (
+        <nav
+          aria-label="Vocabulary sub-navigation"
+          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        >
+          {/* Brand & Studio Identity */}
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+                <BookOpen className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                  Vocabulary Studio
+                </span>
+                <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                  ACTIVE VOCABULARY LAB // 3,860 WORDS
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Vocabulary Studio
-              </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                ACTIVE VOCABULARY LAB // 3,860 WORDS
-              </span>
+
+            <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+            {/* Mode Switcher Pills */}
+            <div className="flex items-center p-1 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 gap-1 flex-wrap">
+              <button
+                type="button"
+                onClick={() => setViewMode('study')}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
+                  viewMode === 'study'
+                    ? 'bg-[#FA5D5D] text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
+                }`}
+                aria-label={isEn ? 'Study Flashcards' : 'โหมดการ์ดคำศัพท์'}
+              >
+                <Layers className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>{isEn ? 'Flashcards' : 'การ์ดคำศัพท์'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setViewMode('practice');
+                  if (practiceQuestions.length === 0) startPracticeSession();
+                }}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
+                  viewMode === 'practice'
+                    ? 'bg-[#FA5D5D] text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
+                }`}
+                aria-label={isEn ? 'Quick Practice' : 'โหมดทดสอบความจำ'}
+              >
+                <BrainCircuit className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>{isEn ? 'Practice Quiz' : 'โหมดฝึกจำ'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setViewMode('browse')}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
+                  viewMode === 'browse'
+                    ? 'bg-[#FA5D5D] text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
+                }`}
+                aria-label={isEn ? 'Browse Word Bank' : 'โหมดคลังคำศัพท์'}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setViewMode('universe')}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
+                  viewMode === 'universe'
+                    ? 'bg-[#FA5D5D] text-white shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
+                }`}
+                aria-label={isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+                <span>{isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}</span>
+              </button>
             </div>
           </div>
 
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+          {/* Mastered Counter Capsule & Spaced Repetition Indicator */}
+          <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+            <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
+              <span className="font-black text-slate-950 dark:text-white">
+                {`${masteredWordIds.length} ${isEn ? 'words' : 'คำ'}`}
+              </span>
+            </div>
 
+            <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>SPACED REPETITION ENGINE</span>
+            </div>
+          </div>
+        </nav>
+      ) : (
+        <div className="flex items-center justify-between gap-3 flex-wrap pb-1">
           {/* Mode Switcher Pills */}
           <div className="flex items-center p-1 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 gap-1 flex-wrap">
             <button
@@ -390,7 +474,6 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   ? 'bg-[#FA5D5D] text-white shadow-sm'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
-              aria-label={isEn ? 'Study Flashcards' : 'โหมดการ์ดคำศัพท์'}
             >
               <Layers className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Flashcards' : 'การ์ดคำศัพท์'}</span>
@@ -407,7 +490,6 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   ? 'bg-[#FA5D5D] text-white shadow-sm'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
-              aria-label={isEn ? 'Quick Practice' : 'โหมดทดสอบความจำ'}
             >
               <BrainCircuit className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Practice Quiz' : 'โหมดฝึกจำ'}</span>
@@ -421,30 +503,12 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   ? 'bg-[#FA5D5D] text-white shadow-sm'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
               }`}
-              aria-label={isEn ? 'Browse Word Bank' : 'โหมดคลังคำศัพท์'}
             >
               <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
             </button>
-
-            <button
-              type="button"
-              onClick={() => setViewMode('universe')}
-              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
-                viewMode === 'universe'
-                  ? 'bg-[#FA5D5D] text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
-              }`}
-              aria-label={isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-              <span>{isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}</span>
-            </button>
           </div>
-        </div>
 
-        {/* Mastered Counter Capsule & Spaced Repetition Indicator */}
-        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
           <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
             <CheckCircle className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{isEn ? 'Mastered:' : 'เชี่ยวชาญแล้ว:'}</span>
@@ -452,13 +516,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {`${masteredWordIds.length} ${isEn ? 'words' : 'คำ'}`}
             </span>
           </div>
-
-          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>SPACED REPETITION ENGINE</span>
-          </div>
         </div>
-      </nav>
+      )}
 
       {/* Main Title & Hero Description */}
       <div className="space-y-1">

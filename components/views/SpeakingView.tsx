@@ -30,8 +30,15 @@ import {
 } from '../ui';
 import { RemotionPlayerWrapper, ListeningWaveformComposition } from '../remotion';
 import { useTranslation } from '../../i18n';
+export interface SpeakingViewProps {
+  embedded?: boolean;
+  mode?: 'speaking' | 'pronunciation';
+}
 
-export const SpeakingView: React.FC = () => {
+export const SpeakingView: React.FC<SpeakingViewProps> = ({
+  embedded = false,
+  mode = 'speaking',
+}) => {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
   const { showToast } = useToast();
@@ -194,61 +201,67 @@ export const SpeakingView: React.FC = () => {
   };
 
   return (
-    <div className="w-full space-y-6 pb-16">
+    <div className={`w-full space-y-6 ${embedded ? 'pb-8' : 'pb-16'}`}>
       {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
-      <nav
-        aria-label="Speaking sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Studio Identity */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <Mic className="w-5 h-5 text-white" />
+      {!embedded && (
+        <nav
+          aria-label="Speaking sub-navigation"
+          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+        >
+          {/* Brand & Studio Identity */}
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
+                <Mic className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
+                  Speaking Studio
+                </span>
+                <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
+                  SPEAKING LAB // CEFR
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Speaking Studio
-              </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                SPEAKING LAB // CEFR
-              </span>
-            </div>
+
+            <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
+
+            {currentPrompt && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
+                <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
+                  Part {currentPrompt.part}
+                </span>
+              </div>
+            )}
           </div>
 
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {currentPrompt && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-              <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
-              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-                Part {currentPrompt.part}
-              </span>
+          {/* Counter and Status Chips */}
+          <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
+            <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <Mic className="w-3.5 h-3.5" />
+              <span>{isEn ? `${prompts.length} Speaking Prompts` : `${prompts.length} หัวข้อการพูด`}</span>
             </div>
-          )}
-        </div>
 
-        {/* Counter and Status Chips */}
-        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
-          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <Mic className="w-3.5 h-3.5" />
-            <span>{isEn ? `${prompts.length} Speaking Prompts` : `${prompts.length} หัวข้อการพูด`}</span>
+            <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Voice Cognition</span>
+            </div>
           </div>
-
-          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Voice Cognition</span>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
       {/* Main Title & Description */}
       <div className="space-y-1">
         <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-          {isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ"}
+          {mode === 'pronunciation'
+            ? (isEn ? "Pronunciation & Sentence Stress Studio" : "การฝึกออกเสียงและเน้นเสียงในประโยค (Sentence Stress)")
+            : (isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ")}
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
-          {isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย"}
+          {mode === 'pronunciation'
+            ? (isEn ? "Practice sentence rhythm, intonation, and phonetic precision with voice recording." : "ฝึกจังหวะการพูด การเน้นคำสำคัญ (Stress) และความแม่นยำทางสัทศาสตร์ พร้อมบันทึกเสียงและตรวจจับเสียงพูด")
+            : (isEn ? "Practice responding with fluency and lexical precision with voice recording and target phrase detection." : "ฝึกพูดตอบคำถามตามเกณฑ์ความคล่องแคล่วและการใช้คำศัพท์ พร้อมบันทึกเสียงและตรวจจับวลีเป้าหมาย")}
         </p>
       </div>
 

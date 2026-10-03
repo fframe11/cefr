@@ -24,6 +24,10 @@ import {
   GlovaLevelBadge,
 } from '../ui';
 import { useTranslation } from '../../i18n';
+import { ReadingView } from './ReadingView';
+import { SpeakingView } from './SpeakingView';
+import { ListeningView } from './ListeningView';
+import { VocabularyView } from './VocabularyView';
 
 // Crisp Native Timeline Component replacing blurry canvas animations
 const NativeGrammarTimeline: React.FC<{
@@ -80,14 +84,24 @@ const NativeGrammarTimeline: React.FC<{
   </div>
 );
 
+export type StudioSkillTab =
+  | 'reading'
+  | 'grammar'
+  | 'pronunciation'
+  | 'listening'
+  | 'vocabulary'
+  | 'speaking';
+
 interface GrammarViewProps {
   onQuestionCompleted?: (questionId: string, isCorrect: boolean, weaknessTag: string) => void;
   activeTopicId?: string;
+  initialSkill?: StudioSkillTab;
 }
 
 export const GrammarView: React.FC<GrammarViewProps> = ({
   onQuestionCompleted,
   activeTopicId,
+  initialSkill = 'grammar',
 }) => {
   let router: { push: (url: string) => void } | null = null;
   try {
@@ -107,6 +121,32 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
     activeTopicId || GRAMMAR_BANK[0]?.id || ''
   );
   const [activeGrammarTab, setActiveGrammarTab] = useState<'test' | 'study'>('test');
+  const [activeSkillTab, setActiveSkillTab] = useState<StudioSkillTab>(initialSkill);
+
+  // Sync initialSkill or URL parameter on mount without full page reload
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const skillParam = (params.get('skill') || params.get('tab')) as StudioSkillTab | null;
+      if (
+        skillParam &&
+        ['reading', 'grammar', 'pronunciation', 'listening', 'vocabulary', 'speaking'].includes(skillParam)
+      ) {
+        setActiveSkillTab(skillParam);
+      } else if (initialSkill) {
+        setActiveSkillTab(initialSkill);
+      }
+    }
+  }, [initialSkill]);
+
+  const handleSkillTabSelect = (skillKey: StudioSkillTab) => {
+    setActiveSkillTab(skillKey);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('skill', skillKey);
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [topicQuestions, setTopicQuestions] = useState<Record<string, Question[]>>({});
@@ -334,7 +374,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
       {/* 2. Main View Mode: Dedicated Test Tab (Matching Reference Images 1 & 2) */}
       {currentTopic && activeGrammarTab === 'test' && (
-        <div className="max-w-4xl mx-auto w-full space-y-6">
+        <div className={`mx-auto w-full space-y-6 ${activeSkillTab === 'listening' ? 'max-w-6xl' : 'max-w-4xl'}`}>
           {/* Top Lesson Unit Header */}
           <div className="flex items-center justify-between pb-1 px-1">
             <div>
@@ -446,23 +486,19 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
           {/* Skill Navigation Tabs with Blue Underline Indicator (from Image 1 & 2) */}
           <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto border-b border-slate-200/80 dark:border-white/10 pb-0.5 scrollbar-none pt-1">
             {[
-              { key: 'reading', label: 'Reading', route: '/reading' },
-              { key: 'grammar', label: 'Grammar', route: '/grammar' },
-              { key: 'pronunciation', label: 'Pronunciation', route: '/speaking' },
-              { key: 'listening', label: 'Listening', route: '/listening' },
-              { key: 'vocabulary', label: 'Vocabulary', route: '/vocabulary' },
-              { key: 'speaking', label: 'Speaking', route: '/speaking' },
+              { key: 'reading', label: 'Reading' },
+              { key: 'grammar', label: 'Grammar' },
+              { key: 'pronunciation', label: 'Pronunciation' },
+              { key: 'listening', label: 'Listening' },
+              { key: 'vocabulary', label: 'Vocabulary' },
+              { key: 'speaking', label: 'Speaking' },
             ].map((skill) => {
-              const isActive = skill.key === 'grammar';
+              const isActive = activeSkillTab === skill.key;
               return (
                 <button
                   key={skill.key}
                   type="button"
-                  onClick={() => {
-                    if (!isActive && skill.route) {
-                      router.push(skill.route);
-                    }
-                  }}
+                  onClick={() => handleSkillTabSelect(skill.key as StudioSkillTab)}
                   className={`relative pb-3 text-sm font-semibold transition-all shrink-0 cursor-pointer ${
                     isActive
                       ? 'text-slate-900 dark:text-white font-extrabold'
@@ -478,117 +514,152 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
             })}
           </div>
 
-          {/* Task / Instruction Header (from Image 1 & 2) */}
-          <div className="space-y-1.5 pt-1">
-            <div className="flex items-center gap-2.5">
-              <span className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/60 text-[#2563EB] dark:text-blue-400 font-extrabold text-xs flex items-center justify-center">
-                {currentTopicIdx + 1 || 1}
-              </span>
-              <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
-                Grammar Application
-              </h4>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium pl-8.5">
-              <span className="font-extrabold text-slate-900 dark:text-white mr-2">A</span>
-              Choose the correct form to complete each sentence according to grammar rules.
-            </p>
-          </div>
-
-          {loadingQuestions && displayedQuestions.length === 0 && (
-            <div className="min-h-[280px] flex items-center justify-center p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-[#EAE4D5] dark:border-white/10">
-              <LoadingSpinner
-                size="md"
-                text={isEn ? 'Loading exercises...' : 'กำลังโหลดแบบฝึกหัด...'}
-              />
-            </div>
-          )}
-
-          {!loadingQuestions && displayedQuestions.length === 0 && (
-            <EmptyState
-              title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
-              description={
-                isEn
-                  ? 'Our academic team is currently preparing practice sets for this tier. Please select another grammar topic from the sidebar to continue.'
-                  : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้ในขณะนี้ กรุณาเลือกหัวข้อไวยากรณ์หรือระดับ CEFR อื่นจากเมนูด้านซ้ายเพื่อเริ่มฝึกฝน'
-              }
-            />
-          )}
-
-          {/* Stacked Question Cards matching Image 1 & Image 2 (Question 1, Question 2 ...) */}
-          {displayedQuestions.length > 0 && (
-            <div className="space-y-5">
-              {displayedQuestions.map((q, idx) => (
-                <QuestionCard
-                  key={q.id}
-                  question={q}
-                  questionNumber={currentTopicStartNumber + idx + 1}
-                  totalQuestions={totalCurriculumQuestions}
-                  onAnswer={(selectedKey, isCorrect) => {
-                    onQuestionCompleted?.(q.id, isCorrect, q.weaknessTag);
-                  }}
-                  showExplanationImmediately={true}
-                />
-              ))}
-
-              {/* Action Bar for Progression */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3">
-                <button
-                  type="button"
-                  disabled={!hasPrev}
-                  onClick={() => {
-                    if (hasPrev && prevTopic) {
-                      setSelectedTopicId(prevTopic.id);
-                      setActiveQuestionIdx(0);
-                      if (typeof window !== 'undefined') {
-                        window.scrollTo({ top: 320, behavior: 'smooth' });
-                      }
-                    }
-                  }}
-                  className={`touch-target px-5 py-2.5 rounded-full border border-[#EAE4D5] dark:border-white/10 text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs ${
-                    hasPrev
-                      ? 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 cursor-pointer'
-                      : 'bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
-                  }`}
-                >
-                  <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                  <span>{isEn ? 'Previous Section' : 'หัวข้อก่อนหน้า'}</span>
-                </button>
-
-                <div className="text-xs font-bold text-slate-500 dark:text-slate-400">
-                  {isEn
-                    ? `Questions ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} of ${totalCurriculumQuestions}`
-                    : `ข้อ ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} จากทั้งหมด ${totalCurriculumQuestions} ข้อ`}
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (hasNext && nextTopic) {
-                      setSelectedTopicId(nextTopic.id);
-                      setActiveQuestionIdx(0);
-                      if (typeof window !== 'undefined') {
-                        window.scrollTo({ top: 320, behavior: 'smooth' });
-                      }
-                    } else {
-                      const nextIdx = (currentTopicIdx + 1) % topics.length;
-                      setSelectedTopicId(topics[nextIdx].id);
-                      setActiveQuestionIdx(0);
-                    }
-                  }}
-                  className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
-                >
-                  <span>
-                    {hasNext
-                      ? isEn
-                        ? `Next Section (Q${nextStart}–${nextEnd})`
-                        : `หัวข้อถัดไป (ข้อ ${nextStart}–${nextEnd})`
-                      : isEn
-                      ? 'Back to Unit 1'
-                      : 'กลับสู่หัวข้อแรก'}
+          {/* Active Skill Content: Renders the selected studio skill right in place */}
+          {activeSkillTab === 'grammar' && (
+            <>
+              {/* Task / Instruction Header (from Image 1 & 2) */}
+              <div className="space-y-1.5 pt-1">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/60 text-[#2563EB] dark:text-blue-400 font-extrabold text-xs flex items-center justify-center">
+                    {currentTopicIdx + 1 || 1}
                   </span>
-                  <ChevronRight className="w-4 h-4" aria-hidden="true" />
-                </button>
+                  <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
+                    Grammar Application
+                  </h4>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium pl-8.5">
+                  <span className="font-extrabold text-slate-900 dark:text-white mr-2">A</span>
+                  Choose the correct form to complete each sentence according to grammar rules.
+                </p>
               </div>
+
+              {loadingQuestions && displayedQuestions.length === 0 && (
+                <div className="min-h-[280px] flex items-center justify-center p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-[#EAE4D5] dark:border-white/10">
+                  <LoadingSpinner
+                    size="md"
+                    text={isEn ? 'Loading exercises...' : 'กำลังโหลดแบบฝึกหัด...'}
+                  />
+                </div>
+              )}
+
+              {!loadingQuestions && displayedQuestions.length === 0 && (
+                <EmptyState
+                  title={isEn ? 'No exercises available for this topic yet' : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้'}
+                  description={
+                    isEn
+                      ? 'Our academic team is currently preparing practice sets for this tier. Please select another grammar topic from the sidebar to continue.'
+                      : 'ยังไม่มีแบบฝึกหัดสำหรับหัวข้อนี้ในขณะนี้ กรุณาเลือกหัวข้อไวยากรณ์หรือระดับ CEFR อื่นจากเมนูด้านซ้ายเพื่อเริ่มฝึกฝน'
+                  }
+                />
+              )}
+
+              {/* Stacked Question Cards matching Image 1 & Image 2 (Question 1, Question 2 ...) */}
+              {displayedQuestions.length > 0 && (
+                <div className="space-y-5">
+                  {displayedQuestions.map((q, idx) => (
+                    <QuestionCard
+                      key={q.id}
+                      question={q}
+                      questionNumber={currentTopicStartNumber + idx + 1}
+                      totalQuestions={totalCurriculumQuestions}
+                      onAnswer={(selectedKey, isCorrect) => {
+                        onQuestionCompleted?.(q.id, isCorrect, q.weaknessTag);
+                      }}
+                      showExplanationImmediately={true}
+                    />
+                  ))}
+
+                  {/* Action Bar for Progression */}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3">
+                    <button
+                      type="button"
+                      disabled={!hasPrev}
+                      onClick={() => {
+                        if (hasPrev && prevTopic) {
+                          setSelectedTopicId(prevTopic.id);
+                          setActiveQuestionIdx(0);
+                          if (typeof window !== 'undefined') {
+                            window.scrollTo({ top: 320, behavior: 'smooth' });
+                          }
+                        }
+                      }}
+                      className={`touch-target px-5 py-2.5 rounded-full border border-[#EAE4D5] dark:border-white/10 text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs ${
+                        hasPrev
+                          ? 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 cursor-pointer'
+                          : 'bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                      }`}
+                    >
+                      <ChevronLeft className="w-4 h-4" aria-hidden="true" />
+                      <span>{isEn ? 'Previous Section' : 'หัวข้อก่อนหน้า'}</span>
+                    </button>
+
+                    <div className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                      {isEn
+                        ? `Questions ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} of ${totalCurriculumQuestions}`
+                        : `ข้อ ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} จากทั้งหมด ${totalCurriculumQuestions} ข้อ`}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (hasNext && nextTopic) {
+                          setSelectedTopicId(nextTopic.id);
+                          setActiveQuestionIdx(0);
+                          if (typeof window !== 'undefined') {
+                            window.scrollTo({ top: 320, behavior: 'smooth' });
+                          }
+                        } else {
+                          const nextIdx = (currentTopicIdx + 1) % topics.length;
+                          setSelectedTopicId(topics[nextIdx].id);
+                          setActiveQuestionIdx(0);
+                        }
+                      }}
+                      className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
+                    >
+                      <span>
+                        {hasNext
+                          ? isEn
+                            ? `Next Section (Q${nextStart}–${nextEnd})`
+                            : `หัวข้อถัดไป (ข้อ ${nextStart}–${nextEnd})`
+                          : isEn
+                          ? 'Back to Unit 1'
+                          : 'กลับสู่หัวข้อแรก'}
+                      </span>
+                      <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+
+          {activeSkillTab === 'reading' && (
+            <div className="pt-2">
+              <ReadingView embedded={true} onQuestionCompleted={onQuestionCompleted} />
+            </div>
+          )}
+
+          {activeSkillTab === 'pronunciation' && (
+            <div className="pt-2">
+              <SpeakingView embedded={true} mode="pronunciation" />
+            </div>
+          )}
+
+          {activeSkillTab === 'listening' && (
+            <div className="pt-2">
+              <ListeningView embedded={true} onQuestionCompleted={onQuestionCompleted} />
+            </div>
+          )}
+
+          {activeSkillTab === 'vocabulary' && (
+            <div className="pt-2">
+              <VocabularyView embedded={true} />
+            </div>
+          )}
+
+          {activeSkillTab === 'speaking' && (
+            <div className="pt-2">
+              <SpeakingView embedded={true} mode="speaking" />
             </div>
           )}
         </div>
