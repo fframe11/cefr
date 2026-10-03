@@ -88,9 +88,9 @@ interface NavSectionDef {
 
 const NAV_SECTIONS: NavSectionDef[] = [
   { id: 'learn', labelEn: 'LEARNING STUDIOS', labelTh: 'สตูดิโอการเรียนรู้' },
-  { id: 'arena', labelEn: 'RANKED & COMMUNITY', labelTh: 'แรงก์และคอมมูนิตี้' },
   { id: 'practice', labelEn: 'EXAMS & CERTIFICATION', labelTh: 'สอบและวัดระดับ' },
-  { id: 'progress', labelEn: 'PROGRESS & PROFILE', labelTh: 'โปรไฟล์และความก้าวหน้า' },
+  { id: 'progress', labelEn: 'PROGRESS & PROFILE', labelTh: 'ความก้าวหน้าและสถิติ' },
+  { id: 'arena', labelEn: 'RANKED & COMMUNITY', labelTh: 'แรงก์และคอมมูนิตี้' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({

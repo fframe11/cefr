@@ -7,11 +7,18 @@ import { NavView } from '../../components/common/Sidebar';
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { progress, handleStartRemediation } = useApp();
+  const { progress, handleStartRemediation, handleAssessmentComplete } = useApp();
 
   const handleNavigate = (view: NavView) => {
     const route = view === 'dashboard' ? '/dashboard' : view === 'mockExam' ? '/mock-exams' : `/${view}`;
     router.push(route);
+  };
+
+  const handleSelectLevel = (level: any) => {
+    handleAssessmentComplete({
+      currentLevel: level,
+      assessmentCompleted: true,
+    });
   };
 
   return (
@@ -19,6 +26,7 @@ export default function DashboardPage() {
       progress={progress}
       onNavigate={handleNavigate}
       onStartRemediation={handleStartRemediation}
+      onSelectLevel={handleSelectLevel}
     />
   );
 }

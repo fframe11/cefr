@@ -1104,7 +1104,7 @@ export const ListeningView: React.FC<ListeningViewProps> = ({ onQuestionComplete
             {/* Top Back Action Button */}
             <button
               type="button"
-              onClick={() => router.push('/')}
+              onClick={() => router.push('/dashboard')}
               className="touch-target px-5 py-2.5 rounded-full border border-sky-500/40 text-sky-700 dark:text-sky-300 bg-sky-500/10 hover:bg-sky-500/20 text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all shadow-xs cursor-pointer w-fit"
             >
               <ArrowLeft className="w-4 h-4" />

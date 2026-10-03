@@ -11,7 +11,7 @@ export default function AssessmentPage() {
   return (
     <AssessmentView
       onComplete={handleAssessmentComplete}
-      onNavigateDashboard={() => router.push('/')}
+      onNavigateDashboard={() => router.push('/dashboard')}
     />
   );
 }

@@ -33,6 +33,7 @@ import {
   X,
   Bot,
   Loader2,
+  Compass,
 } from 'lucide-react';
 import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
@@ -43,12 +44,14 @@ interface DashboardViewProps {
   progress: UserProgressState;
   onNavigate: (view: NavView) => void;
   onStartRemediation: (weakTag: string) => void;
+  onSelectLevel?: (level: CEFRLevel) => void;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
   progress,
   onNavigate,
   onStartRemediation,
+  onSelectLevel,
 }) => {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
@@ -233,230 +236,296 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
 
       {/* ========================================================================= */}
-      {/* 2. HERO HEADLINE & FLOATING TAG CLOUD                                    */}
+      {/* 2. ONBOARDING HERO OR DAILY GUIDED LEARNING PATH                          */}
       {/* ========================================================================= */}
-      <header className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        {/* Left Column: Big Headline & Cambridge Progression */}
-        <div className="lg:col-span-7 space-y-3">
-          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
-            Your Platform{' '}
-            <span className="font-serif italic font-normal text-[#FA5D5D]">for</span>{' '}
-            Unlimited Learning
-          </h1>
+      {!progress.assessmentCompleted ? (
+        /* ----------------------------------------------------------------------- */
+        /* NEW LEARNER ONBOARDING HERO: Clear 2 Choices to Start                     */
+        /* ----------------------------------------------------------------------- */
+        <section aria-label="New learner onboarding" className="w-full rounded-[28px] bg-gradient-to-br from-white via-[#FFF8F6] to-[#FFF0EC] dark:from-[#1A1826] dark:via-[#161421] dark:to-[#1E1622] p-6 sm:p-8 lg:p-10 border-2 border-[#FA5D5D]/25 shadow-md space-y-6 relative overflow-hidden">
+          {/* Subtle Ambient Radial Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#FA5D5D]/10 blur-3xl pointer-events-none" />
 
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-mono leading-relaxed">
-            เป้าหมายการสอบ: <strong className="text-slate-950 dark:text-white">{progress.targetExam}</strong> • Cambridge Equivalent: <strong className="text-[#FA5D5D]">{progress.estimatedCambridgeScore || 148}</strong> • เส้นทางการพัฒนา CEFR Framework: <strong className="text-slate-950 dark:text-white">{progress.currentLevel}</strong>
-          </p>
+          {/* Top Header & Context */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#FA5D5D]/15 pb-5">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] border border-[#FA5D5D]/25 text-xs font-bold font-mono">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{isEn ? 'Welcome to Glova • Step 1: Set Your Baseline' : 'ยินดีต้อนรับสู่ Glova • เริ่มต้นก้าวแรกของคุณ'}</span>
+              </div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+                {isEn ? 'How would you like to start today?' : 'คุณต้องการเริ่มต้นเรียนรู้อย่างไร?'}
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+                {isEn
+                  ? 'To match vocabulary, grammar rules, and mock exams to your exact skill level, choose one of the options below:'
+                  : 'เพื่อให้ระบบจัดระดับคำศัพท์ แบบฝึกหัดไวยากรณ์ และข้อสอบจำลองให้เหมาะสมกับคุณที่สุด กรุณาเลือก 1 ช่องทาง:'}
+              </p>
+            </div>
 
-          <div className="flex items-center gap-3 pt-1 flex-wrap text-xs">
-            <span
-              role="status"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 font-bold border border-[#C5EBDA] dark:border-emerald-500/20"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#1E7E52] dark:bg-emerald-400 animate-pulse" />
-              Current activity: Active
-            </span>
-
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] dark:text-rose-300 font-bold border border-[#FCD3D1] dark:border-rose-500/20 font-mono">
-              Lessons: #{progress.completedQuestionIds?.length || 44}
-            </span>
-          </div>
-        </div>
-
-        {/* Right Column: Floating Tag Cloud Illustration */}
-        <div className="lg:col-span-5 flex items-center justify-center relative min-h-[170px] sm:min-h-[190px] py-4">
-          {/* Central Circular Book Icon */}
-          <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-[#070B16] border-2 border-[#EAE4D5] dark:border-white/10 shadow-lg flex items-center justify-center p-2.5 sm:p-3">
-            <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-[#FA5D5D]" />
+            <div className="flex items-center gap-2 shrink-0 self-start md:self-auto">
+              <span className="px-3 py-1.5 rounded-full bg-white dark:bg-white/10 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold border border-border/80 shadow-2xs">
+                CEFR Standard • A1 - C2
+              </span>
+            </div>
           </div>
 
-          {/* Floating Bubble Tags (Around Center) */}
-          <div className="absolute top-1 left-2 sm:left-12 px-2.5 sm:px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FBBF24] font-bold text-[11px] sm:text-xs shadow-xs border border-[#FDE5BC] dark:border-amber-500/20 flex items-center gap-1.5">
-            <span>#Math</span>
-            <TrendingUp className="w-3 h-3 text-[#D98200] dark:text-[#FBBF24]" aria-hidden="true" />
-          </div>
+          {/* Dual Starting Pathways (Test vs Direct Selection) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Option 1: Quick 3-Min Placement Test */}
+            <div className="rounded-[22px] bg-white dark:bg-[#201D2E] p-6 border-2 border-[#FA5D5D]/40 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#FA5D5D] transition-colors relative">
+              <div className="absolute top-4 right-4">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#FA5D5D] text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
+                  {isEn ? 'Recommended' : 'แนะนำที่สุด'}
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#FA5D5D]/15 text-[#FA5D5D] flex items-center justify-center">
+                  <Compass className="w-6 h-6 text-[#FA5D5D]" />
+                </div>
+                <div>
+                  <h2 className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white">
+                    {isEn ? '🎯 Take 3-Min Placement Test' : '🎯 ทำแบบทดสอบวัดระดับด่วน (3 นาที)'}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed font-sans">
+                    {isEn
+                      ? 'Answer 8 quick questions. Glova will automatically calibrate your CEFR tier and identify weak grammar topics.'
+                      : 'ตอบคำถามสั้นๆ เพียง 8 ข้อ ระบบจะวิเคราะห์ระดับ CEFR (A1-C2) และคำนวณจุดแข็ง-จุดอ่อนให้อัตโนมัติ'}
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => onNavigate('assessment')}
+                className="w-full py-3 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs sm:text-sm font-extrabold shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>{isEn ? 'Start 3-Min Placement Test' : 'เริ่มทำแบบทดสอบวัดระดับ'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
 
-          <div className="absolute top-1 right-2 sm:right-10 px-2.5 sm:px-3.5 py-1 rounded-full bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] dark:text-rose-300 font-bold text-[11px] sm:text-xs shadow-xs border border-[#FCD3D1] dark:border-rose-500/20">
-            #Accounting
-          </div>
+            {/* Option 2: Self-Select Level Directly */}
+            <div className="rounded-[22px] bg-white dark:bg-[#201D2E] p-6 border border-border/80 shadow-sm flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                  <Target className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                </div>
+                <div>
+                  <h2 className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white">
+                    {isEn ? '⚡ Or Select Your Starting Level Directly' : '⚡ หรือ เลือกระดับเริ่มต้นด้วยตนเอง'}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed font-sans">
+                    {isEn
+                      ? 'Already know your level or want to start from absolute basics? Choose any tier below to enter immediately:'
+                      : 'หากคุณทราบระดับของตนเองอยู่แล้ว สามารถกดเลือกระดับเพื่อเริ่มเรียนได้ทันทีโดยไม่ต้องสอบ:'}
+                  </p>
+                </div>
+              </div>
 
-          <div className="absolute bottom-1 left-2 sm:left-16 px-2.5 sm:px-3 py-1 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 font-bold text-[11px] sm:text-xs shadow-xs border border-[#C5EBDA] dark:border-emerald-500/20">
-            #Business
+              {/* 6 CEFR Tier Selection Buttons */}
+              <div className="grid grid-cols-3 gap-2 pt-1">
+                {[
+                  { lvl: 'A1' as const, titleTh: 'A1 เริ่มต้น', desc: 'พื้นฐานเริ่มต้น' },
+                  { lvl: 'A2' as const, titleTh: 'A2 ขั้นต้น', desc: 'สื่อสารทั่วไป' },
+                  { lvl: 'B1' as const, titleTh: 'B1 ปานกลาง', desc: 'ทำงาน/ชีวิตประจำวัน' },
+                  { lvl: 'B2' as const, titleTh: 'B2 กลางสูง', desc: 'วิชาการ/สอบแข่งขัน' },
+                  { lvl: 'C1' as const, titleTh: 'C1 ขั้นสูง', desc: 'ภาษาอังกฤษระดับสูง' },
+                  { lvl: 'C2' as const, titleTh: 'C2 เชี่ยวชาญ', desc: 'เทียบเคียงเจ้าของภาษา' },
+                ].map((tier) => (
+                  <button
+                    key={tier.lvl}
+                    type="button"
+                    onClick={() => onSelectLevel?.(tier.lvl)}
+                    className="py-2.5 px-2 rounded-xl border border-border/80 bg-slate-50 dark:bg-white/5 hover:border-[#FA5D5D] hover:bg-[#FA5D5D]/10 text-slate-800 dark:text-slate-200 text-xs font-extrabold transition-all active:scale-95 text-center flex flex-col items-center justify-center gap-0.5 cursor-pointer group"
+                  >
+                    <span className="font-mono text-sm group-hover:text-[#FA5D5D] transition-colors">{tier.lvl}</span>
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-sans font-medium truncate max-w-full">
+                      {tier.titleTh.split(' ')[1]}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <div className="absolute bottom-1 right-2 sm:right-14 px-2.5 sm:px-3 py-1 rounded-full bg-[#F4F5F7] dark:bg-[#141C2B] text-slate-800 dark:text-slate-200 font-bold text-[11px] sm:text-xs shadow-xs border border-[#E2E5EA] dark:border-slate-700/40">
-            #Strategy
-          </div>
-
-          <div className="absolute -top-1 right-28 hidden sm:block w-7 h-7 rounded-full bg-amber-200 overflow-hidden border border-white shadow-xs">
-            <Users className="w-4 h-4 text-amber-800 m-1" />
-          </div>
-        </div>
-      </header>
-
-      {/* ========================================================================= */}
-      {/* 3. 78% AVERAGE PROGRESS & SPLINE ACTIVITY CURVE                           */}
-      {/* ========================================================================= */}
-      <div className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-6 sm:p-8 border border-[#EAE4D5] dark:border-white/10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left Side: 78% Giant Metric */}
-        <div className="lg:col-span-4 space-y-2">
-          <div className="text-6xl sm:text-7xl font-black text-slate-900 dark:text-white tracking-tighter leading-none">
-            78%
-          </div>
-          <div className="text-sm font-bold text-slate-500 dark:text-slate-400">
-            Average progress
-          </div>
-
-          <div className="pt-3 flex items-center gap-4 text-xs font-mono">
+        </section>
+      ) : (
+        /* ----------------------------------------------------------------------- */
+        /* ACTIVE LEARNER: TODAY'S GUIDED 3-STEP LEARNING MISSION (15 MINS)          */
+        /* ----------------------------------------------------------------------- */
+        <section aria-label="Today's learning mission" className="w-full rounded-[28px] bg-white dark:bg-[#1A1826] p-6 sm:p-7 border border-border/80 shadow-sm space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/80 pb-4">
             <div>
-              <span className="block text-slate-400 font-medium">Current activity</span>
-              <span className="font-bold text-[#1E7E52] dark:text-emerald-300">Active</span>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 text-xs font-mono font-bold">
+                  {`ระดับปัจจุบัน: CEFR ${progress.currentLevel}`}
+                </span>
+                <span className="text-xs text-slate-400 hidden sm:inline">•</span>
+                <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                  {`เป้าหมายการสอบ: Cambridge ${progress.targetExam}`}
+                </span>
+                <span className="text-xs text-slate-400 hidden sm:inline">•</span>
+                <span className="text-xs font-mono text-[#FA5D5D] font-bold">
+                  {`คะแนนประเมิน: ${progress.estimatedCambridgeScore || 148} pts`}
+                </span>
+              </div>
+              <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1.5 tracking-tight">
+                {isEn ? "Today's Guided Learning Mission (15 Minutes)" : 'ภารกิจการเรียนรู้วันนี้ (3 ขั้นตอน • 15 นาที)'}
+              </h1>
             </div>
-            <div className="h-6 w-px bg-slate-300 dark:bg-white/10" />
-            <div>
-              <span className="block text-slate-400 font-medium">Lessons</span>
-              <span className="font-bold text-[#FA5D5D]">#{progress.completedQuestionIds?.length || 44}</span>
-            </div>
-          </div>
-        </div>
 
-        {/* Right Side: Smooth Spline Curve Chart */}
-        <div className="lg:col-span-8 flex flex-col justify-between space-y-3">
-          {/* Header Dates */}
-          <div className="flex items-center justify-between text-xs font-mono font-bold text-slate-400">
-            <span>10 mon</span>
-            <span>2026</span>
-          </div>
-
-          {/* Interactive SVG Spline Wave Chart */}
-          <div className="relative w-full h-32 sm:h-36">
-            <svg
-              className="w-full h-full overflow-visible"
-              viewBox="0 0 600 120"
-              preserveAspectRatio="none"
-              aria-label="Progress trend curve"
+            <button
+              type="button"
+              onClick={() => onNavigate('assessment')}
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FA5D5D] hover:underline self-start sm:self-auto cursor-pointer"
             >
-              <defs>
-                <linearGradient id="anastasiaSplineGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FA5D5D" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#FA5D5D" stopOpacity="0.0" />
-                </linearGradient>
-              </defs>
-
-              {/* Shaded Area Below Spline */}
-              <path
-                d="M 20 95 C 100 95, 140 45, 200 50 C 260 55, 300 100, 360 85 C 420 70, 480 20, 580 80 L 580 120 L 20 120 Z"
-                fill="url(#anastasiaSplineGradient)"
-              />
-
-              {/* Main Coral Spline Stroke */}
-              <path
-                d="M 20 95 C 100 95, 140 45, 200 50 C 260 55, 300 100, 360 85 C 420 70, 480 20, 580 80"
-                fill="none"
-                stroke="#FA5D5D"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-
-              {/* Data Point Dots & Circles */}
-              <circle cx="120" cy="65" r="5" fill="#FA5D5D" className="drop-shadow-sm" />
-              <circle cx="270" cy="75" r="5" fill="#FA5D5D" className="drop-shadow-sm" />
-              <circle cx="430" cy="40" r="5" fill="#FA5D5D" className="drop-shadow-sm" />
-              <circle cx="490" cy="24" r="6" fill="#18191B" stroke="#FA5D5D" strokeWidth="3" />
-            </svg>
-
-            {/* Floating Point Indicators (Pill Tags) */}
-            <div className="absolute left-[18%] top-[35%] -translate-y-1/2 px-2 py-0.5 rounded-full bg-white dark:bg-[#0B1224] text-slate-800 dark:text-slate-200 border border-[#EAE4D5] dark:border-white/10 text-[10px] font-bold shadow-xs">
-              +12
-            </div>
-
-            <div className="absolute left-[44%] top-[60%] -translate-y-1/2 px-2 py-0.5 rounded-full bg-white dark:bg-[#0B1224] text-slate-800 dark:text-slate-200 border border-[#EAE4D5] dark:border-white/10 text-[10px] font-bold shadow-xs">
-              -22
-            </div>
-
-            <div className="absolute left-[68%] top-[20%] -translate-y-1/2 px-2 py-0.5 rounded-full bg-white dark:bg-[#0B1224] text-slate-800 dark:text-slate-200 border border-[#EAE4D5] dark:border-white/10 text-[10px] font-bold shadow-xs">
-              +43
-            </div>
-
-            {/* Peak Milestone Tooltip (78%) */}
-            <div className="absolute left-[80%] -top-2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#18191B] dark:bg-white text-white dark:text-slate-950 font-black text-xs shadow-md">
-              78%
-            </div>
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>{isEn ? 'Retake Placement Test' : 'ทดสอบวัดระดับใหม่'}</span>
+            </button>
           </div>
 
-          {/* Month Axis Labels */}
-          <div className="flex items-center justify-between text-[11px] font-mono font-medium text-slate-400 pt-2">
-            <span>May</span>
-            <span>Jun</span>
-            <span>July</span>
-            <span className="font-bold text-slate-900 dark:text-white px-2 py-0.5 rounded-md bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10">
-              August
-            </span>
-            <span>September</span>
+          {/* 3 Clear Steps for Today */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Step 1: Vocabulary */}
+            <div className="rounded-[20px] bg-[#FAF8F3] dark:bg-white/5 p-5 border border-border/80 flex flex-col justify-between space-y-4 hover:border-[#FA5D5D]/50 transition-colors">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-xl bg-rose-500/15 text-[#FA5D5D] flex items-center justify-center font-bold text-xs">
+                    1
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">5 MINS</span>
+                </div>
+                <h2 className="font-extrabold text-base text-slate-900 dark:text-white">
+                  📚 คำศัพท์ประจำวัน
+                </h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+                  เรียนรู้ 10 คำศัพท์ Oxford & CEFR ความถี่สูง พร้อมตัวอย่างประโยคบริบทจริง
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onNavigate('vocabulary')}
+                className="w-full py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs font-bold shadow-xs transition-all active:scale-95 text-center flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>เริ่มท่องคำศัพท์</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Step 2: Grammar */}
+            <div className="rounded-[20px] bg-[#FAF8F3] dark:bg-white/5 p-5 border border-border/80 flex flex-col justify-between space-y-4 hover:border-amber-500/50 transition-colors">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
+                    2
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">5 MINS</span>
+                </div>
+                <h2 className="font-extrabold text-base text-slate-900 dark:text-white">
+                  ✍️ ไวยากรณ์และการนำไปใช้
+                </h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+                  ฝึกโครงสร้างประโยคและหลักไวยากรณ์ตามระดับ CEFR พร้อมแบบฝึกหัด 5 ข้อ
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onNavigate('grammar')}
+                className="w-full py-2.5 rounded-full bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 text-slate-800 dark:text-white border border-border/80 text-xs font-bold shadow-2xs transition-all active:scale-95 text-center flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>ฝึกทำแบบฝึกหัด</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Step 3: Mock Exam / Quiz */}
+            <div className="rounded-[20px] bg-[#FAF8F3] dark:bg-white/5 p-5 border border-border/80 flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition-colors">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-xl bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-xs">
+                    3
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">5 MINS</span>
+                </div>
+                <h2 className="font-extrabold text-base text-slate-900 dark:text-white">
+                  🎓 สอบจำลอง Cambridge
+                </h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+                  ทดลองทำข้อสอบจริง จับเวลา และตรวจประเมินคะแนนทันทีหลังทำเสร็จ
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onNavigate('mockExam')}
+                className="w-full py-2.5 rounded-full bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 text-slate-800 dark:text-white border border-border/80 text-xs font-bold shadow-2xs transition-all active:scale-95 text-center flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>เข้าคลังข้อสอบ</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      )}
 
       {/* ========================================================================= */}
       {/* 4. ROW OF 4 STATUS COUNTER CARDS                                         */}
       {/* ========================================================================= */}
       <section aria-label="Status counters" className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {/* Counter 1: Total (44) */}
+        {/* Counter 1: Daily Study Goal */}
         <div className="bg-[#E3F6ED] dark:bg-[#102B22] rounded-[22px] p-5 border border-[#C5EBDA] dark:border-emerald-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#1E7E52] text-white flex items-center justify-center">
-            <GraduationCap className="w-4 h-4 text-white" />
+            <Clock className="w-4 h-4 text-white" />
           </div>
           <div>
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-emerald-100 tracking-tight">
-              44
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-emerald-100 tracking-tight">
+              {`${minutesStudied}/${goalMinutes} น.`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-emerald-300">
-              Total Units
+              {`${goalPercent}% เป้าหมายวันนี้`}
             </div>
           </div>
         </div>
 
-        {/* Counter 2: Completed (completedQuestionIds.length) */}
+        {/* Counter 2: Completed Questions */}
         <div className="bg-[#FEECEB] dark:bg-[#2C1416] rounded-[22px] p-5 border border-[#FCD3D1] dark:border-rose-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center">
             <CheckCircle2 className="w-4 h-4 text-white" />
           </div>
           <div>
             <div className="text-2xl sm:text-3xl font-black text-[#FA5D5D] tracking-tight">
-              {`${progress.completedQuestionIds?.length || 3} ข้อ`}
+              {`${progress.completedQuestionIds?.length || 0} ข้อ`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-rose-300">
-              Completed Questions
+              {isEn ? 'Completed Questions' : 'แบบฝึกหัดที่ทำเสร็จ'}
             </div>
           </div>
         </div>
 
-        {/* Counter 3: In Progress (masteredWordIds.length) */}
+        {/* Counter 3: Mastered Words */}
         <div className="bg-[#FEF5E5] dark:bg-[#2B2010] rounded-[22px] p-5 border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#FFBA38] text-slate-950 flex items-center justify-center">
             <BookOpen className="w-4 h-4 text-slate-950" />
           </div>
           <div>
-            <div className="text-lg sm:text-xl font-black text-[#D98200] dark:text-[#FFBA38] tracking-tight leading-snug">
-              {`${progress.masteredWordIds?.length || 2} คำศัพท์ที่เชี่ยวชาญแล้ว`}
+            <div className="text-2xl sm:text-3xl font-black text-[#D98200] dark:text-[#FFBA38] tracking-tight">
+              {`${progress.masteredWordIds?.length || 0} คำ`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-amber-300">
-              In Progress
+              {isEn ? 'Mastered Words' : 'คำศัพท์ที่เชี่ยวชาญ'}
             </div>
           </div>
         </div>
 
-        {/* Counter 4: Upcoming / Daily Study (minutesStudiedToday) */}
+        {/* Counter 4: Study Streak */}
         <div className="bg-[#F4F5F7] dark:bg-[#141C2B] rounded-[22px] p-5 border border-[#E2E5EA] dark:border-slate-700/40 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center">
-            <Clock className="w-4 h-4 text-white" />
+            <Flame className="w-4 h-4 text-[#FFBA38]" />
           </div>
           <div>
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-              {`${progress.minutesStudiedToday ?? 15} นาที`}
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
+              {`${progress.streakDays || 1} วัน`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-slate-300">
-              Daily Study Time
+              {isEn ? 'Study Streak' : 'เรียนต่อเนื่อง (Streak)'}
             </div>
           </div>
         </div>
@@ -824,113 +893,140 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* RIGHT COLUMN (30-35%): STREAK BONUS + ACTIVE TRACKS + SKILL RADAR      */}
         {/* ===================================================================== */}
         <div className="lg:col-span-4 space-y-6">
-          {/* A. Bonus Streak for 7 Days Card (Coral Pink Card from Reference) */}
+          {/* A. 7-Day Study Streak Card */}
           <div className="w-full bg-[#FA5D5D] text-white rounded-[28px] p-6 sm:p-7 shadow-md text-center space-y-4">
-            <h3 className="text-xl font-black text-white tracking-tight">
-              Bonus steak for 7 days
+            <h3 className="text-xl font-black text-white tracking-tight flex items-center justify-center gap-2">
+              <Flame className="w-5 h-5 text-[#FFBA38] animate-pulse" />
+              <span>{isEn ? '7-Day Study Streak' : 'สถิติเรียนต่อเนื่อง 7 วัน'}</span>
             </h3>
 
             <div className="text-xs font-mono font-bold text-white/90">
-              {`รักษาต่อเนื่อง ${progress.streakDays || 5} วัน`}
+              {`รักษาความต่อเนื่องแล้ว ${progress.streakDays || 1} วัน`}
             </div>
 
             {/* Streak Day Badges Row */}
             <div className="grid grid-cols-4 gap-2 pt-1">
-              <div className="bg-white/20 rounded-2xl py-2 px-1 flex flex-col items-center">
-                <div className="w-6 h-6 rounded-full bg-[#FFBA38] text-slate-950 font-black text-xs flex items-center justify-center">
-                  3
-                </div>
-                <span className="text-[10px] font-bold mt-1 opacity-90">3D</span>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl py-2 px-1 flex flex-col items-center">
-                <div className="w-6 h-6 rounded-full bg-[#FFBA38] text-slate-950 font-black text-xs flex items-center justify-center">
-                  4
-                </div>
-                <span className="text-[10px] font-bold mt-1 opacity-90">4D</span>
-              </div>
-
-              <div className="bg-white text-[#FA5D5D] rounded-2xl py-2 px-1 flex flex-col items-center shadow-md scale-105">
-                <div className="w-6 h-6 rounded-full bg-[#FA5D5D] text-white font-black text-xs flex items-center justify-center">
-                  5
-                </div>
-                <span className="text-[10px] font-black mt-1">5D</span>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl py-2 px-1 flex flex-col items-center">
-                <div className="w-6 h-6 rounded-full bg-[#FFBA38] text-slate-950 font-black text-xs flex items-center justify-center">
-                  6
-                </div>
-                <span className="text-[10px] font-bold mt-1 opacity-90">6D</span>
-              </div>
+              {[1, 2, 3, 4].map((d) => {
+                const currentDay = progress.streakDays || 1;
+                const isCurrent = d === Math.min(4, currentDay);
+                return (
+                  <div
+                    key={d}
+                    className={`rounded-2xl py-2 px-1 flex flex-col items-center ${
+                      isCurrent
+                        ? 'bg-white text-[#FA5D5D] shadow-md scale-105'
+                        : 'bg-white/20 text-white'
+                    }`}
+                  >
+                    <div
+                      className={`w-6 h-6 rounded-full font-black text-xs flex items-center justify-center ${
+                        isCurrent
+                          ? 'bg-[#FA5D5D] text-white'
+                          : 'bg-[#FFBA38] text-slate-950'
+                      }`}
+                    >
+                      {d}
+                    </div>
+                    <span className="text-[10px] font-bold mt-1 opacity-90">{d}D</span>
+                  </div>
+                );
+              })}
             </div>
 
             <button
               type="button"
               onClick={() => onNavigate('vocabulary')}
-              className="w-full py-2.5 rounded-full font-black text-xs bg-white text-[#FA5D5D] hover:bg-slate-50 transition-all shadow-sm active:scale-95"
+              className="w-full py-2.5 rounded-full font-black text-xs bg-white text-[#FA5D5D] hover:bg-slate-50 transition-all shadow-sm active:scale-95 cursor-pointer"
             >
-              Get a reward
+              {isEn ? 'Continue Daily Streak' : 'เรียนต่อเพื่อรักษาสถิติ'}
             </button>
           </div>
 
-          {/* B. Active Course Subject 1 (Accounting Basics -> Cambridge Grammar) */}
-          <div className="w-full bg-[#FFBA38] text-slate-950 rounded-[26px] p-5 shadow-sm space-y-3">
+          {/* B. Active English Course 1: Vocabulary Studio */}
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => onNavigate('vocabulary')}
+            onKeyDown={(e) => e.key === 'Enter' && onNavigate('vocabulary')}
+            className="w-full bg-[#FFBA38] text-slate-950 rounded-[26px] p-5 shadow-sm space-y-3 cursor-pointer hover:shadow-md transition-all active:scale-[0.99]"
+          >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-slate-950 text-white">
-                  #Accounting
+                  #Vocabulary
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-white/70 text-slate-950">
-                  #Math
+                  #Oxford3000
                 </span>
               </div>
-              <Volume2 className="w-4 h-4 text-slate-950/70" />
+              <BookOpen className="w-4 h-4 text-slate-950/70" />
             </div>
 
             <div>
               <h4 className="text-xl font-black text-slate-950 tracking-tight leading-tight">
-                Accounting basics
+                Cambridge Vocabulary
               </h4>
+              <p className="text-xs text-slate-900/80 mt-0.5">
+                3,860 คำศัพท์ตามระดับ A1-C2 พร้อมตัวอย่าง
+              </p>
               <div className="flex items-center justify-between text-xs font-bold text-slate-900 mt-2 font-mono">
-                <span>Progress</span>
-                <span>48%</span>
+                <span>คำที่เชี่ยวชาญแล้ว</span>
+                <span>{progress.masteredWordIds?.length || 0} คำ</span>
               </div>
             </div>
 
-            {/* Circular or Bar Progress */}
+            {/* Real Progress Bar */}
             <div className="w-full h-2 rounded-full bg-slate-950/15 overflow-hidden">
-              <div className="h-full bg-slate-950 rounded-full" style={{ width: '48%' }} />
+              <div
+                className="h-full bg-slate-950 rounded-full transition-all duration-500"
+                style={{
+                  width: `${Math.min(100, Math.max(10, ((progress.masteredWordIds?.length || 0) / 30) * 100))}%`,
+                }}
+              />
             </div>
           </div>
 
-          {/* C. Active Course Subject 2 (Product Design -> Cambridge Vocabulary Arena) */}
-          <div className="w-full bg-[#1D4E45] text-white rounded-[26px] p-5 shadow-sm space-y-3">
+          {/* C. Active English Course 2: Grammar Studio */}
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => onNavigate('grammar')}
+            onKeyDown={(e) => e.key === 'Enter' && onNavigate('grammar')}
+            className="w-full bg-[#1D4E45] text-white rounded-[26px] p-5 shadow-sm space-y-3 cursor-pointer hover:shadow-md transition-all active:scale-[0.99]"
+          >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-white text-slate-950">
-                  #Accounting
+                  #Grammar
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-400 text-slate-950">
-                  #Math
+                  {`#CEFR_${progress.currentLevel}`}
                 </span>
               </div>
-              <Volume2 className="w-4 h-4 text-emerald-200/80" />
+              <Sparkles className="w-4 h-4 text-emerald-200/80" />
             </div>
 
             <div>
               <h4 className="text-xl font-black text-white tracking-tight leading-tight">
-                Product Design
+                Grammar in Context
               </h4>
+              <p className="text-xs text-emerald-100/80 mt-0.5">
+                โครงสร้างประโยค กฎไวยากรณ์ และข้อสอบ
+              </p>
               <div className="flex items-center justify-between text-xs font-bold text-emerald-200 mt-2 font-mono">
-                <span>Progress</span>
-                <span>78%</span>
+                <span>ข้อที่ฝึกฝนแล้ว</span>
+                <span>{progress.completedQuestionIds?.length || 0} ข้อ</span>
               </div>
             </div>
 
-            {/* Progress Bar */}
+            {/* Real Progress Bar */}
             <div className="w-full h-2 rounded-full bg-white/15 overflow-hidden">
-              <div className="h-full bg-emerald-400 rounded-full" style={{ width: '78%' }} />
+              <div
+                className="h-full bg-emerald-400 rounded-full transition-all duration-500"
+                style={{
+                  width: `${Math.min(100, Math.max(15, ((progress.completedQuestionIds?.length || 0) / 20) * 100))}%`,
+                }}
+              />
             </div>
           </div>
 

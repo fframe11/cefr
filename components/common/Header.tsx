@@ -120,9 +120,9 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           <Link
-            href="/landing"
+            href="/dashboard"
             className="flex items-center gap-2 sm:gap-2.5 shrink-0 group hover:opacity-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] rounded-xl p-1 -m-1"
-            aria-label="Glova Home - Brand Showcase"
+            aria-label="Glova Dashboard"
           >
             <div className="flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200">
               <GlovaLogo size={32} variant="radiant" ariaLabel="Glova Brand Logo" />

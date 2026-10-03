@@ -634,17 +634,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-lg shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all cursor-pointer whitespace-nowrap"
             >
               <Sparkles className="w-4 h-4" />
-              <span>{isEn ? 'Start learning' : 'เริ่มต้นเรียนรู้'}</span>
+              <span>{isEn ? 'Take Placement Test (3 Min)' : 'เริ่มวัดระดับภาษา (ฟรี 3 นาที)'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
             <button
               type="button"
-              onClick={() => scrollToSection('studios')}
+              onClick={() => router.push('/dashboard')}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white dark:bg-[#1E1B28] hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-border font-bold text-sm shadow-2xs transition-colors cursor-pointer whitespace-nowrap"
             >
-              <BookOpen className="w-4 h-4 text-[#FA5D5D]" />
-              <span>{isEn ? 'Explore studios' : 'สำรวจสตูดิโอ'}</span>
+              <Compass className="w-4 h-4 text-[#FA5D5D]" />
+              <span>{isEn ? 'Enter Classroom (Dashboard)' : 'เข้าสู่ห้องเรียน (Dashboard)'}</span>
             </button>
           </div>
 

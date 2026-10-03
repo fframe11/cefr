@@ -117,7 +117,7 @@ export default function SignUpPage() {
 
   useEffect(() => {
     if (status === 'authenticated') {
-      router.push('/');
+      router.push('/dashboard');
     }
   }, [status, router]);
 
@@ -151,7 +151,7 @@ export default function SignUpPage() {
             // Non-blocking fallback
           }
         }
-        router.push('/');
+        router.push('/dashboard');
       }
     } finally {
       setIsSubmitting(false);

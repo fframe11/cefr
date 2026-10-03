@@ -105,7 +105,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (status === 'authenticated') {
-      router.push('/');
+      router.push('/dashboard');
     }
   }, [status, router]);
 
@@ -126,7 +126,7 @@ export default function LoginPage() {
           setAuthError(error.message || t('auth.err_general'));
         }
       } else {
-        router.push('/');
+        router.push('/dashboard');
       }
     } finally {
       setIsSubmitting(false);

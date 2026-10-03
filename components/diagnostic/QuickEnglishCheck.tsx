@@ -194,7 +194,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
     if (onFinish) {
       onFinish();
     } else if (!onComplete) {
-      router.push('/');
+      router.push('/dashboard');
     }
   };
 
