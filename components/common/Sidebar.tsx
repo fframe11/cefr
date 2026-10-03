@@ -35,6 +35,8 @@ export type NavView =
   | 'speaking'
   | 'mockExam'
   | 'mock-exam'
+  | 'cheatSheets'
+  | 'ooptPractice'
   | 'analytics'
   | 'profile'
   | 'compete'
@@ -66,6 +68,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'dashboard', labelEn: 'Dashboard', labelTh: 'หน้าหลักการเรียน', icon: LayoutDashboard, section: 'learn' },
   { id: 'vocabulary', labelEn: 'Vocabulary Studio', labelTh: 'คลังคำศัพท์ Oxford & Scale', icon: BookOpen, badge: '3.8k + 121k', badgeStyle: 'gold', section: 'learn' },
   { id: 'grammar', labelEn: 'Grammar Studio', labelTh: 'ไวยากรณ์โครงสร้าง', icon: Sparkles, section: 'learn' },
+  { id: 'cheatSheets', labelEn: 'CEFR Cheat Sheets', labelTh: 'สูตรลัด High-Yield', icon: BookOpen, badge: 'High-Yield', badgeStyle: 'mint', section: 'learn' },
   { id: 'reading', labelEn: 'Reading Studio', labelTh: 'การอ่านเชิงวิชาการ', icon: BookMarked, section: 'learn' },
   { id: 'listening', labelEn: 'Listening Studio', labelTh: 'การฟังสำเนียงจริง', icon: Headphones, section: 'learn' },
   { id: 'writing', labelEn: 'Writing Studio', labelTh: 'การเขียนและเรียบเรียง', icon: PenTool, section: 'learn' },
@@ -75,6 +78,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'social', labelEn: 'Study Circles', labelTh: 'กลุ่มเพื่อนร่วมเรียน', icon: Users, badge: 'Live', badgeStyle: 'mint', section: 'arena' },
   { id: 'achievements', labelEn: 'Achievements & Trophies', labelTh: 'เกียรติยศและเหรียญรางวัล', icon: Award, section: 'arena' },
   { id: 'assessment', labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR แม่นยำ', icon: ClipboardCheck, badge: 'A1-C2', badgeStyle: 'indigo', section: 'practice' },
+  { id: 'ooptPractice', labelEn: 'Oxford OOPT Practice', labelTh: 'ฝึกข้อสอบ Oxford OOPT', icon: GraduationCap, badge: 'Part 2 & 3', badgeStyle: 'gold', section: 'practice' },
   { id: 'mockExam', labelEn: 'Cambridge Mock Exams', labelTh: 'สอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
   { id: 'analytics', labelEn: 'Skill Analytics', labelTh: 'วิเคราะห์ทักษะและจุดอ่อน', icon: BarChart2, section: 'progress' },
   { id: 'profile', labelEn: 'User Profile', labelTh: 'โปรไฟล์ของฉัน', icon: User, section: 'progress' },

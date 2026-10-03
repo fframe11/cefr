@@ -77,6 +77,8 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     if (pathname.startsWith('/listening')) return 'listening';
     if (pathname.startsWith('/writing')) return 'writing';
     if (pathname.startsWith('/speaking')) return 'speaking';
+    if (pathname.startsWith('/cheat-sheets')) return 'cheatSheets';
+    if (pathname.startsWith('/oopt-practice')) return 'ooptPractice';
     if (pathname.startsWith('/mock-exams')) return 'mockExam';
     if (pathname.startsWith('/analytics')) return 'analytics';
     if (pathname.startsWith('/profile')) return 'profile';
@@ -88,7 +90,16 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   }, [pathname]);
 
   const handleSelectView = (view: NavView) => {
-    const route = view === 'dashboard' ? '/dashboard' : view === 'mockExam' ? '/mock-exams' : `/${view}`;
+    const route =
+      view === 'dashboard'
+        ? '/dashboard'
+        : view === 'mockExam'
+        ? '/mock-exams'
+        : view === 'cheatSheets'
+        ? '/cheat-sheets'
+        : view === 'ooptPractice'
+        ? '/oopt-practice'
+        : `/${view}`;
     router.push(route);
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
