@@ -1,0 +1,5282 @@
+[
+  {
+    "id": "gq_a1_001",
+    "cefr_level": "A1",
+    "grammar_topic": "present_simple",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.4,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "She _____ English every morning before breakfast.",
+    "correct_answer": "studies",
+    "options": [
+      {
+        "key": "A",
+        "text": "study"
+      },
+      {
+        "key": "B",
+        "text": "studies"
+      },
+      {
+        "key": "C",
+        "text": "studying"
+      },
+      {
+        "key": "D",
+        "text": "is study"
+      }
+    ],
+    "explanation_en": "With third-person singular (she) in Present Simple, verbs ending in consonant + y change to -ies.",
+    "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 (She) ใน Present Simple คำกริยาที่ลงท้ายด้วย consonant + y เปลี่ยนเป็น -ies",
+    "weakness_tag": "grammar_present_simple_3rd_person",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_002",
+    "cefr_level": "A1",
+    "grammar_topic": "be_verb",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.5,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "My brother and I _____ students at the same school.",
+    "correct_answer": "are",
+    "options": [
+      {
+        "key": "A",
+        "text": "am"
+      },
+      {
+        "key": "B",
+        "text": "is"
+      },
+      {
+        "key": "C",
+        "text": "are"
+      },
+      {
+        "key": "D",
+        "text": "be"
+      }
+    ],
+    "explanation_en": "The compound subject 'My brother and I' is plural (we), requiring 'are'.",
+    "explanation_th": "ประธานพหูพจน์ 'My brother and I' (พวกเรา) ต้องใช้กับ verb to be คือ 'are'",
+    "weakness_tag": "grammar_be_verb_agreement",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_003",
+    "cefr_level": "A1",
+    "grammar_topic": "articles",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "He wants to buy _____ apple and two oranges.",
+    "correct_answer": "an",
+    "options": [
+      {
+        "key": "A",
+        "text": "a"
+      },
+      {
+        "key": "B",
+        "text": "an"
+      },
+      {
+        "key": "C",
+        "text": "the"
+      },
+      {
+        "key": "D",
+        "text": "some"
+      }
+    ],
+    "explanation_en": "'An' is used before singular countable nouns beginning with a vowel sound.",
+    "explanation_th": "'apple' ขึ้นต้นด้วยเสียงสระ จึงใช้คำนำหน้านามไม่ชี้เฉพาะ 'an'",
+    "weakness_tag": "grammar_articles_indefinite",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_004",
+    "cefr_level": "A1",
+    "grammar_topic": "pronouns",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.2,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "This is Peter. Do you know _____?",
+    "correct_answer": "him",
+    "options": [
+      {
+        "key": "A",
+        "text": "he"
+      },
+      {
+        "key": "B",
+        "text": "his"
+      },
+      {
+        "key": "C",
+        "text": "him"
+      },
+      {
+        "key": "D",
+        "text": "himself"
+      }
+    ],
+    "explanation_en": "The object pronoun 'him' is needed after the transitive verb 'know'.",
+    "explanation_th": "ตามหลังคำกริยา 'know' ต้องใช้รูปสรรพนามกรรมคือ 'him'",
+    "weakness_tag": "grammar_object_pronouns",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_005",
+    "cefr_level": "A1",
+    "grammar_topic": "prepositions_time",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.1,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "The train leaves _____ eight o'clock in the morning.",
+    "correct_answer": "at",
+    "options": [
+      {
+        "key": "A",
+        "text": "in"
+      },
+      {
+        "key": "B",
+        "text": "on"
+      },
+      {
+        "key": "C",
+        "text": "at"
+      },
+      {
+        "key": "D",
+        "text": "to"
+      }
+    ],
+    "explanation_en": "'At' is used for clock times.",
+    "explanation_th": "เวลาที่ระบุเวลาเป็นนาฬิกาแน่นอน ใช้ 'at'",
+    "weakness_tag": "grammar_prepositions_time",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_006",
+    "cefr_level": "A1",
+    "grammar_topic": "present_simple_negative",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.0,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "Tom _____ like coffee; he prefers tea.",
+    "correct_answer": "doesn't",
+    "options": [
+      {
+        "key": "A",
+        "text": "don't"
+      },
+      {
+        "key": "B",
+        "text": "doesn't"
+      },
+      {
+        "key": "C",
+        "text": "isn't"
+      },
+      {
+        "key": "D",
+        "text": "not"
+      }
+    ],
+    "explanation_en": "Third-person singular negative in Present Simple uses 'doesn't' + base verb.",
+    "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 (Tom) ในประโยคปฏิเสธใช้ 'doesn't' + กริยาช่อง 1",
+    "weakness_tag": "grammar_present_simple_negative",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_007",
+    "cefr_level": "A1",
+    "grammar_topic": "plurals",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.2,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "There are five _____ playing in the park.",
+    "correct_answer": "children",
+    "options": [
+      {
+        "key": "A",
+        "text": "child"
+      },
+      {
+        "key": "B",
+        "text": "childs"
+      },
+      {
+        "key": "C",
+        "text": "children"
+      },
+      {
+        "key": "D",
+        "text": "childrens"
+      }
+    ],
+    "explanation_en": "'Children' is the irregular plural form of 'child'.",
+    "explanation_th": "พหูพจน์ของ 'child' คือรูปเปลี่ยนเสียง 'children'",
+    "weakness_tag": "grammar_irregular_plurals",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_008",
+    "cefr_level": "A1",
+    "grammar_topic": "demonstratives",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "_____ shoes over there are very expensive.",
+    "correct_answer": "Those",
+    "options": [
+      {
+        "key": "A",
+        "text": "This"
+      },
+      {
+        "key": "B",
+        "text": "That"
+      },
+      {
+        "key": "C",
+        "text": "These"
+      },
+      {
+        "key": "D",
+        "text": "Those"
+      }
+    ],
+    "explanation_en": "'Those' refers to plural items located at a distance ('over there').",
+    "explanation_th": "'Those' ใช้ชี้คำนามพหูพจน์ (shoes) ที่อยู่ไกลตัว ('over there')",
+    "weakness_tag": "grammar_demonstratives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_009",
+    "cefr_level": "A1",
+    "grammar_topic": "modals_can",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.4,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "My sister can _____ three languages fluently.",
+    "correct_answer": "speak",
+    "options": [
+      {
+        "key": "A",
+        "text": "speaks"
+      },
+      {
+        "key": "B",
+        "text": "speak"
+      },
+      {
+        "key": "C",
+        "text": "speaking"
+      },
+      {
+        "key": "D",
+        "text": "to speak"
+      }
+    ],
+    "explanation_en": "Modal verbs like 'can' are followed by the bare infinitive.",
+    "explanation_th": "หลัง modal verb 'can' ต้องตามด้วยกริยาฐาน (bare infinitive)",
+    "weakness_tag": "grammar_modal_bare_infinitive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_010",
+    "cefr_level": "A1",
+    "grammar_topic": "possessive_adjectives",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.1,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "Anna has a new car. _____ car is red.",
+    "correct_answer": "Her",
+    "options": [
+      {
+        "key": "A",
+        "text": "His"
+      },
+      {
+        "key": "B",
+        "text": "Her"
+      },
+      {
+        "key": "C",
+        "text": "Its"
+      },
+      {
+        "key": "D",
+        "text": "Their"
+      }
+    ],
+    "explanation_en": "'Her' refers back to a female possessor (Anna).",
+    "explanation_th": "สรรพนามแสดงความเป็นเจ้าของสำหรับผู้หญิงเอกพจน์คือ 'Her'",
+    "weakness_tag": "grammar_possessive_adjectives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_011",
+    "cefr_level": "A1",
+    "grammar_topic": "there_is_are",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.2,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "_____ a big supermarket near my house.",
+    "correct_answer": "There is",
+    "options": [
+      {
+        "key": "A",
+        "text": "There is"
+      },
+      {
+        "key": "B",
+        "text": "There are"
+      },
+      {
+        "key": "C",
+        "text": "It have"
+      },
+      {
+        "key": "D",
+        "text": "They are"
+      }
+    ],
+    "explanation_en": "'There is' introduces a singular countable noun.",
+    "explanation_th": "บอกการมีอยู่ของคำนามเอกพจน์ ใช้ 'There is'",
+    "weakness_tag": "grammar_there_be",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_012",
+    "cefr_level": "A1",
+    "grammar_topic": "prepositions_place",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "The notebook is _____ the desk.",
+    "correct_answer": "on",
+    "options": [
+      {
+        "key": "A",
+        "text": "in"
+      },
+      {
+        "key": "B",
+        "text": "on"
+      },
+      {
+        "key": "C",
+        "text": "at"
+      },
+      {
+        "key": "D",
+        "text": "to"
+      }
+    ],
+    "explanation_en": "'On' indicates placement on a horizontal surface.",
+    "explanation_th": "อยู่บนพื้นผิวโต๊ะ ใช้บุพบท 'on'",
+    "weakness_tag": "grammar_prepositions_place",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_013",
+    "cefr_level": "A1",
+    "grammar_topic": "wh_questions",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.0,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "_____ is your favorite singer? - Ed Sheeran.",
+    "correct_answer": "Who",
+    "options": [
+      {
+        "key": "A",
+        "text": "What"
+      },
+      {
+        "key": "B",
+        "text": "Where"
+      },
+      {
+        "key": "C",
+        "text": "Who"
+      },
+      {
+        "key": "D",
+        "text": "When"
+      }
+    ],
+    "explanation_en": "'Who' asks about identity of a person.",
+    "explanation_th": "คำถามเกี่ยวกับบุคคลใช้ 'Who'",
+    "weakness_tag": "grammar_wh_question_words",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_014",
+    "cefr_level": "A1",
+    "grammar_topic": "adverbs_frequency",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.9,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "Sarah _____ late for work; she is very punctual.",
+    "correct_answer": "is never",
+    "options": [
+      {
+        "key": "A",
+        "text": "never is"
+      },
+      {
+        "key": "B",
+        "text": "is never"
+      },
+      {
+        "key": "C",
+        "text": "never"
+      },
+      {
+        "key": "D",
+        "text": "isn't never"
+      }
+    ],
+    "explanation_en": "Adverbs of frequency follow the verb 'to be'.",
+    "explanation_th": "กริยาวิเศษณ์บอกความถี่ (never) อยู่หลัง verb to be เสมอ",
+    "weakness_tag": "grammar_adverb_position_frequency",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_015",
+    "cefr_level": "A1",
+    "grammar_topic": "present_continuous",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.8,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "Look! The boys _____ football right now.",
+    "correct_answer": "are playing",
+    "options": [
+      {
+        "key": "A",
+        "text": "play"
+      },
+      {
+        "key": "B",
+        "text": "are playing"
+      },
+      {
+        "key": "C",
+        "text": "is playing"
+      },
+      {
+        "key": "D",
+        "text": "played"
+      }
+    ],
+    "explanation_en": "Action happening right now with plural subject uses are + verb-ing.",
+    "explanation_th": "เหตุการณ์ที่กำลังดำเนินอยู่ขณะนี้ (right now) ใช้ are + V-ing",
+    "weakness_tag": "grammar_present_continuous_form",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_016",
+    "cefr_level": "A1",
+    "grammar_topic": "prepositions_days",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.1,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "We usually play tennis _____ Sunday afternoons.",
+    "correct_answer": "on",
+    "options": [
+      {
+        "key": "A",
+        "text": "at"
+      },
+      {
+        "key": "B",
+        "text": "in"
+      },
+      {
+        "key": "C",
+        "text": "on"
+      },
+      {
+        "key": "D",
+        "text": "by"
+      }
+    ],
+    "explanation_en": "'On' is used before days and specific day parts.",
+    "explanation_th": "วันในสัปดาห์ใช้บุพบท 'on'",
+    "weakness_tag": "grammar_prepositions_days",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_017",
+    "cefr_level": "A1",
+    "grammar_topic": "have_has_got",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.0,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "David _____ got two brothers and one sister.",
+    "correct_answer": "has",
+    "options": [
+      {
+        "key": "A",
+        "text": "have"
+      },
+      {
+        "key": "B",
+        "text": "has"
+      },
+      {
+        "key": "C",
+        "text": "is"
+      },
+      {
+        "key": "D",
+        "text": "having"
+      }
+    ],
+    "explanation_en": "Singular subject David takes 'has got'.",
+    "explanation_th": "ประธานเอกพจน์บุรุษที่ 3 ใช้ 'has got'",
+    "weakness_tag": "grammar_have_has_got",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_018",
+    "cefr_level": "A1",
+    "grammar_topic": "conjunctions_basic",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.2,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "I want to go to the cinema, _____ I don't have enough money.",
+    "correct_answer": "but",
+    "options": [
+      {
+        "key": "A",
+        "text": "and"
+      },
+      {
+        "key": "B",
+        "text": "or"
+      },
+      {
+        "key": "C",
+        "text": "but"
+      },
+      {
+        "key": "D",
+        "text": "so"
+      }
+    ],
+    "explanation_en": "'But' expresses contrast between two ideas.",
+    "explanation_th": "เชื่อมข้อความที่ขัดแย้งกันใช้ 'but'",
+    "weakness_tag": "grammar_coordinating_conjunctions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_019",
+    "cefr_level": "A1",
+    "grammar_topic": "quantifiers_much_many",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.9,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "How _____ water do you drink every day?",
+    "correct_answer": "much",
+    "options": [
+      {
+        "key": "A",
+        "text": "many"
+      },
+      {
+        "key": "B",
+        "text": "much"
+      },
+      {
+        "key": "C",
+        "text": "lot"
+      },
+      {
+        "key": "D",
+        "text": "few"
+      }
+    ],
+    "explanation_en": "'How much' is used with uncountable nouns like water.",
+    "explanation_th": "คำนามนับไม่ได้ (water) ถามปริมาณด้วย 'How much'",
+    "weakness_tag": "grammar_quantifiers_uncountable",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_020",
+    "cefr_level": "A1",
+    "grammar_topic": "imperatives",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "Please _____ touch the paintings in the museum.",
+    "correct_answer": "don't",
+    "options": [
+      {
+        "key": "A",
+        "text": "not"
+      },
+      {
+        "key": "B",
+        "text": "no"
+      },
+      {
+        "key": "C",
+        "text": "don't"
+      },
+      {
+        "key": "D",
+        "text": "doesn't"
+      }
+    ],
+    "explanation_en": "Negative imperatives begin with 'don't' + base verb.",
+    "explanation_th": "ประโยคคำสั่งห้ามขึ้นต้นด้วย 'don't' + V.1",
+    "weakness_tag": "grammar_negative_imperative",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_021",
+    "cefr_level": "A1",
+    "grammar_topic": "present_simple_questions",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.8,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "_____ your parents live in London?",
+    "correct_answer": "Do",
+    "options": [
+      {
+        "key": "A",
+        "text": "Do"
+      },
+      {
+        "key": "B",
+        "text": "Does"
+      },
+      {
+        "key": "C",
+        "text": "Are"
+      },
+      {
+        "key": "D",
+        "text": "Is"
+      }
+    ],
+    "explanation_en": "Plural subject 'your parents' takes auxiliary 'Do' in Present Simple questions.",
+    "explanation_th": "ประธานพหูพจน์ (your parents) ใช้กริยาช่วย 'Do' ในคำถาม",
+    "weakness_tag": "grammar_present_simple_questions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_022",
+    "cefr_level": "A1",
+    "grammar_topic": "verb_plus_ing",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.9,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "My little sister enjoys _____ books before bedtime.",
+    "correct_answer": "reading",
+    "options": [
+      {
+        "key": "A",
+        "text": "read"
+      },
+      {
+        "key": "B",
+        "text": "reads"
+      },
+      {
+        "key": "C",
+        "text": "reading"
+      },
+      {
+        "key": "D",
+        "text": "to read"
+      }
+    ],
+    "explanation_en": "'Enjoy' is followed by a gerund (-ing form).",
+    "explanation_th": "กริยา 'enjoy' ตามด้วย V-ing (gerund) เสมอ",
+    "weakness_tag": "grammar_verb_plus_gerund_basic",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_023",
+    "cefr_level": "A1",
+    "grammar_topic": "adjective_order_basic",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "They bought a _____ table for the dining room.",
+    "correct_answer": "nice round",
+    "options": [
+      {
+        "key": "A",
+        "text": "nice round"
+      },
+      {
+        "key": "B",
+        "text": "round nice"
+      },
+      {
+        "key": "C",
+        "text": "nicely round"
+      },
+      {
+        "key": "D",
+        "text": "table round"
+      }
+    ],
+    "explanation_en": "Opinion adjectives (nice) precede shape/size adjectives (round).",
+    "explanation_th": "คุณศัพท์บอกความเห็น (nice) มาก่อนคุณศัพท์บอกรูปร่าง (round)",
+    "weakness_tag": "grammar_adjective_order_basic",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_024",
+    "cefr_level": "A1",
+    "grammar_topic": "possessive_pronouns",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.9,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "This jacket isn't mine; it is _____.",
+    "correct_answer": "hers",
+    "options": [
+      {
+        "key": "A",
+        "text": "her"
+      },
+      {
+        "key": "B",
+        "text": "hers"
+      },
+      {
+        "key": "C",
+        "text": "she"
+      },
+      {
+        "key": "D",
+        "text": "herself"
+      }
+    ],
+    "explanation_en": "The independent possessive pronoun 'hers' stands alone.",
+    "explanation_th": "สรรพนามแสดงความเป็นเจ้าของที่วางเดี่ยวๆ ไม่ต้องมีนามตามหลังใช้ 'hers'",
+    "weakness_tag": "grammar_possessive_pronouns",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_025",
+    "cefr_level": "A1",
+    "grammar_topic": "definite_article",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.1,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "Can you please open _____ window? It is warm in here.",
+    "correct_answer": "the",
+    "options": [
+      {
+        "key": "A",
+        "text": "a"
+      },
+      {
+        "key": "B",
+        "text": "an"
+      },
+      {
+        "key": "C",
+        "text": "the"
+      },
+      {
+        "key": "D",
+        "text": "any"
+      }
+    ],
+    "explanation_en": "'The' is used when the specific object is clear in the immediate setting.",
+    "explanation_th": "เจาะจงหน้าต่างในห้องที่ผู้ฟังและผู้พูดอยู่ด้วยกัน ใช้ 'the'",
+    "weakness_tag": "grammar_definite_article_context",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_026",
+    "cefr_level": "A1",
+    "grammar_topic": "prepositions_transport",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.0,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "He travels to school _____ train every morning.",
+    "correct_answer": "by",
+    "options": [
+      {
+        "key": "A",
+        "text": "in"
+      },
+      {
+        "key": "B",
+        "text": "on"
+      },
+      {
+        "key": "C",
+        "text": "by"
+      },
+      {
+        "key": "D",
+        "text": "with"
+      }
+    ],
+    "explanation_en": "'By' is used directly with transport modes (by train, by car).",
+    "explanation_th": "บอกวิธีการเดินทางโดยตรงไม่ใส่ article ใช้ 'by train'",
+    "weakness_tag": "grammar_prepositions_transport",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_027",
+    "cefr_level": "A1",
+    "grammar_topic": "plurals_es",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.4,
+    "discrimination_a": 1.1,
+    "guessing_c": 0.25,
+    "stem_en": "I bought two new _____ for my shoes.",
+    "correct_answer": "boxes",
+    "options": [
+      {
+        "key": "A",
+        "text": "box"
+      },
+      {
+        "key": "B",
+        "text": "boxs"
+      },
+      {
+        "key": "C",
+        "text": "boxes"
+      },
+      {
+        "key": "D",
+        "text": "boxies"
+      }
+    ],
+    "explanation_en": "Nouns ending in -x add -es in the plural form.",
+    "explanation_th": "คำนามลงท้ายด้วย x เติม -es เมื่อเป็นพหูพจน์",
+    "weakness_tag": "grammar_regular_plurals_es",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_028",
+    "cefr_level": "A1",
+    "grammar_topic": "be_negative_plural",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.3,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "The students _____ in the classroom right now.",
+    "correct_answer": "aren't",
+    "options": [
+      {
+        "key": "A",
+        "text": "isn't"
+      },
+      {
+        "key": "B",
+        "text": "aren't"
+      },
+      {
+        "key": "C",
+        "text": "don't"
+      },
+      {
+        "key": "D",
+        "text": "not are"
+      }
+    ],
+    "explanation_en": "Plural subject 'The students' requires negative be-verb 'aren't'.",
+    "explanation_th": "ประธานพหูพจน์ (The students) ใช้ 'aren't'",
+    "weakness_tag": "grammar_be_negative_agreement",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_029",
+    "cefr_level": "A1",
+    "grammar_topic": "some_any_negative",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.8,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "There isn't _____ sugar left in the jar.",
+    "correct_answer": "any",
+    "options": [
+      {
+        "key": "A",
+        "text": "some"
+      },
+      {
+        "key": "B",
+        "text": "any"
+      },
+      {
+        "key": "C",
+        "text": "many"
+      },
+      {
+        "key": "D",
+        "text": "no"
+      }
+    ],
+    "explanation_en": "'Any' is used in negative sentences with uncountable nouns.",
+    "explanation_th": "ประโยคปฏิเสธใช้ 'any' กับคำนามนับไม่ได้",
+    "weakness_tag": "grammar_some_any_negative",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a1_030",
+    "cefr_level": "A1",
+    "grammar_topic": "prepositions_months",
+    "question_type": "gap_fill",
+    "difficulty_b": -2.0,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "My birthday is _____ September.",
+    "correct_answer": "in",
+    "options": [
+      {
+        "key": "A",
+        "text": "on"
+      },
+      {
+        "key": "B",
+        "text": "at"
+      },
+      {
+        "key": "C",
+        "text": "in"
+      },
+      {
+        "key": "D",
+        "text": "by"
+      }
+    ],
+    "explanation_en": "'In' is used with months of the year.",
+    "explanation_th": "ใช้นำหน้าชื่อเดือน (September) ใช้บุพบท 'in'",
+    "weakness_tag": "grammar_prepositions_months",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_001",
+    "cefr_level": "A2",
+    "grammar_topic": "past_simple_regular",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.4,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "Yesterday, we _____ for three hours along the river.",
+    "correct_answer": "walked",
+    "options": [
+      {
+        "key": "A",
+        "text": "walk"
+      },
+      {
+        "key": "B",
+        "text": "walked"
+      },
+      {
+        "key": "C",
+        "text": "walking"
+      },
+      {
+        "key": "D",
+        "text": "have walked"
+      }
+    ],
+    "explanation_en": "Completed past action with explicit time marker 'yesterday' requires Past Simple.",
+    "explanation_th": "การกระทำที่จบลงแล้วในอดีตและมีคำบอกเวลา 'yesterday' ใช้ Past Simple (walked)",
+    "weakness_tag": "grammar_past_simple_regular",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_002",
+    "cefr_level": "A2",
+    "grammar_topic": "past_simple_irregular",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.35,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "She _____ a beautiful dress at the shopping mall last Saturday.",
+    "correct_answer": "bought",
+    "options": [
+      {
+        "key": "A",
+        "text": "buyed"
+      },
+      {
+        "key": "B",
+        "text": "bought"
+      },
+      {
+        "key": "C",
+        "text": "boughted"
+      },
+      {
+        "key": "D",
+        "text": "buys"
+      }
+    ],
+    "explanation_en": "'Bought' is the irregular past tense of 'buy'.",
+    "explanation_th": "กริยาช่อง 2 ของ 'buy' คือรูปอปกติ 'bought'",
+    "weakness_tag": "grammar_past_simple_irregular",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_003",
+    "cefr_level": "A2",
+    "grammar_topic": "comparative_adjectives",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.2,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "The blue jacket is _____ than the red one.",
+    "correct_answer": "more expensive",
+    "options": [
+      {
+        "key": "A",
+        "text": "expensive"
+      },
+      {
+        "key": "B",
+        "text": "more expensive"
+      },
+      {
+        "key": "C",
+        "text": "expensiver"
+      },
+      {
+        "key": "D",
+        "text": "most expensive"
+      }
+    ],
+    "explanation_en": "Three-syllable adjectives form the comparative with 'more' + adjective + 'than'.",
+    "explanation_th": "คุณศัพท์ตั้งแต่ 3 พยางค์ขึ้นไป (expensive) ทำขั้นกว่าด้วย 'more' + adj + than",
+    "weakness_tag": "grammar_comparatives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_004",
+    "cefr_level": "A2",
+    "grammar_topic": "superlative_adjectives",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.15,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "Mount Everest is _____ mountain in the world.",
+    "correct_answer": "the highest",
+    "options": [
+      {
+        "key": "A",
+        "text": "higher"
+      },
+      {
+        "key": "B",
+        "text": "highest"
+      },
+      {
+        "key": "C",
+        "text": "the highest"
+      },
+      {
+        "key": "D",
+        "text": "the most high"
+      }
+    ],
+    "explanation_en": "One-syllable adjectives take 'the' + -est in the superlative.",
+    "explanation_th": "คุณศัพท์พยางค์เดียวขั้นสูงสุดต้องมี 'the' นำหน้าแล้วเติม -est (the highest)",
+    "weakness_tag": "grammar_superlatives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_005",
+    "cefr_level": "A2",
+    "grammar_topic": "future_going_to",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.1,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "Look at those dark clouds! It _____ rain soon.",
+    "correct_answer": "is going to",
+    "options": [
+      {
+        "key": "A",
+        "text": "will be"
+      },
+      {
+        "key": "B",
+        "text": "is going to"
+      },
+      {
+        "key": "C",
+        "text": "goes to"
+      },
+      {
+        "key": "D",
+        "text": "is raining to"
+      }
+    ],
+    "explanation_en": "'Be going to' expresses predictions based on current visual evidence.",
+    "explanation_th": "การคาดคะเนเหตุการณ์ที่มีหลักฐานปรากฏให้เห็นในปัจจุบัน (dark clouds) ใช้ 'is going to'",
+    "weakness_tag": "grammar_going_to_prediction",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_006",
+    "cefr_level": "A2",
+    "grammar_topic": "future_will",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.05,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "Don't worry about the dishes; I _____ do them for you.",
+    "correct_answer": "will",
+    "options": [
+      {
+        "key": "A",
+        "text": "am going to"
+      },
+      {
+        "key": "B",
+        "text": "will"
+      },
+      {
+        "key": "C",
+        "text": "do"
+      },
+      {
+        "key": "D",
+        "text": "would"
+      }
+    ],
+    "explanation_en": "'Will' is used for spontaneous offers and decisions made at the moment of speaking.",
+    "explanation_th": "การตัดสินใจช่วยเหลือทันทีขณะที่กำลังพูด (spontaneous decision/offer) ใช้ 'will'",
+    "weakness_tag": "grammar_will_spontaneous",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_007",
+    "cefr_level": "A2",
+    "grammar_topic": "modals_have_to",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.25,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "You _____ show your passport when entering another country.",
+    "correct_answer": "have to",
+    "options": [
+      {
+        "key": "A",
+        "text": "have to"
+      },
+      {
+        "key": "B",
+        "text": "must to"
+      },
+      {
+        "key": "C",
+        "text": "can to"
+      },
+      {
+        "key": "D",
+        "text": "ought"
+      }
+    ],
+    "explanation_en": "'Have to' expresses external obligation/rules.",
+    "explanation_th": "การบอกกฎเกณฑ์หรือข้อบังคับภายนอก ใช้ 'have to'",
+    "weakness_tag": "grammar_have_to_obligation",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_008",
+    "cefr_level": "A2",
+    "grammar_topic": "modals_should",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.3,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "You look very tired; you _____ go to bed earlier.",
+    "correct_answer": "should",
+    "options": [
+      {
+        "key": "A",
+        "text": "should"
+      },
+      {
+        "key": "B",
+        "text": "should to"
+      },
+      {
+        "key": "C",
+        "text": "ought"
+      },
+      {
+        "key": "D",
+        "text": "must to"
+      }
+    ],
+    "explanation_en": "'Should' + bare infinitive gives friendly advice.",
+    "explanation_th": "การให้คำแนะนำทั่วไป ใช้ modal verb 'should' + กริยาช่อง 1",
+    "weakness_tag": "grammar_should_advice",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_009",
+    "cefr_level": "A2",
+    "grammar_topic": "past_simple_negative",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.2,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "We _____ enjoy the film because it was too scary.",
+    "correct_answer": "didn't",
+    "options": [
+      {
+        "key": "A",
+        "text": "didn't"
+      },
+      {
+        "key": "B",
+        "text": "don't"
+      },
+      {
+        "key": "C",
+        "text": "weren't"
+      },
+      {
+        "key": "D",
+        "text": "hadn't"
+      }
+    ],
+    "explanation_en": "Past Simple negative uses 'didn't' + base form for all subjects.",
+    "explanation_th": "ประโยคปฏิเสธใน Past Simple ใช้ 'didn't' + กริยาฐาน (base form)",
+    "weakness_tag": "grammar_past_simple_negative",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_010",
+    "cefr_level": "A2",
+    "grammar_topic": "past_simple_question",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.1,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "Where _____ you go for your summer vacation last year?",
+    "correct_answer": "did",
+    "options": [
+      {
+        "key": "A",
+        "text": "do"
+      },
+      {
+        "key": "B",
+        "text": "did"
+      },
+      {
+        "key": "C",
+        "text": "were"
+      },
+      {
+        "key": "D",
+        "text": "have"
+      }
+    ],
+    "explanation_en": "Past Simple questions require the auxiliary 'did' + base verb.",
+    "explanation_th": "คำถามถามถึงเหตุการณ์ในอดีต (last year) ใช้กริยาช่วย 'did'",
+    "weakness_tag": "grammar_past_simple_questions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_011",
+    "cefr_level": "A2",
+    "grammar_topic": "past_continuous_intro",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.9,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "At 8 PM yesterday, I _____ my homework in my bedroom.",
+    "correct_answer": "was doing",
+    "options": [
+      {
+        "key": "A",
+        "text": "did"
+      },
+      {
+        "key": "B",
+        "text": "was doing"
+      },
+      {
+        "key": "C",
+        "text": "am doing"
+      },
+      {
+        "key": "D",
+        "text": "have done"
+      }
+    ],
+    "explanation_en": "Action in progress at a specific past moment uses was/were + verb-ing.",
+    "explanation_th": "การกระทำที่กำลังดำเนินอยู่ในเวลาเฉพาะเจาะจงในอดีต ใช้ Past Continuous (was doing)",
+    "weakness_tag": "grammar_past_continuous_basic",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_012",
+    "cefr_level": "A2",
+    "grammar_topic": "when_while_past",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.85,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "I was cooking dinner when the doorbell _____.",
+    "correct_answer": "rang",
+    "options": [
+      {
+        "key": "A",
+        "text": "rings"
+      },
+      {
+        "key": "B",
+        "text": "rang"
+      },
+      {
+        "key": "C",
+        "text": "was ringing"
+      },
+      {
+        "key": "D",
+        "text": "had rung"
+      }
+    ],
+    "explanation_en": "A short past action interrupting a continuous past action uses Past Simple.",
+    "explanation_th": "เหตุการณ์สั้นที่เข้ามาแทรกขณะที่อีกเหตุการณ์กำลังดำเนินอยู่ ใช้ Past Simple (rang)",
+    "weakness_tag": "grammar_past_interrupted_action",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_013",
+    "cefr_level": "A2",
+    "grammar_topic": "conjunction_because_so",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.3,
+    "discrimination_a": 1.15,
+    "guessing_c": 0.25,
+    "stem_en": "It started raining heavily, _____ we decided to stay indoors.",
+    "correct_answer": "so",
+    "options": [
+      {
+        "key": "A",
+        "text": "because"
+      },
+      {
+        "key": "B",
+        "text": "so"
+      },
+      {
+        "key": "C",
+        "text": "although"
+      },
+      {
+        "key": "D",
+        "text": "since"
+      }
+    ],
+    "explanation_en": "'So' introduces the result of an action.",
+    "explanation_th": "เชื่อมประโยคเพื่อบอกผลลัพธ์ที่ตามมา ใช้ 'so' (ดังนั้น)",
+    "weakness_tag": "grammar_conjunctions_result",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_014",
+    "cefr_level": "A2",
+    "grammar_topic": "conjunction_although",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.8,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "_____ it was freezing cold, they went swimming in the lake.",
+    "correct_answer": "Although",
+    "options": [
+      {
+        "key": "A",
+        "text": "Because"
+      },
+      {
+        "key": "B",
+        "text": "Although"
+      },
+      {
+        "key": "C",
+        "text": "So"
+      },
+      {
+        "key": "D",
+        "text": "However"
+      }
+    ],
+    "explanation_en": "'Although' introduces a subordinate clause showing surprising contrast.",
+    "explanation_th": "เชื่อมประโยครองที่แสดงความขัดแย้งที่ไม่คาดคิด ใช้ 'Although' (แม้ว่า)",
+    "weakness_tag": "grammar_conjunctions_contrast",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_015",
+    "cefr_level": "A2",
+    "grammar_topic": "infinitives_of_purpose",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.15,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "He went to the pharmacy _____ some medicine for his headache.",
+    "correct_answer": "to get",
+    "options": [
+      {
+        "key": "A",
+        "text": "for get"
+      },
+      {
+        "key": "B",
+        "text": "to get"
+      },
+      {
+        "key": "C",
+        "text": "getting"
+      },
+      {
+        "key": "D",
+        "text": "for getting"
+      }
+    ],
+    "explanation_en": "An infinitive with 'to' expresses purpose (why someone did something).",
+    "explanation_th": "การบอกวัตถุประสงค์ของการกระทำ (ไปเพื่ออะไร) ใช้ to-infinitive ('to get')",
+    "weakness_tag": "grammar_infinitive_of_purpose",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_016",
+    "cefr_level": "A2",
+    "grammar_topic": "gerund_after_preposition",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.0,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "She is really good at _____ traditional Thai food.",
+    "correct_answer": "cooking",
+    "options": [
+      {
+        "key": "A",
+        "text": "cook"
+      },
+      {
+        "key": "B",
+        "text": "cooks"
+      },
+      {
+        "key": "C",
+        "text": "cooking"
+      },
+      {
+        "key": "D",
+        "text": "to cook"
+      }
+    ],
+    "explanation_en": "Prepositions (like 'at') must be followed by a gerund (-ing).",
+    "explanation_th": "คำที่ตามหลังคำบุพบท (at) ต้องอยู่ในรูป gerund (V-ing) เสมอ",
+    "weakness_tag": "grammar_gerund_after_prepositions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_017",
+    "cefr_level": "A2",
+    "grammar_topic": "as_as_comparison",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.05,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "My brother is not as _____ as my father.",
+    "correct_answer": "tall",
+    "options": [
+      {
+        "key": "A",
+        "text": "taller"
+      },
+      {
+        "key": "B",
+        "text": "tall"
+      },
+      {
+        "key": "C",
+        "text": "tallest"
+      },
+      {
+        "key": "D",
+        "text": "more tall"
+      }
+    ],
+    "explanation_en": "Equality comparison 'as... as' uses the base adjective.",
+    "explanation_th": "โครงสร้างการเปรียบเทียบเท่าเทียม 'as ... as' ใช้คำคุณศัพท์รูปปกติ (tall)",
+    "weakness_tag": "grammar_as_as_comparison",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_018",
+    "cefr_level": "A2",
+    "grammar_topic": "too_enough",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.95,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "He is not old _____ to drive a car.",
+    "correct_answer": "enough",
+    "options": [
+      {
+        "key": "A",
+        "text": "too"
+      },
+      {
+        "key": "B",
+        "text": "enough"
+      },
+      {
+        "key": "C",
+        "text": "so"
+      },
+      {
+        "key": "D",
+        "text": "very"
+      }
+    ],
+    "explanation_en": "'Enough' follows adjectives and precedes to-infinitive.",
+    "explanation_th": "'enough' วางไว้ 'หลัง' คำคุณศัพท์ (old enough) เพื่อบอกความพอเพียง",
+    "weakness_tag": "grammar_too_enough",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_019",
+    "cefr_level": "A2",
+    "grammar_topic": "quantifiers_few_little",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.9,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "We have _____ time left before the exam starts, so hurry up.",
+    "correct_answer": "little",
+    "options": [
+      {
+        "key": "A",
+        "text": "few"
+      },
+      {
+        "key": "B",
+        "text": "a few"
+      },
+      {
+        "key": "C",
+        "text": "little"
+      },
+      {
+        "key": "D",
+        "text": "many"
+      }
+    ],
+    "explanation_en": "'Little' means not much and is used with uncountable nouns like 'time'.",
+    "explanation_th": "'time' เป็นนามนับไม่ได้และมีความหมายเชิงลบ (เหลือน้อยแทบไม่มี) ใช้ 'little'",
+    "weakness_tag": "grammar_few_little",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_020",
+    "cefr_level": "A2",
+    "grammar_topic": "prepositions_movement",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.2,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "The cat ran _____ the street to chase a bird.",
+    "correct_answer": "across",
+    "options": [
+      {
+        "key": "A",
+        "text": "through"
+      },
+      {
+        "key": "B",
+        "text": "across"
+      },
+      {
+        "key": "C",
+        "text": "along"
+      },
+      {
+        "key": "D",
+        "text": "onto"
+      }
+    ],
+    "explanation_en": "'Across' means from one side of a surface or road to the other.",
+    "explanation_th": "การเคลื่อนที่จากฝั่งหนึ่งข้ามไปยังอีกฝั่งหนึ่งของถนน ใช้ 'across'",
+    "weakness_tag": "grammar_prepositions_movement",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_021",
+    "cefr_level": "A2",
+    "grammar_topic": "reflexive_pronouns",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.1,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "He looked at _____ in the mirror and smiled.",
+    "correct_answer": "himself",
+    "options": [
+      {
+        "key": "A",
+        "text": "him"
+      },
+      {
+        "key": "B",
+        "text": "his"
+      },
+      {
+        "key": "C",
+        "text": "himself"
+      },
+      {
+        "key": "D",
+        "text": "he"
+      }
+    ],
+    "explanation_en": "Reflexive pronoun 'himself' is used when the subject and object are the same person.",
+    "explanation_th": "ประธานและกรรมเป็นบุคคลเดียวกัน ใช้สรรพนามสะท้อน 'himself'",
+    "weakness_tag": "grammar_reflexive_pronouns",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_022",
+    "cefr_level": "A2",
+    "grammar_topic": "adverbs_of_manner",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.3,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "The baby was sleeping, so she closed the door _____.",
+    "correct_answer": "quietly",
+    "options": [
+      {
+        "key": "A",
+        "text": "quiet"
+      },
+      {
+        "key": "B",
+        "text": "quietly"
+      },
+      {
+        "key": "C",
+        "text": "more quiet"
+      },
+      {
+        "key": "D",
+        "text": "quietness"
+      }
+    ],
+    "explanation_en": "Adverbs of manner ending in -ly describe how the action was performed.",
+    "explanation_th": "ขยายคำกริยา 'closed' เพื่อบอกลักษณะการกระทำ ใช้ adverb 'quietly'",
+    "weakness_tag": "grammar_adverbs_manner",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_023",
+    "cefr_level": "A2",
+    "grammar_topic": "indefinite_pronouns",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.0,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "There is _____ at the front door waiting to see you.",
+    "correct_answer": "someone",
+    "options": [
+      {
+        "key": "A",
+        "text": "anyone"
+      },
+      {
+        "key": "B",
+        "text": "someone"
+      },
+      {
+        "key": "C",
+        "text": "no one"
+      },
+      {
+        "key": "D",
+        "text": "anything"
+      }
+    ],
+    "explanation_en": "'Someone' is used in affirmative statements referring to an unidentified person.",
+    "explanation_th": "ประโยคบอกเล่ากล่าวถึงบุคคลที่ไม่ระบุเจาะจง ใช้ 'someone'",
+    "weakness_tag": "grammar_indefinite_pronouns",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_024",
+    "cefr_level": "A2",
+    "grammar_topic": "must_mustn't",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.15,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "You _____ speak loudly in the library; it is strictly forbidden.",
+    "correct_answer": "mustn't",
+    "options": [
+      {
+        "key": "A",
+        "text": "don't have to"
+      },
+      {
+        "key": "B",
+        "text": "mustn't"
+      },
+      {
+        "key": "C",
+        "text": "shouldn't"
+      },
+      {
+        "key": "D",
+        "text": "needn't"
+      }
+    ],
+    "explanation_en": "'Mustn't' expresses strict prohibition.",
+    "explanation_th": "ข้อห้ามที่เคร่งครัดตามกฎระเบียบ (strictly forbidden) ใช้ 'mustn't'",
+    "weakness_tag": "grammar_must_prohibition",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_025",
+    "cefr_level": "A2",
+    "grammar_topic": "question_tags_basic",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.85,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "You live in Chiang Mai, _____ you?",
+    "correct_answer": "don't",
+    "options": [
+      {
+        "key": "A",
+        "text": "aren't"
+      },
+      {
+        "key": "B",
+        "text": "don't"
+      },
+      {
+        "key": "C",
+        "text": "didn't"
+      },
+      {
+        "key": "D",
+        "text": "do"
+      }
+    ],
+    "explanation_en": "Positive Present Simple statement with main verb 'live' takes negative tag 'don't you?'.",
+    "explanation_th": "ประโยคบอกเล่า Present Simple กริยาแท้ live ใช้ question tag ปฏิเสธ 'don't you?'",
+    "weakness_tag": "grammar_question_tags_basic",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_026",
+    "cefr_level": "A2",
+    "grammar_topic": "preposition_during_for",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.95,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "I lived in Tokyo _____ two years before moving to London.",
+    "correct_answer": "for",
+    "options": [
+      {
+        "key": "A",
+        "text": "during"
+      },
+      {
+        "key": "B",
+        "text": "for"
+      },
+      {
+        "key": "C",
+        "text": "since"
+      },
+      {
+        "key": "D",
+        "text": "while"
+      }
+    ],
+    "explanation_en": "'For' expresses a duration of time (two years).",
+    "explanation_th": "บอกระยะเวลาความยาวนานของการกระทำ (two years) ใช้ 'for'",
+    "weakness_tag": "grammar_for_during_duration",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_027",
+    "cefr_level": "A2",
+    "grammar_topic": "present_perfect_intro",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.75,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "Have you ever _____ to Japan before?",
+    "correct_answer": "been",
+    "options": [
+      {
+        "key": "A",
+        "text": "went"
+      },
+      {
+        "key": "B",
+        "text": "be"
+      },
+      {
+        "key": "C",
+        "text": "been"
+      },
+      {
+        "key": "D",
+        "text": "gone"
+      }
+    ],
+    "explanation_en": "'Have you ever been to' is the standard inquiry about life experience of visiting a place.",
+    "explanation_th": "ถามถึงประสบการณ์ชีวิตว่าเคยไปเยือนสถานที่นั้นแล้วกลับมาหรือยัง ใช้ 'been to'",
+    "weakness_tag": "grammar_present_perfect_experience",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_028",
+    "cefr_level": "A2",
+    "grammar_topic": "used_to_intro",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.8,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "When I was a child, I _____ live in a small village.",
+    "correct_answer": "used to",
+    "options": [
+      {
+        "key": "A",
+        "text": "used to"
+      },
+      {
+        "key": "B",
+        "text": "was used to"
+      },
+      {
+        "key": "C",
+        "text": "use to"
+      },
+      {
+        "key": "D",
+        "text": "am used to"
+      }
+    ],
+    "explanation_en": "'Used to' + base verb expresses a past state or habit that is no longer true.",
+    "explanation_th": "บอกถึงสภาพหรือนิสัยในอดีตที่ปัจจุบันไม่ได้ทำแล้ว ใช้ 'used to' + V.1",
+    "weakness_tag": "grammar_used_to_past_habit",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_029",
+    "cefr_level": "A2",
+    "grammar_topic": "relative_pronouns_who",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.1,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "The woman _____ helped me at the hospital was very kind.",
+    "correct_answer": "who",
+    "options": [
+      {
+        "key": "A",
+        "text": "which"
+      },
+      {
+        "key": "B",
+        "text": "who"
+      },
+      {
+        "key": "C",
+        "text": "where"
+      },
+      {
+        "key": "D",
+        "text": "whose"
+      }
+    ],
+    "explanation_en": "'Who' is the subject relative pronoun referring to people.",
+    "explanation_th": "ประภัสสรรพนาม (relative pronoun) แทนคำนามบุคคล (The woman) ใช้ 'who'",
+    "weakness_tag": "grammar_relative_pronouns_who",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_a2_030",
+    "cefr_level": "A2",
+    "grammar_topic": "modals_permission_may",
+    "question_type": "gap_fill",
+    "difficulty_b": -1.25,
+    "discrimination_a": 1.2,
+    "guessing_c": 0.25,
+    "stem_en": "Excuse me, _____ I borrow your dictionary for a moment?",
+    "correct_answer": "may",
+    "options": [
+      {
+        "key": "A",
+        "text": "may"
+      },
+      {
+        "key": "B",
+        "text": "should"
+      },
+      {
+        "key": "C",
+        "text": "must"
+      },
+      {
+        "key": "D",
+        "text": "would"
+      }
+    ],
+    "explanation_en": "'May' is a polite modal used to ask for permission.",
+    "explanation_th": "การขออนุญาตอย่างสุภาพตามมารยาท ใช้ modal verb 'may'",
+    "weakness_tag": "grammar_modals_permission",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_001",
+    "cefr_level": "B1",
+    "grammar_topic": "present_perfect_vs_past",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.4,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "I _____ my passport yesterday, so I couldn't board the flight.",
+    "correct_answer": "lost",
+    "options": [
+      {
+        "key": "A",
+        "text": "have lost"
+      },
+      {
+        "key": "B",
+        "text": "lost"
+      },
+      {
+        "key": "C",
+        "text": "had lost"
+      },
+      {
+        "key": "D",
+        "text": "was losing"
+      }
+    ],
+    "explanation_en": "Specific past time adverbials (yesterday) strictly require Past Simple, not Present Perfect.",
+    "explanation_th": "เมื่อมีคำระบุเวลาอดีตเจาะจงชัดเจน (yesterday) ต้องใช้ Past Simple (lost) ไม่ใช้ Present Perfect",
+    "weakness_tag": "grammar_present_perfect_vs_past_simple",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_002",
+    "cefr_level": "B1",
+    "grammar_topic": "present_perfect_continuous",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.2,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "She is exhausted because she _____ tennis since eight this morning.",
+    "correct_answer": "has been playing",
+    "options": [
+      {
+        "key": "A",
+        "text": "plays"
+      },
+      {
+        "key": "B",
+        "text": "has played"
+      },
+      {
+        "key": "C",
+        "text": "has been playing"
+      },
+      {
+        "key": "D",
+        "text": "was playing"
+      }
+    ],
+    "explanation_en": "Action continuing from the past to the present with continuous focus uses Present Perfect Continuous.",
+    "explanation_th": "การกระทำที่เริ่มในอดีตและดำเนินต่อเนื่องมาถึงปัจจุบันโดยเน้นความต่อเนื่อง ใช้ Present Perfect Continuous",
+    "weakness_tag": "grammar_present_perfect_continuous",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_003",
+    "cefr_level": "B1",
+    "grammar_topic": "first_conditional",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.3,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "If you _____ hard, you will pass all your final exams.",
+    "correct_answer": "work",
+    "options": [
+      {
+        "key": "A",
+        "text": "will work"
+      },
+      {
+        "key": "B",
+        "text": "work"
+      },
+      {
+        "key": "C",
+        "text": "worked"
+      },
+      {
+        "key": "D",
+        "text": "are working"
+      }
+    ],
+    "explanation_en": "The 'if' clause of the First Conditional uses Present Simple, not 'will'.",
+    "explanation_th": "ในประโยคเงื่อนไขแบบที่ 1 (First Conditional) ส่วนของ if-clause ต้องใช้ Present Simple",
+    "weakness_tag": "grammar_first_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_004",
+    "cefr_level": "B1",
+    "grammar_topic": "second_conditional_basic",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.1,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "If I _____ a million dollars, I would travel around the world.",
+    "correct_answer": "won",
+    "options": [
+      {
+        "key": "A",
+        "text": "win"
+      },
+      {
+        "key": "B",
+        "text": "won"
+      },
+      {
+        "key": "C",
+        "text": "have won"
+      },
+      {
+        "key": "D",
+        "text": "had won"
+      }
+    ],
+    "explanation_en": "Second Conditional (hypothetical present/future) uses Past Simple in the if-clause.",
+    "explanation_th": "ประโยคเงื่อนไขสมมติในปัจจุบัน (Second Conditional) ใน if-clause ใช้ Past Simple (won)",
+    "weakness_tag": "grammar_second_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_005",
+    "cefr_level": "B1",
+    "grammar_topic": "passive_voice_present",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.35,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "Millions of electronic devices _____ in this factory every month.",
+    "correct_answer": "are manufactured",
+    "options": [
+      {
+        "key": "A",
+        "text": "manufacture"
+      },
+      {
+        "key": "B",
+        "text": "are manufactured"
+      },
+      {
+        "key": "C",
+        "text": "were manufactured"
+      },
+      {
+        "key": "D",
+        "text": "are manufacturing"
+      }
+    ],
+    "explanation_en": "Present Simple passive uses is/are + past participle (are manufactured).",
+    "explanation_th": "ประธานเป็นผู้ถูกกระทำในเหตุการณ์ปกติ (passive voice) ใช้ are + V.3 (are manufactured)",
+    "weakness_tag": "grammar_passive_voice_present",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_006",
+    "cefr_level": "B1",
+    "grammar_topic": "passive_voice_past",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.25,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "The Mona Lisa _____ by Leonardo da Vinci in the early 16th century.",
+    "correct_answer": "was painted",
+    "options": [
+      {
+        "key": "A",
+        "text": "painted"
+      },
+      {
+        "key": "B",
+        "text": "was painted"
+      },
+      {
+        "key": "C",
+        "text": "has been painted"
+      },
+      {
+        "key": "D",
+        "text": "is painted"
+      }
+    ],
+    "explanation_en": "Past Simple passive uses was/were + past participle (was painted).",
+    "explanation_th": "ประธานถูกกระทำในอดีต (16th century) ใช้รูป Past Simple Passive (was painted)",
+    "weakness_tag": "grammar_passive_voice_past",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_007",
+    "cefr_level": "B1",
+    "grammar_topic": "modals_deduction_present",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.2,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "The lights are off and their car is gone. They _____ at home.",
+    "correct_answer": "can't be",
+    "options": [
+      {
+        "key": "A",
+        "text": "must be"
+      },
+      {
+        "key": "B",
+        "text": "can't be"
+      },
+      {
+        "key": "C",
+        "text": "shouldn't be"
+      },
+      {
+        "key": "D",
+        "text": "might be"
+      }
+    ],
+    "explanation_en": "'Can't be' expresses strong negative deduction based on evidence.",
+    "explanation_th": "การคาดคะเนเชิงปฏิเสธอย่างมั่นใจจากหลักฐานแวดล้อม ใช้ 'can't be' (เป็นไปไม่ได้ที่จะอยู่)",
+    "weakness_tag": "grammar_modals_deduction_present",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_008",
+    "cefr_level": "B1",
+    "grammar_topic": "modals_must_deduction",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.15,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "He has been working for twelve hours without a break; he _____ be exhausted.",
+    "correct_answer": "must",
+    "options": [
+      {
+        "key": "A",
+        "text": "can"
+      },
+      {
+        "key": "B",
+        "text": "must"
+      },
+      {
+        "key": "C",
+        "text": "should"
+      },
+      {
+        "key": "D",
+        "text": "would"
+      }
+    ],
+    "explanation_en": "'Must' expresses logical certainty / strong affirmative deduction.",
+    "explanation_th": "การคาดคะเนข้อเท็จจริงอย่างมั่นใจจากหลักฐานเชิงบวก ใช้ 'must be'",
+    "weakness_tag": "grammar_modals_deduction_must",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_009",
+    "cefr_level": "B1",
+    "grammar_topic": "gerund_vs_infinitive_stop",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.0,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "He was feeling very tired, so he stopped _____ a quick coffee.",
+    "correct_answer": "to have",
+    "options": [
+      {
+        "key": "A",
+        "text": "having"
+      },
+      {
+        "key": "B",
+        "text": "to have"
+      },
+      {
+        "key": "C",
+        "text": "have"
+      },
+      {
+        "key": "D",
+        "text": "for have"
+      }
+    ],
+    "explanation_en": "'Stop + to-infinitive' means pausing an activity in order to do something else.",
+    "explanation_th": "'stop + to-infinitive' หมายถึงหยุดสิ่งที่ทำอยู่เพื่อไปทำสิ่งใหม่ (แวะดื่มกาแฟ)",
+    "weakness_tag": "grammar_verb_patterns_stop",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_010",
+    "cefr_level": "B1",
+    "grammar_topic": "gerund_vs_infinitive_remember",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.25,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "Please remember _____ the front door before you leave for work.",
+    "correct_answer": "to lock",
+    "options": [
+      {
+        "key": "A",
+        "text": "locking"
+      },
+      {
+        "key": "B",
+        "text": "to lock"
+      },
+      {
+        "key": "C",
+        "text": "lock"
+      },
+      {
+        "key": "D",
+        "text": "locked"
+      }
+    ],
+    "explanation_en": "'Remember + to-infinitive' refers to remembering a duty before performing it.",
+    "explanation_th": "'remember + to-infinitive' หมายถึงจำสิ่งที่ต้องทำและทำตามหน้าที่ในอนาคต",
+    "weakness_tag": "grammar_verb_patterns_remember",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_011",
+    "cefr_level": "B1",
+    "grammar_topic": "relative_clauses_whose",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.1,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "I met a gentleman _____ son plays professional football.",
+    "correct_answer": "whose",
+    "options": [
+      {
+        "key": "A",
+        "text": "who"
+      },
+      {
+        "key": "B",
+        "text": "whom"
+      },
+      {
+        "key": "C",
+        "text": "whose"
+      },
+      {
+        "key": "D",
+        "text": "which"
+      }
+    ],
+    "explanation_en": "'Whose' is the relative pronoun expressing possession.",
+    "explanation_th": "สรรพนามเชื่อมแสดงความเป็นเจ้าของความสัมพันธ์ทางเครือญาติ ใช้ 'whose'",
+    "weakness_tag": "grammar_relative_clauses_whose",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_012",
+    "cefr_level": "B1",
+    "grammar_topic": "relative_clauses_where",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.3,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "This is the university _____ my parents first met thirty years ago.",
+    "correct_answer": "where",
+    "options": [
+      {
+        "key": "A",
+        "text": "which"
+      },
+      {
+        "key": "B",
+        "text": "where"
+      },
+      {
+        "key": "C",
+        "text": "that"
+      },
+      {
+        "key": "D",
+        "text": "what"
+      }
+    ],
+    "explanation_en": "'Where' is the relative adverb referring to a location of an action.",
+    "explanation_th": "คำเชื่อมแสดงสถานที่ที่เหตุการณ์เกิดขึ้น ใช้ 'where'",
+    "weakness_tag": "grammar_relative_clauses_where",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_013",
+    "cefr_level": "B1",
+    "grammar_topic": "reported_speech_tense_shift",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.05,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "'I am moving to Paris,' she said. -> She said that she _____ to Paris.",
+    "correct_answer": "was moving",
+    "options": [
+      {
+        "key": "A",
+        "text": "is moving"
+      },
+      {
+        "key": "B",
+        "text": "was moving"
+      },
+      {
+        "key": "C",
+        "text": "has moved"
+      },
+      {
+        "key": "D",
+        "text": "will move"
+      }
+    ],
+    "explanation_en": "Direct speech in Present Continuous shifts back to Past Continuous in indirect speech.",
+    "explanation_th": "การเปลี่ยนคำพูดเป็น Reported Speech กริยา Present Continuous เลื่อนถอยเป็น Past Continuous",
+    "weakness_tag": "grammar_reported_speech_tense_shift",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_014",
+    "cefr_level": "B1",
+    "grammar_topic": "reported_questions",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.3,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "He asked me where _____ my car.",
+    "correct_answer": "I had parked",
+    "options": [
+      {
+        "key": "A",
+        "text": "had I parked"
+      },
+      {
+        "key": "B",
+        "text": "I had parked"
+      },
+      {
+        "key": "C",
+        "text": "did I park"
+      },
+      {
+        "key": "D",
+        "text": "I parked had"
+      }
+    ],
+    "explanation_en": "Reported questions use normal statement word order (Subject + Verb), not inverted question order.",
+    "explanation_th": "ใน Reported Questions ลำดับคำต้องเรียงแบบประโยคบอกเล่า (ประธาน + กริยา) ห้ามกลับกริยาช่วย",
+    "weakness_tag": "grammar_reported_questions_order",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_015",
+    "cefr_level": "B1",
+    "grammar_topic": "for_since_distinction",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.4,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "She has lived in this apartment _____ she graduated from college.",
+    "correct_answer": "since",
+    "options": [
+      {
+        "key": "A",
+        "text": "for"
+      },
+      {
+        "key": "B",
+        "text": "since"
+      },
+      {
+        "key": "C",
+        "text": "during"
+      },
+      {
+        "key": "D",
+        "text": "from"
+      }
+    ],
+    "explanation_en": "'Since' is used with a specific starting point in time.",
+    "explanation_th": "บอกจุดเริ่มต้นของเวลาในอดีต (she graduated) ใช้ 'since'",
+    "weakness_tag": "grammar_since_starting_point",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_016",
+    "cefr_level": "B1",
+    "grammar_topic": "past_perfect_simple",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.1,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "By the time the fire brigade arrived, the fire _____ already out.",
+    "correct_answer": "had gone",
+    "options": [
+      {
+        "key": "A",
+        "text": "went"
+      },
+      {
+        "key": "B",
+        "text": "has gone"
+      },
+      {
+        "key": "C",
+        "text": "had gone"
+      },
+      {
+        "key": "D",
+        "text": "was going"
+      }
+    ],
+    "explanation_en": "An action completed before another past event uses Past Perfect (had + past participle).",
+    "explanation_th": "เหตุการณ์ที่เสร็จสิ้นลงก่อนอีกเหตุการณ์หนึ่งในอดีต ใช้ Past Perfect (had gone)",
+    "weakness_tag": "grammar_past_perfect_precedence",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_017",
+    "cefr_level": "B1",
+    "grammar_topic": "so_such_that",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.15,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "It was _____ an interesting book that I couldn't put it down.",
+    "correct_answer": "such",
+    "options": [
+      {
+        "key": "A",
+        "text": "so"
+      },
+      {
+        "key": "B",
+        "text": "such"
+      },
+      {
+        "key": "C",
+        "text": "too"
+      },
+      {
+        "key": "D",
+        "text": "very"
+      }
+    ],
+    "explanation_en": "'Such + a/an + adjective + singular noun' expresses degree leading to a result.",
+    "explanation_th": "โครงสร้างบอกผลลัพธ์ 'such + a/an + adj + noun + that' ใช้ 'such'",
+    "weakness_tag": "grammar_so_such_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_018",
+    "cefr_level": "B1",
+    "grammar_topic": "used_to_vs_be_used_to",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.4,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "I found the hot weather difficult at first, but now I _____ to it.",
+    "correct_answer": "am used",
+    "options": [
+      {
+        "key": "A",
+        "text": "used"
+      },
+      {
+        "key": "B",
+        "text": "am used"
+      },
+      {
+        "key": "C",
+        "text": "use"
+      },
+      {
+        "key": "D",
+        "text": "was used"
+      }
+    ],
+    "explanation_en": "'Be used to + noun/gerund' means being accustomed to something.",
+    "explanation_th": "โครงสร้าง 'be used to + noun' หมายถึงเคยชินแล้วกับสิ่งนั้นในปัจจุบัน",
+    "weakness_tag": "grammar_be_used_to_accustomed",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_019",
+    "cefr_level": "B1",
+    "grammar_topic": "passive_with_modals",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.2,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "All application forms must _____ before the end of the month.",
+    "correct_answer": "be submitted",
+    "options": [
+      {
+        "key": "A",
+        "text": "submit"
+      },
+      {
+        "key": "B",
+        "text": "be submitted"
+      },
+      {
+        "key": "C",
+        "text": "been submitted"
+      },
+      {
+        "key": "D",
+        "text": "submitting"
+      }
+    ],
+    "explanation_en": "Modal passive requires modal + be + past participle.",
+    "explanation_th": "Passive voice กับกริยาช่วย modal ใช้โครงสร้าง must + be + V.3",
+    "weakness_tag": "grammar_passive_with_modals",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_020",
+    "cefr_level": "B1",
+    "grammar_topic": "future_continuous",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.35,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "This time tomorrow, we _____ over the Atlantic Ocean.",
+    "correct_answer": "will be flying",
+    "options": [
+      {
+        "key": "A",
+        "text": "fly"
+      },
+      {
+        "key": "B",
+        "text": "will fly"
+      },
+      {
+        "key": "C",
+        "text": "will be flying"
+      },
+      {
+        "key": "D",
+        "text": "will have flown"
+      }
+    ],
+    "explanation_en": "Future Continuous describes an action that will be in progress at a specific future moment.",
+    "explanation_th": "บอกการกระทำที่จะกำลังดำเนินอยู่ในจุดเวลาใดเวลาหนึ่งในอนาคต ใช้ Future Continuous",
+    "weakness_tag": "grammar_future_continuous",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_021",
+    "cefr_level": "B1",
+    "grammar_topic": "defining_relative_omission",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.05,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "The documentary _____ we watched last night was thought-provoking.",
+    "correct_answer": "which",
+    "options": [
+      {
+        "key": "A",
+        "text": "what"
+      },
+      {
+        "key": "B",
+        "text": "which"
+      },
+      {
+        "key": "C",
+        "text": "where"
+      },
+      {
+        "key": "D",
+        "text": "whose"
+      }
+    ],
+    "explanation_en": "Object relative pronoun referring to things is 'which' or 'that'.",
+    "explanation_th": "ประภัสสรรพนามทำหน้าที่กรรมแทนสิ่งของ (documentary) ใช้ 'which'",
+    "weakness_tag": "grammar_relative_pronouns_things",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_022",
+    "cefr_level": "B1",
+    "grammar_topic": "unless_conditional",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.05,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "We will cancel the picnic _____ the weather improves by noon.",
+    "correct_answer": "unless",
+    "options": [
+      {
+        "key": "A",
+        "text": "if"
+      },
+      {
+        "key": "B",
+        "text": "unless"
+      },
+      {
+        "key": "C",
+        "text": "provided"
+      },
+      {
+        "key": "D",
+        "text": "in case"
+      }
+    ],
+    "explanation_en": "'Unless' means 'if not' and introduces a condition.",
+    "explanation_th": "'unless' มีความหมายเท่ากับ 'if not' (เว้นแต่ว่า / ถ้า...ไม่)",
+    "weakness_tag": "grammar_unless_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_023",
+    "cefr_level": "B1",
+    "grammar_topic": "in_case_vs_if",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.25,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "Take an umbrella with you _____ it rains while you are out.",
+    "correct_answer": "in case",
+    "options": [
+      {
+        "key": "A",
+        "text": "in case"
+      },
+      {
+        "key": "B",
+        "text": "if"
+      },
+      {
+        "key": "C",
+        "text": "unless"
+      },
+      {
+        "key": "D",
+        "text": "provided"
+      }
+    ],
+    "explanation_en": "'In case' expresses doing something as a precaution for a possible future event.",
+    "explanation_th": "'in case' ใช้บอกการเตรียมพร้อมป้องกันไว้เผื่อกรณีที่เหตุการณ์อาจเกิดขึ้น",
+    "weakness_tag": "grammar_in_case_precaution",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_024",
+    "cefr_level": "B1",
+    "grammar_topic": "either_neither",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.2,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "_____ my brother nor my sister enjoys watching horror movies.",
+    "correct_answer": "Neither",
+    "options": [
+      {
+        "key": "A",
+        "text": "Either"
+      },
+      {
+        "key": "B",
+        "text": "Neither"
+      },
+      {
+        "key": "C",
+        "text": "Both"
+      },
+      {
+        "key": "D",
+        "text": "Not"
+      }
+    ],
+    "explanation_en": "'Neither... nor' pairs to connect two negative alternatives.",
+    "explanation_th": "คำเชื่อมคู่ปฏิเสธที่เข้าคู่กับ 'nor' คือ 'Neither'",
+    "weakness_tag": "grammar_neither_nor",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_025",
+    "cefr_level": "B1",
+    "grammar_topic": "causative_have",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.45,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "I need to _____ my car serviced before our long road trip.",
+    "correct_answer": "have",
+    "options": [
+      {
+        "key": "A",
+        "text": "make"
+      },
+      {
+        "key": "B",
+        "text": "have"
+      },
+      {
+        "key": "C",
+        "text": "do"
+      },
+      {
+        "key": "D",
+        "text": "let"
+      }
+    ],
+    "explanation_en": "Causative 'have something done' means arranging for someone else to do a service.",
+    "explanation_th": "โครงสร้าง causative 'have + something + V.3' หมายถึงจ้างวานหรือนำไปให้ผู้อื่นทำบริการให้",
+    "weakness_tag": "grammar_causative_have_done",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_026",
+    "cefr_level": "B1",
+    "grammar_topic": "question_tags_modal",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.1,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "She can speak Japanese fluently, _____ she?",
+    "correct_answer": "can't",
+    "options": [
+      {
+        "key": "A",
+        "text": "can"
+      },
+      {
+        "key": "B",
+        "text": "can't"
+      },
+      {
+        "key": "C",
+        "text": "doesn't"
+      },
+      {
+        "key": "D",
+        "text": "is she"
+      }
+    ],
+    "explanation_en": "Affirmative sentence with modal 'can' takes negative tag 'can't'.",
+    "explanation_th": "ประโยคบอกเล่าที่มี modal 'can' ใช้ question tag ปฏิเสธ 'can't she?'",
+    "weakness_tag": "grammar_question_tags_modals",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_027",
+    "cefr_level": "B1",
+    "grammar_topic": "verb_object_infinitive",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.25,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "My teacher advised me _____ more attention to pronunciation.",
+    "correct_answer": "to pay",
+    "options": [
+      {
+        "key": "A",
+        "text": "pay"
+      },
+      {
+        "key": "B",
+        "text": "to pay"
+      },
+      {
+        "key": "C",
+        "text": "paying"
+      },
+      {
+        "key": "D",
+        "text": "paid"
+      }
+    ],
+    "explanation_en": "'Advise + object + to-infinitive' is the required verb pattern.",
+    "explanation_th": "กริยา advise ตามด้วยกรรมและ to-infinitive (advise someone to do something)",
+    "weakness_tag": "grammar_verb_object_infinitive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_028",
+    "cefr_level": "B1",
+    "grammar_topic": "despite_vs_although",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.15,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "_____ the heavy traffic, we arrived at the concert on time.",
+    "correct_answer": "Despite",
+    "options": [
+      {
+        "key": "A",
+        "text": "Although"
+      },
+      {
+        "key": "B",
+        "text": "Despite"
+      },
+      {
+        "key": "C",
+        "text": "Even though"
+      },
+      {
+        "key": "D",
+        "text": "However"
+      }
+    ],
+    "explanation_en": "'Despite' is a preposition followed by a noun phrase, whereas 'although' takes a clause.",
+    "explanation_th": "'Despite' เป็นบุพบทตามด้วยนามวลี (the heavy traffic) ส่วน although ต้องตามด้วยประโยค",
+    "weakness_tag": "grammar_despite_in_spite_of",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_029",
+    "cefr_level": "B1",
+    "grammar_topic": "still_yet_already",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.3,
+    "discrimination_a": 1.3,
+    "guessing_c": 0.25,
+    "stem_en": "Has the postman delivered the morning mail _____?",
+    "correct_answer": "yet",
+    "options": [
+      {
+        "key": "A",
+        "text": "already"
+      },
+      {
+        "key": "B",
+        "text": "still"
+      },
+      {
+        "key": "C",
+        "text": "yet"
+      },
+      {
+        "key": "D",
+        "text": "just"
+      }
+    ],
+    "explanation_en": "'Yet' is standard at the end of questions asking if an expected event has occurred.",
+    "explanation_th": "วางท้ายประโยคคำถามเพื่อถามว่าการกระทำที่รอคอยเกิดขึ้นหรือยัง ใช้ 'yet'",
+    "weakness_tag": "grammar_yet_questions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b1_030",
+    "cefr_level": "B1",
+    "grammar_topic": "adjective_dependent_prepositions",
+    "question_type": "gap_fill",
+    "difficulty_b": -0.35,
+    "discrimination_a": 1.25,
+    "guessing_c": 0.25,
+    "stem_en": "Are you interested _____ joining our photography club?",
+    "correct_answer": "in",
+    "options": [
+      {
+        "key": "A",
+        "text": "at"
+      },
+      {
+        "key": "B",
+        "text": "on"
+      },
+      {
+        "key": "C",
+        "text": "in"
+      },
+      {
+        "key": "D",
+        "text": "with"
+      }
+    ],
+    "explanation_en": "'Interested' takes the dependent preposition 'in'.",
+    "explanation_th": "คุณศัพท์ 'interested' ใช้คู่กับบุพบท 'in' เสมอ",
+    "weakness_tag": "grammar_dependent_prepositions_adjectives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_001",
+    "cefr_level": "B2",
+    "grammar_topic": "third_conditional",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.6,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "If we _____ the earlier train, we wouldn't have missed the opening ceremony.",
+    "correct_answer": "had caught",
+    "options": [
+      {
+        "key": "A",
+        "text": "caught"
+      },
+      {
+        "key": "B",
+        "text": "had caught"
+      },
+      {
+        "key": "C",
+        "text": "would have caught"
+      },
+      {
+        "key": "D",
+        "text": "catch"
+      }
+    ],
+    "explanation_en": "Third Conditional (unreal past) uses Past Perfect in the if-clause.",
+    "explanation_th": "ประโยคเงื่อนไขสมมติขัดแย้งกับอดีต (Third Conditional) ส่วน if-clause ใช้ Past Perfect",
+    "weakness_tag": "grammar_third_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_002",
+    "cefr_level": "B2",
+    "grammar_topic": "mixed_conditionals_intro",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.1,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "If he had taken my advice last year, he _____ in financial trouble now.",
+    "correct_answer": "wouldn't be",
+    "options": [
+      {
+        "key": "A",
+        "text": "wouldn't have been"
+      },
+      {
+        "key": "B",
+        "text": "wouldn't be"
+      },
+      {
+        "key": "C",
+        "text": "isn't"
+      },
+      {
+        "key": "D",
+        "text": "won't be"
+      }
+    ],
+    "explanation_en": "Mixed conditional: past condition (had taken) having a present result (wouldn't be now).",
+    "explanation_th": "เงื่อนไขผสม (Mixed Conditional): เหตุเกิดในอดีตส่งผลต่อสภาวะปัจจุบัน (wouldn't be now)",
+    "weakness_tag": "grammar_mixed_conditionals_past_present",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_003",
+    "cefr_level": "B2",
+    "grammar_topic": "modals_past_deduction_must",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.7,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "The ground is soaking wet; it _____ heavily during the night.",
+    "correct_answer": "must have rained",
+    "options": [
+      {
+        "key": "A",
+        "text": "must rain"
+      },
+      {
+        "key": "B",
+        "text": "must have rained"
+      },
+      {
+        "key": "C",
+        "text": "should have rained"
+      },
+      {
+        "key": "D",
+        "text": "can have rained"
+      }
+    ],
+    "explanation_en": "'Must have + past participle' makes a logical deduction about a past occurrence.",
+    "explanation_th": "การคาดคะเนอดีตอย่างมั่นใจจากหลักฐานปัจจุบัน ใช้โครงสร้าง 'must have + V.3'",
+    "weakness_tag": "grammar_modals_past_deduction",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_004",
+    "cefr_level": "B2",
+    "grammar_topic": "modals_past_regret_should",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.65,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "I failed the driving test. I _____ more before taking it.",
+    "correct_answer": "should have practiced",
+    "options": [
+      {
+        "key": "A",
+        "text": "should practice"
+      },
+      {
+        "key": "B",
+        "text": "should have practiced"
+      },
+      {
+        "key": "C",
+        "text": "must have practiced"
+      },
+      {
+        "key": "D",
+        "text": "could practice"
+      }
+    ],
+    "explanation_en": "'Should have + past participle' expresses past regret or criticism of an unperformed action.",
+    "explanation_th": "การแสดงความเสียดายหรือตำหนิสิ่งที่ควรทำในอดีตแต่ไม่ได้ทำ ใช้ 'should have + V.3'",
+    "weakness_tag": "grammar_should_have_past_regret",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_005",
+    "cefr_level": "B2",
+    "grammar_topic": "wish_past_unreal",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.8,
+    "discrimination_a": 1.55,
+    "guessing_c": 0.25,
+    "stem_en": "I wish I _____ so harshly to my colleague yesterday.",
+    "correct_answer": "hadn't spoken",
+    "options": [
+      {
+        "key": "A",
+        "text": "didn't speak"
+      },
+      {
+        "key": "B",
+        "text": "hadn't spoken"
+      },
+      {
+        "key": "C",
+        "text": "wouldn't speak"
+      },
+      {
+        "key": "D",
+        "text": "haven't spoken"
+      }
+    ],
+    "explanation_en": "'Wish + Past Perfect' expresses regret about a past situation.",
+    "explanation_th": "การแสดงความเสียดายเกี่ยวกับเหตุการณ์ในอดีตหลัง wish ใช้รูป Past Perfect (hadn't spoken)",
+    "weakness_tag": "grammar_wish_past_regret",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_006",
+    "cefr_level": "B2",
+    "grammar_topic": "wish_present_unreal",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.55,
+    "discrimination_a": 1.4,
+    "guessing_c": 0.25,
+    "stem_en": "I wish I _____ enough spare time to learn how to play the piano.",
+    "correct_answer": "had",
+    "options": [
+      {
+        "key": "A",
+        "text": "have"
+      },
+      {
+        "key": "B",
+        "text": "had"
+      },
+      {
+        "key": "C",
+        "text": "would have"
+      },
+      {
+        "key": "D",
+        "text": "had had"
+      }
+    ],
+    "explanation_en": "'Wish + Past Simple' expresses a desire for a different present situation.",
+    "explanation_th": "ความปรารถนาที่ตรงข้ามกับความจริงในปัจจุบันหลัง wish ใช้ Past Simple (had)",
+    "weakness_tag": "grammar_wish_present_unreal",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_007",
+    "cefr_level": "B2",
+    "grammar_topic": "non_defining_relative",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.75,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "Dr. Watson, _____ research on genetics won the Nobel Prize, will speak today.",
+    "correct_answer": "whose",
+    "options": [
+      {
+        "key": "A",
+        "text": "who"
+      },
+      {
+        "key": "B",
+        "text": "whom"
+      },
+      {
+        "key": "C",
+        "text": "whose"
+      },
+      {
+        "key": "D",
+        "text": "which"
+      }
+    ],
+    "explanation_en": "Non-defining relative clause expressing possession uses 'whose'.",
+    "explanation_th": "อนุประโยคแทรกไม่อธิบายจำกัดความ (มีเครื่องหมายจุลภาค) แสดงความเป็นเจ้าของ ใช้ 'whose'",
+    "weakness_tag": "grammar_non_defining_relative_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_008",
+    "cefr_level": "B2",
+    "grammar_topic": "whom_preposition",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.95,
+    "discrimination_a": 1.55,
+    "guessing_c": 0.25,
+    "stem_en": "The senior director with _____ I spoke yesterday confirmed our appointment.",
+    "correct_answer": "whom",
+    "options": [
+      {
+        "key": "A",
+        "text": "who"
+      },
+      {
+        "key": "B",
+        "text": "whom"
+      },
+      {
+        "key": "C",
+        "text": "which"
+      },
+      {
+        "key": "D",
+        "text": "whose"
+      }
+    ],
+    "explanation_en": "Formal English requires 'whom' directly following a preposition when referring to a person.",
+    "explanation_th": "ในภาษาทางการ เมื่อสรรพนามบุคคลอยู่ 'หลังคำบุพบท' โดยตรง ต้องใช้รูปกรรม 'whom'",
+    "weakness_tag": "grammar_whom_after_prepositions",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_009",
+    "cefr_level": "B2",
+    "grammar_topic": "passive_reporting_verbs",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.05,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "The ancient temple is believed _____ by the king over a thousand years ago.",
+    "correct_answer": "to have been built",
+    "options": [
+      {
+        "key": "A",
+        "text": "to be built"
+      },
+      {
+        "key": "B",
+        "text": "to have been built"
+      },
+      {
+        "key": "C",
+        "text": "being built"
+      },
+      {
+        "key": "D",
+        "text": "having built"
+      }
+    ],
+    "explanation_en": "Impersonal passive reporting with past time reference uses 'to have been + past participle'.",
+    "explanation_th": "การรายงานความเชื่อทางประวัติศาสตร์ที่มีผลเกิดก่อน ใช้รูป 'to have been built'",
+    "weakness_tag": "grammar_passive_reporting_verbs",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_010",
+    "cefr_level": "B2",
+    "grammar_topic": "future_perfect_simple",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.85,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "By next December, the construction team _____ the bridge.",
+    "correct_answer": "will have completed",
+    "options": [
+      {
+        "key": "A",
+        "text": "will complete"
+      },
+      {
+        "key": "B",
+        "text": "will be completing"
+      },
+      {
+        "key": "C",
+        "text": "will have completed"
+      },
+      {
+        "key": "D",
+        "text": "completed"
+      }
+    ],
+    "explanation_en": "'By' + future time expression requires the Future Perfect (will have completed).",
+    "explanation_th": "เมื่อมี 'By + เวลาในอนาคต' ใช้ Future Perfect (will have + V.3) เพื่อบอกความสำเร็จก่อนเวลานั้น",
+    "weakness_tag": "grammar_future_perfect",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_011",
+    "cefr_level": "B2",
+    "grammar_topic": "future_perfect_continuous",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.2,
+    "discrimination_a": 1.65,
+    "guessing_c": 0.25,
+    "stem_en": "In October, she _____ at this international school for precisely twenty years.",
+    "correct_answer": "will have been teaching",
+    "options": [
+      {
+        "key": "A",
+        "text": "will teach"
+      },
+      {
+        "key": "B",
+        "text": "will be teaching"
+      },
+      {
+        "key": "C",
+        "text": "will have been teaching"
+      },
+      {
+        "key": "D",
+        "text": "is teaching"
+      }
+    ],
+    "explanation_en": "Expresses duration up to a specific future point using Future Perfect Continuous.",
+    "explanation_th": "บอกความต่อเนื่องของระยะเวลาที่จะดำเนินมาครบกำหนดในอนาคต ใช้ Future Perfect Continuous",
+    "weakness_tag": "grammar_future_perfect_continuous",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_012",
+    "cefr_level": "B2",
+    "grammar_topic": "had_better_infinitive",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.6,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "You had better _____ your coats; the temperature is dropping rapidly.",
+    "correct_answer": "put on",
+    "options": [
+      {
+        "key": "A",
+        "text": "to put on"
+      },
+      {
+        "key": "B",
+        "text": "put on"
+      },
+      {
+        "key": "C",
+        "text": "putting on"
+      },
+      {
+        "key": "D",
+        "text": "have put on"
+      }
+    ],
+    "explanation_en": "'Had better' is followed by a bare infinitive without 'to'.",
+    "explanation_th": "'had better' (ควรจะ...ดีกว่า) ต้องตามด้วยกริยาฐานรูป bare infinitive (ไม่มี to)",
+    "weakness_tag": "grammar_had_better_bare_infinitive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_013",
+    "cefr_level": "B2",
+    "grammar_topic": "would_rather_past",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.0,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "I would rather you _____ anyone about what happened this morning.",
+    "correct_answer": "didn't tell",
+    "options": [
+      {
+        "key": "A",
+        "text": "don't tell"
+      },
+      {
+        "key": "B",
+        "text": "didn't tell"
+      },
+      {
+        "key": "C",
+        "text": "not to tell"
+      },
+      {
+        "key": "D",
+        "text": "won't tell"
+      }
+    ],
+    "explanation_en": "'Would rather + subject + Past Simple' expresses preference for someone else's action.",
+    "explanation_th": "'would rather + ประธานคนอื่น' กริยาต้องถอยรูปเป็น Past Simple (didn't tell)",
+    "weakness_tag": "grammar_would_rather_different_subject",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_014",
+    "cefr_level": "B2",
+    "grammar_topic": "it_is_time_past",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.9,
+    "discrimination_a": 1.55,
+    "guessing_c": 0.25,
+    "stem_en": "It is high time the government _____ effective measures against inflation.",
+    "correct_answer": "took",
+    "options": [
+      {
+        "key": "A",
+        "text": "takes"
+      },
+      {
+        "key": "B",
+        "text": "took"
+      },
+      {
+        "key": "C",
+        "text": "take"
+      },
+      {
+        "key": "D",
+        "text": "has taken"
+      }
+    ],
+    "explanation_en": "'It is high time + subject + Past Simple' indicates that an action is already overdue.",
+    "explanation_th": "สำนวน 'It is high time + ประธาน' กริยาต้องใช้ Past Simple เพื่อสื่อว่าถึงเวลาที่ควรทำตั้งนานแล้ว",
+    "weakness_tag": "grammar_it_is_high_time",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_015",
+    "cefr_level": "B2",
+    "grammar_topic": "participial_adjectives",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.5,
+    "discrimination_a": 1.35,
+    "guessing_c": 0.25,
+    "stem_en": "The documentary about deep ocean trenches was utterly _____.",
+    "correct_answer": "fascinating",
+    "options": [
+      {
+        "key": "A",
+        "text": "fascinated"
+      },
+      {
+        "key": "B",
+        "text": "fascinating"
+      },
+      {
+        "key": "C",
+        "text": "fascination"
+      },
+      {
+        "key": "D",
+        "text": "fascinate"
+      }
+    ],
+    "explanation_en": "-ing adjectives describe the characteristic/source of the feeling (the documentary).",
+    "explanation_th": "คุณศัพท์ลงท้าย -ing ใช้บรรยายลักษณะของสิ่งของหรือเหตุการณ์ที่ก่อให้เกิดความรู้สึก",
+    "weakness_tag": "grammar_participial_adjectives_ed_ing",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_020",
+    "cefr_level": "B2",
+    "grammar_topic": "inversion_hardly_when",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.3,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "Hardly _____ the house when the storm began.",
+    "correct_answer": "had we left",
+    "options": [
+      {
+        "key": "A",
+        "text": "we had left"
+      },
+      {
+        "key": "B",
+        "text": "had we left"
+      },
+      {
+        "key": "C",
+        "text": "did we leave"
+      },
+      {
+        "key": "D",
+        "text": "we left"
+      }
+    ],
+    "explanation_en": "Negative adverb 'Hardly' at sentence start triggers subject-auxiliary inversion with 'had'.",
+    "explanation_th": "คำปฏิเสธ 'Hardly' ขึ้นต้นประโยค บังคับเกิด Inversion กริยาช่วย had มาหน้าประธาน",
+    "weakness_tag": "grammar_inversion_hardly_when",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_017",
+    "cefr_level": "B2",
+    "grammar_topic": "inversion_no_sooner",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.35,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "No sooner had the plane landed _____ the passengers stood up.",
+    "correct_answer": "than",
+    "options": [
+      {
+        "key": "A",
+        "text": "when"
+      },
+      {
+        "key": "B",
+        "text": "than"
+      },
+      {
+        "key": "C",
+        "text": "then"
+      },
+      {
+        "key": "D",
+        "text": "that"
+      }
+    ],
+    "explanation_en": "'No sooner... than' is the mandatory correlative conjunction pair.",
+    "explanation_th": "คู่คำเชื่อม Inversion 'No sooner had ...' ต้องเข้าคู่กับ 'than' เสมอ",
+    "weakness_tag": "grammar_inversion_no_sooner_than",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_018",
+    "cefr_level": "B2",
+    "grammar_topic": "clauses_of_concession_whereas",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.7,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "Some people prefer modern urban apartments, _____ others love rural cottages.",
+    "correct_answer": "whereas",
+    "options": [
+      {
+        "key": "A",
+        "text": "despite"
+      },
+      {
+        "key": "B",
+        "text": "whereas"
+      },
+      {
+        "key": "C",
+        "text": "in spite of"
+      },
+      {
+        "key": "D",
+        "text": "unless"
+      }
+    ],
+    "explanation_en": "'Whereas' connects two contrasting facts in parallel clauses.",
+    "explanation_th": "'whereas' ใช้เชื่อมสองอนุประโยคเพื่อเปรียบเทียบความแตกต่างที่เห็นได้ชัด",
+    "weakness_tag": "grammar_concession_whereas",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_019",
+    "cefr_level": "B2",
+    "grammar_topic": "cleft_sentences_what",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.15,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "_____ surprised me most was how calm the pilot remained during turbulence.",
+    "correct_answer": "What",
+    "options": [
+      {
+        "key": "A",
+        "text": "That"
+      },
+      {
+        "key": "B",
+        "text": "Which"
+      },
+      {
+        "key": "C",
+        "text": "What"
+      },
+      {
+        "key": "D",
+        "text": "It"
+      }
+    ],
+    "explanation_en": "Wh-cleft sentence beginning with 'What' focuses on the subject action/clause.",
+    "explanation_th": "Cleft sentence แบบขึ้นต้นด้วย 'What' ใช้เน้นสิ่งที่เกิดขึ้น (สิ่งที่ทำให้ฉันประหลาดใจที่สุดคือ...)",
+    "weakness_tag": "grammar_wh_cleft_sentences",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_016",
+    "cefr_level": "B2",
+    "grammar_topic": "cleft_sentences_it_is",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.0,
+    "discrimination_a": 1.55,
+    "guessing_c": 0.25,
+    "stem_en": "It was my uncle _____ encouraged me to pursue a career in aerospace engineering.",
+    "correct_answer": "who",
+    "options": [
+      {
+        "key": "A",
+        "text": "which"
+      },
+      {
+        "key": "B",
+        "text": "who"
+      },
+      {
+        "key": "C",
+        "text": "whom"
+      },
+      {
+        "key": "D",
+        "text": "whose"
+      }
+    ],
+    "explanation_en": "It-cleft focusing on a person uses 'who' or 'that'.",
+    "explanation_th": "It-cleft sentence ที่เน้นตัวบุคคล (my uncle) ใช้คำเชื่อม 'who'",
+    "weakness_tag": "grammar_it_cleft_sentences",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_021",
+    "cefr_level": "B2",
+    "grammar_topic": "participle_clauses_present",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.85,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "_____ through the park, I stumbled across a flock of wild parakeets.",
+    "correct_answer": "Walking",
+    "options": [
+      {
+        "key": "A",
+        "text": "Walked"
+      },
+      {
+        "key": "B",
+        "text": "Walking"
+      },
+      {
+        "key": "C",
+        "text": "Having walked"
+      },
+      {
+        "key": "D",
+        "text": "To walk"
+      }
+    ],
+    "explanation_en": "Present participle clause expresses an action happening at the same time as the main clause.",
+    "explanation_th": "Participle clause รูป V-ing (Walking) ใช้บอกการกระทำที่เกิดขึ้นพร้อมกับกริยาหลักในประโยค",
+    "weakness_tag": "grammar_participle_clauses_time",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_022",
+    "cefr_level": "B2",
+    "grammar_topic": "participle_clauses_perfect",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.1,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "_____ all her exams with distinction, Maria felt immensely relieved.",
+    "correct_answer": "Having passed",
+    "options": [
+      {
+        "key": "A",
+        "text": "Passing"
+      },
+      {
+        "key": "B",
+        "text": "Having passed"
+      },
+      {
+        "key": "C",
+        "text": "Passed"
+      },
+      {
+        "key": "D",
+        "text": "To pass"
+      }
+    ],
+    "explanation_en": "Perfect participle clause (Having + past participle) emphasizes that one action finished before another.",
+    "explanation_th": "Perfect participle (Having passed) ใช้เน้นย้ำว่าการกระทำนี้เสร็จสิ้นอย่างสมบูรณ์ก่อนกริยาหลัก",
+    "weakness_tag": "grammar_perfect_participle_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_023",
+    "cefr_level": "B2",
+    "grammar_topic": "passive_gerund",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.9,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "He strongly dislikes _____ what to do by his junior colleagues.",
+    "correct_answer": "being told",
+    "options": [
+      {
+        "key": "A",
+        "text": "telling"
+      },
+      {
+        "key": "B",
+        "text": "to tell"
+      },
+      {
+        "key": "C",
+        "text": "being told"
+      },
+      {
+        "key": "D",
+        "text": "to be told"
+      }
+    ],
+    "explanation_en": "Passive gerund after 'dislike' uses being + past participle.",
+    "explanation_th": "กริยา dislike ตามด้วย gerund และเมื่ออยู่ในความหมายเชิงถูกกระทำ ต้องใช้ 'being + V.3'",
+    "weakness_tag": "grammar_passive_gerunds",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_024",
+    "cefr_level": "B2",
+    "grammar_topic": "needn't_have_vs_didn't_need_to",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.25,
+    "discrimination_a": 1.65,
+    "guessing_c": 0.25,
+    "stem_en": "We _____ brought warm coats; the weather turned out to be delightfully warm.",
+    "correct_answer": "needn't have",
+    "options": [
+      {
+        "key": "A",
+        "text": "didn't need to"
+      },
+      {
+        "key": "B",
+        "text": "needn't have"
+      },
+      {
+        "key": "C",
+        "text": "mustn't have"
+      },
+      {
+        "key": "D",
+        "text": "couldn't have"
+      }
+    ],
+    "explanation_en": "'Needn't have + V3' means an action was done unnecessarily; 'didn't need to' means it wasn't necessary and wasn't necessarily done.",
+    "explanation_th": "'needn't have + V.3' หมายถึงได้ทำสิ่งนั้นไปแล้ว แต่จริง ๆ ไม่มีความจำเป็นต้องทำ",
+    "weakness_tag": "grammar_neednt_have_unnecessary_action",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_025",
+    "cefr_level": "B2",
+    "grammar_topic": "conditionals_inversion_should",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.3,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "_____ you require any further assistance, please do not hesitate to contact us.",
+    "correct_answer": "Should",
+    "options": [
+      {
+        "key": "A",
+        "text": "Had"
+      },
+      {
+        "key": "B",
+        "text": "Were"
+      },
+      {
+        "key": "C",
+        "text": "Should"
+      },
+      {
+        "key": "D",
+        "text": "If"
+      }
+    ],
+    "explanation_en": "Inversion of First Conditional replaces 'If you should require' with 'Should you require'.",
+    "explanation_th": "การกลับประโยคเงื่อนไขแบบสุภาพทางการ (Inversion of 1st conditional) ใช้ 'Should you require'",
+    "weakness_tag": "grammar_inversion_first_conditional_should",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_026",
+    "cefr_level": "B2",
+    "grammar_topic": "conditionals_inversion_were",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.4,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "_____ I in your position, I would accept the international assignment immediately.",
+    "correct_answer": "Were",
+    "options": [
+      {
+        "key": "A",
+        "text": "Had"
+      },
+      {
+        "key": "B",
+        "text": "Were"
+      },
+      {
+        "key": "C",
+        "text": "Should"
+      },
+      {
+        "key": "D",
+        "text": "Am"
+      }
+    ],
+    "explanation_en": "Inversion of Second Conditional with verb to be uses 'Were I...'.",
+    "explanation_th": "Inversion ของ Second Conditional กับ verb to be ใช้โครงสร้าง 'Were I in your position'",
+    "weakness_tag": "grammar_inversion_second_conditional_were",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_027",
+    "cefr_level": "B2",
+    "grammar_topic": "conditionals_inversion_had",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.45,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "_____ we known about the highway closure, we would have chosen an alternative route.",
+    "correct_answer": "Had",
+    "options": [
+      {
+        "key": "A",
+        "text": "If"
+      },
+      {
+        "key": "B",
+        "text": "Had"
+      },
+      {
+        "key": "C",
+        "text": "Were"
+      },
+      {
+        "key": "D",
+        "text": "Should"
+      }
+    ],
+    "explanation_en": "Inversion of Third Conditional replaces 'If we had known' with 'Had we known'.",
+    "explanation_th": "Inversion ของ Third Conditional ละ if แล้วนำกริยาช่วย had ขึ้นหน้าประธาน ('Had we known')",
+    "weakness_tag": "grammar_inversion_third_conditional_had",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_028",
+    "cefr_level": "B2",
+    "grammar_topic": "subjunctive_mandative",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.2,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "The inspector demanded that the factory _____ operations until repairs were completed.",
+    "correct_answer": "suspend",
+    "options": [
+      {
+        "key": "A",
+        "text": "suspended"
+      },
+      {
+        "key": "B",
+        "text": "suspends"
+      },
+      {
+        "key": "C",
+        "text": "suspend"
+      },
+      {
+        "key": "D",
+        "text": "would suspend"
+      }
+    ],
+    "explanation_en": "Mandative subjunctive requires the bare base form after demand/insist/recommend that.",
+    "explanation_th": "โครงสร้าง Subjunctive หลังคำกริยาแสดงคำสั่ง/เรียกร้อง (demanded that) ใช้กริยาฐานรูปเดิม (suspend)",
+    "weakness_tag": "grammar_mandative_subjunctive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_029",
+    "cefr_level": "B2",
+    "grammar_topic": "double_comparatives",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.75,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "The more research you conduct, _____ your conclusions will be.",
+    "correct_answer": "the more reliable",
+    "options": [
+      {
+        "key": "A",
+        "text": "more reliable"
+      },
+      {
+        "key": "B",
+        "text": "the more reliable"
+      },
+      {
+        "key": "C",
+        "text": "the most reliable"
+      },
+      {
+        "key": "D",
+        "text": "reliabler"
+      }
+    ],
+    "explanation_en": "Parallel proportional change uses 'The + comparative, the + comparative'.",
+    "explanation_th": "โครงสร้างการเปลี่ยนแปลงแปรผันตามกัน ใช้ 'The + comparative ..., the + comparative ...'",
+    "weakness_tag": "grammar_double_comparatives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_b2_030",
+    "cefr_level": "B2",
+    "grammar_topic": "modals_could_have_possibility",
+    "question_type": "gap_fill",
+    "difficulty_b": 0.65,
+    "discrimination_a": 1.45,
+    "guessing_c": 0.25,
+    "stem_en": "You were driving recklessly! You _____ caused a catastrophic accident.",
+    "correct_answer": "could have",
+    "options": [
+      {
+        "key": "A",
+        "text": "must have"
+      },
+      {
+        "key": "B",
+        "text": "could have"
+      },
+      {
+        "key": "C",
+        "text": "should have"
+      },
+      {
+        "key": "D",
+        "text": "would have"
+      }
+    ],
+    "explanation_en": "'Could have + V3' expresses an unfulfilled past possibility (it was possible, but didn't happen).",
+    "explanation_th": "'could have + V.3' ใช้บอกความเป็นไปได้ในอดีตที่เกือบจะเกิดขึ้นจริงแต่ไม่ได้เกิดขึ้น",
+    "weakness_tag": "grammar_could_have_past_possibility",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_001",
+    "cefr_level": "C1",
+    "grammar_topic": "negative_inversion_seldom",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.6,
+    "discrimination_a": 1.65,
+    "guessing_c": 0.25,
+    "stem_en": "Seldom _____ such remarkable eloquence from a political leader in recent history.",
+    "correct_answer": "have we witnessed",
+    "options": [
+      {
+        "key": "A",
+        "text": "we have witnessed"
+      },
+      {
+        "key": "B",
+        "text": "have we witnessed"
+      },
+      {
+        "key": "C",
+        "text": "did we witness"
+      },
+      {
+        "key": "D",
+        "text": "we witnessed"
+      }
+    ],
+    "explanation_en": "Negative frequency adverb 'Seldom' fronted triggers subject-auxiliary inversion.",
+    "explanation_th": "คำกริยาวิเศษณ์เชิงปฏิเสธ 'Seldom' เมื่อวางต้นประโยค บังคับเกิด Inversion สลับกริยาช่วยไว้หน้าประธาน",
+    "weakness_tag": "grammar_inversion_negative_adverbials",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_002",
+    "cefr_level": "C1",
+    "grammar_topic": "inversion_under_no_circumstances",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.7,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "Under no circumstances _____ confidential patient records be shared without written consent.",
+    "correct_answer": "should",
+    "options": [
+      {
+        "key": "A",
+        "text": "confidential records should"
+      },
+      {
+        "key": "B",
+        "text": "should"
+      },
+      {
+        "key": "C",
+        "text": "ought"
+      },
+      {
+        "key": "D",
+        "text": "must records"
+      }
+    ],
+    "explanation_en": "'Under no circumstances' fronted requires immediate inversion (should + subject + be).",
+    "explanation_th": "สำนวนปฏิเสธเด็ดขาด 'Under no circumstances' วางต้นประโยค ต้องตามด้วยกริยาช่วยทันทีก่อนประธาน",
+    "weakness_tag": "grammar_inversion_prepositional_phrases",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_003",
+    "cefr_level": "C1",
+    "grammar_topic": "inversion_not_only",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.65,
+    "discrimination_a": 1.65,
+    "guessing_c": 0.25,
+    "stem_en": "Not only _____ the contract, but they also offered to double our funding.",
+    "correct_answer": "did they sign",
+    "options": [
+      {
+        "key": "A",
+        "text": "they signed"
+      },
+      {
+        "key": "B",
+        "text": "did they sign"
+      },
+      {
+        "key": "C",
+        "text": "they did sign"
+      },
+      {
+        "key": "D",
+        "text": "had they signed"
+      }
+    ],
+    "explanation_en": "'Not only' fronted in a past simple clause requires auxiliary inversion with 'did'.",
+    "explanation_th": "โครงสร้าง 'Not only' ต้นประโยค ใน Past Simple ต้องใช้กริยาช่วย did สลับหน้าประธาน",
+    "weakness_tag": "grammar_inversion_not_only_but_also",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_004",
+    "cefr_level": "C1",
+    "grammar_topic": "subjunctive_formal",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.8,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "It is imperative that every delegate _____ present during the plenary voting session.",
+    "correct_answer": "be",
+    "options": [
+      {
+        "key": "A",
+        "text": "is"
+      },
+      {
+        "key": "B",
+        "text": "was"
+      },
+      {
+        "key": "C",
+        "text": "be"
+      },
+      {
+        "key": "D",
+        "text": "should to be"
+      }
+    ],
+    "explanation_en": "Formulaic/mandative subjunctive following 'It is imperative that' uses the base form 'be'.",
+    "explanation_th": "โครงสร้างทางการ 'It is imperative that...' ใช้กริยาฐานรูป Subjunctive เสมอ (be)",
+    "weakness_tag": "grammar_formulaic_subjunctive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_005",
+    "cefr_level": "C1",
+    "grammar_topic": "cleft_sentences_all",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.75,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "All _____ was a genuine apology, but he refused to admit his mistake.",
+    "correct_answer": "I asked for",
+    "options": [
+      {
+        "key": "A",
+        "text": "that I asked"
+      },
+      {
+        "key": "B",
+        "text": "what I asked"
+      },
+      {
+        "key": "C",
+        "text": "I asked for"
+      },
+      {
+        "key": "D",
+        "text": "which I asked"
+      }
+    ],
+    "explanation_en": "'All (that) + subject + verb' acts as an exclusive focus cleft construction.",
+    "explanation_th": "Cleft sentence แบบขึ้นต้นด้วย 'All...' ที่เน้นความต้องการเพียงสิ่งเดียว",
+    "weakness_tag": "grammar_all_cleft_sentences",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_006",
+    "cefr_level": "C1",
+    "grammar_topic": "participle_passive_clause",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.85,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "_____ from afar, the ancient citadel resembles a crown resting on the mountain ridge.",
+    "correct_answer": "Seen",
+    "options": [
+      {
+        "key": "A",
+        "text": "Seeing"
+      },
+      {
+        "key": "B",
+        "text": "Seen"
+      },
+      {
+        "key": "C",
+        "text": "Having seen"
+      },
+      {
+        "key": "D",
+        "text": "To see"
+      }
+    ],
+    "explanation_en": "Past participle clause implies a passive meaning ('When it is seen from afar').",
+    "explanation_th": "Participle clause ที่มีความหมายเป็นผู้ถูกกระทำ (เมื่อถูกมองจากที่ไกล) ใช้ Past Participle (Seen)",
+    "weakness_tag": "grammar_passive_participle_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_007",
+    "cefr_level": "C1",
+    "grammar_topic": "mixed_conditionals_unreal_past_present",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.9,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "If the theorem _____ verified earlier, our laboratory would currently be conducting field trials.",
+    "correct_answer": "had been",
+    "options": [
+      {
+        "key": "A",
+        "text": "were"
+      },
+      {
+        "key": "B",
+        "text": "had been"
+      },
+      {
+        "key": "C",
+        "text": "would be"
+      },
+      {
+        "key": "D",
+        "text": "has been"
+      }
+    ],
+    "explanation_en": "Mixed conditional: past passive condition (had been verified) with present result (would currently be).",
+    "explanation_th": "เงื่อนไขผสม: เหตุการณ์ในอดีตแบบ passive (had been verified) ส่งผลต่อการดำเนินงานในปัจจุบัน",
+    "weakness_tag": "grammar_mixed_conditionals_complex",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_008",
+    "cefr_level": "C1",
+    "grammar_topic": "unreal_past_as_if",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.6,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "He speaks about the global financial crash as if he _____ personally in charge of the treasury.",
+    "correct_answer": "had been",
+    "options": [
+      {
+        "key": "A",
+        "text": "was"
+      },
+      {
+        "key": "B",
+        "text": "has been"
+      },
+      {
+        "key": "C",
+        "text": "had been"
+      },
+      {
+        "key": "D",
+        "text": "would be"
+      }
+    ],
+    "explanation_en": "'As if / As though' with past unreal reference requires the Past Perfect.",
+    "explanation_th": "การเปรียบเทียบเสมือนว่า (as if) ที่ขัดแย้งกับความเป็นจริงในอดีต ใช้ Past Perfect (had been)",
+    "weakness_tag": "grammar_as_if_as_though_past",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_009",
+    "cefr_level": "C1",
+    "grammar_topic": "inversion_only_after",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.95,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "Only after the laboratory results were published _____ the scope of the discovery.",
+    "correct_answer": "did the scientific community realize",
+    "options": [
+      {
+        "key": "A",
+        "text": "the scientific community realized"
+      },
+      {
+        "key": "B",
+        "text": "did the scientific community realize"
+      },
+      {
+        "key": "C",
+        "text": "had the scientific community realized"
+      },
+      {
+        "key": "D",
+        "text": "was the scientific community realizing"
+      }
+    ],
+    "explanation_en": "Inversion occurs in the MAIN clause following an initial 'Only after...' adverbial clause.",
+    "explanation_th": "โครงสร้าง 'Only after + อนุประโยค' การกลับประโยค (Inversion) จะเกิดขึ้นใน 'ประโยคหลัก'",
+    "weakness_tag": "grammar_inversion_only_after",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_010",
+    "cefr_level": "C1",
+    "grammar_topic": "inversion_little_did",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.8,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "Little _____ that the document he had just signed would alter the course of modern history.",
+    "correct_answer": "did the diplomat suspect",
+    "options": [
+      {
+        "key": "A",
+        "text": "the diplomat suspected"
+      },
+      {
+        "key": "B",
+        "text": "did the diplomat suspect"
+      },
+      {
+        "key": "C",
+        "text": "had the diplomat suspected"
+      },
+      {
+        "key": "D",
+        "text": "was the diplomat suspecting"
+      }
+    ],
+    "explanation_en": "'Little' with negative meaning fronted requires auxiliary inversion (Little did he suspect).",
+    "explanation_th": "'Little' (แทบจะไม่เลย) นำหน้าประโยค บังคับ Inversion ใน Past Simple ใช้ 'did + ประธาน + V.1'",
+    "weakness_tag": "grammar_inversion_little_did",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_011",
+    "cefr_level": "C1",
+    "grammar_topic": "prepositional_fronting",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.05,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "Across the valley _____ the ruins of a once-formidable fourteenth-century fortress.",
+    "correct_answer": "lay",
+    "options": [
+      {
+        "key": "A",
+        "text": "did lie"
+      },
+      {
+        "key": "B",
+        "text": "lay"
+      },
+      {
+        "key": "C",
+        "text": "lied"
+      },
+      {
+        "key": "D",
+        "text": "lying"
+      }
+    ],
+    "explanation_en": "Locative inversion: prepositional phrase of location fronted with intransitive verb (lay) directly preceding the subject.",
+    "explanation_th": "Locative Inversion: บุพบทวลีบอกสถานที่ขึ้นต้น กริยาอกรรมกริยา (lay) วางหน้าประธานได้ทันทีโดยไม่ต้องใช้กริยาช่วย",
+    "weakness_tag": "grammar_locative_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_012",
+    "cefr_level": "C1",
+    "grammar_topic": "nominal_relative_clauses",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.7,
+    "discrimination_a": 1.65,
+    "guessing_c": 0.25,
+    "stem_en": "The committee expressed deep reservations about _____ was proposed by the external consultants.",
+    "correct_answer": "what",
+    "options": [
+      {
+        "key": "A",
+        "text": "that"
+      },
+      {
+        "key": "B",
+        "text": "which"
+      },
+      {
+        "key": "C",
+        "text": "what"
+      },
+      {
+        "key": "D",
+        "text": "whatever that"
+      }
+    ],
+    "explanation_en": "'What' acts as a fused relative meaning 'the thing which'.",
+    "explanation_th": "Fused relative pronoun 'what' ทำหน้าที่แทนนามวลีทั้งหมด ('the thing that was proposed')",
+    "weakness_tag": "grammar_nominal_relative_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_013",
+    "cefr_level": "C1",
+    "grammar_topic": "compound_relative_whatever",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.65,
+    "discrimination_a": 1.6,
+    "guessing_c": 0.25,
+    "stem_en": "We are determined to uphold these ethical standards, _____ the short-term financial repercussions may be.",
+    "correct_answer": "whatever",
+    "options": [
+      {
+        "key": "A",
+        "text": "however"
+      },
+      {
+        "key": "B",
+        "text": "whatever"
+      },
+      {
+        "key": "C",
+        "text": "whichever"
+      },
+      {
+        "key": "D",
+        "text": "wherever"
+      }
+    ],
+    "explanation_en": "'Whatever' functions as a determiner before the noun phrase 'the short-term financial repercussions'.",
+    "explanation_th": "'Whatever' ทำหน้าที่เป็น determiner นำหน้านามวลีใน concession clause",
+    "weakness_tag": "grammar_compound_relatives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_014",
+    "cefr_level": "C1",
+    "grammar_topic": "advanced_concession_much_as",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.1,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "Much _____ I admire her technical prowess, I cannot endorse her autocratic leadership style.",
+    "correct_answer": "as",
+    "options": [
+      {
+        "key": "A",
+        "text": "as"
+      },
+      {
+        "key": "B",
+        "text": "though that"
+      },
+      {
+        "key": "C",
+        "text": "since"
+      },
+      {
+        "key": "D",
+        "text": "however"
+      }
+    ],
+    "explanation_en": "'Much as + subject + verb' is an advanced concessive structure meaning 'Although I admire... very much'.",
+    "explanation_th": "สำนวนสัมปทานขั้นสูง 'Much as + ประธาน + กริยา' มีความหมายว่า 'แม้ว่าฉันจะชื่นชม...มากเพียงใดก็ตาม'",
+    "weakness_tag": "grammar_much_as_concession",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_015",
+    "cefr_level": "C1",
+    "grammar_topic": "inversion_adjective_as",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.15,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "Strange _____ it may seem, the arid desert ecosystem harbors exceptional biodiversity.",
+    "correct_answer": "as",
+    "options": [
+      {
+        "key": "A",
+        "text": "as"
+      },
+      {
+        "key": "B",
+        "text": "like"
+      },
+      {
+        "key": "C",
+        "text": "although"
+      },
+      {
+        "key": "D",
+        "text": "since"
+      }
+    ],
+    "explanation_en": "'Adjective + as/though + subject + verb' expresses concession (Although it may seem strange).",
+    "explanation_th": "โครงสร้างสัมปทาน 'คุณศัพท์ + as/though + ประธาน + กริยา' (แม้ว่าจะดูแปลกก็ตาม)",
+    "weakness_tag": "grammar_adjective_as_concession",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_016",
+    "cefr_level": "C1",
+    "grammar_topic": "unreal_past_supposing",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.75,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "Supposing they _____ our initial tender, what contingency measures would we enact?",
+    "correct_answer": "rejected",
+    "options": [
+      {
+        "key": "A",
+        "text": "reject"
+      },
+      {
+        "key": "B",
+        "text": "rejected"
+      },
+      {
+        "key": "C",
+        "text": "had rejected"
+      },
+      {
+        "key": "D",
+        "text": "would reject"
+      }
+    ],
+    "explanation_en": "'Supposing' introduces a hypothetical present/future condition paired with 'would' in the main clause.",
+    "explanation_th": "'Supposing' นำหน้าเงื่อนไขสมมติในปัจจุบัน/อนาคต ใช้กับ Past Simple (rejected)",
+    "weakness_tag": "grammar_supposing_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_017",
+    "cefr_level": "C1",
+    "grammar_topic": "but_for_conditional",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.2,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "_____ for the timely intervention of the paramedic, the patient would not have survived.",
+    "correct_answer": "But",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only"
+      },
+      {
+        "key": "B",
+        "text": "Except"
+      },
+      {
+        "key": "C",
+        "text": "But"
+      },
+      {
+        "key": "D",
+        "text": "If"
+      }
+    ],
+    "explanation_en": "'But for + noun phrase' means 'Were it not for / Had it not been for'.",
+    "explanation_th": "สำนวน 'But for + นามวลี' มีความหมายเท่ากับ 'หากมิใช่เพราะ...' ใช้กับสมมติอดีต",
+    "weakness_tag": "grammar_but_for_conditional",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_018",
+    "cefr_level": "C1",
+    "grammar_topic": "participle_having_been",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.9,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "_____ twice by the regulatory board, the pharmaceutical company revised its clinical protocols.",
+    "correct_answer": "Having been reprimanded",
+    "options": [
+      {
+        "key": "A",
+        "text": "Reprimanding"
+      },
+      {
+        "key": "B",
+        "text": "Having reprimanded"
+      },
+      {
+        "key": "C",
+        "text": "Having been reprimanded"
+      },
+      {
+        "key": "D",
+        "text": "Being reprimanded"
+      }
+    ],
+    "explanation_en": "Perfect passive participle clause (Having been + V3) denotes a prior completed passive experience.",
+    "explanation_th": "Perfect passive participle (Having been reprimanded) แสดงการถูกกระทำที่เสร็จสิ้นก่อนกริยาหลัก",
+    "weakness_tag": "grammar_perfect_passive_participle",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_019",
+    "cefr_level": "C1",
+    "grammar_topic": "split_infinitive_stylistic",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.55,
+    "discrimination_a": 1.5,
+    "guessing_c": 0.25,
+    "stem_en": "The administration aims to _____ improve bilateral trade relations over the coming decade.",
+    "correct_answer": "substantially",
+    "options": [
+      {
+        "key": "A",
+        "text": "substantial"
+      },
+      {
+        "key": "B",
+        "text": "substantially"
+      },
+      {
+        "key": "C",
+        "text": "substantiate"
+      },
+      {
+        "key": "D",
+        "text": "substantive"
+      }
+    ],
+    "explanation_en": "Adverb placement modifying the infinitive verb 'improve'.",
+    "explanation_th": "การวางกริยาวิเศษณ์ขยายกริยาในโครงสร้าง infinitive (to substantially improve)",
+    "weakness_tag": "grammar_adverb_infinitive_modification",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c1_020",
+    "cefr_level": "C1",
+    "grammar_topic": "ergative_verbs",
+    "question_type": "gap_fill",
+    "difficulty_b": 1.8,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "The heavy oak doors _____ smoothly without making the slightest sound.",
+    "correct_answer": "swung shut",
+    "options": [
+      {
+        "key": "A",
+        "text": "were swung shut"
+      },
+      {
+        "key": "B",
+        "text": "swung shut"
+      },
+      {
+        "key": "C",
+        "text": "had been swung shut"
+      },
+      {
+        "key": "D",
+        "text": "swung shutting"
+      }
+    ],
+    "explanation_en": "Ergative use of verbs like 'swing/shut' where the patient subject undergoes the action without passive voice.",
+    "explanation_th": "การใช้กริยา Ergative (swung shut) ในรูป active แต่มีความหมายในตัวเองโดยไม่ต้องใช้ passive",
+    "weakness_tag": "grammar_ergative_verbs",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_001",
+    "cefr_level": "C2",
+    "grammar_topic": "archaic_subjunctive_inversion",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.6,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "_____ it not been for her steadfast advocacy, the legislation would never have passed.",
+    "correct_answer": "Had",
+    "options": [
+      {
+        "key": "A",
+        "text": "Were"
+      },
+      {
+        "key": "B",
+        "text": "Had"
+      },
+      {
+        "key": "C",
+        "text": "Should"
+      },
+      {
+        "key": "D",
+        "text": "Could"
+      }
+    ],
+    "explanation_en": "Hypothetical negative past inversion: 'Had it not been for...' replaces 'If it had not been for...'.",
+    "explanation_th": "Inversion ปฏิเสธสมมติอดีตขั้นสูง 'Had it not been for...' (หากมิใช่เพราะว่า...)",
+    "weakness_tag": "grammar_inversion_had_it_not_been_for",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_002",
+    "cefr_level": "C2",
+    "grammar_topic": "unreal_were_it_not_for",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.55,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "_____ it not for your generous patronage, our symphony orchestra could not sustain its winter season.",
+    "correct_answer": "Were",
+    "options": [
+      {
+        "key": "A",
+        "text": "Had"
+      },
+      {
+        "key": "B",
+        "text": "Were"
+      },
+      {
+        "key": "C",
+        "text": "Should"
+      },
+      {
+        "key": "D",
+        "text": "If"
+      }
+    ],
+    "explanation_en": "Hypothetical present inversion: 'Were it not for...' expresses a condition currently counter to fact.",
+    "explanation_th": "Inversion สมมติขัดแย้งกับปัจจุบัน 'Were it not for...' (หากมิใช่เพราะการสนับสนุนของคุณในตอนนี้)",
+    "weakness_tag": "grammar_inversion_were_it_not_for",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_003",
+    "cefr_level": "C2",
+    "grammar_topic": "ellipsis_and_substitution",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.7,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "Some critics hailed the exhibition as groundbreaking, while others did not _____.",
+    "correct_answer": "so",
+    "options": [
+      {
+        "key": "A",
+        "text": "so"
+      },
+      {
+        "key": "B",
+        "text": "such"
+      },
+      {
+        "key": "C",
+        "text": "it"
+      },
+      {
+        "key": "D",
+        "text": "too"
+      }
+    ],
+    "explanation_en": "Code ellipsis and prop-word substitution after negative auxiliary.",
+    "explanation_th": "ไวยากรณ์ขั้นสูงด้าน Ellipsis & Substitution การละข้อความหลัง auxiliary verb โดยใช้รูปละ",
+    "weakness_tag": "grammar_ellipsis_substitution",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_004",
+    "cefr_level": "C2",
+    "grammar_topic": "fronting_comparative",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.8,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "Even more compelling _____ the archaeological relics unearthed during the subsequent excavation.",
+    "correct_answer": "were",
+    "options": [
+      {
+        "key": "A",
+        "text": "was"
+      },
+      {
+        "key": "B",
+        "text": "were"
+      },
+      {
+        "key": "C",
+        "text": "did"
+      },
+      {
+        "key": "D",
+        "text": "had"
+      }
+    ],
+    "explanation_en": "Comparative adjective fronted with delayed plural subject ('the archaeological relics') requires plural verb 'were'.",
+    "explanation_th": "Inversion จากการนำ comparative adjective ขึ้นต้นประโยค ประธานพหูพจน์ (relics) บังคับใช้กริยา 'were'",
+    "weakness_tag": "grammar_comparative_fronting_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_005",
+    "cefr_level": "C2",
+    "grammar_topic": "formulaic_subjunctive_be_that_as_it_may",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.65,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "_____ that as it may, we cannot overlook the egregious breach of contractual confidentiality.",
+    "correct_answer": "Be",
+    "options": [
+      {
+        "key": "A",
+        "text": "Being"
+      },
+      {
+        "key": "B",
+        "text": "Be"
+      },
+      {
+        "key": "C",
+        "text": "Is"
+      },
+      {
+        "key": "D",
+        "text": "Were"
+      }
+    ],
+    "explanation_en": "Fixed formulaic subjunctive idiom: 'Be that as it may' (Nevertheless / Even if that is true).",
+    "explanation_th": "สำนวน Subjunctive โบราณที่ยังใช้อยู่ในภาษาทางการชั้นสูง 'Be that as it may' (อย่างไรก็ตาม/แม้จะเป็นเช่นนั้นก็ตาม)",
+    "weakness_tag": "grammar_formulaic_subjunctive_idioms",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_006",
+    "cefr_level": "C2",
+    "grammar_topic": "formulaic_come_what_may",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.75,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "_____ what may, the expedition team will push forward toward the summit at dawn.",
+    "correct_answer": "Come",
+    "options": [
+      {
+        "key": "A",
+        "text": "Coming"
+      },
+      {
+        "key": "B",
+        "text": "Come"
+      },
+      {
+        "key": "C",
+        "text": "May"
+      },
+      {
+        "key": "D",
+        "text": "Should"
+      }
+    ],
+    "explanation_en": "Formulaic subjunctive expression: 'Come what may' expresses unyielding resolve.",
+    "explanation_th": "สำนวน Subjunctive 'Come what may' (ไม่ว่าจะเกิดอะไรขึ้นก็ตาม)",
+    "weakness_tag": "grammar_formulaic_subjunctive_come_what_may",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_007",
+    "cefr_level": "C2",
+    "grammar_topic": "nominalization_density",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.6,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "The rapid _____ of urban transit infrastructure facilitated regional economic revitalization.",
+    "correct_answer": "expansion",
+    "options": [
+      {
+        "key": "A",
+        "text": "expand"
+      },
+      {
+        "key": "B",
+        "text": "expansion"
+      },
+      {
+        "key": "C",
+        "text": "expanding"
+      },
+      {
+        "key": "D",
+        "text": "expansiveness"
+      }
+    ],
+    "explanation_en": "High academic register nominalization functioning as the dense syntactic head of the subject clause.",
+    "explanation_th": "การเปลี่ยนรูปเป็นคำนามระดับวิชาการชั้นสูง (Nominalization: expansion) ทำหน้าที่เป็นแกนประธาน",
+    "weakness_tag": "grammar_advanced_nominalization",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_008",
+    "cefr_level": "C2",
+    "grammar_topic": "inversion_so_adjective_that",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.85,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "So intricate _____ the navigational mechanisms that only three horologists could repair them.",
+    "correct_answer": "were",
+    "options": [
+      {
+        "key": "A",
+        "text": "was"
+      },
+      {
+        "key": "B",
+        "text": "were"
+      },
+      {
+        "key": "C",
+        "text": "did"
+      },
+      {
+        "key": "D",
+        "text": "had"
+      }
+    ],
+    "explanation_en": "'So + adjective' fronted for emphatic topicalization requires inversion matching plural subject (mechanisms).",
+    "explanation_th": "การเน้นย้ำด้วย 'So + adj' ต้นประโยค บังคับเกิด Inversion สอดคล้องกับประธานพหูพจน์ (mechanisms) ใช้ 'were'",
+    "weakness_tag": "grammar_so_adjective_that_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_009",
+    "cefr_level": "C2",
+    "grammar_topic": "inversion_such_be",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.9,
+    "discrimination_a": 1.9,
+    "guessing_c": 0.25,
+    "stem_en": "Such _____ the sheer ferocity of the hurricane that ancient masonry structures collapsed within minutes.",
+    "correct_answer": "was",
+    "options": [
+      {
+        "key": "A",
+        "text": "was"
+      },
+      {
+        "key": "B",
+        "text": "were"
+      },
+      {
+        "key": "C",
+        "text": "did"
+      },
+      {
+        "key": "D",
+        "text": "is"
+      }
+    ],
+    "explanation_en": "'Such + be + singular subject' creates an emphatic literary result construction.",
+    "explanation_th": "สำนวนวรรณกรรมชั้นสูง 'Such was + นามเอกพจน์ + that' เพื่อเน้นย้ำความรุนแรงของผลลัพธ์",
+    "weakness_tag": "grammar_such_be_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_010",
+    "cefr_level": "C2",
+    "grammar_topic": "negative_raising",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.5,
+    "discrimination_a": 1.7,
+    "guessing_c": 0.25,
+    "stem_en": "I don't think she _____ aware of the procedural ramifications of her sudden resignation.",
+    "correct_answer": "is",
+    "options": [
+      {
+        "key": "A",
+        "text": "is"
+      },
+      {
+        "key": "B",
+        "text": "isn't"
+      },
+      {
+        "key": "C",
+        "text": "shouldn't"
+      },
+      {
+        "key": "D",
+        "text": "wouldn't"
+      }
+    ],
+    "explanation_en": "Negative raising: the matrix clause carries the negation (I don't think), keeping the complement clause affirmative.",
+    "explanation_th": "ปรากฏการณ์ Negative Raising: ย้ายการปฏิเสธไปไว้ที่กริยาหลัก (I don't think) อนุประโยคตามหลังจึงเป็นรูปบอกเล่า (is)",
+    "weakness_tag": "grammar_negative_raising",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_011",
+    "cefr_level": "C2",
+    "grammar_topic": "absolute_participial_clauses",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.95,
+    "discrimination_a": 1.9,
+    "guessing_c": 0.25,
+    "stem_en": "All necessary formalities _____ completed, the trade pact was officially ratified by both parliaments.",
+    "correct_answer": "having been",
+    "options": [
+      {
+        "key": "A",
+        "text": "being"
+      },
+      {
+        "key": "B",
+        "text": "having been"
+      },
+      {
+        "key": "C",
+        "text": "were"
+      },
+      {
+        "key": "D",
+        "text": "have been"
+      }
+    ],
+    "explanation_en": "An absolute clause with an overt subject ('All necessary formalities') functioning independently as a non-finite adjunct.",
+    "explanation_th": "Absolute Clause ชั้นสูง: มีประธานอิสระของตัวเองและใช้ non-finite participle 'having been completed'",
+    "weakness_tag": "grammar_absolute_participial_clauses",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_012",
+    "cefr_level": "C2",
+    "grammar_topic": "infinitive_perfect_passive",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.7,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "The missing manuscript is alleged _____ during the ransacking of the monastic library in 1538.",
+    "correct_answer": "to have been destroyed",
+    "options": [
+      {
+        "key": "A",
+        "text": "to be destroyed"
+      },
+      {
+        "key": "B",
+        "text": "to have been destroyed"
+      },
+      {
+        "key": "C",
+        "text": "having been destroyed"
+      },
+      {
+        "key": "D",
+        "text": "to destroy"
+      }
+    ],
+    "explanation_en": "Perfect passive infinitive following a present reporting verb (is alleged) denoting anterior historical action.",
+    "explanation_th": "โครงสร้างรายงานปัจจุบันกับเหตุการณ์ประวัติศาสตร์ที่จบไปแล้ว ใช้ perfect passive infinitive 'to have been destroyed'",
+    "weakness_tag": "grammar_perfect_passive_infinitive_reporting",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_013",
+    "cefr_level": "C2",
+    "grammar_topic": "inversion_nor_neither",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.65,
+    "discrimination_a": 1.75,
+    "guessing_c": 0.25,
+    "stem_en": "The defense presented no exonerating testimonies, nor _____ any forensic rebuttal.",
+    "correct_answer": "did they offer",
+    "options": [
+      {
+        "key": "A",
+        "text": "they offered"
+      },
+      {
+        "key": "B",
+        "text": "did they offer"
+      },
+      {
+        "key": "C",
+        "text": "offered they"
+      },
+      {
+        "key": "D",
+        "text": "they did offer"
+      }
+    ],
+    "explanation_en": "Coordination with 'nor' strictly triggers auxiliary-subject inversion.",
+    "explanation_th": "การเชื่อมประโยคปฏิเสธด้วย 'nor' บังคับกลับกริยาช่วยและประธาน (did they offer)",
+    "weakness_tag": "grammar_nor_coordination_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_014",
+    "cefr_level": "C2",
+    "grammar_topic": "pseudo_cleft_reversal",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.8,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "A complete overhaul of corporate governance is _____ the board of directors urgently necessitates.",
+    "correct_answer": "what",
+    "options": [
+      {
+        "key": "A",
+        "text": "that"
+      },
+      {
+        "key": "B",
+        "text": "which"
+      },
+      {
+        "key": "C",
+        "text": "what"
+      },
+      {
+        "key": "D",
+        "text": "where"
+      }
+    ],
+    "explanation_en": "Reversed pseudo-cleft construction: focal noun phrase + be + nominal relative clause introduced by 'what'.",
+    "explanation_th": "โครงสร้าง Reversed Pseudo-cleft ขั้นสูง: นามวลีเน้น + be + nominal clause 'what'",
+    "weakness_tag": "grammar_reversed_pseudo_cleft",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_015",
+    "cefr_level": "C2",
+    "grammar_topic": "double_passive_constructions",
+    "question_type": "gap_fill",
+    "difficulty_b": 3.0,
+    "discrimination_a": 1.95,
+    "guessing_c": 0.25,
+    "stem_en": "The diplomatic dispute is expected to _____ amicably before the regional summit convenes.",
+    "correct_answer": "be resolved",
+    "options": [
+      {
+        "key": "A",
+        "text": "resolve"
+      },
+      {
+        "key": "B",
+        "text": "be resolved"
+      },
+      {
+        "key": "C",
+        "text": "have resolved"
+      },
+      {
+        "key": "D",
+        "text": "being resolved"
+      }
+    ],
+    "explanation_en": "Passive infinitive embedded under a passive matrix verb.",
+    "explanation_th": "โครงสร้าง Passive ซ้อน (is expected to be resolved)",
+    "weakness_tag": "grammar_embedded_passive_infinitives",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_016",
+    "cefr_level": "C2",
+    "grammar_topic": "discourse_markers_inverted",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.75,
+    "discrimination_a": 1.8,
+    "guessing_c": 0.25,
+    "stem_en": "On no account _____ authorized personnel leave the containment facility unmonitored.",
+    "correct_answer": "may",
+    "options": [
+      {
+        "key": "A",
+        "text": "may"
+      },
+      {
+        "key": "B",
+        "text": "personnel may"
+      },
+      {
+        "key": "C",
+        "text": "ought"
+      },
+      {
+        "key": "D",
+        "text": "should to"
+      }
+    ],
+    "explanation_en": "'On no account' demands immediate modal auxiliary inversion before the subject.",
+    "explanation_th": "ข้อห้ามเด็ดขาด 'On no account' ต้นประโยค บังคับสลับ modal auxiliary 'may' ไว้หน้าประธาน",
+    "weakness_tag": "grammar_on_no_account_inversion",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_017",
+    "cefr_level": "C2",
+    "grammar_topic": "adverbial_bare_infinitive_suffice",
+    "question_type": "gap_fill",
+    "difficulty_b": 3.1,
+    "discrimination_a": 1.95,
+    "guessing_c": 0.25,
+    "stem_en": "_____ it to say, the catastrophic collapse of the banking syndicate surprised even veteran analysts.",
+    "correct_answer": "Suffice",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sufficing"
+      },
+      {
+        "key": "B",
+        "text": "Suffice"
+      },
+      {
+        "key": "C",
+        "text": "Sufficient"
+      },
+      {
+        "key": "D",
+        "text": "Sufficed"
+      }
+    ],
+    "explanation_en": "Archaic subjunctive formula: 'Suffice it to say' (It is enough to say).",
+    "explanation_th": "สำนวนวรรณกรรมโบราณรูป Subjunctive: 'Suffice it to say' (ขอกล่าวเพียงเท่านี้ว่า...)",
+    "weakness_tag": "grammar_formulaic_suffice_it_to_say",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_018",
+    "cefr_level": "C2",
+    "grammar_topic": "subordinating_conjunction_lest",
+    "question_type": "gap_fill",
+    "difficulty_b": 3.05,
+    "discrimination_a": 1.95,
+    "guessing_c": 0.25,
+    "stem_en": "The treaty details were drafted with extreme vigilance, lest any ambiguity _____ rise to armed disputes.",
+    "correct_answer": "give",
+    "options": [
+      {
+        "key": "A",
+        "text": "gives"
+      },
+      {
+        "key": "B",
+        "text": "gave"
+      },
+      {
+        "key": "C",
+        "text": "give"
+      },
+      {
+        "key": "D",
+        "text": "would give"
+      }
+    ],
+    "explanation_en": "'Lest' requires the present subjunctive bare base form (give) or 'should give' in formal registers.",
+    "explanation_th": "คำเชื่อมทางการขั้นสูง 'lest' (เกรงว่า/เพื่อมิให้) บังคับใช้กริยารูป Subjunctive ฐานเดิม (give)",
+    "weakness_tag": "grammar_lest_subjunctive",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_019",
+    "cefr_level": "C2",
+    "grammar_topic": "participle_having_bare",
+    "question_type": "gap_fill",
+    "difficulty_b": 2.85,
+    "discrimination_a": 1.85,
+    "guessing_c": 0.25,
+    "stem_en": "The board declined the merger proposal, _____ that shareholder equity would be irreparably diluted.",
+    "correct_answer": "reasoning",
+    "options": [
+      {
+        "key": "A",
+        "text": "reasoned"
+      },
+      {
+        "key": "B",
+        "text": "reasoning"
+      },
+      {
+        "key": "C",
+        "text": "having reasoned"
+      },
+      {
+        "key": "D",
+        "text": "to reason"
+      }
+    ],
+    "explanation_en": "Present participial adjunct expressing an accompanying cognitive rationale.",
+    "explanation_th": "Participial adjunct แสดงเหตุผลการตัดสินใจของประธานในประโยค (reasoning that...)",
+    "weakness_tag": "grammar_participial_rationale_adjuncts",
+    "source": "curated_pedagogical"
+  },
+  {
+    "id": "gq_c2_020",
+    "cefr_level": "C2",
+    "grammar_topic": "fronted_non_finite_verb",
+    "question_type": "gap_fill",
+    "difficulty_b": 3.15,
+    "discrimination_a": 2.0,
+    "guessing_c": 0.25,
+    "stem_en": "Try _____ he might, the defense counsel could not undermine the veracity of the biometric evidence.",
+    "correct_answer": "as",
+    "options": [
+      {
+        "key": "A",
+        "text": "as"
+      },
+      {
+        "key": "B",
+        "text": "though that"
+      },
+      {
+        "key": "C",
+        "text": "since"
+      },
+      {
+        "key": "D",
+        "text": "while"
+      }
+    ],
+    "explanation_en": "Fronted bare infinitive concessive structure: 'Try as he might' (However hard he tried).",
+    "explanation_th": "โครงสร้างสัมปทานชั้นสูง 'Bare infinitive + as + ประธาน + might' (แม้เขาจะพยายามมากเพียงใดก็ตาม)",
+    "weakness_tag": "grammar_bare_infinitive_fronting_concession",
+    "source": "curated_pedagogical"
+  }
+]

@@ -1,0 +1,1313 @@
+#!/usr/bin/env python3
+"""
+build_full_reading_passages.py
+Generates 16 authentic, CEFR-graded Reading Passages with 74 comprehension items:
+A1 (3 passages x 4 = 12 questions)
+A2 (3 passages x 4 = 12 questions)
+B1 (3 passages x 5 = 15 questions)
+B2 (3 passages x 5 = 15 questions)
+C1 (2 passages x 5 = 10 questions)
+C2 (2 passages x 5 = 10 questions)
+Total = 16 passages, 74 questions.
+"""
+
+import json
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+passages = []
+
+def add_p(p_dict):
+    # Verify questions count and options
+    assert len(p_dict["questions"]) in (4, 5), f"Passage {p_dict['id']} has invalid question count {len(p_dict['questions'])}"
+    for q in p_dict["questions"]:
+        assert len(q["options"]) == 4, f"Question {q['id']} does not have 4 options"
+        texts = [opt["text"] for opt in q["options"]]
+        assert q["correct_answer"] in texts, f"Question {q['id']}: answer '{q['correct_answer']}' not in options {texts}"
+    passages.append(p_dict)
+
+# =========================================================================
+# A1 PASSAGES (3 passages, 12 questions)
+# =========================================================================
+add_p({
+    "id": "rp_a1_001",
+    "cefr_level": "A1",
+    "title_en": "Maria's Typical Day",
+    "title_th": "หนึ่งวันธรรมดาของมาเรีย",
+    "topic": "daily_life",
+    "word_count": 85,
+    "passage_en": (
+        "Maria is twenty-two years old and lives in Madrid, Spain. Every morning, she wakes up at seven o'clock. "
+        "First, she washes her face and drinks a cup of warm tea with honey. She does not eat a big breakfast. "
+        "At eight o'clock, she walks to the city library where she works as a book assistant. "
+        "She helps visitors find interesting books and organizes the reading rooms. "
+        "In the evening, she cooks pasta for dinner and listens to classical music with her friendly cat."
+    ),
+    "questions": [
+        {
+            "id": "rq_a1_001_1", "question_type": "detail", "difficulty_b": -2.3, "discrimination_a": 1.15, "guessing_c": 0.25,
+            "stem_en": "What time does Maria wake up in the morning?",
+            "correct_answer": "At 7:00",
+            "options": [{"key": "A", "text": "At 6:30"}, {"key": "B", "text": "At 7:00"}, {"key": "C", "text": "At 8:00"}, {"key": "D", "text": "At 8:30"}],
+            "explanation_en": "The passage explicitly states: 'Every morning, she wakes up at seven o'clock.'",
+            "explanation_th": "บทความระบุชัดเจนว่า 'Every morning, she wakes up at seven o'clock.'",
+            "evidence_line": "Every morning, she wakes up at seven o'clock.",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_001_2", "question_type": "detail", "difficulty_b": -2.1, "discrimination_a": 1.2, "guessing_c": 0.25,
+            "stem_en": "Where does Maria work?",
+            "correct_answer": "At a city library",
+            "options": [{"key": "A", "text": "In a tea shop"}, {"key": "B", "text": "At a city library"}, {"key": "C", "text": "In a music store"}, {"key": "D", "text": "At a local hospital"}],
+            "explanation_en": "The passage says: 'she walks to the city library where she works as a book assistant.'",
+            "explanation_th": "บทความกล่าวว่า 'she walks to the city library where she works as a book assistant.'",
+            "evidence_line": "she walks to the city library where she works as a book assistant.",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_001_3", "question_type": "detail", "difficulty_b": -2.0, "discrimination_a": 1.25, "guessing_c": 0.25,
+            "stem_en": "How does Maria travel to her workplace?",
+            "correct_answer": "On foot",
+            "options": [{"key": "A", "text": "By bus"}, {"key": "B", "text": "By train"}, {"key": "C", "text": "On foot"}, {"key": "D", "text": "By bicycle"}],
+            "explanation_en": "She 'walks to the city library', which means traveling on foot.",
+            "explanation_th": "ข้อความระบุ 'she walks to the city library' ซึ่งหมายถึงการเดินเท้า (on foot)",
+            "evidence_line": "she walks to the city library",
+            "weakness_tag": "reading_vocabulary_synonym_a1"
+        },
+        {
+            "id": "rq_a1_001_4", "question_type": "main_idea", "difficulty_b": -1.9, "discrimination_a": 1.3, "guessing_c": 0.25,
+            "stem_en": "What is the primary topic of the text?",
+            "correct_answer": "Maria's daily habits and job",
+            "options": [{"key": "A", "text": "Maria's vacation in Spain"}, {"key": "B", "text": "How to cook Italian pasta"}, {"key": "C", "text": "Maria's daily habits and job"}, {"key": "D", "text": "The history of Madrid libraries"}],
+            "explanation_en": "The passage describes Maria's routine, work duties, and evening relaxation.",
+            "explanation_th": "บทความบรรยายกิจวัตรประจำวันของมาเรียตั้งแต่ตื่นนอน การทำงาน จนถึงเวลาพักผ่อน",
+            "evidence_line": "Maria is twenty-two years old and lives in Madrid... In the evening...",
+            "weakness_tag": "reading_main_idea_a1"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_a1_002",
+    "cefr_level": "A1",
+    "title_en": "Greenwood Community Garden",
+    "title_th": "สวนผักชุมชนกรีนวูด",
+    "topic": "nature_community",
+    "word_count": 92,
+    "passage_en": (
+        "Greenwood Garden is a peaceful place in the middle of our town. "
+        "Twenty families share this green space to grow organic vegetables and colorful flowers. "
+        "Mr. Lee plants sweet tomatoes and carrots. His neighbor, Sarah, grows mint and yellow sunflowers. "
+        "On sunny Saturday mornings, children water the plants with small blue buckets while parents clean the paths. "
+        "Everyone is very friendly. At the end of every harvest month, the families organize a community lunch and share fresh fruit."
+    ),
+    "questions": [
+        {
+            "id": "rq_a1_002_1", "question_type": "detail", "difficulty_b": -2.2, "discrimination_a": 1.15, "guessing_c": 0.25,
+            "stem_en": "How many families share Greenwood Garden?",
+            "correct_answer": "Twenty",
+            "options": [{"key": "A", "text": "Ten"}, {"key": "B", "text": "Twelve"}, {"key": "C", "text": "Twenty"}, {"key": "D", "text": "Thirty"}],
+            "explanation_en": "The passage states: 'Twenty families share this green space...'",
+            "explanation_th": "บทความระบุ 'Twenty families share this green space'",
+            "evidence_line": "Twenty families share this green space",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_002_2", "question_type": "detail", "difficulty_b": -2.0, "discrimination_a": 1.2, "guessing_c": 0.25,
+            "stem_en": "What does Mr. Lee grow in his plot?",
+            "correct_answer": "Tomatoes and carrots",
+            "options": [{"key": "A", "text": "Sunflowers and mint"}, {"key": "B", "text": "Tomatoes and carrots"}, {"key": "C", "text": "Apples and oranges"}, {"key": "D", "text": "Potatoes and onions"}],
+            "explanation_en": "The text states: 'Mr. Lee plants sweet tomatoes and carrots.'",
+            "explanation_th": "บทความระบุ 'Mr. Lee plants sweet tomatoes and carrots.'",
+            "evidence_line": "Mr. Lee plants sweet tomatoes and carrots.",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_002_3", "question_type": "detail", "difficulty_b": -1.9, "discrimination_a": 1.25, "guessing_c": 0.25,
+            "stem_en": "What do the children do on Saturday mornings?",
+            "correct_answer": "Water the plants",
+            "options": [{"key": "A", "text": "Cook lunch"}, {"key": "B", "text": "Water the plants"}, {"key": "C", "text": "Sell vegetables"}, {"key": "D", "text": "Paint the garden fence"}],
+            "explanation_en": "The passage says: 'children water the plants with small blue buckets...'",
+            "explanation_th": "บทความระบุว่าเด็กๆ รดน้ำต้นไม้ด้วยถังน้ำสีฟ้าขนาดเล็ก",
+            "evidence_line": "children water the plants with small blue buckets",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_002_4", "question_type": "inference", "difficulty_b": -1.8, "discrimination_a": 1.3, "guessing_c": 0.25,
+            "stem_en": "How do the neighbors in Greenwood Garden interact with each other?",
+            "correct_answer": "They cooperate and share food",
+            "options": [{"key": "A", "text": "They compete for prizes"}, {"key": "B", "text": "They rarely talk to one another"}, {"key": "C", "text": "They cooperate and share food"}, {"key": "D", "text": "They sell garden tickets to tourists"}],
+            "explanation_en": "The text states 'Everyone is very friendly' and 'share fresh fruit' at a community lunch.",
+            "explanation_th": "บทความบอกว่าทุกคนเป็นมิตร ช่วยกันดูแลสวน และแบ่งปันผลไม้ในมื้ออาหารชุมชน",
+            "evidence_line": "Everyone is very friendly... organize a community lunch and share fresh fruit.",
+            "weakness_tag": "reading_inference_a1"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_a1_003",
+    "cefr_level": "A1",
+    "title_en": "A Trip to the Mountain Village",
+    "title_th": "การเดินทางสู่หมู่บ้านบนภูเขา",
+    "topic": "travel_holiday",
+    "word_count": 88,
+    "passage_en": (
+        "Last weekend, David traveled with his parents to an old wooden village in the northern hills. "
+        "They stayed in a small guesthouse near a clear rushing stream. "
+        "The weather was sunny but cool. In the morning, they walked through tall pine trees and took photos of colorful wild birds. "
+        "For dinner, they ate warm pumpkin soup with fresh brown bread. "
+        "David loved looking at the bright stars at night because there were no tall city buildings or bright neon lamps."
+    ),
+    "questions": [
+        {
+            "id": "rq_a1_003_1", "question_type": "detail", "difficulty_b": -2.2, "discrimination_a": 1.15, "guessing_c": 0.25,
+            "stem_en": "Who did David travel with?",
+            "correct_answer": "His parents",
+            "options": [{"key": "A", "text": "His school friends"}, {"key": "B", "text": "His parents"}, {"key": "C", "text": "His older brother"}, {"key": "D", "text": "He traveled alone"}],
+            "explanation_en": "The passage says: 'David traveled with his parents...'",
+            "explanation_th": "บทความระบุ 'David traveled with his parents'",
+            "evidence_line": "David traveled with his parents",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_003_2", "question_type": "detail", "difficulty_b": -2.1, "discrimination_a": 1.2, "guessing_c": 0.25,
+            "stem_en": "What was the weather like during the trip?",
+            "correct_answer": "Sunny but cool",
+            "options": [{"key": "A", "text": "Rainy and windy"}, {"key": "B", "text": "Hot and humid"}, {"key": "C", "text": "Sunny but cool"}, {"key": "D", "text": "Snowy and foggy"}],
+            "explanation_en": "The text states: 'The weather was sunny but cool.'",
+            "explanation_th": "บทความระบุ 'The weather was sunny but cool.'",
+            "evidence_line": "The weather was sunny but cool.",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_003_3", "question_type": "detail", "difficulty_b": -1.9, "discrimination_a": 1.25, "guessing_c": 0.25,
+            "stem_en": "What did they have for dinner?",
+            "correct_answer": "Pumpkin soup with bread",
+            "options": [{"key": "A", "text": "Grilled meat with potatoes"}, {"key": "B", "text": "Pumpkin soup with bread"}, {"key": "C", "text": "Fried rice with eggs"}, {"key": "D", "text": "Tomato salad with cheese"}],
+            "explanation_en": "The text says: 'they ate warm pumpkin soup with fresh brown bread.'",
+            "explanation_th": "บทความระบุ 'they ate warm pumpkin soup with fresh brown bread.'",
+            "evidence_line": "they ate warm pumpkin soup with fresh brown bread.",
+            "weakness_tag": "reading_detail_retrieval_a1"
+        },
+        {
+            "id": "rq_a1_003_4", "question_type": "inference", "difficulty_b": -1.7, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "Why could David see the stars clearly at night?",
+            "correct_answer": "There was no artificial city light",
+            "options": [{"key": "A", "text": "He used a powerful telescope"}, {"key": "B", "text": "There was no artificial city light"}, {"key": "C", "text": "He climbed the highest pine tree"}, {"key": "D", "text": "The moon was exceptionally bright"}],
+            "explanation_en": "The text notes: 'because there were no tall city buildings or bright neon lamps.'",
+            "explanation_th": "เนื่องจากไม่มีอาคารสูงหรือแสงไฟนีออนของเมืองบดบังทัศนียภาพ",
+            "evidence_line": "because there were no tall city buildings or bright neon lamps.",
+            "weakness_tag": "reading_inference_a1"
+        }
+    ]
+})
+
+# =========================================================================
+# A2 PASSAGES (3 passages, 12 questions)
+# =========================================================================
+add_p({
+    "id": "rp_a2_001",
+    "cefr_level": "A2",
+    "title_en": "The Island Bicycle Project",
+    "title_th": "โครงการจักรยานชุมชนบนเกาะ",
+    "topic": "transport_community",
+    "word_count": 145,
+    "passage_en": (
+        "Three years ago, the local council of Santa Clara Island decided to ban private gasoline cars from its historic town center. "
+        "Air pollution was rising, and the narrow cobblestone streets were crowded with traffic. "
+        "In their place, the council introduced five hundred bright yellow rental bicycles that residents and tourists can borrow using a smartphone app. "
+        "The first thirty minutes of every ride are completely free. "
+        "Since the program began, bicycle usage has tripled, and noise levels have dropped by nearly forty percent. "
+        "Local shopkeeper Elena Martinez noted that pedestrians now spend more time browsing market stalls because the air is clean and the streets are safe. "
+        "Following this extraordinary success, neighboring coastal towns are now planning to copy the project next summer."
+    ),
+    "questions": [
+        {
+            "id": "rq_a2_001_1", "question_type": "detail", "difficulty_b": -1.3, "discrimination_a": 1.25, "guessing_c": 0.25,
+            "stem_en": "Why did the council ban private cars from the town center?",
+            "correct_answer": "Because of rising pollution and traffic congestion",
+            "options": [{"key": "A", "text": "Because of rising pollution and traffic congestion"}, {"key": "B", "text": "To build an underground railway station"}, {"key": "C", "text": "To attract large automotive factories"}, {"key": "D", "text": "Because the roads were severely flooded"}],
+            "explanation_en": "Text states: 'Air pollution was rising, and the narrow cobblestone streets were crowded with traffic.'",
+            "explanation_th": "ระบุว่ามลพิษทางอากาศเพิ่มขึ้น และถนนแคบๆ หนาแน่นไปด้วยการจราจร",
+            "evidence_line": "Air pollution was rising, and the narrow cobblestone streets were crowded with traffic.",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_001_2", "question_type": "detail", "difficulty_b": -1.2, "discrimination_a": 1.3, "guessing_c": 0.25,
+            "stem_en": "How can people access the rental bicycles?",
+            "correct_answer": "Through a mobile application",
+            "options": [{"key": "A", "text": "By buying paper tickets at the town hall"}, {"key": "B", "text": "Through a mobile application"}, {"key": "C", "text": "By paying cash to hotel receptionists"}, {"key": "D", "text": "By showing a driver's license"}],
+            "explanation_en": "Text says: 'residents and tourists can borrow using a smartphone app.'",
+            "explanation_th": "ระบุว่าผู้พักอาศัยและนักท่องเที่ยวสามารถยืมจักรยานได้ผ่านแอปบนสมาร์ทโฟน",
+            "evidence_line": "borrow using a smartphone app",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_001_3", "question_type": "detail", "difficulty_b": -1.0, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What positive impact did Elena Martinez observe on local trade?",
+            "correct_answer": "People spend more time browsing market stalls",
+            "options": [{"key": "A", "text": "Delivery trucks arrived earlier in the day"}, {"key": "B", "text": "Rents for commercial shops increased"}, {"key": "C", "text": "People spend more time browsing market stalls"}, {"key": "D", "text": "Shop owners opened branch stores"}],
+            "explanation_en": "Text states: 'pedestrians now spend more time browsing market stalls because the air is clean...'",
+            "explanation_th": "ผู้คนที่เดินเท้าใช้เวลาเดินดูร้านค้ามากขึ้นเพราะอากาศสะอาดและถนนปลอดภัย",
+            "evidence_line": "pedestrians now spend more time browsing market stalls",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_001_4", "question_type": "inference", "difficulty_b": -0.8, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "What do neighboring coastal towns think of Santa Clara's initiative?",
+            "correct_answer": "They view it as an effective model to adopt",
+            "options": [{"key": "A", "text": "They consider it too costly to maintain"}, {"key": "B", "text": "They view it as an effective model to adopt"}, {"key": "C", "text": "They fear it will discourage tourists from visiting"}, {"key": "D", "text": "They rejected the proposal after public debate"}],
+            "explanation_en": "Text states: 'neighboring coastal towns are now planning to copy the project next summer.'",
+            "explanation_th": "เมืองชายฝั่งใกล้เคียงวางแผนจะนำโครงการนี้ไปใช้ตามในฤดูร้อนหน้า แสดงว่าเห็นว่าเป็นแบบอย่างที่ดี",
+            "evidence_line": "neighboring coastal towns are now planning to copy the project next summer.",
+            "weakness_tag": "reading_inference_a2"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_a2_002",
+    "cefr_level": "A2",
+    "title_en": "Afternoon at the Natural History Museum",
+    "title_th": "ช่วงบ่ายที่พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติ",
+    "topic": "culture_education",
+    "word_count": 150,
+    "passage_en": (
+        "Last Thursday, students from Oakridge High School visited the Metropolitan Museum of Natural History. "
+        "Their science teacher, Mrs. Brooks, prepared a checklist of interactive exhibits for them to explore. "
+        "The most popular attraction was the Cretaceous Hall, which features a thirty-meter-long cast skeleton of a Diplodocus. "
+        "Visitors can touch replica dinosaur teeth and listen to digital recordings of what prehistoric jungles sounded like. "
+        "Later in the afternoon, the class attended a workshop on volcanic rocks. "
+        "A museum geologist demonstrated how basalt and pumice form when red-hot molten lava cools down rapidly. "
+        "Before boarding the school bus at four o'clock, the students purchased postcards and miniature dinosaur models at the souvenir shop. "
+        "The visit helped them understand their biology textbook concepts with hands-on enjoyment."
+    ),
+    "questions": [
+        {
+            "id": "rq_a2_002_1", "question_type": "detail", "difficulty_b": -1.35, "discrimination_a": 1.2, "guessing_c": 0.25,
+            "stem_en": "What was the most popular exhibit among the students?",
+            "correct_answer": "The Cretaceous Hall with the dinosaur skeleton",
+            "options": [{"key": "A", "text": "The mineral and gemstone room"}, {"key": "B", "text": "The Cretaceous Hall with the dinosaur skeleton"}, {"key": "C", "text": "The botanical glass greenhouse"}, {"key": "D", "text": "The planetarium show"}],
+            "explanation_en": "Text says: 'The most popular attraction was the Cretaceous Hall, which features a thirty-meter-long cast skeleton...'",
+            "explanation_th": "ระบุว่าห้อง Cretaceous Hall ที่มีโครงกระดูกไดโนเสาร์ขนาดยาว 30 เมตรได้รับความนิยมมากที่สุด",
+            "evidence_line": "The most popular attraction was the Cretaceous Hall",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_002_2", "question_type": "detail", "difficulty_b": -1.15, "discrimination_a": 1.3, "guessing_c": 0.25,
+            "stem_en": "What did the museum geologist explain during the workshop?",
+            "correct_answer": "How volcanic rocks form from cooling lava",
+            "options": [{"key": "A", "text": "How ancient fossils are cleaned and cataloged"}, {"key": "B", "text": "How volcanic rocks form from cooling lava"}, {"key": "C", "text": "Why dinosaurs became extinct millions of years ago"}, {"key": "D", "text": "How earthquakes are measured using seismographs"}],
+            "explanation_en": "Text states: 'A museum geologist demonstrated how basalt and pumice form when red-hot molten lava cools down rapidly.'",
+            "explanation_th": "นักธรณีวิทยาอธิบายการเกิดหินบะซอลต์และหินพัมมิซเมื่อลาวาหลอมเหลวเย็นตัวลงอย่างรวดเร็ว",
+            "evidence_line": "demonstrated how basalt and pumice form when red-hot molten lava cools down rapidly.",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_002_3", "question_type": "detail", "difficulty_b": -1.0, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What did the students buy before leaving the museum?",
+            "correct_answer": "Postcards and small dinosaur figures",
+            "options": [{"key": "A", "text": "Science textbooks and magnifying glasses"}, {"key": "B", "text": "Postcards and small dinosaur figures"}, {"key": "C", "text": "Sandwiches and apple juice"}, {"key": "D", "text": "Volcanic stone pendants"}],
+            "explanation_en": "Text says: 'the students purchased postcards and miniature dinosaur models at the souvenir shop.'",
+            "explanation_th": "นักเรียนซื้อโปสการ์ดและโมเดลไดโนเสาร์จำลองขนาดเล็กที่ร้านขายของที่ระลึก",
+            "evidence_line": "purchased postcards and miniature dinosaur models",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_002_4", "question_type": "inference", "difficulty_b": -0.85, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "Why was the museum field trip valuable for the students?",
+            "correct_answer": "It connected textbook theories with practical experience",
+            "options": [{"key": "A", "text": "It exempted them from their final science exam"}, {"key": "B", "text": "It connected textbook theories with practical experience"}, {"key": "C", "text": "It allowed them to meet international scientists"}, {"key": "D", "text": "It taught them how to manage historical collections"}],
+            "explanation_en": "The final sentence states: 'The visit helped them understand their biology textbook concepts with hands-on enjoyment.'",
+            "explanation_th": "ทัศนศึกษาช่วยให้นักเรียนเข้าใจแนวคิดในหนังสือเรียนชีววิทยาผ่านการสัมผัสและประสบการณ์ตรง",
+            "evidence_line": "helped them understand their biology textbook concepts with hands-on enjoyment.",
+            "weakness_tag": "reading_inference_a2"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_a2_003",
+    "cefr_level": "A2",
+    "title_en": "The Tradition of Sourdough Bread",
+    "title_th": "ศาสตร์และศิลป์ของขนมปังซาวร์โด",
+    "topic": "food_craft",
+    "word_count": 140,
+    "passage_en": (
+        "Unlike commercial sliced bread that relies on fast-acting industrial yeast, traditional sourdough requires only three simple ingredients: flour, water, and salt. "
+        "The magic happens through a living starter, which is a fermented mixture of wild yeast and beneficial lactic acid bacteria. "
+        "Bakers must feed their starter with fresh flour and warm water every day to keep the microorganisms active. "
+        "When mixed into dough, this fermentation process takes anywhere from twelve to twenty-four hours. "
+        "During this slow rise, the bacteria break down gluten and produce organic acids that give sourdough its distinctive tangy flavor and chewy crust. "
+        "Many people who experience mild stomach discomfort when eating supermarket bread report that naturally fermented sourdough is much easier to digest."
+    ),
+    "questions": [
+        {
+            "id": "rq_a2_003_1", "question_type": "detail", "difficulty_b": -1.25, "discrimination_a": 1.25, "guessing_c": 0.25,
+            "stem_en": "What are the three core ingredients of traditional sourdough bread?",
+            "correct_answer": "Flour, water, and salt",
+            "options": [{"key": "A", "text": "Flour, milk, and butter"}, {"key": "B", "text": "Flour, water, and salt"}, {"key": "C", "text": "Yeast, sugar, and eggs"}, {"key": "D", "text": "Wheat, honey, and olive oil"}],
+            "explanation_en": "Text states: 'traditional sourdough requires only three simple ingredients: flour, water, and salt.'",
+            "explanation_th": "ระบุว่าขนมปังซาวร์โดดั้งเดิมใช้วัตถุดิบเพียง 3 อย่าง คือ แป้ง น้ำ และเกลือ",
+            "evidence_line": "requires only three simple ingredients: flour, water, and salt.",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_003_2", "question_type": "detail", "difficulty_b": -1.1, "discrimination_a": 1.3, "guessing_c": 0.25,
+            "stem_en": "What must bakers do daily to maintain a healthy sourdough starter?",
+            "correct_answer": "Add fresh flour and warm water",
+            "options": [{"key": "A", "text": "Store it in an airtight freezer"}, {"key": "B", "text": "Bake a small portion of it"}, {"key": "C", "text": "Add fresh flour and warm water"}, {"key": "D", "text": "Boil it over low heat"}],
+            "explanation_en": "Text says: 'Bakers must feed their starter with fresh flour and warm water every day...'",
+            "explanation_th": "คนทำขนมปังต้องให้อาหารหัวเชื้อด้วยแป้งสดใหม่และน้ำอุ่นทุกวัน",
+            "evidence_line": "feed their starter with fresh flour and warm water every day",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_003_3", "question_type": "detail", "difficulty_b": -0.95, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What produces the distinctive sour taste of the bread?",
+            "correct_answer": "Organic acids from the slow fermentation",
+            "options": [{"key": "A", "text": "Lemon juice added before baking"}, {"key": "B", "text": "Organic acids from the slow fermentation"}, {"key": "C", "text": "Industrial vinegar sprayed on the crust"}, {"key": "D", "text": "Artificial flavoring from packaged yeast"}],
+            "explanation_en": "Text says: 'produce organic acids that give sourdough its distinctive tangy flavor...'",
+            "explanation_th": "กรดอินทรีย์ที่จุลินทรีย์สร้างขึ้นระหว่างการหมักอย่างช้าๆ ทำให้เกิดรสเปรี้ยวกลมกล่อม",
+            "evidence_line": "produce organic acids that give sourdough its distinctive tangy flavor",
+            "weakness_tag": "reading_detail_retrieval_a2"
+        },
+        {
+            "id": "rq_a2_003_4", "question_type": "inference", "difficulty_b": -0.75, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "Why do some people find sourdough easier to digest than regular bread?",
+            "correct_answer": "The prolonged fermentation breaks down gluten structures",
+            "options": [{"key": "A", "text": "It contains zero wheat ingredients"}, {"key": "B", "text": "It is baked at much higher temperatures"}, {"key": "C", "text": "The prolonged fermentation breaks down gluten structures"}, {"key": "D", "text": "It has added dietary fiber supplements"}],
+            "explanation_en": "Text states: 'During this slow rise, the bacteria break down gluten... much easier to digest.'",
+            "explanation_th": "การหมักที่ยาวนานทำให้แบคทีเรียย่อยสลายโครงสร้างกลูเตน จึงย่อยได้ง่ายขึ้น",
+            "evidence_line": "During this slow rise, the bacteria break down gluten... much easier to digest.",
+            "weakness_tag": "reading_inference_a2"
+        }
+    ]
+})
+
+# =========================================================================
+# B1 PASSAGES (3 passages, 15 questions)
+# =========================================================================
+add_p({
+    "id": "rp_b1_001",
+    "cefr_level": "B1",
+    "title_en": "The Renaissance of European Sleeper Trains",
+    "title_th": "การฟื้นคืนชีพของรถไฟตู้นอนในยุโรป",
+    "topic": "travel_sustainability",
+    "word_count": 245,
+    "passage_en": (
+        "Across the European continent, an unexpected transport revolution is quietly picking up speed. "
+        "A decade ago, overnight sleeper trains seemed destined for extinction, unable to compete with ultra-cheap budget airlines that promised two-hour hops between capitals. "
+        "However, growing public concern over the aviation sector's carbon footprint, combined with worsening airport delays and baggage chaos, has sparked a major resurgence in rail travel. "
+        "National railway operators in Austria, France, and Sweden have invested hundreds of millions of euros in modernized rolling stock. "
+        "New sleeper carriages feature private en-suite compartments, high-speed Wi-Fi, noise-dampening insulation, and bicycle storage spaces. "
+        "Passengers board in central Vienna or Brussels in the evening, enjoy a warm meal in the dining car, sleep through the night in comfortable berths, and arrive in the heart of Rome or Berlin early the next morning without the stress of airport security lines or baggage reclaim halls. "
+        "Environmental think tanks calculate that traveling by night train emits roughly eighty-five percent less greenhouse gas per passenger than taking an equivalent short-haul flight. "
+        "Although ticket prices can occasionally exceed budget airfares, travelers increasingly value the convenience of arriving directly in downtown city centers rested and ready for business or leisure."
+    ),
+    "questions": [
+        {
+            "id": "rq_b1_001_1", "question_type": "main_idea", "difficulty_b": -0.3, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What is the primary reason for the renewed popularity of night trains?",
+            "correct_answer": "Growing ecological awareness and airport travel fatigue",
+            "options": [{"key": "A", "text": "Growing ecological awareness and airport travel fatigue"}, {"key": "B", "text": "The complete shutdown of budget airline routes"}, {"key": "C", "text": "Government mandates banning all domestic flights"}, {"key": "D", "text": "Massive reductions in railway ticket costs"}],
+            "explanation_en": "Text cites 'growing public concern over the aviation sector's carbon footprint, combined with worsening airport delays'.",
+            "explanation_th": "บทความระบุความกังวลเรื่องคาร์บอนฟุตพริ้นท์ของการบินร่วมกับปัญหาความล่าช้าในสนามบิน",
+            "evidence_line": "growing public concern over the aviation sector's carbon footprint, combined with worsening airport delays",
+            "weakness_tag": "reading_main_idea_b1"
+        },
+        {
+            "id": "rq_b1_001_2", "question_type": "detail", "difficulty_b": -0.2, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "What modern amenities have been added to the newly commissioned sleeper carriages?",
+            "correct_answer": "Private bathrooms, sound insulation, and internet connectivity",
+            "options": [{"key": "A", "text": "Full-size swimming pools and gaming arcades"}, {"key": "B", "text": "Private bathrooms, sound insulation, and internet connectivity"}, {"key": "C", "text": "Self-driving automated lounge cars"}, {"key": "D", "text": "Complimentary car rental vouchers upon arrival"}],
+            "explanation_en": "Text lists: 'private en-suite compartments, high-speed Wi-Fi, noise-dampening insulation, and bicycle storage'.",
+            "explanation_th": "ระบุสิ่งอำนวยความสะดวก: ห้องน้ำส่วนตัว, Wi-Fi ความเร็วสูง, ฉนวนกันเสียง และที่เก็บจักรยาน",
+            "evidence_line": "private en-suite compartments, high-speed Wi-Fi, noise-dampening insulation",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_001_3", "question_type": "detail", "difficulty_b": 0.0, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "According to environmental think tanks, how much lower are emissions on sleeper trains compared to short flights?",
+            "correct_answer": "Approximately 85% less",
+            "options": [{"key": "A", "text": "Approximately 35% less"}, {"key": "B", "text": "Approximately 50% less"}, {"key": "C", "text": "Approximately 85% less"}, {"key": "D", "text": "Approximately 99% less"}],
+            "explanation_en": "The passage clearly states: 'emits roughly eighty-five percent less greenhouse gas per passenger...'",
+            "explanation_th": "ข้อความระบุชัดเจนว่า 'emits roughly eighty-five percent less greenhouse gas'",
+            "evidence_line": "emits roughly eighty-five percent less greenhouse gas per passenger",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_001_4", "question_type": "vocabulary_in_context", "difficulty_b": 0.15, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "What does the word 'resurgence' mean in the first paragraph?",
+            "correct_answer": "A renewal or return of popularity",
+            "options": [{"key": "A", "text": "A sudden financial collapse"}, {"key": "B", "text": "A renewal or return of popularity"}, {"key": "C", "text": "An unpredictable technical failure"}, {"key": "D", "text": "A strict government inspection"}],
+            "explanation_en": "'Resurgence' means a rising again into life, activity, or prominence after a period of decline.",
+            "explanation_th": "'resurgence' หมายถึง การฟื้นคืนกลับมาได้รับความนิยมหรือกลับมามีบทบาทใหม่อีกครั้ง",
+            "evidence_line": "has sparked a major resurgence in rail travel",
+            "weakness_tag": "reading_vocabulary_context_b1"
+        },
+        {
+            "id": "rq_b1_001_5", "question_type": "inference", "difficulty_b": 0.3, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "Why do travelers find night trains convenient despite higher prices?",
+            "correct_answer": "They save hotel costs and arrive right in city centers",
+            "options": [{"key": "A", "text": "They receive guaranteed free flight tickets for future travel"}, {"key": "B", "text": "They save hotel costs and arrive right in city centers"}, {"key": "C", "text": "Trains travel twice as fast as modern airplanes"}, {"key": "D", "text": "Train stations have no customs inspections whatsoever"}],
+            "explanation_en": "Traveling overnight acts as accommodation while transporting passengers directly from downtown to downtown rested.",
+            "explanation_th": "การเดินทางข้ามคืนช่วยประหยัดเวลาและเดินทางถึงใจกลางเมืองโดยตรงพร้อมเริ่มกิจกรรมได้ทันที",
+            "evidence_line": "arrive in the heart of Rome or Berlin early the next morning without the stress",
+            "weakness_tag": "reading_inference_b1"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_b1_002",
+    "cefr_level": "B1",
+    "title_en": "Urban Rooftop Agriculture",
+    "title_th": "เกษตรกรรมดาดฟ้าในเมืองหลวง",
+    "topic": "environment_urban_planning",
+    "word_count": 255,
+    "passage_en": (
+        "In densely populated metropolises such as Tokyo, Singapore, and New York, green open land is exceptionally scarce and prohibitively expensive. "
+        "In response, innovative urban planners and agricultural engineers are gazing upward, transforming bare concrete rooftops into thriving hydroponic farms. "
+        "Unlike conventional horizontal agriculture, which relies on expansive topsoil and heavy chemical pest control, rooftop farms utilize vertical nutrient-film channels and closed-loop water recirculation systems. "
+        "These cutting-edge facilities consume up to ninety percent less freshwater than traditional farms while producing year-round yields of fresh leafy greens, herbs, and strawberries. "
+        "Beyond generating nutritious, locally harvested produce, rooftop farms offer substantial thermodynamic benefits for the buildings below. "
+        "During scorching summer heatwaves, the thick layer of vegetation absorbs solar radiation, reducing interior rooftop temperatures by as much as twenty degrees Celsius and drastically lowering air-conditioning electricity bills. "
+        "During torrential downpours, the farm substrate acts as a natural retention sponge, absorbing stormwater runoff that would otherwise overwhelm municipal storm drains and cause street flooding. "
+        "While initial capital investment for structural reinforcement and plumbing remains a hurdle, commercial property developers are realizing that green roofs substantially enhance property asset value."
+    ),
+    "questions": [
+        {
+            "id": "rq_b1_002_1", "question_type": "main_idea", "difficulty_b": -0.25, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What is the central purpose of the passage?",
+            "correct_answer": "To explain the environmental and economic advantages of rooftop farming",
+            "options": [{"key": "A", "text": "To criticize traditional farming methods in rural regions"}, {"key": "B", "text": "To explain the environmental and economic advantages of rooftop farming"}, {"key": "C", "text": "To advertise commercial real estate in Singapore"}, {"key": "D", "text": "To document the history of ancient hanging gardens"}],
+            "explanation_en": "The passage outlines the food production efficiency, cooling benefits, and stormwater management of rooftop farming.",
+            "explanation_th": "บทความอธิบายประโยชน์รอบด้าน ทั้งด้านอาหาร การลดการใช้พลังงาน และการจัดการน้ำของฟาร์มดาดฟ้า",
+            "evidence_line": "transforming bare concrete rooftops into thriving hydroponic farms... thermodynamic benefits",
+            "weakness_tag": "reading_main_idea_b1"
+        },
+        {
+            "id": "rq_b1_002_2", "question_type": "detail", "difficulty_b": -0.15, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "How does water consumption in rooftop hydroponic setups compare to rural farms?",
+            "correct_answer": "It uses up to 90% less freshwater",
+            "options": [{"key": "A", "text": "It uses twice as much water"}, {"key": "B", "text": "It consumes roughly the same volume"}, {"key": "C", "text": "It uses up to 90% less freshwater"}, {"key": "D", "text": "It depends completely on untreated rainwater"}],
+            "explanation_en": "Text says: 'consume up to ninety percent less freshwater than traditional farms'.",
+            "explanation_th": "ระบุว่าใช้น้ำจืดน้อยกว่าฟาร์มแบบดั้งเดิมถึงร้อยละ 90 ด้วยระบบน้ำหมุนเวียน",
+            "evidence_line": "consume up to ninety percent less freshwater than traditional farms",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_002_3", "question_type": "detail", "difficulty_b": 0.1, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "How do green roofs affect building energy efficiency in summer?",
+            "correct_answer": "Vegetation absorbs sun rays, reducing indoor cooling needs",
+            "options": [{"key": "A", "text": "They generate solar electricity directly into the grid"}, {"key": "B", "text": "Vegetation absorbs sun rays, reducing indoor cooling needs"}, {"key": "C", "text": "They block natural ventilation across top floors"}, {"key": "D", "text": "They require continuous heating lamps overnight"}],
+            "explanation_en": "Text states: 'absorbs solar radiation, reducing interior rooftop temperatures... drastically lowering air-conditioning electricity bills.'",
+            "explanation_th": "พืชผักช่วยดูดซับรังสีความร้อน ลดอุณหภูมิดาดฟ้า และช่วยประหยัดค่าไฟแอร์ลงได้อย่างมาก",
+            "evidence_line": "absorbs solar radiation, reducing interior rooftop temperatures... drastically lowering air-conditioning electricity bills.",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_002_4", "question_type": "detail", "difficulty_b": 0.2, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "What role does the farm substrate play during torrential rainfall?",
+            "correct_answer": "It retains water to ease pressure on city drainage systems",
+            "options": [{"key": "A", "text": "It diverts water directly into domestic drinking supplies"}, {"key": "B", "text": "It retains water to ease pressure on city drainage systems"}, {"key": "C", "text": "It causes structural leaks across top floor ceilings"}, {"key": "D", "text": "It washes away soil particles into sewer mains"}],
+            "explanation_en": "Text says: 'acts as a natural retention sponge, absorbing stormwater runoff that would otherwise overwhelm municipal storm drains'.",
+            "explanation_th": "ดินปลูกทำหน้าที่เสมือนฟองน้ำช่วยซับน้ำฝน ไม่ให้ไหลล้นลงท่อระบายน้ำจนเกิดน้ำท่วมขังตามถนน",
+            "evidence_line": "acts as a natural retention sponge, absorbing stormwater runoff",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_002_5", "question_type": "inference", "difficulty_b": 0.35, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "What is identified as the main barrier preventing faster adoption of rooftop farms?",
+            "correct_answer": "High upfront costs for building reinforcement and plumbing",
+            "options": [{"key": "A", "text": "A severe shortage of agricultural plant seeds"}, {"key": "B", "text": "Strict health laws banning vegetable sales in cities"}, {"key": "C", "text": "High upfront costs for building reinforcement and plumbing"}, {"key": "D", "text": "Consumer resistance to eating hydroponic vegetables"}],
+            "explanation_en": "Text states: 'While initial capital investment for structural reinforcement and plumbing remains a hurdle...'",
+            "explanation_th": "ระบุว่าเงินลงทุนเริ่มต้นด้านการเสริมโครงสร้างอาคารและระบบประปายังเป็นอุปสรรคสำคัญ",
+            "evidence_line": "While initial capital investment for structural reinforcement and plumbing remains a hurdle",
+            "weakness_tag": "reading_inference_b1"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_b1_003",
+    "cefr_level": "B1",
+    "title_en": "The Evolution of Mechanical Clocks",
+    "title_th": "วิวัฒนาการของนาฬิกากลไกในประวัติศาสตร์",
+    "topic": "history_technology",
+    "word_count": 260,
+    "passage_en": (
+        "Before the late thirteenth century, human societies measured the passage of time using natural phenomena. "
+        "Sundials tracked the shadow cast by the sun, while water clocks and burning incense sticks offered approximate intervals during overcast days and cloudy nights. "
+        "However, these ancient instruments suffered from serious inconsistencies: sundials were utterly useless in darkness, and water clocks often froze in harsh European winters or clogged with sediment. "
+        "The technological breakthrough arrived around 1280 in medieval European monasteries with the invention of the verge and foliot escapement. "
+        "Monks needed to observe strict prayer schedules throughout the night, which motivated them to design a machine governed by a falling weight whose energy was regulated in rhythmic, ticking ticks. "
+        "These earliest mechanical clocks had no dials or hands; they simply rang a heavy bronze bell to summon the brotherhood. "
+        "Over subsequent centuries, clockmakers refined these bulky church tower mechanisms into coiled-spring portable pocket watches and accurate maritime chronometers. "
+        "By allowing navigator captains to determine precise longitude at sea, mechanical horology did not merely organize daily monastic rituals—it fundamentally redefined global maritime navigation and modern commerce."
+    ),
+    "questions": [
+        {
+            "id": "rq_b1_003_1", "question_type": "detail", "difficulty_b": -0.3, "discrimination_a": 1.35, "guessing_c": 0.25,
+            "stem_en": "What was a major limitation of water clocks during winter in Europe?",
+            "correct_answer": "Water frequently froze or became clogged with sediment",
+            "options": [{"key": "A", "text": "They were too loud for quiet libraries"}, {"key": "B", "text": "Water frequently froze or became clogged with sediment"}, {"key": "C", "text": "They required costly imported glass components"}, {"key": "D", "text": "They were prohibited by religious authorities"}],
+            "explanation_en": "Text states: 'water clocks often froze in harsh European winters or clogged with sediment.'",
+            "explanation_th": "ระบุว่านาฬิกาน้ำมักกลายเป็นน้ำแข็งในฤดูหนาวอันรุนแรงของยุโรป หรือเกิดการอุดตันจากตะกอน",
+            "evidence_line": "water clocks often froze in harsh European winters or clogged with sediment.",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_003_2", "question_type": "detail", "difficulty_b": -0.1, "discrimination_a": 1.4, "guessing_c": 0.25,
+            "stem_en": "Why were medieval monks motivated to invent mechanical timekeepers?",
+            "correct_answer": "To follow precise prayer schedules throughout the night",
+            "options": [{"key": "A", "text": "To sell timepieces to wealthy trading merchants"}, {"key": "B", "text": "To calculate astrological horoscopes for kings"}, {"key": "C", "text": "To follow precise prayer schedules throughout the night"}, {"key": "D", "text": "To measure the harvest cycles of abbey farmlands"}],
+            "explanation_en": "Text says: 'Monks needed to observe strict prayer schedules throughout the night, which motivated them...'",
+            "explanation_th": "พระในอารามจำเป็นต้องสวดมนต์ตามกำหนดเวลาที่เคร่งครัดตลอดทั้งคืน",
+            "evidence_line": "Monks needed to observe strict prayer schedules throughout the night",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_003_3", "question_type": "detail", "difficulty_b": 0.05, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "How did the earliest mechanical clocks convey time to people?",
+            "correct_answer": "By striking an audible bronze bell",
+            "options": [{"key": "A", "text": "With rotating hour and minute hands"}, {"key": "B", "text": "By striking an audible bronze bell"}, {"key": "C", "text": "With painted dials indicating cardinal directions"}, {"key": "D", "text": "Through digital shadow projections"}],
+            "explanation_en": "Text states: 'These earliest mechanical clocks had no dials or hands; they simply rang a heavy bronze bell...'",
+            "explanation_th": "นาฬิกายุคแรกไม่มีหน้าปัดหรือเข็มชี้บอกเวลา แต่จะตีระฆังสำริดส่งเสียงเตือน",
+            "evidence_line": "had no dials or hands; they simply rang a heavy bronze bell",
+            "weakness_tag": "reading_detail_retrieval_b1"
+        },
+        {
+            "id": "rq_b1_003_4", "question_type": "inference", "difficulty_b": 0.25, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "How did portable clocks and chronometers transform world history?",
+            "correct_answer": "They enabled sailors to accurately establish longitude at sea",
+            "options": [{"key": "A", "text": "They caused the collapse of overland trading routes"}, {"key": "B", "text": "They enabled sailors to accurately establish longitude at sea"}, {"key": "C", "text": "They reduced international trade to local exchanges"}, {"key": "D", "text": "They made astronomical charts completely obsolete"}],
+            "explanation_en": "The final sentence explains: 'By allowing navigator captains to determine precise longitude at sea... redefined global maritime navigation'.",
+            "explanation_th": "นาฬิกาโครโนมิเตอร์ช่วยให้กัปตันเดินเรือคำนวณลองจิจูดในทะเลได้อย่างแม่นยำ ปฏิวัติการเดินเรือข้ามทวีป",
+            "evidence_line": "allowing navigator captains to determine precise longitude at sea",
+            "weakness_tag": "reading_inference_b1"
+        },
+        {
+            "id": "rq_b1_003_5", "question_type": "vocabulary_in_context", "difficulty_b": 0.4, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "What is the meaning of 'horology' in the concluding sentence?",
+            "correct_answer": "The science and art of measuring time",
+            "options": [{"key": "A", "text": "The study of deep ocean currents"}, {"key": "B", "text": "The architecture of medieval monasteries"}, {"key": "C", "text": "The science and art of measuring time"}, {"key": "D", "text": "The metallurgy of casting bronze bells"}],
+            "explanation_en": "'Horology' is the scientific study and technology of measuring time and making clocks.",
+            "explanation_th": "'horology' หมายถึง วิทยาศาสตร์และศิลปะในการประดิษฐ์เครื่องมือวัดเวลา (นาฬิกา)",
+            "evidence_line": "mechanical horology did not merely organize daily monastic rituals",
+            "weakness_tag": "reading_vocabulary_context_b1"
+        }
+    ]
+})
+
+# =========================================================================
+# B2 PASSAGES (3 passages, 15 questions)
+# =========================================================================
+add_p({
+    "id": "rp_b2_001",
+    "cefr_level": "B2",
+    "title_en": "Artificial Intelligence in Modern Diagnostic Medicine",
+    "title_th": "ปัญญาประดิษฐ์ในการตรวจวินิจฉัยทางการแพทย์สมัยใหม่",
+    "topic": "technology_healthcare",
+    "word_count": 340,
+    "passage_en": (
+        "In oncology and diagnostic radiology, deep-learning neural networks are rapidly transitioning from experimental research curiosities into indispensable clinical instruments. "
+        "Trained on vast annotated repositories containing millions of high-resolution computed tomography (CT) scans and magnetic resonance imaging (MRI) slices, algorithmic diagnostic models can identify micro-calcifications and subtle tissue lesions with a level of statistical precision that matches or occasionally surpasses seasoned human radiologists. "
+        "In early-stage breast and pulmonary cancer screenings, where diagnostic ambiguity frequently causes high rates of false positives or overlooked micro-tumors, these automated systems serve as tireless, unbiased secondary readers. "
+        "By rapidly filtering through normal baseline scans and prioritizing suspicious scans for immediate senior review, algorithmic workflows have slashed diagnostic turnaround times by up to fifty percent across overburdened public hospital networks. "
+        "However, this technological paradigm shift is accompanied by profound ethical and epistemic dilemmas. "
+        "Foremost among these is the notorious 'black box' problem: deep neural networks arrive at probabilistic classifications through millions of non-linear parameter weights, making it exceedingly difficult for clinicians to interpret the explicit causal rationale underlying a specific algorithmic output. "
+        "Furthermore, algorithmic models trained predominantly on demographic datasets from Western academic medical centers exhibit measurable accuracy degradation when deployed across racially diverse or economically disadvantaged populations with different baseline epidemiological profiles. "
+        "Consequently, medical regulatory bodies such as the FDA and the European Medicines Agency emphasize that artificial intelligence must remain strictly assistive—an augmented intelligence framework where ultimate diagnostic culpability and therapeutic decisions remain firmly anchored in human clinical judgment."
+    ),
+    "questions": [
+        {
+            "id": "rq_b2_001_1", "question_type": "main_idea", "difficulty_b": 0.6, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "Which statement best summarizes the author's argument regarding AI in radiology?",
+            "correct_answer": "AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues",
+            "options": [
+                {"key": "A", "text": "AI has entirely superseded human radiologists across all diagnostic specialties"},
+                {"key": "B", "text": "AI delivers major diagnostic efficiencies but requires human oversight due to explainability and bias issues"},
+                {"key": "C", "text": "The black box problem renders deep learning completely unsafe for healthcare deployment"},
+                {"key": "D", "text": "Medical regulatory agencies are banning automated screening software in oncology"}
+            ],
+            "explanation_en": "The passage balances the immense triage speed and precision of AI with the ethical hurdles of black-box reasoning and dataset bias.",
+            "explanation_th": "ผู้เขียนชี้ให้เห็นประโยชน์มหาศาลด้านความแม่นยำและความเร็ว แต่ย้ำว่าต้องมีแพทย์ควบคุมเนื่องจากปัญหาความโปร่งใสและอคติทางข้อมูล",
+            "evidence_line": "must remain strictly assistive—an augmented intelligence framework where ultimate diagnostic culpability... remain firmly anchored in human clinical judgment.",
+            "weakness_tag": "reading_main_idea_b2"
+        },
+        {
+            "id": "rq_b2_001_2", "question_type": "detail", "difficulty_b": 0.75, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "How do algorithmic workflows primarily alleviate workload in overburdened hospital networks?",
+            "correct_answer": "By filtering out normal scans and prioritizing suspicious cases for urgent specialist review",
+            "options": [
+                {"key": "A", "text": "By performing surgical operations autonomously without human assistance"},
+                {"key": "B", "text": "By filtering out normal scans and prioritizing suspicious cases for urgent specialist review"},
+                {"key": "C", "text": "By dispensing medication prescriptions directly to outpatients"},
+                {"key": "D", "text": "By replacing radiologic equipment with low-cost digital cameras"}
+            ],
+            "explanation_en": "Text says: 'By rapidly filtering through normal baseline scans and prioritizing suspicious scans for immediate senior review...'",
+            "explanation_th": "ระบบช่วยคัดกรองภาพสแกนปกติออกอย่างรวดเร็ว และส่งต่อเคสที่มีรอยโรคต้องสงสัยให้แพทย์ผู้เชี่ยวชาญวินิจฉัยทันที",
+            "evidence_line": "filtering through normal baseline scans and prioritizing suspicious scans for immediate senior review",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        },
+        {
+            "id": "rq_b2_001_3", "question_type": "vocabulary_in_context", "difficulty_b": 0.9, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "In paragraph 2, what does the 'black box' problem specifically refer to?",
+            "correct_answer": "The inability of clinicians to trace the exact causal logic of algorithmic predictions",
+            "options": [
+                {"key": "A", "text": "The physical vulnerability of computer server enclosures to fire"},
+                {"key": "B", "text": "The inability of clinicians to trace the exact causal logic of algorithmic predictions"},
+                {"key": "C", "text": "The high cost of purchasing proprietary software licenses"},
+                {"key": "D", "text": "The complete absence of patient confidentiality protocols"}
+            ],
+            "explanation_en": "The text explains: 'making it exceedingly difficult for clinicians to interpret the explicit causal rationale underlying a specific algorithmic output.'",
+            "explanation_th": "ปัญหา 'black box' คือความยากลำบากที่แพทย์ไม่สามารถทราบหรือตรวจสอบตรรกะเชิงเหตุผลที่ซ่อนอยู่ในการตัดสินใจของโมเดลได้",
+            "evidence_line": "exceedingly difficult for clinicians to interpret the explicit causal rationale",
+            "weakness_tag": "reading_vocabulary_context_b2"
+        },
+        {
+            "id": "rq_b2_001_4", "question_type": "inference", "difficulty_b": 1.1, "discrimination_a": 1.6, "guessing_c": 0.25,
+            "stem_en": "Why do models trained on Western demographic data perform poorly in other parts of the world?",
+            "correct_answer": "Different populations have distinct baseline genetics and disease prevalence profiles",
+            "options": [
+                {"key": "A", "text": "Hospitals outside the West lack high-speed internet infrastructure"},
+                {"key": "B", "text": "Medical terminology cannot be translated accurately into non-English languages"},
+                {"key": "C", "text": "Different populations have distinct baseline genetics and disease prevalence profiles"},
+                {"key": "D", "text": "Foreign radiologists refuse to accept software manufactured in the West"}
+            ],
+            "explanation_en": "Text notes they exhibit accuracy degradation when deployed across populations 'with different baseline epidemiological profiles'.",
+            "explanation_th": "ประชากรในแต่ละภูมิภาคมีพันธุกรรม ลักษณะทางระบาดวิทยา และรูปแบบการเกิดโรคที่แตกต่างจากกลุ่มข้อมูลที่โมเดลใช้เรียนรู้",
+            "evidence_line": "populations with different baseline epidemiological profiles",
+            "weakness_tag": "reading_inference_b2"
+        },
+        {
+            "id": "rq_b2_001_5", "question_type": "detail", "difficulty_b": 1.25, "discrimination_a": 1.65, "guessing_c": 0.25,
+            "stem_en": "What position do regulatory agencies take regarding medical legal accountability?",
+            "correct_answer": "Final legal and therapeutic responsibility must remain with human clinicians",
+            "options": [
+                {"key": "A", "text": "Software developers are held fully liable for diagnostic errors"},
+                {"key": "B", "text": "Hospitals are immune from malpractice lawsuits when using approved AI"},
+                {"key": "C", "text": "Final legal and therapeutic responsibility must remain with human clinicians"},
+                {"key": "D", "text": "Patients must sign waivers releasing doctors from all diagnostic duties"}
+            ],
+            "explanation_en": "Text concludes: 'ultimate diagnostic culpability and therapeutic decisions remain firmly anchored in human clinical judgment.'",
+            "explanation_th": "หน่วยงานกำกับดูแลระบุว่า ความรับผิดชอบทางกฎหมายและการรักษาขั้นสุดท้ายต้องผูกอยู่กับการตัดสินใจของแพทย์ที่เป็นมนุษย์เท่านั้น",
+            "evidence_line": "ultimate diagnostic culpability and therapeutic decisions remain firmly anchored in human clinical judgment.",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_b2_002",
+    "cefr_level": "B2",
+    "title_en": "The Geopolitics of the Nordic Renewable Transition",
+    "title_th": "ภูมิรัฐศาสตร์ของการเปลี่ยนผ่านสู่พลังงานหมุนเวียนในกลุ่มนอร์ดิก",
+    "topic": "energy_geopolitics",
+    "word_count": 350,
+    "passage_en": (
+        "Over the past two decades, the Nordic nations—Norway, Sweden, Denmark, and Finland—have emerged as global pioneers in decarbonizing their national electricity grids. "
+        "Endowed with mountainous topography and abundant glacial meltwater, Norway generates over ninety-five percent of its domestic electricity from cascading hydroelectric installations. "
+        "Denmark, historically devoid of substantial mineral wealth or mountainous terrain, capitalized on its blustery maritime climate to engineer the world's most sophisticated offshore wind energy ecosystem. "
+        "Meanwhile, Sweden pioneered industrial-scale bioenergy systems derived from forestry byproducts and integrated expansive district heating grids, while Finland recently commissioned Europe's largest nuclear reactor to bolster baseline supply stability. "
+        "Crucial to this collective success is Nord Pool, a unified multinational electricity exchange established in the 1990s. "
+        "Through interconnected high-voltage direct current (HVDC) subsea cables, the Nordic grid dynamically balances intermittent weather-dependent resources: on windless days in the North Sea, Danish cities import Norwegian hydro power; conversely, when storm fronts produce massive Danish wind surpluses, excess power is exported north to pump water back into Norwegian reservoir dams. "
+        "Nevertheless, the transition is not without ecological friction. "
+        "The expansion of massive onshore wind concessions across northern Scandinavia has provoked fierce resistance from indigenous Sámi communities, whose centuries-old reindeer herding migration routes are fragmented by turbine towers, access roads, and roaring power lines. "
+        "Balancing international climate commitments with indigenous land sovereignty represents a profound test of social cohesion in nations celebrated for progressive governance."
+    ),
+    "questions": [
+        {
+            "id": "rq_b2_002_1", "question_type": "main_idea", "difficulty_b": 0.65, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "What is the central focus of the passage?",
+            "correct_answer": "How Nordic countries cooperate on green power while facing environmental and cultural tensions",
+            "options": [
+                {"key": "A", "text": "The complete failure of wind energy projects across Scandinavian coastlines"},
+                {"key": "B", "text": "How Nordic countries cooperate on green power while facing environmental and cultural tensions"},
+                {"key": "C", "text": "The economic rivalry between Norwegian oil exporters and Danish wind turbine makers"},
+                {"key": "D", "text": "The technical history of high-voltage subsea cables in the Baltic Sea"}
+            ],
+            "explanation_en": "The passage discusses the complementary energy strategies, the Nord Pool grid, and indigenous Sámi land conflicts.",
+            "explanation_th": "บทความอธิบายความร่วมมือของกลุ่มประเทศนอร์ดิกผ่านระบบโครงข่ายเชื่อมโยง ควบคู่ไปกับความขัดแย้งกับสิทธิชนพื้นเมืองซามิ",
+            "evidence_line": "emerged as global pioneers in decarbonizing... Balancing international climate commitments with indigenous land sovereignty",
+            "weakness_tag": "reading_main_idea_b2"
+        },
+        {
+            "id": "rq_b2_002_2", "question_type": "detail", "difficulty_b": 0.8, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "How does Norway generate the overwhelming majority of its domestic electricity?",
+            "correct_answer": "From cascading hydroelectric river installations",
+            "options": [
+                {"key": "A", "text": "From imported coal and natural gas"},
+                {"key": "B", "text": "From cascading hydroelectric river installations"},
+                {"key": "C", "text": "From deep geothermal steam extraction"},
+                {"key": "D", "text": "From commercial solar photovoltaic farms"}
+            ],
+            "explanation_en": "Text says: 'Norway generates over ninety-five percent of its domestic electricity from cascading hydroelectric installations.'",
+            "explanation_th": "ระบุว่านอร์เวย์ผลิตกระแสไฟฟ้าภายในประเทศกว่าร้อยละ 95 จากโรงไฟฟ้าพลังน้ำ",
+            "evidence_line": "Norway generates over ninety-five percent of its domestic electricity from cascading hydroelectric installations.",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        },
+        {
+            "id": "rq_b2_002_3", "question_type": "detail", "difficulty_b": 1.0, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "How does the Nord Pool exchange balance intermittent power generation?",
+            "correct_answer": "Excess Danish wind energy pumps water back into Norwegian hydro reservoirs",
+            "options": [
+                {"key": "A", "text": "By burning backup diesel generators during cloudy periods"},
+                {"key": "B", "text": "Excess Danish wind energy pumps water back into Norwegian hydro reservoirs"},
+                {"key": "C", "text": "By mandating scheduled power cuts across major cities"},
+                {"key": "D", "text": "By purchasing nuclear power credits from southern European states"}
+            ],
+            "explanation_en": "Text states: 'when storm fronts produce massive Danish wind surpluses, excess power is exported north to pump water back into Norwegian reservoir dams.'",
+            "explanation_th": "เมื่อเดนมาร์กผลิตไฟจากกังหันลมได้เกินความต้องการ พลังงานส่วนเกินจะถูกส่งไปสูบน้ำกลับเข้าเขื่อนกักเก็บของนอร์เวย์",
+            "evidence_line": "excess power is exported north to pump water back into Norwegian reservoir dams.",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        },
+        {
+            "id": "rq_b2_002_4", "question_type": "detail", "difficulty_b": 1.15, "discrimination_a": 1.6, "guessing_c": 0.25,
+            "stem_en": "Why are indigenous Sámi communities opposing wind farm developments in the north?",
+            "correct_answer": "Turbines and roads disrupt centuries-old reindeer herding corridors",
+            "options": [
+                {"key": "A", "text": "They want exclusive commercial ownership of the energy companies"},
+                {"key": "B", "text": "Turbines and roads disrupt centuries-old reindeer herding corridors"},
+                {"key": "C", "text": "Wind power installations cause severe regional air pollution"},
+                {"key": "D", "text": "The government refused to connect indigenous villages to the electric grid"}
+            ],
+            "explanation_en": "Text says: 'whose centuries-old reindeer herding migration routes are fragmented by turbine towers, access roads, and roaring power lines.'",
+            "explanation_th": "เสากังหันลมและถนนตัดผ่านแบ่งแยกเส้นทางอพยพเลี้ยงกวางเรนเดียร์ของชาวซามิที่มีมาหลายร้อยปี",
+            "evidence_line": "centuries-old reindeer herding migration routes are fragmented",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        },
+        {
+            "id": "rq_b2_002_5", "question_type": "inference", "difficulty_b": 1.35, "discrimination_a": 1.65, "guessing_c": 0.25,
+            "stem_en": "What broader lesson does the Nordic experience offer international energy planners?",
+            "correct_answer": "Regional grid integration solves intermittency, but local social costs must be navigated",
+            "options": [
+                {"key": "A", "text": "Individual nations must rely exclusively on a single green technology"},
+                {"key": "B", "text": "Hydroelectric power is universally viable in every geographical terrain"},
+                {"key": "C", "text": "Regional grid integration solves intermittency, but local social costs must be navigated"},
+                {"key": "D", "text": "Offshore wind installations are completely free of community opposition"}
+            ],
+            "explanation_en": "The article illustrates the power of interconnected grids while warning against overlooking indigenous land rights.",
+            "explanation_th": "การเชื่อมโยงโครงข่ายช่วยแก้ปัญหาความไม่สม่ำเสมอของพลังงานหมุนเวียน แต่ต้องให้ความสำคัญกับผลกระทบทางสังคมของชุมชนท้องถิ่น",
+            "evidence_line": "Balancing international climate commitments with indigenous land sovereignty represents a profound test",
+            "weakness_tag": "reading_inference_b2"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_b2_003",
+    "cefr_level": "B2",
+    "title_en": "The Cognitive Architecture of Habit Formation",
+    "title_th": "โครงสร้างทางปัญญาของการสร้างอุปนิสัย",
+    "topic": "psychology_neuroscience",
+    "word_count": 335,
+    "passage_en": (
+        "Human behavioral neuroscience reveals that approximately forty percent of our daily actions are not guided by deliberate conscious decisions, but are automatic routines orchestrated by the basal ganglia. "
+        "This primitive subcortical structure conserves valuable mental bandwidth by encoding repetitive sequences into what cognitive psychologists term 'habit loops.' "
+        "A classical habit loop consists of three interdependent components: an environmental cue, a behavioral routine, and a neurological reward. "
+        "The cue triggers an unconscious expectation of pleasure or relief; the routine executes the automated motor or cognitive program; and the reward reinforces the neural pathway by flooding the nucleus accumbens with dopamine. "
+        "Over time, neuroimaging demonstrates that dopamine surges shift from the receipt of the reward to the perception of the preceding cue. "
+        "This anticipatory spike generates intense craving, compelling the organism to perform the routine almost compulsively. "
+        "Attempting to dismantle an undesirable habit through sheer willpower is notoriously ineffective because the prefrontal cortex, which governs self-control and abstract reasoning, rapidly suffers from metabolic exhaustion under stress or fatigue. "
+        "Instead, behavioral modification therapists advocate the 'Golden Rule of Habit Change': rather than attempting to eradicate the craving, one must keep the established cue and the ultimate reward identical while systematically substituting the intermediate routine. "
+        "By consciously inserting an alternative behavior that delivers an equivalent neurochemical payoff, the underlying neural architecture can be successfully rewired without relying on unsustainable conscious vigilance."
+    ),
+    "questions": [
+        {
+            "id": "rq_b2_003_1", "question_type": "main_idea", "difficulty_b": 0.7, "discrimination_a": 1.45, "guessing_c": 0.25,
+            "stem_en": "What is the primary message conveyed regarding the transformation of habits?",
+            "correct_answer": "Changing habits requires replacing the routine while retaining the cue and reward",
+            "options": [
+                {"key": "A", "text": "Sheer willpower is the most reliable strategy for eliminating bad habits"},
+                {"key": "B", "text": "Changing habits requires replacing the routine while retaining the cue and reward"},
+                {"key": "C", "text": "Habits can only be formed before human beings reach cognitive adulthood"},
+                {"key": "D", "text": "The basal ganglia must be suppressed using prescription pharmaceuticals"}
+            ],
+            "explanation_en": "The passage argues that willpower fails, and success comes from replacing the routine between the cue and reward.",
+            "explanation_th": "บทความอธิบายว่าการใช้พลังใจหักดิบมักล้มเหลว วิธีที่ได้ผลคือคงสิ่งเร้าและรางวัลเดิมไว้ แต่เปลี่ยนพฤติกรรมคั่นกลาง",
+            "evidence_line": "keep the established cue and the ultimate reward identical while systematically substituting the intermediate routine.",
+            "weakness_tag": "reading_main_idea_b2"
+        },
+        {
+            "id": "rq_b2_003_2", "question_type": "detail", "difficulty_b": 0.85, "discrimination_a": 1.5, "guessing_c": 0.25,
+            "stem_en": "What neurological shift occurs as a habit becomes deeply ingrained?",
+            "correct_answer": "Dopamine releases when encountering the cue rather than receiving the reward",
+            "options": [
+                {"key": "A", "text": "The prefrontal cortex expands significantly in physical volume"},
+                {"key": "B", "text": "The basal ganglia stops communicating with the spinal cord"},
+                {"key": "C", "text": "Dopamine releases when encountering the cue rather than receiving the reward"},
+                {"key": "D", "text": "Electrical activity across the cerebral hemispheres ceases completely"}
+            ],
+            "explanation_en": "Text says: 'dopamine surges shift from the receipt of the reward to the perception of the preceding cue.'",
+            "explanation_th": "เมื่ออุปนิสัยหยั่งรากลึก สารโดปามีนจะหลั่งออกมาทันทีที่เห็น 'สิ่งเร้า' ก่อนที่จะได้รับรางวัลจริงด้วยซ้ำ",
+            "evidence_line": "dopamine surges shift from the receipt of the reward to the perception of the preceding cue.",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        },
+        {
+            "id": "rq_b2_003_3", "question_type": "inference", "difficulty_b": 1.05, "discrimination_a": 1.55, "guessing_c": 0.25,
+            "stem_en": "Why does reliance on conscious willpower frequently fail in resisting bad habits?",
+            "correct_answer": "The prefrontal cortex depletes its energy quickly when tired or stressed",
+            "options": [
+                {"key": "A", "text": "Conscious thoughts have no physical connection to muscle movement"},
+                {"key": "B", "text": "The prefrontal cortex depletes its energy quickly when tired or stressed"},
+                {"key": "C", "text": "Willpower causes severe long-term cardiovascular damage"},
+                {"key": "D", "text": "Habits operate outside the human central nervous system"}
+            ],
+            "explanation_en": "Text states: 'the prefrontal cortex, which governs self-control... rapidly suffers from metabolic exhaustion under stress or fatigue.'",
+            "explanation_th": "สมองส่วนหน้า (prefrontal cortex) ที่ควบคุมความยับยั้งชั่งใจจะเกิดภาวะล้าหมดพลังงานอย่างรวดเร็วเมื่อมีความเครียด",
+            "evidence_line": "prefrontal cortex... rapidly suffers from metabolic exhaustion under stress or fatigue.",
+            "weakness_tag": "reading_inference_b2"
+        },
+        {
+            "id": "rq_b2_003_4", "question_type": "vocabulary_in_context", "difficulty_b": 1.2, "discrimination_a": 1.6, "guessing_c": 0.25,
+            "stem_en": "In the final paragraph, what does 'dismantle' most closely mean?",
+            "correct_answer": "To break down or disassemble an established structure",
+            "options": [
+                {"key": "A", "text": "To celebrate or openly admire"},
+                {"key": "B", "text": "To break down or disassemble an established structure"},
+                {"key": "C", "text": "To conceal from public observation"},
+                {"key": "D", "text": "To speed up the progress of an action"}
+            ],
+            "explanation_en": "'Dismantle' means to take something to pieces or systematically deconstruct an existing structure.",
+            "explanation_th": "'dismantle' หมายถึง การรื้อ ถอดแยก หรือสลายโครงสร้างที่มีอยู่ออกเป็นส่วนๆ",
+            "evidence_line": "Attempting to dismantle an undesirable habit through sheer willpower",
+            "weakness_tag": "reading_vocabulary_context_b2"
+        },
+        {
+            "id": "rq_b2_003_5", "question_type": "detail", "difficulty_b": 1.3, "discrimination_a": 1.65, "guessing_c": 0.25,
+            "stem_en": "What are the three core elements of the 'habit loop' identified in the text?",
+            "correct_answer": "Cue, routine, and reward",
+            "options": [
+                {"key": "A", "text": "Desire, struggle, and victory"},
+                {"key": "B", "text": "Cue, routine, and reward"},
+                {"key": "C", "text": "Stimulus, punishment, and memory"},
+                {"key": "D", "text": "Intention, practice, and mastery"}
+            ],
+            "explanation_en": "Text explicitly lists: 'an environmental cue, a behavioral routine, and a neurological reward.'",
+            "explanation_th": "ระบุชัดเจนว่าประกอบด้วย 3 ส่วนคือ สิ่งเร้า (cue), กิจวัตร (routine), และรางวัล (reward)",
+            "evidence_line": "an environmental cue, a behavioral routine, and a neurological reward.",
+            "weakness_tag": "reading_detail_retrieval_b2"
+        }
+    ]
+})
+
+# =========================================================================
+# C1 PASSAGES (2 passages, 10 questions)
+# =========================================================================
+add_p({
+    "id": "rp_c1_001",
+    "cefr_level": "C1",
+    "title_en": "Metaphorical Cognition and Conceptual Blending",
+    "title_th": "การรับรู้เชิงอุปมาและการผสมผสานมโนทัศน์ในภาษาศาสตร์",
+    "topic": "linguistics_cognitive_science",
+    "word_count": 440,
+    "passage_en": (
+        "In the classical Aristotelian tradition, metaphor was long relegated to the periphery of rhetoric—a decorative poetic flourish that draped ordinary semantic prose in ornamental embellishment. "
+        "This historicist marginalization was decisively dismantled by George Lakoff and Mark Johnson in their seminal 1980 treatise, Metaphors We Live By, which demonstrated that human conceptual systems are fundamentally grounded in embodied, metaphorical mapping. "
+        "Far from being an idiosyncratic linguistic device, metaphor constitutes the primary cognitive mechanism whereby abstract, intangible domains are structured and comprehended through sensorimotor experiences. "
+        "Consider the structural conceptual metaphor 'ARGUMENT IS WAR.' "
+        "Our discourse is not merely decorated by martial vocabulary; rather, the adversarial conceptual framework actively governs our behavioral conduct during debate: we attack vulnerabilities, defend defensible claims, shoot down counter-arguments, and claim victory. "
+        "Building upon this foundational theory, Gilles Fauconnier and Mark Turner formulated the Conceptual Blending Theory, positing that human creativity arises from multi-space mental integration networks. "
+        "Rather than a unidirectional cross-domain projection from source to target, mental blending constructs an autonomous third space—a 'blend'—which inherits selective elements from distinct input spaces while synthesizing an emergent structure not present in either parent domain. "
+        "In technological and scientific discourse, conceptual blending catalyzes conceptual breakthroughs: the modern graphical user interface (GUI) blended the physical domestic office desk (folders, trash cans, desktop) with the computational matrix of stored data files, creating a revolutionary cognitive workspace that felt intuitive to novices. "
+        "However, cognitive metaphors simultaneously illuminate and obscure. "
+        "By systematically highlighting specific experiential dimensions while masking others, dominant conceptual metaphors enforce cognitive paradigms that shape public policy without critical scrutiny. "
+        "When public health discourse frames epidemic management strictly as 'A BATTLE AGAINST AN INVISIBLE ENEMY,' it valorizes aggressive interventions, military mobilization, and unquestioning civic obedience, while simultaneously marginalizing palliative care, systemic social determinants of health, and long-term socio-economic rehabilitation. "
+        "Unmasking these implicit conceptual mappings is therefore not merely a technical philological exercise, but a vital democratic safeguard against manipulative ideological persuasion."
+    ),
+    "questions": [
+        {
+            "id": "rq_c1_001_1", "question_type": "main_idea", "difficulty_b": 1.6, "discrimination_a": 1.65, "guessing_c": 0.25,
+            "stem_en": "What is the primary thesis advanced by the author regarding metaphor?",
+            "correct_answer": "Metaphor is a fundamental cognitive framework that structures thought and ideological perception",
+            "options": [
+                {"key": "A", "text": "Metaphor remains primarily an ornamental embellishment for imaginative poets"},
+                {"key": "B", "text": "Metaphor is a fundamental cognitive framework that structures thought and ideological perception"},
+                {"key": "C", "text": "Conceptual blending theory has invalidated all cognitive linguistics findings"},
+                {"key": "D", "text": "Military metaphors are scientifically proven to be the most effective communication tools"}
+            ],
+            "explanation_en": "The passage argues that metaphor is not decorative, but a foundational cognitive mechanism that organizes abstract thought and public discourse.",
+            "explanation_th": "ผู้เขียนยืนยันว่าอุปมาไม่ใช่วาทศิลป์ประดับประดา แต่เป็นกลไกการรู้คิดพื้นฐานที่สร้างกรอบความคิดและชี้นำมุมมองทางอุดมการณ์ของมนุษย์",
+            "evidence_line": "metaphor constitutes the primary cognitive mechanism whereby abstract, intangible domains are structured",
+            "weakness_tag": "reading_main_idea_c1"
+        },
+        {
+            "id": "rq_c1_001_2", "question_type": "detail", "difficulty_b": 1.8, "discrimination_a": 1.7, "guessing_c": 0.25,
+            "stem_en": "How does Conceptual Blending Theory differ from traditional conceptual metaphor theory?",
+            "correct_answer": "It generates an autonomous blended space with unique emergent structures",
+            "options": [
+                {"key": "A", "text": "It rejects all references to human bodily sensorimotor experiences"},
+                {"key": "B", "text": "It limits linguistic mapping exclusively to mathematical formulas"},
+                {"key": "C", "text": "It generates an autonomous blended space with unique emergent structures"},
+                {"key": "D", "text": "It assumes human thought is entirely literal without any abstract domains"}
+            ],
+            "explanation_en": "Text says: 'mental blending constructs an autonomous third space—a \"blend\"—which inherits selective elements... synthesizing an emergent structure'.",
+            "explanation_th": "ทฤษฎีการผสมผสานมโนทัศน์สร้างพื้นที่ทางความคิดที่สาม (blend) ที่สังเคราะห์โครงสร้างใหม่ที่ไม่มีในสองพื้นที่ตั้งต้น",
+            "evidence_line": "mental blending constructs an autonomous third space—a 'blend'—which inherits selective elements... synthesizing an emergent structure",
+            "weakness_tag": "reading_detail_retrieval_c1"
+        },
+        {
+            "id": "rq_c1_001_3", "question_type": "inference", "difficulty_b": 2.0, "discrimination_a": 1.75, "guessing_c": 0.25,
+            "stem_en": "Why does the author critique the wartime metaphor 'A BATTLE AGAINST AN INVISIBLE ENEMY' in public health?",
+            "correct_answer": "It privileges coercive militarized responses over holistic, palliative social care",
+            "options": [
+                {"key": "A", "text": "It fails to allocate sufficient funding to vaccine research laboratories"},
+                {"key": "B", "text": "It causes medical doctors to resign from hospital emergency rooms"},
+                {"key": "C", "text": "It privileges coercive militarized responses over holistic, palliative social care"},
+                {"key": "D", "text": "It is grammatically confusing to the general public"}
+            ],
+            "explanation_en": "The passage states that war framing 'valorizes aggressive interventions... while simultaneously marginalizing palliative care, systemic social determinants of health'.",
+            "explanation_th": "การเปรียบเทียบกับสงครามส่งเสริมการใช้อำนาจเด็ดขาดและการบังคับ แต่กลับบดบังการดูแลแบบประคับประคองและปัจจัยทางสังคมด้านสุขภาพ",
+            "evidence_line": "valorizes aggressive interventions, military mobilization... while simultaneously marginalizing palliative care",
+            "weakness_tag": "reading_inference_c1"
+        },
+        {
+            "id": "rq_c1_001_4", "question_type": "vocabulary_in_context", "difficulty_b": 2.15, "discrimination_a": 1.8, "guessing_c": 0.25,
+            "stem_en": "In the first paragraph, what does 'relegated' most precisely signify?",
+            "correct_answer": "Assigned to an inferior or dismissed rank",
+            "options": [
+                {"key": "A", "text": "Elevated to universal acclaim"},
+                {"key": "B", "text": "Assigned to an inferior or dismissed rank"},
+                {"key": "C", "text": "Translated into foreign languages"},
+                {"key": "D", "text": "Subjected to chemical analysis"}
+            ],
+            "explanation_en": "'Relegate' means to consign or dismiss to an inferior rank, status, or condition.",
+            "explanation_th": "'relegate' หมายถึง การผลักไสหรือลดทอนบทบาทให้อยู่ในสถานะที่ต่ำต้อยหรือไร้ความสำคัญ",
+            "evidence_line": "was long relegated to the periphery of rhetoric",
+            "weakness_tag": "reading_vocabulary_context_c1"
+        },
+        {
+            "id": "rq_c1_001_5", "question_type": "inference", "difficulty_b": 2.3, "discrimination_a": 1.85, "guessing_c": 0.25,
+            "stem_en": "According to the concluding paragraph, why is deconstructing metaphors important for democracy?",
+            "correct_answer": "It exposes covert linguistic framing that coerces uncritical public consensus",
+            "options": [
+                {"key": "A", "text": "It ensures that politicians speak only in grammatically verified Latin"},
+                {"key": "B", "text": "It exposes covert linguistic framing that coerces uncritical public consensus"},
+                {"key": "C", "text": "It enables computer programmers to design better operating systems"},
+                {"key": "D", "text": "It reduces the financial costs of conducting election campaigns"}
+            ],
+            "explanation_en": "The conclusion explicitly states that unmasking conceptual mappings is a 'vital democratic safeguard against manipulative ideological persuasion.'",
+            "explanation_th": "การตีแผ่กรอบอุปมาช่วยปกป้องสังคมประชาธิปไตยจากการถูกชักจูงทางอุดมการณ์โดยไม่รู้ตัวผ่านภาษาที่ซ่อนเร้น",
+            "evidence_line": "vital democratic safeguard against manipulative ideological persuasion.",
+            "weakness_tag": "reading_inference_c1"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_c1_002",
+    "cefr_level": "C1",
+    "title_en": "Fragility and Decoupling in Global Value Chains",
+    "title_th": "ความเปราะบางและการแยกส่วนในห่วงโซ่คุณค่าระดับโลก",
+    "topic": "economics_globalization",
+    "word_count": 450,
+    "passage_en": (
+        "For nearly four decades, the doctrine of hyper-globalization operated on an unshakeable orthodoxy of lean hyper-efficiency. "
+        "Propelled by the gospel of 'just-in-time' logistics, multinational conglomerates dismantled vertically integrated manufacturing bastions, off-shoring specialized operational tiers to jurisdictions with the lowest marginal labor costs. "
+        "Global production networks became marvels of hyper-fragmentation: a modern smartphone might contain semiconductors fabricated in Taiwan, lithium refined in Chile, display modules assembled in South Korea, and circuit boards finalized in Shenzhen, crisscrossing oceans multiple times before arriving at retail shelves. "
+        "Yet, this hyper-optimized operational paradigm harbored systemic, unpriced vulnerabilities. "
+        "By ruthlessly eliminating inventory redundancy and working-capital buffers in pursuit of quarterly return on equity, corporate supply chains sacrificed systemic resilience on the altar of short-term efficiency. "
+        "The catastrophic convergence of the COVID-19 pandemic, canal blockages, geopolitical conflict in Eastern Europe, and escalating export controls exposed the brittle fragility of hyper-extended logistics arteries. "
+        "A localized plant shutdown in a single province could paralyze automotive assembly lines thousands of miles away for months. "
+        "Consequently, international business strategy is undergoing a historic realignment from 'just-in-time' to 'just-in-case.' "
+        "Corporate executives and sovereign policymakers now treat supply chain resilience as an imperative of national security and corporate survival rather than an ignorable cost center. "
+        "This doctrinal shift manifests in aggressive near-shoring, friend-shoring, and dual-sourcing architectures. "
+        "Governments across North America and Europe are deploying sweeping industrial subsidies—such as the US CHIPS and Science Act—to repatriate strategically foundational capabilities, particularly advanced semiconductor lithography and battery chemistry. "
+        "However, this emergent paradigm of geo-economic fragmentation carries severe economic trade-offs: duplicating capital-intensive fabrication foundries across multiple regional blocs inevitably depresses economies of scale, exacerbates structural inflationary pressures, and risks fracturing global standards."
+    ),
+    "questions": [
+        {
+            "id": "rq_c1_002_1", "question_type": "main_idea", "difficulty_b": 1.7, "discrimination_a": 1.65, "guessing_c": 0.25,
+            "stem_en": "What is the overarching shift in global manufacturing strategy described in the text?",
+            "correct_answer": "A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification",
+            "options": [
+                {"key": "A", "text": "A complete abandonment of electronic consumer technology manufacturing"},
+                {"key": "B", "text": "A pivot from cost-optimized 'just-in-time' networks toward resilience-driven 'just-in-case' diversification"},
+                {"key": "C", "text": "The total replacement of human factory laborers with humanoid robotics"},
+                {"key": "D", "text": "A return to nineteenth-century domestic agrarian self-sufficiency"}
+            ],
+            "explanation_en": "The passage details the structural migration from hyper-efficient, fragile just-in-time supply chains toward resilient, subsidized just-in-case near-shoring.",
+            "explanation_th": "บทความบรรยายการเปลี่ยนแปลงเชิงโครงสร้างจากการผลิตแบบลดต้นทุนสูงสุด (just-in-time) สู่การกระจายความเสี่ยงและสร้างความมั่นคง (just-in-case)",
+            "evidence_line": "undergoing a historic realignment from 'just-in-time' to 'just-in-case.'",
+            "weakness_tag": "reading_main_idea_c1"
+        },
+        {
+            "id": "rq_c1_002_2", "question_type": "detail", "difficulty_b": 1.85, "discrimination_a": 1.7, "guessing_c": 0.25,
+            "stem_en": "Why did multinational corporations historically eliminate inventory buffers?",
+            "correct_answer": "To maximize short-term return on equity by reducing working capital costs",
+            "options": [
+                {"key": "A", "text": "To comply with international maritime safety treaties"},
+                {"key": "B", "text": "To prevent corporate espionage by overseas competitors"},
+                {"key": "C", "text": "To maximize short-term return on equity by reducing working capital costs"},
+                {"key": "D", "text": "To prevent raw materials from degrading under tropical humidity"}
+            ],
+            "explanation_en": "Text states: 'By ruthlessly eliminating inventory redundancy and working-capital buffers in pursuit of quarterly return on equity...'",
+            "explanation_th": "องค์กรกำจัดสินค้าคงคลังสำรองเพื่อลดต้นทุนเงินทุนหมุนเวียนและสร้างผลตอบแทนต่อผู้ถือหุ้น (ROE) สูงสุดในระยะสั้น",
+            "evidence_line": "eliminating inventory redundancy and working-capital buffers in pursuit of quarterly return on equity",
+            "weakness_tag": "reading_detail_retrieval_c1"
+        },
+        {
+            "id": "rq_c1_002_3", "question_type": "vocabulary_in_context", "difficulty_b": 2.1, "discrimination_a": 1.8, "guessing_c": 0.25,
+            "stem_en": "In the fourth paragraph, what does 'friend-shoring' refer to?",
+            "correct_answer": "Restricting sourcing and manufacturing to nations with aligned geopolitical values",
+            "options": [
+                {"key": "A", "text": "Employing personal acquaintances in senior executive positions"},
+                {"key": "B", "text": "Restricting sourcing and manufacturing to nations with aligned geopolitical values"},
+                {"key": "C", "text": "Establishing voluntary community cooperative societies"},
+                {"key": "D", "text": "Encouraging employees to form cross-border labor unions"}
+            ],
+            "explanation_en": "'Friend-shoring' is the trade practice of relocating supply chains to countries with shared geopolitical values to minimize political disruption.",
+            "explanation_th": "'friend-shoring' คือการย้ายฐานการผลิตไปยังประเทศพันธมิตรที่มีจุดยืนทางภูมิรัฐศาสตร์สอดคล้องกันเพื่อป้องกันความเสี่ยง",
+            "evidence_line": "This doctrinal shift manifests in aggressive near-shoring, friend-shoring, and dual-sourcing",
+            "weakness_tag": "reading_vocabulary_context_c1"
+        },
+        {
+            "id": "rq_c1_002_4", "question_type": "inference", "difficulty_b": 2.25, "discrimination_a": 1.85, "guessing_c": 0.25,
+            "stem_en": "What economic consequence does the author foresee from duplicating semiconductor foundries across regional blocs?",
+            "correct_answer": "Reduced economies of scale and heightened structural inflation",
+            "options": [
+                {"key": "A", "text": "Immediate deflation across all consumer electronics categories"},
+                {"key": "B", "text": "The complete obsolescence of personal mobile computing"},
+                {"key": "C", "text": "Reduced economies of scale and heightened structural inflation"},
+                {"key": "D", "text": "A severe collapse in the profitability of energy utilities"}
+            ],
+            "explanation_en": "The final sentence warns: 'duplicating capital-intensive fabrication foundries... inevitably depresses economies of scale, exacerbates structural inflationary pressures'.",
+            "explanation_th": "การสร้างโรงงานเซมิคอนดักเตอร์ซ้ำซ้อนในหลายภูมิภาคจะทำให้สูญเสียการประหยัดจากขนาด (economies of scale) และกระตุ้นเงินเฟ้อ",
+            "evidence_line": "depresses economies of scale, exacerbates structural inflationary pressures",
+            "weakness_tag": "reading_inference_c1"
+        },
+        {
+            "id": "rq_c1_002_5", "question_type": "inference", "difficulty_b": 2.4, "discrimination_a": 1.9, "guessing_c": 0.25,
+            "stem_en": "Why have Western governments enacted policies like the CHIPS Act?",
+            "correct_answer": "They view advanced microchips as foundational to national security and sovereignty",
+            "options": [
+                {"key": "A", "text": "They want to nationalize all technology corporations under military control"},
+                {"key": "B", "text": "They view advanced microchips as foundational to national security and sovereignty"},
+                {"key": "C", "text": "They plan to eliminate intellectual property protections on semiconductors"},
+                {"key": "D", "text": "They intend to ban imports of all Asian-manufactured components"}
+            ],
+            "explanation_en": "Text connects state subsidies to treating 'supply chain resilience as an imperative of national security... repatriate strategically foundational capabilities'.",
+            "explanation_th": "รัฐบาลมองว่าชิปขั้นสูงเป็นรากฐานความมั่นคงของชาติ จึงต้องดึงฐานการผลิตที่มีความสำคัญเชิงยุทธศาสตร์กลับมาไว้ในประเทศ",
+            "evidence_line": "imperative of national security and corporate survival... repatriate strategically foundational capabilities",
+            "weakness_tag": "reading_inference_c1"
+        }
+    ]
+})
+
+# =========================================================================
+# C2 PASSAGES (2 passages, 10 questions)
+# =========================================================================
+add_p({
+    "id": "rp_c2_001",
+    "cefr_level": "C2",
+    "title_en": "Incommensurability and Epistemic Ruptures in Scientific Revolutions",
+    "title_th": "ความไม่อาจเทียบเคียงได้และการแตกหักทางญาณวิทยาในการปฏิวัติวิทยาศาสตร์",
+    "topic": "philosophy_of_science",
+    "word_count": 490,
+    "passage_en": (
+        "In his iconoclastic 1962 monograph, The Structure of Scientific Revolutions, Thomas Kuhn exploded the teleological myth of science as a cumulative, linear progression toward an objective ontological truth. "
+        "Kuhn posited that mature scientific inquiry operates within historically contingent 'paradigms'—coherent networks of theoretical axioms, instrumental techniques, and metaphysical commitments that define what constitutes a legitimate problem and a valid empirical solution. "
+        "During phases of 'normal science,' practitioners engage in puzzle-solving within the unproblematic horizon of the reigning paradigm, actively assimilating or marginalizing minor recalcitrant anomalies. "
+        "However, when anomalous empirical observations accumulate past a critical threshold, the paradigm enters an acute crisis state, culminating in an epistemic rupture or 'paradigm shift.' "
+        "The linchpin of Kuhn's philosophical thesis—and the catalyst for decades of ferocious philosophical controversy—is the doctrine of incommensurability. "
+        "Kuhn argued that competing paradigms across a revolutionary divide are incommensurable on cognitive, semantic, and observational grounds: proponents of rival theories do not merely disagree on interpretations of shared empirical data; rather, they inhabit fundamentally distinct conceptual universes. "
+        "The semantic shift undergone by core scientific terms is not merely additive; it is radical and gestalt-like. "
+        "When Newtonian mechanics was superseded by relativistic physics, the concept of 'mass' was not merely refined; its operational ontology was transformed from an invariant, conserved property of matter into a velocity-dependent manifestation of unified spacetime energy. "
+        "Consequently, there exists no neutral, theory-independent observational language capable of adjudicating between competing paradigms with absolute objectivity. "
+        "Observation is indelibly 'theory-laden': what a scientist perceives through an instrument is pre-structured by the theoretical presuppositions internalized through disciplinary enculturation. "
+        "Far from suggesting that scientific transitions are wholly irrational, Kuhn argued that paradigm choice resembles a political realignment or a religious conversion—a deliberative choice guided by epistemic values like parsimony, fruitfulness, and explanatory scope, but never dictated by inexorable algorithmic proof. "
+        "Science progresses not through cumulative asymptotic approximation of external reality, but through successive historical transformations of the conceptual lenses through which human consciousness interrogates nature."
+    ),
+    "questions": [
+        {
+            "id": "rq_c2_001_1", "question_type": "main_idea", "difficulty_b": 2.7, "discrimination_a": 1.8, "guessing_c": 0.25,
+            "stem_en": "What fundamental premise of the traditional philosophy of science does Kuhn repudiate?",
+            "correct_answer": "That scientific knowledge advances as a cumulative, objective linear progression toward truth",
+            "options": [
+                {"key": "A", "text": "That mathematical calculations have any utility in astrophysical observations"},
+                {"key": "B", "text": "That scientific knowledge advances as a cumulative, objective linear progression toward truth"},
+                {"key": "C", "text": "That laboratory experiments can be replicated across different research institutions"},
+                {"key": "D", "text": "That religious institutions should maintain control over academic funding"}
+            ],
+            "explanation_en": "The opening sentence explicitly notes that Kuhn exploded 'the teleological myth of science as a cumulative, linear progression toward an objective ontological truth.'",
+            "explanation_th": "คูห์นปฏิเสธความเชื่อดั้งเดิมที่ว่าวิทยาศาสตร์คือการสั่งสมความรู้แบบเส้นตรงอย่างเป็นภววิสัยเพื่อเข้าหาความจริงสัมบูรณ์",
+            "evidence_line": "exploded the teleological myth of science as a cumulative, linear progression toward an objective ontological truth.",
+            "weakness_tag": "reading_main_idea_c2"
+        },
+        {
+            "id": "rq_c2_001_2", "question_type": "vocabulary_in_context", "difficulty_b": 2.85, "discrimination_a": 1.85, "guessing_c": 0.25,
+            "stem_en": "In the context of the passage, what does 'incommensurability' signify?",
+            "correct_answer": "The absence of a common neutral standard to objectively compare competing paradigms",
+            "options": [
+                {"key": "A", "text": "The impossibility of measuring atomic particles using mechanical calipers"},
+                {"key": "B", "text": "The inability of scientists to communicate across different spoken vernaculars"},
+                {"key": "C", "text": "The absence of a common neutral standard to objectively compare competing paradigms"},
+                {"key": "D", "text": "The mathematical equality between classical and quantum mechanics equations"}
+            ],
+            "explanation_en": "Kuhn's incommensurability implies that rival paradigms cannot be measured against a single neutral benchmark because their terms and observations are mutually incompatible.",
+            "explanation_th": "'incommensurability' (ความไม่อาจเทียบเคียงกันได้) หมายถึง การไม่มีเกณฑ์วัดหรือภาษาที่เป็นกลางที่สามารถนำมาเปรียบเทียบกระบวนทัศน์ที่ต่างกันได้อย่างเป็นกลางแท้จริง",
+            "evidence_line": "there exists no neutral, theory-independent observational language capable of adjudicating between competing paradigms",
+            "weakness_tag": "reading_vocabulary_context_c2"
+        },
+        {
+            "id": "rq_c2_001_3", "question_type": "detail", "difficulty_b": 2.9, "discrimination_a": 1.9, "guessing_c": 0.25,
+            "stem_en": "How did the ontological status of 'mass' transform during the transition from Newton to Einstein?",
+            "correct_answer": "From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime",
+            "options": [
+                {"key": "A", "text": "From a purely metaphysical concept into a measurable biological hormone"},
+                {"key": "B", "text": "From an absolute intrinsic property into a dynamic, velocity-dependent property of spacetime"},
+                {"key": "C", "text": "From an acoustic frequency measurement into a thermodynamic heat index"},
+                {"key": "D", "text": "It was completely discarded as an unscientific pseudoscientific artifact"}
+            ],
+            "explanation_en": "Text states: 'transformed from an invariant, conserved property of matter into a velocity-dependent manifestation of unified spacetime energy.'",
+            "explanation_th": "ความหมายของ 'มวล' เปลี่ยนจากคุณสมบัติคงที่ที่รักษาไว้ได้ของสสาร ไปสู่สภาวะพลังงานที่แปรผันตามความเร็วในกาล-อวกาศ",
+            "evidence_line": "transformed from an invariant, conserved property of matter into a velocity-dependent manifestation",
+            "weakness_tag": "reading_detail_retrieval_c2"
+        },
+        {
+            "id": "rq_c2_001_4", "question_type": "inference", "difficulty_b": 3.05, "discrimination_a": 1.95, "guessing_c": 0.25,
+            "stem_en": "What does the author imply by asserting that observation is 'theory-laden'?",
+            "correct_answer": "Raw perceptual sensory inputs are always filtered through learned theoretical assumptions",
+            "options": [
+                {"key": "A", "text": "Scientists deliberately manipulate visual findings to please grant committees"},
+                {"key": "B", "text": "Optical lenses in microscopes distort physical reality due to chromatic aberration"},
+                {"key": "C", "text": "Raw perceptual sensory inputs are always filtered through learned theoretical assumptions"},
+                {"key": "D", "text": "Scientific observations can only be verified using theoretical computer algorithms"}
+            ],
+            "explanation_en": "Theory-ladenness means that human observation is never entirely pure; what is seen is structured by the theoretical framework internalized by the observer.",
+            "explanation_th": "การสังเกตมี 'ทฤษฎีแฝงอยู่เสมอ' (theory-laden) หมายถึงสิ่งที่นักวิทยาศาสตร์มองเห็นจะถูกกรองและประกอบสร้างผ่านสมมติฐานทางทฤษฎีที่ตนเองยึดถืออยู่",
+            "evidence_line": "what a scientist perceives through an instrument is pre-structured by the theoretical presuppositions",
+            "weakness_tag": "reading_inference_c2"
+        },
+        {
+            "id": "rq_c2_001_5", "question_type": "inference", "difficulty_b": 3.15, "discrimination_a": 2.0, "guessing_c": 0.25,
+            "stem_en": "According to Kuhn, how does science truly progress over historical epochs?",
+            "correct_answer": "Through successive reconfigurations of the conceptual paradigms through which nature is experienced",
+            "options": [
+                {"key": "A", "text": "Through the gradual accumulation of irrefutable empirical laboratory facts"},
+                {"key": "B", "text": "By eliminating all human subjectivity and delegating research entirely to computers"},
+                {"key": "C", "text": "Through successive reconfigurations of the conceptual paradigms through which nature is experienced"},
+                {"key": "D", "text": "By demonstrating that earlier scientific civilizations were intellectually inferior"}
+            ],
+            "explanation_en": "The final sentence concludes: 'progresses not through cumulative asymptotic approximation... but through successive historical transformations of the conceptual lenses'.",
+            "explanation_th": "ความก้าวหน้าทางวิทยาศาสตร์ไม่ได้เกิดจากการสะสมข้อเท็จจริงเข้าใกล้ความจริงสัมบูรณ์ แต่เกิดจากการปฏิวัติเปลี่ยนเลนส์มโนทัศน์ที่ใช้ทำความเข้าใจธรรมชาติ",
+            "evidence_line": "successive historical transformations of the conceptual lenses through which human consciousness interrogates nature.",
+            "weakness_tag": "reading_inference_c2"
+        }
+    ]
+})
+
+add_p({
+    "id": "rp_c2_002",
+    "cefr_level": "C2",
+    "title_en": "Spatial Palimpsests and the Semiotics of Post-Industrial Urbanity",
+    "title_th": "แผ่นจารึกซ้อนทับเชิงพื้นที่และสัญวิทยาของความเป็นเมืองหลังยุคอุตสาหกรรม",
+    "topic": "urban_sociology_semiotics",
+    "word_count": 510,
+    "passage_en": (
+        "In contemporary critical urban geography, the post-industrial metropolis is increasingly theorized not as a stable geometric container of economic utility, but as an architectural palimpsest—a multi-layered spatial text wherein historical inscriptions of labor, capital accumulation, and civic ideology are perpetually overwritten, juxtaposed, and recontextualized. "
+        "Nowhere is this dialectic more pronounced than in former industrial rustbelts, where decommissioned coal-fired power stations, disused railway roundhouses, and dormant textile mills have undergone radical semiotic transubstantiation into centers of cultural consumption, luxury loft enclaves, and venture capital incubators. "
+        "This spatial restructuring is driven by the post-Fordist aestheticization of decay: the physical patina of industrial manual labor—weathered brick facades, exposed rusted iron girders, and massive overhead gantry cranes—is stripped of its historic association with proletarian subjugation and class exploitation. "
+        "Recast as desirable architectural authenticity, these remnants of industrial trauma are commodified for an affluent, hyper-mobile bourgeois class whose wealth derives from financialized abstractions, software design, and digital brand consulting. "
+        "In this semiotic inversion, the material artifacts of mechanical toil become fetishized museum pieces, sanitized of the collective agony and union struggles that birthed modern labor rights. "
+        "Furthermore, this selective preservation produces profound spatial apartheid. "
+        "As pristine private-public waterfront promenades and boutique breweries proliferate across gentrified harbor districts, the working-class populations whose ancestors laid the physical foundations of these waterfront hubs are systematically expelled to the geographic and infrastructural peripheries by hyper-inflated ground rents and aggressive property speculation. "
+        "The resulting urban landscape constitutes what cultural theorist Jean Baudrillard termed a simulacrum: an idealized, museumified facsimile of working-class heritage from which real, embodied working-class humans have been surgically eradicated. "
+        "A critical reading of the urban palimpsest must therefore resist the seductive nostalgia of adaptive reuse. "
+        "To interrogate the contemporary metropolis is to excavate the obscured sediment of displacement, decoding the built environment as a contested arena where memory and amnesia continually vie for spatial hegemony."
+    ),
+    "questions": [
+        {
+            "id": "rq_c2_002_1", "question_type": "main_idea", "difficulty_b": 2.75, "discrimination_a": 1.85, "guessing_c": 0.25,
+            "stem_en": "What is the author's primary critical argument regarding post-industrial urban redevelopment?",
+            "correct_answer": "Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts",
+            "options": [
+                {"key": "A", "text": "Adaptive reuse is an unmitigated environmental and architectural triumph"},
+                {"key": "B", "text": "Industrial heritage is aesthetically commodified while displacing the working class whose history it co-opts"},
+                {"key": "C", "text": "Decommissioned factory sites should be demolished rather than restored"},
+                {"key": "D", "text": "Urban gentrification has successfully eliminated economic inequality in metropolitan areas"}
+            ],
+            "explanation_en": "The passage argues that gentrification sanitizes and commodifies industrial history for the elite while economically expelling real working-class communities.",
+            "explanation_th": "ผู้เขียนวิพากษ์ว่ามรดกทางอุตสาหกรรมถูกทำให้กลายเป็นสินค้าเพื่อชนชั้นใหม่ ในขณะที่คนงานตัวจริงผู้สร้างประวัติศาสตร์กลับถูกขับไล่ออกไปจากพื้นที่",
+            "evidence_line": "museumified facsimile of working-class heritage from which real, embodied working-class humans have been surgically eradicated.",
+            "weakness_tag": "reading_main_idea_c2"
+        },
+        {
+            "id": "rq_c2_002_2", "question_type": "vocabulary_in_context", "difficulty_b": 2.9, "discrimination_a": 1.9, "guessing_c": 0.25,
+            "stem_en": "What does the metaphor 'palimpsest' mean when applied to urban geography?",
+            "correct_answer": "A site where historical architectural layers are repeatedly overwritten yet remain partially visible",
+            "options": [
+                {"key": "A", "text": "A completely cleared terrain intended for suburban housing developments"},
+                {"key": "B", "text": "A site where historical architectural layers are repeatedly overwritten yet remain partially visible"},
+                {"key": "C", "text": "A geometric map projection designed for satellite navigation systems"},
+                {"key": "D", "text": "An earthquake-resistant foundation engineered for coastal skyscrapers"}
+            ],
+            "explanation_en": "A palimpsest is a manuscript page rewritten over earlier scraped-off writing; urbanly, it signifies layers of historical city development overlapping.",
+            "explanation_th": "'palimpsest' ในทางภูมิศาสตร์เมืองหมายถึง พื้นที่ทางสถาปัตยกรรมที่มีการเขียนทับ รื้อสร้างใหม่หลายยุคสมัย แต่ร่องรอยในอดีตยังคงปรากฏให้เห็นซ้อนทับกันอยู่",
+            "evidence_line": "an architectural palimpsest—a multi-layered spatial text wherein historical inscriptions of labor... are perpetually overwritten",
+            "weakness_tag": "reading_vocabulary_context_c2"
+        },
+        {
+            "id": "rq_c2_002_3", "question_type": "detail", "difficulty_b": 2.95, "discrimination_a": 1.9, "guessing_c": 0.25,
+            "stem_en": "What happens to the physical remnants of manual labor (exposed girders, weathered brick) in gentrified lofts?",
+            "correct_answer": "They are stripped of class trauma and commodified as desirable authenticity",
+            "options": [
+                {"key": "A", "text": "They are recycled into industrial scrap metal for automotive export"},
+                {"key": "B", "text": "They are covered behind sound-proof drywall to meet modern fire regulations"},
+                {"key": "C", "text": "They are stripped of class trauma and commodified as desirable authenticity"},
+                {"key": "D", "text": "They are donated to municipal schools as educational structural models"}
+            ],
+            "explanation_en": "Text says: 'stripped of its historic association with proletarian subjugation... Recast as desirable architectural authenticity, these remnants... are commodified'.",
+            "explanation_th": "สิ่งก่อสร้างในโรงงานเดิมถูกฟอกขาวตัดขาดจากประวัติศาสตร์การกดขี่แรงงาน แล้วแปลงสภาพเป็น 'ความแท้ทางสถาปัตยกรรม' เพื่อขายในราคาสูง",
+            "evidence_line": "stripped of its historic association with proletarian subjugation and class exploitation. Recast as desirable architectural authenticity",
+            "weakness_tag": "reading_detail_retrieval_c2"
+        },
+        {
+            "id": "rq_c2_002_4", "question_type": "inference", "difficulty_b": 3.1, "discrimination_a": 1.95, "guessing_c": 0.25,
+            "stem_en": "Why does the author evoke Baudrillard's concept of the 'simulacrum'?",
+            "correct_answer": "To characterize these redeveloped spaces as artificial copies disconnected from living social reality",
+            "options": [
+                {"key": "A", "text": "To celebrate the economic efficiency of modern property development firms"},
+                {"key": "B", "text": "To suggest that modern architecture should utilize augmented reality headsets"},
+                {"key": "C", "text": "To characterize these redeveloped spaces as artificial copies disconnected from living social reality"},
+                {"key": "D", "text": "To argue that historical archives should be moved to digital cloud databases"}
+            ],
+            "explanation_en": "The author uses 'simulacrum' to describe how historic waterfronts become staged, hollow representations devoid of genuine working-class life.",
+            "explanation_th": "การยกแนวคิด 'simulacrum' มาอธิบายเพื่อสะท้อนภาพจำลองที่ถูกประดิษฐ์ขึ้นมาอย่างสวยหรู แต่ไร้ชีวิตและตัดขาดจากความเป็นจริงของผู้ใช้แรงงาน",
+            "evidence_line": "simulacrum: an idealized, museumified facsimile of working-class heritage from which real, embodied working-class humans have been surgically eradicated.",
+            "weakness_tag": "reading_inference_c2"
+        },
+        {
+            "id": "rq_c2_002_5", "question_type": "inference", "difficulty_b": 3.2, "discrimination_a": 2.0, "guessing_c": 0.25,
+            "stem_en": "What does a critical reading of urban landscapes ultimately demand of the observer?",
+            "correct_answer": "Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment",
+            "options": [
+                {"key": "A", "text": "Supporting corporate tax incentives to accelerate waterfront demolition"},
+                {"key": "B", "text": "Restricting public access to historical monument sites across the city"},
+                {"key": "C", "text": "Uncovering the structural mechanisms of displacement obscured beneath attractive redevelopment"},
+                {"key": "D", "text": "Encouraging higher luxury condominium density to boost municipal tax collections"}
+            ],
+            "explanation_en": "The final sentence urges the observer to 'excavate the obscured sediment of displacement, decoding the built environment as a contested arena where memory and amnesia continually vie for spatial hegemony.'",
+            "explanation_th": "การมองเมืองอย่างวิพากษ์ต้องก้าวข้ามความประทับใจเปลือกนอกเพื่อขุดค้นความจริงเรื่องการถูกเบียดขับของคนจน และมองเห็นการต่อสู้แย่งชิงพื้นที่ความทรงจำ",
+            "evidence_line": "excavate the obscured sediment of displacement, decoding the built environment as a contested arena",
+            "weakness_tag": "reading_inference_c2"
+        }
+    ]
+})
+
+print(f"Total passages generated: {len(passages)}")
+
+total_q = sum(len(p["questions"]) for p in passages)
+print(f"Total reading questions: {total_q}")
+
+output_path = "data/reading-passages.json"
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(passages, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully saved {len(passages)} passages ({total_q} questions) to {output_path}")
