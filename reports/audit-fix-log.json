@@ -1,0 +1,134 @@
+[
+  {
+    "word": "find",
+    "pos": "verb",
+    "old": "พบ",
+    "new": "พบ, ค้นพบ"
+  },
+  {
+    "word": "make",
+    "pos": "verb",
+    "old": "ทำ",
+    "new": "ทำ, สร้าง"
+  },
+  {
+    "word": "note",
+    "pos": "verb",
+    "old": "จด",
+    "new": "จดบันทึก, สังเกต"
+  },
+  {
+    "word": "paint",
+    "pos": "noun",
+    "old": "สี",
+    "new": "สี, สีทา"
+  },
+  {
+    "word": "well",
+    "pos": "adjective",
+    "old": "ดี",
+    "new": "ดี, สบายดี"
+  },
+  {
+    "word": "bear",
+    "pos": "verb",
+    "old": "ทน",
+    "new": "ทนทาน, อดทน"
+  },
+  {
+    "word": "close",
+    "pos": "verb",
+    "old": "จบ",
+    "new": "ปิด, ปิดกั้น"
+  },
+  {
+    "word": "drop",
+    "pos": "verb",
+    "old": "ตก",
+    "new": "ตก, หล่น, ทำตก"
+  },
+  {
+    "word": "fine",
+    "pos": "adjective",
+    "old": "ดี",
+    "new": "ดี, โอเค"
+  },
+  {
+    "word": "good",
+    "pos": "adjective",
+    "old": "ดี",
+    "new": "ดี, เก่ง"
+  },
+  {
+    "word": "watch",
+    "pos": "verb",
+    "old": "ดู",
+    "new": "ดู, เฝ้าดู"
+  },
+  {
+    "word": "press",
+    "pos": "verb",
+    "old": "กด",
+    "new": "กด, กดดัน"
+  },
+  {
+    "word": "funny",
+    "pos": "adjective",
+    "old": "ขำ",
+    "new": "ตลก, ขบขัน"
+  },
+  {
+    "word": "fresh",
+    "pos": "adjective",
+    "old": "สด",
+    "new": "สด, สดชื่น"
+  },
+  {
+    "word": "pour",
+    "pos": "verb",
+    "old": "เท",
+    "new": "เท, รินน้ำ"
+  },
+  {
+    "word": "snow",
+    "pos": "verb",
+    "old": "ตก",
+    "new": "ตกหิมะ"
+  },
+  {
+    "word": "sink",
+    "pos": "verb",
+    "old": "จม",
+    "new": "จม, ทำให้จม"
+  },
+  {
+    "word": "slow",
+    "pos": "verb",
+    "old": "ทำให้ช้าลง",
+    "new": "ช้าลง, ทำให้ช้าลง"
+  },
+  {
+    "word": "slow",
+    "pos": "verb",
+    "old": "ทำให้ช้าลง",
+    "new": "ช้าลง, ทำให้ช้าลง"
+  },
+  {
+    "word": "asleep",
+    "pos": "adjective",
+    "old": "ชา",
+    "new": "หลับอยู่, นอนหลับ"
+  },
+  {
+    "word": "spill",
+    "pos": "verb",
+    "old": "หก",
+    "new": "หก, ทำให้หก"
+  },
+  {
+    "word": "bitter",
+    "pos": "adjective",
+    "old": "ขม",
+    "new": "ขม, ขมขื่น"
+  }
+]

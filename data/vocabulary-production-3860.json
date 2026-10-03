@@ -72579,7 +72579,7 @@
     "lemma": "find",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "พบ",
+    "meaning_th": "พบ, ค้นพบ",
     "meaning_en": "the act of discovering something",
     "ipa": "/faɪnd/",
     "example_sentence_en": "It's a word I'd like to find a substitute for.",
@@ -72697,7 +72697,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "a9b1e9fd-4fdd-46bd-abd2-abe56c763e50",
@@ -80077,7 +80078,7 @@
     "lemma": "make",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ทำ",
+    "meaning_th": "ทำ, สร้าง",
     "meaning_en": "the act of mixing cards haphazardly",
     "ipa": "/meɪk/",
     "example_sentence_en": "I make €100 a day.",
@@ -80192,7 +80193,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "e7fafa50-4ca5-4229-aac3-889143b94e0b",
@@ -82606,7 +82608,7 @@
     "lemma": "note",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "จด",
+    "meaning_th": "จดบันทึก, สังเกต",
     "meaning_en": "a characteristic emotional quality",
     "ipa": "/noʊt/",
     "example_sentence_en": "I advise you to be careful in making notes for the lecture.",
@@ -82741,7 +82743,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.708Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "7db3aaf9-e192-478c-a28b-35de12becf4d",
@@ -84028,7 +84031,7 @@
     "lemma": "paint",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "สี",
+    "meaning_th": "สี, สีทา",
     "meaning_en": "a substance used as a coating to protect or decorate a surface (especially a mixture of pigment suspended in a liquid); dries to form a hard coating",
     "ipa": "/peɪnt/",
     "example_sentence_en": "The paint on the seat on which you are sitting is still wet.",
@@ -84130,7 +84133,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.708Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "b6e3a568-4ffe-4e03-aca4-9d9719afd3c5",
@@ -97582,7 +97586,7 @@
     "lemma": "well",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดี",
+    "meaning_th": "ดี, สบายดี",
     "meaning_en": "a deep hole or shaft dug or drilled to obtain water or oil or gas or brine",
     "ipa": "/wel/",
     "example_sentence_en": "My mom doesn't speak English very well.",
@@ -97717,7 +97721,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "337745da-5782-44bc-a967-46b32d71190a",
@@ -101092,7 +101097,7 @@
     "lemma": "bear",
     "part_of_speech": "verb",
     "cefr_level": "A2",
-    "meaning_th": "ทน",
+    "meaning_th": "ทนทาน, อดทน",
     "meaning_en": "massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws",
     "ipa": "/beɹ/",
     "example_sentence_en": "What?! You ate my chocolate bear?!",
@@ -101217,7 +101222,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "28110117-308f-4c74-a696-c02214016385",
@@ -120733,7 +120739,7 @@
     "lemma": "close",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "จบ",
+    "meaning_th": "ปิด, ปิดกั้น",
     "meaning_en": "the concluding part of any performance",
     "ipa": "/kloʊs/",
     "example_sentence_en": "How many close friends do you have?",
@@ -120892,7 +120898,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "00bd2485-e281-4165-aa64-548b7845a9a2",
@@ -121326,7 +121333,7 @@
     "lemma": "drop",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ตก",
+    "meaning_th": "ตก, หล่น, ทำตก",
     "meaning_en": "The quality, state, or action of drop.",
     "ipa": "/dɹɑːp/",
     "example_sentence_en": "Since you like to write letters, why don't you drop her a line?",
@@ -121437,7 +121444,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "358928c5-271a-4136-a260-d530d0745466",
@@ -121734,7 +121742,7 @@
     "lemma": "fine",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดี",
+    "meaning_th": "ดี, โอเค",
     "meaning_en": "money extracted as a penalty",
     "ipa": "/faɪn/",
     "example_sentence_en": "You're by my side; everything's fine now.",
@@ -121852,7 +121860,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "6e587fee-719d-46e2-ad1f-44102a5da5d1",
@@ -122398,7 +122407,7 @@
     "lemma": "good",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ดี",
+    "meaning_th": "ดี, เก่ง",
     "meaning_en": "a raw material that is sold in large quantities, usually to other businesses for manufacturing or production purposes",
     "ipa": "/ɡʊd/",
     "example_sentence_en": "You are saying you intentionally hide your good looks?",
@@ -122511,7 +122520,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "72fa8031-e340-4c54-a38a-b64ef99ef39f",
@@ -125700,7 +125710,7 @@
     "lemma": "watch",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "ดู",
+    "meaning_th": "ดู, เฝ้าดู",
     "meaning_en": "a purposeful surveillance to guard or observe",
     "ipa": "/wɑːtʃ/",
     "example_sentence_en": "There are 1000 movies that one must watch before dying.",
@@ -125811,7 +125821,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "26b128e0-5b60-4f79-ace4-4291f204e13a",
@@ -139023,7 +139034,7 @@
     "lemma": "press",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "กด",
+    "meaning_th": "กด, กดดัน",
     "meaning_en": "the act of pressing; the exertion of pressure",
     "ipa": "/pɹes/",
     "example_sentence_en": "Don't press your opinions on me.",
@@ -139104,7 +139115,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.713Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "34de6f80-f93f-4798-a678-18dde11beab3",
@@ -154048,7 +154060,7 @@
     "lemma": "funny",
     "part_of_speech": "adjective",
     "cefr_level": "A1",
-    "meaning_th": "ขำ",
+    "meaning_th": "ตลก, ขบขัน",
     "meaning_en": "an account of an amusing incident (usually with a punch line)",
     "ipa": "/ˈfʌni/",
     "example_sentence_en": "I hit my funny bone on the edge of the table.",
@@ -154135,7 +154147,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.715Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "d1d5baec-76fd-49a9-adad-37f5de63da0b",
@@ -175183,7 +175196,7 @@
     "lemma": "fresh",
     "part_of_speech": "adjective",
     "cefr_level": "A2",
-    "meaning_th": "สด",
+    "meaning_th": "สด, สดชื่น",
     "meaning_en": "recently made, produced, or harvested",
     "ipa": "/fɹeʃ/",
     "example_sentence_en": "In this harsh, petty world where money does the talking, his way of life is like a breath of fresh air.",
@@ -175270,7 +175283,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.717Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "d76a99b9-64b4-46f4-a156-9c78ef016e1c",
@@ -180179,7 +180193,7 @@
     "lemma": "pour",
     "part_of_speech": "verb",
     "cefr_level": "A2",
-    "meaning_th": "เท",
+    "meaning_th": "เท, รินน้ำ",
     "meaning_en": "move in large numbers",
     "ipa": "/pɔːɹ/",
     "example_sentence_en": "The excited crowd poured out of the stadium.",
@@ -180269,7 +180283,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.718Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "2514039d-595f-4b91-a1ee-fd68f3535e7e",
@@ -183718,7 +183733,7 @@
     "lemma": "snow",
     "part_of_speech": "verb",
     "cefr_level": "A2",
-    "meaning_th": "ตก",
+    "meaning_th": "ตกหิมะ",
     "meaning_en": "street names for cocaine",
     "ipa": "/snoʊ/",
     "example_sentence_en": "Judging from the look of the sky, we may have snow tomorrow.",
@@ -183796,7 +183811,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.718Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "610bbda5-a89c-4686-abcd-4681163590a5",
@@ -214163,7 +214179,7 @@
     "lemma": "sink",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "จม",
+    "meaning_th": "จม, ทำให้จม",
     "meaning_en": "plumbing fixture consisting of a water basin fixed to a wall or floor and having a drainpipe",
     "ipa": "/sɪŋk/",
     "example_sentence_en": "The situation has come to the point where we either sink or swim.",
@@ -214268,7 +214284,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.723Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "0f945893-6208-4350-a5b5-54a762d77b84",
@@ -214404,7 +214421,7 @@
     "lemma": "slow",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ทำให้ช้าลง",
+    "meaning_th": "ช้าลง, ทำให้ช้าลง",
     "meaning_en": "wearing or provided with clothing; sometimes used in combination",
     "ipa": "/sloʊ/",
     "example_sentence_en": "The slowest one to make a promise is the most faithful one in keeping it.",
@@ -214539,7 +214556,7 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.723Z"
     },
-    "meaning_th_source": "manual_cefr_override",
+    "meaning_th_source": "audit_fix_v1",
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
   },
   {
@@ -214549,7 +214566,7 @@
     "lemma": "slow",
     "part_of_speech": "verb",
     "cefr_level": "B1",
-    "meaning_th": "ทำให้ช้าลง",
+    "meaning_th": "ช้าลง, ทำให้ช้าลง",
     "meaning_en": "wearing or provided with clothing; sometimes used in combination",
     "ipa": "/sloʊ/",
     "example_sentence_en": "The slowest one to make a promise is the most faithful one in keeping it.",
@@ -214684,7 +214701,7 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.723Z"
     },
-    "meaning_th_source": "manual_cefr_override",
+    "meaning_th_source": "audit_fix_v1",
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
   },
   {
@@ -222063,7 +222080,7 @@
     "lemma": "asleep",
     "part_of_speech": "adjective",
     "cefr_level": "A2",
-    "meaning_th": "ชา",
+    "meaning_th": "หลับอยู่, นอนหลับ",
     "meaning_en": "in a state of sleep",
     "ipa": "/əsˈliːp/",
     "example_sentence_en": "I was so excited that I could not fall asleep.",
@@ -222124,7 +222141,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.724Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "25c4525b-dafb-4263-ae7e-3aa15752cb14",
@@ -239752,7 +239770,7 @@
     "lemma": "spill",
     "part_of_speech": "verb",
     "cefr_level": "A2",
-    "meaning_th": "หก",
+    "meaning_th": "หก, ทำให้หก",
     "meaning_en": "the act of allowing a fluid to escape",
     "ipa": "/spɪl/",
     "example_sentence_en": "You can wear my scarf as long as you don't spill anything on it.",
@@ -239792,7 +239810,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.731Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "cb8d557b-9c4c-424f-af0e-8ba0f4d6d1fa",
@@ -244703,7 +244722,7 @@
     "lemma": "bitter",
     "part_of_speech": "adjective",
     "cefr_level": "B1",
-    "meaning_th": "ขม",
+    "meaning_th": "ขม, ขมขื่น",
     "meaning_en": "the property of having a harsh unpleasant taste",
     "ipa": "/ˈbɪtəɹ/",
     "example_sentence_en": "Laugh as much as you like; I'll stick to my plan to the bitter end.",
@@ -244804,7 +244823,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.732Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "audit_fix_v1"
   },
   {
     "id": "17412fc3-7f83-4d9f-a0cb-ee2962764de3",
