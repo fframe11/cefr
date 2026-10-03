@@ -851,5 +851,278 @@ export const LISTENING_BANK: ListeningExercise[] = [
         "difficultyWeight": 5
       }
     ]
-  }
+  },
+  {
+    "id": "listen-b1-relocation",
+    "title": "Corporate Office Relocation & Logistics Planning",
+    "cefrLevel": "B1",
+    "targetExam": "PET",
+    "speakerAccents": "American English (Office Manager & Logistics Coordinator)",
+    "audioSpeedOptions": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "audioScript": "Coordinator: Good morning, Steve. Have we finalized the moving schedule for the technical support department?\n\nSteve: Yes, Margaret. The professional moving crew arrives at five o'clock on Friday afternoon once all staff have finished work. We have packed the workstations, server towers, and documentation in color-coded crates.\n\nCoordinator: Excellent. What about the conference room furniture and executive desks?\n\nSteve: Those will be transported in the second delivery truck on Saturday morning. By Sunday midday, the IT network technicians will have all desktop terminals connected and tested.\n\nCoordinator: Wonderful. So our employees can resume normal operations on Monday morning without any client disruptions!",
+    "questions": [
+      {
+        "id": "listen-q-b1-relo-1",
+        "skill": "listening",
+        "cefrLevel": "B1",
+        "type": "multiple_choice",
+        "promptTh": "ทีมงานขนย้ายมืออาชีพจะมาถึงสำนักงานในวันและเวลาใด?",
+        "promptEn": "When will the professional moving crew arrive at the office?",
+        "options": [
+          {
+            "key": "A",
+            "text": "At Friday midday during the lunch break",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้มาตอนเที่ยง"
+          },
+          {
+            "key": "B",
+            "text": "At five o'clock on Friday afternoon after work",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! สตีฟแจ้งว่า: 'The professional moving crew arrives at five o'clock on Friday afternoon'"
+          },
+          {
+            "key": "C",
+            "text": "Early on Saturday morning before sunrise",
+            "isCorrect": false,
+            "feedbackTh": "วันเสาร์เป็นรอบรถบรรทุกคันที่สอง"
+          },
+          {
+            "key": "D",
+            "text": "On Sunday night before Monday opening",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่คืนวันอาทิตย์"
+          }
+        ],
+        "explanationTh": "สตีฟระบุชัดเจน: 'The professional moving crew arrives at five o'clock on Friday afternoon once all staff have finished work.'",
+        "explanationEn": "Steve states that the crew arrives at 5:00 PM on Friday afternoon after staff finish work.",
+        "weaknessTag": "tracking_specific_chronological_timeframes",
+        "difficultyWeight": 3
+      },
+      {
+        "id": "listen-q-b1-relo-2",
+        "skill": "listening",
+        "cefrLevel": "B1",
+        "type": "multiple_choice",
+        "promptTh": "เป้าหมายหลักของการทดสอบระบบในวันอาทิตย์คืออะไร?",
+        "promptEn": "What is the primary objective of completing IT testing on Sunday?",
+        "options": [
+          {
+            "key": "A",
+            "text": "To allow employees to work from home all week",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้จะให้ทำงานที่บ้าน"
+          },
+          {
+            "key": "B",
+            "text": "To enable normal operations on Monday without customer disruptions",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เพื่อให้เปิดทำการวันจันทร์ได้ตามปกติโดยไม่กระทบลูกค้า"
+          },
+          {
+            "key": "C",
+            "text": "To sell redundant office computers to local charities",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้กล่าวถึงการบริจาค"
+          },
+          {
+            "key": "D",
+            "text": "To interview prospective junior candidates",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้สัมภาษณ์งาน"
+          }
+        ],
+        "explanationTh": "ผู้ประสานงานสรุปว่า: 'our employees can resume normal operations on Monday morning without any client disruptions!'",
+        "explanationEn": "The objective is ensuring regular business resumption on Monday morning without disruption.",
+        "weaknessTag": "inferring_underlying_business_rationale",
+        "difficultyWeight": 3
+      }
+    ]
+  },
+  {
+    "id": "listen-b2-airport",
+    "title": "International Airport Departure Gate & Luggage Notice",
+    "cefrLevel": "B2",
+    "targetExam": "FCE",
+    "speakerAccents": "British English (Airport Gate Announcer)",
+    "audioSpeedOptions": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "audioScript": "Airport Announcer: May I have your urgent attention, passengers holding boarding passes for Skyways flight 402 departing for Singapore Changi. \n\nDue to scheduled apron maintenance on concourse B, the departure gate for flight 402 has been relocated from gate B12 to gate E7. Boarding will commence promptly at 14:40, thirty minutes prior to scheduled departure.\n\nPassengers traveling with oversized carry-on bags exceeding the standard cabin dimensions of 55 by 40 centimeters must check their luggage at gate E7 prior to boarding. Complimentary baggage tags will be issued at the podium. We apologize for any inconvenience caused by this gate alteration and appreciate your patience.",
+    "questions": [
+      {
+        "id": "listen-q-b2-air-1",
+        "skill": "listening",
+        "cefrLevel": "B2",
+        "type": "multiple_choice",
+        "promptTh": "เหตุผลสำคัญที่มีการย้ายประตูขึ้นเครื่องบินคืออะไร?",
+        "promptEn": "What is the primary reason provided for relocating the departure gate?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Severe electrical thunderstorms over the runway",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เกิดจากพายุ"
+          },
+          {
+            "key": "B",
+            "text": "Scheduled apron maintenance taking place on concourse B",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ประกาศระบุ: 'Due to scheduled apron maintenance on concourse B'"
+          },
+          {
+            "key": "C",
+            "text": "An unexpected mechanical issue with the aircraft engine",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้มีปัญหาเครื่องยนต์"
+          },
+          {
+            "key": "D",
+            "text": "A labor dispute involving baggage handlers",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เกี่ยวกับข้อพิพาทแรงงาน"
+          }
+        ],
+        "explanationTh": "เสียงประกาศระบุ: 'Due to scheduled apron maintenance on concourse B, the departure gate for flight 402 has been relocated'",
+        "explanationEn": "The gate change is due to scheduled apron maintenance on concourse B.",
+        "weaknessTag": "comprehending_operational_public_announcements",
+        "difficultyWeight": 4
+      },
+      {
+        "id": "listen-q-b2-air-2",
+        "skill": "listening",
+        "cefrLevel": "B2",
+        "type": "multiple_choice",
+        "promptTh": "ผู้โดยสารที่มีสัมภาระถือขึ้นเครื่องขนาดเกินกำหนดต้องปฏิบัติตามคำแนะนำใด?",
+        "promptEn": "What action must passengers with oversized carry-on luggage take?",
+        "options": [
+          {
+            "key": "A",
+            "text": "They must abandon their bags at the security screening checkpoint.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ต้องทิ้งกระเป๋า"
+          },
+          {
+            "key": "B",
+            "text": "They must check their bags at gate E7 before boarding begins.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ต้องโหลดกระเป๋าที่เกต E7 ก่อนขึ้นเครื่อง"
+          },
+          {
+            "key": "C",
+            "text": "They must purchase an additional passenger seat on the flight.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ต้องซื้อที่นั่งเพิ่ม"
+          },
+          {
+            "key": "D",
+            "text": "They are prohibited from boarding the flight entirely.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้ห้ามขึ้นเครื่อง"
+          }
+        ],
+        "explanationTh": "เสียงประกาศแจ้งว่า: 'Passengers traveling with oversized carry-on bags... must check their luggage at gate E7 prior to boarding.'",
+        "explanationEn": "Oversized luggage must be checked in at gate E7 prior to boarding.",
+        "weaknessTag": "detail_compliance_instruction_comprehension",
+        "difficultyWeight": 4
+      }
+    ]
+  },
+  {
+    "id": "listen-b2-career",
+    "title": "Stage Career & Performing Arts Interview with Alan",
+    "cefrLevel": "B2",
+    "targetExam": "FCE",
+    "speakerAccents": "Standard British & Mid-Atlantic English (Interviewer & Veteran Stage Actor Alan)",
+    "audioSpeedOptions": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "audioScript": "Interviewer: Welcome back to Arts Insight. I'm delighted to speak today with veteran stage performer Alan Croft. Alan, having spent over four decades in classical theatre, how did your journey in the performing arts originally begin?\n\nAlan: Well, Rachel, believe it or not, I first stepped onto a theatrical stage when I was barely six years old. My older sister was rehearsing a local production of A Midsummer Night's Dream, and their child actor suddenly contracted measles. The director panicked, noticed me sitting quietly in the third row, and handed me a small wooden prop. \n\nInterviewer: Incredible! And was it an instantaneous passion?\n\nAlan: Completely intoxicating! While my school peers spent weekends playing football or building model airplanes, I was completely captivated by stage presence, vocal projection, and text interpretation. Theatre taught me that acting is not about pretending to be someone else; it is about discovering genuine human vulnerability under extraordinary imagined circumstances.",
+    "questions": [
+      {
+        "id": "listen-q-b2-career-1",
+        "skill": "listening",
+        "cefrLevel": "B2",
+        "type": "multiple_choice",
+        "promptTh": "แอลันได้มีโอกาสขึ้นแสดงละครเวทีครั้งแรกเมื่ออายุ 6 ขวบได้อย่างไร?",
+        "promptEn": "How did Alan secure his very first acting role at age six?",
+        "options": [
+          {
+            "key": "A",
+            "text": "He won a nationwide competitive audition for television.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้ชนะการออดิชั่นระดับชาติ"
+          },
+          {
+            "key": "B",
+            "text": "He replaced a sick child actor at his sister's rehearsal at the last minute.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! เขาได้รับเลือกให้แสดงแทนนักแสดงเด็กที่ป่วยเป็นโรคหัดอย่างกะทันหัน"
+          },
+          {
+            "key": "C",
+            "text": "His parents forced him to study classical opera singing.",
+            "isCorrect": false,
+            "feedbackTh": "พ่อแม่ไม่ได้บังคับ"
+          },
+          {
+            "key": "D",
+            "text": "He wrote and staged his own kindergarten puppet play.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่ละครหุ่น"
+          }
+        ],
+        "explanationTh": "แอลันเล่าว่า: 'their child actor suddenly contracted measles. The director panicked, noticed me sitting quietly in the third row, and handed me a small wooden prop.'",
+        "explanationEn": "Alan stepped in as an impromptu replacement when the original child actor contracted measles.",
+        "weaknessTag": "narrative_biographical_circumstance_tracking",
+        "difficultyWeight": 4
+      },
+      {
+        "id": "listen-q-b2-career-2",
+        "skill": "listening",
+        "cefrLevel": "B2",
+        "type": "multiple_choice",
+        "promptTh": "แอลันนิยามแก่นแท้ของศิลปะการแสดงว่าอย่างไรในตอนท้าย?",
+        "promptEn": "According to Alan, what is the profound essence of acting?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Earning prestigious commercial accolades and fame.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ได้เน้นเรื่องชื่อเสียงและรางวัล"
+          },
+          {
+            "key": "B",
+            "text": "Uncovering genuine human vulnerability under imagined circumstances.",
+            "isCorrect": true,
+            "feedbackTh": "ถูกต้อง! ค้นพบความเปราะบางของมนุษย์อย่างแท้จริงภายใต้สถานการณ์ที่สมมติขึ้น"
+          },
+          {
+            "key": "C",
+            "text": "Mastering flawless mimicry of foreign regional accents.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่การเลียนแบบสำเนียง"
+          },
+          {
+            "key": "D",
+            "text": "Memorizing hundreds of historical script pages quickly.",
+            "isCorrect": false,
+            "feedbackTh": "ไม่ใช่แค่การท่องจำบท"
+          }
+        ],
+        "explanationTh": "แอลันระบุ: 'acting is not about pretending to be someone else; it is about discovering genuine human vulnerability under extraordinary imagined circumstances.'",
+        "explanationEn": "Alan defines acting as uncovering genuine human vulnerability under imagined conditions.",
+        "weaknessTag": "identifying_philosophical_perspective_in_interviews",
+        "difficultyWeight": 4
+      }
+    ]
+  },
 ];

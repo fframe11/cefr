@@ -78,6 +78,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     if (pathname.startsWith('/writing')) return 'writing';
     if (pathname.startsWith('/speaking')) return 'speaking';
     if (pathname.startsWith('/cheat-sheets')) return 'cheatSheets';
+    if (pathname.startsWith('/collocations')) return 'collocations';
     if (pathname.startsWith('/oopt-practice')) return 'ooptPractice';
     if (pathname.startsWith('/mock-exams')) return 'mockExam';
     if (pathname.startsWith('/analytics')) return 'analytics';
@@ -97,6 +98,8 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         ? '/mock-exams'
         : view === 'cheatSheets'
         ? '/cheat-sheets'
+        : view === 'collocations'
+        ? '/collocations'
         : view === 'ooptPractice'
         ? '/oopt-practice'
         : `/${view}`;

@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { GRAMMAR_BANK } from '../data/grammarBank';
+import { COLLOCATIONS_BANK, COLLOCATION_PRACTICE_QUESTIONS } from '../data/collocationsBank';
+import { A2_DIAGNOSTIC_RULES } from '../data/a2DiagnosticRules';
+import { READING_BANK } from '../data/readingBank';
 import {
   IN_ON_AT_CHEAT_SHEET,
   SPORTS_VERBS_CHEAT_SHEET,
@@ -154,10 +157,10 @@ describe('Synthesized Guidelines & Curriculum Suite', () => {
     });
   });
 
-  describe('Comprehensive Listening Bank & Engine (10 Exercises)', () => {
-    it('should contain 10 authentic listening tasks across A1 to C1', () => {
+  describe('Comprehensive Listening Bank & Engine (13 Exercises)', () => {
+    it('should contain 13 authentic listening tasks across A1 to C1', () => {
       const exercises = getAllListeningExercises();
-      expect(exercises.length).toBe(10);
+      expect(exercises.length).toBe(13);
 
       const levels = exercises.map((e) => e.cefrLevel);
       expect(levels).toContain('A1');
@@ -215,6 +218,88 @@ describe('Synthesized Guidelines & Curriculum Suite', () => {
     });
   });
 
+  describe('Collocations & Phrasal Verbs Bank (200 Items)', () => {
+    it('should contain exactly 200 curated collocations with unique IDs', () => {
+      expect(COLLOCATIONS_BANK.length).toBe(200);
+      const ids = new Set(COLLOCATIONS_BANK.map((i) => i.id));
+      expect(ids.size).toBe(200);
+    });
+
+    it('each collocation item must have valid phrase, meaning, level, and examples', () => {
+      for (const item of COLLOCATIONS_BANK) {
+        expect(item.collocation.length).toBeGreaterThan(0);
+        expect(item.meaningTh.length).toBeGreaterThan(0);
+        expect(['A1', 'A2', 'B1', 'B2', 'C1']).toContain(item.cefrLevel);
+        expect(['verb_prep', 'verb_noun', 'adj_prep', 'phrasal_verb']).toContain(item.category);
+        expect(item.exampleEn.length).toBeGreaterThan(5);
+        expect(item.exampleTh.length).toBeGreaterThan(5);
+      }
+    });
+
+    it('should have diagnostic practice questions with single correct answers', () => {
+      expect(COLLOCATION_PRACTICE_QUESTIONS.length).toBeGreaterThanOrEqual(10);
+      for (const q of COLLOCATION_PRACTICE_QUESTIONS) {
+        expect(q.options.length).toBe(4);
+        const correctOpts = q.options.filter((o) => o.isCorrect);
+        expect(correctOpts.length).toBe(1);
+        expect(q.explanationTh.length).toBeGreaterThan(10);
+      }
+    });
+  });
+
+  describe('A2 Pretest Diagnostic Rules (6 Key Rules)', () => {
+    it('should contain 6 high-yield diagnostic grammar rules from Pretest analysis', () => {
+      expect(A2_DIAGNOSTIC_RULES.rules.length).toBe(6);
+      expect(A2_DIAGNOSTIC_RULES.diagnosticQuestions.length).toBe(6);
+    });
+
+    it('each diagnostic rule must have clear pedagogical explanations and examples', () => {
+      for (const rule of A2_DIAGNOSTIC_RULES.rules) {
+        expect(rule.ruleTitleEn.length).toBeGreaterThan(0);
+        expect(rule.ruleTitleTh.length).toBeGreaterThan(0);
+        expect(rule.summaryTh.length).toBeGreaterThan(20);
+        expect(rule.examples.length).toBeGreaterThanOrEqual(2);
+      }
+    });
+
+    it('diagnostic questions must have valid 4 choices and explanations', () => {
+      for (const q of A2_DIAGNOSTIC_RULES.diagnosticQuestions) {
+        expect(q.options.length).toBe(4);
+        const correct = q.options.filter((o) => o.isCorrect);
+        expect(correct.length).toBe(1);
+        expect(q.explanationTh.length).toBeGreaterThan(10);
+      }
+    });
+  });
+
+  describe('Reading Lab Bank (8 Authentic Passages)', () => {
+    it('should contain 8 CEFR-leveled passages from A1 to C1', () => {
+      expect(READING_BANK.length).toBe(8);
+      const levels = READING_BANK.map((p) => p.cefrLevel);
+      expect(levels).toContain('A1');
+      expect(levels).toContain('A2');
+      expect(levels).toContain('B1');
+      expect(levels).toContain('B2');
+      expect(levels).toContain('C1');
+    });
+
+    it('each passage must have authentic text, target vocabulary, and questions', () => {
+      for (const passage of READING_BANK) {
+        expect(passage.title.length).toBeGreaterThan(0);
+        expect(passage.content.length).toBeGreaterThan(100);
+        expect(passage.wordCount).toBeGreaterThan(30);
+        expect(passage.questions.length).toBeGreaterThanOrEqual(2);
+
+        for (const q of passage.questions) {
+          expect(q.options.length).toBe(4);
+          const correct = q.options.filter((o) => o.isCorrect);
+          expect(correct.length).toBe(1);
+          expect(q.explanationTh.length).toBeGreaterThan(10);
+        }
+      }
+    });
+  });
+
   describe('Personal Health Invariant Audit', () => {
     it('must have ZERO mentions of shrimp, crab, or shellfish across all synthesized materials', () => {
       const banned = ['shrimp', 'crab', 'prawn', 'lobster', 'crayfish', 'shellfish', 'กุ้ง', 'ปู'];
@@ -224,6 +309,9 @@ describe('Synthesized Guidelines & Curriculum Suite', () => {
       const p3Str = JSON.stringify(getAllPart3ClozePassages()).toLowerCase();
       const cheatStr = JSON.stringify([IN_ON_AT_CHEAT_SHEET, SPORTS_VERBS_CHEAT_SHEET, DO_MAKE_CHEAT_SHEET]).toLowerCase();
       const listenStr = JSON.stringify(getAllListeningExercises()).toLowerCase();
+      const colocStr = JSON.stringify(COLLOCATIONS_BANK).toLowerCase();
+      const a2Str = JSON.stringify(A2_DIAGNOSTIC_RULES).toLowerCase();
+      const readStr = JSON.stringify(READING_BANK).toLowerCase();
 
       for (const word of banned) {
         expect(grammarStr.includes(word)).toBe(false);
@@ -231,6 +319,9 @@ describe('Synthesized Guidelines & Curriculum Suite', () => {
         expect(p3Str.includes(word)).toBe(false);
         expect(cheatStr.includes(word)).toBe(false);
         expect(listenStr.includes(word)).toBe(false);
+        expect(colocStr.includes(word)).toBe(false);
+        expect(a2Str.includes(word)).toBe(false);
+        expect(readStr.includes(word)).toBe(false);
       }
     });
   });

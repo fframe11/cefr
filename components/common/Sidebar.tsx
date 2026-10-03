@@ -36,6 +36,7 @@ export type NavView =
   | 'mockExam'
   | 'mock-exam'
   | 'cheatSheets'
+  | 'collocations'
   | 'ooptPractice'
   | 'analytics'
   | 'profile'
@@ -67,6 +68,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { id: 'dashboard', labelEn: 'Dashboard', labelTh: 'หน้าหลักการเรียน', icon: LayoutDashboard, section: 'learn' },
   { id: 'vocabulary', labelEn: 'Vocabulary Studio', labelTh: 'คลังคำศัพท์ Oxford & Scale', icon: BookOpen, badge: '3.8k + 121k', badgeStyle: 'gold', section: 'learn' },
+  { id: 'collocations', labelEn: 'Collocations Studio', labelTh: 'คลัง 200 Collocations', icon: BookOpen, badge: '200 Items', badgeStyle: 'coral', section: 'learn' },
   { id: 'grammar', labelEn: 'Grammar Studio', labelTh: 'ไวยากรณ์โครงสร้าง', icon: Sparkles, section: 'learn' },
   { id: 'cheatSheets', labelEn: 'CEFR Cheat Sheets', labelTh: 'สูตรลัด High-Yield', icon: BookOpen, badge: 'High-Yield', badgeStyle: 'mint', section: 'learn' },
   { id: 'reading', labelEn: 'Reading Studio', labelTh: 'การอ่านเชิงวิชาการ', icon: BookMarked, section: 'learn' },

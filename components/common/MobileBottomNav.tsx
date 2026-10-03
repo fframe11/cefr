@@ -42,6 +42,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({ currentView, o
 
   const secondaryItems = [
     { id: 'grammar' as NavView, icon: Sparkles, labelEn: 'Grammar Studio', labelTh: 'สตูดิโอไวยากรณ์' },
+    { id: 'collocations' as NavView, icon: BookOpen, labelEn: 'Collocations', labelTh: 'คลัง 200 Collocations' },
     { id: 'cheatSheets' as NavView, icon: BookOpen, labelEn: 'Cheat Sheets', labelTh: 'สูตรลัด High-Yield' },
     { id: 'ooptPractice' as NavView, icon: GraduationCap, labelEn: 'OOPT Practice', labelTh: 'แบบฝึกหัด OOPT' },
     { id: 'reading' as NavView, icon: BookMarked, labelEn: 'Reading Lab', labelTh: 'อ่านจับใจความ' },

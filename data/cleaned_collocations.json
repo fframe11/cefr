@@ -1,0 +1,1002 @@
+[
+  {
+    "num": 1,
+    "en": "agree with",
+    "th": "เห็นด้วยกับ"
+  },
+  {
+    "num": 2,
+    "en": "apologize for",
+    "th": "ขอโทษเร่อง..."
+  },
+  {
+    "num": 3,
+    "en": "apply for",
+    "th": "สมัคร (งาน/มหาวทยาลัย)"
+  },
+  {
+    "num": 4,
+    "en": "arrive at/in",
+    "th": "มาถึง (สถานที่เล็ก)/ (เมือง/ประเทศ)"
+  },
+  {
+    "num": 5,
+    "en": "attend a party/meeting",
+    "th": "เข้าร่วมงานปาร์ตี้/งานประชุม"
+  },
+  {
+    "num": 6,
+    "en": "ask about",
+    "th": "ถามเกี่ยวกับ"
+  },
+  {
+    "num": 7,
+    "en": "ask for",
+    "th": "ขอ"
+  },
+  {
+    "num": 8,
+    "en": "ask someone to...",
+    "th": "ขอให้ใครทำ..."
+  },
+  {
+    "num": 9,
+    "en": "be absent from",
+    "th": "ขาด (เรยน/งาน)"
+  },
+  {
+    "num": 10,
+    "en": "be afraid of",
+    "th": "กลัว"
+  },
+  {
+    "num": 11,
+    "en": "be allowed to",
+    "th": "ได้รับอนุญาตให้"
+  },
+  {
+    "num": 12,
+    "en": "be based on",
+    "th": "อ้างอิงจาก"
+  },
+  {
+    "num": 13,
+    "en": "be different from",
+    "th": "แตกต่างจาก"
+  },
+  {
+    "num": 14,
+    "en": "be famous for",
+    "th": "มีชื่อเสียงเร่อง"
+  },
+  {
+    "num": 15,
+    "en": "be full of",
+    "th": "เต็มไปด้วย"
+  },
+  {
+    "num": 16,
+    "en": "be good at",
+    "th": "เก่งด้าน"
+  },
+  {
+    "num": 17,
+    "en": "be interested in",
+    "th": "สนใจ"
+  },
+  {
+    "num": 18,
+    "en": "be keen on",
+    "th": "ชอบ/สนใจมาก"
+  },
+  {
+    "num": 19,
+    "en": "be late for",
+    "th": "มาสาย"
+  },
+  {
+    "num": 20,
+    "en": "be located in/on",
+    "th": "ตั้งอยู่ใน/บน"
+  },
+  {
+    "num": 21,
+    "en": "be looking for",
+    "th": "กำลังมองหา"
+  },
+  {
+    "num": 22,
+    "en": "be made of",
+    "th": "ทำจาก (ยังเห็นวัสดุเดิม)"
+  },
+  {
+    "num": 23,
+    "en": "be made from",
+    "th": "ทำจาก (วัสดุเปลี่ยนสภาพ)"
+  },
+  {
+    "num": 24,
+    "en": "be proud of",
+    "th": "ภูมิใจใน"
+  },
+  {
+    "num": 25,
+    "en": "be ready for",
+    "th": "พร้อมสำหรับ"
+  },
+  {
+    "num": 26,
+    "en": "be responsible for",
+    "th": "รับผิดชอบ"
+  },
+  {
+    "num": 27,
+    "en": "be sorry about",
+    "th": "เสียใจเร่อง"
+  },
+  {
+    "num": 28,
+    "en": "be surprised at",
+    "th": "ประหลาดใจ"
+  },
+  {
+    "num": 29,
+    "en": "be worried about",
+    "th": "กังวลเกี่ยวกับ"
+  },
+  {
+    "num": 30,
+    "en": "believe in",
+    "th": "เชื่อใน"
+  },
+  {
+    "num": 31,
+    "en": "belong to",
+    "th": "เป็นของ"
+  },
+  {
+    "num": 32,
+    "en": "book a room / ticket",
+    "th": "จองห้องพัก / จองตั๋ว"
+  },
+  {
+    "num": 33,
+    "en": "borrow from",
+    "th": "ยืมจาก"
+  },
+  {
+    "num": 34,
+    "en": "break the law",
+    "th": "ฝาฝนกฎหมาย"
+  },
+  {
+    "num": 35,
+    "en": "break the rules",
+    "th": "ฝาฝนกฎ"
+  },
+  {
+    "num": 36,
+    "en": "bring back",
+    "th": "นำกลับมา"
+  },
+  {
+    "num": 37,
+    "en": "bring up",
+    "th": "เลี้ยงดู / ยกประเด็น (B1)"
+  },
+  {
+    "num": 38,
+    "en": "build a house",
+    "th": "สร้างบ้าน"
+  },
+  {
+    "num": 39,
+    "en": "buy a ticket",
+    "th": "ซื้อตั๋ว"
+  },
+  {
+    "num": 40,
+    "en": "call back",
+    "th": "โทรกลับ"
+  },
+  {
+    "num": 41,
+    "en": "call for",
+    "th": "เรยกหา / ต้องการ"
+  },
+  {
+    "num": 42,
+    "en": "care about",
+    "th": "ใส่ใจ"
+  },
+  {
+    "num": 43,
+    "en": "care for",
+    "th": "ดูแล"
+  },
+  {
+    "num": 44,
+    "en": "carry on",
+    "th": "ทำต่อ"
+  },
+  {
+    "num": 45,
+    "en": "catch a bus",
+    "th": "ขึ้นรถเมล์"
+  },
+  {
+    "num": 46,
+    "en": "catch a cold",
+    "th": "เป็นหวัด"
+  },
+  {
+    "num": 47,
+    "en": "catch a train",
+    "th": "ขึ้นรถไฟ"
+  },
+  {
+    "num": 48,
+    "en": "catch someone's attention",
+    "th": "ดึงดูดความสนใจ"
+  },
+  {
+    "num": 49,
+    "en": "check in",
+    "th": "เช็กอิน (โรงแรม/สนามบิน)"
+  },
+  {
+    "num": 50,
+    "en": "check out",
+    "th": "เช็กเอาต์ / ตรวจสอบ"
+  },
+  {
+    "num": 51,
+    "en": "choose from",
+    "th": "เลือกจาก"
+  },
+  {
+    "num": 52,
+    "en": "clean up",
+    "th": "ทำความสะอาด"
+  },
+  {
+    "num": 53,
+    "en": "clear up",
+    "th": "ทำให้กระจ่าง / แก้ปญหา"
+  },
+  {
+    "num": 54,
+    "en": "close friend",
+    "th": "เพื่อนสนิท"
+  },
+  {
+    "num": 55,
+    "en": "come back",
+    "th": "กลับมา"
+  },
+  {
+    "num": 56,
+    "en": "come from",
+    "th": "มาจาก"
+  },
+  {
+    "num": 57,
+    "en": "come up with",
+    "th": "คิดค้น / คิดไอเดีย (B1)"
+  },
+  {
+    "num": 58,
+    "en": "communicate with",
+    "th": "ติดต่อสื่อสารกับ"
+  },
+  {
+    "num": 59,
+    "en": "compare with",
+    "th": "เปรยบเทียบกับ"
+  },
+  {
+    "num": 60,
+    "en": "complain about",
+    "th": "บ่นเกี่ยวกับ"
+  },
+  {
+    "num": 61,
+    "en": "concentrate on",
+    "th": "มีสมาธิกับ"
+  },
+  {
+    "num": 62,
+    "en": "connect to",
+    "th": "เชื่อมต่อกับ"
+  },
+  {
+    "num": 63,
+    "en": "consist of",
+    "th": "ประกอบด้วย"
+  },
+  {
+    "num": 64,
+    "en": "contact someone",
+    "th": "ติดต่อใครบางคน"
+  },
+  {
+    "num": 65,
+    "en": "continue doing",
+    "th": "ทำต่อไป"
+  },
+  {
+    "num": 66,
+    "en": "control over",
+    "th": "การควบคุมเหนือ"
+  },
+  {
+    "num": 67,
+    "en": "cook a meal",
+    "th": "ทำอาหารหนึ่งมื้อ"
+  },
+  {
+    "num": 68,
+    "en": "cost money",
+    "th": "มีค่าใช้จ่าย"
+  },
+  {
+    "num": 69,
+    "en": "create an opportunity",
+    "th": "สร้างโอกาส"
+  },
+  {
+    "num": 70,
+    "en": "cut down on",
+    "th": "ลดปรมาณ (B1)"
+  },
+  {
+    "num": 71,
+    "en": "deal with",
+    "th": "จัดการกับ"
+  },
+  {
+    "num": 72,
+    "en": "decide to do something",
+    "th": "ตัดสินใจทำบางอย่าง"
+  },
+  {
+    "num": 73,
+    "en": "depend on",
+    "th": "ขึ้นอยู่กับ"
+  },
+  {
+    "num": 74,
+    "en": "describe as",
+    "th": "บรรยายว่าเป็น"
+  },
+  {
+    "num": 75,
+    "en": "die from",
+    "th": "เสียชีวตจาก"
+  },
+  {
+    "num": 76,
+    "en": "die of",
+    "th": "เสียชีวตจาก (โรค/สาเหตุ)"
+  },
+  {
+    "num": 77,
+    "en": "do business",
+    "th": "ทำธุรกิจ"
+  },
+  {
+    "num": 78,
+    "en": "do exercise",
+    "th": "ออกกำลังกาย"
+  },
+  {
+    "num": 79,
+    "en": "do homework",
+    "th": "ทำการบ้าน"
+  },
+  {
+    "num": 80,
+    "en": "do research",
+    "th": "ทำวจัย"
+  },
+  {
+    "num": 81,
+    "en": "do the shopping",
+    "th": "ซื้อของ"
+  },
+  {
+    "num": 82,
+    "en": "do your best",
+    "th": "ทำให้ดีที่สุด"
+  },
+  {
+    "num": 83,
+    "en": "draw attention to",
+    "th": "ดึงความสนใจไปที่"
+  },
+  {
+    "num": 84,
+    "en": "dream about",
+    "th": "ฝนเกี่ยวกับ"
+  },
+  {
+    "num": 85,
+    "en": "dress up",
+    "th": "แต่งตัวดี/แต่งชุดพิเศษ"
+  },
+  {
+    "num": 86,
+    "en": "drink water",
+    "th": "ดื่มนา"
+  },
+  {
+    "num": 87,
+    "en": "drive a car",
+    "th": "ขับรถ"
+  },
+  {
+    "num": 88,
+    "en": "earn money",
+    "th": "หาเงน"
+  },
+  {
+    "num": 89,
+    "en": "eat out",
+    "th": "กินอาหารนอกบ้าน"
+  },
+  {
+    "num": 90,
+    "en": "end up",
+    "th": "ลงท้ายด้วย / สุดท้ายกลายเป็น"
+  },
+  {
+    "num": 91,
+    "en": "enjoy doing",
+    "th": "สนุกกับการทำ"
+  },
+  {
+    "num": 92,
+    "en": "enter a competition",
+    "th": "เข้าร่วมการแข่งขัน"
+  },
+  {
+    "num": 93,
+    "en": "fall asleep",
+    "th": "หลับ"
+  },
+  {
+    "num": 94,
+    "en": "fall ill",
+    "th": "ปวย"
+  },
+  {
+    "num": 95,
+    "en": "fall in love",
+    "th": "ตกหลุมรัก"
+  },
+  {
+    "num": 96,
+    "en": "feel like",
+    "th": "รู้สึกอยาก"
+  },
+  {
+    "num": 97,
+    "en": "ﬁll in",
+    "th": "กรอกข้อมูล"
+  },
+  {
+    "num": 98,
+    "en": "ﬁll out",
+    "th": "กรอกแบบฟอร์ม"
+  },
+  {
+    "num": 99,
+    "en": "ﬁnd out",
+    "th": "ค้นพบ / หาคำตอบ"
+  },
+  {
+    "num": 100,
+    "en": "give advice",
+    "th": "ให้คำแนะนำ"
+  },
+  {
+    "num": 101,
+    "en": "make a decision",
+    "th": "ตัดสินใจ"
+  },
+  {
+    "num": 102,
+    "en": "make a mistake",
+    "th": "ทำผิดพลาด"
+  },
+  {
+    "num": 103,
+    "en": "make an appointment",
+    "th": "นัดหมาย"
+  },
+  {
+    "num": 104,
+    "en": "make an effort",
+    "th": "พยายาม"
+  },
+  {
+    "num": 105,
+    "en": "make a plan",
+    "th": "วางแผน"
+  },
+  {
+    "num": 106,
+    "en": "make progress",
+    "th": "มีความก้าวหน้า"
+  },
+  {
+    "num": 107,
+    "en": "make money",
+    "th": "หาเงน"
+  },
+  {
+    "num": 108,
+    "en": "make friends",
+    "th": "สร้างมิตรภาพ / หาเพื่อน"
+  },
+  {
+    "num": 109,
+    "en": "make sure",
+    "th": "ตรวจสอบให้แน่ใจ"
+  },
+  {
+    "num": 110,
+    "en": "make a difference",
+    "th": "สร้างความแตกต่าง"
+  },
+  {
+    "num": 111,
+    "en": "manage to do something",
+    "th": "สามารถทำสำเร็จ"
+  },
+  {
+    "num": 112,
+    "en": "mean to do something",
+    "th": "ตั้งใจจะทำ"
+  },
+  {
+    "num": 113,
+    "en": "meet a deadline",
+    "th": "ทำให้ทันกําหนดเวลา"
+  },
+  {
+    "num": 114,
+    "en": "meet someone's needs",
+    "th": "ตอบสนองความต้องการ"
+  },
+  {
+    "num": 115,
+    "en": "miss a chance",
+    "th": "พลาดโอกาส"
+  },
+  {
+    "num": 116,
+    "en": "miss a train",
+    "th": "ตกรถไฟ"
+  },
+  {
+    "num": 117,
+    "en": "move house",
+    "th": "ย้ายบ้าน"
+  },
+  {
+    "num": 118,
+    "en": "move to another city",
+    "th": "ย้ายไปอีกเมือง"
+  },
+  {
+    "num": 119,
+    "en": "need help",
+    "th": "ต้องการความช่วยเหลือ"
+  },
+  {
+    "num": 120,
+    "en": "need to do something",
+    "th": "จำเป็นต้องทำ"
+  },
+  {
+    "num": 121,
+    "en": "notice a difference",
+    "th": "สังเกตเห็นความแตกต่าง"
+  },
+  {
+    "num": 122,
+    "en": "offer help",
+    "th": "เสนอความช่วยเหลือ"
+  },
+  {
+    "num": 123,
+    "en": "offer advice",
+    "th": "ให้คำแนะนำ"
+  },
+  {
+    "num": 124,
+    "en": "open a bank account",
+    "th": "เปิดบัญชีธนาคาร"
+  },
+  {
+    "num": 125,
+    "en": "order food",
+    "th": "สั่งอาหาร"
+  },
+  {
+    "num": 126,
+    "en": "pay attention",
+    "th": "ให้ความสนใจ"
+  },
+  {
+    "num": 127,
+    "en": "pay for something",
+    "th": "จ่ายเงนสำหรับบางสิ่ง"
+  },
+  {
+    "num": 128,
+    "en": "pay a visit",
+    "th": "ไปเยี่ยม"
+  },
+  {
+    "num": 129,
+    "en": "pick up",
+    "th": "รับ / หยิบ / ไปรับ"
+  },
+  {
+    "num": 130,
+    "en": "plan to do something",
+    "th": "วางแผนที่จะทำ"
+  },
+  {
+    "num": 131,
+    "en": "play a role",
+    "th": "มีบทบาท"
+  },
+  {
+    "num": 132,
+    "en": "point out",
+    "th": "ชี้ให้เห็น"
+  },
+  {
+    "num": 133,
+    "en": "prepare for",
+    "th": "เตรยมตัวสำหรับ"
+  },
+  {
+    "num": 134,
+    "en": "prevent something from happening",
+    "th": "ป£องกันบางสิ่งเกิดขึ้น"
+  },
+  {
+    "num": 135,
+    "en": "provide information",
+    "th": "ให้ข้อมูล"
+  },
+  {
+    "num": 136,
+    "en": "provide help",
+    "th": "ให้ความช่วยเหลือ"
+  },
+  {
+    "num": 137,
+    "en": "put away",
+    "th": "เก็บเข้าที่"
+  },
+  {
+    "num": 138,
+    "en": "put on clothes",
+    "th": "สวมเสื้อผ้า"
+  },
+  {
+    "num": 139,
+    "en": "put off",
+    "th": "เลื่อนออกไป"
+  },
+  {
+    "num": 140,
+    "en": "put pressure on",
+    "th": "กดดัน"
+  },
+  {
+    "num": 141,
+    "en": "reach an agreement",
+    "th": "บรรลุข้อตกลง"
+  },
+  {
+    "num": 142,
+    "en": "reach a decision",
+    "th": "ได้ข้อสรุป / ตัดสินใจ"
+  },
+  {
+    "num": 143,
+    "en": "receive a message",
+    "th": "ได้รับข้อความ"
+  },
+  {
+    "num": 144,
+    "en": "receive information",
+    "th": "ได้รับข้อมูล"
+  },
+  {
+    "num": 145,
+    "en": "reduce costs",
+    "th": "ลดค่าใช้จ่าย"
+  },
+  {
+    "num": 146,
+    "en": "reduce the risk",
+    "th": "ลดความเสี่ยง"
+  },
+  {
+    "num": 147,
+    "en": "remember to do something",
+    "th": "จำไว้ว่าต้องทำ"
+  },
+  {
+    "num": 148,
+    "en": "remind someone about",
+    "th": "เตือนใครเกี่ยวกับ"
+  },
+  {
+    "num": 149,
+    "en": "reply to an email",
+    "th": "ตอบอีเมล"
+  },
+  {
+    "num": 150,
+    "en": "run out of",
+    "th": "หมด / ใช้จนหมด"
+  },
+  {
+    "num": 151,
+    "en": "save money",
+    "th": "ประหยัดเงน / เก็บเงน"
+  },
+  {
+    "num": 152,
+    "en": "save time",
+    "th": "ประหยัดเวลา"
+  },
+  {
+    "num": 153,
+    "en": "say goodbye",
+    "th": "กล่าวลา"
+  },
+  {
+    "num": 154,
+    "en": "search for",
+    "th": "ค้นหา"
+  },
+  {
+    "num": 155,
+    "en": "sell products",
+    "th": "ขายสินค้า"
+  },
+  {
+    "num": 156,
+    "en": "send a message",
+    "th": "ส่งข้อความ"
+  },
+  {
+    "num": 157,
+    "en": "send an email",
+    "th": "ส่งอีเมล"
+  },
+  {
+    "num": 158,
+    "en": "set an alarm",
+    "th": "ตั้งนาิกาปลุก"
+  },
+  {
+    "num": 159,
+    "en": "set a goal",
+    "th": "ตั้งเป้าหมาย"
+  },
+  {
+    "num": 160,
+    "en": "share information",
+    "th": "แบ่งปนข้อมูล"
+  },
+  {
+    "num": 161,
+    "en": "share an opinion",
+    "th": "แบ่งปนความคิดเห็น"
+  },
+  {
+    "num": 162,
+    "en": "show interest in",
+    "th": "แสดงความสนใจใน"
+  },
+  {
+    "num": 163,
+    "en": "show someone how to",
+    "th": "แสดงวธีทำให้ใครดู"
+  },
+  {
+    "num": 164,
+    "en": "sign a document",
+    "th": "เซ็นเอกสาร"
+  },
+  {
+    "num": 165,
+    "en": "solve a problem",
+    "th": "แก้ปญหา"
+  },
+  {
+    "num": 166,
+    "en": "spend time doing something",
+    "th": "ใช้เวลาทำอะไรบางอย่าง"
+  },
+  {
+    "num": 167,
+    "en": "spend money on",
+    "th": "ใช้เงนกับ"
+  },
+  {
+    "num": 168,
+    "en": "start a business",
+    "th": "เร่มธุรกิจ"
+  },
+  {
+    "num": 169,
+    "en": "start doing something",
+    "th": "เร่มทำบางสิ่ง"
+  },
+  {
+    "num": 170,
+    "en": "stay at home",
+    "th": "อยู่บ้าน"
+  },
+  {
+    "num": 171,
+    "en": "stay in touch",
+    "th": "ติดต่อกันอยู่"
+  },
+  {
+    "num": 172,
+    "en": "stop doing something",
+    "th": "หยุดทำบางสิ่ง"
+  },
+  {
+    "num": 173,
+    "en": "succeed in",
+    "th": "ประสบความสำเร็จใน"
+  },
+  {
+    "num": 174,
+    "en": "suffer from",
+    "th": "ประสบปญหา / ทุกข์ทรมานจาก"
+  },
+  {
+    "num": 175,
+    "en": "suggest doing something",
+    "th": "แนะนำให้ทำ"
+  },
+  {
+    "num": 176,
+    "en": "support someone",
+    "th": "สนับสนุนใครบางคน"
+  },
+  {
+    "num": 177,
+    "en": "take a break",
+    "th": "พัก"
+  },
+  {
+    "num": 178,
+    "en": "take a chance",
+    "th": "ลองเสี่ยง / คว้าโอกาส"
+  },
+  {
+    "num": 179,
+    "en": "take care of",
+    "th": "ดูแล"
+  },
+  {
+    "num": 180,
+    "en": "take part in",
+    "th": "เข้าร่วม"
+  },
+  {
+    "num": 181,
+    "en": "take place",
+    "th": "เกิดขึ้น"
+  },
+  {
+    "num": 182,
+    "en": "take responsibility for",
+    "th": "รับผิดชอบต่อ"
+  },
+  {
+    "num": 183,
+    "en": "take notes",
+    "th": "จดบันทึก"
+  },
+  {
+    "num": 184,
+    "en": "take medicine",
+    "th": "กินยา"
+  },
+  {
+    "num": 185,
+    "en": "talk about",
+    "th": "พูดเกี่ยวกับ"
+  },
+  {
+    "num": 186,
+    "en": "talk to/with",
+    "th": "พูดคุยกับ"
+  },
+  {
+    "num": 187,
+    "en": "thank for",
+    "th": "ขอบคุณสำหรับ"
+  },
+  {
+    "num": 188,
+    "en": "think about",
+    "th": "คิดเกี่ยวกับ"
+  },
+  {
+    "num": 189,
+    "en": "think of",
+    "th": "คิดถึง / นึกถึง"
+  },
+  {
+    "num": 190,
+    "en": "try on clothes",
+    "th": "ลองเสื้อผ้า"
+  },
+  {
+    "num": 191,
+    "en": "turn on",
+    "th": "เปิด (เคร่องใช้ไฟฟ£า)"
+  },
+  {
+    "num": 192,
+    "en": "turn off",
+    "th": "ปิด (เคร่องใช้ไฟฟ£า)"
+  },
+  {
+    "num": 193,
+    "en": "use up",
+    "th": "ใช้หมด"
+  },
+  {
+    "num": 194,
+    "en": "wait for",
+    "th": "รอ"
+  },
+  {
+    "num": 195,
+    "en": "wake up",
+    "th": "ตื่นนอน"
+  },
+  {
+    "num": 196,
+    "en": "work as",
+    "th": "ทำงานเป็น"
+  },
+  {
+    "num": 197,
+    "en": "work for",
+    "th": "ทำงานให้กับ"
+  },
+  {
+    "num": 198,
+    "en": "work on",
+    "th": "ทำงานเกี่ยวกับ / ปรับปรุง"
+  },
+  {
+    "num": 199,
+    "en": "work out",
+    "th": "ออกกำลังกาย / แก้ปญหาได้"
+  },
+  {
+    "num": 200,
+    "en": "write down",
+    "th": "จดเขียนลง"
+  }
+]
