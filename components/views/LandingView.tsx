@@ -514,6 +514,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       {/* Quick Diagnostic Modal (3 Min Check) */}
       <QuickEnglishCheck
         isOpen={isQuickCheckOpen}
+        isModal={true}
         onClose={() => setIsQuickCheckOpen(false)}
         onComplete={() => router.push('/dashboard')}
       />

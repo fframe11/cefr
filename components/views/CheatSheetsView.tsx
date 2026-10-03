@@ -362,7 +362,7 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
                       const isOptionCorrect = opt.key === quiz.correctAnswer;
 
                       let btnStyle =
-                        'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 hover:border-[#3B82F6] text-slate-800 dark:text-slate-200 shadow-2xs';
+                        'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 hover:border-[#FA5D5D] text-slate-800 dark:text-slate-200 shadow-2xs';
 
                       if (isAnswered) {
                         if (isOptionCorrect) {
@@ -392,10 +392,22 @@ export const CheatSheetsView: React.FC<CheatSheetsViewProps> = ({
                     })}
                   </div>
 
+                  {/* Explicit Correct Answer Banner when Incorrect */}
+                  {isAnswered && !isCorrect && (
+                    <div className="mt-3 ml-8 flex items-center gap-2 p-3 rounded-[16px] bg-[#E3F6ED] dark:bg-[#102B22] border border-emerald-500/40 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-sans shadow-2xs animate-in fade-in duration-150">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span>
+                        {isEn
+                          ? `Correct Answer: Option ${quiz.correctAnswer} (${quiz.options.find((o) => o.key === quiz.correctAnswer)?.text})`
+                          : `เฉลยคำตอบที่ถูกต้อง: ข้อ ${quiz.correctAnswer} (${quiz.options.find((o) => o.key === quiz.correctAnswer)?.text})`}
+                      </span>
+                    </div>
+                  )}
+
                   {/* Explanation after answering */}
                   {isAnswered && (
-                    <div className="mt-4 ml-8 p-3.5 rounded-[18px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs text-slate-700 dark:text-slate-300 space-y-1 shadow-2xs">
-                      <div className="font-bold text-[#3B82F6] flex items-center gap-1">
+                    <div className="mt-3 ml-8 p-3.5 rounded-[18px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs text-slate-700 dark:text-slate-300 space-y-1 shadow-2xs">
+                      <div className="font-bold text-[#FA5D5D] flex items-center gap-1">
                         <HelpCircle className="w-3.5 h-3.5" />
                         <span>คำอธิบาย / Explanation:</span>
                       </div>

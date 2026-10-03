@@ -316,7 +316,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenProfile}
-              className="touch-target inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-indigo-600 dark:bg-[#5B5CE2] text-white text-xs font-bold shadow-[0_2px_0_#3730A3] dark:shadow-[0_2px_0_#3839A0] hover:bg-indigo-700 dark:hover:bg-[#4E4FD6] active:translate-y-0.5 transition-all"
+              className="touch-target inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs font-bold shadow-xs active:scale-95 transition-all cursor-pointer"
               aria-label={language === 'en' ? 'Sign In' : 'เข้าสู่ระบบ'}
             >
               <UserIcon className="w-3.5 h-3.5" />

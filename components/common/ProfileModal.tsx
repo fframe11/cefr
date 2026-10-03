@@ -141,7 +141,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   onProfileUpdated,
 }) => {
   const router = useRouter();
-  const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signOut, updateProfile } = useAuth();
+  const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signInAsDemoStudent, signOut, updateProfile } = useAuth();
   const { t, language } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'guest'>('signin');
@@ -201,6 +201,20 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   };
 
   if (!isOpen) return null;
+
+  const handleDemoSignIn = async () => {
+    setAuthError(null);
+    setIsSubmitting(true);
+    try {
+      await signInAsDemoStudent();
+      onClose();
+      router.push('/dashboard');
+    } catch (err: any) {
+      setAuthError(err?.message || 'เข้าสู่ระบบบัญชีทดลองไม่สำเร็จ');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -672,6 +686,17 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                     </button>
                   </div>
 
+                  {/* Demo Student Fast Access */}
+                  <button
+                    type="button"
+                    onClick={handleDemoSignIn}
+                    disabled={isSubmitting}
+                    className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50"
+                  >
+                    <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                    <span>{language === 'th' ? 'เข้าสู่ระบบด่วน (Demo Student)' : 'Quick Demo Student Access'}</span>
+                  </button>
+
                   {/* Divider */}
                   <div className="relative my-2 flex items-center justify-center">
                     <div className="absolute inset-0 flex items-center">
@@ -805,6 +830,17 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                           <span className="truncate">{t('auth.continue_with_facebook')}</span>
                         </button>
                       </div>
+
+                      {/* Demo Student Fast Access */}
+                      <button
+                        type="button"
+                        onClick={handleDemoSignIn}
+                        disabled={isSubmitting}
+                        className="touch-target w-full py-2.5 px-3 rounded-xl border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-2xs hover:shadow-xs min-h-[44px] disabled:opacity-50"
+                      >
+                        <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                        <span>{language === 'th' ? 'เข้าสู่ระบบด่วน (Demo Student)' : 'Quick Demo Student Access'}</span>
+                      </button>
 
                       {/* Divider */}
                       <div className="relative my-2 flex items-center justify-center">

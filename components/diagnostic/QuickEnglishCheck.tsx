@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Sparkles,
@@ -21,6 +21,7 @@ import {
   Check,
   ChevronRight,
   ShieldCheck,
+  X,
 } from 'lucide-react';
 import {
   QUICK_CHECK_QUESTIONS,
@@ -53,7 +54,50 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
   const { progress, setProgress } = useApp();
   const { status } = useAuth();
 
+  useEffect(() => {
+    if (!isModal && !onClose) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && onClose) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isModal, onClose]);
+
   if (isOpen === false) return null;
+
+  const renderContainer = (content: React.ReactNode) => {
+    if (!isModal && !onClose) return content;
+
+    return (
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="แบบวัดระดับด่วน 3 นาที"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in duration-200"
+        onClick={(e) => {
+          if (e.target === e.currentTarget && onClose) {
+            onClose();
+          }
+        }}
+      >
+        <div className="relative w-full max-w-2xl my-auto">
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer shadow-xs"
+              aria-label="ปิดหน้าต่าง"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+          {content}
+        </div>
+      </div>
+    );
+  };
 
   const [step, setStep] = useState<'intro' | 'questions' | 'snapshot' | 'quick_win' | 'win_done'>('intro');
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -200,7 +244,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
 
   // 1. INTRO SCREEN
   if (step === 'intro') {
-    return (
+    return renderContainer(
       <div className="w-full max-w-2xl mx-auto p-6 sm:p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-border/80 shadow-sm text-left space-y-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] text-xs font-mono font-bold border border-[#FDE5BC] dark:border-amber-500/20">
           <Clock className="w-3.5 h-3.5" aria-hidden="true" />
@@ -288,7 +332,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
 
   // 2. QUESTION SCREEN (One by One, Real-Life Context)
   if (step === 'questions') {
-    return (
+    return renderContainer(
       <div className="w-full max-w-2xl mx-auto p-5 sm:p-7 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-border/80 shadow-sm space-y-5 text-left">
         {/* Header with Progress */}
         <div className="space-y-2">
@@ -421,7 +465,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
 
   // 3. PERSONAL ENGLISH SNAPSHOT SCREEN
   if (step === 'snapshot' && snapshot) {
-    return (
+    return renderContainer(
       <div className="w-full max-w-2xl mx-auto p-6 sm:p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-border/80 shadow-sm space-y-6 text-left">
         {/* Header */}
         <div className="space-y-1 border-b border-border/80 pb-4">
@@ -523,7 +567,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
 
   // 4. QUICK WIN ACTIVITY (2 Minutes)
   if (step === 'quick_win') {
-    return (
+    return renderContainer(
       <div className="w-full max-w-2xl mx-auto p-6 sm:p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-border/80 shadow-sm space-y-5 text-left">
         <div className="flex items-center justify-between border-b border-border/80 pb-3">
           <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#D98200] dark:text-[#FFBA38]">
@@ -610,7 +654,7 @@ export const QuickEnglishCheck: React.FC<QuickEnglishCheckProps> = ({
   }
 
   // 5. QUICK WIN DONE AFFIRMATION
-  return (
+  return renderContainer(
     <div className="w-full max-w-md mx-auto p-6 sm:p-8 bg-white dark:bg-[#1E1B28] rounded-[28px] border border-border/80 shadow-sm space-y-5 text-center">
       <div className="w-16 h-16 mx-auto rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 flex items-center justify-center shadow-xs">
         <BookmarkCheck className="w-8 h-8" aria-hidden="true" />

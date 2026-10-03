@@ -86,7 +86,7 @@ export default createApiHandler(
     requireAuth: false,
     rateLimit: {
       action: 'content_vocabulary',
-      maxRequests: 60,
+      maxRequests: 600,
       windowMs: 60_000,
     },
   }

@@ -22,6 +22,7 @@ export interface AuthContextType {
     password: string
   ) => Promise<{ error: Error | null; confirmationRequired?: boolean }>;
   signInWithOAuth: (provider: 'google' | 'facebook') => Promise<{ error: Error | null; url?: string }>;
+  signInAsDemoStudent: () => Promise<void>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   updateProfile: (input: UpdateProfileInput) => Promise<UserProfileData>;
@@ -35,6 +36,39 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export interface AuthProviderProps {
   children: ReactNode;
 }
+
+const createDemoUserAndSession = (): { user: User; session: Session; profile: UserProfileData } => {
+  const demoUser: User = {
+    id: 'demo-student-id',
+    app_metadata: { provider: 'email' },
+    user_metadata: { display_name: 'Demo Student', full_name: 'Demo Student' },
+    aud: 'authenticated',
+    created_at: new Date().toISOString(),
+    email: 'student@glova.demo',
+    role: 'authenticated',
+  };
+  const demoSession: Session = {
+    access_token: 'demo-token',
+    refresh_token: 'demo-refresh-token',
+    expires_in: 86400,
+    token_type: 'bearer',
+    user: demoUser,
+  };
+  const demoProfile: UserProfileData = {
+    id: 'demo-student-id',
+    display_name: 'Demo Student',
+    current_cefr_level: 'B1',
+    target_exam: 'FCE',
+    estimated_cambridge_score: 160,
+    streak_days: 3,
+    daily_goal_minutes: 20,
+    last_active_date: new Date().toISOString().split('T')[0],
+    assessment_completed: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+  return { user: demoUser, session: demoSession, profile: demoProfile };
+};
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [status, setStatus] = useState<AuthStatus>('loading');
@@ -114,6 +148,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           // Perform automatic guest progress sync if guest attempts are present
           await syncGuestToAccount();
         } else if (isMounted) {
+          if (typeof window !== 'undefined' && localStorage.getItem('cefr_demo_session') === 'true') {
+            const { user: dUser, session: dSession, profile: dProfile } = createDemoUserAndSession();
+            setUser(dUser);
+            setSession(dSession);
+            setProfile(dProfile);
+            setStatus('authenticated');
+            return;
+          }
           setSession(null);
           setUser(null);
           setProfile(null);
@@ -121,6 +163,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
       } catch (err: any) {
         if (isMounted) {
+          if (typeof window !== 'undefined' && localStorage.getItem('cefr_demo_session') === 'true') {
+            const { user: dUser, session: dSession, profile: dProfile } = createDemoUserAndSession();
+            setUser(dUser);
+            setSession(dSession);
+            setProfile(dProfile);
+            setStatus('authenticated');
+            return;
+          }
           setError(err?.message || 'Failed to initialize authentication.');
           setStatus('unauthenticated');
         }
@@ -273,8 +323,23 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const signInAsDemoStudent = async () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cefr_demo_session', 'true');
+    }
+    const { user: dUser, session: dSession, profile: dProfile } = createDemoUserAndSession();
+    setUser(dUser);
+    setSession(dSession);
+    setProfile(dProfile);
+    setStatus('authenticated');
+    setError(null);
+  };
+
   const signOut = async () => {
     try {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('cefr_demo_session');
+      }
       await supabase.auth.signOut();
     } finally {
       setSession(null);
@@ -309,6 +374,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     signInWithPassword,
     signUpWithPassword,
     signInWithOAuth,
+    signInAsDemoStudent,
     signOut,
     refreshProfile,
     updateProfile,

@@ -88,13 +88,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const [practiceLoading, setPracticeLoading] = useState(false);
 
   const fetchVocabularyData = useCallback(async () => {
-    setLoading(true);
     setError(null);
     try {
       const res = await getVocabulary({
         cefr_level: selectedLevel === 'ALL' ? undefined : selectedLevel,
         part_of_speech: selectedPos === 'ALL' ? undefined : selectedPos.toLowerCase(),
-        search: searchQuery.trim() || undefined,
         page: 1,
         limit: 100,
       });
@@ -105,28 +103,17 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         if (res.pagination?.total) {
           setTotalCatalogCount(res.pagination.total);
         }
-      } else {
-        const fallback = VOCABULARY_BANK.filter((w) => {
-          const matchesLevel = selectedLevel === 'ALL' || w.cefrLevel === selectedLevel;
-          const matchesPos = selectedPos === 'ALL' || w.partOfSpeech.toLowerCase() === selectedPos.toLowerCase();
-          const q = searchQuery.toLowerCase();
-          const matchesSearch =
-            !q ||
-            w.word.toLowerCase().includes(q) ||
-            w.meaningTh.toLowerCase().includes(q) ||
-            w.topic.toLowerCase().includes(q);
-          return matchesLevel && matchesPos && matchesSearch;
-        });
-        setWords(fallback);
       }
     } catch (err: any) {
-      console.warn('[VocabularyView] API fetch failed, falling back to static vocabulary:', err?.message || err);
-      setError(err?.friendlyMessage || 'ไม่สามารถโหลดข้อมูลคำศัพท์จากเซิร์ฟเวอร์ได้ กำลังแสดงข้อมูลสำรอง');
-      setWords(VOCABULARY_BANK);
+      console.warn('[VocabularyView] API fetch failed, using instant local vocabulary catalog:', err?.message || err);
+      // Resilient silent fallback to instant local verified catalog
+      if (words.length === 0) {
+        setWords(VOCABULARY_BANK);
+      }
     } finally {
       setLoading(false);
     }
-  }, [selectedLevel, selectedPos, searchQuery, masteredWordIds]);
+  }, [selectedLevel, selectedPos, masteredWordIds, words.length]);
 
   useEffect(() => {
     fetchVocabularyData();
@@ -607,8 +594,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       )}
 
-      {/* Error State */}
-      {error && (
+      {/* Error State: Only show if catalog is completely empty */}
+      {error && words.length === 0 && (
         <ErrorMessage
           message={error}
           onRetry={fetchVocabularyData}
