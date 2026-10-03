@@ -51,8 +51,9 @@ for w in prod:
     elif ENGLISH_ONLY.match(th.strip()):
         word_issues.append('ENGLISH_ONLY')
 
-    # 3. Too short (< 3 chars Thai) — likely truncated or symbol
-    elif len(th.strip()) < 3:
+    # 3. Too short — Thai naturally has 2-char words (นก, งู, กบ, หู, ขา, ลม)
+    #    Flag only if fewer than 2 Thai characters total
+    elif len(re.findall(r'[\u0e00-\u0e7f]', th)) < 2:
         word_issues.append('TOO_SHORT')
 
     # 4. Too long (> 120 chars) — might be a full sentence not a meaning
@@ -67,16 +68,20 @@ for w in prod:
         if ratio < 0.5:
             word_issues.append(f'LOW_THAI_RATIO_{ratio:.0%}')
 
-    # 6. Cross-check vs Lexitron — flag if current meaning matches NO sense
+    # 6. Cross-check vs Lexitron — improved matching with char-overlap fallback
     lex_senses = lexitron.get(key, [])
     if lex_senses and not word_issues:
         lex_translations = [s['normalized_translation'] for s in lex_senses]
-        # Loose match: any Lexitron sense is a substring of meaning_th or vice versa
-        match_found = any(
-            (lt in th or th in lt or
-             any(seg in th for seg in lt.split(',') if len(seg.strip()) > 2))
-            for lt in lex_translations
-        )
+        def lex_match(lt, th_text):
+            if lt in th_text or th_text in lt:
+                return True
+            if any(seg.strip() in th_text for seg in lt.split(',') if len(seg.strip()) > 2):
+                return True
+            # Shared Thai chars (≥3 unique Thai chars in common)
+            th_set = set(c for c in th_text if '\u0e00' <= c <= '\u0e7f')
+            lt_set = set(c for c in lt if '\u0e00' <= c <= '\u0e7f')
+            return len(th_set & lt_set) >= 3
+        match_found = any(lex_match(lt, th) for lt in lex_translations)
         if not match_found:
             word_issues.append('LEXITRON_MISMATCH')
 

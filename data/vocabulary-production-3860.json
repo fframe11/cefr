@@ -587,7 +587,7 @@
     "lemma": "bar",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "บาร์, ร้านขายเครื่องดื่ม",
+    "meaning_th": "บาร์, ที่จำหน่ายเครื่องดื่ม",
     "meaning_en": "the act of preventing",
     "ipa": "/bɑːɹ/",
     "example_sentence_en": "We had a bar of gold stolen.",
@@ -703,7 +703,7 @@
       "enriched_at": "2026-09-28T16:19:55.673Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "28223c1c-8828-4650-a71e-192e2a76ab68",
@@ -12617,7 +12617,7 @@
     "lemma": "game",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "เกม, การแข่งขัน",
+    "meaning_th": "เกม, กีฬา, การแข่งขัน",
     "meaning_en": "a contest with rules to determine a winner",
     "ipa": "/ɡeɪm/",
     "example_sentence_en": "The French government has launched an online game that challenges taxpayers to balance the national budget.",
@@ -12745,7 +12745,7 @@
       "enriched_at": "2026-09-28T16:19:55.678Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "63eb24c7-6e8f-46b0-ad4c-896f5fd66eee",
@@ -13886,7 +13886,7 @@
     "lemma": "picture",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "รูปภาพ, ภาพ",
+    "meaning_th": "รูปภาพ, ภาพวาด",
     "meaning_en": "a visual representation (of an object or scene or person or abstraction) produced on a surface",
     "ipa": "/ˈpɪktʃəɹ/",
     "example_sentence_en": "Is it a recent picture?",
@@ -14002,7 +14002,7 @@
       "enriched_at": "2026-09-28T16:19:55.679Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "12afd91b-4d21-43ea-a18a-b38d36a07b87",
@@ -15731,7 +15731,7 @@
     "lemma": "neck",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "คอ",
+    "meaning_th": "คอ, ลำคอ",
     "meaning_en": "an opening in a garment for the neck of the wearer; a part of the garment near the wearer's neck",
     "ipa": "/nek/",
     "example_sentence_en": "The horses are coming down the track and it's neck and neck.",
@@ -15834,7 +15834,7 @@
       "enriched_at": "2026-09-28T16:19:55.679Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "15b1c4ce-337c-4b51-adf7-a41963fc4e37",
@@ -19296,7 +19296,7 @@
     "lemma": "supply",
     "part_of_speech": "noun",
     "cefr_level": "B1",
-    "meaning_th": "การจัดหา, อุปทาน",
+    "meaning_th": "จัดหาให้, การจัดหา, อุปทาน",
     "meaning_en": "the activity of supplying or providing something",
     "ipa": "/səpˈlaɪ/",
     "example_sentence_en": "Supply is relative to demand.",
@@ -19360,7 +19360,7 @@
       "enriched_at": "2026-09-28T16:19:55.681Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "52ea468f-457f-402f-a93d-4087f312e433",
@@ -22529,7 +22529,7 @@
     "lemma": "flat",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "อพาร์ทเมนต์",
+    "meaning_th": "อพาร์ทเมนต์, ที่ราบ",
     "meaning_en": "a suite of rooms usually on one floor of an apartment house",
     "ipa": "/flæt/",
     "example_sentence_en": "It was very hard for me to find your flat.",
@@ -22641,7 +22641,7 @@
       "enriched_at": "2026-09-28T16:19:55.682Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "fc18f8db-5a72-4320-ace2-7a62785dfce6",
@@ -55368,7 +55368,7 @@
     "lemma": "ant",
     "part_of_speech": "noun",
     "cefr_level": "B1",
-    "meaning_th": "มด",
+    "meaning_th": "มด, แมลงมด",
     "meaning_en": "social insect living in organized colonies; characteristically the males and fertile queen have wings during breeding season; wingless sterile females are the workers",
     "ipa": "/ænt/",
     "example_sentence_en": "We crawled like so many ants along the mountain pass.",
@@ -55407,7 +55407,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.698Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "d9f7c513-da2b-4974-ab9c-1875f0a5a16a",
@@ -67048,7 +67049,7 @@
     "lemma": "card",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "บัตร, การ์ด",
+    "meaning_th": "บัตรประจำตัว, บัตร, การ์ด",
     "meaning_en": "one of a set of small pieces of stiff paper marked in various ways and used for playing games or for telling fortunes",
     "ipa": "/kɑːɹd/",
     "example_sentence_en": "\"I feel like playing cards.\" \"So do I.\"",
@@ -67148,7 +67149,7 @@
       "enriched_at": "2026-09-28T16:19:55.706Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "a6db0bec-c9b0-4ceb-aa49-a47eb78557e1",
@@ -71777,7 +71778,7 @@
     "lemma": "fast",
     "part_of_speech": "verb",
     "cefr_level": "A1",
-    "meaning_th": "อดอาหาร",
+    "meaning_th": "อดอาหาร, จำกัดอาหาร",
     "meaning_en": "abstaining from food",
     "ipa": "/fæst/",
     "example_sentence_en": "I found a solution, but I found it so fast that it can't be the right solution.",
@@ -71864,7 +71865,7 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
-    "meaning_th_source": "manual_cefr_override",
+    "meaning_th_source": "zero_fp_fix",
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
   },
   {
@@ -74723,7 +74724,7 @@
     "lemma": "ground",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "พื้นดิน, พื้น",
+    "meaning_th": "ผิวดิน, พื้นดิน, สนาม",
     "meaning_en": "the first or preliminary coat of paint or size applied to a surface",
     "ipa": "/ɡɹaʊnd/",
     "example_sentence_en": "I can't agree to your proposal on the ground that it is not fair and reasonable.",
@@ -74838,7 +74839,7 @@
       "enriched_at": "2026-09-28T16:19:55.707Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "34eb0f83-527c-4990-acb7-4200ccc666ca",
@@ -82464,7 +82465,7 @@
     "lemma": "note",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "บันทึก, โน้ต",
+    "meaning_th": "ข้อความ, บันทึก, โน้ต",
     "meaning_en": "a characteristic emotional quality",
     "ipa": "/noʊt/",
     "example_sentence_en": "I advise you to be careful in making notes for the lecture.",
@@ -82603,7 +82604,7 @@
       "enriched_at": "2026-09-28T16:19:55.708Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "38fda85a-9b08-4362-a624-aed49299f715",
@@ -89927,7 +89928,7 @@
     "lemma": "side",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ด้าน",
+    "meaning_th": "ข้าง, ด้าน",
     "meaning_en": "an extended outer surface of an object",
     "ipa": "/saɪd/",
     "example_sentence_en": "You're by my side; everything's fine now.",
@@ -90027,7 +90028,7 @@
       "enriched_at": "2026-09-28T16:19:55.708Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "8890d174-244a-425a-a13a-97b4ac7d442a",
@@ -96419,7 +96420,7 @@
     "lemma": "type",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ประเภท",
+    "meaning_th": "ประเภท, รูปแบบ",
     "meaning_en": "a small metal block bearing a raised character on one end; produces a printed character when inked and pressed on paper",
     "ipa": "/taɪp/",
     "example_sentence_en": "This is not my type.",
@@ -96531,7 +96532,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "81fa3e5a-c632-4792-a415-b2edfa7c4854",
@@ -97098,7 +97099,7 @@
     "lemma": "way",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ทาง, วิธีการ",
+    "meaning_th": "ทาง, วิธีหรือแนวทาง",
     "meaning_en": "a course of conduct",
     "ipa": "/weɪ/",
     "example_sentence_en": "You are in my way.",
@@ -97238,7 +97239,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "c8318428-234e-44b6-a9b8-3a6e2d4619e0",
@@ -101288,7 +101289,7 @@
     "lemma": "bill",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ใบเรียกเก็บเงิน",
+    "meaning_th": "ใบแจ้งหนี้, ธนบัตร, ร่างกฎหมาย",
     "meaning_en": "the entertainment offered at a public presentation",
     "ipa": "/bɪl/",
     "example_sentence_en": "Bill Clinton spoke in ambiguous language when asked to describe his relationship with Monica Lewinsky.",
@@ -101391,7 +101392,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "53213182-7439-41e1-af87-201c8c006363",
@@ -101400,7 +101401,7 @@
     "lemma": "bit",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ชิ้นเล็ก",
+    "meaning_th": "ชิ้นส่วนเล็กๆน้อยๆ, ชิ้นเล็ก",
     "meaning_en": "The quality, state, or action of bit.",
     "ipa": "/bɪt/",
     "example_sentence_en": "I don't want to lose my ideas, even though some of them are a bit extreme.",
@@ -101488,7 +101489,7 @@
       "enriched_at": "2026-09-28T16:19:55.709Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "77d9af1e-bb22-4c32-af0c-3daa1f67d95d",
@@ -102818,7 +102819,7 @@
     "lemma": "company",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "บริษัท",
+    "meaning_th": "บริษัท, กลุ่มคน",
     "meaning_en": "a social gathering of guests or companions",
     "ipa": "/ˈkʌmpəˌniː/",
     "example_sentence_en": "If you don't want to stay alone, I can keep you company.",
@@ -102898,7 +102899,7 @@
       "enriched_at": "2026-09-28T16:19:55.710Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "17042021-f833-4216-a979-d5fb5756f218",
@@ -104476,7 +104477,7 @@
     "lemma": "deal",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ข้อตกลง",
+    "meaning_th": "ข้อตกลง, การซื้อขาย",
     "meaning_en": "The quality, state, or action of deal.",
     "ipa": "/diːl/",
     "example_sentence_en": "It's a good deal.",
@@ -104567,7 +104568,7 @@
       "enriched_at": "2026-09-28T16:19:55.710Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "25a5fc65-f2fd-4529-aba9-f4236cfe60bd",
@@ -119386,7 +119387,7 @@
     "lemma": "view",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ทิวทัศน์, มุมมอง",
+    "meaning_th": "ภาพทิวทัศน์, มุมมอง, ความคิดเห็น",
     "meaning_en": "the act of looking or seeing or observing",
     "ipa": "/vjuː/",
     "example_sentence_en": "Sometimes he has difficulty being articulate about his views.",
@@ -119525,7 +119526,7 @@
       "enriched_at": "2026-09-28T16:19:55.711Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "0928246e-4278-491b-aba7-426d508aeb6a",
@@ -121874,7 +121875,7 @@
     "lemma": "fire",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ไฟ, เปลวไฟ",
+    "meaning_th": "เพลิง, ไฟ, เปลวไฟ",
     "meaning_en": "the act of firing weapons or artillery at an enemy",
     "ipa": "/ˈfaɪəɹ/",
     "example_sentence_en": "A small forest fire can easily spread and quickly become a great conflagration.",
@@ -122014,7 +122015,7 @@
       "enriched_at": "2026-09-28T16:19:55.712Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "ffe33b7e-1ae4-4aa8-ae02-ef56712fb4cf",
@@ -147053,7 +147054,7 @@
     "lemma": "bird",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "นก",
+    "meaning_th": "นก, สัตว์ปีก",
     "meaning_en": "warm-blooded egg-laying vertebrates characterized by feathers and forelimbs modified as wings",
     "ipa": "/bɜːɹd/",
     "example_sentence_en": "That way I kill two birds with one stone.",
@@ -147128,7 +147129,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.714Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "343e7870-4496-4c40-ab78-13a421d9372f",
@@ -153441,7 +153443,7 @@
     "lemma": "flag",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ธง",
+    "meaning_th": "ธง, ธงชาติ",
     "meaning_en": "The quality, state, or action of flag.",
     "ipa": "/flæɡ/",
     "example_sentence_en": "The flag is up.",
@@ -153532,7 +153534,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.715Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "721b8a6b-ae41-487b-a792-fea0d88cd252",
@@ -156950,7 +156953,7 @@
     "lemma": "leg",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ขา",
+    "meaning_th": "ขา, แข้ง",
     "meaning_en": "a section or portion of a journey or course",
     "ipa": "/leɡ/",
     "example_sentence_en": "It costs an arm and a leg.",
@@ -157039,7 +157042,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.715Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "f776bd24-885c-4327-a960-f1f6517fa74a",
@@ -184933,7 +184937,7 @@
     "lemma": "suit",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "ชุดสูท",
+    "meaning_th": "ชุดสูท, ชุดเสื้อผ้า",
     "meaning_en": "a comprehensive term for any proceeding in a court of law whereby an individual seeks a legal remedy",
     "ipa": "/suːt/",
     "example_sentence_en": "Your shoes do not go with the suit.",
@@ -185049,7 +185053,7 @@
       "enriched_at": "2026-09-28T16:19:55.718Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "214d38ea-c607-4257-a9a0-7b4ecc8b6e25",
@@ -185820,7 +185824,7 @@
     "lemma": "tip",
     "part_of_speech": "noun",
     "cefr_level": "A2",
-    "meaning_th": "เคล็ดลับ, ปลาย",
+    "meaning_th": "เคล็ดลับ, จุดปลายสุด, เงินทิป",
     "meaning_en": "an indication of potential opportunity",
     "ipa": "/tɪp/",
     "example_sentence_en": "How much do you leave for a tip in Spain?",
@@ -185937,7 +185941,7 @@
       "enriched_at": "2026-09-28T16:19:55.719Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "verified_fix_v2"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "4e5e2bf3-bb5c-4d57-ab1a-bdabfd012af5",
@@ -188524,7 +188528,7 @@
     "lemma": "ear",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "หู",
+    "meaning_th": "หู, ใบหู",
     "meaning_en": "the sense organ for hearing and equilibrium",
     "ipa": "/iːɹ/",
     "example_sentence_en": "David has a keen interest in aesthetics — the qualities that make a painting, sculpture, musical composition, or poem pleasing to the eye, ear, or mind.",
@@ -188627,7 +188631,7 @@
       "enriched_at": "2026-09-28T16:19:55.719Z"
     },
     "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
-    "meaning_th_source": "cefr_manual_override"
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "21d54387-e998-47f0-ae12-c3906212a6ae",
@@ -190695,7 +190699,7 @@
     "lemma": "wind",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "ลม",
+    "meaning_th": "ลม, กระแสลม",
     "meaning_en": "the act of winding or twisting",
     "ipa": "/waɪnd/",
     "example_sentence_en": "Someday I'll run like the wind.",
@@ -190773,7 +190777,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.719Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "0399f7a4-a7e9-4918-a117-bad730ad768f",
@@ -221028,7 +221033,7 @@
     "lemma": "snake",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "งู",
+    "meaning_th": "งู, สัตว์เลื้อยคลาน",
     "meaning_en": "limbless scaly elongate reptile; some are venomous",
     "ipa": "/sneɪk/",
     "example_sentence_en": "Seen from the sky, the river looked like a huge snake.",
@@ -221130,7 +221135,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.724Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "ac7d8c95-fb4a-4b28-a7f9-df52d25edeb5",
@@ -272831,7 +272837,7 @@
     "lemma": "frog",
     "part_of_speech": "noun",
     "cefr_level": "A1",
-    "meaning_th": "กบ",
+    "meaning_th": "กบ, สัตว์สะเทินน้ำสะเทินบก",
     "meaning_en": "any of various tailless stout-bodied amphibians with long hind limbs for leaping; semiaquatic and terrestrial species",
     "ipa": "/fɹɑːɡ/",
     "example_sentence_en": "I've got a frog in my throat.",
@@ -272906,7 +272912,8 @@
       "pipeline_version": "Phase-7-Production-Verified",
       "enriched_at": "2026-09-28T16:19:55.752Z"
     },
-    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION"
+    "example_sentence_th_status": "NEEDS_HUMAN_TRANSLATION",
+    "meaning_th_source": "zero_fp_fix"
   },
   {
     "id": "a7cd29de-5083-4ff8-a04d-eb11347216b6",
