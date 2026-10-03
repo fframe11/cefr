@@ -7,7 +7,7 @@ export default function LandingPage() {
   const router = useRouter();
 
   const handleStartLearning = () => {
-    router.push('/assessment');
+    router.push('/dashboard');
   };
 
   return <LandingView onStartLearning={handleStartLearning} />;

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   X,
   User as UserIcon,
@@ -139,6 +140,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   currentLocalDailyGoal,
   onProfileUpdated,
 }) => {
+  const router = useRouter();
   const { status, user, profile, signInWithPassword, signUpWithPassword, signInWithOAuth, signOut, updateProfile } = useAuth();
   const { t, language } = useTranslation();
 
@@ -218,6 +220,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         }
       } else {
         onClose();
+        router.push('/dashboard');
       }
     } finally {
       setIsSubmitting(false);
@@ -256,7 +259,10 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           }
         }
         setProfileSuccessMsg(t('auth.save_success'));
-        setTimeout(() => onClose(), 1200);
+        setTimeout(() => {
+          onClose();
+          router.push('/dashboard');
+        }, 600);
       }
     } finally {
       setIsSubmitting(false);

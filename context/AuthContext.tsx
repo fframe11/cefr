@@ -202,8 +202,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const redirectUrl =
         typeof window !== 'undefined'
-          ? `${window.location.origin}/auth/callback`
-          : 'http://localhost:3000/auth/callback';
+          ? `${window.location.origin}/auth/callback?next=/dashboard`
+          : 'http://localhost:3000/auth/callback?next=/dashboard';
 
       const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider,

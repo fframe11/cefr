@@ -125,7 +125,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
       <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden selection:bg-primary/20 selection:text-primary">
         <LandingBrandNav
           onOpenAuthModal={() => setIsProfileModalOpen(true)}
-          onStartAssessment={() => router.push('/assessment')}
+          onStartAssessment={() => router.push('/dashboard')}
           isAuthenticated={status === 'authenticated'}
           userEmail={user?.email || null}
           isDark={isDark}

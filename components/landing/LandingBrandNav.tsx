@@ -166,13 +166,7 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
           {/* Outcrowd Mondly Coral Primary CTA Button */}
           <button
             type="button"
-            onClick={() => {
-              if (onStartAssessment) {
-                onStartAssessment();
-              } else {
-                router.push('/assessment');
-              }
-            }}
+            onClick={() => router.push('/dashboard')}
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs font-bold shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all cursor-pointer shrink-0 whitespace-nowrap"
           >
             <Sparkles className="w-3.5 h-3.5" />
@@ -237,12 +231,11 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onStartAssessment) onStartAssessment();
-                else router.push('/assessment');
+                router.push('/dashboard');
               }}
               className="w-full py-2.5 rounded-xl text-center text-xs font-bold text-white bg-[#FA5D5D] hover:bg-[#E84C4C] shadow-md shadow-[#FA5D5D]/25"
             >
-              {isEn ? 'START FREE ASSESSMENT' : 'เริ่มประเมินฟรี'}
+              {isEn ? 'START FREE' : 'เริ่มเรียนฟรี'}
             </button>
           </div>
         </div>

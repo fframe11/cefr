@@ -43,7 +43,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
     if (onStartLearning) {
       onStartLearning();
     } else {
-      setIsQuickCheckOpen(true);
+      router.push('/dashboard');
     }
   };
 
@@ -170,17 +170,17 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-md shadow-[#FA5D5D]/20 active:scale-[0.98] transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
-              <span>{isEn ? 'Start 3-Minute Placement Test (Free)' : 'เริ่มวัดระดับภาษาฟรี (3 นาที)'}</span>
+              <span>{isEn ? 'Start Learning Free' : 'เริ่มเรียนฟรี'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
             <button
               type="button"
-              onClick={() => router.push('/dashboard')}
+              onClick={() => setIsQuickCheckOpen(true)}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 font-bold text-sm shadow-xs transition-colors cursor-pointer"
             >
               <Compass className="w-4 h-4 text-[#FA5D5D]" />
-              <span>{isEn ? 'Enter Classroom / Dashboard' : 'เข้าสู่ห้องเรียน / แดชบอร์ด'}</span>
+              <span>{isEn ? 'Quick Placement Test (3 Mins)' : 'ทำแบบวัดระดับด่วน (3 นาที)'}</span>
             </button>
           </div>
 
@@ -451,18 +451,28 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
         </h2>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
           {isEn
-            ? 'Test your current benchmark in just 3 minutes. Zero cost, no guesswork, immediate personalized roadmap.'
-            : 'ทำแบบวัดระดับเพียง 3 นาที เพื่อค้นหาระดับภาษาปัจจุบันและรับคำแนะนำการเรียนรู้เฉพาะบุคคล'}
+            ? 'Access all 6 learning studios, practice exercises, and exam simulations. Zero cost, start directly on your dashboard.'
+            : 'เข้าใช้งาน 6 ห้องเรียนฝึกฝน คลังคำศัพท์ ไวยากรณ์ และข้อสอบจำลอง เริ่มต้นได้ทันทีไม่มีค่าใช้จ่าย'}
         </p>
-        <button
-          type="button"
-          onClick={handleStart}
-          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all cursor-pointer"
-        >
-          <Sparkles className="w-4 h-4" />
-          <span>{isEn ? 'Take Free Placement Test Now' : 'เริ่มทำแบบทดสอบวัดระดับฟรี'}</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={handleStart}
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#FA5D5D] hover:bg-[#E84C4C] text-white font-bold text-sm shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all cursor-pointer"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>{isEn ? 'Start Learning Free Now' : 'เริ่มเรียนฟรีทันที'}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsQuickCheckOpen(true)}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 font-bold text-sm shadow-xs transition-colors cursor-pointer"
+          >
+            <Compass className="w-4 h-4 text-[#FA5D5D]" />
+            <span>{isEn ? 'Quick Placement Test (3 Mins)' : 'ทำแบบวัดระดับด่วน (3 นาที)'}</span>
+          </button>
+        </div>
       </section>
 
       {/* ========================================================================= */}
