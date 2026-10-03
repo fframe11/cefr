@@ -165,81 +165,54 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
   return (
     <div className="w-full space-y-6 pb-12">
-      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
-      <nav
-        aria-label="Skill analytics sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Studio Identity */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <TrendingUp className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Skill Analytics
+      {/* 1. Unified Studio Hero Diagnostic Banner */}
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs space-y-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100 dark:border-white/10">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
+                <TrendingUp className="w-4 h-4 text-white" />
+              </div>
+              <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+                CEFR {currentLevel} Diagnostic Telemetry
               </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                DIAGNOSTIC TELEMETRY // CEFR {currentLevel}
-              </span>
-            </div>
-          </div>
-
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {/* Level Badge */}
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-            <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-              {isEn ? `Target: Cambridge ${progress.targetExam}` : `เป้าหมาย: Cambridge ${progress.targetExam}`}
-            </span>
-          </div>
-        </div>
-
-        {/* Status Chips */}
-        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
-          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <TrendingUp className="w-3.5 h-3.5" />
-            <span>Cambridge Score: {estimatedScore}</span>
-          </div>
-
-          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>{weaknessesList.length} Learning Gaps</span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Header Diagnostic Card */}
-      <div className="p-6 sm:p-8 space-y-6 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EAE4D5] dark:border-white/10">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-3 py-1 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold">
-                CEFR {currentLevel}
-              </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline font-mono">
+              <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-700 dark:text-slate-300 font-mono">
                 {isEn ? `Exam Target: Cambridge ${progress.targetExam}` : `เป้าหมายการสอบ: Cambridge ${progress.targetExam}`}
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               {t('analytics.title')}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 font-sans">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
               {isEn ? (currentLevelInfo.descriptionEn || currentLevelInfo.descriptionTh) : currentLevelInfo.descriptionTh}
             </p>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-center shrink-0 shadow-xs">
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-bold font-mono">
-              {isEn ? 'Estimated Cambridge Score' : 'คะแนนประเมินเทียบเคียง'}
-            </span>
-            <p className="text-3xl font-black text-[#FA5D5D] font-mono mt-0.5">
-              <AnimatedNumber value={estimatedScore} />
-            </p>
-            <span className="text-[10px] text-slate-400 block font-mono">
-              {isEn ? 'Equivalent scale: 80 - 230 marks' : 'สเกลเทียบเคียง 80 - 230 คะแนน'}
-            </span>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
+            {/* Telemetry Chips */}
+            <div className="flex flex-col gap-2">
+              <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+                <TrendingUp className="w-3.5 h-3.5" />
+                <span>Cambridge Score: {estimatedScore}</span>
+              </div>
+              <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                <span>{weaknessesList.length} Learning Gaps</span>
+              </div>
+            </div>
+
+            {/* Score Highlight Card */}
+            <div className="p-4 sm:p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-center shadow-xs min-w-[170px]">
+              <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-bold font-mono">
+                {isEn ? 'Estimated Cambridge Score' : 'คะแนนประเมินเทียบเคียง'}
+              </span>
+              <p className="text-3xl font-black text-[#FA5D5D] font-mono mt-0.5">
+                <AnimatedNumber value={estimatedScore} />
+              </p>
+              <span className="text-[10px] text-slate-400 block font-mono">
+                {isEn ? 'Scale: 80 - 230 marks' : 'สเกล 80 - 230 คะแนน'}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -254,14 +227,14 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
         {/* Can-Do Descriptors at Current CEFR Level */}
         <div className="pt-2 space-y-2">
-          <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono">
+          <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider font-mono">
             {t('analytics.can_do_descriptors')}:
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 pt-1">
             {currentLevelInfo.canDoDescriptorsTh.map((desc, i) => (
               <div
                 key={i}
-                className="p-3.5 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 flex items-start gap-2 shadow-xs"
+                className="p-3.5 rounded-[18px] bg-white/80 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 text-xs text-slate-800 dark:text-slate-200 flex items-start gap-2 shadow-2xs"
               >
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                 <span className="leading-relaxed font-sans">{desc}</span>
@@ -271,7 +244,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
         </div>
 
         {/* Cambridge / CEFR Disclaimer */}
-        <div className="mt-2 p-3.5 rounded-[22px] bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-500/20 flex items-start gap-2.5 text-xs text-slate-600 dark:text-amber-200/90 shadow-xs font-sans">
+        <div className="mt-2 p-3.5 rounded-[22px] bg-amber-50/80 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-500/20 flex items-start gap-2.5 text-xs text-slate-600 dark:text-amber-200/90 shadow-2xs font-sans">
           <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
           <span>
             {analytics?.disclaimer ||
@@ -284,8 +257,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
       {/* Telemetry Overview Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
-          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
+        <div className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
             {isEn ? 'Total Questions' : 'คำถามที่ทำทั้งหมด'}
           </span>
           <p className="text-2xl sm:text-3xl font-black font-mono text-slate-900 dark:text-white">
@@ -296,8 +269,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           </span>
         </div>
 
-        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
-          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">{t('analytics.accuracy')}</span>
+        <div className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">{t('analytics.accuracy')}</span>
           {overallAccuracy !== null ? (
             <p className="text-2xl sm:text-3xl font-black font-mono text-[#FA5D5D]">
               <AnimatedNumber value={overallAccuracy} />%
@@ -314,8 +287,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           </span>
         </div>
 
-        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
-          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
+        <div className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
             {isEn ? 'Learning Gaps' : 'จุดอ่อนสะสม'}
           </span>
           <p className="text-2xl sm:text-3xl font-black font-mono text-amber-500">
@@ -326,8 +299,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           </span>
         </div>
 
-        <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#070B16]/90 border border-[#EAE4D5] dark:border-white/10 space-y-1 shadow-xs">
-          <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
+        <div className="p-5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 space-y-1 shadow-xs">
+          <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
             {isEn ? 'Completed Mock Exams' : 'Mock Exams ที่ส่งแล้ว'}
           </span>
           <p className="text-2xl sm:text-3xl font-black font-mono text-slate-900 dark:text-white">
@@ -342,17 +315,17 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
       {/* Grid: 6 Skill Mastery Breakdown & Weakness Detection Engine */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left (7 cols): Detailed Skill Proficiency Bars */}
-        <div className="lg:col-span-7 p-6 sm:p-8 space-y-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-          <div className="flex items-center justify-between pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+        <div className="lg:col-span-7 p-6 sm:p-8 space-y-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
                 <TrendingUp className="w-4 h-4" />
               </div>
-              <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
+              <h3 className="font-black text-base text-slate-900 dark:text-white tracking-tight">
                 {t('analytics.skill_proficiency')}
               </h3>
             </div>
-            <span className="text-xs text-slate-400 font-mono font-semibold">100% Scale</span>
+            <span className="text-xs text-slate-400 font-mono font-bold">100% Scale</span>
           </div>
 
           {totalAttempted === 0 && status === 'authenticated' ? (
@@ -373,12 +346,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
           ) : (
             <div className="space-y-4 pt-1">
               {skillsData.map((item) => (
-                <div key={item.name} className="space-y-1.5 p-3.5 rounded-[20px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-                  <div className="flex justify-between text-xs font-semibold">
+                <div key={item.name} className="space-y-1.5 p-4 rounded-[20px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/60 dark:border-white/10 shadow-2xs">
+                  <div className="flex justify-between text-xs font-bold">
                     <span className="text-slate-800 dark:text-slate-200">{item.name}</span>
                     <div className="flex items-center gap-2">
                       {item.accuracy !== null && item.attempted > 0 && (
-                        <span className="text-[11px] text-slate-400 font-mono">
+                        <span className="text-[11px] text-slate-500 font-mono">
                           {isEn ? `Accuracy ${item.accuracy}%` : `ความแม่นยำ ${item.accuracy}%`}
                         </span>
                       )}
@@ -387,7 +360,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                           {isEn ? `Pending ${item.pending}` : `รอตรวจ ${item.pending} ข้อ`}
                         </span>
                       )}
-                      <span className="font-mono text-slate-900 dark:text-white font-extrabold">{item.score}%</span>
+                      <span className="font-mono text-slate-900 dark:text-white font-black">{item.score}%</span>
                     </div>
                   </div>
                   <GlovaProgress value={item.score} showLabel={false} />
@@ -396,22 +369,22 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             </div>
           )}
 
-          <div className="p-3.5 rounded-[20px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 mt-4 text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between shadow-xs">
-            <span className="font-medium font-sans">{isEn ? 'Mastered vocabulary saved:' : 'คำศัพท์ที่บันทึกว่าจำได้แล้ว:'}</span>
-            <span className="font-mono font-bold text-slate-900 dark:text-white">
+          <div className="p-4 rounded-[20px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/60 dark:border-white/10 mt-4 text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between shadow-2xs">
+            <span className="font-bold font-sans">{isEn ? 'Mastered vocabulary saved:' : 'คำศัพท์ที่บันทึกว่าจำได้แล้ว:'}</span>
+            <span className="font-mono font-black text-slate-900 dark:text-white">
               {progress.masteredWordIds.length} {isEn ? 'words' : 'คำ'}
             </span>
           </div>
         </div>
 
         {/* Right (5 cols): Targeted Weakness Remediation */}
-        <div className="lg:col-span-5 p-6 sm:p-8 space-y-5 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-          <div className="flex items-center justify-between pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+        <div className="lg:col-span-5 p-6 sm:p-8 space-y-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center">
                 <AlertTriangle className="w-4 h-4" />
               </div>
-              <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
+              <h3 className="font-black text-base text-slate-900 dark:text-white tracking-tight">
                 {t('analytics.weakness_detection')}
               </h3>
             </div>
@@ -435,7 +408,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               {weaknessesList.map((w) => (
                 <div
                   key={w.tag}
-                  className="p-4 rounded-[22px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 space-y-3 shadow-xs"
+                  className="p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/60 dark:border-white/10 space-y-3 shadow-2xs"
                 >
                   <div>
                     <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white font-sans">
@@ -451,7 +424,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
                     size="sm"
                     fullWidth
                     onClick={() => onStartRemediation(w.tag)}
-                    className="rounded-full bg-slate-50 hover:bg-slate-100 dark:bg-[#121B2F] dark:hover:bg-[#192642] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 font-bold"
+                    className="rounded-full bg-white hover:bg-slate-50 dark:bg-white/10 dark:hover:bg-white/15 border border-slate-200/80 dark:border-white/10 text-slate-800 dark:text-slate-200 font-bold shadow-2xs"
                   >
                     <Play className="w-3.5 h-3.5 fill-current mr-1.5 text-[#FA5D5D]" />
                     <span>{t('analytics.remediation_action')}</span>
@@ -465,17 +438,17 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
 
       {/* Mock Exam History (if available) */}
       {analytics && analytics.mock_exam_history.length > 0 && (
-        <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-          <div className="flex items-center gap-2.5 pb-4 border-b border-[#EAE4D5] dark:border-white/10">
+        <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs">
+          <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100 dark:border-white/10">
             <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
               <FileText className="w-4 h-4" />
             </div>
-            <h3 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
+            <h3 className="font-black text-base text-slate-900 dark:text-white tracking-tight">
               {t('analytics.mock_exam_history')}
             </h3>
           </div>
 
-          <div className="divide-y divide-[#EAE4D5] dark:divide-white/10">
+          <div className="divide-y divide-slate-100 dark:divide-white/10">
             {analytics.mock_exam_history.map((m) => (
               <div key={m.id} className="py-3.5 flex items-center justify-between text-xs">
                 <div>

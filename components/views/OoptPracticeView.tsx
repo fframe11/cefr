@@ -222,23 +222,23 @@ export const OoptPracticeView: React.FC = () => {
 
   return (
     <div className="w-full space-y-8 pb-16">
-      {/* Top Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 p-6 md:p-8 text-white border border-slate-800 shadow-xl">
+      {/* Top Banner - Unified Studio DNA */}
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
         <div className="relative z-10 max-w-3xl space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-semibold uppercase tracking-wider">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
               {isEn ? 'Oxford OOPT Practice Studio' : 'แบบฝึกหัดเสมือนจริง Oxford OOPT'}
             </span>
-            <span className="px-2.5 py-1 rounded-md bg-white/10 text-slate-300 text-xs font-mono font-medium">
+            <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold">
               CEFR A1–B2 Calibration
             </span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
             {isEn
               ? 'Focus on Meaning & Connected Open Cloze'
               : 'ฝึกทำข้อสอบ OOPT: Part 2 การตีความบทสนทนา และ Part 3 เติมคำในบทความ'}
           </h1>
-          <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed font-sans">
             {isEn
               ? 'Practice authentic Oxford Online Placement Test sections: Part 2 focuses on pragmatics, conversational implicatures, and idioms. Part 3 tests structural grammatical cohesion via connected text gap-fills.'
               : 'ฝึกฝน 2 ส่วนสำคัญของ OOPT ที่ไม่มีในข้อสอบทั่วไป: Part 2 วัดความเข้าใจความหมายแฝงและสำนวนในบทสนทนา (20 ข้อ) และ Part 3 วัดไวยากรณ์เชื่อมโยงประโยคผ่านบทความต่อเนื่อง (6 บทความ 42 ช่องว่าง)'}
@@ -247,12 +247,12 @@ export const OoptPracticeView: React.FC = () => {
       </div>
 
       {/* Tab Switcher */}
-      <div className="flex items-center gap-3 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 max-w-md border border-slate-200 dark:border-slate-700">
+      <div className="flex items-center gap-2 p-1.5 rounded-full bg-white dark:bg-[#1E1B28] max-w-md border border-slate-200/80 dark:border-white/10 shadow-2xs">
         <button
           onClick={() => setActiveTab('meaning')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs md:text-sm font-bold transition-all ${
+          className={`flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'meaning'
-              ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+              ? 'bg-[#3B82F6] text-white shadow-xs font-black'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -261,9 +261,9 @@ export const OoptPracticeView: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('cloze')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs md:text-sm font-bold transition-all ${
+          className={`flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'cloze'
-              ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-sm'
+              ? 'bg-[#3B82F6] text-white shadow-xs font-black'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
           }`}
         >
@@ -276,11 +276,11 @@ export const OoptPracticeView: React.FC = () => {
       {activeTab === 'meaning' && (
         <div className="space-y-6">
           {/* Question Carousel Navigator */}
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xs">
+          <div className="flex items-center justify-between p-4 rounded-[22px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-2xs">
             <button
               onClick={() => setCurrentMeaningIdx((prev) => Math.max(0, prev - 1))}
               disabled={currentMeaningIdx === 0}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
               <span>{isEn ? 'Previous' : 'ข้อย้อนหลัง'}</span>
@@ -290,7 +290,7 @@ export const OoptPracticeView: React.FC = () => {
               <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
                 Item {currentMeaningIdx + 1} of {meaningItems.length}
               </span>
-              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20">
                 {currentMeaning.cefrLevel}
               </span>
             </div>
@@ -302,7 +302,7 @@ export const OoptPracticeView: React.FC = () => {
                 )
               }
               disabled={currentMeaningIdx === meaningItems.length - 1}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-30 disabled:pointer-events-none"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 disabled:opacity-30 disabled:pointer-events-none transition-colors cursor-pointer"
             >
               <span>{isEn ? 'Next' : 'ข้อถัดไป'}</span>
               <ChevronRight className="w-4 h-4" />
@@ -310,9 +310,9 @@ export const OoptPracticeView: React.FC = () => {
           </div>
 
           {/* Dialogue & Question Card */}
-          <div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-6">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-              <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+          <div className="p-6 md:p-8 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
+              <span className="text-xs font-black text-[#3B82F6] uppercase tracking-wider">
                 Pragmatic Focus: {currentMeaning.pragmaticFocus.replace(/_/g, ' ')}
               </span>
               <span className="text-xs text-slate-400 font-mono">
@@ -320,12 +320,12 @@ export const OoptPracticeView: React.FC = () => {
               </span>
             </div>
 
-            <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white">
+            <h3 className="text-base md:text-lg font-black text-slate-900 dark:text-white">
               {currentMeaning.titleTh}
             </h3>
 
             {/* Two-Speaker Dialogue Speech Bubbles */}
-            <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 space-y-4">
+            <div className="p-5 rounded-[22px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/60 dark:border-white/10 space-y-4">
               {currentMeaning.dialogue.map((line, lIdx) => {
                 const isFirst = lIdx === 0;
                 return (
@@ -338,17 +338,17 @@ export const OoptPracticeView: React.FC = () => {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${
                         isFirst
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-emerald-600 text-white'
+                          ? 'bg-[#3B82F6] text-white shadow-xs'
+                          : 'bg-emerald-600 text-white shadow-xs'
                       }`}
                     >
                       {line.speaker[0]}
                     </span>
                     <div
-                      className={`p-3.5 rounded-2xl text-sm max-w-xl shadow-xs ${
+                      className={`p-3.5 rounded-[18px] text-sm max-w-xl shadow-xs ${
                         isFirst
-                          ? 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-tl-xs'
-                          : 'bg-indigo-50 dark:bg-indigo-950/40 text-slate-900 dark:text-indigo-100 border border-indigo-200/60 dark:border-indigo-900/60 rounded-tl-xs'
+                          ? 'bg-white dark:bg-[#1E1B28] text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-white/10'
+                          : 'bg-blue-50/70 dark:bg-blue-950/30 text-slate-900 dark:text-blue-100 border border-blue-200/60 dark:border-blue-900/60'
                       }`}
                     >
                       <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
@@ -363,7 +363,7 @@ export const OoptPracticeView: React.FC = () => {
 
             {/* 3-Option Multiple Choice */}
             <div className="space-y-3 pt-2">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+              <span className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                 {isEn ? 'What does the second speaker mean?' : 'ผู้พูดคนที่สองหมายความว่าอย่างไร?'}
               </span>
 
@@ -374,7 +374,7 @@ export const OoptPracticeView: React.FC = () => {
                   const isAnswered = !!selectedKey;
 
                   let optionStyle =
-                    'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-indigo-400';
+                    'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-[#3B82F6] shadow-2xs';
 
                   if (isAnswered) {
                     if (opt.isCorrect) {
@@ -385,7 +385,7 @@ export const OoptPracticeView: React.FC = () => {
                         'bg-rose-500 text-white border-rose-600 font-bold';
                     } else {
                       optionStyle =
-                        'bg-slate-100 dark:bg-slate-800/40 text-slate-400 border-slate-200 dark:border-slate-800 opacity-60';
+                        'bg-slate-100 dark:bg-white/5 text-slate-400 border-slate-200/60 dark:border-white/10 opacity-60';
                     }
                   }
 
@@ -395,9 +395,9 @@ export const OoptPracticeView: React.FC = () => {
                       onClick={() =>
                         handleSelectMeaningOption(currentMeaning.id, opt.key)
                       }
-                      className={`w-full flex items-start gap-3 p-4 rounded-xl border text-left text-xs md:text-sm transition-all ${optionStyle}`}
+                      className={`w-full flex items-start gap-3 p-4 rounded-[18px] border text-left text-xs md:text-sm transition-all cursor-pointer ${optionStyle}`}
                     >
-                      <span className="w-6 h-6 rounded-md bg-black/10 dark:bg-white/10 flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
+                      <span className="w-6 h-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">
                         {opt.key}
                       </span>
                       <span className="flex-1 leading-snug">{opt.text}</span>
@@ -409,13 +409,13 @@ export const OoptPracticeView: React.FC = () => {
 
             {/* Answer Explanation */}
             {selectedMeaningAnswers[currentMeaning.id] && (
-              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-2">
-                <div className="flex items-center gap-1.5 font-bold text-indigo-600 dark:text-indigo-400">
+              <div className="p-4 rounded-[20px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs md:text-sm text-slate-700 dark:text-slate-300 space-y-2 shadow-2xs">
+                <div className="flex items-center gap-1.5 font-bold text-[#3B82F6]">
                   <HelpCircle className="w-4 h-4" />
                   <span>{isEn ? 'Pragmatic Analysis & Explanation' : 'การวิเคราะห์เจตนาและความหมายแฝง'}</span>
                 </div>
                 <p className="leading-relaxed">{currentMeaning.explanationTh}</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+                <p className="text-xs text-slate-500 dark:text-slate-400 italic pt-1 border-t border-slate-100 dark:border-white/10">
                   {currentMeaning.explanationEn}
                 </p>
               </div>
@@ -436,10 +436,10 @@ export const OoptPracticeView: React.FC = () => {
                 <button
                   key={p.id}
                   onClick={() => setCurrentClozeIdx(pIdx)}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border cursor-pointer ${
                     isSelected
-                      ? 'bg-purple-600 text-white border-purple-600 shadow-sm'
-                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'
+                      ? 'bg-[#3B82F6] text-white border-[#3B82F6] shadow-xs font-black'
+                      : 'bg-white dark:bg-[#1E1B28] border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'
                   }`}
                 >
                   <span className="font-mono">{p.cefrLevel}</span>
@@ -451,18 +451,18 @@ export const OoptPracticeView: React.FC = () => {
           </div>
 
           {/* Active Cloze Passage Card */}
-          <div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+          <div className="p-6 md:p-8 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-white/10">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20">
                     {currentCloze.cefrLevel} Standard
                   </span>
                   <span className="text-xs text-slate-400 font-mono">
                     Genre: {currentCloze.genre}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="text-xl font-black text-slate-900 dark:text-white">
                   {currentCloze.title}
                 </h3>
               </div>
@@ -470,10 +470,10 @@ export const OoptPracticeView: React.FC = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setShowClozeHints((prev) => !prev)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold border transition-colors cursor-pointer ${
                     showClozeHints
                       ? 'bg-amber-500/10 border-amber-500/30 text-amber-700 dark:text-amber-300 font-bold'
-                      : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+                      : 'bg-slate-100 dark:bg-white/10 border-slate-200/80 dark:border-white/10 text-slate-600 dark:text-slate-400'
                   }`}
                 >
                   <Lightbulb className="w-3.5 h-3.5" />
@@ -482,7 +482,7 @@ export const OoptPracticeView: React.FC = () => {
 
                 <button
                   onClick={() => handleResetCloze(currentCloze.id)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors border border-slate-200/80 dark:border-white/10 cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>{isEn ? 'Reset' : 'ล้างคำตอบ'}</span>
@@ -491,13 +491,13 @@ export const OoptPracticeView: React.FC = () => {
             </div>
 
             {/* Passage Body with Inline Inputs */}
-            <div className="p-6 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-700/70">
+            <div className="p-6 rounded-[22px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-slate-200/60 dark:border-white/10">
               {renderClozePassage(currentCloze)}
             </div>
 
             {/* Check Answers Action Button */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span className="text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100 dark:border-white/10">
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-sans">
                 {isEn
                   ? 'Type ONE word per gap (grammar glue word: preposition, article, pronoun, auxiliary).'
                   : 'พิมพ์คำตอบ 1 คำต่อช่องว่าง (คำเชื่อม, บุพบท, คำสรรพนาม หรือกริยาช่วย)'}
@@ -505,7 +505,7 @@ export const OoptPracticeView: React.FC = () => {
 
               <button
                 onClick={() => handleCheckCloze(currentCloze.id)}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs md:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#3B82F6] hover:bg-[#2563EB] text-white text-xs md:text-sm font-bold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 <span>{isEn ? 'Check Answers' : 'ตรวจคำตอบทั้งหมด'}</span>
@@ -514,9 +514,9 @@ export const OoptPracticeView: React.FC = () => {
 
             {/* Explanations Table after checking */}
             {clozeSubmitted[currentCloze.id] && (
-              <div className="space-y-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-purple-500" />
+              <div className="space-y-3 pt-4 border-t border-slate-100 dark:border-white/10">
+                <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
                   {isEn ? 'Detailed Gap-by-Gap Solutions' : 'เฉลยและคำอธิบายไวยากรณ์ทีละช่อง'}
                 </h4>
 
@@ -534,7 +534,7 @@ export const OoptPracticeView: React.FC = () => {
                     return (
                       <div
                         key={gap.gapNumber}
-                        className={`p-3.5 rounded-lg border text-xs space-y-1.5 ${
+                        className={`p-4 rounded-[18px] border text-xs space-y-1.5 ${
                           isCorrect
                             ? 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-500/30'
                             : 'bg-rose-50/50 dark:bg-rose-950/20 border-rose-500/30'
@@ -544,11 +544,11 @@ export const OoptPracticeView: React.FC = () => {
                           <span className="font-bold text-slate-800 dark:text-slate-200">
                             Gap {gap.gapNumber}: Target: &quot;{gap.targetWord}&quot;
                           </span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-black/10 dark:bg-white/10 uppercase">
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase font-bold">
                             {gap.pos}
                           </span>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-300 font-sans">
+                        <p className="text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
                           {gap.explanationTh}
                         </p>
                       </div>

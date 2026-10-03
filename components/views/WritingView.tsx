@@ -117,63 +117,46 @@ export const WritingView: React.FC = () => {
 
   return (
     <div className="w-full space-y-6 pb-16">
-      {/* 1. TOP SUB-NAV BAR (EduMaster Style) */}
-      <nav
-        aria-label="Writing sub-navigation"
-        className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-      >
-        {/* Brand & Studio Identity */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <PenTool className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Writing Studio
+      {/* 1. Unified Hero Header Banner - Studio DNA */}
+      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
+                <PenTool className="w-4 h-4 text-white" />
+              </div>
+              <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+                Writing Lab // CEFR
               </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                WRITING LAB // CEFR
-              </span>
+              {currentPrompt && (
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
+                  <span className="font-mono">{currentPrompt.taskType}</span>
+                </div>
+              )}
             </div>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+              {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
+            </h1>
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              {isEn
+                ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks with self-assessment rubrics.'
+                : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมิน CEFR พร้อมเกณฑ์ Self-Assessment'}
+            </p>
           </div>
 
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {currentPrompt && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
-              <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
-              <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-                {currentPrompt.taskType}
-              </span>
+          {/* Status Chips */}
+          <div className="flex flex-row md:flex-col gap-2.5 shrink-0">
+            <div className="px-3.5 py-2 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+              <PenTool className="w-3.5 h-3.5" />
+              <span>{isEn ? `${prompts.length} Writing Tasks` : `${prompts.length} หัวข้องานเขียน`}</span>
             </div>
-          )}
-        </div>
-
-        {/* Counter and Status Chips */}
-        <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
-          <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <PenTool className="w-3.5 h-3.5" />
-            <span>{isEn ? `${prompts.length} Writing Tasks` : `${prompts.length} หัวข้องานเขียน`}</span>
-          </div>
-
-          <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Cambridge Rubric</span>
+            <div className="px-3.5 py-2 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Cambridge Rubric</span>
+            </div>
           </div>
         </div>
-      </nav>
-
-      {/* Main Title & Description */}
-      <div className="space-y-1">
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-          {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
-        </h1>
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl font-sans">
-          {isEn
-            ? 'Practice written expression, essay structuring, and authentic Cambridge writing tasks.'
-            : 'ฝึกเขียนบทความ อีเมล และรายงานตามเกณฑ์ประเมิน CEFR พร้อมเกณฑ์ Self-Assessment'}
-        </p>
       </div>
 
       {/* Task Selector Tabs */}

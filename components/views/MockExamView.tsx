@@ -414,83 +414,50 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   if (!isExamStarted && !isSubmitted) {
     return (
       <div className="w-full space-y-6 pb-12">
-        {/* 1. TOP SUB-NAV BAR (Mondly Language Learning Style) */}
-        <nav
-          aria-label="Mock exam sub-navigation"
-          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-border/80 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
-        >
-          {/* Brand & Studio Identity */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
-              <GraduationCap className="w-5 h-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
-                Cambridge Mock Exams
-              </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                CAMBRIDGE ARENA // A2-C1
-              </span>
-            </div>
-          </div>
-
-          <div className="h-6 w-px bg-slate-300 dark:bg-white/10 hidden sm:block mx-1" />
-
-          {/* Catalog counter chip */}
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#13111C]/60 border border-border/80 shadow-xs">
-            <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">
-              {isEn ? `${catalogExams.length} Full Sets` : `${catalogExams.length} ชุดข้อสอบจำลอง`}
-            </span>
-          </div>
-
-          {/* Status Chips */}
-          <div className="flex items-center gap-2.5 justify-between sm:justify-end flex-wrap">
-            <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-              <Clock className="w-3.5 h-3.5" />
-              <span>Timed Simulation</span>
-            </div>
-
-            <div className="px-3.5 py-1.5 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Cambridge Scale</span>
-            </div>
-          </div>
-        </nav>
-
-        {/* Header Hero Banner */}
-        <div className="p-6 sm:p-8 text-center space-y-4 rounded-[32px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm relative overflow-hidden">
-          <div className="relative z-10 space-y-3">
-            <div className="w-14 h-14 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center mx-auto shadow-sm">
-              <GraduationCap className="w-7 h-7 text-white" />
-            </div>
-            <div>
+        {/* Unified Hero Header Banner - Studio DNA */}
+        <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-sky-50/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-2xl">
+              <div className="flex items-center gap-2 flex-wrap">
+                <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
+                  <GraduationCap className="w-4 h-4 text-white" />
+                </div>
+                <span className="px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20 text-xs font-black uppercase tracking-wider">
+                  Cambridge Arena // A2–C1
+                </span>
+                <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 text-xs font-mono font-bold">
+                  {catalogExams.length} {isEn ? 'Full Sets' : 'ชุดข้อสอบจำลอง'}
+                </span>
+              </div>
               <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                 {isEn ? 'Cambridge English Qualifications Mock Examination' : 'ห้องสอบจำลอง Cambridge English Qualifications'}
               </h1>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-lg mx-auto font-sans">
+              <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                 {isEn
                   ? 'Simulate realistic exam conditions aligned with the CEFR framework with automated timing and Cambridge English Scale score estimation.'
                   : 'จำลองสนามสอบเสมือนจริงอิงตามกรอบการวัดระดับ CEFR พร้อมระบบจับเวลาและคำนวณคะแนนเทียบเคียง Cambridge English Scale'}
               </p>
+              {/* Disclaimer */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 text-[11px] text-slate-600 dark:text-slate-400 text-left shadow-2xs">
+                <HelpCircle className="w-3.5 h-3.5 shrink-0 text-slate-400" />
+                <span>
+                  {isEn
+                    ? 'Practice mock test for skills evaluation, not an official certificate from Cambridge English Qualifications.'
+                    : 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications'}
+                </span>
+              </div>
             </div>
 
-            <GlovaFeedbackBubble
-              currentSkill="reading"
-              customTip={
-                isEn
-                  ? 'Practice mock tests to evaluate test readiness and estimate your Cambridge English Scale score. All test sessions are automatically logged.'
-                  : 'แบบทดสอบจำลองเพื่อประเมินความพร้อมและคำนวณคะแนนเทียบเคียง Cambridge English Scale ทุกข้อสอบจะมีการบันทึกประวัติการสอบอัตโนมัติ'
-              }
-            />
-
-            {/* Official Cambridge Disclaimer */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/80 text-[11px] text-slate-600 dark:text-slate-400 text-left max-w-xl mx-auto shadow-xs">
-              <HelpCircle className="w-4 h-4 shrink-0 text-slate-400" />
-              <span>
-                {isEn
-                  ? 'Practice mock test for skills evaluation, not an official certificate from Cambridge English Qualifications.'
-                  : 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications'}
-              </span>
+            {/* Timed Simulation & Scale Chips */}
+            <div className="flex flex-row md:flex-col gap-2.5 shrink-0">
+              <div className="px-3.5 py-2 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+                <Clock className="w-3.5 h-3.5" />
+                <span>Timed Simulation</span>
+              </div>
+              <div className="px-3.5 py-2 rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] border border-[#FDE5BC] dark:border-amber-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Cambridge Scale</span>
+              </div>
             </div>
           </div>
         </div>
