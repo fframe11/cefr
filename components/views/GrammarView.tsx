@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { GRAMMAR_BANK } from '../../data/grammarBank';
 import { GrammarTopic, Question } from '../../types';
@@ -174,6 +174,30 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
 
   const displayedQuestions = (currentTopic && topicQuestions[currentTopic.id]) || currentTopic?.practiceQuestions || [];
   const currentQuestion = displayedQuestions[activeQuestionIdx];
+
+  // Compute global running question offsets for each topic so numbers continue seamlessly (1, 2 -> 3, 4, 5...)
+  const topicQuestionOffsets = useMemo(() => {
+    const offsets: Record<string, number> = {};
+    let runningTotal = 0;
+    for (const t of topics) {
+      offsets[t.id] = runningTotal;
+      const count = (topicQuestions[t.id]?.length) ?? (t.practiceQuestions?.length ?? 0);
+      runningTotal += count;
+    }
+    return { offsets, totalQuestions: runningTotal };
+  }, [topics, topicQuestions]);
+
+  const currentTopicStartNumber = (currentTopic && topicQuestionOffsets.offsets[currentTopic.id]) ?? 0;
+  const totalCurriculumQuestions = topicQuestionOffsets.totalQuestions || displayedQuestions.length;
+
+  const currentTopicIdx = topics.findIndex((t) => t.id === currentTopic?.id);
+  const hasPrev = currentTopicIdx > 0;
+  const hasNext = currentTopicIdx < topics.length - 1;
+  const nextTopic = hasNext ? topics[currentTopicIdx + 1] : null;
+  const nextStart = currentTopicStartNumber + displayedQuestions.length + 1;
+  const nextCount = nextTopic ? ((topicQuestions[nextTopic.id]?.length) ?? (nextTopic.practiceQuestions?.length ?? 0)) : 0;
+  const nextEnd = nextStart + nextCount - 1;
+  const prevTopic = hasPrev ? topics[currentTopicIdx - 1] : null;
 
   const handleNextQuestion = () => {
     if (activeQuestionIdx < displayedQuestions.length - 1) {
@@ -458,7 +482,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
           <div className="space-y-1.5 pt-1">
             <div className="flex items-center gap-2.5">
               <span className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/60 text-[#2563EB] dark:text-blue-400 font-extrabold text-xs flex items-center justify-center">
-                1
+                {currentTopicIdx + 1 || 1}
               </span>
               <h4 className="font-extrabold text-base text-slate-900 dark:text-white">
                 Grammar Application
@@ -497,8 +521,8 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                 <QuestionCard
                   key={q.id}
                   question={q}
-                  questionNumber={idx + 1}
-                  totalQuestions={displayedQuestions.length}
+                  questionNumber={currentTopicStartNumber + idx + 1}
+                  totalQuestions={totalCurriculumQuestions}
                   onAnswer={(selectedKey, isCorrect) => {
                     onQuestionCompleted?.(q.id, isCorrect, q.weaknessTag);
                   }}
@@ -507,30 +531,61 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               ))}
 
               {/* Action Bar for Progression */}
-              <div className="flex items-center justify-between pt-3">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3">
                 <button
                   type="button"
+                  disabled={!hasPrev}
                   onClick={() => {
-                    const prevIdx = (topics.findIndex((t) => t.id === currentTopic.id) - 1 + topics.length) % topics.length;
-                    setSelectedTopicId(topics[prevIdx].id);
-                    setActiveQuestionIdx(0);
+                    if (hasPrev && prevTopic) {
+                      setSelectedTopicId(prevTopic.id);
+                      setActiveQuestionIdx(0);
+                      if (typeof window !== 'undefined') {
+                        window.scrollTo({ top: 320, behavior: 'smooth' });
+                      }
+                    }
                   }}
-                  className="touch-target px-5 py-2.5 rounded-full bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  className={`touch-target px-5 py-2.5 rounded-full border border-[#EAE4D5] dark:border-white/10 text-xs font-bold flex items-center gap-1.5 transition-all shadow-xs ${
+                    hasPrev
+                      ? 'bg-white dark:bg-[#1E1B28] text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 cursor-pointer'
+                      : 'bg-slate-100 dark:bg-white/5 text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                  }`}
                 >
                   <ChevronLeft className="w-4 h-4" aria-hidden="true" />
-                  <span>{isEn ? 'Previous Topic' : 'หัวข้อก่อนหน้า'}</span>
+                  <span>{isEn ? 'Previous Section' : 'หัวข้อก่อนหน้า'}</span>
                 </button>
+
+                <div className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                  {isEn
+                    ? `Questions ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} of ${totalCurriculumQuestions}`
+                    : `ข้อ ${currentTopicStartNumber + 1}–${currentTopicStartNumber + displayedQuestions.length} จากทั้งหมด ${totalCurriculumQuestions} ข้อ`}
+                </div>
 
                 <button
                   type="button"
                   onClick={() => {
-                    const nextIdx = (topics.findIndex((t) => t.id === currentTopic.id) + 1) % topics.length;
-                    setSelectedTopicId(topics[nextIdx].id);
-                    setActiveQuestionIdx(0);
+                    if (hasNext && nextTopic) {
+                      setSelectedTopicId(nextTopic.id);
+                      setActiveQuestionIdx(0);
+                      if (typeof window !== 'undefined') {
+                        window.scrollTo({ top: 320, behavior: 'smooth' });
+                      }
+                    } else {
+                      const nextIdx = (currentTopicIdx + 1) % topics.length;
+                      setSelectedTopicId(topics[nextIdx].id);
+                      setActiveQuestionIdx(0);
+                    }
                   }}
                   className="touch-target px-6 py-2.5 rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white text-xs font-black flex items-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer"
                 >
-                  <span>{isEn ? 'Next Topic' : 'หัวข้อถัดไป'}</span>
+                  <span>
+                    {hasNext
+                      ? isEn
+                        ? `Next Section (Q${nextStart}–${nextEnd})`
+                        : `หัวข้อถัดไป (ข้อ ${nextStart}–${nextEnd})`
+                      : isEn
+                      ? 'Back to Unit 1'
+                      : 'กลับสู่หัวข้อแรก'}
+                  </span>
                   <ChevronRight className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
