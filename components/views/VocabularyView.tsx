@@ -48,6 +48,7 @@ import {
 } from '../ui';
 import { useTranslation } from '../../i18n';
 import { ExtendedUniverseView } from '../vocabulary/ExtendedUniverseView';
+import { sanitizeVocabularyItem } from '../../lib/vocabulary/curated-definitions';
 
 interface VocabularyViewProps {
   masteredWordIds?: string[];
@@ -71,7 +72,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const [isRevealed, setIsRevealed] = useState(false);
 
   // Content API State
-  const [words, setWords] = useState<VocabularyWord[]>(VOCABULARY_BANK);
+  const [words, setWords] = useState<VocabularyWord[]>(VOCABULARY_BANK.map(sanitizeVocabularyItem));
   const [totalCatalogCount, setTotalCatalogCount] = useState<number>(3860);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -98,7 +99,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       });
 
       if (res && res.items && res.items.length > 0) {
-        const mapped = res.items.map((dto) => mapVocabularyDtoToWord(dto, masteredWordIds));
+        const mapped = res.items.map((dto) => sanitizeVocabularyItem(mapVocabularyDtoToWord(dto, masteredWordIds)));
         setWords(mapped);
         if (res.pagination?.total) {
           setTotalCatalogCount(res.pagination.total);
@@ -108,7 +109,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       console.warn('[VocabularyView] API fetch failed, using instant local vocabulary catalog:', err?.message || err);
       // Resilient silent fallback to instant local verified catalog
       if (words.length === 0) {
-        setWords(VOCABULARY_BANK);
+        setWords(VOCABULARY_BANK.map(sanitizeVocabularyItem));
       }
     } finally {
       setLoading(false);

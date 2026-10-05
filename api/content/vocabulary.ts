@@ -5,6 +5,8 @@ import { validateQuery } from '../_lib/validation/validator';
 import { cefrLevelSchema, paginationSchema } from '../_lib/validation/common-schemas';
 import { searchProductionVocabulary } from '../../lib/vocabulary/production-vocabulary';
 
+import { sanitizeVocabularyItem } from '../../lib/vocabulary/curated-definitions';
+
 const vocabularyQuerySchema = paginationSchema.extend({
   cefr_level: cefrLevelSchema.optional(),
   part_of_speech: z.string().max(40).optional(),
@@ -53,7 +55,7 @@ export default createApiHandler(
 
       if (!error && items && items.length > 0) {
         return {
-          items,
+          items: items.map(sanitizeVocabularyItem),
           pagination: {
             page: query.page,
             limit: query.limit,
@@ -77,7 +79,7 @@ export default createApiHandler(
     });
 
     return {
-      items: local.items,
+      items: local.items.map(sanitizeVocabularyItem),
       pagination: local.pagination,
     };
   },
