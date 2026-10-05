@@ -83,10 +83,10 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
   // Physical tactile 3D extrusion (Dribbble Electric Cobalt + Tactile 3D ledge)
   const variantDepthStyles: Record<string, Record<string, string>> = {
     primary: {
-      sm: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_2.5px_0_0_#143DB8] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
-      md: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_4px_0_0_#143DB8] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
-      lg: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_5px_0_0_#143DB8] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
-      xl: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_6px_0_0_#143DB8] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
+      sm: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_2.5px_0_0_#B83232] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-black',
+      md: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_4px_0_0_#B83232] active:shadow-none active:translate-y-[4px] border-t border-white/25 font-black',
+      lg: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_5px_0_0_#B83232] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25 font-black',
+      xl: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_6px_0_0_#B83232] active:shadow-none active:translate-y-[6px] border-t-2 border-white/25 font-black',
     },
     valorant: {
       sm: 'bg-[#FF4655] hover:bg-[#E63946] text-white shadow-[0_2.5px_0_0_#9E1B26] active:shadow-none active:translate-y-[2.5px] border-t border-white/30 font-black tracking-wide',
@@ -240,7 +240,7 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
               <span
                 className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
                   isActive
-                    ? 'bg-[#5B5CE2]/15 text-[#5B5CE2] dark:text-[#A5A6F6]'
+                    ? 'bg-[#FA5D5D]/15 text-[#FA5D5D] dark:text-[#FA5D5D]'
                     : 'bg-slate-200 dark:bg-[#222E3A] text-slate-600 dark:text-[#94A3B8]'
                 }`}
               >
@@ -718,7 +718,7 @@ export const VIBE_CODER_SOURCES = [
     roleTh: 'Hero Bento & คลัง Component ระดับโปรดักชัน',
     roleEn: 'Production Hero Bento & Modular Registry',
     fusionTag: 'PRODUCTION BENTO',
-    badgeClass: 'bg-[#FA5D5D] text-[#FA5D5D] border-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#6893FF] dark:border-[#FA5D5D]/40',
+    badgeClass: 'bg-[#FA5D5D] text-[#FA5D5D] border-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#FA5D5D] dark:border-[#FA5D5D]/40',
   },
   {
     id: 'godly',
@@ -1023,10 +1023,10 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#FA5D5D]/30 shadow-[0_12px_36px_-6px_rgba(33,85,230,0.1)] space-y-5 ${className}`}
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#FA5D5D]/30 shadow-[0_12px_36px_-6px_rgba(250,93,93,0.1)] space-y-5 ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#6893FF] text-xs font-bold tracking-wide border border-[#FA5D5D]/30">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#FA5D5D] text-xs font-bold tracking-wide border border-[#FA5D5D]/30">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{categoryBadge}</span>
         </span>
@@ -1114,7 +1114,7 @@ export const LearningPathNode: React.FC<LearningPathNodeProps> = ({
       badgeBg: 'bg-[#10B981] text-white',
     },
     active: {
-      bg: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] shadow-[#143DB8]',
+      bg: 'bg-[#FA5D5D] hover:bg-[#E04848] shadow-[#B83232]',
       ring: 'ring-[#FA5D5D]/35',
       icon: <Star className="w-8 h-8 text-white fill-white stroke-[1.5]" />,
       badgeBg: 'bg-[#FA5D5D] text-white',

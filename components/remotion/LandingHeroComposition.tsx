@@ -45,7 +45,7 @@ export const LandingHeroComposition: React.FC<LandingHeroCompositionProps> = ({ 
               padding: '6px 14px',
               borderRadius: '999px',
               backgroundColor: '#E9E5FF',
-              color: '#5B5CE2',
+              color: '#FA5D5D',
               fontSize: '12px',
               fontWeight: 700,
               marginBottom: '14px',
@@ -75,7 +75,7 @@ export const LandingHeroComposition: React.FC<LandingHeroCompositionProps> = ({ 
                   borderRadius: '8px',
                   fontSize: '11px',
                   fontWeight: 700,
-                  backgroundColor: i <= 3 ? '#5B5CE2' : '#F4EFEA',
+                  backgroundColor: i <= 3 ? '#FA5D5D' : '#F4EFEA',
                   color: i <= 3 ? '#FFFFFF' : '#77758A',
                 }}
               >
@@ -220,7 +220,7 @@ const SceneAlignment: React.FC<{ frame: number }> = ({ frame }) => {
           padding: '4px 12px',
           borderRadius: '999px',
           backgroundColor: '#E9E5FF',
-          color: '#5B5CE2',
+          color: '#FA5D5D',
           fontSize: '11px',
           fontWeight: 700,
         }}
@@ -243,7 +243,7 @@ const SceneAlignment: React.FC<{ frame: number }> = ({ frame }) => {
                 width: '38px',
                 height: '38px',
                 borderRadius: '10px',
-                backgroundColor: itemProgress > 0.5 ? '#5B5CE2' : '#FFFDF8',
+                backgroundColor: itemProgress > 0.5 ? '#FA5D5D' : '#FFFDF8',
                 color: itemProgress > 0.5 ? '#FFFFFF' : '#77758A',
                 border: '1px solid #EDE8DF',
                 display: 'flex',
@@ -348,8 +348,8 @@ const SceneSkillHarmony: React.FC<{ frame: number }> = ({ frame }) => {
     extrapolateRight: 'clamp',
   });
   const skills = [
-    { name: 'Vocabulary', color: '#E9E5FF', text: '#5B5CE2' },
-    { name: 'Grammar', color: '#FAF7F2', text: '#5B5CE2' },
+    { name: 'Vocabulary', color: '#E9E5FF', text: '#FA5D5D' },
+    { name: 'Grammar', color: '#FAF7F2', text: '#FA5D5D' },
     { name: 'Reading', color: '#B9E8D3', text: '#059669' },
     { name: 'Listening', color: '#E0F2FE', text: '#FA5D5D' },
     { name: 'Writing', color: '#FFE4E6', text: '#E11D48' },
@@ -453,7 +453,7 @@ const SceneMilestone: React.FC<{ frame: number }> = ({ frame }) => {
       >
         CAMBRIDGE EQUIVALENT
       </div>
-      <div style={{ fontSize: '24px', fontWeight: 800, color: '#5B5CE2' }}>
+      <div style={{ fontSize: '24px', fontWeight: 800, color: '#FA5D5D' }}>
         B2 First Ready
       </div>
       <div style={{ fontSize: '13px', color: '#77758A', maxWidth: '280px' }}>

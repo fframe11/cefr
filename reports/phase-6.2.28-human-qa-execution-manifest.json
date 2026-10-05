@@ -2,7 +2,7 @@
   "metadata": {
     "phase": "6.2.28",
     "manifest_version": "1.0.0",
-    "generated_at": "2026-10-03T16:59:45.353Z",
+    "generated_at": "2026-10-05T06:25:26.667Z",
     "source_packet": "reports/phase-6.2.27-human-review-packet.json",
     "source_controlled_batch": "reports/phase-6.2.27-controlled-qa-batch.json",
     "total_execution_units": 50,

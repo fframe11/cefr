@@ -98,22 +98,22 @@ export async function sendFriendInviteEmail(
     html: `
       <div style="font-family: 'Plus Jakarta Sans', sans-serif, system-ui; max-width: 560px; margin: 0 auto; padding: 32px 24px; background: #FFFDF8; border-radius: 24px; border: 1px solid #EDE8DF; color: #24233A;">
         <div style="text-align: center; margin-bottom: 24px;">
-          <h1 style="color: #5B5CE2; font-size: 28px; font-weight: 900; margin: 0;">GLOVA</h1>
+          <h1 style="color: #FA5D5D; font-size: 28px; font-weight: 900; margin: 0;">GLOVA</h1>
           <p style="color: #77758A; font-size: 14px; margin-top: 4px;">University CEFR English Learning Platform</p>
         </div>
-        <div style="background: #FFFFFF; border-radius: 20px; padding: 24px; border: 1px solid #E9E5FF; margin-bottom: 24px;">
+        <div style="background: #FFFFFF; border-radius: 20px; padding: 24px; border: 1px solid #FFECE8; margin-bottom: 24px;">
           <h2 style="font-size: 18px; font-weight: 800; margin-top: 0; color: #24233A;">
             👋 ${inviterName} ชวนคุณเข้าร่วมก๊วนเรียนภาษาอังกฤษ!
           </h2>
           <p style="font-size: 14px; line-height: 1.6; color: #555368;">
             ร่วมฝึกฝนคำศัพท์ CEFR และท้าดวลประลองความเร็ว 4 วินาทีในโหมดแข่งขัน (Ranked Mode) เพื่อพัฒนาทักษะภาษาอังกฤษระดับมหาวิทยาลัยไปด้วยกัน
           </p>
-          <div style="background: #F6F4FF; border-radius: 12px; padding: 12px 16px; margin: 20px 0; text-align: center;">
+          <div style="background: #FFF5F4; border-radius: 12px; padding: 12px 16px; margin: 20px 0; text-align: center;">
             <span style="font-size: 12px; color: #77758A; display: block; margin-bottom: 4px;">รหัสคำเชิญของคุณ:</span>
-            <span style="font-size: 20px; font-weight: 800; color: #5B5CE2; letter-spacing: 2px;">${inviteCode}</span>
+            <span style="font-size: 20px; font-weight: 800; color: #FA5D5D; letter-spacing: 2px;">${inviteCode}</span>
           </div>
           <div style="text-align: center; margin-top: 24px;">
-            <a href="${inviteUrl}" style="display: inline-block; background: #5B5CE2; color: #FFFFFF; text-decoration: none; padding: 14px 28px; border-radius: 14px; font-weight: 800; font-size: 14px;">
+            <a href="${inviteUrl}" style="display: inline-block; background: #FA5D5D; color: #FFFFFF; text-decoration: none; padding: 14px 28px; border-radius: 14px; font-weight: 800; font-size: 14px;">
               ตอบรับคำเชิญและเริ่มเรียนรู้
             </a>
           </div>

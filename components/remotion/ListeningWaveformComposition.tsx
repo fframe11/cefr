@@ -45,7 +45,7 @@ export const ListeningWaveformComposition: React.FC<ListeningWaveformProps> = ({
         });
 
         // Alternating pastel jewel tones: Indigo, Lavender, Mint, Coral
-        const colors = ['#5B5CE2', '#8B5CF6', '#10B981', '#FF8F82'];
+        const colors = ['#FA5D5D', '#8B5CF6', '#10B981', '#FF8F82'];
         const barColor = colors[idx % colors.length];
 
         return (

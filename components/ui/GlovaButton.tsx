@@ -47,9 +47,9 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
 
     const variantDepthStyles: Record<string, Record<string, string>> = {
       primary: {
-        sm: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_2.5px_0_0_#143DB8] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',
-        md: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_4px_0_0_#143DB8] active:shadow-none active:translate-y-[4px] border-t border-white/25',
-        lg: 'bg-[#FA5D5D] hover:bg-[#1C4AC9] text-white shadow-[0_5px_0_0_#143DB8] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
+        sm: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_2.5px_0_0_#B83232] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',
+        md: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_4px_0_0_#B83232] active:shadow-none active:translate-y-[4px] border-t border-white/25',
+        lg: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_5px_0_0_#B83232] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
       },
       secondary: {
         sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',

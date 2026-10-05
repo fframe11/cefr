@@ -148,9 +148,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
 
   const CAMPAIGN_STYLES: Record<string, { bgGradient: string; borderAccent: string; badgeBg: string }> = {
     camp_ranked_season_01: {
-      bgGradient: 'from-[#FA5D5D]/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/25 dark:via-[#141A22] dark:to-[#1C2430]',
-      borderAccent: 'border-[#FA5D5D]/90 dark:border-[#5B5CE2]/35',
-      badgeBg: 'bg-[#FA5D5D] dark:bg-[#5B5CE2]',
+      bgGradient: 'from-[#FA5D5D]/15 via-amber-50/80 to-white dark:from-[#FA5D5D]/25 dark:via-[#141A22] dark:to-[#1C2430]',
+      borderAccent: 'border-[#FA5D5D]/90 dark:border-[#FA5D5D]/35',
+      badgeBg: 'bg-[#FA5D5D] dark:bg-[#FA5D5D]',
     },
     camp_vocab_sprint_300: {
       bgGradient: 'from-rose-500/15 via-amber-50/70 to-white dark:from-rose-500/20 dark:via-[#141A22] dark:to-[#1C2430]',
@@ -175,9 +175,9 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
   };
 
   const resolvedStyle = CAMPAIGN_STYLES[current.id] || {
-    bgGradient: current.theme?.backgroundGradient || 'from-[#FA5D5D]/15 via-violet-50/80 to-white dark:from-[#5B5CE2]/20 dark:via-[#141A22] dark:to-[#1C2430]',
+    bgGradient: current.theme?.backgroundGradient || 'from-[#FA5D5D]/15 via-amber-50/80 to-white dark:from-[#FA5D5D]/20 dark:via-[#141A22] dark:to-[#1C2430]',
     borderAccent: current.theme?.borderAccent || 'border-[#FA5D5D]/90 dark:border-border/60',
-    badgeBg: 'bg-[#FA5D5D] dark:bg-[#5B5CE2]',
+    badgeBg: 'bg-[#FA5D5D] dark:bg-[#FA5D5D]',
   };
 
   const bgGradient = resolvedStyle.bgGradient;
@@ -202,11 +202,11 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className={`relative overflow-hidden rounded-[26px] border-2 ${borderAccent} bg-gradient-to-br ${bgGradient} p-5 sm:p-7 shadow-[0_6px_24px_-4px_rgba(91,92,226,0.08)] transition-all duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#5B5CE2] select-none ${className}`}
+      className={`relative overflow-hidden rounded-[26px] border-2 ${borderAccent} bg-gradient-to-br ${bgGradient} p-5 sm:p-7 shadow-[0_6px_24px_-4px_rgba(250,93,93,0.08)] transition-all duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FA5D5D] select-none ${className}`}
     >
       {/* Visual Accent Ambient Glow (Aceternity UI influence) */}
       <div
-        className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-[#5B5CE2]/15 blur-3xl dark:bg-[#5B5CE2]/25"
+        className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-[#FA5D5D]/15 blur-3xl dark:bg-[#FA5D5D]/25"
         aria-hidden="true"
       />
 
@@ -241,7 +241,7 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
             {/* Campaign Title & Subtitle */}
             <div>
               {subtitle && (
-                <p className="text-xs font-bold text-[#5B5CE2] dark:text-[#FA5D5D] uppercase tracking-wider font-tech mb-0.5">
+                <p className="text-xs font-bold text-[#FA5D5D] uppercase tracking-wider font-tech mb-0.5">
                   {subtitle}
                 </p>
               )}
@@ -329,13 +329,13 @@ export const CampaignBanner: React.FC<CampaignBannerProps> = ({
                   aria-selected={isActive}
                   aria-label={`${isEn ? 'Go to slide' : 'ไปยังสไลด์ที่'} ${idx + 1}`}
                   onClick={() => goToSlide(idx)}
-                  className="p-1.5 -m-0.5 flex items-center justify-center cursor-pointer group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#5B5CE2] rounded-full transition-transform active:scale-90"
+                  className="p-1.5 -m-0.5 flex items-center justify-center cursor-pointer group focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FA5D5D] rounded-full transition-transform active:scale-90"
                 >
                   <span
                     className={`h-2.5 rounded-full transition-all duration-300 ${
                       isActive
-                        ? 'w-7 bg-[#5B5CE2] shadow-sm shadow-[#5B5CE2]/30'
-                        : 'w-2.5 bg-[#77758A]/35 dark:bg-[#77758A]/45 group-hover:bg-[#5B5CE2]/60 group-hover:scale-125'
+                        ? 'w-7 bg-[#FA5D5D] shadow-sm shadow-[#FA5D5D]/30'
+                        : 'w-2.5 bg-[#77758A]/35 dark:bg-[#77758A]/45 group-hover:bg-[#FA5D5D]/60 group-hover:scale-125'
                     }`}
                   />
                 </button>

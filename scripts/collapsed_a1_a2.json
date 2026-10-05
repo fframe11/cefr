@@ -1,0 +1,6130 @@
+[
+  {
+    "id": "d2ee4807-68ea-445c-ab3b-35974ebac839",
+    "word": "automatic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "self-loading rifle capable of automatic fire",
+    "old_th": "อัตโนมัติ"
+  },
+  {
+    "id": "vocab-t2-colloc-1478",
+    "word": "automatic",
+    "pos": "phrase",
+    "cefr": "A2",
+    "en": "a choke that automatically controls the flow of air to the carburetor",
+    "old_th": "อัตโนมัติ"
+  },
+  {
+    "id": "vocab-t2-colloc-1727",
+    "word": "paint",
+    "pos": "phrase",
+    "cefr": "A1",
+    "en": "a layer of paint covering something else",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-lex-2073",
+    "word": "awry",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "away from the correct or expected course",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-lex-4612",
+    "word": "byte",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a sequence of 8 bits (enough to represent one character of alphanumeric data) processed as a single unit of information",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-lex-9590",
+    "word": "cut at",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "",
+    "old_th": "ตัด"
+  },
+  {
+    "id": "vocab-t2-lex-14050",
+    "word": "ex",
+    "pos": "preposition",
+    "cefr": "A1",
+    "en": "the 24th letter of the Roman alphabet",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-lex-25514",
+    "word": "lop",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "cultivate, tend, and cut back the growth of",
+    "old_th": "ตัด"
+  },
+  {
+    "id": "vocab-t2-lex-26807",
+    "word": "marker",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "some conspicuous object used to distinguish or mark something",
+    "old_th": "เครื่องหมาย"
+  },
+  {
+    "id": "vocab-t2-lex-30119",
+    "word": "nook",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an interior angle formed by two meeting walls",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-lex-31804",
+    "word": "chromo",
+    "pos": "prefix",
+    "cefr": "A2",
+    "en": "",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-lex-43250",
+    "word": "shear",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "become deformed by forces tending to produce a shearing strain",
+    "old_th": "ตัด"
+  },
+  {
+    "id": "vocab-t2-lex-43614",
+    "word": "sigil",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "",
+    "old_th": "เครื่องหมาย"
+  },
+  {
+    "id": "vocab-t2-lex-49808",
+    "word": "trim",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "adjust (sails on a ship) so that the wind is optimally used",
+    "old_th": "ตัด"
+  },
+  {
+    "id": "vocab-t2-lex-54011",
+    "word": "width",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the extent of something from side to side",
+    "old_th": "ความกว้าง"
+  },
+  {
+    "id": "vocab-t2-oewn-42",
+    "word": "abdias",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an Old Testament book telling Obadiah's prophecies",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-133",
+    "word": "abseil",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(mountaineering) a descent of a vertical cliff or wall made by using a doubled rope that is fixed to a higher point and wrapped around the body",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-174",
+    "word": "abysm",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a bottomless gulf or pit",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-236",
+    "word": "accession",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the act of attaining or gaining access to a new office or right or position (especially the throne)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-258",
+    "word": "accretion",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(law) an increase in a beneficiary's share in an estate (as when a co-beneficiary dies or fails to meet some condition or rejects the inheritance)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-341",
+    "word": "aclant",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a major strategic headquarters of NATO located in the United States",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-402",
+    "word": "actaea",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "baneberry",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-525",
+    "word": "adige",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a river in northern Italy that flows southeast into the Adriatic Sea",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-554",
+    "word": "adonic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a verse line with a dactyl followed by a spondee or trochee",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-665",
+    "word": "aesir",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Norse mythology) the chief of gods living at Asgard",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-698",
+    "word": "afisr",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an agency focused on ensuring that the United States military attains information superiority",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-795",
+    "word": "aglet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "ornamental tagged cord or braid on the shoulder of a uniform",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-1073",
+    "word": "algren",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States writer (1909-1981)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-1109",
+    "word": "alkane",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a series of non-aromatic saturated hydrocarbons with the general formula CnH(2n+2)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-1116",
+    "word": "alkyd",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a durable synthetic resin widely used in adhesives and paints",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-1146",
+    "word": "allice",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "European shad",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-1187",
+    "word": "aloes",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a purgative made from the leaves of aloe",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-1220",
+    "word": "alsace",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a region of northeastern France famous for its wines",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-1229",
+    "word": "altair",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "double star 15.7 light years from Earth",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-1251",
+    "word": "alytes",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "midwife toads",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-1345",
+    "word": "amide",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any organic compound containing the group -CONH2",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-1449",
+    "word": "amusd",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a doctor's degree in musical arts",
+    "old_th": "ไม่สนใจ"
+  },
+  {
+    "id": "vocab-t2-oewn-1558",
+    "word": "anchorage",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the act of anchoring",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-1741",
+    "word": "annexe",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an addition that extends a main building",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-1799",
+    "word": "anselm",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an Italian who was a Benedictine monk",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-1818",
+    "word": "anteater",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a burrowing monotreme mammal covered with spines and having a long snout and claws for hunting ants and termites",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-2043",
+    "word": "aplite",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "light-colored and fine-grained granitic rock consisting chiefly of quartz and feldspars",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-2181",
+    "word": "arales",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Araceae",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-2277",
+    "word": "archil",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of various lecanoras that yield the dye archil",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-2299",
+    "word": "arcsin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the inverse function of the sine",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-2332",
+    "word": "arendt",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States historian and political philosopher (born in Germany) (1906-1975)",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-2347",
+    "word": "argent",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a metal tincture used in heraldry to give a silvery appearance",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-2476",
+    "word": "arouet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French writer who was the embodiment of 18th century Enlightenment (1694-1778)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-2620",
+    "word": "ascot",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a cravat with wide square ends",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-2623",
+    "word": "asdic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a measuring instrument that sends out an acoustic pulse in water and measures distances in terms of the time for the echo of the pulse to return",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-2725",
+    "word": "assimilation",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "in the theories of Jean Piaget: the application of a general schema to a particular instance",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-2824",
+    "word": "ataxy",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "inability to coordinate voluntary muscle movements",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-2951",
+    "word": "audad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "wild sheep of northern Africa",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-2952",
+    "word": "auden",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States poet (born in England) (1907-1973)",
+    "old_th": "อัตโนมัติ"
+  },
+  {
+    "id": "vocab-t2-oewn-2965",
+    "word": "augeas",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Greek mythology) the mythical Greek king who for 30 years did not clean his stables which contained his vast herd of cattle",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-2966",
+    "word": "augend",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a number to which another number (the addend) is added",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-3001",
+    "word": "auspex",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(ancient Rome) a religious official who interpreted omens to guide public policy",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-3005",
+    "word": "austen",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English novelist noted for her insightful portrayals of middle-class families (1775-1817)",
+    "old_th": "อัตโนมัติ"
+  },
+  {
+    "id": "vocab-t2-oewn-3134",
+    "word": "avocet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "long-legged web-footed black-and-white shorebird with slender upward-curving bill",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-3183",
+    "word": "azide",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a chemical compound containing the azido group combined with an element or radical",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-3337",
+    "word": "baiza",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "1,000 baiza equal 1 riyal-omani in Oman",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-3377",
+    "word": "baleen",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a horny material from the upper jaws of certain whales",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-3388",
+    "word": "balker",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a person who refuses to comply",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-3419",
+    "word": "baltic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a branch of the Indo-European family of languages related to the Slavonic languages",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-3475",
+    "word": "baphia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small genus of shrubs and lianas and trees of Africa and Madagascar",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-3632",
+    "word": "bastet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "cat- or lion-headed Egyptian goddess",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-3697",
+    "word": "bayard",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French soldier said to be fearless and chivalrous (1473-1524)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-3698",
+    "word": "bayat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an oath of allegiance to an emir",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-3810",
+    "word": "behest",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an authoritative command or request",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-3847",
+    "word": "belize",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a country on the northeastern coast of Central America on the Caribbean",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-4085",
+    "word": "bierce",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States writer of caustic wit (1842-1914)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4237",
+    "word": "bistre",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a water-soluble brownish-yellow pigment made by boiling wood soot",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4268",
+    "word": "bizet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French composer best known for his operas (1838-1875)",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-4379",
+    "word": "bletia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of various orchids of the genus Bletia having pseudobulbs and erect leafless racemes of large purple or pink flowers",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4388",
+    "word": "bling",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "flashy, ostentatious jewelry",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-4400",
+    "word": "blixen",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Danish writer who lived in Kenya for 19 years and is remembered for her writings about Africa (1885-1962)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4517",
+    "word": "bocce",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Italian bowling played on a long narrow dirt court",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4527",
+    "word": "boding",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a feeling of evil to come",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-4571",
+    "word": "bolide",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an especially luminous meteor (sometimes exploding)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4687",
+    "word": "borate",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a salt or ester of boric acid",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-4779",
+    "word": "bourn",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an archaic term for a goal or destination",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4786",
+    "word": "bovid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "hollow-horned ruminants",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-4856",
+    "word": "bract",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a modified leaf or leaflike part just below and protecting an inflorescence",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-4886",
+    "word": "brail",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a small rope (one of several) used to draw a sail in",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-4990",
+    "word": "brent",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small dark geese that breed in the north and migrate southward",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-4993",
+    "word": "brest",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a port city in northwestern France (in Brittany)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-4996",
+    "word": "breuer",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States architect (born in Hungary) who was associated with the Bauhaus in the 1920's (1902-1981)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5008",
+    "word": "briard",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "old French breed of large strong usually black dogs having a long tail and long wavy and slightly stiff coat",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5217",
+    "word": "buber",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Israeli religious philosopher (born in Austria)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-5284",
+    "word": "bulgur",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "parched crushed wheat",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-5331",
+    "word": "bunk",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a bed on a ship or train",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-5436",
+    "word": "buteo",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "broad-winged soaring hawks",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5440",
+    "word": "butte",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a town in southwestern Montana",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5461",
+    "word": "butut",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "100 bututs equal 1 dalasi in Gambia",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-5467",
+    "word": "buxus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "type genus of the Buxaceae",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5493",
+    "word": "byrnie",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a long (usually sleeveless) tunic of chain mail formerly worn as defensive armor",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5495",
+    "word": "byron",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English romantic poet notorious for his rebellious and unconventional lifestyle (1788-1824)",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5497",
+    "word": "byssus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tuft of strong filaments by which e.g. a mussel makes itself fast to a fixed surface",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5498",
+    "word": "byzant",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a gold coin of the Byzantine Empire",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-5568",
+    "word": "caecum",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the cavity in which the large intestine begins and into which the ileum opens",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-5589",
+    "word": "cahoot",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "collusion",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-5612",
+    "word": "calais",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a town in northern France on the Strait of Dover that serves as a ferry port to England",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-5909",
+    "word": "capiz",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "marine bivalve common in Philippine coastal waters characterized by a large thin flat translucent shell",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-5911",
+    "word": "capone",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States gangster who terrorized Chicago during prohibition until arrested for tax evasion (1899-1947)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-5941",
+    "word": "capsid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the outer covering of protein surrounding the nucleic acid of a virus",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-6053",
+    "word": "carib",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the family of languages spoken by the Carib",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-6083",
+    "word": "carnot",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French physicist who founded thermodynamics (1796-1832)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-6303",
+    "word": "cather",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States writer who wrote about frontier life (1873-1947)",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-6333",
+    "word": "caudex",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "woody stem of palms and tree ferns",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-6429",
+    "word": "celtic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a branch of the Indo-European languages that (judging from inscriptions and place names) was spread widely over Europe in the pre-Christian era",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-6514",
+    "word": "ceras",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "one of the often brightly colored and branching hornlike structures on the back of the nudibranch (and other related mollusks) that serve as gills",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-6572",
+    "word": "cervid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "distinguished from Bovidae by the male's having solid deciduous antlers",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-6618",
+    "word": "chadar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a cloth used as a head covering (and veil and shawl) by Muslim and Hindu women",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-6621",
+    "word": "chadic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a family of Afroasiatic tonal languages (mostly two tones) spoken in the regions west and south of Lake Chad in north central Africa",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-6646",
+    "word": "chait",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the first Hindu calendar month (corresponding to March in the Gregorian calendar)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-6776",
+    "word": "charles",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a river in eastern Massachusetts that empties into Boston Harbor and that separates Cambridge from Boston",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-6797",
+    "word": "chasid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a member of a Jewish sect that observes a form of strict Orthodox Judaism",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-6800",
+    "word": "chasse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(ballet) quick gliding steps with one foot always leading",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-6908",
+    "word": "cheops",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Egyptian Pharaoh of the 27th century BC who commissioned the Great Pyramid at Giza",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-7002",
+    "word": "chimer",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a fur-lined coat decorated with braid, worn in the sixteenth century.",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-7074",
+    "word": "chive",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "perennial having hollow cylindrical leaves used for seasoning",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-7230",
+    "word": "chroma",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "chromatic purity: freedom from dilution with white and hence vivid in hue",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7240",
+    "word": "chrome",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "another word for chromium when it is used in dyes or pigments",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7374",
+    "word": "cinque",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the cardinal number that is the sum of four and one",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7383",
+    "word": "circe",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Greek mythology) a sorceress who detained Odysseus on her island and turned his men into swine",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-7399",
+    "word": "cirque",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a steep-walled semicircular basin in a mountain",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7532",
+    "word": "cleats",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "shoes with leather or metal projections on the soles",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-7554",
+    "word": "clerid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "predacious on other insects",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-7568",
+    "word": "cliche",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a trite or obvious remark",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-7569",
+    "word": "clichy",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a northwestern suburb of Paris",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-7582",
+    "word": "cline",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "American geneticist who succeeded in transferring a functioning gene from one mouse to another (born in 1934)",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-7604",
+    "word": "clitic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a word that is treated in pronunciation as forming a part of a neighboring word and that is often unaccented or contracted.",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7634",
+    "word": "closeness",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "close or warm friendship",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-7678",
+    "word": "clyde",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a river in western Scotland that flows from the southern uplands into the Firth of Clyde",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-7849",
+    "word": "cognac",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "high quality grape brandy distilled in the Cognac district of France",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-7863",
+    "word": "coign",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the keystone of an arch",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-7864",
+    "word": "coigne",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the keystone of an arch",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-7884",
+    "word": "colic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "acute abdominal pain (especially in infants)",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-8251",
+    "word": "connexion",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the act of bringing two things into contact (especially for communication)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-8269",
+    "word": "conrad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English novelist (born in Poland) noted for sea stories and for his narrative technique (1857-1924)",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-8471",
+    "word": "cordia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tropical deciduous or evergreen trees or shrubs of the family Boraginaceae",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-8589",
+    "word": "corvee",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "unpaid labor (as for the maintenance of roads) required by a lord of their vassals in lieu of taxes",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-8630",
+    "word": "coss",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(in India) a unit of length having different values in different localities",
+    "old_th": "ความยาว"
+  },
+  {
+    "id": "vocab-t2-oewn-8765",
+    "word": "couth",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(used facetiously) refinement",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-8875",
+    "word": "cravat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "neckwear worn in a slipknot with long ends overlapping vertically in front",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-8928",
+    "word": "crete",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the largest Greek island in the Mediterranean",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-8963",
+    "word": "crith",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the weight of a liter of hydrogen (at 0 centigrade and 760 millimeters pressure)",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-8974",
+    "word": "croat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a member of the Slavic people living in Croatia",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-9007",
+    "word": "crore",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the number that is represented as a one followed by 7 zeros",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-9042",
+    "word": "crotal",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of several lichens of the genus Parmelia from which reddish brown or purple dyes are made",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-9055",
+    "word": "crouse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States playwright (1893-1966)",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-9298",
+    "word": "cushat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Eurasian pigeon with white patches on wings and neck",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9316",
+    "word": "cut-up",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who plays practical jokes on others",
+    "old_th": "ตัด"
+  },
+  {
+    "id": "vocab-t2-oewn-9317",
+    "word": "cutch",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tannin extract derived from any of several mangrove barks of Pacific areas",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9322",
+    "word": "cutin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(biochemistry) a waxy transparent material that occurs in the cuticle of plants and consists of highly polymerized esters of fatty acids",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9323",
+    "word": "cutis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a natural protective body covering and site of the sense of touch",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9324",
+    "word": "cutlas",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a short heavy curved sword with one edge",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9328",
+    "word": "cuttle",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "ten-armed oval-bodied cephalopod with narrow fins as long as the body and a large calcareous internal shell",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9331",
+    "word": "cuvier",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French naturalist known as the father of comparative anatomy (1769-1832)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9368",
+    "word": "cycad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any tropical gymnosperm of the order Cycadales",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-9549",
+    "word": "dacite",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a grey volcanic rock containing plagioclase and quartz and other crystalline minerals",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-9615",
+    "word": "daleth",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the 4th letter of the Hebrew alphabet",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-9631",
+    "word": "damask",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a fabric of linen or cotton or silk or wool with a reversible pattern woven into it",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-9747",
+    "word": "dauber",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an unskilled painter",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-9758",
+    "word": "davis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States film actress (1908-1989)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-9759",
+    "word": "davit",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a crane-like device (usually one of a pair) for suspending or lowering equipment (as a lifeboat)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-9859",
+    "word": "decal",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "either a design that is fixed to some surface or a paper bearing the design which is to be transferred to the surface",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-10162",
+    "word": "dentin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "bone (calcified tissue) surrounding the pulp cavity of a tooth",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-10434",
+    "word": "diapir",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a domed rock formation where a core of rock has moved upward and pierced through the more brittle overlying strata",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-10627",
+    "word": "dinar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the basic unit of money in Algeria",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-10722",
+    "word": "dirham",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "worth one tenth of a Kuwaiti dinar",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-10900",
+    "word": "ditty",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a short simple song (or the words of a poem intended to be sung)",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-10903",
+    "word": "diuril",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a diuretic drug (trade name Diuril) used in the treatment of edema and hypertension",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-10966",
+    "word": "docket",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a temporally organized plan for matters to be attended to",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-11213",
+    "word": "doxing",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Releasing someone's personal information on the Web with the intention of causing harassment",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-11280",
+    "word": "dreck",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "merchandise that is shoddy or inferior",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-11303",
+    "word": "drimys",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "shrubs and trees of Southern Hemisphere having aromatic foliage",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-11349",
+    "word": "drouth",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a shortage of rainfall",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-11366",
+    "word": "drusen",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(plural) an eye disease resulting from small accumulations of hyaline bodies underneath the retina",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-11435",
+    "word": "dugong",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "sirenian tusked mammal found from eastern Africa to Australia",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-11446",
+    "word": "dulse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "coarse edible red seaweed",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-11488",
+    "word": "durant",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States historian (1885-1981)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-11499",
+    "word": "durion",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tree of southeastern Asia having edible oval fruit with a hard spiny rind",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-11632",
+    "word": "eblis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Islam) the principal evil jinni in Islamic mythology",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-11641",
+    "word": "ebv",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the herpes virus that causes infectious mononucleosis",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-11642",
+    "word": "ec",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an international organization of European countries formed after World War II to reduce trade barriers and increase cooperation among its members",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-11660",
+    "word": "ecg",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a graphical recording of the cardiac cycle produced by an electrocardiograph",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-11754",
+    "word": "edp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "automatic data processing by electronic means without the use of tabulating cards or punched tapes",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-11761",
+    "word": "edward",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "son of Edward III who defeated the French at Crecy and Poitiers in the Hundred Years' War (1330-1376)",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-11901",
+    "word": "eld",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a time of life (usually defined in years) at which some particular qualification or power arises",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-12098",
+    "word": "enbrel",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a genetically engineered anti-TNF compound (trade name Enbrel) consisting of receptors that bind TNF",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-12236",
+    "word": "enosis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the union of Greece and Cyprus (which is the goal of a group of Greek Cypriots)",
+    "old_th": "โรคข้ออักเสบ"
+  },
+  {
+    "id": "vocab-t2-oewn-12545",
+    "word": "erivan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "capital of Armenia",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-12552",
+    "word": "eros",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a desire for sexual intimacy",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-12603",
+    "word": "eschar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a dry scab formed on the skin following a burn or cauterization of the skin",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-12735",
+    "word": "eugene",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in western Oregon on the Willamette River",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-12848",
+    "word": "ew",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "military action involving the use of electromagnetic energy to determine or exploit or reduce or prevent hostile use of the electromagnetic spectrum",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-13208",
+    "word": "fancam",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "footage of a celebrity taken by a fan",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-13213",
+    "word": "fantan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a card game in which you play your sevens and other cards in sequence in the same suit as the sevens",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-13230",
+    "word": "farc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a powerful and wealthy terrorist organization formed in 1957 as the guerilla arm of the Colombian communist party",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-13294",
+    "word": "fauld",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a piece of armor plate below the breastplate",
+    "old_th": "ความกว้าง"
+  },
+  {
+    "id": "vocab-t2-oewn-13303",
+    "word": "faust",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an alchemist of German legend who sold his soul to Mephistopheles in exchange for knowledge",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-13563",
+    "word": "finisher",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an animal that wins in a contest of speed",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-13658",
+    "word": "flab",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "loose or flaccid body fat",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-13704",
+    "word": "flaps",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a movable airfoil that is part of an aircraft wing",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-13760",
+    "word": "fletc",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a center in the Department of Homeland Security that trains law enforcement professionals for more than seventy federal agencies",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-13790",
+    "word": "flitch",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "salted and cured abdominal wall of a side of pork",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-13791",
+    "word": "flnc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a terrorist group formed in 1976 to work for Corsican independence",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-13793",
+    "word": "floater",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an insurance policy covering loss of movable property (e.g. jewelry) regardless of its location",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-13924",
+    "word": "folate",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a B vitamin that is essential for cell growth and reproduction",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-14403",
+    "word": "fugu",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a blowfish highly prized as a delicacy in Japan but highly dangerous because the skin and organs are poisonous",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-14413",
+    "word": "fula",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a family of languages of the Fulani of West Africa and used as a lingua franca in the sub-Saharan regions from Senegal to Chad",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-14503",
+    "word": "furze",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "very spiny and dense evergreen shrub with fragrant golden-yellow flowers",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-14533",
+    "word": "gabor",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "British physicist (born in Hungary) noted for his work on holography (1900-1979)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-14620",
+    "word": "gallup",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a town in northwestern New Mexico near the Arizona border",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-14623",
+    "word": "galoot",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a disreputable or clumsy man",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-14822",
+    "word": "gb",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an island comprising England and Scotland and Wales",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-14823",
+    "word": "gbit",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of information equal to 1000 megabits or 10^9 (1,000,000,000) bits",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-14826",
+    "word": "gcse",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the basic level of a subject taken in school",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-14989",
+    "word": "gerres",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "type genus of the Gerreidae",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-15048",
+    "word": "gidar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Chadic language spoken south of Lake Chad, especially in the North Region, Mayo-Louti division, Guider and Figuil subdivisions",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-15050",
+    "word": "gide",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "French author and dramatist who is regarded as the father of modern French literature (1869-1951)",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-15288",
+    "word": "gnosis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "intuitive knowledge of spiritual truths",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-15370",
+    "word": "gomel",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "industrial city of Belarus to the southeast of Minsk",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-15617",
+    "word": "gregory",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Roman Catholic Church) an Italian pope distinguished for his spiritual and temporal leadership",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-15667",
+    "word": "groat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a former English silver coin worth four pennies",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-15668",
+    "word": "groats",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the hulled and crushed grain of various cereals",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-15853",
+    "word": "gustavus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "king of Sweden who established Lutheranism as the state religion (1496-1560)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-15874",
+    "word": "gy",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the SI unit of energy absorbed from ionizing radiation",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-16127",
+    "word": "halide",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a salt of any halogen acid",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-16185",
+    "word": "hamilton",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the capital of Bermuda",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-16215",
+    "word": "handel",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the music of Handel",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-16312",
+    "word": "harlow",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States film actress who made several films with Clark Gable (1911-1937)",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-16332",
+    "word": "harris",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "publisher of the first newspaper printed in America (1673-1713)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-16357",
+    "word": "haslet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "heart and liver and other edible viscera especially of hogs",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-16378",
+    "word": "hatpin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a long sturdy pin used by women to secure a hat to their hair",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-16528",
+    "word": "hecht",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States writer of stories and plays (1894-1946)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-16760",
+    "word": "herat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in northwestern Afghanistan on the site of several ancient cities",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-16778",
+    "word": "herm",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a statue consisting of a squared stone pillar with a carved head (usually a bearded Hermes) on top",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-16957",
+    "word": "hilus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(anatomy) a depression or fissure where vessels or nerves or ducts enter a bodily organ",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-17040",
+    "word": "hiv",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the virus that causes acquired immune deficiency syndrome (AIDS)",
+    "old_th": "ความสูง"
+  },
+  {
+    "id": "vocab-t2-oewn-17510",
+    "word": "hubble",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States astronomer who discovered that (as the universe expands) the speed with which nebulae recede increases with their distance from the observer (1889-1953)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-17513",
+    "word": "hubbub",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "loud confused noise from many sources",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-17514",
+    "word": "hubby",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a married man",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-17515",
+    "word": "hubcap",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "cap that fits over the hub of a wheel",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-17516",
+    "word": "hubel",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States neuroscientist noted for his studies of the neural basis of vision (born in 1926)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-17517",
+    "word": "hubris",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "overbearing pride or presumption",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-17529",
+    "word": "hue",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the quality of a color as determined by its dominant wavelength",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-17543",
+    "word": "huitre",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "edible body of any of numerous oysters",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-17562",
+    "word": "humate",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "material that is high in humic acids",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-17610",
+    "word": "hurler",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(baseball) the person who does the pitching",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-18025",
+    "word": "ibis",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "wading birds of warm regions having long slender down-curved bills",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-18645",
+    "word": "inpour",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an inflow",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-19279",
+    "word": "jeth",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the third month of the Hindu calendar",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-19368",
+    "word": "jones",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English phonetician (1881-1967)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-19394",
+    "word": "jowett",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English classical scholar noted for his translations of Plato and Aristotle (1817-1893)",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-19436",
+    "word": "jumbal",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small flat ring-shaped cake or cookie",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-19459",
+    "word": "jupaty",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a tall Brazilian feather palm with a terminal crown of very large leathery pinnatisect leaves rising from long strong stems used for structural purposes",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-19467",
+    "word": "jutish",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a southern dialect of Old English, spoken in the Anglo-Saxon kingdom of Kent",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-19670",
+    "word": "keflex",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a cephalosporin antibiotic (trade names Keflex and Keflin and Keftab) commonly prescribed for mild to moderately severe infections of the skin or ears or throat or lungs or urinary tract",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-19707",
+    "word": "kenyan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a native or inhabitant of Kenya",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-19801",
+    "word": "khat",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the leaves of the shrub Catha edulis which are chewed like tobacco or used to make tea",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-19931",
+    "word": "kislev",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the third month of the civil year",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-19947",
+    "word": "kittul",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "fishtail palm of India to Malay Peninsula",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-20011",
+    "word": "knout",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a whip with a lash of leather thongs twisted with wire",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-20203",
+    "word": "kyat",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the basic unit of money in Myanmar",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-20218",
+    "word": "l-beam",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a beam with an L-shaped cross-section.",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-20224",
+    "word": "laban",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Hungarian choreographer who developed Labanotation (1879-1958)",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-20230",
+    "word": "lablab",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "one species: hyacinth bean",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-20344",
+    "word": "lakh",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the cardinal number that is the fifth power of ten",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-20445",
+    "word": "langur",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "slender long-tailed monkey of Asia",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-20483",
+    "word": "lapin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "castrated male rabbit",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-20487",
+    "word": "lappic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of the languages spoken by the Lapps and generally assumed to be Uralic languages",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-20732",
+    "word": "leeds",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city on the River Aire in West Yorkshire in northern England",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-20824",
+    "word": "lenity",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "mercifulness as a consequence of being lenient or tolerant",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-20832",
+    "word": "lentia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "city in northern Austria on the Danube",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-20920",
+    "word": "lescol",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "least expensive statin drug (trade name Lescol)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-20929",
+    "word": "letch",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "man with strong sexual desires",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-20969",
+    "word": "lev",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the basic unit of money in Bulgaria",
+    "old_th": "ความสูง"
+  },
+  {
+    "id": "vocab-t2-oewn-20993",
+    "word": "lewis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English critic and novelist",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-21006",
+    "word": "leyden",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in the western Netherlands",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-21008",
+    "word": "leyte",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a battle in World War II",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-21017",
+    "word": "lhotse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a mountain in the central Himalayas on the border of Tibet and Nepal (27,890 feet high)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-21373",
+    "word": "llm",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an advanced law degree",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-21375",
+    "word": "llud",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a Celtic warrior god",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-21454",
+    "word": "logan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a mountain peak in the St. Elias Range in the southwestern Yukon Territory in Canada (19,850 feet high)",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-21530",
+    "word": "lontar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tall fan palm of Africa and India and Malaysia yielding a hard wood and sweet sap that is a source of palm wine and sugar",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-21544",
+    "word": "looseness",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "dissolute indulgence in sensual pleasure",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-21610",
+    "word": "lovage",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "stalks eaten like celery or candied like angelica",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-21657",
+    "word": "ltte",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a terrorist organization in Sri Lanka that began in 1970 as a student protest over the limited university access for Tamil students",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-21675",
+    "word": "luce",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "United States playwright and public official (1902-1987)",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-21681",
+    "word": "lucite",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a transparent thermoplastic acrylic resin",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-21699",
+    "word": "luge",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a racing sled for one or two people",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21708",
+    "word": "luke",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one of the four Gospels in the New Testament",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21714",
+    "word": "lulz",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "An objective that is worth achieving only for its own enjoyment",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-21753",
+    "word": "lupin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any plant of the genus Lupinus",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21779",
+    "word": "luther",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "German theologian who led the Reformation",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-21786",
+    "word": "lutra",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "in some classifications considered a genus of the subfamily Lutrinae",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21792",
+    "word": "luvian",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an Anatolian language closely related to Lycian",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21794",
+    "word": "lux",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of illumination equal to 1 lumen per square meter",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-21921",
+    "word": "maar",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a flat-bottomed volcanic crater that was formed by an explosion",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-22307",
+    "word": "manpad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a man-portable surface-to-air missile",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-22426",
+    "word": "marks",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English businessman who created a retail chain (1888-1964)",
+    "old_th": "เครื่องหมาย"
+  },
+  {
+    "id": "vocab-t2-oewn-22583",
+    "word": "maund",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a unit of weight used in Asia",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-22591",
+    "word": "mavik",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an ACE inhibiting drug (trade name Mavik) used in some patients after a heart attack or to treat hypertension",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-23132",
+    "word": "mg",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one thousandth (1/1,000) gram",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-23406",
+    "word": "minoan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Cretan who lived in the bronze-age culture of Crete about 3000-1100 BC",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-23421",
+    "word": "minyan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the quorum required by Jewish law to be present for public worship (at least ten males over thirteen years of age)",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-23423",
+    "word": "miosis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "reflex contraction of the sphincter muscle of the iris in response to a bright light (or certain drugs) causing the pupil to become smaller",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-23481",
+    "word": "mitchell",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States dancer who formed the first Black classical ballet company (born in 1934)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-23592",
+    "word": "moline",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a town in northwest Illinois on the Mississippi River",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-23603",
+    "word": "molnar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Hungarian playwright (1878-1952)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-23979",
+    "word": "mulct",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "money extracted as a penalty",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-23985",
+    "word": "muller",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a vessel in which wine is mulled",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-24029",
+    "word": "munj",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "tough Asiatic grass whose culms are used for ropes and baskets",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-24032",
+    "word": "munjuk",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Chadic language spoken south of Lake Chad, especially in the Far North Region, Mayo-Danay division, Maga subdivision",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-24084",
+    "word": "musial",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States baseball player (born in 1920)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-24214",
+    "word": "myotic",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a drug that causes miosis (constriction of the pupil of the eye)",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-24312",
+    "word": "nafud",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a desert in northern Saudi Arabia that is noted for its red sand and violent winds",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-24341",
+    "word": "najd",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a central plateau region of the Arabian Peninsula",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-24403",
+    "word": "napier",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Scottish mathematician who invented logarithms",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-24415",
+    "word": "narc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a lawman concerned with narcotics violations",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-24499",
+    "word": "naze",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a cape at the southern tip of Norway",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-24513",
+    "word": "neb",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "horny projecting mouth of a bird",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-24597",
+    "word": "nentsy",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Uralic language spoken by a Samoyed of northern Siberia",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-24702",
+    "word": "ness",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a strip of land projecting into a body of water",
+    "old_th": "ความสูง"
+  },
+  {
+    "id": "vocab-t2-oewn-24814",
+    "word": "ng",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one billionth (1/1,000,000,000) gram",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-24918",
+    "word": "ninib",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a solar deity",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-24978",
+    "word": "nlrb",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an independent agency of the United States government charged with mediating disputes between management and labor unions",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-25002",
+    "word": "noctua",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "type genus of the Noctuidae: moths whose larvae are cutworms",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-25023",
+    "word": "nomia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a genus of bee",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-25095",
+    "word": "nopal",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of several cacti of the genus Nopalea resembling prickly pears",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-25127",
+    "word": "norn",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(Norse mythology) any of the three goddesses of destiny",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-25151",
+    "word": "nosher",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who eats lightly or eats snacks between meals",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-25153",
+    "word": "nostoc",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "found in moist places as rounded jellylike colonies",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-25188",
+    "word": "novena",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Roman Catholic devotion consisting of prayers on nine consecutive days",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-25200",
+    "word": "nox",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "Roman goddess of night",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-25205",
+    "word": "nra",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a powerful lobby that advocates the right to own and bear arms and rejects any gun regulation by the government",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-25207",
+    "word": "nrem",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a recurring sleep state during which rapid eye movements do not occur and dreaming does not occur",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-25208",
+    "word": "nrl",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the United States Navy's defense laboratory that conducts basic and applied research for the Navy in a variety of scientific and technical disciplines",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-25250",
+    "word": "numbat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small Australian marsupial having long snout and strong claws for feeding on termites",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-25278",
+    "word": "nuptse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a mountain in the central Himalayas on the border of Tibet and Nepal (25,726 feet high)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-25297",
+    "word": "nuwc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the agency that provides scientific and engineering and technical support for submarine and undersea warfare systems",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-25303",
+    "word": "ny",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a Mid-Atlantic state",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-25308",
+    "word": "nybble",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a small byte",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-25343",
+    "word": "nyx",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(Greek mythology) Greek goddess of the night",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-25525",
+    "word": "oilrig",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "rig used in drilling for oil or gas",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-25875",
+    "word": "ormazd",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "chief deity of Zoroastrianism",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-25907",
+    "word": "orpin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "perennial northern temperate plant with toothed leaves and heads of small purplish-white flowers",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-26187",
+    "word": "ovral",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "brand name for an oral contraceptive containing estradiol and norgestrel",
+    "old_th": "อัตโนมัติ"
+  },
+  {
+    "id": "vocab-t2-oewn-26240",
+    "word": "ozarks",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an area of low mountains in northwestern Arkansas and southeastern Missouri and northeastern Oklahoma",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-26272",
+    "word": "pacing",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "walking with slow regular strides",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-26320",
+    "word": "paigle",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "early spring flower common in British isles having fragrant yellow or sometimes purple flowers",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-26327",
+    "word": "paipai",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a community of Native Americans who speak a Hokan language and live in Baja California",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-26607",
+    "word": "paraph",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a flourish added after or under your signature (originally to protect against forgery)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-26850",
+    "word": "patzer",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a poor chess player",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-26895",
+    "word": "pcp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a drug used as an anesthetic by veterinarians",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-26990",
+    "word": "pelage",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "growth of hair or wool or fur covering the body of an animal",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-27309",
+    "word": "pesewa",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "100 pesewas equal 1 cedi in Ghana",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-27369",
+    "word": "pflp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a terrorist group of limited popularity formed in 1967 after the Six-Day War",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-27405",
+    "word": "phalsa",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "drought-resistant Asiatic treelike shrub bearing pleasantly acid small red edible fruits commonly used in sherbets",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-27711",
+    "word": "pickup",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the act of taking aboard passengers or freight",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-27768",
+    "word": "pilate",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the Roman procurator of Judea who ordered that Jesus be crucified (died in AD 36)",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-27790",
+    "word": "pilus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "hairlike structure especially on the surface of a cell or microorganism",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-27983",
+    "word": "plage",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the beach at a seaside resort",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-28028",
+    "word": "plash",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the sound like water splashing",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-28052",
+    "word": "plat",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a map showing planned or actual features of an area (streets and building lots etc.)",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-28063",
+    "word": "plath",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States writer and poet (1932-1963)",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-28069",
+    "word": "platte",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a river in Nebraska that flows eastward to become a tributary of the Missouri River",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-28134",
+    "word": "plenum",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an enclosed space in which the air pressure is higher than outside",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-28161",
+    "word": "pleven",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the town was taken from the Turks by the Russians in 1877 after a siege of 143 days",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-28171",
+    "word": "plica",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a folded part (as in skin or muscle)",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-28174",
+    "word": "plier",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who plies a trade",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-28178",
+    "word": "plo",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a political movement uniting Palestinian Arabs in an effort to create an independent state of Palestine",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-28179",
+    "word": "ploce",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(rhetoric) repetition to gain special emphasis or extend meaning",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-28230",
+    "word": "plyer",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who plies a trade",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-28231",
+    "word": "plyers",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a gripping hand tool with two hinged arms and (usually) serrated jaws",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-28491",
+    "word": "ponce",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who procures customers for whores (in England they call a pimp a ponce)",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-28502",
+    "word": "pongid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of the large anthropoid apes of the family Pongidae",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-28680",
+    "word": "poulet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the flesh of a chicken used for food",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29290",
+    "word": "psocid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small winged insect living on the bark and leaves of trees and feeding on e.g. fungi and decaying plant matter",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29329",
+    "word": "psyop",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "military actions designed to influence the perceptions and attitudes of individuals, groups, and foreign governments",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29368",
+    "word": "pto",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a device that transfers power from an engine (as in a tractor or other motor vehicle) to another piece of equipment (as to a pump or jackhammer)",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29372",
+    "word": "ptsd",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an anxiety disorder associated with serious traumatic events and characterized by such symptoms as survivor guilt, reliving the trauma in dreams, numbness and lack of involvement with reality, or recurrent thoughts and images",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29433",
+    "word": "pulque",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "fermented Mexican drink from juice of various agave plants especially the maguey",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29454",
+    "word": "punjab",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a historical region on northwestern India and northern Pakistan",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29466",
+    "word": "purace",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an inactive volcano in the Andes in southern Colombia",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29476",
+    "word": "purim",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Judaism) a Jewish holy day commemorating their deliverance from massacre by Haman",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29479",
+    "word": "purist",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who insists on great precision and correctness (especially in the use of words)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29536",
+    "word": "pydna",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a major victory by the Romans over the Macedonians in 168 BC",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29635",
+    "word": "pyxie",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "creeping evergreen shrub having narrow overlapping leaves and early white star-shaped flowers",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-29659",
+    "word": "qintar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "100 qindarka equal 1 lek in Albania",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-29690",
+    "word": "quapaw",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the Dhegiha dialect spoken by the Quapaw",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-29707",
+    "word": "quat",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the leaves of the shrub Catha edulis which are chewed like tobacco or used to make tea",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-29736",
+    "word": "quin",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one of five children born at the same time from the same pregnancy",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-29740",
+    "word": "quine",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States philosopher and logician who championed an empirical view of knowledge that depended on language (1908-2001)",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-29756",
+    "word": "qum",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a city in northwestern Iran",
+    "old_th": "ความยาว"
+  },
+  {
+    "id": "vocab-t2-oewn-29790",
+    "word": "raddle",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a red iron ore used in dyeing and marking",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-29864",
+    "word": "rajab",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the seventh month of the Islamic calendar",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-29869",
+    "word": "rajput",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a member of the dominant Hindu military caste in northern India",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29873",
+    "word": "rale",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a rapid series of short loud sounds (as might be heard with a stethoscope in some types of respiratory disorders)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-29895",
+    "word": "rammer",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a tool for driving something with force",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-30030",
+    "word": "razzle",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any exciting and complex play intended to confuse (dazzle) the opponent",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-30032",
+    "word": "rbc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a mature blood cell that contains hemoglobin to carry oxygen to the bodily tissues",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-30061",
+    "word": "reagin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an immunoglobulin E that is formed as an antibody against allergens (such as pollen)",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30075",
+    "word": "reata",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a long noosed rope used to catch animals",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30095",
+    "word": "recco",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "reconnaissance (by shortening)",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30139",
+    "word": "rectus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of various straight muscles",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30242",
+    "word": "regur",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a rich black loam of India",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30250",
+    "word": "reims",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in northeastern France to the east of Paris",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-30315",
+    "word": "renin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a proteolytic enzyme secreted by the kidneys",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30368",
+    "word": "res",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a widely distributed system consisting of all the cells able to ingest bacteria or colloidal particles etc., except for certain white blood cells",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30372",
+    "word": "reseda",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any plant of the genus Reseda",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30379",
+    "word": "resht",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "city in northwestern Iran near the Caspian Sea",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-30381",
+    "word": "resid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "oil products that remain after petroleum has been distilled",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-30499",
+    "word": "rhapis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "genus of small clump-forming fan palms of China and Japan",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-30500",
+    "word": "rhd",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a paramilitary group of Protestants in Northern Ireland that tries to prevent any political settlement with the Irish Republic",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-30504",
+    "word": "rhein",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a major European river carrying more traffic than any other river in the world",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-30571",
+    "word": "rhone",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a major French river",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-30573",
+    "word": "rhumb",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a line on a sphere that cuts all meridians at the same angle",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-30574",
+    "word": "rhus",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "deciduous or evergreen shrubs and shrubby trees of temperate and subtropical North America, South Africa, eastern Asia and northeastern Australia",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-30588",
+    "word": "riata",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a long noosed rope used to catch animals",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-30596",
+    "word": "ribier",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "dark reddish-purple table grape of California",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-30632",
+    "word": "ridgil",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a colt with undescended testicles",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-30658",
+    "word": "rigil",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "brightest star in Centaurus",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-30746",
+    "word": "roc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "mythical bird of prey having enormous size and strength",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-30892",
+    "word": "rotc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a training program to prepare college students to be commissioned officers",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-30894",
+    "word": "roth",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "United States writer whose novels portray middle-class Jewish life (born in 1933)",
+    "old_th": "ความยาว"
+  },
+  {
+    "id": "vocab-t2-oewn-30937",
+    "word": "rpm",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "rate of revolution of a motor",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-30949",
+    "word": "rubens",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "prolific Flemish baroque painter",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-30958",
+    "word": "rubor",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a response of body tissues to injury or irritation",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-30971",
+    "word": "ruf",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a terrorist group formed in the 1980s in Sierra Leone",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-31003",
+    "word": "rupert",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English leader (born in Germany) of the Royalist forces during the English Civil War (1619-1682)",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-31041",
+    "word": "rutile",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a mineral consisting of titanium dioxide in crystalline form",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-31196",
+    "word": "salix",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a large and widespread genus varying in size from small shrubs to large trees: willows",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-31197",
+    "word": "salk",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "United States virologist who developed the Salk vaccine that is injected against poliomyelitis (born 1914)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-31198",
+    "word": "sallet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a light medieval helmet with a slit for vision",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-31214",
+    "word": "salp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "minute floating marine tunicate having a transparent body with an opening at each end",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-31278",
+    "word": "samite",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a heavy silk fabric (often woven with silver or gold threads)",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-31360",
+    "word": "sapir",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "anthropologist and linguist",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-31370",
+    "word": "sappho",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the Greek lyric poet of Lesbos",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-31549",
+    "word": "sbw",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the compass point that is one point west of due south",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-31599",
+    "word": "scaup",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "diving ducks of North America having a bluish-grey bill",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-31721",
+    "word": "scid",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a congenital disease affecting T cells that can result from a mutation in any one of several different genes",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-31740",
+    "word": "sclaff",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a poor golf stroke in which the club head hits the ground before hitting the ball",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-31756",
+    "word": "sclk",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the clock time given by a clock carried on board a spacecraft",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-31864",
+    "word": "scrubs",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "protective garment worn by surgeons during operations",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-31916",
+    "word": "seance",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a meeting of spiritualists",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-31939",
+    "word": "secale",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "cereal grass widely cultivated for its grain: rye",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-32002",
+    "word": "seid",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an Old Norse term for a type of sorcery which was practiced in Norse society during the Late Scandinavian Iron Age.",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-32012",
+    "word": "seith",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an Old Norse term for a type of sorcery which was practiced in Norse society during the Late Scandinavian Iron Age.",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-32291",
+    "word": "serval",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "slender long-legged African wildcat having large untufted ears and tawny black-spotted coat",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-32358",
+    "word": "sgml",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(computer science) a standardized language for the descriptive markup of documents",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-32423",
+    "word": "shard",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a broken piece of a brittle artifact",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-32454",
+    "word": "shears",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "large scissors with strong blades",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-32521",
+    "word": "shiism",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the branch of Islam that regards Ali as the legitimate successor to Mohammed and rejects the first three caliphs",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-32523",
+    "word": "shiite",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a member of the branch of Islam that regards Ali as the legitimate successor to Mohammed and rejects the first three caliphs",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-32573",
+    "word": "shiv",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a knife used as a weapon",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-32628",
+    "word": "shortness",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an abrupt discourteous manner",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-32646",
+    "word": "shover",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "someone who pushes",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-32660",
+    "word": "shrift",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the act of being shriven",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-32661",
+    "word": "shrike",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of numerous Old World birds having a strong hooked bill that feed on smaller animals",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-32694",
+    "word": "sial",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the granitelike rocks that form the outermost layer of the earth's crust",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-32696",
+    "word": "sialia",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "North American bluebirds",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-32702",
+    "word": "sib",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one related by blood or origin",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-32752",
+    "word": "sifter",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a household sieve (as for flour)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-32754",
+    "word": "sigeh",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Shiite tradition of temporary marriage permitted in Iran that allows a couple to specify the terms of their relationship",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-32783",
+    "word": "sigurd",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Norse mythology) mythical Norse warrior hero who gains an accursed hoard of gold and was killed by Brynhild",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-32930",
+    "word": "sirach",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an Apocryphal book mainly of maxims (resembling Proverbs in that respect)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-33095",
+    "word": "sle",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an inflammatory disease of connective tissue with variable features including fever and weakness and fatigability and joint pains and skin lesions on the face or neck or arms",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-33194",
+    "word": "smidge",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a tiny or scarcely detectable amount",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-33228",
+    "word": "smuts",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "South African statesman and soldier (1870-1950)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-33250",
+    "word": "snapper",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "large-headed turtle with powerful hooked jaws found in or near water",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-33291",
+    "word": "snp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(genetics) genetic variation in a DNA sequence that occurs when a single nucleotide in a genome is altered",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-33676",
+    "word": "spf",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the degree to which a sunscreen protects the skin from the direct rays of the sun",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33755",
+    "word": "spinus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "in some classifications considered a subgenus of Carduelis: siskins and New World goldfinches",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-33797",
+    "word": "splat",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a slat of wood in the middle of the back of a straight chair",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33817",
+    "word": "spode",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a brand of fine English porcelain",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33848",
+    "word": "spork",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "trademark for a plastic eating utensil that has both tines and a bowl like a spoon",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33875",
+    "word": "sprag",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a wooden prop used to support the roof of a mine",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33893",
+    "word": "sprit",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a light spar that crosses a fore-and-aft sail diagonally",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-33895",
+    "word": "spritz",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a quick squirt of some liquid (usually carbonated water)",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-33924",
+    "word": "squark",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a quark with an electric charge of -1/3 and a mass 988 times that of an electron and a strangeness of -1",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-33930",
+    "word": "squaw",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "derogatory terms for an American Indian woman",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-33958",
+    "word": "sse",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the compass point midway between south and southeast",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-33978",
+    "word": "stacte",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Old Testament) one of several sweet-smelling spices used in incense",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-33981",
+    "word": "stael",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "French romantic writer (1766-1817)",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-34037",
+    "word": "staph",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "spherical Gram-positive parasitic bacteria that tend to form irregular colonies",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-34143",
+    "word": "stelis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of various small tropical American orchids of the genus Stelis having long slender racemes of numerous small to minute flowers",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-34262",
+    "word": "stirk",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "yearling heifer or bullock",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-34298",
+    "word": "stogy",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a cheap cigar",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-34350",
+    "word": "strad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a violin made by Antonio Stradivari or a member of his family",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-34922",
+    "word": "swad",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a bunch",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-34928",
+    "word": "swale",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a low area (especially a marshy area between ridges)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-35127",
+    "word": "szell",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States conductor (born in Hungary) (1897-1970)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-35162",
+    "word": "tabuk",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in northwestern Saudi Arabia",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-35201",
+    "word": "taft",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "27th President of the United States and later chief justice of the United States Supreme Court (1857-1930)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-35217",
+    "word": "taif",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a city in western Saudi Arabia to the east of Mecca",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-35276",
+    "word": "tallin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a port city on the Gulf of Finland that is the capital and largest city of Estonia",
+    "old_th": "ความสูง"
+  },
+  {
+    "id": "vocab-t2-oewn-35278",
+    "word": "tallis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Judaism) a shawl with a ritually knotted fringe at each corner",
+    "old_th": "ความสูง"
+  },
+  {
+    "id": "vocab-t2-oewn-35347",
+    "word": "tangor",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "large citrus tree having large sweet deep orange fruit that is easily peeled",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-35443",
+    "word": "tasse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "one of two pieces of armor plate hanging from the fauld to protect the upper thighs",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-35478",
+    "word": "tawse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a leather strap for punishing children",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-35509",
+    "word": "tce",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a heavy colorless highly toxic liquid used as a solvent to clean electronic components and for dry cleaning and as a fumigant",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-35510",
+    "word": "tchad",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a landlocked desert republic in north-central Africa",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-35514",
+    "word": "tcp",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a protocol developed for the internet to get data from one network device to another",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-35722",
+    "word": "teras",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(medicine) a grossly malformed and usually nonviable fetus",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-35730",
+    "word": "terce",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the third canonical hour",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-35731",
+    "word": "tercel",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "male hawk especially male peregrine or gyrfalcon",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-35733",
+    "word": "tercet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the cardinal number that is the sum of one and one and one",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-35777",
+    "word": "tertry",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a battle in France in 687 among the descendants of Clovis",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-35807",
+    "word": "teth",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the 9th letter of the Hebrew alphabet",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-35857",
+    "word": "tetryl",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a yellow crystalline explosive solid that is used in detonators",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-35863",
+    "word": "tevere",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a river of central Italy",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-35864",
+    "word": "tevet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the fourth month of the civil year",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-35887",
+    "word": "thames",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the longest river in England",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-35896",
+    "word": "tharp",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "innovative United States dancer and choreographer (born in 1941)",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-35906",
+    "word": "thc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "psychoactive substance present in marijuana",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-35907",
+    "word": "thd",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a doctor's degree in theology",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-35930",
+    "word": "thenar",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the inner surface of the hand from the wrist to the base of the fingers",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-36010",
+    "word": "thibet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an autonomous region of the Peoples Republic of China",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-36028",
+    "word": "thinness",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a consistency of low viscosity",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-36110",
+    "word": "thrip",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of various small to minute sucking insects with narrow feathery wings if any",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-36207",
+    "word": "thz",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "one trillion periods per second",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-36220",
+    "word": "tical",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the basic unit of money in Thailand",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-36248",
+    "word": "tiflis",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the capital and largest city of Georgia on the Kura river",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-36300",
+    "word": "tindal",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English translator and Protestant martyr",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-36302",
+    "word": "tineid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "small yellowish moths whose larvae feed on wool or fur",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-36369",
+    "word": "tlc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "considerate and solicitous care",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-36403",
+    "word": "todus",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "type genus of the Todidae",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-36407",
+    "word": "toecap",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a protective leather or steel cover for the toe of a boot or shoe, reinforcing or decorating it",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-36517",
+    "word": "topper",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a man's hat with a tall crown",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-36543",
+    "word": "torte",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "rich cake usually covered with cream and fruit or nuts",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-36558",
+    "word": "tosk",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "the dialect of Albanian spoken in southern Albania and in areas of Greece and Italy",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-36587",
+    "word": "toupe",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a small hairpiece to cover partial baldness",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-36602",
+    "word": "towhee",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "any of numerous long-tailed American finches",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-36630",
+    "word": "tra-la",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a set of nonsensical syllables used while humming a refrain",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-36796",
+    "word": "trent",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a city in northern Italy (northwest of Venice) on the River Adige",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-36812",
+    "word": "trh",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "hormone released by the hypothalamus that controls the release of thyroid-stimulating hormone from the anterior pituitary",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-36976",
+    "word": "trnc",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "state on the island of Cyprus, only recognized by Turkey",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-37010",
+    "word": "trope",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "language used in a figurative or nonliteral sense",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-37022",
+    "word": "troth",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a solemn pledge of fidelity",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-37115",
+    "word": "tuff",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "hard volcanic rock composed of compacted volcanic ash",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-37116",
+    "word": "tuffet",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a low seat or a stool to rest the feet of a seated person",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-37185",
+    "word": "turfan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a dialect of Tocharian, of Qarašähär and Turpan",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-37208",
+    "word": "turnix",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "type genus of the Turnicidae: button quail",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-37215",
+    "word": "turpin",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "English highwayman (1706-1739)",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-37244",
+    "word": "twat",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "obscene terms for female genitals",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-37297",
+    "word": "tympan",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a musical percussion instrument",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-37311",
+    "word": "typhon",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(Greek mythology) a monster with a hundred heads who breathed out flames",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-37329",
+    "word": "tyrr",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(Norse mythology) god of war and strife and son of Odin",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-37336",
+    "word": "tzetze",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "bloodsucking African fly",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-37355",
+    "word": "uhland",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "German romantic poet (1787-1862)",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-37412",
+    "word": "ummah",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the Muslim community or people, considered to extend from Mauritania to Pakistan",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-37694",
+    "word": "urate",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a salt of uric acid",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-37701",
+    "word": "urease",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an enzyme that catalyzes the hydrolysis of urea into carbon dioxide and ammonia",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-37866",
+    "word": "valine",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "an essential amino acid found in proteins",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-37875",
+    "word": "valse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a ballroom dance in triple time with a strong accent on the first beat",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-37915",
+    "word": "var",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of electrical power in an AC circuit equal to the power dissipated when 1 volt produces a current of 1 ampere",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-37971",
+    "word": "veblen",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States mathematician (1880-1960)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-37978",
+    "word": "veery",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "tawny brown North American thrush noted for its song",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-37985",
+    "word": "veldt",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "elevated open grassland in southern Africa",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-38012",
+    "word": "venire",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(law) a group of people summoned for jury service (from whom a jury will be chosen)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-38031",
+    "word": "vepse",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Finnic language spoken by the Veps",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-38097",
+    "word": "vespid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "mostly social nest-building wasps",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-38193",
+    "word": "vioxx",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a Cox-2 inhibitor (trade name Vioxx) that relieves pain and inflammation without harming the digestive tract",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-38213",
+    "word": "virion",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "(virology) a complete viral particle",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-38275",
+    "word": "vlf",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "3 to 30 kilohertz",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-38347",
+    "word": "vulpes",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "foxes",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-38354",
+    "word": "wading",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "walking with your feet in shallow water",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-38525",
+    "word": "weber",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "German physiologist who studied sensory responses to stimuli and is considered the father of psychophysics (1795-1878)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-38712",
+    "word": "williams",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "United States playwright (1911-1983)",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-38926",
+    "word": "wyrd",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "fate personified",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-38931",
+    "word": "x-scid",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "SCID in male children resulting from mutation of a gene that codes for a protein on the surface of T cells that allows them to develop a growth factor receptor",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39075",
+    "word": "ybit",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of information equal to 1000 zettabits or 10^24 bits",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-39079",
+    "word": "yeats",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "Irish poet and dramatist (1865-1939)",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-39126",
+    "word": "yib",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of information equal to 1024 zebibytes or 2^80 bytes",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39127",
+    "word": "yibit",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "a unit of information equal to 1024 zebibits or 2^80 bits",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39128",
+    "word": "yid",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "(ethnic slur) offensive term for a Jew",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39134",
+    "word": "yip",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a sharp high-pitched cry (especially by a dog)",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39199",
+    "word": "yurt",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a circular domed dwelling that is portable and self-supporting",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39210",
+    "word": "zagreb",
+    "pos": "noun",
+    "cefr": "A2",
+    "en": "the capital of Croatia",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-39246",
+    "word": "zarf",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "an ornamental metal cup-shaped holder for a hot coffee cup",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-39253",
+    "word": "zbit",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a unit of information equal to 1000 exabits or 10^21 bits",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39373",
+    "word": "zr",
+    "pos": "noun",
+    "cefr": "A1",
+    "en": "a lustrous grey strong metallic element resembling titanium",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39414",
+    "word": "abduce",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "advance evidence for",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-39418",
+    "word": "abrase",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "wear away",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-39421",
+    "word": "abseil",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "descend by means of a rappel",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-39454",
+    "word": "agnize",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "be fully aware or cognizant of",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-39558",
+    "word": "aurify",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "turn golden",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-39574",
+    "word": "aviate",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "operate an airplane",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-39576",
+    "word": "avulse",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "separate by avulsion",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-39648",
+    "word": "benday",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "reproduce by the Benday process",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-39710",
+    "word": "blate",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "cry plaintively",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-39713",
+    "word": "blear",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "make dim or indistinct",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-39723",
+    "word": "blub",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "cry or whine with snuffling",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-39770",
+    "word": "brail",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "haul fish aboard with brails",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-39882",
+    "word": "capitalise",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "convert (a company's reserve funds) into capital",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-39938",
+    "word": "chasse",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "perform a chasse step, in ballet",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-39948",
+    "word": "chevy",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "annoy continually or chronically",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-39968",
+    "word": "chrome",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "treat with a chromium compound",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-39972",
+    "word": "chuff",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "blow hard and loudly",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40027",
+    "word": "coapt",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "fit tightly and fasten",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-40036",
+    "word": "coggle",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "move unsteadily",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-40152",
+    "word": "cranch",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "press or grind with a crushing noise",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40169",
+    "word": "cronk",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "cry like a goose",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-40270",
+    "word": "defat",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "remove the fat from",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-40344",
+    "word": "desalt",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "remove salt from",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40368",
+    "word": "detusk",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "remove the tusks of animals",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40457",
+    "word": "docket",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "make a summary or abstract of a legal document and inscribe it in a list",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-40504",
+    "word": "educe",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "develop or evolve from a latent or potential state",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-40648",
+    "word": "flambe",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "pour liquor over and ignite (a dish)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-40654",
+    "word": "flense",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "strip the blubber or skin from (a whale or seal)",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40755",
+    "word": "gazump",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "raise the price of something after agreeing on a lower price",
+    "old_th": "ขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-40809",
+    "word": "groak",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "look or stare at longingly",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-40811",
+    "word": "grok",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "get the meaning of something",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-40837",
+    "word": "harmonise",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "bring into consonance, harmony, or accord while making music or singing",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-40903",
+    "word": "hue",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "suffuse with color",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-40909",
+    "word": "humify",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "convert (plant remains) into humus",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-40950",
+    "word": "immobilise",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "cause to be unable to move",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-40998",
+    "word": "inunct",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "administer an oil or ointment to",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-41076",
+    "word": "larn",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "gain knowledge or skills",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-41121",
+    "word": "luge",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "move along on a luge or toboggan",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-41229",
+    "word": "mulct",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "impose a fine on",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-41245",
+    "word": "negociate",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "discuss the terms of an arrangement",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-41299",
+    "word": "organise",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "bring order and organization to",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-41429",
+    "word": "plash",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "dash a liquid upon or against",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-41433",
+    "word": "plat",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "make a plot of",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41437",
+    "word": "pleach",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "interlace the shoots of",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-41514",
+    "word": "quetch",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "express complaints, discontent, displeasure, or unhappiness",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-41520",
+    "word": "raddle",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "mark or paint with raddle",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-41564",
+    "word": "recode",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "put into a different code",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41598",
+    "word": "regift",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "give a present that one has received to someone else",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-41612",
+    "word": "relace",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "lace again",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-41616",
+    "word": "reline",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "put new lines on",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41637",
+    "word": "repot",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "put in a new, usually larger, pot",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41649",
+    "word": "reseed",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "maintain by seeding without human intervention",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41664",
+    "word": "ret",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "place (flax, hemp, or jute) in liquid so as to promote loosening of the fibers from the woody tissue",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-41665",
+    "word": "retick",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "sew",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-41682",
+    "word": "roil",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "make turbid by stirring up the sediments of",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-41701",
+    "word": "rubify",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "make ruby red",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-41739",
+    "word": "sclaff",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "strike (the ground) in making a sclaff",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-41821",
+    "word": "shrive",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "grant remission of a sin to",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-41886",
+    "word": "snarf",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "make off with belongings of others",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-41949",
+    "word": "spritz",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "cover (a location) wholly or partially by squirting a liquid onto it",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-41950",
+    "word": "spue",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "eject the contents of the stomach through the mouth",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-42050",
+    "word": "synchronise",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "make synchronous and adjust in time or manner",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-42107",
+    "word": "tinct",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "color lightly",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-42108",
+    "word": "tink",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "make or emit a high sound",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-42169",
+    "word": "tsk",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "utter ‘tsk,’ ‘tut,’ or ‘tut-tut,’ as in disapproval",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-42178",
+    "word": "tweeze",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "pluck with tweezers",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-42193",
+    "word": "unclog",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "become or cause to become unobstructed",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-42198",
+    "word": "uncurl",
+    "pos": "verb",
+    "cefr": "A2",
+    "en": "move out of a curled position",
+    "old_th": "ไม่สนใจ"
+  },
+  {
+    "id": "vocab-t2-oewn-42342",
+    "word": "yip",
+    "pos": "verb",
+    "cefr": "A1",
+    "en": "bark in a high-pitched tone",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-42368",
+    "word": "abient",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "characterized by avoidance or withdrawal",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-42406",
+    "word": "abulic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "suffering from abulia",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-42506",
+    "word": "acned",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(of complexion) blemished by imperfections of the skin",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-42508",
+    "word": "acold",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of persons",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-42584",
+    "word": "adonic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having a rhythm consisting of a dactyl followed by a spondee or a trochee",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-42856",
+    "word": "alular",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "pertaining to alulae",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-42913",
+    "word": "amort",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "utterly cast down",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-43296",
+    "word": "arced",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "forming or resembling an arch",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-43324",
+    "word": "arco",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "(of instruments in the violin family) to be played with the bow",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-43331",
+    "word": "argent",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of lustrous grey",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-43360",
+    "word": "aroused",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(of persons) excessively affected by emotion",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-43467",
+    "word": "astral",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being or relating to or resembling or emanating from stars",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-43724",
+    "word": "baltic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or near or on the Baltic Sea",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-43810",
+    "word": "beamy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "radiating or as if radiating light",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-43887",
+    "word": "bereft",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "sorrowful through loss or deprivation",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-43909",
+    "word": "biaxal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having two axes",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-43949",
+    "word": "bifid",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "divided into two lobes",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-43953",
+    "word": "biform",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having or combining two forms",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-44040",
+    "word": "birken",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "consisting of or made of wood of the birch tree",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-44066",
+    "word": "blabby",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "unwisely talking too much",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-44112",
+    "word": "blate",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "disposed to avoid notice",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-44114",
+    "word": "blear",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "tired to the point of exhaustion",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-44120",
+    "word": "blest",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "highly favored or fortunate (as e.g. by divine grace)",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-44231",
+    "word": "botchy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "poorly done",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-44257",
+    "word": "bovid",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or belonging to the genus Bos (cattle)",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-44329",
+    "word": "briary",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having or covered with protective barbs or quills or spines or thorns or setae etc.",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-44401",
+    "word": "brushy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "covered with or consisting of bushes or thickets",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-44430",
+    "word": "bulbed",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having a bulb",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-44626",
+    "word": "capped",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "covered as if with a cap or crown especially of a specified kind",
+    "old_th": "มุม"
+  },
+  {
+    "id": "vocab-t2-oewn-44774",
+    "word": "celtic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "relating to or characteristic of the Celts",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-44936",
+    "word": "choric",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "relating to or written for or in the style of a Greek chorus",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-44968",
+    "word": "cilial",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to cilia projecting from the surface of a cell",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-45161",
+    "word": "coital",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to coitus or copulation",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-45485",
+    "word": "couth",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(used facetiously) refined and well-mannered",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-45573",
+    "word": "cruddy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "characterized by obscenity",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-45626",
+    "word": "cured",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(used of tobacco) aging as a preservative process",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-45651",
+    "word": "cusped",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having cusps or points",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-45716",
+    "word": "czech",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to Czechoslovakia or its people or their language",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-45727",
+    "word": "damask",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having a woven pattern",
+    "old_th": "เลเยอร์"
+  },
+  {
+    "id": "vocab-t2-oewn-46190",
+    "word": "distal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "situated farthest from point of attachment or origin, as of a limb or bone",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-46223",
+    "word": "dodgy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "marked by skill in deception",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-46356",
+    "word": "ducal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or belonging to or suitable for a duke",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-46361",
+    "word": "dulcet",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "pleasing to the ear",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-46383",
+    "word": "dural",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the dura mater",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-46885",
+    "word": "extant",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "still in existence",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47013",
+    "word": "faucal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the fauces",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47038",
+    "word": "ferial",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or being a feria",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-47209",
+    "word": "flossy",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "like down or as soft as down",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47449",
+    "word": "furled",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "rolled up and secured",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47451",
+    "word": "furred",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "covered with a dense coat of fine silky hairs",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47586",
+    "word": "glace",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(used especially of fruits) preserved by coating with or allowing to absorb sugar",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-47625",
+    "word": "goaded",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "compelled forcibly by an outside agency",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47776",
+    "word": "gyral",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "relating to or associated with or comprising a convolution of the brain",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-47938",
+    "word": "hemal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "relating to the blood vessels or blood",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-47977",
+    "word": "het",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "made warm or hot (‘het’ is a dialectal variant of ‘heated’)",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-48769",
+    "word": "jilted",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "rebuffed (by a lover) without warning",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-48824",
+    "word": "keeled",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having a ridge or shaped like a ridge or suggesting the keel of a ship",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-48828",
+    "word": "kenyan",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or characteristic of Kenya or its people",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-49052",
+    "word": "lienal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the spleen",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-49244",
+    "word": "lucent",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "softly bright or radiant",
+    "old_th": "ความเข้มสี"
+  },
+  {
+    "id": "vocab-t2-oewn-49260",
+    "word": "luteal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the corpus luteum",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-49261",
+    "word": "luxe",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "elegant and sumptuous",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-49265",
+    "word": "lv",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "being five more than fifty",
+    "old_th": "สี"
+  },
+  {
+    "id": "vocab-t2-oewn-49268",
+    "word": "lviii",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being eight more than fifty",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-49277",
+    "word": "lxviii",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being eight more than sixty",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-49288",
+    "word": "lxxxi",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being one more than eighty",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-49289",
+    "word": "lxxxii",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being two more than eighty",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-49417",
+    "word": "mazed",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "perplexed by many conflicting situations or statements",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-49478",
+    "word": "mesial",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being in or directed toward the midline or mesial plane of the body",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-49557",
+    "word": "minoan",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or characteristic of the Bronze Age culture of Crete",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-49764",
+    "word": "myotic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or causing constriction of the pupil of the eye",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-49774",
+    "word": "naiant",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "applied to a fish depicted horizontally",
+    "old_th": "แว่นขยาย"
+  },
+  {
+    "id": "vocab-t2-oewn-49789",
+    "word": "narial",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to or near the nares",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-49932",
+    "word": "noetic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or associated with or requiring the use of the mind",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-50239",
+    "word": "nubbly",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of textiles",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-50665",
+    "word": "parve",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "containing no meat or milk (or their derivatives) and thus eatable with both meat and dairy dishes according to the dietary laws of Judaism",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-50891",
+    "word": "pilous",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "covered with hairs especially fine soft ones",
+    "old_th": "เส้นต่อเนื่อง"
+  },
+  {
+    "id": "vocab-t2-oewn-51478",
+    "word": "ramate",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having branches",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-51586",
+    "word": "redux",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "WordNet Synset Entry (1 senses)",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-51669",
+    "word": "retral",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "at or near or toward the posterior",
+    "old_th": "ทําซ้ํา"
+  },
+  {
+    "id": "vocab-t2-oewn-51714",
+    "word": "riant",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "showing or feeling mirth or pleasure or happiness",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-51838",
+    "word": "runic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "relating to or consisting of runes",
+    "old_th": "ความทึบแสง"
+  },
+  {
+    "id": "vocab-t2-oewn-51861",
+    "word": "rutted",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "full of ruts",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-52033",
+    "word": "seared",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having the surface burned quickly with intense heat",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-52313",
+    "word": "shorn",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having the hair or wool cut or clipped off as if with shears or clippers",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-52469",
+    "word": "slaked",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "allayed",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-52619",
+    "word": "soigne",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "polished and well-groomed",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-53164",
+    "word": "swart",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "naturally having skin of a dark color",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-53394",
+    "word": "thenal",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the palm of the hand or to the area at the base of the thumb",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-53395",
+    "word": "thenar",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of or relating to the palm of the hand or to the area at the base of the thumb",
+    "old_th": "เส้นพริ้วไหว"
+  },
+  {
+    "id": "vocab-t2-oewn-53512",
+    "word": "tiddly",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "slightly intoxicated",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-53520",
+    "word": "tiled",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "covered or furnished with tiles",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-53534",
+    "word": "tinkly",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "like the short high ringing sound of a small bell",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-53692",
+    "word": "tref",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "not conforming to dietary laws",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-53763",
+    "word": "tubed",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "of a tire",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-53805",
+    "word": "twilit",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "lighted by or as if by twilight",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-53814",
+    "word": "twisty",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "marked by repeated turns and bends",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-53843",
+    "word": "typic",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being or serving as an illustration of a type",
+    "old_th": "เส้นทแยง"
+  },
+  {
+    "id": "vocab-t2-oewn-54536",
+    "word": "unmown",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "(used of grass or vegetation) not cut down with a hand implement or machine",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-55010",
+    "word": "untrod",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "lacking pathways",
+    "old_th": "ไม่รวม"
+  },
+  {
+    "id": "vocab-t2-oewn-55102",
+    "word": "utile",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being of use or service",
+    "old_th": "ความแหลม"
+  },
+  {
+    "id": "vocab-t2-oewn-55163",
+    "word": "venose",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "having or showing markings that resemble veins",
+    "old_th": "& ขาว"
+  },
+  {
+    "id": "vocab-t2-oewn-55464",
+    "word": "xcl",
+    "pos": "adjective",
+    "cefr": "A1",
+    "en": "being ten more than one hundred eighty",
+    "old_th": "หมุน & 90"
+  },
+  {
+    "id": "vocab-t2-oewn-55485",
+    "word": "xlviii",
+    "pos": "adjective",
+    "cefr": "A2",
+    "en": "being eight more than forty",
+    "old_th": "ภาษาละตินName"
+  },
+  {
+    "id": "vocab-t2-oewn-55584",
+    "word": "'tween",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "in between",
+    "old_th": "ช่องสัญญาณ"
+  },
+  {
+    "id": "vocab-t2-oewn-55724",
+    "word": "awry",
+    "pos": "adverb",
+    "cefr": "A1",
+    "en": "away from the correct or expected course",
+    "old_th": "บิดเบี้ยว"
+  },
+  {
+    "id": "vocab-t2-oewn-55743",
+    "word": "bce",
+    "pos": "adverb",
+    "cefr": "A1",
+    "en": "of the period before the Common Era",
+    "old_th": "ไบต์"
+  },
+  {
+    "id": "vocab-t2-oewn-56022",
+    "word": "daftly",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "in a mildly insane manner",
+    "old_th": "แปรงทาสี"
+  },
+  {
+    "id": "vocab-t2-oewn-56831",
+    "word": "mayhap",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "by chance",
+    "old_th": "พ.ศ"
+  },
+  {
+    "id": "vocab-t2-oewn-56904",
+    "word": "nowise",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "in no manner",
+    "old_th": "แก้ไขโครงการหลัก"
+  },
+  {
+    "id": "vocab-t2-oewn-57476",
+    "word": "stably",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "in a stable unchanging manner",
+    "old_th": "สี่เหลี่ยม"
+  },
+  {
+    "id": "vocab-t2-oewn-57538",
+    "word": "subtly",
+    "pos": "adverb",
+    "cefr": "A2",
+    "en": "in a subtle manner",
+    "old_th": "ความแหลม"
+  }
+]

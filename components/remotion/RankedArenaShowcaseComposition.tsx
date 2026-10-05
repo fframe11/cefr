@@ -94,7 +94,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
             style={{
               padding: '4px 12px',
               borderRadius: '999px',
-              backgroundColor: '#5B5CE2',
+              backgroundColor: '#FA5D5D',
               borderTop: '1px solid rgba(255, 255, 255, 0.3)',
               boxShadow: '0 2.5px 0 0 #38399E',
               fontSize: '11px',
@@ -126,7 +126,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
           <span
             style={{
               fontSize: '12px',
-              color: timerSeconds <= 2.0 ? '#E98278' : '#5B5CE2',
+              color: timerSeconds <= 2.0 ? '#E98278' : '#FA5D5D',
               fontWeight: 800,
               fontFamily: 'monospace',
             }}
@@ -146,7 +146,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               style={{
                 width: `${timerProgress}%`,
                 height: '100%',
-                backgroundColor: timerSeconds <= 2.0 ? '#E98278' : '#5B5CE2',
+                backgroundColor: timerSeconds <= 2.0 ? '#E98278' : '#FA5D5D',
                 borderRadius: '999px',
               }}
             />
@@ -187,7 +187,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
                 border: '1px solid rgba(37, 36, 42, 0.12)',
                 fontSize: '11px',
                 fontWeight: 800,
-                color: '#5B5CE2',
+                color: '#FA5D5D',
                 fontFamily: 'monospace',
               }}
             >
@@ -224,7 +224,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
             lineHeight: 1.45,
           }}
         >
-          &quot;We need a <strong style={{ color: '#5B5CE2' }}>pragmatic</strong> approach to solve this urgent timeline.&quot;
+          &quot;We need a <strong style={{ color: '#FA5D5D' }}>pragmatic</strong> approach to solve this urgent timeline.&quot;
         </div>
 
         {/* 4 Tactile Option Choices */}
@@ -336,7 +336,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
               transform: `translate(-50%, -50%) scale(${rewardScale})`,
               opacity: rewardOpacity,
               backgroundColor: '#141A22',
-              border: '2px solid #5B5CE2',
+              border: '2px solid #FA5D5D',
               borderRadius: '22px',
               padding: '18px 32px',
               boxShadow: '0 8px 0 0 #38399E, 0 16px 32px rgba(37, 36, 42, 0.15)',
@@ -348,7 +348,7 @@ export const RankedArenaShowcaseComposition: React.FC<RankedArenaShowcaseProps> 
             <div
               style={{
                 fontSize: '11px',
-                color: '#5B5CE2',
+                color: '#FA5D5D',
                 fontWeight: 800,
                 letterSpacing: '1.5px',
                 textTransform: 'uppercase',

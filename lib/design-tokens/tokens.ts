@@ -49,11 +49,11 @@ export const GLOVA_ORIGINAL_PALETTE = {
     inverse: '#FAF7F2',        // Light text on dark/primary buttons
   },
   brand: {
-    primary: '#5B5CE2',        // Glova Primary Radiant Indigo
-    primaryHover: '#4A4BCB',
+    primary: '#FA5D5D',        // Glova Primary Radiant Coral Rose
+    primaryHover: '#E04848',
     accent: '#E98278',         // Glova Accent (Terracotta / Coral Rose)
     accentHover: '#D97167',
-    softPrimary: '#DCD9FF',    // Soft Lavender / Indigo Tint
+    softPrimary: '#FFE8E6',    // Soft Coral Tint
     softAccent: '#FBE8E6',     // Soft Terracotta Tint
     gold: '#E5A83B',           // XP / Rank Gold
     mint: '#58B993',           // Success / Mastery
@@ -64,8 +64,8 @@ export const GLOVA_COLLECTIBLE_ECOSYSTEM = {
   badge: { type: 'rank_emblem', base: '#F0EAE1', border: 'rgba(37, 36, 42, 0.16)' },
   trophy: { type: 'achievement_trophy', base: '#F0EAE1', highlight: '#E5A83B' },
   streak: { type: 'daily_flame', accent: '#E98278' },
-  xpGem: { type: 'reward_crystal', accent: '#5B5CE2' },
-  frame: { type: 'profile_frame', base: '#F0EAE1', border: '#5B5CE2' },
+  xpGem: { type: 'reward_crystal', accent: '#FA5D5D' },
+  frame: { type: 'profile_frame', base: '#F0EAE1', border: '#FA5D5D' },
 };
 
 export const GLOVA_PALETTE = {
@@ -100,7 +100,7 @@ export const GLOVA_PALETTE = {
     subtleCream: '#F4EFEA',
     deepInk: '#24233A',
     mutedPlum: '#77758A',
-    glovaIndigo: '#5B5CE2',
+    glovaIndigo: '#FA5D5D',
     softLavender: '#E9E5FF',
     warmCoral: '#FF8F82',
     butterYellow: '#F6D978',
@@ -233,10 +233,10 @@ export const GLOVA_BUBBLE_TYPES = {
   insight: {
     bg: '#FFFDF8',
     tint: '#FAF7F2',
-    border: 'rgba(91, 92, 226, 0.16)',
-    accent: '#5B5CE2',
-    pillBg: 'rgba(91, 92, 226, 0.10)',
-    pillText: '#5B5CE2',
+    border: 'rgba(250, 93, 93, 0.16)',
+    accent: '#FA5D5D',
+    pillBg: 'rgba(250, 93, 93, 0.10)',
+    pillText: '#FA5D5D',
     titleEn: 'Insight',
     titleTh: 'ข้อสังเกต',
   },

@@ -430,10 +430,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                     ? 'bg-[#FA5D5D] text-white shadow-sm'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
                 }`}
-                aria-label={isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}
+                aria-label={isEn ? 'Exam & Universe' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์'}
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-                <span>{isEn ? 'Lexical Universe' : 'คลังจักรวาลศัพท์'}</span>
+                <span>{isEn ? 'Exam & Universe (10k+)' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์ (10k+)'}</span>
               </button>
             </div>
           </div>
@@ -499,6 +499,19 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{isEn ? 'Word Bank' : 'คลังรายการ'}</span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('universe')}
+              className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
+                viewMode === 'universe'
+                  ? 'bg-[#FA5D5D] text-white shadow-sm'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+              <span>{isEn ? 'Exam & Universe (10k+)' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์ (10k+)'}</span>
+            </button>
           </div>
 
           <div className="px-3.5 py-1.5 rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 border border-[#C5EBDA] dark:border-emerald-500/20 text-xs font-mono font-bold flex items-center gap-1.5 shadow-xs">
@@ -518,8 +531,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl font-sans">
           {isEn
-            ? 'Study 3,860 verified vocabulary units with native phonetic stress, contextual examples, collocations, and server-graded practice.'
-            : 'เรียนรู้คำศัพท์คัดสรร 3,860 คำที่ผ่านการตรวจสอบ พร้อมเสียงอ่านและสัทศาสตร์ บริบทการใช้งานจริง และโหมดทดสอบความจำ'}
+            ? 'Study 3,860 core verified vocabulary units, explore 10,021 attested exam and daily life words for CEFR, IELTS, TOEIC, and TOEFL, and review with spaced repetition.'
+            : 'เรียนรู้คำศัพท์คัดสรร 3,860 คำ พร้อมคลังคำศัพท์สอบมาตรฐาน CEFR, IELTS, TOEIC, TOEFL และชีวิตประจำวันรวม 10,021 คำ พร้อมระบบทดสอบและจำแบบ Spaced Repetition'}
         </p>
       </div>
 

@@ -134,7 +134,7 @@ export const GlovaHeroCinematicVideo: React.FC<GlovaHeroCinematicVideoProps> = (
             style={{
               padding: '10px 18px',
               borderRadius: '14px',
-              backgroundColor: '#5B5CE2',
+              backgroundColor: '#FA5D5D',
               color: '#FFFFFF',
               fontWeight: 800,
               fontSize: '13px',
@@ -467,7 +467,7 @@ export const GlovaHeroCinematicVideo: React.FC<GlovaHeroCinematicVideoProps> = (
                   fontFamily: 'monospace',
                   padding: '2px 6px',
                   borderRadius: '4px',
-                  backgroundColor: isHighlighted ? '#5B5CE2' : 'transparent',
+                  backgroundColor: isHighlighted ? '#FA5D5D' : 'transparent',
                   color: isHighlighted ? '#FFFFFF' : '#64748B',
                 }}
               >

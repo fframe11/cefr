@@ -59,7 +59,7 @@ export const LevelUpCelebrationComposition: React.FC<LevelUpCelebrationProps> = 
         className="relative z-10 flex flex-col items-center text-center space-y-3"
         style={{ transform: `scale(${scale})`, opacity }}
       >
-        <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-[#5B5CE2] to-[#FF8F82] p-1 shadow-lg flex items-center justify-center">
+        <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-[#FA5D5D] to-[#FF8F82] p-1 shadow-lg flex items-center justify-center">
           <div className="w-full h-full rounded-[22px] bg-[#24233A] flex flex-col items-center justify-center">
             <span className="text-[11px] font-bold text-amber-300 uppercase tracking-widest">LEVEL</span>
             <span className="text-3xl font-black text-white tabular-nums">{level}</span>
@@ -128,7 +128,7 @@ export const AchievementCelebrationComposition: React.FC<AchievementCelebrationP
           <h3 className="text-base font-black text-white">{title}</h3>
         </div>
 
-        <div className="px-3 py-1 rounded-full bg-[#5B5CE2]/40 border border-[#5B5CE2] text-xs font-bold text-[#E9E5FF] tabular-nums">
+        <div className="px-3 py-1 rounded-full bg-[#FA5D5D]/40 border border-[#FA5D5D] text-xs font-bold text-[#E9E5FF] tabular-nums">
           +{xpReward} XP
         </div>
       </div>

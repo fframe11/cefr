@@ -92,8 +92,8 @@ export const GlovaBubble: React.FC<GlovaBubbleProps> = ({
             <span
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase transition-colors"
               style={{
-                backgroundColor: typeConfig?.pillBg || 'rgba(91, 92, 226, 0.1)',
-                color: typeConfig?.pillText || '#5B5CE2',
+                backgroundColor: typeConfig?.pillBg || 'rgba(250, 93, 93, 0.1)',
+                color: typeConfig?.pillText || '#FA5D5D',
               }}
             >
               {resolvedIcon}
@@ -116,7 +116,7 @@ export const GlovaBubble: React.FC<GlovaBubbleProps> = ({
                   className="h-full rounded-full transition-all duration-500 ease-out"
                   style={{
                     width: `${Math.min(100, Math.max(0, progress))}%`,
-                    backgroundColor: typeConfig?.accent || '#5B5CE2',
+                    backgroundColor: typeConfig?.accent || '#FA5D5D',
                   }}
                 />
               </div>
@@ -166,7 +166,7 @@ export const GlovaBubble: React.FC<GlovaBubbleProps> = ({
               action.onClick();
             }}
             className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold transition-all group"
-            style={{ color: typeConfig?.accent || '#5B5CE2' }}
+            style={{ color: typeConfig?.accent || '#FA5D5D' }}
           >
             <span>{action.label}</span>
             <ArrowRight
