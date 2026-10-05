@@ -155,7 +155,7 @@ export function formatGeneratedReadingQuestion(
     cefrLevel: passage.cefr_level,
     type: 'multiple_choice',
     promptEn: q.stem_en,
-    promptTh: `อ่านบทความด้านบน แล้วตอบคำถาม: ${q.stem_en}`,
+    promptTh: q.stem_en,
     options,
     explanationEn: q.explanation_en,
     explanationTh: q.explanation_th,

@@ -60,7 +60,7 @@ const OPTION_KEYS = ['A', 'B', 'C', 'D'];
  */
 function getDistractors(
   target: ProductionVocabularyRecord,
-  field: 'meaning_th' | 'word' | 'ipa',
+  field: 'meaning_th' | 'meaning_en' | 'word' | 'ipa',
   count = 3
 ): string[] {
   const cefrPool = getProductionVocabularyByCefr(target.cefr_level);
@@ -84,7 +84,15 @@ function getDistractors(
 
   // If still need more, fallback
   while (selected.length < count) {
-    selected.push(field === 'meaning_th' ? 'ความหมายอื่น' : field === 'word' ? 'alternate' : '/ˈæltənət/');
+    selected.push(
+      field === 'meaning_th'
+        ? 'ความหมายอื่น'
+        : field === 'meaning_en'
+        ? 'alternative definition'
+        : field === 'word'
+        ? 'alternate'
+        : '/ˈæltənət/'
+    );
   }
 
   return selected;
@@ -94,16 +102,17 @@ function getDistractors(
  * Question Type 1: Meaning Recognition (Word -> Thai Meaning)
  */
 function createMeaningRecognitionQuestion(target: ProductionVocabularyRecord): GeneratedVocabQuestion {
-  const distractors = getDistractors(target, 'meaning_th', 3);
-  const allTexts = [target.meaning_th, ...distractors].sort(() => 0.5 - Math.random());
-  const correctIndex = allTexts.indexOf(target.meaning_th);
+  const targetMeaning = target.meaning_en || target.meaning_th;
+  const distractors = getDistractors(target, 'meaning_en', 3);
+  const allTexts = [targetMeaning, ...distractors].sort(() => 0.5 - Math.random());
+  const correctIndex = allTexts.indexOf(targetMeaning);
   const correctKey = OPTION_KEYS[correctIndex];
 
   const options: QuestionOption[] = allTexts.map((text, idx) => ({
     key: OPTION_KEYS[idx],
     text,
     isCorrect: idx === correctIndex,
-    feedbackTh: idx === correctIndex ? 'ถูกต้อง!' : `ยังไม่ใช่ ความหมายของ "${target.word}" คือ "${target.meaning_th}"`,
+    feedbackTh: idx === correctIndex ? 'Correct!' : `Incorrect. The meaning of "${target.word}" is "${targetMeaning}".`,
   }));
 
   return {
@@ -116,18 +125,18 @@ function createMeaningRecognitionQuestion(target: ProductionVocabularyRecord): G
     cefrLevel: target.cefr_level,
     type: 'multiple_choice',
     promptEn: `What is the meaning of "${target.word}"?`,
-    promptTh: `คำว่า "${target.word}" มีความหมายตรงกับข้อใด?`,
+    promptTh: `What is the meaning of "${target.word}"?`,
     contextPassage: target.example_sentence_en ? `"${target.example_sentence_en}"` : undefined,
     options,
     explanationEn: `"${target.word}" (${target.part_of_speech}) means "${target.meaning_en}". IPA: ${target.ipa}. Example: "${target.example_sentence_en}"`,
-    explanationTh: `"${target.word}" (${target.part_of_speech}) แปลว่า "${target.meaning_th}". ตัวอย่าง: "${target.example_sentence_en}" (${target.example_sentence_th})`,
+    explanationTh: `"${target.word}" (${target.part_of_speech}) means "${target.meaning_en}". Example: "${target.example_sentence_en}"`,
     weaknessTag: 'vocabulary_meaning',
     difficultyWeight: target.cefr_level === 'A1' ? 1 : target.cefr_level === 'A2' ? 2 : target.cefr_level === 'B1' ? 3 : 4,
   };
 }
 
 /**
- * Question Type 2: Reverse Meaning (Thai Meaning -> English Word)
+ * Question Type 2: Reverse Meaning (Definition -> English Word)
  */
 function createReverseMeaningQuestion(target: ProductionVocabularyRecord): GeneratedVocabQuestion {
   const distractors = getDistractors(target, 'word', 3);
@@ -139,7 +148,7 @@ function createReverseMeaningQuestion(target: ProductionVocabularyRecord): Gener
     key: OPTION_KEYS[idx],
     text,
     isCorrect: idx === correctIndex,
-    feedbackTh: idx === correctIndex ? 'ถูกต้อง!' : `ยังไม่ใช่ "${target.meaning_th}" คือ "${target.word}"`,
+    feedbackTh: idx === correctIndex ? 'Correct!' : `Incorrect. "${target.meaning_en || target.meaning_th}" is "${target.word}".`,
   }));
 
   return {
@@ -151,11 +160,11 @@ function createReverseMeaningQuestion(target: ProductionVocabularyRecord): Gener
     skill: 'vocabulary',
     cefrLevel: target.cefr_level,
     type: 'multiple_choice',
-    promptEn: `Which English word corresponds to the meaning "${target.meaning_th}"?`,
-    promptTh: `คำศัพท์ภาษาอังกฤษคำใดมีความหมายตรงกับ "${target.meaning_th}"?`,
+    promptEn: `Which English word matches the definition: "${target.meaning_en || target.meaning_th}"?`,
+    promptTh: `Which English word matches the definition: "${target.meaning_en || target.meaning_th}"?`,
     options,
-    explanationEn: `"${target.word}" is the English term for "${target.meaning_th}". IPA: ${target.ipa}.`,
-    explanationTh: `คำว่า "${target.word}" แปลว่า "${target.meaning_th}" (${target.meaning_en}). ออกเสียง: ${target.ipa}`,
+    explanationEn: `"${target.word}" is the English term for "${target.meaning_en}". IPA: ${target.ipa}.`,
+    explanationTh: `"${target.word}" means "${target.meaning_en}". Pronunciation: ${target.ipa}`,
     weaknessTag: 'vocabulary_recall',
     difficultyWeight: target.cefr_level === 'A1' ? 1 : target.cefr_level === 'A2' ? 2 : target.cefr_level === 'B1' ? 3 : 4,
   };
@@ -201,7 +210,7 @@ function createSentenceCompletionQuestion(target: ProductionVocabularyRecord): G
     cefrLevel: target.cefr_level,
     type: 'fill_blank',
     promptEn: 'Choose the word that best completes the sentence:',
-    promptTh: 'เลือกคำศัพท์ที่ถูกต้องเพื่อเติมในประโยคให้สมบูรณ์:',
+    promptTh: 'Choose the word that best completes the sentence:',
     contextPassage: blankedSentence,
     options,
     explanationEn: `Full sentence: "${target.example_sentence_en}". "${target.word}" fits contextually as a ${target.part_of_speech}.`,
@@ -262,7 +271,7 @@ function createCollocationQuestion(target: ProductionVocabularyRecord): Generate
     cefrLevel: target.cefr_level,
     type: 'multiple_choice',
     promptEn: 'Complete the common English collocation:',
-    promptTh: 'เลือกคำที่เข้าคู่กัน (Collocation) ให้ถูกต้องและเป็นธรรมชาติ:',
+    promptTh: 'Complete the common English collocation:',
     contextPassage: `"${promptText}"`,
     options,
     explanationEn: `"${chosenCollocation}" is a natural native English collocation.`,
@@ -301,11 +310,11 @@ function createPosQuestion(target: ProductionVocabularyRecord): GeneratedVocabQu
     cefrLevel: target.cefr_level,
     type: 'multiple_choice',
     promptEn: `In the sentence below, what part of speech is the word "${target.word}"?`,
-    promptTh: `ในประโยคต่อไปนี้ คำว่า "${target.word}" ทำหน้าที่เป็นไวยากรณ์ประเภทใด (Part of Speech)?`,
+    promptTh: `In the sentence below, what part of speech is the word "${target.word}"?`,
     contextPassage: `"${target.example_sentence_en}"`,
     options,
     explanationEn: `"${target.word}" functions as a ${correctPos} in this context.`,
-    explanationTh: `"${target.word}" ในบริบทนี้ทำหน้าที่เป็น ${correctPos} (${target.meaning_th})`,
+    explanationTh: `"${target.word}" functions as a ${correctPos} in this context.`,
     weaknessTag: 'grammar_part_of_speech',
     difficultyWeight: 2,
   };
@@ -324,7 +333,7 @@ function createPronunciationQuestion(target: ProductionVocabularyRecord): Genera
     key: OPTION_KEYS[idx],
     text,
     isCorrect: idx === correctIndex,
-    feedbackTh: idx === correctIndex ? 'ถูกต้อง!' : `สัทอักษร (IPA) ที่ถูกต้องของ "${target.word}" คือ ${target.ipa}`,
+    feedbackTh: idx === correctIndex ? 'Correct!' : `Standard IPA for "${target.word}" is ${target.ipa}`,
   }));
 
   return {
@@ -337,7 +346,7 @@ function createPronunciationQuestion(target: ProductionVocabularyRecord): Genera
     cefrLevel: target.cefr_level,
     type: 'multiple_choice',
     promptEn: `Which phonetic transcription (IPA) matches the correct pronunciation of "${target.word}"?`,
-    promptTh: `สัทอักษรสากล (IPA) ข้อใดแสดงการออกเสียงที่ถูกต้องของคำว่า "${target.word}"?`,
+    promptTh: `Which phonetic transcription (IPA) matches the correct pronunciation of "${target.word}"?`,
     options,
     explanationEn: `The verified standard pronunciation for "${target.word}" is ${target.ipa}.`,
     explanationTh: `การออกเสียงที่ถูกต้องตามพจนานุกรมสากลของ "${target.word}" คือ ${target.ipa}`,

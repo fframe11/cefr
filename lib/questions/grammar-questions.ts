@@ -123,7 +123,7 @@ export function formatGeneratedGrammarQuestion(raw: RawGrammarItem): GeneratedGr
     cefrLevel: raw.cefr_level,
     type: 'multiple_choice',
     promptEn: 'Choose the grammatically correct word or phrase to complete the sentence:',
-    promptTh: 'เลือกคำหรือโครงสร้างไวยากรณ์ที่ถูกต้องที่สุดเพื่อเติมในช่องว่าง:',
+    promptTh: 'Choose the grammatically correct word or phrase to complete the sentence:',
     contextPassage: raw.stem_en,
     options,
     explanationEn: raw.explanation_en,

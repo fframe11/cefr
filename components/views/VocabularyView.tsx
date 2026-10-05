@@ -166,8 +166,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       const questions: ClientVocabularyQuestionDTO[] = [];
 
       // Primary target word question
-      const targetMeaning = isEn ? (target.meaningEn || target.meaningTh) : (target.meaningTh || target.meaningEn);
-      const distractors = shuffledOthers.slice(0, 3).map((w) => isEn ? (w.meaningEn || w.meaningTh) : (w.meaningTh || w.meaningEn));
+      const targetMeaning = target.meaningEn || target.meaningTh;
+      const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
       const allChoices = [targetMeaning, ...distractors].sort(() => 0.5 - Math.random());
       questions.push({
         id: `vq_local_${target.id}_${Date.now()}`,
@@ -176,7 +176,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         type: 'multiple_choice',
         interactionType: 'meaning_recognition',
         promptEn: `What is the meaning of "${target.word}"?`,
-        promptTh: `คำว่า "${target.word}" มีความหมายตรงกับข้อใด?`,
+        promptTh: `What is the meaning of "${target.word}"?`,
         contextPassage: target.exampleSentenceEn ? `"${target.exampleSentenceEn}"` : undefined,
         targetWord: target.word,
         options: allChoices.map((text, idx) => ({
@@ -191,8 +191,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       for (let i = 0; i < Math.min(4, shuffledOthers.length); i++) {
         const cur = shuffledOthers[i];
         const rest = pool.filter((w) => w.id !== cur.id);
-        const curMeaning = isEn ? (cur.meaningEn || cur.meaningTh) : (cur.meaningTh || cur.meaningEn);
-        const d = rest.slice(0, 3).map((w) => isEn ? (w.meaningEn || w.meaningTh) : (w.meaningTh || w.meaningEn));
+        const curMeaning = cur.meaningEn || cur.meaningTh;
+        const d = rest.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
         const c = [curMeaning, ...d].sort(() => 0.5 - Math.random());
         questions.push({
           id: `vq_local_${cur.id}_${Date.now()}_${i + 1}`,
@@ -201,7 +201,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           type: 'multiple_choice',
           interactionType: 'meaning_recognition',
           promptEn: `What is the meaning of "${cur.word}"?`,
-          promptTh: `คำว่า "${cur.word}" มีความหมายตรงกับข้อใด?`,
+          promptTh: `What is the meaning of "${cur.word}"?`,
           contextPassage: cur.exampleSentenceEn ? `"${cur.exampleSentenceEn}"` : undefined,
           targetWord: cur.word,
           options: c.map((text, idx) => ({
@@ -215,7 +215,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
       return questions;
     },
-    [words, isEn]
+    [words]
   );
 
   // Load Practice Questions when entering practice mode
@@ -757,7 +757,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {/* Question Prompt */}
               <div className="space-y-2 text-center sm:text-left">
                 <h3 className="text-lg sm:text-xl font-bold text-foreground leading-snug">
-                  {isEn ? (currentPracticeQ.promptEn || currentPracticeQ.promptTh) : (currentPracticeQ.promptTh || currentPracticeQ.promptEn)}
+                  {currentPracticeQ.promptEn || currentPracticeQ.promptTh}
                 </h3>
                 {currentPracticeQ.contextPassage && (
                   <div className="p-4 rounded-xl bg-slate-100 dark:bg-muted/40 border border-slate-200/80 dark:border-border/40 text-sm font-semibold text-slate-800 dark:text-foreground italic">
