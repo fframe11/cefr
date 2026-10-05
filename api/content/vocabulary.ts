@@ -4,6 +4,7 @@ import { createPublicServerClient } from '../_lib/supabase/client';
 import { validateQuery } from '../_lib/validation/validator';
 import { cefrLevelSchema, paginationSchema } from '../_lib/validation/common-schemas';
 import { searchProductionVocabulary } from '../../lib/vocabulary/production-vocabulary';
+import { queryExamUniverse } from '../../lib/vocabulary/exam-universe';
 
 import { sanitizeVocabularyItem } from '../../lib/vocabulary/curated-definitions';
 
@@ -12,6 +13,7 @@ const vocabularyQuerySchema = paginationSchema.extend({
   part_of_speech: z.string().max(40).optional(),
   topic: z.string().max(100).optional(),
   search: z.string().max(100).optional(),
+  exam: z.string().max(30).optional(),
 });
 
 /**
@@ -50,6 +52,29 @@ export default createApiHandler(
       .order('id', { ascending: true })
       .range(offset, offset + query.limit - 1);
 
+    // If specific exam filter is requested (DAILY, IELTS, TOEIC, TOEFL, CEFR), route to Exam Universe
+    if (query.exam && query.exam !== 'ALL') {
+      const examRes = queryExamUniverse({
+        exam: query.exam,
+        cefr: query.cefr_level,
+        pos: query.part_of_speech,
+        q: query.search,
+        page: query.page,
+        pageSize: query.limit,
+      });
+
+      return {
+        items: examRes.items.map(sanitizeVocabularyItem),
+        pagination: {
+          page: examRes.page,
+          limit: examRes.pageSize,
+          total: examRes.total,
+          total_pages: examRes.totalPages,
+        },
+        stats: examRes.stats,
+      };
+    }
+
     try {
       const { data: items, count, error } = await dbQuery;
 
@@ -68,7 +93,28 @@ export default createApiHandler(
       console.warn('[ContentVocabulary] Supabase query failed, falling back to local production bank:', dbErr);
     }
 
-    // High-performance fallback to verified 3,860 production catalog
+    // High-performance fallback to verified exam & production universe
+    const examFallback = queryExamUniverse({
+      cefr: query.cefr_level,
+      pos: query.part_of_speech,
+      q: query.search,
+      page: query.page,
+      pageSize: query.limit,
+    });
+
+    if (examFallback.items.length > 0) {
+      return {
+        items: examFallback.items.map(sanitizeVocabularyItem),
+        pagination: {
+          page: examFallback.page,
+          limit: examFallback.pageSize,
+          total: examFallback.total,
+          total_pages: examFallback.totalPages,
+        },
+        stats: examFallback.stats,
+      };
+    }
+
     const local = searchProductionVocabulary({
       cefr_level: query.cefr_level,
       part_of_speech: query.part_of_speech,

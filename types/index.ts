@@ -68,6 +68,9 @@ export interface VocabularyWord {
   masteryPercentage: number; // 0-100
   reviewCount: number;
   lastReviewed?: string;
+  targetExams?: string[];
+  ieltsBand?: string;
+  isDailyLife?: boolean;
 }
 
 export interface GrammarRule {

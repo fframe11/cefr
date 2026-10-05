@@ -6,6 +6,7 @@ export interface VocabularyQueryParams {
   topic?: string;
   part_of_speech?: string;
   search?: string;
+  exam?: 'ALL' | 'DAILY' | 'DAILY_LIFE' | 'IELTS' | 'TOEIC' | 'TOEFL' | 'CEFR' | string;
   page?: number;
   limit?: number;
 }
@@ -22,8 +23,12 @@ export interface VocabularyItemDTO {
   example_sentence_en: string;
   example_sentence_th: string;
   topic: string;
+  collocations?: string[];
   synonyms?: string[];
   antonyms?: string[];
+  target_exams?: string[];
+  ielts_band?: string;
+  is_daily_life?: boolean;
 }
 
 export interface VocabularyPaginationDTO {
@@ -54,8 +59,12 @@ export function mapVocabularyDtoToWord(dto: VocabularyItemDTO, masteryIds: strin
     exampleSentenceEn: dto.example_sentence_en || '',
     exampleSentenceTh: dto.example_sentence_th || '',
     topic: dto.topic || 'General',
+    collocations: dto.collocations || [],
     synonyms: dto.synonyms || [],
     antonyms: dto.antonyms || [],
+    targetExams: dto.target_exams || [],
+    ieltsBand: dto.ielts_band || '',
+    isDailyLife: dto.is_daily_life || false,
     masteryPercentage: masteryIds.includes(dto.id) ? 100 : 0,
     reviewCount: 0,
   };
@@ -63,11 +72,12 @@ export function mapVocabularyDtoToWord(dto: VocabularyItemDTO, masteryIds: strin
 
 /**
  * GET /api/content/vocabulary
- * Fetches vocabulary items with optional CEFR, topic, search, and pagination filters.
+ * Fetches vocabulary items with optional CEFR, exam, topic, search, and pagination filters.
  */
 export async function getVocabulary(params: VocabularyQueryParams = {}): Promise<VocabularyResponseDTO> {
   const queryParts: string[] = [];
   if (params.cefr_level) queryParts.push(`cefr_level=${encodeURIComponent(params.cefr_level)}`);
+  if (params.exam) queryParts.push(`exam=${encodeURIComponent(params.exam)}`);
   if (params.topic) queryParts.push(`topic=${encodeURIComponent(params.topic)}`);
   if (params.part_of_speech) queryParts.push(`part_of_speech=${encodeURIComponent(params.part_of_speech)}`);
   if (params.search) queryParts.push(`search=${encodeURIComponent(params.search)}`);

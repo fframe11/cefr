@@ -66,6 +66,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel | 'ALL'>('ALL');
   const [selectedPos, setSelectedPos] = useState<string>('ALL');
+  const [selectedExam, setSelectedExam] = useState<'ALL' | 'DAILY' | 'IELTS' | 'TOEIC' | 'TOEFL' | 'CEFR'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<'study' | 'practice' | 'browse' | 'universe'>('study');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -73,7 +74,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
   // Content API State
   const [words, setWords] = useState<VocabularyWord[]>(VOCABULARY_BANK.map(sanitizeVocabularyItem));
-  const [totalCatalogCount, setTotalCatalogCount] = useState<number>(3860);
+  const [totalCatalogCount, setTotalCatalogCount] = useState<number>(10021);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -94,8 +95,10 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       const res = await getVocabulary({
         cefr_level: selectedLevel === 'ALL' ? undefined : selectedLevel,
         part_of_speech: selectedPos === 'ALL' ? undefined : selectedPos.toLowerCase(),
+        exam: selectedExam === 'ALL' ? undefined : selectedExam,
+        search: searchQuery || undefined,
         page: 1,
-        limit: 100,
+        limit: 120,
       });
 
       if (res && res.items && res.items.length > 0) {
@@ -104,17 +107,43 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         if (res.pagination?.total) {
           setTotalCatalogCount(res.pagination.total);
         }
+        return;
       }
     } catch (err: any) {
-      console.warn('[VocabularyView] API fetch failed, using instant local vocabulary catalog:', err?.message || err);
-      // Resilient silent fallback to instant local verified catalog
+      console.warn('[VocabularyView] API fetch failed, trying edge exam dataset:', err?.message || err);
+    }
+
+    // Resilient fallback to static edge compact exam json
+    try {
+      const edgeRes = await fetch('/data/vocabulary-exam-compact.json');
+      if (edgeRes.ok) {
+        const rawItems: any[] = await edgeRes.json();
+        let filtered = rawItems;
+        if (selectedExam === 'DAILY') {
+          filtered = filtered.filter((i) => i.is_daily_life || i.topic === 'Daily Life' || i.topic === 'Daily Routine');
+        } else if (selectedExam !== 'ALL') {
+          filtered = filtered.filter((i) => i.target_exams?.includes(selectedExam));
+        }
+        if (selectedLevel !== 'ALL') {
+          filtered = filtered.filter((i) => i.cefr_level === selectedLevel);
+        }
+        if (selectedPos !== 'ALL') {
+          filtered = filtered.filter((i) => i.part_of_speech?.toLowerCase() === selectedPos.toLowerCase());
+        }
+        const mapped = filtered.map((dto) => sanitizeVocabularyItem(mapVocabularyDtoToWord(dto, masteredWordIds)));
+        setWords(mapped);
+        setTotalCatalogCount(filtered.length);
+        return;
+      }
+    } catch {
+      // Offline fallback
       if (words.length === 0) {
         setWords(VOCABULARY_BANK.map(sanitizeVocabularyItem));
       }
     } finally {
       setLoading(false);
     }
-  }, [selectedLevel, selectedPos, masteredWordIds, words.length]);
+  }, [selectedLevel, selectedPos, selectedExam, searchQuery, masteredWordIds, words.length]);
 
   useEffect(() => {
     fetchVocabularyData();
@@ -137,8 +166,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       const questions: ClientVocabularyQuestionDTO[] = [];
 
       // Primary target word question
-      const targetMeaning = target.meaningEn || target.meaningTh;
-      const distractors = shuffledOthers.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
+      const targetMeaning = isEn ? (target.meaningEn || target.meaningTh) : (target.meaningTh || target.meaningEn);
+      const distractors = shuffledOthers.slice(0, 3).map((w) => isEn ? (w.meaningEn || w.meaningTh) : (w.meaningTh || w.meaningEn));
       const allChoices = [targetMeaning, ...distractors].sort(() => 0.5 - Math.random());
       questions.push({
         id: `vq_local_${target.id}_${Date.now()}`,
@@ -147,7 +176,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         type: 'multiple_choice',
         interactionType: 'meaning_recognition',
         promptEn: `What is the meaning of "${target.word}"?`,
-        promptTh: `What is the meaning of "${target.word}"?`,
+        promptTh: `คำว่า "${target.word}" มีความหมายตรงกับข้อใด?`,
         contextPassage: target.exampleSentenceEn ? `"${target.exampleSentenceEn}"` : undefined,
         targetWord: target.word,
         options: allChoices.map((text, idx) => ({
@@ -162,8 +191,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       for (let i = 0; i < Math.min(4, shuffledOthers.length); i++) {
         const cur = shuffledOthers[i];
         const rest = pool.filter((w) => w.id !== cur.id);
-        const curMeaning = cur.meaningEn || cur.meaningTh;
-        const d = rest.slice(0, 3).map((w) => w.meaningEn || w.meaningTh);
+        const curMeaning = isEn ? (cur.meaningEn || cur.meaningTh) : (cur.meaningTh || cur.meaningEn);
+        const d = rest.slice(0, 3).map((w) => isEn ? (w.meaningEn || w.meaningTh) : (w.meaningTh || w.meaningEn));
         const c = [curMeaning, ...d].sort(() => 0.5 - Math.random());
         questions.push({
           id: `vq_local_${cur.id}_${Date.now()}_${i + 1}`,
@@ -172,7 +201,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           type: 'multiple_choice',
           interactionType: 'meaning_recognition',
           promptEn: `What is the meaning of "${cur.word}"?`,
-          promptTh: `What is the meaning of "${cur.word}"?`,
+          promptTh: `คำว่า "${cur.word}" มีความหมายตรงกับข้อใด?`,
           contextPassage: cur.exampleSentenceEn ? `"${cur.exampleSentenceEn}"` : undefined,
           targetWord: cur.word,
           options: c.map((text, idx) => ({
@@ -186,7 +215,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
       return questions;
     },
-    [words]
+    [words, isEn]
   );
 
   // Load Practice Questions when entering practice mode
@@ -230,13 +259,17 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
   const filteredWords = words.filter((w) => {
     const matchesLevel = selectedLevel === 'ALL' || w.cefrLevel === selectedLevel;
     const matchesPos = selectedPos === 'ALL' || w.partOfSpeech.toLowerCase() === selectedPos.toLowerCase();
+    const matchesExam =
+      selectedExam === 'ALL' ||
+      (selectedExam === 'DAILY' && (w.isDailyLife || w.topic === 'Daily Life' || w.topic === 'Daily Routine')) ||
+      (w.targetExams && w.targetExams.includes(selectedExam));
     const q = searchQuery.toLowerCase();
     const matchesSearch =
       !q ||
       w.word.toLowerCase().includes(q) ||
       w.meaningTh.toLowerCase().includes(q) ||
       w.topic.toLowerCase().includes(q);
-    return matchesLevel && matchesPos && matchesSearch;
+    return matchesLevel && matchesPos && matchesExam && matchesSearch;
   });
 
   const currentWord = filteredWords[currentIndex] || filteredWords[0];
@@ -536,6 +569,51 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </p>
       </div>
 
+      {/* Target Exam & Daily Life Learning Focus Bar */}
+      {viewMode !== 'universe' && (
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm text-slate-800 dark:text-slate-200">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1 mr-1 shrink-0">
+              <Sparkles className="w-3.5 h-3.5 text-[#FA5D5D]" aria-hidden="true" />
+              <span>{isEn ? 'Focus:' : 'เป้าหมาย:'}</span>
+            </span>
+            {[
+              { id: 'ALL', labelTh: 'รวมคำศัพท์ทั้งหมด (10,021)', labelEn: 'All Vocab (10,021)', icon: '🌟' },
+              { id: 'DAILY', labelTh: 'ชีวิตประจำวัน (3,154)', labelEn: 'Daily Life (3,154)', icon: '🏠' },
+              { id: 'IELTS', labelTh: 'สอบ IELTS (7,510)', labelEn: 'IELTS Exam (7,510)', icon: '🎓' },
+              { id: 'TOEIC', labelTh: 'สอบ TOEIC (6,994)', labelEn: 'TOEIC Exam (6,994)', icon: '💼' },
+              { id: 'TOEFL', labelTh: 'สอบ TOEFL (5,678)', labelEn: 'TOEFL Exam (5,678)', icon: '🏛️' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => {
+                  setSelectedExam(tab.id as any);
+                  setCurrentIndex(0);
+                  setIsRevealed(false);
+                }}
+                className={`touch-target px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                  selectedExam === tab.id
+                    ? 'bg-[#FA5D5D] text-white shadow-xs'
+                    : 'bg-[#FAF8F3] hover:bg-[#F3EFE6] dark:bg-[#252131] dark:hover:bg-[#2E293D] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10'
+                }`}
+              >
+                <span>{tab.icon}</span>
+                <span>{isEn ? tab.labelEn : tab.labelTh}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="text-[11px] font-mono font-bold text-slate-500 dark:text-slate-400 shrink-0 hidden md:block">
+            {selectedExam === 'DAILY' && (isEn ? 'Daily Life & Conversation Priority' : 'เน้นศัพท์สื่อสารและบทสนทนาประจำวัน')}
+            {selectedExam === 'IELTS' && (isEn ? 'Academic & General IELTS Bands' : 'เน้นศัพท์วิชาการและข้อสอบ IELTS')}
+            {selectedExam === 'TOEIC' && (isEn ? 'Business & Corporate Workplace' : 'เน้นศัพท์การทำงานและข้อสอบ TOEIC')}
+            {selectedExam === 'TOEFL' && (isEn ? 'University Lectures & Science' : 'เน้นศัพท์วิชาการระดับมหาวิทยาลัย TOEFL')}
+            {selectedExam === 'ALL' && (isEn ? 'CEFR + Exam + Daily Corpus' : 'ครอบคลุม CEFR ข้อสอบ และชีวิตประจำวัน')}
+          </div>
+        </div>
+      )}
+
       {/* Level & POS Filter Bar */}
       {viewMode !== 'universe' && (
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3.5 rounded-[24px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm text-slate-800 dark:text-slate-200">
@@ -679,7 +757,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               {/* Question Prompt */}
               <div className="space-y-2 text-center sm:text-left">
                 <h3 className="text-lg sm:text-xl font-bold text-foreground leading-snug">
-                  {currentPracticeQ.promptEn || currentPracticeQ.promptTh}
+                  {isEn ? (currentPracticeQ.promptEn || currentPracticeQ.promptTh) : (currentPracticeQ.promptTh || currentPracticeQ.promptEn)}
                 </h3>
                 {currentPracticeQ.contextPassage && (
                   <div className="p-4 rounded-xl bg-slate-100 dark:bg-muted/40 border border-slate-200/80 dark:border-border/40 text-sm font-semibold text-slate-800 dark:text-foreground italic">
@@ -806,14 +884,29 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
 
           <div className="min-h-[400px] p-6 sm:p-9 flex flex-col justify-between transition-all relative overflow-hidden rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             {/* Card Header Context */}
-            <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-white/10">
-              <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-white/10 flex-wrap">
+              <div className="flex items-center gap-1.5 flex-wrap">
                 <GlovaLevelBadge level={currentWord.cefrLevel} size="sm" />
                 <span className="capitalize rounded-full px-2.5 py-0.5 text-xs font-mono font-bold bg-[#FA5D5D]/15 text-[#FA5D5D] border border-[#FA5D5D]/30">
                   {currentWord.partOfSpeech}
                 </span>
+                {currentWord.isDailyLife && (
+                  <span className="rounded-full px-2.5 py-0.5 text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                    🏠 Daily Life
+                  </span>
+                )}
+                {currentWord.ieltsBand && (
+                  <span className="rounded-full px-2.5 py-0.5 text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                    🎓 IELTS {currentWord.ieltsBand.split(' ')[0]}
+                  </span>
+                )}
+                {currentWord.targetExams && currentWord.targetExams.filter(e => e !== 'CEFR').map((ex) => (
+                  <span key={ex} className="rounded-full px-2 py-0.5 text-[11px] font-bold bg-[#FAF8F3] dark:bg-[#252131] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10">
+                    {ex}
+                  </span>
+                ))}
                 {currentWord.topic && (
-                  <span className="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline font-medium">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline font-medium ml-1">
                     {isEn ? `Topic: ${currentWord.topic}` : `หมวด: ${currentWord.topic}`}
                   </span>
                 )}
@@ -995,11 +1088,26 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 >
                   <GlovaCardContent className="p-0 space-y-2.5">
                     <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1.5 flex-wrap">
                         <GlovaLevelBadge level={w.cefrLevel} size="sm" />
                         <span className="text-[11px] text-muted-foreground capitalize">
                           {w.partOfSpeech}
                         </span>
+                        {w.isDailyLife && (
+                          <span className="rounded-full px-2 py-0.5 text-[10px] font-bold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                            🏠 Daily
+                          </span>
+                        )}
+                        {w.ieltsBand && (
+                          <span className="rounded-full px-2 py-0.5 text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                            🎓 IELTS
+                          </span>
+                        )}
+                        {w.targetExams && w.targetExams.filter(e => e !== 'CEFR').map((ex) => (
+                          <span key={ex} className="rounded-full px-2 py-0.5 text-[10px] font-bold bg-[#FAF8F3] dark:bg-[#252131] text-slate-700 dark:text-slate-300 border border-[#EAE4D5] dark:border-white/10">
+                            {ex}
+                          </span>
+                        ))}
                       </div>
 
                       <button
