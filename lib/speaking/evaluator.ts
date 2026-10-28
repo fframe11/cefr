@@ -141,26 +141,39 @@ export async function evaluateSpeech(
       }
     }
 
+    // Extract word-level score from external ML model if available
+    const extWord = externalPronunciationResult?.words?.find(
+      (w) => w.text.toLowerCase() === cleanRef
+    );
+    let modelAccuracy: number | null = null;
+    if (extWord?.phonemeScores && extWord.phonemeScores.length > 0) {
+      const avgPhone =
+        extWord.phonemeScores.reduce((sum, p) => sum + p.score, 0) / extWord.phonemeScores.length;
+      modelAccuracy = Math.round((avgPhone / 2.0) * 100);
+    }
+
     if (bestSpokenIdx !== -1 && bestMatchScore >= 0.85) {
       cursor = bestSpokenIdx + 1;
       matchedWordCount += 1;
       return {
         word: refWord,
-        accuracy_score: externalPronunciationResult?.status === "scored" ? 90 : null,
+        accuracy_score: modelAccuracy !== null ? modelAccuracy : Math.round(bestMatchScore * 100),
         error_type: "None" as WordErrorType,
+        phonemeScores: extWord?.phonemeScores,
       };
     } else if (bestSpokenIdx !== -1 && bestMatchScore >= 0.45) {
       cursor = bestSpokenIdx + 1;
       matchedWordCount += 0.5;
       return {
         word: refWord,
-        accuracy_score: externalPronunciationResult?.status === "scored" ? 60 : null,
+        accuracy_score: modelAccuracy !== null ? modelAccuracy : Math.round(bestMatchScore * 100),
         error_type: "Mispronunciation" as WordErrorType,
+        phonemeScores: extWord?.phonemeScores,
       };
     } else {
       return {
         word: refWord,
-        accuracy_score: null,
+        accuracy_score: modelAccuracy !== null ? 0 : null,
         error_type: "Omission" as WordErrorType,
       };
     }

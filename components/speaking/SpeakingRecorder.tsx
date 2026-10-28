@@ -62,7 +62,10 @@ export function SpeakingRecorder({
     silentFrames: 0,
     volumeRms: 0,
     silenceRatio: 0,
-    pitchVariance: 0.7,
+    centroidSum: 0,
+    centroidSqSum: 0,
+    voicedFrames: 0,
+    pitchVariance: 0.0,
   });
 
   const MAX_SECONDS = 90;
@@ -116,6 +119,22 @@ export function SpeakingRecorder({
       acousticStatsRef.current.sumRms += rms;
       if (rms < 0.015) {
         acousticStatsRef.current.silentFrames += 1;
+      } else {
+        // Compute real-time frequency spectral centroid for pitch dynamics
+        const freqData = new Uint8Array(bufferLength);
+        analyser.getByteFrequencyData(freqData);
+        let spectralCentroid = 0;
+        let totalMag = 0;
+        for (let j = 0; j < freqData.length; j++) {
+          spectralCentroid += j * freqData[j];
+          totalMag += freqData[j];
+        }
+        if (totalMag > 0) {
+          const centroid = spectralCentroid / totalMag;
+          acousticStatsRef.current.centroidSum += centroid;
+          acousticStatsRef.current.centroidSqSum += centroid * centroid;
+          acousticStatsRef.current.voicedFrames += 1;
+        }
       }
 
       ctx.fillStyle = "rgb(15, 23, 42)"; // Dark slate canvas background
@@ -294,6 +313,13 @@ export function SpeakingRecorder({
     if (stats.totalFrames > 0) {
       stats.volumeRms = stats.sumRms / stats.totalFrames;
       stats.silenceRatio = stats.silentFrames / stats.totalFrames;
+    }
+    if (stats.voicedFrames > 1) {
+      const meanCentroid = stats.centroidSum / stats.voicedFrames;
+      const variance = (stats.centroidSqSum / stats.voicedFrames) - (meanCentroid * meanCentroid);
+      stats.pitchVariance = Math.min(1.0, Math.max(0.0, Math.sqrt(Math.max(0, variance)) / 50.0));
+    } else {
+      stats.pitchVariance = 0.0;
     }
 
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
