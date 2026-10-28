@@ -3,7 +3,9 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -n \"next,inference\" -c \"blue,green\" \"next dev\" \"python -m uvicorn services.pronunciation.app:app --host 127.0.0.1 --port 8000\"",
+    "dev:frontend": "next dev",
+    "dev:inference": "python -m uvicorn services.pronunciation.app:app --host 127.0.0.1 --port 8000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -26,6 +28,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.6",
     "jsdom": "^26.0.0",
     "postcss": "^8.5.2",
     "tailwindcss": "^3.4.17",

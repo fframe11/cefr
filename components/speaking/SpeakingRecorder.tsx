@@ -180,7 +180,10 @@ export function SpeakingRecorder({
         silentFrames: 0,
         volumeRms: 0,
         silenceRatio: 0,
-        pitchVariance: 0.7,
+        centroidSum: 0,
+        centroidSqSum: 0,
+        voicedFrames: 0,
+        pitchVariance: 0.0,
       };
       audioChunksRef.current = [];
 

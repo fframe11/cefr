@@ -168,7 +168,8 @@ export async function POST(req: NextRequest) {
       pyFormData.append("reference_text", referenceText);
 
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1500); // 1.5s timeout for Edge compatibility
+      const timeoutMs = parseInt(process.env.PRONUNCIATION_TIMEOUT_MS || "8000", 10);
+      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
       const pyRes = await fetch(pythonServiceUrl, {
         method: "POST",

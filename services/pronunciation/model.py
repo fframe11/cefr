@@ -32,7 +32,14 @@ class E2EGOPModelWrapper:
 
             logger.info(f"Loading E2E-GOP model from {self.model_name} on {self.device}...")
             # Note: E2E-GOP-SpeechOcean762 requires trust_remote_code=True for custom architecture
-            self.processor = AutoProcessor.from_pretrained(self.model_name, trust_remote_code=True)
+            try:
+                self.processor = AutoProcessor.from_pretrained(self.model_name, trust_remote_code=True)
+            except Exception:
+                from transformers import AutoFeatureExtractor, AutoTokenizer, Wav2Vec2Processor
+                fe = AutoFeatureExtractor.from_pretrained(self.model_name)
+                tok = AutoTokenizer.from_pretrained(self.model_name)
+                self.processor = Wav2Vec2Processor(feature_extractor=fe, tokenizer=tok)
+
             self.model = AutoModel.from_pretrained(self.model_name, trust_remote_code=True).to(self.device)
             self.model.eval()
             self.is_loaded = True

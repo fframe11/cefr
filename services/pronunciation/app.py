@@ -1,7 +1,15 @@
+import os
+import sys
+import logging
+
+# Ensure services/pronunciation directory is in sys.path
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+if _current_dir not in sys.path:
+    sys.path.insert(0, _current_dir)
+
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-import logging
 
 from audio import decode_audio_bytes, convert_to_mono_16k, check_audio_quality
 from phonemes import text_to_phonemes, get_canonical_phoneme_sequence

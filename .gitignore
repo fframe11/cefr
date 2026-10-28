@@ -1,4 +1,4 @@
-﻿node_modules
+node_modules
 .next
 dist
 build
@@ -11,3 +11,7 @@ coverage
 *.zip
 logs
 *.log
+
+__pycache__/
+*.pyc
+.venv/
