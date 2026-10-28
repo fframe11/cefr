@@ -20,6 +20,8 @@ describe('Database Schema Migrations Verification', () => {
       '20260929000009_seed_verified_production_vocabulary_3860.sql',
       '20261003000010_create_adaptive_assessment_tables.sql',
       '20261007000011_lockdown_question_options_rls.sql',
+      '20261028_user_speaking_attempts.sql',
+      '20261028_user_writing_submissions.sql',
     ]);
   });
 
@@ -185,4 +187,5 @@ describe('Database Schema Migrations Verification', () => {
     expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(question_id,\s*key\)\s+DO\s+UPDATE/i);
   });
 });
+
 
