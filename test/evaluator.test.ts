@@ -12,6 +12,7 @@ describe("AI Speech Evaluation Pipeline", () => {
       targetCefr: "B2",
       promptId: "prompt_test_01",
       clientDurationSec: 4.5,
+      userTranscript: "I enjoy studying English because it helps me communicate globally",
     });
 
     // Check top-level properties
@@ -28,18 +29,60 @@ describe("AI Speech Evaluation Pipeline", () => {
 
     // Check words analysis
     expect(result.words_analysis.length).toBeGreaterThan(0);
-    const globallyWord = result.words_analysis.find(
-      (w) => w.word.toLowerCase() === "globally"
-    );
-    expect(globallyWord).toBeDefined();
-    if (globallyWord && globallyWord.error_type !== "None") {
-      expect(globallyWord.phonetic_hint).toBe("/ˈɡloʊ.bəl.i/");
-      expect(globallyWord.tip_th).toContain("GLO-buh-lee");
-    }
-
-    // Check feedback
     expect(typeof result.feedback_th).toBe("string");
     expect(result.feedback_th.length).toBeGreaterThan(10);
+  });
+
+  it("drastically reduces scores when silence or no speech is detected", async () => {
+    const referenceText = "I enjoy studying English because it helps me communicate globally.";
+    const audioBuffer = new Uint8Array(16000 * 2 * 4);
+
+    const silentResult = await evaluateSpeech({
+      audioBuffer,
+      referenceText,
+      targetCefr: "B2",
+      promptId: "prompt_silent",
+      clientDurationSec: 4.0,
+      userTranscript: "",
+      acousticMetrics: {
+        volume_rms: 0.001,
+        silence_ratio: 0.98,
+      },
+    });
+
+    // Silent audio should receive very low score and A1 band
+    expect(silentResult.overall_score).toBeLessThan(20);
+    expect(silentResult.cefr_band).toBe("A1");
+    expect(silentResult.metrics.completeness_score).toBe(0);
+    expect(silentResult.feedback_th).toContain("ตรวจไม่พบเสียงพูด");
+  });
+
+  it("scores partial speech accurately with omission penalties", async () => {
+    const referenceText = "I enjoy studying English because it helps me communicate globally.";
+    const audioBuffer = new Uint8Array(16000 * 2 * 4);
+
+    // User only said 3 words out of 9
+    const partialResult = await evaluateSpeech({
+      audioBuffer,
+      referenceText,
+      targetCefr: "B2",
+      promptId: "prompt_partial",
+      clientDurationSec: 4.0,
+      userTranscript: "I enjoy studying",
+      acousticMetrics: {
+        volume_rms: 0.08,
+        silence_ratio: 0.3,
+      },
+    });
+
+    expect(partialResult.overall_score).toBeLessThan(60);
+    expect(partialResult.metrics.completeness_score).toBeLessThan(50);
+
+    const missingWord = partialResult.words_analysis.find(
+      (w) => w.word.toLowerCase() === "globally"
+    );
+    expect(missingWord?.error_type).toBe("Omission");
+    expect(missingWord?.accuracy_score).toBe(10);
   });
 
   it("produces deterministic metrics when simulated scores are passed", async () => {

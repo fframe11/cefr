@@ -17,6 +17,12 @@ export interface SpeakingMetrics {
   prosody_score: number;       // 0 - 100
 }
 
+export interface AcousticMetrics {
+  volume_rms?: number;      // 0.0 - 1.0
+  silence_ratio?: number;   // 0.0 - 1.0
+  pitch_variance?: number;  // 0.0 - 1.0
+}
+
 export interface SpeakingEvaluationData {
   attempt_id: string;
   overall_score: number;

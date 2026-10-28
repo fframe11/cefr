@@ -40,6 +40,7 @@ export function SpeakingRecorder({
   const [isPlayingPreview, setIsPlayingPreview] = useState<boolean>(false);
   const [warningMessage, setWarningMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [liveTranscript, setLiveTranscript] = useState<string>("");
 
   // References
   const mediaStreamRef = useRef<MediaStream | null>(null);
@@ -52,10 +53,22 @@ export function SpeakingRecorder({
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Acoustic & Speech Recognition refs
+  const speechRecognitionRef = useRef<any>(null);
+  const userTranscriptRef = useRef<string>("");
+  const acousticStatsRef = useRef({
+    sumRms: 0,
+    totalFrames: 0,
+    silentFrames: 0,
+    volumeRms: 0,
+    silenceRatio: 0,
+    pitchVariance: 0.7,
+  });
+
   const MAX_SECONDS = 90;
   const MIN_SECONDS = 3;
 
-  // Clear timers and animation frames on unmount
+  // Clear timers, animations, and speech recognition on unmount
   useEffect(() => {
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
@@ -67,10 +80,15 @@ export function SpeakingRecorder({
       if (audioContextRef.current && audioContextRef.current.state !== "closed") {
         audioContextRef.current.close().catch(() => {});
       }
+      if (speechRecognitionRef.current) {
+        try {
+          speechRecognitionRef.current.stop();
+        } catch {}
+      }
     };
   }, [audioUrl]);
 
-  // Real-time canvas waveform visualizer
+  // Real-time canvas waveform visualizer & acoustic energy analyzer
   const drawWaveform = useCallback(() => {
     if (!canvasRef.current || !analyserRef.current) return;
 
@@ -86,11 +104,25 @@ export function SpeakingRecorder({
       animationFrameRef.current = requestAnimationFrame(render);
       analyser.getByteTimeDomainData(dataArray);
 
+      // Acoustic RMS analysis
+      let sumSq = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        const norm = (dataArray[i] - 128) / 128.0;
+        sumSq += norm * norm;
+      }
+      const rms = Math.sqrt(sumSq / bufferLength);
+
+      acousticStatsRef.current.totalFrames += 1;
+      acousticStatsRef.current.sumRms += rms;
+      if (rms < 0.015) {
+        acousticStatsRef.current.silentFrames += 1;
+      }
+
       ctx.fillStyle = "rgb(15, 23, 42)"; // Dark slate canvas background
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.lineWidth = 2.5;
-      ctx.strokeStyle = "rgb(16, 185, 129)"; // Emerald wave
+      ctx.strokeStyle = rms > 0.02 ? "rgb(16, 185, 129)" : "rgb(100, 116, 139)"; // Green when voice detected, muted gray when silent
       ctx.beginPath();
 
       const sliceWidth = (canvas.width * 1.0) / bufferLength;
@@ -121,6 +153,16 @@ export function SpeakingRecorder({
     try {
       setWarningMessage(null);
       setErrorMessage(null);
+      setLiveTranscript("");
+      userTranscriptRef.current = "";
+      acousticStatsRef.current = {
+        sumRms: 0,
+        totalFrames: 0,
+        silentFrames: 0,
+        volumeRms: 0,
+        silenceRatio: 0,
+        pitchVariance: 0.7,
+      };
       audioChunksRef.current = [];
 
       // 16 kHz Mono audio capture constraint
@@ -137,7 +179,9 @@ export function SpeakingRecorder({
       mediaStreamRef.current = stream;
 
       // Initialize Web Audio API for Live Waveform Visualizer
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      const AudioCtx =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       const audioCtx = new AudioCtx({ sampleRate: 16000 });
       audioContextRef.current = audioCtx;
 
@@ -146,6 +190,33 @@ export function SpeakingRecorder({
       analyser.fftSize = 2048;
       source.connect(analyser);
       analyserRef.current = analyser;
+
+      // Initialize Web Speech API for real-time speech-to-text
+      const SpeechRecognition =
+        (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        try {
+          const recognition = new SpeechRecognition();
+          recognition.continuous = true;
+          recognition.interimResults = true;
+          recognition.lang = "en-US";
+
+          recognition.onresult = (event: any) => {
+            let transcriptText = "";
+            for (let i = 0; i < event.results.length; i++) {
+              transcriptText += event.results[i][0].transcript + " ";
+            }
+            const cleanTranscript = transcriptText.trim();
+            userTranscriptRef.current = cleanTranscript;
+            setLiveTranscript(cleanTranscript);
+          };
+
+          recognition.onerror = () => {};
+          recognition.start();
+          speechRecognitionRef.current = recognition;
+        } catch {}
+      }
 
       // Browser MediaRecorder setup
       const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
@@ -212,6 +283,19 @@ export function SpeakingRecorder({
       animationFrameRef.current = null;
     }
 
+    if (speechRecognitionRef.current) {
+      try {
+        speechRecognitionRef.current.stop();
+      } catch {}
+    }
+
+    // Finalize acoustic statistics
+    const stats = acousticStatsRef.current;
+    if (stats.totalFrames > 0) {
+      stats.volumeRms = stats.sumRms / stats.totalFrames;
+      stats.silenceRatio = stats.silentFrames / stats.totalFrames;
+    }
+
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
       mediaRecorderRef.current.stop();
     }
@@ -250,6 +334,8 @@ export function SpeakingRecorder({
       setAudioUrl(null);
     }
     setElapsedSec(0);
+    setLiveTranscript("");
+    userTranscriptRef.current = "";
     setWarningMessage(null);
     setErrorMessage(null);
     setRecorderState("idle");
@@ -280,12 +366,17 @@ export function SpeakingRecorder({
     setWarningMessage(null);
 
     try {
+      const stats = acousticStatsRef.current;
       const formData = new FormData();
       formData.append("audio", audioBlob, "speaking_attempt.webm");
       formData.append("prompt_id", promptId);
       formData.append("reference_text", referenceText);
       formData.append("target_cefr", targetCefr);
       formData.append("duration_sec", elapsedSec.toString());
+      formData.append("user_transcript", userTranscriptRef.current.trim());
+      formData.append("volume_rms", stats.volumeRms.toFixed(4));
+      formData.append("silence_ratio", stats.silenceRatio.toFixed(4));
+      formData.append("pitch_variance", stats.pitchVariance.toFixed(4));
 
       const res = await fetch("/api/speaking/evaluate", {
         method: "POST",
@@ -376,7 +467,28 @@ export function SpeakingRecorder({
             REC {formatTime(elapsedSec)}
           </div>
         )}
+
+        {/* Live Spoken Text Subtitle */}
+        {recorderState === "recording" && liveTranscript && (
+          <div className="absolute bottom-2 inset-x-2 bg-slate-900/80 backdrop-blur px-2.5 py-1 rounded text-center text-xs text-emerald-300 truncate">
+            {liveTranscript}
+          </div>
+        )}
       </div>
+
+      {/* Spoken Text Feedback during Review */}
+      {recorderState === "review" && (
+        <div className="mb-4 p-3 rounded-md bg-muted/20 border border-border/30 text-xs">
+          <span className="text-muted-foreground font-medium block mb-1">
+            ข้อความที่ตรวจพบจากเสียงพูด:
+          </span>
+          <span className="text-foreground font-medium">
+            {userTranscriptRef.current
+              ? `"${userTranscriptRef.current}"`
+              : "(ไม่พบเสียงพูดที่ตรวจจับได้ หรือพูดไม่ตรงกับภาษาอังกฤษ)"}
+          </span>
+        </div>
+      )}
 
       {/* Time and Progress Bar */}
       <div className="mb-4">

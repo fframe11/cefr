@@ -110,6 +110,16 @@ export async function POST(req: NextRequest) {
     const targetCefr = formData.get("target_cefr") as CEFRLevel | null;
     const clientDurationStr = formData.get("duration_sec") as string | null;
     const clientDuration = clientDurationStr ? parseFloat(clientDurationStr) : undefined;
+    const userTranscript = (formData.get("user_transcript") as string | null) ?? undefined;
+    const volumeRmsStr = formData.get("volume_rms") as string | null;
+    const silenceRatioStr = formData.get("silence_ratio") as string | null;
+    const pitchVarianceStr = formData.get("pitch_variance") as string | null;
+
+    const acousticMetrics = {
+      volume_rms: volumeRmsStr ? parseFloat(volumeRmsStr) : undefined,
+      silence_ratio: silenceRatioStr ? parseFloat(silenceRatioStr) : undefined,
+      pitch_variance: pitchVarianceStr ? parseFloat(pitchVarianceStr) : undefined,
+    };
 
     // Validate presence of required fields
     if (!audioFile || !promptId || !referenceText || !targetCefr) {
@@ -156,6 +166,8 @@ export async function POST(req: NextRequest) {
       targetCefr,
       promptId,
       clientDurationSec: validation.durationSec,
+      userTranscript,
+      acousticMetrics,
     });
 
     // 7. Return 200 OK Response matching the exact Notion specification contract
