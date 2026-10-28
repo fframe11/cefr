@@ -1,0 +1,187 @@
+import { NextRequest, NextResponse } from "next/server";
+import { validateAudioFile, MAX_AUDIO_BYTES } from "@/lib/speaking/audio";
+import { evaluateSpeech } from "@/lib/speaking/evaluator";
+import { CEFRLevel } from "@/lib/speaking/types";
+
+export const runtime = "edge";
+
+// In-memory sliding window rate limiter for edge runtime (e.g. 60 requests per hour per user/IP)
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_MAX = 60;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+function checkRateLimit(key: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(key);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+
+  if (entry.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  entry.count += 1;
+  return true;
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    // 1. Authorization Guard
+    const authHeader = req.headers.get("authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Missing or invalid Authorization header (Bearer token required)",
+          },
+        },
+        { status: 401 }
+      );
+    }
+
+    const sessionToken = authHeader.substring(7).trim();
+    if (!sessionToken) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Authentication token is empty",
+          },
+        },
+        { status: 401 }
+      );
+    }
+
+    // 2. Rate Limiting Check
+    const clientIdentifier = sessionToken.slice(-10) || req.headers.get("x-forwarded-for") || "default_client";
+    if (!checkRateLimit(clientIdentifier)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "TOO_MANY_REQUESTS",
+            message: "เรียกใช้งานเกินโควตาต่อชั่วโมง กรุณารอสักครู่แล้วลองใหม่อีกครั้ง",
+          },
+        },
+        { status: 429 }
+      );
+    }
+
+    // 3. Payload Content-Type & Size validation
+    const contentType = req.headers.get("content-type");
+    if (contentType && !contentType.includes("multipart/form-data")) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "BAD_REQUEST",
+            message: "Content-Type must be multipart/form-data",
+          },
+        },
+        { status: 400 }
+      );
+    }
+
+    const contentLength = parseInt(req.headers.get("content-length") || "0", 10);
+    if (contentLength > MAX_AUDIO_BYTES) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "PAYLOAD_TOO_LARGE",
+            message: "ขนาดไฟล์เสียงเกิน 10MB",
+          },
+        },
+        { status: 413 }
+      );
+    }
+
+    // 4. Parse FormData
+    const formData = await req.formData();
+    const audioFile = formData.get("audio") as File | null;
+    const promptId = formData.get("prompt_id") as string | null;
+    const referenceText = formData.get("reference_text") as string | null;
+    const targetCefr = formData.get("target_cefr") as CEFRLevel | null;
+    const clientDurationStr = formData.get("duration_sec") as string | null;
+    const clientDuration = clientDurationStr ? parseFloat(clientDurationStr) : undefined;
+
+    // Validate presence of required fields
+    if (!audioFile || !promptId || !referenceText || !targetCefr) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "BAD_REQUEST",
+            message: "Missing required fields: audio, prompt_id, reference_text, target_cefr",
+          },
+        },
+        { status: 400 }
+      );
+    }
+
+    // 5. Audio Buffer & Format Validation
+    const arrayBuffer = await audioFile.arrayBuffer();
+    const audioBuffer = new Uint8Array(arrayBuffer);
+
+    const validation = validateAudioFile(audioBuffer, audioFile.type || "audio/webm", clientDuration);
+    if (!validation.valid) {
+      const isPayloadTooLarge = validation.errorCode === "PAYLOAD_TOO_LARGE";
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: isPayloadTooLarge ? "PAYLOAD_TOO_LARGE" : "BAD_REQUEST",
+            message: validation.errorMessage || "ไฟล์เสียงไม่ผ่านการตรวจสอบ",
+            details: {
+              duration: validation.durationSec,
+              format: validation.format,
+              size: validation.sizeBytes,
+            },
+          },
+        },
+        { status: isPayloadTooLarge ? 413 : 400 }
+      );
+    }
+
+    // 6. Run AI Speech Evaluation Engine
+    const evaluation = await evaluateSpeech({
+      audioBuffer,
+      referenceText,
+      targetCefr,
+      promptId,
+      clientDurationSec: validation.durationSec,
+    });
+
+    // 7. Return 200 OK Response matching the exact Notion specification contract
+    return NextResponse.json(
+      {
+        success: true,
+        data: evaluation,
+      },
+      {
+        status: 200,
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
+      }
+    );
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unexpected evaluation failure";
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_SERVER_ERROR",
+          message,
+        },
+      },
+      { status: 500 }
+    );
+  }
+}
