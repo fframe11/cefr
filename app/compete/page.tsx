@@ -51,6 +51,7 @@ import { RankedMatchScreen } from '@/components/ranked/RankedMatchScreen';
 import { RankedResultModal } from '@/components/ranked/RankedResultModal';
 import { RankedMistakeReviewModal } from '@/components/ranked/RankedMistakeReviewModal';
 import { SquadShareBanner, RankBannerCard } from '@/components/ui/aceternity';
+import { SpeedBattleArena } from '@/components/ranked/SpeedBattleArena';
 
 export default function CompetePage() {
   const { t, language } = useTranslation();
@@ -59,7 +60,7 @@ export default function CompetePage() {
   const userId = user?.id || 'user_current';
 
   // Main Compete Mode: 'ranked' vs 'quick'
-  const [competeMode, setCompeteMode] = useState<'ranked' | 'quick'>('ranked');
+  const [competeMode, setCompeteMode] = useState<'speed' | 'ranked' | 'quick'>('speed');
 
   // ================= RANKED MODE STATE =================
   const [rankedProfile, setRankedProfile] = useState<RankedProfile | null>(null);
@@ -291,7 +292,9 @@ export default function CompetePage() {
               {isEn ? 'Arena Competition' : 'สมรภูมิแข่งขันภาษาอังกฤษ'}
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-              {competeMode === 'ranked'
+              {competeMode === 'speed'
+                ? (isEn ? 'Speed Battle: Realtime 60s synchronous multiplayer duel with live Elo matchmaking.' : 'ดวลความเร็ว 60 วินาที: แข่งสดแบบเรียลไทม์ พร้อมปรับระดับ Elo ตามระบบมาตรฐาน')
+                : competeMode === 'ranked'
                 ? (isEn ? 'Official Ranked Mode: Performance changes your Rank Rating (MMR).' : 'โหมดจัดอันดับจริงจัง: ผลการแข่งมีผลต่อ Rank Rating โดยตรง แยกจากแต้ม XP')
                 : (isEn ? 'Quick Play: Practice speed vocabulary battle with zero rating risk.' : 'โหมดเล่นเร็ว: ฝึกซ้อมประลองความเร็ว ไม่กระทบต่อ Rank Rating')}
             </p>
@@ -300,6 +303,18 @@ export default function CompetePage() {
 
         {/* Binary Mode Switch */}
         <div className="flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-1.5 self-start sm:self-auto shadow-xs">
+          <button
+            type="button"
+            onClick={() => setCompeteMode('speed')}
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all ${
+              competeMode === 'speed'
+                ? 'bg-[#FA5D5D] text-white font-extrabold shadow-xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <Swords className="h-4 w-4" />
+            {isEn ? 'Speed Battle (60s)' : 'ดวลความเร็ว (60s)'}
+          </button>
           <button
             type="button"
             onClick={() => setCompeteMode('ranked')}
@@ -326,6 +341,19 @@ export default function CompetePage() {
           </button>
         </div>
       </section>
+
+      {/* ========================================================= */}
+      {/* VIEW S: REALTIME SPEED BATTLE (60s) */}
+      {/* ========================================================= */}
+      {competeMode === 'speed' && (
+        <section className="space-y-6">
+          <SpeedBattleArena
+            currentUserId={userId}
+            currentUsername={user?.email ? user.email.split('@')[0] : (isEn ? 'Contender' : 'ผู้ท้าชิง')}
+            currentUserElo={rankedProfile?.rating ?? 1200}
+          />
+        </section>
+      )}
 
       {/* ========================================================= */}
       {/* VIEW A: RANKED BATTLE MODE */}
