@@ -280,7 +280,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             }`}
           >
             <GraduationCap className="w-4 h-4" />
-            <span>{isEn ? 'Exam & Daily Life (10,021 Words)' : 'คลังคำศัพท์สอบ & ชีวิตประจำวัน (10,021 คำ)'}</span>
+            <span>{isEn ? 'Exam & Daily Life' : 'คลังคำศัพท์สอบ & ชีวิตประจำวัน'}</span>
           </button>
 
           <button
@@ -296,7 +296,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             }`}
           >
             <Globe2 className="w-4 h-4 text-amber-500" />
-            <span>{isEn ? 'Full Universe (121,253 Words)' : 'คลังจักรวาลศัพท์รวม (121,253 คำ)'}</span>
+            <span>{isEn ? 'Full Universe' : 'คลังจักรวาลศัพท์รวม'}</span>
           </button>
         </div>
 
@@ -375,7 +375,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
           <StudioMetric
             label={isEn ? 'UNIVERSE TOTAL' : 'คลังจักรวาลศัพท์รวม'}
             value={universeStats.totalUniverseCount.toLocaleString()}
-            delta="121,253 Words"
+            delta="Curated Lexicon"
             variant="gold"
             icon={<Globe2 className="w-4 h-4 text-[#E5A93C]" />}
           />
@@ -416,11 +416,11 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               placeholder={
                 datasetMode === 'EXAM_10K'
                   ? isEn
-                    ? 'Search 10,021 exam words, Thai definitions, collocations...'
-                    : 'ค้นหาคำศัพท์สอบ 10,021 คำ ความหมายไทย วลีสัมพันธ์...'
+                    ? 'Search exam words, Thai definitions, collocations...'
+                    : 'ค้นหาคำศัพท์สอบ ความหมายไทย วลีสัมพันธ์...'
                   : isEn
-                  ? 'Search across 121,253 words in the lexical universe...'
-                  : 'ค้นหาคำศัพท์จาก 121,253 คำในคลังจักรวาลศัพท์...'
+                  ? 'Search across words in the lexical universe...'
+                  : 'ค้นหาคำศัพท์ในคลังจักรวาลศัพท์...'
               }
               className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] placeholder:text-slate-400 dark:placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40"
             />
@@ -456,9 +456,9 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 aria-label={isEn ? 'Filter by tier' : 'กรองตามระดับคลัง'}
                 className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#0F141C] border border-slate-200 dark:border-white/10 text-xs text-slate-900 dark:text-[#EDEBE8] focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/40 cursor-pointer"
               >
-                <option value="ALL">{isEn ? 'All Tiers (121k)' : 'ทุกระดับ (121k)'}</option>
-                <option value="TIER_1_VERIFIED">{isEn ? 'Tier 1: Verified (3.8k)' : 'ระดับ 1: ยืนยันสมบูรณ์ (3.8k)'}</option>
-                <option value="TIER_2_CANDIDATE">{isEn ? 'Tier 2: Candidate (117k)' : 'ระดับ 2: คลังขยาย (117k)'}</option>
+                <option value="ALL">{isEn ? 'All Tiers' : 'ทุกระดับ'}</option>
+                <option value="TIER_1_VERIFIED">{isEn ? 'Tier 1: Verified' : 'ระดับ 1: ยืนยันสมบูรณ์'}</option>
+                <option value="TIER_2_CANDIDATE">{isEn ? 'Tier 2: Candidate' : 'ระดับ 2: คลังขยาย'}</option>
               </select>
             )}
           </div>
@@ -472,12 +472,12 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               <span>{isEn ? 'Target Category:' : 'เป้าหมายการสอบ & ใช้งาน:'}</span>
             </span>
             {[
-              { id: 'ALL', label: isEn ? 'All Exam Words (10k)' : 'คำศัพท์ทั้งหมด (10,021)' },
-              { id: 'DAILY', label: isEn ? 'Daily Life (3.1k)' : 'ชีวิตประจำวัน (3,154)' },
-              { id: 'IELTS', label: isEn ? 'IELTS Academic (7.5k)' : 'สอบ IELTS (7,510)' },
-              { id: 'TOEIC', label: isEn ? 'TOEIC Business (7.0k)' : 'สอบ TOEIC (6,994)' },
-              { id: 'TOEFL', label: isEn ? 'TOEFL Lectures (5.7k)' : 'สอบ TOEFL (5,678)' },
-              { id: 'CEFR', label: isEn ? 'CEFR Standard (10k)' : 'มาตรฐาน CEFR (10,021)' },
+              { id: 'ALL', label: isEn ? 'All Exam Words' : 'คำศัพท์ทั้งหมด' },
+              { id: 'DAILY', label: isEn ? 'Daily Life' : 'ชีวิตประจำวัน' },
+              { id: 'IELTS', label: isEn ? 'IELTS Academic' : 'สอบ IELTS' },
+              { id: 'TOEIC', label: isEn ? 'TOEIC Business' : 'สอบ TOEIC' },
+              { id: 'TOEFL', label: isEn ? 'TOEFL Lectures' : 'สอบ TOEFL' },
+              { id: 'CEFR', label: isEn ? 'CEFR Standard' : 'มาตรฐาน CEFR' },
             ].map((tgt) => (
               <button
                 key={tgt.id}
@@ -489,7 +489,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
                 className={`touch-target px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer ${
                   examTarget === tgt.id
                     ? 'bg-[#FA5D5D] text-white shadow-xs'
-                    : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10'
+                    : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10'
                 }`}
               >
                 {tgt.label}
@@ -515,7 +515,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
               className={`touch-target px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer ${
                 level === lvl
                   ? 'bg-[#FA5D5D] text-white shadow-xs'
-                  : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10'
+                  : 'bg-slate-100 hover:bg-slate-200/80 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-800 dark:text-[#EDEBE8] border border-slate-200 dark:border-white/10'
               }`}
             >
               {lvl === 'ALL' ? (isEn ? 'All Levels' : 'ทุกระดับ') : `CEFR ${lvl}`}
@@ -800,7 +800,7 @@ export const ExtendedUniverseView: React.FC<ExtendedUniverseViewProps> = ({
             </div>
 
             {/* Meanings */}
-            <div className="p-4 rounded-xl bg-amber-500/5 dark:bg-[#0B1224] border border-amber-500/20 dark:border-white/10 space-y-2">
+            <div className="p-4 rounded-xl bg-amber-500/5 dark:bg-[#23212C] border border-amber-500/20 dark:border-white/10 space-y-2">
               <div className="text-xs uppercase font-mono font-bold text-[#FA5D5D]">
                 {isEn ? 'Thai Meaning' : 'ความหมายภาษาไทย (บริบทการใช้งานจริง)'}
               </div>

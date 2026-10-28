@@ -5,10 +5,22 @@ import { validateQuery } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError, ForbiddenError, BadRequestError } from '../_lib/errors/api-error';
 import { calculateExamTiming, finalizeMockExamAttempt } from './_engine';
+import { DemoExamService } from '../_lib/demo/demo-exam.service';
 
 const resultsQuerySchema = z.object({
   token: uuidSchema,
 });
+
+export interface MockExamReviewQuestionDTO {
+  question_id: string;
+  is_correct: boolean;
+  user_selected_key?: string | null;
+  user_text_answer?: string | null;
+  correct_option_key?: string | null;
+  correct_answer_text?: string | null;
+  explanation_th?: string | null;
+  explanation_en?: string | null;
+}
 
 export interface MockExamResultResponseDTO {
   attempt_id: string;
@@ -40,6 +52,9 @@ export interface MockExamResultResponseDTO {
   skill_breakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }>;
   is_official: false;
   disclaimer: string;
+  is_demo?: boolean;
+  dataset?: string;
+  review_questions?: MockExamReviewQuestionDTO[];
 }
 
 /**
@@ -60,9 +75,15 @@ export default createApiHandler(
     }
 
     const query = validateQuery(resultsQuerySchema, req.query);
+
+    // 1. Isolated Demo Session Branch
+    if (DemoExamService.isDemoSessionToken(query.token)) {
+      return DemoExamService.getDemoResultsDTO(query.token);
+    }
+
     const supabase = createServiceRoleClient();
 
-    // 1. Locate attempt and verify ownership
+    // 2. Locate production attempt and verify ownership
     let { data: attempt, error: attemptError } = await supabase
       .from('user_mock_exam_attempts')
       .select('id, user_id, mock_exam_id, session_token, started_at, submitted_at, status, raw_score, total_marks, percentage_score, estimated_cefr_level, estimated_cambridge_score')

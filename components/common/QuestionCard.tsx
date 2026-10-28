@@ -5,12 +5,6 @@ import { Check, X, HelpCircle, ArrowRight, Clock, Loader2, Sparkles } from 'luci
 import { AudioPlayer } from './AudioPlayer';
 import { submitPracticeAnswer, PracticeGradingResultDTO } from '../../lib/api/practice';
 import { useTranslation } from '../../i18n';
-import { GRAMMAR_BANK } from '../../data/grammarBank';
-import { READING_BANK } from '../../data/readingBank';
-import { LISTENING_BANK } from '../../data/listeningBank';
-import { CAMBRIDGE_MOCK_EXAMS } from '../../data/mockExams';
-import { DIAGNOSTIC_QUESTIONS } from '../../data/diagnosticAssessment';
-import { QUICK_CHECK_QUESTIONS } from '../../data/quickCheckQuestions';
 
 interface QuestionCardProps {
   question: Question;
@@ -33,41 +27,20 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverGrading, setServerGrading] = useState<PracticeGradingResultDTO | null>(null);
 
-  // Resolve static question data across all banks if API options stripped isCorrect
-  const matchedStaticQ = React.useMemo(() => {
-    if (!question) return null;
-    const gq = GRAMMAR_BANK.flatMap((t) => t?.practiceQuestions || []).filter(Boolean);
-    const rq = READING_BANK.flatMap((p) => p?.questions || []).filter(Boolean);
-    const lq = LISTENING_BANK.flatMap((t) => t?.questions || []).filter(Boolean);
-    const mq = CAMBRIDGE_MOCK_EXAMS.flatMap((e) => e?.sections?.flatMap((s) => s?.questions || []) || []).filter(Boolean);
-    const dq = DIAGNOSTIC_QUESTIONS || [];
-    const qq = QUICK_CHECK_QUESTIONS || [];
-
-    const all = [...gq, ...rq, ...lq, ...mq, ...dq, ...qq];
-    const questionPrompt = question.promptEn || (question as any).prompt;
-    return (
-      all.find(
-        (q: any) =>
-          (q?.id && q.id === question.id) ||
-          (questionPrompt && (q?.promptEn === questionPrompt || q?.prompt === questionPrompt))
-      ) || null
-    );
-  }, [question?.id, question?.promptEn, (question as any)?.prompt]);
-
-  // Robustly determine the correct option key across all possible schemas
+  // Robustly determine the correct option key strictly from server result (or test props)
   const resolvedCorrectKey = React.useMemo(() => {
     // 1. Server graded authoritative result
     if (serverGrading?.correct_option_key) {
       return serverGrading.correct_option_key;
     }
 
-    // 2. Direct option explicit isCorrect
+    // 2. Direct option explicit isCorrect (for synthetic test mocks)
     const directOpt = question.options?.find((o) => o.isCorrect === true || (o as any).is_correct === true);
     if (directOpt) {
       return directOpt.key;
     }
 
-    // 3. Question root level correct key or answer text
+    // 3. Question root level correct key or answer text (for synthetic test mocks)
     const rootKey = (question as any).correctAnswer || (question as any).correct_answer || (question as any).correctOptionKey || (question as any).correctKey;
     if (rootKey) {
       const byKey = question.options?.find((o) => o.key.toUpperCase() === String(rootKey).trim().toUpperCase());
@@ -76,30 +49,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       if (byText) return byText.key;
     }
 
-    // 4. Matched static question from curated banks
-    if (matchedStaticQ) {
-      const staticOpt = matchedStaticQ.options?.find((o: any) => o.isCorrect === true || o.is_correct === true);
-      if (staticOpt) return staticOpt.key;
-      const staticRootKey = (matchedStaticQ as any).correctAnswer || (matchedStaticQ as any).correct_answer;
-      if (staticRootKey) {
-        const byKey = question.options?.find((o) => o.key.toUpperCase() === String(staticRootKey).trim().toUpperCase());
-        if (byKey) return byKey.key;
-        const byText = question.options?.find((o) => o.text.trim().toLowerCase() === String(staticRootKey).trim().toLowerCase());
-        if (byText) return byText.key;
-      }
-    }
-
     return null;
-  }, [serverGrading?.correct_option_key, question, matchedStaticQ]);
+  }, [serverGrading?.correct_option_key, question]);
 
   const resolvedCorrectOption = React.useMemo(() => {
     if (!resolvedCorrectKey) return null;
-    return (
-      question.options?.find((o) => o.key.toUpperCase() === resolvedCorrectKey.toUpperCase()) ||
-      matchedStaticQ?.options?.find((o: any) => o.key.toUpperCase() === resolvedCorrectKey.toUpperCase()) ||
-      null
-    );
-  }, [resolvedCorrectKey, question.options, matchedStaticQ]);
+    return question.options?.find((o) => o.key.toUpperCase() === resolvedCorrectKey.toUpperCase()) || null;
+  }, [resolvedCorrectKey, question.options]);
 
   const getOptionCorrectness = (key: string): boolean => {
     if (resolvedCorrectKey) {
@@ -108,10 +64,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     const directOption = question.options?.find((o) => o.key === key);
     if (directOption && typeof directOption.isCorrect === 'boolean') {
       return directOption.isCorrect;
-    }
-    const staticOption = matchedStaticQ?.options?.find((o) => o.key === key);
-    if (staticOption && typeof staticOption.isCorrect === 'boolean') {
-      return staticOption.isCorrect;
     }
     return false;
   };
@@ -129,7 +81,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       setSubmitted(true);
       onAnswer(key, result.is_correct ?? false);
     } catch {
-      // Offline / guest mode / mock fallback: use option client data if present
+      // Offline / network fallback: evaluate against direct options if present
       const fallbackCorrect = getOptionCorrectness(key);
       setSubmitted(true);
       onAnswer(key, fallbackCorrect);
@@ -152,28 +104,24 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     evaluateAnswer(selectedOption);
   };
 
-  // Determine correctness and feedback either from server grading or local question fallback
+  // Determine correctness and feedback strictly from server grading
   const isServerGraded = serverGrading !== null;
   const isPending = serverGrading?.evaluation_status === 'pending';
   const isCorrect = isServerGraded
     ? Boolean(serverGrading.is_correct)
     : selectedOption ? getOptionCorrectness(selectedOption) : false;
 
-  const matchedOpt: any = matchedStaticQ?.options?.find((o: any) => o.key === selectedOption);
   const feedbackText = isServerGraded
     ? (serverGrading.feedback_th || '')
-    : (question.options?.find((o) => o.key === selectedOption)?.feedbackTh ||
-       matchedOpt?.feedbackTh ||
-       matchedOpt?.feedback ||
-       '');
+    : (question.options?.find((o) => o.key === selectedOption)?.feedbackTh || '');
 
   const explanationTh = isServerGraded
-    ? (serverGrading.explanation_th || question.explanationTh)
-    : (question.explanationTh || (matchedStaticQ as any)?.explanationTh || (matchedStaticQ as any)?.explanation || '');
+    ? (serverGrading.explanation_th || question.explanationTh || '')
+    : (question.explanationTh || '');
 
   const explanationEn = isServerGraded
-    ? (serverGrading.explanation_en || question.explanationEn)
-    : (question.explanationEn || (matchedStaticQ as any)?.explanationEn || (matchedStaticQ as any)?.explanation || '');
+    ? (serverGrading.explanation_en || question.explanationEn || '')
+    : (question.explanationEn || '');
 
   const isOptionCorrect = (optKey: string, optIsCorrectFallback?: boolean) => {
     return getOptionCorrectness(optKey);

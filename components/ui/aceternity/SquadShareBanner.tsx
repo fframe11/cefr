@@ -36,7 +36,7 @@ export const SquadShareBanner: React.FC<SquadShareBannerProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#23212C]/95 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white ${className}`}
     >
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
         {/* Left Side: Squad Status & Mission */}
@@ -46,7 +46,7 @@ export const SquadShareBanner: React.FC<SquadShareBannerProps> = ({
               <Users className="h-3.5 w-3.5 text-[#F59E0B]" />
               UNIVERSITY SQUAD
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-[#0B1224] px-2.5 py-0.5 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-[#1C1A24] px-2.5 py-0.5 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">
               {squadName} ({memberCount}/{maxMembers} คน)
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
@@ -70,7 +70,7 @@ export const SquadShareBanner: React.FC<SquadShareBannerProps> = ({
           <button
             type="button"
             onClick={handleCopyLink}
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#0B1224] px-4 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 shadow-sm transition-all hover:bg-slate-200 dark:hover:bg-white/5 active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#2C2937] px-4 py-2.5 text-sm font-semibold text-slate-800 dark:text-slate-200 shadow-sm transition-all hover:bg-slate-200 dark:hover:bg-white/5 active:scale-[0.98]"
           >
             {copied ? (
               <>

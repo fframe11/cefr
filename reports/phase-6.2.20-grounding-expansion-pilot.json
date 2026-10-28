@@ -1,7 +1,7 @@
 {
   "$schema": "https://glova.ai/schemas/vocabulary-grounding-expansion-pilot-v1.json",
   "phase": "PHASE_6_2_20_CONTROLLED_EXPANSION_PILOT",
-  "generated_at": "2026-10-05T06:24:58.450Z",
+  "generated_at": "2026-10-28T07:42:37.431Z",
   "sample_scope": {
     "total_pilot_units": 200,
     "a1_units": 100,

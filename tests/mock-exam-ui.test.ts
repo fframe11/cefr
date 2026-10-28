@@ -6,6 +6,7 @@ import {
   autosaveMockExamAnswer,
   submitMockExam,
   getMockExamResults,
+  resetDemoExam,
 } from '../src/lib/api/mock-exams';
 import { supabase } from '../src/lib/supabaseClient';
 
@@ -407,6 +408,79 @@ describe('Phase 4.8D: Mock Exam Engine UI Integration Suite', () => {
 
       const diff = Math.max(0, Math.floor((new Date(expiresAt).getTime() - now) / 1000));
       expect(diff).toBe(0);
+    });
+  });
+
+  describe('8. Demo Reset & Review Invariant Handling', () => {
+    it('should call POST /api/mock-exams/reset for clearing demo session state', async () => {
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ success: true, data: { success: true, message: 'Demo reset', is_demo: true } }),
+      });
+
+      const response = await resetDemoExam();
+      expect(response.success).toBe(true);
+      expect(response.is_demo).toBe(true);
+
+      const [url, init] = (global.fetch as any).mock.calls[0];
+      expect(url).toBe('/api/mock-exams/reset');
+      expect(init.method).toBe('POST');
+    });
+
+    it('should parse review_questions with explanations and correct keys post-submission', async () => {
+      const mockReviewResponse = {
+        attempt_id: 'demo-attempt-1',
+        session_token: 'demo-token-1',
+        exam: {
+          id: 'dddddddd-0000-4000-a000-000000000001',
+          exam_code: 'FCE',
+          name: 'B2 First (FCE) Cambridge Practice Exam',
+          target_cefr: 'B2',
+          passing_score: 60,
+          total_duration_minutes: 25,
+        },
+        status: 'submitted',
+        started_at: new Date().toISOString(),
+        submitted_at: new Date().toISOString(),
+        raw_score: 5,
+        total_marks: 5,
+        percentage_score: 100,
+        objective_score: 5,
+        objective_total_marks: 5,
+        objective_percentage: 100,
+        pending_subjective_marks: 0,
+        has_pending_subjective: false,
+        evaluation_status: 'completed',
+        is_passed: true,
+        estimated_cefr_level: 'B2',
+        estimated_cambridge_score: 165,
+        section_breakdown: {},
+        skill_breakdown: {},
+        is_official: false,
+        disclaimer: 'Lead Demo Examination Sandbox',
+        is_demo: true,
+        review_questions: [
+          {
+            question_id: 'dddddddd-0000-4000-a000-000000000011',
+            is_correct: true,
+            correct_option_key: 'A',
+            explanation_th: 'have an impact on เป็น collocation ที่ถูกต้อง',
+          },
+        ],
+      };
+
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ success: true, data: mockReviewResponse }),
+      });
+
+      const results = await getMockExamResults('demo-token-1');
+      expect(results.is_demo).toBe(true);
+      expect(results.review_questions).toHaveLength(1);
+      expect(results.review_questions?.[0].correct_option_key).toBe('A');
+      expect(results.review_questions?.[0].explanation_th).toContain('collocation');
     });
   });
 });

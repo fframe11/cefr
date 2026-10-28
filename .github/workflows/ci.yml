@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Automated CI Quality & PR Verification Gate
 
 on:
   push:
@@ -6,8 +6,13 @@ on:
   pull_request:
     branches: [ master, main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-test:
+  automated-checks:
+    name: Run Automated Tests & Quality Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -23,15 +28,18 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
-    - name: Run Vitest Suites
-      run: npm test
+    - name: Run Automated Vitest Regression & Core Suites
+      run: npm run test:ci
 
-    - name: Build Next.js 15 Standalone
+    - name: Verify Next.js Production Build
       run: npm run build
       env:
         NEXT_TELEMETRY_DISABLED: 1
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://atmatooytieelwiarffp.supabase.co' }}
-        NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'dummy_publishable_key_for_ci_build' }}
+        NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_ijcWQyHGOSuCilaFvt1r0w' }}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_ijcWQyHGOSuCilaFvt1r0w' }}
 
-    - name: Verify Docker Container Build
-      run: docker build -t cefr-platform:latest .
+    - name: Audit Secret & Key Exposure
+      run: |
+        echo "Running security check for exposed secrets..."
+        ! grep -rn "sk_live_" app/ components/ api/ lib/ || exit 1

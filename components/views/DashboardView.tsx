@@ -146,7 +146,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           ? `For CEFR ${progress.currentLevel}, focus on precision collocations and phrasal verbs in context rather than isolated definitions.`
           : `สำหรับระดับ CEFR ${progress.currentLevel} เทคนิคที่ดีที่สุดคือการจำคำศัพท์พร้อมประโยคบริบทและ Collocations เพื่อให้นำไปใช้จริงได้ทันทีในข้อสอบครับ`;
         action = {
-          label: isEn ? 'Explore Vocabulary Studio' : 'เปิดสตูดิโอคำศัพท์',
+          label: isEn ? 'Open Vocabulary Bank' : 'เปิดดูคลังคำศัพท์',
           view: 'vocabulary',
         };
       } else if (lowerQ.includes('สอบ') || lowerQ.includes('exam') || lowerQ.includes('cambridge')) {
@@ -398,7 +398,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   📚 คำศัพท์ประจำวัน
                 </h2>
                 <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-                  เรียนรู้ 10 คำศัพท์ Oxford & CEFR ความถี่สูง พร้อมตัวอย่างประโยคบริบทจริง
+                  เรียนรู้คำศัพท์ Oxford & CEFR ความถี่สูง พร้อมตัวอย่างประโยคบริบทจริง
                 </p>
               </div>
               <button
@@ -732,7 +732,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Path 1: Vocabulary */}
-              <div className="bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
+              <div className="bg-[#FAF8F3] dark:bg-[#23212C]/95 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="w-10 h-10 rounded-2xl bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52] dark:text-emerald-300 flex items-center justify-center">
                     <BookOpen className="w-5 h-5" />
@@ -751,20 +751,20 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     คลังคำศัพท์ CEFR
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    3,860 คำศัพท์ตามระดับ A1 ถึง C2 พร้อมตัวอย่าง
+                    คำศัพท์ตามระดับ A1 ถึง C2 พร้อมตัวอย่าง
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => onNavigate('vocabulary')}
-                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
+                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#2A2735] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
                 >
                   เปิดคลังคำศัพท์
                 </button>
               </div>
 
               {/* Path 2: Grammar */}
-              <div className="bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
+              <div className="bg-[#FAF8F3] dark:bg-[#23212C]/95 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="w-10 h-10 rounded-2xl bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200] dark:text-[#FFBA38] flex items-center justify-center">
                     <Sparkles className="w-5 h-5" />
@@ -789,14 +789,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('grammar')}
-                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
+                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#2A2735] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
                 >
                   ฝึกทำแบบฝึกหัด
                 </button>
               </div>
 
               {/* Path 3: Cambridge Mock Exams */}
-              <div className="bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
+              <div className="bg-[#FAF8F3] dark:bg-[#23212C]/95 backdrop-blur-md rounded-[24px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs flex flex-col justify-between space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="w-10 h-10 rounded-2xl bg-[#FEECEB] dark:bg-[#2C1416] text-[#FA5D5D] flex items-center justify-center">
                     <Target className="w-5 h-5" />
@@ -821,7 +821,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('mock-exam')}
-                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
+                  className="w-full py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#2A2735] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-center"
                 >
                   เข้าสู่คลังข้อสอบ
                 </button>
@@ -830,7 +830,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* E. Weakness List or Empty State */}
-          <div className="bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[26px] p-6 border border-[#EAE4D5] dark:border-white/10 shadow-xs space-y-4">
+          <div className="bg-[#FAF8F3] dark:bg-[#23212C]/95 backdrop-blur-md rounded-[26px] p-6 border border-[#EAE4D5] dark:border-white/10 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-black text-base text-slate-900 dark:text-white flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4 text-[#FA5D5D]" />
@@ -846,7 +846,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 {progress.weakTopics.map((topic) => (
                   <div
                     key={topic.tag}
-                    className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 gap-3"
+                    className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#2A2735] border border-[#EAE4D5] dark:border-white/10 gap-3"
                   >
                     <div>
                       <div className="font-extrabold text-sm text-slate-900 dark:text-white">
@@ -867,7 +867,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 ))}
               </div>
             ) : (
-              <div className="p-6 rounded-2xl bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-center space-y-2">
+              <div className="p-6 rounded-2xl bg-white dark:bg-[#2A2735] border border-[#EAE4D5] dark:border-white/10 text-center space-y-2">
                 <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto" />
                 <h4 className="font-bold text-sm text-slate-900 dark:text-white">
                   ยอดเยี่ยมมาก! ยังไม่พบจุดอ่อนที่ผิดซ้ำ
@@ -967,7 +967,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 Cambridge Vocabulary
               </h4>
               <p className="text-xs text-slate-900/80 mt-0.5">
-                3,860 คำศัพท์ตามระดับ A1-C2 พร้อมตัวอย่าง
+                คำศัพท์ตามระดับ A1-C2 พร้อมตัวอย่าง
               </p>
               <div className="flex items-center justify-between text-xs font-bold text-slate-900 mt-2 font-mono">
                 <span>คำที่เชี่ยวชาญแล้ว</span>
@@ -1031,7 +1031,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* D. Skill Mastery Progress Bars (6 Core Competencies with ARIA progressbar) */}
-          <div className="w-full bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md rounded-[26px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs space-y-4">
+          <div className="w-full bg-[#FAF8F3] dark:bg-[#23212C]/95 backdrop-blur-md rounded-[26px] p-5 border border-[#EAE4D5] dark:border-white/10 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-extrabold text-sm uppercase tracking-wider text-slate-800 dark:text-white flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-[#FA5D5D]" />

@@ -101,22 +101,22 @@ export const TactileButton: React.FC<TactileButtonProps> = ({
       xl: 'bg-[#10B981] hover:bg-[#059669] text-white shadow-[0_6px_0_0_#047857] active:shadow-none active:translate-y-[6px] border-t-2 border-white/30 font-black',
     },
     secondary: {
-      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#181620] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#181620] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#181620] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#181620] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
     },
     neutral: {
-      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
-      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#181620] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#181620] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#181620] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
+      xl: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#181620] active:shadow-none active:translate-y-[5.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)] font-bold',
     },
     surface: {
-      sm: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      md: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      lg: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
-      xl: 'bg-white hover:bg-slate-50 dark:bg-[#1C2430] dark:hover:bg-[#253040] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#0D1318] active:shadow-none active:translate-y-[5.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      sm: 'bg-white hover:bg-slate-50 dark:bg-[#23212C] dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#181620] active:shadow-none active:translate-y-[2.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      md: 'bg-white hover:bg-slate-50 dark:bg-[#23212C] dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#181620] active:shadow-none active:translate-y-[3.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      lg: 'bg-white hover:bg-slate-50 dark:bg-[#23212C] dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#181620] active:shadow-none active:translate-y-[4.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
+      xl: 'bg-white hover:bg-slate-50 dark:bg-[#23212C] dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_5.5px_0_0_#CBD5E1] dark:shadow-[0_5.5px_0_0_#181620] active:shadow-none active:translate-y-[5.5px] border border-slate-200 dark:border-[rgba(255,255,255,0.08)] font-semibold',
     },
     accent: {
       sm: 'bg-[#E98278] hover:bg-[#D97167] text-white shadow-[0_2.5px_0_0_#B8574E] active:shadow-none active:translate-y-[2.5px] border-t border-white/25 font-bold',
@@ -483,7 +483,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         setOpacity(0);
         if (onMouseLeave) onMouseLeave(e);
       }}
-      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#070B16]/90 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100 ${className}`}
+      className={`relative overflow-hidden rounded-[24px] bg-white dark:bg-[#23212C]/95 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100 ${className}`}
       {...props}
     >
       <div
@@ -644,7 +644,7 @@ export const TerrariaHotbarBar: React.FC<{
 
   return (
     <div
-      className={`p-3.5 sm:p-5 rounded-[24px] bg-gradient-to-b from-[#0F172A] via-[#0B1224] to-[#060A14] border border-slate-700/60 shadow-[0_12px_40px_rgba(0,0,0,0.5)] space-y-3.5 text-white ${className}`}
+      className={`p-3.5 sm:p-5 rounded-[24px] bg-gradient-to-b from-[#2C2937] via-[#23212C] to-[#181620] border border-slate-700/60 shadow-[0_12px_40px_rgba(0,0,0,0.5)] space-y-3.5 text-white ${className}`}
     >
       <div className="flex items-center justify-between gap-2 flex-wrap px-1">
         <div className="flex items-center gap-2">
@@ -768,7 +768,7 @@ export const VibeCoderSourceDock: React.FC<{ isEn?: boolean; className?: string 
 }) => {
   return (
     <div
-      className={`p-5 rounded-[24px] bg-gradient-to-r from-[#FA5D5D]/80 via-white to-rose-50/70 dark:from-[#0B1224] dark:via-[#0B1224] dark:to-[#101A30] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
+      className={`p-5 rounded-[24px] bg-gradient-to-r from-[#FA5D5D]/80 via-white to-rose-50/70 dark:from-[#23212C] dark:via-[#23212C] dark:to-[#2C2937] border border-slate-200/90 dark:border-[rgba(255,255,255,0.08)] shadow-xs space-y-4 text-slate-900 dark:text-[#EDEBE8] ${className}`}
     >
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-2">
@@ -876,7 +876,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
   return (
     <motion.div
       whileHover={shouldReduceMotion || status === 'locked' ? undefined : { y: -3, scale: 1.01 }}
-      className={`relative p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#101A30] border transition-all duration-200 group flex flex-col justify-between ${
+      className={`relative p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#23212C] border transition-all duration-200 group flex flex-col justify-between ${
         status === 'ready'
           ? 'border-[#FA5D5D] shadow-[0_8px_24px_-4px_rgba(33,85,230,0.15)] ring-1 ring-[#FA5D5D]/30'
           : status === 'completed'
@@ -911,7 +911,7 @@ export const GlovaCartridge: React.FC<GlovaCartridgeProps> = ({
         ) : (
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-black bg-slate-100 dark:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] border border-slate-200 dark:border-[rgba(255,255,255,0.08)]">
                 {level}
               </span>
               <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold border uppercase tracking-wider ${skillColorMap}`}>
@@ -1023,7 +1023,7 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
 }) => {
   return (
     <div
-      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0B1224] border-2 border-[#FA5D5D]/30 shadow-[0_12px_36px_-6px_rgba(250,93,93,0.1)] space-y-5 ${className}`}
+      className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#23212C] border-2 border-[#FA5D5D]/30 shadow-[0_12px_36px_-6px_rgba(250,93,93,0.1)] space-y-5 ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:bg-[#FA5D5D]/20 dark:text-[#FA5D5D] text-xs font-bold tracking-wide border border-[#FA5D5D]/30">
@@ -1035,7 +1035,7 @@ export const GlovaNextMove: React.FC<GlovaNextMoveProps> = ({
             <Clock className="w-3.5 h-3.5 text-[#FFE600]" />
             <span>{estimatedMinutes} min</span>
           </span>
-          <span className="px-2.5 py-0.5 rounded-full bg-[#FFE600] text-[#0B1224] font-bold text-xs">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#FFE600] text-[#181620] font-bold text-xs">
             +{xpReward} XP
           </span>
         </div>

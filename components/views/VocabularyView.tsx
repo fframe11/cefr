@@ -401,7 +401,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                   Vocabulary Studio
                 </span>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold">
-                  ACTIVE VOCABULARY LAB // 3,860 WORDS
+                  ACTIVE VOCABULARY LAB
                 </span>
               </div>
             </div>
@@ -466,7 +466,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 aria-label={isEn ? 'Exam & Universe' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์'}
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-                <span>{isEn ? 'Exam & Universe (10k+)' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์ (10k+)'}</span>
+                <span>{isEn ? 'Exam & Universe' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์'}</span>
               </button>
             </div>
           </div>
@@ -543,7 +543,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-              <span>{isEn ? 'Exam & Universe (10k+)' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์ (10k+)'}</span>
+              <span>{isEn ? 'Exam & Universe' : 'คลังคำศัพท์สอบ & จักรวาลศัพท์'}</span>
             </button>
           </div>
 
@@ -564,8 +564,8 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </h1>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl font-sans">
           {isEn
-            ? 'Study 3,860 core verified vocabulary units, explore 10,021 attested exam and daily life words for CEFR, IELTS, TOEIC, and TOEFL, and review with spaced repetition.'
-            : 'เรียนรู้คำศัพท์คัดสรร 3,860 คำ พร้อมคลังคำศัพท์สอบมาตรฐาน CEFR, IELTS, TOEIC, TOEFL และชีวิตประจำวันรวม 10,021 คำ พร้อมระบบทดสอบและจำแบบ Spaced Repetition'}
+            ? 'Study core verified vocabulary units, explore attested exam and daily life words for CEFR, IELTS, TOEIC, and TOEFL, and review with spaced repetition.'
+            : 'เรียนรู้คำศัพท์คัดสรรพร้อมคลังคำศัพท์สอบมาตรฐาน CEFR, IELTS, TOEIC, TOEFL และชีวิตประจำวัน พร้อมระบบทดสอบและจำแบบ Spaced Repetition'}
         </p>
       </div>
 
@@ -578,11 +578,11 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
               <span>{isEn ? 'Focus:' : 'เป้าหมาย:'}</span>
             </span>
             {[
-              { id: 'ALL', labelTh: 'รวมคำศัพท์ทั้งหมด (10,021)', labelEn: 'All Vocab (10,021)', icon: '🌟' },
-              { id: 'DAILY', labelTh: 'ชีวิตประจำวัน (3,154)', labelEn: 'Daily Life (3,154)', icon: '🏠' },
-              { id: 'IELTS', labelTh: 'สอบ IELTS (7,510)', labelEn: 'IELTS Exam (7,510)', icon: '🎓' },
-              { id: 'TOEIC', labelTh: 'สอบ TOEIC (6,994)', labelEn: 'TOEIC Exam (6,994)', icon: '💼' },
-              { id: 'TOEFL', labelTh: 'สอบ TOEFL (5,678)', labelEn: 'TOEFL Exam (5,678)', icon: '🏛️' },
+              { id: 'ALL', labelTh: 'รวมคำศัพท์ทั้งหมด', labelEn: 'All Vocab', icon: '🌟' },
+              { id: 'DAILY', labelTh: 'ชีวิตประจำวัน', labelEn: 'Daily Life', icon: '🏠' },
+              { id: 'IELTS', labelTh: 'สอบ IELTS', labelEn: 'IELTS Exam', icon: '🎓' },
+              { id: 'TOEIC', labelTh: 'สอบ TOEIC', labelEn: 'TOEIC Exam', icon: '💼' },
+              { id: 'TOEFL', labelTh: 'สอบ TOEFL', labelEn: 'TOEFL Exam', icon: '🏛️' },
             ].map((tab) => (
               <button
                 key={tab.id}

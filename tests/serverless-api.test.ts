@@ -506,14 +506,18 @@ describe('Serverless API: Secure Question API (GET /api/questions)', () => {
     expect(q.correct_answer_text).toBeUndefined();
     expect(q.explanation_th).toBeUndefined();
     expect(q.explanation_en).toBeUndefined();
+    expect((q as any).explanationTh).toBeUndefined();
+    expect((q as any).explanationEn).toBeUndefined();
 
-    // Verify options are present without is_correct or feedback
+    // Verify options are present without is_correct, isCorrect, feedback_th, or feedbackTh
     expect(q.options.length).toBe(2);
     for (const opt of q.options) {
       expect(opt.key).toBeDefined();
       expect(opt.text).toBeDefined();
       expect(opt.is_correct).toBeUndefined();
+      expect((opt as any).isCorrect).toBeUndefined();
       expect(opt.feedback_th).toBeUndefined();
+      expect((opt as any).feedbackTh).toBeUndefined();
     }
   });
 });

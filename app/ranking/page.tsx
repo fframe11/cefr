@@ -35,7 +35,7 @@ const TIER_COLORS: Record<RankTier, { bg: string; text: string; border: string }
 function RankingContent() {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
-  const { user } = useAuth();
+  const { status, user } = useAuth();
   const userId = user?.id || 'guest_user';
   const searchParams = useSearchParams();
 

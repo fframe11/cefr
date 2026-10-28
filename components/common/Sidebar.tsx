@@ -21,8 +21,10 @@ import {
   Users,
   GraduationCap,
   ShieldCheck,
+  Lock,
 } from 'lucide-react';
 import { GlovaLogo } from '../ui/GlovaLogo';
+import { useToast } from './Toast';
 
 export type NavView =
   | 'dashboard'
@@ -63,27 +65,28 @@ export interface NavItem {
   badge?: string;
   badgeStyle?: 'gold' | 'mint' | 'coral' | 'indigo';
   section: 'learn' | 'arena' | 'practice' | 'progress';
+  isLocked?: boolean;
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'dashboard', labelEn: 'Dashboard', labelTh: 'หน้าหลักการเรียน', icon: LayoutDashboard, section: 'learn' },
-  { id: 'vocabulary', labelEn: 'Vocabulary Studio', labelTh: 'คลังคำศัพท์ Oxford & Scale', icon: BookOpen, badge: '3.8k + 121k', badgeStyle: 'gold', section: 'learn' },
-  { id: 'collocations', labelEn: 'Collocations Studio', labelTh: 'คลัง 200 Collocations', icon: BookOpen, badge: '200 Items', badgeStyle: 'coral', section: 'learn' },
-  { id: 'grammar', labelEn: 'Grammar Studio', labelTh: 'ไวยากรณ์โครงสร้าง', icon: Sparkles, section: 'learn' },
-  { id: 'cheatSheets', labelEn: 'CEFR Cheat Sheets', labelTh: 'สูตรลัด High-Yield', icon: BookOpen, badge: 'High-Yield', badgeStyle: 'mint', section: 'learn' },
-  { id: 'reading', labelEn: 'Reading Studio', labelTh: 'การอ่านเชิงวิชาการ', icon: BookMarked, section: 'learn' },
-  { id: 'listening', labelEn: 'Listening Studio', labelTh: 'การฟังสำเนียงจริง', icon: Headphones, section: 'learn' },
-  { id: 'writing', labelEn: 'Writing Studio', labelTh: 'การเขียนและเรียบเรียง', icon: PenTool, section: 'learn' },
-  { id: 'speaking', labelEn: 'Speaking Studio', labelTh: 'การพูดและออกเสียง', icon: Mic, section: 'learn' },
-  { id: 'compete', labelEn: 'Ranked Arena 4s', labelTh: 'สมรภูมิประลองคำศัพท์', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'arena' },
-  { id: 'ranking', labelEn: 'University League', labelTh: 'ตารางคะแนนลีกมหาวิทยาลัย', icon: Trophy, badge: 'Top 3', badgeStyle: 'gold', section: 'arena' },
-  { id: 'social', labelEn: 'Study Circles', labelTh: 'กลุ่มเพื่อนร่วมเรียน', icon: Users, badge: 'Live', badgeStyle: 'mint', section: 'arena' },
-  { id: 'achievements', labelEn: 'Achievements & Trophies', labelTh: 'เกียรติยศและเหรียญรางวัล', icon: Award, section: 'arena' },
-  { id: 'assessment', labelEn: 'Diagnostic Test', labelTh: 'วัดระดับ CEFR แม่นยำ', icon: ClipboardCheck, badge: 'A1-C2', badgeStyle: 'indigo', section: 'practice' },
-  { id: 'ooptPractice', labelEn: 'Oxford OOPT Practice', labelTh: 'ฝึกข้อสอบ Oxford OOPT', icon: GraduationCap, badge: 'Part 2 & 3', badgeStyle: 'gold', section: 'practice' },
-  { id: 'mockExam', labelEn: 'Cambridge Mock Exams', labelTh: 'สอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
-  { id: 'analytics', labelEn: 'Skill Analytics', labelTh: 'วิเคราะห์ทักษะและจุดอ่อน', icon: BarChart2, section: 'progress' },
-  { id: 'profile', labelEn: 'User Profile', labelTh: 'โปรไฟล์ของฉัน', icon: User, section: 'progress' },
+  { id: 'dashboard', labelEn: 'Overview', labelTh: 'หน้าหลัก', icon: LayoutDashboard, section: 'learn' },
+  { id: 'vocabulary', labelEn: 'Vocabulary', labelTh: 'คลังคำศัพท์', icon: BookOpen, section: 'learn' },
+  { id: 'collocations', labelEn: 'Collocations', labelTh: 'กลุ่มคำสัมพันธ์', icon: BookOpen, section: 'learn' },
+  { id: 'grammar', labelEn: 'Grammar', labelTh: 'หลักไวยากรณ์', icon: Sparkles, section: 'learn' },
+  { id: 'cheatSheets', labelEn: 'Grammar Reference', labelTh: 'สรุปหลักไวยากรณ์สำคัญ', icon: BookOpen, section: 'learn' },
+  { id: 'reading', labelEn: 'Reading Comprehension', labelTh: 'ทักษะการอ่าน', icon: BookMarked, section: 'learn' },
+  { id: 'listening', labelEn: 'Listening Comprehension', labelTh: 'ทักษะการฟัง', icon: Headphones, section: 'learn' },
+  { id: 'writing', labelEn: 'Writing Skills', labelTh: 'ทักษะการเขียน', icon: PenTool, section: 'learn' },
+  { id: 'speaking', labelEn: 'Speaking & Phonetics', labelTh: 'ทักษะการพูด', icon: Mic, section: 'learn' },
+  { id: 'compete', labelEn: 'Vocabulary Challenge', labelTh: 'แบบฝึกประลองคำศัพท์', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'arena' },
+  { id: 'ranking', labelEn: 'Leaderboard', labelTh: 'ตารางอันดับคะแนน', icon: Trophy, badge: 'Top 3', badgeStyle: 'gold', section: 'arena' },
+  { id: 'social', labelEn: 'Study Groups', labelTh: 'กลุ่มการเรียนรู้ร่วมกัน', icon: Users, badge: 'Live', badgeStyle: 'mint', section: 'arena' },
+  { id: 'achievements', labelEn: 'Achievements & Records', labelTh: 'บันทึกความสำเร็จและรางวัล', icon: Award, section: 'arena' },
+  { id: 'assessment', labelEn: 'Diagnostic Assessment', labelTh: 'แบบทดสอบวัดระดับ', icon: ClipboardCheck, section: 'practice' },
+  { id: 'ooptPractice', labelEn: 'Oxford OOPT Practice', labelTh: 'แบบฝึกหัดข้อสอบ Oxford', icon: GraduationCap, section: 'practice' },
+  { id: 'mockExam', labelEn: 'Cambridge Mock Exams', labelTh: 'ข้อสอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
+  { id: 'analytics', labelEn: 'Learning Analytics', labelTh: 'การวิเคราะห์ผลการเรียนรู้', icon: BarChart2, section: 'progress' },
+  { id: 'profile', labelEn: 'Learner Profile', labelTh: 'ข้อมูลผู้เรียน', icon: User, section: 'progress' },
 ];
 
 interface NavSectionDef {
@@ -93,10 +96,10 @@ interface NavSectionDef {
 }
 
 const NAV_SECTIONS: NavSectionDef[] = [
-  { id: 'learn', labelEn: 'LEARNING STUDIOS', labelTh: 'สตูดิโอการเรียนรู้' },
-  { id: 'practice', labelEn: 'EXAMS & CERTIFICATION', labelTh: 'สอบและวัดระดับ' },
-  { id: 'progress', labelEn: 'PROGRESS & PROFILE', labelTh: 'ความก้าวหน้าและสถิติ' },
-  { id: 'arena', labelEn: 'RANKED & COMMUNITY', labelTh: 'แรงก์และคอมมูนิตี้' },
+  { id: 'learn', labelEn: 'LANGUAGE SKILLS', labelTh: 'หมวดทักษะภาษาอังกฤษ' },
+  { id: 'practice', labelEn: 'TESTING & ASSESSMENT', labelTh: 'การทดสอบและประเมินผล' },
+  { id: 'progress', labelEn: 'PROGRESS & ANALYTICS', labelTh: 'รายงานผลการเรียนรู้' },
+  { id: 'arena', labelEn: 'ACTIVITIES & COMMUNITY', labelTh: 'กิจกรรมและกลุ่มการเรียนรู้' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -109,6 +112,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const { language } = useTranslation();
   const isEn = language === 'en';
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (isMobileOpen) {
@@ -141,6 +145,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             const isActive = currentView === item.id;
             const Icon = item.icon;
             const itemLabel = isEn ? item.labelEn : item.labelTh;
+            const isLocked = Boolean(item.isLocked);
 
             let badgeClasses = 'bg-amber-500/15 text-amber-700 dark:bg-[#F59E0B]/15 dark:text-[#FDE68A] border border-amber-500/30 dark:border-[#F59E0B]/30';
             if (item.badgeStyle === 'gold') {
@@ -156,34 +161,60 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => {
+                  if (isLocked) {
+                    showToast(
+                      isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
+                      isEn
+                        ? 'Currently unavailable. Coming soon.'
+                        : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
+                      'info'
+                    );
+                    return;
+                  }
                   onSelectView(item.id);
                   if (onItemClick) onItemClick();
                 }}
-                title={collapsedMode ? itemLabel : undefined}
+                title={collapsedMode ? `${itemLabel}${isLocked ? ` (${isEn ? 'Locked' : 'ล็อก'})` : ''}` : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 ${
+                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
+                } ${
+                  isLocked ? 'opacity-75 hover:opacity-95' : ''
                 } ${
                   isActive
                     ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
                     : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
                 }`}
               >
-                <Icon
-                  className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
-                  }`}
-                />
+                <div className="relative shrink-0">
+                  <Icon
+                    className={`w-4 h-4 transition-transform group-hover:scale-110 ${
+                      isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
+                    }`}
+                  />
+                  {collapsedMode && isLocked && (
+                    <Lock className="w-2.5 h-2.5 text-slate-500 dark:text-slate-400 absolute -top-1 -right-1" />
+                  )}
+                </div>
                 {!collapsedMode && (
                   <span className={`truncate text-xs font-display flex-1 text-left ${isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white'}`}>
                     {itemLabel}
                   </span>
                 )}
 
-                {!collapsedMode && item.badge && (
+                {!collapsedMode && isLocked && (
+                  <span
+                    className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-400 border border-slate-200 dark:border-white/10"
+                  >
+                    <Lock className="w-2.5 h-2.5 text-slate-400 dark:text-slate-500" />
+                    <span>{isEn ? 'Locked' : 'ล็อก'}</span>
+                  </span>
+                )}
+
+                {!collapsedMode && !isLocked && item.badge && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
                       isActive ? 'bg-[#FA5D5D] text-white dark:bg-[#FA5D5D] dark:text-white font-black shadow-xs' : badgeClasses
@@ -202,9 +233,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <>
-      {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) */}
+      {/* 1. Desktop / Tablet Collapsible Sidebar Spacer to preserve flex flow for <main> */}
+      <div
+        className={`hidden md:block shrink-0 transition-all duration-300 ease-in-out pointer-events-none ${
+          isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
+        }`}
+        aria-hidden="true"
+      />
+
+      {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) - Fixed to bottom edge */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/70 dark:border-white/10 bg-white/75 dark:bg-[#070B16]/85 backdrop-blur-2xl shrink-0 select-none py-3.5 px-3 sticky top-16 left-0 h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
+        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#181620]/95 backdrop-blur-2xl shrink-0 select-none py-3.5 px-3 fixed top-16 bottom-0 left-0 z-30 overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
           isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
@@ -215,7 +254,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#FA5D5D] shadow-[0_0_8px_#FA5D5D]" />
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono select-none">
-                {isEn ? 'Studio Suite' : 'สตูดิโอการเรียนรู้'}
+                {isEn ? 'English Curriculum' : 'หลักสูตรภาษาอังกฤษ'}
               </span>
             </div>
           )}
@@ -245,7 +284,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Footer Info Box (Only when expanded) */}
         {!isCollapsed && (
           <div className="pt-3.5 border-t border-slate-200/70 dark:border-white/10 mt-auto">
-            <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#0B1224]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
+            <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#23212C]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
               <div className="flex items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#FA5D5D]" />
@@ -258,7 +297,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono leading-snug">
-                3,860 Oxford Lexicon &bull; 6 Core Skills
+                Oxford Lexicon &bull; 6 Core Skills
               </p>
             </div>
           </div>
@@ -276,7 +315,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white/95 dark:bg-[#070B16]/98 backdrop-blur-xl border-r border-slate-200/80 dark:border-white/10 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-slate-100"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] bg-white/95 dark:bg-[#181620]/98 backdrop-blur-xl border-r border-slate-200/80 dark:border-white/10 p-4 flex flex-col shadow-2xl animate-in slide-in-from-left duration-200 overflow-y-auto text-slate-900 dark:text-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}

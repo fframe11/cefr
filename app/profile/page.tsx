@@ -257,7 +257,7 @@ export default function ProfilePage() {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8 pb-24 font-sans text-foreground space-y-6">
       {/* EduMaster Sub-Nav Bar */}
-      <nav className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+      <nav className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-[28px] bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md border border-[#EAE4D5] dark:border-white/10 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
             <Sparkles className="w-5 h-5 text-white" />
@@ -292,7 +292,7 @@ export default function ProfilePage() {
         {/* ========================================================= */}
         <div className="lg:col-span-8 space-y-6">
           {/* 1. HERO PROFILE IDENTITY CARD */}
-          <section className="relative overflow-hidden rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
+          <section className="relative overflow-hidden rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               {/* Avatar with Camera/Edit Overlay */}
               <div className="relative group shrink-0">
@@ -309,7 +309,7 @@ export default function ProfilePage() {
                   type="button"
                   onClick={() => setAvatarModalOpen(true)}
                   aria-label="เปลี่ยนรูปโปรไฟล์"
-                  className="absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white shadow-sm ring-2 ring-white dark:ring-[#070B16] transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+                  className="absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#FA5D5D] hover:bg-[#ff4747] text-white shadow-sm ring-2 ring-white dark:ring-[#1D1B26] transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                   title="คลิกเพื่ออัปโหลดหรือเปลี่ยนรูปโปรไฟล์"
                 >
                   <Camera className="h-4 w-4" />
@@ -326,7 +326,7 @@ export default function ProfilePage() {
                         type="text"
                         value={displayNameInput}
                         onChange={(e) => setDisplayNameInput(e.target.value)}
-                        className="rounded-full border border-[#FA5D5D] bg-white dark:bg-[#0B1224] px-4 py-1.5 text-lg font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 shadow-xs"
+                        className="rounded-full border border-[#FA5D5D] bg-white dark:bg-[#23212C] px-4 py-1.5 text-lg font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 shadow-xs"
                         autoFocus
                       />
                       <button
@@ -393,7 +393,7 @@ export default function ProfilePage() {
 
                 {/* Target Exam & Rank Ribbon */}
                 <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-xs">
                     <Target className="h-3.5 w-3.5 text-[#FA5D5D]" />
                     เป้าหมาย: {selectedExam} (CEFR {CAMBRIDGE_EXAMS.find((e) => e.code === selectedExam)?.cefr || 'B2'})
                   </span>
@@ -414,7 +414,7 @@ export default function ProfilePage() {
 
             <div className="grid grid-cols-2 gap-3.5">
               {/* Stat 1: Day Streak */}
-              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-4 sm:p-5 shadow-xs">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FEF5E5] dark:bg-[#2B2010] text-[#D98200]">
                   <Flame className="h-6 w-6 fill-[#D98200]" />
                 </div>
@@ -427,7 +427,7 @@ export default function ProfilePage() {
               </div>
 
               {/* Stat 2: Total XP */}
-              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-4 sm:p-5 shadow-xs">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
                   <Zap className="h-6 w-6 fill-[#FA5D5D]" />
                 </div>
@@ -440,7 +440,7 @@ export default function ProfilePage() {
               </div>
 
               {/* Stat 3: Current League / MMR */}
-              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-4 sm:p-5 shadow-xs">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E3F6ED] dark:bg-[#102B22] text-[#1E7E52]">
                   <Award className="h-6 w-6" />
                 </div>
@@ -455,7 +455,7 @@ export default function ProfilePage() {
               </div>
 
               {/* Stat 4: Top 3 Finishes */}
-              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+              <div className="flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-4 sm:p-5 shadow-xs">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">
                   <Trophy className="h-6 w-6" />
                 </div>
@@ -466,7 +466,7 @@ export default function ProfilePage() {
               </div>
 
               {/* Stat 5: Cambridge Estimated Score & Skill Breakdown */}
-              <div className="col-span-2 flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-4 sm:p-5 shadow-xs">
+              <div className="col-span-2 flex items-center gap-3.5 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-4 sm:p-5 shadow-xs">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
                   <Target className="h-6 w-6" />
                 </div>
@@ -493,7 +493,7 @@ export default function ProfilePage() {
           </section>
 
           {/* 3. Achievements List */}
-          <section className="p-6 sm:p-8 space-y-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md shadow-sm">
+          <section className="p-6 sm:p-8 space-y-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md shadow-sm">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">ความสำเร็จ</h2>
               <Link
@@ -505,7 +505,7 @@ export default function ProfilePage() {
               </Link>
             </div>
 
-            <div className="divide-y divide-[#EAE4D5] dark:divide-white/10 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] overflow-hidden shadow-xs">
+            <div className="divide-y divide-[#EAE4D5] dark:divide-white/10 rounded-[22px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] overflow-hidden shadow-xs">
               {/* Achievement 1: Fire Starter */}
               <div className="flex items-center gap-4 p-5 hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FEF5E5] text-[#D98200] dark:bg-[#2B2010]">
@@ -575,7 +575,7 @@ export default function ProfilePage() {
           </section>
 
           {/* 4. Learning Goals */}
-          <section className="p-6 sm:p-8 space-y-5 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md shadow-sm">
+          <section className="p-6 sm:p-8 space-y-5 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md shadow-sm">
             <div className="flex items-center justify-between border-b border-[#EAE4D5] dark:border-white/10 pb-3">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] flex items-center justify-center">
@@ -602,7 +602,7 @@ export default function ProfilePage() {
                       className={`p-3.5 rounded-[20px] border text-center transition-all flex flex-col items-center justify-center gap-1 shadow-xs ${
                         isSelected
                           ? 'border-[#FA5D5D] bg-[#FA5D5D] text-white font-bold shadow-xs'
-                          : 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] text-slate-800 dark:text-slate-200 hover:border-slate-300'
+                          : 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] text-slate-800 dark:text-slate-200 hover:border-slate-300'
                       }`}
                     >
                       <span className="text-xs font-bold">{exam.name}</span>
@@ -631,7 +631,7 @@ export default function ProfilePage() {
                       className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                         isSelected
                           ? 'bg-[#FA5D5D] text-white shadow-xs'
-                          : 'bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5'
+                          : 'bg-white dark:bg-[#23212C] border border-[#EAE4D5] dark:border-white/10 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5'
                       }`}
                     >
                       {mins} นาที
@@ -665,7 +665,7 @@ export default function ProfilePage() {
         {/* ========================================================= */}
         <div className="lg:col-span-4 space-y-6">
           {/* 1. FRIENDS / SOCIAL TABS CARD */}
-          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md overflow-hidden shadow-sm">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md overflow-hidden shadow-sm">
             {/* Tab Header */}
             <div className="grid grid-cols-2 border-b border-[#EAE4D5] dark:border-white/10 text-center font-bold text-xs">
               <button
@@ -705,7 +705,7 @@ export default function ProfilePage() {
               {/* Study Buddies List */}
               <div className="space-y-2.5">
                 {studyBuddies.map((buddy, idx) => (
-                  <div key={`buddy_${idx}`} className="flex items-center justify-between p-3 rounded-[18px] bg-white dark:bg-[#0B1224] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+                  <div key={`buddy_${idx}`} className="flex items-center justify-between p-3 rounded-[18px] bg-white dark:bg-[#23212C] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                     <div className="flex items-center gap-3 min-w-0">
                       <GlovaAvatarWithFrame
                         avatarUrl={buddy.avatar}
@@ -742,7 +742,7 @@ export default function ProfilePage() {
           </section>
 
           {/* 2. ADD FRIENDS ACTION CARD */}
-          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
             <h3 className="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
               เพิ่มเพื่อน
             </h3>
@@ -750,7 +750,7 @@ export default function ProfilePage() {
             <div className="space-y-2">
               <Link
                 href="/social?tab=search"
-                className="flex items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors shadow-xs"
+                className="flex items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors shadow-xs"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] dark:text-[#FA5D5D]">
@@ -764,7 +764,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={handleCopyInvite}
-                className="flex w-full items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors text-left shadow-xs"
+                className="flex w-full items-center justify-between rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-3.5 text-xs font-bold text-slate-800 dark:text-slate-200 hover:border-[#FA5D5D] transition-colors text-left shadow-xs"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FEF5E5] text-[#D98200] dark:bg-[#2B2010]">
@@ -789,7 +789,7 @@ export default function ProfilePage() {
           </section>
 
           {/* 3. ACCOUNT ACTIONS & LOGOUT */}
-          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
+          <section className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-6 shadow-sm space-y-3">
             <h3 className="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">
               บัญชีผู้ใช้
             </h3>

@@ -55,7 +55,7 @@ import { SquadShareBanner, RankBannerCard } from '@/components/ui/aceternity';
 export default function CompetePage() {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
-  const { user } = useAuth();
+  const { status, user } = useAuth();
   const userId = user?.id || 'user_current';
 
   // Main Compete Mode: 'ranked' vs 'quick'
@@ -281,7 +281,7 @@ export default function CompetePage() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6 pb-16">
       {/* 1. TOP MODE SWITCHER: RANKED VS QUICK PLAY */}
-      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-4 sm:p-5 shadow-sm">
+      <section className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-4 sm:p-5 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-sm shrink-0">
             <Swords className="w-5 h-5 text-white" />
@@ -299,7 +299,7 @@ export default function CompetePage() {
         </div>
 
         {/* Binary Mode Switch */}
-        <div className="flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-1.5 self-start sm:self-auto shadow-xs">
+        <div className="flex items-center gap-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-1.5 self-start sm:self-auto shadow-xs">
           <button
             type="button"
             onClick={() => setCompeteMode('ranked')}
@@ -384,7 +384,7 @@ export default function CompetePage() {
         <section className="space-y-6">
           {/* Quick Play Lobby Card */}
           {quickGameState === 'idle' && (
-            <div className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-8 sm:p-10 text-center shadow-sm">
+            <div className="rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-8 sm:p-10 text-center shadow-sm">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D] shadow-xs">
                 <Zap className="h-7 w-7" />
               </div>
@@ -417,7 +417,7 @@ export default function CompetePage() {
 
           {/* Quick Play Match Active */}
           {(quickGameState === 'playing' || quickGameState === 'feedback') && quickQuestion && (
-            <div className="relative mx-auto max-w-2xl rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
+            <div className="relative mx-auto max-w-2xl rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-6 sm:p-8 shadow-sm">
               {/* Quick Play Header */}
               <div className="flex items-center justify-between border-b border-[#EAE4D5] dark:border-white/10 pb-4">
                 <div className="flex items-center gap-2">
@@ -463,7 +463,7 @@ export default function CompetePage() {
               {/* Options */}
               <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {quickQuestion.options.map((opt, idx) => {
-                  let style = 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] hover:border-[#FA5D5D] text-slate-800 dark:text-slate-200';
+                  let style = 'border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] hover:border-[#FA5D5D] text-slate-800 dark:text-slate-200';
                   if (quickGameState === 'feedback') {
                     if (opt === quickFeedbackResult?.correctAnswerText) {
                       style = 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-800 dark:text-emerald-200 font-bold';
@@ -495,7 +495,7 @@ export default function CompetePage() {
 
           {/* Quick Play Summary */}
           {quickGameState === 'finished' && quickSummary && (
-            <div className="mx-auto max-w-lg rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#070B16]/90 backdrop-blur-md p-8 text-center shadow-sm">
+            <div className="mx-auto max-w-lg rounded-[28px] border border-[#EAE4D5] dark:border-white/10 bg-[#FAF8F3] dark:bg-[#1D1B26]/90 backdrop-blur-md p-8 text-center shadow-sm">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#FA5D5D]/10 text-[#FA5D5D]">
                 <Trophy className="h-7 w-7" />
               </div>
@@ -503,15 +503,15 @@ export default function CompetePage() {
               <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">คุณทำคะแนนได้ {quickSummary.finalScore} XP ในแมตช์นี้</p>
 
               <div className="mt-5 grid grid-cols-3 gap-2">
-                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-3.5 shadow-xs">
                   <span className="text-[10px] font-mono text-slate-400">คะแนนรวม</span>
                   <div className="mt-1 text-sm font-mono font-black text-slate-900 dark:text-white">{quickSummary.finalScore} XP</div>
                 </div>
-                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-3.5 shadow-xs">
                   <span className="text-[10px] font-mono text-slate-400">ความแม่นยำ</span>
                   <div className="mt-1 text-sm font-mono font-black text-[#FA5D5D]">{quickSummary.accuracyPercent}%</div>
                 </div>
-                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] p-3.5 shadow-xs">
+                <div className="rounded-[20px] border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] p-3.5 shadow-xs">
                   <span className="text-[10px] font-mono text-slate-400">คอมโบสูงสุด</span>
                   <div className="mt-1 text-sm font-mono font-black text-amber-500">{quickSummary.maxStreak}</div>
                 </div>
@@ -528,7 +528,7 @@ export default function CompetePage() {
                 <button
                   type="button"
                   onClick={() => setCompeteMode('ranked')}
-                  className="w-full rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#0B1224] py-3 text-xs font-bold text-slate-800 dark:text-slate-200 transition-all hover:bg-slate-50 dark:hover:bg-white/5 shadow-xs"
+                  className="w-full rounded-full border border-[#EAE4D5] dark:border-white/10 bg-white dark:bg-[#23212C] py-3 text-xs font-bold text-slate-800 dark:text-slate-200 transition-all hover:bg-slate-50 dark:hover:bg-white/5 shadow-xs"
                 >
                   {isEn ? 'Try Ranked Battle' : 'ลองเข้าเล่นโหมดจัดอันดับ Ranked Battle'}
                 </button>

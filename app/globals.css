@@ -38,28 +38,28 @@
   }
 
   .dark {
-    /* Glova Dark Mode — BorisWick Esports Gaming Obsidian Canvas, High Contrast Gold/Cyan */
-    --background: 222 47% 4%;     /* #030712 Deep Cosmic Abyss */
+    /* Cosmic Dark Theme (dyslove.design reference: HEX #23212C, RGB 35, 33, 44, CMYK 20, 25, 0, 83) */
+    --background: 251 18% 11%;    /* #181620 Deep Cosmic Space Canvas */
     --foreground: 210 40% 98%;    /* #F8FAFC High-Contrast Crisp White Text */
 
-    --card: 224 50% 6%;          /* #070B16 Obsidian Tactical Deck */
+    --card: 251 14% 15%;          /* #23212C Cosmic Card (RGB 35, 33, 44) */
     --card-foreground: 210 40% 98%;
 
-    --primary: 38 92% 50%;        /* #F59E0B Esports Amber Gold */
+    --primary: 38 92% 50%;        /* #F59E0B Starlight Amber Gold */
     --primary-foreground: 222 47% 4%;
 
-    --secondary: 222 47% 9%;      /* #0B1224 Inset Tactical Plate */
+    --secondary: 253 15% 19%;     /* #2C2937 Cosmic Elevated Plate */
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 224 50% 5%;          /* #050811 Recessed Gaming Floor */
-    --muted-foreground: 215 20% 65%; /* #94A3B8 Secondary Telemetry */
+    --muted: 252 16% 12%;          /* #1C1A24 Cosmic Recessed Inset */
+    --muted-foreground: 255 10% 65%; /* #A19BAE Cosmic Starlight Muted Text */
 
-    --accent: 38 92% 50%;         /* #F59E0B Esports Amber Gold */
+    --accent: 38 92% 50%;         /* #F59E0B Starlight Gold */
     --accent-foreground: 222 47% 4%;
 
-    --border: 220 20% 18%;        /* rgba(255, 255, 255, 0.10) */
-    --input: 220 20% 18%;
-    --ring: 38 92% 50%;
+    --border: 251 12% 23%;        /* #353243 / rgba(255, 255, 255, 0.10) */
+    --input: 251 12% 23%;
+    --ring: 251 14% 35%;
   }
 
   * {
@@ -227,7 +227,7 @@
   transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 .dark .tactile-key {
-  box-shadow: 0 3px 0 0 #0D1318, 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 0 0 #181620, 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .tactile-key:active {
@@ -235,7 +235,7 @@
   box-shadow: 0 1px 0 0 #CBD5E1, 0 2px 4px rgba(15, 23, 42, 0.08);
 }
 .dark .tactile-key:active {
-  box-shadow: 0 1px 0 0 #0D1318, 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 0 #181620, 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* =========================================================================
@@ -326,13 +326,13 @@
 .dark .bg-game-canvas,
 html.dark .bg-game-canvas,
 html.dark body.bg-game-canvas {
-  background-color: #030712;
+  background-color: #181620;
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(245, 158, 11, 0.16) 0%, transparent 65%),
-    radial-gradient(circle 800px at 15% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
-    radial-gradient(circle 900px at 85% 65%, rgba(99, 102, 241, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(217, 119, 6, 0.14) 0%, transparent 70%),
-    linear-gradient(180deg, #030712 0%, #060B18 50%, #02050E 100%);
+    radial-gradient(circle 850px at 15% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle 950px at 85% 65%, rgba(217, 70, 239, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(250, 93, 93, 0.07) 0%, transparent 65%),
+    radial-gradient(circle 600px at 50% 85%, rgba(99, 102, 241, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #181620 0%, #1D1A27 50%, #15131E 100%);
   background-attachment: fixed;
 }
 

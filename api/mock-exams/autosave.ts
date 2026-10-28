@@ -5,6 +5,7 @@ import { validateBody } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError, BadRequestError } from '../_lib/errors/api-error';
 import { calculateExamTiming, finalizeMockExamAttempt } from './_engine';
+import { DemoExamService } from '../_lib/demo/demo-exam.service';
 
 export const mockExamAutosaveSchema = z
   .object({
@@ -38,9 +39,19 @@ export default createApiHandler(
     }
 
     const body = validateBody(mockExamAutosaveSchema, req.body);
+
+    // 1. Isolated Demo Session Branch
+    if (DemoExamService.isDemoSessionToken(body.session_token)) {
+      return DemoExamService.autosaveDemoAnswer(body.session_token, body.question_id, {
+        selected_option_key: body.selected_option_key,
+        text_answer: body.text_answer,
+        time_spent_seconds: body.time_spent_seconds,
+      });
+    }
+
     const supabase = createServiceRoleClient();
 
-    // 1. Locate active attempt
+    // 2. Locate active production attempt
     const { data: attempt, error: attemptError } = await supabase
       .from('user_mock_exam_attempts')
       .select('id, user_id, mock_exam_id, session_token, started_at, status')

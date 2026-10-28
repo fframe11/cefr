@@ -80,8 +80,8 @@ const createCustomUserAndSession = (
 const createDemoUserAndSession = (): { user: User; session: Session; profile: UserProfileData } => {
   return createCustomUserAndSession(
     'demo-student-id',
-    'student@glova.demo',
-    'Demo Student',
+    'candidate@cefr.edu',
+    'Cambridge Candidate',
     'email',
     'B1'
   );
@@ -166,6 +166,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           await syncGuestToAccount();
         } else if (isMounted) {
           if (typeof window !== 'undefined') {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('demo') === 'true' || urlParams.get('demo') === '1') {
+              localStorage.setItem('cefr_demo_session', 'true');
+              localStorage.removeItem('cefr_guest_session');
+              try {
+                window.history.replaceState({}, document.title, window.location.pathname);
+              } catch {}
+            } else if (urlParams.get('demo') === 'false' || urlParams.get('real') === 'true') {
+              localStorage.removeItem('cefr_demo_session');
+            }
+
             const customSaved = localStorage.getItem('cefr_custom_auth_session');
             if (customSaved) {
               try {
@@ -206,6 +217,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } catch (err: any) {
         if (isMounted) {
           if (typeof window !== 'undefined') {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('demo') === 'true' || urlParams.get('demo') === '1') {
+              localStorage.setItem('cefr_demo_session', 'true');
+              localStorage.removeItem('cefr_guest_session');
+              try {
+                window.history.replaceState({}, document.title, window.location.pathname);
+              } catch {}
+            } else if (urlParams.get('demo') === 'false' || urlParams.get('real') === 'true') {
+              localStorage.removeItem('cefr_demo_session');
+            }
+
             const customSaved = localStorage.getItem('cefr_custom_auth_session');
             if (customSaved) {
               try {

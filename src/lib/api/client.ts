@@ -24,8 +24,17 @@ export class ApiClient {
   private async getAuthToken(): Promise<string | null> {
     try {
       const { data } = await supabase.auth.getSession();
-      return data?.session?.access_token || null;
+      if (data?.session?.access_token) {
+        return data.session.access_token;
+      }
+      if (typeof window !== 'undefined' && localStorage.getItem('cefr_demo_session') === 'true') {
+        return 'token-demo-student-id-active';
+      }
+      return null;
     } catch {
+      if (typeof window !== 'undefined' && localStorage.getItem('cefr_demo_session') === 'true') {
+        return 'token-demo-student-id-active';
+      }
       return null;
     }
   }
@@ -38,6 +47,10 @@ export class ApiClient {
 
     const headers = new Headers(customHeaders);
     headers.set('Accept', 'application/json');
+
+    if (typeof window !== 'undefined' && localStorage.getItem('cefr_demo_session') === 'true') {
+      headers.set('X-Demo-Mode', 'true');
+    }
 
     if (body !== undefined && !(body instanceof FormData)) {
       headers.set('Content-Type', 'application/json');

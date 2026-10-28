@@ -453,6 +453,17 @@ export interface MockExamSubmitResponseDTO {
   disclaimer: string;
 }
 
+export interface MockExamReviewQuestionDTO {
+  question_id: string;
+  is_correct: boolean;
+  user_selected_key?: string | null;
+  user_text_answer?: string | null;
+  correct_option_key?: string | null;
+  correct_answer_text?: string | null;
+  explanation_th?: string | null;
+  explanation_en?: string | null;
+}
+
 export interface MockExamResultResponseDTO {
   attempt_id: string;
   session_token: string;
@@ -483,6 +494,9 @@ export interface MockExamResultResponseDTO {
   skill_breakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }>;
   is_official: false;
   disclaimer: string;
+  is_demo?: boolean;
+  dataset?: string;
+  review_questions?: MockExamReviewQuestionDTO[];
 }
 
 // ==========================================

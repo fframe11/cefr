@@ -1,0 +1,40 @@
+# robots.txt for CEFR English Platform
+# Strict crawl directives preventing AI training and unauthorized scraper ingestion
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: AnthropicAI
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /practice/
+Disallow: /mock-exam/
+Disallow: /diagnostic/
+Allow: /

@@ -5,6 +5,7 @@ import { validateBody } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError } from '../_lib/errors/api-error';
 import { calculateExamTiming, finalizeMockExamAttempt, FinalizeExamResult } from './_engine';
+import { DemoExamService } from '../_lib/demo/demo-exam.service';
 
 export const mockExamAnswerItemSchema = z.object({
   question_id: uuidSchema,
@@ -49,9 +50,15 @@ export default createApiHandler(
     }
 
     const body = validateBody(mockExamSubmitSchema, req.body);
+
+    // 1. Isolated Demo Session Branch
+    if (DemoExamService.isDemoSessionToken(body.session_token)) {
+      return DemoExamService.submitDemoSession(body.session_token, body.answers);
+    }
+
     const supabase = createServiceRoleClient();
 
-    // 1. Locate attempt
+    // 2. Locate production attempt
     const { data: attempt, error: attemptError } = await supabase
       .from('user_mock_exam_attempts')
       .select('id, user_id, mock_exam_id, session_token, started_at, submitted_at, status, raw_score, total_marks, percentage_score, estimated_cefr_level, estimated_cambridge_score')

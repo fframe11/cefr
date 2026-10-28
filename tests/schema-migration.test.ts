@@ -19,6 +19,7 @@ describe('Database Schema Migrations Verification', () => {
       '20260926000008_seed_vocabulary_pilot_batch.sql',
       '20260929000009_seed_verified_production_vocabulary_3860.sql',
       '20261003000010_create_adaptive_assessment_tables.sql',
+      '20261007000011_lockdown_question_options_rls.sql',
     ]);
   });
 

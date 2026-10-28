@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { CAMBRIDGE_MOCK_EXAMS } from '../../data/mockExams';
+import { CAMBRIDGE_MOCK_EXAMS_CATALOG } from '../../data/mockExamsCatalog';
 import {
   MockExamCatalogItemDTO,
   MockExamSessionResponseDTO,
@@ -12,6 +12,7 @@ import {
   autosaveMockExamAnswer,
   submitMockExam,
   getMockExamResults,
+  resetDemoExam,
 } from '../../lib/api';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../common/Toast';
@@ -69,7 +70,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 }) => {
   const { t, language } = useTranslation();
   const isEn = language === 'en';
-  const { status: authStatus } = useAuth();
+  const { status: authStatus, signInAsDemoStudent } = useAuth();
   const { showToast } = useToast();
 
   // Catalog State
@@ -140,19 +141,9 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
   }, []);
 
   const useStaticCatalogFallback = () => {
-    const fallbackList: MockExamCatalogItemDTO[] = CAMBRIDGE_MOCK_EXAMS.map((e) => ({
-      id: e.id,
-      exam_code: e.examCode,
-      name: e.name,
-      target_cefr: e.targetCefr,
-      description_th: e.descriptionTh,
-      total_duration_minutes: e.totalDurationMinutes,
-      passing_score: e.passingScore,
-      version: 1,
-    }));
-    setCatalogExams(fallbackList);
-    if (fallbackList.length > 0) {
-      setSelectedExamId(fallbackList[0].id);
+    setCatalogExams(CAMBRIDGE_MOCK_EXAMS_CATALOG);
+    if (CAMBRIDGE_MOCK_EXAMS_CATALOG.length > 0) {
+      setSelectedExamId(CAMBRIDGE_MOCK_EXAMS_CATALOG[0].id);
     }
   };
 
@@ -193,69 +184,19 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // 4. Start Exam Handler (Server-Authoritative Lifecycle with Offline/Guest Resilience)
-  const startLocalMockExam = (targetExamId: string) => {
-    const exam = CAMBRIDGE_MOCK_EXAMS.find((e) => e.id === targetExamId) || CAMBRIDGE_MOCK_EXAMS[0];
-    if (!exam) return;
-
-    const flattened: FlattenedExamQuestion[] = [];
-    let order = 1;
-    exam.sections.forEach((sec) => {
-      sec.questions.forEach((q) => {
-        flattened.push({
-          id: q.id,
-          sectionId: sec.id,
-          sectionName: sec.name,
-          orderIndex: order++,
-          marks: 1,
-          skill: q.skill,
-          type: q.type,
-          promptTh: q.promptTh,
-          promptEn: q.promptEn + (q.contextPassage ? `\n\n${q.contextPassage}` : ''),
-          options: (q.options || []).map((opt) => ({
-            id: opt.key,
-            key: opt.key,
-            text: opt.text,
-          })),
-        });
-      });
-    });
-
-    const token = `local-session-${Date.now()}`;
-    const durationMs = exam.totalDurationMinutes * 60 * 1000;
-    const expires = new Date(Date.now() + durationMs).toISOString();
-
-    setSessionToken(token);
-    setExamMetadata({
-      id: exam.id,
-      examCode: exam.examCode,
-      name: exam.name,
-      targetCefr: exam.targetCefr,
-      totalDurationMinutes: exam.totalDurationMinutes,
-    });
-    setQuestions(flattened);
-    setAnswers({});
-    setFlaggedQuestionIds([]);
-    setCurrentQuestionIdx(0);
-    setExpiresAt(expires);
-    setSecondsRemaining(exam.totalDurationMinutes * 60);
-    setIsExamStarted(true);
-    setIsSubmitted(false);
-    setExamResult(null);
-
-    showToast(
-      'เริ่มการสอบจำลองแล้ว',
-      `เวลาสอบทั้งหมด ${exam.totalDurationMinutes} นาที ระบบกำลังจับเวลาจำลองการสอบ`,
-      'info'
-    );
-  };
-
+  // 4. Start Exam Handler (Strict Server-Authoritative Lifecycle)
   const handleStartExam = async (examIdToStart?: string) => {
     const targetExamId = examIdToStart || selectedExamId;
 
     if (authStatus !== 'authenticated') {
-      startLocalMockExam(targetExamId);
-      return;
+      try {
+        await signInAsDemoStudent();
+      } catch {
+        if (onOpenProfile) {
+          onOpenProfile();
+        }
+        return;
+      }
     }
 
     setIsStartingExam(true);
@@ -268,23 +209,31 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
       // 3. Flatten questions in strict section and question order
       const flattened: FlattenedExamQuestion[] = [];
-      const initialAnswers: Record<string, { selected_option_key: string | null; text_answer: string | null }> = {};
-
-      sessionRes.sections.forEach((section) => {
-        section.questions.forEach((q) => {
+      let order = 1;
+      sessionRes.sections.forEach((sec) => {
+        sec.questions.forEach((q) => {
           flattened.push({
             id: q.id,
-            sectionId: section.id,
-            sectionName: section.name,
-            orderIndex: q.order_index,
+            sectionId: sec.id,
+            sectionName: sec.name,
+            orderIndex: order++,
             marks: q.marks,
             skill: q.skill,
             type: q.type,
             promptTh: q.prompt_th,
             promptEn: q.prompt_en,
-            options: q.options || [],
+            options: q.options.map((opt) => ({
+              id: opt.id,
+              key: opt.key,
+              text: opt.text,
+            })),
           });
+        });
+      });
 
+      const initialAnswers: Record<string, { selected_option_key: string | null; text_answer: string | null }> = {};
+      sessionRes.sections.forEach((sec) => {
+        sec.questions.forEach((q) => {
           if (q.saved_answer) {
             initialAnswers[q.id] = {
               selected_option_key: q.saved_answer.selected_option_key,
@@ -318,8 +267,12 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
         'info'
       );
     } catch (err: any) {
-      console.warn('Failed to start mock exam on server, starting local exam session:', err);
-      startLocalMockExam(targetExamId);
+      console.warn('Failed to start mock exam on server:', err);
+      showToast(
+        isEn ? 'Exam Session Failed' : 'ไม่สามารถเริ่มเซสชันการสอบได้',
+        isEn ? 'Please check your connection or sign in again to access official mock exams.' : 'กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตหรือเข้าสู่ระบบใหม่อีกครั้งเพื่อสอบ',
+        'error'
+      );
     } finally {
       setIsStartingExam(false);
     }
@@ -392,87 +345,42 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
     examQuestions: FlattenedExamQuestion[],
     isTimeout: boolean
   ): MockExamResultResponseDTO => {
-    const exam = CAMBRIDGE_MOCK_EXAMS.find((e) => e.id === examId) || CAMBRIDGE_MOCK_EXAMS[0];
-    let correctCount = 0;
-    const sectionCounts: Record<string, { raw: number; total: number }> = {};
-    const skillCounts: Record<string, { correct: number; total: number }> = {};
-
-    exam.sections.forEach((sec) => {
-      sectionCounts[sec.name] = { raw: 0, total: 0 };
-      sec.questions.forEach((q) => {
-        sectionCounts[sec.name].total += 1;
-        if (!skillCounts[q.skill]) {
-          skillCounts[q.skill] = { correct: 0, total: 0 };
-        }
-        skillCounts[q.skill].total += 1;
-
-        const userKey = submittedAnswers[q.id]?.selected_option_key;
-        const correctOpt = (q.options || []).find((o) => o.isCorrect);
-        if (userKey && correctOpt && userKey.toUpperCase() === correctOpt.key.toUpperCase()) {
-          correctCount += 1;
-          sectionCounts[sec.name].raw += 1;
-          skillCounts[q.skill].correct += 1;
-        }
-      });
-    });
-
+    const answeredCount = Object.keys(submittedAnswers).filter((k) => submittedAnswers[k]?.selected_option_key).length;
     const totalQuestions = examQuestions.length || 1;
-    const percentage = Math.round((correctCount / totalQuestions) * 100);
-
-    let baseScale = 120;
-    if (exam.examCode === 'PET') baseScale = 140;
-    if (exam.examCode === 'FCE') baseScale = 160;
-    if (exam.examCode === 'CAE') baseScale = 180;
+    const targetCefr = examMetadata?.targetCefr || 'A2';
+    const examCode = examMetadata?.examCode || 'KET';
+    const baseScale = examCode === 'PET' ? 140 : examCode === 'FCE' ? 160 : examCode === 'CAE' ? 180 : 120;
+    const percentage = Math.round((answeredCount / totalQuestions) * 100);
     const cambridgeScore = Math.min(210, Math.round(baseScale + percentage * 0.3));
 
-    const isPassed = percentage >= (exam.passingScore || 60);
-
-    const sectionBreakdown: Record<string, { raw_score: number; total_marks: number; percentage: number }> = {};
-    Object.entries(sectionCounts).forEach(([name, data]) => {
-      sectionBreakdown[name] = {
-        raw_score: data.raw,
-        total_marks: data.total,
-        percentage: data.total > 0 ? Math.round((data.raw / data.total) * 100) : 0,
-      };
-    });
-
-    const skillBreakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }> = {};
-    Object.entries(skillCounts).forEach(([skill, data]) => {
-      skillBreakdown[skill] = {
-        total_questions: data.total,
-        correct_questions: data.correct,
-        percentage: data.total > 0 ? Math.round((data.correct / data.total) * 100) : 0,
-      };
-    });
-
     return {
-      attempt_id: `local-attempt-${Date.now()}`,
-      session_token: sessionToken || `local-token-${Date.now()}`,
+      attempt_id: `offline-attempt-${Date.now()}`,
+      session_token: sessionToken || `offline-token-${Date.now()}`,
       exam: {
-        id: exam.id,
-        exam_code: exam.examCode,
-        name: exam.name,
-        target_cefr: exam.targetCefr,
-        passing_score: exam.passingScore,
-        total_duration_minutes: exam.totalDurationMinutes,
+        id: examId,
+        exam_code: examCode,
+        name: examMetadata?.name || 'Mock Exam',
+        target_cefr: targetCefr,
+        passing_score: 60,
+        total_duration_minutes: examMetadata?.totalDurationMinutes || 45,
       },
       status: isTimeout ? 'timed_out' : 'submitted',
       started_at: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
       submitted_at: new Date().toISOString(),
-      raw_score: correctCount,
+      raw_score: answeredCount,
       total_marks: totalQuestions,
       percentage_score: percentage,
-      objective_score: correctCount,
+      objective_score: answeredCount,
       objective_total_marks: totalQuestions,
       objective_percentage: percentage,
       pending_subjective_marks: 0,
       has_pending_subjective: false,
       evaluation_status: 'completed',
-      is_passed: isPassed,
-      estimated_cefr_level: exam.targetCefr,
+      is_passed: percentage >= 60,
+      estimated_cefr_level: targetCefr,
       estimated_cambridge_score: cambridgeScore,
-      section_breakdown: sectionBreakdown,
-      skill_breakdown: skillBreakdown,
+      section_breakdown: {},
+      skill_breakdown: {},
       is_official: false,
       disclaimer: 'แบบทดสอบจำลองเพื่อการฝึกฝนทักษะ ไม่ใช่ผลสอบทางการหรือใบรับรองจาก Cambridge English Qualifications',
     };
@@ -839,6 +747,31 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             >
               {isEn ? 'Retake This Exam' : 'ทำข้อสอบชุดนี้อีกครั้ง'}
             </button>
+            {examResult?.is_demo && (
+              <button
+                type="button"
+                onClick={async () => {
+                  try {
+                    await resetDemoExam();
+                    setIsExamStarted(false);
+                    setIsSubmitted(false);
+                    setExamResult(null);
+                    setSessionToken(null);
+                    showToast(
+                      isEn ? 'Exam Session Cleared' : 'ล้างผลสอบเรียบร้อย',
+                      isEn ? 'You can retake the practice exam.' : 'สามารถเริ่มทำข้อสอบใหม่อีกครั้งได้ทันที',
+                      'success'
+                    );
+                  } catch {
+                    showToast('เกิดข้อผิดพลาดในการล้างเซสชัน', '', 'error');
+                  }
+                }}
+                className="touch-target w-full sm:w-auto px-6 py-3 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-slate-700 dark:text-slate-200 border border-border/80 text-xs sm:text-sm font-bold shadow-xs active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2"
+              >
+                <RotateCcw className="w-4 h-4 text-slate-500" />
+                <span>{isEn ? 'Retake & Reset' : 'ล้างคำตอบเพื่อเริ่มใหม่'}</span>
+              </button>
+            )}
             <button
               type="button"
               onClick={() => {
@@ -915,31 +848,37 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
 
           <div className="space-y-4">
             {questions.map((q, idx) => {
-              let staticQ: any = null;
-              for (const exam of CAMBRIDGE_MOCK_EXAMS) {
-                for (const sec of exam.sections) {
-                  const match = sec.questions.find((item) => item.id === q.id);
-                  if (match) {
-                    staticQ = match;
-                    break;
-                  }
-                }
-                if (staticQ) break;
-              }
-
               const userAnswerKey = answers[q.id]?.selected_option_key;
-              const correctOpt = staticQ?.options?.find((o: any) => o.isCorrect);
-              const isCorrect = userAnswerKey && correctOpt && userAnswerKey.toUpperCase() === correctOpt.key.toUpperCase();
-              const isUnanswered = !userAnswerKey;
+              const userTextAnswer = answers[q.id]?.text_answer;
+              const isAnswered = Boolean(userAnswerKey || userTextAnswer);
+
+              const review = examResult?.review_questions?.find((r) => r.question_id === q.id);
+              const isCorrect = review ? review.is_correct : false;
+              const correctOptionKey = review?.correct_option_key;
+              const correctAnswerText = review?.correct_answer_text;
+              const explanation = review?.explanation_th;
+
+              let badgeText = isEn ? 'Unanswered' : 'ยังไม่ได้ตอบ';
+              let badgeClass = 'bg-slate-200/80 dark:bg-white/10 text-slate-700 dark:text-slate-300';
+
+              if (review) {
+                if (isCorrect) {
+                  badgeText = isEn ? `✓ Correct (+${q.marks} mark)` : `✓ ตอบถูกต้อง (+${q.marks} คะแนน)`;
+                  badgeClass = 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 font-bold';
+                } else if (isAnswered) {
+                  badgeText = isEn ? '✗ Incorrect (0 marks)' : '✗ ตอบไม่ถูกต้อง (0 คะแนน)';
+                  badgeClass = 'bg-rose-500/10 text-rose-700 dark:text-rose-300 border border-rose-500/30 font-bold';
+                }
+              } else if (isAnswered) {
+                badgeText = userAnswerKey
+                  ? (isEn ? `Selected: Option ${userAnswerKey}` : `คำตอบที่คุณเลือก: ข้อ ${userAnswerKey}`)
+                  : (userTextAnswer || '');
+              }
 
               return (
                 <div
                   key={q.id}
-                  className={`p-4 sm:p-5 rounded-[22px] border transition-all ${
-                    isCorrect
-                      ? 'bg-emerald-50/40 dark:bg-emerald-950/20 border-emerald-500/40'
-                      : 'bg-rose-50/40 dark:bg-rose-950/20 border-rose-500/40'
-                  }`}
+                  className="p-4 sm:p-5 rounded-[22px] border transition-all bg-slate-50/50 dark:bg-white/[0.03] border-slate-200/80 dark:border-white/10"
                 >
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2">
@@ -951,24 +890,8 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                       </span>
                     </div>
 
-                    <span
-                      className={`px-2.5 py-0.5 rounded-full text-xs font-bold flex items-center gap-1 ${
-                        isCorrect
-                          ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300'
-                          : 'bg-rose-500/20 text-rose-700 dark:text-rose-300'
-                      }`}
-                    >
-                      {isCorrect ? (
-                        <>
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                          <span>{isEn ? 'Correct' : 'ถูกต้อง'}</span>
-                        </>
-                      ) : (
-                        <>
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{isUnanswered ? (isEn ? 'Unanswered' : 'ยังไม่ได้ตอบ') : (isEn ? 'Incorrect' : 'ตอบผิด')}</span>
-                        </>
-                      )}
+                    <span className={`px-2.5 py-0.5 rounded-full text-xs ${badgeClass}`}>
+                      {badgeText}
                     </span>
                   </div>
 
@@ -976,18 +899,32 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                     {q.promptEn}
                   </p>
 
-                  {/* Options review */}
+                  {/* Multiple Choice Options review */}
                   {q.options && q.options.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-8">
                       {q.options.map((opt) => {
                         const isUserChoice = userAnswerKey === opt.key;
-                        const isThisCorrect = correctOpt?.key === opt.key;
+                        const isCorrectChoice = opt.key === correctOptionKey;
 
                         let style = 'bg-white dark:bg-[#1E1B28] border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300';
-                        if (isThisCorrect) {
-                          style = 'bg-emerald-500 text-white font-bold border-emerald-600 shadow-xs';
+                        let tag = null;
+
+                        if (isCorrectChoice) {
+                          style = 'bg-emerald-500/10 dark:bg-emerald-950/40 border-emerald-500/70 text-emerald-800 dark:text-emerald-200 font-bold ring-1 ring-emerald-500/20';
+                          tag = (
+                            <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-800 dark:text-emerald-200 font-bold shrink-0">
+                              {isEn ? '✓ Correct' : '✓ เฉลย'}
+                            </span>
+                          );
+                        } else if (isUserChoice && !isCorrect) {
+                          style = 'bg-rose-500/10 dark:bg-rose-950/40 border-rose-400 text-rose-800 dark:text-rose-200 ring-1 ring-rose-500/20';
+                          tag = (
+                            <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-800 dark:text-rose-200 font-bold shrink-0">
+                              {isEn ? '✗ Your choice' : '✗ ที่เลือก'}
+                            </span>
+                          );
                         } else if (isUserChoice) {
-                          style = 'bg-rose-500 text-white font-bold border-rose-600';
+                          style = 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-bold border-slate-900 shadow-xs';
                         }
 
                         return (
@@ -999,32 +936,47 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                               {opt.key}
                             </span>
                             <span className="truncate">{opt.text}</span>
+                            {tag}
                           </div>
                         );
                       })}
                     </div>
                   )}
 
-                  {/* Explicit Correct Answer Banner when Incorrect */}
-                  {!isCorrect && correctOpt && (
-                    <div className="mt-3 ml-8 flex items-center gap-2 p-3 rounded-[16px] bg-[#E3F6ED] dark:bg-[#102B22] border border-emerald-500/40 text-emerald-900 dark:text-emerald-200 text-xs font-bold font-sans shadow-2xs">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                      <span>
-                        {isEn
-                          ? `Correct Answer: Option ${correctOpt.key} (${correctOpt.text})`
-                          : `เฉลยคำตอบที่ถูกต้อง: ข้อ ${correctOpt.key} (${correctOpt.text})`}
-                      </span>
+                  {/* Fill in the blank review */}
+                  {q.type === 'fill_blank' && (
+                    <div className="pl-8 pt-1 space-y-2 text-xs">
+                      <div className="p-3 rounded-[14px] bg-white dark:bg-[#1E1B28] border border-border/80 flex items-center justify-between">
+                        <span className="text-slate-600 dark:text-slate-400">
+                          {isEn ? 'Your text answer:' : 'คำตอบที่คุณกรอก:'}
+                        </span>
+                        <span className={`font-mono font-bold ${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                          {userTextAnswer || (isEn ? '(Unanswered)' : '(ยังไม่ได้ระบุ)')}
+                        </span>
+                      </div>
+                      {correctAnswerText && (
+                        <div className="p-3 rounded-[14px] bg-emerald-500/10 dark:bg-emerald-950/30 border border-emerald-500/30 flex items-center justify-between">
+                          <span className="text-emerald-800 dark:text-emerald-200 font-semibold">
+                            {isEn ? 'Correct Answer:' : 'เฉลยคำตอบที่ถูกต้อง:'}
+                          </span>
+                          <span className="font-mono font-bold text-emerald-700 dark:text-emerald-300">
+                            {correctAnswerText}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   )}
 
-                  {/* Pedagogical Explanation */}
-                  {staticQ?.explanationTh && (
-                    <div className="mt-3 ml-8 p-3 rounded-[16px] bg-white dark:bg-[#1E1B28] border border-slate-200/80 dark:border-white/10 text-xs text-slate-700 dark:text-slate-300 space-y-1 shadow-2xs">
-                      <div className="font-bold text-[#FA5D5D] flex items-center gap-1">
-                        <HelpCircle className="w-3.5 h-3.5" />
-                        <span>{isEn ? 'Explanation:' : 'คำอธิบายเชิงวิเคราะห์:'}</span>
+                  {/* Pedagogical Explanation Card */}
+                  {explanation && (
+                    <div className="mt-3 ml-8 p-3 rounded-[16px] bg-[#FAF8F3] dark:bg-[#13111C]/60 border border-border/70 text-xs space-y-1">
+                      <div className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200">
+                        <Sparkles className="w-3.5 h-3.5 text-[#FA5D5D] shrink-0" />
+                        <span>{isEn ? 'Explanation & Answer Key' : 'เฉลยและคำอธิบาย'}</span>
                       </div>
-                      <p className="font-sans leading-relaxed">{staticQ.explanationTh}</p>
+                      <p className="text-slate-600 dark:text-slate-400 pl-5 leading-relaxed font-sans">
+                        {explanation}
+                      </p>
                     </div>
                   )}
                 </div>

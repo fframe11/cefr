@@ -52,19 +52,19 @@ export const GlovaButton = React.forwardRef<HTMLButtonElement, GlovaButtonProps>
         lg: 'bg-[#FA5D5D] hover:bg-[#E04848] text-white shadow-[0_5px_0_0_#B83232] active:shadow-none active:translate-y-[5px] border-t-2 border-white/25',
       },
       secondary: {
-        sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#0D1318] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
-        md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#0D1318] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
-        lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#101A30] dark:hover:bg-[#15203B] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#0D1318] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
+        sm: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2.5px_0_0_#CBD5E1] dark:shadow-[0_2.5px_0_0_#181620] active:shadow-none active:translate-y-[2.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
+        md: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3.5px_0_0_#CBD5E1] dark:shadow-[0_3.5px_0_0_#181620] active:shadow-none active:translate-y-[3.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
+        lg: 'bg-slate-100 hover:bg-slate-200 dark:bg-[#2C2937] dark:hover:bg-[#353243] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4.5px_0_0_#CBD5E1] dark:shadow-[0_4.5px_0_0_#181620] active:shadow-none active:translate-y-[4.5px] border border-slate-300 dark:border-[rgba(255,255,255,0.08)]',
       },
       outline: {
-        sm: 'bg-white hover:bg-slate-50 dark:bg-[#0B1224]/90 dark:hover:bg-[#101A30] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#0D1318] active:shadow-none active:translate-y-[2px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
-        md: 'bg-white hover:bg-slate-50 dark:bg-[#0B1224]/90 dark:hover:bg-[#101A30] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3px_0_0_#CBD5E1] dark:shadow-[0_3px_0_0_#0D1318] active:shadow-none active:translate-y-[3px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
-        lg: 'bg-white hover:bg-slate-50 dark:bg-[#0B1224]/90 dark:hover:bg-[#101A30] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4px_0_0_#CBD5E1] dark:shadow-[0_4px_0_0_#0D1318] active:shadow-none active:translate-y-[4px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
+        sm: 'bg-white hover:bg-slate-50 dark:bg-[#23212C]/90 dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_2px_0_0_#CBD5E1] dark:shadow-[0_2px_0_0_#181620] active:shadow-none active:translate-y-[2px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
+        md: 'bg-white hover:bg-slate-50 dark:bg-[#23212C]/90 dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_3px_0_0_#CBD5E1] dark:shadow-[0_3px_0_0_#181620] active:shadow-none active:translate-y-[3px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
+        lg: 'bg-white hover:bg-slate-50 dark:bg-[#23212C]/90 dark:hover:bg-[#2C2937] text-slate-900 dark:text-[#EDEBE8] shadow-[0_4px_0_0_#CBD5E1] dark:shadow-[0_4px_0_0_#181620] active:shadow-none active:translate-y-[4px] border border-slate-300 dark:border-[rgba(255,255,255,0.12)]',
       },
       ghost: {
-        sm: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-        md: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
-        lg: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#1C2430] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        sm: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#2C2937] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        md: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#2C2937] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
+        lg: 'bg-transparent hover:bg-slate-100 dark:hover:bg-[#2C2937] text-slate-800 dark:text-[#EDEBE8] shadow-none active:translate-y-0.5 border border-transparent font-medium',
       },
       destructive: {
         sm: 'bg-[#E5484D] hover:bg-[#D4373C] text-white shadow-[0_2.5px_0_0_#9E2024] active:shadow-none active:translate-y-[2.5px] border-t border-white/25',

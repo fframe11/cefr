@@ -9,6 +9,7 @@ import { ProfileModal } from './common/ProfileModal';
 import { GlovaFeedbackBubble } from './ui/GlovaFeedbackBubble';
 import { useAuth } from '../context/AuthContext';
 import { useApp } from '../context/AppContext';
+import { useToast } from './common/Toast';
 import { saveUserProgress } from '../services/storageService';
 import { UserProgressState } from '../types';
 import { CEFRTier } from '@/lib/design-tokens/tokens';
@@ -90,7 +91,28 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     return 'dashboard';
   }, [pathname]);
 
+  const { showToast } = useToast();
+
+  const LOCKED_VIEWS: NavView[] = [
+    'vocabulary',
+    'cheatSheets',
+    'listening',
+    'assessment',
+    'ooptPractice',
+    'collocations',
+    'compete',
+    'ranking',
+  ];
+
   const handleSelectView = (view: NavView) => {
+    if (LOCKED_VIEWS.includes(view)) {
+      showToast(
+        'แท็บนี้ถูกล็อกการเข้าถึง',
+        'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
+        'info'
+      );
+      return;
+    }
     const route =
       view === 'dashboard'
         ? '/dashboard'
@@ -156,7 +178,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100 flex flex-col overflow-x-hidden selection:bg-[#FA5D5D]/25 selection:text-white relative">
+    <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100 flex flex-col overflow-x-clip selection:bg-[#FA5D5D]/25 selection:text-white relative">
       {/* Top Universal Header */}
       <Header
         currentLevel={progress.currentLevel}

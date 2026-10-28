@@ -132,7 +132,7 @@ export const CollocationsView: React.FC = () => {
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
-            <span>{isEn ? 'Study Bank (200)' : 'คลังคำศัพท์ (200 คำ)'}</span>
+            <span>{isEn ? 'Study Bank' : 'คลังคำศัพท์ Collocations'}</span>
           </button>
           <button
             type="button"

@@ -33,4 +33,5 @@ scratch/
 tools/
 cloudflared.exe
 *เนื้อหาที่ควรมีในเว็บ*
+*.tsbuildinfo
 

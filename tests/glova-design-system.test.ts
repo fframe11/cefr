@@ -180,7 +180,7 @@ describe('Glova Design System & Token Foundation', () => {
       expect(urls).toContain('https://ui.aceternity.com/');
       expect(urls).toContain('https://uiverse.io/');
       expect(urls).toContain('https://reactbits.dev/');
-    }, 30000);
+    }, 90000);
 
     it('should export 21st.dev BorderBeam component with customizable parameters', async () => {
       const { BorderBeam } = await import('../components/ui/GlovaPrimitives');

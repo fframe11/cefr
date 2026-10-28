@@ -7,7 +7,6 @@ import {
   skillTypeSchema,
   questionTypeSchema,
 } from '../_lib/validation/common-schemas';
-import { NotFoundError } from '../_lib/errors/api-error';
 import readingData from '../../data/reading-passages.json';
 import grammarData from '../../data/grammar-question-bank.json';
 import { LISTENING_BANK } from '../../data/listeningBank';
@@ -27,14 +26,24 @@ const questionsQuerySchema = z.object({
   limit: z.coerce.number().int().min(1).max(50).default(20),
 });
 
+/**
+ * Sanitized Option DTO.
+ * CRITICAL SECURITY INVARIANT:
+ * isCorrect, is_correct, feedbackTh, feedback_th are strictly FORBIDDEN.
+ * Answer evaluation is performed server-authoritatively via POST /api/practice/submit.
+ */
 export interface SanitizedOptionDTO {
   id: string;
   key: string;
   text: string;
-  isCorrect?: boolean;
-  feedbackTh?: string;
 }
 
+/**
+ * Sanitized Question DTO.
+ * CRITICAL SECURITY INVARIANT:
+ * Answers, correct keys, and full explanations are strictly withheld
+ * until a verified submission is evaluated by the server grading engine.
+ */
 export interface SanitizedQuestionDTO {
   id: string;
   skill: string;
@@ -49,8 +58,6 @@ export interface SanitizedQuestionDTO {
   grammarTopicId?: string | null;
   readingPassageId?: string | null;
   listeningExerciseId?: string | null;
-  explanationTh?: string;
-  explanationEn?: string;
   options: SanitizedOptionDTO[];
 }
 
@@ -72,9 +79,10 @@ export default createApiHandler(
           .single();
 
         if (!qError && q) {
+          // Explicitly select ONLY safe columns, never is_correct or feedback_th
           const { data: rawOptions } = await supabase
             .from('question_options')
-            .select('id, key, text, is_correct, feedback_th')
+            .select('id, key, text')
             .eq('question_id', q.id)
             .order('key', { ascending: true });
 
@@ -96,8 +104,6 @@ export default createApiHandler(
               id: opt.id,
               key: opt.key,
               text: opt.text,
-              isCorrect: opt.is_correct,
-              feedbackTh: opt.feedback_th,
             })),
           };
 
@@ -109,7 +115,7 @@ export default createApiHandler(
       let dbQuery = supabase
         .from('questions')
         .select(
-          'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, question_options(id, key, text, is_correct, feedback_th)',
+          'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, question_options(id, key, text)',
           { count: 'exact' }
         )
         .eq('is_active', true);
@@ -146,8 +152,6 @@ export default createApiHandler(
             id: opt.id,
             key: opt.key,
             text: opt.text,
-            isCorrect: opt.is_correct,
-            feedbackTh: opt.feedback_th,
           })),
         }));
 
@@ -166,7 +170,7 @@ export default createApiHandler(
     }
 
     // =========================================================================
-    // LOCAL CALIBRATED QUESTION BANK FALLBACK
+    // LOCAL CALIBRATED QUESTION BANK FALLBACK (ZERO-LEAK SANITIZATION)
     // =========================================================================
     let localPool: SanitizedQuestionDTO[] = [];
 
@@ -186,14 +190,10 @@ export default createApiHandler(
           difficultyWeight: p.cefr_level === 'A1' ? 1 : p.cefr_level === 'A2' ? 2 : 3,
           weaknessTag: q.weakness_tag || 'reading_comprehension',
           readingPassageId: p.id,
-          explanationTh: q.explanation_th,
-          explanationEn: q.explanation_en,
           options: (q.options || []).map((opt: any) => ({
             id: `${q.id}_${opt.key}`,
             key: opt.key,
             text: opt.text,
-            isCorrect: opt.isCorrect ?? opt.is_correct ?? (opt.key === q.correctAnswer || opt.key === q.correct_option_key),
-            feedbackTh: opt.feedbackTh,
           })),
         }));
       } else {
@@ -211,14 +211,10 @@ export default createApiHandler(
             difficultyWeight: q.difficultyWeight || 2,
             weaknessTag: q.weaknessTag || 'reading_comprehension',
             readingPassageId: rpStatic.id,
-            explanationTh: q.explanationTh,
-            explanationEn: q.explanationEn,
             options: (q.options || []).map((opt) => ({
               id: `${q.id}_${opt.key}`,
               key: opt.key,
               text: opt.text,
-              isCorrect: opt.isCorrect,
-              feedbackTh: opt.feedbackTh,
             })),
           }));
         }
@@ -238,14 +234,10 @@ export default createApiHandler(
           difficultyWeight: q.difficultyWeight || 2,
           weaknessTag: q.weaknessTag || 'listening_comprehension',
           listeningExerciseId: le.id,
-          explanationTh: q.explanationTh,
-          explanationEn: q.explanationEn,
           options: (q.options || []).map((opt) => ({
             id: `${q.id}_${opt.key}`,
             key: opt.key,
             text: opt.text,
-            isCorrect: opt.isCorrect,
-            feedbackTh: opt.feedbackTh,
           })),
         }));
       }
@@ -264,14 +256,10 @@ export default createApiHandler(
           difficultyWeight: 2,
           weaknessTag: q.weakness_tag || 'grammar_rules',
           grammarTopicId: q.topic_id,
-          explanationTh: q.explanation_th,
-          explanationEn: q.explanation_en,
           options: (q.options || []).map((opt: any) => ({
             id: `${q.id}_${opt.key}`,
             key: opt.key,
             text: opt.text,
-            isCorrect: opt.isCorrect ?? opt.is_correct ?? (opt.key === q.correct_option_key),
-            feedbackTh: opt.feedbackTh,
           })),
         }));
       } else {
@@ -289,14 +277,10 @@ export default createApiHandler(
             difficultyWeight: q.difficultyWeight || 2,
             weaknessTag: q.weaknessTag || 'grammar_rules',
             grammarTopicId: topic.id,
-            explanationTh: q.explanationTh,
-            explanationEn: q.explanationEn,
             options: (q.options || []).map((opt) => ({
               id: `${q.id}_${opt.key}`,
               key: opt.key,
               text: opt.text,
-              isCorrect: opt.isCorrect,
-              feedbackTh: opt.feedbackTh,
             })),
           }));
         }

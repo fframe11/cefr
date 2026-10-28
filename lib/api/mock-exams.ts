@@ -92,3 +92,11 @@ export async function getMockExamResults(token: string): Promise<MockExamResultR
     `/api/mock-exams/results?token=${encodeURIComponent(token)}`
   );
 }
+
+/**
+ * POST /api/mock-exams/reset
+ * Resets the demo exam session for the demo student without touching real data.
+ */
+export async function resetDemoExam(): Promise<{ success: boolean; message: string; is_demo: boolean }> {
+  return apiClient.post<{ success: boolean; message: string; is_demo: boolean }>('/api/mock-exams/reset', {});
+}

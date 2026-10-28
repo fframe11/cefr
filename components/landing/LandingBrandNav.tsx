@@ -62,9 +62,9 @@ export const LandingBrandNav: React.FC<LandingBrandNavProps> = ({
 
   const navLinks = [
     { id: 'conversations', labelEn: 'Conversations', labelTh: 'บทสนทนาจำลอง' },
-    { id: 'studios', labelEn: '8 Learning Studios', labelTh: '8 สตูดิโอการเรียนรู้' },
-    { id: 'framework', labelEn: 'CEFR Journey', labelTh: 'เส้นทาง CEFR' },
-    { id: 'exams', labelEn: 'Cambridge Vault', labelTh: 'คลังข้อสอบเคมบริดจ์' },
+    { id: 'studios', labelEn: 'Core Skills', labelTh: 'หมวดทักษะการเรียนรู้' },
+    { id: 'framework', labelEn: 'CEFR Framework', labelTh: 'เกณฑ์มาตรฐาน CEFR' },
+    { id: 'exams', labelEn: 'Cambridge Exams', labelTh: 'คลังข้อสอบเคมบริดจ์' },
   ];
 
   return (

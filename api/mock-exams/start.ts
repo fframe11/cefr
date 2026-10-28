@@ -5,6 +5,9 @@ import { createServiceRoleClient } from '../_lib/supabase/client';
 import { validateBody } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError } from '../_lib/errors/api-error';
+import { isDemoSession } from '../_lib/auth/auth.helper';
+import { DemoExamService } from '../_lib/demo/demo-exam.service';
+import { LEAD_DEMO_EXAM, LEAD_DEMO_EXAM_ID } from '../../data/demoExamData';
 
 export const mockExamStartSchema = z.object({
   mock_exam_id: uuidSchema,
@@ -36,6 +39,7 @@ export interface MockExamStartResponseDTO {
  * 2. session_token is a cryptographically secure random UUID.
  * 3. started_at and expires_at are determined strictly on the server.
  * 4. status is initialized strictly to 'in_progress'.
+ * 5. Deterministic isolation: Demo attempts are stored in isolated demo engine, zero DB mutation.
  */
 export default createApiHandler(
   async ({ req, user }) => {
@@ -44,9 +48,30 @@ export default createApiHandler(
     }
 
     const body = validateBody(mockExamStartSchema, req.body);
+
+    // 1. Isolated Demo Session Branch
+    if (body.mock_exam_id === LEAD_DEMO_EXAM_ID || isDemoSession(user, req)) {
+      const demoSession = DemoExamService.startDemoSession(user.id);
+      const expiresAt = new Date(Date.now() + demoSession.durationMinutes * 60 * 1000).toISOString();
+
+      const response: MockExamStartResponseDTO = {
+        session_token: demoSession.sessionToken,
+        mock_exam_id: LEAD_DEMO_EXAM.id,
+        exam_code: LEAD_DEMO_EXAM.examCode,
+        name: LEAD_DEMO_EXAM.name,
+        started_at: demoSession.startedAt,
+        expires_at: expiresAt,
+        duration_minutes: demoSession.durationMinutes,
+        status: 'in_progress',
+        disclaimer: 'Lead Demo Examination Sandbox; synthetic demonstration data.',
+      };
+
+      return response;
+    }
+
+    // 2. Production Database Branch
     const supabase = createServiceRoleClient();
 
-    // 1. Verify mock exam exists and is published
     const { data: exam, error: examError } = await supabase
       .from('mock_exams')
       .select('id, exam_code, name, target_cefr, total_duration_minutes, is_published')
@@ -58,13 +83,11 @@ export default createApiHandler(
       throw new NotFoundError('Mock exam not found or is currently not available.');
     }
 
-    // 2. Generate cryptographically unpredictable session token
     const sessionToken = crypto.randomUUID();
     const startedAt = new Date().toISOString();
     const durationMs = exam.total_duration_minutes * 60 * 1000;
     const expiresAt = new Date(Date.now() + durationMs).toISOString();
 
-    // 3. Persist attempt record
     const { data: attempt, error: insertError } = await supabase
       .from('user_mock_exam_attempts')
       .insert({

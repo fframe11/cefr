@@ -32,10 +32,10 @@ export const GlovaCard = React.forwardRef<HTMLDivElement, GlovaCardProps>(
     const resolvedElevation = elevation || (isBubble ? 'bubble' : variant === 'elevated' ? 'subtle' : 'flat');
 
     const elevationStyles = {
-      flat: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-none text-slate-900 dark:text-slate-100',
-      subtle: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100',
-      glow: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-[#F59E0B]/40 dark:border-[#F59E0B]/30 shadow-[0_4px_20px_rgba(245,158,11,0.12)] text-slate-900 dark:text-white',
-      bubble: 'bg-white dark:bg-[#070B16]/85 backdrop-blur-md border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]',
+      flat: 'bg-white dark:bg-[#23212C]/95 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-none text-slate-900 dark:text-slate-100',
+      subtle: 'bg-white dark:bg-[#23212C]/95 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] text-slate-900 dark:text-slate-100',
+      glow: 'bg-white dark:bg-[#23212C]/95 backdrop-blur-md border border-[#F59E0B]/40 dark:border-[#F59E0B]/30 shadow-[0_4px_20px_rgba(245,158,11,0.12)] text-slate-900 dark:text-white',
+      bubble: 'bg-white dark:bg-[#23212C]/95 backdrop-blur-md border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.6)]',
     }[resolvedElevation];
 
     const interactiveStyles = isInteractive

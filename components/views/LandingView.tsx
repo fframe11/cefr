@@ -53,8 +53,8 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
       id: 'vocab',
       titleTh: 'คลังคำศัพท์ (Vocabulary Vault)',
       titleEn: 'Vocabulary Vault',
-      descTh: '3,860+ คำศัพท์คัดสรรตาม CEFR A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations',
-      descEn: '3,860+ CEFR-curated words with spaced repetition and high-frequency collocations',
+      descTh: 'คลังคำศัพท์คัดสรรตาม CEFR A1–C2 พร้อมระบบทบทวน Spaced Repetition และ Collocations',
+      descEn: 'Curated CEFR vocabulary vault with spaced repetition and high-frequency collocations',
       icon: BookOpen,
       color: 'from-[#FA5D5D]/10 to-purple-500/10 text-[#FA5D5D] dark:text-[#FA5D5D] border-[#FA5D5D]/20',
       badge: 'A1 – C2',
@@ -411,12 +411,12 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 <span>High-Yield Matrices</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
-                {isEn ? 'Grammar Matrices & Collocations' : 'คลังสูตรลัดไวยากรณ์ & Collocations'}
+                {isEn ? 'Grammar Matrices & Collocations' : 'คลังสรุปหลักไวยากรณ์ & Collocations'}
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {isEn
                   ? 'Master high-frequency decision matrices: In/On/At hierarchy, Play vs Do vs Go sports rule, and Do vs Make action outcomes with instant mini-quizzes.'
-                  : 'รวบรวม 4 จุดตัดคะแนนที่คนไทยผิดบ่อยที่สุด: พีระมิด In/On/At, กฎกีฬา Play/Do/Go, จุดต่าง Do vs Make พร้อมมินิควิซทดสอบความจำทันที'}
+                  : 'รวบรวม 4 จุดสำคัญที่ผู้เรียนมักสับสน: ลำดับ In/On/At, หลักการใช้คำกริยากีฬา Play/Do/Go, ข้อแตกต่าง Do vs Make พร้อมแบบฝึกหัดทบทวนความเข้าใจทันที'}
               </p>
             </div>
 
@@ -426,7 +426,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
                 onClick={() => router.push('/cheat-sheets')}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs hover:bg-amber-400 transition-colors cursor-pointer"
               >
-                <span>{isEn ? 'Open Master Cheat Sheets' : 'เปิดดูคลังสูตรลัด'}</span>
+                <span>{isEn ? 'Open Grammar Guides' : 'เปิดดูสรุปหลักไวยากรณ์'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
@@ -505,7 +505,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onStartLearning }) => 
               onClick={() => router.push('/cheat-sheets')}
               className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
             >
-              {isEn ? 'Cheat Sheets' : 'สูตรลัด'}
+              {isEn ? 'Grammar Guides' : 'สรุปไวยากรณ์'}
             </button>
           </div>
         </div>

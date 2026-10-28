@@ -5,6 +5,7 @@ import { validateQuery } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError, ForbiddenError } from '../_lib/errors/api-error';
 import { calculateExamTiming, finalizeMockExamAttempt } from './_engine';
+import { DemoExamService } from '../_lib/demo/demo-exam.service';
 
 const sessionQuerySchema = z.object({
   token: uuidSchema,
@@ -77,9 +78,15 @@ export default createApiHandler(
     }
 
     const query = validateQuery(sessionQuerySchema, req.query);
+
+    // 1. Isolated Demo Session Branch
+    if (DemoExamService.isDemoSessionToken(query.token)) {
+      return DemoExamService.getSanitizedSessionDTO(query.token);
+    }
+
     const supabase = createServiceRoleClient();
 
-    // 1. Locate attempt and verify ownership
+    // 2. Locate production attempt and verify ownership
     const { data: attempt, error: attemptError } = await supabase
       .from('user_mock_exam_attempts')
       .select('id, user_id, mock_exam_id, session_token, started_at, submitted_at, status')

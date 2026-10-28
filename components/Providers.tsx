@@ -5,6 +5,7 @@ import { AuthProvider } from '../context/AuthContext';
 import { ToastProvider } from './common/Toast';
 import { AppProvider } from '../context/AppContext';
 import { AppShell } from './AppShell';
+import { AntiTamperGuard } from './security/AntiTamperGuard';
 
 export const Providers: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ export const Providers: React.FC<{ children: ReactNode }> = ({ children }) => {
       <AuthProvider>
         <ToastProvider>
           <AppProvider>
+            <AntiTamperGuard />
             <AppShell>{children}</AppShell>
           </AppProvider>
         </ToastProvider>

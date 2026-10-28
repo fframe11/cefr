@@ -6,6 +6,7 @@ import { uuidSchema } from '../_lib/validation/common-schemas';
 import { UnauthorizedError, BadRequestError } from '../_lib/errors/api-error';
 import { estimatePlatformCefr } from '../_lib/assessment/cefr-calculator';
 import { updateStreakOnActivity } from '../_lib/assessment/streak';
+import { isDemoSession } from '../_lib/auth/auth.helper';
 
 export const assessmentAnswerItemSchema = z
   .object({
@@ -56,6 +57,7 @@ export default createApiHandler(
     }
 
     const body = validateBody(assessmentSubmitSchema, req.body);
+    const isDemo = isDemoSession(user, req);
     const supabase = createServiceRoleClient();
 
     let correctCount = 0;
@@ -116,33 +118,35 @@ export default createApiHandler(
           identifiedWeaknesses[question.weakness_tag].error_count += 1;
         }
 
-        // Upsert into user_weaknesses table
-        try {
-          const { data: existingWeakness } = await supabase
-            .from('user_weaknesses')
-            .select('id, error_count')
-            .eq('user_id', user.id)
-            .eq('weakness_tag', question.weakness_tag)
-            .single();
-
-          if (existingWeakness) {
-            await supabase
+        // Upsert into user_weaknesses table (production users only)
+        if (!isDemo) {
+          try {
+            const { data: existingWeakness } = await supabase
               .from('user_weaknesses')
-              .update({
-                error_count: existingWeakness.error_count + 1,
+              .select('id, error_count')
+              .eq('user_id', user.id)
+              .eq('weakness_tag', question.weakness_tag)
+              .single();
+
+            if (existingWeakness) {
+              await supabase
+                .from('user_weaknesses')
+                .update({
+                  error_count: existingWeakness.error_count + 1,
+                  last_failed_at: submittedAt,
+                })
+                .eq('id', existingWeakness.id);
+            } else {
+              await supabase.from('user_weaknesses').insert({
+                user_id: user.id,
+                weakness_tag: question.weakness_tag,
+                error_count: 1,
                 last_failed_at: submittedAt,
-              })
-              .eq('id', existingWeakness.id);
-          } else {
-            await supabase.from('user_weaknesses').insert({
-              user_id: user.id,
-              weakness_tag: question.weakness_tag,
-              error_count: 1,
-              last_failed_at: submittedAt,
-            });
+              });
+            }
+          } catch {
+            // Non-blocking telemetry
           }
-        } catch {
-          // Non-blocking telemetry
         }
       }
 
@@ -154,23 +158,25 @@ export default createApiHandler(
         }
       }
 
-      // Record attempt in user_question_attempts with context_type = 'placement'
-      try {
-        await supabase.from('user_question_attempts').insert({
-          user_id: user.id,
-          question_id: question.id,
-          selected_key: ans.selected_option_key || null,
-          text_answer: ans.text_answer || null,
-          is_correct: isCorrect,
-          score_awarded: isCorrect ? maxPoints : 0,
-          evaluation_status: 'completed',
-          time_spent_seconds: ans.time_spent_seconds || 0,
-          context_type: 'placement',
-          context_attempt_id: null,
-          attempted_at: submittedAt,
-        });
-      } catch {
-        // Non-blocking attempt record
+      // Record attempt in user_question_attempts with context_type = 'placement' (production only)
+      if (!isDemo) {
+        try {
+          await supabase.from('user_question_attempts').insert({
+            user_id: user.id,
+            question_id: question.id,
+            selected_key: ans.selected_option_key || null,
+            text_answer: ans.text_answer || null,
+            is_correct: isCorrect,
+            score_awarded: isCorrect ? maxPoints : 0,
+            evaluation_status: 'completed',
+            time_spent_seconds: ans.time_spent_seconds || 0,
+            context_type: 'placement',
+            context_attempt_id: null,
+            attempted_at: submittedAt,
+          });
+        } catch {
+          // Non-blocking attempt record
+        }
       }
     }
 
@@ -187,63 +193,70 @@ export default createApiHandler(
         skillBreakdown[skillKey] = estimation.percentage;
       }
 
-      // Update user_skill_progress
-      try {
-        const { data: existingSkill } = await supabase
-          .from('user_skill_progress')
-          .select('id, proficiency_score, questions_completed')
-          .eq('user_id', user.id)
-          .eq('skill', skillKey)
-          .single();
-
-        if (existingSkill) {
-          await supabase
+      // Update user_skill_progress (production users only)
+      if (!isDemo) {
+        try {
+          const { data: existingSkill } = await supabase
             .from('user_skill_progress')
-            .update({
+            .select('id, proficiency_score, questions_completed')
+            .eq('user_id', user.id)
+            .eq('skill', skillKey)
+            .single();
+
+          if (existingSkill) {
+            await supabase
+              .from('user_skill_progress')
+              .update({
+                proficiency_score: skillBreakdown[skillKey],
+                questions_completed: existingSkill.questions_completed + stat.total,
+                updated_at: submittedAt,
+              })
+              .eq('id', existingSkill.id);
+          } else {
+            await supabase.from('user_skill_progress').insert({
+              user_id: user.id,
+              skill: skillKey,
               proficiency_score: skillBreakdown[skillKey],
-              questions_completed: existingSkill.questions_completed + stat.total,
+              questions_completed: stat.total,
               updated_at: submittedAt,
-            })
-            .eq('id', existingSkill.id);
-        } else {
-          await supabase.from('user_skill_progress').insert({
-            user_id: user.id,
-            skill: skillKey,
-            proficiency_score: skillBreakdown[skillKey],
-            questions_completed: stat.total,
-            updated_at: submittedAt,
-          });
+            });
+          }
+        } catch {
+          // Non-blocking skill update
         }
-      } catch {
-        // Non-blocking skill update
       }
     }
 
-    // Fetch existing user profile to preserve user-owned target_exam
-    const { data: profile } = await supabase
-      .from('user_profiles')
-      .select('target_exam')
-      .eq('id', user.id)
-      .single();
-    const userTargetExam = profile?.target_exam || 'PET';
+    let userTargetExam = 'PET';
 
-    // Atomically update user_profiles (Server-owned fields ONLY - DO NOT mutate user-owned target_exam)
-    const todayDate = submittedAt.split('T')[0];
-    await supabase
-      .from('user_profiles')
-      .update({
-        current_cefr_level: estimation.estimatedLevel,
-        estimated_cambridge_score: estimation.estimatedCambridgeScore,
-        assessment_completed: true,
-        last_active_date: todayDate,
-        updated_at: submittedAt,
-      })
-      .eq('id', user.id);
+    // Fetch and update profile/streak (production users only)
+    if (!isDemo) {
+      // Fetch existing user profile to preserve user-owned target_exam
+      const { data: profile } = await supabase
+        .from('user_profiles')
+        .select('target_exam')
+        .eq('id', user.id)
+        .single();
+      userTargetExam = profile?.target_exam || 'PET';
 
-    try {
-      await updateStreakOnActivity(supabase, user.id, new Date(submittedAt));
-    } catch {
-      // Non-blocking telemetry
+      // Atomically update user_profiles (Server-owned fields ONLY - DO NOT mutate user-owned target_exam)
+      const todayDate = submittedAt.split('T')[0];
+      await supabase
+        .from('user_profiles')
+        .update({
+          current_cefr_level: estimation.estimatedLevel,
+          estimated_cambridge_score: estimation.estimatedCambridgeScore,
+          assessment_completed: true,
+          last_active_date: todayDate,
+          updated_at: submittedAt,
+        })
+        .eq('id', user.id);
+
+      try {
+        await updateStreakOnActivity(supabase, user.id, new Date(submittedAt));
+      } catch {
+        // Non-blocking telemetry
+      }
     }
 
     const result: AssessmentResultDTO = {

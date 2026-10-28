@@ -14,12 +14,15 @@ import {
   CheckCircle2,
   HelpCircle,
   GraduationCap,
+  Lock,
 } from 'lucide-react';
 import { getGrammarTopics, mapGrammarDtoToTopic } from '../../lib/api/content/grammar';
 import { getQuestions, mapQuestionDtoToQuestion } from '../../lib/api/questions';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
 import { EmptyState } from '../common/EmptyState';
+import { useToast } from '../common/Toast';
+import { useAuth } from '../../context/AuthContext';
 import {
   GlovaLevelBadge,
 } from '../ui';
@@ -116,6 +119,19 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
   }
   const { t, language } = useTranslation();
   const isEn = language === 'en';
+  const { showToast } = useToast();
+  let isGuestOrDemo = false;
+  try {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const auth = useAuth();
+    isGuestOrDemo =
+      auth.status !== 'authenticated' ||
+      !auth.user ||
+      auth.user.email === 'demo-student@glova.app' ||
+      auth.user.email === 'guest@glova.app';
+  } catch {
+    isGuestOrDemo = false;
+  }
   const [topics, setTopics] = useState<GrammarTopic[]>(GRAMMAR_BANK);
   const [selectedTopicId, setSelectedTopicId] = useState<string>(
     activeTopicId || GRAMMAR_BANK[0]?.id || ''
@@ -265,23 +281,41 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
           { key: 'reading', label: isEn ? 'Reading' : 'การอ่าน' },
           { key: 'grammar', label: isEn ? 'Grammar' : 'ไวยากรณ์' },
           { key: 'pronunciation', label: isEn ? 'Pronunciation' : 'การออกเสียง' },
-          { key: 'listening', label: isEn ? 'Listening' : 'การฟัง' },
-          { key: 'vocabulary', label: isEn ? 'Vocabulary' : 'คลังคำศัพท์' },
+          { key: 'listening', label: isEn ? 'Listening' : 'การฟัง', isLocked: isGuestOrDemo },
+          { key: 'vocabulary', label: isEn ? 'Vocabulary' : 'คำศัพท์', isLocked: isGuestOrDemo },
           { key: 'speaking', label: isEn ? 'Speaking' : 'การพูด' },
         ].map((skill) => {
           const isActive = activeSkillTab === skill.key;
+          const isLocked = Boolean(skill.isLocked);
           return (
             <button
               key={skill.key}
               type="button"
-              onClick={() => handleSkillTabSelect(skill.key as StudioSkillTab)}
-              className={`relative pb-3 text-sm font-semibold transition-all shrink-0 cursor-pointer ${
+              onClick={() => {
+                if (isLocked) {
+                  showToast(
+                    isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
+                    isEn
+                      ? 'Currently unavailable. Coming soon.'
+                      : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
+                    'info'
+                  );
+                  return;
+                }
+                handleSkillTabSelect(skill.key as StudioSkillTab);
+              }}
+              className={`relative pb-3 text-sm font-semibold transition-all shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                isLocked ? 'opacity-70' : ''
+              } ${
                 isActive
                   ? 'text-slate-900 dark:text-white font-extrabold'
                   : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
               }`}
             >
               <span>{skill.label}</span>
+              {isLocked && (
+                <Lock className="w-3 h-3 text-slate-400 dark:text-slate-500" />
+              )}
               {isActive && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FA5D5D] rounded-full" />
               )}

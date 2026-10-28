@@ -90,6 +90,8 @@ export interface FinalizeExamResult {
   is_official: false;
   disclaimer: string;
   already_finalized?: boolean;
+  is_demo?: boolean;
+  dataset?: string;
 }
 
 /**

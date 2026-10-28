@@ -40,7 +40,7 @@ export const RankedLobbyCard: React.FC<RankedLobbyCardProps> = ({
   }
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#070B16]/90 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white">
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#23212C]/95 backdrop-blur-md p-6 shadow-xl text-slate-900 dark:text-white">
       {/* Top Banner Tag */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 dark:border-white/10 pb-4">
         <div className="flex items-center gap-2">

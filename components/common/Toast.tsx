@@ -90,7 +90,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     <ToastContext.Provider value={{ showToast }}>
       {children}
       <div
-        className="fixed bottom-20 md:bottom-6 right-4 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 md:px-0"
+        className="fixed bottom-20 md:bottom-6 right-4 z-50 flex flex-col items-end gap-2.5 max-w-sm pointer-events-none px-4 md:px-0"
         aria-live="polite"
         role="region"
         aria-label="Notifications"
@@ -98,12 +98,12 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         {toasts.map((t) => (
           <div
             key={t.id}
-            className={`pointer-events-auto flex items-start gap-3 p-4 rounded-2xl border shadow-xl backdrop-blur-md transition-all duration-200 animate-in fade-in slide-in-from-bottom-2 ${
+            className={`pointer-events-auto flex items-start gap-2.5 sm:gap-3 py-3 px-3.5 sm:p-4 rounded-2xl border shadow-xl backdrop-blur-md transition-all duration-200 animate-in fade-in slide-in-from-bottom-2 w-fit max-w-[calc(100vw-2rem)] sm:max-w-sm ${
               t.type === 'success'
                 ? 'bg-white dark:bg-[#0E1726] border-emerald-500/40 text-emerald-700 dark:text-emerald-300'
                 : t.type === 'error'
                 ? 'bg-white dark:bg-[#1C0E14] border-rose-500/40 text-rose-700 dark:text-rose-300'
-                : 'bg-white dark:bg-[#0B1224] border-slate-200 dark:border-white/15 text-slate-900 dark:text-slate-100'
+                : 'bg-white dark:bg-[#23212C] border-slate-200 dark:border-white/15 text-slate-900 dark:text-slate-100'
             }`}
           >
             {t.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />}
