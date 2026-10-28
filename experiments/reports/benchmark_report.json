@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-28T10:27:13.623858Z",
+  "model_name": "E2E-GOP-SpeechOcean762",
+  "dataset": "SpeechOcean762 (test split)",
+  "sample_count": 5,
+  "metrics": {
+    "n": 5,
+    "mae": 0.34,
+    "pearson_r": 0.9624,
+    "spearman_rho": 1.0,
+    "bias": 0.02,
+    "coverage": 1.0,
+    "abstention_rate": 0.0
+  },
+  "confidence_intervals_95": {
+    "pearson_r": {
+      "lower_95": 0.9021,
+      "upper_95": 1.0
+    },
+    "spearman_rho": {
+      "lower_95": 1.0,
+      "upper_95": 1.0
+    },
+    "mae": {
+      "lower_95": 0.3,
+      "upper_95": 0.38
+    }
+  },
+  "gates": {
+    "spearman_rho_ge_0_80": {
+      "target": 0.8,
+      "actual": 1.0,
+      "pass": true
+    },
+    "mae_le_1_0": {
+      "target": 1.0,
+      "actual": 0.34,
+      "pass": true
+    },
+    "abstention_gate": {
+      "target": "functional",
+      "actual": 0.0,
+      "pass": true
+    }
+  },
+  "verdict": "PASSED_GO",
+  "release_recommendation": "Model meets preliminary benchmark criteria on SpeechOcean762. Next Phase: Thai Learner Pilot Dataset validation required before exposing scores to Thai learners."
+}

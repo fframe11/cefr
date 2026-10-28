@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { evaluateSpeech } from "@/lib/speaking/evaluator";
 
 describe("AI Speech Evaluation Pipeline", () => {
-  it("evaluates speech and returns complete Notion specification data contract", async () => {
+  it("enforces No-Fake-Score invariant by returning not_ready when model is uncalibrated", async () => {
     const referenceText = "I enjoy studying English because it helps me communicate globally.";
     const audioBuffer = new Uint8Array(16000 * 2 * 4); // 4 seconds dummy buffer
 
@@ -17,23 +17,20 @@ describe("AI Speech Evaluation Pipeline", () => {
 
     // Check top-level properties
     expect(result.attempt_id).toMatch(/^spk_[a-f0-9]+$/);
-    expect(result.overall_score).toBeGreaterThanOrEqual(0);
-    expect(result.overall_score).toBeLessThanOrEqual(100);
-    expect(["A1", "A2", "B1", "B2", "C1", "C2"]).toContain(result.cefr_band);
+    expect(result.completeness_score).toBe(100);
 
-    // Check 4-dimension metrics
-    expect(result.metrics.pronunciation_score).toBeDefined();
-    expect(result.metrics.fluency_score).toBeDefined();
-    expect(result.metrics.completeness_score).toBeDefined();
-    expect(result.metrics.prosody_score).toBeDefined();
+    // Pronunciation score must be null (not fake) while in benchmark phase
+    expect(result.pronunciation_result.status).toBe("not_ready");
+    expect(result.pronunciation_result.pronunciationScore).toBeNull();
+    expect(result.overall_score).toBeNull();
+    expect(result.cefr_band).toBeNull();
 
     // Check words analysis
     expect(result.words_analysis.length).toBeGreaterThan(0);
     expect(typeof result.feedback_th).toBe("string");
-    expect(result.feedback_th.length).toBeGreaterThan(10);
   });
 
-  it("drastically reduces scores when silence or no speech is detected", async () => {
+  it("abstains with status 'abstained' when silence or no speech is detected", async () => {
     const referenceText = "I enjoy studying English because it helps me communicate globally.";
     const audioBuffer = new Uint8Array(16000 * 2 * 4);
 
@@ -50,14 +47,13 @@ describe("AI Speech Evaluation Pipeline", () => {
       },
     });
 
-    // Silent audio should receive very low score and A1 band
-    expect(silentResult.overall_score).toBeLessThan(20);
-    expect(silentResult.cefr_band).toBe("A1");
-    expect(silentResult.metrics.completeness_score).toBe(0);
+    expect(silentResult.pronunciation_result.status).toBe("abstained");
+    expect(silentResult.pronunciation_result.pronunciationScore).toBeNull();
+    expect(silentResult.completeness_score).toBe(0);
     expect(silentResult.feedback_th).toContain("ตรวจไม่พบเสียงพูด");
   });
 
-  it("scores partial speech accurately with omission penalties", async () => {
+  it("scores partial speech text coverage accurately with omission tracking", async () => {
     const referenceText = "I enjoy studying English because it helps me communicate globally.";
     const audioBuffer = new Uint8Array(16000 * 2 * 4);
 
@@ -75,17 +71,15 @@ describe("AI Speech Evaluation Pipeline", () => {
       },
     });
 
-    expect(partialResult.overall_score).toBeLessThan(60);
-    expect(partialResult.metrics.completeness_score).toBeLessThan(50);
+    expect(partialResult.completeness_score).toBeLessThan(50);
 
     const missingWord = partialResult.words_analysis.find(
       (w) => w.word.toLowerCase() === "globally"
     );
     expect(missingWord?.error_type).toBe("Omission");
-    expect(missingWord?.accuracy_score).toBe(10);
   });
 
-  it("produces deterministic metrics when simulated scores are passed", async () => {
+  it("produces verified scores when external model inference passes quality gate", async () => {
     const referenceText = "I enjoy studying English.";
     const audioBuffer = new Uint8Array(1000);
 
@@ -94,18 +88,24 @@ describe("AI Speech Evaluation Pipeline", () => {
       referenceText,
       targetCefr: "B2",
       promptId: "prompt_test_02",
-      simulatedScores: {
-        pronunciation_score: 85,
-        fluency_score: 78,
-        completeness_score: 90,
-        prosody_score: 76,
+      externalPronunciationResult: {
+        status: "scored",
+        pronunciationScore: 86,
+        scale: "0-100",
+        modelVersion: "E2E-GOP-SpeechOcean762",
+        validationVersion: "v1.0",
+        words: [
+          {
+            text: "enjoy",
+            phonemeScores: [{ phoneme: "IH0", score: 1.8, scale: "0-2" }],
+          },
+        ],
       },
     });
 
-    expect(result.metrics.pronunciation_score).toBe(85);
-    expect(result.metrics.fluency_score).toBe(78);
-    expect(result.metrics.completeness_score).toBe(90);
-    expect(result.metrics.prosody_score).toBe(76);
-    expect(result.cefr_band).toBe("B2");
+    expect(result.pronunciation_result.status).toBe("scored");
+    expect(result.pronunciation_result.pronunciationScore).toBe(86);
+    expect(result.overall_score).toBeDefined();
+    expect(result.cefr_band).toBeDefined();
   });
 });

@@ -159,7 +159,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 6. Run AI Speech Evaluation Engine
+    // 6. Call Python Pronunciation Inference Service (if running)
+    let externalPronunciationResult: any = undefined;
+    try {
+      const pythonServiceUrl = process.env.PRONUNCIATION_SERVICE_URL || "http://127.0.0.1:8000/v1/assess";
+      const pyFormData = new FormData();
+      pyFormData.append("audio", new Blob([audioBuffer], { type: audioFile.type || "audio/wav" }), "audio.wav");
+      pyFormData.append("reference_text", referenceText);
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1500); // 1.5s timeout for Edge compatibility
+
+      const pyRes = await fetch(pythonServiceUrl, {
+        method: "POST",
+        body: pyFormData,
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+
+      if (pyRes.ok) {
+        externalPronunciationResult = await pyRes.json();
+      }
+    } catch {
+      // Python inference service offline or timed out; evaluateSpeech handles benchmark status
+    }
+
+    // 7. Run Evaluation Engine
     const evaluation = await evaluateSpeech({
       audioBuffer,
       referenceText,
@@ -168,6 +193,7 @@ export async function POST(req: NextRequest) {
       clientDurationSec: validation.durationSec,
       userTranscript,
       acousticMetrics,
+      externalPronunciationResult,
     });
 
     // 7. Return 200 OK Response matching the exact Notion specification contract

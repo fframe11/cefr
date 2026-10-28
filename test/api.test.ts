@@ -123,12 +123,11 @@ describe("POST /api/speaking/evaluate Route Handler", () => {
     const json = await res.json();
     expect(json.success).toBe(true);
     expect(json.data.attempt_id).toMatch(/^spk_/);
-    expect(json.data.overall_score).toBeGreaterThan(0);
-    expect(json.data.cefr_band).toBeDefined();
-    expect(json.data.metrics.pronunciation_score).toBeDefined();
-    expect(json.data.metrics.fluency_score).toBeDefined();
-    expect(json.data.metrics.completeness_score).toBeDefined();
-    expect(json.data.metrics.prosody_score).toBeDefined();
+    expect(json.data.completeness_score).toBeGreaterThan(0);
+    expect(json.data.pronunciation_result).toBeDefined();
+    expect(["scored", "not_ready", "abstained"]).toContain(
+      json.data.pronunciation_result.status
+    );
     expect(json.data.words_analysis.length).toBeGreaterThan(0);
     expect(json.data.feedback_th).toBeDefined();
   });

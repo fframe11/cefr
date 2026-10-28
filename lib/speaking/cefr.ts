@@ -18,7 +18,15 @@ export const CEFR_ORDER: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
  * - Completeness: 25%
  * - Prosody: 15%
  */
-export function calculateOverallScore(metrics: SpeakingMetrics): number {
+export function calculateOverallScore(metrics: SpeakingMetrics): number | null {
+  if (
+    metrics.pronunciation_score === null ||
+    metrics.fluency_score === null ||
+    metrics.prosody_score === null
+  ) {
+    return null;
+  }
+
   const weighted =
     metrics.pronunciation_score * 0.35 +
     metrics.fluency_score * 0.25 +
@@ -66,15 +74,15 @@ export function generateThaiFeedback(
   }
 
   // Dimension specific coaching
-  if (metrics.pronunciation_score < 70) {
+  if (metrics.pronunciation_score !== null && metrics.pronunciation_score < 70) {
     insights.push("เน้นระวังเสียงลงท้ายและเสียงควบกล้ำพยัญชนะ");
   }
 
-  if (metrics.fluency_score < 70) {
+  if (metrics.fluency_score !== null && metrics.fluency_score < 70) {
     insights.push("พยายามลดจังหวะการหยุดคิดนาน และฝึกพูดเชื่อมคำเป็นวลีต่อเนื่อง");
   }
 
-  if (metrics.prosody_score < 70) {
+  if (metrics.prosody_score !== null && metrics.prosody_score < 70) {
     insights.push("ปรับปรุงน้ำเสียงสูงต่ำและการเน้นเสียงหนักเบาในระดับประโยค");
   }
 
