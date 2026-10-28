@@ -108,4 +108,38 @@ describe("AI Speech Evaluation Pipeline", () => {
     expect(result.overall_score).toBeDefined();
     expect(result.cefr_band).toBeDefined();
   });
+
+  it("abstains with status 'abstained' when learner speaks off-target language (e.g. Thai) with 0% completeness", async () => {
+    const referenceText = "I enjoy studying English because it helps me communicate globally.";
+    const audioBuffer = new Uint8Array(16000 * 2 * 3);
+
+    // User spoke in Thai (none of the English reference words matched)
+    const thaiResult = await evaluateSpeech({
+      audioBuffer,
+      referenceText,
+      targetCefr: "B2",
+      promptId: "prompt_thai_speech",
+      clientDurationSec: 3.5,
+      userTranscript: "สวัสดีครับผมชื่อจอห์น วันนี้อากาศดีมาก",
+      acousticMetrics: {
+        volume_rms: 0.12,
+        silence_ratio: 0.2,
+      },
+      externalPronunciationResult: {
+        status: "scored",
+        pronunciationScore: 61,
+        scale: "0-100",
+        modelVersion: "anonym-coling2027/E2E-GOP-SpeechOcean762",
+        validationVersion: "v1.0",
+        words: [],
+      },
+    });
+
+    // Content relevance gate MUST prevent fake 61% score on Thai speech!
+    expect(thaiResult.completeness_score).toBe(0);
+    expect(thaiResult.pronunciation_result.status).toBe("abstained");
+    expect(thaiResult.pronunciation_result.pronunciationScore).toBeNull();
+    expect(thaiResult.overall_score).toBeNull();
+    expect(thaiResult.feedback_th).toContain("ภาษาที่พูดไม่ตรงกับโจทย์");
+  });
 });

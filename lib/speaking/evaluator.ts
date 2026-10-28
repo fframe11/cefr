@@ -185,12 +185,10 @@ export async function evaluateSpeech(
     : matchedWordCount / (referenceWords.length || 1);
   const completeness_score = Math.min(100, Math.round(completionRatio * 100));
 
-  // Determine pronunciation result
+  // Determine pronunciation result with Content Relevance & Language Gate
   let pronunciation_result: PronunciationResult;
 
-  if (externalPronunciationResult) {
-    pronunciation_result = externalPronunciationResult;
-  } else if (isCompletelySilent) {
+  if (isCompletelySilent) {
     pronunciation_result = {
       status: "abstained",
       pronunciationScore: null,
@@ -198,6 +196,42 @@ export async function evaluateSpeech(
       modelVersion: "E2E-GOP-SpeechOcean762",
       validationVersion: "v1.0",
       reason: "ตรวจไม่พบสัญญาณเสียงพูดหรือระดับเสียงต่ำเกินไป ระบบงดการให้คะแนนเพื่อความถูกต้อง",
+    };
+  } else if (matchedWordCount === 0 || completeness_score === 0) {
+    // Language / Target Content Mismatch Gate:
+    // If the learner spoke in a different language (e.g. Thai) or none of the target words were spoken,
+    // acoustic GOP on forced-aligned English phonemes is scientifically invalid.
+    // In accordance with Azure Speech Assessment & Pearson standards, the engine must abstain from pronunciation scoring.
+    pronunciation_result = {
+      status: "abstained",
+      pronunciationScore: null,
+      scale: null,
+      modelVersion: externalPronunciationResult?.modelVersion || "E2E-GOP-SpeechOcean762",
+      validationVersion: externalPronunciationResult?.validationVersion || "v1.0",
+      reason: "ตรวจไม่พบคำภาษาอังกฤษที่ตรงกับโจทย์ (พูดไม่ตรงภาษาเป้าหมายหรือไม่ได้อ่านข้อความที่กำหนด)",
+      words: wordsAnalysis.map((w) => ({
+        text: w.word,
+        phonemeScores: [],
+      })),
+    };
+  } else if (externalPronunciationResult && externalPronunciationResult.status === "scored") {
+    // Calculate pronunciation score strictly across spoken/attempted words (excluding omissions)
+    const spokenWordsWithScore = wordsAnalysis.filter(
+      (w) => w.error_type !== "Omission" && w.accuracy_score !== null
+    );
+
+    let adjustedPronunciationScore = externalPronunciationResult.pronunciationScore;
+    if (completeness_score < 100 && spokenWordsWithScore.length > 0) {
+      const avgSpokenAccuracy = Math.round(
+        spokenWordsWithScore.reduce((sum, w) => sum + (w.accuracy_score ?? 0), 0) /
+          spokenWordsWithScore.length
+      );
+      adjustedPronunciationScore = avgSpokenAccuracy;
+    }
+
+    pronunciation_result = {
+      ...externalPronunciationResult,
+      pronunciationScore: adjustedPronunciationScore,
     };
   } else {
     // Model not yet calibrated or server offline: DO NOT synthesize fake scores!
@@ -231,6 +265,8 @@ export async function evaluateSpeech(
   let feedbackTh = "";
   if (isCompletelySilent) {
     feedbackTh = "ตรวจไม่พบเสียงพูดที่ชัดเจนในไฟล์เสียง กรุณาตรวจสอบไมโครโฟนและฝึกพูดออกเสียงตามข้อความตัวอย่าง";
+  } else if (completeness_score === 0 || matchedWordCount === 0) {
+    feedbackTh = "ตรวจไม่พบคำภาษาอังกฤษที่ตรงกับบทอ่านเป้าหมาย หรือภาษาที่พูดไม่ตรงกับโจทย์ (ความครบถ้วน 0%) กรุณาฝึกอ่านและออกเสียงข้อความภาษาอังกฤษตามที่กำหนด";
   } else if (completeness_score < 50) {
     feedbackTh = `คุณพูดข้อความได้เพียง ${completeness_score}% ของข้อความทั้งหมด (ขาดคำสำคัญไปหลายคำ) กรุณาฝึกอ่านและพูดประโยคให้ครบถ้วนสมบูรณ์ตามโจทย์`;
   } else if (pronunciation_result.status === "scored" && overall_score !== null) {

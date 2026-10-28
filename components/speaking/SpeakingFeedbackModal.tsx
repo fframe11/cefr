@@ -179,7 +179,9 @@ export function SpeakingFeedbackModal({
                 <div className="flex justify-between text-xs">
                   <span className="text-foreground/80 font-medium">Pronunciation</span>
                   <span className="font-semibold text-foreground">
-                    {pronunciation_result?.pronunciationScore !== null
+                    {isAbstained
+                      ? "งดประเมิน"
+                      : pronunciation_result?.pronunciationScore !== null
                       ? `${pronunciation_result?.pronunciationScore}%`
                       : "รอเกณฑ์"}
                   </span>
