@@ -77,9 +77,18 @@ export const SpeedBattleArena: React.FC<SpeedBattleArenaProps> = ({
         setHasAnswered(false);
         setAnswerFeedback(null);
         setQuestionStartTime(Date.now());
+      } else {
+        // Recovery unlock: if question fetch returns non-success, reset lock
+        console.warn('[SpeedBattle] Question fetch unsuccessful, unlocking UI');
+        setHasAnswered(false);
+        setSelectedOption(null);
+        setAnswerFeedback(null);
       }
     } catch (err) {
       console.error('[SpeedBattle] Failed to fetch question:', err);
+      setHasAnswered(false);
+      setSelectedOption(null);
+      setAnswerFeedback(null);
     }
   }, [currentUserId]);
 
@@ -242,14 +251,27 @@ export const SpeedBattleArena: React.FC<SpeedBattleArenaProps> = ({
 
         // Fetch next question after brief feedback delay (300ms)
         setTimeout(() => {
-          if (gameState === 'ROUND_ACTIVE' && roundSecondsLeft > 0) {
-            fetchNextQuestion(roomId);
-          }
+          fetchNextQuestion(roomId);
         }, 350);
+      } else {
+        console.warn('[SpeedBattle] Submit rejected, unlocking UI');
+        setTimeout(() => fetchNextQuestion(roomId), 300);
       }
     } catch (err) {
       console.error('[SpeedBattle] Answer submission failed:', err);
-      setTimeout(() => fetchNextQuestion(roomId), 400);
+      setTimeout(() => fetchNextQuestion(roomId), 300);
+    } finally {
+      // Safety unlock watchdog: guarantees UI never permanently freezes
+      setTimeout(() => {
+        setHasAnswered((prev) => {
+          if (prev) {
+            setSelectedOption(null);
+            setAnswerFeedback(null);
+            return false;
+          }
+          return prev;
+        });
+      }, 1000);
     }
   };
 

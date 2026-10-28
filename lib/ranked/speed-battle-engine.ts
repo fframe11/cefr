@@ -66,23 +66,71 @@ const SMART_BOT_PERSONAS: BattleOpponent[] = [
   { user_id: 'bot_david_speedracer', username: 'David_SpeedWord', avatar_url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80', elo: 1400, is_bot: true },
 ];
 
-// Curated Oxford Academic & CEFR Speed Battle Question Bank
+/**
+ * Fisher-Yates (Knuth) Uniform Permutation
+ * Guarantees uniform distribution: all n! permutations are equally likely.
+ */
+export function fisherYatesShuffle<T>(array: T[]): T[] {
+  const result = [...array];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+// Curated Oxford Academic & CEFR Speed Battle Question Bank (Expanded 50+ items)
 const SEED_QUESTIONS: Array<{ word: string; options: string[]; correctIndex: number; level: string }> = [
   { word: 'Metaphor', options: ['การเปรียบเทียบโดยตรง', 'การพูดเกินจริง', 'การเล่นเสียงสระ', 'การบอกใบ้ทางอ้อม'], correctIndex: 0, level: 'B2' },
   { word: 'Pragmatic', options: ['ทางปฏิบัติ/เป็นจริง', 'ในเชิงอุดมคติ', 'ซับซ้อนยากเข้าใจ', 'เกี่ยวกับทฤษฎีล้วน'], correctIndex: 0, level: 'C1' },
-  { word: 'Resilient', options: ['เปราะบาง', 'ฟื้นตัวได้เร็ว/อดทน', 'เหนื่อยล้าสะสม', 'เฉื่อยชา'], correctIndex: 1, level: 'B2' },
-  { word: 'Ambiguous', options: ['ชัดเจนแจ่มแจ้ง', 'เด็ดขาดมั่นคง', 'กำกวม/คลุมเครือ', 'สว่างไสว'], correctIndex: 2, level: 'B2' },
-  { word: 'Coherent', options: ['กระจัดกระจาย', 'สับสนวุ่นวาย', 'ขัดแย้งกันเอง', 'สอดคล้องเชื่อมโยงกัน'], correctIndex: 3, level: 'B2' },
+  { word: 'Resilient', options: ['ฟื้นตัวได้เร็ว/อดทน', 'เปราะบาง', 'เหนื่อยล้าสะสม', 'เฉื่อยชา'], correctIndex: 0, level: 'B2' },
+  { word: 'Ambiguous', options: ['กำกวม/คลุมเครือ', 'ชัดเจนแจ่มแจ้ง', 'เด็ดขาดมั่นคง', 'สว่างไสว'], correctIndex: 0, level: 'B2' },
+  { word: 'Coherent', options: ['สอดคล้องเชื่อมโยงกัน', 'กระจัดกระจาย', 'สับสนวุ่นวาย', 'ขัดแย้งกันเอง'], correctIndex: 0, level: 'B2' },
   { word: 'Eloquent', options: ['พูดจาสละสลวยคมคาย', 'เงียบขรึมไม่พูด', 'พูดจาติดอ่าง', 'พูดจาหยาบคาย'], correctIndex: 0, level: 'C1' },
-  { word: 'Scrutinize', options: ['เหลือบมองผ่านๆ', 'ตรวจสอบอย่างละเอียดถี่ถ้วน', 'ละเลยไม่ใส่ใจ', 'ชื่นชมยินดี'], correctIndex: 1, level: 'C1' },
+  { word: 'Scrutinize', options: ['ตรวจสอบอย่างละเอียดถี่ถ้วน', 'เหลือบมองผ่านๆ', 'ละเลยไม่ใส่ใจ', 'ชื่นชมยินดี'], correctIndex: 0, level: 'C1' },
   { word: 'Ephemeral', options: ['ชั่วคราว/คงอยู่ไม่นาน', 'ถาวรตลอดกาล', 'ยิ่งใหญ่ตระการตา', 'แข็งแกร่งทนทาน'], correctIndex: 0, level: 'C2' },
-  { word: 'Pervasive', options: ['พบเห็นได้ยาก', 'แพร่หลายไปทั่วทุกแห่ง', 'อยู่อย่างโดดเดี่ยว', 'จำกัดเฉพาะกลุ่ม'], correctIndex: 1, level: 'C1' },
-  { word: 'Meticulous', options: ['สะเพร่าเลินเล่อ', 'พิถีพิถัน/ละเอียดลออ', 'รวดเร็วเร่งรีบ', 'ใจกว้าง'], correctIndex: 1, level: 'C1' },
+  { word: 'Pervasive', options: ['แพร่หลายไปทั่วทุกแห่ง', 'พบเห็นได้ยาก', 'อยู่อย่างโดดเดี่ยว', 'จำกัดเฉพาะกลุ่ม'], correctIndex: 0, level: 'C1' },
+  { word: 'Meticulous', options: ['พิถีพิถัน/ละเอียดลออ', 'สะเพร่าเลินเล่อ', 'รวดเร็วเร่งรีบ', 'ใจกว้าง'], correctIndex: 0, level: 'C1' },
   { word: 'Lucid', options: ['ชัดเจนเข้าใจง่าย', 'มืดมัวสลัว', 'น่าสะพรึงกลัว', 'เลอะเลือน'], correctIndex: 0, level: 'B2' },
-  { word: 'Deteriorate', options: ['พัฒนาขึ้น', 'เสื่อมโทรม/ทรุดโทรมลง', 'คงที่', 'รุ่งเรือง'], correctIndex: 1, level: 'B2' },
-  { word: 'Vindicate', options: ['กล่าวหาปรักปรำ', 'พิสูจน์ความบริสุทธิ์/ยืนยันความถูกต้อง', 'ลงโทษอย่างรุนแรง', 'ยอมจำนน'], correctIndex: 1, level: 'C2' },
+  { word: 'Deteriorate', options: ['เสื่อมโทรม/ทรุดโทรมลง', 'พัฒนาขึ้น', 'คงที่', 'รุ่งเรือง'], correctIndex: 0, level: 'B2' },
+  { word: 'Vindicate', options: ['พิสูจน์ความบริสุทธิ์/ยืนยันความถูกต้อง', 'กล่าวหาปรักปรำ', 'ลงโทษอย่างรุนแรง', 'ยอมจำนน'], correctIndex: 0, level: 'C2' },
   { word: 'Ubiquitous', options: ['พบเห็นได้ทั่วไปทุกหนแห่ง', 'หายากมาก', 'โบราณล้าสมัย', 'แปลกประหลาด'], correctIndex: 0, level: 'C1' },
-  { word: 'Mitigate', options: ['ทำให้แย่ลง', 'บรรเทา/ทำให้อ่อนลง', 'กระตุ้นให้โกรธ', 'เพิกเฉย'], correctIndex: 1, level: 'B2' },
+  { word: 'Mitigate', options: ['บรรเทา/ทำให้อ่อนลง', 'ทำให้แย่ลง', 'กระตุ้นให้โกรธ', 'เพิกเฉย'], correctIndex: 0, level: 'B2' },
+  { word: 'Spontaneous', options: ['เกิดขึ้นเองตามธรรมชาติ', 'วางแผนไว้ล่วงหน้า', 'ถูกบังคับขู่เข็ญ', 'ประดิษฐ์ขึ้นมา'], correctIndex: 0, level: 'B2' },
+  { word: 'Benevolent', options: ['เมตตากรุณา/ใจบุญ', 'มุ่งร้ายเห็นแก่ตัว', 'โหดร้ายทารุณ', 'หยิ่งยโสโอหัง'], correctIndex: 0, level: 'C1' },
+  { word: 'Adversity', options: ['ความยากลำบาก/เคราะห์กรรม', 'โชคลาภวาสนา', 'ความสุขสบาย', 'ความสงบสุข'], correctIndex: 0, level: 'B2' },
+  { word: 'Disdain', options: ['การดูถูกเหยียดหยาม', 'ความเคารพนับถือ', 'ความชื่นชมศรัทธา', 'ความเห็นอกเห็นใจ'], correctIndex: 0, level: 'C1' },
+  { word: 'Fortitude', options: ['ความอดทนเข้มแข็ง', 'ความอ่อนแอขลาดกลัว', 'ความลังเลไม่แน่ใจ', 'ความประมาท'], correctIndex: 0, level: 'C2' },
+  { word: 'Inevitable', options: ['หลีกเลี่ยงไม่ได้/ต้องเกิดขึ้นแน่นอน', 'คาดเดาไม่ได้', 'เกิดขึ้นได้ยาก', 'ชะลอไว้ก่อนได้'], correctIndex: 0, level: 'B2' },
+  { word: 'Paradigm', options: ['แบบจำลองทางความคิด/กระบวนทัศน์', 'ความขัดแย้งส่วนบุคคล', 'ข้อผิดพลาดทางเทคนิค', 'เรื่องบังเอิญ'], correctIndex: 0, level: 'C1' },
+  { word: 'Superfluous', options: ['เกินความจำเป็น/ฟุ่มเฟือย', 'จำเป็นเร่งด่วน', 'ขาดแคลนอย่างหนัก', 'สำคัญยิ่งยวด'], correctIndex: 0, level: 'C2' },
+  { word: 'Synthesize', options: ['สังเคราะห์/บูรณาการเข้าด้วยกัน', 'แยกส่วนกระจัดกระจาย', 'ทำลายทิ้ง', 'วิพากษ์วิจารณ์'], correctIndex: 0, level: 'C1' },
+  { word: 'Venerable', options: ['น่าเคารพนับถือด้วยวัยวุฒิ', 'น่ารังเกียจ', 'เยาว์วัยไร้เดียงสา', 'ก้าวร้าวรุนแรง'], correctIndex: 0, level: 'C2' },
+  { word: 'Aesthetic', options: ['เกี่ยวกับความงดงาม/สุนทรียภาพ', 'ไร้ระเบียบแบบแผน', 'เกี่ยวกับตัวเลขคณิตศาสตร์', 'หยาบกระด้าง'], correctIndex: 0, level: 'B2' },
+  { word: 'Cogent', options: ['มีเหตุผลหนักแน่นน่าเชื่อถือ', 'ไร้สาระเลื่อนลอย', 'เข้าใจยากวกวน', 'อ่อนแอไร้น้ำหนัก'], correctIndex: 0, level: 'C1' },
+  { word: 'Diminish', options: ['ลดลง/ทำให้เล็กลง', 'ขยายใหญ่ขึ้น', 'คงสภาพเดิม', 'สร้างขึ้นใหม่'], correctIndex: 0, level: 'B2' },
+  { word: 'Enigma', options: ['สิ่งลึกลับปริศนายากเข้าใจ', 'เรื่องเปิดเผยชัดเจน', 'ความจริงธรรมดาสามัญ', 'คำตอบที่แน่ชัด'], correctIndex: 0, level: 'C1' },
+  { word: 'Foster', options: ['ส่งเสริมสนับสนุน/อุปถัมภ์', 'ขัดขวางทำลาย', 'เพิกเฉยทอดทิ้ง', 'แข่งขันแย่งชิง'], correctIndex: 0, level: 'B2' },
+  { word: 'Gregarious', options: ['ชอบเข้าสังคม/ชอบอยู่รวมกลุ่ม', 'ชอบเก็บตัวโดดเดี่ยว', 'หวาดระแวงผู้อื่น', 'เกียจคร้าน'], correctIndex: 0, level: 'C1' },
+  { word: 'Imperative', options: ['จำเป็นอย่างยิ่ง/ขาดไม่ได้', 'เลือกทำหรือไม่ก็ได้', 'ไม่มีความสำคัญ', 'ไม่เร่งด่วน'], correctIndex: 0, level: 'B2' },
+  { word: 'Juxtapose', options: ['วางเปรียบเทียบเคียงข้างกัน', 'แยกให้ห่างไกลกัน', 'ผสมกลมกลืนเป็นเนื้อเดียว', 'ซ่อนเร้นไว้'], correctIndex: 0, level: 'C2' },
+  { word: 'Kinetic', options: ['เกี่ยวกับการเคลื่อนไหว/พลังงานจลน์', 'หยุดนิ่งกับที่', 'เกี่ยวกับอารมณ์ความรู้สึก', 'เกี่ยวกับเสียงดนตรี'], correctIndex: 0, level: 'B2' },
+  { word: 'Lethargic', options: ['เซื่องซึม/เหนื่อยล้าไร้พลัง', 'กระตือรือร้นว่องไว', 'ตื่นเต้นมีชีวิตชีวา', 'โกรธเกรี้ยว'], correctIndex: 0, level: 'C1' },
+  { word: 'Manifest', options: ['แสดงออกอย่างชัดเจน/ประจักษ์', 'ซ่อนอยู่ลึกๆ', 'คลุมเครือไม่แน่ชัด', 'ปฏิเสธไม่ยอมรับ'], correctIndex: 0, level: 'B2' },
+  { word: 'Nostalgia', options: ['ความถวิลหาอดีต', 'ความกังวลต่ออนาคต', 'ความเกลียดชังสิ่งเดิม', 'ความตื่นเต้นกับสิ่งใหม่'], correctIndex: 0, level: 'B2' },
+  { word: 'Obscure', options: ['คลุมเครือ/ไม่เป็นที่รู้จักแพร่หลาย', 'โด่งดังมีชื่อเสียง', 'สว่างจ้าชัดเจน', 'เข้าใจได้ทันที'], correctIndex: 0, level: 'B2' },
+  { word: 'Placate', options: ['ปลอบประโลมให้สงบลง', 'ยั่วยุให้โมโห', 'เมินเฉยไม่ใส่ใจ', 'ท้าทายเปิดเผย'], correctIndex: 0, level: 'C1' },
+  { word: 'Reconcile', options: ['ประนีประนอม/ไกล่เกลี่ยคืนดี', 'ตัดขาดความสัมพันธ์', 'โต้เถียงเอาชนะ', 'แข่งขันกันต่อ'], correctIndex: 0, level: 'B2' },
+  { word: 'Tenacious', options: ['เหนียวแน่น/ทรหดไม่ยอมแพ้', 'ยอมแพ้ง่ายดาย', 'เปราะบางหักง่าย', 'เฉื่อยชา'], correctIndex: 0, level: 'C1' },
+  { word: 'Unprecedented', options: ['ที่ไม่เคยปรากฏมาก่อน/ไร้แบบอย่าง', 'เกิดขึ้นเป็นประจำ', 'ซ้ำซากจำเจ', 'เป็นธรรมเนียมดั้งเดิม'], correctIndex: 0, level: 'C1' },
+  { word: 'Versatile', options: ['อเนกประสงค์/รอบด้านหลากหลาย', 'ใช้ได้เพียงทางเดียว', 'ตายตัวปรับเปลี่ยนไม่ได้', 'ไร้ประโยชน์'], correctIndex: 0, level: 'B2' },
+  { word: 'Wary', options: ['ระมัดระวังรอบคอบ/ไม่ไว้วางใจ', 'ประมาทเลินเล่อ', 'เชื่อคนง่าย', 'กล้าได้กล้าเสีย'], correctIndex: 0, level: 'B2' },
+  { word: 'Zealous', options: ['กระตือรือร้นอย่างยิ่ง/มุ่งมั่นแรงกล้า', 'เฉยเมยเย็นชา', 'เกียจคร้าน', 'ลังเลสงสัย'], correctIndex: 0, level: 'C1' },
+  { word: 'Advocate', options: ['ผู้สนับสนุน/สนับสนุนอย่างเปิดเผย', 'ผู้คัดค้านต่อต้าน', 'ผู้สังเกตการณ์เงียบๆ', 'ผู้ตัดสิน'], correctIndex: 0, level: 'B2' },
+  { word: 'Bolster', options: ['ค้ำจุน/เสริมกำลังให้แข็งแกร่ง', 'บั่นทอนทำให้อ่อนแอ', 'ทำลายล้าง', 'กีดกัน'], correctIndex: 0, level: 'C1' },
+  { word: 'Circumvent', options: ['หลีกเลี่ยง/หาทางเลี่ยงอุปสรรค', 'เผชิญหน้าโดยตรง', 'ยอมจำนน', 'ยอมรับข้อจำกัด'], correctIndex: 0, level: 'C1' },
+  { word: 'Disparate', options: ['แตกต่างกันอย่างสิ้นเชิง', 'เหมือนกันทุกประการ', 'สอดคล้องกันดี', 'สัมพันธ์กันแน่นแฟ้น'], correctIndex: 0, level: 'C2' },
+  { word: 'Empathy', options: ['ความเข้าอกเข้าใจผู้อื่น', 'ความเฉยเมยไม่ใส่ใจ', 'ความอิจฉาริษยา', 'ความขัดแย้ง'], correctIndex: 0, level: 'B2' },
 ];
 
 /**
@@ -95,19 +143,32 @@ export function resetSpeedBattleState(): void {
 }
 
 /**
- * Generate 25 questions for a speed battle room
+ * Generate 60 questions for a speed battle room with thoroughly permuted options.
+ * Guarantees uniform random distribution across options A, B, C, D (approx 25% each).
  */
 function generateRoomQuestions(): InternalQuestion[] {
-  // Shuffle seed questions
-  const shuffled = [...SEED_QUESTIONS].sort(() => Math.random() - 0.5);
-  return shuffled.map((q, idx) => ({
-    questionIndex: idx + 1,
-    word: q.word,
-    options: q.options,
-    correctOptionIndex: q.correctIndex,
-    timeLimitSeconds: 10,
-    cefrLevel: q.level,
-  }));
+  const questionsList: InternalQuestion[] = [];
+  const baseShuffled = fisherYatesShuffle(SEED_QUESTIONS);
+  
+  let qIdx = 1;
+  while (questionsList.length < 60) {
+    const cycleShuffled = fisherYatesShuffle(baseShuffled);
+    for (const q of cycleShuffled) {
+      if (questionsList.length >= 60) break;
+      const correctAnswerText = q.options[q.correctIndex];
+      const permutedOptions = fisherYatesShuffle(q.options);
+      const newCorrectIndex = permutedOptions.indexOf(correctAnswerText);
+      questionsList.push({
+        questionIndex: qIdx++,
+        word: q.word,
+        options: permutedOptions,
+        correctOptionIndex: newCorrectIndex,
+        timeLimitSeconds: 10,
+        cefrLevel: q.level,
+      });
+    }
+  }
+  return questionsList;
 }
 
 /**
@@ -335,8 +396,23 @@ export function getClientNextQuestion(roomId: string, userId: string): ClientQue
   const isPlayer1 = room.player1.user_id === userId;
   const currentIdx = isPlayer1 ? room.player1CurrentQuestionIndex : room.player2CurrentQuestionIndex;
 
-  const q = questions.find((item) => item.questionIndex === currentIdx);
-  if (!q) return null;
+  let q = questions.find((item) => item.questionIndex === currentIdx);
+  if (!q) {
+    // Dynamic continuous question generation: guarantees match never exhausts questions in 60s
+    const seedQ = SEED_QUESTIONS[(currentIdx - 1) % SEED_QUESTIONS.length];
+    const correctAnswerText = seedQ.options[seedQ.correctIndex];
+    const permutedOptions = fisherYatesShuffle(seedQ.options);
+    const newCorrectIndex = permutedOptions.indexOf(correctAnswerText);
+    q = {
+      questionIndex: currentIdx,
+      word: seedQ.word,
+      options: permutedOptions,
+      correctOptionIndex: newCorrectIndex,
+      timeLimitSeconds: 10,
+      cefrLevel: seedQ.level,
+    };
+    questions.push(q);
+  }
 
   // Return strictly client-safe payload (NO correct answer index)
   return {

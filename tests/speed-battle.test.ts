@@ -212,4 +212,83 @@ describe('GLOVA TASK-03 — Realtime Multiplayer Synchronous Speed Battle', () =
       expect(result.room.isWalkover).toBe(true);
     });
   });
+
+  describe('Bug Reproduction: Choice Shuffling & Endless Questions in 60s Sprint', () => {
+    it('should never run out of questions even when players answer > 15 questions in 60s sprint', () => {
+      enqueueSpeedBattlePlayer({
+        userId: 'usr_fast_1',
+        username: 'FastPlayer',
+        avatarUrl: '/avatars/p1.png',
+        elo: 1300,
+      });
+      const match = enqueueSpeedBattlePlayer({
+        userId: 'usr_fast_2',
+        username: 'Opponent',
+        avatarUrl: '/avatars/p2.png',
+        elo: 1300,
+      });
+
+      const roomId = match.matchEvent!.room_id;
+      const room = getSpeedBattleRoom(roomId);
+      expect(room).toBeDefined();
+
+      // Test that questions 1 through 30 can be retrieved without returning null
+      for (let idx = 1; idx <= 30; idx++) {
+        room!.player1CurrentQuestionIndex = idx;
+        const q = getClientNextQuestion(roomId, 'usr_fast_1');
+        expect(q).not.toBeNull();
+        expect(q?.question_index).toBe(idx);
+        expect(q?.options.length).toBe(4);
+      }
+    });
+
+    it('should distribute correct answer positions across all 4 choices A, B, C, D (not just 0 and 1)', () => {
+      enqueueSpeedBattlePlayer({
+        userId: 'usr_dist_1',
+        username: 'DistPlayer',
+        avatarUrl: '/avatars/p1.png',
+        elo: 1200,
+      });
+      const match = enqueueSpeedBattlePlayer({
+        userId: 'usr_dist_2',
+        username: 'DistPlayer2',
+        avatarUrl: '/avatars/p2.png',
+        elo: 1200,
+      });
+
+      const roomId = match.matchEvent!.room_id;
+      const room = getSpeedBattleRoom(roomId);
+      expect(room).toBeDefined();
+
+      // Check whether questions 1-20 contain correct answers on options C (2) and D (3)
+      let countCD = 0;
+      for (let idx = 1; idx <= 20; idx++) {
+        room!.player1CurrentQuestionIndex = idx;
+        const q = getClientNextQuestion(roomId, 'usr_dist_1');
+        if (!q) continue;
+
+        // Try submitting option 2 (C) or 3 (D)
+        const subC = submitSpeedBattleAnswer({
+          roomId,
+          userId: 'usr_dist_1',
+          questionIndex: idx,
+          selectedOptionIndex: 2,
+          responseTimeMs: 1000,
+        });
+        if (subC.isCorrect) countCD++;
+
+        const subD = submitSpeedBattleAnswer({
+          roomId,
+          userId: 'usr_dist_1',
+          questionIndex: idx,
+          selectedOptionIndex: 3,
+          responseTimeMs: 1000,
+        });
+        if (subD.isCorrect) countCD++;
+      }
+
+      // In a fair uniform 4-choice test across 20 questions, C and D should appear at least 5 times (~50% of the time)
+      expect(countCD).toBeGreaterThanOrEqual(5);
+    });
+  });
 });
