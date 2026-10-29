@@ -4,7 +4,7 @@ import { createServiceRoleClient } from '../_lib/supabase/client';
 import { validateQuery } from '../_lib/validation/validator';
 import { uuidSchema } from '../_lib/validation/common-schemas';
 import { NotFoundError, UnauthorizedError, ForbiddenError, BadRequestError } from '../_lib/errors/api-error';
-import { calculateExamTiming, finalizeMockExamAttempt } from './_engine';
+import { calculateExamTiming, finalizeMockExamAttempt, convertCambridgeRawScore, convertIeltsBandScore } from './_engine';
 import { DemoExamService } from '../_lib/demo/demo-exam.service';
 
 const resultsQuerySchema = z.object({
@@ -48,6 +48,9 @@ export interface MockExamResultResponseDTO {
   is_passed: boolean;
   estimated_cefr_level: string;
   estimated_cambridge_score: number;
+  cambridge_grade?: string;
+  ielts_band?: number;
+  ielts_descriptor?: string;
   section_breakdown: Record<string, { raw_score: number; total_marks: number; percentage: number }>;
   skill_breakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }>;
   is_official: false;
@@ -221,6 +224,26 @@ export default createApiHandler(
     const hasPendingSubjective = pendingSubjectiveMarks > 0;
     const objectivePercentage = objectiveTotalMarks > 0 ? Math.round((objectiveRawScore / objectiveTotalMarks) * 100) : 0;
 
+    let cambridgeGrade: string | undefined;
+    let ieltsBand: number | undefined;
+    let ieltsDescriptor: string | undefined;
+
+    const examCode = (exam.exam_code || '').toUpperCase();
+    const scoreToConvert = attempt.raw_score ?? objectiveRawScore;
+    const totalToConvert = attempt.total_marks ?? (objectiveTotalMarks + pendingSubjectiveMarks);
+
+    if (examCode === 'CAE' || examCode.includes('C1') || examCode.includes('ADVANCED')) {
+      const res = convertCambridgeRawScore(scoreToConvert, totalToConvert, 'C1');
+      cambridgeGrade = res.grade;
+    } else if (examCode === 'CPE' || examCode.includes('C2') || examCode.includes('PROFICIENCY')) {
+      const res = convertCambridgeRawScore(scoreToConvert, totalToConvert, 'C2');
+      cambridgeGrade = res.grade;
+    } else if (examCode === 'IELTS' || examCode.includes('IELTS')) {
+      const res = convertIeltsBandScore(scoreToConvert, totalToConvert);
+      ieltsBand = res.band;
+      ieltsDescriptor = res.descriptor;
+    }
+
     const response: MockExamResultResponseDTO = {
       attempt_id: attempt.id,
       session_token: attempt.session_token,
@@ -247,6 +270,9 @@ export default createApiHandler(
       is_passed: isPassed,
       estimated_cefr_level: attempt.estimated_cefr_level || 'A1',
       estimated_cambridge_score: attempt.estimated_cambridge_score || 80,
+      cambridge_grade: cambridgeGrade,
+      ielts_band: ieltsBand,
+      ielts_descriptor: ieltsDescriptor,
       section_breakdown: sectionBreakdown,
       skill_breakdown: skillBreakdown,
       is_official: false,

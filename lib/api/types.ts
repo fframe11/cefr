@@ -491,6 +491,9 @@ export interface MockExamResultResponseDTO {
   is_passed: boolean;
   estimated_cefr_level: string;
   estimated_cambridge_score: number;
+  cambridge_grade?: string;
+  ielts_band?: number;
+  ielts_descriptor?: string;
   section_breakdown: Record<string, { raw_score: number; total_marks: number; percentage: number }>;
   skill_breakdown: Record<string, { total_questions: number; correct_questions: number; percentage: number }>;
   is_official: false;

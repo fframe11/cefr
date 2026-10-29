@@ -1,6 +1,10 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { CAMBRIDGE_MOCK_EXAMS_CATALOG } from '../../data/mockExamsCatalog';
+import { KeyWordTransformationQuestion } from '../mock-exams/KeyWordTransformationQuestion';
+import { GappedTextQuestion } from '../mock-exams/GappedTextQuestion';
+import { MultipleMatchingQuestion } from '../mock-exams/MultipleMatchingQuestion';
+import { ListeningAudioPlayer } from '../mock-exams/ListeningAudioPlayer';
 import {
   MockExamCatalogItemDTO,
   MockExamSessionResponseDTO,
@@ -710,7 +714,11 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-2">
-              {isEn
+              {examResult.ielts_band !== undefined
+                ? `IELTS Academic Overall Band: ${examResult.ielts_band.toFixed(1)} (${examResult.ielts_descriptor || 'Evaluated'})`
+                : examResult.cambridge_grade
+                ? `Cambridge ${examResult.exam.exam_code}: ${examResult.estimated_cambridge_score} pts (${examResult.cambridge_grade})`
+                : isEn
                 ? `Cambridge ${examResult.exam.exam_code} Exam Result: ${examResult.estimated_cambridge_score} pts`
                 : `ผลสอบ Cambridge ${examResult.exam.exam_code}: ${examResult.estimated_cambridge_score} คะแนน`}
             </h2>
@@ -944,7 +952,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                   )}
 
                   {/* Fill in the blank review */}
-                  {q.type === 'fill_blank' && (
+                  {(q.type === 'fill_blank' || q.type === 'keyword_transformation' || q.type === 'gapped_text') && (
                     <div className="pl-8 pt-1 space-y-2 text-xs">
                       <div className="p-3 rounded-[14px] bg-white dark:bg-[#1E1B28] border border-border/80 flex items-center justify-between">
                         <span className="text-slate-600 dark:text-slate-400">
@@ -1102,7 +1110,139 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
               </button>
             </div>
 
-            {/* Current Question View (English only) */}
+            {/* Listening Audio Track with Cambridge Max 2 Plays Rule */}
+            {currentQuestion.skill === 'listening' && (
+              <ListeningAudioPlayer
+                title={currentQuestion.promptEn?.split('\n')[0] || 'Cambridge Listening Audio Track'}
+                script={currentQuestion.promptEn || currentQuestion.promptTh}
+                maxPlays={2}
+                className="mb-4"
+              />
+            )}
+
+            {/* Specialized Question Types: Key Word Transformation */}
+            {currentQuestion.type === 'keyword_transformation' ? (
+              (() => {
+                let original = '';
+                let keyword = 'KEY';
+                let prefix = '';
+                let suffix = '';
+                const raw = currentQuestion.promptEn || currentQuestion.promptTh || '';
+                if (raw.trim().startsWith('{')) {
+                  try {
+                    const obj = JSON.parse(raw);
+                    original = obj.originalSentence || '';
+                    keyword = obj.keyWord || '';
+                    prefix = obj.targetPrefix || '';
+                    suffix = obj.targetSuffix || '';
+                  } catch {}
+                } else {
+                  const origMatch = raw.match(/Original:\s*(.+?)(?:\n|$)/i);
+                  const keyMatch = raw.match(/Key(?:word)?:\s*(.+?)(?:\n|$)/i);
+                  const preMatch = raw.match(/Prefix:\s*(.+?)(?:\n|$)/i);
+                  const sufMatch = raw.match(/Suffix:\s*(.+?)(?:\n|$)/i);
+                  original = origMatch ? origMatch[1].trim() : raw;
+                  keyword = keyMatch ? keyMatch[1].trim() : (currentQuestion.options?.[0]?.text || 'KEY');
+                  prefix = preMatch ? preMatch[1].trim() : '';
+                  suffix = sufMatch ? sufMatch[1].trim() : '';
+                }
+
+                return (
+                  <KeyWordTransformationQuestion
+                    questionNumber={currentQuestionIdx + 1}
+                    originalSentence={original}
+                    keyWord={keyword}
+                    targetPrefix={prefix}
+                    targetSuffix={suffix}
+                    userAnswer={answers[currentQuestion.id]?.text_answer || ''}
+                    onAnswerChange={(ans) => handleTextAnswerChange(currentQuestion.id, ans)}
+                  />
+                );
+              })()
+            ) : currentQuestion.type === 'multiple_matching' ? (
+              (() => {
+                const raw = currentQuestion.promptEn || currentQuestion.promptTh || '';
+                let statement = raw;
+                let sections = (currentQuestion.options || []).map((opt) => ({
+                  key: opt.key,
+                  title: `Section ${opt.key}`,
+                  text: opt.text,
+                }));
+
+                if (raw.trim().startsWith('{')) {
+                  try {
+                    const parsed = JSON.parse(raw);
+                    statement = parsed.statement || statement;
+                    if (parsed.sections) sections = parsed.sections;
+                  } catch {}
+                }
+
+                return (
+                  <MultipleMatchingQuestion
+                    questionNumber={currentQuestionIdx + 1}
+                    statement={statement}
+                    sections={sections}
+                    selectedKey={answers[currentQuestion.id]?.selected_option_key || null}
+                    onSelectKey={(key) => handleSelectOption(currentQuestion.id, key)}
+                  />
+                );
+              })()
+            ) : currentQuestion.type === 'gapped_text' ? (
+              (() => {
+                const raw = currentQuestion.promptEn || currentQuestion.promptTh || '';
+                let title = 'Reading & Use of English: Part 6 Gapped Text';
+                let paragraphs: Array<{ type: 'text' | 'gap'; content?: string; gapNumber?: number }> = [];
+                let options = (currentQuestion.options || []).map((o) => ({ key: o.key, text: o.text }));
+
+                if (raw.trim().startsWith('{')) {
+                  try {
+                    const parsed = JSON.parse(raw);
+                    title = parsed.passageTitle || title;
+                    if (parsed.passageParagraphs) paragraphs = parsed.passageParagraphs;
+                    if (parsed.availableOptions) options = parsed.availableOptions;
+                  } catch {}
+                } else {
+                  paragraphs = [
+                    { type: 'text', content: raw },
+                    { type: 'gap', gapNumber: 1 },
+                  ];
+                }
+
+                let assignedGaps: Record<number, string> = {};
+                try {
+                  const stored = answers[currentQuestion.id]?.text_answer;
+                  if (stored && stored.trim().startsWith('{')) {
+                    assignedGaps = JSON.parse(stored);
+                  } else if (answers[currentQuestion.id]?.selected_option_key) {
+                    assignedGaps = { 1: answers[currentQuestion.id]?.selected_option_key! };
+                  }
+                } catch {}
+
+                const handleAssignGap = (gapNum: number, optKey: string) => {
+                  const updated = { ...assignedGaps, [gapNum]: optKey };
+                  handleTextAnswerChange(currentQuestion.id, JSON.stringify(updated));
+                  handleSelectOption(currentQuestion.id, optKey);
+                };
+
+                const handleClearGap = (gapNum: number) => {
+                  const updated = { ...assignedGaps };
+                  delete updated[gapNum];
+                  handleTextAnswerChange(currentQuestion.id, JSON.stringify(updated));
+                };
+
+                return (
+                  <GappedTextQuestion
+                    passageTitle={title}
+                    passageParagraphs={paragraphs}
+                    availableOptions={options}
+                    assignedGaps={assignedGaps}
+                    onAssignGap={handleAssignGap}
+                    onClearGap={handleClearGap}
+                  />
+                );
+              })()
+            ) : (
+            /* Standard Multiple Choice / Fill Blank Question View */
             <div className="p-6 sm:p-7 space-y-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-border/80 shadow-sm">
               <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white break-word-safe leading-snug">
                 {currentQuestion.promptEn || currentQuestion.promptTh}
@@ -1156,6 +1296,7 @@ export const MockExamView: React.FC<MockExamViewProps> = ({
                 </div>
               )}
             </div>
+            )}
 
             {/* Bottom Pagination Buttons */}
             <div className="flex items-center justify-between pt-2">
