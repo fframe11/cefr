@@ -24,6 +24,7 @@ describe('Database Schema Migrations Verification', () => {
       '20261028_user_speaking_attempts.sql',
       '20261028_user_writing_submissions.sql',
       '20261029000012_cambridge_c1_c2_ielts_expansion.sql',
+      '20261030000013_user_push_subscriptions_and_streaks.sql',
     ]);
   });
 
