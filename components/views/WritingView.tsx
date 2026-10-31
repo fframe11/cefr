@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { WRITING_BANK } from '../../data/writingBank';
 import { WritingPrompt } from '../../types';
+import { WritingEvaluationResult } from '../../lib/writing/types';
+import { WritingEvaluationPanel } from '../writing/WritingEvaluationPanel';
 import {
   PenTool,
   CheckCircle2,
@@ -42,6 +44,8 @@ export const WritingView: React.FC = () => {
   const [showModelAnswer, setShowModelAnswer] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selfScores, setSelfScores] = useState<Record<string, number>>({});
+  const [evaluationResult, setEvaluationResult] = useState<WritingEvaluationResult | null>(null);
+  const [isEvaluating, setIsEvaluating] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -98,21 +102,65 @@ export const WritingView: React.FC = () => {
     );
   };
 
-  const handleSubmit = () => {
-    if (wordCount < 5) {
+  const handleSubmit = async () => {
+    if (wordCount < 10) {
       showToast(
-        isEn ? 'Please write your response' : 'กรุณาเขียนคำตอบก่อนส่ง',
-        isEn ? 'Minimum content required' : 'ต้องการเนื้อหาอย่างน้อยเพื่อทำการบันทึก',
+        isEn ? 'Please write your response' : 'กรุณาเขียนคำตอบเพิ่มเติม',
+        isEn ? 'Minimum content required (at least 10 words)' : 'ต้องมีเนื้อหาอย่างน้อย 10 คำเพื่อทำการประเมิน',
         'info'
       );
       return;
     }
-    setIsSubmitted(true);
-    showToast(
-      isEn ? 'Writing submitted' : 'ส่งงานเขียนเข้าสู่ระบบแล้ว',
-      isEn ? 'Response recorded for assessment' : 'บันทึกคำตอบแล้ว — อยู่ระหว่างรอการประเมินผล',
-      'success'
-    );
+
+    setIsEvaluating(true);
+    try {
+      const res = await fetch('/api/writing/evaluate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text: userText,
+          promptId: currentPrompt.id,
+          targetCefr: currentPrompt.cefrLevel,
+          minWords: currentPrompt.minWords,
+          maxWords: currentPrompt.maxWords,
+          topic: currentPrompt.title,
+          promptTitle: currentPrompt.title,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success && data.data) {
+        setEvaluationResult(data.data);
+        setIsSubmitted(true);
+        showToast(
+          isEn ? 'Evaluation Complete' : 'ประเมินผลสำเร็จ',
+          isEn
+            ? `CEFR Band: ${data.data.cefrBand} (${data.data.overallScore}/100)`
+            : `ระดับ CEFR: ${data.data.cefrBand} (${data.data.overallScore}/100)`,
+          'success'
+        );
+      } else {
+        throw new Error(data.error || 'Evaluation failed');
+      }
+    } catch (err: any) {
+      console.error('[WritingView] AES error:', err);
+      showToast(
+        isEn ? 'Evaluation Error' : 'เกิดข้อผิดพลาดในการประเมิน',
+        err?.message || 'Could not evaluate text',
+        'error'
+      );
+    } finally {
+      setIsEvaluating(false);
+    }
+  };
+
+  const handleSelectNextPrompt = () => {
+    const currentIndex = prompts.findIndex((p) => p.id === selectedPromptId);
+    const nextIndex = (currentIndex + 1) % prompts.length;
+    setSelectedPromptId(prompts[nextIndex].id);
+    setIsSubmitted(false);
+    setEvaluationResult(null);
+    setUserText('');
   };
 
   return (
@@ -336,23 +384,14 @@ export const WritingView: React.FC = () => {
             </div>
           </div>
 
-          {/* 3. Feedback State (Pending Evaluation & Model Answer) */}
-          {isSubmitted && (
-            <div className="p-4 sm:p-5 rounded-[22px] bg-[#FA5D5D] dark:bg-[#FA5D5D]/20 border border-[#FA5D5D] dark:border-[#FA5D5D]/20 space-y-2 animate-in fade-in duration-200 shadow-xs">
-              <div className="flex items-center gap-2 text-[#FA5D5D] dark:text-[#FA5D5D] font-bold text-sm">
-                <Clock className="w-4 h-4" aria-hidden="true" />
-                <span>
-                  {isEn
-                    ? 'Response Recorded: Pending Cambridge Rubric Evaluation'
-                    : 'บันทึกงานเขียนสำเร็จ — อยู่ระหว่างรอการประเมินตามเกณฑ์ Cambridge'}
-                </span>
-              </div>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-                {isEn
-                  ? 'Because writing is an open-ended CEFR assessment, your response has been saved. You can compare your work with the model answer and scoring rubric below.'
-                  : 'เนื่องจากงานเขียนเป็นแบบฝึกหัดอัตนัยอิงตามแนวทาง CEFR ระบบได้บันทึกคำตอบของคุณแล้ว คุณสามารถตรวจสอบความสอดคล้องเบื้องต้นได้จากตัวอย่างคำตอบระดับคะแนนเต็มและเกณฑ์ Self-Assessment ด้านล่าง'}
-              </p>
-            </div>
+          {/* 3. AES AI Evaluation Results Panel */}
+          {isSubmitted && evaluationResult && (
+            <WritingEvaluationPanel
+              result={evaluationResult}
+              modelAnswer={currentPrompt.sampleModelAnswer}
+              onTryAgain={() => setIsSubmitted(false)}
+              onSelectNextPrompt={handleSelectNextPrompt}
+            />
           )}
 
           {/* Sample Model Answer Box */}
