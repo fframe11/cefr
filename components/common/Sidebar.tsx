@@ -21,7 +21,6 @@ import {
   Trophy,
   Users,
   GraduationCap,
-  ShieldCheck,
   Lock,
 } from 'lucide-react';
 import { GlovaLogo } from '../ui/GlovaLogo';
@@ -320,28 +319,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <nav className="flex-1 space-y-1.5 pt-0.5">
           {renderNavButtons(isCollapsed)}
         </nav>
-
-        {/* Footer Info Box (Only when expanded) */}
-        {!isCollapsed && (
-          <div className="pt-3.5 border-t border-slate-200/70 dark:border-white/10 mt-auto">
-            <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#23212C]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
-              <div className="flex items-center justify-between gap-1.5">
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#FA5D5D]" />
-                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">
-                    CEFR & Cambridge
-                  </span>
-                </div>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#FA5D5D] text-white">
-                  VERIFIED
-                </span>
-              </div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono leading-snug">
-                Oxford Lexicon &bull; 6 Core Skills
-              </p>
-            </div>
-          </div>
-        )}
       </aside>
 
       {/* 2. Mobile Off-Canvas Drawer (< 768px) */}
