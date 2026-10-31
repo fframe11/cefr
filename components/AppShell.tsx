@@ -213,7 +213,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         onOpenMobileNav={() => setIsMobileNavOpen(true)}
       />
 
-      <div className="flex-1 flex w-full min-h-[calc(100vh-3.5rem)] xl:min-h-[calc(100vh-4rem)]">
+      <div className="flex-1 flex w-full min-h-[calc(100vh-4rem)]">
         {/* Desktop / Tablet Sidebar (>= 768px) & Mobile Drawer (< 768px) */}
         <Sidebar
           currentView={currentView}
@@ -228,8 +228,8 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         />
 
         {/* Main Content Area: Fluid width expanding naturally when sidebar is collapsed */}
-        <main className="flex-1 p-3 sm:p-4 lg:p-5 xl:p-6 min-w-0 w-full overflow-x-hidden pb-20 md:pb-6 transition-all duration-300">
-          <div className="w-full max-w-[1440px] mx-auto space-y-4 sm:space-y-5 lg:space-y-5 xl:space-y-6">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-w-0 w-full overflow-x-hidden pb-24 md:pb-8 transition-all duration-300">
+          <div className="w-full max-w-[1500px] mx-auto space-y-6">
             {children}
           </div>
         </main>

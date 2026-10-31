@@ -388,7 +388,7 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {!embedded ? (
         <nav
           aria-label="Vocabulary sub-navigation"
-          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[24px] sm:rounded-[28px] p-2.5 sm:p-3.5 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
         >
           {/* Brand & Studio Identity */}
           <div className="flex items-center gap-3 flex-wrap">

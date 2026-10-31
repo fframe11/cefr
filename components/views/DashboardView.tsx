@@ -242,7 +242,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         /* ----------------------------------------------------------------------- */
         /* NEW LEARNER ONBOARDING HERO: Clear 2 Choices to Start                     */
         /* ----------------------------------------------------------------------- */
-        <section aria-label="New learner onboarding" className="w-full rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-white via-[#FFF8F6] to-[#FFF0EC] dark:from-[#1A1826] dark:via-[#161421] dark:to-[#1E1622] p-4 sm:p-6 lg:p-6 xl:p-8 border-2 border-[#FA5D5D]/25 shadow-md space-y-4 sm:space-y-5 relative overflow-hidden">
+        <section aria-label="New learner onboarding" className="w-full rounded-[28px] bg-gradient-to-br from-white via-[#FFF8F6] to-[#FFF0EC] dark:from-[#1A1826] dark:via-[#161421] dark:to-[#1E1622] p-6 sm:p-8 lg:p-10 border-2 border-[#FA5D5D]/25 shadow-md space-y-6 relative overflow-hidden">
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#FA5D5D]/10 blur-3xl pointer-events-none" />
 
@@ -253,7 +253,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{isEn ? 'Welcome to Glova • Step 1: Set Your Baseline' : 'ยินดีต้อนรับสู่ Glova • เริ่มต้นก้าวแรกของคุณ'}</span>
               </div>
-              <h1 className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                 {isEn ? 'How would you like to start today?' : 'คุณต้องการเริ่มต้นเรียนรู้อย่างไร?'}
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
@@ -273,18 +273,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           {/* Dual Starting Pathways (Test vs Direct Selection) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Option 1: Quick 3-Min Placement Test */}
-            <div className="rounded-[20px] bg-white dark:bg-[#201D2E] p-4 sm:p-5 border-2 border-[#FA5D5D]/40 shadow-sm flex flex-col justify-between space-y-3 hover:border-[#FA5D5D] transition-colors relative">
+            <div className="rounded-[22px] bg-white dark:bg-[#201D2E] p-6 border-2 border-[#FA5D5D]/40 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#FA5D5D] transition-colors relative">
               <div className="absolute top-4 right-4">
                 <span className="px-2.5 py-0.5 rounded-full bg-[#FA5D5D] text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
                   {isEn ? 'Recommended' : 'แนะนำที่สุด'}
                 </span>
               </div>
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FA5D5D]/15 text-[#FA5D5D] flex items-center justify-center">
-                  <Compass className="w-5 h-5 text-[#FA5D5D]" />
+                <div className="w-12 h-12 rounded-2xl bg-[#FA5D5D]/15 text-[#FA5D5D] flex items-center justify-center">
+                  <Compass className="w-6 h-6 text-[#FA5D5D]" />
                 </div>
                 <div>
-                  <h2 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">
+                  <h2 className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white">
                     {isEn ? '🎯 Take 3-Min Placement Test' : '🎯 ทำแบบทดสอบวัดระดับด่วน (3 นาที)'}
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed font-sans">
@@ -297,7 +297,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigate('assessment')}
-                className="w-full py-2.5 sm:py-3 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs sm:text-sm font-extrabold shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 rounded-full bg-[#FA5D5D] hover:bg-[#E84C4C] text-white text-xs sm:text-sm font-extrabold shadow-md shadow-[#FA5D5D]/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>{isEn ? 'Start 3-Min Placement Test' : 'เริ่มทำแบบทดสอบวัดระดับ'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -305,13 +305,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
 
             {/* Option 2: Self-Select Level Directly */}
-            <div className="rounded-[20px] bg-white dark:bg-[#201D2E] p-4 sm:p-5 border border-border/80 shadow-sm flex flex-col justify-between space-y-3">
+            <div className="rounded-[22px] bg-white dark:bg-[#201D2E] p-6 border border-border/80 shadow-sm flex flex-col justify-between space-y-4">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                  <Target className="w-6 h-6 text-amber-600 dark:text-amber-400" />
                 </div>
                 <div>
-                  <h2 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">
+                  <h2 className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white">
                     {isEn ? '⚡ Or Select Your Starting Level Directly' : '⚡ หรือ เลือกระดับเริ่มต้นด้วยตนเอง'}
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed font-sans">
@@ -352,7 +352,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         /* ----------------------------------------------------------------------- */
         /* ACTIVE LEARNER: TODAY'S GUIDED 3-STEP LEARNING MISSION (15 MINS)          */
         /* ----------------------------------------------------------------------- */
-        <section aria-label="Today's learning mission" className="w-full rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1A1826] p-4 sm:p-5 lg:p-6 border border-border/80 shadow-sm space-y-4">
+        <section aria-label="Today's learning mission" className="w-full rounded-[28px] bg-white dark:bg-[#1A1826] p-6 sm:p-7 border border-border/80 shadow-sm space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/80 pb-4">
             <div>
               <div className="flex items-center gap-2 flex-wrap" role="status">
@@ -469,14 +469,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* ========================================================================= */}
       {/* 4. ROW OF 4 STATUS COUNTER CARDS                                         */}
       {/* ========================================================================= */}
-      <section aria-label="Status counters" className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+      <section aria-label="Status counters" className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {/* Counter 1: Daily Study Goal */}
-        <div className="bg-[#E3F6ED] dark:bg-[#102B22] rounded-[20px] p-3.5 sm:p-4 lg:p-4 xl:p-5 border border-[#C5EBDA] dark:border-emerald-500/20 shadow-xs flex flex-col justify-between space-y-2">
+        <div className="bg-[#E3F6ED] dark:bg-[#102B22] rounded-[22px] p-5 border border-[#C5EBDA] dark:border-emerald-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#1E7E52] text-white flex items-center justify-center">
             <Clock className="w-4 h-4 text-white" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-black text-slate-900 dark:text-emerald-100 tracking-tight">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-emerald-100 tracking-tight">
               {`${minutesStudied}/${goalMinutes} น.`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-emerald-300">
@@ -486,12 +486,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Counter 2: Completed Questions */}
-        <div className="bg-[#FEECEB] dark:bg-[#2C1416] rounded-[20px] p-3.5 sm:p-4 lg:p-4 xl:p-5 border border-[#FCD3D1] dark:border-rose-500/20 shadow-xs flex flex-col justify-between space-y-2">
+        <div className="bg-[#FEECEB] dark:bg-[#2C1416] rounded-[22px] p-5 border border-[#FCD3D1] dark:border-rose-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center">
             <CheckCircle2 className="w-4 h-4 text-white" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-black text-[#FA5D5D] tracking-tight">
+            <div className="text-2xl sm:text-3xl font-black text-[#FA5D5D] tracking-tight">
               {`${progress.completedQuestionIds?.length || 0} ข้อ`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-rose-300">
@@ -501,12 +501,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Counter 3: Mastered Words */}
-        <div className="bg-[#FEF5E5] dark:bg-[#2B2010] rounded-[20px] p-3.5 sm:p-4 lg:p-4 xl:p-5 border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs flex flex-col justify-between space-y-2">
+        <div className="bg-[#FEF5E5] dark:bg-[#2B2010] rounded-[22px] p-5 border border-[#FDE5BC] dark:border-amber-500/20 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-[#FFBA38] text-slate-950 flex items-center justify-center">
             <BookOpen className="w-4 h-4 text-slate-950" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-black text-[#D98200] dark:text-[#FFBA38] tracking-tight">
+            <div className="text-2xl sm:text-3xl font-black text-[#D98200] dark:text-[#FFBA38] tracking-tight">
               {`${progress.masteredWordIds?.length || 0} คำ`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-amber-300">
@@ -516,12 +516,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Counter 4: Study Streak */}
-        <div className="bg-[#F4F5F7] dark:bg-[#141C2B] rounded-[20px] p-3.5 sm:p-4 lg:p-4 xl:p-5 border border-[#E2E5EA] dark:border-slate-700/40 shadow-xs flex flex-col justify-between space-y-2">
+        <div className="bg-[#F4F5F7] dark:bg-[#141C2B] rounded-[22px] p-5 border border-[#E2E5EA] dark:border-slate-700/40 shadow-xs flex flex-col justify-between space-y-2">
           <div className="w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center">
             <Flame className="w-4 h-4 text-[#FFBA38]" />
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
               {`${progress.streakDays || 1} วัน`}
             </div>
             <div className="text-xs font-bold text-slate-500 dark:text-slate-300">
@@ -584,7 +584,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
 
             {/* B. Primary Next Best Action Card (Integrated Inside Mentor Chassis) */}
-            <div className="bg-white/10 backdrop-blur-md rounded-[20px] p-3.5 sm:p-4 lg:p-4 xl:p-5 sm:p-6 border border-white/15 space-y-3">
+            <div className="bg-white/10 backdrop-blur-md rounded-[22px] p-5 sm:p-6 border border-white/15 space-y-3">
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-black uppercase tracking-wider bg-[#FFBA38] text-slate-950">
                   {primaryAction.unitBadge}

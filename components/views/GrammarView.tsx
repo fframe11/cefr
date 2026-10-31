@@ -359,7 +359,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
       {activeSkillTab === 'grammar' && (
         <div className="space-y-6">
           {/* Quick Action Navigation Bar for Cheat Sheets & OOPT Test Prep */}
-          <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-2xl bg-gradient-to-r from-[#FA5D5D]/10 via-amber-500/10 to-slate-900/10 dark:from-[#FA5D5D]/15 dark:via-amber-500/15 dark:to-slate-900/40 border border-[#FA5D5D]/20 shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gradient-to-r from-[#FA5D5D]/10 via-amber-500/10 to-slate-900/10 dark:from-[#FA5D5D]/15 dark:via-amber-500/15 dark:to-slate-900/40 border border-[#FA5D5D]/20 shadow-xs">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#FA5D5D]" />
               <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
@@ -499,12 +499,12 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
               </div>
 
               {/* Hero Concept Card Banner with Orbiting Ellipse Art & Cosmic Swirl */}
-              <div className="relative rounded-[24px] sm:rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-rose-50/30 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-4 sm:p-5 lg:p-6 overflow-hidden shadow-xs">
+              <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-rose-50/30 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                   {/* Left Column: Headline + Orbiting Ellipse Artwork + Feature Pills */}
-                  <div className="space-y-3 sm:space-y-4 max-w-lg">
+                  <div className="space-y-6 max-w-lg">
                     <div className="relative inline-block">
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
                         One small word,<br />one big difference<br />in meaning
                       </h3>
 
@@ -555,7 +555,7 @@ export const GrammarView: React.FC<GrammarViewProps> = ({
                   </div>
 
                   {/* Right Column: Character Vector Art */}
-                  <div className="shrink-0 relative hidden sm:flex w-40 h-28 md:w-48 md:h-36 lg:w-56 lg:h-40 items-center justify-center select-none pointer-events-none">
+                  <div className="shrink-0 relative w-60 h-44 sm:w-72 sm:h-48 flex items-center justify-center select-none pointer-events-none">
                     <svg width="250" height="180" viewBox="0 0 250 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path
                         d="M25 45 C65 15, 125 50, 155 85 C185 120, 235 115, 245 80 C255 45, 225 15, 190 20 C155 25, 135 60, 105 95 C75 130, 15 145, 10 105 C5 65, 0 60, 25 45 Z"

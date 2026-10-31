@@ -21,6 +21,7 @@ import {
   Trophy,
   Users,
   GraduationCap,
+  ShieldCheck,
   Lock,
 } from 'lucide-react';
 import { GlovaLogo } from '../ui/GlovaLogo';
@@ -163,10 +164,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 ? '/oopt-practice'
                 : `/${item.id}`;
 
-            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[36px] xl:min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
+            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
               collapsedMode
-                ? 'justify-center p-2'
-                : 'justify-start px-2.5 py-1.5 xl:py-2 gap-2 xl:gap-2.5'
+                ? 'justify-center p-2.5'
+                : 'justify-start px-3 py-2 gap-2.5'
             } ${
               isLocked ? 'opacity-75 hover:opacity-95' : ''
             } ${
@@ -275,15 +276,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* 1. Desktop / Tablet Collapsible Sidebar Spacer to preserve flex flow for <main> */}
       <div
         className={`hidden md:block shrink-0 transition-all duration-300 ease-in-out pointer-events-none ${
-          isCollapsed ? 'w-14 lg:w-16' : 'w-56 lg:w-60 xl:w-64'
+          isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-hidden="true"
       />
 
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) - Fixed to bottom edge */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#181620]/95 backdrop-blur-2xl shrink-0 select-none py-2.5 xl:py-3.5 px-2.5 xl:px-3 fixed top-14 xl:top-16 bottom-0 left-0 z-30 overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
-          isCollapsed ? 'w-14 lg:w-16' : 'w-56 lg:w-60 xl:w-64'
+        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#181620]/95 backdrop-blur-2xl shrink-0 select-none py-3.5 px-3 fixed top-16 bottom-0 left-0 z-30 overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
+          isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
@@ -319,6 +320,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <nav className="flex-1 space-y-1.5 pt-0.5">
           {renderNavButtons(isCollapsed)}
         </nav>
+
+        {/* Footer Info Box (Only when expanded) */}
+        {!isCollapsed && (
+          <div className="pt-3.5 border-t border-slate-200/70 dark:border-white/10 mt-auto">
+            <div className="p-3 rounded-xl bg-slate-50/70 dark:bg-[#23212C]/80 backdrop-blur-md border border-slate-200/70 dark:border-white/10 shadow-xs space-y-1">
+              <div className="flex items-center justify-between gap-1.5">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#FA5D5D]" />
+                  <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200">
+                    CEFR & Cambridge
+                  </span>
+                </div>
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#FA5D5D] text-white">
+                  VERIFIED
+                </span>
+              </div>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono leading-snug">
+                Oxford Lexicon &bull; 6 Core Skills
+              </p>
+            </div>
+          </div>
+        )}
       </aside>
 
       {/* 2. Mobile Off-Canvas Drawer (< 768px) */}

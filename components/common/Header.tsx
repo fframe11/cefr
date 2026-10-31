@@ -105,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#181620]/90 backdrop-blur-md transition-colors pt-safe shadow-xs dark:shadow-[0_4px_25px_rgba(0,0,0,0.8)] text-slate-800 dark:text-slate-100">
-      <div className="w-full px-3 sm:px-5 lg:px-6 xl:px-8 h-14 xl:h-16 flex items-center justify-between gap-2.5 sm:gap-3">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         {/* Left: Mobile Nav Toggle + Studio Brand */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {onOpenMobileNav && (
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Center/Right Status Indicators & Hardware Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* Dynamic CEFR Level Accreditation Pill */}
-          <div className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100/90 dark:bg-[#23212C] border border-slate-200 dark:border-[#F59E0B]/30 text-[10px] font-mono font-bold text-slate-700 dark:text-[#FDE68A]">
+          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100/90 dark:bg-[#23212C] border border-slate-200 dark:border-[#F59E0B]/30 text-[10px] font-mono font-bold text-slate-700 dark:text-[#FDE68A]">
             <Sparkles className="w-3 h-3 text-[#F59E0B]" />
             <span>
               {currentLevel === 'A1'

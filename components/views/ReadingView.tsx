@@ -134,7 +134,7 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted, e
       {!embedded && (
         <nav
           aria-label="Reading sub-navigation"
-          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[24px] sm:rounded-[28px] p-2.5 sm:p-3.5 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
         >
           {/* Brand & Studio Identity */}
           <div className="flex items-center gap-3 flex-wrap">
@@ -263,10 +263,10 @@ export const ReadingView: React.FC<ReadingViewProps> = ({ onQuestionCompleted, e
 
       {/* 2. Main Learning Activity: Split Canvas */}
       {currentPassage && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 xl:gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column (6 cols): Reading Passage Canvas */}
           <div className={`lg:col-span-6 space-y-4 ${activeTab === 'questions' ? 'hidden lg:block' : 'block'}`}>
-            <div className="w-full p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="w-full p-6 sm:p-8 space-y-5 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               {/* Passage Metadata Bar */}
               <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
                 <div className="flex items-center gap-2">
