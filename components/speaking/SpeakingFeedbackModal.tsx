@@ -133,7 +133,7 @@ export function SpeakingFeedbackModal({
               </div>
             ) : (
               <div className="inline-flex items-center justify-center rounded-lg px-3 py-1 bg-muted border border-border/40 text-muted-foreground text-xs font-medium mb-2">
-                รอผลโมเดล
+                {isAbstained ? "งดประเมิน" : "รอผลโมเดล"}
               </div>
             )}
             <div className="text-sm font-semibold text-foreground">
@@ -142,7 +142,9 @@ export function SpeakingFeedbackModal({
                   {overall_score} <span className="text-xs text-muted-foreground font-normal">/ 100</span>
                 </>
               ) : (
-                <span className="text-xs text-muted-foreground">ยังไม่สามารถประเมินได้</span>
+                <span className="text-xs text-muted-foreground">
+                  {isAbstained ? "งดประเมินผลคะแนน" : "ยังไม่สามารถประเมินได้"}
+                </span>
               )}
             </div>
           </div>

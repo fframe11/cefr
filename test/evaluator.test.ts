@@ -142,4 +142,36 @@ describe("AI Speech Evaluation Pipeline", () => {
     expect(thaiResult.overall_score).toBeNull();
     expect(thaiResult.feedback_th).toContain("ภาษาที่พูดไม่ตรงกับโจทย์");
   });
+  it("abstains with status 'abstained' when non-English audio yields empty ASR transcript with active volume", async () => {
+    const referenceText = "I enjoy studying English because it helps me communicate globally.";
+    const audioBuffer = new Uint8Array(16000 * 2 * 3);
+
+    // Audio has real energy, but English ASR returned empty string because user spoke Thai
+    const emptyAsrResult = await evaluateSpeech({
+      audioBuffer,
+      referenceText,
+      targetCefr: "B2",
+      promptId: "prompt_empty_asr_thai",
+      clientDurationSec: 3.5,
+      userTranscript: "",
+      acousticMetrics: {
+        volume_rms: 0.15,
+        silence_ratio: 0.1,
+      },
+      externalPronunciationResult: {
+        status: "scored",
+        pronunciationScore: 61,
+        scale: "0-100",
+        modelVersion: "anonym-coling2027/E2E-GOP-SpeechOcean762",
+        validationVersion: "v1.0",
+        words: [],
+      },
+    });
+
+    expect(emptyAsrResult.completeness_score).toBe(0);
+    expect(emptyAsrResult.pronunciation_result.status).toBe("abstained");
+    expect(emptyAsrResult.pronunciation_result.pronunciationScore).toBeNull();
+    expect(emptyAsrResult.overall_score).toBeNull();
+    expect(emptyAsrResult.feedback_th).toContain("ภาษาที่พูดไม่ตรงกับโจทย์");
+  });
 });

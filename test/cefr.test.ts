@@ -56,7 +56,7 @@ describe("CEFR Band Calculation & Score Mapping", () => {
 
     const overall = calculateOverallScore(metrics);
     expect(overall).toBe(83);
-    expect(scoreToCefrBand(overall)).toBe("B2");
+    expect(scoreToCefrBand(overall!)).toBe("B2");
   });
 
   it("calculates extreme metrics accurately", () => {

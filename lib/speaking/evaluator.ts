@@ -100,9 +100,11 @@ export async function evaluateSpeech(
     transcription = simulatedTranscript;
   } else if (isSilenceDetected) {
     transcription = "";
-  } else if (userTranscript !== undefined && userTranscript.trim().length > 0) {
+  } else if (userTranscript !== undefined) {
+    // If client explicitly provided a transcript (even if empty because English ASR recognized nothing/foreign language)
     transcription = userTranscript.trim();
   } else {
+    // Fall back to reference text only when userTranscript is truly undefined (e.g. test fixtures)
     transcription = referenceText;
   }
 
@@ -112,7 +114,8 @@ export async function evaluateSpeech(
     .map((w) => w.replace(/[.,/#!$%^&*;:{}=\-_`~()?"']/g, ""))
     .filter((w) => w.length > 0);
 
-  const isCompletelySilent = isSilenceDetected || spokenWords.length === 0;
+  const isCompletelySilent = isSilenceDetected;
+  const hasNoRecognizedWords = spokenWords.length === 0;
 
   // Align each reference word with spoken text to evaluate text coverage
   let matchedWordCount = 0;
@@ -121,7 +124,7 @@ export async function evaluateSpeech(
   const wordsAnalysis: WordAnalysis[] = referenceWords.map((refWord) => {
     const cleanRef = refWord.toLowerCase();
 
-    if (isCompletelySilent) {
+    if (isCompletelySilent || hasNoRecognizedWords) {
       return {
         word: refWord,
         accuracy_score: null,
@@ -180,7 +183,7 @@ export async function evaluateSpeech(
   });
 
   // Calculate strict completeness score based on text coverage
-  const completionRatio = isCompletelySilent
+  const completionRatio = isCompletelySilent || hasNoRecognizedWords
     ? 0
     : matchedWordCount / (referenceWords.length || 1);
   const completeness_score = Math.min(100, Math.round(completionRatio * 100));
@@ -197,7 +200,7 @@ export async function evaluateSpeech(
       validationVersion: "v1.0",
       reason: "ตรวจไม่พบสัญญาณเสียงพูดหรือระดับเสียงต่ำเกินไป ระบบงดการให้คะแนนเพื่อความถูกต้อง",
     };
-  } else if (matchedWordCount === 0 || completeness_score === 0) {
+  } else if (hasNoRecognizedWords || matchedWordCount === 0 || completeness_score === 0) {
     // Language / Target Content Mismatch Gate:
     // If the learner spoke in a different language (e.g. Thai) or none of the target words were spoken,
     // acoustic GOP on forced-aligned English phonemes is scientifically invalid.
@@ -265,7 +268,7 @@ export async function evaluateSpeech(
   let feedbackTh = "";
   if (isCompletelySilent) {
     feedbackTh = "ตรวจไม่พบเสียงพูดที่ชัดเจนในไฟล์เสียง กรุณาตรวจสอบไมโครโฟนและฝึกพูดออกเสียงตามข้อความตัวอย่าง";
-  } else if (completeness_score === 0 || matchedWordCount === 0) {
+  } else if (hasNoRecognizedWords || completeness_score === 0 || matchedWordCount === 0) {
     feedbackTh = "ตรวจไม่พบคำภาษาอังกฤษที่ตรงกับบทอ่านเป้าหมาย หรือภาษาที่พูดไม่ตรงกับโจทย์ (ความครบถ้วน 0%) กรุณาฝึกอ่านและออกเสียงข้อความภาษาอังกฤษตามที่กำหนด";
   } else if (completeness_score < 50) {
     feedbackTh = `คุณพูดข้อความได้เพียง ${completeness_score}% ของข้อความทั้งหมด (ขาดคำสำคัญไปหลายคำ) กรุณาฝึกอ่านและพูดประโยคให้ครบถ้วนสมบูรณ์ตามโจทย์`;
