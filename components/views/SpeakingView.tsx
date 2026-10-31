@@ -206,7 +206,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
       {!embedded && (
         <nav
           aria-label="Speaking sub-navigation"
-          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[28px] p-3 sm:p-4 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
+          className="w-full bg-[#FAF8F3] dark:bg-[#1E1B28] backdrop-blur-md rounded-[24px] sm:rounded-[28px] p-2.5 sm:p-3.5 border border-[#EAE4D5] dark:border-white/10 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 sm:gap-4 shadow-sm"
         >
           {/* Brand & Studio Identity */}
           <div className="flex items-center gap-3 flex-wrap">
@@ -253,7 +253,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
 
       {/* Main Title & Description */}
       <div className="space-y-1">
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
           {mode === 'pronunciation'
             ? (isEn ? "Pronunciation & Sentence Stress Studio" : "การฝึกออกเสียงและเน้นเสียงในประโยค")
             : (isEn ? "Interactive Speaking & Pronunciation" : "การพูดและออกเสียงเชิงโต้ตอบ")}
@@ -307,7 +307,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
       {currentPrompt && (
         <div className="space-y-6">
           {/* Prompt Guidelines Card */}
-          <div className="p-6 sm:p-8 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
@@ -338,7 +338,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
                 alt="Professional speech coach engaged in speaking consultation"
                 width={800}
                 height={380}
-                className="w-full max-h-48 object-cover"
+                className="w-full max-h-28 sm:max-h-36 lg:max-h-40 object-cover"
               />
               <div className="absolute bottom-2.5 right-2.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono font-bold border border-white/20 flex items-center gap-1.5">
                 <Mic className="w-3 h-3 text-[#FA5D5D]" />
@@ -401,8 +401,8 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
           </div>
 
           {/* Interactive Recording Station Card */}
-          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
-            <div className="p-4 sm:p-6 flex flex-col items-center text-center space-y-4">
+          <div className="w-full p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="p-3 sm:p-4 flex flex-col items-center text-center space-y-3">
               {/* Live Recording Timer */}
               <div className="flex items-center gap-2 font-mono text-sm font-bold text-slate-700 dark:text-slate-300 bg-[#FAF8F3] dark:bg-[#252131] px-4 py-1.5 rounded-full border border-[#EAE4D5] dark:border-white/10 shadow-xs">
                 <Clock className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />
@@ -417,7 +417,7 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
                 <button
                   type="button"
                   onClick={handleToggleRecord}
-                  className={`touch-target w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center transition-all focus:outline-none focus:ring-4 cursor-pointer select-none shadow-md ${
+                  className={`touch-target w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all focus:outline-none focus:ring-4 cursor-pointer select-none shadow-md ${
                     isRecording
                       ? 'bg-rose-500 text-white ring-4 ring-rose-300 dark:ring-rose-900/50 animate-pulse'
                       : 'bg-[#FA5D5D] hover:bg-[#ff4747] text-white ring-4 ring-[#FA5D5D]/20 active:scale-95'
@@ -425,9 +425,9 @@ export const SpeakingView: React.FC<SpeakingViewProps> = ({
                   aria-label={isRecording ? (isEn ? 'Stop recording' : 'หยุดบันทึกเสียง') : (isEn ? 'Start speaking' : 'เริ่มบันทึกเสียง')}
                 >
                   {isRecording ? (
-                    <MicOff className="w-9 h-9 sm:w-11 sm:h-11" aria-hidden="true" />
+                    <MicOff className="w-7 h-7 sm:w-9 sm:h-9" aria-hidden="true" />
                   ) : (
-                    <Mic className="w-9 h-9 sm:w-11 sm:h-11" aria-hidden="true" />
+                    <Mic className="w-7 h-7 sm:w-9 sm:h-9" aria-hidden="true" />
                   )}
                 </button>
               </div>

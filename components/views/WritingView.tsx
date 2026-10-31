@@ -166,9 +166,9 @@ export const WritingView: React.FC = () => {
   return (
     <div className="w-full space-y-6 pb-16">
       {/* 1. Unified Hero Header Banner - Studio DNA */}
-      <div className="relative rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 overflow-hidden shadow-xs">
+      <div className="relative rounded-[24px] sm:rounded-[32px] bg-gradient-to-r from-slate-50 via-white to-amber-500/50 dark:from-[#1E1B28] dark:to-[#171520] border border-slate-200/80 dark:border-white/10 p-4 sm:p-5 lg:p-6 overflow-hidden shadow-xs">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
+          <div className="space-y-2 sm:space-y-2.5 max-w-2xl">
             <div className="flex items-center gap-2 flex-wrap">
               <div className="w-8 h-8 rounded-full bg-[#FA5D5D] text-white flex items-center justify-center shadow-xs shrink-0">
                 <PenTool className="w-4 h-4 text-white" />
@@ -183,7 +183,7 @@ export const WritingView: React.FC = () => {
                 </div>
               )}
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               {isEn ? 'Writing & Production Studio' : 'ทักษะการเขียนและการสื่อสาร'}
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
@@ -251,9 +251,9 @@ export const WritingView: React.FC = () => {
 
       {/* 2. Main Learning Activity: Prompt & Writing Canvas */}
       {currentPrompt && (
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-start">
           {/* Prompt Guidelines Card */}
-          <div className="p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="lg:col-span-5 p-4 sm:p-5 space-y-3 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <GlovaLevelBadge level={currentPrompt.cefrLevel} size="sm" />
@@ -271,12 +271,12 @@ export const WritingView: React.FC = () => {
             </div>
 
             {/* Contextual Writing Studio Photo */}
-            <div className="overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
+            <div className="hidden overflow-hidden rounded-[22px] border border-[#EAE4D5] dark:border-white/10 shadow-xs">
               <GlovaImage
                 src="/images/learning/writing_hero.jpg"
                 alt="Creative writing notebook, fountain pen and study materials on natural wood desk"
                 aspectRatio="aspect-video"
-                className="w-full max-h-44"
+                className="w-full max-h-28 sm:max-h-36 lg:max-h-40"
               />
             </div>
 
@@ -309,7 +309,7 @@ export const WritingView: React.FC = () => {
           </div>
 
           {/* Interactive Writing Canvas */}
-          <div className="w-full p-6 sm:p-7 space-y-4 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+          <div className="lg:col-span-7 w-full p-4 sm:p-5 space-y-3 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
             <div className="flex items-center justify-between pb-3 border-b border-[#EAE4D5] dark:border-white/10">
               <div className="flex items-center gap-2">
                 <PenTool className="w-4 h-4 text-[#FA5D5D]" aria-hidden="true" />
@@ -357,7 +357,7 @@ export const WritingView: React.FC = () => {
               placeholder={
                 isEn ? 'Type your English answer here...' : 'พิมพ์คำตอบภาษาอังกฤษของคุณที่นี่...'
               }
-              rows={9}
+              rows={6}
               className="w-full p-4 rounded-[22px] bg-[#FAF8F3] dark:bg-[#252131] border border-[#EAE4D5] dark:border-white/10 text-sm leading-relaxed text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FA5D5D]/20 font-sans resize-y shadow-xs"
               aria-label="พื้นที่เขียนคำตอบ"
             />
@@ -386,17 +386,19 @@ export const WritingView: React.FC = () => {
 
           {/* 3. AES AI Evaluation Results Panel */}
           {isSubmitted && evaluationResult && (
-            <WritingEvaluationPanel
-              result={evaluationResult}
-              modelAnswer={currentPrompt.sampleModelAnswer}
-              onTryAgain={() => setIsSubmitted(false)}
-              onSelectNextPrompt={handleSelectNextPrompt}
-            />
+            <div className="lg:col-span-12">
+              <WritingEvaluationPanel
+                result={evaluationResult}
+                modelAnswer={currentPrompt.sampleModelAnswer}
+                onTryAgain={() => setIsSubmitted(false)}
+                onSelectNextPrompt={handleSelectNextPrompt}
+              />
+            </div>
           )}
 
           {/* Sample Model Answer Box */}
           {currentPrompt.sampleModelAnswer && (
-            <div className="p-5 sm:p-6 space-y-3 rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
+            <div className="lg:col-span-12 p-4 sm:p-5 space-y-3 rounded-[24px] sm:rounded-[28px] bg-white dark:bg-[#1E1B28] border border-[#EAE4D5] dark:border-white/10 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#D98200] dark:text-[#FFBA38]" aria-hidden="true" />

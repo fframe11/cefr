@@ -164,10 +164,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 ? '/oopt-practice'
                 : `/${item.id}`;
 
-            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
+            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[36px] xl:min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
               collapsedMode
-                ? 'justify-center p-2.5'
-                : 'justify-start px-3 py-2 gap-2.5'
+                ? 'justify-center p-2'
+                : 'justify-start px-2.5 py-1.5 xl:py-2 gap-2 xl:gap-2.5'
             } ${
               isLocked ? 'opacity-75 hover:opacity-95' : ''
             } ${
@@ -276,15 +276,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* 1. Desktop / Tablet Collapsible Sidebar Spacer to preserve flex flow for <main> */}
       <div
         className={`hidden md:block shrink-0 transition-all duration-300 ease-in-out pointer-events-none ${
-          isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
+          isCollapsed ? 'w-14 lg:w-16' : 'w-56 lg:w-60 xl:w-64'
         }`}
         aria-hidden="true"
       />
 
       {/* 1. Desktop / Tablet Collapsible Sidebar (>= 768px) - Fixed to bottom edge */}
       <aside
-        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#181620]/95 backdrop-blur-2xl shrink-0 select-none py-3.5 px-3 fixed top-16 bottom-0 left-0 z-30 overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
-          isCollapsed ? 'w-16 lg:w-[72px]' : 'w-60 lg:w-64'
+        className={`hidden md:flex flex-col border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#181620]/95 backdrop-blur-2xl shrink-0 select-none py-2.5 xl:py-3.5 px-2.5 xl:px-3 fixed top-14 xl:top-16 bottom-0 left-0 z-30 overflow-y-auto transition-all duration-300 ease-in-out shadow-[4px_0_24px_rgba(0,0,0,0.02)] dark:shadow-[4px_0_24px_rgba(0,0,0,0.6)] ${
+          isCollapsed ? 'w-14 lg:w-16' : 'w-56 lg:w-60 xl:w-64'
         }`}
         aria-label="Desktop Navigation"
       >
