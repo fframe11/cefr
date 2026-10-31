@@ -1,8 +1,8 @@
 {
   "phase": "6.2.40",
   "title": "Phase 6.2.40 — Example Evidence Recovery Audit & Controlled Expansion POC",
-  "generated_at": "2026-10-28T07:41:08.621Z",
-  "execution_time_ms": 3838,
+  "generated_at": "2026-10-31T14:14:54.380Z",
+  "execution_time_ms": 4354,
   "governance": {
     "total_universe_denominator": 10021,
     "production_db_mutations": 0,

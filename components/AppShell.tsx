@@ -34,6 +34,12 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     return false;
   });
 
+  const [pendingView, setPendingView] = React.useState<NavView | null>(null);
+
+  React.useEffect(() => {
+    setPendingView(null);
+  }, [pathname]);
+
   React.useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -45,25 +51,29 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Background Prefetching: Pre-cache primary learning studios into browser memory
+  // Background Prefetching: Pre-cache primary learning studios into browser memory during idle
   React.useEffect(() => {
-    const studios = [
-      '/dashboard',
-      '/vocabulary',
-      '/grammar',
-      '/reading',
-      '/listening',
-      '/mock-exams',
-      '/assessment',
-      '/compete',
-      '/ranking',
-      '/profile',
-    ];
-    studios.forEach((r) => {
-      try {
-        router.prefetch(r);
-      } catch {}
-    });
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      const handle = window.requestIdleCallback(() => {
+        const studios = [
+          '/dashboard',
+          '/vocabulary',
+          '/grammar',
+          '/reading',
+          '/listening',
+          '/writing',
+          '/speaking',
+          '/mock-exams',
+          '/assessment',
+        ];
+        studios.forEach((r) => {
+          try {
+            router.prefetch(r);
+          } catch {}
+        });
+      });
+      return () => window.cancelIdleCallback(handle);
+    }
   }, [router]);
 
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState<boolean>(false);
@@ -104,6 +114,31 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
     'ranking',
   ];
 
+  const getViewRoute = React.useCallback((view: NavView): string => {
+    return view === 'dashboard'
+      ? '/dashboard'
+      : view === 'mockExam'
+      ? '/mock-exams'
+      : view === 'cheatSheets'
+      ? '/cheat-sheets'
+      : view === 'collocations'
+      ? '/collocations'
+      : view === 'ooptPractice'
+      ? '/oopt-practice'
+      : `/${view}`;
+  }, []);
+
+  const handlePrefetchView = React.useCallback(
+    (view: NavView) => {
+      if (LOCKED_VIEWS.includes(view)) return;
+      const targetRoute = getViewRoute(view);
+      try {
+        router.prefetch(targetRoute);
+      } catch {}
+    },
+    [router, getViewRoute]
+  );
+
   const handleSelectView = (view: NavView) => {
     if (LOCKED_VIEWS.includes(view)) {
       showToast(
@@ -113,21 +148,13 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
       );
       return;
     }
-    const route =
-      view === 'dashboard'
-        ? '/dashboard'
-        : view === 'mockExam'
-        ? '/mock-exams'
-        : view === 'cheatSheets'
-        ? '/cheat-sheets'
-        : view === 'collocations'
-        ? '/collocations'
-        : view === 'ooptPractice'
-        ? '/oopt-practice'
-        : `/${view}`;
+    const route = getViewRoute(view);
+    if (pathname === route) return;
+
+    setPendingView(view);
     router.push(route);
     if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
     }
   };
 
@@ -179,6 +206,15 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   return (
     <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100 flex flex-col overflow-x-clip selection:bg-[#FA5D5D]/25 selection:text-white relative">
+      {/* Top Transition Progress Indicator */}
+      {pendingView && (
+        <div
+          role="progressbar"
+          aria-label="Navigating"
+          className="fixed top-0 left-0 right-0 z-[9999] h-[2.5px] bg-[#FA5D5D] shadow-[0_0_12px_#FA5D5D] animate-pulse pointer-events-none"
+        />
+      )}
+
       {/* Top Universal Header */}
       <Header
         currentLevel={progress.currentLevel}
@@ -199,7 +235,9 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
         {/* Desktop / Tablet Sidebar (>= 768px) & Mobile Drawer (< 768px) */}
         <Sidebar
           currentView={currentView}
+          pendingView={pendingView}
           onSelectView={handleSelectView}
+          onPrefetchView={handlePrefetchView}
           assessmentCompleted={progress.assessmentCompleted}
           isCollapsed={isSidebarCollapsed}
           onToggleCollapse={() => setIsSidebarCollapsed((prev) => !prev)}
@@ -216,7 +254,12 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
       </div>
 
       {/* Mobile Bottom Navigation (< 768px) */}
-      <MobileBottomNav currentView={currentView} onSelectView={handleSelectView} />
+      <MobileBottomNav
+        currentView={currentView}
+        pendingView={pendingView}
+        onSelectView={handleSelectView}
+        onPrefetchView={handlePrefetchView}
+      />
 
       {/* User Profile & Authentication Modal */}
       <ProfileModal

@@ -49,7 +49,9 @@ export type NavView =
 
 export interface SidebarProps {
   currentView: NavView;
+  pendingView?: NavView | null;
   onSelectView: (view: NavView) => void;
+  onPrefetchView?: (view: NavView) => void;
   assessmentCompleted?: boolean;
   isCollapsed?: boolean;
   onToggleCollapse?: () => void;
@@ -104,7 +106,9 @@ const NAV_SECTIONS: NavSectionDef[] = [
 
 export const Sidebar: React.FC<SidebarProps> = ({
   currentView,
+  pendingView,
   onSelectView,
+  onPrefetchView,
   isCollapsed = false,
   onToggleCollapse,
   isMobileOpen = false,
@@ -142,7 +146,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
 
           {sectionItems.map((item) => {
-            const isActive = currentView === item.id;
+            const isPending = pendingView === item.id;
+            const isActive = currentView === item.id || isPending;
             const Icon = item.icon;
             const itemLabel = isEn ? item.labelEn : item.labelTh;
             const isLocked = Boolean(item.isLocked);
@@ -160,6 +165,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 key={item.id}
                 type="button"
+                onMouseEnter={() => {
+                  if (!isLocked && onPrefetchView) {
+                    onPrefetchView(item.id);
+                  }
+                }}
                 onClick={() => {
                   if (isLocked) {
                     showToast(
@@ -177,7 +187,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 title={collapsedMode ? `${itemLabel}${isLocked ? ` (${isEn ? 'Locked' : 'ล็อก'})` : ''}` : undefined}
                 aria-label={itemLabel}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative ${
+                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
                   collapsedMode
                     ? 'justify-center p-2.5'
                     : 'justify-start px-3 py-2 gap-2.5'
@@ -190,11 +200,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 }`}
               >
                 <div className="relative shrink-0">
-                  <Icon
-                    className={`w-4 h-4 transition-transform group-hover:scale-110 ${
-                      isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
-                    }`}
-                  />
+                  {isPending ? (
+                    <div className="w-4 h-4 border-2 border-[#FA5D5D] border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Icon
+                      className={`w-4 h-4 transition-transform group-hover:scale-110 ${
+                        isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
+                      }`}
+                    />
+                  )}
                   {collapsedMode && isLocked && (
                     <Lock className="w-2.5 h-2.5 text-slate-500 dark:text-slate-400 absolute -top-1 -right-1" />
                   )}
@@ -214,7 +228,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   </span>
                 )}
 
-                {!collapsedMode && !isLocked && item.badge && (
+                {!collapsedMode && !isLocked && item.badge && !isPending && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
                       isActive ? 'bg-[#FA5D5D] text-white dark:bg-[#FA5D5D] dark:text-white font-black shadow-xs' : badgeClasses

@@ -66,27 +66,76 @@ export default createApiHandler(
     const query = validateQuery(questionsQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    try {
-      // 1. Single Question Retrieval via Supabase
-      if (query.id) {
-        const { data: q, error: qError } = await supabase
+    if (supabase) {
+      try {
+        // 1. Single Question Retrieval via Supabase
+        if (query.id) {
+          const { data: q, error: qError } = await supabase
+            .from('questions')
+            .select(
+              'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, is_active'
+            )
+            .eq('id', query.id)
+            .eq('is_active', true)
+            .single();
+
+          if (!qError && q) {
+            // Explicitly select ONLY safe columns, never is_correct or feedback_th
+            const { data: rawOptions } = await supabase
+              .from('question_options')
+              .select('id, key, text')
+              .eq('question_id', q.id)
+              .order('key', { ascending: true });
+
+            const sanitizedQuestion: SanitizedQuestionDTO = {
+              id: q.id,
+              skill: q.skill,
+              cefrLevel: q.cefr_level,
+              questionType: q.type,
+              prompt_th: q.prompt_th,
+              prompt_en: q.prompt_en,
+              contextPassage: q.context_passage,
+              audioStoragePath: q.audio_storage_path,
+              difficultyWeight: q.difficulty_weight,
+              weaknessTag: q.weakness_tag,
+              grammarTopicId: q.grammar_topic_id ?? null,
+              readingPassageId: q.reading_passage_id ?? null,
+              listeningExerciseId: q.listening_exercise_id ?? null,
+              options: (rawOptions || []).map((opt) => ({
+                id: opt.id,
+                key: opt.key,
+                text: opt.text,
+              })),
+            };
+
+            return { question: sanitizedQuestion };
+          }
+        }
+
+        // 2. Question Bank Query with Safe Filtering via Supabase
+        let dbQuery = supabase
           .from('questions')
           .select(
-            'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, is_active'
+            'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, question_options(id, key, text)',
+            { count: 'exact' }
           )
-          .eq('id', query.id)
-          .eq('is_active', true)
-          .single();
+          .eq('is_active', true);
 
-        if (!qError && q) {
-          // Explicitly select ONLY safe columns, never is_correct or feedback_th
-          const { data: rawOptions } = await supabase
-            .from('question_options')
-            .select('id, key, text')
-            .eq('question_id', q.id)
-            .order('key', { ascending: true });
+        if (query.skill) dbQuery = dbQuery.eq('skill', query.skill);
+        if (query.cefr) dbQuery = dbQuery.eq('cefr_level', query.cefr);
+        if (query.question_type) dbQuery = dbQuery.eq('type', query.question_type);
+        if (query.weakness_tag) dbQuery = dbQuery.eq('weakness_tag', query.weakness_tag);
+        if (query.grammar_topic_id) dbQuery = dbQuery.eq('grammar_topic_id', query.grammar_topic_id);
+        if (query.reading_passage_id) dbQuery = dbQuery.eq('reading_passage_id', query.reading_passage_id);
+        if (query.listening_exercise_id) dbQuery = dbQuery.eq('listening_exercise_id', query.listening_exercise_id);
 
-          const sanitizedQuestion: SanitizedQuestionDTO = {
+        const offset = (query.page - 1) * query.limit;
+        dbQuery = dbQuery.order('created_at', { ascending: false }).range(offset, offset + query.limit - 1);
+
+        const { data: rawQuestions, count, error } = await dbQuery;
+
+        if (!error && rawQuestions && rawQuestions.length > 0) {
+          const sanitizedQuestions: SanitizedQuestionDTO[] = rawQuestions.map((q: any) => ({
             id: q.id,
             skill: q.skill,
             cefrLevel: q.cefr_level,
@@ -100,73 +149,26 @@ export default createApiHandler(
             grammarTopicId: q.grammar_topic_id ?? null,
             readingPassageId: q.reading_passage_id ?? null,
             listeningExerciseId: q.listening_exercise_id ?? null,
-            options: (rawOptions || []).map((opt) => ({
+            options: ((q.question_options as any[]) || []).map((opt: any) => ({
               id: opt.id,
               key: opt.key,
               text: opt.text,
             })),
+          }));
+
+          return {
+            questions: sanitizedQuestions,
+            pagination: {
+              page: query.page,
+              limit: query.limit,
+              total: count || 0,
+              total_pages: Math.ceil((count || 0) / query.limit),
+            },
           };
-
-          return { question: sanitizedQuestion };
         }
+      } catch {
+        // Fall through to local banks fallback
       }
-
-      // 2. Question Bank Query with Safe Filtering via Supabase
-      let dbQuery = supabase
-        .from('questions')
-        .select(
-          'id, skill, cefr_level, type, prompt_th, prompt_en, context_passage, audio_storage_path, weakness_tag, difficulty_weight, grammar_topic_id, reading_passage_id, listening_exercise_id, question_options(id, key, text)',
-          { count: 'exact' }
-        )
-        .eq('is_active', true);
-
-      if (query.skill) dbQuery = dbQuery.eq('skill', query.skill);
-      if (query.cefr) dbQuery = dbQuery.eq('cefr_level', query.cefr);
-      if (query.question_type) dbQuery = dbQuery.eq('type', query.question_type);
-      if (query.weakness_tag) dbQuery = dbQuery.eq('weakness_tag', query.weakness_tag);
-      if (query.grammar_topic_id) dbQuery = dbQuery.eq('grammar_topic_id', query.grammar_topic_id);
-      if (query.reading_passage_id) dbQuery = dbQuery.eq('reading_passage_id', query.reading_passage_id);
-      if (query.listening_exercise_id) dbQuery = dbQuery.eq('listening_exercise_id', query.listening_exercise_id);
-
-      const offset = (query.page - 1) * query.limit;
-      dbQuery = dbQuery.order('created_at', { ascending: false }).range(offset, offset + query.limit - 1);
-
-      const { data: rawQuestions, count, error } = await dbQuery;
-
-      if (!error && rawQuestions && rawQuestions.length > 0) {
-        const sanitizedQuestions: SanitizedQuestionDTO[] = rawQuestions.map((q: any) => ({
-          id: q.id,
-          skill: q.skill,
-          cefrLevel: q.cefr_level,
-          questionType: q.type,
-          prompt_th: q.prompt_th,
-          prompt_en: q.prompt_en,
-          contextPassage: q.context_passage,
-          audioStoragePath: q.audio_storage_path,
-          difficultyWeight: q.difficulty_weight,
-          weaknessTag: q.weakness_tag,
-          grammarTopicId: q.grammar_topic_id ?? null,
-          readingPassageId: q.reading_passage_id ?? null,
-          listeningExerciseId: q.listening_exercise_id ?? null,
-          options: ((q.question_options as any[]) || []).map((opt: any) => ({
-            id: opt.id,
-            key: opt.key,
-            text: opt.text,
-          })),
-        }));
-
-        return {
-          questions: sanitizedQuestions,
-          pagination: {
-            page: query.page,
-            limit: query.limit,
-            total: count || 0,
-            total_pages: Math.ceil((count || 0) / query.limit),
-          },
-        };
-      }
-    } catch {
-      // Fall through to local banks fallback
     }
 
     // =========================================================================

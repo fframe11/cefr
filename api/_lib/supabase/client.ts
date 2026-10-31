@@ -64,22 +64,31 @@ export function createServerUserClient(jwt: string): SupabaseClient {
  * 3. Public Read Server Client
  * Used for querying public unauthenticated content (CEFR metadata, active vocabulary, reading lessons)
  * from serverless functions.
+ * Gracefully returns null when Supabase environment variables are unconfigured or placeholder,
+ * enabling immediate zero-delay fallback to curated offline pedagogical banks.
  */
-export function createPublicServerClient(): SupabaseClient {
-  const config = getServerConfig();
-  if (!config.supabaseUrl || !config.supabaseAnonKey) {
-    throw new Error(
-      '[Supabase Server] Missing SUPABASE_URL or SUPABASE_ANON_KEY in server environment.'
-    );
-  }
+export function createPublicServerClient(): SupabaseClient | null {
+  try {
+    const config = getServerConfig();
+    if (
+      !config.supabaseUrl ||
+      !config.supabaseAnonKey ||
+      config.supabaseUrl.includes('your-project-id') ||
+      config.supabaseUrl.includes('placeholder')
+    ) {
+      return null;
+    }
 
-  return createClient(config.supabaseUrl, config.supabaseAnonKey, {
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-    db: {
-      schema: 'public',
-    },
-  });
+    return createClient(config.supabaseUrl, config.supabaseAnonKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+      db: {
+        schema: 'public',
+      },
+    });
+  } catch {
+    return null;
+  }
 }
