@@ -47,26 +47,17 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
 
   const primaryItems = [
     { id: 'dashboard' as NavView, icon: LayoutDashboard, labelEn: 'Home', labelTh: 'หน้าหลัก' },
-    { id: 'vocabulary' as NavView, icon: BookOpen, labelEn: 'Vocab', labelTh: 'คำศัพท์' },
-    { id: 'compete' as NavView, icon: Swords, labelEn: 'Challenge', labelTh: 'ประลองคำศัพท์' },
-    { id: 'mockExam' as NavView, icon: GraduationCap, labelEn: 'Exams', labelTh: 'ข้อสอบจำลอง' },
-    { id: 'profile' as NavView, icon: User, labelEn: 'Profile', labelTh: 'ข้อมูลผู้เรียน' },
+    { id: 'reading' as NavView, icon: BookMarked, labelEn: 'Reading', labelTh: 'การอ่าน' },
+    { id: 'writing' as NavView, icon: PenTool, labelEn: 'Writing', labelTh: 'การเขียน' },
+    { id: 'speaking' as NavView, icon: Mic, labelEn: 'Speaking', labelTh: 'การพูด' },
+    { id: 'compete' as NavView, icon: Swords, labelEn: 'Arena', labelTh: 'ประลอง' },
   ];
 
   const secondaryItems = [
-    { id: 'grammar' as NavView, icon: Sparkles, labelEn: 'Grammar', labelTh: 'หลักไวยากรณ์' },
-    { id: 'collocations' as NavView, icon: BookOpen, labelEn: 'Collocations', labelTh: 'กลุ่มคำสัมพันธ์' },
-    { id: 'cheatSheets' as NavView, icon: BookOpen, labelEn: 'Grammar Reference', labelTh: 'สรุปหลักไวยากรณ์' },
-    { id: 'ooptPractice' as NavView, icon: GraduationCap, labelEn: 'Oxford OOPT Practice', labelTh: 'แบบฝึกหัดข้อสอบ Oxford' },
-    { id: 'reading' as NavView, icon: BookMarked, labelEn: 'Reading Comprehension', labelTh: 'ทักษะการอ่าน' },
     { id: 'listening' as NavView, icon: Headphones, labelEn: 'Listening Comprehension', labelTh: 'ทักษะการฟัง' },
-    { id: 'writing' as NavView, icon: PenTool, labelEn: 'Writing Skills', labelTh: 'ทักษะการเขียน' },
-    { id: 'speaking' as NavView, icon: Mic, labelEn: 'Speaking Skills', labelTh: 'ทักษะการพูด' },
-    { id: 'ranking' as NavView, icon: Trophy, labelEn: 'Leaderboard', labelTh: 'ตารางอันดับคะแนน' },
-    { id: 'social' as NavView, icon: Users, labelEn: 'Study Groups', labelTh: 'กลุ่มการเรียนรู้ร่วมกัน' },
-    { id: 'achievements' as NavView, icon: Award, labelEn: 'Achievements & Records', labelTh: 'บันทึกความสำเร็จและรางวัล' },
-    { id: 'assessment' as NavView, icon: ClipboardCheck, labelEn: 'Diagnostic Assessment', labelTh: 'แบบทดสอบวัดระดับ' },
-    { id: 'analytics' as NavView, icon: BarChart2, labelEn: 'Learning Analytics', labelTh: 'การวิเคราะห์ผลการเรียนรู้' },
+    { id: 'vocabulary' as NavView, icon: BookOpen, labelEn: 'Vocabulary & Phrases', labelTh: 'คลังคำศัพท์และกลุ่มคำ' },
+    { id: 'grammar' as NavView, icon: Sparkles, labelEn: 'Grammar & Rules', labelTh: 'หลักไวยากรณ์และสูตรลัด' },
+    { id: 'mockExam' as NavView, icon: GraduationCap, labelEn: 'Mock Exams (Cambridge & OOPT)', labelTh: 'ศูนย์ข้อสอบจำลอง' },
   ];
 
   const getItemRoute = (id: NavView): string => {

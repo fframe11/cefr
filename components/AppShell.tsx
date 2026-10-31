@@ -80,24 +80,15 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   // Map pathname to NavView
   const currentView: NavView = React.useMemo(() => {
-    if (!pathname || pathname.startsWith('/dashboard')) return 'dashboard';
-    if (pathname.startsWith('/assessment')) return 'assessment';
-    if (pathname.startsWith('/vocabulary')) return 'vocabulary';
-    if (pathname.startsWith('/grammar')) return 'grammar';
+    if (!pathname || pathname.startsWith('/dashboard') || pathname.startsWith('/analytics') || pathname.startsWith('/assessment')) return 'dashboard';
     if (pathname.startsWith('/reading')) return 'reading';
     if (pathname.startsWith('/listening')) return 'listening';
     if (pathname.startsWith('/writing')) return 'writing';
     if (pathname.startsWith('/speaking')) return 'speaking';
-    if (pathname.startsWith('/cheat-sheets')) return 'cheatSheets';
-    if (pathname.startsWith('/collocations')) return 'collocations';
-    if (pathname.startsWith('/oopt-practice')) return 'ooptPractice';
-    if (pathname.startsWith('/mock-exams')) return 'mockExam';
-    if (pathname.startsWith('/analytics')) return 'analytics';
-    if (pathname.startsWith('/profile')) return 'profile';
-    if (pathname.startsWith('/compete')) return 'compete';
-    if (pathname.startsWith('/ranking')) return 'ranking';
-    if (pathname.startsWith('/social')) return 'social';
-    if (pathname.startsWith('/achievements')) return 'achievements';
+    if (pathname.startsWith('/vocabulary') || pathname.startsWith('/collocations')) return 'vocabulary';
+    if (pathname.startsWith('/grammar') || pathname.startsWith('/cheat-sheets')) return 'grammar';
+    if (pathname.startsWith('/mock-exams') || pathname.startsWith('/oopt-practice')) return 'mockExam';
+    if (pathname.startsWith('/compete') || pathname.startsWith('/ranking') || pathname.startsWith('/social')) return 'compete';
     return 'dashboard';
   }, [pathname]);
 

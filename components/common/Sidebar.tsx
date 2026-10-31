@@ -72,24 +72,15 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'dashboard', labelEn: 'Overview', labelTh: 'หน้าหลัก', icon: LayoutDashboard, section: 'learn' },
-  { id: 'vocabulary', labelEn: 'Vocabulary', labelTh: 'คลังคำศัพท์', icon: BookOpen, section: 'learn' },
-  { id: 'collocations', labelEn: 'Collocations', labelTh: 'กลุ่มคำสัมพันธ์', icon: BookOpen, section: 'learn' },
-  { id: 'grammar', labelEn: 'Grammar', labelTh: 'หลักไวยากรณ์', icon: Sparkles, section: 'learn' },
-  { id: 'cheatSheets', labelEn: 'Grammar Reference', labelTh: 'สรุปหลักไวยากรณ์สำคัญ', icon: BookOpen, section: 'learn' },
+  { id: 'dashboard', labelEn: 'Overview', labelTh: 'หน้าหลักและสมรรถนะ', icon: LayoutDashboard, section: 'learn' },
   { id: 'reading', labelEn: 'Reading Comprehension', labelTh: 'ทักษะการอ่าน', icon: BookMarked, section: 'learn' },
   { id: 'listening', labelEn: 'Listening Comprehension', labelTh: 'ทักษะการฟัง', icon: Headphones, section: 'learn' },
-  { id: 'writing', labelEn: 'Writing Skills', labelTh: 'ทักษะการเขียน', icon: PenTool, section: 'learn' },
-  { id: 'speaking', labelEn: 'Speaking & Phonetics', labelTh: 'ทักษะการพูด', icon: Mic, section: 'learn' },
-  { id: 'compete', labelEn: 'Vocabulary Challenge', labelTh: 'แบบฝึกประลองคำศัพท์', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'arena' },
-  { id: 'ranking', labelEn: 'Leaderboard', labelTh: 'ตารางอันดับคะแนน', icon: Trophy, badge: 'Top 3', badgeStyle: 'gold', section: 'arena' },
-  { id: 'social', labelEn: 'Study Groups', labelTh: 'กลุ่มการเรียนรู้ร่วมกัน', icon: Users, badge: 'Live', badgeStyle: 'mint', section: 'arena' },
-  { id: 'achievements', labelEn: 'Achievements & Records', labelTh: 'บันทึกความสำเร็จและรางวัล', icon: Award, section: 'arena' },
-  { id: 'assessment', labelEn: 'Diagnostic Assessment', labelTh: 'แบบทดสอบวัดระดับ', icon: ClipboardCheck, section: 'practice' },
-  { id: 'ooptPractice', labelEn: 'Oxford OOPT Practice', labelTh: 'แบบฝึกหัดข้อสอบ Oxford', icon: GraduationCap, section: 'practice' },
-  { id: 'mockExam', labelEn: 'Cambridge Mock Exams', labelTh: 'ข้อสอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
-  { id: 'analytics', labelEn: 'Learning Analytics', labelTh: 'การวิเคราะห์ผลการเรียนรู้', icon: BarChart2, section: 'progress' },
-  { id: 'profile', labelEn: 'Learner Profile', labelTh: 'ข้อมูลผู้เรียน', icon: User, section: 'progress' },
+  { id: 'writing', labelEn: 'Writing Skills (AES)', labelTh: 'ทักษะการเขียน (AES)', icon: PenTool, section: 'learn' },
+  { id: 'speaking', labelEn: 'Speaking Lab', labelTh: 'ทักษะการพูด (Lab)', icon: Mic, section: 'learn' },
+  { id: 'vocabulary', labelEn: 'Vocabulary & Phrases', labelTh: 'คลังคำศัพท์และกลุ่มคำ', icon: BookOpen, section: 'learn' },
+  { id: 'grammar', labelEn: 'Grammar & Rules', labelTh: 'หลักไวยากรณ์และสูตรลัด', icon: Sparkles, section: 'learn' },
+  { id: 'mockExam', labelEn: 'Mock Exams (Cambridge & OOPT)', labelTh: 'ศูนย์ข้อสอบจำลอง', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
+  { id: 'compete', labelEn: 'Arena & Rankings', labelTh: 'สังเวียนประลองและอันดับ', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'practice' },
 ];
 
 interface NavSectionDef {
@@ -99,10 +90,8 @@ interface NavSectionDef {
 }
 
 const NAV_SECTIONS: NavSectionDef[] = [
-  { id: 'learn', labelEn: 'LANGUAGE SKILLS', labelTh: 'หมวดทักษะภาษาอังกฤษ' },
-  { id: 'practice', labelEn: 'TESTING & ASSESSMENT', labelTh: 'การทดสอบและประเมินผล' },
-  { id: 'progress', labelEn: 'PROGRESS & ANALYTICS', labelTh: 'รายงานผลการเรียนรู้' },
-  { id: 'arena', labelEn: 'ACTIVITIES & COMMUNITY', labelTh: 'กิจกรรมและกลุ่มการเรียนรู้' },
+  { id: 'learn', labelEn: 'LANGUAGE SKILLS', labelTh: 'ทักษะภาษาอังกฤษ' },
+  { id: 'practice', labelEn: 'TESTING & ARENA', labelTh: 'การทดสอบและการประลอง' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
