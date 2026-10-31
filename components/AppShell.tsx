@@ -103,16 +103,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   const { showToast } = useToast();
 
-  const LOCKED_VIEWS: NavView[] = [
-    'vocabulary',
-    'cheatSheets',
-    'listening',
-    'assessment',
-    'ooptPractice',
-    'collocations',
-    'compete',
-    'ranking',
-  ];
+  const LOCKED_VIEWS: NavView[] = [];
 
   const getViewRoute = React.useCallback((view: NavView): string => {
     return view === 'dashboard'

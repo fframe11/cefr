@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   LayoutDashboard,
   BookOpen,
@@ -68,6 +69,20 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
     { id: 'analytics' as NavView, icon: BarChart2, labelEn: 'Learning Analytics', labelTh: 'การวิเคราะห์ผลการเรียนรู้' },
   ];
 
+  const getItemRoute = (id: NavView): string => {
+    return id === 'dashboard'
+      ? '/dashboard'
+      : id === 'mockExam'
+      ? '/mock-exams'
+      : id === 'cheatSheets'
+      ? '/cheat-sheets'
+      : id === 'collocations'
+      ? '/collocations'
+      : id === 'ooptPractice'
+      ? '/oopt-practice'
+      : `/${id}`;
+  };
+
   const handleSelect = (view: NavView) => {
     if (LOCKED_VIEWS.includes(view)) {
       showToast(
@@ -117,19 +132,21 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 const isPending = pendingView === item.id;
                 const isActive = currentView === item.id || isPending;
                 const Icon = item.icon;
-                const isLocked = LOCKED_VIEWS.includes(item.id);
+                const itemRoute = getItemRoute(item.id);
 
                 return (
-                  <button
+                  <Link
                     key={item.id}
-                    type="button"
+                    href={itemRoute}
+                    prefetch={true}
                     onMouseEnter={() => {
-                      if (!isLocked && onPrefetchView) onPrefetchView(item.id);
+                      if (onPrefetchView) onPrefetchView(item.id);
                     }}
-                    onClick={() => handleSelect(item.id)}
-                    className={`flex items-center gap-2.5 p-3 rounded-xl text-left transition-all relative ${
-                      isLocked ? 'opacity-70' : ''
-                    } ${
+                    onClick={() => {
+                      onSelectView(item.id);
+                      setDrawerOpen(false);
+                    }}
+                    className={`flex items-center gap-2.5 p-3 rounded-xl text-left transition-all relative cursor-pointer ${
                       isActive
                         ? 'bg-[#FA5D5D] text-white font-bold shadow-[0_4px_16px_rgba(250,93,93,0.35)]'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium'
@@ -143,13 +160,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                     <span className="text-xs font-display flex-1">
                       {isEn ? item.labelEn : item.labelTh}
                     </span>
-                    {isLocked && (
-                      <span className="ml-auto inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-500 dark:bg-white/5 dark:text-slate-400 border border-slate-200 dark:border-white/10 shrink-0">
-                        <Lock className="w-2.5 h-2.5 text-slate-400 dark:text-slate-500" />
-                        <span>{isEn ? 'Locked' : 'ล็อก'}</span>
-                      </span>
-                    )}
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -167,20 +178,19 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
             const isPending = pendingView === item.id;
             const Icon = item.icon;
             const isActive = currentView === item.id || isPending;
-            const isLocked = LOCKED_VIEWS.includes(item.id);
             const label = isEn ? item.labelEn : item.labelTh;
+            const itemRoute = getItemRoute(item.id);
 
             return (
-              <button
+              <Link
                 key={item.id}
-                type="button"
+                href={itemRoute}
+                prefetch={true}
                 onMouseEnter={() => {
-                  if (!isLocked && onPrefetchView) onPrefetchView(item.id);
+                  if (onPrefetchView) onPrefetchView(item.id);
                 }}
-                onClick={() => handleSelect(item.id)}
+                onClick={() => onSelectView(item.id)}
                 className={`flex flex-col items-center justify-center py-1.5 px-3 rounded-xl text-[10px] transition-all min-w-[54px] active:scale-95 relative cursor-pointer ${
-                  isLocked ? 'opacity-80' : ''
-                } ${
                   isActive
                     ? 'bg-[#FA5D5D] text-white font-bold shadow-[0_2px_12px_rgba(250,93,93,0.35)] ring-1 ring-[#FA5D5D]/20'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white font-medium'
@@ -194,12 +204,9 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                   ) : (
                     <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-600 dark:text-slate-400'}`} />
                   )}
-                  {isLocked && (
-                    <Lock className="w-2.5 h-2.5 text-slate-500 dark:text-slate-400 absolute -top-1 -right-1" />
-                  )}
                 </div>
                 <span className="mt-0.5 font-display tracking-tight text-[10px]">{label}</span>
-              </button>
+              </Link>
             );
           })}
 

@@ -1,16 +1,14 @@
 'use client';
 import React from 'react';
-import { GrammarView } from '../../components/views/GrammarView';
+import { ReadingView } from '../../components/views/ReadingView';
 import { useApp } from '../../context/AppContext';
 
 export default function ReadingPage() {
-  const { handleQuestionCompleted, remediationTopic } = useApp();
+  const { handleQuestionCompleted } = useApp();
 
   return (
-    <GrammarView
-      initialSkill="reading"
+    <ReadingView
       onQuestionCompleted={handleQuestionCompleted}
-      activeTopicId={remediationTopic}
     />
   );
 }

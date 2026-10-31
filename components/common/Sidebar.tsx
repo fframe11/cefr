@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { useTranslation } from '../../i18n';
 import {
   LayoutDashboard,
@@ -161,44 +162,33 @@ export const Sidebar: React.FC<SidebarProps> = ({
               badgeClasses = 'bg-emerald-500/15 text-emerald-700 dark:bg-[#10B981]/20 dark:text-[#10B981] border border-emerald-500/30 dark:border-[#10B981]/40';
             }
 
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onMouseEnter={() => {
-                  if (!isLocked && onPrefetchView) {
-                    onPrefetchView(item.id);
-                  }
-                }}
-                onClick={() => {
-                  if (isLocked) {
-                    showToast(
-                      isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
-                      isEn
-                        ? 'Currently unavailable. Coming soon.'
-                        : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
-                      'info'
-                    );
-                    return;
-                  }
-                  onSelectView(item.id);
-                  if (onItemClick) onItemClick();
-                }}
-                title={collapsedMode ? `${itemLabel}${isLocked ? ` (${isEn ? 'Locked' : 'ล็อก'})` : ''}` : undefined}
-                aria-label={itemLabel}
-                aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
-                  collapsedMode
-                    ? 'justify-center p-2.5'
-                    : 'justify-start px-3 py-2 gap-2.5'
-                } ${
-                  isLocked ? 'opacity-75 hover:opacity-95' : ''
-                } ${
-                  isActive
-                    ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
-                }`}
-              >
+            const itemRoute =
+              item.id === 'dashboard'
+                ? '/dashboard'
+                : item.id === 'mockExam'
+                ? '/mock-exams'
+                : item.id === 'cheatSheets'
+                ? '/cheat-sheets'
+                : item.id === 'collocations'
+                ? '/collocations'
+                : item.id === 'ooptPractice'
+                ? '/oopt-practice'
+                : `/${item.id}`;
+
+            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
+              collapsedMode
+                ? 'justify-center p-2.5'
+                : 'justify-start px-3 py-2 gap-2.5'
+            } ${
+              isLocked ? 'opacity-75 hover:opacity-95' : ''
+            } ${
+              isActive
+                ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
+                : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
+            }`;
+
+            const innerContent = (
+              <>
                 <div className="relative shrink-0">
                   {isPending ? (
                     <div className="w-4 h-4 border-2 border-[#FA5D5D] border-t-transparent rounded-full animate-spin" />
@@ -237,7 +227,54 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {item.badge}
                   </span>
                 )}
-              </button>
+              </>
+            );
+
+            if (isLocked) {
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    showToast(
+                      isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
+                      isEn
+                        ? 'Currently unavailable. Coming soon.'
+                        : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
+                      'info'
+                    );
+                  }}
+                  title={collapsedMode ? `${itemLabel} (${isEn ? 'Locked' : 'ล็อก'})` : undefined}
+                  aria-label={itemLabel}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={sharedClass}
+                >
+                  {innerContent}
+                </button>
+              );
+            }
+
+            return (
+              <Link
+                key={item.id}
+                href={itemRoute}
+                prefetch={true}
+                onMouseEnter={() => {
+                  if (onPrefetchView) {
+                    onPrefetchView(item.id);
+                  }
+                }}
+                onClick={() => {
+                  onSelectView(item.id);
+                  if (onItemClick) onItemClick();
+                }}
+                title={collapsedMode ? itemLabel : undefined}
+                aria-label={itemLabel}
+                aria-current={isActive ? 'page' : undefined}
+                className={sharedClass}
+              >
+                {innerContent}
+              </Link>
             );
           })}
         </div>
