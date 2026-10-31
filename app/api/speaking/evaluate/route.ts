@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateAudioFile, MAX_AUDIO_BYTES } from "@/lib/speaking/audio";
 import { evaluateSpeech } from "@/lib/speaking/evaluator";
-import { CEFRLevel } from "@/lib/speaking/types";
+import { CEFRLevel, SpeakingMode } from "@/lib/speaking/types";
 
 export const runtime = "edge";
 
@@ -114,6 +114,9 @@ export async function POST(req: NextRequest) {
     const volumeRmsStr = formData.get("volume_rms") as string | null;
     const silenceRatioStr = formData.get("silence_ratio") as string | null;
     const pitchVarianceStr = formData.get("pitch_variance") as string | null;
+    const mode = (formData.get("mode") as SpeakingMode | null) || "read_aloud";
+    const targetKeywordsRaw = formData.get("target_keywords") as string | null;
+    const targetKeywords = targetKeywordsRaw ? targetKeywordsRaw.split(",").map(k => k.trim()) : [];
 
     const acousticMetrics = {
       volume_rms: volumeRmsStr ? parseFloat(volumeRmsStr) : undefined,
@@ -195,6 +198,8 @@ export async function POST(req: NextRequest) {
       userTranscript,
       acousticMetrics,
       externalPronunciationResult,
+      mode,
+      targetKeywords,
     });
 
     // 7. Return 200 OK Response matching the exact Notion specification contract

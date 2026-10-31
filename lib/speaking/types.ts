@@ -2,6 +2,8 @@ export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 export type WordErrorType = "None" | "Mispronunciation" | "Omission" | "Insertion";
 
+export type SpeakingMode = "read_aloud" | "free_speaking";
+
 export interface PhonemeScore {
   phoneme: string;
   score: number;
@@ -61,6 +63,8 @@ export interface SpeakingEvaluationData {
   transcription: string;
   words_analysis: WordAnalysis[];
   feedback_th: string;
+  mode?: SpeakingMode;
+  target_keywords_found?: string[];
 }
 
 export interface EvaluationSuccessResponse {
@@ -88,4 +92,27 @@ export interface SpeakingPrompt {
   reference_text: string;
   target_duration_sec: number;
   keywords: string[];
+}
+
+export interface SpeakingSentence {
+  id: string;
+  cefrLevel: CEFRLevel;
+  topic: string;
+  sentence: string; // The reference text to read aloud or model response
+  promptTitle: string; // Context/Situation title
+  contextOrQuestion?: string; // For Free Speaking: open-ended question or prompt scenario
+  targetKeywords: string[];
+  difficulty: number; // 1 - 100
+  mode: SpeakingMode;
+  isActive: boolean;
+}
+
+export interface PracticeQueueState {
+  cefrLevel: CEFRLevel;
+  topic: string; // empty string or "all" for all topics
+  mode: SpeakingMode;
+  activeQueue: string[]; // sentence IDs remaining in this round
+  practicedIds: string[]; // sentence IDs practiced in this round
+  roundNumber: number;
+  totalInBank: number;
 }

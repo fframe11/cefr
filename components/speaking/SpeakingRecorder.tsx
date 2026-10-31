@@ -14,7 +14,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CEFRLevel, SpeakingEvaluationData } from "@/lib/speaking/types";
+import { CEFRLevel, SpeakingEvaluationData, SpeakingMode } from "@/lib/speaking/types";
 
 interface SpeakingRecorderProps {
   promptId: string;
@@ -22,6 +22,16 @@ interface SpeakingRecorderProps {
   targetCefr: CEFRLevel;
   onEvaluationComplete: (data: SpeakingEvaluationData) => void;
   className?: string;
+  mode?: SpeakingMode;
+  contextOrQuestion?: string;
+  promptTitle?: string;
+  targetKeywords?: string[];
+  queueProgress?: {
+    currentInRound: number;
+    totalInRound: number;
+    roundNumber: number;
+  };
+  onNextSentence?: () => void;
 }
 
 type RecorderState = "idle" | "recording" | "review" | "processing";
@@ -32,6 +42,12 @@ export function SpeakingRecorder({
   targetCefr,
   onEvaluationComplete,
   className,
+  mode = "read_aloud",
+  contextOrQuestion,
+  promptTitle,
+  targetKeywords = [],
+  queueProgress,
+  onNextSentence,
 }: SpeakingRecorderProps) {
   const [recorderState, setRecorderState] = useState<RecorderState>("idle");
   const [elapsedSec, setElapsedSec] = useState<number>(0);
@@ -406,6 +422,7 @@ export function SpeakingRecorder({
       formData.append("volume_rms", stats.volumeRms.toFixed(4));
       formData.append("silence_ratio", stats.silenceRatio.toFixed(4));
       formData.append("pitch_variance", stats.pitchVariance.toFixed(4));
+      formData.append("mode", mode);
 
       const res = await fetch("/api/speaking/evaluate", {
         method: "POST",
@@ -450,16 +467,72 @@ export function SpeakingRecorder({
       {/* Header and Guidelines */}
       <div className="flex flex-col gap-2 mb-4">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-            Speaking Lab Recorder
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+              {mode === "free_speaking" ? "Free Speaking Task" : "Read Aloud Reference"}
+            </span>
+            {queueProgress && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-primary/10 text-primary border border-primary/20">
+                ประโยคที่ {queueProgress.currentInRound} / {queueProgress.totalInRound} (รอบที่ {queueProgress.roundNumber})
+              </span>
+            )}
+          </div>
           <span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
             Target CEFR: {targetCefr}
           </span>
         </div>
-        <p className="text-sm text-foreground/90 font-medium leading-relaxed bg-muted/30 p-3 rounded-lg border border-border/30">
-          &ldquo;{referenceText}&rdquo;
-        </p>
+
+        {mode === "free_speaking" ? (
+          <div className="flex flex-col gap-2 bg-muted/30 p-3.5 rounded-lg border border-border/30">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-foreground">
+                โจทย์และสถานการณ์สนทนา:
+              </span>
+              {onNextSentence && (
+                <button
+                  type="button"
+                  onClick={onNextSentence}
+                  className="inline-flex items-center gap-1 text-[11px] font-medium text-primary hover:underline"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  สุ่มข้อถัดไป
+                </button>
+              )}
+            </div>
+            <p className="text-sm text-foreground font-medium leading-relaxed">
+              {contextOrQuestion || referenceText}
+            </p>
+            <details className="mt-1 text-xs text-muted-foreground">
+              <summary className="cursor-pointer hover:text-foreground font-medium select-none">
+                💡 ดูตัวอย่างคำตอบแนวทาง (Model Answer)
+              </summary>
+              <p className="mt-1.5 pl-3 border-l-2 border-primary/40 italic text-foreground/80">
+                &ldquo;{referenceText}&rdquo;
+              </p>
+            </details>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2 bg-muted/30 p-3.5 rounded-lg border border-border/30">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold text-muted-foreground">
+                อ่านออกเสียงตามข้อความนี้อย่างชัดเจน:
+              </span>
+              {onNextSentence && (
+                <button
+                  type="button"
+                  onClick={onNextSentence}
+                  className="inline-flex items-center gap-1 text-[11px] font-medium text-primary hover:underline"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  ประโยคถัดไป
+                </button>
+              )}
+            </div>
+            <p className="text-base text-foreground font-semibold leading-relaxed tracking-wide">
+              &ldquo;{referenceText}&rdquo;
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Live Waveform Canvas */}

@@ -6,6 +6,7 @@ import {
   SpeakingMetrics,
   WordAnalysis,
   WordErrorType,
+  SpeakingMode,
 } from "./types";
 import { scoreToCefrBand } from "./cefr";
 
@@ -64,6 +65,8 @@ export interface EvaluateSpeechParams {
   acousticMetrics?: AcousticMetrics;
   externalPronunciationResult?: PronunciationResult;
   simulatedTranscript?: string;
+  mode?: SpeakingMode;
+  targetKeywords?: string[];
 }
 
 /**
@@ -80,6 +83,8 @@ export async function evaluateSpeech(
     acousticMetrics,
     externalPronunciationResult,
     simulatedTranscript,
+    mode = "read_aloud",
+    targetKeywords = [],
   } = params;
 
   // Split reference text into target words
@@ -182,11 +187,26 @@ export async function evaluateSpeech(
     }
   });
 
-  // Calculate strict completeness score based on text coverage
+  // Calculate completeness score based on mode
+  let keywordsFound: string[] = [];
+  let freeSpeakingCompleteness = 0;
+
+  if (mode === "free_speaking" && !isCompletelySilent && !hasNoRecognizedWords) {
+    const spokenJoined = transcription.toLowerCase();
+    keywordsFound = targetKeywords.filter((kw) =>
+      spokenJoined.includes(kw.toLowerCase())
+    );
+    const kwRatio = targetKeywords.length > 0 ? keywordsFound.length / targetKeywords.length : 1.0;
+    const lenRatio = Math.min(1.0, spokenWords.length / 6);
+    freeSpeakingCompleteness = Math.round((kwRatio * 0.6 + lenRatio * 0.4) * 100);
+  }
+
   const completionRatio = isCompletelySilent || hasNoRecognizedWords
     ? 0
     : matchedWordCount / (referenceWords.length || 1);
-  const completeness_score = Math.min(100, Math.round(completionRatio * 100));
+  const completeness_score = mode === "free_speaking" 
+    ? (isCompletelySilent || hasNoRecognizedWords ? 0 : freeSpeakingCompleteness)
+    : Math.min(100, Math.round(completionRatio * 100));
 
   // Determine pronunciation result with Content Relevance & Language Gate
   let pronunciation_result: PronunciationResult;
@@ -270,6 +290,10 @@ export async function evaluateSpeech(
     feedbackTh = "ตรวจไม่พบเสียงพูดที่ชัดเจนในไฟล์เสียง กรุณาตรวจสอบไมโครโฟนและฝึกพูดออกเสียงตามข้อความตัวอย่าง";
   } else if (hasNoRecognizedWords || completeness_score === 0 || matchedWordCount === 0) {
     feedbackTh = "ตรวจไม่พบคำภาษาอังกฤษที่ตรงกับบทอ่านเป้าหมาย หรือภาษาที่พูดไม่ตรงกับโจทย์ (ความครบถ้วน 0%) กรุณาฝึกอ่านและออกเสียงข้อความภาษาอังกฤษตามที่กำหนด";
+  } else if (mode === "free_speaking" && pronunciation_result.status === "scored" && overall_score !== null) {
+    feedbackTh = `การพูดตอบในโหมด Free Speaking ครอบคลุมใจความสำคัญ ${completeness_score}% (ตรวจพบคำสำคัญ ${keywordsFound.length}/${targetKeywords.length} คำ) และคะแนนการออกเสียงคือ ${pronunciation_result.pronunciationScore} คะแนน`;
+  } else if (mode === "free_speaking") {
+    feedbackTh = `ความครอบคลุมเนื้อหาในโหมด Free Speaking คือ ${completeness_score}% (พบคำสำคัญ ${keywordsFound.length}/${targetKeywords.length} คำ)`;
   } else if (completeness_score < 50) {
     feedbackTh = `คุณพูดข้อความได้เพียง ${completeness_score}% ของข้อความทั้งหมด (ขาดคำสำคัญไปหลายคำ) กรุณาฝึกอ่านและพูดประโยคให้ครบถ้วนสมบูรณ์ตามโจทย์`;
   } else if (pronunciation_result.status === "scored" && overall_score !== null) {
@@ -288,5 +312,7 @@ export async function evaluateSpeech(
     transcription: isCompletelySilent ? "(ไม่พบเสียงพูดในไฟล์)" : transcription,
     words_analysis: wordsAnalysis,
     feedback_th: feedbackTh,
+    mode,
+    target_keywords_found: keywordsFound,
   };
 }
