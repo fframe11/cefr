@@ -1,10 +1,13 @@
 'use client';
 
-import React from 'react';
-import { PenTool, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { PenTool, Award, BookOpen } from 'lucide-react';
 import { WritingWorkspace } from '@/components/writing/WritingWorkspace';
+import { WritingView } from '@/components/views/WritingView';
 
 export default function WritingPage() {
+  const [activeTab, setActiveTab] = useState<'workspace' | 'practice'>('workspace');
+
   return (
     <main className="min-h-screen bg-background">
       {/* Top Header Navigation */}
@@ -25,17 +28,39 @@ export default function WritingPage() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-muted/60 text-muted-foreground border border-border/40">
-              <Sparkles className="w-3 h-3 text-indigo-500" />
-              TASK-02 AES Engine Active
-            </span>
+            <div className="flex items-center p-0.5 bg-muted/60 rounded-lg border border-border/40 text-xs">
+              <button
+                type="button"
+                onClick={() => setActiveTab('workspace')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md font-medium transition-all ${
+                  activeTab === 'workspace'
+                    ? 'bg-card text-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <Award className="w-3.5 h-3.5 text-indigo-500" />
+                Cambridge Exam Studio
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('practice')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md font-medium transition-all ${
+                  activeTab === 'practice'
+                    ? 'bg-card text-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <BookOpen className="w-3.5 h-3.5 text-emerald-500" />
+                CEFR Practice & AES
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Workspace Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        <WritingWorkspace />
+        {activeTab === 'workspace' ? <WritingWorkspace /> : <WritingView />}
       </div>
     </main>
   );
