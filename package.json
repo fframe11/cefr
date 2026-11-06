@@ -23,7 +23,8 @@
     "vocabulary:qa": "node scripts/content-pipeline/vocab/enrich-pipeline.mjs qa",
     "vocabulary:report": "node scripts/content-pipeline/vocab/enrich-pipeline.mjs report",
     "vocabulary:large": "node scripts/content-pipeline/vocab/large-production-pipeline.mjs",
-    "qa:integrity": "node scripts/content-pipeline/vocab/qa-integrity-check.mjs"
+    "qa:integrity": "node scripts/content-pipeline/vocab/qa-integrity-check.mjs",
+    "dev:speaking": "python -m uvicorn services.pronunciation.app:app --host 127.0.0.1 --port 8000"
   },
   "dependencies": {
     "@remotion/player": "4.0.529",

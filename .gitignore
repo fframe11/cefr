@@ -35,3 +35,7 @@ cloudflared.exe
 *เนื้อหาที่ควรมีในเว็บ*
 *.tsbuildinfo
 
+
+__pycache__/
+*.pyc
+.pytest_cache/
