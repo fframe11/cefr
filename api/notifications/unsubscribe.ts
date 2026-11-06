@@ -11,12 +11,12 @@ interface UnsubscribeBody {
  * Removes a push subscription endpoint for the authenticated user.
  */
 export default createApiHandler(
-  async ({ user, body }) => {
+  async ({ user, req }) => {
     if (!user) {
       throw new UnauthorizedError('Authentication required to unsubscribe.');
     }
 
-    const payload = body as UnsubscribeBody;
+    const payload = req.body as UnsubscribeBody;
     if (!payload?.endpoint) {
       throw new BadRequestError('Subscription endpoint is required to unsubscribe.');
     }

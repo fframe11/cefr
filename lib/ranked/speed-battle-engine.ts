@@ -615,8 +615,14 @@ export function finalizeSpeedBattleMatch(roomId: string): RoundEndedEvent {
       is_walkover: false,
       final_scores: { player_1: 0, player_2: 0 },
       elo_updates: {
-        player_1: { rating_before: 1200, rating_after: 1200, rating_delta: 0 },
-        player_2: { rating_before: 1200, rating_after: 1200, rating_delta: 0 },
+        player1_id: 'unknown-1',
+        player1_old_elo: 1200,
+        player1_new_elo: 1200,
+        player1_delta: 0,
+        player2_id: 'unknown-2',
+        player2_old_elo: 1200,
+        player2_new_elo: 1200,
+        player2_delta: 0,
       },
     };
   }
@@ -644,6 +650,7 @@ export function finalizeSpeedBattleMatch(roomId: string): RoundEndedEvent {
     outcome: p1Outcome,
     isPlacement: false,
     playerAccuracy: 0.85,
+    demotionProtectedMatches: 0,
   });
 
   const p2EloResult = calculateMatchRating({
@@ -652,6 +659,7 @@ export function finalizeSpeedBattleMatch(roomId: string): RoundEndedEvent {
     outcome: p2Outcome,
     isPlacement: false,
     playerAccuracy: 0.75,
+    demotionProtectedMatches: 0,
   });
 
   return {

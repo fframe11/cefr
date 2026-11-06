@@ -5,10 +5,10 @@ import * as path from 'path';
 describe('Database Schema Migrations Verification', () => {
   const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-  it('should find all 9 approved migration files', () => {
+  it('should find all approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
-        expect(files).toEqual([
+    expect(files).toEqual([
       '20260925000001_create_cefr_platform_schema.sql',
       '20260925000002_create_indexes.sql',
       '20260925000003_create_rls_policies.sql',
@@ -25,6 +25,7 @@ describe('Database Schema Migrations Verification', () => {
       '20261028_user_writing_submissions.sql',
       '20261029000012_cambridge_c1_c2_ielts_expansion.sql',
       '20261030000013_user_push_subscriptions_and_streaks.sql',
+      '20261031_speaking_sentences_and_queue.sql',
     ]);
   });
 
@@ -190,5 +191,3 @@ describe('Database Schema Migrations Verification', () => {
     expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(question_id,\s*key\)\s+DO\s+UPDATE/i);
   });
 });
-
-

@@ -62,7 +62,7 @@ export async function subscribeToPushNotifications(options?: {
     // 2. Subscribe using PushManager
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(publicKey),
+      applicationServerKey: urlBase64ToUint8Array(publicKey) as unknown as BufferSource,
     });
 
     const subJson = subscription.toJSON();

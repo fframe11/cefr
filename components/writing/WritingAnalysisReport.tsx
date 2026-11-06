@@ -66,20 +66,22 @@ Lexical Distribution:
     let lastIndex = 0;
 
     data.grammar_issues.forEach((issue, idx) => {
+      const offset = typeof issue.offset === 'number' ? issue.offset : 0;
+      const length = typeof issue.length === 'number' ? issue.length : 0;
       // Un-highlighted text before this issue
-      if (issue.offset > lastIndex) {
+      if (offset > lastIndex) {
         segments.push(
-          <span key={`text-${lastIndex}-${issue.offset}`}>
-            {originalText.substring(lastIndex, issue.offset)}
+          <span key={`text-${lastIndex}-${offset}`}>
+            {originalText.substring(lastIndex, offset)}
           </span>
         );
       }
 
       // Highlighted issue
-      const isSelected = selectedIssue?.offset === issue.offset;
+      const isSelected = selectedIssue?.offset === offset;
       segments.push(
         <button
-          key={`issue-${issue.offset}-${idx}`}
+          key={`issue-${offset}-${idx}`}
           type="button"
           onClick={() => setSelectedIssue(issue)}
           className={`inline font-semibold px-1 rounded transition-colors duration-150 cursor-pointer ${
@@ -89,11 +91,11 @@ Lexical Distribution:
           }`}
           title="คลิกเพื่อดูคำแนะนำไวยากรณ์"
         >
-          {originalText.substring(issue.offset, issue.offset + issue.length)}
+          {originalText.substring(offset, offset + length)}
         </button>
       );
 
-      lastIndex = issue.offset + issue.length;
+      lastIndex = offset + length;
     });
 
     if (lastIndex < originalText.length) {

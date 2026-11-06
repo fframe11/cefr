@@ -20,12 +20,12 @@ interface SubscribeBody {
  * Registers or updates a browser Web Push subscription for the authenticated user.
  */
 export default createApiHandler(
-  async ({ user, body }) => {
+  async ({ user, req }) => {
     if (!user) {
       throw new UnauthorizedError('Authentication required to register push notifications.');
     }
 
-    const payload = body as SubscribeBody;
+    const payload = req.body as SubscribeBody;
     const subscription = payload?.subscription;
 
     if (!subscription || !subscription.endpoint || !subscription.keys?.p256dh || !subscription.keys?.auth) {

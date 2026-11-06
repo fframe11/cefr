@@ -86,15 +86,15 @@ const GRAMMAR_RULES: GrammarRulePattern[] = [
   {
     id: 'ARTICLE_PHONETICS',
     regex: /\b(an)\s+(unique|universal|university|useful|uniform)\b/gi,
-    getReplacement: (_, __, word) => `a ${word}`,
-    getExplanationTh: (_, __, word) => `คำว่า '${word}' ขึ้นต้นด้วยเสียงพยัญชนะ /j/ (y-sound) จึงต้องใช้ article 'a' ไม่ใช่ 'an'`
+    getReplacement: (m) => `a ${m[2]}`,
+    getExplanationTh: (m) => `คำว่า '${m[2]}' ขึ้นต้นด้วยเสียงพยัญชนะ /j/ (y-sound) จึงต้องใช้ article 'a' ไม่ใช่ 'an'`
   },
   // 11. Article a/an phonetics: a honest -> an honest
   {
     id: 'ARTICLE_PHONETICS',
     regex: /\b(a)\s+(honest|hour|honor|honourable)\b/gi,
-    getReplacement: (_, __, word) => `an ${word}`,
-    getExplanationTh: (_, __, word) => `คำว่า '${word}' ตัว 'h' ไม่ออกเสียง (Silent h) เริ่มต้นด้วยเสียงสระ จึงต้องใช้ article 'an'`
+    getReplacement: (m) => `an ${m[2]}`,
+    getExplanationTh: (m) => `คำว่า '${m[2]}' ตัว 'h' ไม่ออกเสียง (Silent h) เริ่มต้นด้วยเสียงสระ จึงต้องใช้ article 'an'`
   },
   // 12. Gerund after preposition: look forward to + V.ing
   {
@@ -142,5 +142,5 @@ export function detectGrammarIssues(text: string): GrammarIssue[] {
   }
 
   // Sort issues by offset ascending
-  return issues.sort((a, b) => a.offset - b.offset);
+  return issues.sort((a, b) => (a.offset ?? 0) - (b.offset ?? 0));
 }

@@ -13,7 +13,7 @@ interface PatchSettingsBody {
  * Manages user's notification preferences, timezones, and streak freeze state.
  */
 export default createApiHandler(
-  async ({ user, req, body }) => {
+  async ({ user, req }) => {
     if (!user) {
       throw new UnauthorizedError('Authentication required to manage notification settings.');
     }
@@ -51,7 +51,7 @@ export default createApiHandler(
     }
 
     if (method === 'PATCH' || method === 'POST') {
-      const payload = (body || {}) as PatchSettingsBody;
+      const payload = (req.body || {}) as PatchSettingsBody;
       const updates: Record<string, unknown> = {
         user_id: user.id,
         updated_at: new Date().toISOString(),
