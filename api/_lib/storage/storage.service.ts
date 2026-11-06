@@ -44,6 +44,9 @@ export class StorageService {
    */
   public getPublicAudioUrl(storagePath: string): string {
     const supabase = createPublicServerClient();
+    if (!supabase) {
+      return storagePath.startsWith('http') ? storagePath : `/audio/${storagePath}`;
+    }
     const { data } = supabase.storage
       .from(STORAGE_BUCKETS.LISTENING_AUDIO)
       .getPublicUrl(storagePath);
@@ -76,7 +79,7 @@ export class StorageService {
 
   /**
    * Constructs the canonical storage path for student speaking audio submissions:
-   * Format: user/{userId}/attempt/{attemptId}/part_{part}.webm
+   * Format: user/{userId}/attempt/${attemptId}/part_{part}.webm
    */
   public buildSpeakingSubmissionPath(userId: string, attemptId: string, part: number): string {
     return `user/${userId}/attempt/${attemptId}/part_${part}.webm`;

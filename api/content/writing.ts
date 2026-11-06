@@ -38,44 +38,46 @@ export default createApiHandler(
     const query = validateQuery(writingQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    try {
-      let dbQuery = supabase
-        .from('writing_prompts')
-        .select('id, title, cefr_level, target_exam, task_type, prompt_th, prompt_en, min_words, max_words, guidelines_th, useful_phrases, rubrics', {
-          count: 'exact',
-        })
-        .eq('is_active', true);
+    if (supabase) {
+      try {
+        let dbQuery = supabase
+          .from('writing_prompts')
+          .select('id, title, cefr_level, target_exam, task_type, prompt_th, prompt_en, min_words, max_words, guidelines_th, useful_phrases, rubrics', {
+            count: 'exact',
+          })
+          .eq('is_active', true);
 
-      if (query.cefr_level) {
-        dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
-      }
-      if (query.target_exam) {
-        dbQuery = dbQuery.eq('target_exam', query.target_exam);
-      }
-      if (query.task_type) {
-        dbQuery = dbQuery.eq('task_type', query.task_type);
-      }
+        if (query.cefr_level) {
+          dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+        }
+        if (query.target_exam) {
+          dbQuery = dbQuery.eq('target_exam', query.target_exam);
+        }
+        if (query.task_type) {
+          dbQuery = dbQuery.eq('task_type', query.task_type);
+        }
 
-      const offset = (query.page - 1) * query.limit;
-      dbQuery = dbQuery
-        .order('title', { ascending: true })
-        .range(offset, offset + query.limit - 1);
+        const offset = (query.page - 1) * query.limit;
+        dbQuery = dbQuery
+          .order('title', { ascending: true })
+          .range(offset, offset + query.limit - 1);
 
-      const { data: prompts, count, error } = await dbQuery;
+        const { data: prompts, count, error } = await dbQuery;
 
-      if (!error && prompts && prompts.length > 0) {
-        return {
-          prompts,
-          pagination: {
-            page: query.page,
-            limit: query.limit,
-            total: count || prompts.length,
-            total_pages: Math.ceil((count || prompts.length) / query.limit),
-          },
-        };
+        if (!error && prompts && prompts.length > 0) {
+          return {
+            prompts,
+            pagination: {
+              page: query.page,
+              limit: query.limit,
+              total: count || prompts.length,
+              total_pages: Math.ceil((count || prompts.length) / query.limit),
+            },
+          };
+        }
+      } catch {
+        // Fallback seamlessly to local bank below
       }
-    } catch {
-      // Fallback seamlessly to local bank below
     }
 
     // Local curated writing prompts fallback
@@ -100,7 +102,9 @@ export default createApiHandler(
       prompt_en: p.instruction_en,
       min_words: p.min_words,
       max_words: p.max_words,
-      guidelines_th: p.instruction_th,
+      guidelines_th: Array.isArray(p.cefr_descriptors) && p.cefr_descriptors.length > 0
+        ? p.cefr_descriptors
+        : [p.instruction_th || p.instruction_en || 'Follow the prompt instructions'],
       useful_phrases: [],
       rubrics: p.scoring_rubric,
     }));

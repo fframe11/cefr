@@ -32,44 +32,46 @@ export default createApiHandler(
     const query = validateQuery(readingQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    try {
-      let dbQuery = supabase
-        .from('reading_passages')
-        .select('id, title, cefr_level, target_exam, topic, content, word_count, vocabulary_glossary', {
-          count: 'exact',
-        })
-        .eq('is_active', true);
+    if (supabase) {
+      try {
+        let dbQuery = supabase
+          .from('reading_passages')
+          .select('id, title, cefr_level, target_exam, topic, content, word_count, vocabulary_glossary', {
+            count: 'exact',
+          })
+          .eq('is_active', true);
 
-      if (query.cefr_level) {
-        dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
-      }
-      if (query.target_exam) {
-        dbQuery = dbQuery.eq('target_exam', query.target_exam);
-      }
-      if (query.topic) {
-        dbQuery = dbQuery.eq('topic', query.topic);
-      }
+        if (query.cefr_level) {
+          dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+        }
+        if (query.target_exam) {
+          dbQuery = dbQuery.eq('target_exam', query.target_exam);
+        }
+        if (query.topic) {
+          dbQuery = dbQuery.eq('topic', query.topic);
+        }
 
-      const offset = (query.page - 1) * query.limit;
-      dbQuery = dbQuery
-        .order('title', { ascending: true })
-        .range(offset, offset + query.limit - 1);
+        const offset = (query.page - 1) * query.limit;
+        dbQuery = dbQuery
+          .order('title', { ascending: true })
+          .range(offset, offset + query.limit - 1);
 
-      const { data: passages, count, error } = await dbQuery;
+        const { data: passages, count, error } = await dbQuery;
 
-      if (!error && passages && passages.length > 0) {
-        return {
-          passages,
-          pagination: {
-            page: query.page,
-            limit: query.limit,
-            total: count || passages.length,
-            total_pages: Math.ceil((count || passages.length) / query.limit),
-          },
-        };
+        if (!error && passages && passages.length > 0) {
+          return {
+            passages,
+            pagination: {
+              page: query.page,
+              limit: query.limit,
+              total: count || passages.length,
+              total_pages: Math.ceil((count || passages.length) / query.limit),
+            },
+          };
+        }
+      } catch {
+        // Fallback seamlessly to local bank below
       }
-    } catch {
-      // Fallback seamlessly to local bank below
     }
 
     // Local calibrated reading passage fallback

@@ -1,17 +1,15 @@
 'use client';
 import React from 'react';
-import { GrammarView } from '../../components/views/GrammarView';
+import { VocabularyView } from '../../components/views/VocabularyView';
 import { useApp } from '../../context/AppContext';
 
 export default function VocabularyPage() {
-  const { handleQuestionCompleted, remediationTopic } = useApp();
+  const { progress, handleToggleWordMastery } = useApp();
 
   return (
-    <GrammarView
-      initialSkill="vocabulary"
-      onQuestionCompleted={handleQuestionCompleted}
-      activeTopicId={remediationTopic}
+    <VocabularyView
+      masteredWordIds={progress.masteredWordIds}
+      onToggleMastery={handleToggleWordMastery}
     />
   );
 }
-

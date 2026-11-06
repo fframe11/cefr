@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { useTranslation } from '../../i18n';
 import {
   LayoutDashboard,
@@ -49,7 +50,9 @@ export type NavView =
 
 export interface SidebarProps {
   currentView: NavView;
+  pendingView?: NavView | null;
   onSelectView: (view: NavView) => void;
+  onPrefetchView?: (view: NavView) => void;
   assessmentCompleted?: boolean;
   isCollapsed?: boolean;
   onToggleCollapse?: () => void;
@@ -69,24 +72,15 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'dashboard', labelEn: 'Overview', labelTh: 'หน้าหลัก', icon: LayoutDashboard, section: 'learn' },
-  { id: 'vocabulary', labelEn: 'Vocabulary', labelTh: 'คลังคำศัพท์', icon: BookOpen, section: 'learn' },
-  { id: 'collocations', labelEn: 'Collocations', labelTh: 'กลุ่มคำสัมพันธ์', icon: BookOpen, section: 'learn' },
-  { id: 'grammar', labelEn: 'Grammar', labelTh: 'หลักไวยากรณ์', icon: Sparkles, section: 'learn' },
-  { id: 'cheatSheets', labelEn: 'Grammar Reference', labelTh: 'สรุปหลักไวยากรณ์สำคัญ', icon: BookOpen, section: 'learn' },
+  { id: 'dashboard', labelEn: 'Overview', labelTh: 'หน้าหลักและสมรรถนะ', icon: LayoutDashboard, section: 'learn' },
   { id: 'reading', labelEn: 'Reading Comprehension', labelTh: 'ทักษะการอ่าน', icon: BookMarked, section: 'learn' },
   { id: 'listening', labelEn: 'Listening Comprehension', labelTh: 'ทักษะการฟัง', icon: Headphones, section: 'learn' },
-  { id: 'writing', labelEn: 'Writing Skills', labelTh: 'ทักษะการเขียน', icon: PenTool, section: 'learn' },
-  { id: 'speaking', labelEn: 'Speaking & Phonetics', labelTh: 'ทักษะการพูด', icon: Mic, section: 'learn' },
-  { id: 'compete', labelEn: 'Vocabulary Challenge', labelTh: 'แบบฝึกประลองคำศัพท์', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'arena' },
-  { id: 'ranking', labelEn: 'Leaderboard', labelTh: 'ตารางอันดับคะแนน', icon: Trophy, badge: 'Top 3', badgeStyle: 'gold', section: 'arena' },
-  { id: 'social', labelEn: 'Study Groups', labelTh: 'กลุ่มการเรียนรู้ร่วมกัน', icon: Users, badge: 'Live', badgeStyle: 'mint', section: 'arena' },
-  { id: 'achievements', labelEn: 'Achievements & Records', labelTh: 'บันทึกความสำเร็จและรางวัล', icon: Award, section: 'arena' },
-  { id: 'assessment', labelEn: 'Diagnostic Assessment', labelTh: 'แบบทดสอบวัดระดับ', icon: ClipboardCheck, section: 'practice' },
-  { id: 'ooptPractice', labelEn: 'Oxford OOPT Practice', labelTh: 'แบบฝึกหัดข้อสอบ Oxford', icon: GraduationCap, section: 'practice' },
-  { id: 'mockExam', labelEn: 'Cambridge Mock Exams', labelTh: 'ข้อสอบจำลองเคมบริดจ์', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
-  { id: 'analytics', labelEn: 'Learning Analytics', labelTh: 'การวิเคราะห์ผลการเรียนรู้', icon: BarChart2, section: 'progress' },
-  { id: 'profile', labelEn: 'Learner Profile', labelTh: 'ข้อมูลผู้เรียน', icon: User, section: 'progress' },
+  { id: 'writing', labelEn: 'Writing Skills (AES)', labelTh: 'ทักษะการเขียน (AES)', icon: PenTool, section: 'learn' },
+  { id: 'speaking', labelEn: 'Speaking Lab', labelTh: 'ทักษะการพูด (Lab)', icon: Mic, section: 'learn' },
+  { id: 'vocabulary', labelEn: 'Vocabulary & Phrases', labelTh: 'คลังคำศัพท์และกลุ่มคำ', icon: BookOpen, section: 'learn' },
+  { id: 'grammar', labelEn: 'Grammar & Rules', labelTh: 'หลักไวยากรณ์และสูตรลัด', icon: Sparkles, section: 'learn' },
+  { id: 'mockExam', labelEn: 'Mock Exams (Cambridge & OOPT)', labelTh: 'ศูนย์ข้อสอบจำลอง', icon: GraduationCap, badge: 'KET-CPE', badgeStyle: 'gold', section: 'practice' },
+  { id: 'compete', labelEn: 'Arena & Rankings', labelTh: 'สังเวียนประลองและอันดับ', icon: Swords, badge: 'MMR', badgeStyle: 'coral', section: 'practice' },
 ];
 
 interface NavSectionDef {
@@ -96,15 +90,15 @@ interface NavSectionDef {
 }
 
 const NAV_SECTIONS: NavSectionDef[] = [
-  { id: 'learn', labelEn: 'LANGUAGE SKILLS', labelTh: 'หมวดทักษะภาษาอังกฤษ' },
-  { id: 'practice', labelEn: 'TESTING & ASSESSMENT', labelTh: 'การทดสอบและประเมินผล' },
-  { id: 'progress', labelEn: 'PROGRESS & ANALYTICS', labelTh: 'รายงานผลการเรียนรู้' },
-  { id: 'arena', labelEn: 'ACTIVITIES & COMMUNITY', labelTh: 'กิจกรรมและกลุ่มการเรียนรู้' },
+  { id: 'learn', labelEn: 'LANGUAGE SKILLS', labelTh: 'ทักษะภาษาอังกฤษ' },
+  { id: 'practice', labelEn: 'TESTING & ARENA', labelTh: 'การทดสอบและการประลอง' },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({
   currentView,
+  pendingView,
   onSelectView,
+  onPrefetchView,
   isCollapsed = false,
   onToggleCollapse,
   isMobileOpen = false,
@@ -142,7 +136,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
 
           {sectionItems.map((item) => {
-            const isActive = currentView === item.id;
+            const isPending = pendingView === item.id;
+            const isActive = currentView === item.id || isPending;
             const Icon = item.icon;
             const itemLabel = isEn ? item.labelEn : item.labelTh;
             const isLocked = Boolean(item.isLocked);
@@ -156,45 +151,43 @@ export const Sidebar: React.FC<SidebarProps> = ({
               badgeClasses = 'bg-emerald-500/15 text-emerald-700 dark:bg-[#10B981]/20 dark:text-[#10B981] border border-emerald-500/30 dark:border-[#10B981]/40';
             }
 
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => {
-                  if (isLocked) {
-                    showToast(
-                      isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
-                      isEn
-                        ? 'Currently unavailable. Coming soon.'
-                        : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
-                      'info'
-                    );
-                    return;
-                  }
-                  onSelectView(item.id);
-                  if (onItemClick) onItemClick();
-                }}
-                title={collapsedMode ? `${itemLabel}${isLocked ? ` (${isEn ? 'Locked' : 'ล็อก'})` : ''}` : undefined}
-                aria-label={itemLabel}
-                aria-current={isActive ? 'page' : undefined}
-                className={`w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative ${
-                  collapsedMode
-                    ? 'justify-center p-2.5'
-                    : 'justify-start px-3 py-2 gap-2.5'
-                } ${
-                  isLocked ? 'opacity-75 hover:opacity-95' : ''
-                } ${
-                  isActive
-                    ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
-                }`}
-              >
+            const itemRoute =
+              item.id === 'dashboard'
+                ? '/dashboard'
+                : item.id === 'mockExam'
+                ? '/mock-exams'
+                : item.id === 'cheatSheets'
+                ? '/cheat-sheets'
+                : item.id === 'collocations'
+                ? '/collocations'
+                : item.id === 'ooptPractice'
+                ? '/oopt-practice'
+                : `/${item.id}`;
+
+            const sharedClass = `w-full flex items-center rounded-xl text-xs transition-all group min-h-[40px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FA5D5D] active:translate-y-0.5 relative cursor-pointer ${
+              collapsedMode
+                ? 'justify-center p-2.5'
+                : 'justify-start px-3 py-2 gap-2.5'
+            } ${
+              isLocked ? 'opacity-75 hover:opacity-95' : ''
+            } ${
+              isActive
+                ? 'bg-[#FA5D5D]/10 dark:bg-[#FA5D5D]/15 border-l-2 border-[#FA5D5D] text-[#FA5D5D] dark:text-[#FF7A7A] font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
+                : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold'
+            }`;
+
+            const innerContent = (
+              <>
                 <div className="relative shrink-0">
-                  <Icon
-                    className={`w-4 h-4 transition-transform group-hover:scale-110 ${
-                      isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
-                    }`}
-                  />
+                  {isPending ? (
+                    <div className="w-4 h-4 border-2 border-[#FA5D5D] border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Icon
+                      className={`w-4 h-4 transition-transform group-hover:scale-110 ${
+                        isActive ? 'text-[#FA5D5D] dark:text-[#FF7A7A]' : 'text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white'
+                      }`}
+                    />
+                  )}
                   {collapsedMode && isLocked && (
                     <Lock className="w-2.5 h-2.5 text-slate-500 dark:text-slate-400 absolute -top-1 -right-1" />
                   )}
@@ -214,7 +207,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   </span>
                 )}
 
-                {!collapsedMode && !isLocked && item.badge && (
+                {!collapsedMode && !isLocked && item.badge && !isPending && (
                   <span
                     className={`ml-auto inline-flex px-1.5 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 ${
                       isActive ? 'bg-[#FA5D5D] text-white dark:bg-[#FA5D5D] dark:text-white font-black shadow-xs' : badgeClasses
@@ -223,7 +216,54 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {item.badge}
                   </span>
                 )}
-              </button>
+              </>
+            );
+
+            if (isLocked) {
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    showToast(
+                      isEn ? 'This studio is locked' : 'แท็บนี้ถูกล็อกการเข้าถึง',
+                      isEn
+                        ? 'Currently unavailable. Coming soon.'
+                        : 'ยังไม่สามารถใช้งานได้ พบกันเร็วๆนี้',
+                      'info'
+                    );
+                  }}
+                  title={collapsedMode ? `${itemLabel} (${isEn ? 'Locked' : 'ล็อก'})` : undefined}
+                  aria-label={itemLabel}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={sharedClass}
+                >
+                  {innerContent}
+                </button>
+              );
+            }
+
+            return (
+              <Link
+                key={item.id}
+                href={itemRoute}
+                prefetch={true}
+                onMouseEnter={() => {
+                  if (onPrefetchView) {
+                    onPrefetchView(item.id);
+                  }
+                }}
+                onClick={() => {
+                  onSelectView(item.id);
+                  if (onItemClick) onItemClick();
+                }}
+                title={collapsedMode ? itemLabel : undefined}
+                aria-label={itemLabel}
+                aria-current={isActive ? 'page' : undefined}
+                className={sharedClass}
+              >
+                {innerContent}
+              </Link>
             );
           })}
         </div>

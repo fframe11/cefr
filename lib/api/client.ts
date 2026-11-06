@@ -12,10 +12,11 @@ const DEFAULT_TIMEOUT_MS = 15_000;
 /**
  * Standardized Frontend API Client
  * Wraps fetch with Supabase JWT session injection, timeout management,
- * and unified ApiError handling.
+ * unified ApiError handling, and in-memory TTL caching for fast repeated transitions.
  */
 export class ApiClient {
   private baseUrl: string;
+  private cache = new Map<string, { data: any; expiresAt: number }>();
 
   constructor(baseUrl = '') {
     this.baseUrl = baseUrl;
@@ -39,8 +40,23 @@ export class ApiClient {
     }
   }
 
+  public clearCache(): void {
+    this.cache.clear();
+  }
+
   public async request<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
     const { body, timeoutMs = DEFAULT_TIMEOUT_MS, skipAuth = false, headers: customHeaders, ...restInit } = options;
+
+    const method = (restInit.method || 'GET').toUpperCase();
+    const isCacheableGet = method === 'GET' && !body;
+    const url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
+
+    if (isCacheableGet) {
+      const cached = this.cache.get(url);
+      if (cached && Date.now() < cached.expiresAt) {
+        return cached.data as T;
+      }
+    }
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
@@ -63,12 +79,11 @@ export class ApiClient {
       }
     }
 
-    const url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
-
     let response: Response;
     try {
       response = await fetch(url, {
         ...restInit,
+        method,
         headers,
         body: body !== undefined ? (body instanceof FormData ? body : JSON.stringify(body)) : undefined,
         signal: controller.signal,
@@ -101,6 +116,11 @@ export class ApiClient {
       const details = errorObj?.details;
 
       throw new ApiError(status, message, code, details);
+    }
+
+    if (isCacheableGet) {
+      // Cache in-memory for 3 minutes to make back-and-forth tab transitions 0ms instant
+      this.cache.set(url, { data: payload.data, expiresAt: Date.now() + 180_000 });
     }
 
     return payload.data;

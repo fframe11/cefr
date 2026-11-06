@@ -32,42 +32,44 @@ export default createApiHandler(
     const query = validateQuery(grammarQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    try {
-      let dbQuery = supabase
-        .from('grammar_topics')
-        .select(
-          'id, slug, title_en, title_th, cefr_level, summary_th, concept_th, concept_en, rules, common_mistakes',
-          { count: 'exact' }
-        )
-        .eq('is_active', true);
+    if (supabase) {
+      try {
+        let dbQuery = supabase
+          .from('grammar_topics')
+          .select(
+            'id, slug, title_en, title_th, cefr_level, summary_th, concept_th, concept_en, rules, common_mistakes',
+            { count: 'exact' }
+          )
+          .eq('is_active', true);
 
-      if (query.cefr_level) {
-        dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+        if (query.cefr_level) {
+          dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+        }
+        if (query.slug) {
+          dbQuery = dbQuery.eq('slug', query.slug);
+        }
+
+        const offset = (query.page - 1) * query.limit;
+        dbQuery = dbQuery
+          .order('slug', { ascending: true })
+          .range(offset, offset + query.limit - 1);
+
+        const { data: topics, count, error } = await dbQuery;
+
+        if (!error && topics && topics.length > 0) {
+          return {
+            topics,
+            pagination: {
+              page: query.page,
+              limit: query.limit,
+              total: count || topics.length,
+              total_pages: Math.ceil((count || topics.length) / query.limit),
+            },
+          };
+        }
+      } catch {
+        // Fallback seamlessly to local bank below
       }
-      if (query.slug) {
-        dbQuery = dbQuery.eq('slug', query.slug);
-      }
-
-      const offset = (query.page - 1) * query.limit;
-      dbQuery = dbQuery
-        .order('slug', { ascending: true })
-        .range(offset, offset + query.limit - 1);
-
-      const { data: topics, count, error } = await dbQuery;
-
-      if (!error && topics && topics.length > 0) {
-        return {
-          topics,
-          pagination: {
-            page: query.page,
-            limit: query.limit,
-            total: count || topics.length,
-            total_pages: Math.ceil((count || topics.length) / query.limit),
-          },
-        };
-      }
-    } catch {
-      // Fallback seamlessly to local bank below
     }
 
     // Local curated pedagogical fallback using expanded 14-topic CEFR GRAMMAR_BANK
