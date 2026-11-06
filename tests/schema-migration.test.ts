@@ -5,7 +5,7 @@ import * as path from 'path';
 describe('Database Schema Migrations Verification', () => {
   const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-  it('should find all 9 approved migration files', () => {
+  it('should find all approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
     expect(files).toEqual([
@@ -20,6 +20,12 @@ describe('Database Schema Migrations Verification', () => {
       '20260929000009_seed_verified_production_vocabulary_3860.sql',
       '20261003000010_create_adaptive_assessment_tables.sql',
       '20261007000011_lockdown_question_options_rls.sql',
+      '20261028_user_competition_matches.sql',
+      '20261028_user_speaking_attempts.sql',
+      '20261028_user_writing_submissions.sql',
+      '20261029000012_cambridge_c1_c2_ielts_expansion.sql',
+      '20261030000013_user_push_subscriptions_and_streaks.sql',
+      '20261031_speaking_sentences_and_queue.sql',
     ]);
   });
 
@@ -185,4 +191,3 @@ describe('Database Schema Migrations Verification', () => {
     expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(question_id,\s*key\)\s+DO\s+UPDATE/i);
   });
 });
-

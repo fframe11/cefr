@@ -9,7 +9,7 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ci": "vitest run tests/security-guard.test.ts tests/demo-exam-isolation.test.ts tests/mock-exam-ui.test.ts tests/serverless-api.test.ts tests/schema-migration.test.ts tests/glova-components.test.tsx tests/campaign-banner.test.tsx tests/glova-design-system.test.ts tests/diagnostic.test.ts tests/backend-foundation.test.ts tests/i18n.test.ts",
+    "test:ci": "vitest run tests/security-guard.test.ts tests/demo-exam-isolation.test.ts tests/mock-exam-ui.test.ts tests/serverless-api.test.ts tests/schema-migration.test.ts tests/glova-components.test.tsx tests/campaign-banner.test.tsx tests/glova-design-system.test.ts tests/diagnostic.test.ts tests/backend-foundation.test.ts tests/i18n.test.ts tests/cambridge-c1-c2-ielts.test.ts tests/speed-battle.test.ts tests/push-notifications.test.ts tests/streak-retention.test.ts tests/cron-reminders.test.ts tests/writing-evaluator.test.ts test/writing-evaluator.test.ts test/api.test.ts test/audio.test.ts test/cefr.test.ts test/evaluator.test.ts test/queue-engine.test.ts",
     "typecheck": "tsc --noEmit",
     "build:worker": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
     "preview:worker": "opennextjs-cloudflare preview",
@@ -23,7 +23,8 @@
     "vocabulary:qa": "node scripts/content-pipeline/vocab/enrich-pipeline.mjs qa",
     "vocabulary:report": "node scripts/content-pipeline/vocab/enrich-pipeline.mjs report",
     "vocabulary:large": "node scripts/content-pipeline/vocab/large-production-pipeline.mjs",
-    "qa:integrity": "node scripts/content-pipeline/vocab/qa-integrity-check.mjs"
+    "qa:integrity": "node scripts/content-pipeline/vocab/qa-integrity-check.mjs",
+    "dev:speaking": "python -m uvicorn services.pronunciation.app:app --host 127.0.0.1 --port 8000"
   },
   "dependencies": {
     "@remotion/player": "4.0.529",
@@ -39,6 +40,7 @@
     "react-dom": "^18.3.1",
     "remotion": "4.0.529",
     "tailwind-merge": "^2.6.0",
+    "web-push": "^3.6.7",
     "zod": "^4.6.5"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "@types/node": "^22.13.4",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@types/web-push": "^3.6.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.2",
     "tailwindcss": "^3.4.17",

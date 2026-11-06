@@ -39,6 +39,8 @@ import { UserProgressState, CEFRLevel } from '../../types';
 import { CEFR_LEVELS } from '../../data/cefrLevels';
 import { NavView } from '../common/Sidebar';
 import { useTranslation } from '../../i18n';
+import { NotificationOptInBanner } from '../notifications/NotificationOptInBanner';
+import { NotificationSettingsCard } from '../notifications/NotificationSettingsCard';
 
 interface DashboardViewProps {
   progress: UserProgressState;
@@ -465,6 +467,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         </section>
       )}
+
+      {/* Push Notification Opt-in Banner */}
+      <NotificationOptInBanner />
 
       {/* ========================================================================= */}
       {/* 4. ROW OF 4 STATUS COUNTER CARDS                                         */}
@@ -941,6 +946,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               {isEn ? 'Continue Daily Streak' : 'เรียนต่อเพื่อรักษาสถิติ'}
             </button>
           </div>
+
+          {/* Notification & Streak Retention Settings Card */}
+          <NotificationSettingsCard />
 
           {/* B. Active English Course 1: Vocabulary Studio */}
           <div

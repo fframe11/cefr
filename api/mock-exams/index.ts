@@ -27,32 +27,34 @@ export default createApiHandler(
     }
 
     // 2. Production Database Query
-    try {
-      const supabase = createPublicServerClient();
-      const { data: exams, error } = await supabase
-        .from('mock_exams')
-        .select('id, exam_code, name, target_cefr, description_th, total_duration_minutes, passing_score, version')
-        .eq('is_published', true)
-        .order('exam_code', { ascending: true });
+    const supabase = createPublicServerClient();
+    if (supabase) {
+      try {
+        const { data: exams, error } = await supabase
+          .from('mock_exams')
+          .select('id, exam_code, name, target_cefr, description_th, total_duration_minutes, passing_score, version')
+          .eq('is_published', true)
+          .order('exam_code', { ascending: true });
 
-      if (!error && exams && exams.length > 0) {
-        return {
-          exams: exams.map((exam) => ({
-            id: exam.id,
-            exam_code: exam.exam_code,
-            name: exam.name,
-            target_cefr: exam.target_cefr,
-            description_th: exam.description_th,
-            total_duration_minutes: exam.total_duration_minutes,
-            passing_score: exam.passing_score,
-            version: exam.version,
-          })),
-          total: exams.length,
-          disclaimer: 'Platform practice mock examination; not an official Cambridge English qualification exam.',
-        };
+        if (!error && exams && exams.length > 0) {
+          return {
+            exams: exams.map((exam) => ({
+              id: exam.id,
+              exam_code: exam.exam_code,
+              name: exam.name,
+              target_cefr: exam.target_cefr,
+              description_th: exam.description_th,
+              total_duration_minutes: exam.total_duration_minutes,
+              passing_score: exam.passing_score,
+              version: exam.version,
+            })),
+            total: exams.length,
+            disclaimer: 'Platform practice mock examination; not an official Cambridge English qualification exam.',
+          };
+        }
+      } catch {
+        // Fall through to production catalog fallback
       }
-    } catch {
-      // Fall through to production catalog fallback
     }
 
     // 3. Production Static Catalog Fallback (Offline / Test Mode)

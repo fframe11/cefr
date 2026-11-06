@@ -25,33 +25,6 @@ export default createApiHandler(
     const query = validateQuery(vocabularyQuerySchema, req.query);
     const supabase = createPublicServerClient();
 
-    let dbQuery = supabase
-      .from('vocabularies')
-      .select(
-        'id, word, lemma, cefr_level, part_of_speech, ipa, meaning_th, meaning_en, example_sentence_en, example_sentence_th, topic, synonyms, antonyms',
-        { count: 'exact' }
-      )
-      .eq('is_active', true);
-
-    if (query.cefr_level) {
-      dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
-    }
-    if (query.part_of_speech) {
-      dbQuery = dbQuery.eq('part_of_speech', query.part_of_speech);
-    }
-    if (query.topic) {
-      dbQuery = dbQuery.eq('topic', query.topic);
-    }
-    if (query.search) {
-      dbQuery = dbQuery.ilike('word', `%${query.search}%`);
-    }
-
-    const offset = (query.page - 1) * query.limit;
-    dbQuery = dbQuery
-      .order('word', { ascending: true })
-      .order('id', { ascending: true })
-      .range(offset, offset + query.limit - 1);
-
     // If specific exam filter is requested (DAILY, IELTS, TOEIC, TOEFL, CEFR), route to Exam Universe
     if (query.exam && query.exam !== 'ALL') {
       const examRes = queryExamUniverse({
@@ -75,22 +48,51 @@ export default createApiHandler(
       };
     }
 
-    try {
-      const { data: items, count, error } = await dbQuery;
+    if (supabase) {
+      try {
+        let dbQuery = supabase
+          .from('vocabularies')
+          .select(
+            'id, word, lemma, cefr_level, part_of_speech, ipa, meaning_th, meaning_en, example_sentence_en, example_sentence_th, topic, synonyms, antonyms',
+            { count: 'exact' }
+          )
+          .eq('is_active', true);
 
-      if (!error && items && items.length > 0) {
-        return {
-          items: items.map(sanitizeVocabularyItem),
-          pagination: {
-            page: query.page,
-            limit: query.limit,
-            total: count || 0,
-            total_pages: Math.ceil((count || 0) / query.limit),
-          },
-        };
+        if (query.cefr_level) {
+          dbQuery = dbQuery.eq('cefr_level', query.cefr_level);
+        }
+        if (query.part_of_speech) {
+          dbQuery = dbQuery.eq('part_of_speech', query.part_of_speech);
+        }
+        if (query.topic) {
+          dbQuery = dbQuery.eq('topic', query.topic);
+        }
+        if (query.search) {
+          dbQuery = dbQuery.ilike('word', `%${query.search}%`);
+        }
+
+        const offset = (query.page - 1) * query.limit;
+        dbQuery = dbQuery
+          .order('word', { ascending: true })
+          .order('id', { ascending: true })
+          .range(offset, offset + query.limit - 1);
+
+        const { data: items, count, error } = await dbQuery;
+
+        if (!error && items && items.length > 0) {
+          return {
+            items: items.map(sanitizeVocabularyItem),
+            pagination: {
+              page: query.page,
+              limit: query.limit,
+              total: count || 0,
+              total_pages: Math.ceil((count || 0) / query.limit),
+            },
+          };
+        }
+      } catch (dbErr) {
+        console.warn('[ContentVocabulary] Supabase query failed, falling back to local production bank:', dbErr);
       }
-    } catch (dbErr) {
-      console.warn('[ContentVocabulary] Supabase query failed, falling back to local production bank:', dbErr);
     }
 
     // High-performance fallback to verified exam & production universe

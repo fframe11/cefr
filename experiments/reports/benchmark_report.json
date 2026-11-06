@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-28T10:38:46.444375Z",
+  "model_name": "E2E-GOP-SpeechOcean762",
+  "dataset": "SpeechOcean762",
+  "status": "pending_audio_dataset",
+  "sample_count": 5,
+  "evaluated_count": 0,
+  "verdict": "REJECTED_NO_GO",
+  "reason": "SpeechOcean762 raw audio files or model weights not yet downloaded on machine. Run prepare_dataset.py to download before running real benchmark.",
+  "release_recommendation": "Scores remain locked in 'not_ready' status until real audio inference benchmark passes."
+}

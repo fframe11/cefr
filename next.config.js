@@ -4,6 +4,12 @@ const nextConfig = {
   output: 'standalone',
   productionBrowserSourceMaps: false,
   devIndicators: false,
+  experimental: {
+    staleTimes: {
+      dynamic: 300,
+      static: 600,
+    },
+  },
   async headers() {
     return [
       {
