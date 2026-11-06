@@ -4,6 +4,7 @@ import { createServiceRoleClient } from '../_lib/supabase/client';
 import { validateBody, validateQuery } from '../_lib/validation/validator';
 import { uuidSchema, paginationSchema } from '../_lib/validation/common-schemas';
 import { UnauthorizedError, NotFoundError } from '../_lib/errors/api-error';
+import { updateStreakOnActivity } from '../_lib/assessment/streak';
 
 const vocabMasteryQuerySchema = paginationSchema.extend({
   status: z.enum(['all', 'mastered', 'learning', 'due', 'weak']).default('all'),
@@ -243,28 +244,8 @@ export default createApiHandler(
           { onConflict: 'user_id,skill' }
         );
 
-        // Update streak in user_profiles
-        const todayDate = now.toISOString().split('T')[0];
-        const { data: profile } = await supabase
-          .from('user_profiles')
-          .select('streak_days, last_active_date')
-          .eq('id', user.id)
-          .single();
-
-        if (profile) {
-          let streak = profile.streak_days;
-          if (profile.last_active_date !== todayDate) {
-            streak += 1;
-            await supabase
-              .from('user_profiles')
-              .update({
-                streak_days: streak,
-                last_active_date: todayDate,
-                updated_at: nowIso,
-              })
-              .eq('id', user.id);
-          }
-        }
+        // Authoritative streak & freeze retention update
+        await updateStreakOnActivity(supabase, user.id, now);
       }
 
       return {

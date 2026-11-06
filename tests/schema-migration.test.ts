@@ -8,7 +8,7 @@ describe('Database Schema Migrations Verification', () => {
   it('should find all 9 approved migration files', () => {
     expect(fs.existsSync(migrationsDir)).toBe(true);
     const files = fs.readdirSync(migrationsDir).sort();
-    expect(files).toEqual([
+        expect(files).toEqual([
       '20260925000001_create_cefr_platform_schema.sql',
       '20260925000002_create_indexes.sql',
       '20260925000003_create_rls_policies.sql',
@@ -20,6 +20,11 @@ describe('Database Schema Migrations Verification', () => {
       '20260929000009_seed_verified_production_vocabulary_3860.sql',
       '20261003000010_create_adaptive_assessment_tables.sql',
       '20261007000011_lockdown_question_options_rls.sql',
+      '20261028_user_competition_matches.sql',
+      '20261028_user_speaking_attempts.sql',
+      '20261028_user_writing_submissions.sql',
+      '20261029000012_cambridge_c1_c2_ielts_expansion.sql',
+      '20261030000013_user_push_subscriptions_and_streaks.sql',
     ]);
   });
 
@@ -185,4 +190,5 @@ describe('Database Schema Migrations Verification', () => {
     expect(seedSql).toMatch(/ON\s+CONFLICT\s+\(question_id,\s*key\)\s+DO\s+UPDATE/i);
   });
 });
+
 
